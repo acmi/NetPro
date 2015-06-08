@@ -80,20 +80,19 @@
 
 		<dword alias="Visible Weapon" type="Item" />
 		<dword alias="Visible Shield [Sigil]" type="Item" />
-		<dword alias="Visible Weapon / Two Handed" type="Item" />
-
 		<dword alias="Visible Gloves" type="Item" />
 		<dword alias="Visible Upper Body" type="Item" />
 		<dword alias="Visible Lower Body" type="Item" />
 		<dword alias="Visible Boots" type="Item" />
+		<dword alias="Visible Weapon / Two Handed" type="Item" />
 		<dword alias="Visible Hair Accessory (top)" type="Item" />
 		<dword alias="Visible Hair Accessory (bottom)" type="Item" />
 
-		<word alias="unk" /> <!-- 0/3 -->
-		<word alias="unk" /> <!-- 0/3 -->
-		<word alias="unk" /> <!-- 0/3 -->
-		<word alias="unk" /> <!-- 0/3 -->
-		<word alias="unk" /> <!-- 0/3 -->
+		<word alias="Upper Body enchant level" />
+		<word alias="Lower Body enchant level" />
+		<word alias="Headgear enchant level" />
+		<word alias="Gloves enchant level" />
+		<word alias="Boots enchant level" />
 
 		<dword alias="Hair Style" type="Alphabet" />
 		<dword alias="Hair Color" type="Alphabet" />
@@ -123,6 +122,6 @@
 		<dword alias="Available" /> <!-- active = not banned / suspended -->
 		<byte alias="Noblesse" type="YesOrNo" />
 		<byte alias="Hero" type="YesOrNo" />
-		<byte alias="Unk" type="YesOrNo" />
+		<byte alias="Show Hair Accessory" type="YesOrNo" />
 	</loop>
 </packet>

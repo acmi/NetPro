@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Added vitality level and party substitute DWORDs to each loop element (unknown when) -->
+<packet id="SM_PARTY_SMALL_WINDOW_ALL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Leader OID" type="ObjectID" />
+	<dword alias="Item distribution" type="ItemRedist" />
+	<dword alias="Other members" id="others" />
+	<loop id="others">
+		<dword alias="Member OID" type="ObjectID">
+			<scriptAlias id="OIC_PLAYER_OID" />
+		</dword>
+		<string alias="Name">
+			<scriptAlias id="OIC_PLAYER_NAME" />
+		</string>
+		<dword alias="Current CP" />
+		<dword alias="Maximum CP" />
+		<dword alias="Current HP" /> <!-- real -->
+		<dword alias="Maximum HP" /> <!-- real -->
+		<dword alias="Current MP" />
+		<dword alias="Maximum MP" />
+		<dword alias="Vitality" type="VitalityLevel" /> <!-- NEW -->
+		<dword alias="Level" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Sex" type="Sex" />
+		<dword alias="Race" type="Race" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="Party Substitute" type="YesOrNo" /> <!-- NEW -->
+		<dword alias="Servitor count" id="index_1" />
+		<loop id="index_1">
+			<dword alias="Servitor OID" type="ObjectID">
+				<scriptAlias id="OIC_NPC_OID" />
+			</dword>
+			<dword alias="Servitor" type="Npc">
+				<scriptAlias id="OIC_NPC_TEMPLATE" />
+			</dword>
+			<dword alias="Servitor's type" type="ServitorType" />
+			<string alias="Servitor's name" />
+			<dword alias="Servitor's current HP" /> <!-- real -->
+			<dword alias="Servitor's maximum HP" /> <!-- real -->
+			<dword alias="Servitor's current MP" />
+			<dword alias="Servitor's maximum MP" />
+			<dword alias="Servitor's level" />
+		</loop>
+	</loop>
+</packet>

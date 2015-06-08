@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_HENNA_ITEM_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Henna" type="Henna" />
+	<dword alias="Actual item" type="Item" />
+	<dword alias="Amount in inventory" />
+	<dword alias="Price of appliance" />
+	<dword alias="Applicable" type="YesOrNo" />
+	<dword alias="Viewer's adena" />
+	<dword alias="Current INT" />
+	<byte alias="INT with henna" />
+	<dword alias="Current STR" />
+	<byte alias="STR with henna" />
+	<dword alias="Current CON" />
+	<byte alias="CON with henna" />
+	<dword alias="Current MEN" />
+	<byte alias="MEN with henna" />
+	<dword alias="Current DEX" />
+	<byte alias="DEX with henna" />
+	<dword alias="Current WIT" />
+	<byte alias="WIT with henna" />
+</packet>

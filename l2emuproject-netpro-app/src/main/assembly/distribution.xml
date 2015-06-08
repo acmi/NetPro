@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2
+                      http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+  <id>netpro</id>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <formats>
+    <format>dir</format> <!-- for build verification -->
+    <format>zip</format> <!-- for sharing -->
+  </formats>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>${groupId}:${artifactId}</include>
+      </includes>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/lib/</outputDirectory>
+      <excludes>
+        <exclude>${groupId}:${artifactId}</exclude>
+      </excludes>
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+    <fileSet>
+      <directory>dist/</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>*.bat</include>
+        <include>*.cache</include>
+        <include>*.sh</include>
+        <include>*.txt</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>config/</directory>
+      <outputDirectory>config/</outputDirectory>
+      <excludes>
+      	<exclude>full</exclude>
+      	<exclude>modified</exclude>
+      	<exclude>override.properties</exclude>
+      	<exclude>**/.gitignore</exclude>
+      </excludes>
+      <includes>
+      	<include>*.properties</include>
+      	<include>**/*.xml</include>
+      	<include>**/*.xsd</include>
+      	<include>scripts/**</include> <!-- this may need to be adjusted -->
+      </includes>
+    </fileSet>
+    <fileSet>
+    	<directory>scripts</directory>
+    	<outputDirectory>scripts</outputDirectory>
+    	<excludes>
+    		<exclude>internal/**</exclude>
+    	</excludes>
+    </fileSet>
+  </fileSets>
+</assembly>

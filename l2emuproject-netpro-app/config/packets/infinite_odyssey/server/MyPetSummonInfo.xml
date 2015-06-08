@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_MY_PET_SUMMON_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Type" type="ServitorType" id="type" />
+	<branch id="type" condition="servitor.Summon">
+		<dword alias="Summon OID" type="ObjectID">
+			<scriptAlias id="OIC_SUMMON_OID" />
+			<scriptAlias id="OIL_OBJECT_ID" />
+			<scriptAlias id="LUA_USER_SUMMON_OID" />
+		</dword>
+	</branch>
+	<branch id="type" condition="servitor.Pet">
+		<dword alias="Pet OID" type="ObjectID">
+			<scriptAlias id="OIC_PET_OID" />
+			<scriptAlias id="OIL_OBJECT_ID" />
+			<scriptAlias id="LUA_USER_PET_OID" />
+		</dword>
+	</branch>
+	<dword alias="Servitor" type="Npc">
+		<scriptAlias id="OIC_NPC_TEMPLATE" />
+	</dword>
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<dword alias="Yaw" />
+	<dword alias="Casting speed" />
+	<dword alias="Attack speed" />
+	<word alias="Running speed (on ground)" />
+	<word alias="Walking speed (on ground)" />
+	<word alias="Running speed (in water)" />
+	<word alias="Walking speed (in water)" />
+	<word alias="Running speed (mounted)" />
+	<word alias="Walking speed (mounted)" />
+	<word alias="Running speed (flying mounted)" />
+	<word alias="Walking speed (flying mounted)" />
+	<double alias="Movement speed multiplier" />
+	<double alias="Attack speed multiplier" />
+	<double alias="Collision radius" />
+	<double alias="Collision height" />
+	<dword alias="Main weapon" type="Item" />
+	<dword alias="Chest armor" type="Item" />
+	<dword alias="Shield/support weapon" type="Item" />
+	<byte alias="Knownlist state" type="KnownlistState" />
+	<dword alias="Name" type="ImmutableNpcString" />
+	<string alias="Name" />
+	<dword alias="Title" type="ImmutableNpcString" />
+	<string alias="Title" />
+	<byte alias="PvP" type="Pvp" />
+	<dword alias="Reputation" />
+	<dword alias="Current satiation" />
+	<dword alias="Maximum satiation" />
+	<dword alias="Current HP" />
+	<dword alias="Maximum HP" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<qword alias="SP" />
+	<unsignedByte alias="Level" />
+	<qword alias="XP" />
+	<qword alias="Current level XP" />
+	<qword alias="Next level XP" />
+	<dword alias="Current carried weight" />
+	<dword alias="Maximum carried weight" />
+	<dword alias="P. Atk." />
+	<dword alias="P. Def." />
+	<dword alias="P. Accuracy" />
+	<dword alias="P. Evasion" />
+	<dword alias="P. Critical" />
+	<dword alias="M. Atk." />
+	<dword alias="M. Def." />
+	<dword alias="M. Accuracy" />
+	<dword alias="M. Evasion" />
+	<dword alias="M. Critical" />
+	<dword alias="Actual movement speed" />
+	<dword alias="Attack speed" />
+	<dword alias="Casting speed" />
+	<byte alias="" />
+	<byte alias="Duel team" type="DuelTeam" />
+	<byte alias="Soulshot usage" />
+	<byte alias="Spiritshot usage" />
+	<dword alias="" />
+	<dword alias="" />
+	<byte alias="Summon points in use" />
+	<byte alias="Total summon points" />
+	<word alias="Visual effects" id="ave_cnt" />
+	<loop id="ave_cnt">
+		<word alias="Effect" type="ave.AbnormalVisualEffect" />
+	</loop>
+	<byte alias="" />
+</packet>

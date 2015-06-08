@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This packet dates back to the time when there were no chat channels, that is year 2001 or earlier internal releases (no such client has been ever observed) -->
+<!-- Needless to say, all known servers will reply with Say2 (instead of Say) and no known client will send this packet under any circumstances -->
+<!-- Modern servers disconnect the client when they receive this packet. -->
+<packet id="CM_SAY" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Message">
+		<scriptAlias id="INTERACTIVE_CHAT" />
+	</string>
+</packet>

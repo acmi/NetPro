@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added reference price DWORDs to the end of each loop element (for both loops) -->
+<packet id="SM_PRIVATE_STORE_MANAGE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="My OID" type="ObjectID" />
+	<dword alias="Inventory adena" />
+	<dword alias="Sellable item count" id="inv_cnt" />
+	<loop id="inv_cnt">
+		<dword alias="Main item type" type="ItemType2" />
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Amount" />
+		<word alias="Blessed" type="YesOrNo" />
+		<word alias="Enchant level" />
+		<word alias="0" />
+		<word alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<dword alias="Reference (shop) price" /> <!-- NEW -->
+	</loop>
+	<dword alias="On sale item count" id="sale_cnt" />
+	<loop id="sale_cnt">
+		<dword alias="Main item type" type="ItemType2" />
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Amount" />
+		<word alias="Blessed" type="YesOrNo" />
+		<word alias="Enchant level" />
+		<word alias="0" />
+		<word alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<dword alias="Price" />
+		<dword alias="Reference (shop) price" /> <!-- NEW -->
+	</loop>
+</packet>

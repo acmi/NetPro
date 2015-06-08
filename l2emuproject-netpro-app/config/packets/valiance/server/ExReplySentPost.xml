@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="473" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="??? 0" />
+	<dword alias="ID" />
+	<dword alias="Locked" type="YesOrNo" />
+	<string alias="Recipient" />
+	<string alias="Subject" />
+	<string alias="Message" />
+	<dword alias="Attachment count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Item OID" type="ObjectID" />
+		<dword alias="Item" type="Item" />
+		<byte alias="Slot number" type="InventorySlot" />
+		<qword alias="Quantity" />
+		<word alias="Main item type" type="ItemType2" />
+		<word alias="Equipped" type="YesOrNo" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<word alias="Special item type" />
+		<word alias="Name exists" type="YesOrNo" />
+		<word alias="Enchant level" />
+		<dword alias="Augmentation" /> <!-- Make type -->
+		<dword alias="Mana left" type="ShadowMana" />
+		<dword alias="Time remaining" type="TimeRemaining" />
+		<byte alias="Usable" type="YesOrNo" />
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+		<word alias="Item enchant bonus stats id" />
+		<word alias="Item enchant bonus stats id" />
+		<word alias="Item enchant bonus stats id" />
+		<dword alias="Item appearance id" />
+		<dword alias="Item OID" type="ObjectID" />
+	</loop>
+	<qword alias="Price" />
+	<dword alias="Starred" type="YesOrNo" />
+</packet>

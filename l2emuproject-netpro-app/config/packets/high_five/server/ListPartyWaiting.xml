@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Unknown time of changes -->
+<!-- Member count DWORD moved to the end of a loop element and an additional inner loop with basic member details added -->
+<packet id="176" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Page count" />
+	<dword alias="Room count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Room ID" />
+		<string alias="Room title" />
+		<dword alias="Location" type="PartyRoomRegion" />
+		<dword alias="Minimum level to join" />
+		<dword alias="Maximum level to join" />
+		<dword alias="Size" />
+		<string alias="Leader name" />
+		
+		<!-- NEW -->
+		<dword alias="Member count" id="index_1" />
+		<loop id="index_1">
+			<dword alias="Member class" type="CharacterClass" />
+			<string alias="Member name" />
+		</loop>
+	</loop>
+</packet>

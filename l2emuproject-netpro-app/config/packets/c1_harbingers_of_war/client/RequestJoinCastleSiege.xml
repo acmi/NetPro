@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_JOIN_CASTLE_SIEGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Residence" type="PledgeBase" />
+	<dword alias="Participation mode" type="SiegeSide" />
+	<dword alias="Request type" type="SiegeRegistration" />
+</packet>

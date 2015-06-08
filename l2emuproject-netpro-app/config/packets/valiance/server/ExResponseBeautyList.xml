@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="613" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<qword alias="Adena Count" />
+	<qword alias="Beauty Ticket Count" />
+	<dword alias="List Type" id="cond_1" /> <!-- 0=hair / 1=face -->
+
+	<dword alias="List Count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Style ID" />
+		<dword alias="Style OID" />
+	</loop>
+
+	<branch id="cond_1" condition="Zero">
+		<dword alias="Hair Style Buy History" id="hairstyle" />
+		<loop id="hairstyle">
+			<dword alias="Style ID" />
+		</loop>
+		<dword alias="Hair Color Buy History" id="haircolor" />
+		<loop id="haircolor">
+			<dword alias="Style Color ID" />
+		</loop>
+	</branch>
+
+	<branch id="cond_1" condition="Positive">
+		<dword alias="Face Style Buy History" id="facestyle" />
+		<loop id="facestyle">
+			<dword alias="Style ID" />
+		</loop>
+	</branch>
+</packet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added coordinate DWORDs to indicate where the change to actor waiting type takes place. -->
+<packet id="SM_CHANGE_WAIT_TYPE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actor OID" type="ObjectID" />
+	<dword alias="Waiting mode" type="WaitType" />
+	
+	<!-- NEW -->
+	<dword alias="Actor X" />
+	<dword alias="Actor Y" />
+	<dword alias="Actor Z" />
+</packet>

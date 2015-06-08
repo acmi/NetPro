@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<removedPacket id="467" />
+		<removedPacket id="468" />
+		<removedPacket id="469" />
+		<removedPacket id="470" />
+		<removedPacket id="471" />
+		<removedPacket id="472" />
+		<removedPacket id="473" />
+		<removedPacket id="474" />
+		<packet opcodePrefix="D0 CE 00" id="409" />
+		<packet opcodePrefix="D0 CF 00" id="410" />
+		<packet opcodePrefix="D0 D0 00" id="411" />
+		<packet opcodePrefix="D0 D2 00" id="412" />
+		<packet opcodePrefix="D0 D3 00 01 00 00 00" id="413" />
+		<packet opcodePrefix="D0 D4 00" id="414" />
+		<packet opcodePrefix="D0 D5 00" id="415" />
+		<packet opcodePrefix="D0 D6 00" id="351" />
+		<packet opcodePrefix="D0 D8 00" id="416" />
+		<packet opcodePrefix="D0 D9 00" id="417" />
+		<packet opcodePrefix="D0 DA 00" id="418" />
+		<packet opcodePrefix="D0 DB 00" id="419" />
+		<packet opcodePrefix="D0 DC 00" id="420" />
+		<packet opcodePrefix="D0 DD 00" id="421" />
+		<packet opcodePrefix="D0 DE 00" id="422" />
+		<packet opcodePrefix="D0 DF 00" id="423" />
+		<packet opcodePrefix="D0 E0 00" id="424" />
+		<packet opcodePrefix="D0 E1 00" id="425" />
+		<packet opcodePrefix="D0 E2 00" id="426" />
+		<packet opcodePrefix="D0 E3 00" id="427" />
+		<packet opcodePrefix="D0 E4 00" id="428" />
+		<packet opcodePrefix="D0 E5 00" id="429" />
+		<packet opcodePrefix="D0 E6 00" id="430" />
+		<packet opcodePrefix="D0 E7 00" id="431" />
+		<packet opcodePrefix="D0 E8 00" id="432" />
+		<packet opcodePrefix="D0 E9 00" id="433" />
+		<packet opcodePrefix="D0 EA 00" id="434" />
+		<packet opcodePrefix="D0 EB 00" id="435" />
+		<packet opcodePrefix="D0 EC 00" id="436" />
+		<packet opcodePrefix="D0 ED 00" id="437" />
+		<packet opcodePrefix="D0 EE 00" id="438" />
+		<packet opcodePrefix="D0 EF 00" id="439" />
+		<packet opcodePrefix="D0 F0 00" id="440" />
+		<packet opcodePrefix="D0 F1 00" id="441" />
+		<packet opcodePrefix="D0 F2 00" id="443" />
+		<packet opcodePrefix="D0 F3 00" id="444" />
+		<packet opcodePrefix="D0 F4 00" id="445" />
+		<packet opcodePrefix="D0 F6 00" id="446" />
+		<packet opcodePrefix="D0 F7 00" id="447" />
+		<packet opcodePrefix="D0 F8 00" id="448" />
+		<packet opcodePrefix="D0 F9 00" id="449" />
+		<packet opcodePrefix="D0 FA 00" id="450" />
+		<packet opcodePrefix="D0 FB 00" id="451" />
+		<packet opcodePrefix="D0 FC 00" id="452" />
+		<packet opcodePrefix="D0 FD 00" id="453" />
+		<packet opcodePrefix="D0 FE 00" id="475" />
+		<packet opcodePrefix="D0 FF 00" id="476" />
+		<packet opcodePrefix="D0 00 01" id="477" />
+	</client>
+	<server>
+		<removedPacket id="689" />
+		<removedPacket id="690" />
+		<removedPacket id="691" />
+		<removedPacket id="692" />
+		<packet opcodePrefix="FE 36 01" id="608" />
+		<packet opcodePrefix="FE 37 01" id="609" />
+		<packet opcodePrefix="FE 38 01" id="610" />
+		<packet opcodePrefix="FE 39 01" id="611" />
+		<packet opcodePrefix="FE 3A 01" id="612" />
+		<packet opcodePrefix="FE 3B 01" id="613" />
+		<packet opcodePrefix="FE 3C 01" id="614" />
+		<packet opcodePrefix="FE 3D 01" id="615" />
+		<packet opcodePrefix="FE 3E 01" id="616" />
+		<packet opcodePrefix="FE 3F 01" id="617" />
+		<packet opcodePrefix="FE 40 01" id="618" />
+		<packet opcodePrefix="FE 41 01" id="619" />
+		<packet opcodePrefix="FE 42 01" id="620" />
+		<packet opcodePrefix="FE 43 01" id="621" />
+		<packet opcodePrefix="FE 44 01" id="622" />
+		<packet opcodePrefix="FE 45 01" id="623" />
+		<packet opcodePrefix="FE 46 01" id="624" />
+		<packet opcodePrefix="FE 47 01" id="625" />
+		<packet opcodePrefix="FE 48 01" id="626" />
+		<packet opcodePrefix="FE 49 01" id="627" />
+		<packet opcodePrefix="FE 4A 01" id="628" />
+		<packet opcodePrefix="FE 4B 01" id="629" />
+		<packet opcodePrefix="FE 4C 01" id="630" />
+		<packet opcodePrefix="FE 4D 01" id="631" />
+		<packet opcodePrefix="FE 4E 01" id="632" />
+		<packet opcodePrefix="FE 4F 01" id="633" />
+		<packet opcodePrefix="FE 50 01" id="634" />
+		<packet opcodePrefix="FE 51 01" id="635" />
+		<packet opcodePrefix="FE 52 01" id="636" />
+		<packet opcodePrefix="FE 53 01" id="637" />
+		<packet opcodePrefix="FE 54 01" id="638" />
+		<packet opcodePrefix="FE 55 01" id="639" />
+		<packet opcodePrefix="FE 56 01" id="640" />
+		<packet opcodePrefix="FE 57 01" id="641" />
+		<packet opcodePrefix="FE 58 01" id="642" />
+		<packet opcodePrefix="FE 59 01" id="643" />
+		<packet opcodePrefix="FE 5A 01" id="644" />
+		<packet opcodePrefix="FE 5B 01" id="645" />
+		<packet opcodePrefix="FE 5C 01" id="527" />
+		<packet opcodePrefix="FE 5D 01" id="646" />
+		<packet opcodePrefix="FE 5E 01" id="647" />
+		<packet opcodePrefix="FE 5F 01" id="648" />
+		<packet opcodePrefix="FE 60 01" id="649" />
+		<packet opcodePrefix="FE 61 01" id="650" />
+		<packet opcodePrefix="FE 62 01" id="651" />
+		<packet opcodePrefix="FE 63 01" id="652" />
+		<packet opcodePrefix="FE 64 01" id="653" />
+		<packet opcodePrefix="FE 68 01" id="655" />
+		<packet opcodePrefix="FE 69 01" id="656" />
+		<packet opcodePrefix="FE 6A 01" id="657" />
+		<packet opcodePrefix="FE 6B 01" id="658" />
+		<packet opcodePrefix="FE 6C 01" id="659" />
+		<packet opcodePrefix="FE 6D 01" id="660" />
+		<packet opcodePrefix="FE 6E 01" id="531" />
+		<packet opcodePrefix="FE 6F 01" id="528" />
+		<packet opcodePrefix="FE 70 01" id="661" />
+		<packet opcodePrefix="FE 71 01" id="662" />
+		<packet opcodePrefix="FE 72 01" id="663" />
+		<packet opcodePrefix="FE 73 01" id="664" />
+		<packet opcodePrefix="FE 74 01" id="665" />
+		<packet opcodePrefix="FE 75 01" id="666" />
+		<packet opcodePrefix="FE 76 01" id="667" />
+		<packet opcodePrefix="FE 77 01" id="668" />
+		<packet opcodePrefix="FE 78 01" id="669" />
+		<packet opcodePrefix="FE 79 01" id="670" />
+		<packet opcodePrefix="FE 7A 01" id="671" />
+		<packet opcodePrefix="FE 7B 01" id="672" />
+		<packet opcodePrefix="FE 7C 01" id="673" />
+		<packet opcodePrefix="FE 7D 01" id="674" />
+		<packet opcodePrefix="FE 7E 01" id="679" />
+	</server>
+</mapping>

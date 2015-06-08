@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A DWORD indicating the type of sound to be played has been added at the beginning of the packet -->
+<packet id="SM_PLAY_SOUND" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="SoundType" /> <!-- NEW -->
+	<string alias="File" />
+	<dword alias="3D (bind to object)" type="YesOrNo" />
+	<dword alias="Source OID" type="ObjectID" />
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+</packet>

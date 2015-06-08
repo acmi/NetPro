@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_GM_VIEW_PLEDGE_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Pledge member" />
+	<dword alias="Pledge ID" type="Pledge" />
+	<dword alias="Unit" type="PledgeUnit" />
+	<string alias="Name" />
+	<string alias="Leader name" />
+	<dword alias="Crest ID" type="PledgeCrest" />
+	<dword alias="Level" />
+	<dword alias="Castle" type="PledgeBase" />
+	<dword alias="Hideout" type="PledgeBase" />
+	<dword alias="Fortress" type="PledgeBase" />
+	<dword alias="Rank" />
+	<dword alias="Reputation" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="Alliance ID" type="Alliance" />
+	<string alias="Alliance name" />
+	<dword alias="Alliance crest ID" type="AllianceCrest" />
+	<dword alias="At war" type="YesOrNo" />
+	<dword alias="territ castle??" />
+	<dword alias="Member count" id="index_0" />
+	<loop id="index_0">
+		<string alias="Name" />
+		<dword alias="Level" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Sex" type="Sex" />
+		<dword alias="Race" type="Race" />
+		<dword alias="Member OID" type="ObjectID" />
+		<dword alias="Apprentice" />
+	</loop>
+</packet>

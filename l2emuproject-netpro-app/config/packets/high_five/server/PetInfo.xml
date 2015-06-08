@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_PET_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="ServitorType" />
+	<dword alias="Servitor OID" />
+	<dword alias="Servitor" type="Npc" />
+	<dword alias="Attackable" type="YesOrNo" />
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+	<dword alias="Heading" />
+	<dword alias="0" />
+	<dword alias="Casting speed" />
+	<dword alias="Attack speed" />
+	<dword alias="Running speed (on ground)" />
+	<dword alias="Walking speed (on ground)" />
+	<dword alias="Running speed (in water)" />
+	<dword alias="Walking speed (in water)" />
+	<dword alias="Running speed (in air) ???" />
+	<dword alias="Walking speed (in air) ???" />
+	<dword alias="Running speed (in air) while mounted?" />
+	<dword alias="Walking speed (in air) while mounted?" />
+	<double alias="Movement speed multiplier" />
+	<double alias="Attack speed multiplier" />
+	<double alias="Collision radius" />
+	<double alias="Collision height" />
+	<dword alias="Main weapon" type="Item" />
+	<dword alias="Chest armor" type="Item" />
+	<dword alias="Shield/support weapon" type="Item" />
+	<byte alias="Owner online" type="YesOrNo" />
+	<byte alias="Moving" type="MoveType" />
+	<byte alias="In combat" type="YesOrNo" />
+	<byte alias="Lying dead" type="YesOrNo" />
+	<byte alias="Knownlist state" type="KnownlistState" />
+	<dword alias="???" type="ImmutableNpcString" />
+	<string alias="Name" />
+	<dword alias="???" type="ImmutableNpcString" />
+	<string alias="Title" />
+	<dword alias="1" />
+	<dword alias="In PvP" type="YesOrNo" />
+	<dword alias="Karma" />
+	<dword alias="Current satiation" />
+	<dword alias="Maximum satiation" />
+	<dword alias="Current HP" /> <!-- real -->
+	<dword alias="Maximum HP" /> <!-- real -->
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="SP" />
+	<dword alias="Level" />
+	<qword alias="XP" />
+	<qword alias="Current level XP" />
+	<qword alias="Next level XP" />
+	<dword alias="Current carried weight" />
+	<dword alias="Maximum carried weight" />
+	<dword alias="P. Atk." />
+	<dword alias="P. Def." />
+	<dword alias="M. Atk." />
+	<dword alias="M. Def." />
+	<dword alias="Accuracy" />
+	<dword alias="Evasion" />
+	<dword alias="Critical" />
+	<dword alias="Actual movement speed" />
+	<dword alias="Attack speed" />
+	<dword alias="Casting speed" />
+	<dword alias="Abnormal effect" type="ave.AbnormalVisualEffectMask" />
+	<word alias="Mountable" type="YesOrNo" />
+	<byte alias="Weapon enchant glow" type="EnchantEffect" />
+	<word alias="??? 0" />
+	<byte alias="Duel team" type="DuelTeam" />
+	<dword alias="Soulshot usage" />
+	<dword alias="Spiritshot usage" />
+	<dword alias="Ability level" />
+	<dword alias="Special effect" type="ave.AbnormalVisualEffectMask2" />
+</packet>

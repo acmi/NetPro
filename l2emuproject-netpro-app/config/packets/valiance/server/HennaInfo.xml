@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_HENNA_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="INT modifier" />
+	<byte alias="STR modifier" />
+	<byte alias="CON modifier" />
+	<byte alias="MEN modifier" />
+	<byte alias="DEX modifier" />
+	<byte alias="WIT modifier" />
+	<dword alias="Available slots" />
+	<dword alias="Used slots" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Henna" type="Henna" />
+		<dword alias="Active" type="YesOrNo" />
+	</loop>
+
+	<!-- NEW -->
+	<dword alias="Periodic Henna" type="Henna" />
+	<dword alias="Time remaining" type="TimeRemaining" />
+	<dword alias="Active" type="YesOrNo" />
+</packet>

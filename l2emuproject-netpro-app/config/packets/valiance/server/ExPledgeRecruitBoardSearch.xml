@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="625" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actual Page" />
+	<dword alias="Last Page" />
+	<dword alias="Pledge Count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Pledge Id" type="Pledge" />
+		<dword alias="Ally Id" type="Alliance" />
+	</loop>
+	<loop id="cnt">
+		<dword alias="Ranking" />
+		<dword alias="Reputation" />
+		<string alias="Name" />
+		<string alias="Leader" />
+		<dword alias="Level" />
+		<dword alias="Members" />
+		<dword alias="Karma Type" />
+		<string alias="Introduction" />
+	</loop>
+</packet>

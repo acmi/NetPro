@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- THIS IS A DIRECT COPY OF THE PRE-HF VERSION. DO NOT MODIFY -->
+<packet id="CM__USER_ACK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<bytes alias="Opcode is a DWORD">
+		<length>3</length>
+	</bytes>
+	<dword alias="Character ID" />
+	<dword alias="Character OID" type="ObjectID" />
+</packet>

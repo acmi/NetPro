@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="06" id="LS_CM_REQUEST_SC_CHECK" />
+		<packet opcodePrefix="07" id="LS_CM_AQ_GAMEGUARD" />
+		<packet opcodePrefix="0E" id="LS_CM_0E" />
+	</client>
+	<server>
+		<packet opcodePrefix="0A" id="LS_SM_SC_CHECK_REQ" />
+		<packet opcodePrefix="0B" id="LS_SM_AUTH_GAME_GUARD" />
+		<packet opcodePrefix="0F" id="LS_SM_TEL_AUTH_STARTED" />
+		<packet opcodePrefix="11" id="LS_SM_11" />
+	</server>
+</mapping>

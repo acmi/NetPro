@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Message ID field is now a WORD, parameter count & type fields – CHARs (bytes) -->
+<!-- Instanced zone, Residence, Skill level, SysString is now a WORD -->
+<!-- Elemental attribute type field is now a CHAR (byte) -->
+<packet id="SM_SYSTEM_MESSAGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Message" type="ImmutableSystemMessage"> <!-- NEW -->
+		<scriptAlias id="SYS_MESSAGE_ID" />
+	</word>
+	<byte alias="Parameter count" id="index_0" /> <!-- NEW -->
+	<loop id="index_0">
+		<byte alias="Parameter" type="Parameter" id="cond_1"> <!-- NEW -->
+			<scriptAlias id="SYS_MESSAGE_PARAMS" />
+		</byte>
+		<branch id="cond_1" condition="param.StringValue">
+			<string alias="Value" />
+		</branch>
+		<branch id="cond_1" condition="param.Player">
+			<string alias="Player" />
+		</branch>
+		<branch id="cond_1" condition="param.Item">
+			<dword alias="Item" type="Item" />
+		</branch>
+		<branch id="cond_1" condition="param.Item2">
+			<dword alias="Item" type="Item" />
+			<word alias="Augmentation effect (1)" type="Augmentation" />
+			<word alias="Augmentation effect (2)" type="Augmentation" />
+		</branch>
+		<branch id="cond_1" condition="param.PledgeBase">
+			<word alias="Residence" type="PledgeBase" /> <!-- NEW -->
+		</branch>
+		<branch id="cond_1" condition="param.NumberValue">
+			<dword alias="Value" />
+		</branch>
+		<branch id="cond_1" condition="param.Npc">
+			<dword alias="NPC" type="Npc" />
+		</branch>
+		<branch id="cond_1" condition="param.Element"> <!-- Kamael -->
+			<byte alias="Element" type="ElementType" /> <!-- NEW -->
+		</branch>
+		<branch id="cond_1" condition="param.Fstring"> <!-- Freya -->
+			<dword alias="Value" type="ImmutableNpcString" />
+		</branch>
+		<branch id="cond_1" condition="param.Sysstring">
+			<word alias="Value" type="SysString" /> <!-- NEW -->
+		</branch>
+		<branch id="cond_1" condition="param.Instance"> <!-- Kamael -->
+			<word alias="Instance" type="Instance" /> <!-- NEW -->
+		</branch>
+		<branch id="cond_1" condition="param.Quantity"> <!-- C4 -->
+			<qword alias="Quantity" />
+		</branch>
+		<branch id="cond_1" condition="param.Skill">
+			<dword alias="Skill" type="Skill" />
+			<word alias="Level" type="skill.SkillLevel" /> <!-- NEW -->
+		</branch>
+		<branch id="cond_1" condition="param.Zone">
+			<dword alias="Location X" />
+			<dword alias="Location Y" />
+			<dword alias="Location Z" />
+		</branch>
+		<branch id="cond_1" condition="param.CharacterClass"> <!-- GoD -->
+			<word alias="Class" type="CharacterClass" />
+		</branch>
+		<branch id="cond_1" condition="param.Damage"> <!-- GoD -->
+			<dword alias="Target OID" type="ObjectID" />
+			<dword alias="Attacker OID" type="ObjectID" />
+			<dword alias="HP change" />
+		</branch>
+		<branch id="cond_1" condition="param.MutableFstring">
+			<dword alias="Value" type="ImmutableNpcString" />
+			<string alias="1st token" />
+			<string alias="2nd token" />
+			<string alias="3rd token" />
+			<string alias="4th token" />
+			<string alias="5th token" />
+		</branch>
+		<branch id="cond_1" condition="param.TinyNumberValue"> <!-- Ertheia -->
+			<byte alias="Value" />
+		</branch>
+		<branch id="cond_1" condition="param.SmallNumberValue"> <!-- Ertheia -->
+			<word alias="Value" />
+		</branch>
+	</loop>
+</packet>

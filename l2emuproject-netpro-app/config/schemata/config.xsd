@@ -1,0 +1,52 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.l2jfree.com"
+  xmlns="http://www.l2jfree.com" elementFormDefault="qualified">
+
+  <xs:element name="list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="config" type="configType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="configType">
+    <xs:sequence>
+      <xs:element name="directory" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:token">
+              <xs:attribute name="relativeTo" type="dirType" use="optional" default="CURRENT" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="file" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:token">
+              <xs:attribute name="type" type="proxyType" use="required" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="alias" type="xs:token" use="required" />
+  </xs:complexType>
+
+  <xs:simpleType name="dirType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="SETTINGS" />
+      <xs:enumeration value="WORKING" />
+      <xs:enumeration value="CURRENT" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="proxyType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="LOGIN_CLIENT" />
+      <xs:enumeration value="LOGIN_SERVER" />
+      <xs:enumeration value="GAME_CLIENT" />
+      <xs:enumeration value="GAME_SERVER" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

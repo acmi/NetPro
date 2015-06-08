@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_FLY_TO_LOCATION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actor OID" type="ObjectID" />
+	<dword alias="Destination X" />
+	<dword alias="Destination Y" />
+	<dword alias="Destination Z" />
+	<dword alias="Current X" />
+	<dword alias="Current Y" />
+	<dword alias="Current Z" />
+	<dword alias="Type" type="FlyType" />
+	
+	<!-- NEW -->
+	<dword alias="Target Distance" />
+	<dword alias="Caster Distance" />
+	<dword alias="Unk" optional="true"/> <!-- only if actor is not user -->
+</packet>

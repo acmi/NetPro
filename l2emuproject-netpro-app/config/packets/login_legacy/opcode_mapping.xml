@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="00" id="LS_CM_AQ_LOGIN" />
+		<packet opcodePrefix="02" id="LS_CM_REQUEST_SERVER_LOGIN" />
+		<packet opcodePrefix="05" id="LS_CM_REQUEST_SERVER_LIST" />
+	</client>
+	<server>
+		<packet opcodePrefix="00" id="LS_SM_SET_ENCRYPTION" />
+		<packet opcodePrefix="01" id="LS_SM_LOGIN_FAIL_2" />
+		<packet opcodePrefix="02" id="LS_SM_BLOCKED_ACCOUNT" />
+		<packet opcodePrefix="03" id="LS_SM_LOGIN_OK" />
+		<packet opcodePrefix="04" id="LS_SM_SERVER_LIST" />
+		<packet opcodePrefix="05" id="LS_SM_SERVER_FAIL" />
+		<packet opcodePrefix="06" id="LS_SM_PLAY_FAIL" />
+		<packet opcodePrefix="07" id="LS_SM_PLAY_OK" />
+		<packet opcodePrefix="08" id="LS_SM_ACCOUNT_KICKED" />
+		<packet opcodePrefix="09" id="LS_SM_BLOCKED_ACCOUNT_WITH_MSG" />
+	</server>
+</mapping>

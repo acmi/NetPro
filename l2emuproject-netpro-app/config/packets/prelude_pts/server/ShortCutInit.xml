@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_SHORT_CUT_INIT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Shortcut count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Slot" type="shortcut.ShortcutSlotBase10" />
+		<dword alias="Type" type="shortcut.ShortcutType" id="type" />
+		<branch id="type" condition="shortcut.ItemShortcut">
+			<dword alias="Item" type="Item" />
+		</branch>
+		<branch id="type" condition="shortcut.SkillShortcut">
+			<dword alias="Skill" type="Skill" />
+		</branch>
+		<branch id="type" condition="shortcut.ActionShortcut">
+			<dword alias="Action" type="PlayerAction" />
+		</branch>
+
+		<dword alias="1" />
+		<dword alias="1" />
+	</loop>
+</packet>

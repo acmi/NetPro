@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Unknown time of changes -->
+<!-- Main item type, lottery event number, enchant level, pet name existence fields are now CHARs -->
+<!-- Paperdoll mask changed to QWORD -->
+<!-- Added item appearance DWORD -->
+<packet id="SM_TRADE_OTHER_ADD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- This is always a DIRECT COPY of TradeOwnAdd packet -->
+	<!-- DO NOT MODIFY -->
+
+	<word alias="Item count" id="index_0" />
+	<word alias="0" />
+	<loop id="index_0">
+		<dword alias="Item OID" type="ObjectID"> <!-- new OID, if not whole -->
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<qword alias="Quantity" />
+		<byte alias="Main item type" type="ItemType2" /> <!-- NEW -->
+
+		<!-- NEW -->
+		<branch id="is_ticket" condition="GenericItem">
+			<byte alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedByte alias="Round of lottery" mod="NewLotteryEvent" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<byte alias="Lane" />
+		</branch>
+
+		<qword alias="Paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
+
+		<!-- NEW -->
+		<branch id="is_ticket" condition="GenericItem">
+			<byte alias="Enchant level" />
+			<word alias="0" /> <!-- Please. Explain this to me. -->
+			<byte alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedByte alias="Selected numbers (truncated)" type="LottoNumbers" />
+			<!-- This is not a joke -->
+			<word alias="0" />
+			<byte alias="0" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+			<byte alias="Race number" />
+			<word alias="0" />
+			<unsignedByte alias="Actual bet multiplier * 100 (truncated)" type="MonsterRaceBetMultiplier" />
+		</branch>
+		
+		<!-- NEW -->
+		<branch id="is_ticket" condition="GenericItem">
+			<dword alias="Visible item" type="Item" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<dword alias="Selected numbers" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+			<word alias="Race number" />
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+		
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+		<word alias="Enchant effect (1)" type="Augmentation" />
+		<word alias="Enchant effect (2)" type="Augmentation" />
+		<word alias="Enchant effect (3)" type="Augmentation" />
+	</loop>
+</packet>

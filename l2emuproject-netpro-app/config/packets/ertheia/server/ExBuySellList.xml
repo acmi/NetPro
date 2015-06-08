@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Due to bandwidth optimization, augmentation & enchant effects, elemental attribute and appearance fields are now written on demand -->
+<packet id="28" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Sell/Refund" type="YesOrNo" id="cond_1" />
+	<branch id="cond_1" condition="Zero">
+		<!-- Merchant's stock packet -->
+		<qword alias="Viewer's adena" />
+		<dword alias="List ID">
+			<scriptAlias id="SHOPGEN_ADENA_LIST_ID" />
+			<scriptAlias id="harvester_adena_shop_list_id" />
+		</dword>
+		<dword alias="Viewer's inventory item count" />
+		<word alias="Buyable count" id="item_list" />
+	</branch>
+	<branch id="cond_1" condition="Positive">
+		<!-- User's inventory packet -->
+		<dword alias="Viewer's inventory item count" />
+		<word alias="Sellable count" id="item_list" />
+	</branch>
+	<loop id="item_list">
+		<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" /> <!-- NEW -->
+		<branch id="cond_1" condition="Zero">
+			<dword alias="Item (not always)" type="Item" />
+			<dword alias="Item" type="Item" id="is_ticket">
+				<scriptAlias id="OIC_ITEM_TEMPLATE" />
+				<scriptAlias id="SHOPGEN_ADENA_ITEM_ID" />
+				<scriptAlias id="harvester_adena_shop_list_item" />
+			</dword>
+		</branch>
+		<branch id="cond_1" condition="Positive">
+			<dword alias="Item OID" type="ObjectID">
+				<scriptAlias id="OIC_ITEM_OID" />
+			</dword>
+			<dword alias="Item" type="Item" id="is_ticket">
+				<scriptAlias id="OIC_ITEM_TEMPLATE" />
+			</dword>
+		</branch>
+		<unsignedByte alias="Slot number" type="InventorySlot" />
+		<qword alias="Quantity" />
+		<byte alias="Main item type" type="ItemType2" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<byte alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedByte alias="Round of lottery" mod="NewLotteryEvent" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<byte alias="Lane" />
+		</branch>
+
+		<word alias="Equipped" type="YesOrNo" />
+		<qword alias="Item paperdoll slot" type="equip.PaperdollMask" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<byte alias="Enchant level" />
+			<byte alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- still written due to private stores & co., no VISUAL effect in client -->
+			<unsignedByte alias="Selected numbers (truncated)" type="LottoNumbers" />
+			<unsignedByte alias="Selected numbers (upper byte)" mod="ShiftLeft16" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+			<byte alias="Race number" />
+			<byte alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<dword alias="Mana left" type="ShadowMana" />
+		<dword alias="Time remaining" type="TimeRemaining" />
+		<byte alias="Usable" type="YesOrNo" />
+
+		<!-- NEW -->
+		<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
+			<word alias="Augmentation effect (1)" type="Augmentation" />
+			<word alias="Augmentation effect (2)" type="Augmentation" />
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit1"> <!-- elemental info -->
+			<word alias="Attack element" type="ElementType" />
+			<word alias="Attack element power" type="ElementPower" />
+			<word alias="Fire defense" type="ElementPower" />
+			<word alias="Water defense" type="ElementPower" />
+			<word alias="Wind defense" type="ElementPower" />
+			<word alias="Earth defense" type="ElementPower" />
+			<word alias="Holy defense" type="ElementPower" />
+			<word alias="Dark defense" type="ElementPower" />
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
+			<word alias="Enchant effect (1)" type="Augmentation" />
+			<word alias="Enchant effect (2)" type="Augmentation" />
+			<word alias="Enchant effect (3)" type="Augmentation" />
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit3"> <!-- appearance info -->
+			<branch id="is_ticket" condition="GenericItem">
+				<dword alias="Visible item" type="Item" />
+			</branch>
+			<branch id="is_ticket" condition="LotteryTicket">
+				<dword alias="Selected numbers" type="LottoNumbers" />
+			</branch>
+			<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+				<word alias="Race number" />
+				<word alias="Bet" type="MonsterRaceBetMultiplier" />
+			</branch>
+		</branch>
+
+		<branch id="cond_1" condition="Zero">
+			<qword alias="Price">
+				<scriptAlias id="SHOPGEN_ADENA_ITEM_PRICE_ADJ" />
+				<scriptAlias id="harvester_adena_shop_list_item_price" />
+			</qword>
+		</branch>
+		<branch id="cond_1" condition="Positive">
+			<qword alias="Price" />
+		</branch>
+	</loop>
+
+	<branch id="cond_1" condition="Positive">
+		<word alias="Refundable count" id="item_list" /> <!-- ALWAYS 0 (since Valiance) -->
+		<loop id="item_list">
+			<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" /> <!-- NEW -->
+			<dword alias="Item OID" type="ObjectID">
+				<scriptAlias id="OIC_ITEM_OID" />
+			</dword>
+			<dword alias="Item" type="Item" id="is_ticket">
+				<scriptAlias id="OIC_ITEM_TEMPLATE" />
+			</dword>
+			<unsignedByte alias="Slot number (inventory)" type="InventorySlot" />
+			<qword alias="Quantity" />
+			<byte alias="Main item type" type="ItemType2" />
+
+			<branch id="is_ticket" condition="GenericItem">
+				<byte alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+			</branch>
+			<branch id="is_ticket" condition="LotteryTicket">
+				<unsignedByte alias="Round of lottery" mod="NewLotteryEvent" />
+			</branch>
+			<branch id="is_ticket" condition="MonsterRaceTicket">
+				<byte alias="Lane" />
+			</branch>
+
+			<word alias="Equipped" type="YesOrNo" />
+			<qword alias="Item paperdoll slot" type="equip.PaperdollMask" />
+
+			<branch id="is_ticket" condition="GenericItem">
+				<byte alias="Enchant level" />
+				<byte alias="Name exists" type="YesOrNo" />
+			</branch>
+			<branch id="is_ticket" condition="LotteryTicket"> <!-- still written due to private stores & co., no VISUAL effect in client -->
+				<unsignedByte alias="Selected numbers (truncated)" type="LottoNumbers" />
+				<unsignedByte alias="Selected numbers (upper byte)" mod="ShiftLeft16" type="LottoNumbers" />
+			</branch>
+			<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+				<byte alias="Race number" />
+				<byte alias="Bet" type="MonsterRaceBetMultiplier" />
+			</branch>
+
+			<dword alias="Mana left" type="ShadowMana" />
+			<dword alias="Time remaining" type="TimeRemaining" />
+			<byte alias="Usable" type="YesOrNo" />
+
+			<!-- NEW -->
+			<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
+				<word alias="Augmentation effect (1)" type="Augmentation" />
+				<word alias="Augmentation effect (2)" type="Augmentation" />
+			</branch>
+			<branch id="extra_info" condition="bitmask.Bit1"> <!-- elemental info -->
+				<word alias="Attack element" type="ElementType" />
+				<word alias="Attack element power" type="ElementPower" />
+				<word alias="Fire defense" type="ElementPower" />
+				<word alias="Water defense" type="ElementPower" />
+				<word alias="Wind defense" type="ElementPower" />
+				<word alias="Earth defense" type="ElementPower" />
+				<word alias="Holy defense" type="ElementPower" />
+				<word alias="Dark defense" type="ElementPower" />
+			</branch>
+			<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
+				<word alias="Enchant effect (1)" type="Augmentation" />
+				<word alias="Enchant effect (2)" type="Augmentation" />
+				<word alias="Enchant effect (3)" type="Augmentation" />
+			</branch>
+			<branch id="extra_info" condition="bitmask.Bit3"> <!-- appearance info -->
+				<branch id="is_ticket" condition="GenericItem">
+					<dword alias="Visible item" type="Item" />
+				</branch>
+				<branch id="is_ticket" condition="LotteryTicket">
+					<dword alias="Selected numbers" type="LottoNumbers" />
+				</branch>
+				<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+					<word alias="Race number" />
+					<word alias="Bet" type="MonsterRaceBetMultiplier" />
+				</branch>
+			</branch>
+
+			<unsignedByte alias="Slot number (refund list)" type="InventorySlot" />
+			<qword alias="Price" />
+		</loop>
+		<byte alias="Close dialog" type="YesOrNo" />
+	</branch>
+</packet>

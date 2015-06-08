@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_CHANGE_MOVE_TYPE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actor OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+	</dword>
+	<dword alias="Movement mode" type="MoveType">
+		<scriptAlias id="OIL_OBJECT_MOVE_MODE" />
+	</dword>
+</packet>

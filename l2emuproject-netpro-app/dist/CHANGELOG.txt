@@ -1,0 +1,45 @@
+1.0:
+
+Further work on removing duplicate features from dependencies.
+Replaced an incompatible DDS reading library with an own-made reader specifically for Lineage II crests (DXT1).
+Removed anti-decompilation library integration.
+
+0.8-SNAPSHOT:
+
+Further work on internal dependency redimization.
+Support for NA infinite odyssey protocol 24.
+Fixed an issue where reloading packet definitions would cause the active packet display configuration to be reset, even if it is exactly the same as saved to file.
+More interpreters & updated entity name lists.
+Reintroduced support for l2j login servers.
+
+Internal refactoring related to de-bloating & opensourcing dependencies.
+
+Fixed issues with CPU hogging while connecting to a server or after failing to connect to a server.
+
+Packet structure handling implementation related changes:
+Field value condition/interpreter/modifier implementation moved to netpro-commons. It is a fundamental way to deal with typed fields; not merely restricted to L2 or GUI mode.
+As a result, netpro-commons-ui was removed. The implementation was changed to better suit today's use cases.
+Added protocol 610 definition.
+
+Support for legacy login ServerList with > 1 gameserver injection. Also, legacy ServerLists are now properly interpreted.
+Support for running on a JRE; script.cache is now included in a release by default.
+Ability to use a single NP as a hub for proxying multiple login servers.
+Ability to advertise both local and internet IPs in ServerList packet.
+Packet content interpretation for packets to be injected.
+Incremental loading of opcode_mapping.xml files AND a thorough review of their content.
+Definitions for packets "actually in use" by prelude beta client & server. Due to incremental loading, this means less XMLs in GF/HF folders (in certain cases, Valiance was also affected).
+Few minor fixes in packet definitions applicable to Ertheia.
+New example script: examples.game.AntiSpam (filters bot RWT advertisement spam; configurable).
+FastLogin support for legacy login servers (except security card).
+Network I/O configuration options added & default values optimized.
+Configuration option not to open tabs for login connections has been added.
+
+FastLogin now supports PIN-less definitions.
+FastLogin now supports Security Card authorization.
+Added additional packet log filtering by regex, accessible right within the packet table. [michael1414]
+Added the ability to pause/resume packet logging to the packet table. [michael1414]
+Added IP aliases to be used within the UI (including free samples :).
+Added a bottom information panel.
+Changed L&F initialization to respect a manually set L&F system property, as well as to select the native L&F by default (instead of Nimbus). [LoneRanger]
+
+Moved scripts outside the application JAR.

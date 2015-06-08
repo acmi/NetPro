@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_STATUS_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Updated actor OID" type="ObjectID" />
+	<dword alias="Update count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Attribute" type="UpdatableAttribute" id="type" />
+		<branch id="type" condition="status.Hp">
+			<dword alias="Hit Points" type="Hp" /> <!-- real in GF and earlier; not in HF (unless self) -->
+		</branch>
+		<branch id="type" condition="status.CurrentCp">
+			<dword alias="Value" />
+		</branch>
+		<branch id="type" condition="status.DefaultAttribute">
+			<dword alias="Value" />
+		</branch>
+	</loop>
+</packet>

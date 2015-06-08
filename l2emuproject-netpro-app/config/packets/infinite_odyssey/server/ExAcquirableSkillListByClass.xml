@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Despite the changed name and restored opcode, this is ExAcquirableSkillListByClass. What was once published cannot be undone. -->
+<!-- Skill level WORDs changed to DWORDs -->
+<packet id="561" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Skill count" id="skill_cnt" />
+	<loop id="skill_cnt">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+			<scriptAlias id="LUA_LEARNABLE_SKILL_ID" />
+		</dword>
+		<dword alias="Skill level" type="skill.SkillLevel"> <!-- NEW -->
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+			<scriptAlias id="LUA_LEARNABLE_SKILL_LEVEL" />
+		</dword>
+		<qword alias="Required SP">
+			<scriptAlias id="LUA_LEARNABLE_SKILL_REQ_SP" />
+		</qword>
+		<byte alias="Required level">
+			<scriptAlias id="LUA_LEARNABLE_SKILL_REQ_ACTIVE_LEVEL" />
+		</byte>
+		<byte alias="Required dual class level">
+			<scriptAlias id="LUA_LEARNABLE_SKILL_REQ_DUAL_LEVEL" />
+		</byte>
+		<byte alias="Required items" id="req_item_cnt">
+			<scriptAlias id="LUA_LEARNABLE_SKILL_REQ_ITEM_COUNT" />
+		</byte>
+		<loop id="req_item_cnt">
+			<dword alias="Item" type="Item" />
+			<qword alias="Amount" />
+		</loop>
+		<byte alias="Required skills" id="req_skill_cnt">
+			<scriptAlias id="LUA_LEARNABLE_SKILL_REQ_SKILL_COUNT" />
+		</byte>
+		<loop id="req_skill_cnt">
+			<dword alias="Skill" type="Skill">
+				<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+			</dword>
+			<dword alias="Level" type="skill.SkillLevel"> <!-- NEW -->
+				<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+			</dword>
+		</loop>
+	</loop>
+</packet>

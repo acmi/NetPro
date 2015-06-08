@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_DIE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Deceased OID" type="ObjectID" />
+	<dword alias="Can revive in nearest town" type="YesOrNo" /> <!-- To nearest village -->
+	<dword alias="Can revive in hideout" type="YesOrNo" /> <!-- To hideaway -->
+	<dword alias="Can revive in castle" type="YesOrNo" /> <!-- To castle -->
+	<dword alias="Can revive at headquarters" type="YesOrNo" /> <!-- To siege headquarters -->
+	<dword alias="Can be sweeped" type="YesOrNo" />
+	<!-- This part is not written when a player (other than yourself) dies -->
+	<dword alias="Can revive here" type="YesOrNo" optional="true" /> <!-- Fixed -->
+</packet>

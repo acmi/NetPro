@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_MOVE_TO_PAWN" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Follower OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="fspawn_walker_oid" />
+	</dword>
+	<dword alias="Target OID" type="ObjectID" />
+	<dword alias="Follow distance" />
+	<dword alias="Current follower X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Current follower Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Current follower Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+</packet>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_CAN_NOT_MOVE_ANYMORE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Location X">
+		<scriptAlias id="LUA_CLIENT_X" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="LUA_CLIENT_Y" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="LUA_CLIENT_Z" />
+	</dword>
+	<dword alias="Yaw">
+		<scriptAlias id="LUA_CLIENT_HEADING" />
+	</dword>
+</packet>

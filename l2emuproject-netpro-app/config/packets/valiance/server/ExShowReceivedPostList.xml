@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="470" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Current server time" type="SecondsSinceEpoch" />
+	<dword alias="Message count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Actual page" />
+		<dword alias="ID" />
+		<string alias="Subject" />
+		<string alias="Sender" />
+		<dword alias="Locked" type="YesOrNo" />
+		<dword alias="Expires on" type="SecondsSinceEpoch" />
+		<dword alias="Unread" type="YesOrNo" />
+		<dword alias="Had attachment(s)" type="YesOrNo" />
+		<dword alias="Has attachment(s)" type="YesOrNo" />
+		<dword alias="Starred" type="YesOrNo" />
+		<dword alias="Sender character ID" optional="true" /> <!-- always missing for last mail message -->
+	</loop>
+	<dword alias="Message Fee" />
+	<dword alias="Message Fee Per Attach" />
+</packet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_HENNA_UNEQUIP_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<qword alias="Viewer's adena" />
+	<dword alias="Available slots" />
+	<dword alias="Henna count (equipped)" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Henna" type="Henna" />
+		<dword alias="Recovered item" type="Item" />
+		<qword alias="Recovered amount" />
+		<qword alias="Price of removal" />
+		<dword alias="Henna modifier currently active" type="YesOrNo" />
+		<dword alias="Periodic" type="YesOrNo" /> <!-- 1 in Ertheia (u0-u3), 0 otherwise -->
+	</loop>
+</packet>

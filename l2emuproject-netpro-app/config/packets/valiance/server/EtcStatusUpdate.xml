@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- NEW: Increase Force -> Momentum; a reputation penalty DWORD appended at the end of packet (unknown when) -->
+<packet id="277" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Momentum" /> <!-- 0-44; 50. 45-49: black icon; above 50: no icon -->
+	<dword alias="Weight Penalty" /> <!-- 0-4 -->
+	<dword alias="Block All Chat" type="YesOrNo" />
+	<dword alias="Danger Area" type="YesOrNo" />
+	<dword alias="Weapon Grade Penalty" /> <!-- 0-4 -->
+	<dword alias="Armor Grade Penalty" /> <!-- 0-4 -->
+	<dword alias="Charm of Courage" type="YesOrNo" />
+	<dword alias="Death Penalty" /> <!-- 0-15 -->
+	<dword alias="Soul Expansion" /> <!-- 0-45 -->
+	<dword alias="Reputation Penalty" /> <!-- NEW --> <!-- 0-7 -->
+</packet>

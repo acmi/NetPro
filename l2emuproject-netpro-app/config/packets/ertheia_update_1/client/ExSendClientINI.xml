@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_EX_SEND_CLIENT_INI" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Part number" />
+	<unsignedWord alias="Part size" id="bytesize" />
+	<bytes alias="Content" type="ASCII" />
+</packet>

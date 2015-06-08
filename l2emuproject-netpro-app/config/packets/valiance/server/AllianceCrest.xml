@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NEW DWORD field to distinguish alliances from different game worlds in a dimensional server -->
+<packet id="SM_ALLIANCE_CREST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Server" type="GameServerName" /> <!-- NEW -->
+	<dword alias="Crest ID" type="AllianceCrest">
+		<scriptAlias id="AIC_ALLY_CREST_ID" />
+	</dword>
+	<dword alias="Size in bytes" id="bytesize">
+		<scriptAlias id="AIC_ALLY_CREST_SIZE" />
+	</dword>
+	<bytes alias="Image" type="pledge.AllyCrestDDS">
+		<scriptAlias id="AIC_ALLY_CREST" />
+	</bytes>
+</packet>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Gemstone amount is now a QWORD -->
+<packet id="372" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Lifestone OID" type="ObjectID" />
+	<dword alias="Lifestone" type="Item" />
+	<dword alias="Required gemstone" type="Item" />
+	<qword alias="Required quantity" />
+	<dword alias="Lifestone accepted" type="YesOrNo" />
+</packet>

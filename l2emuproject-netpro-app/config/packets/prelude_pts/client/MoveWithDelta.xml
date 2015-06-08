@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- I have not managed to trick ANY client to send this packet. It may have been related to an initial keyboard movement implementation. Or flying implementation. Whatever. -->
+<!-- ALL KNOWN SERVERS handle this packet! -->
+<packet id="CM_MOVE_WITH_DELTA" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="ΔX" />
+	<dword alias="ΔY" />
+	<dword alias="ΔZ" />
+</packet>

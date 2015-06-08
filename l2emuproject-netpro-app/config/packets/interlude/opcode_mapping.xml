@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="D0 26 00" id="219" />
+		<packet opcodePrefix="D0 27 00" id="220" />
+		<packet opcodePrefix="D0 28 00" id="221" />
+		<packet opcodePrefix="D0 29 00" id="222" />
+		<packet opcodePrefix="D0 2A 00" id="223" />
+		<packet opcodePrefix="D0 2B 00" id="224" />
+		<packet opcodePrefix="D0 2C 00" id="225" />
+		<packet opcodePrefix="D0 2D 00" id="226" />
+		<packet opcodePrefix="D0 2E 00" id="227" />
+		<packet opcodePrefix="D0 2F 00" id="228" />
+		<packet opcodePrefix="D0 30 00" id="229" />
+	</client>
+	<server>
+		<packet opcodePrefix="FE 48 00" id="361" />
+		<packet opcodePrefix="FE 49 00" id="362" />
+		<packet opcodePrefix="FE 4A 00" id="363" />
+		<packet opcodePrefix="FE 4B 00" id="364" />
+		<packet opcodePrefix="FE 4C 00" id="365" />
+		<packet opcodePrefix="FE 4D 00" id="366" />
+		<packet opcodePrefix="FE 4E 00" id="367" />
+		<packet opcodePrefix="FE 4F 00" id="368" />
+		<packet opcodePrefix="FE 50 00" id="369" />
+		<packet opcodePrefix="FE 51 00" id="370" />
+		<packet opcodePrefix="FE 52 00" id="371" />
+		<packet opcodePrefix="FE 53 00" id="372" />
+		<packet opcodePrefix="FE 54 00" id="373" />
+		<packet opcodePrefix="FE 55 00" id="374" />
+		<packet opcodePrefix="FE 56 00" id="375" />
+		<packet opcodePrefix="FE 57 00" id="376" />
+		<packet opcodePrefix="FE 58 00" id="377" />
+		<packet opcodePrefix="FE 59 00" id="378" />
+		<packet opcodePrefix="FE 5A 00" id="379" />
+	</server>
+</mapping>

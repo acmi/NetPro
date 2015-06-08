@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="LS_SM_SC_CHECK_REQ" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Account ID" />
+	<byte alias="Key number" />
+	
+	<bytes alias="Padding">
+		<length>10</length>
+	</bytes>
+	<bytes alias="Checksum">
+		<length>4</length>
+	</bytes>
+	<bytes alias="Padding">
+		<length>4</length>
+	</bytes>
+</packet>

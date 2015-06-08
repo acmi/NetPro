@@ -1,0 +1,37 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.l2emu-unique.net" xmlns="http://www.l2emu-unique.net"
+	elementFormDefault="qualified">
+
+	<xs:element name="mapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="client" type="wrapperType" />
+				<xs:element name="server" type="wrapperType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="delimitedHexBytes">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[0-9A-F]{2}( [0-9A-F]{2})*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="packetWithOpcodesType">
+		<xs:complexContent>
+			<xs:extension base="packetType">
+				<xs:attribute name="opcodePrefix" type="delimitedHexBytes" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="packetType">
+		<xs:attribute name="id" type="xs:token" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="wrapperType">
+		<xs:sequence>
+			<xs:element name="removedPacket" type="packetType" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="packet" type="packetWithOpcodesType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

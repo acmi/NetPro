@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="393" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Aircraft OID" type="ObjectID" />
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+	<dword alias="Heading" />
+	<dword alias="Captain OID" type="ObjectID" />
+	<dword alias="Movement speed" />
+	<dword alias="Rotation speed" />
+	<dword alias="Control item OID" type="ObjectID" />
+	<dword alias="Controller X" />
+	<dword alias="Controller Y" />
+	<dword alias="Controller Z" />
+	<dword alias="Captain X" />
+	<dword alias="Captain Y" />
+	<dword alias="Captain Z" />
+	<dword alias="Remaining fuel" />
+	<dword alias="Maximum fuel" />
+</packet>

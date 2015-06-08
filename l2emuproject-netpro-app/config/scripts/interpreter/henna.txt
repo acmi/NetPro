@@ -1,0 +1,460 @@
+1	STR Dye STR + 1, CON - 3
+2	STR Dye STR + 1, DEX - 3
+3	CON Dye CON + 1, STR - 3
+4	CON Dye CON + 1, DEX - 3
+5	DEX Dye DEX + 1, STR - 3
+6	DEX Dye DEX + 1, CON - 3
+7	INT Dye INT + 1, MEN - 3
+8	INT Dye INT + 1, WIT - 3
+9	MEN Dye MEN + 1, INT - 3
+10	MEN Dye MEN + 1, WIT - 3
+11	WIT Dye WIT + 1, INT - 3
+12	WIT Dye WIT + 1, MEN - 3
+13	STR Dye STR + 1, CON - 2
+14	STR Dye STR + 1, DEX - 2
+15	CON Dye CON + 1, STR - 2
+16	CON Dye CON + 1, DEX - 2
+17	DEX Dye DEX + 1, STR - 2
+18	DEX Dye DEX + 1, CON - 2
+19	INT Dye INT + 1, MEN - 2
+20	INT Dye INT + 1, WIT - 2
+21	MEN Dye MEN + 1, INT - 2
+22	MEN Dye MEN + 1, WIT - 2
+23	WIT Dye WIT + 1, INT - 2
+24	WIT Dye WIT + 1, MEN - 2
+25	STR Dye STR + 1, CON - 1
+26	STR Dye STR + 1, DEX - 1
+27	CON Dye CON + 1, STR - 1
+28	CON Dye CON + 1, DEX - 1
+29	DEX Dye DEX + 1, STR - 1
+30	DEX Dye DEX + 1, CON - 1
+31	INT Dye INT + 1, MEN - 1
+32	INT Dye INT + 1, WIT - 1
+33	MEN Dye MEN + 1, INT - 1
+34	MEN Dye MEN + 1, WIT - 1
+35	WIT Dye WIT + 1, INT - 1
+36	WIT Dye WIT + 1, MEN - 1
+37	Greater STR Dye STR + 1, CON - 3
+38	Greater STR Dye STR + 1, DEX - 3
+39	Greater CON Dye CON + 1, STR - 3
+40	Greater CON Dye CON + 1, DEX - 3
+41	Greater DEX Dye DEX + 1, STR - 3
+42	Greater DEX Dye DEX + 1, CON - 3
+43	Greater INT Dye INT + 1, MEN - 3
+44	Greater INT Dye INT + 1, WIT - 3
+45	Greater MEN Dye MEN + 1, INT - 3
+46	Greater MEN Dye MEN + 1, WIT - 3
+47	Greater WIT Dye WIT + 1, INT - 3
+48	Greater WIT Dye WIT + 1, MEN - 3
+49	Greater STR Dye STR + 1, CON - 2
+50	Greater STR Dye STR + 1, DEX - 2
+51	Greater CON Dye CON + 1, STR - 2
+52	Greater CON Dye CON + 1, DEX - 2
+53	Greater DEX Dye DEX + 1, STR - 2
+54	Greater DEX Dye DEX + 1, CON - 2
+55	Greater INT Dye INT + 1, MEN - 2
+56	Greater INT Dye INT + 1, WIT - 2
+57	Greater MEN Dye MEN + 1, INT - 2
+58	Greater MEN Dye MEN + 1, WIT - 2
+59	Greater WIT Dye WIT + 1, INT - 2
+60	Greater WIT Dye WIT + 1, MEN - 2
+61	Greater STR Dye STR + 2, CON - 4
+62	Greater STR Dye STR + 2, DEX - 4
+63	Greater CON Dye CON + 2, STR - 4
+64	Greater CON Dye CON + 2, DEX - 4
+65	Greater DEX Dye DEX + 2, STR - 4
+66	Greater DEX Dye DEX + 2, CON - 4
+67	Greater INT Dye INT + 2, MEN - 4
+68	Greater INT Dye INT + 2, WIT - 4
+69	Greater MEN Dye MEN + 2, INT - 4
+70	Greater MEN Dye MEN + 2, WIT - 4
+71	Greater WIT Dye WIT + 2, INT - 4
+72	Greater WIT Dye WIT + 2, MEN - 4
+73	Greater STR Dye STR + 2, CON - 3
+74	Greater STR Dye STR + 2, DEX - 3
+75	Greater CON Dye CON + 2, STR - 3
+76	Greater CON Dye CON + 2, DEX - 3
+77	Greater DEX Dye DEX + 2, STR - 3
+78	Greater DEX Dye DEX + 2, CON - 3
+79	Greater INT Dye INT + 2, MEN - 3
+80	Greater INT Dye INT + 2, WIT - 3
+81	Greater MEN Dye MEN + 2, INT - 3
+82	Greater MEN Dye MEN + 2, WIT - 3
+83	Greater WIT Dye WIT + 2, INT - 3
+84	Greater WIT Dye WIT + 2, MEN - 3
+85	Greater STR Dye STR + 3, CON - 5
+86	Greater STR Dye STR + 3, DEX - 5
+87	Greater CON Dye CON + 3, STR - 5
+88	Greater CON Dye CON + 3, DEX - 5
+89	Greater DEX Dye DEX + 3, STR - 5
+90	Greater DEX Dye DEX + 3, CON - 5
+91	Greater INT Dye INT + 3, MEN - 5
+92	Greater INT Dye INT + 3, WIT - 5
+93	Greater MEN Dye MEN + 3, INT - 5
+94	Greater MEN Dye MEN + 3, WIT - 5
+95	Greater WIT Dye WIT + 3, INT - 5
+96	Greater WIT Dye WIT + 3, MEN - 5
+97	Greater STR Dye STR + 3, CON - 4
+98	Greater STR Dye STR + 3, DEX - 4
+99	Greater CON Dye CON + 3, STR - 4
+100	Greater CON Dye CON + 3, DEX - 4
+101	Greater DEX Dye DEX + 3, STR - 4
+102	Greater DEX Dye DEX + 3, CON - 4
+103	Greater INT Dye INT + 3, MEN - 4
+104	Greater INT Dye INT + 3, WIT - 4
+105	Greater MEN Dye MEN + 3, INT - 4
+106	Greater MEN Dye MEN + 3, WIT - 4
+107	Greater WIT Dye WIT + 3, INT - 4
+108	Greater WIT Dye WIT + 3, MEN - 4
+109	Greater STR Dye STR + 1, CON - 1
+110	Greater STR Dye STR + 1, DEX - 1
+111	Greater CON Dye CON + 1, STR - 1
+112	Greater CON Dye CON + 1, DEX - 1
+113	Greater DEX Dye DEX + 1, STR - 1
+114	Greater DEX Dye DEX + 1, CON - 1
+115	Greater INT Dye INT + 1, MEN - 1
+116	Greater INT Dye INT + 1, WIT - 1
+117	Greater MEN Dye MEN + 1, INT - 1
+118	Greater MEN Dye MEN + 1, WIT - 1
+119	Greater WIT Dye WIT + 1, INT - 1
+120	Greater WIT Dye WIT + 1, MEN - 1
+121	Greater STR Dye STR + 4, CON - 6
+122	Greater STR Dye STR + 4, DEX - 6
+123	Greater CON Dye CON + 4, STR - 6
+124	Greater CON Dye CON + 4, DEX - 6
+125	Greater DEX Dye DEX + 4, STR - 6
+126	Greater DEX Dye DEX + 4, CON - 6
+127	Greater INT Dye INT + 4, MEN - 6
+128	Greater INT Dye INT + 4, WIT - 6
+129	Greater MEN Dye MEN + 4, INT - 6
+130	Greater MEN Dye MEN + 4, WIT - 6
+131	Greater WIT Dye WIT + 4, INT - 6
+132	Greater WIT Dye WIT + 4, MEN - 6
+133	Greater STR Dye STR + 4, CON - 5
+134	Greater STR Dye STR + 4, DEX - 5
+135	Greater CON Dye CON + 4, STR - 5
+136	Greater CON Dye CON + 4, DEX - 5
+137	Greater DEX Dye DEX + 4, STR - 5
+138	Greater DEX Dye DEX + 4, CON - 5
+139	Greater INT Dye INT + 4, MEN - 5
+140	Greater INT Dye INT + 4, WIT - 5
+141	Greater MEN Dye MEN + 4, INT - 5
+142	Greater MEN Dye MEN + 4, WIT - 5
+143	Greater WIT Dye WIT + 4, INT - 5
+144	Greater WIT Dye WIT + 4, MEN - 5
+145	Greater STR Dye STR + 2, CON - 2
+146	Greater STR Dye STR + 2, DEX - 2
+147	Greater CON Dye CON + 2, STR - 2
+148	Greater CON Dye CON + 2, DEX - 2
+149	Greater DEX Dye DEX + 2, STR - 2
+150	Greater DEX Dye DEX + 2, CON - 2
+151	Greater INT Dye INT + 2, MEN - 2
+152	Greater INT Dye INT + 2, WIT - 2
+153	Greater MEN Dye MEN + 2, INT - 2
+154	Greater MEN Dye MEN + 2, WIT - 2
+155	Greater WIT Dye WIT + 2, INT - 2
+156	Greater WIT Dye WIT + 2, MEN - 2
+157	Greater STR Dye STR + 3, CON - 3
+158	Greater STR Dye STR + 3, DEX - 3
+159	Greater CON Dye CON + 3, STR - 3
+160	Greater CON Dye CON + 3, DEX - 3
+161	Greater DEX Dye DEX + 3, STR - 3
+162	Greater DEX Dye DEX + 3, CON - 3
+163	Greater INT Dye INT + 3, MEN - 3
+164	Greater INT Dye INT + 3, WIT - 3
+165	Greater MEN Dye MEN + 3, INT - 3
+166	Greater MEN Dye MEN + 3, WIT - 3
+167	Greater WIT Dye WIT + 3, INT - 3
+168	Greater WIT Dye WIT + 3, MEN - 3
+169	Greater STR Dye STR + 4, CON - 4
+170	Greater STR Dye STR + 4, DEX - 4
+171	Greater CON Dye CON + 4, STR - 4
+172	Greater CON Dye CON + 4, DEX - 4
+173	Greater DEX Dye DEX + 4, STR - 4
+174	Greater DEX Dye DEX + 4, CON - 4
+175	Greater INT Dye INT + 4, MEN - 4
+176	Greater INT Dye INT + 4, WIT - 4
+177	Greater MEN Dye MEN + 4, INT - 4
+178	Greater MEN Dye MEN + 4, WIT - 4
+179	Greater WIT Dye WIT + 4, INT - 4
+180	Greater WIT Dye WIT + 4, MEN - 4
+181	Lv. 1 Giant's STR Dye STR + 3, DEX - 2
+182	Lv. 1 Giant's DEX Dye DEX + 3, CON - 2
+183	Lv. 1 Giant's CON Dye CON + 3, STR - 2
+184	Lv. 1 Giant's INT Dye INT + 3, WIT - 2
+185	Lv. 1 Giant's WIT Dye WIT + 3, MEN - 2
+186	Lv. 1 Giant's MEN Dye MEN + 3, INT - 2
+187	Lv. 1 Ancient STR Dye STR + 3, DEX - 2, Fire Resistance + 5
+188	Lv. 1 Ancient DEX Dye DEX + 3, CON - 2, Earth Resistance + 5
+189	Lv. 1 Ancient CON Dye CON + 3, STR - 2, Dark Resistance + 5
+190	Lv. 1 Ancient INT Dye INT + 3, WIT - 2, Water Resistance + 5
+191	Lv. 1 Ancient WIT Dye WIT + 3, MEN - 2, Wind Resistance + 5
+192	Lv. 1 Ancient MEN Dye MEN + 3, INT - 2, Holy Resistance + 5
+193	Lv. 1 Legendary STR Dye STR + 3, DEX - 1, Fire Resistance + 5
+194	Lv. 1 Legendary DEX Dye DEX + 3, CON - 1, Earth Resistance + 5
+195	Lv. 1 Legendary CON Dye CON + 3, STR - 1, Dark Resistance + 5
+196	Lv. 1 Legendary INT Dye INT + 3, WIT - 1, Water Resistance + 5
+197	Lv. 1 Legendary WIT Dye WIT + 3, MEN - 1, Wind Resistance + 5
+198	Lv. 1 Legendary MEN Dye MEN + 3, INT - 1, Holy Resistance + 5
+199	Lv. 2 Giant's STR Dye STR + 4, DEX - 3
+200	Lv. 2 Giant's DEX Dye DEX + 4, CON - 3
+201	Lv. 2 Giant's CON Dye CON + 4, STR - 3
+202	Lv. 2 Giant's INT Dye INT + 4, WIT - 3
+203	Lv. 2 Giant's WIT Dye WIT + 4, MEN - 3
+204	Lv. 2 Giant's MEN Dye MEN + 4, INT - 3
+205	Lv. 2 Ancient STR Dye STR + 4, DEX - 3, Fire Resistance + 10
+206	Lv. 2 Ancient DEX Dye DEX + 4, CON - 3, Earth Resistance + 10
+207	Lv. 2 Ancient CON Dye CON + 4, STR - 3, Dark Resistance + 10
+208	Lv. 2 Ancient INT Dye INT + 4, WIT - 3, Water Resistance + 10
+209	Lv. 2 Ancient WIT Dye WIT + 4, MEN - 3, Wind Resistance + 10
+210	Lv. 2 Ancient MEN Dye MEN + 4, INT - 3, Holy Resistance + 10
+211	Lv. 2 Legendary STR Dye STR + 4, DEX - 2, Fire Resistance + 10
+212	Lv. 2 Legendary DEX Dye DEX + 4, CON - 2, Earth Resistance + 10
+213	Lv. 2 Legendary CON Dye CON + 4, STR - 2, Dark Resistance + 10
+214	Lv. 2 Legendary INT Dye INT + 4, WIT - 2, Water Resistance + 10
+215	Lv. 2 Legendary WIT Dye WIT + 4, MEN - 2, Wind Resistance + 10
+216	Lv. 2 Legendary MEN Dye MEN + 4, INT - 2, Holy Resistance + 10
+217	Lv. 3 Giant's STR Dye STR + 5, DEX - 4
+218	Lv. 3 Giant's DEX Dye DEX + 5, CON - 4
+219	Lv. 3 Giant's CON Dye CON + 5, STR - 4
+220	Lv. 3 Giant's INT Dye INT + 5, WIT - 4
+221	Lv. 3 Giant's WIT Dye WIT + 5, MEN - 4
+222	Lv. 3 Giant's MEN Dye MEN + 5, INT - 4
+223	Lv. 3 Ancient STR Dye STR + 5, DEX - 4, Fire Resistance + 15
+224	Lv. 3 Ancient DEX Dye DEX + 5, CON - 4, Earth Resistance + 15
+225	Lv. 3 Ancient CON Dye CON + 5, STR - 4, Dark Resistance + 15
+226	Lv. 3 Ancient INT Dye INT + 5, WIT - 4, Water Resistance + 15
+227	Lv. 3 Ancient WIT Dye WIT + 5, MEN - 4, Wind Resistance + 15
+228	Lv. 3 Ancient MEN Dye MEN + 5, INT - 4, Holy Resistance + 15
+229	Lv. 3 Legendary STR Dye STR + 5, DEX - 3, Fire Resistance + 15
+230	Lv. 3 Legendary DEX Dye DEX + 5, CON - 3, Earth Resistance + 15
+231	Lv. 3 Legendary CON Dye CON + 5, STR - 3, Dark Resistance + 15
+232	Lv. 3 Legendary INT Dye INT + 5, WIT - 3, Water Resistance + 15
+233	Lv. 3 Legendary WIT Dye WIT + 5, MEN - 3, Wind Resistance + 15
+234	Lv. 3 Legendary MEN Dye MEN + 5, INT - 3, Holy Resistance + 15
+235	Lv. 4 Giant's STR Dye STR + 5, DEX - 2
+236	Lv. 4 Giant's DEX Dye DEX + 5, CON - 2
+237	Lv. 4 Giant's CON Dye CON + 5, STR - 2
+238	Lv. 4 Giant's INT Dye INT + 5, WIT - 2
+239	Lv. 4 Giant's WIT Dye WIT + 5, MEN - 2
+240	Lv. 4 Giant's MEN Dye MEN + 5, INT - 2
+241	Lv. 4 Ancient STR Dye STR + 5, DEX - 2, Fire Resistance + 20
+242	Lv. 4 Ancient DEX Dye DEX + 5, CON - 2, Earth Resistance + 20
+243	Lv. 4 Ancient CON Dye CON + 5, STR - 2, Dark Resistance + 20
+244	Lv. 4 Ancient INT Dye INT + 5, WIT - 2, Water Resistance + 20
+245	Lv. 4 Ancient WIT Dye WIT + 5, MEN - 2, Wind Resistance + 20
+246	Lv. 4 Ancient MEN Dye MEN + 5, INT - 2, Holy Resistance + 20
+247	Lv. 4 Legendary STR Dye STR + 5, DEX - 1, Fire Resistance + 20
+248	Lv. 4 Legendary DEX Dye DEX + 5, CON - 1, Earth Resistance + 20
+249	Lv. 4 Legendary CON Dye CON + 5, STR - 1, Dark Resistance + 20
+250	Lv. 4 Legendary INT Dye INT + 5, WIT - 1, Water Resistance + 20
+251	Lv. 4 Legendary WIT Dye WIT + 5, MEN - 1, Wind Resistance + 20
+252	Lv. 4 Legendary MEN Dye MEN + 5, INT - 1, Holy Resistance + 20
+253	Lv. 5 Giant's STR Dye STR + 5
+254	Lv. 5 Giant's DEX Dye DEX + 5
+255	Lv. 5 Giant's CON Dye CON + 5
+256	Lv. 5 Giant's INT Dye INT + 5
+257	Lv. 5 Giant's WIT Dye WIT + 5
+258	Lv. 5 Giant's MEN Dye MEN + 5
+259	Lv. 5 Ancient STR Dye STR + 5, Fire Resistance + 25
+260	Lv. 5 Ancient DEX Dye DEX + 5, Earth Resistance + 25
+261	Lv. 5 Ancient CON Dye CON + 5, Dark Resistance + 25
+262	Lv. 5 Ancient INT Dye INT + 5, Water Resistance + 25
+263	Lv. 5 Ancient WIT Dye WIT + 5, Wind Resistance + 25
+264	Lv. 5 Ancient MEN Dye MEN + 5, Holy Resistance + 25
+265	Lv. 5 Legendary STR Dye STR + 5, DEX + 1, Fire Resistance + 25
+266	Lv. 5 Legendary DEX Dye DEX + 5, CON + 1, Earth Resistance + 25
+267	Lv. 5 Legendary CON Dye CON + 5, STR + 1, Dark Resistance + 25
+268	Lv. 5 Legendary INT Dye INT + 5, WIT + 1, Water Resistance + 25
+269	Lv. 5 Legendary WIT Dye WIT + 5, MEN + 1, Wind Resistance + 25
+270	Lv. 5 Legendary MEN Dye MEN + 5, INT + 1, Holy Resistance + 25
+271	Lv. 1 Giant's STR Dye STR + 3, DEX - 2
+272	Lv. 1 Giant's DEX Dye DEX + 3, CON - 2
+273	Lv. 1 Giant's CON Dye CON + 3, STR - 2
+274	Lv. 1 Giant's INT Dye INT + 3, WIT - 2
+275	Lv. 1 Giant's WIT Dye WIT + 3, MEN - 2
+276	Lv. 1 Giant's MEN Dye MEN + 3, INT - 2
+277	Lv. 1 Ancient STR Dye STR + 3, DEX - 2, Fire Resistance + 5
+278	Lv. 1 Ancient DEX Dye DEX + 3, CON - 2, Earth Resistance + 5
+279	Lv. 1 Ancient CON Dye CON + 3, STR - 2, Dark Resistance + 5
+280	Lv. 1 Ancient INT Dye INT + 3, WIT - 2, Water Resistance + 5
+281	Lv. 1 Ancient WIT Dye WIT + 3, MEN - 2, Wind Resistance + 5
+282	Lv. 1 Ancient MEN Dye MEN + 3, INT - 2, Holy Resistance + 5
+283	Lv. 1 Legendary STR Dye STR + 3, DEX - 1, Fire Resistance + 5
+284	Lv. 1 Legendary DEX Dye DEX + 3, CON - 1, Earth Resistance + 5
+285	Lv. 1 Legendary CON Dye CON + 3, STR - 1, Dark Resistance + 5
+286	Lv. 1 Legendary INT Dye INT + 3, WIT - 1, Water Resistance + 5
+287	Lv. 1 Legendary WIT Dye WIT + 3, MEN - 1, Wind Resistance + 5
+288	Lv. 1 Legendary MEN Dye MEN + 3, INT - 1, Holy Resistance + 5
+289	Lv. 2 Giant's STR Dye STR + 4, DEX - 3
+290	Lv. 2 Giant's DEX Dye DEX + 4, CON - 3
+291	Lv. 2 Giant's CON Dye CON + 4, STR - 3
+292	Lv. 2 Giant's INT Dye INT + 4, WIT - 3
+293	Lv. 2 Giant's WIT Dye WIT + 4, MEN - 3
+294	Lv. 2 Giant's MEN Dye MEN + 4, INT - 3
+295	Lv. 2 Ancient STR Dye STR + 4, DEX - 3, Fire Resistance + 10
+296	Lv. 2 Ancient DEX Dye DEX + 4, CON - 3, Earth Resistance + 10
+297	Lv. 2 Ancient CON Dye CON + 4, STR - 3, Dark Resistance + 10
+298	Lv. 2 Ancient INT Dye INT + 4, WIT - 3, Water Resistance + 10
+299	Lv. 2 Ancient WIT Dye WIT + 4, MEN - 3, Wind Resistance + 10
+300	Lv. 2 Ancient MEN Dye MEN + 4, INT - 3, Holy Resistance + 10
+301	Lv. 2 Legendary STR Dye STR + 4, DEX - 2, Fire Resistance + 10
+302	Lv. 2 Legendary DEX Dye DEX + 4, CON - 2, Earth Resistance + 10
+303	Lv. 2 Legendary CON Dye CON + 4, STR - 2, Dark Resistance + 10
+304	Lv. 2 Legendary INT Dye INT + 4, WIT - 2, Water Resistance + 10
+305	Lv. 2 Legendary WIT Dye WIT + 4, MEN - 2, Wind Resistance + 10
+306	Lv. 2 Legendary MEN Dye MEN + 4, INT - 2, Holy Resistance + 10
+307	Lv. 3 Giant's STR Dye STR + 5, DEX - 4
+308	Lv. 3 Giant's DEX Dye DEX + 5, CON - 4
+309	Lv. 3 Giant's CON Dye CON + 5, STR - 4
+310	Lv. 3 Giant's INT Dye INT + 5, WIT - 4
+311	Lv. 3 Giant's WIT Dye WIT + 5, MEN - 4
+312	Lv. 3 Giant's MEN Dye MEN + 5, INT - 4
+313	Lv. 3 Ancient STR Dye STR + 5, DEX - 4, Fire Resistance + 15
+314	Lv. 3 Ancient DEX Dye DEX + 5, CON - 4, Earth Resistance + 15
+315	Lv. 3 Ancient CON Dye CON + 5, STR - 4, Dark Resistance + 15
+316	Lv. 3 Ancient INT Dye INT + 5, WIT - 4, Water Resistance + 15
+317	Lv. 3 Ancient WIT Dye WIT + 5, MEN - 4, Wind Resistance + 15
+318	Lv. 3 Ancient MEN Dye MEN + 5, INT - 4, Holy Resistance + 15
+319	Lv. 3 Legendary STR Dye STR + 5, DEX - 3, Fire Resistance + 15
+320	Lv. 3 Legendary DEX Dye DEX + 5, CON - 3, Earth Resistance + 15
+321	Lv. 3 Legendary CON Dye CON + 5, STR - 3, Dark Resistance + 15
+322	Lv. 3 Legendary INT Dye INT + 5, WIT - 3, Water Resistance + 15
+323	Lv. 3 Legendary WIT Dye WIT + 5, MEN - 3, Wind Resistance + 15
+324	Lv. 3 Legendary MEN Dye MEN + 5, INT - 3, Holy Resistance + 15
+325	Lv. 4 Giant's STR Dye STR + 5, DEX - 2
+326	Lv. 4 Giant's DEX Dye DEX + 5, CON - 2
+327	Lv. 4 Giant's CON Dye CON + 5, STR - 2
+328	Lv. 4 Giant's INT Dye INT + 5, WIT - 2
+329	Lv. 4 Giant's WIT Dye WIT + 5, MEN - 2
+330	Lv. 4 Giant's MEN Dye MEN + 5, INT - 2
+331	Lv. 4 Ancient STR Dye STR + 5, DEX - 2, Fire Resistance + 20
+332	Lv. 4 Ancient DEX Dye DEX + 5, CON - 2, Earth Resistance + 20
+333	Lv. 4 Ancient CON Dye CON + 5, STR - 2, Dark Resistance + 20
+334	Lv. 4 Ancient INT Dye INT + 5, WIT - 2, Water Resistance + 20
+335	Lv. 4 Ancient WIT Dye WIT + 5, MEN - 2, Wind Resistance + 20
+336	Lv. 4 Ancient MEN Dye MEN + 5, INT - 2, Holy Resistance + 20
+337	Lv. 4 Legendary STR Dye STR + 5, DEX - 1, Fire Resistance + 20
+338	Lv. 4 Legendary DEX Dye DEX + 5, CON - 1, Earth Resistance + 20
+339	Lv. 4 Legendary CON Dye CON + 5, STR - 1, Dark Resistance + 20
+340	Lv. 4 Legendary INT Dye INT + 5, WIT - 1, Water Resistance + 20
+341	Lv. 4 Legendary WIT Dye WIT + 5, MEN - 1, Wind Resistance + 20
+342	Lv. 4 Legendary MEN Dye MEN + 5, INT - 1, Holy Resistance + 20
+343	Lv. 5 Giant's STR Dye STR + 5
+344	Lv. 5 Giant's DEX Dye DEX + 5
+345	Lv. 5 Giant's CON Dye CON + 5
+346	Lv. 5 Giant's INT Dye INT + 5
+347	Lv. 5 Giant's WIT Dye WIT + 5
+348	Lv. 5 Giant's MEN Dye MEN + 5
+349	Lv. 5 Ancient STR Dye STR + 5, Fire Resistance + 25
+350	Lv. 5 Ancient DEX Dye DEX + 5, Earth Resistance + 25
+351	Lv. 5 Ancient CON Dye CON + 5, Dark Resistance + 25
+352	Lv. 5 Ancient INT Dye INT + 5, Water Resistance + 25
+353	Lv. 5 Ancient WIT Dye WIT + 5, Wind Resistance + 25
+354	Lv. 5 Ancient MEN Dye MEN + 5, Holy Resistance + 25
+355	Lv. 5 Legendary STR Dye STR + 5, DEX + 1, Fire Resistance + 25
+356	Lv. 5 Legendary DEX Dye DEX + 5, CON + 1, Earth Resistance + 25
+357	Lv. 5 Legendary CON Dye CON + 5, STR + 1, Dark Resistance + 25
+358	Lv. 5 Legendary INT Dye INT + 5, WIT + 1, Water Resistance + 25
+359	Lv. 5 Legendary WIT Dye WIT + 5, MEN + 1, Wind Resistance + 25
+360	Lv. 5 Legendary MEN Dye MEN + 5, INT + 1, Holy Resistance + 25
+361	Lv. 1 Windy CHA Dye CHA + 1
+362	Lv. 2 Windy CHA Dye CHA + 2
+363	Lv. 3 Windy CHA Dye CHA + 3
+364	Lv. 4 Windy CHA Dye CHA + 4
+365	Lv. 5 Windy CHA Dye CHA + 5
+366	Lv. 1 Windy LUC Dye LUC + 1
+367	Lv. 2 Windy LUC Dye LUC + 2
+368	Lv. 3 Windy LUC Dye LUC + 3
+369	Lv. 4 Windy LUC Dye LUC + 4
+370	Lv. 5 Windy LUC Dye LUC + 5
+371	Lv. 1 Legendary STR Dye (Charisma) STR + 3, CHA + 1
+372	Lv. 1 Legendary DEX Dye (Charisma) DEX + 3, CHA + 1
+373	Lv. 1 Legendary CON Dye (Charisma) CON + 3, CHA + 1
+374	Lv. 1 Legendary INT Dye (Charisma) INT + 3, CHA + 1
+375	Lv. 1 Legendary WIT Dye (Charisma) WIT + 3, CHA + 1
+376	Lv. 1 Legendary MEN Dye (Charisma) MEN + 3, CHA + 1
+377	Lv. 2 Legendary STR Dye (Charisma) STR + 4, CHA + 2
+378	Lv. 2 Legendary DEX Dye (Charisma) DEX + 4, CHA + 2
+379	Lv. 2 Legendary CON Dye (Charisma) CON + 4, CHA + 2
+380	Lv. 2 Legendary INT Dye (Charisma) INT + 4, CHA + 2
+381	Lv. 2 Legendary WIT Dye (Charisma) WIT + 4, CHA + 2
+382	Lv. 2 Legendary MEN Dye (Charisma) MEN + 4, CHA + 2
+383	Lv. 3 Legendary STR Dye (Charisma) STR + 4, CHA + 3
+384	Lv. 3 Legendary DEX Dye (Charisma) DEX + 4, CHA + 3
+385	Lv. 3 Legendary CON Dye (Charisma) CON + 4, CHA + 3
+386	Lv. 3 Legendary INT Dye (Charisma) INT + 4, CHA + 3
+387	Lv. 3 Legendary WIT Dye (Charisma) WIT + 4, CHA + 3
+388	Lv. 3 Legendary MEN Dye (Charisma) MEN + 4, CHA + 3
+389	Lv. 4 Legendary STR Dye (Charisma) STR + 5, CHA + 4
+390	Lv. 4 Legendary DEX Dye (Charisma) DEX + 5, CHA + 4
+391	Lv. 4 Legendary CON Dye (Charisma) CON + 5, CHA + 4
+392	Lv. 4 Legendary INT Dye (Charisma) INT + 5, CHA + 4
+393	Lv. 4 Legendary WIT Dye (Charisma) WIT + 5, CHA + 4
+394	Lv. 4 Legendary MEN Dye (Charisma) MEN + 5, CHA + 4
+395	Lv. 5 Legendary STR Dye (Charisma) STR + 5, CHA + 5
+396	Lv. 5 Legendary DEX Dye (Charisma) DEX + 5, CHA + 5
+397	Lv. 5 Legendary CON Dye (Charisma) CON + 5, CHA + 5
+398	Lv. 5 Legendary INT Dye (Charisma) INT + 5, CHA + 5
+399	Lv. 5 Legendary WIT Dye (Charisma) WIT + 5, CHA + 5
+400	Lv. 5 Legendary MEN Dye (Charisma) MEN + 5, CHA + 5
+401	Lv. 1 Legendary STR Dye (Luck) STR + 3, LUC + 1
+402	Lv. 1 Legendary DEX Dye (Luck) DEX + 3, LUC + 1
+403	Lv. 1 Legendary CON Dye (Luck) CON + 3, LUC + 1
+404	Lv. 1 Legendary INT Dye (Luck) INT + 3, LUC + 1
+405	Lv. 1 Legendary WIT Dye (Luck) WIT + 3, LUC + 1
+406	Lv. 1 Legendary MEN Dye (Luck) MEN + 3, LUC + 1
+407	Lv. 2 Legendary STR Dye (Luck) STR + 4, LUC + 2
+408	Lv. 2 Legendary DEX Dye (Luck) DEX + 4, LUC + 2
+409	Lv. 2 Legendary CON Dye (Luck) CON + 4, LUC + 2
+410	Lv. 2 Legendary INT Dye (Luck) INT + 4, LUC + 2
+411	Lv. 2 Legendary WIT Dye (Luck) WIT + 4, LUC + 2
+412	Lv. 2 Legendary MEN Dye (Luck) MEN + 4, LUC + 2
+413	Lv. 3 Legendary STR Dye (Luck) STR + 4, LUC + 3
+414	Lv. 3 Legendary DEX Dye (Luck) DEX + 4, LUC + 3
+415	Lv. 3 Legendary CON Dye (Luck) CON + 4, LUC + 3
+416	Lv. 3 Legendary INT Dye (Luck) INT + 4, LUC + 3
+417	Lv. 3 Legendary WIT Dye (Luck) WIT + 4, LUC + 3
+418	Lv. 3 Legendary MEN Dye (Luck) MEN + 4, LUC + 3
+419	Lv. 4 Legendary STR Dye (Luck) STR + 5, LUC + 4
+420	Lv. 4 Legendary DEX Dye (Luck) DEX + 5, LUC + 4
+421	Lv. 4 Legendary CON Dye (Luck) CON + 5, LUC + 4
+422	Lv. 4 Legendary INT Dye (Luck) INT + 5, LUC + 4
+423	Lv. 4 Legendary WIT Dye (Luck) WIT + 5, LUC + 4
+424	Lv. 4 Legendary MEN Dye (Luck) MEN + 5, LUC + 4
+425	Lv. 5 Legendary STR Dye (Luck) STR + 5, LUC + 5
+426	Lv. 5 Legendary DEX Dye (Luck) DEX + 5, LUC + 5
+427	Lv. 5 Legendary CON Dye (Luck) CON + 5, LUC + 5
+428	Lv. 5 Legendary INT Dye (Luck) INT + 5, LUC + 5
+429	Lv. 5 Legendary WIT Dye (Luck) WIT + 5, LUC + 5
+430	Lv. 5 Legendary MEN Dye (Luck) MEN + 5, LUC + 5
+431	Lv. 1 Windy CHA Dye (Luck) CHA + 3, LUC + 1
+432	Lv. 2 Windy CHA Dye (Luck) CHA + 4, LUC + 2
+433	Lv. 3 Windy CHA Dye (Luck) CHA + 4, LUC + 3
+434	Lv. 4 Windy CHA Dye (Luck) CHA + 5, LUC + 4
+435	Lv. 5 Windy CHA Dye (Luck) CHA + 5, LUC + 5
+436	Lv. 1 Windy LUC Dye (Charisma) LUC + 3, CHA + 1
+437	Lv. 2 Windy LUC Dye (Charisma) LUC + 4, CHA + 2
+438	Lv. 3 Windy LUC Dye (Charisma) LUC + 4, CHA + 3
+439	Lv. 4 Windy LUC Dye (Charisma) LUC + 5, CHA + 4
+440	Lv. 5 Windy LUC Dye (Charisma) LUC + 5, CHA + 5
+500	Mysterious Human Dye Fire/Water/Wind/Earth Stats + 10, Debuff Resistance + 1%.\nActive Skill: Unbind
+501	Mysterious Elf Dye Water Resistance + 20, P./M. Critical Rate + 10.\nActive Skill: Prevision
+502	Mysterious Dark Elf Dye Wind Resistance + 20, P./M. Critical Damage + 1%.\nActive Skill: Disparition
+503	Mysterious Orc Dye Fire Resistance + 20, HP/MP/CP + 1%.\nActive Skill: Savage
+504	Mysterious Dwarf Dye Earth Resistance + 20, Skill Cooldown - 1%.\nActive Skill: Endurance
+505	Mysterious Kamael Dye Dark Resistance + 20, PVP Damage + 1%.\nActive Skill: Soul Protection
+506	Wondrous Hunt Dye When HP is 90% or above, P. Def. + 20% and Speed + 33 in the Olympiad and the Ceremony of Chaos.
+507	Wondrous Slaughter Dye In a battlefield, Received Damage - 2% and Damage Reflect Resistance + 2. Skill Lv. up with each PC kill up to Lv. 5. Accumulated skill effect disappears when the character dies.
+508	Mysterious Dark Resistance Dye Dark Resistance + 120 when fighting normal monsters.
+509	Mysterious Holy Resistance Dye Holy Resistance + 120 when fighting normal monsters.
+510	Mysterious Fire Resistance Dye Fire Resistance + 120 when fighting normal monsters.
+511	Mysterious Water Resistance Dye Water Resistance + 120 when fighting normal monsters.
+512	Mysterious Wind Resistance Dye Wind Resistance + 120 when fighting normal monsters.
+513	Mysterious Earth Resistance Dye Earth Resistance + 120 when fighting normal monsters.
+514	Mysterious Abnormal State Resistance Dye Hold, Sleep, Paralysis, Poison, Bleed, Stun, and Mental Attack Resistance + 20. Buff Cancellation Resistance + 20. Has a 5% chance of reflecting physical and magical abnormal states.
+515	Mysterious Invincibility Boost Dye Duration for Invincibility against normal hits and skills increases by 50%.
+516	Mysterious World Boss Defense Dye P./M. Def. + 15% when fighting Antharas, Valakas or Lindvior.
+517	Mysterious Antharas Defense Dye P./M. Def. + 20% when fighting Antharas.
+518	Mysterious Valakas Defense Dye P./M. Def. + 20% when fighting Valakas.
+519	Mysterious Lindvior Defense Dye P./M. Def. + 20% when fighitng Lindvior.

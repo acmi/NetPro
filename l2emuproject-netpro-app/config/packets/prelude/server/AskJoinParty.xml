@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Automatic item distribution type DWORD added to the end of the packet -->
+<packet id="SM_ASK_JOIN_PARTY" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Invitor OID" type="ObjectID" />
+	<dword alias="Item distribution" type="ItemRedist" /> <!-- NEW -->
+</packet>

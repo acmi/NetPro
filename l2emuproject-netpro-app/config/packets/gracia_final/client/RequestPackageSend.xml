@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount is now a QWORD -->
+<packet id="CM_REQ_PACKAGE_SEND" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Recipient PK" />
+	<dword alias="Item count" id="cnt" />
+	<loop id="cnt">
+		<!-- SM definition is crafted in a way to register the PK as a fake OID -->
+		<dword alias="Item PK" type="ObjectID" />
+		<qword alias="Amount" /> <!-- NEW -->
+	</loop>
+</packet>

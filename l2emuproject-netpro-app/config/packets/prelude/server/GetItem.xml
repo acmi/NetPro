@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 3 new DWORDs for item coordinates added at the end of the packet -->
+<packet id="SM_GET_ITEM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="New owner OID" type="ObjectID">
+		<scriptAlias id="HLE_WORLD_ITEM_OWNER_OID" />
+	</dword>
+	<dword alias="Item OID" type="ObjectID">
+		<scriptAlias id="HLE_WORLD_ITEM_OID" />
+	</dword>
+	
+	<!-- NEW -->
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+</packet>

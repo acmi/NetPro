@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount/price is now a QWORD -->
+<packet id="SM_PRIVATE_STORE_BUY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Buyer OID" type="ObjectID" />
+	<qword alias="Viewer's adena" /> <!-- NEW -->
+	<dword alias="Items bought" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Private store slot" />
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="harvester_personal_store_item" />
+		</dword>
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedWord alias="Selected numbers (lower two bytes)" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+		</branch>
+
+		<!-- NEW -->
+		<qword alias="Quantity in viewer's inventory" />
+		<qword alias="Reference (shop) price">
+			<scriptAlias id="harvester_personal_store_item_price" />
+		</qword>
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<word alias="0" /> <!-- Please. Explain this to me. -->
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Actual bet multiplier / (100^[number of times owner set up the store without re-adding the item])" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<word alias="Main item type" type="ItemType2" />
+		
+		<!-- NEW -->
+		<qword alias="Price" />
+		<qword alias="Quantity bought" />
+		
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+	</loop>
+</packet>

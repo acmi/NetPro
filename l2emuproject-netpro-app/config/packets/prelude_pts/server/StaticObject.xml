@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Actual static objects were only introduced in C1. -->
+<packet id="SM_STATIC_OBJECT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Object" type="StaticObject">
+		<scriptAlias id="OIC_SO_TEMPLATE" />
+	</dword>
+	<dword alias="OID" type="ObjectID">
+		<scriptAlias id="OIC_SO_OID" />
+	</dword>
+</packet>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A new unknown DWORD field (typically 0) appended at the end of this packet -->
+<packet id="SM_DELETE_OBJECT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="OID" type="ObjectID">
+		<scriptAlias id="HLE_DELETED_OID" />
+	</dword>
+	<dword alias="0" /> <!-- NEW -->
+</packet>

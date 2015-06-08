@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_NPC_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="NPC OID" type="ObjectID">
+		<scriptAlias id="OIC_NPC_OID" />
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="fspawn_gen_npc_oid" />
+		<scriptAlias id="exp_bot_npc_oid" />
+	</dword>
+	<dword alias="NPC" type="Npc">
+		<scriptAlias id="OIC_NPC_TEMPLATE" />
+		<scriptAlias id="exp_bot_npc_id" />
+	</dword>
+	<dword alias="Attackable" type="YesOrNo">
+		<scriptAlias id="fspawn_gen_npc_atk" />
+		<scriptAlias id="exp_bot_npc_atk" />
+	</dword>
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<dword alias="Yaw">
+		<scriptAlias id="OIL_OBJECT_YAW" />
+	</dword>
+	<dword alias="0" />
+	<dword alias="Casting speed" />
+	<dword alias="Attack speed" />
+	<dword alias="Running speed (on ground)" />
+	<dword alias="Walking speed (on ground)" />
+	<dword alias="Running speed (in water)" />
+	<dword alias="Walking speed (in water)" />
+	<dword alias="Running speed (mounted)" />
+	<dword alias="Walking speed (mounted)" />
+	<dword alias="Running speed (flying mounted)" />
+	<dword alias="Walking speed (flying mounted)" />
+	<double alias="Movement speed multiplier" />
+	<double alias="Attack speed multiplier" />
+	<double alias="Current collision radius" />
+	<double alias="Current collision height" />
+	<dword alias="Weapon" type="Item" />
+	<dword alias="Upper Body" type="Item" />
+	<dword alias="Shield [Sigil]" type="Item" />
+	<byte alias="1" /> <!-- Identified as 'Show title', even though status = 0 deals with that -->
+	<byte alias="Moving" type="MoveType" />
+	<byte alias="In combat" type="YesOrNo" />
+	<byte alias="Lying dead" type="YesOrNo" />
+	<byte alias="Knownlist state" type="KnownlistState" />
+	<string alias="Name">
+		<scriptAlias id="OIC_GIVEN_NAME" />
+	</string>
+	<string alias="Title">
+		<scriptAlias id="OIC_NPC_TITLE" />
+	</string>
+	<dword alias="Title color" type="NpcTitleColor" />
+	<dword alias="In PvP" type="YesOrNo" />
+	<dword alias="Karma" />
+	<dword alias="Abnormal effect" type="ave.AbnormalVisualEffectMask" />
+	<dword alias="Pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+	</dword>
+	<dword alias="Pledge crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<dword alias="Alliance ID" type="Alliance">
+		<scriptAlias id="AIC_ALLY_ID" />
+	</dword>
+	<dword alias="Alliance crest ID" type="AllianceCrest">
+		<scriptAlias id="AIC_ALLY_CREST_ID" />
+	</dword>
+	<byte alias="Subtype" type="NpcSubtype" />
+	<byte alias="Duel team" type="DuelTeam" />
+	<double alias="Default collision radius" />
+	<double alias="Default collision height" />
+	<dword alias="Weapon enchant glow" type="EnchantEffect" />
+	<dword alias="Flying" type="YesOrNo" />
+	<dword alias="0" />
+	<dword alias="Ability level" />
+	<byte alias="Targetable" type="YesOrNo" /> <!-- Affects /nexttarget (verified), but NOT direct click -->
+	<byte alias="Show name tag" type="YesOrNo" />
+	<dword alias="Special effect" type="ave.AbnormalVisualEffectMask2" />
+</packet>

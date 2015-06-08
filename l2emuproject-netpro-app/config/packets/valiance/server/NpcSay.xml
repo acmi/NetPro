@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- 5-15 tokens based on chat type (unsure when) -->
+<packet id="SM_NPC_SAY" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="NPC OID" type="ObjectID">
+		<scriptAlias id="OIC_NPC_OID" />
+	</dword>
+	<dword alias="Chat" type="Chat" id="chat" />
+	<dword alias="NPC" type="Npc">
+		<scriptAlias id="OIC_NPC_TEMPLATE" />
+	</dword>
+
+	<dword alias="Message" type="ImmutableNpcString" id="msg" />
+	<branch id="msg" condition="Negative">
+		<string alias="Custom message" />
+	</branch>
+	<branch id="msg" condition="Positive">
+		<string alias="1st token" />
+		<string alias="2nd token" />
+		<string alias="3rd token" />
+		<string alias="4th token" />
+		<string alias="5th token" />
+
+		<!-- NEW -->
+		<branch id="chat" condition="NotPrivateMessage">
+			<string alias="6th token" />
+			<string alias="7th token" />
+			<string alias="8th token" />
+			<string alias="9th token" />
+			<string alias="10th token" />
+
+			<string alias="11th token" />
+			<string alias="12th token" />
+			<string alias="13th token" />
+			<string alias="14th token" />
+			<string alias="15th token" />
+		</branch>
+	</branch>
+</packet>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_MAGIC_SKILL_LAUNCHED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Caster OID" type="ObjectID">
+		<scriptAlias id="HLE_SUCC_CASTER_OID" />
+	</dword>
+	<dword alias="Skill" type="Skill">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		<scriptAlias id="HLE_SKILL_ID" />
+	</dword>
+	<dword alias="Level" type="skill.SkillLevel">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		<scriptAlias id="HLE_SKILL_LEVEL" />
+	</dword>
+	<dword alias="Affected" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Affected OID" type="ObjectID">
+			<scriptAlias id="HLE_TARGETS_OID" />
+		</dword>
+	</loop>
+</packet>

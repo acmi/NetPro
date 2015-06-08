@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_PACKAGE_SENDABLE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Receiver's OID" />
+	<qword alias="Adena" />
+	<dword alias="Receivable count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Item OID" />
+		<dword alias="Item" type="Item" />
+		<dword alias="Slot number" type="InventorySlot" />
+		<qword alias="Quantity" />
+		<word alias="Main item type" type="ItemType2" />
+		<word alias="Special item type" />
+		<word alias="Equipped" type="YesOrNo" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<word alias="Enchant level" />
+		<word alias="Name exists" type="YesOrNo" />
+		<dword alias="Augmentation" /> <!-- Make type -->
+		<dword alias="Mana left" type="ShadowMana" />
+		<dword alias="Time remaining" type="TimeRemaining" />
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+		<!-- ??? enchant? -->
+		<word alias="0" />
+		<word alias="0" />
+		<word alias="0" />
+		<dword alias="Item OID (dupe)" />
+	</loop>
+</packet>

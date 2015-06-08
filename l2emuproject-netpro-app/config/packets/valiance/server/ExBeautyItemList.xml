@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="679" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Style Type" /> <!-- 0=hair, 1=face, 2=color -->
+	<dword alias="Hair Style Count" id="hairstyle" />
+	<loop id="hairstyle">
+		<dword alias="Parent Style Type" />
+		<dword alias="Style ID" />
+		<dword alias="Adena Price" /> <!-- remove -->
+		<dword alias="Adena Price" /> <!-- add -->
+		<dword alias="Ticket Price" />
+		<dword alias="Style OID" />
+	</loop>
+
+	<dword alias="Style Type" /> <!-- 0=hair, 1=face, 2=color -->
+	<dword alias="Face Style Count" id="facestyle" />
+	<loop id="facestyle">
+		<dword alias="Parent Style Type" />
+		<dword alias="Style ID" />
+		<dword alias="Adena Price" /> <!-- remove -->
+		<dword alias="Adena Price" /> <!-- add -->
+		<dword alias="Ticket Price" />
+		<dword alias="Style OID" />
+	</loop>
+
+	<dword alias="Style Type" /> <!-- 0=hair, 1=face, 2=color -->
+	<dword alias="Color Style Count" id="colorstyle" />
+	<loop id="colorstyle">
+		<dword alias="Parent Style Type" />
+		<dword alias="Style ID" />
+		<dword alias="Adena Price" /> <!-- remove -->
+		<dword alias="Adena Price" /> <!-- add -->
+		<dword alias="Ticket Price" />
+		<dword alias="Style OID" />
+	</loop>
+</packet>

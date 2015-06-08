@@ -1,0 +1,3189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A generated list of ALL known packets, in no particular order. -->
+<packets xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../schemata/all_packets.xsd">
+	<client>
+		<!--
+		ASCII "cddddd"
+		UNICODE "AQ_GAMEGUARD : %d %d %d %d %d"
+		UNICODE "ResponseAuthGameGuard"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="LS_CM_AQ_GAMEGUARD" name="ResponseAuthGameGuard" />
+		<!--
+		UNICODE "Login Type %d is Not Used"
+		UNICODE "AQ_LOGIN : %d %d %d %d %d"
+		UNICODE "RL"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="LS_CM_AQ_LOGIN" name="RequestLogin" /> <!-- RL = RequestLogin? -->
+		<!--
+		ASCII "cdx"
+		UNICODE "RequestSCCheck"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="LS_CM_REQUEST_SC_CHECK" name="RequestSCCheck" />
+		<!--
+		ASCII "cddc"
+		UNICODE "RequestServerList"
+		UNICODE "(Send)%s sessionId_1:%d, sesstionId_2:%d, cListKind:%d"
+		-->
+		<packet id="LS_CM_REQUEST_SERVER_LIST" name="RequestServerList" />
+		<!--
+		ASCII "cddc"
+		UNICODE "RequestServerLogin"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="LS_CM_REQUEST_SERVER_LOGIN" name="RequestServerLogin" />
+		<packet id="LS_CM_0E" name="Unnamed 0E" />
+		
+		<packet id="64" name="RequestReplySurrenderPledgeWar" />
+		<packet id="103" name="RequestAnswerJoinAlly" />
+		<packet id="128" name="RequestSEKCustom" />
+		<packet id="129" name="RequestRide" />
+		<packet id="130" name="RequestReviveReply" />
+		<packet id="149" name="RequestSnoopQuit" />
+		<packet id="154" name="RequestRecipeShopManageList" />
+		<packet id="155" name="RequestRecipeShopMessageSet" />
+		<packet id="156" name="RequestRecipeShopListSet" />
+		<packet id="157" name="RequestRecipeShopManageQuit" />
+		<packet id="158" name="RequestRecipeShopManageCancel" />
+		<packet id="159" name="RequestRecipeShopMakeInfo" />
+		<packet id="160" name="RequestRecipeShopMakeItem" />
+		<packet id="161" name="RequestRecipeShopSellList" />
+		<packet id="162" name="RequestObserverEnd" />
+		<packet id="170" name="RequestPledgePower" />
+		<packet id="173" name="RequestBuyProcure" />
+		<packet id="174" name="RequestBuySeed" />
+		<packet id="175" name="ReplyGameGuardQuery" />
+		<packet id="176" name="RequestConfirmDlg" />
+		<packet id="177" name="RequestPreviewItem" />
+		<packet id="178" name="RequestSSQStatus" />
+		<packet id="179" name="RequestPetitionVote" />
+		<packet id="180" name="RequestSendL2FriendSay" />
+		<packet id="181" name="RequestOpenMinimap" />
+		<packet id="182" name="RequestSendMsnChatLog" />
+		<packet id="184" name="RequestReload" />
+		<packet id="185" name="RequestOustFromPartyRoom" />
+		<packet id="186" name="RequestDismissPartyRoom" />
+		<packet id="187" name="RequestWithdrawPartyRoom" />
+		<packet id="188" name="RequestHandOverPartyMaster" />
+		<packet id="189" name="RequestAutoSoulShot" />
+		<packet id="190" name="RequestExEnchantSkillInfo" />
+		<packet id="191" name="RequestExEnchantSkill" />
+		<packet id="192" name="RequestProcureCropList" />
+		<packet id="193" name="RequestSetSeed" />
+		<packet id="194" name="RequestSetCrop" />
+		<packet id="195" name="RequestWriteHeroWords" />
+		<packet id="196" name="RequestExAskJoinMPCC" />
+		<packet id="197" name="RequestExAcceptJoinMPCC" />
+		<packet id="198" name="RequestExOustFromMPCC" />
+		<packet id="199" name="RequestExPledgeCrestLarge" />
+		<packet id="200" name="RequestExSetPledgeCrestLarge" />
+		<packet id="201" name="RequestOlympiadObserverEnd" />
+		<packet id="202" name="RequestOlympiadMatchList" />
+		<packet id="203" name="RequestAskJoinPartyRoom" />
+		<packet id="204" name="RequestAnswerJoinPartyRoom" />
+		<packet id="205" name="RequestListPartyMatchingWaitingRoom" />
+		<packet id="206" name="RequestExitPartyMatchingWaitingRoom" />
+		<packet id="207" name="RequestGetBossRecord" />
+		<packet id="208" name="RequestPledgeSetAcademyMaster" />
+		<packet id="209" name="RequestPledgePowerGradeList" />
+		<packet id="210" name="RequestPledgeMemberPowerInfo" />
+		<packet id="211" name="RequestPledgeSetMemberPowerGrade" />
+		<packet id="212" name="RequestPledgeMemberInfo" />
+		<packet id="213" name="RequestPledgeWarList" />
+		<packet id="214" name="RequestExFishRanking" />
+		<packet id="215" name="RequestPCCafeCouponUse" />
+		<packet id="216" name="RequestCursedWeaponList" />
+		<packet id="217" name="RequestCursedWeaponLocation" />
+		<packet id="218" name="RequestPledgeReorganizeMember" />
+		<packet id="219" name="RequestExMPCCShowPartyMembersInfo" />
+		<packet id="220" name="RequestDuelStart" />
+		<packet id="221" name="RequestDuelAnswerStart" />
+		<packet id="222" name="RequestConfirmTargetItem" />
+		<packet id="223" name="RequestConfirmRefinerItem" />
+		<packet id="224" name="RequestConfirmGemStone" />
+		<packet id="225" name="RequestRefine" />
+		<packet id="226" name="RequestConfirmCancelItem" />
+		<packet id="227" name="RequestRefineCancel" />
+		<packet id="228" name="RequestExMagicSkillUseGround" />
+		<packet id="229" name="RequestDuelSurrender" />
+		<packet id="230" name="RequestExChangeName" />
+		<packet id="231" name="RequestGotoLobby" />
+		<packet id="232" name="RequestKeyMapping" />
+		<packet id="233" name="RequestAllFortressInfo" />
+		<packet id="234" name="RequestExOrcMove" />
+		<packet id="235" name="RequestExSetTutorial" />
+		<packet id="236" name="RequestExRqItemLink" />
+		<packet id="237" name="RequestCannotMoveAnymoreAirShip" />
+		<packet id="238" name="RequestMoveToLocationInAirShip" /> <!-- within airship -->
+		<packet id="239" name="RequestSaveKeyMapping" />
+		<packet id="240" name="RequestExRemoveItemAttribute" />
+		<packet id="241" name="RequestSaveInventoryOrder" />
+		<packet id="242" name="RequestExEnchantSkillSafe" />
+		<packet id="243" name="RequestExEnchantSkillUntrain" />
+		<packet id="244" name="RequestExEnchantSkillChange" />
+		<packet id="245" name="RequestExGetOnAirShip" />
+		<packet id="246" name="RequestExGetOffAirShip" />
+		<!--
+		ASCII "chdQ"
+		UNICODE "RequestExEnchantItemAttribute"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="247" name="RequestExEnchantItemAttribute" />
+		<packet id="248" name="RequestAllCastleInfo" />
+		<packet id="249" name="RequestAllAgitInfo" />
+		<packet id="250" name="RequestFortressSiegeInfo" />
+		<packet id="251" name="RequestExEnchantSkillInfoDetail" />
+		<packet id="252" name="RequestFortressMapInfo" />
+		<packet id="253" name="RequestPVPMatchRecord" />
+		<packet id="254" name="SetPrivateStoreWholeMsg" />
+		<packet id="255" name="RequestDispel" />
+		<packet id="256" name="RequestExTryToPutEnchantTargetItem" />
+		<packet id="257" name="RequestExTryToPutEnchantSupportItem" />
+		<packet id="258" name="RequestExCancelEnchantItem" />
+		<packet id="259" name="RequestChangeNicknameColor" />
+		<packet id="260" name="RequestResetNickname" />
+		<packet id="261" name="RequestBookMarkSlotInfo" />
+		<packet id="262" name="RequestSaveBookMarkSlot" />
+		<packet id="263" name="RequestModifyBookMarkSlot" />
+		<packet id="264" name="RequestDeleteBookMarkSlot" />
+		<packet id="265" name="RequestTeleportBookMark" />
+		<packet id="266" name="RequestChangeBookMarkSlot" />
+		<packet id="267" name="RequestWithDrawPremiumItem" />
+		<packet id="268" name="RequestStartShowCrataeCubeRank" />
+		<packet id="269" name="RequestStopShowCrataeCubeRank" />
+		<packet id="270" name="RequestNotifyStartMiniGame" />
+		<packet id="271" name="RequestBidItemAuction" />
+		<packet id="272" name="RequestInfoItemAuction" />
+		<packet id="273" name="RequestJump" />
+		<packet id="274" name="RequestJoinDominionWar" />
+		<packet id="275" name="RequestDominionInfo" />
+		<packet id="276" name="RequestExCleftEnter" />
+		<packet id="277" name="RequestExBlockGameEnter" />
+		<packet id="278" name="RequestEndScenePlayer" />
+		<packet id="279" name="RequestExBlockGameVote" />
+		<packet id="280" name="RequestListMpccWaiting" />
+		<packet id="281" name="RequestManageMpccRoom" />
+		<packet id="282" name="RequestJoinMpccRoom" />
+		<packet id="283" name="RequestOustFromMpccRoom" />
+		<packet id="284" name="RequestDismissMpccRoom" />
+		<packet id="285" name="RequestWithdrawMpccRoom" />
+		<packet id="286" name="RequestSeedPhase" />
+		<packet id="287" name="RequestMpccPartymasterList" />
+		<packet id="288" name="RequestBR_GamePoint" />
+		<packet id="289" name="RequestBR_ProductList" />
+		<packet id="290" name="RequestBR_ProductInfo" />
+		<packet id="291" name="RequestBR_BuyProduct" />
+		<packet id="292" name="RequestPostItemList" />
+		<packet id="293" name="RequestSendPost" />
+		<packet id="294" name="RequestReceivedPostList" />
+		<packet id="295" name="RequestDeleteReceivedPost" />
+		<packet id="296" name="RequestReceivedPost" />
+		<packet id="297" name="RequestReceivePost" />
+		<packet id="298" name="RequestRejectPost" />
+		<packet id="299" name="RequestSentPostList" />
+		<packet id="300" name="RequestDeleteSentPost" />
+		<packet id="301" name="RequestSentPost" />
+		<packet id="302" name="RequestCancelSentPost" />
+		<packet id="303" name="RequestShowNewUserPetition" />
+		<packet id="304" name="RequestExShowStepTwo" />
+		<packet id="305" name="RequestExShowStepThree" />
+		<packet id="306" name="RequestRefundItem" />
+		<packet id="307" name="RequestBuySellUIClose" />
+		<packet id="308" name="RequestEventMatchObserverEnd" />
+		<packet id="309" name="RequestBR_RecentProductList" />
+		<packet id="310" name="RequestExBR_EventRankerList" />
+		<packet id="311" name="RequestBR_MiniGameLoadScores" />
+		<packet id="312" name="RequestBR_MiniGameInsertScore" />
+		<packet id="313" name="RequestBR_LectureMark" />
+		<packet id="314" name="RequestExConnectToRaidServer" />
+		<packet id="315" name="RequestExReturnFromRaidServer" />
+		<packet id="316" name="RequestPartyLootingModify" />
+		<packet id="317" name="RequestAnswerPartyLootingModify" />
+		<packet id="318" name="RequestAnswerCoupleAction" />
+		<packet id="319" name="RequestAskMemberShip" />
+		<packet id="320" name="RequestAddExpandQuestAlarm" />
+		<packet id="321" name="RequestNewVoteSystem" />
+		<packet id="322" name="RequestEx2ndPasswordCheck" />
+		<packet id="323" name="RequestEx2ndPasswordVerify" />
+		<packet id="324" name="RequestEx2ndPasswordReq" />
+		<packet id="325" name="RequestExAgitInitialize" />
+		<packet id="326" name="RequestExAgitDetailInfo" />
+		<packet id="327" name="RequestExMyAgitState" />
+		<packet id="328" name="RequestExRegisterAgitForBidStep1" />
+		<packet id="329" name="RequestExRegisterAgitForBidStep3" />
+		<packet id="330" name="RequestExConfirmCancelRegisteringAgit" />
+		<packet id="331" name="RequestExProceedCancelRegisteringAgit" />
+		<packet id="332" name="RequestExConfirmCancelAgitLot" />
+		<packet id="333" name="RequestExProceedCancelAgitLot" />
+		<packet id="334" name="RequestExApplyForBidStep1" />
+		<packet id="335" name="RequestExApplyForBidStep2" />
+		<packet id="336" name="RequestExApplyForBidStep3" />
+		<packet id="337" name="RequestExReBid" />
+		<packet id="338" name="RequestExAgitListForLot" />
+		<packet id="339" name="RequestExApplyForAgitLotStep1" />
+		<packet id="340" name="RequestExApplyForAgitLotStep2" />
+		<packet id="341" name="RequestExAgitListForBid" />
+		<packet id="342" name="RequestExAddPostFriendForPostBox" />
+		<packet id="343" name="RequestExDeletePostFriendForPostBox" />
+		<packet id="344" name="RequestExShowPostFriendListForPostBox" />
+		<packet id="345" name="RequestExFriendListForPostBox" />
+		<packet id="346" name="RequestGoodsInventoryInfo" />
+		<packet id="347" name="RequestUseGoodsInventoryItem" />
+		<packet id="348" name="RequestWebSessionID" />
+		<packet id="349" name="RequestCharacterNameCreatable" />
+		<packet id="350" name="NCGuardSendDataToServer" />
+		<packet id="351" name="RequestBR_NewIConCashBtnWnd" />
+		<packet id="353" name="RequestGetOnShuttle" />
+		<packet id="354" name="RequestGetOffShuttle" />
+		<packet id="355" name="RequestMoveToLocationInShuttle" />
+		<packet id="356" name="RequestCannotMoveAnymoreInShuttle" />
+		<packet id="357" name="RequestCrystallizeEstimate" />
+		<packet id="358" name="RequestCrystallizeItemCancel" />
+		<packet id="359" name="RequestExEscapeScene" />
+		<packet id="360" name="RequestFlyMove" />
+		<packet id="361" name="RequestSurrenderPledgeWarEX" />
+		<packet id="362" name="RequestDynamicQuestProgressInfo" />
+		<packet id="363" name="RequestDynamicQuestScoreBoard" />
+		<packet id="364" name="RequestDynamicQuestHTML" />
+		<packet id="365" name="RequestFriendDetailInfo" />
+		<packet id="366" name="RequestUpdateFriendMemo" />
+		<packet id="367" name="RequestUpdateBlockMemo" />
+		<packet id="368" name="RequestInzonePartyInfoHistory" />
+		<packet id="369" name="RequestCommissionRegistrableItemList" />
+		<packet id="370" name="RequestCommissionInfo" />
+		<packet id="371" name="RequestCommissionRegister" />
+		<packet id="372" name="RequestCommissionCancel" />
+		<packet id="373" name="RequestCommissionDelete" />
+		<packet id="374" name="RequestCommissionList" />
+		<packet id="375" name="RequestCommissionBuyInfo" />
+		<packet id="376" name="RequestCommissionBuyItem" />
+		<packet id="377" name="RequestCommissionRegisteredItem" />
+		<packet id="378" name="RequestCallToChangeClass" />
+		<packet id="379" name="RequestChangeToAwakenedClass" />
+		<packet id="380" name="RequestWorldStatistics" />
+		<packet id="381" name="RequestUserStatistics" />
+		<packet id="382" name="RequestFirstPlayStart" />
+		<packet id="383" name="RequestFlyMoveStart" />
+		<packet id="384" name="RequestHardWareInfo" />
+		<packet id="385" name="RequestChangeAttributeTargetItem" />
+		<packet id="386" name="RequestChangeAttributeItem" />
+		<packet id="387" name="RequestChangeAttributeCancel" />
+		<packet id="388" name="RequestBR_PresentBuyProduct" />
+		<packet id="389" name="RequestConfirmMenteeAdd" />
+		<packet id="390" name="RequestMentorCancel" />
+		<packet id="391" name="RequestMentorList" />
+		<packet id="392" name="RequestMenteeAdd" />
+		<packet id="393" name="RequestMenteeWaitingList" />
+		<packet id="394" name="RequestJoinPledgeByName" />
+		<packet id="395" name="RequestInZoneWaitingTime" />
+		<packet id="396" name="RequestJoinCuriousHouse" />
+		<packet id="397" name="RequestCancelCuriousHouse" />
+		<packet id="398" name="RequestLeaveCuriousHouse" />
+		<packet id="399" name="RequestObservingListCuriousHouse" />
+		<packet id="400" name="RequestObservingCuriousHouse" />
+		<packet id="401" name="RequestLeaveObservingCuriousHouse" />
+		<packet id="402" name="RequestCuriousHouseHtml" />
+		<packet id="403" name="RequestCuriousHouseRecord" />
+		<packet id="404" name="RequestExSysString" />
+		<packet id="405" name="RequestExTryToPut_Shape_Shifting_TargetItem" />
+		<packet id="406" name="RequestExTryToPut_Shape_Shifting_EnchantSupportItem" />
+		<packet id="407" name="RequestExCancelShape_Shifting_Item" />
+		<packet id="408" name="RequestShape_Shifting_Item" />
+		<packet id="409" name="RequestEventKalieToken" />
+		<packet id="410" name="RequestShowBeautyList" />
+		<packet id="411" name="RequestRegistBeauty" />
+		<packet id="412" name="RequestResetBeauty" />
+		<!-- UNICODE "[ERROR]%s (Send)SpeedHack!!!!!!!!!!!!!!!!!!!" -->
+		<packet id="413" name="SpeedHack" />
+		<packet id="414" name="RequestBR_AddBasketProductInfo" />
+		<packet id="415" name="RequestBR_DeleteBasketProductInfo" />
+		<packet id="416" name="RequestPledgeRecruitInfo" />
+		<packet id="417" name="RequestPledgeRecruitBoardSearch" />
+		<packet id="418" name="RequestPledgeRecruitBoardAccess" />
+		<packet id="419" name="RequestPledgeRecruitBoardDetail" />
+		<packet id="420" name="RequestPledgeWaitingApply" />
+		<packet id="421" name="RequestPledgeWaitingApplied" />
+		<packet id="422" name="RequestPledgeWaitingList" />
+		<packet id="423" name="RequestPledgeWaitingUser" />
+		<packet id="424" name="RequestPledgeWaitingUserAccept" />
+		<packet id="425" name="RequestPledgeDraftListSearch" />
+		<packet id="426" name="RequestPledgeDraftListApply" />
+		<packet id="427" name="RequestPledgeRecruitApplyInfo" />
+		<packet id="428" name="RequestPledgeJoinSys" />
+		<packet id="429" name="RequestResponsePetitionAlarm" />
+		<packet id="430" name="RequestNotifyExitBeautyshop" />
+		<packet id="431" name="RequestRegisterXMasWishCard" />
+		<packet id="432" name="RequestExAddEnchantScrollItem" />
+		<packet id="433" name="RequestExRemoveEnchantSupportItem" />
+		<packet id="434" name="RequestCardReward" />
+		<packet id="435" name="RequestDivideAdenaStart" />
+		<packet id="436" name="RequestDivideAdenaCancel" />
+		<packet id="437" name="RequestDivideAdena" />
+		<packet id="438" name="RequestAcquireAbilityList" />
+		<packet id="439" name="RequestAbilityList" />
+		<packet id="440" name="RequestResetAbilityPoint" />
+		<packet id="441" name="RequestChangeAbilityPoint" />
+		<packet id="442" name="RequestStopMove" />
+		<packet id="443" name="RequestAbilityWndOpen" />
+		<packet id="444" name="RequestAbilityWndClose" />
+		<packet id="445" name="RequestExPCCafeRequestOpenWindowWithoutNPC" />
+		<packet id="446" name="RequestLuckyGamePlay" />
+		<packet id="447" name="RequestNotifyTrainingRoomEnd" />
+		<packet id="448" name="RequestNewEnchantPushOne" />
+		<packet id="449" name="RequestNewEnchantRemoveOne" />
+		<packet id="450" name="RequestNewEnchantPushTwo" />
+		<packet id="451" name="RequestNewEnchantRemoveTwo" />
+		<packet id="452" name="RequestNewEnchantClose" />
+		<packet id="453" name="RequestNewEnchantTry" />
+		<packet id="454" name="RequestTargetActionMenu" />
+		<packet id="455" name="RequestExSendSelectedQuestZoneID" />
+		<packet id="456" name="RequestAlchemySkillList" />
+		<packet id="457" name="RequestAlchemyTryMixCube" />
+		<packet id="458" name="RequestAlchemyConversion" />
+		<packet id="459" name="RequestSendExecutedUIEventsCount" />
+		<packet id="461" name="RequestExAutoFish" />
+		<packet id="462" name="RequestRegistPartySubstitute" />
+		<packet id="463" name="RequestDeletePartySubstitute" />
+		<packet id="464" name="RequestRegistWaitingSubstitute" />
+		<packet id="465" name="RequestAcceptWaitingSubstitute" />
+		<packet id="466" name="RequestExchangeSubstitute" />
+		<packet id="467" name="RequestUnionJoin" />
+		<packet id="468" name="RequestUnionChange" />
+		<packet id="469" name="RequestUnionWithdraw" />
+		<packet id="470" name="RequestUnionRequest" />
+		<packet id="471" name="RequestUnionAdjust" />
+		<packet id="472" name="RequestUnionSummon" />
+		<packet id="473" name="RequestUnionStart" />
+		<packet id="474" name="RequestShowPledgeUnionInfo" />
+		<packet id="475" name="RequestExCardRewardList" />
+		<packet id="476" name="RequestExAccountAttendanceInfo" />
+		<packet id="477" name="RequestExAccountAttendanceReward" />
+		<packet id="479" name="RequestMoveToLocationAirShip" /> <!-- by airship (both teleport and controlled movement) -->
+		
+		<!--
+		ASCII "cdbd"
+		UNICODE "(Send)Send Protocol Version:%d"
+		-->
+		<packet id="CM_SEND_PROTOCOL_VERSION" name="SendProtocolVersion" />
+		<!--
+		ASCII "cdddddd"
+		UNICODE "MoveBackwardToLocation"
+		UNICODE "(Send)%s X:%d Y:%d Z:%d OriginX:%d OriginY:%d OriginZ:%d"
+		-->
+		<packet id="CM_MOVE_BACKWARD_TO_LOCATION" name="MoveBackwardToLocation" />
+		<!--
+		ASCII "cS"
+		UNICODE "(Send)Say Message:%s"
+		-->
+		<packet id="CM_SAY" name="Say" />
+		<!--
+		ASCII "cccccccccccccccccccccbddddbd"
+		UNICODE "gameguard key: %x / %x / %x / %x"
+		UNICODE "UNetworkHandler::RequestEnterWorldPacket"
+		-->
+		<packet id="CM_REQ_ENTER_WORLD" name="RequestEnterWorld" />
+		<!--
+		ASCII "cddddc"
+		UNICODE "Action"
+		UNICODE "(Send)%s ID:%d OriginX:%d OriginY:%d OriginZ:%d"
+		-->
+		<packet id="CM_ACTION" name="Action" />
+		<!--
+		ASCII "cSdddddQd"
+		UNICODE "(Send)C_LOGIN Packet"
+		-->
+		<packet id="CM_C_LOGIN" name="RequestLogin" />
+		<!--
+		UNICODE "SendLogOutPacket"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SEND_LOG_OUT" name="SendLogOut" />
+		<!--
+		ASCII "cSdddddddddddd"
+		UNICODE "RequestCharacterCreate"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CHARACTER_CREATE" name="RequestCharacterCreate" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestCharacterDelete"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CHARACTER_DELETE" name="RequestCharacterDelete" />
+		<!--
+		UNICODE "RequestNewCharacter"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_CHARACTER" name="RequestNewCharacter" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestCharacterRestore"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CHARACTER_RESTORE" name="RequestCharacterRestore" />
+		<!--
+		ASCII "cdddd"
+		UNICODE "RequestAttack"
+		UNICODE "(Send)%s ID:%d OriginX:%d OriginY:%d OriginZ:%d"
+		-->
+		<packet id="CM_REQ_ATTACK" name="RequestAttack" />
+		<!--
+		ASCII "cd"
+		UNICODE "(Send)CharacterSelect"
+		
+		ASCII "cdhddd"
+		UNICODE "RequestGameStart"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_GAME_START" name="RequestGameStart" />
+		<!--
+		UNICODE "RequestItemList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ITEM_LIST" name="RequestItemList" />
+		<!--
+		ASCII "cdd"
+		UNICODE "(Send)Request Equip Item : server id = %d Slot = %d"
+		-->
+		<packet id="CM_REQ_EQUIP_ITEM" name="RequestEquipItem" />
+		<!--
+		ASCII "cd"
+		UNICODE "(Send)Request UnEquip Item : Slot : %d"
+		
+		ASCII "cQ"
+		UNICODE "RequestUnEquipItem"
+		UNICODE "(Send)%s : %I64"
+		-->
+		<packet id="CM_REQ_UN_EQUIP_ITEM" name="RequestUnEquipItem" />
+		<!--
+		ASCII "cdQddd"
+		UNICODE "RequestDropItem"
+		UNICODE "(Send)%s" -->
+		<packet id="CM_REQ_DROP_ITEM" name="RequestDropItem" />
+		<!--
+		ASCII "cd"
+		UNICODE "(Send)UseItemPacket"
+		
+		ASCII "cdd"
+		UNICODE "RequestUseItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_USE_ITEM" name="RequestUseItem" />
+		<!--
+		ASCII "cd"
+		UNICODE "(Send)TradeRequestPacket : %d"
+		
+		ASCII "cd"
+		UNICODE "RequestTrade"
+		-->
+		<packet id="CM_REQ_TRADE" name="RequestTrade" />
+		<!--
+		ASCII "cddQ"
+		UNICODE "RequestAddTradeItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ADD_TRADE_ITEM" name="RequestAddTradeItem" />
+		<!--
+		ASCII "cd"
+		UNICODE "(Send)TradeDonePacket"
+		-->
+		<packet id="CM_TRADE_DONE" name="TradeDone" />
+		<!--
+		ASCII "cdddd"
+		ASCII "cddddd"
+		UNICODE "(Send)RequestTeleportPacket"
+		-->
+		<packet id="CM_REQ_TELEPORT" name="RequestTeleport" />
+		<!--
+		ASCII "cd"
+		UNICODE "SocialAction"
+		UNICODE "(Send)%s ActionType:%d"
+		-->
+		<packet id="CM_SOCIAL_ACTION" name="SocialAction" />
+		<!--
+		ASCII "cd"
+		UNICODE "ChangeMoveType"
+		UNICODE "(Send)%s MoveType:%d"
+		-->
+		<packet id="CM_CHANGE_MOVE_TYPE" name="ChangeMoveType" />
+		<!--
+		ASCII "cd"
+		UNICODE "ChangeWaitType"
+		UNICODE "(Send)%s WaitType:%d"
+		-->
+		<packet id="CM_CHANGE_WAIT_TYPE" name="ChangeWaitType" />
+		<!--
+		ASCII "ddQ"
+		ASCII "cddb"
+		UNICODE "RequestSellItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SELL_ITEM" name="RequestSellItem" />
+		<!--
+		ASCII "dQ"
+		ASCII "cddb"
+		UNICODE "(Send)RequestBuyItem"
+		-->
+		<packet id="CM_REQ_BUY_ITEM" name="RequestBuyItem" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestLinkHtml"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_LINK_HTML" name="RequestLinkHtml" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestBypassToServer"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_BYPASS_TO_SERVER" name="RequestBypassToServer" />
+		<!--
+		ASCII "cSSSSSS"
+		UNICODE "RequestBBSWrite"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_BBS_WRITE" name="RequestBBSWrite" />
+		<!--
+		ASCII "cS"
+		UNICODE "(Send)RequestCreatePledge"
+		-->
+		<packet id="CM_REQ_CREATE_PLEDGE" name="RequestCreatePledge" />
+		<!--
+		ASCII "cdd"
+		UNICODE "RequestJoinPledge"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_JOIN_PLEDGE" name="RequestJoinPledge" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestAnswerJoinPledge"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ANSWER_JOIN_PLEDGE" name="RequestAnswerJoinPledge" />
+		<!--
+		UNICODE "RequestWithDrawalPledge"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_WITH_DRAWAL_PLEDGE" name="RequestWithDrawalPledge" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestOustPledgeMember"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OUST_PLEDGE_MEMBER" name="RequestOustPledgeMember" />
+		<!-- UNICODE "(Send)RequestDismissPledge" -->
+		<packet id="CM_REQ_DISMISS_PLEDGE" name="RequestDismissPledge" />
+		<!--
+		ASCII "cdd"
+		UNICODE "(Send)RequestJoinParty"
+		
+		ASCII "cSd"
+		UNICODE "RequestJoinParty"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_JOIN_PARTY" name="RequestJoinParty" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestAnswerJoinParty"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ANSWER_JOIN_PARTY" name="RequestAnswerJoinParty" />
+		<!--
+		UNICODE "RequestWithDrawalParty"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_WITH_DRAWAL_PARTY" name="RequestWithDrawalParty" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestOustPartyMember"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OUST_PARTY_MEMBER" name="RequestOustPartyMember" />
+		<!--
+		UNICODE "RequestDismissParty"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_DISMISS_PARTY" name="RequestDismissParty" />
+		<!-- UNICODE "(Send)RequestMagicSkillList" -->
+		<packet id="CM_REQ_MAGIC_SKILL_LIST" name="RequestMagicSkillList" />
+		<!--
+		ASCII "ddd" (HF had it inadvertently changed to cddd)
+		UNICODE "RequestMagicSkillList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM__USER_ACK" name="UserAck" />
+		<!--
+		ASCII "cddc"
+		UNICODE "RequestMagicSkillUse"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_MAGIC_SKILL_USE" name="RequestMagicSkillUse" />
+		<!--
+		UNICODE "(Send)SendApperingPacket"
+		
+		UNICODE "SAP"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SEND_APPERING" name="SendAppearing" />
+		<!--
+		ASCII "dQ"
+		ASCII "cdb"
+		UNICODE "SendWareHouseDepositList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SEND_WARE_HOUSE_DEPOSIT_LIST" name="SendWareHouseDepositList" />
+		<!--
+		ASCII "dQ"
+		ASCII "cdb"
+		UNICODE "SendWareHouseWithdrawList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SEND_WARE_HOUSE_WITHDRAW_LIST" name="SendWareHouseWithdrawList" />
+		<!--
+		ASCII "cddddddd"
+		UNICODE "RequestShortCutReg"
+		UNICODE "(Send)%s Type=%d RoomNum=%d ID=%d UserShortCut=%d Disabled=%d"
+		-->
+		<packet id="CM_REQ_SHORT_CUT_REG" name="RequestShortCutReg" />
+		<!--
+		ASCII "cddc"
+		UNICODE "(Send)RequestShortCutUse"
+		-->
+		<packet id="CM_REQ_SHORT_CUT_USE" name="RequestShortCutUse" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestShortCutDel"
+		UNICODE "(Send)%s RoomNum=%d"
+		-->
+		<packet id="CM_REQ_SHORT_CUT_DEL" name="RequestShortCutDel" />
+		<!--
+		ASCII "cdddd"
+		UNICODE "CanNotMoveAnymore"
+		UNICODE "(Send)%s (CanNotMoveAnymore) OriginX:%d OriginY:%d OriginZ:%d OriginYaw:%d"
+		-->
+		<packet id="CM_CAN_NOT_MOVE_ANYMORE" name="CanNotMoveAnymore" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestTargetCancel"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_TARGET_CANCEL" name="RequestTargetCancel" />
+		<!--
+		ASCII "cSd"
+		ASCII "cSdS"
+		UNICODE "Say2"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SAY2" name="Say2" />
+		<!--
+		ASCII "ccS"
+		UNICODE "(Send)Super Cmd : Character Info"
+		-->
+		<packet id="CM_SUPER_CMD_CHARACTER_INFO" name="SuperCmd:CharacterInfo" />
+		<!--
+		ASCII "ccS"
+		UNICODE "(Send)Super Cmd : Summon Cmd"
+		-->
+		<packet id="CM_SUPER_CMD_SUMMON_CMD" name="SuperCmd:SummonCmd" />
+		<!--
+		ASCII "cc"
+		UNICODE "(Send)Super Cmd : Server Status"
+		-->
+		<packet id="CM_SUPER_CMD_SERVER_STATUS" name="SuperCmd:ServerStatus" />
+		<!--
+		ASCII "ccdd"
+		UNICODE "(Send)SendL2ParamSetting : [%d] [%d]"
+		ASCII "cc"
+		UNICODE "(Send)Super Cmd : Server Status"
+		-->
+		<packet id="CM_SEND_L2_PARAM_SETTING" name="SendL2ParamSetting" />
+		<!--
+		UNICODE "RequestPledgeMemberList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PLEDGE_MEMBER_LIST" name="RequestPledgeMemberList" />
+		<!-- UNICODE "(Send)Request Magic List" -->
+		<packet id="CM_REQ_MAGIC_LIST" name="RequestMagicList" />
+		<!--
+		UNICODE "(Send)Request Skill List"
+		
+		UNICODE "RequestSkillItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SKILL_ITEM" name="RequestSkillList" /> <!-- RequestSkillItem is just too misleading -->
+		<!--
+		ASCII "cddd"
+		UNICODE "MoveWithDelta"
+		UNICODE "(Send)%s dx:%d dy:%d dz:%d"
+		-->
+		<packet id="CM_MOVE_WITH_DELTA" name="MoveWithDelta" />
+		<!--
+		ASCII "cdddd"
+		UNICODE "GetOnVehicle"
+		UNICODE "(Send)%s VehicleID:%d"
+		-->
+		<packet id="CM_GET_ON_VEHICLE" name="GetOnVehicle" />
+		<!--
+		ASCII "cdddd"
+		UNICODE "GetOffVehicle"
+		UNICODE "(Send)%s VehicleID:%d"
+		-->
+		<packet id="CM_GET_OFF_VEHICLE" name="GetOffVehicle" />
+		<!--
+		ASCII "cd"
+		UNICODE "AnswerTradeRequest"
+		UNICODE "(Send)%s : %d"
+		-->
+		<packet id="CM_ANSWER_TRADE_REQ" name="AnswerTradeRequest" />
+		<!--
+		ASCII "cddc"
+		UNICODE "RequestActionUse"
+		UNICODE "(Send)%s : %d"
+		-->
+		<packet id="CM_REQ_ACTION_USE" name="RequestActionUse" />
+		<!--
+		UNICODE "RequestRestart"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RESTART" name="RequestRestart" />
+		<!-- UNICODE "(Send)RequestSiegeInfo" -->
+		<packet id="CM_REQ_SIEGE_INFO" name="RequestSiegeInfo" />
+		<!-- ASCII "cddddd" -->
+		<packet id="CM__VL" name="ValidateLocation" /> <!-- no name -->
+		<!--
+		ASCII "cdd"
+		UNICODE "StartRotating"
+		UNICODE "(Send)%s OriginYaw:%d Dir:%d"
+		-->
+		<packet id="CM_START_ROTATING" name="StartRotating" />
+		<!--
+		ASCII "cdd"
+		UNICODE "FinishRotating"
+		UNICODE "(Send)%s OriginYaw:%d"
+		-->
+		<packet id="CM_FINISH_ROTATING" name="FinishRotating" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestStartPledgeWar"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_START_PLEDGE_WAR" name="RequestStartPledgeWar" />
+		<!--
+		ASCII "cSd"
+		UNICODE "(Send)RequestReplyStartPledgeWar"
+		-->
+		<packet id="CM_REQ_REPLY_START_PLEDGE_WAR" name="RequestReplyStartPledgeWar" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestStopPledgeWar"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_STOP_PLEDGE_WAR" name="RequestStopPledgeWar" />
+		<!--
+		ASCII "cSd"
+		UNICODE "(Send)RequestReplyStopPledgeWar"
+		-->
+		<packet id="CM_REQ_REPLY_STOP_PLEDGE_WAR" name="RequestReplyStopPledgeWar" />
+		<!--
+		ASCII "cS"
+		UNICODE "(Send)RequestSurrenderPledgeWar"
+		-->
+		<packet id="CM_REQ_SURRENDER_PLEDGE_WAR" name="RequestSurrenderPledgeWar" />
+		<!--
+		ASCII "cdb"
+		UNICODE "RequestSetPledgeCrest"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SET_PLEDGE_CREST" name="RequestSetPledgeCrest" />
+		<!--
+		ASCII "cSS"
+		UNICODE "RequestGiveNickName"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_GIVE_NICK_NAME" name="RequestGiveNickName" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestShowboard"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SHOWBOARD" name="RequestShowboard" />
+		<!--
+		ASCII "cdd"
+		UNICODE "RequestEnchantItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ENCHANT_ITEM" name="RequestEnchantItem" />
+		<!--
+		ASCII "cdQ"
+		UNICODE "RequestDestroyItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_DESTROY_ITEM" name="RequestDestroyItem" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestFriendInvite"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_FRIEND_INVITE" name="RequestFriendInvite" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestFriendAddReply"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_FRIEND_ADD_REPLY" name="RequestFriendAddReply" />
+		<!--
+		UNICODE "(Send)RequestFriendList"
+		
+		UNICODE "RequestFriendInfoList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_FRIEND_INFO_LIST" name="RequestFriendInfoList" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestFriendDel"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_FRIEND_DEL" name="RequestFriendDel" />
+		<!--
+		ASCII "cS"
+		UNICODE "SendBypassBuildCmd"
+		UNICODE "(Send)%s %s"
+		-->
+		<packet id="CM_SEND_BYPASS_BUILD_CMD" name="SendBypassBuildCmd" />
+		<!--
+		ASCII "cddddddd"
+		UNICODE "(Send)MoveToLocationInVehicle X:%d Y:%d Z:%d OriginX:%d OriginY:%d OriginZ:%d"
+		-->
+		<packet id="CM_MOVE_TO_LOCATION_IN_VEHICLE" name="MoveToLocationInVehicle" />
+		<!--
+		ASCII "cddddd"
+		UNICODE "CanNotMoveAnymore"
+		UNICODE "(Send)%s (Vehicle) OriginX:%d OriginY:%d OriginZ:%d OriginYaw:%d"
+		-->
+		<packet id="CM_CAN_NOT_MOVE_ANYMORE_VEHICLE" name="CanNotMoveAnymore(Vehicle)" />
+		<!-- UNICODE "(Send)RequestQuestList" -->
+		<packet id="CM_REQ_QUEST_LIST" name="RequestQuestList" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestDestroyQuest"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_DESTROY_QUEST" name="RequestDestroyQuest" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestPledgeInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PLEDGE_INFO" name="RequestPledgeInfo" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestPledgeExtendedInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PLEDGE_EXTENDED_INFO" name="RequestPledgeExtendedInfo" />
+		<!--
+		ASCII "cdd"
+		UNICODE "RequestPledgeCrest"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PLEDGE_CREST" name="RequestPledgeCrest" />
+		<!-- UNICODE "(Send)RequestSurrenderPersonally" -->
+		<packet id="CM_REQ_SURRENDER_PERSONALLY" name="RequestSurrenderPersonally" />
+		<!--
+		ASCII "cddd"
+		UNICODE "(Send)RequestAcquireSkillInfo"
+		-->
+		<packet id="CM_REQ_ACQUIRE_SKILL_INFO" name="RequestAcquireSkillInfo" />
+		<!--
+		ASCII "cddd"
+		UNICODE "(Send)RequestAcquireSkill"
+		-->
+		<packet id="CM_REQ_ACQUIRE_SKILL" name="RequestAcquireSkill" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestRestartPoint"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RESTART_POINT" name="RequestRestartPoint" />
+		<!--
+		ASCII "cdS"
+		UNICODE "RequestTutorialLinkHtml"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_TUTORIAL_LINK_HTML" name="RequestTutorialLinkHtml" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestTutorialPassCmdToServer"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_TUTORIAL_PASS_CMD_TO_SERVER" name="RequestTutorialPassCmdToServer" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestTutorialQuestionMarkPressed"
+		UNICODE "(Send)%s ID:%d"
+		-->
+		<packet id="CM_REQ_TUTORIAL_QUESTION_MARK_PRESSED" name="RequestTutorialQuestionMarkPressed" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestTutorialClientEvent"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_TUTORIAL_CLIENT_EVENT" name="RequestTutorialClientEvent" />
+		<!--
+		ASCII "cSd"
+		UNICODE "RequestPetition"
+		UNICODE "(Send)%s %d"
+		-->
+		<packet id="CM_REQ_PETITION" name="RequestPetition" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestPetitionCancel"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PETITION_CANCEL" name="RequestPetitionCancel" />
+		<!--
+		ASCII "cSdd"
+		UNICODE "RequestGMCommand"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_GM_COMMAND" name="RequestGMCommand" />
+		<!--
+		ASCII "cdddS"
+		UNICODE "(Send)RequestPartyMatchConfig"
+		-->
+		<packet id="CM_REQ_PARTY_MATCH_CONFIG" name="RequestPartyMatchConfig" />
+		<!--
+		ASCII "cddd"
+		UNICODE "RequestListPartyWating"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_LIST_PARTY_WATING" name="RequestListPartyWaiting" />
+		<!--
+		ASCII "cd"
+		UNICODE "(Send)RequestPartyMatchList"
+		-->
+		<packet id="CM_REQ_PARTY_MATCH_LIST" name="RequestPartyMatchList" />
+		<!--
+		ASCII "cdddddS"
+		UNICODE "RequestManagePartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_MANAGE_PARTY_ROOM" name="RequestManagePartyRoom" />
+		<!--
+		ASCII "cd"
+		UNICODE "(Send)RequestPartyMatchDetail"
+		-->
+		<packet id="CM_REQ_PARTY_MATCH_DETAIL" name="RequestPartyMatchDetail" />
+		<!--
+		ASCII "cdddd"
+		UNICODE "RequestJoinPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_JOIN_PARTY_ROOM" name="RequestJoinPartyRoom" />
+		<!--
+		ASCII "cdQ"
+		UNICODE "RequestCrystallizeItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CRYSTALLIZE_ITEM" name="RequestCrystallizeItem" />
+		<packet id="CM__PSM_LIST" name="RequestPrivateStoreSellManageList" /> <!-- no name -->
+		<!--
+		ASCII "dQQ"
+		ASCII "cddb"
+		UNICODE "SetPrivateStoreList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SET_PRIVATE_STORE_LIST" name="SetPrivateStoreSellList" />
+		<packet id="CM__PSM_CANCEL" name="RequestPrivateStoreSellManageCancel" /> <!-- no name -->
+		<packet id="CM__PS_QUIT" name="RequestPrivateStoreSellQuit" /> <!-- no name -->
+		<packet id="CM__SET_PS_MSG" name="SetPrivateStoreSellMsg" /> <!-- no name -->
+		<!--
+		ASCII "dQQ"
+		ASCII "cddb"
+		UNICODE "SendPrivateStoreBuyList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SEND_PRIVATE_STORE_BUY_LIST" name="SendPrivateStoreBuyList" /> <!-- because you buy from the seller's store -->
+		<!--
+		UNICODE "RequestGMList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_GM_LIST" name="RequestGMList" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestJoinAlly"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_JOIN_ALLY" name="RequestJoinAlly" />
+		<!--
+		UNICODE "RequestWithdrawAlly"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_WITHDRAW_ALLY" name="RequestWithdrawAlly" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestOustAlly"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OUST_ALLY" name="RequestOustAlly" />
+		<!--
+		UNICODE "RequestDismissAlly"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_DISMISS_ALLY" name="RequestDismissAlly" />
+		<!--
+		ASCII "cdb"
+		UNICODE "RequestSetAllyCrest"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SET_ALLY_CREST" name="RequestSetAllyCrest" />
+		<!--
+		ASCII "cddd"
+		UNICODE "RequestAllyCrest"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ALLY_CREST" name="RequestAllyCrest" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestChangePetName"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CHANGE_PET_NAME" name="RequestChangePetName" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestPetUseItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PET_USE_ITEM" name="RequestPetUseItem" />
+		<!--
+		ASCII "cdQ"
+		UNICODE "RequestGiveItemToPet"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_GIVE_ITEM_TO_PET" name="RequestGiveItemToPet" />
+		<!--
+		ASCII "cdQd"
+		UNICODE "RequestGetItemFromPet"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_GET_ITEM_FROM_PET" name="RequestGetItemFromPet" />
+		<!--
+		UNICODE "RequestAllyInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ALLY_INFO" name="RequestAllyInfo" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestPetGetItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PET_GET_ITEM" name="RequestPetGetItem" />
+		<packet id="CM__PSM_BUY_LIST" name="RequestPrivateStoreBuyManageList" /> <!-- no name -->
+		<!--
+		ASCII "dhhQQhhhhhhhhd"
+		ASCII "cdb"
+		UNICODE "SetPrivateStoreBuyList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SET_PRIVATE_STORE_BUY_LIST" name="SetPrivateStoreBuyList" />
+		<packet id="CM__PSM_BUY_QUIT" name="RequestPrivateStoreBuyManageQuit" /> <!-- no name -->
+		<packet id="CM__SET_PS_BUY_MSG" name="SetPrivateStoreBuyMsg" /> <!-- no name -->
+		<!--
+		ASCII "ddhhQQd"
+		ASCII "cddb"
+		UNICODE "SendPrivateStoreBuyBuyList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SEND_PRIVATE_STORE_BUY_BUY_LIST" name="SendPrivateStoreSellList" /> <!-- because you sell to the buyer's store -->
+		<!--
+		ASCII "cdd"
+		UNICODE "(Send)SendTimeCheckPacket"
+		-->
+		<packet id="CM_SEND_TIME_CHECK" name="SendTimeCheck" />
+		<!--
+		ASCII "cS"
+		UNICODE "(Send)RequestStartAllianceWar"
+		-->
+		<packet id="CM_REQ_START_ALLIANCE_WAR" name="RequestStartAllianceWar" />
+		<!--
+		ASCII "cSd"
+		UNICODE "(Send)ReplyStartAllianceWar"
+		-->
+		<packet id="CM_REPLY_START_ALLIANCE_WAR" name="ReplyStartAllianceWar" />
+		<!--
+		ASCII "cS"
+		UNICODE "(Send)RequestStopAllianceWar"
+		-->
+		<packet id="CM_REQ_STOP_ALLIANCE_WAR" name="RequestStopAllianceWar" />
+		<!--
+		ASCII "cSd"
+		UNICODE "(Send)ReplyStopAllianceWar"
+		-->
+		<packet id="CM_REPLY_STOP_ALLIANCE_WAR" name="ReplyStopAllianceWar" />
+		<!--
+		ASCII "cS"
+		UNICODE "(Send)RequestSurrenderAllianceWar"
+		-->
+		<packet id="CM_REQ_SURRENDER_ALLIANCE_WAR" name="RequestSurrenderAllianceWar" />
+		<!--
+		UNICODE "RequestSkillCoolTime"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SKILL_COOL_TIME" name="RequestSkillCoolTime" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestPackageSendableItemList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PACKAGE_SENDABLE_ITEM_LIST" name="RequestPackageSendableItemList" />
+		<!--
+		ASCII "dQ"
+		ASCII "cddb"
+		UNICODE "RequestPackageSend"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PACKAGE_SEND" name="RequestPackageSend" />
+		<!--
+		ASCII "cdS"
+		ASCII "cd"
+		UNICODE "RequestBlock"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_BLOCK" name="RequestBlock" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestCastleSiegeInfo"
+		-->
+		<packet id="CM_REQ_CASTLE_SIEGE_INFO" name="RequestCastleSiegeInfo" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestCastleSiegeAttackerList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CASTLE_SIEGE_ATTACKER_LIST" name="RequestCastleSiegeAttackerList" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestCastleSiegeDefenderList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CASTLE_SIEGE_DEFENDER_LIST" name="RequestCastleSiegeDefenderList" />
+		<!--
+		ASCII "cddd"
+		UNICODE "RequestJoinCastleSiege"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_JOIN_CASTLE_SIEGE" name="RequestJoinCastleSiege" />
+		<!--
+		ASCII "cddd"
+		UNICODE "RequestConfirmCastleSiegeWaitingList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CONFIRM_CASTLE_SIEGE_WAITING_LIST" name="RequestConfirmCastleSiegeWaitingList" />
+		<!--
+		ASCII "cdd"
+		UNICODE "RequestSetCastleSiegeTime"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SET_CASTLE_SIEGE_TIME" name="RequestSetCastleSiegeTime" />
+		<!--
+		ASCII "cddQhddhhhhhhhh"
+		UNICODE "RequestMultiSellChoose"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_MULTI_SELL_CHOOSE" name="RequestMultiSellChoose" />
+		<!--
+		ASCII "cddd"
+		UNICODE "(Send)NetPing"
+		-->
+		<packet id="CM_NET_PING" name="NetPing" />
+		<!--
+		UNICODE "RequestRemainTime"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_REMAIN_TIME" name="RequestRemainTime" />
+		<!--
+		ASCII "cd"
+		UNICODE "BypassUserCmd"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_BYPASS_USER_CMD" name="BypassUserCmd" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestRecipeBookOpen"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_BOOK_OPEN" name="RequestRecipeBookOpen" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestRecipeItemDelete"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_ITEM_DELETE" name="RequestRecipeItemDelete" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestRecipeItemMakeInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_ITEM_MAKE_INFO" name="RequestRecipeItemMakeInfo" />
+		<!--
+		ASCII "cdddQ"
+		ASCII "dQ"
+		ASCII "cddb"
+		UNICODE "RequestRecipeItemMakeSelf"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_ITEM_MAKE_SELF" name="RequestRecipeItemMakeSelf" />
+		<!--
+		ASCII "cd"
+		UNICODE "VoteSociality"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_VOTE_SOCIALITY" name="VoteSociality" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestHennaItemList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_HENNA_ITEM_LIST" name="RequestHennaItemList" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestHennaItemInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_HENNA_ITEM_INFO" name="RequestHennaItemInfo" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestHennaEquip"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_HENNA_EQUIP" name="RequestHennaEquip" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestHennaUnequipList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_HENNA_UNEQUIP_LIST" name="RequestHennaUnequipList" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestHennaUnequipInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_HENNA_UNEQUIP_INFO" name="RequestHennaUnequipInfo" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestHennaUnequip"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_HENNA_UNEQUIP" name="RequestHennaUnequip" />
+		<!--
+		ASCII "ccdcS"
+		ASCII "cdSSSccb"
+		UNICODE "RequestMakeMacro"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_MAKE_MACRO" name="RequestMakeMacro" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestDeleteMacro"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_DELETE_MACRO" name="RequestDeleteMacro" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestManorList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_MANOR_LIST" name="RequestManorList" />
+		
+		<!--
+		ASCII "chcdd"
+		UNICODE "RequestExEvent_Campaign_Info"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EX_EVENT_CAMPAIGN_INFO" name="RequestExEventCampaignInfo" />
+		
+		<!--
+		UNICODE "ExSendClientINI"
+		UNICODE "(Send)%s INIType : %s"
+		-->
+		<packet id="CM_EX_SEND_CLIENT_INI" name="ExSendClientINI" />
+		
+		<!--
+		ASCII "ch"
+		UNICODE "RequestVipAttendanceItemList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_VIP_ATTENDANCE_ITEM_LIST" name="RequestVipAttendanceItemList" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestVipAttendanceCheck"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_VIP_ATTENDANCE_CHECK" name="RequestVipAttendanceCheck" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestVipProductList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_VIP_PRODUCT_LIST" name="RequestVipProductList" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestVipLuckyGameInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_VIP_LUCKY_GAME_INFO" name="RequestVipLuckyGameInfo" />
+		<!--
+		ASCII "chc"
+		UNICODE "RequestVipLuckyGameItemList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_VIP_LUCKY_GAME_ITEM_LIST" name="RequestVipLuckyGameItemList" />
+		<!--
+		ASCII "chcc"
+		UNICODE "RequestVipLuckyGameBonus"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_VIP_LUCKY_GAME_BONUS" name="RequestVipLuckyGameBonus" />
+		<!--
+		ASCII "ch"
+		UNICODE "ExRequestVipInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_EX_REQ_VIP_INFO" name="ExRequestVipInfo" />
+		<!--
+		ASCII "chQd"
+		UNICODE "RequestCaptchaAnswer"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CAPTCHA_ANSWER" name="RequestCaptchaAnswer" />
+		<!--
+		ASCII "chQ"
+		UNICODE "RequestRefreshCaptchaImage"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_REFRESH_CAPTCHA_IMAGE" name="RequestRefreshCaptchaImage" />
+	</client>
+	<server>
+		<!--
+		UNICODE "SetEncryption"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="LS_SM_SET_ENCRYPTION" name="SetEncryption" /> <!-- ??? -->
+		<!--
+		ASCII "ddddd"
+		UNICODE "AuthGameGuardPacket"
+		UNICODE "(Receive)%s SessionID Error:%d,%d"
+		-->
+		<packet id="LS_SM_AUTH_GAME_GUARD" name="AuthGameGuard" />
+		<!--
+		UNICODE "BlockedAccountPacket"
+		UNICODE "(Receive)%s"
+		ASCII "dd"
+		-->
+		<packet id="LS_SM_BLOCKED_ACCOUNT" name="BlockedAccount" />
+		<!--
+		UNICODE "LoginFailPacket2"
+		UNICODE "(Receive)%s errorcode:%d"
+		-->
+		<packet id="LS_SM_LOGIN_FAIL_2" name="LoginFail2" />
+		<!--
+		UNICODE "AccountKickedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="LS_SM_ACCOUNT_KICKED" name="AccountKicked" />
+		<!--
+		UNICODE "BlockedAccountWithMsgPacket"
+		UNICODE "(Receive)%s"
+		ASCII "hS"
+		-->
+		<packet id="LS_SM_BLOCKED_ACCOUNT_WITH_MSG" name="BlockedAccountWithMsg" />
+		<!--
+		UNICODE "SCCheckReqPacket"
+		UNICODE "(Receive)%s"
+		ASCII "dc"
+		-->
+		<packet id="LS_SM_SC_CHECK_REQ" name="SCCheckReq" />
+		<!--
+		UNICODE "LoginOkPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="LS_SM_LOGIN_OK" name="LoginOk" />
+		<!--
+		UNICODE "ServerFailPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="LS_SM_SERVER_FAIL" name="ServerFail" />
+		<!--
+		ASCII "cc"
+		ASCII "cddcchhcdc"
+		ASCII "hc"
+		UNICODE "ServerListPacket"
+		UNICODE "(Receive)%s Character Created ServerNum:%d"
+		ASCII "ccc"
+		UNICODE "ServerListPacket"
+		UNICODE "(Receive)%s Server ID:%d, char num:%d, tobeDeletedNum:%d"
+		UNICODE "ServerListPacket"
+		UNICODE "(Receive)%s ServerNum:%d"
+		-->
+		<packet id="LS_SM_SERVER_LIST" name="ServerList" />
+		<!--
+		UNICODE "PlayFailPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="LS_SM_PLAY_FAIL" name="PlayFail" />
+		<!--
+		UNICODE "PlayOkPacket"
+		UNICODE "(Receive)%s"
+		ASCII "dd"
+		-->
+		<packet id="LS_SM_PLAY_OK" name="PlayOk" /> <!-- ??? -->
+		<packet id="LS_SM_11" name="Unnamed 11" />
+		
+		<!--
+		UNICODE "TelAuthStartedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="LS_SM_TEL_AUTH_STARTED" name="TelAuthStarted" />
+		<!--
+		UNICODE "LoginOtpFail"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="LS_SM_LOGIN_OTP_FAIL" name="LoginOtpFail" />
+		<!--
+		UNICODE "PIAgreementAckPacket"
+		UNICODE "(Receive)%s"
+		ASCII "dc"
+		-->
+		<packet id="LS_SM_PI_AGREEMENT_ACK" name="PIAgreementAck" />
+		<!--
+		UNICODE "PIAgreementCheckAckPacket"
+		UNICODE "(Receive)%s"
+		ASCII "dc"
+		-->
+		<packet id="LS_SM_PI_AGREEMENT_CHECK_ACK" name="PIAgreementCheckAck" />
+		
+		<packet id="5" name="Dummy_05" />
+		<packet id="8" name="AttackCanceled" />
+		<packet id="11" name="AttackOutofRange" />
+		<packet id="12" name="AttackinCoolTime" />
+		<packet id="13" name="AttackDeadTarget" />
+		<packet id="14" name="LeaveWorld" />
+		<packet id="15" name="AuthLoginSuccess" />
+		<packet id="16" name="AuthLoginFail" />
+		<packet id="17" name="Dummy_13" />
+		<packet id="18" name="Dummy_14" />
+		<packet id="22" name="EquipItem" />
+		<packet id="23" name="UnequipItem" />
+		<packet id="28" name="ExBuySellList" />
+		<packet id="30" name="CharacterSelectionInfo" />
+		<packet id="31" name="LoginFail" />
+		<packet id="44" name="EquipItemSuccess" />
+		<packet id="45" name="EquipItemFail" />
+		<packet id="46" name="UnEquipItemSuccess" />
+		<packet id="47" name="UnEquipItemFail" />
+		<packet id="49" name="TradeStartOk" />
+		<packet id="56" name="ServerClose" />
+		<packet id="66" name="NetworkFail" />
+		<packet id="67" name="Dummy_41" />
+		<packet id="68" name="Dummy_42" />
+		<packet id="75" name="DismissPledge" />
+		<packet id="76" name="SetDismissPledge" />
+		<packet id="84" name="MagicAndSkillList" />
+		<packet id="94" name="Dummy_5C" />
+		<packet id="97" name="StopMoveWithLocation" />
+		<packet id="100" name="Dummy_62" />
+		<packet id="110" name="MagicList" />
+		<packet id="114" name="VehicleCheckLocation" />
+		<packet id="124" name="Dummy_7B" />
+		<packet id="125" name="Dummy_7C" />
+		<!-- UNICODE "(Receive) SurrenderPledgeWarPacket" -->
+		<packet id="130" name="SurrenderPledgeWar" />
+		<packet id="132" name="SetPledgeCrest" />
+		<packet id="137" name="Dummy_88" />
+		<packet id="145" name="FriendAdd" />
+		<packet id="SM_FRIEND_REMOVE" name="FriendRemove" /> <!-- Since GoD -->
+		<packet id="SM_FRIEND_STATUS" name="FriendStatus" /> <!-- Since GoD -->
+		<packet id="155" name="AuthServerList" />
+		<packet id="172" name="GMViewMagicInfo" />
+		<packet id="176" name="ListPartyWaiting" />
+		<packet id="177" name="PartyRoomInfo" />
+		<packet id="184" name="ReviveRequest" />
+		<packet id="194" name="AskJoinAlliance" />
+		<packet id="199" name="SetAllianceCrest" />
+		<packet id="201" name="ServerCloseSocket" />
+		<packet id="212" name="VehicleStart" />
+		<packet id="214" name="Dummy_D5" />
+		<packet id="225" name="BlockList" />
+		<packet id="227" name="NormalCamera" />
+		<packet id="234" name="EventTrigger" />
+		<packet id="237" name="SkillRemainSec" />
+		<!-- UNICODE "DummyPacket" -->
+		<packet id="239" name="Dummy ED" />
+		<packet id="240" name="ManagePledgePower" />
+		<packet id="241" name="Dummy_70" />
+		<packet id="244" name="Snoop" />
+		<packet id="247" name="RecipeShopManageList" />
+		<packet id="248" name="RecipeShopSellList" />
+		<packet id="249" name="RecipeShopItemInfo" />
+		<packet id="250" name="RecipeShopMsg" />
+		<packet id="251" name="ShowCalculator" />
+		<packet id="252" name="MonRaceInfo" />
+		<packet id="253" name="ShowTownMap" />
+		<packet id="254" name="ObserverStart" />
+		<packet id="255" name="ObserverEnd" />
+		<packet id="256" name="ChairSit" />
+		<packet id="263" name="BuyListSeed" />
+		<packet id="264" name="SellListProcure" />
+		<packet id="266" name="RadarControl" />
+		<packet id="267" name="Dummy_EC" />
+		<packet id="268" name="ShowXmasSeal" />
+		<packet id="269" name="GameGuardQuery" />
+		<packet id="270" name="Dummy_EE" />
+		<packet id="271" name="ClientSetTime" />
+		<packet id="272" name="ConfirmDlg" />
+		<packet id="273" name="PartySpelled" />
+		<packet id="274" name="ShopPreviewList" />
+		<packet id="275" name="ShopPreviewInfo" />
+		<packet id="276" name="CameraMode" />
+		<packet id="277" name="EtcStatusUpdate" />
+		<packet id="278" name="ShortBuffStatusUpdate" />
+		<packet id="279" name="SSQStatus" />
+		<packet id="280" name="PetitionVote" />
+		<packet id="281" name="AgitDecoInfo" />
+		<packet id="283" name="FriendPacket" />
+		<packet id="SM_L2_FRIEND_STATUS" name="L2FriendStatus" /> <!-- Before GoD -->
+		<packet id="285" name="L2FriendSay" />
+		<packet id="286" name="ExRegenMax" />
+		<packet id="287" name="ReplyStartPledgeWa" />
+		<packet id="288" name="ReplyStopPledgeWa" />
+		<packet id="289" name="ReplySurrenderPledgeWa" />
+		<packet id="290" name="SetPledgeCres" />
+		<packet id="291" name="ExEventMatchList" />
+		<packet id="292" name="ExEventMatchObserver" />
+		<packet id="293" name="ExEventMatchMessage" />
+		<packet id="294" name="ExEventMatchScore" />
+		<packet id="295" name="ExEventMatchTeamInfo" />
+		<packet id="296" name="ExEventMatchCreate" />
+		<packet id="297" name="ExEventMatchUserInfo" />
+		<packet id="298" name="ExColosseumFenceInfo" />
+		<packet id="299" name="ExEventMatchSpelledInfo" />
+		<packet id="300" name="ExEventMatchFirecracker" />
+		<packet id="301" name="ExEventMatchTeamUnlocked" />
+		<packet id="302" name="ExEventMatchGMTest" />
+		<packet id="303" name="ExPartyRoomMember" />
+		<packet id="304" name="ExClosePartyRoom" />
+		<packet id="305" name="ExManagePartyRoomMember" />
+		<packet id="306" name="ExEventMatchLockResult" />
+		<packet id="307" name="ExAutoSoulShot" />
+		<packet id="308" name="ExEventMatchManage" />
+		<packet id="309" name="ExFishingStart" />
+		<packet id="310" name="ExFishingEnd" />
+		<packet id="311" name="ExFishingStartCombat" />
+		<packet id="312" name="ExFishingHpRegen" />
+		<packet id="313" name="ExEnchantSkillList" />
+		<packet id="314" name="ExEnchantSkillInfo" />
+		<packet id="315" name="ExShowQuestInfo" />
+		<packet id="316" name="ExShowQuestMark" />
+		<packet id="318" name="ExShowSeedInfo" />
+		<packet id="319" name="ExShowCropInfo" />
+		<packet id="320" name="ExShowManorDefaultInfo" />
+		<packet id="321" name="ExShowSeedSetting" />
+		<packet id="322" name="ExShowCropSetting" />
+		<packet id="323" name="ExShowSellCropList" />
+		<packet id="324" name="ExShowProcureCropDetail" />
+		<packet id="325" name="ExHeroList" />
+		<packet id="326" name="ExServerPrimitive" />
+		<packet id="327" name="ExOpenMPCC" />
+		<packet id="328" name="ExCloseMPCC" />
+		<packet id="329" name="ExAskJoinMPCC" />
+		<packet id="330" name="ExPledgeEmblem" />
+		<packet id="331" name="ExOlympiadUserInfo" />
+		<packet id="332" name="ExOlympiadSpelledInfo" />
+		<packet id="333" name="ExOlympiadMode" />
+		<packet id="334" name="ExOlympiadMatchEnd" />
+		<packet id="335" name="ExMailArrived" />
+		<packet id="337" name="ExMultiPartyCommandChannelInfo" />
+		<packet id="338" name="ExPCCafePointInfo" />
+		<packet id="339" name="ExSetCompassZoneCode" />
+		<packet id="340" name="ExGetBossRecord" />
+		<packet id="341" name="ExAskJoinPartyRoom" />
+		<packet id="342" name="ExListPartyMatchingWaitingRoom" />
+		<packet id="343" name="ExSetMpccRouting" />
+		<packet id="344" name="ExShowAdventurerGuideBook" />
+		<packet id="345" name="ExShowScreenMessage" />
+		<packet id="346" name="PledgeSkillList" />
+		<packet id="347" name="PledgeSkillListAdd" />
+		<packet id="348" name="PledgePowerGradeList" />
+		<packet id="349" name="PledgeReceivePowerInfo" />
+		<packet id="350" name="PledgeReceiveMemberInfo" />
+		<packet id="351" name="PledgeReceiveWarList" />
+		<packet id="352" name="PledgeReceiveSubPledgeCreated" />
+		<packet id="353" name="ExRedSky" />
+		<packet id="354" name="PledgeReceiveUpdatePower" />
+		<packet id="355" name="FlySelfDestination" />
+		<packet id="356" name="ShowPCCafeCouponShowUI" />
+		<packet id="357" name="ExSearchOrc" />
+		<packet id="358" name="ExCursedWeaponList" />
+		<packet id="359" name="ExCursedWeaponLocation" />
+		<packet id="360" name="ExRestartClient" />
+		<packet id="361" name="ExRequestHackShield" />
+		<packet id="362" name="ExUseSharedGroupItem" />
+		<packet id="363" name="ExMPCCShowPartyMemberInfo" />
+		<packet id="364" name="ExDuelAskStart" />
+		<packet id="365" name="ExDuelReady" />
+		<packet id="366" name="ExDuelStart" />
+		<packet id="367" name="ExDuelEnd" />
+		<packet id="368" name="ExDuelUpdateUserInfo" />
+		<packet id="369" name="ExShowVariationMakeWindow" />
+		<packet id="370" name="ExShowVariationCancelWindow" />
+		<packet id="371" name="ExPutItemResultForVariationMake" />
+		<packet id="372" name="ExPutIntensiveResultForVariationMake" />
+		<packet id="373" name="ExPutCommissionResultForVariationMake" />
+		<packet id="374" name="ExVariationResult" />
+		<packet id="375" name="ExPutItemResultForVariationCancel" />
+		<packet id="376" name="ExVariationCancelResult" />
+		<packet id="377" name="ExDuelEnemyRelation" />
+		<packet id="378" name="ExPlayAnimation" />
+		<packet id="379" name="ExMPCCPartyInfoUpdate" />
+		<packet id="380" name="ExPlayScene" />
+		<packet id="381" name="ExNeedToChangeName" />
+		<packet id="382" name="Dummy_7D" />
+		<packet id="384" name="ExShowCastleInfo" />
+		<packet id="385" name="ExShowFortressInfo" />
+		<packet id="386" name="ExShowAgitInfo" />
+		<packet id="387" name="ExShowFortressSiegeInfo" />
+		<packet id="388" name="ExPartyPetWindowAdd" />
+		<packet id="389" name="ExPartyPetWindowUpdate" />
+		<packet id="390" name="ExSpawnEmitter" />
+		<packet id="391" name="ExEnchantSkillInfoDetail" />
+		<packet id="392" name="ExBasicActionList" />
+		<packet id="393" name="ExAirShipInfo" />
+		<packet id="394" name="ExAttributeEnchantResult" />
+		<packet id="395" name="ExChooseInventoryAttributeItem" />
+		<packet id="396" name="ExGetOnAirShip" />
+		<packet id="397" name="ExGetOffAirShip" />
+		<packet id="398" name="ExMoveToLocationAirShip" />
+		<packet id="399" name="ExStopMoveAirShip" />
+		<packet id="400" name="ExShowTrace" />
+		<packet id="401" name="ExItemAuctionInfo" />
+		<packet id="402" name="ExPartyPetWindowDelete" />
+		<packet id="403" name="ExTutorialList" />
+		<packet id="404" name="ExRpItemLink" />
+		<packet id="405" name="ExMoveToLocationInAirShip" />
+		<packet id="406" name="ExStopMoveInAirShip" />
+		<packet id="407" name="ExValidateLocationInAirShip" />
+		<packet id="408" name="ExUISetting" />
+		<packet id="409" name="ExMoveToTargetInAirShip" />
+		<packet id="410" name="ExAttackInAirShip" />
+		<packet id="411" name="ExMagicSkillUseInAirShip" />
+		<packet id="412" name="ExShowBaseAttributeCancelWindow" />
+		<packet id="413" name="ExBaseAttributeCancelResult" />
+		<packet id="414" name="ExSubPledgeSkillAdd" />
+		<packet id="415" name="ExResponseFreeServer" />
+		<packet id="416" name="ExShowFortressMapInfo" />
+		<packet id="417" name="ExPVPMatchRecord" />
+		<packet id="418" name="ExPVPMatchUserDie" />
+		<packet id="419" name="ExPrivateStorePackageMsg" />
+		<packet id="420" name="ExPutEnchantTargetItemResult" />
+		<packet id="421" name="ExPutEnchantSupportItemResult" />
+		<packet id="422" name="ExRequestChangeNicknameColor" />
+		<packet id="423" name="ExGetBookMarkInfo" />
+		<packet id="424" name="ExNotifyPremiumItem" />
+		<packet id="425" name="ExGetPremiumItemList" />
+		<packet id="426" name="ExPeriodicItemList" />
+		<packet id="427" name="ExPVPMatchCCRecord" />
+		<packet id="428" name="ExPVPMatchCCMyRecord" />
+		<packet id="429" name="ExPVPMatchCCRetire" />
+		<packet id="430" name="ExJumpToLocation" />
+		<packet id="431" name="ExShowTerritory" />
+		<packet id="432" name="NpcQuestHtmlMessage" />
+		<packet id="433" name="ExSendUIEvent" />
+		<packet id="434" name="ExNotifyBirthDay" />
+		<packet id="435" name="ExShowDominionRegistry" />
+		<packet id="436" name="ExReplyRegisterDominion" />
+		<packet id="437" name="ExReplyDominionInfo" />
+		<packet id="438" name="ExShowOwnthingPos" />
+		<packet id="439" name="ExCleftList" />
+		<packet id="440" name="ExCleftState" />
+		<packet id="441" name="ExDominionChannelSet" />
+		<packet id="442" name="ExBlockUpSetList" />
+		<packet id="443" name="ExBlockUpSetState" />
+		<packet id="444" name="ExStartScenePlayer" />
+		<packet id="445" name="ExAirShipTeleportList" />
+		<packet id="446" name="ExMpccRoomInfo" />
+		<packet id="447" name="ExListMpccWaiting" />
+		<packet id="448" name="ExDissmissMpccRoom" />
+		<packet id="449" name="ExManageMpccRoomMember" />
+		<packet id="450" name="ExMpccRoomMember" />
+		<packet id="451" name="ExVitalityPointInfo" />
+		<packet id="452" name="ExShowSeedMapInfo" />
+		<packet id="453" name="ExMpccPartymasterList" />
+		<packet id="454" name="ExDominionWarStart" />
+		<packet id="455" name="ExDominionWarEnd" />
+		<packet id="456" name="ExDummy" />
+		<packet id="457" name="ExBR_GamePoint" />
+		<packet id="458" name="ExBR_ProductList" />
+		<packet id="459" name="ExBR_ProductInfo" />
+		<packet id="460" name="ExBR_BuyProduct" />
+		<packet id="462" name="ExBrBroadcastEventState" />
+		<packet id="463" name="ExBrExtraUserInfo" />
+		<packet id="464" name="ExShowLines" />
+		<packet id="465" name="ExPartyMemberRenamed" />
+		<packet id="466" name="ExBrBuffEventState" />
+		<packet id="467" name="ExEnchantSkillResult" />
+		<packet id="468" name="ExRefundList" />
+		<packet id="469" name="ExNoticePostArrived" />
+		<packet id="470" name="ExShowReceivedPostList" />
+		<packet id="471" name="ExReplyReceivedPost" />
+		<packet id="472" name="ExShowSentPostList" />
+		<packet id="473" name="ExReplySentPost" />
+		<packet id="474" name="ExResponseShowStepOne" />
+		<packet id="475" name="ExResponseShowStepTwo" />
+		<packet id="476" name="ExResponseShowContents" />
+		<packet id="477" name="ExShowPetitionHtml" />
+		<packet id="478" name="ExReplyPostItemList" />
+		<packet id="479" name="ExChangePostState" />
+		<packet id="480" name="ExNoticePostSent" />
+		<packet id="481" name="ExRaidCharSelected" />
+		<packet id="482" name="ExRaidReserveResult" />
+		<packet id="483" name="ExBR_RecentProductList" />
+		<packet id="484" name="ExBrLoadEventTopRankers" />
+		<packet id="485" name="ExBR_MinigameLoadScores" />
+		<packet id="486" name="ExBR_AgathionEnergyInfo" />
+		<packet id="487" name="ExInitializeSeed" />
+		<packet id="488" name="ExCloseRaidSocket" />
+		<packet id="489" name="ExPrivateMarketList" />
+		<packet id="490" name="ExRaidCharacterSelected" />
+		<packet id="491" name="ExAskCoupleAction" />
+		<packet id="492" name="ExChangeNpcState" />
+		<packet id="493" name="ExAskModifyPartyLooting" />
+		<packet id="494" name="ExSetPartyLooting" />
+		<packet id="495" name="ExRotation" />
+		<packet id="496" name="ExChangeClientEffectInfo" />
+		<packet id="497" name="ExMembershipInfo" />
+		<packet id="498" name="ExReplyHandOverPartyMaster" />
+		<packet id="499" name="ExQuestNpcLogList" />
+		<packet id="500" name="ExQuestItemList" />
+		<packet id="501" name="ExGMViewQuestItemList" />
+		<packet id="502" name="ExRestartResponse" />
+		<packet id="503" name="ExVoteSystemInfo" />
+		<packet id="504" name="ExShuttuleInfo" />
+		<packet id="505" name="ExSuttleGetOn" />
+		<packet id="506" name="ExSuttleGetOff" />
+		<packet id="507" name="ExSuttleMove" />
+		<packet id="508" name="ExMoveToLocationInSuttle" />
+		<packet id="509" name="ExStopMoveInShuttle" />
+		<packet id="510" name="ExValidateLocationInShuttle" />
+		<packet id="511" name="ExAgitAuctionCmd" />
+		<packet id="512" name="ExConfirmAddingPostFriend" />
+		<packet id="513" name="ExReceiveShowPostFriend" />
+		<packet id="514" name="ExReceiveOlympiad" />
+		<packet id="515" name="ExNavitAdventPointInfo" />
+		<packet id="516" name="ExNavitAdventEffect" />
+		<packet id="517" name="ExNavitAdventTimeChange" />
+		<packet id="518" name="ExGoodsInventoryChangedNotify" />
+		<packet id="519" name="ExGoodsInventoryInfo" />
+		<packet id="520" name="ExGoodsInventoryResult" />
+		<packet id="521" name="Ex2ndPasswordCheck" />
+		<packet id="522" name="Ex2ndPasswordVerify" />
+		<packet id="523" name="Ex2ndPasswordAck" />
+		<packet id="524" name="ExSay2Fail" />
+		<packet id="526" name="ExNpcInfo" />
+		<packet id="527" name="ExUserInfo" />
+		<packet id="528" name="ExNpcInfoAbnormalVisualEffect" />
+		<packet id="SM_L2_FRIEND" name="L2Friend" /> <!-- Before GoD -->
+		<packet id="530" name="ExSummonInfo" />
+		<packet id="531" name="ExNpcInfoState" />
+		<packet id="532" name="Dummy_FF" />
+		<packet id="533" name="ExDummy_FE_00" />
+		<packet id="534" name="PledgeSkillListRemove" />
+		<packet id="536" name="ExBR_LoadEventTopRankers" />
+		<packet id="537" name="ExBR_PremiumState" />
+		<packet id="538" name="ExShowChannelingEffect" />
+		<packet id="539" name="ExGetCrystalizingEstimation" />
+		<packet id="540" name="ExGetCrystalizingFail" />
+		<packet id="541" name="ExAbnormalStatusUpdateFromTarget" />
+		<packet id="542" name="ExStopScenePlayer" />
+		<packet id="543" name="ExFlyMove" />
+		<packet id="544" name="ExDynamicQuest" />
+		<packet id="545" name="ExSubjobInfo" />
+		<packet id="546" name="ExChangeMPCost" />
+		<packet id="547" name="ExFriendDetailInfo" />
+		<packet id="548" name="ExBlockAddResult" />
+		<packet id="549" name="ExBlockRemoveResult" />
+		<packet id="550" name="ExBlockDetailInfo" />
+		<packet id="551" name="ExLoadInzonePartyHistory" />
+		<packet id="552" name="ExFriendNotifyNameChange" />
+		<packet id="553" name="ExShowCommission" />
+		<packet id="554" name="ExResponseCommissionItemList" />
+		<packet id="555" name="ExResponseCommissionInfo" />
+		<packet id="556" name="ExResponseCommissionRegister" />
+		<packet id="557" name="ExResponseCommissionDelete" />
+		<packet id="558" name="ExResponseCommissionList" />
+		<packet id="559" name="ExResponseCommissionBuyInfo" />
+		<packet id="560" name="ExResponseCommissionBuyItem" />
+		<packet id="561" name="ExAcquirableSkillListByClass" />
+		<packet id="562" name="ExMagicAttackInfo" />
+		<packet id="563" name="ExAcquireSkillInfo" />
+		<packet id="564" name="ExNewSkillToLearnByLevelUp" />
+		<packet id="565" name="ExCallToChangeClass" />
+		<packet id="566" name="ExChangeToAwakenedClass" />
+		<packet id="567" name="ExTacticalSign" />
+		<packet id="568" name="ExLoadStatWorldRank" />
+		<packet id="569" name="ExLoadStatUser" />
+		<packet id="570" name="ExLoadStatHotLink" />
+		<packet id="571" name="ExGetWebSessionID" />
+		<packet id="572" name="ExFlyMoveBroadcast" />
+		<packet id="573" name="ExShowUsm" />
+		<packet id="574" name="ExShowStatPage" />
+		<packet id="575" name="ExIsCharNameCreatable" />
+		<packet id="576" name="ExAlterSkillRequest" />
+		<packet id="577" name="ExNotifyFlyMoveStart" />
+		<packet id="578" name="ExCloseCommission" />
+		<packet id="579" name="ExChangeAttributeItemList" />
+		<packet id="580" name="ExChangeAttributeInfo" />
+		<packet id="581" name="ExChangeAttributeOk" />
+		<packet id="582" name="ExChangeAttributeFail" />
+		<packet id="583" name="ExLightingCandleEvent" />
+		<packet id="584" name="ExVitalityEffectInfo" />
+		<packet id="585" name="ExLoginVitalityEffectInfo" />
+		<packet id="586" name="ExBR_PresentBuyProduct" />
+		<packet id="587" name="ExMentorList" />
+		<packet id="588" name="ExMentorAdd" />
+		<packet id="589" name="ExMenteeListWaiting" />
+		<packet id="590" name="ExInzoneWaitingInfo" />
+		<packet id="591" name="ExCuriousHouseState" />
+		<packet id="592" name="ExCuriousHouseEnter" />
+		<packet id="593" name="ExCuriousHouseLeave" />
+		<packet id="594" name="ExCuriousHouseMemberList" />
+		<packet id="595" name="ExCuriousHouseMemberUpdate" />
+		<packet id="596" name="ExCuriousHouseRemainTime" />
+		<packet id="597" name="ExCuriousHouseResult" />
+		<packet id="598" name="ExCuriousHouseObserveList" />
+		<packet id="599" name="ExCuriousHouseObserveMode" />
+		<packet id="600" name="ExSysstring" />
+		<packet id="601" name="ExChoose_Shape_Shifting_Item" />
+		<packet id="602" name="ExPut_Shape_Shifting_Target_Item_Result" />
+		<packet id="603" name="ExPut_Shape_Shifting_Extraction_Item_Result" />
+		<packet id="604" name="ExShape_Shifting_Result" />
+		<packet id="605" name="ExCastleState" />
+		<packet id="606" name="ExNCGuardReceiveDataFromServer" />
+		<packet id="607" name="ExKalieEvent" />
+		<packet id="608" name="ExKalieEventJackpotUser" />
+		<packet id="609" name="ExAbnormalVisualEffectInfo" />
+		<packet id="610" name="ExNpcInfoSpeed" />
+		<packet id="611" name="ExSetPledgeEmblemAck" />
+		<packet id="612" name="ExShowBeautyMenu" />
+		<packet id="613" name="ExResponseBeautyList" />
+		<packet id="614" name="ExResponseBeautyRegistReset" />
+		<packet id="615" name="ExResponseResetList" />
+		<packet id="616" name="ExShuffleSeedAndPublicKey" />
+		<packet id="617" name="ExCheck_SpeedHack" />
+		<packet id="618" name="ExBR_NewIConCashBtnWnd" />
+		<packet id="619" name="ExEventCampaignInfo" />
+		<packet id="620" name="ExUnReadMailCount" />
+		<packet id="621" name="ExPledgeCount" />
+		<packet id="622" name="ExAdenaInvenCount" />
+		<packet id="623" name="ExPledgeRecruitInfo" />
+		<packet id="624" name="ExPledgeRecruitApplyInfo" />
+		<packet id="625" name="ExPledgeRecruitBoardSearch" />
+		<packet id="626" name="ExPledgeRecruitBoardDetail" />
+		<packet id="627" name="ExPledgeWaitingListApplied" />
+		<packet id="628" name="ExPledgeWaitingList" />
+		<packet id="629" name="ExPledgeWaitingUser" />
+		<packet id="630" name="ExPledgeDraftListSearch" />
+		<packet id="631" name="ExPledgeWaitingListAlarm" />
+		<packet id="632" name="ExValidateActiveCharacter" />
+		<packet id="633" name="ExCloseCommissionRegister" />
+		<packet id="634" name="ExTeleportToLocationActivate" />
+		<packet id="635" name="ExNotifyWebPetitionReplyAlarm" />
+		<packet id="636" name="ExEventShowXMasWishCard" />
+		<packet id="637" name="ExInvitation_Event_UI_Setting" />
+		<packet id="638" name="ExInvitation_Event_Ink_Energy" />
+		<packet id="639" name="ExCheckAbusing" />
+		<packet id="640" name="ExGMVitalityEffectInfo" />
+		<packet id="641" name="ExPathToAwakeningAlarm" />
+		<packet id="642" name="ExPutEnchantScrollItemResult" />
+		<packet id="643" name="ExRemoveEnchantSupportItemResult" />
+		<packet id="644" name="ExShowCardRewardList" />
+		<packet id="645" name="ExGmViewCharacterInfo" />
+		<packet id="646" name="ExUserInfoEquipSlot" />
+		<packet id="647" name="ExUserInfoCubic" />
+		<packet id="648" name="ExUserInfoAbnormalVisualEffect" />
+		<packet id="649" name="ExUserInfoFishing" />
+		<packet id="650" name="ExPartySpelledInfoUpdate" />
+		<packet id="651" name="ExDivideAdenaStart" />
+		<packet id="652" name="ExDivideAdenaCancel" />
+		<packet id="653" name="ExDivideAdenaDone" />
+		<packet id="654" name="ExPetInfo" />
+		<packet id="655" name="ExAcquireAPSkillList" />
+		<packet id="656" name="ExStartLuckyGame" />
+		<packet id="657" name="ExBettingLuckyGameResult" />
+		<packet id="658" name="ExTrainingZone_Admission" />
+		<packet id="659" name="ExTrainingZone_Leaving" />
+		<packet id="660" name="ExPeriodicHenna" />
+		<packet id="661" name="ExShowAPListWnd" />
+		<packet id="662" name="ExUserInfoInvenWeight" />
+		<packet id="663" name="ExCloseAPListWnd" />
+		<packet id="664" name="ExEnchantOneOK" />
+		<packet id="665" name="ExEnchantOneFail" />
+		<packet id="666" name="ExEnchantOneRemoveOK" />
+		<packet id="667" name="ExEnchantOneRemoveFail" />
+		<packet id="668" name="ExEnchantTwoOK" />
+		<packet id="669" name="ExEnchantTwoFail" />
+		<packet id="670" name="ExEnchantTwoRemoveOK" />
+		<packet id="671" name="ExEnchantTwoRemoveFail" />
+		<packet id="672" name="ExEnchantSucess" />
+		<packet id="673" name="ExEnchantFail" />
+		<packet id="674" name="ExAccountAttendanceInfo" />
+		<packet id="675" name="ExWorldChatCnt" />
+		<packet id="676" name="ExAlchemySkillList" />
+		<packet id="677" name="ExTryMixCube" />
+		<packet id="678" name="ExAlchemyConversion" />
+		<packet id="679" name="ExBeautyItemList" />
+		<packet id="680" name="ExReceiveClientINI" />
+		<packet id="682" name="ExWaitWaitingSubStituteInfo" />
+		<packet id="683" name="ExRegistWaitingSubstituteOk" />
+		<packet id="684" name="ExRegistPartySubstitute" />
+		<packet id="685" name="ExDeletePartySubstitute" />
+		<packet id="686" name="ExTimeOverPartySubstitute" />
+		<packet id="687" name="ExGet24HzSessionID" />
+		<packet id="688" name="ExExchangeSubstitute" />
+		<packet id="689" name="ExPledgeUnionState" />
+		<packet id="690" name="ExPledgeUnionFlow" />
+		<packet id="691" name="ExPledgeUnionStateInfo" />
+		<packet id="692" name="ExUnionPoint" />
+		<packet id="693" name="Ex_Check_Abusing" />
+		<packet id="694" name="ExPartySmallWindowUpdateVital" />
+		<packet id="695" name="ExPartySmallWindowUpdateHPMPCP" />
+		<packet id="696" name="ExPartySmallWindowUpdateSubtitute" />
+		
+		<!--
+		ASCII "cdd"
+		UNICODE "(Receive)VersionCheck"
+		
+		ASCII "cQddcd"
+		UNICODE "VersionCheckPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_VERSION_CHECK" name="VersionCheck" />
+		<!-- UNICODE "S_MOVE_TO_LOCATION" -->
+		<packet id="SM_MOVE_TO_LOCATION" name="MoveToLocation" />
+		<!--
+		ASCII "dddS"
+		UNICODE "(Receive)NcpSay CreatureID : %d classid : %d Say Msg:%s"
+		UNICODE "(Receive)Npc Say CreatureID : %d classid : %d Say Msg:%s"
+		
+		ASCII "ddddSSSSS"
+		ASCII "ddddd"
+		UNICODE "NSPacket"
+		UNICODE "(Receive)%s CreatureID : %d classid : %d Say Msgidx:%d"
+		-->
+		<packet id="SM_NPC_SAY" name="NpcSay" />
+		<!--
+		UNICODE "CharInfo"
+		ASCII "dddddShcdddddddddddddhhhhhhcdddddddddcdddhhhhhhhhffffdddSddddccccccch"
+		ASCII "chd"
+		ASCII "ddc"
+		ASCII "dcc"
+		ASCII "cddd"
+		ASCII "ch"
+		ASCII "ddddd"
+		UNICODE "CIPacket"
+		UNICODE "(Receive)%s ID:%d Name:%s VehicleID:%d X:%d Y:%d Z:%d"
+		-->
+		<packet id="SM_CHAR_INFO" name="CharInfo" />
+		<!-- UNICODE "(Receive)UserInfo ID:%d Name:%s ]VehicleID:%d X:%d Y:%d Z:%d" -->
+		<packet id="SM_USER_INFO" name="UserInfo" />
+		<!--
+		ASCII "dddddddddh"
+		ASCII "dddd"
+		ASCII "ddd"
+		UNICODE "AttackPacket"
+		UNICODE "(Receive)%s AttackerID:%d DefenderID:%d Damage:%d bMiss:%d bCritical:%d"
+		-->
+		<packet id="SM_ATTACK" name="Attack" />
+		<!--
+		ASCII "dd"
+		UNICODE "(Receive)Attacked AttackerID:%d DefenderID:%d"
+		-->
+		<packet id="SM_ATTACKED" name="Attacked" />
+		<!--
+		ASCII "ddddddddddcdd"
+		UNICODE "DiePacket"
+		UNICODE "(Receive)%s ID:%d"
+		-->
+		<packet id="SM_DIE" name="Die" />
+		<!--
+		UNICODE "RevivePacket"
+		UNICODE "(Receive)%s ID:%d"
+		-->
+		<packet id="SM_REVIVE" name="Revive" />
+		<!--
+		ASCII "ddddddQd"
+		UNICODE "SpawnItemPacket"
+		UNICODE "(Receive)%s ItemID:%d, x:%d, y:%d, z:%d"
+		-->
+		<packet id="SM_SPAWN_ITEM" name="SpawnItem" />
+		<!--
+		ASCII "ddddddcQc"
+		UNICODE "DropItemPacket"
+		UNICODE "(Receive)%s UserID:%d, ItemID:%d, x:%d, y:%d, z:%d"
+		-->
+		<packet id="SM_DROP_ITEM" name="DropItem" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "GetItemPacket"
+		UNICODE "(Receive)%s UserID:%d, ItemID:%d"
+		-->
+		<packet id="SM_GET_ITEM" name="GetItem" />
+		<!--
+		ASCII "ddcc"
+		ASCII "cd"
+		UNICODE "StatusUpdatePacket"
+		UNICODE "(Receive)StatusUpdate StatusNum:%d"
+		-->
+		<packet id="SM_STATUS_UPDATE" name="StatusUpdate" />
+		<!--
+		ASCII "dSdd"
+		UNICODE "NpcHtmlMessagePacket"
+		UNICODE "(Receive)%s UserID:%d DisplayType:%d"
+		-->
+		<packet id="SM_NPC_HTML_MESSAGE" name="NpcHtmlMessage" />
+		<!--
+		ASCII "Qdh"
+		ASCII "ddQhhdhhhQhhhhhhhh"
+		UNICODE "(Receive)SellList SellListNum:%d"
+		-->
+		<packet id="SM_SELL_LIST" name="SellList" />
+		<!--
+		ASCII "Qdh"
+		ASCII "ddQhhdhhhQhhhhhhhh"
+		UNICODE "(Receive)BuyList BuyListNum:%d"
+		-->
+		<packet id="SM_BUY_LIST" name="BuyList" />
+		<!--
+		ASCII "dc"
+		UNICODE "DeleteObjectPacket"
+		UNICODE "(Receive)%s ObjectID:%d"
+		-->
+		<packet id="SM_DELETE_OBJECT" name="DeleteObject" />
+		<!--
+		ASCII "SdSddddddddddffQQddddd"
+		UNICODE "CharacterSelectedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CHARACTER_SELECTED" name="CharacterSelected" />
+		<!--
+		UNICODE "NewCharacterSuccessPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_NEW_CHARACTER_SUCCESS" name="NewCharacterSuccess" />
+		<!--
+		UNICODE "NewCharacterFailPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_NEW_CHARACTER_FAIL" name="NewCharacterFail" />
+		<!--
+		UNICODE "CharacterCreateSuccessPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CHARACTER_CREATE_SUCCESS" name="CharacterCreateSuccess" />
+		<!--
+		UNICODE "CharacterCreateFailPacket"
+		UNICODE "(Receive)%s errorcode:%d"
+		-->
+		<packet id="SM_CHARACTER_CREATE_FAIL" name="CharacterCreateFail" />
+		<!--
+		UNICODE "CharacterDeleteSuccessPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CHARACTER_DELETE_SUCCESS" name="CharacterDeleteSuccess" />
+		<!--
+		UNICODE "CharacterDeleteFailPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CHARACTER_DELETE_FAIL" name="CharacterDeleteFail" />
+		<!--
+		ASCII "ddddddddddddddddddffffdddcccccdSdSddd"
+		ASCII "dddddccffddddccddddddcdddf"
+		UNICODE "NpcInfo"
+		UNICODE "(Receive)NpcInfo ID:%d, ClassID:%d, CanBeAttacked:%d, X:%d, Y:%d, Z:%d"
+		-->
+		<packet id="SM_NPC_INFO" name="NpcInfo" />
+		<!--
+		ASCII "hh"
+		UNICODE "ItemListPacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_ITEM_LIST" name="ItemList" />
+		<!--
+		UNICODE "SunRisePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SUN_RISE" name="SunRise" />
+		<!--
+		UNICODE "SunSetPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SUN_SET" name="SunSet" />
+		<!--
+		ASCII "dc"
+		UNICODE "TradeStartPacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_TRADE_START" name="TradeStart" />
+		<!--
+		UNICODE "TradeOwnAddPacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_TRADE_OWN_ADD" name="TradeOwnAdd" />
+		<!--
+		UNICODE "TradeOtherAddPacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_TRADE_OTHER_ADD" name="TradeOtherAdd" />
+		<!--
+		UNICODE "TradeDonePacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_TRADE_DONE" name="TradeDone" />
+		<!--
+		UNICODE "ActionFailPacket"
+		UNICODE "(Receive)%s Type=%d"
+		-->
+		<packet id="SM_ACTION_FAIL" name="ActionFail" />
+		<!--
+		UNICODE "InventoryUpdatePacket"
+		UNICODE "(Receive)%s Cnt:%d"
+		UNICODE "(Receive)%s WorkType:%d, ServerId:%d, ClassId:%d"
+		-->
+		<packet id="SM_INVENTORY_UPDATE" name="InventoryUpdate" />
+		<!--
+		ASCII "dddddd"
+		UNICODE "TeleportToLocationPacket"
+		UNICODE "(Receive)%s id:%d, x:%d, y:%d, z:%d, IsValidation:%d, nYaw:%d"
+		-->
+		<packet id="SM_TELEPORT_TO_LOCATION" name="TeleportToLocation" />
+		<!--
+		ASCII "dddddd"
+		UNICODE "TargetSelectedPacket"
+		UNICODE "(Receive)%s actorid:%d, targetid:%d"
+		-->
+		<packet id="SM_TARGET_SELECTED" name="TargetSelected" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "TargetUnselectedPacket"
+		UNICODE "(Receive)%s id:%d"
+		-->
+		<packet id="SM_TARGET_UNSELECTED" name="TargetUnselected" />
+		<!--
+		UNICODE "AutoAttackStartPacket"
+		UNICODE "(Receive)%s id:%d"
+		-->
+		<packet id="SM_AUTO_ATTACK_START" name="AutoAttackStart" />
+		<!--
+		UNICODE "AutoAttackStopPacket"
+		UNICODE "(Receive)%s id:%d"
+		-->
+		<packet id="SM_AUTO_ATTACK_STOP" name="AutoAttackStop" />
+		<!--
+		ASCII "ddd"
+		UNICODE "SocialActionPacket"
+		UNICODE "%s"
+		-->
+		<packet id="SM_SOCIAL_ACTION" name="SocialAction" />
+		<!--
+		ASCII "ddd"
+		UNICODE "ChangeMoveTypePacket"
+		UNICODE "(Receive)%s id:%d, MoveType:%d, EnvType:%d"
+		-->
+		<packet id="SM_CHANGE_MOVE_TYPE" name="ChangeMoveType" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "ChangeWaitTypePacket"
+		UNICODE "(Receive)%s id:%d, WaitType:%d"
+		-->
+		<packet id="SM_CHANGE_WAIT_TYPE" name="ChangeWaitType" />
+		<!--
+		UNICODE "CreatePledgePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CREATE_PLEDGE" name="CreatePledge" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "dSSd"
+		UNICODE "AskJoinPledgePacket"
+		-->
+		<packet id="SM_ASK_JOIN_PLEDGE" name="AskJoinPledge" />
+		<!--
+		UNICODE "JoinPledgePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_JOIN_PLEDGE" name="JoinPledge" />
+		<!--
+		UNICODE "WithdrawalPledgePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_WITHDRAWAL_PLEDGE" name="WithdrawalPledge" />
+		<!--
+		UNICODE "OustPledgeMemberPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_OUST_PLEDGE_MEMBER" name="OustPledgeMember" />
+		<!--
+		UNICODE "SetOustPledgeMemberPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SET_OUST_PLEDGE_MEMBER" name="SetOustPledgeMember" />
+		<!--
+		ASCII "Sd"
+		UNICODE "AskJoinPartyPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_ASK_JOIN_PARTY" name="AskJoinParty" />
+		<!--
+		ASCII "dd"
+		UNICODE "JoinPartyPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_JOIN_PARTY" name="JoinParty" />
+		<!--
+		UNICODE "WithdrawalPartyPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_WITHDRAWAL_PARTY" name="WithdrawalParty" />
+		<!--
+		UNICODE "OustPartyMemberPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_OUST_PARTY_MEMBER" name="OustPartyMember" />
+		<!--
+		UNICODE "SetOustPartyMemberPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SET_OUST_PARTY_MEMBER" name="SetOustPartyMember" />
+		<!--
+		UNICODE "DismissPartyPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_DISMISS_PARTY" name="DismissParty" />
+		<!--
+		UNICODE "SetDismissPartyPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SET_DISMISS_PARTY" name="SetDismissParty" />
+		<!--
+		ASCII "hQd"
+		UNICODE "WareHouseDepositListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_WARE_HOUSE_DEPOSIT_LIST" name="WareHouseDepositList" />
+		<!--
+		ASCII "hQh"
+		ASCII "dd"
+		UNICODE "WareHouseWithdrawListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_WARE_HOUSE_WITHDRAW_LIST" name="WareHouseWithdrawList" />
+		<!--
+		UNICODE "WareHouseDonePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_WARE_HOUSE_DONE" name="WareHouseDone" />
+		<!--
+		ASCII "dd"
+		ASCII "dddddhhd"
+		ASCII "dddcddd"
+		ASCII "dd"
+		ASCII "dd"
+		ASCII "dd"
+		ASCII "dd"
+		UNICODE "ShortCutRegisterPacket"
+		UNICODE "(Receive)%s ShortCutType=%d RoomNum=%d"
+		-->
+		<packet id="SM_SHORT_CUT_REGISTER" name="ShortCutRegister" />
+		<!--
+		ASCII "dd"
+		ASCII "dddddhhd"
+		ASCII "dddcd"
+		ASCII "dd"
+		ASCII "dd"
+		ASCII "dd"
+		ASCII "dd"
+		UNICODE "ShortCutInitPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SHORT_CUT_INIT" name="ShortCutInit" />
+		<!-- UNICODE "(Receive) ShortCutDeletePacket" -->
+		<packet id="SM_SHORT_CUT_DELETE" name="ShortCutDelete" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "StopMovePacket"
+		UNICODE "(Receive)%s ID:%d, OriginX:%d, OriginY:%d, OriginZ:%d, OriginYaw:%d "
+		-->
+		<packet id="SM_STOP_MOVE" name="StopMove" />
+		<!--
+		ASCII "dddddddddddh"
+		ASCII "ddd"
+		ASCII "ddd"
+		ASCII "dd"
+		UNICODE "MagicSkillUse"
+		UNICODE "(Receive)%s SkillID=%d, SkillLevel=%d, SpellerID=%d, TargetID=%d"
+		-->
+		<packet id="SM_MAGIC_SKILL_USE" name="MagicSkillUse" />
+		<!--
+		UNICODE "MagicSkillCanceled"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_MAGIC_SKILL_CANCELED" name="MagicSkillCanceled" />
+		<!--
+		ASCII "dd"
+		ASCII "Sd"
+		ASCII "dd"
+		ASCII "SSSSS"
+		UNICODE "SayPacket2"
+		UNICODE "(Receive)%s ID : %d Name : %s Say Msg:%s Type:%d"
+		-->
+		<packet id="SM_SAY_2" name="Say2" />
+		<!--
+		ASCII "ddd"
+		UNICODE "(Receive)EquipUpdatePacket"
+		-->
+		<packet id="SM_EQUIP_UPDATE" name="EquipUpdate" />
+		<!--
+		ASCII "dddd"
+		UNICODE "(Receive) DoorInfo ID:%d X:%d Y:%d Z:%d"
+		
+		ASCII "ddd"
+		UNICODE "(Receive) DoorInfo ID:%d Ediotr id :%d"
+		-->
+		<packet id="SM_DOOR_INFO" name="DoorInfo" />
+		<!--
+		ASCII "ddddddd"
+		UNICODE "(Receive) DoorStatusUpdate ID:%d bClose:%d DamageGrade:%d bEnemy:%d"
+		-->
+		<packet id="SM_DOOR_STATUS_UPDATE" name="DoorStatusUpdate" />
+		<!--
+		ASCII "dcc"
+		ASCII "dSdddddddchchd"
+		ASCII "ddcSddddc"
+		UNICODE "PartySmallWindowAllPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_SMALL_WINDOW_ALL" name="PartySmallWindowAll" />
+		<!--
+		ASCII "dddSdddddddchch"
+		UNICODE "PartySmallWindowAddPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_SMALL_WINDOW_ADD" name="PartySmallWindowAdd" />
+		<!--
+		UNICODE "PartySmallWindowDeleteAllPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_SMALL_WINDOW_DELETE_ALL" name="PartySmallWindowDeleteAll" />
+		<!--
+		ASCII "dS"
+		UNICODE "PartySmallWindowDeletePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_SMALL_WINDOW_DELETE" name="PartySmallWindowDelete" />
+		<!--
+		ASCII "dh"
+		UNICODE "PartySmallWindowUpdatePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_SMALL_WINDOW_UPDATE" name="PartySmallWindowUpdate" />
+		<!--
+		ASCII "ddddSS"
+		ASCII "dddddddddddSddd"
+		ASCII "Sdddddd"
+		UNICODE "PledgeShowMemberListAllPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_SHOW_MEMBER_LIST_ALL" name="PledgeShowMemberListAll" />
+		<!--
+		ASCII "Sddddddd"
+		UNICODE "PledgeShowMemberListUpdatePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_SHOW_MEMBER_LIST_UPDATE" name="PledgeShowMemberListUpdate" />
+		<!--
+		ASCII "Sdddddd"
+		UNICODE "PledgeShowMemberListAddPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_SHOW_MEMBER_LIST_ADD" name="PledgeShowMemberListAdd" />
+		<!--
+		UNICODE "PledgeShowMemberListDeletePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_SHOW_MEMBER_LIST_DELETE" name="PledgeShowMemberListDelete" />
+		<!--
+		ASCII "ddddcc"
+		UNICODE "SkillListPacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_SKILL_LIST" name="SkillList" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "VehicleInfoPacket"
+		UNICODE "(Receive)%s ID:%d x:%d y:%d z:%d yaw:%d"
+		-->
+		<packet id="SM_VEHICLE_INFO" name="VehicleInfo" />
+		<!--
+		ASCII "dddddd"
+		UNICODE "VehicleDeparturePacket"
+		UNICODE "(Receive)%s ID:%d MoveSpeed:%d, RotationSpeed:%d x:%d y:%d z:%d"
+		-->
+		<packet id="SM_VEHICLE_DEPARTURE" name="VehicleDeparture" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "GetOnVehiclePacket"
+		UNICODE "(Receive)%s UserID:%d VehicleID:%d"
+		-->
+		<packet id="SM_GET_ON_VEHICLE" name="GetOnVehicle" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "GetOffVehiclePacket"
+		UNICODE "(Receive)%s UserID:%d VehicleID:%d"
+		-->
+		<packet id="SM_GET_OFF_VEHICLE" name="GetOffVehicle" />
+		<!--
+		ASCII "dS"
+		UNICODE "RestartResponsePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RESTART_RESPONSE" name="RestartResponse" />
+		<!--
+		ASCII "ddddddddd"
+		UNICODE "MoveToPawnPacket"
+		UNICODE "(Receive)%s ID:%d TargetID:%d Dist:%d OriginX:%d OriginY:%d OriginZ:%d"
+		-->
+		<packet id="SM_MOVE_TO_PAWN" name="MoveToPawn" />
+		<!--
+		UNICODE "TradeRequestPacket"
+		UNICODE "(Receive)%s User ID : %d"
+		-->
+		<packet id="SM_TRADE_REQUEST" name="TradeRequest" />
+		<!--
+		ASCII "dddddc"
+		UNICODE "ValidateLocationPacket"
+		UNICODE "(Receive)%s ID:%d OriginX:%d OriginY:%d OriginZ:%d OriginYaw:%d"
+		-->
+		<packet id="SM_VALIDATE_LOCATION" name="ValidateLocation" />
+		<!--
+		ASCII "dddd"
+		UNICODE "StartRotatingPacket"
+		UNICODE "(Receive)%s ID:%d CurYaw:%d Dir:%d"
+		-->
+		<packet id="SM_START_ROTATING" name="StartRotating" />
+		<!--
+		ASCII "ddd"
+		UNICODE "FinishRotatingPacket"
+		UNICODE "(Receive)%s ID:%d CurYaw:%d"
+		-->
+		<packet id="SM_FINISH_ROTATING" name="FinishRotating" />
+		<!--
+		UNICODE "SystemMessagePacket"
+		UNICODE "(Receive)%s Msg Number : %d"
+		-->
+		<packet id="SM_SYSTEM_MESSAGE" name="SystemMessage" />
+		<!--
+		ASCII "SS"
+		UNICODE "(Receive) StartPledgeWarPacket"
+		-->
+		<packet id="SM_START_PLEDGE_WAR" name="StartPledgeWar" />
+		<!-- UNICODE "(Receive) ReplyStartPledgeWarPacket" -->
+		<packet id="SM_REPLY_START_PLEDGE_WAR" name="ReplyStartPledgeWar" />
+		<!--
+		ASCII "SS"
+		UNICODE "(Receive) StopPledgeWarPacket"
+		-->
+		<packet id="SM_STOP_PLEDGE_WAR" name="StopPledgeWar" />
+		<!-- UNICODE "(Receive) ReplyStopPledgeWarPacket" -->
+		<packet id="SM_REPLY_STOP_PLEDGE_WAR" name="ReplyStopPledgeWar" />
+		<!-- UNICODE "(Receive) ReplySurrenderPledgeWarPacket" -->
+		<packet id="SM_REPLY_SURRENDER_PLEDGE_WAR" name="ReplySurrenderPledgeWar" />
+		<!--
+		ASCII "ddd"
+		UNICODE "PledgeCrestPacket"
+		UNICODE "(Receive)%s serverIDX:%d, crestId:%d, ImgByte:%d"
+		-->
+		<packet id="SM_PLEDGE_CREST" name="PledgeCrest" />
+		<!--
+		ASCII "dddd"
+		UNICODE "SetupGaugePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SETUP_GAUGE" name="SetupGauge" />
+		<!--
+		ASCII "SSSSSSSSS"
+		UNICODE "ShowBoardPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SHOW_BOARD" name="ShowBoard" />
+		<!--
+		UNICODE "ChooseInventoryItemPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CHOOSE_INVENTORY_ITEM" name="ChooseInventoryItem" />
+		<!--
+		ASCII "dddddddd"
+		UNICODE "MoveToLocationInVehiclePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_MOVE_TO_LOCATION_IN_VEHICLE" name="MoveToLocationInVehicle" />
+		<!--
+		ASCII "dddddd"
+		UNICODE "StopMoveInVehiclePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_STOP_MOVE_IN_VEHICLE" name="StopMoveInVehicle" />
+		<!--
+		ASCII "dddddd"
+		UNICODE "ValidateLocationInVehiclePacket"
+		UNICODE "(Receive)%s ID:%d OriginX:%d OriginY:%d OriginZ:%d OriginYaw:%d"
+		-->
+		<packet id="SM_VALIDATE_LOCATION_IN_VEHICLE" name="ValidateLocationInVehicle" />
+		<!--
+		ASCII "hh"
+		UNICODE "TradeUpdatePacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_TRADE_UPDATE" name="TradeUpdate" />
+		<!-- UNICODE "TradePressOwnOkPacket" -->
+		<packet id="SM_TRADE_PRESS_OWN_OK" name="TradePressOwnOk" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "MagicSkillLaunchedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_MAGIC_SKILL_LAUNCHED" name="MagicSkillLaunched" />
+		<!--
+		ASCII "dSddddS"
+		UNICODE "FriendAddRequestResult"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_FRIEND_ADD_REQUEST_RESULT" name="FriendAddRequestResult" />
+		<!-- UNICODE "FriendList" -->
+		<packet id="SM_FRIEND_LIST" name="FriendList" />
+		<!-- UNICODE "TradePressOtherOkPacket" -->
+		<packet id="SM_TRADE_PRESS_OTHER_OK" name="TradePressOtherOk" />
+		<!--
+		ASCII "cd"
+		UNICODE "FriendAddRequest"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_FRIEND_ADD_REQUEST" name="FriendAddRequest" />
+		<!--
+		UNICODE "LogOutOkPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_LOG_OUT_OK" name="LogOutOk" />
+		<!--
+		ASCII "dhdh"
+		UNICODE "AbnormalStatusUpdatePacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_ABNORMAL_STATUS_UPDATE" name="AbnormalStatusUpdate" />
+		<!--
+		ASCII "dd"
+		UNICODE "OneTimeQuest"
+		UNICODE "QuestListPacket"
+		UNICODE "(Receive)%s : %d"
+		-->
+		<packet id="SM_QUEST_LIST" name="QuestList" />
+		<!--
+		ASCII "ddQdhhh"
+		UNICODE "EnchantResultPacket"
+		UNICODE "(Receive)%s Result: %d CrystalClassID : %d CrystalCount : %I64d EnchantValue : %d Option1 : %d Optio"
+		-->
+		<packet id="SM_ENCHANT_RESULT" name="EnchantResult" />
+		<!--
+		UNICODE "PledgeShowMemberListDeleteAllPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_SHOW_MEMBER_LIST_DELETE_ALL" name="PledgeShowMemberListDeleteAll" />
+		<!--
+		ASCII "ddSS"
+		UNICODE "PledgeInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_INFO" name="PledgeInfo" />
+		<!-- UNICODE "PledgeExtendedInfoPacket" -->
+		<packet id="SM_PLEDGE_EXTENDED_INFO" name="PledgeExtendedInfo" />
+		<!-- UNICODE "(Receive) SurrenderPersonallyPacket" -->
+		<packet id="SM_SURRENDER_PERSONALLY" name="SurrenderPersonally" />
+		<!--
+		ASCII "ddddddd"
+		UNICODE "RidePacket"
+		UNICODE "(Receive)%s ID:%d bRide:%d, RideType:%d RideClassID : %d"
+		-->
+		<packet id="SM_RIDE" name="Ride" />
+		<!--
+		UNICODE "DummyPacket"
+		
+		This packet was in use by the 336 server; yet had no name in 336/377 clients.
+		Starting from C1 (419), this packet is named as DummyPacket.
+		However, that had no impact on its actual use.
+		-->
+		<packet id="SM__GNN_DONE" name="GiveNickNameDone" /> <!-- no name; DummyPacket since C1 419 -->
+		<!--
+		ASCII "ddddddddddddSdddd"
+		UNICODE "PledgeShowInfoUpdatePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_SHOW_INFO_UPDATE" name="PledgeShowInfoUpdate" />
+		<!--
+		UNICODE "ClientActionPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CLIENT_ACTION" name="ClientAction" />
+		<!--
+		ASCII "dhQccc"
+		ASCII "dQ"
+		ASCII "dh"
+		UNICODE "AcquireSkillListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_ACQUIRE_SKILL_LIST" name="AcquireSkillList" />
+		<!--
+		ASCII "ddQd"
+		ASCII "ddQd"
+		UNICODE "AcquireSkillInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_ACQUIRE_SKILL_INFO" name="AcquireSkillInfo" />
+		<!--
+		ASCII "ddSdddddffffdddd"
+		UNICODE "ServerObjectInfoPacket"
+		UNICODE "(Receive)%s ID:%d, ClassID:%d, CanBeAttacked:%d, X:%d, Y:%d, Z:%d"
+		-->
+		<packet id="SM_SERVER_OBJECT_INFO" name="ServerObjectInfo" />
+		<!--
+		UNICODE "GMHidePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GM_HIDE" name="GMHide" />
+		<!--
+		UNICODE "AcquireSkillDonePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_ACQUIRE_SKILL_DONE" name="AcquireSkillDone" />
+		<!--
+		ASCII "dddddSddddQfddddddddddddQdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhccdhdddddddddddddddddddddddffffddddSdddcccddhhddddccdccddhhhhhhhhdddd"
+		UNICODE "GMViewCharacterInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GM_VIEW_CHARACTER_INFO" name="GMViewCharacterInfo" />
+		<!--
+		ASCII "dSddSS"
+		ASCII "dddddddddddSddd"
+		ASCII "Sdddddd"
+		UNICODE "GMViewPledgeInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GM_VIEW_PLEDGE_INFO" name="GMViewPledgeInfo" />
+		<!--
+		ASCII "Sd"
+		ASCII "ddddcc"
+		UNICODE "GMViewSkillInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GM_VIEW_SKILL_INFO" name="GMViewSkillInfo" />
+		<!--
+		ASCII "Sh"
+		ASCII "dd"
+		ASCII "ddQQ"
+		UNICODE "GMViewQuestInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GM_VIEW_QUEST_INFO" name="GMViewQuestInfo" />
+		<!--
+		ASCII "Sdhh"
+		UNICODE "GMViewItemListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GM_VIEW_ITEM_LIST" name="GMViewItemList" />
+		<!--
+		ASCII "SQh"
+		UNICODE "GMViewWarehouseWithdrawListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GM_VIEW_WAREHOUSE_WITHDRAW_LIST" name="GMViewWarehouseWithdrawList" />
+		<!--
+		ASCII "dSdddddddd"
+		UNICODE "(Receive)PartyMatchListPacket"
+		-->
+		<packet id="SM_PARTY_MATCH_LIST" name="PartyMatchList" />
+		<!--
+		ASCII "ddddS"
+		UNICODE "(Receive)PartyMatchDetailPacket"
+		-->
+		<packet id="SM_PARTY_MATCH_DETAIL" name="PartyMatchDetail" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "dSdddddd"
+		UNICODE "PlaySoundPacket"
+		-->
+		<packet id="SM_PLAY_SOUND" name="PlaySound" />
+		<!--
+		ASCII "ddddddddddd"
+		ASCII "ddddSd"
+		UNICODE "StaticObjectPacket"
+		
+		UNICODE "(Receive)%s UPDATE StaticObjectID[%d] ServerID[%d] Type[%d] bTargetable[%d] MeshIndex[%d] bClose[%d]"
+		UNICODE "	     StaticObjectPacket - Mover[%s:%d] bOpen[%d]"
+		UNICODE "(Receive)%s CREATE StaticObjectID[%d] ServerID[%d] Type[%d] bTargetable[%d] MeshIndex[%d] bClose[%d]"
+		UNICODE "	     StaticObjectPacket - NOT found Mover[%d]"
+		-->
+		<packet id="SM_STATIC_OBJECT" name="StaticObject" />
+		<!--
+		ASCII "ddd"
+		ASCII "ddddhhhh"
+		ASCII "ddddhhhhd"
+		UNICODE "(Receive)PrivateSellList SellListNum1:%d SellListNum2:%d"
+		
+		ASCII "ddQd"
+		UNICODE "PrivateStoreManageList"
+		UNICODE "(Receive)%s SellListNum1:%d SellListNum2:%d"
+		-->
+		<packet id="SM_PRIVATE_STORE_MANAGE_LIST" name="PrivateStoreSellManageList" />
+		<!--
+		ASCII "ddd"
+		ASCII "ddddhhhhd"
+		UNICODE "(Receive)PrivateBuyList BuyListNum1:%d"
+		
+		ASCII "ddQdd"
+		UNICODE "PrivateStoreList"
+		UNICODE "(Receive)%s BuyListNum1:%d"
+		-->
+		<packet id="SM_PRIVATE_STORE_LIST" name="PrivateStoreSellList" />
+		<!--
+		ASCII "dS"
+		UNICODE "PrivateStoreMsg"
+		UNICODE "(Receive)%s MSG : %s"
+		-->
+		<packet id="SM_PRIVATE_STORE_MSG" name="PrivateStoreSellMsg" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "dc"
+		UNICODE "ShowMinimapPacket"
+		-->
+		<packet id="SM_SHOW_MINIMAP" name="ShowMinimap" />
+		<!--
+		UNICODE "AbnormalVisualEffectPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_ABNORMAL_VISUAL_EFFECT" name="AbnormalVisualEffect" />
+		<!--
+		ASCII "dS"
+		UNICODE "TutorialShowHtmlPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_TUTORIAL_SHOW_HTML" name="TutorialShowHtml" />
+		<!--
+		UNICODE "TutorialShowQuestionMarkPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_TUTORIAL_SHOW_QUESTION_MARK" name="TutorialShowQuestionMark" />
+		<!--
+		UNICODE "TutorialEnableClientEventPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_TUTORIAL_ENABLE_CLIENT_EVENT" name="TutorialEnableClientEvent" />
+		<!--
+		UNICODE "TutorialCloseHtmlPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_TUTORIAL_CLOSE_HTML" name="TutorialCloseHtml" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "ShowRadarPacket"
+		UNICODE "(Receive)ShowRadarPacket"
+		-->
+		<packet id="SM_SHOW_RADAR" name="ShowRadar" />
+		<!--
+		ASCII "ddd"
+		UNICODE "(Receive)DeleteRadarPacket"
+		-->
+		<packet id="SM_DELETE_RADAR" name="DeleteRadar" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "dhd"
+		UNICODE "MyTargetSelectedPacket"
+		-->
+		<packet id="SM_MY_TARGET_SELECTED" name="MyTargetSelected" />
+		<!--
+		ASCII "dddd"
+		UNICODE "PartyMemberPositionPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_MEMBER_POSITION" name="PartyMemberPosition" />
+		<!--
+		UNICODE "JoinAlliancePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_JOIN_ALLIANCE" name="JoinAlliance" />
+		<!--
+		UNICODE "WithdrawAlliancePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_WITHDRAW_ALLIANCE" name="WithdrawAlliance" />
+		<!--
+		UNICODE "OustAllianceMemberPledgePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_OUST_ALLIANCE_MEMBER_PLEDGE" name="OustAllianceMemberPledge" />
+		<!--
+		UNICODE "DismissAlliancePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_DISMISS_ALLIANCE" name="DismissAlliance" />
+		<!--
+		ASCII "ddd"
+		UNICODE "AllianceCrestPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_ALLIANCE_CREST" name="AllianceCrest" />
+		<!--
+		ASCII "dd"
+		UNICODE "PetStatusShowPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PET_STATUS_SHOW" name="PetStatusShow" />
+		<!--
+		ASCII "dddddddddddddddddddffffdddcccccdSdSdddddddddddQQQddddddddddddddddccdddddd"
+		UNICODE "(Receive)PetInfo ID:%d, ClassID:%d, CanBeAttacked:%d, X:%d, Y:%d, Z:%d"
+		-->
+		<packet id="SM_PET_INFO" name="PetInfo" />
+		<!--
+		ASCII "cddddddddhhhhhhhhffffdddcdSdScdddddddQcQQQdddddddddddddddccccddcc"
+		UNICODE "MyPetSummonInfoPacket"
+		UNICODE "PetInfo"
+		UNICODE "(Receive)%s ID:%d, ClassID:%d, CanBeAttacked:%d, X:%d, Y:%d, Z:%d"
+		-->
+		<packet id="SM_MY_PET_SUMMON_INFO" name="MyPetSummonInfo" />
+		<!--
+		ASCII "ddQhhhdhhhhhhhhhhhhh"
+		UNICODE "(Receive)PetItemList : %d"
+		-->
+		<packet id="SM_PET_ITEM_LIST" name="PetItemList" />
+		<!--
+		ASCII "hh"
+		ASCII "ddQhhhdhhhhhhhhhhhhh"
+		UNICODE "(Receive)PetInventoryUpdatePacket"
+		-->
+		<packet id="SM_PET_INVENTORY_UPDATE" name="PetInventoryUpdate" />
+		<!-- UNICODE "AllianceInfoPacket" -->
+		<packet id="SM_ALLIANCE_INFO" name="AllianceInfo" />
+		<!--
+		 ASCII "dddddSdddddddQQQd"
+		 UNICODE "PetStatusUpdatePacket"
+		 UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PET_STATUS_UPDATE" name="PetStatusUpdate" />
+		<!--
+		ASCII "dd"
+		UNICODE "PetDeletePacket"
+		UNICODE "%s"
+		-->
+		<packet id="SM_PET_DELETE" name="PetDelete" />
+		<!--
+		ASCII "dQd"
+		UNICODE "PrivateStoreBuyManageList"
+		UNICODE "(Receive)%s SellListNum1:%d SellListNum2:%d"
+		-->
+		<packet id="SM_PRIVATE_STORE_BUY_MANAGE_LIST" name="PrivateStoreBuyManageList" />
+		<!--
+		ASCII "dQdd"
+		UNICODE "PrivateStoreBuyList"
+		UNICODE "(Receive)%s BuyListNum1:%d"
+		-->
+		<packet id="SM_PRIVATE_STORE_BUY_LIST" name="PrivateStoreBuyList" />
+		<!--
+		ASCII "dS"
+		UNICODE "PrivateStoreBuyMsg"
+		UNICODE "(Receive)%s MSG : %s"
+		-->
+		<packet id="SM_PRIVATE_STORE_BUY_MSG" name="PrivateStoreBuyMsg" />
+		<!-- UNICODE "(Receive) RequestTimeCheckPacket" -->
+		<packet id="SM_REQ_TIME_CHECK" name="RequestTimeCheck" />
+		<!--
+		ASCII "SS"
+		UNICODE "StartAllianceWarPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_START_ALLIANCE_WAR" name="StartAllianceWar" />
+		<!-- UNICODE "ReplyStartAllianceWarPacket" -->
+		<packet id="SM_REPLY_START_ALLIANCE_WAR" name="ReplyStartAllianceWar" />
+		<!--
+		ASCII "SS"
+		UNICODE "StopAllianceWarPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_STOP_ALLIANCE_WAR" name="StopAllianceWar" />
+		<!-- UNICODE "ReplyStopAllianceWarPacket" -->
+		<packet id="SM_REPLY_STOP_ALLIANCE_WAR" name="ReplyStopAllianceWar" />
+		<!-- UNICODE "SurrenderAllianceWarPacket" -->
+		<packet id="SM_SURRENDER_ALLIANCE_WAR" name="SurrenderAllianceWar" />
+		<!--
+		ASCII "dddd"
+		UNICODE "SkillCoolTimePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SKILL_COOL_TIME" name="SkillCoolTime" />
+		<!--
+		ASCII "dS"
+		UNICODE "PackageToListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PACKAGE_TO_LIST" name="PackageToList" />
+		<!--
+		ASCII "dQd"
+		ASCII "ddQhhdhhhdhhhhhhhhhhh"
+		UNICODE "(Receive) PackageSendableListPacket"
+		-->
+		<packet id="SM_PACKAGE_SENDABLE_LIST" name="PackageSendableList" />
+		<!--
+		ASCII "dddddd"
+		UNICODE "EarthQuakePacket"
+		UNICODE "(Receive)%s OriginX:%d OriginY:%d OriginZ:%d Intensity:%d Time:%d"
+		-->
+		<packet id="SM_EARTH_QUAKE" name="EarthQuake" />
+		<!--
+		ASCII "ddddddddddd"
+		UNICODE "FlyToLocationPacket"
+		UNICODE "(Receive)%s ID:%d X:%d Y:%d Z:%d OriginX:%d OriginY:%d OriginZ:%d"
+		-->
+		<packet id="SM_FLY_TO_LOCATION" name="FlyToLocation" />
+		<!--
+		ASCII "ddddddddddd"
+		UNICODE "SpecialCameraPacket"
+		UNICODE "(Receive)%s ID:%d Dist:%d Yaw:%d Pitch:%d Time:%d Duration:%d"
+		-->
+		<packet id="SM_SPECIAL_CAMERA" name="SpecialCamera" />
+		<!--
+		ASCII "dddSSdSdd"
+		UNICODE "CastleSiegeInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CASTLE_SIEGE_INFO" name="CastleSiegeInfo" />
+		<!--
+		ASCII "dddddd"
+		ASCII "dSSdddSSd"
+		UNICODE "CastleSiegeAttackerListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CASTLE_SIEGE_ATTACKER_LIST" name="CastleSiegeAttackerList" />
+		<!--
+		ASCII "dddddd"
+		ASCII "dSSddddSSd"
+		UNICODE "CastleSiegeDefenderListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CASTLE_SIEGE_DEFENDER_LIST" name="CastleSiegeDefenderList" />
+		<!--
+		ASCII "dS"
+		UNICODE "NickNameChangedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_NICK_NAME_CHANGED" name="NickNameChanged" />
+		<!--
+		ASCII "dddddddd"
+		UNICODE "PledgeStatusChangedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_STATUS_CHANGED" name="PledgeStatusChanged" />
+		<!--
+		ASCII "dcdc"
+		UNICODE "RelationChangedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RELATION_CHANGED" name="RelationChanged" />
+		<!--
+		ASCII "dcddddc"
+		ASCII "dchddhhhhhhhhhh"
+		ASCII "dQhQhdddhhhhhhhh"
+		ASCII "dhQhddhhhhhhhh"
+		UNICODE "MultiSellListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_MULTI_SELL_LIST" name="MultiSellList" />
+		<!--
+		ASCII "dd"
+		UNICODE "SetSummonRemainTimePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SET_SUMMON_REMAIN_TIME" name="SetSummonRemainTime" />
+		<!--
+		UNICODE "NetPingPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_NET_PING" name="NetPing" />
+		<!--
+		ASCII "dddddd"
+		UNICODE "DicePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_DICE" name="Dice" />
+		<!--
+		ASCII "ddd"
+		ASCII "dd"
+		UNICODE "RecipeBookItemListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIPE_BOOK_ITEM_LIST" name="RecipeBookItemList" />
+		<!--
+		ASCII "dddddcQ"
+		UNICODE "RecipeItemMakeInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIPE_ITEM_MAKE_INFO" name="RecipeItemMakeInfo" />
+		<!--
+		ASCII "Qdd"
+		ASCII "ddQQd"
+		ASCII "ddQQdd"
+		UNICODE "HennaEquipListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_HENNA_EQUIP_LIST" name="HennaEquipList" />
+		<!--
+		ASCII "ddQQdQdcdcdcdcdcdcdcdc"
+		ASCII "ddQQdQdcdcdcdcdcdcdcdcd"
+		UNICODE "HennaItemInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_HENNA_ITEM_INFO" name="HennaItemInfo" />
+		<!--
+		ASCII "ccccccccdd"
+		ASCII "dd"
+		ASCII "ddd"
+		UNICODE "HennaInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_HENNA_INFO" name="HennaInfo" />
+		<!--
+		ASCII "Qdd"
+		ASCII "ddQQd"
+		ASCII "ddQQdd"
+		UNICODE "HennaUnequipListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_HENNA_UNEQUIP_LIST" name="HennaUnequipList" />
+		<!--
+		ASCII "ddQQdQdcdcdcdcdcdcdcdc"
+		ASCII "ddQQdQdcdcdcdcdcdcdcdcd"
+		UNICODE "HennaUnequipInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_HENNA_UNEQUIP_INFO" name="HennaUnequipInfo" />
+		<!--
+		ASCII "dSSScc"
+		ASCII "ccdcS"
+		UNICODE "MacroListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_MACRO_LIST" name="MacroList" />
+		<!--
+		ASCII "ccccccccdd"
+		ASCII "dd"
+		ASCII "ddd"
+		UNICODE "GMHennaInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GM_HENNA_INFO" name="GMHennaInfo" />
+		<!--
+		ASCII "cc"
+		UNICODE "SSQInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SSQ_INFO" name="SSQInfo" />
+		<!--
+		ASCII "dS"
+		UNICODE "ExSendManorListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SEND_MANOR_LIST" name="ExSendManorList" />
+		<!--
+		ASCII "ddddddddd"
+		UNICODE "ExStorageMaxCountPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_STORAGE_MAX_COUNT" name="ExStorageMaxCount" />
+		
+		<!--
+		UNICODE "ExAutoFishAvailable"
+		UNICODE "(Receive)%s %d"
+		-->
+		<packet id="SM_EX_AUTO_FISH_AVAILABLE" name="ExAutoFishAvailable" />
+		<!-- UNICODE "ExChannlChatEnterWorld" -->
+		<packet id="SM_EX_CHANNL_CHAT_ENTER_WORLD" name="ExChannlChatEnterWorld" />
+		<!-- UNICODE "ExChannlChatPlegeInfo" -->
+		<packet id="SM_EX_CHANNL_CHAT_PLEGE_INFO" name="ExChannlChatPledgeInfo" />
+		<!--
+		ASCII "ccddcccc"
+		ASCII "dQcc"
+		ASCII "cddcc"
+		UNICODE "ExVipAttendanceItemList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_VIP_ATTENDANCE_ITEM_LIST" name="ExVipAttendanceItemList" />
+		<!--
+		UNICODE "ExConfirmVipAttendanceCheck"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_CONFIRM_VIP_ATTENDANCE_CHECK" name="ExConfirmVipAttendanceCheck" />
+		<!--
+		UNICODE "ReciveVipProductList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIVE_VIP_PRODUCT_LIST" name="ReceiveVipProductList" />
+		<!--
+		ASCII "cdd"
+		UNICODE "ReciveVipLuckyGameInfo"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIVE_VIP_LUCKY_GAME_INFO" name="ReceiveVipLuckyGameInfo" />
+		<!--
+		ASCII "cddd"
+		ASCII "dcfc"
+		ASCII "ccdddd"
+		UNICODE "ReciveVipLuckyGameItemList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIVE_VIP_LUCKY_GAME_ITEM_LIST" name="ReceiveVipLuckyGameItemList" />
+		<!--
+		ASCII "ccc"
+		UNICODE "ReciveVipLuckyGameResult"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIVE_VIP_LUCKY_GAME_RESULT" name="ReceiveVipLuckyGameResult" />
+		<!--
+		ASCII "cQdQQcQ"
+		UNICODE "ReciveVipInfo"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIVE_VIP_INFO" name="ReceiveVipInfo" />
+		<!--
+		UNICODE "ReciveVipInfoRemainTime"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIVE_VIP_INFO_REMAIN_TIME" name="ReceiveVipInfoRemainTime" />
+		<!--
+		ASCII "Qcd"
+		UNICODE "ReceiveVipBotCaptchaImage"
+		UNICODE "%s"
+		-->
+		<packet id="SM_RECEIVE_VIP_BOT_CAPTCHA_IMAGE" name="ReceiveVipBotCaptchaImage" />
+		<!-- UNICODE "ReceiveVipBotCaptchaAnswerResult" -->
+		<packet id="SM_RECEIVE_VIP_BOT_CAPTCHA_ANSWER_RESULT" name="ReceiveVipBotCaptchaAnswerResult" />
+		
+		<!-- Packets without handlers and/or packets with named IDs! -->
+		<packet id="SM_L2_FRIEND_LIST" name="L2FriendList" />
+	</server>
+</packets>

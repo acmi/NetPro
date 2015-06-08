@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="560" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Response" type="YesOrNo" id="cond_1" />
+	<branch id="cond_1" condition="Positive">
+		<dword alias="Enchant level" /> <!-- really a DWORD -->
+		<dword alias="Item" type="Item" />
+		<qword alias="Quantity" />
+	</branch>
+</packet>

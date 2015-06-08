@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Additional byte at the end of the packet (unknown) -->
+<packet id="CM__VL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Current client X">
+		<scriptAlias id="LUA_CLIENT_X" />
+	</dword>
+	<dword alias="Current client Y">
+		<scriptAlias id="LUA_CLIENT_Y" />
+	</dword>
+	<dword alias="Current client Z">
+		<scriptAlias id="LUA_CLIENT_Z" />
+	</dword>
+	<dword alias="Heading">
+		<scriptAlias id="LUA_CLIENT_HEADING" />
+	</dword>
+	<dword alias="Vehicle OID" />
+	<byte alias="unk" /> <!-- NEW -->
+</packet>

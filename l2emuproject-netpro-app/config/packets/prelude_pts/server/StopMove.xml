@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_STOP_MOVE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actor OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="HLE_STOPPED_OID" />
+	</dword>
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+		<scriptAlias id="OIL_OBJECT_DESTINATION_X" />
+		<scriptAlias id="HLE_STOPPED_X" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+		<scriptAlias id="OIL_OBJECT_DESTINATION_Y" />
+		<scriptAlias id="HLE_STOPPED_Y" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+		<scriptAlias id="OIL_OBJECT_DESTINATION_Z" />
+		<scriptAlias id="HLE_STOPPED_Z" />
+	</dword>
+	<dword alias="Yaw">
+		<scriptAlias id="OIL_OBJECT_YAW" />
+	</dword>
+</packet>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This packet replaces L2Friend [removal part] -->
+<!-- Removes all fields except name and adds a success indicator DWORD -->
+<packet id="SM_FRIEND_REMOVE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Success" type="YesOrNo" />
+	<string alias="Name" />
+</packet>

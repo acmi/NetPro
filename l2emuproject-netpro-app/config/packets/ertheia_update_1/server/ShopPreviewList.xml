@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- UNKNOWN TIME OF CHANGES; PLEASE TEST ON EARLIER CLIENTS -->
+<packet id="274" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Persistent ID" /> <!-- Different NPC = different ID -->
+	<qword alias="Viewer's adena" />
+	<dword alias="Random ID" /> <!-- two lower bits are random, the higher word seems constant over a short period -->
+	<word alias="Item count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Item" type="Item" />
+		<word alias="Main item type" type="ItemType2" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<dword alias="0" />
+		<qword alias="Price" />
+	</loop>
+</packet>

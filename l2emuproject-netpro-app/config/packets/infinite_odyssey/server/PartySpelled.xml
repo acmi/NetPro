@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Skill level WORD changed to DWORD -->
+<packet id="273" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Member type" type="PartyMemberType" />
+	<dword alias="Member OID" type="ObjectID" />
+	<dword alias="Effect count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<dword alias="Level" type="skill.SkillLevel"> <!-- NEW -->
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</dword>
+		<dword alias="0" />
+		<word alias="Time left" type="TimeRemaining" />
+	</loop>
+</packet>

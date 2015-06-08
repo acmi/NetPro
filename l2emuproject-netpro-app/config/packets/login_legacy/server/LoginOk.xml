@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="LS_SM_LOGIN_OK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Account ID" />
+	<dword alias="Authorization keypart (1)" />
+	
+	<bytes alias="[0]">
+		<length>8</length>
+	</bytes>
+	<dword alias="1002" /> <!-- 2002 on HF; but in rare cases, 2011 or 2017 (on HF) -->
+	<unsignedWord alias="60872" /> <!-- 57528 on HF, 60900 on GoD -->
+	<unsignedByte alias="Unknown" /> <!-- No idea -->
+	<unsignedByte alias="Unknown" /> <!-- Seems 2-6 -->
+	<bytes alias="[0]"> <!-- less in GoD/HF! -->
+		<length>28</length>
+	</bytes>
+	<bytes alias="Padding">
+		<length>11</length>
+	</bytes>
+	<bytes alias="Checksum">
+		<length>4</length>
+	</bytes>
+	<bytes alias="Padding">
+		<length>4</length>
+	</bytes>
+</packet>

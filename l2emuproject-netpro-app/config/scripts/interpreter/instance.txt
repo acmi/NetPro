@@ -1,0 +1,260 @@
+1	Party Duel
+2	Urban Area
+3	Tower of Infinitum Demon Prince
+4	Tower of Infinitum Ranku
+5	Tully's Workshop 1st Floor
+6	Tully's Workshop 3rd Floor
+7	Tully's Workshop 5th Floor
+8	Tully's Workshop 7th Floor
+9	Dark Cloud Mansion
+10	Crystal Caverns
+11	Nornil's Garden
+12	Nornil's Garden Quest
+13	Dungeon
+14	Dungeon
+15	Dungeon
+16	Dungeon
+17	Dungeon
+18	Dungeon
+19	Dungeon
+20	Dungeon
+21	Dungeon
+22	Monster Dungeon
+23	Monster Dungeon
+24	Monster Dungeon
+25	Monster Dungeon
+26	Monster Dungeon
+27	Monster Dungeon
+28	Monster Dungeon
+29	Monster Dungeon
+30	Monster Dungeon
+31	Monster Dungeon
+32	Monster Dungeon
+33	Monster Dungeon
+34	Monster Dungeon
+35	Monster Dungeon
+36	Monster Dungeon
+37	Monster Dungeon
+38	Monster Dungeon
+39	Monster Dungeon
+40	Monster Dungeon
+41	Monster Dungeon
+42	Monster Dungeon
+43	Pailaka (Forgotten Temple)
+44	Pailaka (Devil's Isle)
+45	Pailaka (Varka Silenos Barracks)
+46	Rim Kamaloka
+47	Rim Kamaloka
+48	Rim Kamaloka
+49	Rim Kamaloka
+50	Rim Kamaloka
+51	Rim Kamaloka
+52	Rim Kamaloka
+53	Rim Kamaloka
+54	Rim Kamaloka
+55	Rim Kamaloka
+56	Rim Kamaloka
+57	Kamaloka (Hall of the Abyss)
+58	Kamaloka (Hall of the Abyss)
+59	Near Kamaloka
+60	Kamaloka (Hall of the Abyss)
+61	Kamaloka (Hall of the Abyss)
+62	Near Kamaloka
+63	Kamaloka (Hall of the Abyss)
+64	Kamaloka (Hall of the Abyss)
+65	Near Kamaloka
+66	Kamaloka (Hall of the Abyss)
+67	Kamaloka (Hall of the Abyss)
+68	Near Kamaloka
+69	Kamaloka (Hall of the Abyss)
+70	Kamaloka (Hall of the Abyss)
+71	Near Kamaloka
+72	Kamaloka (Hall of the Abyss)
+73	Kamaloka (Labyrinth of the Abyss)
+74	Kamaloka (Labyrinth of the Abyss)
+75	Kamaloka (Labyrinth of the Abyss)
+76	Kamaloka (Labyrinth of the Abyss)
+77	Kamaloka (Labyrinth of the Abyss)
+78	Kamaloka (Labyrinth of the Abyss)
+79	Kamaloka (Labyrinth of the Abyss)
+80	Pailaka (Rune Castle)
+81	Pailaka (Rune Castle)
+82	Pailaka (Rune Castle)
+83	Pailaka (Rune Castle)
+84	Pailaka (Rune Castle)
+85	Pailaka (Rune Castle)
+86	Pailaka (Rune Castle)
+87	Pailaka (Rune Castle)
+88	Pailaka (Rune Castle)
+89	Pailaka (Rune Castle)
+90	Pailaka (Rune Castle)
+91	Pailaka (Rune Castle)
+92	Pailaka (Rune Castle)
+93	Pailaka (Rune Castle)
+94	Pailaka (Rune Castle)
+95	Pailaka (Rune Castle)
+96	Pailaka (Rune Castle)
+97	Pailaka (Rune Castle)
+98	Pailaka (Rune Castle)
+99	Pailaka (Rune Castle)
+100	Pailaka (Rune Castle)
+101	Pailaka (Rune Castle)
+102	Pailaka (Rune Castle)
+103	Pailaka (Rune Castle)
+104	Pailaka (Rune Castle)
+105	Pailaka (Rune Castle)
+106	Pailaka (Rune Castle)
+107	Pailaka (Rune Castle)
+108	Pailaka (Rune Castle)
+109	Pailaka (Rune Castle)
+110	Seed of Destruction
+111	Sanctum of the Lords of Dawn
+112	Disciple's Necropolis (Past)
+113	Hideout of the Dawn
+114	Cavern of the Pirate Captain (Nightmare)
+115	Seed of Infinity (Hall of Suffering)
+116	Seed of Infinity (Hall of Suffering)
+117	Secret Area in the Keucereus Fortress
+118	Secret Area in the Keucereus Fortress
+119	Seed of Infinity (Hall of Erosion)
+120	Seed of Infinity (Hall of Erosion)
+121	Seed of Infinity (Heart of Infinity)
+122	Seed of Infinity (Heart of Infinity)
+123	Seed of Destruction (Dragonkin Servant)
+124	Seed of Destruction (Dragonkin Sentinel)
+125	Seed of Destruction (Dragonkin Warrior)
+126	Seed of Destruction (Dragonkin Crusher)
+127	Delusion Chamber (Eastern Seal)
+128	Delusion Chamber (Western Seal)
+129	Delusion Chamber (Southern Seal)
+130	Delusion Chamber (Northern Seal)
+131	Delusion Chamber (Great Seal)
+132	Delusion Chamber (Tower of Seal)
+133	Cavern of the Pirate Captain (Daydream)
+134	Kamaloka (Labyrinth of the Abyss)
+135	Cavern of the Pirate Captain (Distant Daydream)
+136	Last Imperial Tomb
+137	Ice Queen's Castle
+138	Mithril Mine
+139	Ice Queen's Castle
+140	Jinia Guild Hideout
+141	Jinia Guild Hideout
+142	Tower of Infinitum (5th Floor)
+143	Tower of Infinitum (10th Floor)
+144	Ice Queen's Castle (Epic)
+145	Jinia Guild Hideout
+146	Jinia Guild Hideout
+147	Olympiad
+148	Olympiad
+149	Olympiad
+150	Olympiad
+151	Monastery of Silence
+152	Monastery of Silence
+153	Monastery of Silence
+154	Monastery of Silence
+155	Monastery of Silence
+156	Library of Sages
+157	Underground Library of Sages
+158	Elcadia's Cabin
+159	Prison of Darkness
+160	Teredor Warzone
+161	Kimerian
+162	Kimerian (Epic)
+163	Emerald Square
+164	Steam Corridor
+165	Coral Garden
+166	Baylor Warzone
+167	Balok Warzone
+168	Coral Garden Hall
+169	Istina's Cavern
+170	Istina's Cavern (Epic)
+171	Nursery
+172	Lachik Dwelling Warzone
+173	Lachik Dwelling Warzone
+174	Lachik Dwelling Warzone (Epic)
+175	Lachik Dwelling Warzone (Epic)
+176	Underground Military Compound
+177	Closed Underground Compound
+178	Labyrinth of Belis
+179	Fortuna
+180	Octavis Warzone
+181	Octavis Warzone (Epic)
+182	Museum Dungeon
+183	Balthus Knights - Antharas Expedition
+184	Valakas Warzone
+185	Evil Incubator
+186	Orchid Hall
+187	Ellia Hall
+188	Laurell Hall
+189	Orchid Hall
+190	Ellia Hall
+191	Laurell Hall
+192	Tainted Dimension
+193	Altar of Shilen
+194	Altar of Shilen
+195	Harnak Underground Ruins
+196	Prison of Darkness (Epic)
+197	Elcadia's Cabin
+198	Legacy of Cruma Tower
+199	Rim Kamaloka
+200	Memory of Disaster
+201	Harnak Underground Ruins
+202	Kimerian
+203	Kimerian (Epic)
+204	Evolved Agathion's Place
+205	Kartia's Labyrinth - Tainted Dimension Attacker
+206	Kartia's Labyrinth - Tainted Dimension Attacker
+207	Kartia's Labyrinth - Tainted Dimension Attacker
+208	Kartia's Labyrinth
+209	Kartia's Labyrinth
+210	Kartia's Labyrinth
+211	Advent of Delusion
+212	Verdof's Room (Devil's Island)
+213	Verdof's Room (Devil's Island)
+214	Verdof's Room (Devil's Island)
+215	Verdof's Room (Devil's Island)
+216	Verdof's Room (Devil's Island)
+217	Eva's Hidden Space
+218	Tauti Warzone
+219	Tauti Warzone (Epic)
+220	Arena 1
+221	Arena 2
+222	Arena 3
+223	Arena 4
+224	Battle Tournament Stadium 1
+225	Battle Tournament Stadium 2
+226	Battle Tournament Stadium 3
+227	Battle Tournament Stadium 4
+228	Ancient Kartia's Labyrinth - A Secret of Two Races
+229	Ancient Kartia's Labyrinth - A Secret of Two Races
+230	Ancient Kartia's Labyrinth - A Secret of Two Races
+231	Nornil's Garden - Spicula Raid
+232	Fortress of the Dead
+233	Fortress of the Dead
+234	Devastated Castle
+235	Devastated Castle
+236	Fortress of Resistance
+237	Fortress of Resistance
+238	Bronze Key Guild's Request Zone
+239	Black Anvil Guild's Request Zone
+240	Golden Wheel Guild's Request Zone
+241	Talking Island (Past)
+242	Bronze Key Guild's Request Zone
+243	Black Anvil Guild's Request Zone
+244	Golden Wheel Guild's Request Zone
+245	Nornil's Garden
+246	Verdof's Room (Devil's Island)
+247	Prelude to Lindvior
+248	Prelude to Lindvior
+249	Seed of Infinity
+250	Dimensional Warp
+251	Faeron Training Grounds
+252	Faeron Training Grounds
+253	Karaphon Habitat
+254	Fortress of the Dead
+255	Chamber of Prophecies
+256	Infernal Kamaloka
+257	Lunatic Kamaloka
+258	Nightmare Kamaloka
+259	Embryo Command Post
+260	Ashen Shadow Revolutionaries

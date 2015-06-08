@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount/price is now a QWORD -->
+<packet id="SM_PRIVATE_STORE_MANAGE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Seller OID" type="ObjectID" />
+	<dword alias="Package sale" type="YesOrNo" />
+	<qword alias="Adena" />
+	<dword alias="Sellable count" id="index_0" />
+	<loop id="index_0">
+		<word alias="Main item type" type="ItemType2" />
+		<word alias="0" /> <!-- Please. Explain this to me. -->
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+			<scriptAlias id="harvester_personal_store_item" />
+		</dword>
+		<qword alias="Quantity" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<word alias="Round of lottery" />
+			<dword alias="Selected numbers" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Lane" />
+			<word alias="Race number" />
+			<unsignedWord alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<qword alias="Reference (shop) price">
+			<scriptAlias id="harvester_personal_store_item_price" />
+		</qword>
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+	</loop>
+	<dword alias="Offer count" id="index_0" />
+	<loop id="index_0">
+		<word alias="Main item type" type="ItemType2" />
+		<word alias="0" /> <!-- Please. Explain this to me. -->
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+			<scriptAlias id="harvester_personal_store_item" />
+		</dword>
+		<qword alias="Quantity" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<word alias="Round of lottery" />
+			<dword alias="Selected numbers" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Lane" />
+			<word alias="Race number" />
+			<unsignedWord alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<qword alias="Price" />
+		<qword alias="Reference (shop) price">
+			<scriptAlias id="harvester_personal_store_item_price" />
+		</qword>
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+	</loop>
+</packet>

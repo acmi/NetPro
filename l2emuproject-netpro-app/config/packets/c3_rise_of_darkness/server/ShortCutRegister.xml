@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- There are now 12 shortcut slots per tab -->
+<packet id="SM_SHORT_CUT_REGISTER" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="shortcut.ShortcutType" id="type" />
+	<dword alias="Slot" type="shortcut.ShortcutSlotBase12" /> <!-- NEW -->
+	<branch id="type" condition="shortcut.ItemShortcut">
+		<dword alias="Item OID" type="ObjectID" />
+	</branch>
+	<branch id="type" condition="shortcut.SkillShortcut">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<dword alias="Level" type="skill.SkillLevel">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</dword>
+	</branch>
+	<branch id="type" condition="shortcut.ActionShortcut">
+		<dword alias="Action" type="PlayerAction" />
+	</branch>
+	<branch id="type" condition="shortcut.MacroShortcut">
+		<dword alias="Macro ID" />
+	</branch>
+	<branch id="type" condition="shortcut.RecipeShortcut">
+		<dword alias="Recipe" type="Recipe" />
+	</branch>
+	<dword alias="Executor" type="shortcut.ShortcutActor" />
+</packet>

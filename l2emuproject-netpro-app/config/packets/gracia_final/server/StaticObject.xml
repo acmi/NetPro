@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_STATIC_OBJECT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Object" type="StaticObject">
+		<scriptAlias id="OIC_SO_TEMPLATE" />
+	</dword>
+	<dword alias="OID" type="ObjectID">
+		<scriptAlias id="OIC_SO_OID" />
+	</dword>
+	<dword alias="Door" type="YesOrNo" />
+	<dword alias="Can be targetted" type="YesOrNo" />
+	<dword alias="Mesh index" />
+	<dword alias="Closed" type="YesOrNo" />
+	<dword alias="Attackable" type="YesOrNo" />
+	<dword alias="Current HP" /> <!-- real -->
+	<dword alias="Maximum HP" /> <!-- real -->
+	<dword alias="Show HP bar" type="YesOrNo" />
+	<dword alias="Damage level" />
+</packet>

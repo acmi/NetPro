@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="674" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Total slots" />
+	<byte alias="Marked slots" />
+	<byte alias="Reward thresholds" id="req_slot" />
+	<loop id="req_slot">
+		<byte alias="Marked slots" />
+	</loop>
+	<byte alias="Unclaimed rewards" id="req_met" />
+	<loop id="req_met">
+		<byte alias="Marked slots" />
+	</loop>
+</packet>

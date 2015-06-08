@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="384" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="MAC Address" />
+	<dword alias="Windows Platform Id" />
+	<dword alias="Windows Major Version" />
+	<dword alias="Windows Minor Version" />
+	<dword alias="Windows Build Number" />
+	<dword alias="DirectX Version" />
+	<dword alias="DirectX Revision" />
+	<bytes alias="unk bytes">
+		<length>16</length>
+	</bytes>
+	<string alias="CPU Name" />
+	<dword alias="CPU Speed" />
+	<byte alias="CPU Core Count" />
+	<dword alias="0" />
+	<word alias="VGA Count" />
+	<dword alias="VGA PCX Speed" />
+	<dword alias="PhysMemory Slot1" /> <!-- wrong data type -->
+	<dword alias="PhysMemory Slot2" /> <!-- wrong data type -->
+	<dword alias="PhysMemory Slot3" /> <!-- wrong data type -->
+	<byte alias="0" />
+	<dword alias="Video Memory" />
+	<dword alias="0" />
+	<dword alias="VGA Version" />
+	<string alias="VGA Name" />
+	<string alias="VGA Driver Version" />
+</packet>

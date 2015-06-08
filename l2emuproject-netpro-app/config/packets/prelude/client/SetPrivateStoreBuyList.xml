@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_SET_PRIVATE_STORE_BUY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Purchase count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item" type="Item" />
+		<word alias="Enchant level" />
+		<dword alias="Amount" />
+		<dword alias="Price (single item)" />
+	</loop>
+</packet>

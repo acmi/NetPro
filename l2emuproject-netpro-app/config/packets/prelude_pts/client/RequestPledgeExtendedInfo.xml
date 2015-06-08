@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- I have not managed to trick ANY client to send this packet. -->
+<!-- Modern servers disconnect the client when they receive this packet. -->
+<packet id="CM_REQ_PLEDGE_EXTENDED_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Pledge name" />
+</packet>

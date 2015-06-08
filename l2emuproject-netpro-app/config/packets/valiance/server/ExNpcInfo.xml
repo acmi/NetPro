@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="526" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="NPC OID" type="ObjectID">
+		<scriptAlias id="OIC_NPC_OID" />
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="fspawn_gen_npc_oid" />
+		<scriptAlias id="exp_bot_npc_oid" />
+	</dword>
+
+	<byte alias="unk" />
+	<word alias="Struct type (37)" />
+
+	<unsignedByte alias="Bitmask byte #1" type="structure.ExNpcInfoFieldMask1" id="exNI_1" /> <!-- always has 32+64 enabled -->
+	<unsignedByte alias="Bitmask byte #2" type="structure.ExNpcInfoFieldMask2" id="exNI_2" />
+	<unsignedByte alias="Bitmask byte #3" type="structure.ExNpcInfoFieldMask3" id="exNI_3" />
+	<unsignedByte alias="Bitmask byte #4" type="structure.ExNpcInfoFieldMask4" id="exNI_4" /> <!-- always has 2 enabled -->
+	<unsignedByte alias="Bitmask byte #5" type="structure.ExNpcInfoFieldMask5" id="exNI_5" />
+	<unsignedByte alias="Block size" />
+	<branch description="The block">
+		<byte alias="Attackable" type="YesOrNo">
+			<scriptAlias id="fspawn_gen_npc_atk" />
+			<scriptAlias id="exp_bot_npc_atk" />
+		</byte>
+		<unsignedByte alias="???? mask ???" />
+		<byte alias="unk 0/2" />
+		<word alias="unk" />
+		<string alias="Title">
+			<scriptAlias id="OIC_NPC_TITLE" />
+		</string>
+	</branch>
+	<word alias="Block size" />
+	<branch description="The block">
+		<branch id="exNI_2" condition="bitmask.Bit7" description="Condition is wrong">
+			<dword alias="NPC" type="Npc">
+				<scriptAlias id="OIC_NPC_TEMPLATE" />
+				<scriptAlias id="exp_bot_npc_id" />
+			</dword>
+			<dword alias="Location X">
+				<scriptAlias id="OIL_OBJECT_X_SERVER" />
+			</dword>
+			<dword alias="Location Y">
+				<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+			</dword>
+			<dword alias="Location Z">
+				<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+			</dword>
+			<dword alias="Yaw">
+				<scriptAlias id="OIL_OBJECT_YAW" />
+			</dword>
+			<dword alias="Casting speed" />
+			<dword alias="Attack speed" />
+			<single alias="Movement speed multiplier" />
+			<single alias="Attack speed multiplier" />
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit6" description="Equipment">
+			<dword alias="Main weapon" type="Item" />
+			<dword alias="Chest armor" type="Item" />
+			<dword alias="Shield/support weapon" type="Item" />
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit5" description="Condition is wrong">
+			<byte alias="1" /> <!-- Identified as 'Show title', even though status = 0 deals with that -->
+			<byte alias="Movement mode" type="MoveType" />
+			<byte alias="Subtype" type="NpcSubtype" /> <!-- Either NPC or flyer only -->
+			<byte alias="Flying" type="YesOrNo" />
+			<bytes alias="0">
+				<length>1</length>
+			</bytes>
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit1" description="Single byte, purpose unknown">
+			<byte alias="0" />
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit0" description="Single byte, purpose unknown">
+			<byte alias="" />
+		</branch>
+		<branch id="exNI_3" condition="bitmask.Bit0" description="???">
+			<dword alias="unk 0" />
+		</branch>
+		<branch id="exNI_3" condition="bitmask.Bit5" description="Owner">
+			<dword alias="Owner OID" type="ObjectID" />
+		</branch>
+		<branch id="exNI_3" condition="bitmask.Bit4" description="Is this even correct?">
+			<dword alias="unk 0" />
+		</branch>
+		<branch id="exNI_3" condition="bitmask.Bit1" description="Single dword, found on traps and elsewhere">
+			<dword alias="0/1/2/3/100/101" />
+		</branch>
+		<branch id="exNI_3" condition="bitmask.Bit3" description="Single byte, purpose unknown">
+			<byte alias="" /> <!-- "4" found on Teredor -->
+		</branch>
+		<branch id="exNI_4" condition="bitmask.Bit7" description="Cur HP">
+			<dword alias="Current HP" />
+		</branch>
+		<branch id="exNI_4" condition="bitmask.Bit6" description="Cur MP">
+			<dword alias="Current MP" />
+		</branch>
+		<branch id="exNI_4" condition="bitmask.Bit5" description="Max HP">
+			<dword alias="Max HP" />
+		</branch>
+		<branch id="exNI_4" condition="bitmask.Bit4" description="Max MP">
+			<dword alias="Max MP" />
+		</branch>
+		<branch id="exNI_4" condition="bitmask.Bit3" description="Single byte, purpose unknown">
+			<byte alias="1/2" />
+		</branch>
+		<branch id="exNI_1" condition="bitmask.Bit4" description="Name"> <!-- Unexpected, but that's where it is -->
+			<string alias="Name">
+				<scriptAlias id="OIC_GIVEN_NAME" />
+			</string>
+		</branch>
+		<branch id="exNI_4" condition="bitmask.Bit0" description="Name (npcstring)">
+			<dword alias="Name" type="ImmutableNpcString" />
+		</branch>
+		<branch id="exNI_5" condition="bitmask.NotAllBits">
+			<branch id="exNI_5" condition="bitmask.Bit7" description="Title (npcstring)">
+				<dword alias="Title" type="ImmutableNpcString" />
+			</branch>
+			<branch id="exNI_5" condition="bitmask.Bit6" description="PvP">
+				<byte alias="In PvP" type="Pvp" />
+			</branch>
+			<branch id="exNI_5" condition="bitmask.Bit5" description="Reputation">
+				<dword alias="Reputation" />
+			</branch>
+			<branch id="exNI_5" condition="bitmask.Bit4" description="Pledge/alliance">
+				<dword alias="Pledge ID" type="Pledge">
+					<scriptAlias id="PIC_PLEDGE_ID" />
+				</dword>
+				<dword alias="Pledge crest ID" type="PledgeCrest">
+					<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+				</dword>
+				<dword alias="Pledge insignia ID" />
+				<dword alias="Alliance ID" type="Alliance">
+					<scriptAlias id="AIC_ALLY_ID" />
+				</dword>
+				<dword alias="Alliance crest ID" type="AllianceCrest">
+					<scriptAlias id="AIC_ALLY_CREST_ID" />
+				</dword>
+			</branch>
+			<branch id="exNI_5" condition="bitmask.Bit3" description="State">
+				<byte alias="State" type="NpcState">
+					<scriptAlias id="exp_bot_npc_state" />
+				</byte>
+			</branch>
+		</branch>
+	</branch>
+	<branch id="exNI_5" condition="bitmask.NotAllBits">
+		<branch id="exNI_5" condition="bitmask.Bit2" description="Abnormals">
+			<word alias="Abnormal effect count" id="abn" />
+			<loop id="abn">
+				<word alias="Abnormal effect" />
+			</loop>
+		</branch>
+	</branch>
+</packet>

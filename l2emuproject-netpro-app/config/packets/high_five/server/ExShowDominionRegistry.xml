@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="435" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Viewed territory" type="PledgeBase" />
+	<string alias="Owner pledge" />
+	<string alias="Owner pledge leader" />
+	<string alias="Owner alliance" />
+	<dword alias="Registered pledges" />
+	<dword alias="Registered mercenaries" />
+	<dword alias="War time" type="SecondsSinceEpoch" />
+	<dword alias="Current server time" type="SecondsSinceEpoch" />
+	<dword alias="Registered pledge" type="YesOrNo" />
+	<dword alias="Registered self" type="YesOrNo" />
+	<dword alias="Request period" type="YesOrNo" />
+	<dword alias="Territory count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Territory" type="PledgeBase" />
+		<dword alias="Owned ward count" id="index_1" />
+		<loop id="index_1">
+			<dword alias="Ward" type="PledgeBase" />
+		</loop>
+	</loop>
+</packet>

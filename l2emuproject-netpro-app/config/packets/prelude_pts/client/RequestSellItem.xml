@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_SELL_ITEM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Sell request ID" />
+	<dword alias="Sold item count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item OID" type="ObjectID" />
+		<dword alias="Item" type="Item" />
+		<dword alias="Amount" />
+	</loop>
+</packet>

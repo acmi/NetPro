@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_BBS_WRITE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- These directly depend on what board (or other feature) is currently open -->
+	<string alias="" /> <!-- Action: 1 for new, 3 for edit -->
+	<string alias="" /> <!-- Link: -1_-1 for memo -->
+	<string alias="" /> <!-- Edit: 0 for new, 2 for edit -->
+	<string alias="" /> <!-- Title -->
+	<string alias="" /> <!-- Message -->
+	<string alias="" /> <!-- Type: Title for memo -->
+</packet>

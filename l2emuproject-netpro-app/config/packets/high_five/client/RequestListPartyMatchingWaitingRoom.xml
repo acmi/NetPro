@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="205" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Page" />
+	<dword alias="Minimum level" />
+	<dword alias="Maximum level" />
+	<dword alias="Level range" type="PartyMatchingLevels" />
+	
+	<!-- Discovered on ertheia. Even in two sequential, otherwise identical packets, one may have this field, and the other may not -->
+	<!-- Best to investigate this later on. Possibly loot distribution? -->
+	<word alias="0" optional="true" />
+</packet>

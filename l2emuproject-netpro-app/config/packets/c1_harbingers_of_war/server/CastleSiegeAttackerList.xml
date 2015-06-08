@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_CASTLE_SIEGE_ATTACKER_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Residence" type="PledgeBase" />
+	<dword alias="Owner's view" type="YesOrNo" />
+	<dword alias="Has applicants" type="YesOrNo" />
+	<dword alias="0" />
+	<dword alias="Attacker count" id="index_0" />
+	<dword alias="Attacker count (dupe)" />
+	<loop id="index_0">
+		<dword alias="Pledge ID" type="Pledge">
+			<scriptAlias id="PIC_PLEDGE_ID" />
+		</dword>
+		<string alias="Pledge name">
+			<scriptAlias id="PIC_PLEDGE_NAME" />
+		</string>
+		<string alias="Pledge leader name" />
+		<dword alias="Pledge crest ID" type="PledgeCrest">
+			<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+		</dword>
+		<dword alias="Application time" type="SecondsSinceEpoch" />
+		<dword alias="Alliance ID" type="Alliance">
+			<scriptAlias id="AIC_ALLY_ID" />
+		</dword>
+		<string alias="Alliance name">
+			<scriptAlias id="AIC_ALLY_NAME" />
+		</string>
+		<string alias="Alliance leader name" />
+		<dword alias="Alliance crest ID" type="AllianceCrest">
+			<scriptAlias id="AIC_ALLY_CREST_ID" />
+		</dword>
+	</loop>
+</packet>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- remaining time DWORD field is now a WORD -->
+<packet id="650" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="0" />
+	<dword alias="Party member OID" type="ObjectID" />
+	<dword alias="Removed effects" id="removed" />
+	<loop id="removed">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<word alias="Level" type="skill.SkillLevel">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</word>
+		<dword alias="0" />
+	</loop>
+	<dword alias="Added effects" id="added" />
+	<loop id="added">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<word alias="Level" type="skill.SkillLevel">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</word>
+		<dword alias="0" />
+		<word alias="Time left" type="TimeRemaining" /> <!-- NEW -->
+	</loop>
+</packet>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount/price is now a QWORD -->
+<packet id="CM_SET_PRIVATE_STORE_BUY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Offer count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Item" type="Item" id="is_ticket" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedWord alias="Selected numbers (truncated)" type="LottoNumbers" />
+			<word alias="0" /> <!-- Please. Explain this to me. -->
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<!-- Client reports exactly the same as server sends to it, so first time is correct -->
+			<word alias="Actual bet multiplier / (100^([number of times owner set up the store without re-adding the item] - 1))" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<qword alias="Quantity" />
+		<qword alias="Price (per single unit)" />
+	</loop>
+</packet>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_MOVE_TO_LOCATION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actor OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="fspawn_walker_oid" />
+	</dword>
+	<dword alias="Destination X">
+		<scriptAlias id="OIL_OBJECT_DESTINATION_X" />
+	</dword>
+	<dword alias="Destination Y">
+		<scriptAlias id="OIL_OBJECT_DESTINATION_Y" />
+	</dword>
+	<dword alias="Destination Z">
+		<scriptAlias id="OIL_OBJECT_DESTINATION_Z" />
+	</dword>
+	<dword alias="Current X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Current Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Current Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+</packet>

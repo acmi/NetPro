@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added unknown CHAR (byte) at the beginning of the packet -->
+<packet id="CM_REQ_FRIEND_ADD_REPLY" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="1" /> <!-- NEW -->
+	<dword alias="Accepted" type="YesOrNo" />
+</packet>

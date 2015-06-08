@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Stackability flag is now a CHAR (byte) -->
+<packet id="SM_DROP_ITEM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Dropper OID" type="ObjectID">
+		<scriptAlias id="harvester_droprate_dropper_oid" />
+		<scriptAlias id="HLE_WORLD_ITEM_DROPPER_OID" />
+	</dword>
+	<dword alias="Item OID" type="ObjectID">
+		<scriptAlias id="OIC_ITEM_OID" />
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="HLE_WORLD_ITEM_OID" />
+	</dword>
+	<dword alias="Item" type="Item">
+		<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		<scriptAlias id="harvester_droprate_dropped_item" />
+	</dword>
+	<dword alias="Destination X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Destination Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Destination Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<byte alias="Stackable" type="YesOrNo" /> <!-- NEW -->
+	<qword alias="Quantity">
+		<scriptAlias id="harvester_droprate_dropped_item_count" />
+	</qword>
+	<dword alias="Unknown" type="YesOrNo" />
+</packet>

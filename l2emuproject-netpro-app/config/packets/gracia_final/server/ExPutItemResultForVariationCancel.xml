@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Removal price is now a QWORD -->
+<packet id="375" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Item OID" type="ObjectID" />
+	<dword alias="Item" type="Item" />
+	<dword alias="Augmentation effect (1)" type="Augmentation" />
+	<dword alias="Augmentation effect (2)" type="Augmentation" />
+	<qword alias="Removal price" />
+	<dword alias="Item accepted" type="YesOrNo" />
+</packet>

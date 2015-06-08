@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Slot/type DWORDs reordered
+Skill shortcuts now include skill level DWORD
+One of the unknown DWORDs was replaced by a DWORD to differentiate between player and servitor shortcuts
+Other unknown DWORD was removed
+-->
+<packet id="SM_SHORT_CUT_REGISTER" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="shortcut.ShortcutType" id="type" /> <!-- NEW -->
+	<dword alias="Slot" type="shortcut.ShortcutSlotBase10" /> <!-- NEW -->
+	<branch id="type" condition="shortcut.ItemShortcut">
+		<dword alias="Item OID" type="ObjectID" />
+	</branch>
+	<branch id="type" condition="shortcut.SkillShortcut">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<dword alias="Level" type="skill.SkillLevel"> <!-- NEW -->
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</dword>
+	</branch>
+	<branch id="type" condition="shortcut.ActionShortcut">
+		<dword alias="Action" type="PlayerAction" />
+	</branch>
+	<branch id="type" condition="shortcut.MacroShortcut"> <!-- C2 -->
+		<dword alias="Macro ID" />
+	</branch>
+	<branch id="type" condition="shortcut.RecipeShortcut"> <!-- C2 -->
+		<dword alias="Recipe" type="Recipe" />
+	</branch>
+	<dword alias="Executor" type="shortcut.ShortcutActor" /> <!-- NEW -->
+</packet>

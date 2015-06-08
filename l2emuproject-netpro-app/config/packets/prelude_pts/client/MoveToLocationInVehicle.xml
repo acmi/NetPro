@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_MOVE_TO_LOCATION_IN_VEHICLE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Vehicle OID" />
+	<dword alias="Destination X" />
+	<dword alias="Destination Y" />
+	<dword alias="Destination Z" />
+	<dword alias="Current X" />
+	<dword alias="Current Y" />
+	<dword alias="Current Z" />
+</packet>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New WORD differentiating between cast cancellation (ESC) vs target cancellation (mouse click 'X' decoration of the target window) -->
+<packet id="CM_REQ_TARGET_CANCEL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Controller" type="Controller" /> <!-- NEW -->
+</packet>

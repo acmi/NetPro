@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.l2emuproject</groupId>
+		<artifactId>l2emuproject-netpro-main</artifactId>
+		<version>1.0</version>
+		<relativePath>../l2emuproject-netpro-main</relativePath>
+	</parent>
+	<artifactId>l2emuproject-netpro-commons</artifactId>
+	<name>${project.artifactId}-${project.version}</name>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>net.l2emuproject</groupId>
+			<artifactId>l2emuproject-commons</artifactId>
+			<version>NP1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

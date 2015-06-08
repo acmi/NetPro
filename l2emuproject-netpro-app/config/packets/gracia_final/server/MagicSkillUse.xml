@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_MAGIC_SKILL_USE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Caster OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="HLE_CASTER_OID" />
+	</dword>
+	<dword alias="Main target OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="HLE_TARGET_OID" />
+	</dword>
+	<dword alias="Skill" type="Skill">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		<scriptAlias id="HLE_SKILL_ID" />
+	</dword>
+	<dword alias="Level" type="skill.SkillLevel">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		<scriptAlias id="HLE_SKILL_LEVEL" />
+	</dword>
+	<dword alias="Cast time" type="MillisRemaining">
+		<scriptAlias id="HLE_CAST_TIME" />
+	</dword>
+	<dword alias="Reuse delay" type="MillisRemaining">
+		<scriptAlias id="HLE_COOL_TIME" />
+	</dword>
+	<dword alias="Caster X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Caster Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Caster Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<!-- M. crit doesn't come into play here -->
+	<dword alias="0" id="index_0" /> <!-- 2, if a blow succeeds (crt. hit). All it does is play a critical hit sound (any number). Sad. -->
+	<loop id="index_0"> <!-- you can test by injecting 5 instead of 2 and client will crash -->
+		<word alias="0" /> <!-- Yes, it is a loop here. Always 0, regardless of half kill or what -->
+	</loop>
+	<dword alias="Main target X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Main target Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Main target Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+</packet>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_PLEDGE_CREST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<dword alias="Size in bytes" id="bytesize">
+		<scriptAlias id="PIC_PLEDGE_CREST_SIZE" />
+	</dword>
+	<bytes alias="Image" type="pledge.PledgeCrestDDS">
+		<scriptAlias id="PIC_PLEDGE_CREST" />
+	</bytes>
+</packet>

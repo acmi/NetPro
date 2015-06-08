@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_PACKAGE_TO_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Character count" id="cnt" />
+	<loop id="cnt">
+		<!-- This injects a fake OID for a better presentation of the associated CM -->
+		<!-- As a matter of fact, it is better to only show Item PKs as OIDs -->
+		<dword alias="Character PK" />
+			<!-- scriptAlias id="OIC_PLAYER_OID" / -->
+		<!-- /dword -->
+		<string alias="Name" />
+			<!-- scriptAlias id="OIC_PLAYER_NAME" / -->
+		<!-- /string -->
+	</loop>
+</packet>

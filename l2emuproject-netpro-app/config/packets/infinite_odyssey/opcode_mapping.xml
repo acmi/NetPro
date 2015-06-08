@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="D0 D2 00" id="CM_REQ_EX_EVENT_CAMPAIGN_INFO" /> <!-- Most likely dates back, perhaps to Valiance as well -->
+		
+		<packet opcodePrefix="D0 05 01" id="CM_REQ_VIP_ATTENDANCE_ITEM_LIST" />
+		<packet opcodePrefix="D0 06 01" id="CM_REQ_VIP_ATTENDANCE_CHECK" />
+		<packet opcodePrefix="D0 07 01" id="CM_REQ_VIP_PRODUCT_LIST" />
+		<packet opcodePrefix="D0 08 01" id="CM_REQ_VIP_LUCKY_GAME_INFO" />
+		<packet opcodePrefix="D0 09 01" id="CM_REQ_VIP_LUCKY_GAME_ITEM_LIST" />
+		<packet opcodePrefix="D0 0A 01" id="CM_REQ_VIP_LUCKY_GAME_BONUS" />
+		<packet opcodePrefix="D0 0B 01" id="CM_EX_REQ_VIP_INFO" />
+		<packet opcodePrefix="D0 0C 01" id="CM_REQ_CAPTCHA_ANSWER" />
+		<packet opcodePrefix="D0 0D 01" id="CM_REQ_REFRESH_CAPTCHA_IMAGE" />
+	</client>
+	<server>
+		<packet opcodePrefix="B2" id="SM_MY_PET_SUMMON_INFO" />
+		<packet opcodePrefix="FE 5E 01" id="654" />
+		<packet opcodePrefix="FE 7A 01" id="SM_EX_CHANNL_CHAT_ENTER_WORLD" />
+		<packet opcodePrefix="FE 7B 01" id="SM_EX_CHANNL_CHAT_PLEGE_INFO" />
+		<packet opcodePrefix="FE 7C 01" id="SM_EX_VIP_ATTENDANCE_ITEM_LIST" />
+		<packet opcodePrefix="FE 7D 01" id="SM_EX_CONFIRM_VIP_ATTENDANCE_CHECK" />
+		<packet opcodePrefix="FE 7E 01" id="SM_RECIVE_VIP_PRODUCT_LIST" />
+		<packet opcodePrefix="FE 7F 01" id="SM_RECIVE_VIP_LUCKY_GAME_INFO" />
+		<packet opcodePrefix="FE 80 01" id="SM_RECIVE_VIP_LUCKY_GAME_ITEM_LIST" />
+		<packet opcodePrefix="FE 81 01" id="SM_RECIVE_VIP_LUCKY_GAME_RESULT" />
+		<packet opcodePrefix="FE 82 01" id="SM_RECIVE_VIP_INFO" />
+		<packet opcodePrefix="FE 83 01" id="SM_RECIVE_VIP_INFO_REMAIN_TIME" />
+		<packet opcodePrefix="FE 84 01" id="SM_RECEIVE_VIP_BOT_CAPTCHA_IMAGE" />
+		<packet opcodePrefix="FE 85 01" id="SM_RECEIVE_VIP_BOT_CAPTCHA_ANSWER_RESULT" />
+	</server>
+</mapping>

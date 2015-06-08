@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="394" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Result" id="result" type="item.AttributeEnchantResult" />
+	<branch id="result" condition="Zero">
+		<byte alias="Weapon" type="YesOrNo" />
+		<word alias="Element" type="ElementType" /> <!-- same for weapon, opposite for armor -->
+		<word alias="Power before enchant" />
+		<word alias="Current power" />
+		<word alias="Successes" />
+		<word alias="Failures" />
+	</branch>
+</packet>

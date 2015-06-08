@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A door template DWORD has been added -->
+<packet id="SM_DOOR_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Door OID">
+		<scriptAlias id="OIC_SO_OID" />
+	</dword>
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+	<dword alias="Door" type="StaticObject"> <!-- NEW -->
+		<scriptAlias id="OIC_SO_TEMPLATE" />
+	</dword>
+</packet>

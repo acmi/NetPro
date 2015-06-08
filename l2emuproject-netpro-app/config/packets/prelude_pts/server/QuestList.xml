@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_QUEST_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Quest count" id="quest_cnt" />
+	<loop id="quest_cnt">
+		<dword alias="Quest" type="Quest" />
+	</loop>
+	<word alias="Quest item count" id="item_cnt" />
+	<loop id="item_cnt">
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Amount" />
+		<word alias="" />
+	</loop>
+</packet>

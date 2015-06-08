@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New DWORDs for target selector's (actor's) coordinates -->
+<packet id="SM_TARGET_SELECTED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Selector OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="HLE_TARGET_SELECTOR_OID" />
+	</dword>
+	<dword alias="Target OID" type="ObjectID">
+		<scriptAlias id="HLE_TARGET_OID" />
+	</dword>
+	
+	<!-- NEW -->
+	<dword alias="Selector X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Selector Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Selector Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+</packet>

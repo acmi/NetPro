@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="248" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Manufacturer's OID" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<qword alias="Viewer's adena" />
+	<dword alias="Manufacturable count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Recipe" type="Recipe" />
+		<dword alias="1" />
+		<qword alias="Price" />
+	</loop>
+</packet>

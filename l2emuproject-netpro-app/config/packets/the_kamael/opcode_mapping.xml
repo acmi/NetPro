@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<removedPacket id="CM__PSM_CANCEL" />
+		<removedPacket id="CM_REQ_START_ALLIANCE_WAR" />
+		<removedPacket id="CM_REPLY_START_ALLIANCE_WAR" />
+		<removedPacket id="CM_REQ_STOP_ALLIANCE_WAR" />
+		<removedPacket id="CM_REQ_SURRENDER_ALLIANCE_WAR" />
+		<packet opcodePrefix="00" id="CM_SEND_LOG_OUT" />
+		<packet opcodePrefix="01" id="CM_REQ_ATTACK" />
+		<packet opcodePrefix="03" id="CM_REQ_START_PLEDGE_WAR" />
+		<packet opcodePrefix="04" id="CM_REQ_REPLY_START_PLEDGE_WAR" />
+		<packet opcodePrefix="05" id="CM_REQ_STOP_PLEDGE_WAR" />
+		<packet opcodePrefix="06" id="CM_REQ_REPLY_STOP_PLEDGE_WAR" />
+		<packet opcodePrefix="07" id="CM_REQ_SURRENDER_PLEDGE_WAR" />
+		<packet opcodePrefix="08" id="64" />
+		<packet opcodePrefix="09" id="CM_REQ_SET_PLEDGE_CREST" />
+		<packet opcodePrefix="0B" id="CM_REQ_GIVE_NICK_NAME" />
+		<packet opcodePrefix="0C" id="CM_REQ_CHARACTER_CREATE" />
+		<packet opcodePrefix="0D" id="CM_REQ_CHARACTER_DELETE" />
+		<packet opcodePrefix="0E" id="CM_SEND_PROTOCOL_VERSION" />
+		<packet opcodePrefix="0F" id="CM_MOVE_BACKWARD_TO_LOCATION" />
+		<packet opcodePrefix="10" id="CM_SAY" />
+		<packet opcodePrefix="11" id="CM_REQ_ENTER_WORLD" />
+		<packet opcodePrefix="12" id="CM_REQ_GAME_START" />
+		<packet opcodePrefix="13" id="CM_REQ_NEW_CHARACTER" />
+		<packet opcodePrefix="14" id="CM_REQ_ITEM_LIST" />
+		<packet opcodePrefix="15" id="CM_REQ_EQUIP_ITEM" />
+		<packet opcodePrefix="16" id="CM_REQ_UN_EQUIP_ITEM" />
+		<packet opcodePrefix="17" id="CM_REQ_DROP_ITEM" />
+		<packet opcodePrefix="19" id="CM_REQ_USE_ITEM" />
+		<packet opcodePrefix="1A" id="CM_REQ_TRADE" />
+		<packet opcodePrefix="1B" id="CM_REQ_ADD_TRADE_ITEM" />
+		<packet opcodePrefix="1C" id="CM_TRADE_DONE" />
+		<packet opcodePrefix="1F" id="CM_ACTION" />
+		<packet opcodePrefix="22" id="CM_REQ_LINK_HTML" />
+		<packet opcodePrefix="23" id="CM_REQ_BYPASS_TO_SERVER" />
+		<packet opcodePrefix="24" id="CM_REQ_BBS_WRITE" />
+		<packet opcodePrefix="25" id="CM_REQ_CREATE_PLEDGE" />
+		<packet opcodePrefix="26" id="CM_REQ_JOIN_PLEDGE" />
+		<packet opcodePrefix="27" id="CM_REQ_ANSWER_JOIN_PLEDGE" />
+		<packet opcodePrefix="28" id="CM_REQ_WITH_DRAWAL_PLEDGE" />
+		<packet opcodePrefix="29" id="CM_REQ_OUST_PLEDGE_MEMBER" />
+		<packet opcodePrefix="2B" id="CM_C_LOGIN" />
+		<packet opcodePrefix="2C" id="CM_REQ_GET_ITEM_FROM_PET" />
+		<packet opcodePrefix="2E" id="CM_REQ_ALLY_INFO" />
+		<packet opcodePrefix="2F" id="CM_REQ_CRYSTALLIZE_ITEM" />
+		<packet opcodePrefix="30" id="CM__PSM_LIST" />
+		<packet opcodePrefix="31" id="CM_SET_PRIVATE_STORE_LIST" />
+		<packet opcodePrefix="33" id="CM_REQ_TELEPORT" />
+		<packet opcodePrefix="34" id="CM_SOCIAL_ACTION" />
+		<packet opcodePrefix="35" id="CM_CHANGE_MOVE_TYPE" />
+		<packet opcodePrefix="36" id="CM_CHANGE_WAIT_TYPE" />
+		<packet opcodePrefix="37" id="CM_REQ_SELL_ITEM" />
+		<packet opcodePrefix="38" id="CM__USER_ACK" />
+		<packet opcodePrefix="39" id="CM_REQ_MAGIC_SKILL_USE" />
+		<packet opcodePrefix="3A" id="CM_SEND_APPERING" />
+		<packet opcodePrefix="3B" id="CM_SEND_WARE_HOUSE_DEPOSIT_LIST" />
+		<packet opcodePrefix="3C" id="CM_SEND_WARE_HOUSE_WITHDRAW_LIST" />
+		<packet opcodePrefix="3D" id="CM_REQ_SHORT_CUT_REG" />
+		<packet opcodePrefix="3E" id="CM_REQ_SHORT_CUT_USE" />
+		<packet opcodePrefix="3F" id="CM_REQ_SHORT_CUT_DEL" />
+		<packet opcodePrefix="40" id="CM_REQ_BUY_ITEM" />
+		<packet opcodePrefix="41" id="CM_REQ_DISMISS_PLEDGE" />
+		<packet opcodePrefix="42" id="CM_REQ_JOIN_PARTY" />
+		<packet opcodePrefix="43" id="CM_REQ_ANSWER_JOIN_PARTY" />
+		<packet opcodePrefix="44" id="CM_REQ_WITH_DRAWAL_PARTY" />
+		<packet opcodePrefix="45" id="CM_REQ_OUST_PARTY_MEMBER" />
+		<packet opcodePrefix="46" id="CM_REQ_DISMISS_PARTY" />
+		<packet opcodePrefix="47" id="CM_CAN_NOT_MOVE_ANYMORE" />
+		<packet opcodePrefix="48" id="CM_REQ_TARGET_CANCEL" />
+		<packet opcodePrefix="49" id="CM_SAY2" />
+		<!-- packet opcodePrefix="4A 00" id="CM_SUPER_CMD_CHARACTER_INFO" /-->
+		<!-- packet opcodePrefix="4A 01" id="CM_SUPER_CMD_SUMMON_CMD" /-->
+		<!-- packet opcodePrefix="4A 02" id="CM_SUPER_CMD_SERVER_STATUS" /-->
+		<!-- packet opcodePrefix="4A 03" id="CM_SEND_L2_PARAM_SETTING" /-->
+		<packet opcodePrefix="4D" id="CM_REQ_PLEDGE_MEMBER_LIST" />
+		<packet opcodePrefix="4F" id="CM_REQ_MAGIC_LIST" />
+		<packet opcodePrefix="50" id="CM_REQ_SKILL_ITEM" />
+		<packet opcodePrefix="52" id="CM_MOVE_WITH_DELTA" />
+		<packet opcodePrefix="53" id="CM_GET_ON_VEHICLE" />
+		<packet opcodePrefix="54" id="CM_GET_OFF_VEHICLE" />
+		<packet opcodePrefix="55" id="CM_ANSWER_TRADE_REQ" />
+		<packet opcodePrefix="56" id="CM_REQ_ACTION_USE" />
+		<packet opcodePrefix="57" id="CM_REQ_RESTART" />
+		<packet opcodePrefix="58" id="CM_REQ_SIEGE_INFO" />
+		<packet opcodePrefix="59" id="CM__VL" />
+		<packet opcodePrefix="5A" id="128" />
+		<packet opcodePrefix="5B" id="CM_START_ROTATING" />
+		<packet opcodePrefix="5C" id="CM_FINISH_ROTATING" />
+		<packet opcodePrefix="5E" id="CM_REQ_SHOWBOARD" />
+		<packet opcodePrefix="5F" id="CM_REQ_ENCHANT_ITEM" />
+		<packet opcodePrefix="60" id="CM_REQ_DESTROY_ITEM" />
+		<packet opcodePrefix="62" id="CM_REQ_QUEST_LIST" />
+		<packet opcodePrefix="63" id="CM_REQ_DESTROY_QUEST" />
+		<packet opcodePrefix="65" id="CM_REQ_PLEDGE_INFO" />
+		<packet opcodePrefix="66" id="CM_REQ_PLEDGE_EXTENDED_INFO" />
+		<packet opcodePrefix="67" id="CM_REQ_PLEDGE_CREST" />
+		<packet opcodePrefix="6A" id="CM_REQ_FRIEND_INFO_LIST" />
+		<packet opcodePrefix="6B" id="180" />
+		<packet opcodePrefix="6C" id="181" />
+		<packet opcodePrefix="6D" id="182" />
+		<packet opcodePrefix="6E" id="184" />
+		<packet opcodePrefix="6F" id="CM_REQ_HENNA_EQUIP" />
+		<packet opcodePrefix="70" id="CM_REQ_HENNA_UNEQUIP_LIST" />
+		<packet opcodePrefix="71" id="CM_REQ_HENNA_UNEQUIP_INFO" />
+		<packet opcodePrefix="72" id="CM_REQ_HENNA_UNEQUIP" />
+		<packet opcodePrefix="73" id="CM_REQ_ACQUIRE_SKILL_INFO" />
+		<packet opcodePrefix="74" id="CM_SEND_BYPASS_BUILD_CMD" />
+		<packet opcodePrefix="75" id="CM_MOVE_TO_LOCATION_IN_VEHICLE" />
+		<packet opcodePrefix="76" id="CM_CAN_NOT_MOVE_ANYMORE_VEHICLE" />
+		<packet opcodePrefix="77" id="CM_REQ_FRIEND_INVITE" />
+		<packet opcodePrefix="78" id="CM_REQ_FRIEND_ADD_REPLY" />
+		<packet opcodePrefix="7A" id="CM_REQ_FRIEND_DEL" />
+		<packet opcodePrefix="7B" id="CM_REQ_CHARACTER_RESTORE" />
+		<packet opcodePrefix="7C" id="CM_REQ_ACQUIRE_SKILL" />
+		<packet opcodePrefix="7D" id="CM_REQ_RESTART_POINT" />
+		<packet opcodePrefix="7E" id="CM_REQ_GM_COMMAND" />
+		<packet opcodePrefix="7F" id="CM_REQ_LIST_PARTY_WATING" />
+		<packet opcodePrefix="80" id="CM_REQ_MANAGE_PARTY_ROOM" />
+		<packet opcodePrefix="81" id="CM_REQ_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="83" id="CM_SEND_PRIVATE_STORE_BUY_LIST" />
+		<packet opcodePrefix="84" id="130" />
+		<packet opcodePrefix="85" id="CM_REQ_TUTORIAL_LINK_HTML" />
+		<packet opcodePrefix="86" id="CM_REQ_TUTORIAL_PASS_CMD_TO_SERVER" />
+		<packet opcodePrefix="87" id="CM_REQ_TUTORIAL_QUESTION_MARK_PRESSED" />
+		<packet opcodePrefix="88" id="CM_REQ_TUTORIAL_CLIENT_EVENT" />
+		<packet opcodePrefix="89" id="CM_REQ_PETITION" />
+		<packet opcodePrefix="8A" id="CM_REQ_PETITION_CANCEL" />
+		<packet opcodePrefix="8B" id="CM_REQ_GM_LIST" />
+		<packet opcodePrefix="8C" id="CM_REQ_JOIN_ALLY" />
+		<packet opcodePrefix="8D" id="103" />
+		<packet opcodePrefix="8E" id="CM_REQ_WITHDRAW_ALLY" />
+		<packet opcodePrefix="8F" id="CM_REQ_OUST_ALLY" />
+		<packet opcodePrefix="90" id="CM_REQ_DISMISS_ALLY" />
+		<packet opcodePrefix="91" id="CM_REQ_SET_ALLY_CREST" />
+		<packet opcodePrefix="92" id="CM_REQ_ALLY_CREST" />
+		<packet opcodePrefix="93" id="CM_REQ_CHANGE_PET_NAME" />
+		<packet opcodePrefix="94" id="CM_REQ_PET_USE_ITEM" />
+		<packet opcodePrefix="95" id="CM_REQ_GIVE_ITEM_TO_PET" />
+		<packet opcodePrefix="96" id="CM__PS_QUIT" />
+		<packet opcodePrefix="97" id="CM__SET_PS_MSG" />
+		<packet opcodePrefix="98" id="CM_REQ_PET_GET_ITEM" />
+		<packet opcodePrefix="99" id="CM__PSM_BUY_LIST" />
+		<packet opcodePrefix="9A" id="CM_SET_PRIVATE_STORE_BUY_LIST" />
+		<packet opcodePrefix="9C" id="CM__PSM_BUY_QUIT" />
+		<packet opcodePrefix="9D" id="CM__SET_PS_BUY_MSG" />
+		<packet opcodePrefix="9F" id="CM_SEND_PRIVATE_STORE_BUY_BUY_LIST" />
+		<packet opcodePrefix="A0" id="CM_SEND_TIME_CHECK" />
+		<packet opcodePrefix="A6" id="CM_REQ_SKILL_COOL_TIME" />
+		<packet opcodePrefix="A7" id="CM_REQ_PACKAGE_SENDABLE_ITEM_LIST" />
+		<packet opcodePrefix="A8" id="CM_REQ_PACKAGE_SEND" />
+		<packet opcodePrefix="A9" id="CM_REQ_BLOCK" />
+		<packet opcodePrefix="AA" id="CM_REQ_CASTLE_SIEGE_INFO" />
+		<packet opcodePrefix="AB" id="CM_REQ_CASTLE_SIEGE_ATTACKER_LIST" />
+		<packet opcodePrefix="AC" id="CM_REQ_CASTLE_SIEGE_DEFENDER_LIST" />
+		<packet opcodePrefix="AD" id="CM_REQ_JOIN_CASTLE_SIEGE" />
+		<packet opcodePrefix="AE" id="CM_REQ_CONFIRM_CASTLE_SIEGE_WAITING_LIST" />
+		<packet opcodePrefix="AF" id="CM_REQ_SET_CASTLE_SIEGE_TIME" />
+		<packet opcodePrefix="B0" id="CM_REQ_MULTI_SELL_CHOOSE" />
+		<packet opcodePrefix="B1" id="CM_NET_PING" />
+		<packet opcodePrefix="B2" id="CM_REQ_REMAIN_TIME" />
+		<packet opcodePrefix="B3" id="CM_BYPASS_USER_CMD" />
+		<packet opcodePrefix="B4" id="149" />
+		<packet opcodePrefix="B5" id="CM_REQ_RECIPE_BOOK_OPEN" />
+		<packet opcodePrefix="B6" id="CM_REQ_RECIPE_ITEM_DELETE" />
+		<packet opcodePrefix="B7" id="CM_REQ_RECIPE_ITEM_MAKE_INFO" />
+		<packet opcodePrefix="B8" id="CM_REQ_RECIPE_ITEM_MAKE_SELF" />
+		<packet opcodePrefix="B9" id="154" />
+		<packet opcodePrefix="BA" id="155" />
+		<packet opcodePrefix="BB" id="156" />
+		<packet opcodePrefix="BC" id="157" />
+		<packet opcodePrefix="BD" id="158" />
+		<packet opcodePrefix="BE" id="159" />
+		<packet opcodePrefix="BF" id="160" />
+		<packet opcodePrefix="C0" id="161" />
+		<packet opcodePrefix="C1" id="162" />
+		<packet opcodePrefix="C2" id="CM_VOTE_SOCIALITY" />
+		<packet opcodePrefix="C3" id="CM_REQ_HENNA_ITEM_LIST" />
+		<packet opcodePrefix="C4" id="CM_REQ_HENNA_ITEM_INFO" />
+		<packet opcodePrefix="C5" id="174" />
+		<packet opcodePrefix="C6" id="176" />
+		<packet opcodePrefix="C7" id="177" />
+		<packet opcodePrefix="C8" id="178" />
+		<packet opcodePrefix="C9" id="179" />
+		<packet opcodePrefix="CB" id="175" />
+		<packet opcodePrefix="CC" id="170" />
+		<packet opcodePrefix="CD" id="CM_REQ_MAKE_MACRO" />
+		<packet opcodePrefix="CE" id="CM_REQ_DELETE_MACRO" />
+		<packet opcodePrefix="CF" id="173" />
+		<packet opcodePrefix="D0 01 00" id="CM_REQ_MANOR_LIST" />
+		<packet opcodePrefix="D0 02 00" id="192" />
+		<packet opcodePrefix="D0 03 00" id="193" />
+		<packet opcodePrefix="D0 04 00" id="194" />
+		<packet opcodePrefix="D0 05 00" id="195" />
+		<packet opcodePrefix="D0 06 00" id="196" />
+		<packet opcodePrefix="D0 07 00" id="197" />
+		<packet opcodePrefix="D0 08 00" id="198" />
+		<packet opcodePrefix="D0 09 00" id="185" />
+		<packet opcodePrefix="D0 0A 00" id="186" />
+		<packet opcodePrefix="D0 0B 00" id="187" />
+		<packet opcodePrefix="D0 0C 00" id="188" />
+		<packet opcodePrefix="D0 0D 00" id="189" />
+		<packet opcodePrefix="D0 0E 00" id="190" />
+		<packet opcodePrefix="D0 0F 00" id="191" />
+		<packet opcodePrefix="D0 12 00" id="208" />
+		<packet opcodePrefix="D0 13 00" id="209" />
+		<packet opcodePrefix="D0 14 00" id="210" />
+		<packet opcodePrefix="D0 15 00" id="211" />
+		<packet opcodePrefix="D0 16 00" id="212" />
+		<packet opcodePrefix="D0 17 00" id="213" />
+		<packet opcodePrefix="D0 18 00" id="214" />
+		<packet opcodePrefix="D0 19 00" id="215" />
+		<packet opcodePrefix="D0 1A 00" id="234" />
+		<packet opcodePrefix="D0 1B 00" id="220" />
+		<packet opcodePrefix="D0 1C 00" id="221" />
+		<packet opcodePrefix="D0 1D 00" id="235" />
+		<packet opcodePrefix="D0 1E 00" id="236" />
+		<packet opcodePrefix="D0 1F 00" id="237" />
+		<packet opcodePrefix="D0 20 00" id="238" />
+		<packet opcodePrefix="D0 21 00" id="232" />
+		<packet opcodePrefix="D0 22 00" id="239" />
+		<packet opcodePrefix="D0 23 00" id="240" />
+		<packet opcodePrefix="D0 24 00" id="241" />
+		<packet opcodePrefix="D0 25 00" id="206" />
+		<packet opcodePrefix="D0 26 00" id="222" />
+		<packet opcodePrefix="D0 27 00" id="223" />
+		<packet opcodePrefix="D0 28 00" id="224" />
+		<packet opcodePrefix="D0 29 00" id="201" />
+		<packet opcodePrefix="D0 2A 00" id="216" />
+		<packet opcodePrefix="D0 2B 00" id="217" />
+		<packet opcodePrefix="D0 2C 00" id="218" />
+		<packet opcodePrefix="D0 2E 00" id="219" />
+		<packet opcodePrefix="D0 2F 00" id="202" />
+		<packet opcodePrefix="D0 30 00" id="203" />
+		<packet opcodePrefix="D0 31 00" id="204" />
+		<packet opcodePrefix="D0 32 00" id="205" />
+		<packet opcodePrefix="D0 33 00" id="242" />
+		<packet opcodePrefix="D0 34 00" id="243" />
+		<packet opcodePrefix="D0 35 00" id="244" />
+		<packet opcodePrefix="D0 36 00" id="245" />
+		<packet opcodePrefix="D0 37 00" id="246" />
+		<packet opcodePrefix="D0 38 00" id="247" />
+		<packet opcodePrefix="D0 39 00" id="231" />
+		<packet opcodePrefix="D0 3F 00" id="248" />
+		<packet opcodePrefix="D0 40 00" id="233" />
+		<packet opcodePrefix="D0 41 00" id="249" />
+		<packet opcodePrefix="D0 42 00" id="250" />
+		<packet opcodePrefix="D0 43 00" id="207" />
+		<packet opcodePrefix="D0 44 00" id="225" />
+		<packet opcodePrefix="D0 45 00" id="226" />
+		<packet opcodePrefix="D0 46 00" id="227" />
+		<packet opcodePrefix="D0 47 00" id="228" />
+		<packet opcodePrefix="D0 48 00" id="229" />
+		<packet opcodePrefix="D0 49 00" id="251" />
+		<packet opcodePrefix="D0 4B 00" id="252" />
+	</client>
+	<server>
+		<packet opcodePrefix="00" id="SM_DIE" />
+		<packet opcodePrefix="01" id="SM_REVIVE" />
+		<packet opcodePrefix="02" id="11" />
+		<packet opcodePrefix="03" id="12" />
+		<packet opcodePrefix="04" id="13" />
+		<packet opcodePrefix="05" id="SM_SPAWN_ITEM" />
+		<packet opcodePrefix="06" id="SM_SELL_LIST" />
+		<packet opcodePrefix="07" id="SM_BUY_LIST" />
+		<packet opcodePrefix="08" id="SM_DELETE_OBJECT" />
+		<packet opcodePrefix="09" id="30" />
+		<packet opcodePrefix="0A" id="31" />
+		<packet opcodePrefix="0B" id="SM_CHARACTER_SELECTED" />
+		<packet opcodePrefix="0C" id="SM_NPC_INFO" />
+		<packet opcodePrefix="0D" id="SM_NEW_CHARACTER_SUCCESS" />
+		<packet opcodePrefix="0E" id="SM_NEW_CHARACTER_FAIL" />
+		<packet opcodePrefix="0F" id="SM_CHARACTER_CREATE_SUCCESS" />
+		<packet opcodePrefix="10" id="SM_CHARACTER_CREATE_FAIL" />
+		<packet opcodePrefix="11" id="SM_ITEM_LIST" />
+		<packet opcodePrefix="12" id="SM_SUN_RISE" />
+		<packet opcodePrefix="13" id="SM_SUN_SET" />
+		<packet opcodePrefix="14" id="SM_TRADE_START" />
+		<packet opcodePrefix="15" id="49" />
+		<packet opcodePrefix="16" id="SM_DROP_ITEM" />
+		<packet opcodePrefix="17" id="SM_GET_ITEM" />
+		<packet opcodePrefix="18" id="SM_STATUS_UPDATE" />
+		<packet opcodePrefix="19" id="SM_NPC_HTML_MESSAGE" />
+		<packet opcodePrefix="1A" id="SM_TRADE_OWN_ADD" />
+		<packet opcodePrefix="1B" id="SM_TRADE_OTHER_ADD" />
+		<packet opcodePrefix="1C" id="SM_TRADE_DONE" />
+		<packet opcodePrefix="1D" id="SM_CHARACTER_DELETE_SUCCESS" />
+		<packet opcodePrefix="1E" id="SM_CHARACTER_DELETE_FAIL" />
+		<packet opcodePrefix="1F" id="SM_ACTION_FAIL" />
+		<packet opcodePrefix="20" id="56" />
+		<packet opcodePrefix="21" id="SM_INVENTORY_UPDATE" />
+		<packet opcodePrefix="22" id="SM_TELEPORT_TO_LOCATION" />
+		<packet opcodePrefix="23" id="SM_TARGET_SELECTED" />
+		<packet opcodePrefix="24" id="SM_TARGET_UNSELECTED" />
+		<packet opcodePrefix="25" id="SM_AUTO_ATTACK_START" />
+		<packet opcodePrefix="26" id="SM_AUTO_ATTACK_STOP" />
+		<packet opcodePrefix="27" id="SM_SOCIAL_ACTION" />
+		<packet opcodePrefix="28" id="SM_CHANGE_MOVE_TYPE" />
+		<packet opcodePrefix="29" id="SM_CHANGE_WAIT_TYPE" />
+		<packet opcodePrefix="2A" id="240" />
+		<packet opcodePrefix="2B" id="SM_CREATE_PLEDGE" />
+		<packet opcodePrefix="2C" id="SM_ASK_JOIN_PLEDGE" />
+		<packet opcodePrefix="2D" id="SM_JOIN_PLEDGE" />
+		<packet opcodePrefix="2E" id="SM_VERSION_CHECK" />
+		<packet opcodePrefix="2F" id="SM_MOVE_TO_LOCATION" />
+		<packet opcodePrefix="30" id="SM_NPC_SAY" />
+		<packet opcodePrefix="31" id="SM_CHAR_INFO" />
+		<packet opcodePrefix="32" id="SM_USER_INFO" />
+		<packet opcodePrefix="33" id="SM_ATTACK" />
+		<packet opcodePrefix="53" id="SM_TRADE_PRESS_OWN_OK" />
+		<packet opcodePrefix="54" id="SM_MAGIC_SKILL_LAUNCHED" />
+		<packet opcodePrefix="55" id="SM_FRIEND_ADD_REQUEST_RESULT" />
+		<packet opcodePrefix="56" id="145" />
+		<packet opcodePrefix="57" id="SM_FRIEND_REMOVE" />
+		<packet opcodePrefix="58" id="SM_FRIEND_LIST" />
+		<packet opcodePrefix="59" id="SM_FRIEND_STATUS" />
+		<packet opcodePrefix="5A" id="SM_PLEDGE_SHOW_MEMBER_LIST_ALL" />
+		<packet opcodePrefix="5B" id="SM_PLEDGE_SHOW_MEMBER_LIST_UPDATE" />
+		<packet opcodePrefix="5C" id="SM_PLEDGE_SHOW_MEMBER_LIST_ADD" />
+		<packet opcodePrefix="5D" id="SM_PLEDGE_SHOW_MEMBER_LIST_DELETE" />
+		<packet opcodePrefix="5E" id="110" />
+		<packet opcodePrefix="5F" id="SM_SKILL_LIST" />
+		<packet opcodePrefix="60" id="SM_VEHICLE_INFO" />
+		<packet opcodePrefix="61" id="SM_FINISH_ROTATING" />
+		<packet opcodePrefix="62" id="SM_SYSTEM_MESSAGE" />
+		<packet opcodePrefix="63" id="SM_START_PLEDGE_WAR" />
+		<packet opcodePrefix="64" id="SM_REPLY_START_PLEDGE_WAR" />
+		<packet opcodePrefix="65" id="SM_STOP_PLEDGE_WAR" />
+		<packet opcodePrefix="66" id="SM_REPLY_STOP_PLEDGE_WAR" />
+		<packet opcodePrefix="67" id="130" />
+		<packet opcodePrefix="68" id="SM_REPLY_SURRENDER_PLEDGE_WAR" />
+		<packet opcodePrefix="69" id="132" />
+		<packet opcodePrefix="6A" id="SM_PLEDGE_CREST" />
+		<packet opcodePrefix="6B" id="SM_SETUP_GAUGE" />
+		<packet opcodePrefix="6C" id="SM_VEHICLE_DEPARTURE" />
+		<packet opcodePrefix="6D" id="114" />
+		<packet opcodePrefix="6E" id="SM_GET_ON_VEHICLE" />
+		<packet opcodePrefix="6F" id="SM_GET_OFF_VEHICLE" />
+		<packet opcodePrefix="70" id="SM_TRADE_REQUEST" />
+		<packet opcodePrefix="71" id="SM_RESTART_RESPONSE" />
+		<packet opcodePrefix="72" id="SM_MOVE_TO_PAWN" />
+		<packet opcodePrefix="73" id="SM_SSQ_INFO" />
+		<packet opcodePrefix="74" id="269" />
+		<packet opcodePrefix="75" id="SM_L2_FRIEND_LIST" />
+		<packet opcodePrefix="76" id="SM_L2_FRIEND" />
+		<packet opcodePrefix="77" id="SM_L2_FRIEND_STATUS" />
+		<packet opcodePrefix="78" id="285" />
+		<packet opcodePrefix="79" id="SM_VALIDATE_LOCATION" />
+		<packet opcodePrefix="7A" id="SM_START_ROTATING" />
+		<packet opcodePrefix="7B" id="SM_SHOW_BOARD" />
+		<packet opcodePrefix="7C" id="SM_CHOOSE_INVENTORY_ITEM" />
+		<packet opcodePrefix="7D" id="382" />
+		<packet opcodePrefix="7E" id="SM_MOVE_TO_LOCATION_IN_VEHICLE" />
+		<packet opcodePrefix="7F" id="SM_STOP_MOVE_IN_VEHICLE" />
+		<packet opcodePrefix="80" id="SM_VALIDATE_LOCATION_IN_VEHICLE" />
+		<packet opcodePrefix="81" id="SM_TRADE_UPDATE" />
+		<packet opcodePrefix="82" id="SM_TRADE_PRESS_OTHER_OK" />
+		<packet opcodePrefix="83" id="SM_FRIEND_ADD_REQUEST" />
+		<packet opcodePrefix="84" id="SM_LOG_OUT_OK" />
+		<packet opcodePrefix="85" id="SM_ABNORMAL_STATUS_UPDATE" />
+		<packet opcodePrefix="86" id="SM_QUEST_LIST" />
+		<packet opcodePrefix="87" id="SM_ENCHANT_RESULT" />
+		<packet opcodePrefix="88" id="SM_PLEDGE_SHOW_MEMBER_LIST_DELETE_ALL" />
+		<packet opcodePrefix="89" id="SM_PLEDGE_INFO" />
+		<packet opcodePrefix="8A" id="SM_PLEDGE_EXTENDED_INFO" />
+		<packet opcodePrefix="8B" id="SM_SURRENDER_PERSONALLY" />
+		<packet opcodePrefix="8C" id="SM_RIDE" />
+		<packet opcodePrefix="8D" id="SM__GNN_DONE" />
+		<packet opcodePrefix="8E" id="SM_PLEDGE_SHOW_INFO_UPDATE" />
+		<packet opcodePrefix="8F" id="SM_CLIENT_ACTION" />
+		<packet opcodePrefix="90" id="SM_ACQUIRE_SKILL_LIST" />
+		<packet opcodePrefix="91" id="SM_ACQUIRE_SKILL_INFO" />
+		<packet opcodePrefix="92" id="SM_SERVER_OBJECT_INFO" />
+		<packet opcodePrefix="93" id="SM_GM_HIDE" />
+		<packet opcodePrefix="94" id="SM_ACQUIRE_SKILL_DONE" />
+		<packet opcodePrefix="95" id="SM_GM_VIEW_CHARACTER_INFO" />
+		<packet opcodePrefix="96" id="SM_GM_VIEW_PLEDGE_INFO" />
+		<packet opcodePrefix="97" id="SM_GM_VIEW_SKILL_INFO" />
+		<packet opcodePrefix="98" id="172" />
+		<packet opcodePrefix="99" id="SM_GM_VIEW_QUEST_INFO" />
+		<packet opcodePrefix="9A" id="SM_GM_VIEW_ITEM_LIST" />
+		<packet opcodePrefix="9B" id="SM_GM_VIEW_WAREHOUSE_WITHDRAW_LIST" />
+		<packet opcodePrefix="9C" id="176" />
+		<packet opcodePrefix="9D" id="177" />
+		<packet opcodePrefix="9E" id="SM_PLAY_SOUND" />
+		<packet opcodePrefix="9F" id="SM_STATIC_OBJECT" />
+		<packet opcodePrefix="A0" id="SM_PRIVATE_STORE_MANAGE_LIST" />
+		<packet opcodePrefix="A1" id="SM_PRIVATE_STORE_LIST" />
+		<packet opcodePrefix="A2" id="SM_PRIVATE_STORE_MSG" />
+		<packet opcodePrefix="A3" id="SM_SHOW_MINIMAP" />
+		<packet opcodePrefix="A4" id="184" />
+		<packet opcodePrefix="A5" id="SM_ABNORMAL_VISUAL_EFFECT" />
+		<packet opcodePrefix="A6" id="SM_TUTORIAL_SHOW_HTML" />
+		<packet opcodePrefix="A7" id="SM_TUTORIAL_SHOW_QUESTION_MARK" />
+		<packet opcodePrefix="A8" id="SM_TUTORIAL_ENABLE_CLIENT_EVENT" />
+		<packet opcodePrefix="A9" id="SM_TUTORIAL_CLOSE_HTML" />
+		<packet opcodePrefix="AA" id="SM_SHOW_RADAR" />
+		<packet opcodePrefix="AB" id="SM_WITHDRAW_ALLIANCE" />
+		<packet opcodePrefix="AC" id="SM_OUST_ALLIANCE_MEMBER_PLEDGE" />
+		<packet opcodePrefix="AD" id="SM_DISMISS_ALLIANCE" />
+		<packet opcodePrefix="AE" id="199" />
+		<packet opcodePrefix="AF" id="SM_ALLIANCE_CREST" />
+		<packet opcodePrefix="B0" id="201" />
+		<packet opcodePrefix="B1" id="SM_PET_STATUS_SHOW" />
+		<packet opcodePrefix="B2" id="SM_PET_INFO" />
+		<packet opcodePrefix="B3" id="SM_PET_ITEM_LIST" />
+		<packet opcodePrefix="B4" id="SM_PET_INVENTORY_UPDATE" />
+		<packet opcodePrefix="B5" id="SM_ALLIANCE_INFO" />
+		<packet opcodePrefix="B6" id="SM_PET_STATUS_UPDATE" />
+		<packet opcodePrefix="B7" id="SM_PET_DELETE" />
+		<packet opcodePrefix="B8" id="SM_DELETE_RADAR" />
+		<packet opcodePrefix="B9" id="SM_MY_TARGET_SELECTED" />
+		<packet opcodePrefix="BA" id="SM_PARTY_MEMBER_POSITION" />
+		<packet opcodePrefix="BB" id="194" />
+		<packet opcodePrefix="BC" id="SM_JOIN_ALLIANCE" />
+		<packet opcodePrefix="BD" id="SM_PRIVATE_STORE_BUY_MANAGE_LIST" />
+		<packet opcodePrefix="BE" id="SM_PRIVATE_STORE_BUY_LIST" />
+		<packet opcodePrefix="BF" id="SM_PRIVATE_STORE_BUY_MSG" />
+		<packet opcodePrefix="C0" id="212" />
+		<packet opcodePrefix="C1" id="SM_REQ_TIME_CHECK" />
+		<packet opcodePrefix="C2" id="SM_START_ALLIANCE_WAR" />
+		<packet opcodePrefix="C3" id="SM_REPLY_START_ALLIANCE_WAR" />
+		<packet opcodePrefix="C4" id="SM_STOP_ALLIANCE_WAR" />
+		<packet opcodePrefix="C5" id="SM_REPLY_STOP_ALLIANCE_WAR" />
+		<packet opcodePrefix="C6" id="SM_SURRENDER_ALLIANCE_WAR" />
+		<packet opcodePrefix="C7" id="SM_SKILL_COOL_TIME" />
+		<packet opcodePrefix="C8" id="SM_PACKAGE_TO_LIST" />
+		<packet opcodePrefix="D2" id="SM_PACKAGE_SENDABLE_LIST" />
+		<packet opcodePrefix="D3" id="SM_EARTH_QUAKE" />
+		<packet opcodePrefix="D4" id="SM_FLY_TO_LOCATION" />
+		<packet opcodePrefix="D5" id="225" />
+		<packet opcodePrefix="D6" id="SM_SPECIAL_CAMERA" />
+		<packet opcodePrefix="D7" id="227" />
+		<packet opcodePrefix="D8" id="237" />
+		<packet opcodePrefix="D9" id="SM_NET_PING" />
+		<packet opcodePrefix="DA" id="SM_DICE" />
+		<packet opcodePrefix="DB" id="244" />
+		<packet opcodePrefix="DC" id="SM_RECIPE_BOOK_ITEM_LIST" />
+		<packet opcodePrefix="DD" id="SM_RECIPE_ITEM_MAKE_INFO" />
+		<packet opcodePrefix="DE" id="247" />
+		<packet opcodePrefix="DF" id="248" />
+		<packet opcodePrefix="E0" id="249" />
+		<packet opcodePrefix="E1" id="250" />
+		<packet opcodePrefix="E2" id="251" />
+		<packet opcodePrefix="E3" id="252" />
+		<packet opcodePrefix="E4" id="SM_HENNA_ITEM_INFO" />
+		<packet opcodePrefix="E5" id="SM_HENNA_INFO" />
+		<packet opcodePrefix="E6" id="SM_HENNA_UNEQUIP_LIST" />
+		<packet opcodePrefix="E7" id="SM_HENNA_UNEQUIP_INFO" />
+		<packet opcodePrefix="E8" id="SM_MACRO_LIST" />
+		<packet opcodePrefix="E9" id="263" />
+		<packet opcodePrefix="EA" id="253" />
+		<packet opcodePrefix="EB" id="254" />
+		<packet opcodePrefix="EC" id="255" />
+		<packet opcodePrefix="ED" id="256" />
+		<packet opcodePrefix="EE" id="SM_HENNA_EQUIP_LIST" />
+		<packet opcodePrefix="EF" id="264" />
+		<packet opcodePrefix="F0" id="SM_GM_HENNA_INFO" />
+		<packet opcodePrefix="F1" id="266" />
+		<packet opcodePrefix="F2" id="271" />
+		<packet opcodePrefix="F3" id="272" />
+		<packet opcodePrefix="F4" id="273" />
+		<packet opcodePrefix="F5" id="274" />
+		<packet opcodePrefix="F6" id="275" />
+		<packet opcodePrefix="F7" id="276" />
+		<packet opcodePrefix="F8" id="268" />
+		<packet opcodePrefix="F9" id="277" />
+		<packet opcodePrefix="FA" id="278" />
+		<packet opcodePrefix="FB" id="279" />
+		<packet opcodePrefix="FC" id="280" />
+		<packet opcodePrefix="FD" id="281" />
+		<packet opcodePrefix="FE 02 00" id="297" />
+		<packet opcodePrefix="FE 03 00" id="298" />
+		<packet opcodePrefix="FE 04 00" id="299" />
+		<packet opcodePrefix="FE 05 00" id="300" />
+		<packet opcodePrefix="FE 06 00" id="301" />
+		<packet opcodePrefix="FE 07 00" id="302" />
+		<packet opcodePrefix="FE 08 00" id="303" />
+		<packet opcodePrefix="FE 09 00" id="304" />
+		<packet opcodePrefix="FE 0A 00" id="305" />
+		<packet opcodePrefix="FE 0B 00" id="306" />
+		<packet opcodePrefix="FE 0C 00" id="307" />
+		<packet opcodePrefix="FE 0D 00" id="291" />
+		<packet opcodePrefix="FE 0E 00" id="292" />
+		<packet opcodePrefix="FE 0F 00" id="293" />
+		<packet opcodePrefix="FE 10 00" id="294" />
+		<packet opcodePrefix="FE 11 00" id="326" />
+		<packet opcodePrefix="FE 12 00" id="327" />
+		<packet opcodePrefix="FE 13 00" id="328" />
+		<packet opcodePrefix="FE 14 00" id="384" />
+		<packet opcodePrefix="FE 15 00" id="385" />
+		<packet opcodePrefix="FE 16 00" id="386" />
+		<packet opcodePrefix="FE 17 00" id="387" />
+		<packet opcodePrefix="FE 18 00" id="388" />
+		<packet opcodePrefix="FE 19 00" id="389" />
+		<packet opcodePrefix="FE 1A 00" id="329" />
+		<packet opcodePrefix="FE 1B 00" id="330" />
+		<packet opcodePrefix="FE 1C 00" id="295" />
+		<packet opcodePrefix="FE 1D 00" id="296" />
+		<packet opcodePrefix="FE 1E 00" id="309" />
+		<packet opcodePrefix="FE 1F 00" id="310" />
+		<packet opcodePrefix="FE 20 00" id="315" />
+		<packet opcodePrefix="FE 21 00" id="316" />
+		<packet opcodePrefix="FE 22 00" id="SM_EX_SEND_MANOR_LIST" />
+		<packet opcodePrefix="FE 23 00" id="318" />
+		<packet opcodePrefix="FE 24 00" id="319" />
+		<packet opcodePrefix="FE 25 00" id="320" />
+		<packet opcodePrefix="FE 26 00" id="321" />
+		<packet opcodePrefix="FE 27 00" id="311" />
+		<packet opcodePrefix="FE 28 00" id="312" />
+		<packet opcodePrefix="FE 29 00" id="313" />
+		<packet opcodePrefix="FE 2A 00" id="314" />
+		<packet opcodePrefix="FE 2B 00" id="322" />
+		<packet opcodePrefix="FE 2C 00" id="323" />
+		<packet opcodePrefix="FE 2D 00" id="334" />
+		<packet opcodePrefix="FE 2E 00" id="335" />
+		<packet opcodePrefix="FE 2F 00" id="SM_EX_STORAGE_MAX_COUNT" />
+		<packet opcodePrefix="FE 30 00" id="308" />
+		<packet opcodePrefix="FE 31 00" id="337" />
+		<packet opcodePrefix="FE 32 00" id="338" />
+		<packet opcodePrefix="FE 33 00" id="339" />
+		<packet opcodePrefix="FE 34 00" id="340" />
+		<packet opcodePrefix="FE 35 00" id="341" />
+		<packet opcodePrefix="FE 36 00" id="342" />
+		<packet opcodePrefix="FE 37 00" id="343" />
+		<packet opcodePrefix="FE 38 00" id="344" />
+		<packet opcodePrefix="FE 39 00" id="345" />
+		<packet opcodePrefix="FE 3A 00" id="346" />
+		<packet opcodePrefix="FE 3B 00" id="347" />
+		<packet opcodePrefix="FE 3C 00" id="348" />
+		<packet opcodePrefix="FE 3D 00" id="349" />
+		<packet opcodePrefix="FE 3E 00" id="350" />
+		<packet opcodePrefix="FE 3F 00" id="351" />
+		<packet opcodePrefix="FE 40 00" id="352" />
+		<packet opcodePrefix="FE 41 00" id="353" />
+		<packet opcodePrefix="FE 42 00" id="354" />
+		<packet opcodePrefix="FE 43 00" id="355" />
+		<packet opcodePrefix="FE 44 00" id="356" />
+		<packet opcodePrefix="FE 45 00" id="357" />
+		<packet opcodePrefix="FE 46 00" id="358" />
+		<packet opcodePrefix="FE 47 00" id="359" />
+		<packet opcodePrefix="FE 48 00" id="360" />
+		<packet opcodePrefix="FE 49 00" id="361" />
+		<packet opcodePrefix="FE 4A 00" id="362" />
+		<packet opcodePrefix="FE 4B 00" id="363" />
+		<packet opcodePrefix="FE 4C 00" id="364" />
+		<packet opcodePrefix="FE 4D 00" id="365" />
+		<packet opcodePrefix="FE 4E 00" id="366" />
+		<packet opcodePrefix="FE 4F 00" id="367" />
+		<packet opcodePrefix="FE 50 00" id="368" />
+		<packet opcodePrefix="FE 51 00" id="369" />
+		<packet opcodePrefix="FE 52 00" id="370" />
+		<packet opcodePrefix="FE 53 00" id="371" />
+		<packet opcodePrefix="FE 54 00" id="372" />
+		<packet opcodePrefix="FE 55 00" id="373" />
+		<packet opcodePrefix="FE 56 00" id="374" />
+		<packet opcodePrefix="FE 57 00" id="375" />
+		<packet opcodePrefix="FE 58 00" id="376" />
+		<packet opcodePrefix="FE 59 00" id="377" />
+		<packet opcodePrefix="FE 5A 00" id="378" />
+		<packet opcodePrefix="FE 5B 00" id="379" />
+		<packet opcodePrefix="FE 5C 00" id="380" />
+		<packet opcodePrefix="FE 5D 00" id="390" />
+		<packet opcodePrefix="FE 5E 00" id="391" />
+		<packet opcodePrefix="FE 5F 00" id="392" />
+		<packet opcodePrefix="FE 60 00" id="393" />
+		<packet opcodePrefix="FE 61 00" id="394" />
+		<packet opcodePrefix="FE 62 00" id="395" />
+		<packet opcodePrefix="FE 63 00" id="396" />
+		<packet opcodePrefix="FE 64 00" id="397" />
+		<packet opcodePrefix="FE 65 00" id="398" />
+		<packet opcodePrefix="FE 66 00" id="399" />
+		<packet opcodePrefix="FE 67 00" id="400" />
+		<packet opcodePrefix="FE 68 00" id="401" />
+		<packet opcodePrefix="FE 69 00" id="381" />
+		<packet opcodePrefix="FE 6A 00" id="402" />
+		<packet opcodePrefix="FE 6B 00" id="403" />
+		<packet opcodePrefix="FE 6C 00" id="404" />
+		<packet opcodePrefix="FE 6D 00" id="405" />
+		<packet opcodePrefix="FE 6E 00" id="406" />
+		<packet opcodePrefix="FE 6F 00" id="407" />
+		<packet opcodePrefix="FE 70 00" id="408" />
+		<packet opcodePrefix="FE 71 00" id="409" />
+		<packet opcodePrefix="FE 72 00" id="410" />
+		<packet opcodePrefix="FE 73 00" id="411" />
+		<packet opcodePrefix="FE 74 00" id="412" />
+		<packet opcodePrefix="FE 75 00" id="413" />
+		<packet opcodePrefix="FE 76 00" id="414" />
+		<packet opcodePrefix="FE 77 00" id="415" />
+		<packet opcodePrefix="FE 78 00" id="324" />
+		<packet opcodePrefix="FE 79 00" id="325" />
+		<packet opcodePrefix="FE 7A 00" id="331" />
+		<packet opcodePrefix="FE 7B 00" id="332" />
+		<packet opcodePrefix="FE 7C 00" id="333" />
+		<packet opcodePrefix="FE 7D 00" id="416" />
+	</server>
+</mapping>

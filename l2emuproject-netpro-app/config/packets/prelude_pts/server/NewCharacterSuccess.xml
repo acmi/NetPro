@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_NEW_CHARACTER_SUCCESS" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Template count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Race" type="Race" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Max STR" />
+		<dword alias="Recommended STR" />
+		<dword alias="Min STR" />
+		<dword alias="Max DEX" />
+		<dword alias="Recommended DEX" />
+		<dword alias="Min DEX" />
+		<dword alias="Max CON" />
+		<dword alias="Recommended CON" />
+		<dword alias="Min CON" />
+		<dword alias="Max INT" />
+		<dword alias="Recommended INT" />
+		<dword alias="Min INT" />
+		<dword alias="Max WIT" />
+		<dword alias="Recommended WIT" />
+		<dword alias="Min WIT" />
+		<dword alias="Max MEN" />
+		<dword alias="Recommended MEN" />
+		<dword alias="Min MEN" />
+	</loop>
+</packet>

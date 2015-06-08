@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_C_LOGIN" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Account name" />
+	<dword alias="Account ID" />
+	<dword alias="Session key (game)" />
+	<dword alias="Account ID" />
+	<dword alias="Session key (login)" />
+</packet>

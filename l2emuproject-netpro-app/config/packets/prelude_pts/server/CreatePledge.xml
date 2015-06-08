@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sent in reply to the associated CM packet. Only possible to receive via CM injection. -->
+<!-- Not supported by modern servers. -->
+<packet id="SM_CREATE_PLEDGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Success" type="YesOrNo" />
+</packet>

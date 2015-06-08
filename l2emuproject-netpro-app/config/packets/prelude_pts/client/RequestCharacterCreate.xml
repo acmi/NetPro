@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_CHARACTER_CREATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Name" />
+	<dword alias="Race" type="Race" />
+	<dword alias="Sex" type="Sex" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="INT" />
+	<dword alias="STR" />
+	<dword alias="CON" />
+	<dword alias="MEN" />
+	<dword alias="DEX" />
+	<dword alias="WIT" />
+	<dword alias="Hair style" type="Alphabet" />
+	<dword alias="Hair color" type="Alphabet" />
+	<dword alias="Face" type="Alphabet" />
+</packet>

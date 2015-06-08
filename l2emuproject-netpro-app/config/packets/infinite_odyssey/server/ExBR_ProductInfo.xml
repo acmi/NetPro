@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Current currency amount QWORDs added at the end of the packet -->
+<packet id="459" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Product" type="product.Product" />
+	<dword alias="Price" />
+	<dword alias="Related items" id="content" />
+	<loop id="content">
+		<dword alias="Item" type="Item" />
+		<dword alias="Amount" />
+		<dword alias="Weight" />
+		<dword alias="Tradable" type="YesOrNo" />
+	</loop>
+	
+	<!-- NEW -->
+	<qword alias="Viewer's adena" />
+	<qword alias="Viewer's NCoin" />
+	<qword alias="Viewer's hero coin" />
+</packet>

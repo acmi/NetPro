@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a new DWORD to control HP visibility -->
+<packet id="SM_DOOR_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Door OID">
+		<scriptAlias id="OIC_SO_OID" />
+	</dword>
+	<dword alias="Door" type="StaticObject">
+		<scriptAlias id="OIC_SO_TEMPLATE" />
+	</dword>
+	<dword alias="Destructible" type="YesOrNo" /> <!-- NEW -->
+</packet>

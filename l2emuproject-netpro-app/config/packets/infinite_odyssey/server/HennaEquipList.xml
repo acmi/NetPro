@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Periodic dye flag DWORD is back again at the end of each loop element -->
+<packet id="SM_HENNA_EQUIP_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<qword alias="Viewer's adena" />
+	<dword alias="Available slots" />
+	<dword alias="Henna count (different types in inventory)" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Henna" type="Henna" />
+		<dword alias="Actual item" type="Item" />
+		<qword alias="Amount in inventory" />
+		<qword alias="Price of appliance" />
+		<dword alias="Applicable" type="YesOrNo" />
+		<dword alias="Periodic" type="YesOrNo" /> <!-- NEW -->
+	</loop>
+</packet>

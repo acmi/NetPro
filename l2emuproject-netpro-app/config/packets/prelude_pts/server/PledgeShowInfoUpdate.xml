@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_PLEDGE_SHOW_INFO_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- This is an excerpt from PledgeShowMemberListAll packet -->
+	<dword alias="Crest ID" type="PledgeCrest" />
+	<dword alias="Pledge level" />
+	<dword alias="Has castle" type="YesOrNo" />
+	<dword alias="Has hideout" type="YesOrNo" />
+	<dword alias="Rank" />
+	<dword alias="Reputation" />
+	<dword alias="Status" type="pledge.PledgeStatus" />
+	<dword alias="0" />
+</packet>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Unknown time of changes -->
+<!-- Added augmentation, mana, time remaining fields. Added 3 DWORDs to identify stat bonuses gained from item enchanting. -->
+<!-- Price/ref price fields moved to the end of loop element -->
+<packet id="SM_PRIVATE_STORE_BUY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Buyer OID" type="ObjectID" />
+	<qword alias="Adena" />
+	<dword alias="Buyable count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+			<scriptAlias id="harvester_personal_store_item" />
+		</dword>
+		<dword alias="Slot number" type="InventorySlot" />
+		<qword alias="Quantity" />
+		<word alias="Main item type" type="ItemType2" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<word alias="Round of lottery" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Lane" />
+		</branch>
+		
+		<word alias="Equipped" type="YesOrNo" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<dword alias="Selected numbers" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+		
+		<!-- NEW -->
+		<word alias="Augmentation effect (1)" type="Augmentation" />
+		<word alias="Augmentation effect (2)" type="Augmentation" />
+		<dword alias="Mana left" type="ShadowMana" />
+		<dword alias="Time remaining" type="TimeRemaining" />
+		
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+
+		<!-- NEW -->
+		<word alias="Enchant effect (1)" type="Augmentation" />
+		<word alias="Enchant effect (2)" type="Augmentation" />
+		<word alias="Enchant effect (3)" type="Augmentation" />
+
+		<qword alias="Price" />
+		<qword alias="Reference (shop) price">
+			<scriptAlias id="harvester_personal_store_item_price" />
+		</qword>
+		<qword alias="Quantity bought" />
+	</loop>
+</packet>

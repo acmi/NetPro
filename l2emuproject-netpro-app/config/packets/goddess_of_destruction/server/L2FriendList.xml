@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Adds DWORD 'level', DWORD 'class' and STRING 'Memo' fields to each loop element, making it more like HF's FriendList -->
+<packet id="SM_L2_FRIEND_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Friend count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Character ID" />
+		<string alias="Name" />
+		<dword alias="Online" type="YesOrNo" />
+		<dword alias="Character OID" type="ObjectID" /> <!-- if online -->
+		<dword alias="Level" /> <!-- NEW -->
+		<dword alias="Class" type="CharacterClass" /> <!-- NEW -->
+		<string alias="Memo" /> <!-- NEW -->
+	</loop>
+</packet>

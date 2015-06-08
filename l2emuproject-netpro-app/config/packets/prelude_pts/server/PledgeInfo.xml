@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_PLEDGE_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+	</dword>
+	<string alias="Name">
+		<scriptAlias id="PIC_PLEDGE_NAME" />
+	</string>
+	<dword alias="Crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<dword alias="Current war [pledge with higher ID?!]" type="Pledge" />
+	<dword alias="Current enemy" type="Pledge" />
+	<dword alias="0" />
+	<dword alias="0" />
+</packet>

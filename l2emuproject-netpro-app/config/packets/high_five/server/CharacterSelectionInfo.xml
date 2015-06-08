@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added 'XP %' field (DOUBLE), active pet state describing fields and vitality DWORD  -->
+<packet id="30" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Created character count" id="index_0" />
+	<dword alias="Max character count" />
+	<byte alias="0" />
+	<loop id="index_0">
+		<string alias="Character name" />
+		<dword alias="Character ID" />
+		<string alias="Account name" />
+		<dword alias="Account ID" />
+		<dword alias="Pledge ID" type="Pledge" />
+		<dword alias="Builder level" />
+		<dword alias="Sex" type="Sex" />
+		<dword alias="Race" type="Race" />
+		<dword alias="Visible class" type="CharacterClass" />
+		<dword alias="Server" type="GameServerName" />
+		<dword alias="Location X" />
+		<dword alias="Location Y" />
+		<dword alias="Location Z" />
+		<double alias="Current HP" />
+		<double alias="Current MP" />
+		<dword alias="SP" />
+		<qword alias="XP" />
+		<double alias="Progress to next level (%)" /><!-- NEW -->
+		<dword alias="Level" />
+		<dword alias="Karma" />
+		<dword alias="PK Count" />
+		<dword alias="PvP Count" />
+
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+
+		<dword alias="Underwear" type="Item" />
+		<dword alias="Earring (bottom/left)" type="Item" />
+		<dword alias="Earring (top/right)" type="Item" />
+		<dword alias="Necklace" type="Item" />
+		<dword alias="Ring (bottom/left)" type="Item" />
+		<dword alias="Ring (top/right)" type="Item" />
+		<dword alias="Headgear" type="Item" />
+		<dword alias="Weapon" type="Item" />
+		<dword alias="Shield [Sigil]" type="Item" />
+		<dword alias="Gloves" type="Item" />
+		<dword alias="Upper Body" type="Item" />
+		<dword alias="Lower Body" type="Item" />
+		<dword alias="Boots" type="Item" />
+		<dword alias="Cloak" type="Item" />
+		<dword alias="Weapon / Two Handed" type="Item" />
+		<dword alias="Hair Accessory (top)" type="Item" />
+		<dword alias="Hair Accessory (bottom)" type="Item" />
+		<dword alias="Right Bracelet" type="Item" />
+		<dword alias="Left Bracelet" type="Item" />
+		<dword alias="Talisman (1)" type="Item" />
+		<dword alias="Talisman (2)" type="Item" />
+		<dword alias="Talisman (3)" type="Item" />
+		<dword alias="Talisman (4)" type="Item" />
+		<dword alias="Talisman (5)" type="Item" />
+		<dword alias="Talisman (6)" type="Item" />
+		<dword alias="Belt" type="Item" />
+
+		<dword alias="Hair style" type="Alphabet" />
+		<dword alias="Hair color" type="Alphabet" />
+		<dword alias="Face" type="Alphabet" />
+		
+		<double alias="Maximum HP" />
+		<double alias="Maximum MP" />
+		<dword alias="Time to deletion" type="TimeRemaining" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Selected" type="YesOrNo" />
+		<byte alias="Weapon enchant level" type="EnchantEffect" />
+		<word alias="Weapon augmentation effect (1)" type="Augmentation" />
+		<word alias="Weapon augmentation effect (2)" type="Augmentation" />
+		<dword alias="Transformation" type="Transformation" />
+		
+		<!-- NEW -->
+		<dword alias="Pet" type="Npc" />
+		<dword alias="Pet level" />
+		<dword alias="Pet Food" />
+		<dword alias="Pet Food Level" />
+		<double alias="Current pet HP" />
+		<double alias="Current pet MP" />
+		
+		<dword alias="Vitality" type="VitalityLevel" />
+	</loop>
+</packet>

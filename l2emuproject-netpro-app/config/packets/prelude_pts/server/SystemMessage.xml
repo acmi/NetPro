@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_SYSTEM_MESSAGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Message" type="ImmutableSystemMessage">
+		<scriptAlias id="SYS_MESSAGE_ID" />
+	</dword>
+	<dword alias="Parameter count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Parameter" type="Parameter" id="cond_1">
+			<scriptAlias id="SYS_MESSAGE_PARAMS" />
+		</dword>
+		<branch id="cond_1" condition="param.StringValue">
+			<string alias="Value" />
+		</branch>
+		<branch id="cond_1" condition="param.Player">
+			<string alias="Player" />
+		</branch>
+		<branch id="cond_1" condition="param.Item">
+			<dword alias="Item" type="Item" />
+		</branch>
+		<branch id="cond_1" condition="param.Item2">
+			<dword alias="Item" type="Item" />
+			<word alias="Augmentation effect (1)" type="Augmentation" />
+			<word alias="Augmentation effect (2)" type="Augmentation" />
+		</branch>
+		<branch id="cond_1" condition="param.PledgeBase">
+			<dword alias="Residence" type="PledgeBase" />
+		</branch>
+		<branch id="cond_1" condition="param.NumberValue">
+			<dword alias="Value" />
+		</branch>
+		<branch id="cond_1" condition="param.Npc">
+			<dword alias="NPC" type="Npc" />
+		</branch>
+		<branch id="cond_1" condition="param.Element"> <!-- Kamael -->
+			<dword alias="Element" type="ElementType" />
+		</branch>
+		<branch id="cond_1" condition="param.Fstring"> <!-- Freya -->
+			<dword alias="Value" type="ImmutableNpcString" />
+		</branch>
+		<branch id="cond_1" condition="param.Sysstring">
+			<dword alias="Value" type="SysString" />
+		</branch>
+		<branch id="cond_1" condition="param.Instance"> <!-- Kamael -->
+			<dword alias="Instance" type="Instance" />
+		</branch>
+		<branch id="cond_1" condition="param.Quantity"> <!-- C4 -->
+			<qword alias="Amount" />
+		</branch>
+		<branch id="cond_1" condition="param.Skill">
+			<dword alias="Skill" type="Skill">
+				<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+			</dword>
+			<dword alias="Level" type="skill.SkillLevel">
+				<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+			</dword>
+		</branch>
+		<branch id="cond_1" condition="param.Zone">
+			<dword alias="Location X" />
+			<dword alias="Location Y" />
+			<dword alias="Location Z" />
+		</branch>
+		<branch id="cond_1" condition="param.Damage"> <!-- GoD -->
+			<dword alias="Target OID" type="ObjectID" />
+			<dword alias="Attacker OID" type="ObjectID" />
+			<dword alias="HP change" />
+		</branch>
+		<branch id="cond_1" condition="param.MutableFstring">
+			<dword alias="Value" type="ImmutableNpcString" />
+			<string alias="1st token" />
+			<string alias="2nd token" />
+			<string alias="3rd token" />
+			<string alias="4th token" />
+			<string alias="5th token" />
+		</branch>
+	</loop>
+</packet>

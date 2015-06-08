@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="568" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Statistic" type="MuseumStat" id="cond_1" />
+	<branch id="cond_1" condition="museum.AwakenedClass">
+		<dword alias="Class" type="CharacterClass" />
+	</branch>
+	<branch id="cond_1" condition="museum.Grade">
+		<dword alias="Grade" type="SoulshotGrade" />
+	</branch>
+	<branch id="cond_1" condition="museum.Npc">
+		<dword alias="Npc" type="Npc" />
+	</branch>
+	<branch id="cond_1" condition="museum.DefaultStat">
+		<dword alias="0" />
+	</branch>
+
+	<dword alias="Monthly awards" id="index_0" />
+	<loop id="index_0">
+		<word alias="Rank" />
+		<dword alias="Character ID" />
+		<string alias="Name" />
+		<branch id="cond_1" condition="museum.Duration">
+			<qword alias="Monthly total" type="TimeRemaining" />
+		</branch>
+		<branch id="cond_1" condition="museum.NotDuration">
+			<qword alias="Monthly total" />
+		</branch>
+		<qword alias="0" />
+		<word alias="0" />
+	</loop>
+	<dword alias="Total awards" id="index_0" />
+	<loop id="index_0">
+		<word alias="Rank" />
+		<dword alias="Character ID" />
+		<string alias="Name" />
+		<branch id="cond_1" condition="museum.Duration">
+			<qword alias="Total" type="TimeRemaining" />
+		</branch>
+		<branch id="cond_1" condition="museum.NotDuration">
+			<qword alias="Total" />
+		</branch>
+		<qword alias="0" />
+		<word alias="0" />
+	</loop>
+</packet>

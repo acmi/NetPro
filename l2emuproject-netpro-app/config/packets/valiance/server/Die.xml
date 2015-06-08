@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_DIE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Deceased OID" type="ObjectID">
+		<scriptAlias id="HLE_DECEASED_OID" />
+		<scriptAlias id="harvester_droprate_deceased_oid" />
+	</dword>
+	<dword alias="To Village" type="YesOrNo" />
+	<dword alias="To Clan Hall" type="YesOrNo" />
+	<dword alias="To Castle" type="YesOrNo" />
+	<dword alias="To Outpost" type="YesOrNo" />
+	<dword alias="Can be sweeped" type="YesOrNo">
+		<scriptAlias id="HLE_DECEASED_SWEEP" />
+	</dword>
+	<dword alias="Use Feather" type="YesOrNo" />
+	<dword alias="To Fortress" type="YesOrNo" />
+	<dword alias="Feather allowed in" type="TimeRemaining" />
+	<dword alias="Adventurer's Song" />
+	<byte alias="Normal death" type="YesOrNo" /> <!-- [0 = character falls down & etc][1 = client ignores this packet] -->
+	<dword alias="0" /> <!-- agathion -->
+	<dword alias="0" /> <!-- spacer -->
+</packet>

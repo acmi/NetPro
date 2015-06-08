@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_ACQUIRE_SKILL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Skill" type="Skill">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+	</dword>
+	<dword alias="Level" type="skill.SkillLevel">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+	</dword>
+</packet>

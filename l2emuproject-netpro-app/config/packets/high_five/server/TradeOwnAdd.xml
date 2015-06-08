@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Unknown exact time of modifications -->
+<!-- Added 3 DWORDs to identify stat bonuses gained from item enchanting. -->
+<packet id="SM_TRADE_OWN_ADD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Item count" id="index_0" />
+	<word alias="0" /> <!-- NEW -->
+	<loop id="index_0">
+		<dword alias="Item OID" type="ObjectID"> <!-- new OID, if not whole -->
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<qword alias="Quantity" />
+		<word alias="Main item type" type="ItemType2" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<word alias="Round of lottery" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Lane" />
+		</branch>
+
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="0" /> <!-- Please. Explain this to me. -->
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedWord alias="Selected numbers (truncated)" type="LottoNumbers" />
+			<dword alias="0" /> <!-- Please. Explain this to me. -->
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<word alias="0" /> <!-- Please. Explain this to me. -->
+			<unsignedWord alias="Actual bet multiplier * 100 (truncated)" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+
+		<!-- NEW -->
+		<word alias="Enchant effect (1)" type="Augmentation" />
+		<word alias="Enchant effect (2)" type="Augmentation" />
+		<word alias="Enchant effect (3)" type="Augmentation" />
+	</loop>
+</packet>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_GM_VIEW_WAREHOUSE_WITHDRAW_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Player name" />
+	
+	<!-- WareHouseWithdrawList packet below -->
+	<dword alias="Viewer's adena" />
+	<word alias="Item count" id="cnt" />
+	<loop id="cnt">
+		<word alias="Base item type" type="ItemType1" />
+		<dword alias="0" /> <!-- Item OID -->
+		<dword alias="Item" type="Item" />
+		<dword alias="Amount" />
+		<word alias="Main item type" type="ItemType2" id="type" />
+		<word alias="Blessed" type="YesOrNo" />
+		<branch id="type" condition="equip.EquipableItemType">
+			<word alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+			<word alias="Enchant level" />
+			<word alias="0" />
+			<word alias="0" />
+		</branch>
+
+		<dword alias="Item PK" /> <!-- GMs may not withdraw, so there's no use of OIC here -->
+	</loop>
+</packet>

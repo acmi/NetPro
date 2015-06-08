@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="LS_CM_AQ_LOGIN" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<bytes alias="User data"> <!-- NEW -->
+		<length>128</length>
+	</bytes>
+	<bytes alias="Auth data" optional="true"> <!-- NEW -->
+		<length>128</length>
+	</bytes>
+	
+	<!-- NEW -->
+	<dword alias="Session ID" />
+	<bytes alias="[GG] 23 01 00 00">
+		<length>4</length>
+	</bytes>
+	<bytes alias="[GG] 67 45 00 00">
+		<length>4</length>
+	</bytes>
+	<bytes alias="[GG] AB 89 00 00">
+		<length>4</length>
+	</bytes>
+	<bytes alias="[GG] EF CD 00 00">
+		<length>4</length>
+	</bytes>
+	
+	<byte alias="8" />
+	
+	<bytes alias="Padding[0]">
+		<length>6</length>
+	</bytes>
+	
+	<!-- NEW -->
+	<bytes alias="Unknown">
+		<length>16</length>
+	</bytes>
+	
+	<dword alias="0" /> <!-- NEW -->
+	<bytes alias="Checksum">
+		<length>4</length>
+	</bytes>
+	<bytes alias="Padding[0]">
+		<length>12</length> <!-- NEW -->
+	</bytes>
+</packet>

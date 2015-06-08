@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_VALIDATE_LOCATION_IN_VEHICLE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actor OID" type="ObjectID" />
+	<dword alias="Vehicle OID" />
+	<dword alias="Actor X" />
+	<dword alias="Actor Y" />
+	<dword alias="Actor Z" />
+	<dword alias="Actor yaw" />
+</packet>

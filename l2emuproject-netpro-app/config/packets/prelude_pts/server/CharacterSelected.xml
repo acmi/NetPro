@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_CHARACTER_SELECTED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Name" />
+	<dword alias="Character ID" />
+	<string alias="Title" />
+	
+	<dword alias="Account ID" />
+	<dword alias="Pledge ID" type="Pledge" />
+	<dword alias="Builder level" />
+	<dword alias="Sex" type="Sex" />
+	<dword alias="Race" type="Race" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="1" />
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+	
+	<double alias="Current HP" />
+	<double alias="Current MP" />
+	
+	<dword alias="SP" />
+	<dword alias="XP" />
+	<dword alias="Level" />
+	<dword alias="Karma" />
+	<dword alias="PK Count" />
+	<dword alias="STR" />
+	<dword alias="DEX" />
+	<dword alias="CON" />
+	<dword alias="INT" />
+	<dword alias="WIT" />
+	<dword alias="MEN" />
+	
+	<!-- 30 zero DWORDs -->
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	
+	<dword alias="Game time" type="GameTime" />
+</packet>

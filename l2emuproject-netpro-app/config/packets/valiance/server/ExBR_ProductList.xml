@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="458" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<qword alias="Viewer's adena" />
+	<qword alias="Viewer's hero coin" />
+	<byte alias="Type" type="product.ProductListType" />
+	<dword alias="Product count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Product" type="product.Product" />
+		<byte alias="Tab" type="product.ProductStoreTab" />
+		<byte alias="Price unit" type="product.ProductPriceType" />
+		<dword alias="Price" />
+		<byte alias="Modifier" type="product.ProductModifier" />
+		<byte alias="Section" type="product.ProductFrontPageSectionMask" />
+		<byte alias="0" />
+		<byte alias="0" />
+		<byte alias="0" /> <!-- since Valiance -->
+		<dword alias="Sale period start" type="product.ProductMarketTime" />
+		<dword alias="Sale period end" type="product.ProductMarketTime" />
+		<byte alias="127" />
+		<byte alias="Start Hour" />
+		<byte alias="Start Minute" />
+		<byte alias="End Hour" />
+		<byte alias="End Minute" />
+		<dword alias="-1" />
+		<dword alias="-1/0?" />
+		<byte alias="Discount (%)" />
+		<byte alias="Level restriction" />
+		<byte alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="Repurchase interval (days)" type="product.ProductRepurchaseInterval" />
+		<dword alias="Amount (per account)" />
+		<byte alias="Related items" id="content" />
+		<loop id="content">
+			<dword alias="Item" type="Item" />
+			<dword alias="Quantity" />
+			<dword alias="Weight" />
+			<dword alias="Tradable" type="YesOrNo" />
+		</loop>
+	</loop>
+</packet>

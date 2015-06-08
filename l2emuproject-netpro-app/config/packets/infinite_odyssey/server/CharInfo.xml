@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Augmentation effect WORDs are now DWORDs -->
+<packet id="SM_CHAR_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<dword alias="Vehicle OID" />
+	<dword alias="Player OID" type="ObjectID">
+		<scriptAlias id="OIC_PLAYER_OID" />
+		<scriptAlias id="OIL_OBJECT_ID" />
+	</dword>
+	<string alias="Name">
+		<scriptAlias id="OIC_PLAYER_NAME" />
+	</string>
+	<word alias="Race" type="Race" />
+	<byte alias="Sex" type="Sex" />
+	<dword alias="Visible class" type="CharacterClass" />
+
+	<dword alias="Underwear" type="Item" />
+	<dword alias="Headgear" type="Item" />
+	<dword alias="Weapon" type="Item" />
+	<dword alias="Shield [Sigil]" type="Item" />
+	<dword alias="Gloves" type="Item" />
+	<dword alias="Upper Body" type="Item" />
+	<dword alias="Lower Body" type="Item" />
+	<dword alias="Boots" type="Item" />
+	<dword alias="Cloak" type="Item" />
+	<dword alias="Weapon / Two Handed" type="Item" />
+	<dword alias="Hair Accessory (top)" type="Item" />
+	<dword alias="Hair Accessory (bottom)" type="Item" />
+
+	<!-- NEW -->
+	<dword alias="Weapon augmentation effect (1)" type="Augmentation" />
+	<dword alias="Weapon augmentation effect (2)" type="Augmentation" />
+	<dword alias="Shield [Sigil] augmentation effect (1)" type="Augmentation" />
+	<dword alias="Shield [Sigil] augmentation effect (2)" type="Augmentation" />
+	<dword alias="Weapon / Two Handed augmentation effect (1)" type="Augmentation" />
+	<dword alias="Weapon / Two Handed augmentation effect (2)" type="Augmentation" />
+
+	<byte alias="Talisman slots" />
+
+	<dword alias="Visible Weapon" type="Item" />
+	<dword alias="Visible Shield [Sigil]" type="Item" />
+	<dword alias="Visible Weapon / Two Handed" type="Item" />
+
+	<dword alias="Visible Gloves" type="Item" />
+	<dword alias="Visible Upper Body" type="Item" />
+	<dword alias="Visible Lower Body" type="Item" />
+	<dword alias="Visible Boots" type="Item" />
+	<dword alias="Visible Hair Accessory (top)" type="Item" />
+	<dword alias="Visible Hair Accessory (bottom)" type="Item" />
+
+	<byte alias="In PvP" type="YesOrNo" />
+	<dword alias="Reputation" />
+
+	<dword alias="Casting speed" />
+	<dword alias="Attack speed" />
+
+	<word alias="Running speed (on ground)">
+		<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+	</word>
+	<word alias="Walking speed (on ground)">
+		<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+	</word>
+	<word alias="Running speed (in water)" />
+	<word alias="Walking speed (in water)" />
+	<word alias="Running speed (mounted)" />
+	<word alias="Walking speed (mounted)" />
+	<word alias="Running speed (flying mounted)" />
+	<word alias="Walking speed (flying mounted)" />
+	<double alias="Movement speed multiplier">
+		<scriptAlias id="OIL_OBJECT_SPEED_MULTI" />
+	</double>
+	<double alias="Attack speed multiplier" />
+	<double alias="Collision radius" />
+	<double alias="Collision height" />
+	<dword alias="Hair style" type="Alphabet" />
+	<dword alias="Hair color" type="Alphabet" />
+	<dword alias="Face" type="Alphabet" />
+	<string alias="Title">
+		<scriptAlias id="OIC_PLAYER_TITLE" />
+	</string>
+
+	<dword alias="Pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+	</dword>
+	<dword alias="Pledge crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<dword alias="Alliance ID" type="Alliance">
+		<scriptAlias id="AIC_ALLY_ID" />
+	</dword>
+	<dword alias="Alliance crest ID" type="AllianceCrest">
+		<scriptAlias id="AIC_ALLY_CREST_ID" />
+	</dword>
+
+	<byte alias="Waiting mode" type="WaitType" />
+	<byte alias="Movement mode" type="MoveType" />
+	<byte alias="In combat" type="YesOrNo" />
+	<byte alias="Lying dead" type="YesOrNo" />
+	<byte alias="Builder" type="YesOrNo" />
+	<byte alias="Mount type" type="MountType" />
+	<byte alias="Private store" type="PersonalStoreType" />
+	<word alias="Cubic count" id="index_0" />
+	<loop id="index_0">
+		<word alias="Cubic" type="Cubic" />
+	</loop>
+	<byte alias="Looking for party" type="YesOrNo" />
+	<byte alias="Flying" type="YesOrNo" /> <!-- 2 if flying; never 1 -->
+	<word alias="Evaluation score" />
+	<dword alias="Mount" type="Npc" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="0" />
+	<byte alias="Weapon enchant glow" type="EnchantEffect" />
+	<byte alias="Duel team" type="DuelTeam" />
+	<dword alias="Pledge insignia ID" />
+	<byte alias="Noble" type="YesOrNo" />
+	<byte alias="Hero" type="YesOrNo" />
+
+	<byte alias="Fishing" type="YesOrNo" />
+	<dword alias="Fishing lure X" />
+	<dword alias="Fishing lure Y" />
+	<dword alias="Fishing lure Z" />
+
+	<dword alias="Name color" type="BGR" />
+	<dword alias="Heading">
+		<scriptAlias id="OIL_OBJECT_YAW" />
+	</dword>
+	<byte alias="Social class" type="PledgeRank" />
+	<word alias="Pledge unit" type="PledgeUnit" />
+	<dword alias="Title color" type="BGR" />
+	<byte alias="Cursed weapon level" />
+	<dword alias="Pledge reputation" />
+	<dword alias="Transformation" type="Transformation" />
+	<dword alias="Agathion" type="Npc" />
+	<byte alias="Unknown" type="YesOrNo" />
+
+	<dword alias="Current CP" />
+	<dword alias="Current HP" />
+	<dword alias="Maximum HP" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+
+	<byte alias="Special effect" type="ave.AbnormalVisualEffectMask2" />
+	<dword alias="Visual effects" id="ave_cnt" />
+	<loop id="ave_cnt">
+		<word alias="Effect" type="ave.AbnormalVisualEffect" />
+	</loop>
+	<byte alias="0" />
+	<byte alias="Show Hair Accessory" type="YesOrNo" />
+	<byte alias="Ability points" type="AbilityWingIcon" optional="true" />
+</packet>

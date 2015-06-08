@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- SP is now QWORD. 4x DWORD that used to always be 0 now contain random bytes -->
+<packet id="SM_CHARACTER_SELECTED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Name" />
+	<dword alias="Character ID" />
+	<string alias="Title" />
+	
+	<dword alias="Session ID" />
+	<dword alias="Pledge ID" type="Pledge" />
+	<dword alias="Builder level" />
+	<dword alias="Sex" type="Sex" />
+	<dword alias="Race" type="Race" />
+	<dword alias="Visible class" type="CharacterClass" />
+	<dword alias="Selected??" type="YesOrNo" />
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+	<double alias="Current HP" />
+	<double alias="Current MP" />
+	<qword alias="SP" /> <!-- NEW -->
+	<qword alias="XP" />
+	<dword alias="Level" />
+	<dword alias="Reputation" />
+	<dword alias="PK Count" />
+	<dword alias="INT" />
+	<dword alias="STR" />
+	<dword alias="CON" />
+	<dword alias="MEN" />
+	<dword alias="DEX" />
+	<dword alias="WIT" />
+	<dword alias="Game time" type="GameTime" />
+	<dword alias="0" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="not 0" /> <!-- NEW -->
+	<dword alias="not 0" /> <!-- NEW -->
+	<dword alias="not 0" /> <!-- NEW -->
+	<dword alias="not 0" /> <!-- NEW -->
+	<bytes alias="Unk">
+		<length>64</length>
+	</bytes>
+	<dword alias="CM opcode shuffling seed">
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_OBFUSCATION_KEY" />
+	</dword>
+</packet>

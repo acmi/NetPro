@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New unknown CHAR (byte) field at the end of the packet, typically -1 -->
+<packet id="SM_VALIDATE_LOCATION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actor OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+	</dword>
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<dword alias="Heading">
+		<scriptAlias id="OIL_OBJECT_YAW" />
+	</dword>
+	<byte alias="-1" />
+</packet>

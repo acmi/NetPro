@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="544" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- Times Are In Seconds -->
+	<byte alias="Unk0" />
+	<byte alias="Quest State" id="cond_1" /> <!-- [0 = stopped][1 = start][2 = started] -->
+	<dword alias="Quest Id" />
+	<dword alias="Quest Step Id" />
+	<branch id="cond_1" condition="Positive">
+		<byte alias="Timer Type" /> <!-- [0 = normal][2 = critical] -->
+		<dword alias="Quest Time Left" />
+		<dword alias="Unk1" />
+		<dword alias="QuestId-QuestStepId" />
+		<dword alias="Quest Time Passed" />
+		<dword alias="Quest End Time" />
+	</branch>
+</packet>

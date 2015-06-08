@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="CF" id="184" />
+		<packet opcodePrefix="D0 01 00" id="185" />
+		<packet opcodePrefix="D0 02 00" id="186" />
+		<packet opcodePrefix="D0 03 00" id="187" />
+		<packet opcodePrefix="D0 04 00" id="188" />
+		<packet opcodePrefix="D0 05 00" id="189" />
+		<packet opcodePrefix="D0 06 00" id="190" />
+		<packet opcodePrefix="D0 07 00" id="191" />
+		<packet opcodePrefix="D0 08 00" id="CM_REQ_MANOR_LIST" />
+		<packet opcodePrefix="D0 09 00" id="192" />
+		<packet opcodePrefix="D0 0A 00" id="193" />
+		<packet opcodePrefix="D0 0B 00" id="194" />
+		<packet opcodePrefix="D0 0C 00" id="195" />
+		<packet opcodePrefix="D0 0D 00" id="196" />
+		<packet opcodePrefix="D0 0E 00" id="197" />
+		<packet opcodePrefix="D0 0F 00" id="198" />
+		<packet opcodePrefix="D0 10 00" id="199" />
+		<packet opcodePrefix="D0 11 00" id="200" />
+		<packet opcodePrefix="D0 12 00" id="201" />
+		<packet opcodePrefix="D0 13 00" id="202" />
+	</client>
+	<server>
+		<packet opcodePrefix="FE 13 00" id="309" />
+		<packet opcodePrefix="FE 14 00" id="310" />
+		<packet opcodePrefix="FE 15 00" id="311" />
+		<packet opcodePrefix="FE 16 00" id="312" />
+		<packet opcodePrefix="FE 17 00" id="313" />
+		<packet opcodePrefix="FE 18 00" id="314" />
+		<packet opcodePrefix="FE 19 00" id="315" />
+		<packet opcodePrefix="FE 1A 00" id="316" />
+		<packet opcodePrefix="FE 1B 00" id="SM_EX_SEND_MANOR_LIST" />
+		<packet opcodePrefix="FE 1C 00" id="318" />
+		<packet opcodePrefix="FE 1D 00" id="319" />
+		<packet opcodePrefix="FE 1E 00" id="320" />
+		<packet opcodePrefix="FE 1F 00" id="321" />
+		<packet opcodePrefix="FE 20 00" id="322" />
+		<packet opcodePrefix="FE 21 00" id="323" />
+		<packet opcodePrefix="FE 22 00" id="324" />
+		<packet opcodePrefix="FE 23 00" id="325" />
+		<packet opcodePrefix="FE 24 00" id="326" />
+		<packet opcodePrefix="FE 25 00" id="327" />
+		<packet opcodePrefix="FE 26 00" id="328" />
+		<packet opcodePrefix="FE 27 00" id="329" />
+		<packet opcodePrefix="FE 28 00" id="330" />
+		<packet opcodePrefix="FE 29 00" id="331" />
+		<packet opcodePrefix="FE 2A 00" id="332" />
+		<packet opcodePrefix="FE 2B 00" id="333" />
+		<packet opcodePrefix="FE 2C 00" id="334" />
+		<packet opcodePrefix="FE 2D 00" id="335" />
+		<packet opcodePrefix="FE 2E 00" id="SM_EX_STORAGE_MAX_COUNT" />
+		<packet opcodePrefix="FE 2F 00" id="308" />
+		<packet opcodePrefix="FE 30 00" id="337" />
+	</server>
+</mapping>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- One QWORD removed at the end of the packet -->
+<packet id="371" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Item OID" type="ObjectID" />
+	<string alias="Item" />
+	<qword alias="Price (per unit)" />
+	<qword alias="Quantity" />
+	<dword alias="Duration" type="AuctionDuration" />
+	<qword alias="??? 0" />
+</packet>

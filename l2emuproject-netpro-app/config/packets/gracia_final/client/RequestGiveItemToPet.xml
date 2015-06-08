@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount is now a QWORD -->
+<packet id="CM_REQ_GIVE_ITEM_TO_PET" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Item OID" type="ObjectID" />
+	<qword alias="Amount" /> <!-- NEW -->
+</packet>

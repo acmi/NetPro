@@ -1,0 +1,52 @@
+14	1	Deep inside the Northern Forest
+14	5	Arms of Timiniel
+15	1	Deep inside the Southern Forest
+15	9	Arms of Timiniel
+18	4	Apherus Garden
+18	5	Angel Statue Garden
+18	11	Fountain Garden
+18	13	Apherus Garden
+18	15	Apherus Garden
+18	19	Apherus Garden
+18	23	East of the Garden
+18	25	South of the Garden
+19	1	Apherus Garden
+19	2	Apherus Garden
+19	4	Progress
+19	7	Fountain Garden
+19	11	Garden of Genesis Entrance
+21	1	Bloody Swampland
+21	7	Altar of Evil
+24	1	Top Floor of the Fortress
+27	1	Guillotine West Gate
+27	8	Guillotine North Gate
+28	4	West of the Town of Aden
+28	7	East of the Town of Aden
+29	3	West of the Town of Aden
+29	8	North of the Town of Aden
+30	3	East of the Town of Aden
+30	6	North of the Town of Aden
+31	5	1st Street of Rune Castle
+31	6	2nd Street of Rune Castle
+32	5	1st Street of Rune Castle Outskirts
+32	6	2nd Street of Rune Castle Outskirts
+33	7	2nd Street of Rune Castle Outskirts
+33	8	1st Street of Rune Castle Outskirts
+34	1	Guillotine East Gate
+34	10	Guillotine North Gate
+37	1	Central Checkpoint
+38	1	Isle of Souls Harbor
+38	8	Mimir's Forest Center
+39	1	Harbor to the Isle of Souls
+39	6	Stronghold II Checkpoint
+40	1	Kamael Village
+41	1	Rightward Outpost
+41	6	Leftward Outpost
+42	1	Raider's Crossroads
+42	6	Land of Chaos
+43	1	Leftward Outpost
+43	2	Rightward Outpost
+44	1	Beleth's Magic Circle / Desert Quarry
+44	6	Beleth's Magic Circle
+44	8	Desert Quarry
+44	13	Phantasmal Ridge

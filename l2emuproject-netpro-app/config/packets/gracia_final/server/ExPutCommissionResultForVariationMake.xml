@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Gemstone amount is now a QWORD -->
+<packet id="373" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Gemstone OID" type="ObjectID" />
+	<dword alias="Gemstone" type="Item" />
+	<qword alias="Gemstone quantity" />
+	<qword alias="Difference from required quantity" />
+	<dword alias="Gemstone accepted" type="YesOrNo" />
+</packet>

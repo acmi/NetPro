@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item's paperdoll slot mask is now a DWORD -->
+<!-- Two unknown WORDs, previously only written for equipable items, have been reintroduced (for all items) -->
+<packet id="SM_TRADE_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Item count" id="cnt" />
+	<loop id="cnt">
+		<word alias="Action" type="TradeUpdate" />
+		<word alias="Base item type" type="ItemType1" />
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Amount" />
+		<word alias="Main item type" type="ItemType2" id="type" />
+		<word alias="Blessed" type="YesOrNo" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
+		<word alias="Enchant level" />
+		
+		<!-- NEW -->
+		<word alias="0" />
+		<word alias="0" />
+	</loop>
+</packet>

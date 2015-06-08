@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A new DWORD identifying the game server added at the end of the packet -->
+<packet id="SM_VERSION_CHECK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Compatible" type="YesOrNo" />
+	<dword alias="Cipher key part">
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_CIPHER_KEY_HALF" />
+	</dword>
+	<dword alias="Cipher enabled" type="YesOrNo">
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_CIPHER_STATE" />
+	</dword>
+	<dword alias="Server" type="GameServerName" /> <!-- NEW -->
+</packet>

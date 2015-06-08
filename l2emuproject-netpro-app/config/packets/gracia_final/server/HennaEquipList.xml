@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item/adena amount and price DWORDs changed to QWORDs -->
+<packet id="SM_HENNA_EQUIP_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<qword alias="Viewer's adena" /> <!-- NEW -->
+	<dword alias="Available slots" />
+	<dword alias="Henna count (different types in inventory)" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Henna" type="Henna" />
+		<dword alias="Actual item" type="Item" />
+		<qword alias="Amount in inventory" /> <!-- NEW -->
+		<qword alias="Price of appliance" /> <!-- NEW -->
+		<dword alias="Applicable" type="YesOrNo" />
+	</loop>
+</packet>

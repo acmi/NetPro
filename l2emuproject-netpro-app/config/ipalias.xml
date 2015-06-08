@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addresses xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net schemata/ipalias.xsd">
+	<!-- Listen wildcard and default loopback -->
+	<address ip="0.0.0.0" alias="*THIS*" />
+	<address ip="127.0.0.1" alias="THIS" />
+	
+	<!-- AuthD -->
+	<!-- These can be used as '<authorizationSocket>/<listen host=' attribute values in serviceconfig.xml -->
+	<!-- All seem to use port 2106 -->
+	<address ip="64.25.35.104" alias="NA" />
+	<address ip="112.175.192.60" alias="KR" />
+	<address ip="112.175.192.65" alias="KR PTS" />
+	<address ip="106.186.45.250" alias="JP" />
+	<address ip="210.68.144.4" alias="TW" />
+	
+	<!-- Individual servers -->
+	<!-- NA:7777 -->
+	<address ip="64.25.37.132" alias="Chronos" />
+	<address ip="64.25.37.133" alias="Naia" />
+	<address ip="64.25.37.134" alias="Shilen" />
+	<address ip="64.25.37.135" alias="Magmeld" />
+	<address ip="64.25.37.136" alias="Bartz" />
+	<address ip="64.25.37.137" alias="Event Server" />
+	
+	<!-- KR:7777 -->
+	<address ip="112.175.192.7" alias="드비안느" />
+	<address ip="112.175.192.42" alias="네비트" />
+	<address ip="112.175.192.44" alias="카라" />
+	<address ip="112.175.192.45" alias="테르시" />
+	<address ip="112.175.192.46" alias="브렘논" />
+	<address ip="112.175.192.5" alias="바츠" />
+	<address ip="112.175.192.6" alias="지그하르트" />
+	<address ip="112.175.192.9" alias="카인" />
+	<address ip="112.175.192.29" alias="말하는 섬" />
+	<address ip="112.175.192.30" alias="글루디오" />
+	<address ip="112.175.192.34" alias="기란" />
+	<address ip="112.175.192.10" alias="아덴" />
+	<address ip="112.175.192.13" alias="엘프" />
+	<address ip="112.175.192.16" alias="다크엘프" />
+	<address ip="112.175.192.35" alias="방송용 / 클래식" />
+	<address ip="112.175.192.51" alias="125번 서버" />
+	<address ip="112.175.192.65" alias="테스트 서버" /> <!-- Same as AuthD & the only PTS server in list, so let it override -->
+	<address ip="112.175.192.50" alias="방송용" />
+	
+	<!-- JP:2203 -->
+	<address ip="106.186.46.33" alias="バーツ" />
+	<address ip="106.186.46.34" alias="ジグハルト" />
+	<address ip="106.186.46.35" alias="カイン" />
+	<address ip="106.186.46.36" alias="リオナ" />
+	<address ip="106.186.46.37" alias="エリカ ★オススメ★" />
+	<address ip="106.186.46.38" alias="ゴースティン" />
+	<address ip="106.186.46.39" alias="ドビアンヌ" />
+	<address ip="106.186.46.40" alias="ヒンデミット" />
+	<address ip="106.186.46.41" alias="テオン" />
+	<address ip="106.186.46.42" alias="フランツ" />
+	<address ip="106.186.46.43" alias="ルナ" />
+	<address ip="106.186.46.44" alias="キャスティエン" />
+	<address ip="106.186.46.61" alias="アイリーン" />
+	<address ip="106.186.46.47" alias="タルカイ" />
+</addresses>

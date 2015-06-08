@@ -1,0 +1,6 @@
+bpmmo
+goldceo
+mmocat
+mmocpu
+mmoige
+mmook

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_ALLIANCE_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Alliance name" />
+	<dword alias="Total members" />
+	<dword alias="Online members" />
+	<string alias="Leader pledge" />
+	<string alias="Leader" />
+	<dword alias="Allied pledge count" id="cnt" />
+	<loop id="cnt">
+		<string alias="Pledge name" />
+		<dword alias="0" />
+		<dword alias="Pledge level" />
+		<string alias="Pledge leader" />
+		<dword alias="Total members" />
+		<dword alias="Online members" />
+	</loop>
+</packet>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Packet changed from a DWORD opcode and 2 DWORD values to a normal opcode and 3 DWORDs. However, most likely this was an oversight. -->
+<!-- There are only two DWORD values, both before and after HF. -->
+<packet id="CM__USER_ACK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Character ID" />
+	<dword alias="Character OID" />
+	<dword alias="" />
+</packet>

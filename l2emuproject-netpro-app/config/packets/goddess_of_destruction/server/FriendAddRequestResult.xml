@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- More fields specifying friend's details and a STRING memo -->
+<packet id="SM_FRIEND_ADD_REQUEST_RESULT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Accepted" type="YesOrNo" id="added" />
+
+	<!-- NEW -->
+	<branch id="added" condition="Positive">
+		<dword alias="Character ID" />
+		<string alias="Name" />
+		<dword alias="Online" type="YesOrNo" id="online" />
+		<branch id="online" condition="Positive">
+			<dword alias="Friend OID" type="ObjectID" />
+		</branch>
+		<branch id="online" condition="Zero">
+			<dword alias="0" />
+		</branch>
+		<dword alias="Level" />
+		<dword alias="Class" type="CharacterClass" />
+		<string alias="Memo" />
+	</branch>
+</packet>

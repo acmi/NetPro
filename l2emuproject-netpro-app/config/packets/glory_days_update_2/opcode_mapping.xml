@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client />
+	<server>
+		<packet opcodePrefix="FE 3C 01" id="610" />
+		<packet opcodePrefix="FE 3D 01" id="617" />
+		<packet opcodePrefix="FE 3E 01" id="618" />
+		<packet opcodePrefix="FE 3F 01" id="619" />
+		<packet opcodePrefix="FE 40 01" id="632" />
+		<packet opcodePrefix="FE 41 01" id="633" />
+		<packet opcodePrefix="FE 42 01" id="634" />
+		<packet opcodePrefix="FE 43 01" id="637" />
+		<packet opcodePrefix="FE 44 01" id="638" />
+	</server>
+</mapping>

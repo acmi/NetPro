@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a new DWORD specifying how many items are currently in the inventory (max usable amount) -->
+<packet id="395" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Item" type="Item" />
+	<qword alias="Inventory amount" /> <!-- NEW -->
+	<dword alias="Increases fire power" type="YesOrNo" />
+	<dword alias="Increases water power" type="YesOrNo" />
+	<dword alias="Increases wind power" type="YesOrNo" />
+	<dword alias="Increases earth power" type="YesOrNo" />
+	<dword alias="Increases holy power" type="YesOrNo" />
+	<dword alias="Increases dark power" type="YesOrNo" />
+	<dword alias="Maximum element level" />
+	<dword alias="Applicable items" id="cnt" /> <!-- Equipped and inventory items of S grade or higher (regardless of what their elemental attributes are -->
+	<loop id="cnt">
+		<dword alias="Item OID" type="ObjectID" />
+	</loop>
+</packet>

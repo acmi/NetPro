@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Casting/attack speed fields are now WORDs and now contain the integer part of a multiplier -->
+<packet id="610" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="NPC OID" type="ObjectID" />
+	<word alias="Moving State" /> <!-- usually 4 -->
+	<unsignedByte alias="Bitmask byte #1" id="exNSI" />
+
+	<branch id="exNSI" condition="bitmask.Bit7">
+		<single alias="Movement speed multiplier" />
+	</branch>
+	<branch id="exNSI" condition="bitmask.Bit6">
+		<single alias="Attack speed multiplier" />
+	</branch>
+	<branch id="exNSI" condition="bitmask.Bit5">
+		<word alias="Casting speed multiplier (truncated)" />
+	</branch>
+	<branch id="exNSI" condition="bitmask.Bit4">
+		<word alias="Attack speed multiplier (truncated)" />
+	</branch>
+</packet>

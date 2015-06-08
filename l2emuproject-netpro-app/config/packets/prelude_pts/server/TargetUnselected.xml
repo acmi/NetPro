@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_TARGET_UNSELECTED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Canceller OID" type="ObjectID">
+		<scriptAlias id="LUA_CANCELER_OID" />
+		<scriptAlias id="HLE_TARGET_CANCELER_OID" />
+	</dword>
+	<dword alias="" />
+</packet>

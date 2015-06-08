@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a DWORD to specify whether relative/keyboard or absolute/mouse movement is used. -->
+<packet id="CM_MOVE_BACKWARD_TO_LOCATION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Destination X" />
+	<dword alias="Destination Y" />
+	<dword alias="Destination Z" />
+	<dword alias="Current client X" />
+	<dword alias="Current client Y" />
+	<dword alias="Current client Z" />
+	<dword alias="Controller" type="Controller" /> <!-- NEW -->
+</packet>

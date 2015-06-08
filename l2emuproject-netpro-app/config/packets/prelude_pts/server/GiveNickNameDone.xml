@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM__GNN_DONE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Target" />
+	<string alias="Title" />
+	<dword alias="Success" type="YesOrNo" />
+</packet>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added automatic item distribution type DWORD -->
+<packet id="SM_PARTY_MATCH_DETAIL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Player OID" type="ObjectID" />
+	<dword alias="Show level" type="YesOrNo" />
+	<dword alias="Show occupation" type="YesOrNo" />
+	<dword alias="Item distribution" type="ItemRedist" /> <!-- NEW -->
+	<string alias="Memo" />
+</packet>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="500" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Item count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Item OID" type="ObjectID" />
+		<dword alias="Item" type="Item" />
+		<byte alias="Slot number" type="InventorySlot" />
+		<qword alias="Quantity" />
+		<word alias="Main item type" type="ItemType2" />
+		<word alias="Special item type" />
+		<word alias="Equipped" type="YesOrNo" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<word alias="Enchant level" />
+		<word alias="Name exists" type="YesOrNo" />
+		<dword alias="Augmentation" /> <!-- Make type -->
+		<dword alias="Mana left" type="ShadowMana" />
+		<dword alias="Time remaining" type="TimeRemaining" />
+		<byte alias="Usable" type="YesOrNo" />
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+		<word alias="Enchant bonus stats id" />
+		<word alias="Enchant bonus stats id" />
+		<word alias="Enchant bonus stats id" />
+		<dword alias="Item skin/appearance id" />
+	</loop>
+	<word alias="Special item count" id="index_0_cond_1" />
+	<branch id="index_0_cond_1" condition="Positive">
+		<byte alias="Restriction" type="ItemRestriction" />
+	</branch>
+	<loop id="index_0_cond_1">
+		<dword alias="Special item" type="Item" />
+	</loop>
+</packet>

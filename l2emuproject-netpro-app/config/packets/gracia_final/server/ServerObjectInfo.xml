@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_SERVER_OBJECT_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="NPC OID" type="ObjectID">
+		<scriptAlias id="OIC_NPC_OID" />
+		<scriptAlias id="OIL_OBJECT_ID" />
+	</dword>
+	<dword alias="NPC" type="Npc">
+		<scriptAlias id="OIC_NPC_TEMPLATE" />
+	</dword>
+	<string alias="Name" />
+	<dword alias="Attackable" type="YesOrNo" />
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<dword alias="Yaw">
+		<scriptAlias id="OIL_OBJECT_YAW" />
+	</dword>
+	<double alias="Movement speed multiplier" />
+	<double alias="Attack speed multiplier" />
+	<double alias="Collision radius" />
+	<double alias="Collision height" />
+	<dword alias="Current HP" /> <!-- 0 by default -->
+	<dword alias="Maximum HP" /> <!-- 0 by default -->
+	<dword alias="??? 4" />
+	<dword alias="??? 0" />
+</packet>

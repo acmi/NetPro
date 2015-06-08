@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a static object template DWORD at the end of packet -->
+<packet id="SM_DOOR_STATUS_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Door OID" />
+	<dword alias="Closed" type="YesOrNo" />
+	<dword alias="Damage level" />
+	<dword alias="Attackable" type="YesOrNo" />
+
+	<!-- NEW -->
+	<dword alias="Door" type="StaticObject" />
+</packet>

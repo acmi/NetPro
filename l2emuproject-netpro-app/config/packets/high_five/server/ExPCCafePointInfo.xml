@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="338" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Total points" />
+	<dword alias="Earned points" />
+	<byte alias="??? 1" />
+	<dword alias="??? (decreasing, but not every 5 min)" />
+	<byte alias="First login this day bonus" type="YesOrNo" /> <!-- 0 - session timer/winning ticket, 1 - first login, 3 - ticket acquired (0 earned) -->
+	<dword alias="Timer" type="PcTimer" />
+</packet>

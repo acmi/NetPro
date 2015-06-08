@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<!-- removedPacket id="CM_SUPER_CMD_CHARACTER_INFO" /-->
+		<!-- removedPacket id="CM_SUPER_CMD_SUMMON_CMD" /-->
+		<!-- removedPacket id="CM_SUPER_CMD_SERVER_STATUS" /-->
+		<!-- removedPacket id="CM_SEND_L2_PARAM_SETTING" /-->
+		<packet opcodePrefix="D0 65 00" id="292" />
+		<packet opcodePrefix="D0 66 00" id="293" />
+		<packet opcodePrefix="D0 67 00" id="294" />
+		<packet opcodePrefix="D0 68 00" id="295" />
+		<packet opcodePrefix="D0 69 00" id="296" />
+		<packet opcodePrefix="D0 6A 00" id="297" />
+		<packet opcodePrefix="D0 6B 00" id="298" />
+		<packet opcodePrefix="D0 6C 00" id="299" />
+		<packet opcodePrefix="D0 6D 00" id="300" />
+		<packet opcodePrefix="D0 6E 00" id="301" />
+		<packet opcodePrefix="D0 6F 00" id="302" />
+		<packet opcodePrefix="D0 70 00" id="303" />
+		<packet opcodePrefix="D0 71 00" id="304" />
+		<packet opcodePrefix="D0 72 00" id="305" />
+		<packet opcodePrefix="D0 75 00" id="306" />
+		<packet opcodePrefix="D0 76 00" id="307" />
+		<packet opcodePrefix="D0 77 00" id="308" />
+		<packet opcodePrefix="D0 78 00" id="288" />
+		<packet opcodePrefix="D0 79 00" id="289" />
+		<packet opcodePrefix="D0 7A 00" id="290" />
+		<packet opcodePrefix="D0 7B 00" id="291" />
+		<packet opcodePrefix="D0 7C 00" id="309" />
+		<packet opcodePrefix="D0 7D 00" id="310" />
+	</client>
+	<server>
+		<removedPacket id="SM_SELL_LIST" /> <!-- no longer in use -->
+		<removedPacket id="SM_BUY_LIST" /> <!-- no longer in use -->
+		<packet opcodePrefix="FE A7 00" id="467" />
+		<packet opcodePrefix="FE A8 00" id="468" />
+		<packet opcodePrefix="FE A9 00" id="469" />
+		<packet opcodePrefix="FE AA 00" id="470" />
+		<packet opcodePrefix="FE AB 00" id="471" />
+		<packet opcodePrefix="FE AC 00" id="472" />
+		<packet opcodePrefix="FE AD 00" id="473" />
+		<packet opcodePrefix="FE AE 00" id="474" />
+		<packet opcodePrefix="FE AF 00" id="475" />
+		<packet opcodePrefix="FE B0 00" id="476" />
+		<packet opcodePrefix="FE B1 00" id="477" />
+		<packet opcodePrefix="FE B2 00" id="478" />
+		<packet opcodePrefix="FE B3 00" id="479" />
+		<packet opcodePrefix="FE B4 00" id="480" />
+		<packet opcodePrefix="FE B5 00" id="481" />
+		<packet opcodePrefix="FE B6 00" id="482" />
+		<packet opcodePrefix="FE B7 00" id="28" />
+		<packet opcodePrefix="FE B8 00" id="457" />
+		<packet opcodePrefix="FE B9 00" id="458" />
+		<packet opcodePrefix="FE BA 00" id="459" />
+		<packet opcodePrefix="FE BB 00" id="460" />
+		<packet opcodePrefix="FE BC 00" id="537" />
+		<packet opcodePrefix="FE BD 00" id="463" />
+		<packet opcodePrefix="FE BE 00" id="462" />
+		<packet opcodePrefix="FE BF 00" id="466" />
+		<packet opcodePrefix="FE C0 00" id="483" />
+		<packet opcodePrefix="FE C1 00" id="484" />
+	</server>
+</mapping>

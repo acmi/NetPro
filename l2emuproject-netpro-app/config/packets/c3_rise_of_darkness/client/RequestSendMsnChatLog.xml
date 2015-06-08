@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="182" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Message" />
+	<string alias="Contact (account name)" />
+	<dword alias="Type" type="MessageDirection">
+		<scriptAlias id="anti_msn_logging" />
+	</dword>
+</packet>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Required SP field extended to a QWORD -->
+<packet id="391" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Enchant" type="SkillEnchant" />
+	<dword alias="Skill" type="Skill">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+	</dword>
+	<dword alias="Level" type="skill.SkillLevel">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+	</dword>
+	<qword alias="Required SP" /> <!-- NEW -->
+	<dword alias="Success rate (%)" />
+	<dword alias="Required items" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Item" type="Item" />
+		<dword alias="Amount" />
+	</loop>
+</packet>

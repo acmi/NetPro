@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_SKILL_COOL_TIME" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Affected skill count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Skill" type="Skill" />
+		<dword alias="Level" type="skill.SkillLevel" /> <!-- modern servers specify 0 -->
+		<dword alias="Cooldown time" type="TimeRemaining" />
+		<dword alias="Remaining time" type="TimeRemaining" /> <!-- if actual value is 0 or less (can use immediately), then (00 + 36 89 41 00) -->
+	</loop>
+</packet>

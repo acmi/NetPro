@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_VEHICLE_DEPARTURE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Vehicle OID" />
+	<dword alias="Movement speed" />
+	<dword alias="Rotation speed" />
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+</packet>

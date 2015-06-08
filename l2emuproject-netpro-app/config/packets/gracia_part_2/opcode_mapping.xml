@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="D0 54 00 00 00 00 00" id="261" />
+		<packet opcodePrefix="D0 54 00 01 00 00 00" id="262" />
+		<packet opcodePrefix="D0 54 00 02 00 00 00" id="263" />
+		<packet opcodePrefix="D0 54 00 03 00 00 00" id="264" />
+		<packet opcodePrefix="D0 54 00 04 00 00 00" id="265" />
+		<packet opcodePrefix="D0 54 00 05 00 00 00" id="266" />
+		<packet opcodePrefix="D0 55 00" id="267" />
+		<packet opcodePrefix="D0 56 00" id="268" />
+		<packet opcodePrefix="D0 57 00" id="269" />
+		<packet opcodePrefix="D0 58 00" id="270" />
+	</client>
+	<server>
+		<packet opcodePrefix="FE 84 00" id="423" />
+		<packet opcodePrefix="FE 85 00" id="424" />
+		<packet opcodePrefix="FE 86 00" id="425" />
+		<packet opcodePrefix="FE 87 00" id="426" />
+		<packet opcodePrefix="FE 88 00" id="427" />
+		<packet opcodePrefix="FE 89 00" id="428" />
+		<packet opcodePrefix="FE 8A 00" id="429" />
+	</server>
+</mapping>

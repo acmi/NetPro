@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="LS_SM_SET_ENCRYPTION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Session ID" />
+	<dword alias="Protocol version" />
+	
+	<!-- C3 557/560 includes a RSA key -->
+	<!-- Seeing as the easy way to handle all 30821 clients on a single port is to just inject a key here without caring, it would be best to just keep the definition truncated -->
+	<!-- (P.S. that's how we actually do it in L2EmuUnique) -->
+	
+	<!-- Aside from that, afterwards there will be some padding, the 4 byte checksum and 4 more bytes of padding. -->
+</packet>

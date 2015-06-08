@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- An unknown CHAR (byte) and a shuffle algorithm seed DWORD added at the end of the packet -->
+<packet id="SM_VERSION_CHECK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Compatible" type="YesOrNo" />
+	<qword alias="Cipher key part">
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_CIPHER_KEY_HALF" />
+	</qword>
+	<dword alias="Cipher enabled" type="YesOrNo">
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_CIPHER_STATE" />
+	</dword>
+	<dword alias="Server" type="GameServerName" />
+	<!-- NEW -->
+	<byte alias="1" />
+	<dword alias="CM opcode shuffling seed">
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_OBFUSCATION_KEY" />
+	</dword>
+</packet>

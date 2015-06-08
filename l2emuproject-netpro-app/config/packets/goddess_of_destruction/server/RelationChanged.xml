@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Karma -> Reputation -->
+<packet id="SM_RELATION_CHANGED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Relationship count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Actor OID" type="ObjectID" />
+		<dword alias="Relationship" type="RelationTypes" />
+		<dword alias="Attackable" type="YesOrNo" />
+		<dword alias="Reputation" />
+		<dword alias="In PvP" type="YesOrNo" />
+	</loop>
+</packet>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_PACKAGE_SENDABLE_ITEM_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- SM definition is crafted in a way to register the PK as a fake OID -->
+	<!-- dword alias="Character PK" type="ObjectID" /-->
+	
+	<!-- As a matter of fact, it is better to only show Item PKs as OIDs -->
+	<dword alias="Character PK" />
+</packet>

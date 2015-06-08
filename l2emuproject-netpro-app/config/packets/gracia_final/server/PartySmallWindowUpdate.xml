@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_PARTY_SMALL_WINDOW_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Member OID" type="ObjectID">
+		<scriptAlias id="OIC_PLAYER_OID" />
+	</dword>
+	<string alias="Name">
+		<scriptAlias id="OIC_PLAYER_NAME" />
+	</string>
+	<dword alias="Current CP" /> <!-- NEW -->
+	<dword alias="Maximum CP" /> <!-- NEW -->
+	<dword alias="Current HP" type="Hp" /> <!-- real in GF; not in HF -->
+	<dword alias="Maximum HP" type="Hp" /> <!-- real in GF; not in HF -->
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Level" />
+	<dword alias="Class" type="CharacterClass" />
+</packet>

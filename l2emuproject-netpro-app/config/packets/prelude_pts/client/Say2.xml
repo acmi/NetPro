@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_SAY2" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Message">
+		<scriptAlias id="INTERACTIVE_CHAT" />
+	</string>
+	<dword alias="Chat" type="Chat" id="cond_1" />
+	<branch id="cond_1" condition="PrivateMessage">
+		<string alias="Recipient" />
+	</branch>
+</packet>

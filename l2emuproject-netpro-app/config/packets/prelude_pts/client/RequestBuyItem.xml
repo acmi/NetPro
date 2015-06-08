@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_BUY_ITEM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Buy request ID" />
+	<dword alias="Bought item count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item" type="Item" />
+		<dword alias="Amount" />
+	</loop>
+</packet>

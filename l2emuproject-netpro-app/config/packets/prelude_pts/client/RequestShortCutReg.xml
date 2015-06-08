@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_SHORT_CUT_REG" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="shortcut.ShortcutType" id="type" />
+	<dword alias="Slot" type="shortcut.ShortcutSlotBase10" />
+	<branch id="type" condition="shortcut.ItemShortcut">
+		<dword alias="Item OID" type="ObjectID" />
+	</branch>
+	<branch id="type" condition="shortcut.SkillShortcut">
+		<dword alias="Skill" type="Skill" />
+	</branch>
+	<branch id="type" condition="shortcut.ActionShortcut">
+		<dword alias="Action" type="PlayerAction" />
+	</branch>
+</packet>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_USER_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<dword alias="Vehicle OID" />
+	<dword alias="My OID" type="ObjectID">
+		<scriptAlias id="OIC_PLAYER_OID" />
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="LUA_USER_OID" />
+	</dword>
+	<string alias="Name">
+		<scriptAlias id="OIC_PLAYER_NAME" />
+	</string>
+	<dword alias="Race" type="Race" />
+	<dword alias="Sex" type="Sex" />
+	<dword alias="Visible class" type="CharacterClass" />
+	<dword alias="Level" />
+	<qword alias="XP" />
+	<dword alias="STR" />
+	<dword alias="DEX" />
+	<dword alias="CON" />
+	<dword alias="INT" />
+	<dword alias="WIT" />
+	<dword alias="MEN" />
+	<dword alias="Maximum HP" />
+	<dword alias="Current HP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Current MP" />
+	<dword alias="SP" />
+	<dword alias="Current carried weight" />
+	<dword alias="Maximum carried weight" />
+
+	<dword alias="Weapon status" type="WeaponStatus" />
+
+	<dword alias="Underwear OID" type="ObjectID" />
+	<dword alias="Right earring OID" type="ObjectID" />
+	<dword alias="Left earring OID" type="ObjectID" />
+	<dword alias="Necklace OID" type="ObjectID" />
+	<dword alias="Right ring OID" type="ObjectID" />
+	<dword alias="Left ring OID" type="ObjectID" />
+	<dword alias="Headgear OID" type="ObjectID" />
+	<dword alias="Weapon OID" type="ObjectID" />
+	<dword alias="Shield [Sigil] OID" type="ObjectID" />
+	<dword alias="Gloves OID" type="ObjectID" />
+	<dword alias="Upper Body OID" type="ObjectID" />
+	<dword alias="Lower Body OID" type="ObjectID" />
+	<dword alias="Boots OID" type="ObjectID" />
+	<dword alias="Cloak OID" type="ObjectID" />
+	<dword alias="Weapon / Two Handed OID" type="ObjectID" />
+	<dword alias="Hair Accessory (top) OID" type="ObjectID" />
+	<dword alias="Hair Accessory (bottom) OID" type="ObjectID" />
+	<dword alias="Right Bracelet OID" type="ObjectID" />
+	<dword alias="Left Bracelet OID" type="ObjectID" />
+	<dword alias="Talisman (1) OID" type="ObjectID" />
+	<dword alias="Talisman (2) OID" type="ObjectID" />
+	<dword alias="Talisman (3) OID" type="ObjectID" />
+	<dword alias="Talisman (4) OID" type="ObjectID" />
+	<dword alias="Talisman (5) OID" type="ObjectID" />
+	<dword alias="Talisman (6) OID" type="ObjectID" />
+	<dword alias="Belt OID" type="ObjectID" />
+
+	<dword alias="Underwear" type="Item" />
+	<dword alias="Right earring" type="Item" />
+	<dword alias="Left earring" type="Item" />
+	<dword alias="Necklace" type="Item" />
+	<dword alias="Right ring" type="Item" />
+	<dword alias="Left ring" type="Item" />
+	<dword alias="Headgear" type="Item" />
+	<dword alias="Weapon" type="Item" />
+	<dword alias="Shield [Sigil]" type="Item" />
+	<dword alias="Gloves" type="Item" />
+	<dword alias="Upper Body" type="Item" />
+	<dword alias="Lower Body" type="Item" />
+	<dword alias="Boots" type="Item" />
+	<dword alias="Cloak" type="Item" />
+	<dword alias="Weapon / Two Handed" type="Item" />
+	<dword alias="Hair Accessory (top)" type="Item" />
+	<dword alias="Hair Accessory (bottom)" type="Item" />
+	<dword alias="Right Bracelet" type="Item" />
+	<dword alias="Left Bracelet" type="Item" />
+	<dword alias="Talisman (1)" type="Item" />
+	<dword alias="Talisman (2)" type="Item" />
+	<dword alias="Talisman (3)" type="Item" />
+	<dword alias="Talisman (4)" type="Item" />
+	<dword alias="Talisman (5)" type="Item" />
+	<dword alias="Talisman (6)" type="Item" />
+	<dword alias="Belt" type="Item" />
+
+	<word alias="Underwear augmentation effect (1)" type="Augmentation" />
+	<word alias="Underwear augmentation effect (2)" type="Augmentation" />
+	<word alias="Earring (bottom/left) augmentation effect (1)" type="Augmentation" />
+	<word alias="Earring (bottom/left) augmentation effect (2)" type="Augmentation" />
+	<word alias="Earring (top/right) augmentation effect (1)" type="Augmentation" />
+	<word alias="Earring (top/right) augmentation effect (2)" type="Augmentation" />
+	<word alias="Necklace augmentation effect (1)" type="Augmentation" />
+	<word alias="Necklace augmentation effect (2)" type="Augmentation" />
+	<word alias="Ring (bottom/left) augmentation effect (1)" type="Augmentation" />
+	<word alias="Ring (bottom/left) augmentation effect (2)" type="Augmentation" />
+	<word alias="Ring (top/right) augmentation effect (1)" type="Augmentation" />
+	<word alias="Ring (top/right) augmentation effect (2)" type="Augmentation" />
+	<word alias="Headgear augmentation effect (1)" type="Augmentation" />
+	<word alias="Headgear augmentation effect (2)" type="Augmentation" />
+	<word alias="Weapon augmentation effect (1)" type="Augmentation" />
+	<word alias="Weapon augmentation effect (2)" type="Augmentation" />
+	<word alias="Shield [Sigil] augmentation effect (1)" type="Augmentation" />
+	<word alias="Shield [Sigil] augmentation effect (2)" type="Augmentation" />
+	<word alias="Gloves augmentation effect (1)" type="Augmentation" />
+	<word alias="Gloves augmentation effect (2)" type="Augmentation" />
+	<word alias="Upper Body augmentation effect (1)" type="Augmentation" />
+	<word alias="Upper Body augmentation effect (2)" type="Augmentation" />
+	<word alias="Lower Body augmentation effect (1)" type="Augmentation" />
+	<word alias="Lower Body augmentation effect (2)" type="Augmentation" />
+	<word alias="Boots augmentation effect (1)" type="Augmentation" />
+	<word alias="Boots augmentation effect (2)" type="Augmentation" />
+	<word alias="Cloak augmentation effect (1)" type="Augmentation" />
+	<word alias="Cloak augmentation effect (2)" type="Augmentation" />
+	<word alias="Weapon / Two Handed augmentation effect (1)" type="Augmentation" />
+	<word alias="Weapon / Two Handed augmentation effect (2)" type="Augmentation" />
+	<word alias="Hair Accessory (top) augmentation effect (1)" type="Augmentation" />
+	<word alias="Hair Accessory (top) augmentation effect (2)" type="Augmentation" />
+	<word alias="Hair Accessory (bottom) augmentation effect (1)" type="Augmentation" />
+	<word alias="Hair Accessory (bottom) augmentation effect (2)" type="Augmentation" />
+	<word alias="Right Bracelet augmentation effect (1)" type="Augmentation" />
+	<word alias="Right Bracelet augmentation effect (2)" type="Augmentation" />
+	<word alias="Left Bracelet augmentation effect (1)" type="Augmentation" />
+	<word alias="Left Bracelet augmentation effect (2)" type="Augmentation" />
+	<word alias="Talisman (1) augmentation effect (1)" type="Augmentation" />
+	<word alias="Talisman (1) augmentation effect (2)" type="Augmentation" />
+	<word alias="Talisman (2) augmentation effect (1)" type="Augmentation" />
+	<word alias="Talisman (2) augmentation effect (2)" type="Augmentation" />
+	<word alias="Talisman (3) augmentation effect (1)" type="Augmentation" />
+	<word alias="Talisman (3) augmentation effect (2)" type="Augmentation" />
+	<word alias="Talisman (4) augmentation effect (1)" type="Augmentation" />
+	<word alias="Talisman (4) augmentation effect (2)" type="Augmentation" />
+	<word alias="Talisman (5) augmentation effect (1)" type="Augmentation" />
+	<word alias="Talisman (5) augmentation effect (2)" type="Augmentation" />
+	<word alias="Talisman (6) augmentation effect (1)" type="Augmentation" />
+	<word alias="Talisman (6) augmentation effect (2)" type="Augmentation" />
+	<word alias="Belt augmentation effect (1)" type="Augmentation" />
+	<word alias="Belt augmentation effect (2)" type="Augmentation" />
+
+	<dword alias="Talisman slots" />
+	<dword alias="Cloak slot" type="YesOrNo" />
+
+	<dword alias="P. Atk." />
+	<dword alias="Attack speed" />
+	<dword alias="P. Def." />
+	<dword alias="Evasion" />
+	<dword alias="Accuracy" />
+	<dword alias="Critical" />
+	<dword alias="M. Atk." />
+	<dword alias="Casting speed" />
+	<dword alias="Attack speed" />
+	<dword alias="M. Def." />
+	<dword alias="In PvP" type="YesOrNo" />
+	<dword alias="Karma" />
+	<dword alias="Running speed (on ground)" />
+	<dword alias="Walking speed (on ground)" />
+	<dword alias="Running speed (in water)" />
+	<dword alias="Walking speed (in water)" />
+	<dword alias="Running speed (mounted)" />
+	<dword alias="Walking speed (mounted)" />
+	<dword alias="Running speed (flying mounted)" />
+	<dword alias="Walking speed (flying mounted)" />
+	<double alias="Movement speed multiplier" />
+	<double alias="Attack speed multiplier" />
+	<double alias="Collision radius" />
+	<double alias="Collision height" />
+	<dword alias="Hair style" type="Alphabet" />
+	<dword alias="Hair color" type="Alphabet" />
+	<dword alias="Face" type="Alphabet" />
+	<dword alias="Builder level" />
+	<string alias="Title">
+		<scriptAlias id="OIC_PLAYER_TITLE" />
+	</string>
+
+	<dword alias="Pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+	</dword>
+	<dword alias="Pledge crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<dword alias="Alliance ID" type="Alliance">
+		<scriptAlias id="AIC_ALLY_ID" />
+	</dword>
+	<dword alias="Alliance crest ID" type="AllianceCrest">
+		<scriptAlias id="AIC_ALLY_CREST_ID" />
+	</dword>
+
+	<dword alias="Roles" /> <!-- Make type -->
+	<byte alias="Mount type" type="MountType" />
+	<byte alias="Private store" type="PersonalStoreType" />
+	<byte alias="Can use dwarven recipes" type="YesOrNo" />
+	<dword alias="PK Count" />
+	<dword alias="PvP Count" />
+	<word alias="Cubic count" id="index_0" />
+	<loop id="index_0">
+		<word alias="Cubic" type="Cubic" />
+	</loop>
+	<byte alias="Looking for party" type="YesOrNo" />
+	<dword alias="Abnormal effect" type="ave.AbnormalVisualEffectMask" />
+	<byte alias="Flying" type="YesOrNo" /> <!-- 2 if flying; never 1 -->
+	<dword alias="Pledge privileges" type="PledgePrivileges" />
+	<word alias="Recomendations" />
+	<word alias="Evaluation score" />
+	<dword alias="Mount" type="Npc" />
+	<word alias="Inventory slots" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="0" /> <!-- Make type -->
+	<dword alias="Maximum CP" />
+	<dword alias="Current CP" />
+	<byte alias="Weapon enchant glow" type="EnchantEffect" />
+	<byte alias="Duel team" type="DuelTeam" />
+	<dword alias="Pledge insignia ID" />
+	<byte alias="Noble" type="YesOrNo" />
+	<byte alias="Hero" type="YesOrNo" />
+	<byte alias="Fishing" type="YesOrNo" />
+	<dword alias="Fishing lure X" />
+	<dword alias="Fishing lure Y" />
+	<dword alias="Fishing lure Z" />
+	<dword alias="Name color" type="BGR" />
+	<byte alias="Movement mode" type="MoveType" />
+	<dword alias="Social class" type="PledgeRank" />
+	<dword alias="Pledge unit" type="PledgeUnit" />
+	<dword alias="Title color" type="BGR" />
+	<dword alias="Cursed weapon level" />
+	<dword alias="Transformation" type="Transformation" />
+	<word alias="Attack element" type="ElementType" />
+	<word alias="Attack element power" type="ElementPower" />
+	<word alias="Fire defense" type="ElementPower" />
+	<word alias="Water defense" type="ElementPower" />
+	<word alias="Wind defense" type="ElementPower" />
+	<word alias="Earth defense" type="ElementPower" />
+	<word alias="Holy defense" type="ElementPower" />
+	<word alias="Dark defense" type="ElementPower" />
+	<dword alias="Agathion" type="Npc" />
+	<dword alias="Fame" />
+	<dword alias="Can use minimap" type="YesOrNo" />
+	<dword alias="Vitality" type="VitalityLevel" />
+	<dword alias="Special effect" type="ave.AbnormalVisualEffectMask2" />
+
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+</packet>

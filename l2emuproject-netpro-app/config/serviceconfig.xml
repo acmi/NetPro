@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sockets xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net schemata/svcfg.xsd">
+
+	<gameWorldSockets> <!-- injected into ServerList -->
+		<gameWorldSocket clientAddressPrefix="0.0.0.0/0" ip="127.0.0.1" port="7776" />
+	</gameWorldSockets>
+
+	<authorizationSockets>
+		<!-- Example local authorization daemon (login server), listening on port 2107 -->
+		<authorizationSocket>
+			<listen ip="0.0.0.0" port="2106" />
+			<service host="localhost" port="2107" />
+		</authorizationSocket>
+		<!-- Example: NA -->
+		<authorizationSocket disabled="true">
+			<listen ip="0.0.0.0" port="2106" />
+			<service host="64.25.35.104" port="2106" />
+		</authorizationSocket>
+	</authorizationSockets>
+
+</sockets>

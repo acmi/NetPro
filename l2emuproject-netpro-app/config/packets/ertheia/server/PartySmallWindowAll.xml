@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item distribution DWORD -> CHAR, member count DWORD -> CHAR -->
+<!-- Level DWORD -> CHAR, Class DWORD -> WORD, Sex DWORD -> CHAR, Race DWORD -> CHAR, unknown DWORD -> CHAR, 2 DWORDs removed -->
+<!-- Servitor type & level DWORDs -> CHARs -->
+<packet id="SM_PARTY_SMALL_WINDOW_ALL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Leader OID" type="ObjectID" />
+	<byte alias="Item distribution" type="ItemRedist" /> <!-- NEW -->
+	<byte alias="Other members" id="others" /> <!-- NEW -->
+	<loop id="others">
+		<dword alias="Member OID" type="ObjectID">
+			<scriptAlias id="OIC_PLAYER_OID" />
+		</dword>
+		<string alias="Name">
+			<scriptAlias id="OIC_PLAYER_NAME" />
+		</string>
+		<dword alias="Current CP" />
+		<dword alias="Maximum CP" />
+		<dword alias="Current HP" /> <!-- real -->
+		<dword alias="Maximum HP" /> <!-- real -->
+		<dword alias="Current MP" />
+		<dword alias="Maximum MP" />
+		<dword alias="Vitality" type="VitalityLevel" />
+		
+		<!-- NEW -->
+		<byte alias="Level" />
+		<word alias="Class" type="CharacterClass" />
+		<byte alias="Sex" type="Sex" />
+		<byte alias="Race" type="Race" />
+		<byte alias="0" />
+		
+		<dword alias="Servitor count" id="index_1" />
+		<loop id="index_1">
+			<dword alias="Servitor OID" type="ObjectID">
+				<scriptAlias id="OIC_NPC_OID" />
+			</dword>
+			<dword alias="Servitor" type="Npc">
+				<scriptAlias id="OIC_NPC_TEMPLATE" />
+			</dword>
+			<byte alias="Servitor's type" type="ServitorType" /> <!-- NEW -->
+			<string alias="Servitor's name" />
+			<dword alias="Servitor's current HP" /> <!-- real -->
+			<dword alias="Servitor's maximum HP" /> <!-- real -->
+			<dword alias="Servitor's current MP" />
+			<dword alias="Servitor's maximum MP" />
+			<byte alias="Servitor's level" /> <!-- NEW -->
+		</loop>
+	</loop>
+</packet>

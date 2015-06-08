@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="49" id="128" />
+		<packet opcodePrefix="6A" id="129" />
+		<packet opcodePrefix="7A" id="130" />
+		<packet opcodePrefix="98" id="CM_REQ_START_ALLIANCE_WAR" />
+		<packet opcodePrefix="99" id="CM_REPLY_START_ALLIANCE_WAR" />
+		<packet opcodePrefix="9A" id="CM_REQ_STOP_ALLIANCE_WAR" />
+		<packet opcodePrefix="9B" id="CM_REPLY_STOP_ALLIANCE_WAR" />
+		<packet opcodePrefix="9C" id="CM_REQ_SURRENDER_ALLIANCE_WAR" />
+		<packet opcodePrefix="9D" id="CM_REQ_SKILL_COOL_TIME" />
+		<packet opcodePrefix="9E" id="CM_REQ_PACKAGE_SENDABLE_ITEM_LIST" />
+		<packet opcodePrefix="9F" id="CM_REQ_PACKAGE_SEND" />
+		<packet opcodePrefix="A0" id="CM_REQ_BLOCK" />
+		<packet opcodePrefix="A1" id="CM_REQ_CASTLE_SIEGE_INFO" />
+		<packet opcodePrefix="A2" id="CM_REQ_CASTLE_SIEGE_ATTACKER_LIST" />
+		<packet opcodePrefix="A3" id="CM_REQ_CASTLE_SIEGE_DEFENDER_LIST" />
+		<packet opcodePrefix="A4" id="CM_REQ_JOIN_CASTLE_SIEGE" />
+		<packet opcodePrefix="A5" id="CM_REQ_CONFIRM_CASTLE_SIEGE_WAITING_LIST" />
+		<packet opcodePrefix="A6" id="CM_REQ_SET_CASTLE_SIEGE_TIME" />
+		<packet opcodePrefix="A7" id="CM_REQ_MULTI_SELL_CHOOSE" />
+		<packet opcodePrefix="A8" id="CM_NET_PING" />
+		<packet opcodePrefix="A9" id="CM_REQ_REMAIN_TIME" />
+	</client>
+	<server>
+		<packet opcodePrefix="D5" id="SM_START_ALLIANCE_WAR" />
+		<packet opcodePrefix="D6" id="SM_REPLY_START_ALLIANCE_WAR" />
+		<packet opcodePrefix="D7" id="SM_STOP_ALLIANCE_WAR" />
+		<packet opcodePrefix="D8" id="SM_REPLY_STOP_ALLIANCE_WAR" />
+		<packet opcodePrefix="D9" id="SM_SURRENDER_ALLIANCE_WAR" />
+		<packet opcodePrefix="DA" id="SM_SKILL_COOL_TIME" />
+		<packet opcodePrefix="DB" id="SM_PACKAGE_TO_LIST" />
+		<packet opcodePrefix="DC" id="SM_PACKAGE_SENDABLE_LIST" />
+		<packet opcodePrefix="DD" id="SM_EARTH_QUAKE" />
+		<packet opcodePrefix="DE" id="SM_FLY_TO_LOCATION" />
+		<packet opcodePrefix="DF" id="225" />
+		<packet opcodePrefix="E0" id="SM_SPECIAL_CAMERA" />
+		<packet opcodePrefix="E1" id="227" />
+		<packet opcodePrefix="E2" id="SM_CASTLE_SIEGE_INFO" />
+		<packet opcodePrefix="E3" id="SM_CASTLE_SIEGE_ATTACKER_LIST" />
+		<packet opcodePrefix="E4" id="SM_CASTLE_SIEGE_DEFENDER_LIST" />
+		<packet opcodePrefix="E5" id="SM_NICK_NAME_CHANGED" />
+		<packet opcodePrefix="E6" id="SM_PLEDGE_STATUS_CHANGED" />
+		<packet opcodePrefix="E7" id="SM_RELATION_CHANGED" />
+		<packet opcodePrefix="E8" id="234" />
+		<packet opcodePrefix="E9" id="SM_MULTI_SELL_LIST" />
+		<packet opcodePrefix="EA" id="SM_SET_SUMMON_REMAIN_TIME" />
+		<packet opcodePrefix="EB" id="237" />
+		<packet opcodePrefix="EC" id="SM_NET_PING" />
+		<packet opcodePrefix="ED" id="239" />
+	</server>
+</mapping>

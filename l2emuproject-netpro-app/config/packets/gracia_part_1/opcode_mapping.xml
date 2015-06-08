@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="D0 4E 00" id="255" />
+		<packet opcodePrefix="D0 4F 00" id="256" />
+		<packet opcodePrefix="D0 50 00" id="257" />
+		<packet opcodePrefix="D0 51 00" id="258" />
+		<packet opcodePrefix="D0 52 00" id="259" />
+		<packet opcodePrefix="D0 53 00" id="260" />
+	</client>
+	<server>
+		<packet opcodePrefix="FE 81 00" id="420" />
+		<packet opcodePrefix="FE 82 00" id="421" />
+		<packet opcodePrefix="FE 83 00" id="422" />
+	</server>
+</mapping>

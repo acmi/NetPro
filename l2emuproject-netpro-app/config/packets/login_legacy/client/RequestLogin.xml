@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="LS_CM_AQ_LOGIN" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- C3 557/560 specific: 128 RSA ciphered bytes instead of ID/password strings -->
+	<bytes alias="ID" type="ASCII">
+		<length>14</length>
+	</bytes>
+	<bytes alias="Password" type="ASCII">
+		<length>16</length>
+	</bytes>
+	
+	<byte alias="8" />
+	<bytes alias="Padding[0]">
+		<length>8</length>
+	</bytes>
+	<bytes alias="Checksum">
+		<length>4</length>
+	</bytes>
+	<bytes alias="Padding[0]">
+		<length>4</length>
+	</bytes>
+</packet>

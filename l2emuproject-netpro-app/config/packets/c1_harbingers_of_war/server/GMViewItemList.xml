@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a DWORD to indicate whether to open a window -->
+<!-- Item's paperdoll slot mask is now a DWORD. WORDs only written for equipable items are now written for all items. -->
+<packet id="SM_GM_VIEW_ITEM_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Player name" />
+	
+	<!-- ItemList packet below -->
+	<word alias="Open window" type="YesOrNo" /> <!-- NEW -->
+	<word alias="Item count" id="cnt" />
+	<loop id="cnt">
+		<word alias="Base item type" type="ItemType1" />
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Amount" />
+		<word alias="Main item type" type="ItemType2" id="type" />
+		<word alias="Blessed" type="YesOrNo" />
+		<word alias="Equipped" type="YesOrNo" />
+		
+		<!-- NEW -->
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<word alias="Enchant level" />
+		<word alias="0" />
+	</loop>
+</packet>

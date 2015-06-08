@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Additional 0 DWORD after main target, damage modifiers have changed and now span a DWORD, a separate DWORD for soulshot grade was added -->
+<packet id="SM_ATTACK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Attacker OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="HLE_ATTACKER_OID" />
+		<scriptAlias id="fspawn_walker_oid" />
+	</dword>
+	<dword alias="Main target OID" type="ObjectID">
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="HLE_TARGET_OID" />
+	</dword>
+	<dword alias="0" /> <!-- NEW -->
+	<dword alias="Damage to main target" />
+	<dword alias="Damage modifiers" type="DamageTypes" /> <!-- NEW -->
+	<dword alias="Soulshot" type="SoulshotGrade" /> <!-- NEW -->
+	<dword alias="Attacker X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Attacker Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Attacker Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<word alias="Additional hit count" id="index_0" /> <!-- Used for dual weapons and polearms -->
+	<loop id="index_0">
+		<dword alias="Target OID" type="ObjectID">
+			<scriptAlias id="HLE_TARGETS_OID" />
+		</dword>
+		<dword alias="Damage" />
+		<dword alias="Damage modifiers" type="DamageTypes" /> <!-- NEW -->
+		<dword alias="Soulshot" type="SoulshotGrade" /> <!-- NEW -->
+	</loop>
+	<dword alias="Main target X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Main target Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Main target Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+</packet>

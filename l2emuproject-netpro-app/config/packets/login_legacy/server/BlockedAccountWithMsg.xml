@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="LS_SM_BLOCKED_ACCOUNT_WITH_MSG" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Message count" id="msg_cnt" />
+	<loop id="msg_cnt">
+		<word alias="" type="BlockedAccountDialogMessage" />
+		<string alias="Token" />
+	</loop>
+	<!-- The rest is padding, except for 2nd last DWORD, which is the checksum -->
+</packet>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<!-- Ferry shout channel message is now a DWORD instead of a STRING -->
+<packet id="SM_SAY_2" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Talker OID" type="ObjectID" />
+	<dword alias="Chat" type="Chat" id="cond_1" />
+	<branch id="cond_1" condition="FerryShout">
+		<dword alias="Talker" type="SysString" />
+		<dword alias="Message" type="ImmutableSystemMessage" /> <!-- NEW -->
+	</branch>
+	<branch id="cond_1" condition="DefaultChat">
+		<string alias="Talker" />
+		<string alias="Message">
+			<scriptAlias id="antispam_fulltext_chat_msg" />
+		</string>
+	</branch>
+</packet>

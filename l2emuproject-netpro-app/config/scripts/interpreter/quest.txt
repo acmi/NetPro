@@ -1,0 +1,887 @@
+1	Letters of Love
+2	What Women Want
+3	Will the Seal be Broken?
+4	Long live the Pa'agrio Lord!
+5	Miner's Favor
+6	Step into the Future
+7	A Trip Begins
+8	An Adventure Begins
+9	Into the City of Humans
+10	Into the World
+11	Secret Meeting With Ketra Orcs
+12	Secret Meeting With Varka Silenos
+13	Parcel Delivery
+14	Whereabouts of the Archaeologist
+15	Sweet Whispers
+16	The Coming Darkness
+17	Light and Darkness
+18	Meeting with the Golden Ram
+19	Go to the Pastureland!
+20	Bring Up With Love
+21	Hidden Truth
+22	Tragedy in Von Hellmann Forest
+23	Lidia's Heart
+24	Inhabitants of the Forest of the Dead
+25	Hiding Behind the Truth
+26	Tired of Waiting
+27	Chest Caught with a Bait of Wind
+28	Chest Caught with a Bait of Icy Air
+29	Chest Caught with a Bait of Earth
+30	Chest Caught with a Bait of Fire
+31	Secret Buried in the Swamp
+32	An Obvious Lie
+33	Make a Pair of Dress Shoes
+34	In Search of Cloth
+35	Find Glittering Jewelry
+36	Make a Sewing Kit
+37	Make Formal Wear
+38	Dragon Fangs
+39	Red-eyed Invaders
+40	A Special Order
+42	Help the Uncle!
+43	Help the Sister!
+44	Help the Son!
+45	To Talking Island
+46	Once More In the Arms of the Mother Tree
+47	Into the Dark Elven Forest
+48	To the Immortal Plateau
+49	The Road Home
+50	Lasosco's Special Bait
+51	O'Fulle's Special Bait
+52	Willie's Special Bait
+53	Linnaeus' Special Bait
+60	Good Work's Reward
+61	Law Enforcement
+62	Path of the Trooper
+63	Path of the Warder
+64	Certified Berserker
+65	Certified Soul Breaker
+66	Certified Arbalester
+67	Saga of the Doombringer
+68	Saga of the Soul Hound
+69	Saga of the Trickster
+70	Saga of the Phoenix Knight
+71	Saga of Eva's Templar
+72	Saga of the Sword Muse
+73	Saga of the Duelist
+74	Saga of the Dreadnought
+75	Saga of the Titan
+76	Saga of the Grand Khavatari
+77	Saga of the Dominator
+78	Saga of the Doomcryer
+79	Saga of the Adventurer
+80	Saga of the Wind Rider
+81	Saga of the Ghost Hunter
+82	Saga of the Sagittarius
+83	Saga of the Moonlight Sentinel
+84	Saga of the Ghost Sentinel
+85	Saga of the Cardinal
+86	Saga of the Hierophant
+87	Saga of Eva's Saint
+88	Saga of the Archmage
+89	Saga of the Mystic Muse
+90	Saga of the Storm Screamer
+91	Saga of the Arcana Lord
+92	Saga of the Elemental Master
+93	Saga of the Spectral Master
+94	Saga of the Soultaker
+95	Saga of the Hell Knight
+96	Saga of the Spectral Dancer
+97	Saga of the Shillien Templar
+98	Saga of the Shillien Saint
+99	Saga of the Fortune Seeker
+100	Saga of the Maestro
+101	Sword of Solidarity
+102	Sea of Spores Fever
+103	Spirit of Craftsman
+104	Spirit of Mirrors
+105	Skirmish with the Orcs
+106	Forgotten Truth
+107	Merciless Punishment
+108	Jumble, Tumble, Diamond Fuss
+109	In Search of the Nest
+110	To the Primeval Isle
+111	Elrokian Hunter's Proof
+112	Walk of Fate
+113	Status of the Beacon Tower
+114	Resurrection of an Old Manager
+115	The Other Side of Truth
+116	Beyond the Hills of Winter
+117	The Ocean of Distant Stars
+118	To Lead and Be Led.
+119	Last Imperial Prince
+120	Pavel's Last Research
+121	Pavel the Giant
+122	Ominous News
+123	The Leader and the Follower
+124	Meeting the Elroki
+125	The Name of Evil - 1
+126	The Name of Evil - 2
+128	Pailaka - Song of Ice and Fire
+129	Pailaka - Devil's Legacy
+130	Path to Hellbound
+131	Bird in a Cage
+132	Matras' Curiosity
+133	That's Bloody Hot!
+134	Temple Missionary
+135	Temple Executor
+136	More Than Meets the Eye
+137	Temple Champion - 1
+138	Temple Champion - 2
+139	Shadow Fox - 1
+140	Shadow Fox - 2
+141	Shadow Fox - 3
+142	Fallen Angel - Request of Dawn
+143	Fallen Angel - Request of Dusk
+144	Pailaka - Injured Dragon
+146	The Zero Hour
+147	Path to Becoming an Elite Mercenary
+148	Path to Becoming an Exalted Mercenary
+149	Primal Mother, Istina
+150	Extreme Challenge: Primal Mother Resurrected
+151	Cure for Fever
+152	Shards of Golem
+153	Deliver Goods
+154	Sacrifice to the Sea
+155	Find Sir Windawood
+156	Millennium Love
+157	Recover Smuggled Goods
+158	Seed of Evil
+159	Protect the Water Source
+160	Nerupa's Request
+161	Fruit of the Mother Tree
+162	Curse of the Underground Fortress
+163	Legacy of the Poet
+164	Blood Fiend
+165	Shilen's Hunt
+166	Mass of Darkness
+167	Dwarven Kinship
+168	Deliver Supplies
+169	Offspring of Nightmares
+170	Dangerous Seduction
+171	Acts of Evil
+172	New Horizons
+173	To the Isle of Souls
+174	Supply Check
+175	The Way of the Warrior
+176	Steps for Honor
+177	Split Destiny
+178	Iconic Trinity
+179	Into the Large Cavern
+180	Infernal Flames Burning in Crystal Prison
+181	Devils Strike Back, Advent of Balok
+182	New Recruits
+183	Relic Exploration
+184	Art of Persuasion
+185	Nikola's Cooperation
+186	Contract Execution
+187	Nikola's Heart
+188	Seal Removal
+189	Contract Completion
+190	Lost Dream
+191	Vain Conclusion
+192	Seven Signs, Series of Doubt
+193	Seven Signs, Dying Message
+194	Seven Signs, Mammon's Contract
+195	Seven Signs, Secret Ritual of the Priests
+196	Seven Signs, Seal of the Emperor
+197	Seven Signs, the Sacred Book of Seal
+198	Seven Signs, Embryo
+210	Obtain a Wolf Pet
+211	Trial of the Challenger
+212	Trial of Duty
+213	Trial of the Seeker
+214	Trial of the Scholar
+215	Trial of the Pilgrim
+216	Trial of the Guildsman
+217	Testimony of Trust
+218	Testimony of Life
+219	Testimony of Fate
+220	Testimony of Glory
+221	Testimony of Prosperity
+222	Test of the Duelist
+223	Test of the Champion
+224	Test of Sagittarius
+225	Test of the Searcher
+226	Test of the Healer
+227	Test of the Reformer
+228	Test of Magus
+229	Test of Witchcraft
+230	Test of the Summoner
+231	Test of the Maestro
+232	Test of the Lord
+233	Test of the War Spirit
+234	Fate's Whisper
+235	Mimir's Elixir
+236	Seeds of Chaos
+237	Winds of Change
+238	Success/Failure of Business
+239	Won't You Join Us?
+240	I'm the Only One You Can Trust
+241	Possessor of a Precious Soul - 1
+242	Possessor of a Precious Soul - 2
+245	Come to Me
+246	Possessor of a Precious Soul - 3
+247	Possessor of a Precious Soul - 4
+249	Poisoned Plains of the Lizardmen
+250	Watch What You Eat
+251	No Secrets
+252	It Smells Delicious!
+254	Legendary Tales
+257	The Guard is Busy
+258	Bring Wolf Pelts
+259	Request from the Farm Owner
+260	Orc Hunting
+261	Collector's Dream
+262	Trade with the Ivory Tower
+263	Orc Subjugation
+264	Keen Claws
+265	Bonds of Slavery
+266	Pleas of Pixies
+267	Wrath of Verdure
+268	Traces of Evil
+269	Invention Ambition
+270	The One Who Ends Silence
+271	Proof of Valor
+272	Wrath of Ancestors
+273	Invaders of the Holy Land
+274	Skirmish with the Werewolves
+275	Dark Winged Spies
+276	Totem of the Hestui
+277	Gatekeeper's Offering
+278	Home Security
+279	Target of Opportunity
+280	The Food Chain
+281	Head for the Hills!
+283	The Few, The Proud, The Brave
+284	Muertos Feather
+286	Fabulous Feathers
+287	Figuring It Out!
+288	Handle With Care
+289	No More Soup For You
+290	Threat Removal
+291	Revenge of the Redbonnet
+292	Brigands Sweep
+293	The Hidden Veins
+294	Covert Business
+295	Dreaming of the Skies
+296	Tarantula's Spider Silk
+297	Gatekeeper's Favor
+298	Lizardmen's Conspiracy
+299	Gather Ingredients for Pie
+300	Leto Lizardmen Hunting
+303	Collect Arrowheads
+306	Crystals of Fire and Ice
+307	Control Device of the Giants
+308	Reed Field Maintenance
+309	For a Good Cause
+310	Only What Remains
+311	Expulsion of Evil Spirits
+312	Take Advantage of the Crisis!
+313	Collect Spores
+316	Destroy Plague Carriers
+317	Catch the Wind
+319	Scent of Death
+320	Bones Tell the Future
+324	Sweetest Venom
+325	Grim Collector
+326	Vanquish Remnants
+327	Recover the Farmland
+328	Sense for Business
+329	Curiosity of a Dwarf
+330	Adept of Taste
+331	Arrow of Vengeance
+333	Hunt of the Black Lion
+334	The Wishing Potion
+335	The Song of the Hunter
+336	Coins of Magic
+337	Audience with the Land Dragon
+338	Alligator Hunter
+340	Subjugation of Lizardmen
+341	Hunting for Wild Beasts
+343	Under the Shadow of the Ivory Tower
+344	1000 years, the End of Lamentation
+345	Method to Raise the Dead
+347	Go Get the Calculator
+348	An Arrogant Search
+350	Enhance Your Weapon
+351	Black Swan
+352	Help Rood Raise A New Pet!
+353	Power of Darkness
+354	Conquest of Alligator Island
+355	Family Honor
+356	Dig Up the Sea of Spores!
+357	Warehouse Keeper's Ambition
+358	Illegitimate Child of the Goddess
+359	For a Sleepless Deadman
+360	Plunder Their Supplies
+362	Bard's Mandolin
+363	Sorrowful Sound of Flute
+364	Jovial Accordion
+365	Devil's Legacy
+366	Silver Haired Shaman
+367	Electrifying Recharge!
+368	Trespassing into the Holy Ground
+369	Collector of Jewels
+370	An Elder Sows Seeds
+371	Shrieks of Ghosts
+372	Legacy of Insolence
+373	Supplier of Reagents
+374	Whisper of Dreams - Part 1
+375	Whisper of Dreams - Part 2
+376	Exploration of the Giants' Cave - Part 1
+377	Exploration of the Giants' Cave - Part 2
+378	Grand Feast
+379	Fantasy Wine
+380	Bring Out the Flavor of Ingredients!
+381	Let's Become a Royal Member!
+382	Kail's Magic Coin
+383	Treasure Hunt
+384	Warehouse Keeper's Pastime
+385	Yoke of the Past
+386	Stolen Dignity
+401	Path of the Warrior
+402	Path of the Human Knight
+403	Path of the Rogue
+404	Path of the Human Wizard
+405	Path of the Cleric
+406	Path of the Elven Knight
+407	Path of the Elven Scout
+408	Path of the Elven Wizard
+409	Path of the Elven Oracle
+410	Path of the Palus Knight
+411	Path of the Assassin
+412	Path of the Dark Wizard
+413	Path of the Shillien Oracle
+414	Path of the Orc Raider
+415	Path of the Orc Monk
+416	Path of the Orc Shaman
+417	Path of the Scavenger
+418	Path of the Artisan
+419	Get a pet
+420	Little Wing
+421	Little Wing's Big Adventure
+422	Repent Your Sins
+423	Take Your Best Shot
+426	Quest for Fishing Shot
+431	Wedding March
+432	Birthday Party Song
+450	Grave Robber Rescue
+451	Lucien's Altar
+452	Finding the Lost Soldiers
+453	Not Strong Enough Alone
+454	Completely Lost
+455	Wings of Sand
+456	Don't Know, Don't Care
+457	Lost and Found
+458	Perfect Form
+459	The Villain of the Underground Mine, Teredor
+460	Precious Research Material
+461	Rumble in the Base
+462	Stuffed Ancient Heroes
+463	I Must Be a Genius
+464	Oath
+465	We Are Friends
+466	Placing My Small Power
+468	Be Lost in the Mysterious Scent
+469	Suspicious Gardener
+470	Divinity Protector
+471	Breaking through the Emerald Square
+472	Challenge, Steam Corridor
+473	In the Coral Garden
+474	Waiting for the Summer
+476	Plain Mission
+480	Another Legacy of Cruma Tower
+481	Shadow Helper
+482	Recertification of Value
+483	Intended Tactic
+485	Hot Spring Water
+488	Wonders of Caring
+489	In This Quiet Place
+490	Duty of the Survivor
+491	In Nomine Patris
+492	Tomb Raiders
+493	Kicking Out Unwelcome Guests
+494	Incarnation of Greed Zellaka (Group)
+495	Incarnation of Jealousy Pelline (Group)
+496	Incarnation of Gluttony Kalios (Group)
+497	Incarnation of Greed Zellaka (Solo)
+498	Incarnation of Jealousy Pelline (Solo)
+499	Incarnation of Gluttony Kalios (Solo)
+500	Brothers Bound in Chains
+501	Proof of Clan Alliance
+503	Pursuit of Clan Ambition!
+504	Competition for the Bandit Stronghold
+505	Blood Offering
+508	A Clan's Reputation
+509	A Clan's Fame
+510	A Clan's Prestige
+511	Awl Under Foot
+512	Blade Under Foot
+551	Olympiad Starter
+552	Olympiad Veteran
+553	Olympiad Undefeated
+601	Watching Eyes
+602	Shadow of Light
+603	Daimon the White-Eyed - Part 1
+604	Daimon the White-Eyed - Part 2
+605	Alliance with Ketra Orcs
+606	Battle against Varka Silenos
+607	Prove Your Courage!
+608	Slay the Enemy Commander!
+609	Magical Power of Water - Part 1
+610	Magical Power of Water - Part 2
+611	Alliance with Varka Silenos
+612	Battle against Ketra Orcs
+613	Prove Your Courage!
+614	Slay the Enemy Commander!
+615	Magical Power of Fire - Part 1
+616	Magical Power of Fire - Part 2
+617	Gather the Flames
+618	Into the Flames
+619	Relics of the Old Empire
+620	Four Goblets
+621	Egg Delivery
+622	Specialty Liquor Delivery
+623	The Finest Food
+624	The Finest Ingredients - Part 1
+625	The Finest Ingredients - Part 2
+626	A Dark Twilight
+627	Heart in Search of Power
+628	Hunt of the Golden Ram Mercenary Force
+629	Clean up the Swamp of Screams
+631	Delicious Top Choice Meat
+632	Necromancer's Request
+633	In the Forgotten Village
+634	In Search of Fragments of Dimension
+635	Into the Dimensional Rift
+636	Truth Beyond the Gate
+637	Through the Gate Once More
+638	Seekers of the Holy Grail
+639	Guardians of the Holy Grail
+640	The Zero Hour
+641	Attack Sailren!
+642	A Powerful Primeval Creature
+643	Rise and Fall of the Elroki Tribe
+644	Grave Robber Annihilation
+645	Ghosts of Batur
+646	Signs of Revolt
+647	Influx of Machines
+648	An Ice Merchant's Dream
+649	A Looter and a Railroad Man
+650	A Broken Dream
+651	Runaway Youth
+652	An Aged Ex-Adventurer
+653	Wild Maiden
+654	Journey to a Settlement
+655	A Grand Plan for Taming Wild Beasts
+659	I'd Rather Be Collecting Fairy Breath
+660	Aiding the Floran Village
+661	Making the Harvest Grounds Safe
+662	A Game of Cards
+663	Seductive Whispers
+665	Great Pirate Zaken's Treasure
+666	Leona Blackbird's Treasure
+667	Queen Beora's Legacy
+668	The Gladiator's Treasure
+669	High Priest's Treasure
+670	Turek Orc's Treasure
+688	Defeat the Elrokian Raiders!
+690	Jude's Request
+691	Matras' Suspicious Request
+692	How to Oppose Evil
+693	Defeating Dragonkin Remnants
+694	Break Through the Hall of Suffering
+695	Defend the Hall of Suffering
+696	Conquer the Hall of Erosion
+697	Defend the Hall of Erosion
+698	Block the Lord's Escape
+699	Guardian of the Skies
+700	Cursed Life
+701	Proof of Existence
+702	A Trap for Revenge
+708	Path to Becoming a Lord - Gludio
+709	Path to Becoming a Lord - Dion
+710	Path to Becoming a Lord - Giran
+711	Path to Becoming a Lord - Innadril
+712	Path to Becoming a Lord - Oren
+713	Path to Becoming a Lord - Aden
+714	Path to Becoming a Lord - Schuttgart
+715	Path to Becoming a Lord - Goddard
+716	Path to Becoming a Lord - Rune
+717	For the Sake of the Territory - Gludio
+718	For the Sake of the Territory - Dion
+719	For the Sake of the Territory - Giran
+720	For the Sake of the Territory - Oren
+721	For the Sake of the Territory - Aden
+722	For the Sake of the Territory - Innadril
+723	For the Sake of the Territory - Goddard
+724	For the Sake of the Territory - Rune
+725	For the Sake of the Territory - Schuttgart
+726	Light within the Darkness
+727	Hope within the Darkness
+729	Protect the Territory Catapult!
+730	Protect the Supplies Safe.
+731	Protect the Military Association Leader.
+732	Protect the Religious Association Leader.
+733	Protect the Economic Association Leader.
+734	Pierce through a Shield!
+735	Make Spears Dull!
+736	Weaken the magic!
+737	Deny Blessings
+738	Destroy Key Targets
+750	Seven Flowers
+751	Liberating the Spirits
+752	Uncover the Secret
+753	Reacting to a Crisis
+754	Assisting the Rebel Forces
+755	In Need of Petras
+756	Top Quality Petra
+757	Triol's Movement
+758	The Fallen King's Men
+759	The Dwarven Nightmare Continues
+761	Assisting the Golden Ram Army
+762	An Ominous Request
+763	A Daunting Task
+764	Weakening the Varka Silenos Forces
+765	Weakening the Ketra Orc Forces
+767	Banishing Evil
+768	Terror of Town
+769	The Truth Concealed in Beauty
+770	Maintaining the Field Business
+771	Partaking in the Purification Campaign
+772	Purifying Souls
+775	Retrieving the Chaos Fragment
+776	Slay Dark Lord Ekimus
+777	Slay Dark Lord Tiat
+778	Operation Roaring Flame
+779	Utilize the Darkness - Seed of Destruction
+780	Utilize the Darkness - Seed of Infinity
+781	Utilize the Darkness - Seed of Annihilation
+782	Utilize the Darkness - Seed of Hellfire
+784	The Quiet Killer
+785	A Suspicious Ingredient
+786	Awaiting the Voice of the Gods
+787	The Role of a Watcher
+789	Waiting for Pa'agrio
+790	Obtaining Ferin's Trust
+816	Plans to Repair the Stronghold
+817	Black Atelia Research
+823	Disappeared Race, New Fairy
+824	Attack the Command Post
+826	In Search of the Secret Weapon
+827	Einhasad's Order
+828	Eva's Blessing
+829	Maphr's Salvation
+830	The Way of the Giant's Pawn
+831	Sayha's Scheme
+901	How Lavasauruses Are Made
+902	Reclaim Our Era
+903	The Call of Antharas
+904	Dragon Trophy - Antharas
+905	Refined Dragon Blood
+906	The Call of Valakas
+907	Dragon Trophy - Valakas
+943	Filling the Energy of Destruction
+10267	Journey to Gracia
+10268	To the Seed of Infinity
+10269	To the Seed of Destruction
+10270	Birth of the Seed
+10271	The Enveloping Darkness
+10272	Light Fragment
+10273	Good Day to Fly
+10274	Collecting in the Air
+10275	Containing the Attribute Power
+10276	Mutated Kaneus - Gludio
+10277	Mutated Kaneus - Dion
+10278	Mutated Kaneus - Heine
+10279	Mutated Kaneus - Oren
+10280	Mutated Kaneus - Schuttgart
+10281	Mutated Kaneus - Rune
+10282	To the Seed of Annihilation
+10283	Request of Ice Merchant
+10284	Acquisition of Divine Sword
+10285	Meeting Sirra
+10286	Reunion with Sirra
+10287	Story of Those Left
+10288	Secret Mission
+10289	Fade to Black
+10290	Land Dragon Conqueror
+10291	Fire Dragon Destroyer
+10292	Seven Signs, Mysterious Girl
+10293	Seven Signs, Forbidden Book of the Elmoreden Kingdom
+10294	Seven Signs, To the Monastery of Silence
+10295	Seven Signs, Solina's Tomb
+10296	Seven Signs, One Who Seeks the Power of the Seal
+10301	Shadow of Terror: Blackish Red Fog
+10302	Unsettling Shadow and Rumors
+10303	Crossroads between Light and Darkness
+10304	For the Forgotten Heroes
+10305	Unstoppable Futile Efforts
+10306	The Corrupted Leader
+10307	The Corrupted Leader: His Truth
+10310	Twisted Creation Tree
+10311	Peaceful Days are Over
+10312	Abandoned God's Creature
+10315	To the Prison of Darkness
+10316	Undecaying Memory of the Past
+10317	Orbis' Witch
+10318	Decaying Darkness
+10320	Let's Go to the Central Square
+10321	Qualifications of the Seeker
+10322	Searching for the Mysterious Power
+10323	Train Like It's Real
+10324	Finding Magister Gallint
+10325	Searching for New Power
+10326	Respect Your Elders!
+10327	Intruder Who Wants the Book of Giants
+10328	Request to Seal the Evil Fragment
+10329	Backup Seekers
+10330	To the Ruins of Ye Sagira
+10331	Start of Fate
+10332	Tough Road
+10333	Disappeared Sakum
+10334	Windmill Hill Status Report
+10335	Request to Find Sakum
+10336	Divided Sakum, Kanilov
+10337	Sakum's Impact
+10338	Seize Your Destiny
+10339	Fighting the Forgotten
+10341	Day of Destiny: Human's Fate
+10342	Day of Destiny: Elven Fate
+10343	Day of Destiny: Dark Elf's Fate
+10344	Day of Destiny: Orc's Fate
+10345	Day of Destiny: Dwarf's Fate
+10346	Day of Destiny: Kamael's Fate
+10351	Owner of Hall
+10352	Legacy of Cruma Tower
+10353	Certification of Value
+10354	Resurrected Owner of Hall
+10357	Altar of Blood that Awakens Destruction
+10358	Divided Sakum, Poslof
+10359	Sakum's Trace
+10360	Destiny Proven
+10361	Roles of the Seeker
+10362	Certification of the Seeker
+10363	Request of the Seeker
+10364	Obligations of the Seeker
+10365	Seeker Escort
+10366	Ruins Status Update
+10368	Rebellion of Monsters
+10369	Noblesse, Soul Testing
+10370	Menacing Times
+10371	Grasp Thy Power
+10372	Purgatory Volvere
+10374	That Place Succubus
+10375	Succubus Disciples
+10376	Bloody Good Time
+10377	The Invaded Execution Grounds
+10378	Weeding Work
+10379	An Uninvited Guest
+10380	The Executioner's Execution
+10381	To the Seed of Hellfire
+10382	Day of Liberation
+10383	Fergason's Offer
+10384	An Audience With Tauti
+10385	Red Thread of Fate
+10386	Mysterious Journey
+10387	Soulless One
+10388	Conspiracy Behind Doors
+10389	The Voice of Authority
+10390	Kekropus' Letter (1/9)
+10391	A Suspicious Helper
+10392	Failure and its Consequences
+10393	Kekropus' Letter: A Clue Completed (2/9)
+10394	Mutual Benefit
+10395	Not a Traitor
+10397	Kekropus' Letter: A Suspicious Badge (3/9)
+10398	A Suspicious Badge
+10399	The Alphabet of the Giants
+10401	Kekropus' Letter: Decoding the Badge (4/9)
+10402	Nowhere to Turn
+10403	The Guardian Giant
+10404	Kekropus' Letter: A Hidden Meaning (5/9)
+10405	Kartia's Seed
+10406	Before Darkness Bears Fruit
+10408	Kekropus' Letter: The Swamp of Screams (6/9)
+10409	A Suspicious Vagabond in the Swamp
+10410	Embryo in the Swamp of Screams
+10411	Kekropus' Letter: The Forest of the Dead (6/9)
+10412	A Suspicious Vagabond in the Forest
+10413	Embryo in the Forest of the Dead
+10414	Kekropus' Letter: With Courage (7/9)
+10415	Kekropus' Letter: With Wisdom (7/9)
+10416	In Search of the Eye of Argos
+10417	Daimon the White-eyed
+10419	Kekropus' Letter: Kampf's Whereabouts (8/9)
+10420	The Varka Silenos Supporters
+10421	Assassination of the Varka Silenos Commander
+10422	Assassination of the Varka Silenos Chief
+10424	Kekropus' Letter: Belos' Whereabouts (8/9)
+10425	The Ketra Orc Supporters
+10426	Assassination of the Ketra Orc Commander
+10427	Assassination of the Ketra Orc Chief
+10430	Kekropus' Letter: Tracking the Evil (9/9)
+10431	The Seal of Punishment: Den of Evil
+10432	Chasing Varangka
+10433	Kekropus' Letter: Regarding a Seal (9/9)
+10434	The Seal of Punishment: Sel Mahum Training Grounds
+10435	Chasing Keltron
+10436	Kekropus' Letter: The Seal of Punishment (9/9)
+10437	The Seal of Punishment: Plains of the Lizardmen
+10438	Chasing Loygen
+10439	Kekropus' Letter: The Origins of a Rumor (9/9)
+10440	The Seal of Punishment: The Fields
+10441	Chasing Meccadan
+10442	The Annihilated Plains - 1
+10443	The Annihilated Plains - 2
+10444	The Origin of Monsters
+10445	An Impending Threat
+10446	Hit and Run
+10447	Timing is Everything
+10450	A Dark Ambition
+10452	Is it Edible?
+10453	Stopping the Wind Dragon
+10455	Elikia's Letter
+10456	Operation: Rescue
+10457	Kefensis' Illusion
+10458	To the Desert Quarry
+10459	A Sick Ambition
+10460	Return of the Alligator Hunter
+10461	Tapping the Power Within
+10462	Temper a Rusting Blade
+10463	The Soul of a Sword
+10464	Be Prepared for Anything
+10472	Winds of Fate: Encroaching Shadows
+10501	Embroidered on a Cloak, Part 1: Zaken's Soul
+10502	Embroidered on a Cloak, Part 2: Freya's Soul
+10503	Embroidered on a Cloak, Part 3: Frintezza's Soul
+10504	Jewel of Antharas
+10505	Jewel of Valakas
+10701	The Road to Destruction
+10702	The Road to Infinity
+10703	Bottle of Istina's Soul
+10704	Bottle of Octavis' Soul
+10705	Bottle of Tauti's Soul
+10707	Flames of Sorrow
+10708	Strengthen the Barrier
+10709	The Stolen Seed
+10710	Life Energy Repository
+10712	The Minstrel's Song, Part 1
+10713	The Hero's Journey: Bloody Swampland
+10714	The Hero's Journey: Seed of Annihilation
+10715	The Hero's Journey: Harnak Underground Ruins
+10716	The Hero's Journey: Kartia's Labyrinth
+10717	The Minstrel's Song, Part 2
+10718	The Hero's Journey: Fairy Settlement
+10720	The Minstrel's Song, Part 3
+10721	The Hero's Journey: Prison of Darkness
+10722	The Hero's Journey: Fortuna
+10723	The Minstrel's Song, Part 4
+10724	The Hero's Journey: Isle of Souls
+10725	The Hero's Journey: Nornil's Cave
+10726	The Minstrel's Song, Part 5
+10727	The Hero's Journey: Seal of Shilen
+10728	The Hero's Journey: Cemetary
+10729	The Hero's Journey: Guillotine Fortress
+10730	The Hero's Journey: Orbis Temple
+10731	The Minstrel's Song, Part 6
+10732	A Foreign Land
+10733	The Test for Survival
+10734	Do or Die
+10735	A Special Power
+10736	A Special Power
+10737	Grakon's Warehouse
+10738	An Inner Beauty
+10739	Supply and Demand
+10740	Never Forget
+10741	A Draught for the Cold
+10742	A Furry Friend
+10743	Strange Fungus
+10744	Stronger Than Steel
+10745	The Secret Ingredient
+10746	See the World
+10747	The Hero's Journey: Pagan Temple
+10748	Mysterious Suggestion - 1
+10749	Mysterious Suggestion - 2
+10751	Winds of Fate: Encounters
+10752	Winds of Fate: A Promise
+10753	Winds of Fate: Choices
+10755	Letters from the Queen: Windy Hill
+10756	An Interdimensional Draft
+10757	Quieting the Storm
+10758	The Oath of the Wind
+10760	Letters from the Queen: Orc Barracks
+10761	An Orc in Love
+10762	Marionette Spirit
+10763	Terrifying Chertuba
+10764	Free Spirit
+10766	A New Craft
+10767	A Whole New Level of Alchemy
+10769	Letters from the Queen: Cruma Tower, Part 1
+10770	In Search of the Grail
+10771	Volatile Power
+10772	Reports from Cruma Tower, Part 1
+10774	Letters from the Queen: Cruma Tower, Part 2
+10775	In Search of an Ancient Giant
+10776	The Wrath of the Giants
+10777	Reports from Cruma Tower, Part 2
+10779	Letters from the Queen: Sea of Spores
+10780	A Weakened Barrier
+10781	Ingredients to Enforcements
+10782	Letters from the Queen: Forsaken Plains
+10783	Traces of an Ambush
+10784	The Broken Device
+10785	Letters from the Queen: Fields of Massacre
+10786	Resident Problem Solver
+10787	A Spy Mission
+10789	Letters from the Queen: Swamp of Screams
+10790	A Mercenary Helper
+10791	The Man of Mystery
+10792	Letters from the Queen: Forest of the Dead
+10793	Save the Souls
+10794	Investigate the Forest
+10795	Letters from the Queen: Wall of Argos
+10796	The Eye that Defied the Gods
+10797	Crossing Fate
+10798	Letters from the Queen: Dragon Valley
+10799	Strange Things Afoot in the Valley
+10800	Reconnaissance at Dragon Valley
+10801	The Dimensional Warp, Part 1
+10802	The Dimensional Warp, Part 2
+10803	The Dimensional Warp, Part 3
+10804	The Dimensional Warp, Part 4
+10805	The Dimensional Warp, Part 5
+10806	The Dimensional Warp, Part 6
+10807	The Dimensional Warp, Part 7
+10809	The Hero's Journey: Blazing Swamp
+10811	Exalted, One Who Faces the Limit
+10812	Facing Sadness
+10813	For Glory
+10814	Befitting of the Status
+10815	Step Up
+10817	Exalted, One Who Overcomes the Limit
+10818	Confronting a Giant Monster
+10819	For Honor
+10820	Relationships Befitting of the Status
+10821	Helping Others
+10823	Exalted, One Who Shatters the Limit
+10824	Confronting the Greatest Danger
+10825	For Victory
+10826	Luck Befitting of the Status
+10827	Step Up to Lead
+10829	In Search of the Cause
+10830	The Lost Garden of Spirits
+10831	Unbelievable Sight
+10832	Energy of Sadness and Anger
+10833	Put the Queen of Spirits to Sleep
+10836	Disappeared Clan Member
+10837	Looking for the Blackbird Clan Member
+10838	The Reason For Not Being Able to Get Out
+10839	Blackbird's Name Value
+10840	Time to Recover
+10841	Deep Inside Atelia Fortress
+10843	Anomaly in the Enchanted Valley
+10844	Bloody Battle - Seizing Supplies
+10845	Bloody Battle - Rescue the Smiths
+10846	Bloody Battle - Meeting the Commander

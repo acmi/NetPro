@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This packet was already deprecated in prelude beta (C_MAGIC_SKILL_LIST deprecated packet); and was removed in C3[555]. -->
+<!-- Trigger packet -->
+<packet id="CM_REQ_MAGIC_SKILL_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd" />

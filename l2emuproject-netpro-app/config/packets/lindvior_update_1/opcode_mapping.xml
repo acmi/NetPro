@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client />
+	<server>
+		<removedPacket id="SM_USER_INFO"/> <!-- Ignored by client -->
+		<removedPacket id="SM_NPC_INFO"/> <!-- Ignored by client -->
+		<packet opcodePrefix="FE 5B 01" id="694" />
+		<packet opcodePrefix="FE 5C 01" id="695" />
+		<packet opcodePrefix="FE 5D 01" id="696" />
+		<packet opcodePrefix="FE 5E 01" id="645" />
+		<packet opcodePrefix="FE 5F 01" id="527" />
+		<packet opcodePrefix="FE 60 01" id="646" />
+		<packet opcodePrefix="FE 61 01" id="647" />
+		<packet opcodePrefix="FE 62 01" id="648" />
+		<packet opcodePrefix="FE 63 01" id="649" />
+		<packet opcodePrefix="FE 64 01" id="654" />
+		<packet opcodePrefix="FE 65 01" id="530" />
+		<packet opcodePrefix="FE 66 01" id="526" />
+		<packet opcodePrefix="FE 67 01" id="531" />
+		<packet opcodePrefix="FE 68 01" id="528" />
+		<packet opcodePrefix="FE 69 01" id="662" />
+	</server>
+</mapping>

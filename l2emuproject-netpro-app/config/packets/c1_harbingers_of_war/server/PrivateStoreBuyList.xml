@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item's paperdoll slot mask is now a DWORD -->
+<packet id="SM_PRIVATE_STORE_BUY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Buyer OID" type="ObjectID" />
+	<dword alias="Viewer's adena" />
+	<dword alias="Purchase offer count" id="purchase_cnt" />
+	<loop id="purchase_cnt">
+		<dword alias="Private store slot" />
+		<dword alias="Item" type="Item" />
+		<word alias="Enchant level" />
+		<dword alias="Viewer's amount" />
+		<dword alias="Reference (shop) price" />
+		<word alias="0" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
+		<word alias="Main item type" type="ItemType2" />
+		<dword alias="Price (single item)" />
+		<dword alias="Total purchased amount" />
+	</loop>
+</packet>

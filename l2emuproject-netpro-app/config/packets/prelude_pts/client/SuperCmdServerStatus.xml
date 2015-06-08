@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- I have been unable to trick any client into sending this packet. Also, all known servers do not handle this packet and disconnect the client. -->
+<!-- Essentially, this packet has already been replaced by a builder command by prelude beta. -->
+<!-- Trigger packet -->
+<packet id="CM_SUPER_CMD_SERVER_STATUS" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd" />

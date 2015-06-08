@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- All items, regardless of type, now specify WORDs previously only written for equipable items. -->
+<packet id="SM_WARE_HOUSE_WITHDRAW_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- Equivalent to WareHouseDepositList -->
+	<dword alias="Viewer's adena" />
+	<word alias="Item count" id="cnt" />
+	<loop id="cnt">
+		<word alias="Base item type" type="ItemType1" />
+		<dword alias="0" /> <!-- Item OID -->
+		<dword alias="Item" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Amount" />
+		<word alias="Main item type" type="ItemType2" id="type" />
+		<word alias="Blessed" type="YesOrNo" />
+		
+		<!-- NEW -->
+		<word alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<word alias="Enchant level" />
+		<word alias="0" />
+		<word alias="0" />
+
+		<!-- This injects a fake OID for a better presentation of the associated CM -->
+		<dword alias="Item PK">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+	</loop>
+</packet>

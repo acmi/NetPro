@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This packet may be related to early pledge implementations (most likely before pledge levels). Otherwise, it is a scrapped feature. -->
+<!-- Modern servers disconnect the client when they receive this packet. -->
+<!-- Even in legacy servers the implementation seems to only mark you as a "clan member" (unable to create/join pledge), without actually assigning a real pledge ID or activating clan UI features -->
+<packet id="CM_REQ_CREATE_PLEDGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Pledge name" />
+</packet>

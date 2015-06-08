@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sent in reply to the associated CM packet. Only possible to receive via CM injection. -->
+<!-- Strangely enough, it seems all known clients are missing the opcode mapping for this packet, so it is definitely not handled. -->
+<!-- Not supported by modern servers. -->
+<packet id="SM_PLEDGE_EXTENDED_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Name">
+		<scriptAlias id="PIC_PLEDGE_NAME" />
+	</string>
+	<dword alias="Pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+	</dword>
+	<dword alias="Crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<string alias="Leader name" />
+	<dword alias="Pledge level" />
+	<dword alias="Has castle" type="YesOrNo" />
+	<dword alias="Has hideout" type="YesOrNo" />
+	<dword alias="Rank" />
+	<dword alias="Reputation" />
+	<dword alias="Status" type="pledge.PledgeStatus" />
+	<dword alias="0" />
+</packet>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="614" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<qword alias="Adena Count" />
+	<qword alias="Beauty Ticket Count" />
+	<dword alias="Can Restore" type="YesOrNo" />
+	<dword alias="Can Add" type="YesOrNo" />
+	<dword alias="Hair Style Id" />
+	<dword alias="Face Style Id" />
+	<dword alias="Hair Color Id" />
+</packet>

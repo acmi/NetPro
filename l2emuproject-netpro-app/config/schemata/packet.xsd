@@ -1,0 +1,459 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.l2emu-unique.net" xmlns="http://www.l2emu-unique.net"
+	elementFormDefault="qualified">
+
+	<xs:element name="packet" type="packetType" />
+
+	<xs:complexType name="packetType">
+		<xs:sequence>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element name="bytes" type="bytesType" />
+					<xs:element name="byte" type="dataType" />
+					<xs:element name="unsignedByte" type="dataType" />
+					<xs:element name="word" type="dataType" />
+					<xs:element name="unsignedWord" type="dataType" />
+					<xs:element name="dword" type="dataType" />
+					<xs:element name="qword" type="dataType" />
+					<xs:element name="single" type="dataType" />
+					<xs:element name="double" type="dataType" />
+					<xs:element name="string" type="dataType" /> <!-- nul-terminated string (default) -->
+					<xs:element name="ntstring" type="dataType" /> <!-- nul-terminated string -->
+					<xs:element name="sstring" type="dataType" /> <!-- sized string -->
+					<xs:element name="loop" type="loopType" />
+					<xs:element name="branch" type="branchType" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:token" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="structureType">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:choice>
+				<xs:element name="bytes" type="bytesType" />
+				<xs:element name="byte" type="dataType" />
+				<xs:element name="unsignedByte" type="dataType" />
+				<xs:element name="word" type="dataType" />
+				<xs:element name="unsignedWord" type="dataType" />
+				<xs:element name="dword" type="dataType" />
+				<xs:element name="qword" type="dataType" />
+				<xs:element name="single" type="dataType" />
+				<xs:element name="double" type="dataType" />
+				<xs:element name="string" type="dataType" /> <!-- nul-terminated string (default) -->
+				<xs:element name="ntstring" type="dataType" /> <!-- nul-terminated string -->
+				<xs:element name="sstring" type="dataType" /> <!-- sized string -->
+				<xs:element name="loop" type="loopType" />
+				<xs:element name="branch" type="branchType" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="loopType">
+		<xs:complexContent>
+			<xs:extension base="structureType">
+				<xs:attribute name="id" type="xs:token" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="branchType">
+		<xs:complexContent>
+			<xs:extension base="structureType">
+				<xs:attribute name="id" type="xs:token" />
+				<xs:attribute name="condition" type="conditionType" />
+				<xs:attribute name="description" type="xs:token" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="scriptAliasType">
+		<xs:attribute name="id" type="xs:token" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="bytesType">
+		<xs:sequence>
+			<xs:element name="length" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+			<xs:element name="scriptAlias" type="scriptAliasType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="alias" type="xs:token" use="required" />
+		<xs:attribute name="type" type="interpreterType" />
+		<xs:attribute name="optional" type="xs:boolean" default="false" />
+	</xs:complexType>
+
+	<xs:complexType name="dataType">
+		<xs:sequence>
+			<xs:element name="scriptAlias" type="scriptAliasType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:token" /> <!-- unique identifier for condition evaluation, loop and dynamic array sizing -->
+		<xs:attribute name="alias" type="xs:token" use="required" />
+		<xs:attribute name="mod" type="modifierType" />
+		<xs:attribute name="type" type="interpreterType" />
+		<!-- Marks this entry and everything else after as 'possibly inside the buffer' -->
+		<xs:attribute name="optional" type="xs:boolean" default="false" />
+	</xs:complexType>
+
+	<xs:simpleType name="interpreterType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="AbilityWingIcon" />
+			<xs:enumeration value="AdenaDistributionCancelReason" />
+			<xs:enumeration value="Answer" />
+			<xs:enumeration value="AirshipAction" />
+			<xs:enumeration value="Alliance" />
+			<xs:enumeration value="AllianceCrest" />
+			<xs:enumeration value="AntiImpersonationRelation" />
+			<xs:enumeration value="ASCII" />
+			<xs:enumeration value="AuctionDuration" />
+			<xs:enumeration value="AuctionItemGrade" />
+			<xs:enumeration value="AuctionItemType" />
+			<xs:enumeration value="AuctionListType" />
+			<xs:enumeration value="Augmentation" />
+			<xs:enumeration value="AuthDialog" />
+			<xs:enumeration value="AuthResult" />
+			<xs:enumeration value="Alphabet" /> <!-- Face/Hair -->
+			<xs:enumeration value="BGR" />
+			<xs:enumeration value="BlockedAccountDialogMessage" />
+			<xs:enumeration value="BoardWindow" />
+			<xs:enumeration value="Cabal" />
+			<xs:enumeration value="CardGame" />
+			<xs:enumeration value="CastleResidenceInfo" /> <!-- CLEO -->
+			<xs:enumeration value="CharacterClass" />
+			<xs:enumeration value="CharacterClassType" />
+			<xs:enumeration value="Chat" />
+			<xs:enumeration value="ChCrReason" />
+			<xs:enumeration value="ChDeReason" />
+			<xs:enumeration value="CompassZone" />
+			<xs:enumeration value="CommunityBoardHtml" />
+			<xs:enumeration value="ConsultationRanking" />
+			<xs:enumeration value="Cubic" />
+			<xs:enumeration value="Controller" />
+			<xs:enumeration value="CurrentCrops" />
+			<xs:enumeration value="DamageTypes" />
+			<xs:enumeration value="DeclaredSiegeTime" />
+			<xs:enumeration value="DirectDrawSurface" />
+			<xs:enumeration value="DuelTeam" />
+			<xs:enumeration value="ElementMask" />
+			<xs:enumeration value="ElementPower" />
+			<xs:enumeration value="ElementType" />
+			<xs:enumeration value="EnchantEffect" />
+			<xs:enumeration value="EnchantResult" />
+			<xs:enumeration value="Event" />
+			<xs:enumeration value="ExNpcInfoState" />
+			<xs:enumeration value="Festival" />
+			<xs:enumeration value="FishingAction" />
+			<xs:enumeration value="FishingActionResult" />
+			<xs:enumeration value="FishStrength" />
+			<xs:enumeration value="FlyPathNode" />
+			<xs:enumeration value="FlyType" />
+			<xs:enumeration value="FriendStatusUpdate" />
+			<xs:enumeration value="GameServerListVersion" />
+			<xs:enumeration value="GameServerName" />
+			<xs:enumeration value="GameServerTypes" />
+			<xs:enumeration value="GameTime" />
+			<xs:enumeration value="Gauge" />
+			<xs:enumeration value="GmView" />
+			<xs:enumeration value="Henna" />
+			<xs:enumeration value="HideoutType" />
+			<xs:enumeration value="HitTypes" />
+			<xs:enumeration value="Hp" />
+			<xs:enumeration value="ImmutableNpcString" />
+			<xs:enumeration value="ImmutableSystemMessage" />
+			<xs:enumeration value="Instance" />
+			<xs:enumeration value="InventorySlot" />
+			<xs:enumeration value="IPv4" />
+			<xs:enumeration value="Item" />
+			<xs:enumeration value="ItemChange" />
+			<xs:enumeration value="ItemInfoEx" />
+			<xs:enumeration value="ItemRedist" />
+			<xs:enumeration value="ItemRestriction" />
+			<xs:enumeration value="ItemType1" />
+			<xs:enumeration value="ItemType2" />
+			<xs:enumeration value="KnownlistState" />
+			<xs:enumeration value="KrateiState" />
+			<xs:enumeration value="LoginFailureReason" />
+			<xs:enumeration value="LootRights" />
+			<xs:enumeration value="LottoNumbers" />
+			<xs:enumeration value="Lure" />
+			<xs:enumeration value="MacroChange" />
+			<xs:enumeration value="MacroCommandType" />
+			<xs:enumeration value="MacroIcon" />
+			<xs:enumeration value="Mailbox" />
+			<xs:enumeration value="MailChange" />
+			<xs:enumeration value="MailMessageType" />
+			<xs:enumeration value="ManaConsumptionType" />
+			<xs:enumeration value="ManufactureResult" />
+			<xs:enumeration value="MarkerChange" />
+			<xs:enumeration value="MatchMessage" />
+			<xs:enumeration value="MatchState" />
+			<xs:enumeration value="Mentoring" /> <!-- CLEO -->
+			<xs:enumeration value="MercenaryName" />
+			<xs:enumeration value="MessageDirection" />
+			<xs:enumeration value="MessageRefusalAction" />
+			<xs:enumeration value="MillisRemaining" />
+			<xs:enumeration value="MonsterRaceBetMultiplier" />
+			<xs:enumeration value="MountType" />
+			<xs:enumeration value="MoveType" />
+			<xs:enumeration value="MuseumStat" />
+			<xs:enumeration value="MyInventorySlot" />
+			<xs:enumeration value="NevitHuntingProgress" />
+			<xs:enumeration value="Npc" />
+			<xs:enumeration value="NpcState" />
+			<xs:enumeration value="NpcSubtype" />
+			<xs:enumeration value="NpcTitleColor" />
+			<xs:enumeration value="NpcType" /> <!-- CLEO -->
+			<xs:enumeration value="ObjectID" />
+			<xs:enumeration value="OlympiadMatch" />
+			<xs:enumeration value="OlympiadSide" />
+			<xs:enumeration value="OlympiadSpectation" />
+			<xs:enumeration value="Parameter" />
+			<xs:enumeration value="PartyChange" />
+			<xs:enumeration value="PartyMatchingLevels" />
+			<xs:enumeration value="PartyMemberType" />
+			<xs:enumeration value="PartyRoomRegion" />
+			<xs:enumeration value="PcTimer" />
+			<xs:enumeration value="PersonalStoreType" />
+			<xs:enumeration value="PetitionType" /> <!-- CLEO -->
+			<xs:enumeration value="PlayerAction" />
+			<xs:enumeration value="PlayerCommand" />
+			<xs:enumeration value="Pledge" />
+			<xs:enumeration value="PledgeBase" />
+			<xs:enumeration value="PledgeCrest" />
+			<xs:enumeration value="PledgePowerRank" />
+			<xs:enumeration value="PledgePowerUpdate" />
+			<xs:enumeration value="PledgePrivileges" />
+			<xs:enumeration value="PledgeRank" />
+			<xs:enumeration value="PledgeUnit" />
+			<xs:enumeration value="PledgeWarTab" />
+			<xs:enumeration value="PointOfView" />
+			<xs:enumeration value="PreformattedHtml" />
+			<xs:enumeration value="Pvp" />
+			<xs:enumeration value="Quest" />
+			<xs:enumeration value="QuestState" />
+			<xs:enumeration value="Race" />
+			<xs:enumeration value="Recipe" />
+			<xs:enumeration value="RecipeBook" />
+			<xs:enumeration value="Regeneration" />
+			<xs:enumeration value="RevivalLocation" />
+			<xs:enumeration value="RelationPacketType" />
+			<xs:enumeration value="RelationTypes" />
+			<xs:enumeration value="RoomMembership" />
+			<xs:enumeration value="Rotation" />
+			<xs:enumeration value="Scene" />
+			<xs:enumeration value="ScreenMessagePosition" />
+			<xs:enumeration value="Seal" />
+			<xs:enumeration value="SecAuthDialog" />
+			<xs:enumeration value="SecAuthSetup" />
+			<xs:enumeration value="SecondsLeftToTime" />
+			<xs:enumeration value="SecondsSinceEpoch" />
+			<xs:enumeration value="ServitorType" />
+			<xs:enumeration value="SevenSignsPeriod" />
+			<xs:enumeration value="SevenSignsRecordTab" />
+			<xs:enumeration value="Sex" />
+			<xs:enumeration value="ShadowMana" />
+			<xs:enumeration value="SiegeDefenderStatus" />
+			<xs:enumeration value="SiegeRegistration" />
+			<xs:enumeration value="SiegeSide" />
+			<xs:enumeration value="Skill" />
+			<xs:enumeration value="SkillEnchant" />
+			<xs:enumeration value="SkillListType" />
+			<xs:enumeration value="SkyColor" />
+			<xs:enumeration value="SoulshotGrade" />
+			<xs:enumeration value="SoundType" />
+			<xs:enumeration value="StaticObject" />
+			<xs:enumeration value="SysString" />
+			<xs:enumeration value="TargetDeselectionMode" />
+			<xs:enumeration value="TargetSelectionMode" />
+			<xs:enumeration value="TeamColor" />
+			<xs:enumeration value="TimeRemaining" />
+			<xs:enumeration value="TitleColor" />
+			<xs:enumeration value="ToggleableEtcState" />
+			<xs:enumeration value="Token" />
+			<xs:enumeration value="TradeResult" />
+			<xs:enumeration value="TradeUpdate" />
+			<xs:enumeration value="Transformation" />
+			<xs:enumeration value="TutorialEvents" />
+			<xs:enumeration value="TutorialHtmlWindowType" />
+			<xs:enumeration value="UnknownTeam" />
+			<xs:enumeration value="UserRoles" />
+			<xs:enumeration value="UsmVideo" /> <!-- CLEO -->
+			<xs:enumeration value="UpdatableAttribute" />
+			<xs:enumeration value="VitalityLevel" />
+			<xs:enumeration value="WaitType" />
+			<xs:enumeration value="Warehouse" />
+			<xs:enumeration value="WarehouseUsageResult" />
+			<xs:enumeration value="WeaponStatus" />
+			<xs:enumeration value="YesOrNo" />
+
+			<xs:enumeration value="ave.AbnormalVisualEffect" />
+			<xs:enumeration value="ave.AbnormalVisualEffectMask" />
+			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
+
+			<xs:enumeration value="commission.ItemCategory" />
+
+			<xs:enumeration value="equip.EquipmentSlot" />
+			<xs:enumeration value="equip.EquipmentState" />
+			<xs:enumeration value="equip.ExUserEquipSlot1" />
+			<xs:enumeration value="equip.ExUserEquipSlot2" />
+			<xs:enumeration value="equip.ExUserEquipSlot3" />
+			<xs:enumeration value="equip.ExUserEquipSlot4" />
+			<xs:enumeration value="equip.ExUserEquipSlot5" />
+			<xs:enumeration value="equip.PaperdollMask" />
+			<xs:enumeration value="equip.PeriodicHennaExpiration" />
+			
+			<xs:enumeration value="item.AttributeEnchantResult" />
+
+			<xs:enumeration value="party.PartyMatchingAffilation" />
+			<xs:enumeration value="party.PartyMatchingListMode" />
+
+			<xs:enumeration value="pledge.ApplicationMode" />
+			<xs:enumeration value="pledge.ApplicationResponse" />
+			<xs:enumeration value="pledge.AllyCrestDDS" />
+			<xs:enumeration value="pledge.PledgeAdvertisement" />
+			<xs:enumeration value="pledge.PledgeCrestDDS" />
+			<xs:enumeration value="pledge.PledgeKarma" />
+			<xs:enumeration value="pledge.PledgeSearchType" />
+			<xs:enumeration value="pledge.PledgeStatus" />
+			<xs:enumeration value="pledge.PledgeWarReply" />
+
+			<xs:enumeration value="product.Product" />
+			<xs:enumeration value="product.ProductFrontPageSectionMask" />
+			<xs:enumeration value="product.ProductListType" />
+			<xs:enumeration value="product.ProductMarketTime" />
+			<xs:enumeration value="product.ProductModifier" />
+			<xs:enumeration value="product.ProductPriceType" />
+			<xs:enumeration value="product.ProductRepurchaseInterval" />
+			<xs:enumeration value="product.ProductStoreTab" />
+
+			<xs:enumeration value="quest.QuestCompletion" />
+			
+			<xs:enumeration value="shortcut.ShortcutActor" />
+			<xs:enumeration value="shortcut.ShortcutSlotBase10" />
+			<xs:enumeration value="shortcut.ShortcutSlotBase12" />
+			<xs:enumeration value="shortcut.ShortcutType" />
+
+			<xs:enumeration value="skill.SkillLevel" />
+			<xs:enumeration value="skill.SkillUseType" />
+
+			<xs:enumeration value="structure.ExNpcInfoFieldMask1" />
+			<xs:enumeration value="structure.ExNpcInfoFieldMask2" />
+			<xs:enumeration value="structure.ExNpcInfoFieldMask3" />
+			<xs:enumeration value="structure.ExNpcInfoFieldMask4" />
+			<xs:enumeration value="structure.ExNpcInfoFieldMask5" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="modifierType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="MinusOne" />
+			<xs:enumeration value="NewLotteryEvent" />
+			<xs:enumeration value="PlusOne" />
+			<xs:enumeration value="PlusFiftyFive" />
+			<xs:enumeration value="ShiftLeft8" />
+			<xs:enumeration value="ShiftLeft16" />
+			<xs:enumeration value="ShiftLeft24" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="conditionType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="BlockUnblockPlayer" />
+			<xs:enumeration value="DefaultChat" />
+			<xs:enumeration value="FerryShout" />
+			<xs:enumeration value="GenericItem" />
+			<xs:enumeration value="LotteryTicket" />
+			<xs:enumeration value="MonsterRaceTicket" />
+			<xs:enumeration value="MutableSM" />
+			<xs:enumeration value="Negative" />
+			<xs:enumeration value="NonNegative" />
+			<xs:enumeration value="NonPositive" />
+			<xs:enumeration value="NotPrivateMessage" />
+			<xs:enumeration value="PledgePowerUpdate" />
+			<xs:enumeration value="PledgeUnitSkills" />
+			<xs:enumeration value="Positive" />
+			<xs:enumeration value="PrivateMessage" />
+			<xs:enumeration value="Zero" />
+			
+			<xs:enumeration value="airship.DefaultAction" />
+			<xs:enumeration value="airship.Movement" />
+			<xs:enumeration value="airship.Teleport" />
+			
+			<xs:enumeration value="bitmask.Bit0" />
+			<xs:enumeration value="bitmask.Bit1" />
+			<xs:enumeration value="bitmask.Bit2" />
+			<xs:enumeration value="bitmask.Bit3" />
+			<xs:enumeration value="bitmask.Bit4" />
+			<xs:enumeration value="bitmask.Bit5" />
+			<xs:enumeration value="bitmask.Bit6" />
+			<xs:enumeration value="bitmask.Bit7" />
+			<xs:enumeration value="bitmask.NotAllBits" />
+			
+			<xs:enumeration value="equip.EquipableItemType" />
+			<xs:enumeration value="equip.NewlyEquipped" />
+			<xs:enumeration value="equip.NonEquipableItemType" />
+			<xs:enumeration value="equip.Unequipped" />
+			
+			<xs:enumeration value="event.EvaInferno" />
+			
+			<xs:enumeration value="friend.ClassChange" />
+			<xs:enumeration value="friend.LevelChange" />
+			
+			<xs:enumeration value="macro.ActionOrChat" />
+			<xs:enumeration value="macro.Shortcut" />
+			<xs:enumeration value="macro.Skill" />
+			
+			<xs:enumeration value="museum.AwakenedClass" />
+			<xs:enumeration value="museum.DefaultStat" />
+			<xs:enumeration value="museum.Duration" />
+			<xs:enumeration value="museum.Grade" />
+			<xs:enumeration value="museum.NotDuration" />
+			<xs:enumeration value="museum.Npc" />
+			
+			<xs:enumeration value="param.CharacterClass" />
+			<xs:enumeration value="param.Damage" />
+			<xs:enumeration value="param.Element" />
+			<xs:enumeration value="param.Fstring" />
+			<xs:enumeration value="param.Instance" />
+			<xs:enumeration value="param.Item" />
+			<xs:enumeration value="param.Item2" />
+			<xs:enumeration value="param.MutableFstring" />
+			<xs:enumeration value="param.Npc" />
+			<xs:enumeration value="param.NumberValue" />
+			<xs:enumeration value="param.Player" />
+			<xs:enumeration value="param.PledgeBase" />
+			<xs:enumeration value="param.Quantity" />
+			<xs:enumeration value="param.Skill" />
+			<xs:enumeration value="param.SmallNumberValue" />
+			<xs:enumeration value="param.StringValue" />
+			<xs:enumeration value="param.Sysstring" />
+			<xs:enumeration value="param.TinyNumberValue" />
+			<xs:enumeration value="param.Zone" />
+			
+			<xs:enumeration value="relation.Ack" />
+			<xs:enumeration value="relation.Multiple" />
+			<xs:enumeration value="relation.Single" />
+			
+			<xs:enumeration value="serverlist.ServerListC1" />
+			<xs:enumeration value="serverlist.ServerListC2" />
+			
+			<xs:enumeration value="servitor.Pet" />
+			<xs:enumeration value="servitor.Summon" />
+			
+			<xs:enumeration value="shortcut.ActionShortcut" />
+			<xs:enumeration value="shortcut.DefaultShortcut" />
+			<xs:enumeration value="shortcut.ItemShortcut" />
+			<xs:enumeration value="shortcut.MacroShortcut" />
+			<xs:enumeration value="shortcut.RecipeShortcut" />
+			<xs:enumeration value="shortcut.SkillShortcut" />
+			
+			<xs:enumeration value="skill.TargetPoint" />
+			
+			<xs:enumeration value="status.CurrentCp" />
+			<xs:enumeration value="status.DefaultAttribute" />
+			<xs:enumeration value="status.Hp" />
+			
+			<xs:enumeration value="tab.Festival" />
+			<xs:enumeration value="tab.General" />
+			<xs:enumeration value="tab.Projection" />
+			<xs:enumeration value="tab.SealStatus" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

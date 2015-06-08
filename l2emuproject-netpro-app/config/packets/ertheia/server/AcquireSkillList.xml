@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- List type, skill count, skill level/max level fields changed to WORDs -->
+<!-- Item requirement boolean now in a CHAR (byte) field -->
+<!-- Added new unknown CHAR (byte) in the middle of each loop element -->
+<packet id="SM_ACQUIRE_SKILL_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="List type" type="SkillListType" id="cond_1" /> <!-- NEW -->
+	<word alias="Skill count" id="index_0" /> <!-- NEW -->
+	<loop id="index_0">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<word alias="Level" type="skill.SkillLevel"> <!-- NEW -->
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</word>
+		<word alias="Max level" /> <!-- NEW -->
+		<byte alias="1" /> <!-- NEW -->
+		<qword alias="Required SP" />
+		<byte alias="Requires items" type="YesOrNo" /> <!-- NEW -->
+		<branch id="cond_1" condition="PledgeUnitSkills">
+			<dword alias="Pledge unit" type="PledgeUnit" />
+		</branch>
+	</loop>
+</packet>

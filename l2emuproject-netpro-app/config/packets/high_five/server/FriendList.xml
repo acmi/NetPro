@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Two DWORD fields specifying friend details appended to each loop element (unknown when) -->
+<packet id="SM_FRIEND_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Friend count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Character ID" />
+		<string alias="Name">
+			<scriptAlias id="OIC_PLAYER_NAME" />
+		</string>
+		<dword alias="Online" type="YesOrNo" />
+		<dword alias="Character OID" type="ObjectID"> <!-- if online -->
+			<scriptAlias id="OIC_PLAYER_OID" />
+		</dword>
+		<!-- NEW -->
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Level" />
+	</loop>
+</packet>

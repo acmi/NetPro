@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM__VL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Client X">
+		<scriptAlias id="LUA_CLIENT_X" />
+	</dword>
+	<dword alias="Client Y">
+		<scriptAlias id="LUA_CLIENT_Y" />
+	</dword>
+	<dword alias="Client Z">
+		<scriptAlias id="LUA_CLIENT_Z" />
+	</dword>
+	<dword alias="Client Yaw">
+		<scriptAlias id="LUA_CLIENT_HEADING" />
+	</dword>
+	<dword alias="Vehicle OID" />
+</packet>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Message is no longer STRING, but rather a fstring (DWORD). Tokens for mutable fstrings are always written (even if all are empty). -->
+<packet id="SM_NPC_SAY" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="NPC OID" type="ObjectID">
+		<scriptAlias id="OIC_NPC_OID" />
+	</dword>
+	<dword alias="Chat" type="Chat" />
+	<dword alias="NPC" type="Npc">
+		<scriptAlias id="OIC_NPC_TEMPLATE" />
+	</dword>
+
+	<!-- NEW -->
+	<dword alias="Message" type="ImmutableNpcString" id="msg" />
+	<branch id="msg" condition="Negative">
+		<string alias="Custom message" />
+	</branch>
+	<branch id="msg" condition="Positive">
+		<string alias="1st token" />
+		<string alias="2nd token" />
+		<string alias="3rd token" />
+		<string alias="4th token" />
+		<string alias="5th token" />
+	</branch>
+</packet>

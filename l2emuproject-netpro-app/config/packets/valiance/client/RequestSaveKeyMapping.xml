@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="239" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Buff Size" />
+	<dword alias="Categories" />
+	<dword alias="Key Count" id="index_0" />
+	<loop id="index_0">
+		<byte alias="Category List 1 Count" id="index_1" />
+		<loop id="index_1">
+			<byte alias="Command" />
+		</loop>
+		<byte alias="Category List 2 Count" id="index_1" />
+		<loop id="index_1">
+			<byte alias="Command" />
+		</loop>
+		<dword alias="Key List Count" id="index_1" />
+		<loop id="index_1">
+			<dword alias="Command Id" />
+			<dword alias="Key Id" />
+			<dword alias="Toggle Key 1" />
+			<dword alias="Toggle Key 2" />
+			<dword alias="Show Status" />
+		</loop>
+	</loop>
+	<dword alias="17" />
+	<dword alias="16" />
+</packet>

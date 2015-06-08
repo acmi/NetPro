@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_HENNA_UNEQUIP_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Viewer's adena" />
+	<dword alias="Available slots" />
+	<dword alias="Henna count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Henna" type="Henna" />
+		<dword alias="Recovered item" type="Item" />
+		<dword alias="Recovered amount" />
+		<dword alias="Price of removal" />
+		<dword alias="Henna modifier currently active" type="YesOrNo" />
+	</loop>
+</packet>

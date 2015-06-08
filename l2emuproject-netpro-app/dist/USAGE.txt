@@ -1,0 +1,59 @@
+L2EMU-UNIQUE NETWORK PROTOCOL APPLICATION
+(FORMERLY L2JFREE PACKET ANALYSIS & VISUALIZATION TOOL)
+FOR LINEAGE II
+Prelude PTS - Infinite Odyssey (NA)
+VERSION 1.0 (SNAPSHOT)
+March 19, 2013
+Revised June 5, 2015
+
+USAGE
+=====
+This application works as a transparent proxy between the client and the server. Therefore, you must direct the client to connect to this application instead of a remote server.
+Depending on your context, you will probably modify either your hosts file or l2.ini. For this tutorial, we will assume that you want to run this application on the same computer where you will
+run the Lineage II client.
+1. Change your hosts file/l2.ini to point to 127.0.0.1 (127.0.0.1 instead of l2authd.lineage2.com)
+2. Open serviceconfig.xml (in the ./config directory)
+3. 'gameWorldSocket' IP is already 127.0.0.1. This is what will be used to direct the client when choosing a game sever.
+4. There are two preconfigured 'authorizationSocket's. Both will listen on all available IPs (0.0.0.0), port 2106, therefore they cannot be used at the same time.
+	By default, NA retail socket is disabled. If you want to use it, move 'disabled="true"' to the first socket.
+4.1. 'listen' element describes the IP and port to listen on the local machine. Take note, that L2 client by default connects to port 2106, and you may need command line args or other
+	methods to force it to connect to another port.
+4.2. 'service' element describes the hostname and port of an actual login server (AuthGateD [C3 557 and up]/AuthD).
+5. Launch the application (and wait until it has loaded)
+6. Open the client and log in
+
+If you would like to use a local proxy to intercept transmissions between a local Lineage II login server, you should typically change the listening port of the local server (2106 to 2107).
+If that is not possible, you will have to change the port number in client's l2.ini among with ListenPort in proxy.properties.
+
+It is possible to set up NP to proxify multiple login servers as well as to properly inject a localhost/LAN/WAN IP in game server selection list in order to allow both local and remote
+clients in a way that local clients would be able to connect directly. See the XML Schema for details (which is missing at this time). 
+
+QUICKSTART on NA
+================
+1. Add "127.0.0.1 l2authd.lineage2.com" to hosts file
+2. Open config/serviceconfig.xml
+3. Remove the first <authorizationSocket>
+4. Remove 'disabled="true"' from the remaining <authorizationSocket>
+5. Run NetPro
+6. Run Lineage II client
+7. Login
+
+COMMAND-LINE ARGUMENTS
+======================
+Supported command line arguments are shown when the application is launched in console mode (java instead of javaw) with the --help command line argument.
+
+For your reference, currently supported arguments are:
+--disable-ui
+Launches the proxy without opening the user interface. If launched with javaw, proxy will run in the background.
+--disable-proxy
+Launches the UI without initializing the proxy server.
+
+OTHER
+=====
+http://lineage2.patcher.ncsoft.com/LINEAGE2/Lineage2Installer.exe
+http://l2kor.ncdn.gscdn.com/L2_KOR/filelist.txt (LIVE)
+http://l2kor.ncdn.gscdn.com/L2_KOR_TEST/filelist.txt (PTS)
+http://lineage2.plaync.com.tw/download/client.asp
+http://www.ncsoft.jp/lineage2/main/etc/downLoadClient
+http://down.qq.com/l2/dltools/LineageII_3.0.0011.0_LiveFull_VIPDL_signed.exe
+http://boards.lineage2.com/showthread.php?t=206783

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount is now a QWORD -->
+<packet id="SM_ITEM_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Open window" type="YesOrNo" />
+	<word alias="Item count" id="index_0" />
+	<loop id="index_0">
+		<word alias="Base item type" type="ItemType1" />
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Slot number" type="MyInventorySlot" />
+		<qword alias="Quantity" /> <!-- NEW -->
+		<word alias="Main item type" type="ItemType2" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<word alias="Round of lottery" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Lane" />
+		</branch>
+
+		<word alias="Equipped" type="YesOrNo" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<dword alias="Selected numbers" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<word alias="Augmentation effect (1)" type="Augmentation" />
+		<word alias="Augmentation effect (2)" type="Augmentation" />
+		<dword alias="Mana left" type="ShadowMana" />
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+		<dword alias="Time remaining" type="TimeRemaining" />
+	</loop>
+</packet>

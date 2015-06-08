@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Optimized to a modular structure -->
+<packet id="SM_PARTY_SMALL_WINDOW_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Member OID" type="ObjectID" />
+	<unsignedByte alias="Bitmask byte #1" id="PSWU_1" />
+	<unsignedByte alias="Bitmask byte #2" id="PSWU_2" />
+
+	<branch id="PSWU_1" condition="bitmask.Bit0">
+		<dword alias="Current CP" />
+	</branch>
+	<branch id="PSWU_1" condition="bitmask.Bit1">
+		<dword alias="Maximum CP" />
+	</branch>
+	<branch id="PSWU_1" condition="bitmask.Bit2">
+		<dword alias="Current HP" /> <!-- real -->
+	</branch>
+	<branch id="PSWU_1" condition="bitmask.Bit3">
+		<dword alias="Maximum HP" /> <!-- real -->
+	</branch>
+	<branch id="PSWU_1" condition="bitmask.Bit4">
+		<dword alias="Current MP" />
+	</branch>
+	<branch id="PSWU_1" condition="bitmask.Bit5">
+		<dword alias="Maximum MP" />
+	</branch>
+	<branch id="PSWU_1" condition="bitmask.Bit6">
+		<byte alias="Level" />
+	</branch>
+	<branch id="PSWU_1" condition="bitmask.Bit7">
+		<word alias="Class" type="CharacterClass" />
+	</branch>
+
+	<branch id="PSWU_2" condition="bitmask.Bit0">
+		<byte alias="Party Substitute" type="YesOrNo" />
+	</branch>
+	<branch id="PSWU_2" condition="bitmask.Bit1">
+		<dword alias="Vitality" type="VitalityLevel" />
+	</branch>
+</packet>

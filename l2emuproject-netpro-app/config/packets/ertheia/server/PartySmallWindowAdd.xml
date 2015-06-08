@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Level DWORD -> CHAR, Class DWORD -> WORD, Sex DWORD -> CHAR, Race DWORD -> CHAR, unknown DWORD -> CHAR, 2 DWORDs removed -->
+<packet id="SM_PARTY_SMALL_WINDOW_ADD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Leader OID" type="ObjectID" />
+	<dword alias="Item distribution" type="ItemRedist" />
+	<dword alias="Member OID" type="ObjectID">
+		<scriptAlias id="OIC_PLAYER_OID" />
+	</dword>
+	<string alias="Name">
+		<scriptAlias id="OIC_PLAYER_NAME" />
+	</string>
+	<dword alias="Current CP" />
+	<dword alias="Maximum CP" />
+	<dword alias="Current HP" type="Hp" />
+	<dword alias="Maximum HP" type="Hp" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Vitality" type="VitalityLevel" />
+	
+	<!-- NEW -->
+	<byte alias="Level" />
+	<word alias="Class" type="CharacterClass" />
+	<byte alias="Sex" type="Sex" />
+	<byte alias="Race" type="Race" />
+	<byte alias="0" />
+</packet>

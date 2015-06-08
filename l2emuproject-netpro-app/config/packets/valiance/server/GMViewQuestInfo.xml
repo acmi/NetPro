@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_GM_VIEW_QUEST_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Owner" />
+	<word alias="Quest count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Quest" type="Quest">
+			<scriptAlias id="__INTERP_QUEST_ID"/>
+		</dword>
+		<dword alias="State" type="QuestState">
+			<scriptAlias id="__INTERP_QUEST_STATE"/>
+		</dword>
+	</loop>
+</packet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount/price is now a QWORD -->
+<packet id="CM_SET_PRIVATE_STORE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Package sale" type="YesOrNo" />
+	<dword alias="On sale item count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item OID" type="ObjectID" />
+		<qword alias="Quantity" />
+		<qword alias="Price (per single unit)" />
+	</loop>
+</packet>

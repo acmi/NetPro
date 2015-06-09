@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added SSQ period CHAR (byte) at the end of the packet -->
+<packet id="SM_SHOW_MINIMAP" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="0" /> <!-- Formerly: map item (Aden/Elmore) -->
+	<byte alias="Current Seven Signs period" type="SevenSignsPeriod" /> <!-- NEW -->
+</packet>

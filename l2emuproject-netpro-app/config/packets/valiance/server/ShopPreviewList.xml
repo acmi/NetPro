@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Paperdoll mask is now a QWORD -->
+<packet id="SM_SHOP_PREVIEW_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Merchant ID" /> <!-- Different NPC = different ID -->
+	<qword alias="Viewer's adena" />
+	<dword alias="Request ID" />
+	<word alias="Item count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item" type="Item" />
+		<word alias="Main item type" type="ItemType2" />
+		<qword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
+		<qword alias="Price" />
+	</loop>
+</packet>

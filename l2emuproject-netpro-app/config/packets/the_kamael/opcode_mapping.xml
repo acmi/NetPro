@@ -180,7 +180,7 @@
 		<packet opcodePrefix="C4" id="CM_REQ_HENNA_ITEM_INFO" />
 		<packet opcodePrefix="C5" id="174" />
 		<packet opcodePrefix="C6" id="176" />
-		<packet opcodePrefix="C7" id="177" />
+		<packet opcodePrefix="C7" id="CM_REQ_PREVIEW_ITEM" />
 		<packet opcodePrefix="C8" id="178" />
 		<packet opcodePrefix="C9" id="179" />
 		<packet opcodePrefix="CB" id="175" />
@@ -460,9 +460,9 @@
 		<packet opcodePrefix="F1" id="266" />
 		<packet opcodePrefix="F2" id="271" />
 		<packet opcodePrefix="F3" id="272" />
-		<packet opcodePrefix="F4" id="273" />
-		<packet opcodePrefix="F5" id="274" />
-		<packet opcodePrefix="F6" id="275" />
+		<packet opcodePrefix="F4" id="SM_PARTY_SPELLED" />
+		<packet opcodePrefix="F5" id="SM_SHOP_PREVIEW_LIST" />
+		<packet opcodePrefix="F6" id="SM_SHOP_PREVIEW_INFO" />
 		<packet opcodePrefix="F7" id="276" />
 		<packet opcodePrefix="F8" id="268" />
 		<packet opcodePrefix="F9" id="277" />

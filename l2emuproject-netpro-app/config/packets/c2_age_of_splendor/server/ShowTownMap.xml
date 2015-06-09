@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_SHOW_TOWN_MAP" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Image" />
+	<dword alias="Arrow X" />
+	<dword alias="Arrow Y" />
+</packet>

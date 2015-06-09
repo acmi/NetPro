@@ -1540,7 +1540,6 @@
 		<packet id="250" name="RecipeShopMsg" />
 		<packet id="251" name="ShowCalculator" />
 		<packet id="252" name="MonRaceInfo" />
-		<packet id="253" name="ShowTownMap" />
 		<packet id="254" name="ObserverStart" />
 		<packet id="255" name="ObserverEnd" />
 		<packet id="256" name="ChairSit" />
@@ -3050,6 +3049,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_RECIPE_ITEM_MAKE_INFO" name="RecipeItemMakeInfo" />
+		<!--
+		ASCII "Sdd"
+		UNICODE "ShowTownMapPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SHOW_TOWN_MAP" name="ShowTownMap" />
 		<!--
 		ASCII "Qdd"
 		ASCII "ddQQd"

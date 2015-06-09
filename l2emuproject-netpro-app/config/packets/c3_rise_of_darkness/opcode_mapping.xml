@@ -2,7 +2,7 @@
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
 		<packet opcodePrefix="C5" id="176" />
-		<packet opcodePrefix="C6" id="177" />
+		<packet opcodePrefix="C6" id="CM_REQ_PREVIEW_ITEM" />
 		<packet opcodePrefix="C7" id="178" />
 		<packet opcodePrefix="C8" id="179" />
 		<packet opcodePrefix="CA" id="175" />
@@ -13,22 +13,22 @@
 	<server>
 		<packet opcodePrefix="EC" id="271" />
 		<packet opcodePrefix="ED" id="272" />
-		<packet opcodePrefix="EF" id="273" />
-		<packet opcodePrefix="F0" id="274" />
-		<packet opcodePrefix="F1" id="275" />
-		<packet opcodePrefix="F2" id="276" />
-		<packet opcodePrefix="F3" id="268" />
-		<packet opcodePrefix="F4" id="277" />
-		<packet opcodePrefix="F5" id="278" />
-		<packet opcodePrefix="F6" id="279" />
-		<packet opcodePrefix="F7" id="280" />
-		<packet opcodePrefix="F8" id="SM_SSQ_INFO" /> <!-- 281? -->
-		<!-- packet opcodePrefix="F9" id="282" /-->
-		<packet opcodePrefix="FA" id="269" />
-		<packet opcodePrefix="FB" id="SM_L2_FRIEND_LIST" />
-		<packet opcodePrefix="FC" id="283" />
-		<packet opcodePrefix="FD" id="SM_L2_FRIEND_STATUS" />
-		<packet opcodePrefix="FE" id="285" />
-		<packet opcodePrefix="FF" id="286" />
+		<packet opcodePrefix="EE" id="SM_PARTY_SPELLED" />
+		<packet opcodePrefix="EF" id="SM_SHOP_PREVIEW_LIST" />
+		<packet opcodePrefix="F0" id="SM_SHOP_PREVIEW_INFO" />
+		<packet opcodePrefix="F1" id="276" />
+		<packet opcodePrefix="F2" id="268" />
+		<packet opcodePrefix="F3" id="277" />
+		<packet opcodePrefix="F4" id="278" />
+		<packet opcodePrefix="F5" id="279" />
+		<packet opcodePrefix="F6" id="280" />
+		<packet opcodePrefix="F7" id="281" />
+		<packet opcodePrefix="F8" id="SM_SSQ_INFO" />
+		<packet opcodePrefix="F9" id="269" />
+		<packet opcodePrefix="FA" id="SM_L2_FRIEND_LIST" />
+		<packet opcodePrefix="FB" id="283" />
+		<packet opcodePrefix="FC" id="SM_L2_FRIEND_STATUS" />
+		<packet opcodePrefix="FD" id="285" />
+		<packet opcodePrefix="FE" id="286" />
 	</server>
 </mapping>

@@ -56,7 +56,6 @@
 		<packet id="174" name="RequestBuySeed" />
 		<packet id="175" name="ReplyGameGuardQuery" />
 		<packet id="176" name="RequestConfirmDlg" />
-		<packet id="177" name="RequestPreviewItem" />
 		<packet id="178" name="RequestSSQStatus" />
 		<packet id="179" name="RequestPetitionVote" />
 		<packet id="180" name="RequestSendL2FriendSay" />
@@ -1290,6 +1289,12 @@
 		-->
 		<packet id="CM_REQ_DELETE_MACRO" name="RequestDeleteMacro" />
 		<!--
+		ASCII "cdddb"
+		UNICODE "RequestPreviewItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PREVIEW_ITEM" name="RequestPreviewItem" />
+		<!--
 		ASCII "chdd"
 		UNICODE "RequestAutoSoulShot"
 		UNICODE "(Send)%s"
@@ -1548,9 +1553,6 @@
 		<packet id="270" name="Dummy_EE" />
 		<packet id="271" name="ClientSetTime" />
 		<packet id="272" name="ConfirmDlg" />
-		<packet id="273" name="PartySpelled" />
-		<packet id="274" name="ShopPreviewList" />
-		<packet id="275" name="ShopPreviewInfo" />
 		<packet id="276" name="CameraMode" />
 		<packet id="277" name="EtcStatusUpdate" />
 		<packet id="278" name="ShortBuffStatusUpdate" />
@@ -3101,6 +3103,27 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_GM_HENNA_INFO" name="GMHennaInfo" />
+		<!--
+		ASCII "ddd"
+		ASCII "dhdh"
+		ASCII "dhhdh"
+		UNICODE "PartySpelledPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_SPELLED" name="PartySpelled" />
+		<!--
+		ASCII "dQdh"
+		ASCII "dhQQ"
+		UNICODE "ShopPreviewListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SHOP_PREVIEW_LIST" name="ShopPreviewList" />
+		<!--
+		ASCII "dddddddddddddddddddddddddddddddddddd"
+		UNICODE "ShopPreviewInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SHOP_PREVIEW_INFO" name="ShopPreviewInfo" />
 		<!--
 		ASCII "cc"
 		UNICODE "SSQInfoPacket"

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added new DWORD for alldress at the end of the packet -->
+<packet id="SM_SHOP_PREVIEW_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Visible Underwear" type="Item" />
+	<dword alias="Visible Earring (bottom/left)" type="Item" />
+	<dword alias="Visible Earring (top/right)" type="Item" />
+	<dword alias="Visible Necklace" type="Item" />
+	<dword alias="Visible Ring (bottom/left)" type="Item" />
+	<dword alias="Visible Ring (top/right)" type="Item" />
+	<dword alias="Visible Headgear" type="Item" />
+	<dword alias="Visible Weapon" type="Item" />
+	<dword alias="Visible Shield [Sigil]" type="Item" />
+	<dword alias="Visible Gloves" type="Item" />
+	<dword alias="Visible Upper Body" type="Item" />
+	<dword alias="Visible Lower Body" type="Item" />
+	<dword alias="Visible Boots" type="Item" />
+	<dword alias="Visible Cloak" type="Item" />
+	<dword alias="Visible Weapon / Two Handed" type="Item" />
+	<dword alias="Visible Upper and Lower Body" type="Item" />
+	<dword alias="Visible Hair Accessory" type="Item" />
+
+	<!-- NEW -->
+	<dword alias="Visible Formal Wear" type="Item" />
+</packet>

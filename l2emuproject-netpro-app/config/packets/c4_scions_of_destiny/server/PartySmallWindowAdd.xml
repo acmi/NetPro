@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Two new CP related DWORDs added -->
+<packet id="SM_PARTY_SMALL_WINDOW_ADD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Leader OID" type="ObjectID" />
+	<dword alias="Item distribution" type="ItemRedist" />
+	<dword alias="Member OID" type="ObjectID">
+		<scriptAlias id="OIC_PLAYER_OID" />
+	</dword>
+	<string alias="Name">
+		<scriptAlias id="OIC_PLAYER_NAME" />
+	</string>
+	<dword alias="Current CP" /> <!-- NEW -->
+	<dword alias="Maximum CP" /> <!-- NEW -->
+	<dword alias="Current HP" />
+	<dword alias="Maximum HP" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Level" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="Sex" type="Sex" />
+	<dword alias="Race" type="Race" />
+</packet>

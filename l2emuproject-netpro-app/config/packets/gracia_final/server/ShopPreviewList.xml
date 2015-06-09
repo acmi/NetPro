@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+
+<!-- Adena amount/preview price fields are now QWORDs -->
+<packet id="SM_SHOP_PREVIEW_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Merchant ID" /> <!-- Different NPC = different ID -->
+	<qword alias="Viewer's adena" /> <!-- NEW -->
+	<dword alias="Request ID" />
+	<word alias="Item count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item" type="Item" />
+		<word alias="Main item type" type="ItemType2" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<qword alias="Price" /> <!-- NEW -->
+	</loop>
+</packet>

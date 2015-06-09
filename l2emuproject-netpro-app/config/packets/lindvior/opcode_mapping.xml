@@ -72,7 +72,7 @@
 		<packet opcodePrefix="D0 70 00" id="314" />
 		<packet opcodePrefix="D0 71 00" id="315" />
 		<packet opcodePrefix="D0 72 00" id="306" />
-		<packet opcodePrefix="D0 73 00" id="307" />
+		<packet opcodePrefix="D0 73 00" id="SM_EX_AUTO_SOUL_SHOT" />
 		<packet opcodePrefix="D0 74 00" id="308" />
 		<packet opcodePrefix="D0 75 00" id="316" />
 		<packet opcodePrefix="D0 76 00" id="317" />

@@ -67,7 +67,6 @@
 		<packet id="186" name="RequestDismissPartyRoom" />
 		<packet id="187" name="RequestWithdrawPartyRoom" />
 		<packet id="188" name="RequestHandOverPartyMaster" />
-		<packet id="189" name="RequestAutoSoulShot" />
 		<packet id="190" name="RequestExEnchantSkillInfo" />
 		<packet id="191" name="RequestExEnchantSkill" />
 		<packet id="192" name="RequestProcureCropList" />
@@ -1291,6 +1290,12 @@
 		-->
 		<packet id="CM_REQ_DELETE_MACRO" name="RequestDeleteMacro" />
 		<!--
+		ASCII "chdd"
+		UNICODE "RequestAutoSoulShot"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_AUTO_SOUL_SHOT" name="RequestAutoSoulShot" />
+		<!--
 		ASCII "ch"
 		UNICODE "RequestManorList"
 		UNICODE "(Send)%s"
@@ -1576,7 +1581,6 @@
 		<packet id="304" name="ExClosePartyRoom" />
 		<packet id="305" name="ExManagePartyRoomMember" />
 		<packet id="306" name="ExEventMatchLockResult" />
-		<packet id="307" name="ExAutoSoulShot" />
 		<packet id="308" name="ExEventMatchManage" />
 		<packet id="309" name="ExFishingStart" />
 		<packet id="310" name="ExFishingEnd" />
@@ -3103,6 +3107,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SSQ_INFO" name="SSQInfo" />
+		<!--
+		ASCII "dd"
+		UNICODE "ExAutoSoulShot"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_AUTO_SOUL_SHOT" name="ExAutoSoulShot" />
 		<!--
 		ASCII "dS"
 		UNICODE "ExSendManorListPacket"

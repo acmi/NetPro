@@ -4,7 +4,7 @@
 		<packet opcodePrefix="C5" id="175" />
 	</client>
 	<server>
-		<packet opcodePrefix="EC" id="268" />
+		<packet opcodePrefix="EC" id="SM_SHOW_XMAS_SEAL" />
 		<packet opcodePrefix="ED" id="269" />
 		<packet opcodePrefix="EE" id="270" />
 	</server>

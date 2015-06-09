@@ -17,7 +17,7 @@
 		<packet opcodePrefix="EF" id="SM_SHOP_PREVIEW_LIST" />
 		<packet opcodePrefix="F0" id="SM_SHOP_PREVIEW_INFO" />
 		<packet opcodePrefix="F1" id="276" />
-		<packet opcodePrefix="F2" id="268" />
+		<packet opcodePrefix="F2" id="SM_SHOW_XMAS_SEAL" />
 		<packet opcodePrefix="F3" id="277" />
 		<packet opcodePrefix="F4" id="278" />
 		<packet opcodePrefix="F5" id="279" />

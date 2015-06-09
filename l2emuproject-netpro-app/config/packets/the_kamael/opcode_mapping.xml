@@ -464,7 +464,7 @@
 		<packet opcodePrefix="F5" id="SM_SHOP_PREVIEW_LIST" />
 		<packet opcodePrefix="F6" id="SM_SHOP_PREVIEW_INFO" />
 		<packet opcodePrefix="F7" id="276" />
-		<packet opcodePrefix="F8" id="268" />
+		<packet opcodePrefix="F8" id="SM_SHOW_XMAS_SEAL" />
 		<packet opcodePrefix="F9" id="277" />
 		<packet opcodePrefix="FA" id="278" />
 		<packet opcodePrefix="FB" id="279" />

@@ -58,7 +58,6 @@
 		<packet id="178" name="RequestSSQStatus" />
 		<packet id="179" name="RequestPetitionVote" />
 		<packet id="180" name="RequestSendL2FriendSay" />
-		<packet id="181" name="RequestOpenMinimap" />
 		<packet id="182" name="RequestSendMsnChatLog" />
 		<packet id="184" name="RequestReload" />
 		<packet id="185" name="RequestOustFromPartyRoom" />
@@ -1298,6 +1297,11 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_PREVIEW_ITEM" name="RequestPreviewItem" />
+		<!--
+		UNICODE "RequestOpenMinimap"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OPEN_MINIMAP" name="RequestOpenMinimap" />
 		<!--
 		ASCII "chdd"
 		UNICODE "RequestAutoSoulShot"

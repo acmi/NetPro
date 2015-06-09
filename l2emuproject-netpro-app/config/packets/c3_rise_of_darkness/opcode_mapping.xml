@@ -7,7 +7,7 @@
 		<packet opcodePrefix="C8" id="179" />
 		<packet opcodePrefix="CA" id="175" />
 		<packet opcodePrefix="CC" id="180" />
-		<packet opcodePrefix="CD" id="181" />
+		<packet opcodePrefix="CD" id="CM_REQ_OPEN_MINIMAP" />
 		<packet opcodePrefix="CE" id="182" />
 	</client>
 	<server>

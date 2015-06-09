@@ -98,7 +98,7 @@
 		<packet opcodePrefix="67" id="CM_REQ_PLEDGE_CREST" />
 		<packet opcodePrefix="6A" id="CM_REQ_FRIEND_INFO_LIST" />
 		<packet opcodePrefix="6B" id="180" />
-		<packet opcodePrefix="6C" id="181" />
+		<packet opcodePrefix="6C" id="CM_REQ_OPEN_MINIMAP" />
 		<packet opcodePrefix="6D" id="182" />
 		<packet opcodePrefix="6E" id="184" />
 		<packet opcodePrefix="6F" id="CM_REQ_HENNA_EQUIP" />

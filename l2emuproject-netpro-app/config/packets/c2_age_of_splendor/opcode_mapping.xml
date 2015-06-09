@@ -247,7 +247,7 @@
 		<packet opcodePrefix="DB" id="250" />
 		<packet opcodePrefix="DC" id="251" />
 		<packet opcodePrefix="DD" id="252" />
-		<packet opcodePrefix="DE" id="253" />
+		<packet opcodePrefix="DE" id="SM_SHOW_TOWN_MAP" />
 		<packet opcodePrefix="DF" id="254" />
 		<packet opcodePrefix="E0" id="255" />
 		<packet opcodePrefix="E1" id="256" />

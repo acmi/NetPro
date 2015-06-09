@@ -450,7 +450,7 @@
 		<packet opcodePrefix="E7" id="SM_HENNA_UNEQUIP_INFO" />
 		<packet opcodePrefix="E8" id="SM_MACRO_LIST" />
 		<packet opcodePrefix="E9" id="263" />
-		<packet opcodePrefix="EA" id="253" />
+		<packet opcodePrefix="EA" id="SM_SHOW_TOWN_MAP" />
 		<packet opcodePrefix="EB" id="254" />
 		<packet opcodePrefix="EC" id="255" />
 		<packet opcodePrefix="ED" id="256" />

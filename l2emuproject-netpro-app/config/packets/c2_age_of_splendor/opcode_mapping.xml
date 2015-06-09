@@ -15,7 +15,7 @@
 		<packet opcodePrefix="B5" id="159" />
 		<packet opcodePrefix="B6" id="160" />
 		<packet opcodePrefix="B7" id="161" />
-		<packet opcodePrefix="B8" id="162" />
+		<packet opcodePrefix="B8" id="CM_REQ_OBSERVER_END" />
 		<packet opcodePrefix="B9" id="CM_VOTE_SOCIALITY" />
 		<packet opcodePrefix="BA" id="CM_REQ_HENNA_ITEM_LIST" />
 		<packet opcodePrefix="BB" id="CM_REQ_HENNA_ITEM_INFO" />
@@ -248,8 +248,8 @@
 		<packet opcodePrefix="DC" id="251" />
 		<packet opcodePrefix="DD" id="252" />
 		<packet opcodePrefix="DE" id="SM_SHOW_TOWN_MAP" />
-		<packet opcodePrefix="DF" id="254" />
-		<packet opcodePrefix="E0" id="255" />
+		<packet opcodePrefix="DF" id="SM_OBSERVER_START" />
+		<packet opcodePrefix="E0" id="SM_OBSERVER_END" />
 		<packet opcodePrefix="E1" id="256" />
 		<packet opcodePrefix="E2" id="SM_HENNA_EQUIP_LIST" />
 		<packet opcodePrefix="E3" id="SM_HENNA_ITEM_INFO" />

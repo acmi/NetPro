@@ -50,7 +50,6 @@
 		<packet id="159" name="RequestRecipeShopMakeInfo" />
 		<packet id="160" name="RequestRecipeShopMakeItem" />
 		<packet id="161" name="RequestRecipeShopSellList" />
-		<packet id="162" name="RequestObserverEnd" />
 		<packet id="170" name="RequestPledgePower" />
 		<packet id="173" name="RequestBuyProcure" />
 		<packet id="174" name="RequestBuySeed" />
@@ -1234,6 +1233,11 @@
 		-->
 		<packet id="CM_REQ_RECIPE_ITEM_MAKE_SELF" name="RequestRecipeItemMakeSelf" />
 		<!--
+		UNICODE "RequestObserverEndPacket"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OBSERVER_END" name="RequestObserverEnd" />
+		<!--
 		ASCII "cd"
 		UNICODE "VoteSociality"
 		UNICODE "(Send)%s"
@@ -1540,8 +1544,6 @@
 		<packet id="250" name="RecipeShopMsg" />
 		<packet id="251" name="ShowCalculator" />
 		<packet id="252" name="MonRaceInfo" />
-		<packet id="254" name="ObserverStart" />
-		<packet id="255" name="ObserverEnd" />
 		<packet id="256" name="ChairSit" />
 		<packet id="263" name="BuyListSeed" />
 		<packet id="264" name="SellListProcure" />
@@ -3055,6 +3057,18 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SHOW_TOWN_MAP" name="ShowTownMap" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "ObserverStartPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_OBSERVER_START" name="ObserverStart" />
+		<!--
+		ASCII "ddd"
+		UNICODE "ObserverEndPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_OBSERVER_END" name="ObserverEnd" />
 		<!--
 		ASCII "Qdd"
 		ASCII "ddQQd"

@@ -11,15 +11,32 @@
 		<dword alias="Item OID" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Item" type="Item">
+		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 		<dword alias="Amount" />
 		<word alias="Main item type" type="ItemType2" id="type" />
-		<word alias="Blessed" type="YesOrNo" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Blessed" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- C2 -->
+			<word alias="Round of lottery" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
+			<word alias="Lane" />
+		</branch>
 		<word alias="Equipped" type="YesOrNo" />
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
-		<word alias="Enchant level" />
-		<word alias="0" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" /> <!-- C3 -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- C2 -->
+			<dword alias="Selected numbers" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
+			<word alias="Race number" />
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
 	</loop>
 </packet>

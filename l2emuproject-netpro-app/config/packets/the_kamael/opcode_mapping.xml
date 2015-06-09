@@ -200,7 +200,7 @@
 		<packet opcodePrefix="D0 0A 00" id="186" />
 		<packet opcodePrefix="D0 0B 00" id="187" />
 		<packet opcodePrefix="D0 0C 00" id="188" />
-		<packet opcodePrefix="D0 0D 00" id="189" />
+		<packet opcodePrefix="D0 0D 00" id="CM_REQ_AUTO_SOUL_SHOT" />
 		<packet opcodePrefix="D0 0E 00" id="190" />
 		<packet opcodePrefix="D0 0F 00" id="191" />
 		<packet opcodePrefix="D0 12 00" id="208" />
@@ -480,7 +480,7 @@
 		<packet opcodePrefix="FE 09 00" id="304" />
 		<packet opcodePrefix="FE 0A 00" id="305" />
 		<packet opcodePrefix="FE 0B 00" id="306" />
-		<packet opcodePrefix="FE 0C 00" id="307" />
+		<packet opcodePrefix="FE 0C 00" id="SM_EX_AUTO_SOUL_SHOT" />
 		<packet opcodePrefix="FE 0D 00" id="291" />
 		<packet opcodePrefix="FE 0E 00" id="292" />
 		<packet opcodePrefix="FE 0F 00" id="293" />

@@ -20,7 +20,7 @@
 		<packet opcodePrefix="D0 71 00" id="304" />
 		<packet opcodePrefix="D0 72 00" id="305" />
 		<packet opcodePrefix="D0 75 00" id="306" />
-		<packet opcodePrefix="D0 76 00" id="307" />
+		<packet opcodePrefix="D0 76 00" id="SM_EX_AUTO_SOUL_SHOT" />
 		<packet opcodePrefix="D0 77 00" id="308" />
 		<packet opcodePrefix="D0 78 00" id="288" />
 		<packet opcodePrefix="D0 79 00" id="289" />

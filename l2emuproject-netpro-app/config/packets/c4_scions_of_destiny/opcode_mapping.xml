@@ -6,7 +6,7 @@
 		<packet opcodePrefix="D0 02 00" id="186" />
 		<packet opcodePrefix="D0 03 00" id="187" />
 		<packet opcodePrefix="D0 04 00" id="188" />
-		<packet opcodePrefix="D0 05 00" id="189" />
+		<packet opcodePrefix="D0 05 00" id="CM_REQ_AUTO_SOUL_SHOT" />
 		<packet opcodePrefix="D0 06 00" id="190" />
 		<packet opcodePrefix="D0 07 00" id="191" />
 		<packet opcodePrefix="D0 08 00" id="CM_REQ_MANOR_LIST" />

@@ -1549,7 +1549,6 @@
 		<packet id="264" name="SellListProcure" />
 		<packet id="266" name="RadarControl" />
 		<packet id="267" name="Dummy_EC" />
-		<packet id="268" name="ShowXmasSeal" />
 		<packet id="269" name="GameGuardQuery" />
 		<packet id="270" name="Dummy_EE" />
 		<packet id="271" name="ClientSetTime" />
@@ -3122,6 +3121,11 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_GM_HENNA_INFO" name="GMHennaInfo" />
+		<!--
+		UNICODE "ShowXMasSealPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SHOW_XMAS_SEAL" name="ShowXMasSeal" />
 		<!--
 		ASCII "ddd"
 		ASCII "dhdh"

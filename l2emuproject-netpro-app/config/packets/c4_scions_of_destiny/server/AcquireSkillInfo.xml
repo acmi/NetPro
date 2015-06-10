@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New list type DWORD added -->
+<packet id="SM_ACQUIRE_SKILL_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Skill" type="Skill">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+	</dword>
+	<dword alias="Level" type="skill.SkillLevel">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+	</dword>
+	<dword alias="Required SP" />
+	<dword alias="Type" type="SkillListType" /> <!-- NEW -->
+	<dword alias="Required items" id="item_cnt" />
+	<loop id="item_cnt">
+		<dword alias="Main item type" type="ItemType2" />
+		<dword alias="Item" type="Item" />
+		<dword alias="Amount" />
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+	</loop>
+</packet>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added pumping/reeling inversion CHAR (byte) field at the end of the packet -->
+<packet id="SM_EX_FISHING_START_COMBAT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Fisher OID" type="ObjectID" />
+	<dword alias="Time left" type="TimeRemaining" />
+	<dword alias="HP remaining" />
+	<byte alias="Strength" type="fishing.FishStrength" />
+	<byte alias="Lure type" type="fishing.LureType" />
+
+	<!-- NEW -->
+	<byte alias="Inverted controls" type="YesOrNo" />
+</packet>

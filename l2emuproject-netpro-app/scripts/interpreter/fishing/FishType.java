@@ -13,22 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.fishing;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets the given byte/word/dword as a result of a fishing action.
- * 
- * @author savormix
+ * @author _dev_
  */
-public class FishingActionResult extends ScriptedLegacyIntegerIdInterpreter
+public final class FishType extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public FishType()
 	{
-		addInterpretation(0, "N/A");
-		addInterpretation(1, "Success");
-		addInterpretation(2, "Failure");
+		super(new InterpreterMetadata(-1), "Nothing", "Fat", "Nimble", "Ugly", "Treasure chest", "Fat (novice)", "Nimble (novice)", "Ugly (novice)");
 	}
 }

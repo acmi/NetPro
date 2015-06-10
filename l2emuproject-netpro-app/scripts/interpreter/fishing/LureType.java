@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.fishing;
 
 import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets the given byte/word/dword as a fishing lure type.
+ * Interprets the given byte/word/dword as a fishing bait type.
  * 
  * @author savormix
  */
-public class Lure extends ScriptedZeroBasedIntegerIdInterpreter
+public class LureType extends ScriptedZeroBasedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
-	public Lure()
+	public LureType()
 	{
-		super("Newbie", "Normal", "Night");
+		super("Novice", "Ordinary", "Luminous");
 	}
 }

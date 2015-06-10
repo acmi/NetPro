@@ -442,7 +442,7 @@
 		<packet opcodePrefix="DF" id="248" />
 		<packet opcodePrefix="E0" id="249" />
 		<packet opcodePrefix="E1" id="250" />
-		<packet opcodePrefix="E2" id="251" />
+		<packet opcodePrefix="E2" id="SM_SHOW_CALC" />
 		<packet opcodePrefix="E3" id="252" />
 		<packet opcodePrefix="E4" id="SM_HENNA_ITEM_INFO" />
 		<packet opcodePrefix="E5" id="SM_HENNA_INFO" />
@@ -453,7 +453,7 @@
 		<packet opcodePrefix="EA" id="SM_SHOW_TOWN_MAP" />
 		<packet opcodePrefix="EB" id="SM_OBSERVER_START" />
 		<packet opcodePrefix="EC" id="SM_OBSERVER_END" />
-		<packet opcodePrefix="ED" id="256" />
+		<packet opcodePrefix="ED" id="SM_CHAIR_SIT" />
 		<packet opcodePrefix="EE" id="SM_HENNA_EQUIP_LIST" />
 		<packet opcodePrefix="EF" id="264" />
 		<packet opcodePrefix="F0" id="SM_GM_HENNA_INFO" />
@@ -498,8 +498,8 @@
 		<packet opcodePrefix="FE 1B 00" id="330" />
 		<packet opcodePrefix="FE 1C 00" id="295" />
 		<packet opcodePrefix="FE 1D 00" id="296" />
-		<packet opcodePrefix="FE 1E 00" id="309" />
-		<packet opcodePrefix="FE 1F 00" id="310" />
+		<packet opcodePrefix="FE 1E 00" id="SM_EX_FISHING_START" />
+		<packet opcodePrefix="FE 1F 00" id="SM_EX_FISHING_END" />
 		<packet opcodePrefix="FE 20 00" id="315" />
 		<packet opcodePrefix="FE 21 00" id="316" />
 		<packet opcodePrefix="FE 22 00" id="SM_EX_SEND_MANOR_LIST" />
@@ -507,8 +507,8 @@
 		<packet opcodePrefix="FE 24 00" id="319" />
 		<packet opcodePrefix="FE 25 00" id="320" />
 		<packet opcodePrefix="FE 26 00" id="321" />
-		<packet opcodePrefix="FE 27 00" id="311" />
-		<packet opcodePrefix="FE 28 00" id="312" />
+		<packet opcodePrefix="FE 27 00" id="SM_EX_FISHING_START_COMBAT" />
+		<packet opcodePrefix="FE 28 00" id="SM_EX_FISHING_HP_REGEN" />
 		<packet opcodePrefix="FE 29 00" id="313" />
 		<packet opcodePrefix="FE 2A 00" id="314" />
 		<packet opcodePrefix="FE 2B 00" id="322" />

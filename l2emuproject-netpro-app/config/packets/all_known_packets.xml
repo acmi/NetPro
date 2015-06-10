@@ -64,8 +64,6 @@
 		<packet id="186" name="RequestDismissPartyRoom" />
 		<packet id="187" name="RequestWithdrawPartyRoom" />
 		<packet id="188" name="RequestHandOverPartyMaster" />
-		<packet id="190" name="RequestExEnchantSkillInfo" />
-		<packet id="191" name="RequestExEnchantSkill" />
 		<packet id="192" name="RequestProcureCropList" />
 		<packet id="193" name="RequestSetSeed" />
 		<packet id="194" name="RequestSetCrop" />
@@ -1309,6 +1307,18 @@
 		-->
 		<packet id="CM_REQ_AUTO_SOUL_SHOT" name="RequestAutoSoulShot" />
 		<!--
+		ASCII "chdd"
+		UNICODE "RequestExEnchantSkillInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EX_ENCHANT_SKILL_INFO" name="RequestExEnchantSkillInfo" />
+		<!--
+		ASCII "chddd"
+		UNICODE "RequestExEnchantSkill"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EX_ENCHANT_SKILL" name="RequestExEnchantSkill" />
+		<!--
 		ASCII "ch"
 		UNICODE "RequestManorList"
 		UNICODE "(Send)%s"
@@ -1583,8 +1593,6 @@
 		<packet id="305" name="ExManagePartyRoomMember" />
 		<packet id="306" name="ExEventMatchLockResult" />
 		<packet id="308" name="ExEventMatchManage" />
-		<packet id="313" name="ExEnchantSkillList" />
-		<packet id="314" name="ExEnchantSkillInfo" />
 		<packet id="315" name="ExShowQuestInfo" />
 		<packet id="316" name="ExShowQuestMark" />
 		<packet id="318" name="ExShowSeedInfo" />
@@ -3207,6 +3215,19 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_FISHING_HP_REGEN" name="ExFishingHpRegen" />
+		<!--
+		ASCII "dd"
+		ASCII "dd"
+		UNICODE "ExEnchantSkillListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_SKILL_LIST" name="ExEnchantSkillList" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "ExEnchantSkillInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_SKILL_INFO" name="ExEnchantSkillInfo" />
 		<!--
 		ASCII "dS"
 		UNICODE "ExSendManorListPacket"

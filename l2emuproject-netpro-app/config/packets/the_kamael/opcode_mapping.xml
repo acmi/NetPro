@@ -201,8 +201,8 @@
 		<packet opcodePrefix="D0 0B 00" id="187" />
 		<packet opcodePrefix="D0 0C 00" id="188" />
 		<packet opcodePrefix="D0 0D 00" id="CM_REQ_AUTO_SOUL_SHOT" />
-		<packet opcodePrefix="D0 0E 00" id="190" />
-		<packet opcodePrefix="D0 0F 00" id="191" />
+		<packet opcodePrefix="D0 0E 00" id="CM_REQ_EX_ENCHANT_SKILL_INFO" />
+		<packet opcodePrefix="D0 0F 00" id="CM_REQ_EX_ENCHANT_SKILL" />
 		<packet opcodePrefix="D0 12 00" id="208" />
 		<packet opcodePrefix="D0 13 00" id="209" />
 		<packet opcodePrefix="D0 14 00" id="210" />
@@ -509,8 +509,8 @@
 		<packet opcodePrefix="FE 26 00" id="321" />
 		<packet opcodePrefix="FE 27 00" id="SM_EX_FISHING_START_COMBAT" />
 		<packet opcodePrefix="FE 28 00" id="SM_EX_FISHING_HP_REGEN" />
-		<packet opcodePrefix="FE 29 00" id="313" />
-		<packet opcodePrefix="FE 2A 00" id="314" />
+		<packet opcodePrefix="FE 29 00" id="SM_EX_ENCHANT_SKILL_LIST" />
+		<packet opcodePrefix="FE 2A 00" id="SM_EX_ENCHANT_SKILL_INFO" />
 		<packet opcodePrefix="FE 2B 00" id="322" />
 		<packet opcodePrefix="FE 2C 00" id="323" />
 		<packet opcodePrefix="FE 2D 00" id="334" />

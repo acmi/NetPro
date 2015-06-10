@@ -13,6 +13,6 @@
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 		<dword alias="Amount" />
-		<word alias="" />
+		<word alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
 	</loop>
 </packet>

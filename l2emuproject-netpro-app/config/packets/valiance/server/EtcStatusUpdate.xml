@@ -4,7 +4,7 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 
 <!-- NEW: Increase Force -> Momentum; a reputation penalty DWORD appended at the end of packet (unknown when) -->
-<packet id="277" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_ETC_STATUS_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Momentum" /> <!-- 0-44; 50. 45-49: black icon; above 50: no icon -->
 	<dword alias="Weight Penalty" /> <!-- 0-4 -->
 	<dword alias="Block All Chat" type="YesOrNo" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- All fields (except weight penalty) changed to CHARs (bytes) -->
-<packet id="277" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_ETC_STATUS_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<byte alias="Momentum" /> <!-- NEW --> <!-- 0-44; 50. 45-49: black icon; above 50: no icon -->
 	<dword alias="Weight Penalty" /> <!-- 0-4 -->
 	

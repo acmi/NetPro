@@ -500,8 +500,8 @@
 		<packet opcodePrefix="FE 1D 00" id="296" />
 		<packet opcodePrefix="FE 1E 00" id="SM_EX_FISHING_START" />
 		<packet opcodePrefix="FE 1F 00" id="SM_EX_FISHING_END" />
-		<packet opcodePrefix="FE 20 00" id="315" />
-		<packet opcodePrefix="FE 21 00" id="316" />
+		<packet opcodePrefix="FE 20 00" id="SM_EX_SHOW_QUEST_INFO" />
+		<packet opcodePrefix="FE 21 00" id="SM_EX_SHOW_QUEST_MARK" />
 		<packet opcodePrefix="FE 22 00" id="SM_EX_SEND_MANOR_LIST" />
 		<packet opcodePrefix="FE 23 00" id="318" />
 		<packet opcodePrefix="FE 24 00" id="319" />

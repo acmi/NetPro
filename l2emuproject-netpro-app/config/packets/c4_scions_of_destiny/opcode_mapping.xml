@@ -29,8 +29,8 @@
 		<packet opcodePrefix="FE 16 00" id="SM_EX_FISHING_HP_REGEN" />
 		<packet opcodePrefix="FE 17 00" id="SM_EX_ENCHANT_SKILL_LIST" />
 		<packet opcodePrefix="FE 18 00" id="SM_EX_ENCHANT_SKILL_INFO" />
-		<packet opcodePrefix="FE 19 00" id="315" />
-		<packet opcodePrefix="FE 1A 00" id="316" />
+		<packet opcodePrefix="FE 19 00" id="SM_EX_SHOW_QUEST_INFO" />
+		<packet opcodePrefix="FE 1A 00" id="SM_EX_SHOW_QUEST_MARK" />
 		<packet opcodePrefix="FE 1B 00" id="SM_EX_SEND_MANOR_LIST" />
 		<packet opcodePrefix="FE 1C 00" id="318" />
 		<packet opcodePrefix="FE 1D 00" id="319" />

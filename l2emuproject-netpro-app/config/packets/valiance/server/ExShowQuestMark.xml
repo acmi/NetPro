@@ -4,7 +4,7 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 
 <!-- Quest state DWORD was appended (unknown when) -->
-<packet id="316" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_EX_SHOW_QUEST_MARK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Quest" type="Quest">
 		<scriptAlias id="__INTERP_QUEST_ID" />
 		<scriptAlias id="tutorial_solver_quest_mark_id" />

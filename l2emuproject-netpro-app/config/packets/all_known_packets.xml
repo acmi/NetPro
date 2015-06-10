@@ -1593,8 +1593,6 @@
 		<packet id="305" name="ExManagePartyRoomMember" />
 		<packet id="306" name="ExEventMatchLockResult" />
 		<packet id="308" name="ExEventMatchManage" />
-		<packet id="315" name="ExShowQuestInfo" />
-		<packet id="316" name="ExShowQuestMark" />
 		<packet id="318" name="ExShowSeedInfo" />
 		<packet id="319" name="ExShowCropInfo" />
 		<packet id="320" name="ExShowManorDefaultInfo" />
@@ -3228,6 +3226,17 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_ENCHANT_SKILL_INFO" name="ExEnchantSkillInfo" />
+		<!--
+		UNICODE "ExShowQuestInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_QUEST_INFO" name="ExShowQuestInfo" />
+		<!--
+		ASCII "dd"
+		UNICODE "ExShowQuestMarkPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_QUEST_MARK" name="ExShowQuestMark" />
 		<!--
 		ASCII "dS"
 		UNICODE "ExSendManorListPacket"

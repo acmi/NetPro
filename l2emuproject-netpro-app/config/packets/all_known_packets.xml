@@ -1559,7 +1559,6 @@
 		<packet id="252" name="MonRaceInfo" />
 		<packet id="263" name="BuyListSeed" />
 		<packet id="264" name="SellListProcure" />
-		<packet id="266" name="RadarControl" />
 		<packet id="267" name="Dummy_EC" />
 		<packet id="269" name="GameGuardQuery" />
 		<packet id="270" name="Dummy_EE" />
@@ -3133,6 +3132,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_GM_HENNA_INFO" name="GMHennaInfo" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "RadarControlPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RADAR_CONTROL" name="RadarControl" />
 		<!--
 		UNICODE "ShowXMasSealPacket"
 		UNICODE "(Receive)%s"

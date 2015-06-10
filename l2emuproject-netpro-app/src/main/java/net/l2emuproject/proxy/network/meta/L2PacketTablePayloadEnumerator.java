@@ -28,6 +28,7 @@ import java.util.Set;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.proxy.network.ByteBufferUtils;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.exception.InvalidPacketOpcodeSchemeException;
 import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationException;
@@ -87,7 +88,7 @@ public class L2PacketTablePayloadEnumerator implements PacketPayloadEnumerator
 			}
 			catch (RuntimeException e)
 			{
-				throw new InvalidPacketOpcodeSchemeException(endpoint, HexUtil.bytesToHexString(result._buffer.array(), " "), e);
+				throw new InvalidPacketOpcodeSchemeException(endpoint, HexUtil.bytesToHexString(ByteBufferUtils.asMutable(result._buffer).array(), " "), e);
 			}
 			
 			final EnumeratingVisitor visitor = new EnumeratingVisitor(template, result);

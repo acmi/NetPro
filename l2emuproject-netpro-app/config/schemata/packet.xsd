@@ -139,9 +139,6 @@
 			<xs:enumeration value="Event" />
 			<xs:enumeration value="ExNpcInfoState" />
 			<xs:enumeration value="Festival" />
-			<xs:enumeration value="FishingAction" />
-			<xs:enumeration value="FishingActionResult" />
-			<xs:enumeration value="FishStrength" />
 			<xs:enumeration value="FlyPathNode" />
 			<xs:enumeration value="FlyType" />
 			<xs:enumeration value="FriendStatusUpdate" />
@@ -172,7 +169,6 @@
 			<xs:enumeration value="LoginFailureReason" />
 			<xs:enumeration value="LootRights" />
 			<xs:enumeration value="LottoNumbers" />
-			<xs:enumeration value="Lure" />
 			<xs:enumeration value="MacroChange" />
 			<xs:enumeration value="MacroCommandType" />
 			<xs:enumeration value="MacroIcon" />
@@ -298,6 +294,12 @@
 			<xs:enumeration value="equip.ExUserEquipSlot5" />
 			<xs:enumeration value="equip.PaperdollMask" />
 			<xs:enumeration value="equip.PeriodicHennaExpiration" />
+
+			<xs:enumeration value="fishing.FishingAction" />
+			<xs:enumeration value="fishing.FishingActionResult" />
+			<xs:enumeration value="fishing.FishStrength" />
+			<xs:enumeration value="fishing.FishType" />
+			<xs:enumeration value="fishing.LureType" />
 			
 			<xs:enumeration value="item.AttributeEnchantResult" />
 

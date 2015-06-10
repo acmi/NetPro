@@ -13,22 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.fishing;
 
 import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
 
 /**
- * Interprets the given byte/word/dword as a fishing action.
+ * Interprets the given byte/word/dword as a result of a fishing action.
  * 
  * @author savormix
  */
-public class FishingAction extends ScriptedLegacyIntegerIdInterpreter
+public class FishingActionResult extends ScriptedLegacyIntegerIdInterpreter
 {
 	@Override
 	protected void loadImpl()
 	{
-		addInterpretation(0, "Idle");
-		addInterpretation(1, "Reeling");
-		addInterpretation(2, "Pumping");
+		addInterpretation(0, "N/A");
+		addInterpretation(1, "Success");
+		addInterpretation(2, "Failure");
 	}
 }

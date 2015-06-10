@@ -1546,9 +1546,7 @@
 		<packet id="248" name="RecipeShopSellList" />
 		<packet id="249" name="RecipeShopItemInfo" />
 		<packet id="250" name="RecipeShopMsg" />
-		<packet id="251" name="ShowCalculator" />
 		<packet id="252" name="MonRaceInfo" />
-		<packet id="256" name="ChairSit" />
 		<packet id="263" name="BuyListSeed" />
 		<packet id="264" name="SellListProcure" />
 		<packet id="266" name="RadarControl" />
@@ -1585,10 +1583,6 @@
 		<packet id="305" name="ExManagePartyRoomMember" />
 		<packet id="306" name="ExEventMatchLockResult" />
 		<packet id="308" name="ExEventMatchManage" />
-		<packet id="309" name="ExFishingStart" />
-		<packet id="310" name="ExFishingEnd" />
-		<packet id="311" name="ExFishingStartCombat" />
-		<packet id="312" name="ExFishingHpRegen" />
 		<packet id="313" name="ExEnchantSkillList" />
 		<packet id="314" name="ExEnchantSkillInfo" />
 		<packet id="315" name="ExShowQuestInfo" />
@@ -3052,6 +3046,11 @@
 		-->
 		<packet id="SM_RECIPE_ITEM_MAKE_INFO" name="RecipeItemMakeInfo" />
 		<!--
+		UNICODE "ShowCalcPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SHOW_CALC" name="ShowCalc" />
+		<!--
 		ASCII "Sdd"
 		UNICODE "ShowTownMapPacket"
 		UNICODE "(Receive)%s"
@@ -3069,6 +3068,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_OBSERVER_END" name="ObserverEnd" />
+		<!--
+		ASCII "dd"
+		UNICODE "ChairSitPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CHAIR_SIT" name="ChairSit" />
 		<!--
 		ASCII "Qdd"
 		ASCII "ddQQd"
@@ -3178,6 +3183,30 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_AUTO_SOUL_SHOT" name="ExAutoSoulShot" />
+		<!--
+		ASCII "dcdddc"
+		UNICODE "ExFishingStartPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_FISHING_START" name="ExFishingStart" />
+		<!--
+		ASCII "dc"
+		UNICODE "ExFishingEndPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_FISHING_END" name="ExFishingEnd" />
+		<!--
+		ASCII "dddccc"
+		UNICODE "ExFishingStartCombatPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_FISHING_START_COMBAT" name="ExFishingStartCombat" />
+		<!--
+		ASCII "dddcccdc"
+		UNICODE "ExFishingHpRegenPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_FISHING_HP_REGEN" name="ExFishingHpRegen" />
 		<!--
 		ASCII "dS"
 		UNICODE "ExSendManorListPacket"

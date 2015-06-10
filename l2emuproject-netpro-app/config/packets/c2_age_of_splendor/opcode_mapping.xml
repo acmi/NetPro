@@ -245,12 +245,12 @@
 		<packet opcodePrefix="D9" id="248" />
 		<packet opcodePrefix="DA" id="249" />
 		<packet opcodePrefix="DB" id="250" />
-		<packet opcodePrefix="DC" id="251" />
+		<packet opcodePrefix="DC" id="SM_SHOW_CALC" />
 		<packet opcodePrefix="DD" id="252" />
 		<packet opcodePrefix="DE" id="SM_SHOW_TOWN_MAP" />
 		<packet opcodePrefix="DF" id="SM_OBSERVER_START" />
 		<packet opcodePrefix="E0" id="SM_OBSERVER_END" />
-		<packet opcodePrefix="E1" id="256" />
+		<packet opcodePrefix="E1" id="SM_CHAIR_SIT" />
 		<packet opcodePrefix="E2" id="SM_HENNA_EQUIP_LIST" />
 		<packet opcodePrefix="E3" id="SM_HENNA_ITEM_INFO" />
 		<packet opcodePrefix="E4" id="SM_HENNA_INFO" />

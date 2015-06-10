@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New list type DWORD added at the beginning of the packet -->
+<!-- In C5 and up, it also controls whether the subpledge DWORD is used in each loop element -->
+<packet id="SM_ACQUIRE_SKILL_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="List type" type="SkillListType" id="cond_1" /> <!-- NEW -->
+	<dword alias="Skill count" id="skill_cnt" />
+	<loop id="skill_cnt">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<dword alias="Level" type="skill.SkillLevel">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</dword>
+		<dword alias="Max level" />
+		<dword alias="Required SP" />
+		<dword alias="Requires items" type="YesOrNo" />
+
+		<!-- NEW -->
+		<branch id="cond_1" condition="PledgeUnitSkills"> <!-- C5 -->
+			<dword alias="Pledge unit" type="PledgeUnit" />
+		</branch>
+	</loop>
+</packet>

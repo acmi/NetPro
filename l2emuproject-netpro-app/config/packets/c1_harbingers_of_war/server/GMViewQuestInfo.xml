@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- New quest level DWORD in the first loop and unknown item WORD is now a DWORD in the second loop -->
+<!-- New quest level DWORD in the first loop -->
+<!-- Item's paperdoll slot mask field is now a DWORD -->
 <packet id="SM_GM_VIEW_QUEST_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<string alias="Player name" />
 
@@ -22,6 +23,6 @@
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 		<dword alias="Amount" />
-		<dword alias="" /> <!-- NEW -->
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
 	</loop>
 </packet>

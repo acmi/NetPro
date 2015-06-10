@@ -40,6 +40,9 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 @InitializationPriority(1)
 public class Skill extends ScriptedFieldValueInterpreter implements ContextualFieldValueInterpreter, IntegerInterpreter
 {
+	/** If you are using IO style skill definitions (level+sublevel), keep {@code true}. If you use legacy definitions, set to {@code false}. */
+	private static boolean AUTOFIX_LEGACY_ENCHANT_LEVELS = true;
+	
 	private final ThreadLocal<Integer> _level;
 	
 	/** Constructs this interpreter. */
@@ -80,6 +83,16 @@ public class Skill extends ScriptedFieldValueInterpreter implements ContextualFi
 		try
 		{
 			final SkillNameID interpreter = MetaclassRegistry.getInstance().getInterpreter(ScriptedMetaclass.getAlias(SkillNameID.class), SkillNameID.class);
+			final int rawLevel = L2SkillTranslator.getSkillLevel(lvl);
+			if (AUTOFIX_LEGACY_ENCHANT_LEVELS && rawLevel > 99)
+			{
+				if (rawLevel > 140) // initial method with 2 routes max
+					value = L2SkillTranslator.getSkillNameID(id, interpreter.getHighestLevel(id), 2000 + lvl % 140);
+				else
+					// legacy method without sublevels
+					value = L2SkillTranslator.getSkillNameID(id, interpreter.getHighestLevel(id), (lvl / 100) * 1_000 + lvl % 100);
+			}
+			
 			return interpreter.getInterpretation(value, entityCacheContext);
 		}
 		catch (InvalidFieldValueInterpreterException e)

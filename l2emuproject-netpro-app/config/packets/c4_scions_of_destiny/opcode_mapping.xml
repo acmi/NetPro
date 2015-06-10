@@ -7,8 +7,8 @@
 		<packet opcodePrefix="D0 03 00" id="187" />
 		<packet opcodePrefix="D0 04 00" id="188" />
 		<packet opcodePrefix="D0 05 00" id="CM_REQ_AUTO_SOUL_SHOT" />
-		<packet opcodePrefix="D0 06 00" id="190" />
-		<packet opcodePrefix="D0 07 00" id="191" />
+		<packet opcodePrefix="D0 06 00" id="CM_REQ_EX_ENCHANT_SKILL_INFO" />
+		<packet opcodePrefix="D0 07 00" id="CM_REQ_EX_ENCHANT_SKILL" />
 		<packet opcodePrefix="D0 08 00" id="CM_REQ_MANOR_LIST" />
 		<packet opcodePrefix="D0 09 00" id="192" />
 		<packet opcodePrefix="D0 0A 00" id="193" />
@@ -27,8 +27,8 @@
 		<packet opcodePrefix="FE 14 00" id="SM_EX_FISHING_END" />
 		<packet opcodePrefix="FE 15 00" id="SM_EX_FISHING_START_COMBAT" />
 		<packet opcodePrefix="FE 16 00" id="SM_EX_FISHING_HP_REGEN" />
-		<packet opcodePrefix="FE 17 00" id="313" />
-		<packet opcodePrefix="FE 18 00" id="314" />
+		<packet opcodePrefix="FE 17 00" id="SM_EX_ENCHANT_SKILL_LIST" />
+		<packet opcodePrefix="FE 18 00" id="SM_EX_ENCHANT_SKILL_INFO" />
 		<packet opcodePrefix="FE 19 00" id="315" />
 		<packet opcodePrefix="FE 1A 00" id="316" />
 		<packet opcodePrefix="FE 1B 00" id="SM_EX_SEND_MANOR_LIST" />

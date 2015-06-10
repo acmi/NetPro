@@ -77,4 +77,24 @@ public class SkillNameID extends ScriptedIntegerIdInterpreter
 		
 		return L2SkillTranslator.getSkillID(value) + "_" + L2SkillTranslator.getSkillLevel(value) + "_" + L2SkillTranslator.getSkillSublevel(value);
 	}
+	
+	/**
+	 * Returns the highest level for the given skill ID, ignoring entries with sublevels. Returns {@code 0} for unknown skills.
+	 * 
+	 * @param skillID skill ID
+	 * @return highest non-enchanted level or {@code 0}
+	 */
+	public int getHighestLevel(int skillID)
+	{
+		int result = 0;
+		for (int level = 1; level < 100; ++level)
+		{
+			final Object i = super.getInterpretation(L2SkillTranslator.getSkillNameID(skillID, level, 0), null);
+			if (!(i instanceof String))
+				break;
+			
+			result = level;
+		}
+		return result;
+	}
 }

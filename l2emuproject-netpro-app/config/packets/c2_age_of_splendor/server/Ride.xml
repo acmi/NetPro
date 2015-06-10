@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mount class ID DWORD added at the end of the packet -->
+<packet id="SM_RIDE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Rider OID" type="ObjectID" />
+	<dword alias="Mounted" type="YesOrNo" />
+	<dword alias="Mount type" type="MountType" />
+
+	<!-- NEW -->
+	<dword alias="Mount" type="Npc" />
+</packet>

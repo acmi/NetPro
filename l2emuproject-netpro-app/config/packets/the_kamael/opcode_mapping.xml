@@ -161,7 +161,7 @@
 		<packet opcodePrefix="B1" id="CM_NET_PING" />
 		<packet opcodePrefix="B2" id="CM_REQ_REMAIN_TIME" />
 		<packet opcodePrefix="B3" id="CM_BYPASS_USER_CMD" />
-		<packet opcodePrefix="B4" id="149" />
+		<packet opcodePrefix="B4" id="CM_SNOOP_QUIT" />
 		<packet opcodePrefix="B5" id="CM_REQ_RECIPE_BOOK_OPEN" />
 		<packet opcodePrefix="B6" id="CM_REQ_RECIPE_ITEM_DELETE" />
 		<packet opcodePrefix="B7" id="CM_REQ_RECIPE_ITEM_MAKE_INFO" />
@@ -435,7 +435,7 @@
 		<packet opcodePrefix="D8" id="237" />
 		<packet opcodePrefix="D9" id="SM_NET_PING" />
 		<packet opcodePrefix="DA" id="SM_DICE" />
-		<packet opcodePrefix="DB" id="244" />
+		<packet opcodePrefix="DB" id="SM_SNOOP" />
 		<packet opcodePrefix="DC" id="SM_RECIPE_BOOK_ITEM_LIST" />
 		<packet opcodePrefix="DD" id="SM_RECIPE_ITEM_MAKE_INFO" />
 		<packet opcodePrefix="DE" id="247" />
@@ -463,7 +463,7 @@
 		<packet opcodePrefix="F4" id="SM_PARTY_SPELLED" />
 		<packet opcodePrefix="F5" id="SM_SHOP_PREVIEW_LIST" />
 		<packet opcodePrefix="F6" id="SM_SHOP_PREVIEW_INFO" />
-		<packet opcodePrefix="F7" id="276" />
+		<packet opcodePrefix="F7" id="SM_CAMERA_MODE" />
 		<packet opcodePrefix="F8" id="SM_SHOW_XMAS_SEAL" />
 		<packet opcodePrefix="F9" id="SM_ETC_STATUS_UPDATE" />
 		<packet opcodePrefix="FA" id="SM_SHORT_BUFF_STATUS_UPDATE" />

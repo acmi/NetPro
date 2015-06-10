@@ -16,7 +16,7 @@
 		<packet opcodePrefix="EE" id="SM_PARTY_SPELLED" />
 		<packet opcodePrefix="EF" id="SM_SHOP_PREVIEW_LIST" />
 		<packet opcodePrefix="F0" id="SM_SHOP_PREVIEW_INFO" />
-		<packet opcodePrefix="F1" id="276" />
+		<packet opcodePrefix="F1" id="SM_CAMERA_MODE" />
 		<packet opcodePrefix="F2" id="SM_SHOW_XMAS_SEAL" />
 		<packet opcodePrefix="F3" id="SM_ETC_STATUS_UPDATE" />
 		<packet opcodePrefix="F4" id="SM_SHORT_BUFF_STATUS_UPDATE" />

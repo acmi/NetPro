@@ -457,7 +457,7 @@
 		<packet opcodePrefix="EE" id="SM_HENNA_EQUIP_LIST" />
 		<packet opcodePrefix="EF" id="264" />
 		<packet opcodePrefix="F0" id="SM_GM_HENNA_INFO" />
-		<packet opcodePrefix="F1" id="266" />
+		<packet opcodePrefix="F1" id="SM_RADAR_CONTROL" />
 		<packet opcodePrefix="F2" id="271" />
 		<packet opcodePrefix="F3" id="272" />
 		<packet opcodePrefix="F4" id="SM_PARTY_SPELLED" />

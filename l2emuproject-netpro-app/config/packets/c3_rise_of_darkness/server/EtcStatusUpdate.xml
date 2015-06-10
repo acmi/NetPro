@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_ETC_STATUS_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Increase Force" /> <!-- 0-7 -->
+	<dword alias="Weight Penalty" /> <!-- 0-4 -->
+	<dword alias="Block All Chat" type="YesOrNo" />
+	<dword alias="Danger Area" type="YesOrNo" />
+	<dword alias="Grade Penalty" type="YesOrNo" />
+</packet>

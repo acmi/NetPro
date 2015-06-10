@@ -1558,15 +1558,12 @@
 		<packet id="271" name="ClientSetTime" />
 		<packet id="272" name="ConfirmDlg" />
 		<packet id="276" name="CameraMode" />
-		<packet id="277" name="EtcStatusUpdate" />
-		<packet id="278" name="ShortBuffStatusUpdate" />
 		<packet id="279" name="SSQStatus" />
 		<packet id="280" name="PetitionVote" />
 		<packet id="281" name="AgitDecoInfo" />
 		<packet id="283" name="FriendPacket" />
 		<packet id="SM_L2_FRIEND_STATUS" name="L2FriendStatus" /> <!-- Before GoD -->
 		<packet id="285" name="L2FriendSay" />
-		<packet id="286" name="ExRegenMax" />
 		<packet id="287" name="ReplyStartPledgeWa" />
 		<packet id="288" name="ReplyStopPledgeWa" />
 		<packet id="289" name="ReplySurrenderPledgeWa" />
@@ -3152,11 +3149,29 @@
 		-->
 		<packet id="SM_SHOP_PREVIEW_INFO" name="ShopPreviewInfo" />
 		<!--
+		ASCII "cdccccc"
+		UNICODE "EtcStatusUpdatePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_ETC_STATUS_UPDATE" name="EtcStatusUpdate" />
+		<!--
+		ASCII "ddd"
+		UNICODE "ShortBuffStatusUpdatePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SHORT_BUFF_STATUS_UPDATE" name="ShortBuffStatusUpdate" />
+		<!--
 		ASCII "cc"
 		UNICODE "SSQInfoPacket"
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SSQ_INFO" name="SSQInfo" />
+		<!--
+		ASCII "dddf"
+		UNICODE "ExRegenMaxPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_REGEN_MAX" name="ExRegenMax" />
 		<!--
 		ASCII "dd"
 		UNICODE "ExAutoSoulShot"

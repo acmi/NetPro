@@ -63,7 +63,8 @@ public class SkillNameID extends ScriptedIntegerIdInterpreter
 		{
 			LOG.error("Could not load skill level interpretations", e);
 		}
-		mapping.put(Long.valueOf(L2SkillTranslator.getSkillNameID(0, 1, 0)), "None");
+		mapping.put(Long.valueOf(L2SkillTranslator.getSkillNameID(0, 0, 0)), "None"); // SBSU
+		mapping.put(Long.valueOf(L2SkillTranslator.getSkillNameID(0, 1, 0)), "None"); // default interpretation without level
 		return mapping;
 	}
 	

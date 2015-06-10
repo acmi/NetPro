@@ -16,7 +16,6 @@
 		<removedPacket id="SM_PARTY_MATCH_DETAIL" />
 		<packet opcodePrefix="AF" id="176" />
 		<packet opcodePrefix="B0" id="177" />
-		<packet opcodePrefix="FE 01 00" id="286" />
 		<packet opcodePrefix="FE 02 00" id="291" />
 		<packet opcodePrefix="FE 03 00" id="292" />
 		<packet opcodePrefix="FE 04 00" id="293" />

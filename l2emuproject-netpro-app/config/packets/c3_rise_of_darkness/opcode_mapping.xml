@@ -18,8 +18,8 @@
 		<packet opcodePrefix="F0" id="SM_SHOP_PREVIEW_INFO" />
 		<packet opcodePrefix="F1" id="276" />
 		<packet opcodePrefix="F2" id="SM_SHOW_XMAS_SEAL" />
-		<packet opcodePrefix="F3" id="277" />
-		<packet opcodePrefix="F4" id="278" />
+		<packet opcodePrefix="F3" id="SM_ETC_STATUS_UPDATE" />
+		<packet opcodePrefix="F4" id="SM_SHORT_BUFF_STATUS_UPDATE" />
 		<packet opcodePrefix="F5" id="279" />
 		<packet opcodePrefix="F6" id="280" />
 		<packet opcodePrefix="F7" id="281" />
@@ -29,6 +29,6 @@
 		<packet opcodePrefix="FB" id="283" />
 		<packet opcodePrefix="FC" id="SM_L2_FRIEND_STATUS" />
 		<packet opcodePrefix="FD" id="285" />
-		<packet opcodePrefix="FE" id="286" />
+		<packet opcodePrefix="FE 01 00" id="SM_EX_REGEN_MAX" />
 	</server>
 </mapping>

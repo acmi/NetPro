@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Just FYI: NPC, Ferry and similar messages are not presented to the GM. -->
+<packet id="SM_SNOOP" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Player OID" type="ObjectID" />
+	<string alias="Player name" />
+	<dword alias="Talker OID" type="ObjectID" />
+	<dword alias="Chat" type="Chat" />
+	<string alias="Talker" /> <!-- '->Recipient' for whisper -->
+	<string alias="Message" />
+</packet>

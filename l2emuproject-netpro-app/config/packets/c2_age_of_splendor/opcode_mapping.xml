@@ -2,7 +2,7 @@
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
 		<packet opcodePrefix="AA" id="CM_BYPASS_USER_CMD" />
-		<packet opcodePrefix="AB" id="149" />
+		<packet opcodePrefix="AB" id="CM_SNOOP_QUIT" />
 		<packet opcodePrefix="AC" id="CM_REQ_RECIPE_BOOK_OPEN" />
 		<packet opcodePrefix="AD" id="CM_REQ_RECIPE_ITEM_DELETE" />
 		<packet opcodePrefix="AE" id="CM_REQ_RECIPE_ITEM_MAKE_INFO" />
@@ -238,7 +238,7 @@
 		<packet opcodePrefix="D2" id="237" />
 		<packet opcodePrefix="D3" id="SM_NET_PING" />
 		<packet opcodePrefix="D4" id="SM_DICE" />
-		<packet opcodePrefix="D5" id="244" />
+		<packet opcodePrefix="D5" id="SM_SNOOP" />
 		<packet opcodePrefix="D6" id="SM_RECIPE_BOOK_ITEM_LIST" />
 		<packet opcodePrefix="D7" id="SM_RECIPE_ITEM_MAKE_INFO" />
 		<packet opcodePrefix="D8" id="247" />

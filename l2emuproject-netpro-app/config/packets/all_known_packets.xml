@@ -41,7 +41,6 @@
 		<packet id="128" name="RequestSEKCustom" />
 		<packet id="129" name="RequestRide" />
 		<packet id="130" name="RequestReviveReply" />
-		<packet id="149" name="RequestSnoopQuit" />
 		<packet id="154" name="RequestRecipeShopManageList" />
 		<packet id="155" name="RequestRecipeShopMessageSet" />
 		<packet id="156" name="RequestRecipeShopListSet" />
@@ -1205,6 +1204,12 @@
 		<packet id="CM_BYPASS_USER_CMD" name="BypassUserCmd" />
 		<!--
 		ASCII "cd"
+		UNICODE "GMSnoopEnd"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_SNOOP_QUIT" name="GMSnoopEnd" />
+		<!--
+		ASCII "cd"
 		UNICODE "RequestRecipeBookOpen"
 		UNICODE "(Send)%s"
 		-->
@@ -1551,7 +1556,6 @@
 		<packet id="239" name="Dummy ED" />
 		<packet id="240" name="ManagePledgePower" />
 		<packet id="241" name="Dummy_70" />
-		<packet id="244" name="Snoop" />
 		<packet id="247" name="RecipeShopManageList" />
 		<packet id="248" name="RecipeShopSellList" />
 		<packet id="249" name="RecipeShopItemInfo" />
@@ -1564,7 +1568,6 @@
 		<packet id="270" name="Dummy_EE" />
 		<packet id="271" name="ClientSetTime" />
 		<packet id="272" name="ConfirmDlg" />
-		<packet id="276" name="CameraMode" />
 		<packet id="279" name="SSQStatus" />
 		<packet id="280" name="PetitionVote" />
 		<packet id="281" name="AgitDecoInfo" />
@@ -3038,6 +3041,12 @@
 		-->
 		<packet id="SM_DICE" name="Dice" />
 		<!--
+		ASCII "dSddSS"
+		UNICODE "SnoopPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SNOOP" name="Snoop" />
+		<!--
 		ASCII "ddd"
 		ASCII "dd"
 		UNICODE "RecipeBookItemListPacket"
@@ -3164,6 +3173,11 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SHOP_PREVIEW_INFO" name="ShopPreviewInfo" />
+		<!--
+		UNICODE "CameraModePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_CAMERA_MODE" name="CameraMode" />
 		<!--
 		ASCII "cdccccc"
 		UNICODE "EtcStatusUpdatePacket"

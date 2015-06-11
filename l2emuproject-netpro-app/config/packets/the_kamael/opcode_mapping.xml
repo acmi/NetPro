@@ -485,7 +485,7 @@
 		<packet opcodePrefix="FE 0E 00" id="292" />
 		<packet opcodePrefix="FE 0F 00" id="293" />
 		<packet opcodePrefix="FE 10 00" id="294" />
-		<packet opcodePrefix="FE 11 00" id="326" />
+		<packet opcodePrefix="FE 11 00" id="SM_EX_SERVER_PRIMITIVE" />
 		<packet opcodePrefix="FE 12 00" id="327" />
 		<packet opcodePrefix="FE 13 00" id="328" />
 		<packet opcodePrefix="FE 14 00" id="384" />

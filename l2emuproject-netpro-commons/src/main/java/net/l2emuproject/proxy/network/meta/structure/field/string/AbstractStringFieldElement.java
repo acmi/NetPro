@@ -24,6 +24,7 @@ import java.util.Set;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
+import net.l2emuproject.proxy.network.meta.exception.CompositeReadBufferUnderflowException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueModifierException;
 import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
@@ -50,8 +51,7 @@ public abstract class AbstractStringFieldElement extends FieldElement<StringFiel
 	 * @param valueModifier associated value modifier
 	 * @param valueInterpreter associated value interpreter
 	 */
-	protected AbstractStringFieldElement(String id, String alias, boolean optional, Set<String> fieldAliases,
-			String valueModifier, String valueInterpreter)
+	protected AbstractStringFieldElement(String id, String alias, boolean optional, Set<String> fieldAliases, String valueModifier, String valueInterpreter)
 	{
 		super(id, alias, optional, fieldAliases, valueModifier, valueInterpreter);
 	}
@@ -69,6 +69,7 @@ public abstract class AbstractStringFieldElement extends FieldElement<StringFiel
 	public final StringFieldValue readValue(MMOBuffer buf, Map<FieldValueReadOption, ?> options, Object... args) throws InvalidFieldValueInterpreterException, InvalidFieldValueModifierException
 	{
 		final String value;
+		final int remaining = buf.getAvailableBytes();
 		try
 		{
 			value = readValue(buf);
@@ -77,7 +78,7 @@ public abstract class AbstractStringFieldElement extends FieldElement<StringFiel
 		{
 			if (isOptional())
 				return null;
-			throw e;
+			throw new CompositeReadBufferUnderflowException(e, remaining);
 		}
 		
 		final byte[] raw = buf.lastRead();

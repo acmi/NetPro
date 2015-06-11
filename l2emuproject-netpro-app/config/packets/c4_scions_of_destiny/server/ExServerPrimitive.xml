@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_SERVER_PRIMITIVE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Alias" id="ex" /> <!-- Either real name or 'ServerPrimitive_lineX'/'ServerPrimitive_pointX', where X is a natural number -->
+	<branch description="Exact location of the center indicator icon">
+		<dword alias="Center X" />
+		<dword alias="Center Y" />
+		<dword alias="Center Z" />
+	</branch>
+	<branch description="Should only affect simplified primitives">
+		<dword alias="" />
+		<dword alias="" />
+	</branch>
+	<dword alias="Primitive count" id="cnt" />
+	<loop id="cnt">
+		<byte alias="Type" type="primitive.ServerPrimitive" id="type" />
+		<branch id="ex" condition="primitive.ExtendedPrimitive">
+			<string alias="Label" />
+			<dword alias="Red" />
+			<dword alias="Green" />
+			<dword alias="Blue" />
+			<dword alias="Alpha" /> <!-- Despite this, on the client side this merely controls whether to show (!= 0) or hide (= 0) the label -->
+		</branch>
+		<branch id="type" condition="primitive.Point">
+			<dword alias="Location X" />
+			<dword alias="Location Y" />
+			<dword alias="Location Z" />
+		</branch>
+		<branch id="type" condition="primitive.LineSegment">
+			<dword alias="Start X" />
+			<dword alias="Start Y" />
+			<dword alias="Start Z" />
+			<dword alias="End X" />
+			<dword alias="End Y" />
+			<dword alias="End Z" />
+		</branch>
+	</loop>
+</packet>

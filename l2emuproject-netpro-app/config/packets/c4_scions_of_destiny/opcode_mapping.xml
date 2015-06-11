@@ -40,7 +40,7 @@
 		<packet opcodePrefix="FE 21 00" id="323" />
 		<packet opcodePrefix="FE 22 00" id="324" />
 		<packet opcodePrefix="FE 23 00" id="325" />
-		<packet opcodePrefix="FE 24 00" id="326" />
+		<packet opcodePrefix="FE 24 00" id="SM_EX_SERVER_PRIMITIVE" />
 		<packet opcodePrefix="FE 25 00" id="327" />
 		<packet opcodePrefix="FE 26 00" id="328" />
 		<packet opcodePrefix="FE 27 00" id="329" />

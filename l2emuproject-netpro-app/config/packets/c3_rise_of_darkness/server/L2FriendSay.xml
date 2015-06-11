@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_L2_FRIEND_SAY" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Delivery failure reason" type="ImmutableSystemMessage" /> <!-- 620 is the only known handled ID, will show 'You have been blocked from chatting with this contact' -->
+	<string alias="Recipient" />
+	<string alias="Talker" />
+	<string alias="Message" />
+</packet>

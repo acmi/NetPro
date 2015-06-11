@@ -49,7 +49,7 @@
 		<packet opcodePrefix="FE 2A 00" id="332" />
 		<packet opcodePrefix="FE 2B 00" id="333" />
 		<packet opcodePrefix="FE 2C 00" id="334" />
-		<packet opcodePrefix="FE 2D 00" id="335" />
+		<packet opcodePrefix="FE 2D 00" id="SM_EX_MAIL_ARRIVED" />
 		<packet opcodePrefix="FE 2E 00" id="SM_EX_STORAGE_MAX_COUNT" />
 		<packet opcodePrefix="FE 2F 00" id="308" />
 		<packet opcodePrefix="FE 30 00" id="337" />

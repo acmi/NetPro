@@ -97,9 +97,9 @@
 		<packet opcodePrefix="66" id="CM_REQ_PLEDGE_EXTENDED_INFO" />
 		<packet opcodePrefix="67" id="CM_REQ_PLEDGE_CREST" />
 		<packet opcodePrefix="6A" id="CM_REQ_FRIEND_INFO_LIST" />
-		<packet opcodePrefix="6B" id="180" />
+		<packet opcodePrefix="6B" id="CM_REQ_SEND_L2_FRIEND_SAY" />
 		<packet opcodePrefix="6C" id="CM_REQ_OPEN_MINIMAP" />
-		<packet opcodePrefix="6D" id="182" />
+		<packet opcodePrefix="6D" id="CM_REQ_SEND_MSN_CHAT_LOG" />
 		<packet opcodePrefix="6E" id="184" />
 		<packet opcodePrefix="6F" id="CM_REQ_HENNA_EQUIP" />
 		<packet opcodePrefix="70" id="CM_REQ_HENNA_UNEQUIP_LIST" />
@@ -345,7 +345,7 @@
 		<packet opcodePrefix="75" id="SM_L2_FRIEND_LIST" />
 		<packet opcodePrefix="76" id="SM_L2_FRIEND" />
 		<packet opcodePrefix="77" id="SM_L2_FRIEND_STATUS" />
-		<packet opcodePrefix="78" id="285" />
+		<packet opcodePrefix="78" id="SM_L2_FRIEND_SAY" />
 		<packet opcodePrefix="79" id="SM_VALIDATE_LOCATION" />
 		<packet opcodePrefix="7A" id="SM_START_ROTATING" />
 		<packet opcodePrefix="7B" id="SM_SHOW_BOARD" />
@@ -514,7 +514,7 @@
 		<packet opcodePrefix="FE 2B 00" id="322" />
 		<packet opcodePrefix="FE 2C 00" id="323" />
 		<packet opcodePrefix="FE 2D 00" id="334" />
-		<packet opcodePrefix="FE 2E 00" id="335" />
+		<packet opcodePrefix="FE 2E 00" id="SM_EX_MAIL_ARRIVED" />
 		<packet opcodePrefix="FE 2F 00" id="SM_EX_STORAGE_MAX_COUNT" />
 		<packet opcodePrefix="FE 30 00" id="308" />
 		<packet opcodePrefix="FE 31 00" id="337" />

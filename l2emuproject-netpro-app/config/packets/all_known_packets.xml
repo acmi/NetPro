@@ -56,8 +56,6 @@
 		<packet id="176" name="RequestConfirmDlg" />
 		<packet id="178" name="RequestSSQStatus" />
 		<packet id="179" name="RequestPetitionVote" />
-		<packet id="180" name="RequestSendL2FriendSay" />
-		<packet id="182" name="RequestSendMsnChatLog" />
 		<packet id="184" name="RequestReload" />
 		<packet id="185" name="RequestOustFromPartyRoom" />
 		<packet id="186" name="RequestDismissPartyRoom" />
@@ -1301,10 +1299,22 @@
 		-->
 		<packet id="CM_REQ_PREVIEW_ITEM" name="RequestPreviewItem" />
 		<!--
+		ASCII "cSS"
+		UNICODE "RequestSendL2FriendSay"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SEND_L2_FRIEND_SAY" name="RequestSendL2FriendSay" />
+		<!--
 		UNICODE "RequestOpenMinimap"
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_OPEN_MINIMAP" name="RequestOpenMinimap" />
+		<!--
+		ASCII "cSSd"
+		UNICODE "RequestSendMsnChatLog"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SEND_MSN_CHAT_LOG" name="RequestSendMsnChatLog" />
 		<!--
 		ASCII "chdd"
 		UNICODE "RequestAutoSoulShot"
@@ -1572,12 +1582,6 @@
 		<packet id="280" name="PetitionVote" />
 		<packet id="281" name="AgitDecoInfo" />
 		<packet id="283" name="FriendPacket" />
-		<packet id="SM_L2_FRIEND_STATUS" name="L2FriendStatus" /> <!-- Before GoD -->
-		<packet id="285" name="L2FriendSay" />
-		<packet id="287" name="ReplyStartPledgeWa" />
-		<packet id="288" name="ReplyStopPledgeWa" />
-		<packet id="289" name="ReplySurrenderPledgeWa" />
-		<packet id="290" name="SetPledgeCres" />
 		<packet id="291" name="ExEventMatchList" />
 		<packet id="292" name="ExEventMatchObserver" />
 		<packet id="293" name="ExEventMatchMessage" />
@@ -1611,7 +1615,6 @@
 		<packet id="332" name="ExOlympiadSpelledInfo" />
 		<packet id="333" name="ExOlympiadMode" />
 		<packet id="334" name="ExOlympiadMatchEnd" />
-		<packet id="335" name="ExMailArrived" />
 		<packet id="337" name="ExMultiPartyCommandChannelInfo" />
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
@@ -1801,7 +1804,6 @@
 		<packet id="526" name="ExNpcInfo" />
 		<packet id="527" name="ExUserInfo" />
 		<packet id="528" name="ExNpcInfoAbnormalVisualEffect" />
-		<packet id="SM_L2_FRIEND" name="L2Friend" /> <!-- Before GoD -->
 		<packet id="530" name="ExSummonInfo" />
 		<packet id="531" name="ExNpcInfoState" />
 		<packet id="532" name="Dummy_FF" />
@@ -3196,6 +3198,30 @@
 		-->
 		<packet id="SM_SSQ_INFO" name="SSQInfo" />
 		<!--
+		ASCII "dSddddS"
+		UNICODE "L2FriendListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_L2_FRIEND_LIST" name="L2FriendList" />
+		<!--
+		ASCII "ddSdd"
+		UNICODE "L2FriendPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_L2_FRIEND" name="L2Friend" />
+		<!--
+		ASCII "dSd"
+		UNICODE "L2FriendStatusPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_L2_FRIEND_STATUS" name="L2FriendStatus" />
+		<!--
+		ASCII "dSSS"
+		UNICODE "L2FriendSayPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_L2_FRIEND_SAY" name="L2FriendSay" />
+		<!--
 		ASCII "dddf"
 		UNICODE "ExRegenMaxPacket"
 		UNICODE "(Receive)%s"
@@ -3272,6 +3298,11 @@
 		-->
 		<packet id="SM_EX_SERVER_PRIMITIVE" name="ExServerPrimitive" />
 		<!--
+		UNICODE "ExMailArrivedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_MAIL_ARRIVED" name="ExMailArrived" />
+		<!--
 		ASCII "ddddddddd"
 		UNICODE "ExStorageMaxCountPacket"
 		UNICODE "(Receive)%s"
@@ -3344,8 +3375,5 @@
 		<packet id="SM_RECEIVE_VIP_BOT_CAPTCHA_IMAGE" name="ReceiveVipBotCaptchaImage" />
 		<!-- UNICODE "ReceiveVipBotCaptchaAnswerResult" -->
 		<packet id="SM_RECEIVE_VIP_BOT_CAPTCHA_ANSWER_RESULT" name="ReceiveVipBotCaptchaAnswerResult" />
-		
-		<!-- Packets without handlers and/or packets with named IDs! -->
-		<packet id="SM_L2_FRIEND_LIST" name="L2FriendList" />
 	</server>
 </packets>

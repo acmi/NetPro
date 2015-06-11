@@ -6,9 +6,9 @@
 		<packet opcodePrefix="C7" id="178" />
 		<packet opcodePrefix="C8" id="179" />
 		<packet opcodePrefix="CA" id="175" />
-		<packet opcodePrefix="CC" id="180" />
+		<packet opcodePrefix="CC" id="CM_REQ_SEND_L2_FRIEND_SAY" />
 		<packet opcodePrefix="CD" id="CM_REQ_OPEN_MINIMAP" />
-		<packet opcodePrefix="CE" id="182" />
+		<packet opcodePrefix="CE" id="CM_REQ_SEND_MSN_CHAT_LOG" />
 	</client>
 	<server>
 		<packet opcodePrefix="EC" id="271" />
@@ -26,9 +26,9 @@
 		<packet opcodePrefix="F8" id="SM_SSQ_INFO" />
 		<packet opcodePrefix="F9" id="269" />
 		<packet opcodePrefix="FA" id="SM_L2_FRIEND_LIST" />
-		<packet opcodePrefix="FB" id="283" />
+		<packet opcodePrefix="FB" id="SM_L2_FRIEND" />
 		<packet opcodePrefix="FC" id="SM_L2_FRIEND_STATUS" />
-		<packet opcodePrefix="FD" id="285" />
+		<packet opcodePrefix="FD" id="SM_L2_FRIEND_SAY" />
 		<packet opcodePrefix="FE 01 00" id="SM_EX_REGEN_MAX" />
 	</server>
 </mapping>

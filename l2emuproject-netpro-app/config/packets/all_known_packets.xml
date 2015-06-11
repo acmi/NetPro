@@ -60,18 +60,14 @@
 		<packet id="185" name="RequestOustFromPartyRoom" />
 		<packet id="186" name="RequestDismissPartyRoom" />
 		<packet id="187" name="RequestWithdrawPartyRoom" />
-		<packet id="188" name="RequestHandOverPartyMaster" />
 		<packet id="192" name="RequestProcureCropList" />
 		<packet id="193" name="RequestSetSeed" />
 		<packet id="194" name="RequestSetCrop" />
-		<packet id="195" name="RequestWriteHeroWords" />
 		<packet id="196" name="RequestExAskJoinMPCC" />
 		<packet id="197" name="RequestExAcceptJoinMPCC" />
 		<packet id="198" name="RequestExOustFromMPCC" />
 		<packet id="199" name="RequestExPledgeCrestLarge" />
 		<packet id="200" name="RequestExSetPledgeCrestLarge" />
-		<packet id="201" name="RequestOlympiadObserverEnd" />
-		<packet id="202" name="RequestOlympiadMatchList" />
 		<packet id="203" name="RequestAskJoinPartyRoom" />
 		<packet id="204" name="RequestAnswerJoinPartyRoom" />
 		<packet id="205" name="RequestListPartyMatchingWaitingRoom" />
@@ -1316,6 +1312,12 @@
 		-->
 		<packet id="CM_REQ_SEND_MSN_CHAT_LOG" name="RequestSendMsnChatLog" />
 		<!--
+		ASCII "chS"
+		UNICODE "RequestHandOverPartyMaster"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_HAND_OVER_PARTY_MASTER" name="RequestHandOverPartyMaster" />
+		<!--
 		ASCII "chdd"
 		UNICODE "RequestAutoSoulShot"
 		UNICODE "(Send)%s"
@@ -1339,6 +1341,24 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_MANOR_LIST" name="RequestManorList" />
+		<!--
+		ASCII "chS"
+		UNICODE "RequestWriteHeroWords"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_WRITE_HERO_WORDS" name="RequestWriteHeroWords" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestOlympiadObserverEnd"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OLYMPIAD_OBSERVER_END" name="RequestOlympiadObserverEnd" />
+		<!--
+		ASCII "chd"
+		UNICODE "RequestOlympiadMatchList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OLYMPIAD_MATCH_LIST" name="RequestOlympiadMatchList" />
 		
 		<!--
 		ASCII "chcdd"

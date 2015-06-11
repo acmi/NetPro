@@ -33,6 +33,7 @@ import net.l2emuproject.proxy.network.meta.condition.StringCondition;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet.OpcodeOwner;
+import net.l2emuproject.proxy.network.meta.exception.CompositeReadBufferUnderflowException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueConditionException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueModifierException;
@@ -94,7 +95,7 @@ public final class PacketTemplate implements IPacketTemplate, Comparable<OpcodeO
 	}
 	
 	/**
-	 * Creates a packet template without name and structure. 
+	 * Creates a packet template without name and structure.
 	 * 
 	 * @param prefix raw opcode array (allowed to be truncated)
 	 */
@@ -147,7 +148,7 @@ public final class PacketTemplate implements IPacketTemplate, Comparable<OpcodeO
 		}
 		catch (BufferUnderflowException e)
 		{
-			final int remaining = buffer.getAvailableBytes();
+			final int remaining = e instanceof CompositeReadBufferUnderflowException ? ((CompositeReadBufferUnderflowException)e).getRemainingBytesBeforeRead() : buffer.getAvailableBytes();
 			try
 			{
 				visitor.onAbruptTermination(e, remaining);
@@ -191,7 +192,8 @@ public final class PacketTemplate implements IPacketTemplate, Comparable<OpcodeO
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static final <V extends FieldValue> void visitSingleElement(PacketStructureElement element, PacketStructureElementVisitor visitor, ByteBuffer body, MMOBuffer buffer, Map<FieldValueReadOption, ?> options, Map<String, FieldValue> fieldID2Value)
+	private static final <V extends FieldValue> void visitSingleElement(PacketStructureElement element, PacketStructureElementVisitor visitor, ByteBuffer body, MMOBuffer buffer,
+			Map<FieldValueReadOption, ?> options, Map<String, FieldValue> fieldID2Value)
 	{
 		if (element instanceof BranchElement)
 		{

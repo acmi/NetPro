@@ -395,7 +395,7 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 				_packetBuilder.appendNewline("<br /><center><strong>EXPECTED MORE DATA</strong><br />");
 				_packetBuilder.appendNewline("(according to packet definition)</center><br />");
 				if (remainingBytes > 0)
-					_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet, body.position(), " "));
+					_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet, body.position() - (remainingBytes - body.remaining()), " "));
 			}
 			
 			@Override

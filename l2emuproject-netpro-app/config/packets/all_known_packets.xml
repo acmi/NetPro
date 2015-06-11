@@ -1603,7 +1603,6 @@
 		<packet id="323" name="ExShowSellCropList" />
 		<packet id="324" name="ExShowProcureCropDetail" />
 		<packet id="325" name="ExHeroList" />
-		<packet id="326" name="ExServerPrimitive" />
 		<packet id="327" name="ExOpenMPCC" />
 		<packet id="328" name="ExCloseMPCC" />
 		<packet id="329" name="ExAskJoinMPCC" />
@@ -3262,6 +3261,16 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_SEND_MANOR_LIST" name="ExSendManorList" />
+		<!--
+		ASCII "Sdddddd"
+		ASCII "Sddddddd"
+		ASCII "Sdddd"
+		ASCII "ddd"
+		ASCII "ddd"
+		UNICODE "ExServerPrimitivePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SERVER_PRIMITIVE" name="ExServerPrimitive" />
 		<!--
 		ASCII "ddddddddd"
 		UNICODE "ExStorageMaxCountPacket"

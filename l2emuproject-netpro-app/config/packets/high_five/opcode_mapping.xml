@@ -22,7 +22,7 @@
 		<packet opcodePrefix="D0 85 00" id="343" />
 		<packet opcodePrefix="D0 86 00" id="344" />
 		<packet opcodePrefix="D0 87 00" id="345" />
-		<packet opcodePrefix="D0 88 00" id="202" />
+		<packet opcodePrefix="D0 88 00" id="CM_REQ_OLYMPIAD_MATCH_LIST" />
 		<packet opcodePrefix="D0 89 00" id="288" />
 		<packet opcodePrefix="D0 8A 00" id="289" />
 		<packet opcodePrefix="D0 8B 00" id="290" />

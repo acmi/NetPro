@@ -5,7 +5,7 @@
 		<packet opcodePrefix="D0 01 00" id="185" />
 		<packet opcodePrefix="D0 02 00" id="186" />
 		<packet opcodePrefix="D0 03 00" id="187" />
-		<packet opcodePrefix="D0 04 00" id="188" />
+		<packet opcodePrefix="D0 04 00" id="CM_REQ_HAND_OVER_PARTY_MASTER" />
 		<packet opcodePrefix="D0 05 00" id="CM_REQ_AUTO_SOUL_SHOT" />
 		<packet opcodePrefix="D0 06 00" id="CM_REQ_EX_ENCHANT_SKILL_INFO" />
 		<packet opcodePrefix="D0 07 00" id="CM_REQ_EX_ENCHANT_SKILL" />
@@ -13,14 +13,14 @@
 		<packet opcodePrefix="D0 09 00" id="192" />
 		<packet opcodePrefix="D0 0A 00" id="193" />
 		<packet opcodePrefix="D0 0B 00" id="194" />
-		<packet opcodePrefix="D0 0C 00" id="195" />
+		<packet opcodePrefix="D0 0C 00" id="CM_REQ_WRITE_HERO_WORDS" />
 		<packet opcodePrefix="D0 0D 00" id="196" />
 		<packet opcodePrefix="D0 0E 00" id="197" />
 		<packet opcodePrefix="D0 0F 00" id="198" />
 		<packet opcodePrefix="D0 10 00" id="199" />
 		<packet opcodePrefix="D0 11 00" id="200" />
-		<packet opcodePrefix="D0 12 00" id="201" />
-		<packet opcodePrefix="D0 13 00" id="202" />
+		<packet opcodePrefix="D0 12 00" id="CM_REQ_OLYMPIAD_OBSERVER_END" />
+		<packet opcodePrefix="D0 13 00" id="CM_REQ_OLYMPIAD_MATCH_LIST" />
 	</client>
 	<server>
 		<packet opcodePrefix="FE 13 00" id="SM_EX_FISHING_START" />

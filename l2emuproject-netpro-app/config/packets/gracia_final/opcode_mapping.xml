@@ -2,7 +2,7 @@
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
 		<packet opcodePrefix="D0 2D 00" id="219" />
-		<packet opcodePrefix="D0 2E 00" id="202" />
+		<packet opcodePrefix="D0 2E 00" id="CM_REQ_OLYMPIAD_MATCH_LIST" />
 		<packet opcodePrefix="D0 2F 00" id="203" />
 		<packet opcodePrefix="D0 30 00" id="204" />
 		<packet opcodePrefix="D0 31 00" id="205" />

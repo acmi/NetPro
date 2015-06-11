@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Additional DWORD, which is typically 0 -->
 <!-- Could not find this packet in a large part of HF logs (Oly-related); perhaps the packet is no longer in use? Easily reproduced in GF (without the DWORD) -->
-<packet id="202" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="CM_REQ_OLYMPIAD_MATCH_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="??? 0" />
 </packet>

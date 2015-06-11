@@ -9,6 +9,7 @@
 		<packet opcodePrefix="6F" id="CM_REQ_LIST_PARTY_WATING" />
 		<packet opcodePrefix="70" id="CM_REQ_MANAGE_PARTY_ROOM" />
 		<packet opcodePrefix="71" id="CM_REQ_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="CF 04 00" id="CM_REQ_HAND_OVER_PARTY_MASTER" />
 		<packet opcodePrefix="CF 05 00" id="CM_REQ_AUTO_SOUL_SHOT" />
 	</client>
 	<server>

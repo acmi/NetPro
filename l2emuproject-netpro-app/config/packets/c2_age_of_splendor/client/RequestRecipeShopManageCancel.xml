@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This works equivalently to the way old private store cancel packet worked. However, I have not succeeded in tricking the client into sending this one. -->
+<!-- Likely to be discontinued before 478 (similarly how the equivalent PS packet was). Servers will still handle this packet. -->
+
+<!-- Trigger packet -->
+<packet id="CM_REQ_RECIPE_SHOP_MANAGE_CANCEL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd" />

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a DWORD field to distinguish between general and dwarven crafting -->
+<packet id="SM_RECIPE_SHOP_MANAGE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="RecipeBook" /> <!-- NEW -->
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Recipe count" id="rec_cnt" />
+	<loop id="rec_cnt">
+		<dword alias="Recipe" type="Recipe" />
+		<dword alias="Can create" type="YesOrNo" />
+	</loop>
+	<dword alias="Offer count" id="man_cnt" />
+	<loop id="man_cnt">
+		<dword alias="Recipe" type="Recipe" />
+		<dword alias="Can create" type="YesOrNo" />
+		<dword alias="Price" />
+	</loop>
+</packet>

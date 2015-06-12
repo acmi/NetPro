@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Adena amount fields are now QWORDs -->
+<packet id="SM_RECIPE_SHOP_SELL_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Manufacturer's OID" type="ObjectID" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<qword alias="Viewer's adena" /> <!-- NEW -->
+	<dword alias="Manufacturable count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Recipe" type="Recipe" />
+		<dword alias="Can create" type="YesOrNo" />
+		<qword alias="Price" /> <!-- NEW -->
+	</loop>
+</packet>

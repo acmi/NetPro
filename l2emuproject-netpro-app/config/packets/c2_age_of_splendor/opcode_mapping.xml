@@ -7,14 +7,14 @@
 		<packet opcodePrefix="AD" id="CM_REQ_RECIPE_ITEM_DELETE" />
 		<packet opcodePrefix="AE" id="CM_REQ_RECIPE_ITEM_MAKE_INFO" />
 		<packet opcodePrefix="AF" id="CM_REQ_RECIPE_ITEM_MAKE_SELF" />
-		<packet opcodePrefix="B0" id="154" />
-		<packet opcodePrefix="B1" id="155" />
-		<packet opcodePrefix="B2" id="156" />
-		<packet opcodePrefix="B3" id="157" />
-		<packet opcodePrefix="B4" id="158" />
-		<packet opcodePrefix="B5" id="159" />
-		<packet opcodePrefix="B6" id="160" />
-		<packet opcodePrefix="B7" id="161" />
+		<packet opcodePrefix="B0" id="CM_REQ_RECIPE_SHOP_MANAGE_LIST" />
+		<packet opcodePrefix="B1" id="CM_REQ_RECIPE_SHOP_MESSAGE_SET" />
+		<packet opcodePrefix="B2" id="CM_REQ_RECIPE_SHOP_LIST_SET" />
+		<packet opcodePrefix="B3" id="CM_REQ_RECIPE_SHOP_MANAGE_QUIT" />
+		<packet opcodePrefix="B4" id="CM_REQ_RECIPE_SHOP_MANAGE_CANCEL" />
+		<packet opcodePrefix="B5" id="CM_REQ_RECIPE_SHOP_MAKE_INFO" />
+		<packet opcodePrefix="B6" id="CM_REQ_RECIPE_SHOP_MAKE_DO" />
+		<packet opcodePrefix="B7" id="CM_REQ_RECIPE_SHOP_SELL_LIST" />
 		<packet opcodePrefix="B8" id="CM_REQ_OBSERVER_END" />
 		<packet opcodePrefix="B9" id="CM_VOTE_SOCIALITY" />
 		<packet opcodePrefix="BA" id="CM_REQ_HENNA_ITEM_LIST" />
@@ -241,10 +241,10 @@
 		<packet opcodePrefix="D5" id="SM_SNOOP" />
 		<packet opcodePrefix="D6" id="SM_RECIPE_BOOK_ITEM_LIST" />
 		<packet opcodePrefix="D7" id="SM_RECIPE_ITEM_MAKE_INFO" />
-		<packet opcodePrefix="D8" id="247" />
-		<packet opcodePrefix="D9" id="248" />
-		<packet opcodePrefix="DA" id="249" />
-		<packet opcodePrefix="DB" id="250" />
+		<packet opcodePrefix="D8" id="SM_RECIPE_SHOP_MANAGE_LIST" />
+		<packet opcodePrefix="D9" id="SM_RECIPE_SHOP_SELL_LIST" />
+		<packet opcodePrefix="DA" id="SM_RECIPE_SHOP_ITEM_INFO" />
+		<packet opcodePrefix="DB" id="SM_RECIPE_SHOP_MSG" />
 		<packet opcodePrefix="DC" id="SM_SHOW_CALC" />
 		<packet opcodePrefix="DD" id="252" />
 		<packet opcodePrefix="DE" id="SM_SHOW_TOWN_MAP" />

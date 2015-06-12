@@ -41,14 +41,6 @@
 		<packet id="128" name="RequestSEKCustom" />
 		<packet id="129" name="RequestRide" />
 		<packet id="130" name="RequestReviveReply" />
-		<packet id="154" name="RequestRecipeShopManageList" />
-		<packet id="155" name="RequestRecipeShopMessageSet" />
-		<packet id="156" name="RequestRecipeShopListSet" />
-		<packet id="157" name="RequestRecipeShopManageQuit" />
-		<packet id="158" name="RequestRecipeShopManageCancel" />
-		<packet id="159" name="RequestRecipeShopMakeInfo" />
-		<packet id="160" name="RequestRecipeShopMakeItem" />
-		<packet id="161" name="RequestRecipeShopSellList" />
 		<packet id="170" name="RequestPledgePower" />
 		<packet id="173" name="RequestBuyProcure" />
 		<packet id="174" name="RequestBuySeed" />
@@ -1228,6 +1220,51 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_RECIPE_ITEM_MAKE_SELF" name="RequestRecipeItemMakeSelf" />
+		<!-- UNICODE "(Send)RequestRecipeShopManageList" -->
+		<packet id="CM_REQ_RECIPE_SHOP_MANAGE_LIST" name="RequestRecipeShopManageList" />
+		<!--
+		ASCII "cS"
+		UNICODE "RequestRecipeShopMessageSet"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_SHOP_MESSAGE_SET" name="RequestRecipeShopMessageSet" />
+		<!--
+		ASCII "dQ"
+		ASCII "cdb"
+		UNICODE "RequestRecipeShopListSet"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_SHOP_LIST_SET" name="RequestRecipeShopListSet" />
+		<!--
+		UNICODE "RequestRecipeShopManageQuit"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_SHOP_MANAGE_QUIT" name="RequestRecipeShopManageQuit" />
+		<!--
+		UNICODE "RequestRecipeShopManageCancel"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_SHOP_MANAGE_CANCEL" name="RequestRecipeShopManageCancel" />
+		<!--
+		ASCII "cdd"
+		UNICODE "RequestRecipeShopMakeInfo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_SHOP_MAKE_INFO" name="RequestRecipeShopMakeInfo" />
+		<!--
+		ASCII "cddQddQ"
+		ASCII "dQ"
+		ASCII "cddQdb"
+		UNICODE "RequestRecipeShopMakeDo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_SHOP_MAKE_DO" name="RequestRecipeShopMakeDo" />
+		<!--
+		ASCII "cd"
+		UNICODE "RequestRecipeShopSellList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_SHOP_SELL_LIST" name="RequestRecipeShopSellList" />
 		<!--
 		UNICODE "RequestObserverEndPacket"
 		UNICODE "(Send)%s"
@@ -1586,10 +1623,6 @@
 		<packet id="239" name="Dummy ED" />
 		<packet id="240" name="ManagePledgePower" />
 		<packet id="241" name="Dummy_70" />
-		<packet id="247" name="RecipeShopManageList" />
-		<packet id="248" name="RecipeShopSellList" />
-		<packet id="249" name="RecipeShopItemInfo" />
-		<packet id="250" name="RecipeShopMsg" />
 		<packet id="252" name="MonRaceInfo" />
 		<packet id="263" name="BuyListSeed" />
 		<packet id="264" name="SellListProcure" />
@@ -3080,6 +3113,33 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_RECIPE_ITEM_MAKE_INFO" name="RecipeItemMakeInfo" />
+		<!--
+		ASCII "dddd"
+		ASCII "dd"
+		ASCII "ddQ"
+		UNICODE "RecipeShopManageListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIPE_SHOP_MANAGE_LIST" name="RecipeShopManageList" />
+		<!--
+		ASCII "dddQd"
+		ASCII "ddQ"
+		UNICODE "RecipeShopSellListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIPE_SHOP_SELL_LIST" name="RecipeShopSellList" />
+		<!--
+		ASCII "dddddQcQ"
+		UNICODE "RecipeShopItemInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIPE_SHOP_ITEM_INFO" name="RecipeShopItemInfo" />
+		<!--
+		ASCII "dS"
+		UNICODE "RecipeShopMsgPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_RECIPE_SHOP_MSG" name="RecipeShopMsg" />
 		<!--
 		UNICODE "ShowCalcPacket"
 		UNICODE "(Receive)%s"

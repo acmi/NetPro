@@ -6,6 +6,6 @@
 	<dword alias="Available recipes" id="cnt" />
 	<loop id="cnt">
 		<dword alias="Recipe" type="Recipe" />
-		<dword alias="1" />
+		<dword alias="Can create" type="YesOrNo" />
 	</loop>
 </packet>

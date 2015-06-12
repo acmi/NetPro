@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file was automatically generated when converting from the legacy definition format. -->
-<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
-<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<!-- Added a DWORD indicating which speed to apply at the end of the packet. -->
 <packet id="SM_CHANGE_MOVE_TYPE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Actor OID" type="ObjectID">
 		<scriptAlias id="OIL_OBJECT_ID" />
@@ -9,5 +7,7 @@
 	<dword alias="Movement mode" type="MoveType">
 		<scriptAlias id="OIL_OBJECT_MOVE_MODE" />
 	</dword>
-	<dword alias="0" />
+
+	<!-- NEW -->
+	<dword alias="Swimming" type="YesOrNo" />
 </packet>

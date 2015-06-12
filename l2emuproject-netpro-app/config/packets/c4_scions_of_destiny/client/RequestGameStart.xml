@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- One unknown WORD and 3 DWORDs added at the end of the packet -->
+<packet id="CM_REQ_GAME_START" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Character index" />
+
+	<!-- NEW -->
+	<word alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+	<dword alias="0" />
+</packet>

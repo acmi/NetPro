@@ -18,15 +18,15 @@ package interpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets the given byte/word/dword as a NPC's subtype.
+ * Interprets the given value as a movement environment.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class NpcSubtype extends ScriptedZeroBasedIntegerIdInterpreter
+public final class Environment extends ScriptedZeroBasedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
-	public NpcSubtype()
+	public Environment()
 	{
-		super("NPC", "Servitor", "Flyer");
+		super("Ground", "Water", "Air");
 	}
 }

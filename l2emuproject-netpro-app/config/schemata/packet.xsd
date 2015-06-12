@@ -136,6 +136,7 @@
 			<xs:enumeration value="ElementType" />
 			<xs:enumeration value="EnchantEffect" />
 			<xs:enumeration value="EnchantResult" />
+			<xs:enumeration value="Environment" />
 			<xs:enumeration value="Event" />
 			<xs:enumeration value="ExNpcInfoState" />
 			<xs:enumeration value="Festival" />
@@ -193,7 +194,6 @@
 			<xs:enumeration value="NevitHuntingProgress" />
 			<xs:enumeration value="Npc" />
 			<xs:enumeration value="NpcState" />
-			<xs:enumeration value="NpcSubtype" />
 			<xs:enumeration value="NpcTitleColor" />
 			<xs:enumeration value="NpcType" /> <!-- CLEO -->
 			<xs:enumeration value="ObjectID" />

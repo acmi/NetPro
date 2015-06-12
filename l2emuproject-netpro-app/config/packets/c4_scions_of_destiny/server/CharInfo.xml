@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Added alliance ID & crest ID DWORDs -->
-<!-- Removed pledge leader and current pledge war DWORDs -->
+<!-- Added large pledge crest DWORD, noble and hero CHARs (bytes), fishing mode CHAR (byte) and bait location DWORDs before the name color DWORD -->
 <packet id="SM_CHAR_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Location X">
 		<scriptAlias id="OIL_OBJECT_X_SERVER" />
@@ -21,7 +20,7 @@
 	</string>
 	<dword alias="Race" type="Race" />
 	<dword alias="Sex" type="Sex" />
-	<dword alias="Class" type="CharacterClass" />
+	<dword alias="Visible class" type="CharacterClass" />
 
 	<dword alias="Underwear" type="Item" />
 	<dword alias="Headgear" type="Item" />
@@ -33,6 +32,7 @@
 	<dword alias="Boots" type="Item" />
 	<dword alias="Cloak" type="Item" />
 	<dword alias="Weapon / Two Handed" type="Item" />
+	<dword alias="Hair Accessory" type="Item" />
 
 	<dword alias="In PvP" type="YesOrNo" />
 	<dword alias="Karma" />
@@ -65,8 +65,6 @@
 	<dword alias="Pledge ID" type="Pledge">
 		<scriptAlias id="PIC_PLEDGE_ID" />
 	</dword>
-
-	<!-- NEW -->
 	<dword alias="Pledge crest ID" type="PledgeCrest">
 		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
 	</dword>
@@ -76,7 +74,6 @@
 	<dword alias="Alliance crest ID" type="AllianceCrest">
 		<scriptAlias id="AIC_ALLY_CREST_ID" />
 	</dword>
-
 	<dword alias="Relations" type="RelationTypes" />
 
 	<byte alias="Waiting mode" type="WaitType" />
@@ -91,4 +88,23 @@
 		<word alias="Cubic" type="Cubic" />
 	</loop>
 	<byte alias="Looking for party" type="YesOrNo" />
+	<dword alias="Abnormal effect" type="ave.AbnormalVisualEffectMask" />
+	<byte alias="Environment" type="Environment" />
+	<word alias="Evaluation score" />
+	<dword alias="Mount" type="Npc" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="0" />
+	<byte alias="Weapon enchant glow" type="EnchantEffect" />
+	<byte alias="Event team" type="DuelTeam" />
+
+	<!-- NEW -->
+	<dword alias="Pledge insignia ID" />
+	<byte alias="Noble" type="YesOrNo" />
+	<byte alias="Hero" type="YesOrNo" />
+	<byte alias="Fishing" type="YesOrNo" />
+	<dword alias="Fishing lure X" />
+	<dword alias="Fishing lure Y" />
+	<dword alias="Fishing lure Z" />
+
+	<dword alias="Name color" type="BGR" />
 </packet>

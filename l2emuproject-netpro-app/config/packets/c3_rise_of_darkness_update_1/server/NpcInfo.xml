@@ -72,7 +72,7 @@
 	<dword alias="Alliance crest ID" type="AllianceCrest">
 		<scriptAlias id="AIC_ALLY_CREST_ID" />
 	</dword>
-	<byte alias="Subtype" type="NpcSubtype" />
+	<byte alias="Environment" type="Environment" />
 
 	<!-- NEW -->
 	<byte alias="Event team" type="DuelTeam" />

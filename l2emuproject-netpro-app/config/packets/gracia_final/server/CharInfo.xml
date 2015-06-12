@@ -99,7 +99,7 @@
 	<dword alias="Casting speed" />
 	<dword alias="Attack speed" />
 
-	<dword alias="0" />
+	<dword alias="War enemy" type="YesOrNo" />
 	<dword alias="0" />
 
 	<dword alias="Running speed (on ground)" />
@@ -150,7 +150,7 @@
 	</loop>
 	<byte alias="Looking for party" type="YesOrNo" />
 	<dword alias="Abnormal effect" type="ave.AbnormalVisualEffectMask" />
-	<byte alias="Flying" type="YesOrNo" /> <!-- 2 if flying; never 1 -->
+	<byte alias="Environment" type="Environment" />
 	<word alias="Evaluation score" />
 	<dword alias="Mount" type="Npc" />
 	<dword alias="Class" type="CharacterClass" />

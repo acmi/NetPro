@@ -39,7 +39,7 @@
 	<dword alias="Casting speed" />
 	<dword alias="Attack speed" />
 
-	<dword alias="Attackable" type="YesOrNo" />
+	<dword alias="War enemy" type="YesOrNo" />
 	<dword alias="0" />
 
 	<dword alias="Running speed (on ground)" />

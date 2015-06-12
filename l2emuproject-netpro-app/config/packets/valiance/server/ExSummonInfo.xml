@@ -56,7 +56,7 @@
 		<branch id="exNI_2" condition="bitmask.Bit5" description="Condition is wrong">
 			<byte alias="1" /> <!-- Identified as 'Show title', even though status = 0 deals with that -->
 			<byte alias="Movement mode" type="MoveType" />
-			<byte alias="Subtype" type="NpcSubtype" /> <!-- Either NPC or flyer only -->
+			<byte alias="Environment" type="Environment" />
 			<byte alias="Flying" type="YesOrNo" />
 			<bytes alias="0">
 				<length>1</length>

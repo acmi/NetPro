@@ -19,11 +19,6 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>net.l2emuproject</groupId>
-			<artifactId>l2emuproject-commons-ui</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>eu.revengineer</groupId>
 			<artifactId>simplejse</artifactId>
 			<version>1.0</version>

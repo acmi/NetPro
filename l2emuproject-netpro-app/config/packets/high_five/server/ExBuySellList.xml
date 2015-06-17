@@ -47,7 +47,7 @@
 			<word alias="Round of lottery" />
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket">
-			<word alias="Lane" />
+			<unsignedWord alias="Lane(s)" type="item.MonsterRaceLane" />
 		</branch>
 
 		<word alias="Equipped" type="YesOrNo" />
@@ -114,7 +114,7 @@
 				<word alias="Round of lottery" />
 			</branch>
 			<branch id="is_ticket" condition="MonsterRaceTicket">
-				<word alias="Lane" />
+				<unsignedWord alias="Lane(s)" type="item.MonsterRaceLane" />
 			</branch>
 
 			<word alias="Equipped" type="YesOrNo" />

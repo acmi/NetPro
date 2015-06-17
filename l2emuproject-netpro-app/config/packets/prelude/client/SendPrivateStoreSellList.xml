@@ -5,7 +5,15 @@
 	<loop id="cnt">
 		<dword alias="Private store slot" />
 		<dword alias="Item" type="Item" id="is_ticket" />
-		<word alias="Enchant level" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- C2 -->
+			<unsignedWord alias="Selected numbers (truncated)" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
+			<word alias="Race number" />
+		</branch>
 		<dword alias="Amount" />
 		<dword alias="Price (single item)" />
 	</loop>

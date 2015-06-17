@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a warehouse type DWORD at the beginning of the packet -->
+<packet id="SM_WARE_HOUSE_DEPOSIT_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Warehouse" type="Warehouse" /> <!-- NEW -->
+	<dword alias="Viewer's adena" />
+	<word alias="Depositable item count" id="cnt" />
+	<loop id="cnt">
+		<word alias="Base item type" type="ItemType1" />
+		<dword alias="Item OID" type="ObjectID" />
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Amount" />
+		<word alias="Main item type" type="ItemType2" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Blessed" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<word alias="Round of lottery" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<unsignedWord alias="Lane(s)" type="item.MonsterRaceLane" />
+		</branch>
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="0" />
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedWord alias="Selected numbers (lower)" type="LottoNumbers" />
+			<word alias="0" />
+			<word alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<word alias="0" />
+			<unsignedWord alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<!-- This injects a fake OID for a better presentation of the associated CM -->
+		<dword alias="Item PK">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+	</loop>
+</packet>

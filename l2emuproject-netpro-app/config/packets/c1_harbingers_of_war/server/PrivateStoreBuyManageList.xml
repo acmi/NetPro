@@ -5,25 +5,57 @@
 	<dword alias="Inventory adena" />
 	<dword alias="Buyable item count" id="inv_cnt" />
 	<loop id="inv_cnt">
-		<dword alias="Item" type="Item">
+		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<word alias="Enchant level" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- C2 -->
+			<unsignedWord alias="Selected numbers (lower)" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
+			<word alias="Race number" />
+		</branch>
 		<dword alias="Amount" />
 		<dword alias="Reference (shop) price" />
-		<word alias="0" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Name exists" type="YesOrNo" /> <!-- C3 -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- C2 -->
+			<word alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
 		<word alias="Main item type" type="ItemType2" />
 	</loop>
 	<dword alias="On sale item count" id="sale_cnt" />
 	<loop id="sale_cnt">
-		<dword alias="Item" type="Item">
+		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<word alias="Enchant level" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- C2 -->
+			<unsignedWord alias="Selected numbers (lower)" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
+			<word alias="Race number" />
+		</branch>
 		<dword alias="Amount" />
 		<dword alias="Reference (shop) price" />
-		<word alias="0" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Name exists" type="YesOrNo" /> <!-- C3 -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- C2 -->
+			<word alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
 		<word alias="Main item type" type="ItemType2" />
 		<dword alias="Price (single item)" />

@@ -28,7 +28,7 @@
 			<word alias="Round of lottery" />
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket">
-			<word alias="Lane" />
+			<unsignedWord alias="Lane(s)" type="item.MonsterRaceLane" />
 		</branch>
 
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />

@@ -32,7 +32,7 @@
 			<unsignedByte alias="Round of lottery" mod="NewLotteryEvent" />
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket">
-			<byte alias="Lane" />
+			<unsignedByte alias="Lane(s)" type="item.MonsterRaceLane" />
 		</branch>
 
 		<word alias="Equipped" type="YesOrNo" />

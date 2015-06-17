@@ -302,6 +302,7 @@
 			<xs:enumeration value="fishing.LureType" />
 			
 			<xs:enumeration value="item.AttributeEnchantResult" />
+			<xs:enumeration value="item.MonsterRaceLane" />
 
 			<xs:enumeration value="party.PartyMatchingAffilation" />
 			<xs:enumeration value="party.PartyMatchingListMode" />

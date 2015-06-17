@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added new WORD to complement extended state: pet name existence for pets, missing lotto numbers for lottery tickets -->
+<packet id="CM_SET_PRIVATE_STORE_BUY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Purchase count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item" type="Item" id="is_ticket" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" /> <!-- NEW -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<dword alias="Selected numbers" type="LottoNumbers" /> <!-- NEW -->
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<word alias="Bet" type="MonsterRaceBetMultiplier" /> <!-- NEW -->
+		</branch>
+		<dword alias="Amount" />
+		<dword alias="Price (single item)" />
+	</loop>
+</packet>

@@ -27,7 +27,7 @@
 			<dword alias="Selected numbers" type="LottoNumbers" />
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket">
-			<word alias="Lane" />
+			<unsignedWord alias="Lane(s)" type="item.MonsterRaceLane" />
 			<word alias="Race number" />
 			<unsignedWord alias="Bet" type="MonsterRaceBetMultiplier" />
 		</branch>
@@ -68,7 +68,7 @@
 			<dword alias="Selected numbers" type="LottoNumbers" />
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket">
-			<word alias="Lane" />
+			<unsignedWord alias="Lane(s)" type="item.MonsterRaceLane" />
 			<word alias="Race number" />
 			<unsignedWord alias="Bet" type="MonsterRaceBetMultiplier" />
 		</branch>

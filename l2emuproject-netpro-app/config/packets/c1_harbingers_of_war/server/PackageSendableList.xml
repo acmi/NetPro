@@ -18,20 +18,20 @@
 			<word alias="Round of lottery" />
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
-			<word alias="Lane" />
+			<unsignedWord alias="Lane(s)" type="item.MonsterRaceLane" />
 		</branch>
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
 		<branch id="is_ticket" condition="GenericItem">
 			<word alias="Enchant level" />
 			<word alias="0" />
-			<word alias="Name exists" type="YesOrNo" />
+			<word alias="Name exists" type="YesOrNo" /> <!-- C3 -->
 		</branch>
-		<branch id="is_ticket" condition="LotteryTicket">
-			<unsignedWord alias="Selected numbers (truncated)" type="LottoNumbers" />
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- C2 -->
+			<unsignedWord alias="Selected numbers (lower)" type="LottoNumbers" />
 			<word alias="0" />
-			<word alias="0" />
+			<word alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
 		</branch>
-		<branch id="is_ticket" condition="MonsterRaceTicket">
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- C2 -->
 			<word alias="Race number" />
 			<word alias="0" />
 			<unsignedWord alias="Bet" type="MonsterRaceBetMultiplier" />

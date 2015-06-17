@@ -32,7 +32,7 @@
 			<byte alias="0" /> <!-- Event number is not specified  -->
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket">
-			<byte alias="Lane" />
+			<unsignedByte alias="Lane(s)" type="item.MonsterRaceLane" />
 		</branch>
 
 		<word alias="Equipped" type="YesOrNo" />

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- All item types now specify extended state, not only enchantables -->
+<packet id="SM_SELL_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Viewer's adena" />
+	<dword alias="Sell request ID" />
+	<word alias="Sellable item count" id="cnt" />
+	<loop id="cnt">
+		<word alias="Base item type" type="ItemType1" />
+		<dword alias="Item OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Amount" />
+		<word alias="Main item type" type="ItemType2" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Blessed" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<word alias="Round of lottery" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<unsignedWord alias="Lane(s)" type="item.MonsterRaceLane" />
+		</branch>
+
+		<!-- NEW -->
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="0" />
+			<word alias="Name exists" type="YesOrNo" /> <!-- C3 -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedWord alias="Selected numbers (lower)" type="LottoNumbers" />
+			<word alias="0" />
+			<word alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<word alias="0" />
+			<unsignedWord alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<dword alias="Sell price" />
+	</loop>
+</packet>

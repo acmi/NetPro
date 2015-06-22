@@ -1635,23 +1635,9 @@
 		<packet id="280" name="PetitionVote" />
 		<packet id="281" name="AgitDecoInfo" />
 		<packet id="283" name="FriendPacket" />
-		<packet id="291" name="ExEventMatchList" />
-		<packet id="292" name="ExEventMatchObserver" />
-		<packet id="293" name="ExEventMatchMessage" />
-		<packet id="294" name="ExEventMatchScore" />
-		<packet id="295" name="ExEventMatchTeamInfo" />
-		<packet id="296" name="ExEventMatchCreate" />
-		<packet id="297" name="ExEventMatchUserInfo" />
-		<packet id="298" name="ExColosseumFenceInfo" />
-		<packet id="299" name="ExEventMatchSpelledInfo" />
-		<packet id="300" name="ExEventMatchFirecracker" />
-		<packet id="301" name="ExEventMatchTeamUnlocked" />
-		<packet id="302" name="ExEventMatchGMTest" />
 		<packet id="303" name="ExPartyRoomMember" />
 		<packet id="304" name="ExClosePartyRoom" />
 		<packet id="305" name="ExManagePartyRoomMember" />
-		<packet id="306" name="ExEventMatchLockResult" />
-		<packet id="308" name="ExEventMatchManage" />
 		<packet id="318" name="ExShowSeedInfo" />
 		<packet id="319" name="ExShowCropInfo" />
 		<packet id="320" name="ExShowManorDefaultInfo" />
@@ -3307,12 +3293,89 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_REGEN_MAX" name="ExRegenMax" />
+		<!-- UNICODE "ExEventMatchListPacket" -->
+		<packet id="SM_EX_EVENT_MATCH_LIST" name="ExEventMatchList" />
+		<!--
+		ASCII "dccSS"
+		UNICODE "ExEventMatchObserverPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_OBSERVER" name="ExEventMatchObserver" />
+		<!--
+		ASCII "cS"
+		UNICODE "ExEventMatchMessagePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_MESSAGE" name="ExEventMatchMessage" />
+		<!--
+		ASCII "ddd"
+		UNICODE "ExEventMatchScorePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_SCORE" name="ExEventMatchScore" />
+		<!--
+		ASCII "dcd"
+		ASCII "dSdddddddddd"
+		UNICODE "ExEventMatchTeamInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_TEAM_INFO" name="ExEventMatchTeamInfo" />
+		<!--
+		UNICODE "ExEventMatchCreatePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_CREATE" name="ExEventMatchCreate" />
+		<!--
+		ASCII "dSdddddddd"
+		UNICODE "ExEventMatchUserInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_USER_INFO" name="ExEventMatchUserInfo" />
+		<!--
+		ASCII "ddddddd"
+		UNICODE "ExColosseumFenceInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_COLOSSEUM_FENCE_INFO" name="ExColosseumFenceInfo" />
+		<!--
+		ASCII "ddd"
+		ASCII "dhdh"
+		ASCII "dhhdh"
+		UNICODE "ExEventMatchSpelledInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_SPELLED_INFO" name="ExEventMatchSpelledInfo" />
+		<!--
+		UNICODE "ExEventMatchFirecrackerPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_FIRECRACKER" name="ExEventMatchFirecracker" />
+		<!--
+		ASCII "dc"
+		UNICODE "ExEventMatchTeamUnlockedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_TEAM_UNLOCKED" name="ExEventMatchTeamUnlocked" />
+		<!--
+		UNICODE "ExEventMatchGMTestPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_GM_TEST" name="ExEventMatchGMTest" />
+		<!-- UNICODE "ExEventMatchLockResult" -->
+		<packet id="306" name="ExEventMatchLockResult" />
 		<!--
 		ASCII "dd"
 		UNICODE "ExAutoSoulShot"
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_AUTO_SOUL_SHOT" name="ExAutoSoulShot" />
+		<!--
+		ASCII "dccScScd"
+		ASCII "ccdSdd"
+		UNICODE "ExEventMatchManagePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_MANAGE" name="ExEventMatchManage" />
 		<!--
 		ASCII "dcdddc"
 		UNICODE "ExFishingStartPacket"

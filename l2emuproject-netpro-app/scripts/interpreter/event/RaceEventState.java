@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.event;
 
 import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets the given byte/word/dword as an event match message.
- * 
- * @author savormix
+ * @author _dev_
  */
-public class MatchMessage extends ScriptedZeroBasedIntegerIdInterpreter
+public final class RaceEventState extends ScriptedZeroBasedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
-	public MatchMessage()
+	public RaceEventState()
 	{
-		super("Custom", "Finish", "Start", "Game over", "1", "2", "3", "4", "5");
+		super(new InterpreterMetadata(1), "Not in progress", "Started", "Paused");
 	}
 }

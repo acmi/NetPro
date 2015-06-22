@@ -294,6 +294,9 @@
 			<xs:enumeration value="equip.ExUserEquipSlot5" />
 			<xs:enumeration value="equip.PaperdollMask" />
 			<xs:enumeration value="equip.PeriodicHennaExpiration" />
+			
+			<xs:enumeration value="event.FenceType" />
+			<xs:enumeration value="event.RaceEventState" />
 
 			<xs:enumeration value="fishing.FishingAction" />
 			<xs:enumeration value="fishing.FishingActionResult" />

@@ -470,21 +470,21 @@
 		<packet opcodePrefix="FB" id="279" />
 		<packet opcodePrefix="FC" id="280" />
 		<packet opcodePrefix="FD" id="281" />
-		<packet opcodePrefix="FE 02 00" id="297" />
-		<packet opcodePrefix="FE 03 00" id="298" />
-		<packet opcodePrefix="FE 04 00" id="299" />
-		<packet opcodePrefix="FE 05 00" id="300" />
-		<packet opcodePrefix="FE 06 00" id="301" />
-		<packet opcodePrefix="FE 07 00" id="302" />
+		<packet opcodePrefix="FE 02 00" id="SM_EX_EVENT_MATCH_USER_INFO" />
+		<packet opcodePrefix="FE 03 00" id="SM_EX_COLOSSEUM_FENCE_INFO" />
+		<packet opcodePrefix="FE 04 00" id="SM_EX_EVENT_MATCH_SPELLED_INFO" />
+		<packet opcodePrefix="FE 05 00" id="SM_EX_EVENT_MATCH_FIRECRACKER" />
+		<packet opcodePrefix="FE 06 00" id="SM_EX_EVENT_MATCH_TEAM_UNLOCKED" />
+		<packet opcodePrefix="FE 07 00" id="SM_EX_EVENT_MATCH_GM_TEST" />
 		<packet opcodePrefix="FE 08 00" id="303" />
 		<packet opcodePrefix="FE 09 00" id="304" />
 		<packet opcodePrefix="FE 0A 00" id="305" />
 		<packet opcodePrefix="FE 0B 00" id="306" />
 		<packet opcodePrefix="FE 0C 00" id="SM_EX_AUTO_SOUL_SHOT" />
-		<packet opcodePrefix="FE 0D 00" id="291" />
-		<packet opcodePrefix="FE 0E 00" id="292" />
-		<packet opcodePrefix="FE 0F 00" id="293" />
-		<packet opcodePrefix="FE 10 00" id="294" />
+		<packet opcodePrefix="FE 0D 00" id="SM_EX_EVENT_MATCH_LIST" />
+		<packet opcodePrefix="FE 0E 00" id="SM_EX_EVENT_MATCH_OBSERVER" />
+		<packet opcodePrefix="FE 0F 00" id="SM_EX_EVENT_MATCH_MESSAGE" />
+		<packet opcodePrefix="FE 10 00" id="SM_EX_EVENT_MATCH_SCORE" />
 		<packet opcodePrefix="FE 11 00" id="SM_EX_SERVER_PRIMITIVE" />
 		<packet opcodePrefix="FE 12 00" id="327" />
 		<packet opcodePrefix="FE 13 00" id="328" />
@@ -496,8 +496,8 @@
 		<packet opcodePrefix="FE 19 00" id="389" />
 		<packet opcodePrefix="FE 1A 00" id="329" />
 		<packet opcodePrefix="FE 1B 00" id="330" />
-		<packet opcodePrefix="FE 1C 00" id="295" />
-		<packet opcodePrefix="FE 1D 00" id="296" />
+		<packet opcodePrefix="FE 1C 00" id="SM_EX_EVENT_MATCH_TEAM_INFO" />
+		<packet opcodePrefix="FE 1D 00" id="SM_EX_EVENT_MATCH_CREATE" />
 		<packet opcodePrefix="FE 1E 00" id="SM_EX_FISHING_START" />
 		<packet opcodePrefix="FE 1F 00" id="SM_EX_FISHING_END" />
 		<packet opcodePrefix="FE 20 00" id="SM_EX_SHOW_QUEST_INFO" />
@@ -516,7 +516,7 @@
 		<packet opcodePrefix="FE 2D 00" id="334" />
 		<packet opcodePrefix="FE 2E 00" id="SM_EX_MAIL_ARRIVED" />
 		<packet opcodePrefix="FE 2F 00" id="SM_EX_STORAGE_MAX_COUNT" />
-		<packet opcodePrefix="FE 30 00" id="308" />
+		<packet opcodePrefix="FE 30 00" id="SM_EX_EVENT_MATCH_MANAGE" />
 		<packet opcodePrefix="FE 31 00" id="337" />
 		<packet opcodePrefix="FE 32 00" id="338" />
 		<packet opcodePrefix="FE 33 00" id="339" />

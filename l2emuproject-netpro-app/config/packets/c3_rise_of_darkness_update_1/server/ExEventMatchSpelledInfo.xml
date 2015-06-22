@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<packet id="SM_PARTY_SPELLED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Member type" type="PartyMemberType" />
+<packet id="SM_EX_EVENT_MATCH_SPELLED_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Event ID" />
 	<dword alias="Member OID" type="ObjectID" />
 	<dword alias="Effect count" id="cnt" />
 	<loop id="cnt">

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_EVENT_MATCH_OBSERVER" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Event ID" />
+	<byte alias="Spectating" type="YesOrNo" id="enabled" />
+	<branch id="enabled" condition="Positive">
+		<byte alias="Ruleset" />
+		<string alias="Team 1" />
+		<string alias="Team 2" />
+		<dword alias="Location X" />
+		<dword alias="Location Y" />
+		<dword alias="Location Z" />
+	</branch>
+</packet>

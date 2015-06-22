@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_COLOSSEUM_FENCE_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Fence OID" />
+	<dword alias="Visibility" type="event.FenceType" />
+	<dword alias="Center X" />
+	<dword alias="Center Y" />
+	<dword alias="Center Z" />
+	<dword alias="Height" /> <!-- fence_height, W/E -->
+	<dword alias="Width" /> <!-- fence_width, N/S -->
+</packet>

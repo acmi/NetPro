@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_EVENT_MATCH_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Match count" id="cnt"/>
+	<loop id="cnt">
+		<dword alias="Event ID" />
+		<string alias="Team 1" />
+		<string alias="Team 2" />
+	</loop>
+</packet>

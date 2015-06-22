@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_EVENT_MATCH_MANAGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Event ID" />
+	<byte alias="State" type="event.RaceEventState" />
+	<byte alias="Fence" type="event.FenceType" />
+	<string alias="Team 1 name" />
+	<byte alias="Team 1 lockup" type="YesOrNo" />
+	<string alias="Team 2 name" />
+	<byte alias="Team 2 lockup" type="YesOrNo" />
+	<dword alias="Participant count" id="cnt" />
+	<loop id="cnt">
+		<byte alias="Team" />
+		<byte alias="Representative" type="YesOrNo" />
+		<dword alias="Participant OID" type="ObjectID" />
+		<string alias="Name" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Level" />
+	</loop>
+</packet>

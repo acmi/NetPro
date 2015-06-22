@@ -2,6 +2,6 @@
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client />
 	<server>
-		<packet opcodePrefix="FE 13 00" id="308" />
+		<packet opcodePrefix="FE 13 00" id="SM_EX_EVENT_MATCH_MANAGE" />
 	</server>
 </mapping>

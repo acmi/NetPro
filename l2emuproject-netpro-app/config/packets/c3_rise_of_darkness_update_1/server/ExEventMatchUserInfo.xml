@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_EVENT_MATCH_USER_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Player OID" type="ObjectID" />
+	<string alias="Name" />
+	<dword alias="Current HP" />
+	<dword alias="Maximum HP" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Current CP" />
+	<dword alias="Maximum CP" />
+	<dword alias="Level" />
+	<dword alias="Class" type="CharacterClass" />
+</packet>

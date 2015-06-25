@@ -200,7 +200,7 @@
 		<packet opcodePrefix="AC" id="SM_DISMISS_ALLIANCE" />
 		<packet opcodePrefix="AD" id="199" />
 		<packet opcodePrefix="AE" id="SM_ALLIANCE_CREST" />
-		<packet opcodePrefix="AF" id="201" />
+		<packet opcodePrefix="AF" id="SM_SERVER_CLOSE_SOCKET" />
 		<packet opcodePrefix="B0" id="SM_PET_STATUS_SHOW" />
 		<packet opcodePrefix="B1" id="SM_PET_INFO" />
 		<packet opcodePrefix="B2" id="SM_PET_ITEM_LIST" />

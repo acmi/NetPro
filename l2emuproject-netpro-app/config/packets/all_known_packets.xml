@@ -1612,7 +1612,6 @@
 		<packet id="184" name="ReviveRequest" />
 		<packet id="194" name="AskJoinAlliance" />
 		<packet id="199" name="SetAllianceCrest" />
-		<packet id="201" name="ServerCloseSocket" />
 		<packet id="212" name="VehicleStart" />
 		<packet id="214" name="Dummy_D5" />
 		<packet id="225" name="BlockList" />
@@ -2899,6 +2898,11 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_ALLIANCE_CREST" name="AllianceCrest" />
+		<!--
+		UNICODE "ServerCloseSocketPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SERVER_CLOSE_SOCKET" name="ServerCloseSocket" />
 		<!--
 		ASCII "dd"
 		UNICODE "PetStatusShowPacket"

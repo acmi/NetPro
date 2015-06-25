@@ -39,7 +39,7 @@
 		<packet opcodePrefix="C5" id="SM_DISMISS_ALLIANCE" />
 		<packet opcodePrefix="C6" id="199" />
 		<packet opcodePrefix="C7" id="SM_ALLIANCE_CREST" />
-		<packet opcodePrefix="C8" id="201" />
+		<packet opcodePrefix="C8" id="SM_SERVER_CLOSE_SOCKET" />
 		<packet opcodePrefix="C9" id="SM_PET_STATUS_SHOW" />
 		<packet opcodePrefix="CA" id="SM_PET_INFO" />
 		<packet opcodePrefix="CB" id="SM_PET_ITEM_LIST" />

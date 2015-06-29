@@ -31,6 +31,7 @@ import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -187,13 +188,13 @@ public class VersionnedPacketTable implements IOConstants
 		try
 		{
 			LOG.info("Loading packet declarations…");
-			final Map<String, String> id2NameClient = new HashMap<>(), id2NameServer = new HashMap<>();
+			final Map<String, String> id2NameClient = new IdentityHashMap<>(), id2NameServer = new IdentityHashMap<>();
 			{
 				final Node packets = L2XMLUtils.getChildNodeByName(L2XMLUtils.getXMLFile(definitionRoot.resolve("all_known_packets.xml")), "packets");
 				for (final Node packet : L2XMLUtils.listNodesByNodeName(L2XMLUtils.getChildNodeByName(packets, "client"), "packet"))
-					id2NameClient.put(L2XMLUtils.getAttribute(packet, "id"), L2XMLUtils.getAttribute(packet, "name"));
+					id2NameClient.put(L2XMLUtils.getAttribute(packet, "id").intern(), L2XMLUtils.getAttribute(packet, "name").intern());
 				for (final Node packet : L2XMLUtils.listNodesByNodeName(L2XMLUtils.getChildNodeByName(packets, "server"), "packet"))
-					id2NameServer.put(L2XMLUtils.getAttribute(packet, "id"), L2XMLUtils.getAttribute(packet, "name"));
+					id2NameServer.put(L2XMLUtils.getAttribute(packet, "id").intern(), L2XMLUtils.getAttribute(packet, "name").intern());
 			}
 			LOG.info("Total: " + id2NameClient.size() + " client packets and " + id2NameServer.size() + " server packets.");
 			
@@ -204,7 +205,7 @@ public class VersionnedPacketTable implements IOConstants
 			{
 				if (!pro.getNodeName().endsWith("rotocol"))
 					continue;
-				
+					
 				final String alias, category;
 				alias = L2XMLUtils.getNodeAttributeStringValue(pro, "alias", null);
 				if (alias == null)
@@ -285,7 +286,7 @@ public class VersionnedPacketTable implements IOConstants
 				throw new RuntimeException("No login protocols defined");
 			if (gp.isEmpty())
 				throw new RuntimeException("No game protocols defined");
-			
+				
 			final Map<UserDefinedLoginProtocolVersion, Map<EndpointType, PacketTemplateContainer>> loginMap;
 			final Map<UserDefinedGameProtocolVersion, Map<EndpointType, PacketTemplateContainer>> gameMap;
 			if (LoadOption.DISABLE_DEFS.isNotSet())
@@ -298,8 +299,9 @@ public class VersionnedPacketTable implements IOConstants
 				
 				{
 					LOG.info("Loading login packets…");
-					final Map<String, byte[]> id2PrefixClient = new HashMap<>(), id2PrefixServer = new HashMap<>();
-					final Map<String, IPacketTemplate> clientPacketsByID = new HashMap<>(), serverPacketsByID = new HashMap<>();
+					final Map<String, byte[]> id2PrefixClient = new IdentityHashMap<>(), id2PrefixServer = new IdentityHashMap<>();
+					final Map<String, IPacketTemplate> clientPacketsByID = new IdentityHashMap<>(), serverPacketsByID = new IdentityHashMap<>();
+					final Map<byte[], String> prefix2IDClient = new HashMap<>(), prefix2IDServer = new HashMap<>();
 					for (final Entry<UserDefinedLoginProtocolVersion, String> e : lp.entrySet())
 					{
 						int removedClientPackets = 0, removedServerPackets = 0;
@@ -314,7 +316,7 @@ public class VersionnedPacketTable implements IOConstants
 							final Node clientMaps = L2XMLUtils.getChildNodeByName(mappings, "client");
 							for (final Node packet : L2XMLUtils.listNodesByNodeName(clientMaps, "removedPacket"))
 							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id");
+								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
 								if (!id2NameClient.containsKey(packetID))
 									LOG.info(proName + " attempts to remove a nonexistent client packet: " + packetID + " [" + e.getValue() + "]");
 								if (id2PrefixClient.remove(packetID) == null)
@@ -324,10 +326,10 @@ public class VersionnedPacketTable implements IOConstants
 							}
 							for (final Node packet : L2XMLUtils.listNodesByNodeName(clientMaps, "packet"))
 							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id");
+								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
 								if (!id2NameClient.containsKey(packetID))
 									LOG.info(proName + " attempts to declare a nonexistent client packet: " + packetID + " [" + e.getValue() + "]");
-								
+									
 								final String prefixHexString = L2XMLUtils.getAttribute(packet, "opcodePrefix");
 								final byte[] prefix = hexStringToInternedBytes(prefixHexString);
 								if (id2PrefixClient.put(packetID, prefix) == prefix)
@@ -336,13 +338,22 @@ public class VersionnedPacketTable implements IOConstants
 									LOG.info(proName + ": too many declarations for CM " + prefixHexString + "!");
 								if (!assignedIDs.add(packetID))
 									LOG.info(proName + " maps multiple opcode sets to client packet: " + packetID + " [" + e.getValue() + "]");
+									
+								// automatically remove obsolete mappings
+								final String previousID = prefix2IDClient.put(prefix, packetID);
+								if (previousID != null)
+								{
+									final byte[] currentPrefixOfPreviousPacket = id2PrefixClient.get(previousID);
+									if (currentPrefixOfPreviousPacket == prefix)
+										id2PrefixClient.remove(previousID);
+								}
 							}
 							declaredOpcodes.clear();
 							assignedIDs.clear();
 							final Node serverMaps = L2XMLUtils.getChildNodeByName(mappings, "server");
 							for (final Node packet : L2XMLUtils.listNodesByNodeName(serverMaps, "removedPacket"))
 							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id");
+								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
 								if (!id2NameServer.containsKey(packetID))
 									LOG.info(proName + " attempts to remove a nonexistent server packet: " + packetID + " [" + e.getValue() + "]");
 								if (id2PrefixServer.remove(packetID) == null)
@@ -352,10 +363,10 @@ public class VersionnedPacketTable implements IOConstants
 							}
 							for (final Node packet : L2XMLUtils.listNodesByNodeName(serverMaps, "packet"))
 							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id");
+								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
 								if (!id2NameServer.containsKey(packetID))
 									LOG.info(proName + " attempts to declare a nonexistent server packet: " + packetID + " [" + e.getValue() + "]");
-								
+									
 								final String prefixHexString = L2XMLUtils.getAttribute(packet, "opcodePrefix");
 								final byte[] prefix = hexStringToInternedBytes(prefixHexString);
 								if (id2PrefixServer.put(packetID, prefix) == prefix)
@@ -364,6 +375,15 @@ public class VersionnedPacketTable implements IOConstants
 									LOG.info(proName + ": too many declarations for SM " + prefixHexString + "!");
 								if (!assignedIDs.add(packetID))
 									LOG.info(proName + " maps multiple opcode sets to server packet: " + packetID + " [" + e.getValue() + "]");
+									
+								// automatically remove obsolete mappings
+								final String previousID = prefix2IDServer.put(prefix, packetID);
+								if (previousID != null)
+								{
+									final byte[] currentPrefixOfPreviousPacket = id2PrefixServer.get(previousID);
+									if (currentPrefixOfPreviousPacket == prefix)
+										id2PrefixServer.remove(previousID);
+								}
 							}
 							declaredOpcodes.clear();
 							assignedIDs.clear();
@@ -457,8 +477,9 @@ public class VersionnedPacketTable implements IOConstants
 				
 				{
 					LOG.info("Loading game packets…");
-					final Map<String, byte[]> id2PrefixClient = new HashMap<>(), id2PrefixServer = new HashMap<>();
-					final Map<String, IPacketTemplate> clientPacketsByID = new HashMap<>(), serverPacketsByID = new HashMap<>();
+					final Map<String, byte[]> id2PrefixClient = new IdentityHashMap<>(), id2PrefixServer = new IdentityHashMap<>();
+					final Map<String, IPacketTemplate> clientPacketsByID = new IdentityHashMap<>(), serverPacketsByID = new IdentityHashMap<>();
+					final Map<byte[], String> prefix2IDClient = new HashMap<>(), prefix2IDServer = new HashMap<>();
 					for (final Iterator<Entry<UserDefinedGameProtocolVersion, String>> it = gp.entrySet().iterator(); it.hasNext();)
 					{
 						int removedClientPackets = 0, removedServerPackets = 0;
@@ -476,7 +497,7 @@ public class VersionnedPacketTable implements IOConstants
 							final Node clientMaps = L2XMLUtils.getChildNodeByName(mappings, "client");
 							for (final Node packet : L2XMLUtils.listNodesByNodeName(clientMaps, "removedPacket"))
 							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id");
+								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
 								if (!id2NameClient.containsKey(packetID))
 									LOG.info(proName + " attempts to remove a nonexistent client packet: " + packetID + " [" + e.getValue() + "]");
 								if (id2PrefixClient.remove(packetID) == null)
@@ -487,10 +508,10 @@ public class VersionnedPacketTable implements IOConstants
 							}
 							for (final Node packet : L2XMLUtils.listNodesByNodeName(L2XMLUtils.getChildNodeByName(mappings, "client"), "packet"))
 							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id");
+								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
 								if (!id2NameClient.containsKey(packetID))
 									LOG.info(proName + " attempts to declare a nonexistent client packet: " + packetID + " [" + e.getValue() + "]");
-								
+									
 								final String prefixHexString = L2XMLUtils.getAttribute(packet, "opcodePrefix");
 								final byte[] prefix = hexStringToInternedBytes(prefixHexString);
 								if (id2PrefixClient.put(packetID, prefix) == prefix)
@@ -499,13 +520,22 @@ public class VersionnedPacketTable implements IOConstants
 									LOG.info(proName + ": too many declarations for CM " + prefixHexString + "!");
 								if (!assignedIDs.add(packetID))
 									LOG.info(proName + " maps multiple opcode sets to client packet: " + packetID + " [" + e.getValue() + "]");
+									
+								// automatically remove obsolete mappings
+								final String previousID = prefix2IDClient.put(prefix, packetID);
+								if (previousID != null)
+								{
+									final byte[] currentPrefixOfPreviousPacket = id2PrefixClient.get(previousID);
+									if (currentPrefixOfPreviousPacket == prefix)
+										id2PrefixClient.remove(previousID);
+								}
 							}
 							declaredOpcodes.clear();
 							assignedIDs.clear();
 							final Node serverMaps = L2XMLUtils.getChildNodeByName(mappings, "server");
 							for (final Node packet : L2XMLUtils.listNodesByNodeName(serverMaps, "removedPacket"))
 							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id");
+								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
 								if (!id2NameServer.containsKey(packetID))
 									LOG.info(proName + " attempts to remove a nonexistent server packet: " + packetID + " [" + e.getValue() + "]");
 								if (id2PrefixServer.remove(packetID) == null)
@@ -515,10 +545,10 @@ public class VersionnedPacketTable implements IOConstants
 							}
 							for (final Node packet : L2XMLUtils.listNodesByNodeName(L2XMLUtils.getChildNodeByName(mappings, "server"), "packet"))
 							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id");
+								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
 								if (!id2NameServer.containsKey(packetID))
 									LOG.info(proName + " attempts to declare a nonexistent server packet: " + packetID + " [" + e.getValue() + "]");
-								
+									
 								final String prefixHexString = L2XMLUtils.getAttribute(packet, "opcodePrefix");
 								final byte[] prefix = hexStringToInternedBytes(prefixHexString);
 								if (id2PrefixServer.put(packetID, prefix) == prefix)
@@ -527,6 +557,15 @@ public class VersionnedPacketTable implements IOConstants
 									LOG.info(proName + ": too many declarations for SM " + prefixHexString + "!");
 								if (!assignedIDs.add(packetID))
 									LOG.info(proName + " maps multiple opcode sets to server packet: " + packetID + " [" + e.getValue() + "]");
+									
+								// automatically remove obsolete mappings
+								final String previousID = prefix2IDServer.put(prefix, packetID);
+								if (previousID != null)
+								{
+									final byte[] currentPrefixOfPreviousPacket = id2PrefixServer.get(previousID);
+									if (currentPrefixOfPreviousPacket == prefix)
+										id2PrefixServer.remove(previousID);
+								}
 							}
 							declaredOpcodes.clear();
 							assignedIDs.clear();
@@ -640,7 +679,7 @@ public class VersionnedPacketTable implements IOConstants
 			
 			_definitions = new ProtocolDefinitions(lp.keySet(), gp.keySet(), new VersionnedPacketTemplateContainer<UserDefinedLoginProtocolVersion>(loginMap, lp.lastKey()),
 					new VersionnedPacketTemplateContainer<UserDefinedGameProtocolVersion>(gameMap, gp.lastKey()));
-			
+					
 			if (L2PpeProvider.getPacketPayloadEnumerator() == null)
 				L2PpeProvider.initialize(new L2PacketTablePayloadEnumerator());
 		}
@@ -679,7 +718,7 @@ public class VersionnedPacketTable implements IOConstants
 		{
 			if (o instanceof VersionInfo)
 				return _version == ((VersionInfo)o)._version;
-			
+				
 			return false;
 		}
 		

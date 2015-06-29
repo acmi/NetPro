@@ -91,14 +91,14 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 				final byte[] realPrefix = _id2Prefix.get(e.getKey());
 				if (realPrefix == null)
 					continue;
-				
+					
 				final IPacketTemplate template = e.getValue();
 				_packets.add(new PacketTemplate(realPrefix, template.getName(), template.getStructure()));
 				
 				final String first = prefix2TemplateName.putIfAbsent(realPrefix, template.getName());
 				if (first == null)
 					continue;
-				
+					
 				LOG.warn(HexUtil.bytesToHexString(realPrefix, ":") + " " + first + " conflicts with " + template.getName());
 			}
 		}
@@ -120,7 +120,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 			return result;
 		}
 		
-		final String id = L2XMLUtils.getString(packet, "id");
+		final String id = L2XMLUtils.getString(packet, "id").intern();
 		final String name = _id2Name.get(id);
 		if (name == null)
 		{
@@ -157,7 +157,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 		}
 		else
 			++_added;
-		
+			
 		_packetsByID.put(id, template);
 		_packets.add(template);
 		
@@ -207,9 +207,10 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 			return new BranchElement(elements);
 		}
 		
-		final String alias = L2XMLUtils.getAttribute(xmlNode, "alias", null);
+		String alias = L2XMLUtils.getAttribute(xmlNode, "alias", null);
 		if (alias == null)
 			return null;
+		alias = alias.intern();
 		
 		final String id = L2XMLUtils.getAttribute(xmlNode, "id", null);
 		String valueModifier = L2XMLUtils.getAttribute(xmlNode, "mod", null);
@@ -244,7 +245,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 		final Set<String> fieldAliases = new HashSet<>();
 		for (final Node n : L2XMLUtils.listNodesByNodeName(xmlNode, "scriptAlias"))
 			fieldAliases.add(L2XMLUtils.getAttribute(n, "id"));
-		
+			
 		// now, select type of element
 		switch (xmlNode.getNodeName())
 		{
@@ -252,7 +253,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 				final Node len = L2XMLUtils.getChildNodeByName(xmlNode, "length");
 				if (len == null)
 					return new DynamicSizeByteArrayFieldElement(id, alias, optional, fieldAliases, valueModifier, valueInterpreter);
-				
+					
 				final String str = len.getTextContent().trim();
 				int length = 0;
 				try

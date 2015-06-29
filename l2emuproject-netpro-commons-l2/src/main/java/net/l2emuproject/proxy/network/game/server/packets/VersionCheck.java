@@ -68,7 +68,7 @@ public final class VersionCheck extends L2GameServerPacket implements RequiredIn
 				final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
 				if (ppe == null)
 					break usePPE;
-				
+					
 				RandomAccessMMOBuffer enumerator = null;
 				try
 				{
@@ -113,7 +113,8 @@ public final class VersionCheck extends L2GameServerPacket implements RequiredIn
 			getReceiver().initCipher(cipherKeyPart);
 			client.initCipher(cipherKeyPart);
 		}
-		client.getDeobfuscator().init(shuffleSeed);
+		if (shuffleSeed != 0)
+			client.getDeobfuscator().init(shuffleSeed);
 	}
 	
 	@Override

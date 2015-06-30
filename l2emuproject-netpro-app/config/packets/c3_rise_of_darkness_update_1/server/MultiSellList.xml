@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item class ID, item type and consumable count DWORDs changed to WORDs -->
+<!-- Added enchant level WORDs for the received item and consumables -->
+<packet id="SM_MULTI_SELL_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="List ID" />
+	<dword alias="Offer count" id="exchanges" />
+	<loop id="exchanges">
+		<dword alias="Exchange ID" />
+		<word alias="Received item" type="Item" /> <!-- NEW -->
+		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+		<word alias="Main item type" type="ItemType2" /> <!-- NEW -->
+		<dword alias="Amount" />
+		<word alias="Consumable count" id="consumed" /> <!-- NEW -->
+		<word alias="Enchant level" /> <!-- NEW -->
+		<loop id="consumed">
+			<word alias="Consumable" type="Item" /> <!-- NEW -->
+			<word alias="Main item type" type="ItemType2" /> <!-- NEW -->
+			<dword alias="Amount" />
+			<word alias="Enchant level" /> <!-- NEW -->
+		</loop>
+	</loop>
+</packet>

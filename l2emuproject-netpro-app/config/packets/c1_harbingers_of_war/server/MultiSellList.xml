@@ -8,9 +8,7 @@
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
 		<dword alias="Main item type" type="ItemType2" />
 		<dword alias="Amount" />
-		<dword alias="Consumable count" id="consumed">
-			<scriptAlias id="dump_multisell_cons_cnt" />
-		</dword>
+		<dword alias="Consumable count" id="consumed" />
 		<loop id="consumed">
 			<dword alias="Consumable" type="Item" />
 			<dword alias="Main item type" type="ItemType2" />

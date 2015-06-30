@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a CHAR (byte) to control whether the window should be opened -->
+<packet id="SM_SHOW_BOARD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Window action" type="BoardWindow" /> <!-- NEW -->
+	<string alias="Top" />
+	<string alias="Favorite" />
+	<string alias="Region" />
+	<string alias="Clan" />
+	<string alias="Memo" />
+	<string alias="Mail" />
+	<string alias="Friends" />
+	<string alias="Add Fav." />
+	<string alias="Content" type="CommunityBoardHtml" />
+</packet>

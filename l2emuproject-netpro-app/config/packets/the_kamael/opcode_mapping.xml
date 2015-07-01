@@ -184,7 +184,7 @@
 		<packet opcodePrefix="C8" id="178" />
 		<packet opcodePrefix="C9" id="179" />
 		<packet opcodePrefix="CB" id="175" />
-		<packet opcodePrefix="CC" id="170" />
+		<packet opcodePrefix="CC" id="CM_REQ_PLEDGE_POWER" />
 		<packet opcodePrefix="CD" id="CM_REQ_MAKE_MACRO" />
 		<packet opcodePrefix="CE" id="CM_REQ_DELETE_MACRO" />
 		<packet opcodePrefix="CF" id="173" />
@@ -298,7 +298,7 @@
 		<packet opcodePrefix="27" id="SM_SOCIAL_ACTION" />
 		<packet opcodePrefix="28" id="SM_CHANGE_MOVE_TYPE" />
 		<packet opcodePrefix="29" id="SM_CHANGE_WAIT_TYPE" />
-		<packet opcodePrefix="2A" id="240" />
+		<packet opcodePrefix="2A" id="SM_MANAGE_PLEDGE_POWER" />
 		<packet opcodePrefix="2B" id="SM_CREATE_PLEDGE" />
 		<packet opcodePrefix="2C" id="SM_ASK_JOIN_PLEDGE" />
 		<packet opcodePrefix="2D" id="SM_JOIN_PLEDGE" />

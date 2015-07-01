@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_PLEDGE_POWER" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Member OID" type="ObjectID" />
+	<dword alias="Action" type="pledge.LegacyPledgePowerAction" id="action" />
+	<branch id="action" condition="pledge.LegacyPledgePowerChange">
+		<dword alias="Privileges" type="pledge.LegacyPledgeAuthority" />
+		<bytes alias="">
+			<length>28</length>
+		</bytes>
+	</branch>
+</packet>

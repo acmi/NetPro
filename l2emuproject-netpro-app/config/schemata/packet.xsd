@@ -313,6 +313,8 @@
 			<xs:enumeration value="pledge.ApplicationMode" />
 			<xs:enumeration value="pledge.ApplicationResponse" />
 			<xs:enumeration value="pledge.AllyCrestDDS" />
+			<xs:enumeration value="pledge.LegacyPledgeAuthority" />
+			<xs:enumeration value="pledge.LegacyPledgePowerAction" />
 			<xs:enumeration value="pledge.PledgeAdvertisement" />
 			<xs:enumeration value="pledge.PledgeCrestDDS" />
 			<xs:enumeration value="pledge.PledgeKarma" />
@@ -434,6 +436,8 @@
 			<xs:enumeration value="param.Sysstring" />
 			<xs:enumeration value="param.TinyNumberValue" />
 			<xs:enumeration value="param.Zone" />
+			
+			<xs:enumeration value="pledge.LegacyPledgePowerChange" />
 			
 			<xs:enumeration value="primitive.ExtendedPrimitive" />
 			<xs:enumeration value="primitive.LineSegment" />

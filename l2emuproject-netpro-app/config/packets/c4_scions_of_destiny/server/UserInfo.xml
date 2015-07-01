@@ -216,7 +216,7 @@
 	<byte alias="Event team" type="DuelTeam" />
 
 	<!-- NEW -->
-	<dword alias="Pledge insignia ID" />
+	<dword alias="Pledge emblem ID" />
 	<byte alias="Noble" type="YesOrNo" />
 	<byte alias="Hero" type="YesOrNo" />
 	<byte alias="Fishing" type="YesOrNo" />

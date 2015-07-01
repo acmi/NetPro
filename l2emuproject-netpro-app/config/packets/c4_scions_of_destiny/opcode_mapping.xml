@@ -17,8 +17,8 @@
 		<packet opcodePrefix="D0 0D 00" id="196" />
 		<packet opcodePrefix="D0 0E 00" id="197" />
 		<packet opcodePrefix="D0 0F 00" id="198" />
-		<packet opcodePrefix="D0 10 00" id="199" />
-		<packet opcodePrefix="D0 11 00" id="200" />
+		<packet opcodePrefix="D0 10 00" id="CM_REQ_EX_PLEDGE_CREST_LARGE" />
+		<packet opcodePrefix="D0 11 00" id="CM_REQ_EX_SET_PLEDGE_CREST_LARGE" />
 		<packet opcodePrefix="D0 12 00" id="CM_REQ_OLYMPIAD_OBSERVER_END" />
 		<packet opcodePrefix="D0 13 00" id="CM_REQ_OLYMPIAD_MATCH_LIST" />
 	</client>
@@ -44,7 +44,7 @@
 		<packet opcodePrefix="FE 25 00" id="327" />
 		<packet opcodePrefix="FE 26 00" id="328" />
 		<packet opcodePrefix="FE 27 00" id="329" />
-		<packet opcodePrefix="FE 28 00" id="330" />
+		<packet opcodePrefix="FE 28 00" id="SM_PLEDGE_CREST_LARGE" />
 		<packet opcodePrefix="FE 29 00" id="331" />
 		<packet opcodePrefix="FE 2A 00" id="332" />
 		<packet opcodePrefix="FE 2B 00" id="333" />

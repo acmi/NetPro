@@ -58,8 +58,6 @@
 		<packet id="196" name="RequestExAskJoinMPCC" />
 		<packet id="197" name="RequestExAcceptJoinMPCC" />
 		<packet id="198" name="RequestExOustFromMPCC" />
-		<packet id="199" name="RequestExPledgeCrestLarge" />
-		<packet id="200" name="RequestExSetPledgeCrestLarge" />
 		<packet id="203" name="RequestAskJoinPartyRoom" />
 		<packet id="204" name="RequestAnswerJoinPartyRoom" />
 		<packet id="205" name="RequestListPartyMatchingWaitingRoom" />
@@ -1385,6 +1383,29 @@
 		-->
 		<packet id="CM_REQ_WRITE_HERO_WORDS" name="RequestWriteHeroWords" />
 		<!--
+		ASCII "chd"
+		UNICODE "(Send)RequestExPledgeCrestLarge"
+		-->
+		<packet id="CM_REQ_EX_PLEDGE_CREST_LARGE" name="RequestExPledgeCrestLarge" />
+		<!--
+		ASCII "chdd"
+		UNICODE "RequestExPledgeEmblem"
+		UNICODE "(Send)%s [%d] %d"
+		-->
+		<packet id="CM_REQ_EX_PLEDGE_EMBLEM" name="RequestExPledgeEmblem" />
+		<!--
+		ASCII "chd"
+		ASCII "chdb"
+		UNICODE "(Send)RequestExSetPledgeCrestLarge"
+		-->
+		<packet id="CM_REQ_EX_SET_PLEDGE_CREST_LARGE" name="RequestExSetPledgeCrestLarge" />
+		<!--
+		ASCII "chdddb"
+		UNICODE "RequestExSetPledgeCrestLargeRemainPart"
+		UNICODE "(Send)%s numID:%d"
+		-->
+		<packet id="CM_REQ_EX_SET_PLEDGE_CREST_LARGE_REMAIN_PART" name="RequestExSetPledgeCrestLargeRemainPart" />
+		<!--
 		ASCII "ch"
 		UNICODE "RequestOlympiadObserverEnd"
 		UNICODE "(Send)%s"
@@ -1648,7 +1669,6 @@
 		<packet id="327" name="ExOpenMPCC" />
 		<packet id="328" name="ExCloseMPCC" />
 		<packet id="329" name="ExAskJoinMPCC" />
-		<packet id="330" name="ExPledgeEmblem" />
 		<packet id="331" name="ExOlympiadUserInfo" />
 		<packet id="332" name="ExOlympiadSpelledInfo" />
 		<packet id="333" name="ExOlympiadMode" />
@@ -3444,6 +3464,26 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_SERVER_PRIMITIVE" name="ExServerPrimitive" />
+		<!--
+		ASCII "ddd"
+		UNICODE "crest_%d_%d_l"
+		UNICODE "PledgeCrestLargePacket"
+		UNICODE "%s"
+		
+		(shortly after:)
+		ASCII "ddd"
+		UNICODE "crest_%d_%d_l"
+		UNICODE "ExPledgeEmblem"
+		UNICODE "%s"
+		-->
+		<packet id="SM_PLEDGE_CREST_LARGE" name="ExPledgeEmblem" />
+		<!--
+		ASCII "dddddd"
+		UNICODE "ExPledgeEmblem"
+		UNICODE "(Receive)%s ServerIdx:%d, PledgeId:%d, CrestId:%d, Emblem_order:%d, TotalBmpSize:%d, Size:%d"
+		UNICODE "allreceived:%d"
+		-->
+		<packet id="SM_EX_PLEDGE_EMBLEM" name="ExPledgeEmblem" />
 		<!--
 		UNICODE "ExMailArrivedPacket"
 		UNICODE "(Receive)%s"

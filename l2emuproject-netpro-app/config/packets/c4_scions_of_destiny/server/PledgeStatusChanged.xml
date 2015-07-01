@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Pledge emblem image ID DWORD added at the end of the packet -->
 <packet id="SM_PLEDGE_STATUS_CHANGED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Member OID" type="ObjectID" />
 	<dword alias="Pledge ID" type="Pledge">
@@ -13,4 +14,7 @@
 	<dword alias="Alliance crest ID" type="AllianceCrest">
 		<scriptAlias id="AIC_ALLY_CREST_ID" />
 	</dword>
+
+	<!-- NEW -->
+	<dword alias="Pledge emblem ID" />
 </packet>

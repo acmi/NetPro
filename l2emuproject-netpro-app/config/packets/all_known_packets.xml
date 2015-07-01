@@ -41,7 +41,6 @@
 		<packet id="128" name="RequestSEKCustom" />
 		<packet id="129" name="RequestRide" />
 		<packet id="130" name="RequestReviveReply" />
-		<packet id="170" name="RequestPledgePower" />
 		<packet id="173" name="RequestBuyProcure" />
 		<packet id="174" name="RequestBuySeed" />
 		<packet id="175" name="ReplyGameGuardQuery" />
@@ -1311,6 +1310,15 @@
 		-->
 		<packet id="CM_REQ_HENNA_UNEQUIP" name="RequestHennaUnequip" />
 		<!--
+		ASCII "cdd"
+		UNICODE "RequestPledgePower %d : %d"
+		UNICODE "RequestPledgePower 0 : %d"
+		ASCII "cddd"
+		UNICODE "RequestPledgePower"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PLEDGE_POWER" name="RequestPledgePower" />
+		<!--
 		ASCII "ccdcS"
 		ASCII "cdSSSccb"
 		UNICODE "RequestMakeMacro"
@@ -1641,7 +1649,6 @@
 		<packet id="237" name="SkillRemainSec" />
 		<!-- UNICODE "DummyPacket" -->
 		<packet id="239" name="Dummy ED" />
-		<packet id="240" name="ManagePledgePower" />
 		<packet id="241" name="Dummy_70" />
 		<packet id="252" name="MonRaceInfo" />
 		<packet id="263" name="BuyListSeed" />
@@ -3098,6 +3105,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_NET_PING" name="NetPing" />
+		<!--
+		ASCII "ddd"
+		UNICODE "ManagePledgePowerPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_MANAGE_PLEDGE_POWER" name="ManagePledgePower" />
 		<!--
 		ASCII "dddddd"
 		UNICODE "DicePacket"

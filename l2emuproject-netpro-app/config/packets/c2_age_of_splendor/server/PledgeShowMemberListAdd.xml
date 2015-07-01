@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 'Online' DWORD has been changed to a 'world object ID' DWORD -->
+<packet id="SM_PLEDGE_SHOW_MEMBER_LIST_ADD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Member name" />
+	<dword alias="Level" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="Sex" type="Sex" />
+	<dword alias="Race" type="Race" />
+	<dword alias="Member OID" type="ObjectID" /> <!-- NEW -->
+</packet>

@@ -23,7 +23,7 @@
 		<packet opcodePrefix="BD" id="CM_REQ_HENNA_UNEQUIP_LIST" />
 		<packet opcodePrefix="BE" id="CM_REQ_HENNA_UNEQUIP_INFO" />
 		<packet opcodePrefix="BF" id="CM_REQ_HENNA_UNEQUIP" />
-		<packet opcodePrefix="C0" id="170" />
+		<packet opcodePrefix="C0" id="CM_REQ_PLEDGE_POWER" />
 		<packet opcodePrefix="C1" id="CM_REQ_MAKE_MACRO" />
 		<packet opcodePrefix="C2" id="CM_REQ_DELETE_MACRO" />
 		<packet opcodePrefix="C3" id="173" />
@@ -73,7 +73,7 @@
 		<packet opcodePrefix="2D" id="SM_SOCIAL_ACTION" />
 		<packet opcodePrefix="2E" id="SM_CHANGE_MOVE_TYPE" />
 		<packet opcodePrefix="2F" id="SM_CHANGE_WAIT_TYPE" />
-		<packet opcodePrefix="30" id="240" />
+		<packet opcodePrefix="30" id="SM_MANAGE_PLEDGE_POWER" />
 		<packet opcodePrefix="31" id="SM_CREATE_PLEDGE" />
 		<packet opcodePrefix="32" id="SM_ASK_JOIN_PLEDGE" />
 		<packet opcodePrefix="33" id="SM_JOIN_PLEDGE" />

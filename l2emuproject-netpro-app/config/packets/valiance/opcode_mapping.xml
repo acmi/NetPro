@@ -9,6 +9,8 @@
 		<removedPacket id="472" />
 		<removedPacket id="473" />
 		<removedPacket id="474" />
+		<packet opcodePrefix="D0 10 00" id="CM_REQ_EX_PLEDGE_EMBLEM" />
+		<packet opcodePrefix="D0 11 00" id="CM_REQ_EX_SET_PLEDGE_CREST_LARGE_REMAIN_PART" />
 		<packet opcodePrefix="D0 CE 00" id="409" />
 		<packet opcodePrefix="D0 CF 00" id="410" />
 		<packet opcodePrefix="D0 D0 00" id="411" />
@@ -63,6 +65,7 @@
 		<removedPacket id="690" />
 		<removedPacket id="691" />
 		<removedPacket id="692" />
+		<packet opcodePrefix="FE 1B 00" id="SM_EX_PLEDGE_EMBLEM" />
 		<packet opcodePrefix="FE 36 01" id="608" />
 		<packet opcodePrefix="FE 37 01" id="609" />
 		<packet opcodePrefix="FE 38 01" id="610" />

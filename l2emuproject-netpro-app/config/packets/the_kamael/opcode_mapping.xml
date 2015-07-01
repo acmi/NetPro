@@ -495,7 +495,7 @@
 		<packet opcodePrefix="FE 18 00" id="388" />
 		<packet opcodePrefix="FE 19 00" id="389" />
 		<packet opcodePrefix="FE 1A 00" id="329" />
-		<packet opcodePrefix="FE 1B 00" id="330" />
+		<packet opcodePrefix="FE 1B 00" id="SM_PLEDGE_CREST_LARGE" />
 		<packet opcodePrefix="FE 1C 00" id="SM_EX_EVENT_MATCH_TEAM_INFO" />
 		<packet opcodePrefix="FE 1D 00" id="SM_EX_EVENT_MATCH_CREATE" />
 		<packet opcodePrefix="FE 1E 00" id="SM_EX_FISHING_START" />

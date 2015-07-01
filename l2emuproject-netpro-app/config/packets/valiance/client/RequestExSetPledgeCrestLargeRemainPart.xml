@@ -2,12 +2,9 @@
 <!-- This file was automatically generated when converting from the legacy definition format. -->
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
-<packet id="SM_EX_PLEDGE_EMBLEM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Server" type="GameServerName" />
-	<dword alias="Pledge ID" type="Pledge" />
-	<dword alias="Insignia ID" />
+<packet id="CM_REQ_EX_SET_PLEDGE_CREST_LARGE_REMAIN_PART" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Part number" />
 	<dword alias="Total size" />
-	<dword alias="Part size" id="bytesize" />
+	<dword alias="Part size" id="bytesize" /> <!-- Max: 14336 -->
 	<bytes alias="Image part" />
 </packet>

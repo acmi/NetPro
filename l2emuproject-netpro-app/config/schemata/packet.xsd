@@ -230,7 +230,6 @@
 			<xs:enumeration value="Regeneration" />
 			<xs:enumeration value="RevivalLocation" />
 			<xs:enumeration value="RelationPacketType" />
-			<xs:enumeration value="RelationTypes" />
 			<xs:enumeration value="RoomMembership" />
 			<xs:enumeration value="Rotation" />
 			<xs:enumeration value="Scene" />
@@ -334,7 +333,10 @@
 			<xs:enumeration value="product.ProductStoreTab" />
 
 			<xs:enumeration value="quest.QuestCompletion" />
-			
+
+			<xs:enumeration value="relation.RelationTypeC1" />
+			<xs:enumeration value="relation.RelationTypeC4" />
+
 			<xs:enumeration value="shortcut.ShortcutActor" />
 			<xs:enumeration value="shortcut.ShortcutSlotBase10" />
 			<xs:enumeration value="shortcut.ShortcutSlotBase12" />

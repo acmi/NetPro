@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a DWORD to indicate pledge war status -->
+<packet id="SM_PLEDGE_SHOW_MEMBER_LIST_ALL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+	</dword>
+	<string alias="Pledge name">
+		<scriptAlias id="PIC_PLEDGE_NAME" />
+	</string>
+	<string alias="Leader name" />
+	<dword alias="Crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<dword alias="Pledge level" />
+	<dword alias="Has castle" type="YesOrNo" />
+	<dword alias="Has hideout" type="YesOrNo" />
+	<!-- Comments are about prelude beta (336) for now -->
+	<dword alias="Rank" /> <!-- 0, because ranking system is not supported by client -->
+	<dword alias="Reputation" /> <!-- a.k.a. Fame; member level total is the usual value, regardless of lost/won wars or sieges -->
+	<dword alias="Status" type="pledge.PledgeStatus" />
+	<dword alias="0" />
+	<dword alias="Alliance ID" type="Alliance">
+		<scriptAlias id="AIC_ALLY_ID" />
+	</dword>
+	<string alias="Alliance name">
+		<scriptAlias id="AIC_ALLY_NAME" />
+	</string>
+	<dword alias="Alliance crest ID" type="AllianceCrest">
+		<scriptAlias id="AIC_ALLY_CREST_ID" />
+	</dword>
+	<dword alias="In pledge war" type="YesOrNo" /> <!-- NEW -->
+	<dword alias="Other member count" id="cnt" /> <!-- Excluding the viewer -->
+	<loop id="cnt">
+		<string alias="Name" />
+		<dword alias="Level" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Sex" type="Sex" />
+		<dword alias="Race" type="Race" />
+		<dword alias="Online" type="YesOrNo" />
+	</loop>
+</packet>

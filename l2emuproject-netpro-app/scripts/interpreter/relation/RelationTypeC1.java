@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.relation;
 
 import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
 
@@ -23,10 +23,10 @@ import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
  * 
  * @author savormix
  */
-public class RelationTypes extends ScriptedBitmaskInterpreter
+public class RelationTypeC1 extends ScriptedBitmaskInterpreter
 {
 	/** Constructs this interpreter. */
-	public RelationTypes()
+	public RelationTypeC1()
 	{
 		// @formatter:off
 		super("None", null,
@@ -52,7 +52,7 @@ public class RelationTypes extends ScriptedBitmaskInterpreter
 				"Same alliance",
 				"In alliance war",
 				"Enemy alliance"
-				);
+		);
 		// @formatter:on
 	}
 }

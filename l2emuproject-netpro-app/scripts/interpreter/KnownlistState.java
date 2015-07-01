@@ -32,6 +32,6 @@ public class KnownlistState extends ScriptedZeroBasedIntegerIdInterpreter
 	/** Constructs this interpreter. */
 	public KnownlistState()
 	{
-		super("Existing world object", "Known object", "Newly spawned object");
+		super("[ADD] Existing world object", "[UPDATE] Known object", "[ADD] Newly spawned object");
 	}
 }

@@ -64,7 +64,7 @@
 
 	<dword alias="Pledge ID" type="Pledge" />
 	<dword alias="Pledge leader" type="YesOrNo" />
-	<dword alias="Relations" type="RelationTypes" /> <!-- NEW -->
+	<dword alias="Relations" type="relation.RelationTypeC1" /> <!-- NEW -->
 
 	<byte alias="Waiting mode" type="WaitType" />
 	<byte alias="Movement mode" type="MoveType" />

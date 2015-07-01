@@ -197,14 +197,10 @@
 	<byte alias="Looking for party" type="YesOrNo" />
 	<dword alias="Abnormal effect" type="ave.AbnormalVisualEffectMask" />
 	<byte alias="Environment" type="Environment" />
-	<dword alias="Pledge privileges" type="PledgePrivileges" />
-	<dword alias="0" />
-	<dword alias="0" />
-	<dword alias="0" />
-	<dword alias="0" />
-	<dword alias="0" />
-	<dword alias="0" />
-	<dword alias="0" />
+	<dword alias="Privileges" type="pledge.LegacyPledgeAuthority" />
+	<bytes alias="">
+		<length>28</length>
+	</bytes>
 	<word alias="Recommendations" />
 	<word alias="Evaluation score" />
 	<dword alias="Mount" type="Npc" />

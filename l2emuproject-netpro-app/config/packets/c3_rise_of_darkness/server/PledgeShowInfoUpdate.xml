@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Changed castle and hideout flag DWORDs to residence ID DWORDs -->
+<!-- Added pledge war status DWORD at the end of packet -->
+<packet id="SM_PLEDGE_SHOW_INFO_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- This is an excerpt from PledgeShowMemberListAll packet -->
+	<dword alias="Pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+	</dword>
+	<dword alias="Crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<dword alias="Pledge level" />
+	<dword alias="Castle" type="PledgeBase" /> <!-- NEW -->
+	<dword alias="Hideout" type="PledgeBase" /> <!-- NEW -->
+	<dword alias="Rank" />
+	<dword alias="Reputation" />
+	<dword alias="Status" type="pledge.PledgeStatus" />
+	<dword alias="0" />
+	<dword alias="Alliance ID" type="Alliance">
+		<scriptAlias id="AIC_ALLY_ID" />
+	</dword>
+	<string alias="Alliance name">
+		<scriptAlias id="AIC_ALLY_NAME" />
+	</string>
+	<dword alias="Alliance crest ID" type="AllianceCrest">
+		<scriptAlias id="AIC_ALLY_CREST_ID" />
+	</dword>
+
+	<!-- NEW -->
+	<dword alias="In pledge war" type="YesOrNo" />
+</packet>

@@ -4,7 +4,7 @@
 	<dword alias="Relationship count" id="index_0" />
 	<loop id="index_0">
 		<dword alias="Actor OID" type="ObjectID" />
-		<dword alias="Relationship" type="RelationTypes" />
+		<dword alias="Relationship" type="relation.RelationTypeC4" />
 		<dword alias="Attackable" type="YesOrNo" />
 		<dword alias="Reputation" />
 		<dword alias="In PvP" type="YesOrNo" />

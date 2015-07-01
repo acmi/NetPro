@@ -74,7 +74,7 @@
 	<dword alias="Alliance crest ID" type="AllianceCrest">
 		<scriptAlias id="AIC_ALLY_CREST_ID" />
 	</dword>
-	<dword alias="Relations" type="RelationTypes" />
+	<dword alias="Relations" type="relation.RelationTypeC4" />
 
 	<byte alias="Waiting mode" type="WaitType" />
 	<byte alias="Movement mode" type="MoveType" />

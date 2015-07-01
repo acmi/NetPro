@@ -8,7 +8,7 @@
 	</branch>
 	<branch id="type" condition="relation.Single">
 		<dword alias="Actor OID" type="ObjectID" />
-		<dword alias="Relationship" type="RelationTypes" />
+		<dword alias="Relationship" type="relation.RelationTypeC4" />
 		<byte alias="Attackable" type="YesOrNo" />
 		<dword alias="Reputation" />
 		<byte alias="In PvP" type="YesOrNo" />
@@ -17,7 +17,7 @@
 		<word alias="Relationship count" id="relations" />
 		<loop id="relations">
 			<dword alias="Actor OID" type="ObjectID" />
-			<dword alias="Relationship" type="RelationTypes" />
+			<dword alias="Relationship" type="relation.RelationTypeC4" />
 			<byte alias="Attackable" type="YesOrNo" />
 			<dword alias="Reputation" />
 			<byte alias="In PvP" type="YesOrNo" />

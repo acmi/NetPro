@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.relation;
 
 import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
 
 /**
- * Interprets the given bitmask as user's possible social roles.
+ * Interprets the given bit mask as possible relationships between the user and other players.
+ * This class was designed for C4.
  * 
  * @author _dev_
  */
-public final class UserRoles extends ScriptedBitmaskInterpreter
+public class RelationTypeC4 extends ScriptedBitmaskInterpreter
 {
 	/** Constructs this interpreter. */
-	public UserRoles()
+	public RelationTypeC4()
 	{
 		// @formatter:off
 		super("None", null,
@@ -34,15 +35,24 @@ public final class UserRoles extends ScriptedBitmaskInterpreter
 				"Chaotic",
 				"In party",
 				"Party leader",
-				"In pledge", // 5
+				"Same party", // 5
+				"In pledge",
 				"Pledge leader",
+				"Same pledge",
 				"Siege participant",
-				"Siege attacker",
-				"In pledge war", // Declared for C4+
-				"In alliance", // 10
+				"Siege attacker", // 10
+				"Siege ally",
+				"Siege enemy",
+				null,
+				null,
+				// A war declaration was received from the player's pledge
+				"Enemy pledge – attacker", // 15
+				// A war was declared on the player's pledge
+				"Enemy pledge – under attack",
+				"In alliance",
 				"Alliance leader",
-				"In alliance war"
-				);
+				"Same alliance"
+		);
 		// @formatter:on
 	}
 }

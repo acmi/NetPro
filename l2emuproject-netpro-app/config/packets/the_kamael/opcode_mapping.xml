@@ -469,7 +469,7 @@
 		<packet opcodePrefix="FA" id="SM_SHORT_BUFF_STATUS_UPDATE" />
 		<packet opcodePrefix="FB" id="279" />
 		<packet opcodePrefix="FC" id="280" />
-		<packet opcodePrefix="FD" id="281" />
+		<packet opcodePrefix="FD" id="SM_AGIT_DECO_INFO" />
 		<packet opcodePrefix="FE 02 00" id="SM_EX_EVENT_MATCH_USER_INFO" />
 		<packet opcodePrefix="FE 03 00" id="SM_EX_COLOSSEUM_FENCE_INFO" />
 		<packet opcodePrefix="FE 04 00" id="SM_EX_EVENT_MATCH_SPELLED_INFO" />

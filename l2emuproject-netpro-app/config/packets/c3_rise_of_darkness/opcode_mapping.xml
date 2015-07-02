@@ -22,7 +22,7 @@
 		<packet opcodePrefix="F4" id="SM_SHORT_BUFF_STATUS_UPDATE" />
 		<packet opcodePrefix="F5" id="279" />
 		<packet opcodePrefix="F6" id="280" />
-		<packet opcodePrefix="F7" id="281" />
+		<packet opcodePrefix="F7" id="SM_AGIT_DECO_INFO" />
 		<packet opcodePrefix="F8" id="SM_SSQ_INFO" />
 		<packet opcodePrefix="F9" id="269" />
 		<packet opcodePrefix="FA" id="SM_L2_FRIEND_LIST" />

@@ -1660,7 +1660,6 @@
 		<packet id="272" name="ConfirmDlg" />
 		<packet id="279" name="SSQStatus" />
 		<packet id="280" name="PetitionVote" />
-		<packet id="281" name="AgitDecoInfo" />
 		<packet id="283" name="FriendPacket" />
 		<packet id="303" name="ExPartyRoomMember" />
 		<packet id="304" name="ExClosePartyRoom" />
@@ -3294,6 +3293,11 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SHORT_BUFF_STATUS_UPDATE" name="ShortBuffStatusUpdate" />
+		<!--
+		UNICODE "AgitDecoInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_AGIT_DECO_INFO" name="AgitDecoInfo" />
 		<!--
 		ASCII "cc"
 		UNICODE "SSQInfoPacket"

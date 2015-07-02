@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- STEALTH PATCH WARNING: this definition is only valid for IO clients updated on 2015-06-10 or later -->
+
+<!-- Stealth patch: the previous error of introducing unsigned CHARs (and allowing character base stats to display +249 and similar modifiers) was fixed by using DWORDs -->
 <!-- Periodic dye flag DWORD is back again at the end of packet -->
 <packet id="SM_HENNA_UNEQUIP_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Henna" type="Henna" />
@@ -8,20 +11,30 @@
 	<dword alias="0" />
 	<qword alias="Viewer's adena" />
 	<dword alias="Current INT" />
-	<byte alias="INT without henna" />
+	<dword alias="INT without henna" />
+	<!-- byte alias="INT without henna" /-->
 	<dword alias="Current STR" />
-	<byte alias="STR without henna" />
+	<dword alias="STR without henna" /> <!-- NEW (STEALTH PATCH) -->
+	<!-- byte alias="STR without henna" /-->
 	<dword alias="Current CON" />
-	<byte alias="CON without henna" />
+	<dword alias="CON without henna" /> <!-- NEW (STEALTH PATCH) -->
+	<!-- byte alias="CON without henna" /-->
 	<dword alias="Current MEN" />
-	<byte alias="MEN without henna" />
+	<dword alias="MEN without henna" /> <!-- NEW (STEALTH PATCH) -->
+	<!-- byte alias="MEN without henna" /-->
 	<dword alias="Current DEX" />
-	<byte alias="DEX without henna" />
+	<dword alias="DEX without henna" /> <!-- NEW (STEALTH PATCH) -->
+	<!-- byte alias="DEX without henna" /-->
 	<dword alias="Current WIT" />
-	<byte alias="WIT without henna" />
+	<dword alias="WIT without henna" /> <!-- NEW (STEALTH PATCH) -->
+	<!-- byte alias="WIT without henna" /-->
 	<dword alias="Current LUC" />
-	<byte alias="LUC without henna" />
+	<dword alias="LUC without henna" /> <!-- NEW (STEALTH PATCH) -->
+	<!-- byte alias="LUC without henna" /-->
 	<dword alias="Current CHA" />
-	<byte alias="CHA without henna" />
-	<dword alias="Periodic" type="YesOrNo" /> <!-- NEW -->
+	<dword alias="CHA without henna" /> <!-- NEW (STEALTH PATCH) -->
+	<!-- byte alias="CHA without henna" /-->
+
+	<!-- NEW -->
+	<dword alias="Periodic" type="YesOrNo" />
 </packet>

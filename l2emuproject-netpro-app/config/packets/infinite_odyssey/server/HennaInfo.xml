@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- STEALTH PATCH WARNING: this definition is only valid for IO clients updated on 2015-06-10 or later -->
+<!-- No updates since Ertheia. If using an older client, consult Ertheia definition for details -->
+
+<!-- Stealth patch: the previous error of introducing unsigned CHARs (and allowing character base stats to display +249 and similar modifiers) was fixed by using DWORDs -->
+<packet id="SM_HENNA_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- NEW (STEALTH PATCH) -->
+	<dword alias="INT modifier" />
+	<dword alias="STR modifier" />
+	<dword alias="CON modifier" />
+	<dword alias="MEN modifier" />
+	<dword alias="DEX modifier" />
+	<dword alias="WIT modifier" />
+	<dword alias="LUC modifier" /> 
+	<dword alias="CHA modifier" />
+
+	<dword alias="Available slots" />
+	<dword alias="Used slots" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Henna" type="Henna" />
+		<dword alias="Active" type="YesOrNo" />
+	</loop>
+	<dword alias="Periodic henna" type="Henna" />
+	<dword alias="Time remaining" type="TimeRemaining" />
+	<dword alias="Active" type="YesOrNo" />
+</packet>

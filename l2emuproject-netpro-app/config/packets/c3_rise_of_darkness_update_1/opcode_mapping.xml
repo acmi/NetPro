@@ -15,8 +15,6 @@
 	<server>
 		<removedPacket id="SM_PARTY_MATCH_LIST" />
 		<removedPacket id="SM_PARTY_MATCH_DETAIL" />
-		<packet opcodePrefix="AF" id="176" />
-		<packet opcodePrefix="B0" id="177" />
 		<packet opcodePrefix="FE 02 00" id="SM_EX_EVENT_MATCH_LIST" />
 		<packet opcodePrefix="FE 03 00" id="SM_EX_EVENT_MATCH_OBSERVER" />
 		<packet opcodePrefix="FE 04 00" id="SM_EX_EVENT_MATCH_MESSAGE" />

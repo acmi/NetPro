@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added soulshot/spiritshot consumption DWORDs -->
+<packet id="SM_PET_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="ServitorType" id="type" />
+	<branch id="type" condition="servitor.Summon">
+		<dword alias="Summon OID" type="ObjectID">
+			<scriptAlias id="OIC_SUMMON_OID" />
+			<scriptAlias id="OIL_OBJECT_ID" />
+			<scriptAlias id="LUA_USER_SUMMON_OID" />
+		</dword>
+	</branch>
+	<branch id="type" condition="servitor.Pet">
+		<dword alias="Pet OID" type="ObjectID">
+			<scriptAlias id="OIC_PET_OID" />
+			<scriptAlias id="OIL_OBJECT_ID" />
+			<scriptAlias id="LUA_USER_PET_OID" />
+		</dword>
+	</branch>
+	<dword alias="Servitor" type="Npc">
+		<scriptAlias id="OIC_NPC_TEMPLATE" />
+	</dword>
+	<dword alias="Attackable" type="YesOrNo" />
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<dword alias="Heading" />
+	<dword alias="0" />
+	<dword alias="Casting speed" />
+	<dword alias="Attack speed" />
+	<dword alias="Running speed (on ground)" />
+	<dword alias="Walking speed (on ground)" />
+	<dword alias="Running speed (in water)" />
+	<dword alias="Walking speed (in water)" />
+	<dword alias="Running speed (mounted)" />
+	<dword alias="Walking speed (mounted)" />
+	<dword alias="Running speed (flying mounted)" />
+	<dword alias="Walking speed (flying mounted)" />
+	<double alias="Movement speed multiplier" />
+	<double alias="Attack speed multiplier" />
+	<double alias="Collision radius" />
+	<double alias="Collision height" />
+	<dword alias="Main weapon" type="Item" />
+	<dword alias="Chest armor" type="Item" />
+	<dword alias="Shield/support weapon" type="Item" />
+	<byte alias="1" /> <!-- Identified as 'Show title' -->
+	<byte alias="Movement mode" type="MoveType" />
+	<byte alias="In combat" type="YesOrNo" />
+	<byte alias="Lying dead" type="YesOrNo" />
+	<byte alias="Knownlist state" type="KnownlistState" />
+	<string alias="Name">
+		<scriptAlias id="OIC_GIVEN_NAME" />
+	</string>
+	<string alias="Title">
+		<scriptAlias id="OIC_NPC_TITLE" />
+	</string>
+	<dword alias="Title color" type="NpcTitleColor" />
+	<dword alias="PvP" type="Pvp" />
+	<dword alias="Karma" />
+	<dword alias="Current satiation" />
+	<dword alias="Maximum satiation" />
+	<dword alias="Current HP" />
+	<dword alias="Maximum HP" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="SP" />
+	<dword alias="Level" />
+	<dword alias="XP" />
+	<dword alias="Current level XP" />
+	<dword alias="Next level XP" />
+	<dword alias="Current carried weight" />
+	<dword alias="Maximum carried weight" />
+	<dword alias="P. Atk." />
+	<dword alias="P. Def." />
+	<dword alias="M. Atk." />
+	<dword alias="M. Def." />
+	<dword alias="Accuracy" />
+	<dword alias="Evasion" />
+	<dword alias="Critical" />
+	<dword alias="Actual movement speed" />
+	<dword alias="Attack speed" />
+	<dword alias="Casting speed" />
+	<dword alias="Abnormal effect" type="ave.AbnormalVisualEffectMask" />
+	<dword alias="Mountable" type="YesOrNo" />
+	<byte alias="Environment" type="Environment" />
+	<byte alias="Event team" type="DuelTeam" />
+
+	<!-- NEW -->
+	<dword alias="Soulshot usage" />
+	<dword alias="Spiritshot usage" />
+</packet>

@@ -6,7 +6,7 @@
 		<packet opcodePrefix="60" id="CM_REQ_FRIEND_INFO_LIST" />
 		<packet opcodePrefix="61" id="CM_REQ_FRIEND_DEL" />
 		<packet opcodePrefix="82" id="CM_REQ_JOIN_ALLY" />
-		<packet opcodePrefix="83" id="103" />
+		<packet opcodePrefix="83" id="CM_REQ_ANSWER_JOIN_ALLY" />
 		<packet opcodePrefix="84" id="CM_REQ_WITHDRAW_ALLY" />
 		<packet opcodePrefix="85" id="CM_REQ_OUST_ALLY" />
 		<packet opcodePrefix="86" id="CM_REQ_DISMISS_ALLY" />
@@ -32,7 +32,7 @@
 		<packet opcodePrefix="92" id="SM_FRIEND_LIST" />
 		<packet opcodePrefix="93" id="SM_FRIEND_STATUS" />
 		<packet opcodePrefix="95" id="SM_FRIEND_ADD_REQUEST" />
-		<packet opcodePrefix="C1" id="194" />
+		<packet opcodePrefix="C1" id="SM_ASK_JOIN_ALLIANCE" />
 		<packet opcodePrefix="C2" id="SM_JOIN_ALLIANCE" />
 		<packet opcodePrefix="C3" id="SM_WITHDRAW_ALLIANCE" />
 		<packet opcodePrefix="C4" id="SM_OUST_ALLIANCE_MEMBER_PLEDGE" />

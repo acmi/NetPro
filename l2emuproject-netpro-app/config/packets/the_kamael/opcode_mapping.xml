@@ -196,9 +196,9 @@
 		<packet opcodePrefix="D0 06 00" id="196" />
 		<packet opcodePrefix="D0 07 00" id="197" />
 		<packet opcodePrefix="D0 08 00" id="198" />
-		<packet opcodePrefix="D0 09 00" id="185" />
-		<packet opcodePrefix="D0 0A 00" id="186" />
-		<packet opcodePrefix="D0 0B 00" id="187" />
+		<packet opcodePrefix="D0 09 00" id="CM_REQ_OUST_FROM_PARTY_ROOM" />
+		<packet opcodePrefix="D0 0A 00" id="CM_REQ_DISMISS_PARTY_ROOM" />
+		<packet opcodePrefix="D0 0B 00" id="CM_REQ_WITHDRAW_PARTY_ROOM" />
 		<packet opcodePrefix="D0 0C 00" id="CM_REQ_HAND_OVER_PARTY_MASTER" />
 		<packet opcodePrefix="D0 0D 00" id="CM_REQ_AUTO_SOUL_SHOT" />
 		<packet opcodePrefix="D0 0E 00" id="CM_REQ_EX_ENCHANT_SKILL_INFO" />
@@ -381,8 +381,8 @@
 		<packet opcodePrefix="99" id="SM_GM_VIEW_QUEST_INFO" />
 		<packet opcodePrefix="9A" id="SM_GM_VIEW_ITEM_LIST" />
 		<packet opcodePrefix="9B" id="SM_GM_VIEW_WAREHOUSE_WITHDRAW_LIST" />
-		<packet opcodePrefix="9C" id="176" />
-		<packet opcodePrefix="9D" id="177" />
+		<packet opcodePrefix="9C" id="SM_LIST_PARTY_WATING" />
+		<packet opcodePrefix="9D" id="SM_PARTY_ROOM_INFO" />
 		<packet opcodePrefix="9E" id="SM_PLAY_SOUND" />
 		<packet opcodePrefix="9F" id="SM_STATIC_OBJECT" />
 		<packet opcodePrefix="A0" id="SM_PRIVATE_STORE_MANAGE_LIST" />
@@ -476,9 +476,9 @@
 		<packet opcodePrefix="FE 05 00" id="SM_EX_EVENT_MATCH_FIRECRACKER" />
 		<packet opcodePrefix="FE 06 00" id="SM_EX_EVENT_MATCH_TEAM_UNLOCKED" />
 		<packet opcodePrefix="FE 07 00" id="SM_EX_EVENT_MATCH_GM_TEST" />
-		<packet opcodePrefix="FE 08 00" id="303" />
-		<packet opcodePrefix="FE 09 00" id="304" />
-		<packet opcodePrefix="FE 0A 00" id="305" />
+		<packet opcodePrefix="FE 08 00" id="SM_EX_PARTY_ROOM_MEMBER" />
+		<packet opcodePrefix="FE 09 00" id="SM_EX_CLOSE_PARTY_ROOM" />
+		<packet opcodePrefix="FE 0A 00" id="SM_EX_MANAGE_PARTY_ROOM_MEMBER" />
 		<packet opcodePrefix="FE 0B 00" id="306" />
 		<packet opcodePrefix="FE 0C 00" id="SM_EX_AUTO_SOUL_SHOT" />
 		<packet opcodePrefix="FE 0D 00" id="SM_EX_EVENT_MATCH_LIST" />

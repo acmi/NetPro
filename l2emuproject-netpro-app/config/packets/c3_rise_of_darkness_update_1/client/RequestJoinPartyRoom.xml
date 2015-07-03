@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_JOIN_PARTY_ROOM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<!-- Only one of these DWORDs will be != 0 -->
+	<dword alias="Room ID" />
+	<dword alias="Region" type="PartyRoomRegion" />
+</packet>

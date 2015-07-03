@@ -9,12 +9,17 @@
 		<packet opcodePrefix="6F" id="CM_REQ_LIST_PARTY_WATING" />
 		<packet opcodePrefix="70" id="CM_REQ_MANAGE_PARTY_ROOM" />
 		<packet opcodePrefix="71" id="CM_REQ_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="CF 01 00" id="CM_REQ_OUST_FROM_PARTY_ROOM" />
+		<packet opcodePrefix="CF 02 00" id="CM_REQ_DISMISS_PARTY_ROOM" />
+		<packet opcodePrefix="CF 03 00" id="CM_REQ_WITHDRAW_PARTY_ROOM" />
 		<packet opcodePrefix="CF 04 00" id="CM_REQ_HAND_OVER_PARTY_MASTER" />
 		<packet opcodePrefix="CF 05 00" id="CM_REQ_AUTO_SOUL_SHOT" />
 	</client>
 	<server>
 		<removedPacket id="SM_PARTY_MATCH_LIST" />
 		<removedPacket id="SM_PARTY_MATCH_DETAIL" />
+		<packet opcodePrefix="96" id="SM_LIST_PARTY_WATING" />
+		<packet opcodePrefix="97" id="SM_PARTY_ROOM_INFO" />
 		<packet opcodePrefix="FE 02 00" id="SM_EX_EVENT_MATCH_LIST" />
 		<packet opcodePrefix="FE 03 00" id="SM_EX_EVENT_MATCH_OBSERVER" />
 		<packet opcodePrefix="FE 04 00" id="SM_EX_EVENT_MATCH_MESSAGE" />
@@ -27,9 +32,9 @@
 		<packet opcodePrefix="FE 0B 00" id="SM_EX_EVENT_MATCH_FIRECRACKER" />
 		<packet opcodePrefix="FE 0C 00" id="SM_EX_EVENT_MATCH_TEAM_UNLOCKED" />
 		<packet opcodePrefix="FE 0D 00" id="SM_EX_EVENT_MATCH_GM_TEST" />
-		<packet opcodePrefix="FE 0E 00" id="303" />
-		<packet opcodePrefix="FE 0F 00" id="304" />
-		<packet opcodePrefix="FE 10 00" id="305" />
+		<packet opcodePrefix="FE 0E 00" id="SM_EX_PARTY_ROOM_MEMBER" />
+		<packet opcodePrefix="FE 0F 00" id="SM_EX_CLOSE_PARTY_ROOM" />
+		<packet opcodePrefix="FE 10 00" id="SM_EX_MANAGE_PARTY_ROOM_MEMBER" />
 		<packet opcodePrefix="FE 11 00" id="306" />
 		<packet opcodePrefix="FE 12 00" id="SM_EX_AUTO_SOUL_SHOT" />
 	</server>

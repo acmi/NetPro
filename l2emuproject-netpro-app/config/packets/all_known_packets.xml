@@ -46,9 +46,6 @@
 		<packet id="178" name="RequestSSQStatus" />
 		<packet id="179" name="RequestPetitionVote" />
 		<packet id="184" name="RequestReload" />
-		<packet id="185" name="RequestOustFromPartyRoom" />
-		<packet id="186" name="RequestDismissPartyRoom" />
-		<packet id="187" name="RequestWithdrawPartyRoom" />
 		<packet id="192" name="RequestProcureCropList" />
 		<packet id="193" name="RequestSetSeed" />
 		<packet id="194" name="RequestSetCrop" />
@@ -929,33 +926,15 @@
 		-->
 		<packet id="CM_REQ_PARTY_MATCH_CONFIG" name="RequestPartyMatchConfig" />
 		<!--
-		ASCII "cddd"
-		UNICODE "RequestListPartyWating"
-		UNICODE "(Send)%s"
-		-->
-		<packet id="CM_REQ_LIST_PARTY_WATING" name="RequestListPartyWaiting" />
-		<!--
 		ASCII "cd"
 		UNICODE "(Send)RequestPartyMatchList"
 		-->
 		<packet id="CM_REQ_PARTY_MATCH_LIST" name="RequestPartyMatchList" />
 		<!--
-		ASCII "cdddddS"
-		UNICODE "RequestManagePartyRoom"
-		UNICODE "(Send)%s"
-		-->
-		<packet id="CM_REQ_MANAGE_PARTY_ROOM" name="RequestManagePartyRoom" />
-		<!--
 		ASCII "cd"
 		UNICODE "(Send)RequestPartyMatchDetail"
 		-->
 		<packet id="CM_REQ_PARTY_MATCH_DETAIL" name="RequestPartyMatchDetail" />
-		<!--
-		ASCII "cdddd"
-		UNICODE "RequestJoinPartyRoom"
-		UNICODE "(Send)%s"
-		-->
-		<packet id="CM_REQ_JOIN_PARTY_ROOM" name="RequestJoinPartyRoom" />
 		<!--
 		ASCII "cdQ"
 		UNICODE "RequestCrystallizeItem"
@@ -1365,6 +1344,42 @@
 		-->
 		<packet id="CM_REQ_SEND_MSN_CHAT_LOG" name="RequestSendMsnChatLog" />
 		<!--
+		ASCII "cddd"
+		UNICODE "RequestListPartyWating"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_LIST_PARTY_WATING" name="RequestListPartyWaiting" />
+		<!--
+		ASCII "cdddddS"
+		UNICODE "RequestManagePartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_MANAGE_PARTY_ROOM" name="RequestManagePartyRoom" />
+		<!--
+		ASCII "cdddd"
+		UNICODE "RequestJoinPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_JOIN_PARTY_ROOM" name="RequestJoinPartyRoom" />
+		<!--
+		ASCII "chd"
+		UNICODE "RequestOustFromPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OUST_FROM_PARTY_ROOM" name="RequestOustFromPartyRoom" />
+		<!--
+		ASCII "chdd"
+		UNICODE "RequestDismissPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_DISMISS_PARTY_ROOM" name="RequestDismissPartyRoom" />
+		<!--
+		ASCII "chdd"
+		UNICODE "RequestWithdrawPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_WITHDRAW_PARTY_ROOM" name="RequestWithdrawPartyRoom" />
+		<!--
 		ASCII "chS"
 		UNICODE "RequestHandOverPartyMaster"
 		UNICODE "(Send)%s"
@@ -1646,8 +1661,6 @@
 		<packet id="SM_FRIEND_STATUS" name="FriendStatus" /> <!-- Since GoD -->
 		<packet id="155" name="AuthServerList" />
 		<packet id="172" name="GMViewMagicInfo" />
-		<packet id="176" name="ListPartyWaiting" />
-		<packet id="177" name="PartyRoomInfo" />
 		<packet id="184" name="ReviveRequest" />
 		<packet id="199" name="SetAllianceCrest" />
 		<packet id="212" name="VehicleStart" />
@@ -1669,9 +1682,6 @@
 		<packet id="279" name="SSQStatus" />
 		<packet id="280" name="PetitionVote" />
 		<packet id="283" name="FriendPacket" />
-		<packet id="303" name="ExPartyRoomMember" />
-		<packet id="304" name="ExClosePartyRoom" />
-		<packet id="305" name="ExManagePartyRoomMember" />
 		<packet id="318" name="ExShowSeedInfo" />
 		<packet id="319" name="ExShowCropInfo" />
 		<packet id="320" name="ExShowManorDefaultInfo" />
@@ -3352,6 +3362,20 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_REGEN_MAX" name="ExRegenMax" />
+		<!--
+		ASCII "dd"
+		ASCII "dSddddSd"
+		ASCII "dS"
+		UNICODE "ListPartyWatingPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_LIST_PARTY_WATING" name="ListPartyWaiting" />
+		<!--
+		ASCII "ddddddS"
+		UNICODE "PartyRoomInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_ROOM_INFO" name="PartyRoomInfo" />
 		<!-- UNICODE "ExEventMatchListPacket" -->
 		<packet id="SM_EX_EVENT_MATCH_LIST" name="ExEventMatchList" />
 		<!--
@@ -3420,6 +3444,24 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_EVENT_MATCH_GM_TEST" name="ExEventMatchGMTest" />
+		<!--
+		ASCII "dd"
+		ASCII "dSddddd"
+		UNICODE "ExPartyRoomMemberPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_PARTY_ROOM_MEMBER" name="ExPartyRoomMember" />
+		<!--
+		UNICODE "ExClosePartyRoomPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_CLOSE_PARTY_ROOM" name="ExClosePartyRoom" />
+		<!--
+		ASCII "ddSddddd"
+		UNICODE "ExManagePartyRoomMemberPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_MANAGE_PARTY_ROOM_MEMBER" name="ExManagePartyRoomMember" />
 		<!-- UNICODE "ExEventMatchLockResult" -->
 		<packet id="306" name="ExEventMatchLockResult" />
 		<!--

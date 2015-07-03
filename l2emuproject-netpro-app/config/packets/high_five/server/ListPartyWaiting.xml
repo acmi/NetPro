@@ -5,10 +5,10 @@
 
 <!-- Unknown time of changes -->
 <!-- Member count DWORD moved to the end of a loop element and an additional inner loop with basic member details added -->
-<packet id="176" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_LIST_PARTY_WATING" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Page count" />
-	<dword alias="Room count" id="index_0" />
-	<loop id="index_0">
+	<dword alias="Room count" id="room_cnt" />
+	<loop id="room_cnt">
 		<dword alias="Room ID" />
 		<string alias="Room title" />
 		<dword alias="Location" type="PartyRoomRegion" />
@@ -18,8 +18,8 @@
 		<string alias="Leader name" />
 		
 		<!-- NEW -->
-		<dword alias="Member count" id="index_1" />
-		<loop id="index_1">
+		<dword alias="Member count" id="member_cnt" />
+		<loop id="member_cnt">
 			<dword alias="Member class" type="CharacterClass" />
 			<string alias="Member name" />
 		</loop>

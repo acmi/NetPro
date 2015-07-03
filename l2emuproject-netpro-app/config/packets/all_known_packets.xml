@@ -43,7 +43,6 @@
 		<packet id="173" name="RequestBuyProcure" />
 		<packet id="174" name="RequestBuySeed" />
 		<packet id="175" name="ReplyGameGuardQuery" />
-		<packet id="176" name="RequestConfirmDlg" />
 		<packet id="178" name="RequestSSQStatus" />
 		<packet id="179" name="RequestPetitionVote" />
 		<packet id="184" name="RequestReload" />
@@ -1337,6 +1336,12 @@
 		-->
 		<packet id="CM_REQ_DELETE_MACRO" name="RequestDeleteMacro" />
 		<!--
+		ASCII "cddd"
+		UNICODE "ConfirmDlg"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_CONFIRM_DLG" name="ConfirmDlg" />
+		<!--
 		ASCII "cdddb"
 		UNICODE "RequestPreviewItem"
 		UNICODE "(Send)%s"
@@ -1661,7 +1666,6 @@
 		<packet id="269" name="GameGuardQuery" />
 		<packet id="270" name="Dummy_EE" />
 		<packet id="271" name="ClientSetTime" />
-		<packet id="272" name="ConfirmDlg" />
 		<packet id="279" name="SSQStatus" />
 		<packet id="280" name="PetitionVote" />
 		<packet id="283" name="FriendPacket" />
@@ -3265,6 +3269,14 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SHOW_XMAS_SEAL" name="ShowXMasSeal" />
+		<!--
+		ASCII "dd"
+		ASCII "ddd"
+		ASCII "dd"
+		UNICODE "ConfirmDlgPacket"
+		UNICODE "(Receive)%s : Msg Number : %d"
+		-->
+		<packet id="SM_CONFIRM_DLG" name="ConfirmDlg" />
 		<!--
 		ASCII "ddd"
 		ASCII "dhdh"

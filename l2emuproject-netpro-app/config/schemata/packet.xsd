@@ -199,7 +199,6 @@
 			<xs:enumeration value="ObjectID" />
 			<xs:enumeration value="OlympiadMatch" />
 			<xs:enumeration value="OlympiadSide" />
-			<xs:enumeration value="OlympiadSpectation" />
 			<xs:enumeration value="Parameter" />
 			<xs:enumeration value="PartyChange" />
 			<xs:enumeration value="PartyMatchingLevels" />

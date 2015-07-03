@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_OLYMPIAD_USER_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Side" type="OlympiadSide" />
+	<dword alias="Player OID" type="ObjectID" />
+	<string alias="Name" />
+	<dword alias="Class" type="CharacterClass" />
+	<dword alias="Current HP" /> <!-- real -->
+	<dword alias="Maximum HP" /> <!-- real -->
+	<dword alias="Current CP" />
+	<dword alias="Maximum CP" />
+</packet>

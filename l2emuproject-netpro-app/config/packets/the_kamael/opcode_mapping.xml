@@ -179,7 +179,7 @@
 		<packet opcodePrefix="C3" id="CM_REQ_HENNA_ITEM_LIST" />
 		<packet opcodePrefix="C4" id="CM_REQ_HENNA_ITEM_INFO" />
 		<packet opcodePrefix="C5" id="174" />
-		<packet opcodePrefix="C6" id="176" />
+		<packet opcodePrefix="C6" id="CM_CONFIRM_DLG" />
 		<packet opcodePrefix="C7" id="CM_REQ_PREVIEW_ITEM" />
 		<packet opcodePrefix="C8" id="178" />
 		<packet opcodePrefix="C9" id="179" />
@@ -459,7 +459,7 @@
 		<packet opcodePrefix="F0" id="SM_GM_HENNA_INFO" />
 		<packet opcodePrefix="F1" id="SM_RADAR_CONTROL" />
 		<packet opcodePrefix="F2" id="271" />
-		<packet opcodePrefix="F3" id="272" />
+		<packet opcodePrefix="F3" id="SM_CONFIRM_DLG" />
 		<packet opcodePrefix="F4" id="SM_PARTY_SPELLED" />
 		<packet opcodePrefix="F5" id="SM_SHOP_PREVIEW_LIST" />
 		<packet opcodePrefix="F6" id="SM_SHOP_PREVIEW_INFO" />

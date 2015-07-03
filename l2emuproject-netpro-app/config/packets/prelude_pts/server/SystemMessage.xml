@@ -17,7 +17,7 @@
 		<branch id="cond_1" condition="param.Item">
 			<dword alias="Item" type="Item" />
 		</branch>
-		<branch id="cond_1" condition="param.Item2">
+		<branch id="cond_1" condition="param.Item2"> <!-- Interlude -->
 			<dword alias="Item" type="Item" />
 			<word alias="Augmentation effect (1)" type="Augmentation" />
 			<word alias="Augmentation effect (2)" type="Augmentation" />

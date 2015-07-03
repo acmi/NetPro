@@ -14,9 +14,9 @@
 		<packet opcodePrefix="D0 0A 00" id="193" />
 		<packet opcodePrefix="D0 0B 00" id="194" />
 		<packet opcodePrefix="D0 0C 00" id="CM_REQ_WRITE_HERO_WORDS" />
-		<packet opcodePrefix="D0 0D 00" id="196" />
-		<packet opcodePrefix="D0 0E 00" id="197" />
-		<packet opcodePrefix="D0 0F 00" id="198" />
+		<packet opcodePrefix="D0 0D 00" id="CM_REQ_EX_ASK_JOIN_MPCC" />
+		<packet opcodePrefix="D0 0E 00" id="CM_REQ_EX_ACCEPT_JOIN_MPCC" />
+		<packet opcodePrefix="D0 0F 00" id="CM_REQ_EX_OUST_FROM_MPCC" />
 		<packet opcodePrefix="D0 10 00" id="CM_REQ_EX_PLEDGE_CREST_LARGE" />
 		<packet opcodePrefix="D0 11 00" id="CM_REQ_EX_SET_PLEDGE_CREST_LARGE" />
 		<packet opcodePrefix="D0 12 00" id="CM_REQ_OLYMPIAD_OBSERVER_END" />
@@ -41,9 +41,9 @@
 		<packet opcodePrefix="FE 22 00" id="324" />
 		<packet opcodePrefix="FE 23 00" id="325" />
 		<packet opcodePrefix="FE 24 00" id="SM_EX_SERVER_PRIMITIVE" />
-		<packet opcodePrefix="FE 25 00" id="327" />
-		<packet opcodePrefix="FE 26 00" id="328" />
-		<packet opcodePrefix="FE 27 00" id="329" />
+		<packet opcodePrefix="FE 25 00" id="SM_EX_OPEN_MPCC" />
+		<packet opcodePrefix="FE 26 00" id="SM_EX_CLOSE_MPCC" />
+		<packet opcodePrefix="FE 27 00" id="SM_EX_ASK_JOIN_MPCC" />
 		<packet opcodePrefix="FE 28 00" id="SM_PLEDGE_CREST_LARGE" />
 		<packet opcodePrefix="FE 29 00" id="SM_EX_OLYMPIAD_USER_INFO" />
 		<packet opcodePrefix="FE 2A 00" id="SM_EX_OLYMPIAD_SPELLED_INFO" />
@@ -52,6 +52,6 @@
 		<packet opcodePrefix="FE 2D 00" id="SM_EX_MAIL_ARRIVED" />
 		<packet opcodePrefix="FE 2E 00" id="SM_EX_STORAGE_MAX_COUNT" />
 		<packet opcodePrefix="FE 2F 00" id="SM_EX_EVENT_MATCH_MANAGE" />
-		<packet opcodePrefix="FE 30 00" id="337" />
+		<packet opcodePrefix="FE 30 00" id="SM_EX_MULTI_PARTY_COMMAND_CHANNEL_INFO" />
 	</server>
 </mapping>

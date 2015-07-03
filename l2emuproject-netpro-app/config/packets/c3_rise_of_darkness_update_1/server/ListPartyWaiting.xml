@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_LIST_PARTY_WATING" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Page number" />
+	<dword alias="Room count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Room ID" />
+		<string alias="Room title" />
+		<dword alias="Location" type="PartyRoomRegion" />
+		<dword alias="Minimum level to join" />
+		<dword alias="Maximum level to join" />
+		<dword alias="Member count" />
+		<dword alias="Size" />
+		<string alias="Leader name" />
+	</loop>
+</packet>

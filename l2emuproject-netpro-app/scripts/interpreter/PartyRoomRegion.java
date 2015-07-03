@@ -28,7 +28,8 @@ public class PartyRoomRegion extends ScriptedZeroBasedIntegerIdInterpreter
 	public PartyRoomRegion()
 	{
 		// @formatter:off
-		super(new InterpreterMetadata(-1),
+		super(new InterpreterMetadata(-2),
+				"Near me",
 				"Any",
 				"Offline", // 0
 				"Talking island",
@@ -38,7 +39,7 @@ public class PartyRoomRegion extends ScriptedZeroBasedIntegerIdInterpreter
 				"Dion", // 5
 				"Giran",
 				"Neutral zone",
-				null,
+				"Lyonn",
 				"Schuttgart",
 				"Oren", // 10
 				"Hunters village",
@@ -46,7 +47,7 @@ public class PartyRoomRegion extends ScriptedZeroBasedIntegerIdInterpreter
 				"Aden",
 				"Rune",
 				"Goddard" // 15
-				);
+		);
 		// @formatter:on
 	}
 }

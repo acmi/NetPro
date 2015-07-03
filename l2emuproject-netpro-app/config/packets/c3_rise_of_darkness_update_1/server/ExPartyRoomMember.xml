@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_PARTY_ROOM_MEMBER" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Owner's view" type="YesOrNo" />
+	<dword alias="Member count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Member OID" type="ObjectID" />
+		<string alias="Name" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Level" />
+		<dword alias="Region" type="PartyRoomRegion" />
+		<dword alias="Membership" type="RoomMembership" />
+	</loop>
+</packet>

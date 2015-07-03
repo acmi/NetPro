@@ -193,7 +193,7 @@
 		<packet opcodePrefix="A5" id="SM_DELETE_RADAR" />
 		<packet opcodePrefix="A6" id="SM_MY_TARGET_SELECTED" />
 		<packet opcodePrefix="A7" id="SM_PARTY_MEMBER_POSITION" />
-		<packet opcodePrefix="A8" id="194" />
+		<packet opcodePrefix="A8" id="SM_ASK_JOIN_ALLIANCE" />
 		<packet opcodePrefix="A9" id="SM_JOIN_ALLIANCE" />
 		<packet opcodePrefix="AA" id="SM_WITHDRAW_ALLIANCE" />
 		<packet opcodePrefix="AB" id="SM_OUST_ALLIANCE_MEMBER_PLEDGE" />

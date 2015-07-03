@@ -37,7 +37,6 @@
 		<packet id="LS_CM_0E" name="Unnamed 0E" />
 		
 		<packet id="64" name="RequestReplySurrenderPledgeWar" />
-		<packet id="103" name="RequestAnswerJoinAlly" />
 		<packet id="128" name="RequestSEKCustom" />
 		<packet id="129" name="RequestRide" />
 		<packet id="130" name="RequestReviveReply" />
@@ -994,6 +993,12 @@
 		-->
 		<packet id="CM_REQ_JOIN_ALLY" name="RequestJoinAlly" />
 		<!--
+		ASCII "cd"
+		UNICODE "RequestAnswerJoinAlly"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ANSWER_JOIN_ALLY" name="RequestAnswerJoinAlly" />
+		<!--
 		UNICODE "RequestWithdrawAlly"
 		UNICODE "(Send)%s"
 		-->
@@ -1639,7 +1644,6 @@
 		<packet id="176" name="ListPartyWaiting" />
 		<packet id="177" name="PartyRoomInfo" />
 		<packet id="184" name="ReviveRequest" />
-		<packet id="194" name="AskJoinAlliance" />
 		<packet id="199" name="SetAllianceCrest" />
 		<packet id="212" name="VehicleStart" />
 		<packet id="214" name="Dummy_D5" />
@@ -2898,6 +2902,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_PARTY_MEMBER_POSITION" name="PartyMemberPosition" />
+		<!--
+		ASCII "dSSS"
+		UNICODE "AskJoinAlliancePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_ASK_JOIN_ALLIANCE" name="AskJoinAlliance" />
 		<!--
 		UNICODE "JoinAlliancePacket"
 		UNICODE "(Receive)%s"

@@ -129,7 +129,7 @@
 		<packet opcodePrefix="8A" id="CM_REQ_PETITION_CANCEL" />
 		<packet opcodePrefix="8B" id="CM_REQ_GM_LIST" />
 		<packet opcodePrefix="8C" id="CM_REQ_JOIN_ALLY" />
-		<packet opcodePrefix="8D" id="103" />
+		<packet opcodePrefix="8D" id="CM_REQ_ANSWER_JOIN_ALLY" />
 		<packet opcodePrefix="8E" id="CM_REQ_WITHDRAW_ALLY" />
 		<packet opcodePrefix="8F" id="CM_REQ_OUST_ALLY" />
 		<packet opcodePrefix="90" id="CM_REQ_DISMISS_ALLY" />
@@ -412,7 +412,7 @@
 		<packet opcodePrefix="B8" id="SM_DELETE_RADAR" />
 		<packet opcodePrefix="B9" id="SM_MY_TARGET_SELECTED" />
 		<packet opcodePrefix="BA" id="SM_PARTY_MEMBER_POSITION" />
-		<packet opcodePrefix="BB" id="194" />
+		<packet opcodePrefix="BB" id="SM_ASK_JOIN_ALLIANCE" />
 		<packet opcodePrefix="BC" id="SM_JOIN_ALLIANCE" />
 		<packet opcodePrefix="BD" id="SM_PRIVATE_STORE_BUY_MANAGE_LIST" />
 		<packet opcodePrefix="BE" id="SM_PRIVATE_STORE_BUY_LIST" />

@@ -1683,10 +1683,6 @@
 		<packet id="327" name="ExOpenMPCC" />
 		<packet id="328" name="ExCloseMPCC" />
 		<packet id="329" name="ExAskJoinMPCC" />
-		<packet id="331" name="ExOlympiadUserInfo" />
-		<packet id="332" name="ExOlympiadSpelledInfo" />
-		<packet id="333" name="ExOlympiadMode" />
-		<packet id="334" name="ExOlympiadMatchEnd" />
 		<packet id="337" name="ExMultiPartyCommandChannelInfo" />
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
@@ -3523,6 +3519,30 @@
 		UNICODE "allreceived:%d"
 		-->
 		<packet id="SM_EX_PLEDGE_EMBLEM" name="ExPledgeEmblem" />
+		<!--
+		ASCII "cdSddddd"
+		UNICODE "ExOlympiadUserInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_OLYMPIAD_USER_INFO" name="ExOlympiadUserInfo" />
+		<!--
+		ASCII "dd"
+		ASCII "dhdh"
+		ASCII "dhhdh"
+		UNICODE "ExOlympiadSpelledInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_OLYMPIAD_SPELLED_INFO" name="ExOlympiadSpelledInfo" />
+		<!--
+		UNICODE "ExOlympiadModePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_OLYMPIAD_MODE" name="ExOlympiadMode" />
+		<!--
+		UNICODE "ExOlympiadMatchEndPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_OLYMPIAD_MATCH_END" name="ExOlympiadMatchEnd" />
 		<!--
 		UNICODE "ExMailArrivedPacket"
 		UNICODE "(Receive)%s"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_OLYMPIAD_SPELLED_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Player OID" type="ObjectID" />
+	<dword alias="Effect count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Skill" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<word alias="Level" type="skill.SkillLevel">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</word>
+		<dword alias="Time left" type="TimeRemaining" />
+	</loop>
+</packet>

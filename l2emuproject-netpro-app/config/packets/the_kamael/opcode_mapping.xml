@@ -513,7 +513,7 @@
 		<packet opcodePrefix="FE 2A 00" id="SM_EX_ENCHANT_SKILL_INFO" />
 		<packet opcodePrefix="FE 2B 00" id="322" />
 		<packet opcodePrefix="FE 2C 00" id="323" />
-		<packet opcodePrefix="FE 2D 00" id="334" />
+		<packet opcodePrefix="FE 2D 00" id="SM_EX_OLYMPIAD_MATCH_END" />
 		<packet opcodePrefix="FE 2E 00" id="SM_EX_MAIL_ARRIVED" />
 		<packet opcodePrefix="FE 2F 00" id="SM_EX_STORAGE_MAX_COUNT" />
 		<packet opcodePrefix="FE 30 00" id="SM_EX_EVENT_MATCH_MANAGE" />
@@ -590,9 +590,9 @@
 		<packet opcodePrefix="FE 77 00" id="415" />
 		<packet opcodePrefix="FE 78 00" id="324" />
 		<packet opcodePrefix="FE 79 00" id="325" />
-		<packet opcodePrefix="FE 7A 00" id="331" />
-		<packet opcodePrefix="FE 7B 00" id="332" />
-		<packet opcodePrefix="FE 7C 00" id="333" />
+		<packet opcodePrefix="FE 7A 00" id="SM_EX_OLYMPIAD_USER_INFO" />
+		<packet opcodePrefix="FE 7B 00" id="SM_EX_OLYMPIAD_SPELLED_INFO" />
+		<packet opcodePrefix="FE 7C 00" id="SM_EX_OLYMPIAD_MODE" />
 		<packet opcodePrefix="FE 7D 00" id="416" />
 	</server>
 </mapping>

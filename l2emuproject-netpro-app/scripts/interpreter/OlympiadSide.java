@@ -15,19 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as an olympiad match's side.
  * 
  * @author savormix
  */
-public class OlympiadSide extends ScriptedLegacyIntegerIdInterpreter
+public class OlympiadSide extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public OlympiadSide()
 	{
-		addInterpretation(1, "Red");
-		addInterpretation(2, "Blue");
+		super("None", "Red", "Blue", "Spectator");
 	}
 }

@@ -193,9 +193,9 @@
 		<packet opcodePrefix="D0 03 00" id="193" />
 		<packet opcodePrefix="D0 04 00" id="194" />
 		<packet opcodePrefix="D0 05 00" id="CM_REQ_WRITE_HERO_WORDS" />
-		<packet opcodePrefix="D0 06 00" id="196" />
-		<packet opcodePrefix="D0 07 00" id="197" />
-		<packet opcodePrefix="D0 08 00" id="198" />
+		<packet opcodePrefix="D0 06 00" id="CM_REQ_EX_ASK_JOIN_MPCC" />
+		<packet opcodePrefix="D0 07 00" id="CM_REQ_EX_ACCEPT_JOIN_MPCC" />
+		<packet opcodePrefix="D0 08 00" id="CM_REQ_EX_OUST_FROM_MPCC" />
 		<packet opcodePrefix="D0 09 00" id="CM_REQ_OUST_FROM_PARTY_ROOM" />
 		<packet opcodePrefix="D0 0A 00" id="CM_REQ_DISMISS_PARTY_ROOM" />
 		<packet opcodePrefix="D0 0B 00" id="CM_REQ_WITHDRAW_PARTY_ROOM" />
@@ -486,15 +486,15 @@
 		<packet opcodePrefix="FE 0F 00" id="SM_EX_EVENT_MATCH_MESSAGE" />
 		<packet opcodePrefix="FE 10 00" id="SM_EX_EVENT_MATCH_SCORE" />
 		<packet opcodePrefix="FE 11 00" id="SM_EX_SERVER_PRIMITIVE" />
-		<packet opcodePrefix="FE 12 00" id="327" />
-		<packet opcodePrefix="FE 13 00" id="328" />
+		<packet opcodePrefix="FE 12 00" id="SM_EX_OPEN_MPCC" />
+		<packet opcodePrefix="FE 13 00" id="SM_EX_CLOSE_MPCC" />
 		<packet opcodePrefix="FE 14 00" id="384" />
 		<packet opcodePrefix="FE 15 00" id="385" />
 		<packet opcodePrefix="FE 16 00" id="386" />
 		<packet opcodePrefix="FE 17 00" id="387" />
 		<packet opcodePrefix="FE 18 00" id="388" />
 		<packet opcodePrefix="FE 19 00" id="389" />
-		<packet opcodePrefix="FE 1A 00" id="329" />
+		<packet opcodePrefix="FE 1A 00" id="SM_EX_ASK_JOIN_MPCC" />
 		<packet opcodePrefix="FE 1B 00" id="SM_PLEDGE_CREST_LARGE" />
 		<packet opcodePrefix="FE 1C 00" id="SM_EX_EVENT_MATCH_TEAM_INFO" />
 		<packet opcodePrefix="FE 1D 00" id="SM_EX_EVENT_MATCH_CREATE" />
@@ -517,7 +517,7 @@
 		<packet opcodePrefix="FE 2E 00" id="SM_EX_MAIL_ARRIVED" />
 		<packet opcodePrefix="FE 2F 00" id="SM_EX_STORAGE_MAX_COUNT" />
 		<packet opcodePrefix="FE 30 00" id="SM_EX_EVENT_MATCH_MANAGE" />
-		<packet opcodePrefix="FE 31 00" id="337" />
+		<packet opcodePrefix="FE 31 00" id="SM_EX_MULTI_PARTY_COMMAND_CHANNEL_INFO" />
 		<packet opcodePrefix="FE 32 00" id="338" />
 		<packet opcodePrefix="FE 33 00" id="339" />
 		<packet opcodePrefix="FE 34 00" id="340" />

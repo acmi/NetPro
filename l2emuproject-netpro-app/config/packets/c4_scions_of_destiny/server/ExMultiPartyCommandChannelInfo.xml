@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file was automatically generated when converting from the legacy definition format. -->
-<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
-<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="SM_EX_MULTI_PARTY_COMMAND_CHANNEL_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<string alias="Owner" />
-	<dword alias="Looting" type="LootRights" />
+	<string alias="Channel owner" />
 	<dword alias="Player count" />
 	<dword alias="Party count" id="party_cnt" />
 	<loop id="party_cnt">
 		<string alias="Party leader" />
-		<dword alias="Leader OID" type="ObjectID" />
 		<dword alias="Party member count" />
 	</loop>
 </packet>

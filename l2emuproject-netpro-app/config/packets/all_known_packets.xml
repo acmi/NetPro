@@ -49,9 +49,6 @@
 		<packet id="192" name="RequestProcureCropList" />
 		<packet id="193" name="RequestSetSeed" />
 		<packet id="194" name="RequestSetCrop" />
-		<packet id="196" name="RequestExAskJoinMPCC" />
-		<packet id="197" name="RequestExAcceptJoinMPCC" />
-		<packet id="198" name="RequestExOustFromMPCC" />
 		<packet id="203" name="RequestAskJoinPartyRoom" />
 		<packet id="204" name="RequestAnswerJoinPartyRoom" />
 		<packet id="205" name="RequestListPartyMatchingWaitingRoom" />
@@ -1416,6 +1413,24 @@
 		-->
 		<packet id="CM_REQ_WRITE_HERO_WORDS" name="RequestWriteHeroWords" />
 		<!--
+		ASCII "chS"
+		UNICODE "RequestExAskJoinMPCC"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EX_ASK_JOIN_MPCC" name="RequestExAskJoinMPCC" />
+		<!--
+		ASCII "chdd"
+		UNICODE "RequestExAcceptJoinMPCC"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EX_ACCEPT_JOIN_MPCC" name="RequestExAcceptJoinMPCC" />
+		<!--
+		ASCII "chS"
+		UNICODE "RequestExOustFromMPCC"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EX_OUST_FROM_MPCC" name="RequestExOustFromMPCC" />
+		<!--
 		ASCII "chd"
 		UNICODE "(Send)RequestExPledgeCrestLarge"
 		-->
@@ -1690,10 +1705,6 @@
 		<packet id="323" name="ExShowSellCropList" />
 		<packet id="324" name="ExShowProcureCropDetail" />
 		<packet id="325" name="ExHeroList" />
-		<packet id="327" name="ExOpenMPCC" />
-		<packet id="328" name="ExCloseMPCC" />
-		<packet id="329" name="ExAskJoinMPCC" />
-		<packet id="337" name="ExMultiPartyCommandChannelInfo" />
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
 		<packet id="340" name="ExGetBossRecord" />
@@ -3542,6 +3553,22 @@
 		-->
 		<packet id="SM_EX_SERVER_PRIMITIVE" name="ExServerPrimitive" />
 		<!--
+		UNICODE "ExOpenMPCCPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_OPEN_MPCC" name="ExOpenMPCC" />
+		<!--
+		UNICODE "ExCloseMPCCPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_CLOSE_MPCC" name="ExCloseMPCC" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "Sd"
+		UNICODE "ExAskJoinMPCCPacket"
+		-->
+		<packet id="SM_EX_ASK_JOIN_MPCC" name="ExAskJoinMPCC" />
+		<!--
 		ASCII "ddd"
 		UNICODE "crest_%d_%d_l"
 		UNICODE "PledgeCrestLargePacket"
@@ -3596,6 +3623,13 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_STORAGE_MAX_COUNT" name="ExStorageMaxCount" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "Sddd"
+		ASCII "Sdd"
+		UNICODE "ExMultiPartyCommandChannelInfoPacket"
+		-->
+		<packet id="SM_EX_MULTI_PARTY_COMMAND_CHANNEL_INFO" name="ExMultiPartyCommandChannelInfo" />
 		
 		<!--
 		UNICODE "ExAutoFishAvailable"

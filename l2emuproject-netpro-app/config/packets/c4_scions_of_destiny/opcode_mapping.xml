@@ -39,7 +39,7 @@
 		<packet opcodePrefix="FE 20 00" id="322" />
 		<packet opcodePrefix="FE 21 00" id="323" />
 		<packet opcodePrefix="FE 22 00" id="324" />
-		<packet opcodePrefix="FE 23 00" id="325" />
+		<packet opcodePrefix="FE 23 00" id="SM_EX_HERO_LIST" />
 		<packet opcodePrefix="FE 24 00" id="SM_EX_SERVER_PRIMITIVE" />
 		<packet opcodePrefix="FE 25 00" id="SM_EX_OPEN_MPCC" />
 		<packet opcodePrefix="FE 26 00" id="SM_EX_CLOSE_MPCC" />

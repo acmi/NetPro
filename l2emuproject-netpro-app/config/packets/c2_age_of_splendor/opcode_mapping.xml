@@ -246,7 +246,7 @@
 		<packet opcodePrefix="DA" id="SM_RECIPE_SHOP_ITEM_INFO" />
 		<packet opcodePrefix="DB" id="SM_RECIPE_SHOP_MSG" />
 		<packet opcodePrefix="DC" id="SM_SHOW_CALC" />
-		<packet opcodePrefix="DD" id="252" />
+		<packet opcodePrefix="DD" id="SM_MON_RACE_INFO" />
 		<packet opcodePrefix="DE" id="SM_SHOW_TOWN_MAP" />
 		<packet opcodePrefix="DF" id="SM_OBSERVER_START" />
 		<packet opcodePrefix="E0" id="SM_OBSERVER_END" />

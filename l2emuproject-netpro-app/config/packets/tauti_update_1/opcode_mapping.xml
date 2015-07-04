@@ -64,7 +64,7 @@
 		<packet opcodePrefix="FE 77 00" id="414" />
 		<packet opcodePrefix="FE 78 00" id="415" />
 		<packet opcodePrefix="FE 79 00" id="324" />
-		<packet opcodePrefix="FE 7A 00" id="325" />
+		<packet opcodePrefix="FE 7A 00" id="SM_EX_HERO_LIST" />
 		<packet opcodePrefix="FE 7B 00" id="SM_EX_OLYMPIAD_USER_INFO" />
 		<packet opcodePrefix="FE 7C 00" id="SM_EX_OLYMPIAD_SPELLED_INFO" />
 		<packet opcodePrefix="FE 7D 00" id="SM_EX_OLYMPIAD_MODE" />

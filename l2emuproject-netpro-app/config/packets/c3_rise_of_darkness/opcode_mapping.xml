@@ -5,7 +5,7 @@
 		<packet opcodePrefix="C6" id="CM_REQ_PREVIEW_ITEM" />
 		<packet opcodePrefix="C7" id="178" />
 		<packet opcodePrefix="C8" id="179" />
-		<packet opcodePrefix="CA" id="175" />
+		<packet opcodePrefix="CA" id="CM_REPLY_GAME_GUARD_QUERY" />
 		<packet opcodePrefix="CC" id="CM_REQ_SEND_L2_FRIEND_SAY" />
 		<packet opcodePrefix="CD" id="CM_REQ_OPEN_MINIMAP" />
 		<packet opcodePrefix="CE" id="CM_REQ_SEND_MSN_CHAT_LOG" />
@@ -24,7 +24,7 @@
 		<packet opcodePrefix="F6" id="280" />
 		<packet opcodePrefix="F7" id="SM_AGIT_DECO_INFO" />
 		<packet opcodePrefix="F8" id="SM_SSQ_INFO" />
-		<packet opcodePrefix="F9" id="269" />
+		<packet opcodePrefix="F9" id="SM_GAME_GUARD_QUERY" />
 		<packet opcodePrefix="FA" id="SM_L2_FRIEND_LIST" />
 		<packet opcodePrefix="FB" id="SM_L2_FRIEND" />
 		<packet opcodePrefix="FC" id="SM_L2_FRIEND_STATUS" />

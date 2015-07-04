@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
-		<packet opcodePrefix="C5" id="175" />
+		<packet opcodePrefix="C5" id="CM_REPLY_GAME_GUARD_QUERY" />
 	</client>
 	<server>
 		<packet opcodePrefix="EC" id="SM_SHOW_XMAS_SEAL" />
-		<packet opcodePrefix="ED" id="269" />
+		<packet opcodePrefix="ED" id="SM_GAME_GUARD_QUERY" />
 		<packet opcodePrefix="EE" id="270" />
 	</server>
 </mapping>

@@ -183,7 +183,7 @@
 		<packet opcodePrefix="C7" id="CM_REQ_PREVIEW_ITEM" />
 		<packet opcodePrefix="C8" id="178" />
 		<packet opcodePrefix="C9" id="179" />
-		<packet opcodePrefix="CB" id="175" />
+		<packet opcodePrefix="CB" id="CM_REPLY_GAME_GUARD_QUERY" />
 		<packet opcodePrefix="CC" id="CM_REQ_PLEDGE_POWER" />
 		<packet opcodePrefix="CD" id="CM_REQ_MAKE_MACRO" />
 		<packet opcodePrefix="CE" id="CM_REQ_DELETE_MACRO" />
@@ -341,7 +341,7 @@
 		<packet opcodePrefix="71" id="SM_RESTART_RESPONSE" />
 		<packet opcodePrefix="72" id="SM_MOVE_TO_PAWN" />
 		<packet opcodePrefix="73" id="SM_SSQ_INFO" />
-		<packet opcodePrefix="74" id="269" />
+		<packet opcodePrefix="74" id="SM_GAME_GUARD_QUERY" />
 		<packet opcodePrefix="75" id="SM_L2_FRIEND_LIST" />
 		<packet opcodePrefix="76" id="SM_L2_FRIEND" />
 		<packet opcodePrefix="77" id="SM_L2_FRIEND_STATUS" />
@@ -443,7 +443,7 @@
 		<packet opcodePrefix="E0" id="SM_RECIPE_SHOP_ITEM_INFO" />
 		<packet opcodePrefix="E1" id="SM_RECIPE_SHOP_MSG" />
 		<packet opcodePrefix="E2" id="SM_SHOW_CALC" />
-		<packet opcodePrefix="E3" id="252" />
+		<packet opcodePrefix="E3" id="SM_MON_RACE_INFO" />
 		<packet opcodePrefix="E4" id="SM_HENNA_ITEM_INFO" />
 		<packet opcodePrefix="E5" id="SM_HENNA_INFO" />
 		<packet opcodePrefix="E6" id="SM_HENNA_UNEQUIP_LIST" />
@@ -589,7 +589,7 @@
 		<packet opcodePrefix="FE 76 00" id="414" />
 		<packet opcodePrefix="FE 77 00" id="415" />
 		<packet opcodePrefix="FE 78 00" id="324" />
-		<packet opcodePrefix="FE 79 00" id="325" />
+		<packet opcodePrefix="FE 79 00" id="SM_EX_HERO_LIST" />
 		<packet opcodePrefix="FE 7A 00" id="SM_EX_OLYMPIAD_USER_INFO" />
 		<packet opcodePrefix="FE 7B 00" id="SM_EX_OLYMPIAD_SPELLED_INFO" />
 		<packet opcodePrefix="FE 7C 00" id="SM_EX_OLYMPIAD_MODE" />

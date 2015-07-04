@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- New unknown CHAR (byte) field appended at the end of the packet. Either 0 or 1 (HF) -->
-<packet id="175" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<bytes alias="data">
-		<length>16</length>
-	</bytes>
-	<byte alias="Unk" type="YesOrNo" /> <!-- NEW -->
+<packet id="CM_REPLY_GAME_GUARD_QUERY" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="" />
+	<dword alias="" />
+	<dword alias="" />
+	<dword alias="" />
+	<byte alias="Type" /> <!-- NEW -->
 </packet>

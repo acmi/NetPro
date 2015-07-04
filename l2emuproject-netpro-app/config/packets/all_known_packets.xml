@@ -42,7 +42,6 @@
 		<packet id="130" name="RequestReviveReply" />
 		<packet id="173" name="RequestBuyProcure" />
 		<packet id="174" name="RequestBuySeed" />
-		<packet id="175" name="ReplyGameGuardQuery" />
 		<packet id="178" name="RequestSSQStatus" />
 		<packet id="179" name="RequestPetitionVote" />
 		<packet id="184" name="RequestReload" />
@@ -428,7 +427,8 @@
 		<!--
 		ASCII "cdQddd"
 		UNICODE "RequestDropItem"
-		UNICODE "(Send)%s" -->
+		UNICODE "(Send)%s"
+		-->
 		<packet id="CM_REQ_DROP_ITEM" name="RequestDropItem" />
 		<!--
 		ASCII "cd"
@@ -1312,6 +1312,12 @@
 		-->
 		<packet id="CM_REQ_DELETE_MACRO" name="RequestDeleteMacro" />
 		<!--
+		ASCII "cddddc"
+		UNICODE "ReplyGameGuardQuery"
+		UNICODE "(Send)%s [Type=%d] %x, %x, %x, %x"
+		-->
+		<packet id="CM_REPLY_GAME_GUARD_QUERY" name="ReplyGameGuardQuery" />
+		<!--
 		ASCII "cddd"
 		UNICODE "ConfirmDlg"
 		UNICODE "(Send)%s"
@@ -1687,11 +1693,9 @@
 		<!-- UNICODE "DummyPacket" -->
 		<packet id="239" name="Dummy ED" />
 		<packet id="241" name="Dummy_70" />
-		<packet id="252" name="MonRaceInfo" />
 		<packet id="263" name="BuyListSeed" />
 		<packet id="264" name="SellListProcure" />
 		<packet id="267" name="Dummy_EC" />
-		<packet id="269" name="GameGuardQuery" />
 		<packet id="270" name="Dummy_EE" />
 		<packet id="271" name="ClientSetTime" />
 		<packet id="279" name="SSQStatus" />
@@ -1704,7 +1708,6 @@
 		<packet id="322" name="ExShowCropSetting" />
 		<packet id="323" name="ExShowSellCropList" />
 		<packet id="324" name="ExShowProcureCropDetail" />
-		<packet id="325" name="ExHeroList" />
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
 		<packet id="340" name="ExGetBossRecord" />
@@ -3199,6 +3202,13 @@
 		-->
 		<packet id="SM_SHOW_CALC" name="ShowCalc" />
 		<!--
+		ASCII "dd"
+		ASCII "ddddddddffd"
+		UNICODE "MonRaceInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_MON_RACE_INFO" name="MonRaceInfo" />
+		<!--
 		ASCII "Sdd"
 		UNICODE "ShowTownMapPacket"
 		UNICODE "(Receive)%s"
@@ -3286,6 +3296,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SHOW_XMAS_SEAL" name="ShowXMasSeal" />
+		<!--
+		ASCII "dddd"
+		UNICODE "GameGuardQueryPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_GAME_GUARD_QUERY" name="GameGuardQuery" />
 		<!--
 		ASCII "dd"
 		ASCII "ddd"
@@ -3542,6 +3558,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_SEND_MANOR_LIST" name="ExSendManorList" />
+		<!--
+		ASCII "SdSdSdd"
+		UNICODE "ExHeroListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_HERO_LIST" name="ExHeroList" />
 		<!--
 		ASCII "Sdddddd"
 		ASCII "Sddddddd"

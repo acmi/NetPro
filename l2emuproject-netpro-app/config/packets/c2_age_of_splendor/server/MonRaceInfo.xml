@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_MON_RACE_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="" />
+	<dword alias="" />
+	<dword alias="Lane count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Runner OID" type="ObjectID" />
+		<dword alias="Runner" type="Npc" />
+		<dword alias="Lane start X" />
+		<dword alias="Lane start Y" />
+		<dword alias="Lane start Z" />
+		<dword alias="Lane finish X" />
+		<dword alias="Lane finish Y" />
+		<dword alias="Lane finish Z" />
+		<double alias="Collision radius" />
+		<double alias="Collision height" />
+		<dword alias="Base movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<unsignedByte alias="Movement speed" />
+		<dword alias="0" />
+	</loop>
+</packet>

@@ -663,8 +663,6 @@
 		<!--
 		ASCII "ccdd"
 		UNICODE "(Send)SendL2ParamSetting : [%d] [%d]"
-		ASCII "cc"
-		UNICODE "(Send)Super Cmd : Server Status"
 		-->
 		<packet id="CM_SEND_L2_PARAM_SETTING" name="SendL2ParamSetting" />
 		<!--

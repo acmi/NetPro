@@ -26,10 +26,10 @@
 	<dword alias="Game time" type="GameTime" />
 	<dword alias="0" />
 	<dword alias="Class" type="CharacterClass" />
-	<dword alias="not 0" />
-	<dword alias="not 0" />
-	<dword alias="not 0" />
-	<dword alias="not 0" />
+	<dword alias="GG (1)" />
+	<dword alias="GG (2)" />
+	<dword alias="GG (3)" />
+	<dword alias="GG (4)" />
 	<bytes alias="Unk">
 		<length>64</length>
 	</bytes>

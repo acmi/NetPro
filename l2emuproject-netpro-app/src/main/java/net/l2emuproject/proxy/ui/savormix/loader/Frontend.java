@@ -293,7 +293,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					int result = _logChooser.showOpenDialog(Frontend.this);
 					if (result != JFileChooser.APPROVE_OPTION)
 						return;
-					
+						
 					_lastLogDir = _logChooser.getCurrentDirectory();
 					AutoLogger.loadConnections(Frontend.this, _logChooser.getDefaultLegacyLoginProtocol(), _logChooser.getDefaultLegacyGameProtocol(), _logChooser.getSelectedFiles());
 				});
@@ -320,7 +320,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				{
 					if (_gcTask != null)
 						return;
-					
+						
 					gc.setEnabled(false);
 					_gcTask = new AsyncTask<Void, Void, Void>()
 					{
@@ -406,7 +406,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 					if (answer != JOptionPane.YES_OPTION)
 						return;
-					
+						
 					new PacketDefinitionLoadTask(Frontend.this).execute((Void[])null);
 				});
 				packets.add(reload);
@@ -445,13 +445,11 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 						item.setToolTipText("Loads all scripts in the script directory.");
 						item.addActionListener(e ->
 						{
-							if (JOptionPane
-									.showConfirmDialog(
-											Frontend.this,
-											"This will attempt to load all scripts from the script directory. Managed scripts will be unloaded/reloaded, unmanaged scripts will be loaded a second time. Continue?",
-											"Confirm action", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE) != JOptionPane.YES_OPTION)
+							if (JOptionPane.showConfirmDialog(Frontend.this,
+									"This will attempt to load all scripts from the script directory. Managed scripts will be unloaded/reloaded, unmanaged scripts will be loaded a second time. Continue?",
+									"Confirm action", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE) != JOptionPane.YES_OPTION)
 								return;
-							
+								
 							new AllScriptReloadTask(Frontend.this).execute((Void[])null);
 						});
 						scripts.add(item);
@@ -531,13 +529,13 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				about.setToolTipText("Shows information about this application.");
 				
 				final String suffix;
-				if ("exported".equals(ProxyInfo.getRevisionNumber()))
+				if (ProxyInfo.isUnreleased())
 					suffix = "norelease";
 				else if (ProxyInfo.isSnapshot())
 					suffix = "snapshot";
 				else
 					suffix = "stable";
-				
+					
 				try
 				{
 					final String text = NewIOResourceHelper.readAsString(IMage.class, "about_" + suffix + ".htm");
@@ -568,66 +566,66 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				panel.add(_labProxyState = new JLabel());
 				_labProxyState.setFont(_labProxyState.getFont().deriveFont(_labProxyState.getFont().getSize2D() - 1));
 				/*panel.add(*//*_tbProxyState = new JToggleButton("Restrict");//);
-						updateProxyState();
-						
-						_tbProxyState.addActionListener(e ->
-						{
-						// set flag to drop connections
-						
-						updateProxyState();
-						});
-						proxyCaptureHeap.add(panel);
-						}
-						{
-						final JPanel panel = new JPanel();
-						panel.add(_cbGlobalCapture = new JCheckBox("Global capture"));
-						if (LoadOption.DISABLE_PROXY.isSet())
-						_cbGlobalCapture.setEnabled(false);
-						else
-						_cbGlobalCapture.setSelected(true);
-						_cbGlobalCapture.setFont(_cbGlobalCapture.getFont().deriveFont(_cbGlobalCapture.getFont().getSize2D() - 1));
-						proxyCaptureHeap.add(panel);
-						}
-						{
-						final JPanel panel = new JPanel();
-						panel.add(_pbHeapState = new JProgressBar(0, 1_000)
-						{
-						private static final long serialVersionUID = 6895671150559979086L;
-						
-						@Override
-						public Dimension getPreferredSize()
-						{
-						final Dimension d = super.getPreferredSize();
-						d.width = panel.getWidth();
-						return d;
-						}
-						});
-						_pbHeapState.setStringPainted(true);
-						_pbHeapState.setFont(_pbHeapState.getFont().deriveFont(_pbHeapState.getFont().getSize2D() - 1));
-						/*panel.add(*//*_btnManualGC = new JButton("GC");//);
-										_btnManualGC.setMargin(new Insets(0, 0, 0, 0));
-										_btnManualGC.setMultiClickThreshhold(1_000);
-										final Timer updater = new Timer(1_000, e ->
-										{
-										final long free = Runtime.getRuntime().freeMemory(), total = Runtime.getRuntime().totalMemory(), used = total - free;
-										final L2TextBuilder tb = new L2TextBuilder(BytesizeInterpreter.consolidate(used, BytesizeUnit.BYTES, BytesizeUnit.BYTES, BytesizeUnit.MEBIBYTES, "0 M"));
-										final int end = tb.indexOf(" ") + 1;
-										tb.setCharAt(end - 1, Character.toUpperCase(tb.charAt(end)));
-										tb.setLength(end);
-										_pbHeapState.setValue((int)(used * _pbHeapState.getMaximum() / total));
-										_pbHeapState.setString(tb.moveToString());
-										});
-										updater.setRepeats(true);
-										updater.setCoalesce(true);
-										updater.setInitialDelay(0);
-										updater.start();
-										proxyCaptureHeap.add(panel);
-										}
-										globalControls.add(proxyCaptureHeap, BorderLayout.SOUTH);
-										}
-										
-										root.add(globalControls, BorderLayout.NORTH);
-										*/
+								updateProxyState();
+								
+								_tbProxyState.addActionListener(e ->
+								{
+								// set flag to drop connections
+								
+								updateProxyState();
+								});
+								proxyCaptureHeap.add(panel);
+								}
+								{
+								final JPanel panel = new JPanel();
+								panel.add(_cbGlobalCapture = new JCheckBox("Global capture"));
+								if (LoadOption.DISABLE_PROXY.isSet())
+								_cbGlobalCapture.setEnabled(false);
+								else
+								_cbGlobalCapture.setSelected(true);
+								_cbGlobalCapture.setFont(_cbGlobalCapture.getFont().deriveFont(_cbGlobalCapture.getFont().getSize2D() - 1));
+								proxyCaptureHeap.add(panel);
+								}
+								{
+								final JPanel panel = new JPanel();
+								panel.add(_pbHeapState = new JProgressBar(0, 1_000)
+								{
+								private static final long serialVersionUID = 6895671150559979086L;
+								
+								@Override
+								public Dimension getPreferredSize()
+								{
+								final Dimension d = super.getPreferredSize();
+								d.width = panel.getWidth();
+								return d;
+								}
+								});
+								_pbHeapState.setStringPainted(true);
+								_pbHeapState.setFont(_pbHeapState.getFont().deriveFont(_pbHeapState.getFont().getSize2D() - 1));
+								/*panel.add(*//*_btnManualGC = new JButton("GC");//);
+											_btnManualGC.setMargin(new Insets(0, 0, 0, 0));
+											_btnManualGC.setMultiClickThreshhold(1_000);
+											final Timer updater = new Timer(1_000, e ->
+											{
+											final long free = Runtime.getRuntime().freeMemory(), total = Runtime.getRuntime().totalMemory(), used = total - free;
+											final L2TextBuilder tb = new L2TextBuilder(BytesizeInterpreter.consolidate(used, BytesizeUnit.BYTES, BytesizeUnit.BYTES, BytesizeUnit.MEBIBYTES, "0 M"));
+											final int end = tb.indexOf(" ") + 1;
+											tb.setCharAt(end - 1, Character.toUpperCase(tb.charAt(end)));
+											tb.setLength(end);
+											_pbHeapState.setValue((int)(used * _pbHeapState.getMaximum() / total));
+											_pbHeapState.setString(tb.moveToString());
+											});
+											updater.setRepeats(true);
+											updater.setCoalesce(true);
+											updater.setInitialDelay(0);
+											updater.start();
+											proxyCaptureHeap.add(panel);
+											}
+											globalControls.add(proxyCaptureHeap, BorderLayout.SOUTH);
+											}
+											
+											root.add(globalControls, BorderLayout.NORTH);
+											*/
 		root.add(mb, BorderLayout.NORTH);
 	}
 	
@@ -666,10 +664,10 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		final PacketDisplayConfig dialog = _configDialogs.get(version);
 		if (dialog != null)
 			return dialog.getPackets(type);
-		
+			
 		if (LoadOption.DISABLE_DEFS.isNotSet())
 			return Collections.emptySet();
-		
+			
 		// otherwise, all packets are unknown & forced visible
 		return Collections.singleton(IPacketTemplate.ANY_DYNAMIC_PACKET);
 	}
@@ -694,7 +692,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		
 		if (toBeShownAfterReload == null)
 			return;
-		
+			
 		final PacketDisplayConfig dlg = _configDialogs.get(toBeShownAfterReload);
 		if (dlg != null)
 			dlg.setVisible(true);
@@ -725,7 +723,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			JMenu menu = categories.get(cat);
 			if (menu != null)
 				continue;
-			
+				
 			menu = new JMenu(cat);
 			categories.put(cat, menu);
 		}
@@ -734,14 +732,14 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		final Map<IProtocolVersion, Path> initialConfigs = new HashMap<>();
 		for (final Entry<IProtocolVersion, PacketDisplayConfig> e : _configDialogs.entrySet())
 			initialConfigs.put(e.getKey(), e.getValue().getLastConfig());
-		
+			
 		final JMenu loginMenu = new JMenu("Login");
 		for (int i = 0; i < allProtocols.size(); ++i)
 		{
 			final IProtocolVersion protocol = allProtocols.get(i);
 			if (!(protocol instanceof UserDefinedProtocolVersion))
 				continue;
-			
+				
 			final UserDefinedProtocolVersion user = (UserDefinedProtocolVersion)protocol;
 			
 			final PacketDisplayConfig dlg = new PacketDisplayConfig(this, _watermark, protocol, initialConfigs.get(protocol));
@@ -761,7 +759,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		_configMenu.addSeparator();
 		for (final JMenu catMenu : categories.values())
 			_configMenu.add(catMenu);
-		
+			
 		_configDialogs = configDialogs;
 	}
 	

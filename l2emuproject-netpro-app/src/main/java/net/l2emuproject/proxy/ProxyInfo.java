@@ -88,6 +88,36 @@ public final class ProxyInfo
 	}
 	
 	/**
+	 * Returns application version string.
+	 * 
+	 * @return application version
+	 */
+	public static String getVersion()
+	{
+		return PROXY_VERSION.getVersionNumber();
+	}
+	
+	/**
+	 * Returns whether the application is executed directly off java classes instead of a properly built release JAR.
+	 * 
+	 * @return whether the application does not specify a version
+	 */
+	public static boolean isUnreleased()
+	{
+		return "exported".equals(ProxyInfo.getRevisionNumber());
+	}
+	
+	/**
+	 * Returns whether this version represents a snapshot.
+	 * 
+	 * @return whether this is a snapshot release
+	 */
+	public static boolean isSnapshot()
+	{
+		return getVersion().contains("SNAPSHOT");
+	}
+	
+	/**
 	 * Returns version info of all related components.
 	 * 
 	 * @return complete version info
@@ -105,15 +135,5 @@ public final class ProxyInfo
 		};
 		// @formatter:on
 		return full;
-	}
-	
-	/**
-	 * Returns whether this version represents a snapshot.
-	 * 
-	 * @return whether this is a snapshot release
-	 */
-	public static boolean isSnapshot()
-	{
-		return PROXY_VERSION.getVersionNumber().contains("SNAPSHOT");
 	}
 }

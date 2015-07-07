@@ -15,6 +15,9 @@
  */
 package net.l2emuproject.proxy.network;
 
+import static net.l2emuproject.proxy.network.EndpointType.CLIENT;
+import static net.l2emuproject.proxy.network.EndpointType.SERVER;
+
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
@@ -61,8 +64,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, ProxyRepeatedPacket> implements
-		IPacketSource
+public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, ProxyRepeatedPacket>implements IPacketSource
 {
 	/** Bundles log entries and logs them asynchronously each second. */
 	protected static final MMOLogger LOG = new MMOLogger(Proxy.class, 1_000);
@@ -82,8 +84,7 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	 * @param target internal object that represents an outgoing connection
 	 * @throws ClosedChannelException if the given channel was closed during operations
 	 */
-	protected Proxy(ProxyConnections mmoController, SocketChannel socketChannel, Proxy target)
-			throws ClosedChannelException
+	protected Proxy(ProxyConnections mmoController, SocketChannel socketChannel, Proxy target) throws ClosedChannelException
 	{
 		super(mmoController, socketChannel);
 		
@@ -139,15 +140,15 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	{
 		if (!_disconnected.compareAndSet(false, true))
 			return;
-		
+			
 		onDisconnectionImpl();
 		
 		if (getType() == EndpointType.SERVER)
 			EntityInfoCache.removeSharedContext(new ServerSocketID(getInetSocketAddress()));
-		
+			
 		if (_target != null && !_target.isDced())
 		{
-			_target.close(null);
+			_target.weakClose();
 			return;
 		}
 		
@@ -190,7 +191,7 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	{
 		if (target != null && target.getType() == getType())
 			throw new IllegalArgumentException("Invalid binding");
-		
+			
 		_target = target;
 	}
 	
@@ -211,10 +212,7 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	 */
 	public final Proxy getClient()
 	{
-		if (getType() == EndpointType.CLIENT)
-			return this;
-		else
-			return getTarget();
+		return getType() == CLIENT ? this : getTarget();
 	}
 	
 	/**
@@ -224,10 +222,7 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	 */
 	public final Proxy getServer()
 	{
-		if (getType() == EndpointType.SERVER)
-			return this;
-		else
-			return getTarget();
+		return getType() == SERVER ? this : getTarget();
 	}
 	
 	/**
@@ -270,7 +265,8 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 					final long start = System.nanoTime();
 					pm.packetArrived(this, getTarget(), packet);
 					final long end = System.nanoTime();
-					RunnableStatsManager.handleStats(pm.getClass(), "packetArrived(Proxy, Proxy, Packet)", end - start, packet.getForwardedBody() == ref ? getMmoController().getBlockingImmutablePacketProcessingWarnThreshold() : getMmoController().getBlockingMutablePacketProcessingWarnThreshold());
+					RunnableStatsManager.handleStats(pm.getClass(), "packetArrived(Proxy, Proxy, Packet)", end - start, packet.getForwardedBody() == ref
+							? getMmoController().getBlockingImmutablePacketProcessingWarnThreshold() : getMmoController().getBlockingMutablePacketProcessingWarnThreshold());
 				}
 			}
 			catch (RuntimeException e)

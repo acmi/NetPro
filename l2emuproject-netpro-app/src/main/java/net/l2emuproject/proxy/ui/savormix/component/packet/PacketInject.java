@@ -538,7 +538,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 			@Override
 			void write(MMOBuffer buf, String input) throws NumberFormatException
 			{
-				buf.writeSWithLength(input);
+				buf.writeSS(input);
 			}
 			
 			@Override

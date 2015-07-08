@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Added a warehouse type DWORD at the beginning of the packet -->
+<!-- Added a warehouse type WORD at the beginning of the packet -->
 <packet id="SM_WARE_HOUSE_DEPOSIT_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<word alias="Warehouse" type="Warehouse" /> <!-- NEW -->
 	<dword alias="Viewer's adena" />

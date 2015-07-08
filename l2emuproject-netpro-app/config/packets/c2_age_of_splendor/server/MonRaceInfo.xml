@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="SM_MON_RACE_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="" />
-	<dword alias="" />
+	<dword alias="Actual race duration" type="MillisRemaining" />
+	<dword alias="Estimated race duration" type="MillisRemaining" />
 	<dword alias="Lane count" id="cnt" />
 	<loop id="cnt">
 		<dword alias="Runner OID" type="ObjectID" />

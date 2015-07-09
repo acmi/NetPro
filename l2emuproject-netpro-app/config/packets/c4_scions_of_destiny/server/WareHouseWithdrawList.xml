@@ -12,7 +12,7 @@
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 		<dword alias="Amount" />
-		<word alias="Main item type" type="ItemType2" id="type" />
+		<word alias="Main item type" type="ItemType2" />
 		<branch id="is_ticket" condition="GenericItem">
 			<word alias="Blessed" type="YesOrNo" />
 		</branch>
@@ -31,7 +31,7 @@
 		<branch id="is_ticket" condition="LotteryTicket">
 			<unsignedWord alias="Selected numbers (lower)" type="LottoNumbers" />
 			<word alias="0" />
-			<word alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
+			<unsignedWord alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket">
 			<word alias="Race number" />

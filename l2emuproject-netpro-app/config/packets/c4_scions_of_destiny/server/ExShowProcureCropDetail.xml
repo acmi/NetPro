@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_SHOW_PROCURE_CROP_DETAIL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Crop" type="Item" />
+	<dword alias="Buyer count" id="buyer_cnt" />
+	<loop id="buyer_cnt">
+		<dword alias="Manor" type="PledgeBase" />
+		<dword alias="Amount" />
+		<dword alias="Price" />
+		<byte alias="Reward" />
+	</loop>
+</packet>

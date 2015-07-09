@@ -26,8 +26,8 @@
 		<packet opcodePrefix="C0" id="CM_REQ_PLEDGE_POWER" />
 		<packet opcodePrefix="C1" id="CM_REQ_MAKE_MACRO" />
 		<packet opcodePrefix="C2" id="CM_REQ_DELETE_MACRO" />
-		<packet opcodePrefix="C3" id="173" />
-		<packet opcodePrefix="C4" id="174" />
+		<packet opcodePrefix="C3" id="CM_REQ_PROCURE_CROP" />
+		<packet opcodePrefix="C4" id="CM_REQ_BUY_SEED" />
 	</client>
 	<server>
 		<packet opcodePrefix="05" id="SM_ATTACK" />
@@ -257,8 +257,8 @@
 		<packet opcodePrefix="E5" id="SM_HENNA_UNEQUIP_LIST" />
 		<packet opcodePrefix="E6" id="SM_HENNA_UNEQUIP_INFO" />
 		<packet opcodePrefix="E7" id="SM_MACRO_LIST" />
-		<packet opcodePrefix="E8" id="263" />
-		<packet opcodePrefix="E9" id="264" />
+		<packet opcodePrefix="E8" id="SM_BUY_LIST_SEED" />
+		<packet opcodePrefix="E9" id="SM_SELL_LIST_PROCURE" />
 		<packet opcodePrefix="EA" id="SM_GM_HENNA_INFO" />
 		<packet opcodePrefix="EB" id="SM_RADAR_CONTROL" />
 		<packet opcodePrefix="EC" id="267" />

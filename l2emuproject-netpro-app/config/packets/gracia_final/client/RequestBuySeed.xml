@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount DWORD changed to QWORD -->
+<packet id="CM_REQ_BUY_SEED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Manor" type="PledgeBase" />
+	<dword alias="Seed count" id="seed_cnt" />
+	<loop id="seed_cnt">
+		<dword alias="Item" type="Item" />
+		<qword alias="Amount" /> <!-- NEW -->
+	</loop>
+</packet>

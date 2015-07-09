@@ -29,6 +29,6 @@ public class PledgeBase extends ScriptedIntegerIdInterpreter
 	/** Constructs this interpreter. */
 	public PledgeBase()
 	{
-		super(loadFromResource("pledgebase.txt", ImmutablePair.of(0L, "None")));
+		super(loadFromResource("pledgebase.txt", ImmutablePair.of(-1L, "None"), ImmutablePair.of(0L, "None")));
 	}
 }

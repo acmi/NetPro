@@ -6,11 +6,11 @@
 	<dword alias="Buy request ID" />
 	<word alias="Buyable item count" id="cnt" />
 	<loop id="cnt">
-		<word alias="Base item type" type="ItemType1" />
+		<word alias="Base item type" type="ItemType1" id="type" />
 		<dword alias="0" /> <!-- Item OID -->
 		<dword alias="Item" type="Item" />
 		<dword alias="Amount" />
-		<word alias="Main item type" type="ItemType2" id="type" />
+		<word alias="Main item type" type="ItemType2" />
 		<word alias="Blessed" type="YesOrNo" />
 		<branch id="type" condition="equip.EquipableItemType">
 			<word alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />

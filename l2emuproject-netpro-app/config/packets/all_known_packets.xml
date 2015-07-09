@@ -40,14 +40,9 @@
 		<packet id="128" name="RequestSEKCustom" />
 		<packet id="129" name="RequestRide" />
 		<packet id="130" name="RequestReviveReply" />
-		<packet id="173" name="RequestBuyProcure" />
-		<packet id="174" name="RequestBuySeed" />
 		<packet id="178" name="RequestSSQStatus" />
 		<packet id="179" name="RequestPetitionVote" />
 		<packet id="184" name="RequestReload" />
-		<packet id="192" name="RequestProcureCropList" />
-		<packet id="193" name="RequestSetSeed" />
-		<packet id="194" name="RequestSetCrop" />
 		<packet id="203" name="RequestAskJoinPartyRoom" />
 		<packet id="204" name="RequestAnswerJoinPartyRoom" />
 		<packet id="205" name="RequestListPartyMatchingWaitingRoom" />
@@ -1310,6 +1305,19 @@
 		-->
 		<packet id="CM_REQ_DELETE_MACRO" name="RequestDeleteMacro" />
 		<!--
+		ASCII "ddQ"
+		ASCII "cddb"
+		UNICODE "(Send)RequestProcureCrop"
+		-->
+		<packet id="CM_REQ_PROCURE_CROP" name="RequestProcureCrop" />
+		<!--
+		ASCII "dQ"
+		ASCII "cddb"
+		UNICODE "RequestBuySeed"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_BUY_SEED" name="RequestBuySeed" />
+		<!--
 		ASCII "cddddc"
 		UNICODE "ReplyGameGuardQuery"
 		UNICODE "(Send)%s [Type=%d] %x, %x, %x, %x"
@@ -1410,6 +1418,27 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_MANOR_LIST" name="RequestManorList" />
+		<!--
+		ASCII "dddQ"
+		ASCII "chdb"
+		UNICODE "RequestProcureCropList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PROCURE_CROP_LIST" name="RequestProcureCropList" />
+		<!--
+		ASCII "dQQ"
+		ASCII "chddb"
+		UNICODE "RequestSetSeed"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SET_SEED" name="RequestSetSeed" />
+		<!--
+		ASCII "dQQc"
+		ASCII "chddb"
+		UNICODE "RequestSetCrop"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SET_CROP" name="RequestSetCrop" />
 		<!--
 		ASCII "chS"
 		UNICODE "RequestWriteHeroWords"
@@ -1691,21 +1720,11 @@
 		<!-- UNICODE "DummyPacket" -->
 		<packet id="239" name="Dummy ED" />
 		<packet id="241" name="Dummy_70" />
-		<packet id="263" name="BuyListSeed" />
-		<packet id="264" name="SellListProcure" />
 		<packet id="267" name="Dummy_EC" />
 		<packet id="270" name="Dummy_EE" />
 		<packet id="271" name="ClientSetTime" />
 		<packet id="279" name="SSQStatus" />
 		<packet id="280" name="PetitionVote" />
-		<packet id="283" name="FriendPacket" />
-		<packet id="318" name="ExShowSeedInfo" />
-		<packet id="319" name="ExShowCropInfo" />
-		<packet id="320" name="ExShowManorDefaultInfo" />
-		<packet id="321" name="ExShowSeedSetting" />
-		<packet id="322" name="ExShowCropSetting" />
-		<packet id="323" name="ExShowSellCropList" />
-		<packet id="324" name="ExShowProcureCropDetail" />
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
 		<packet id="340" name="ExGetBossRecord" />
@@ -3276,6 +3295,20 @@
 		-->
 		<packet id="SM_MACRO_LIST" name="MacroList" />
 		<!--
+		ASCII "Qddh"
+		UNICODE "BuyListSeedPacket"
+		UNICODE "(Receive)%s BuyListNum:%d"
+		-->
+		<packet id="SM_BUY_LIST_SEED" name="BuyListSeed" />
+		<!--
+		ASCII "Qdh"
+		ASCII "ddQhh"
+		ASCII "Qhhh"
+		UNICODE "SellListProcurePacket"
+		UNICODE "(Receive)%s SellListNum:%d"
+		-->
+		<packet id="SM_SELL_LIST_PROCURE" name="SellListProcure" />
+		<!--
 		ASCII "ccccccccdd"
 		ASCII "dd"
 		ASCII "ddd"
@@ -3556,6 +3589,58 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_SEND_MANOR_LIST" name="ExSendManorList" />
+		<!--
+		ASCII "cddd"
+		ASCII "dQQQdc"
+		UNICODE "ExShowSeedInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_SEED_INFO" name="ExShowSeedInfo" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "cddd"
+		ASCII "dQQQcdc"
+		UNICODE "ExShowCropInfoPacket"
+		-->
+		<packet id="SM_EX_SHOW_CROP_INFO" name="ExShowCropInfo" />
+		<!--
+		ASCII "cd"
+		ASCII "ddddc"
+		UNICODE "ExShowManorDefaultInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_MANOR_DEFAULT_INFO" name="ExShowManorDefaultInfo" />
+		<!--
+		ASCII "dd"
+		ASCII "ddc"
+		ASCII "ddddQQQQ"
+		UNICODE "ExShowSeedSettingPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_SEED_SETTING" name="ExShowSeedSetting" />
+		<!--
+		ASCII "dd"
+		ASCII "ddc"
+		ASCII "ddddQQcQQc"
+		UNICODE "ExShowCropSettingPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_CROP_SETTING" name="ExShowCropSetting" />
+		<!--
+		ASCII "dd"
+		ASCII "dddc"
+		ASCII "dQQcQ"
+		UNICODE "ExShowSellCropListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_SELL_CROP_LIST" name="ExShowSellCropList" />
+		<!--
+		ASCII "dd"
+		ASCII "dQQc"
+		UNICODE "ExShowProcureCropDetailPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_PROCURE_CROP_DETAIL" name="ExShowProcureCropDetail" />
 		<!--
 		ASCII "SdSdSdd"
 		UNICODE "ExHeroListPacket"

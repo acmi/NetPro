@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount and price fields are now QWORDs -->
+<packet id="CM_REQ_SET_CROP" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Manor" type="PledgeBase" />
+	<dword alias="Crop count" id="crop_cnt" />
+	<loop id="crop_cnt">
+		<dword alias="Item" type="Item" />
+
+		<!-- NEW -->
+		<qword alias="Amount" />
+		<qword alias="Price" />
+
+		<byte alias="Reward" />
+	</loop>
+</packet>

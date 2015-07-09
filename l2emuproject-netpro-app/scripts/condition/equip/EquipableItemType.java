@@ -19,9 +19,9 @@ import net.l2emuproject.proxy.network.meta.condition.IntegerCondition;
 import net.l2emuproject.proxy.script.condition.ScriptedFieldValueCondition;
 
 /**
- * Tests whether the value of a byte/word/dword is less than 3.<BR>
+ * Tests whether the value of a byte/word/dword is less than 4.<BR>
  * <BR>
- * Used to check the item type in various packets.
+ * Used to check the [base] item type in various packets.
  * 
  * @author _dev_
  */
@@ -30,6 +30,6 @@ public class EquipableItemType extends ScriptedFieldValueCondition implements In
 	@Override
 	public boolean test(long value)
 	{
-		return value < 3;
+		return value < 4;
 	}
 }

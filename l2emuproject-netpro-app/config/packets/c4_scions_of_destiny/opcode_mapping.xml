@@ -10,9 +10,9 @@
 		<packet opcodePrefix="D0 06 00" id="CM_REQ_EX_ENCHANT_SKILL_INFO" />
 		<packet opcodePrefix="D0 07 00" id="CM_REQ_EX_ENCHANT_SKILL" />
 		<packet opcodePrefix="D0 08 00" id="CM_REQ_MANOR_LIST" />
-		<packet opcodePrefix="D0 09 00" id="192" />
-		<packet opcodePrefix="D0 0A 00" id="193" />
-		<packet opcodePrefix="D0 0B 00" id="194" />
+		<packet opcodePrefix="D0 09 00" id="CM_REQ_PROCURE_CROP_LIST" />
+		<packet opcodePrefix="D0 0A 00" id="CM_REQ_SET_SEED" />
+		<packet opcodePrefix="D0 0B 00" id="CM_REQ_SET_CROP" />
 		<packet opcodePrefix="D0 0C 00" id="CM_REQ_WRITE_HERO_WORDS" />
 		<packet opcodePrefix="D0 0D 00" id="CM_REQ_EX_ASK_JOIN_MPCC" />
 		<packet opcodePrefix="D0 0E 00" id="CM_REQ_EX_ACCEPT_JOIN_MPCC" />
@@ -32,13 +32,13 @@
 		<packet opcodePrefix="FE 19 00" id="SM_EX_SHOW_QUEST_INFO" />
 		<packet opcodePrefix="FE 1A 00" id="SM_EX_SHOW_QUEST_MARK" />
 		<packet opcodePrefix="FE 1B 00" id="SM_EX_SEND_MANOR_LIST" />
-		<packet opcodePrefix="FE 1C 00" id="318" />
-		<packet opcodePrefix="FE 1D 00" id="319" />
-		<packet opcodePrefix="FE 1E 00" id="320" />
-		<packet opcodePrefix="FE 1F 00" id="321" />
-		<packet opcodePrefix="FE 20 00" id="322" />
-		<packet opcodePrefix="FE 21 00" id="323" />
-		<packet opcodePrefix="FE 22 00" id="324" />
+		<packet opcodePrefix="FE 1C 00" id="SM_EX_SHOW_SEED_INFO" />
+		<packet opcodePrefix="FE 1D 00" id="SM_EX_SHOW_CROP_INFO" />
+		<packet opcodePrefix="FE 1E 00" id="SM_EX_SHOW_MANOR_DEFAULT_INFO" />
+		<packet opcodePrefix="FE 1F 00" id="SM_EX_SHOW_SEED_SETTING" />
+		<packet opcodePrefix="FE 20 00" id="SM_EX_SHOW_CROP_SETTING" />
+		<packet opcodePrefix="FE 21 00" id="SM_EX_SHOW_SELL_CROP_LIST" />
+		<packet opcodePrefix="FE 22 00" id="SM_EX_SHOW_PROCURE_CROP_DETAIL" />
 		<packet opcodePrefix="FE 23 00" id="SM_EX_HERO_LIST" />
 		<packet opcodePrefix="FE 24 00" id="SM_EX_SERVER_PRIMITIVE" />
 		<packet opcodePrefix="FE 25 00" id="SM_EX_OPEN_MPCC" />

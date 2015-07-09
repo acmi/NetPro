@@ -178,7 +178,7 @@
 		<packet opcodePrefix="C2" id="CM_VOTE_SOCIALITY" />
 		<packet opcodePrefix="C3" id="CM_REQ_HENNA_ITEM_LIST" />
 		<packet opcodePrefix="C4" id="CM_REQ_HENNA_ITEM_INFO" />
-		<packet opcodePrefix="C5" id="174" />
+		<packet opcodePrefix="C5" id="CM_REQ_BUY_SEED" />
 		<packet opcodePrefix="C6" id="CM_CONFIRM_DLG" />
 		<packet opcodePrefix="C7" id="CM_REQ_PREVIEW_ITEM" />
 		<packet opcodePrefix="C8" id="178" />
@@ -187,11 +187,11 @@
 		<packet opcodePrefix="CC" id="CM_REQ_PLEDGE_POWER" />
 		<packet opcodePrefix="CD" id="CM_REQ_MAKE_MACRO" />
 		<packet opcodePrefix="CE" id="CM_REQ_DELETE_MACRO" />
-		<packet opcodePrefix="CF" id="173" />
+		<packet opcodePrefix="CF" id="CM_REQ_PROCURE_CROP" />
 		<packet opcodePrefix="D0 01 00" id="CM_REQ_MANOR_LIST" />
-		<packet opcodePrefix="D0 02 00" id="192" />
-		<packet opcodePrefix="D0 03 00" id="193" />
-		<packet opcodePrefix="D0 04 00" id="194" />
+		<packet opcodePrefix="D0 02 00" id="CM_REQ_PROCURE_CROP_LIST" />
+		<packet opcodePrefix="D0 03 00" id="CM_REQ_SET_SEED" />
+		<packet opcodePrefix="D0 04 00" id="CM_REQ_SET_CROP" />
 		<packet opcodePrefix="D0 05 00" id="CM_REQ_WRITE_HERO_WORDS" />
 		<packet opcodePrefix="D0 06 00" id="CM_REQ_EX_ASK_JOIN_MPCC" />
 		<packet opcodePrefix="D0 07 00" id="CM_REQ_EX_ACCEPT_JOIN_MPCC" />
@@ -449,13 +449,13 @@
 		<packet opcodePrefix="E6" id="SM_HENNA_UNEQUIP_LIST" />
 		<packet opcodePrefix="E7" id="SM_HENNA_UNEQUIP_INFO" />
 		<packet opcodePrefix="E8" id="SM_MACRO_LIST" />
-		<packet opcodePrefix="E9" id="263" />
+		<packet opcodePrefix="E9" id="SM_BUY_LIST_SEED" />
 		<packet opcodePrefix="EA" id="SM_SHOW_TOWN_MAP" />
 		<packet opcodePrefix="EB" id="SM_OBSERVER_START" />
 		<packet opcodePrefix="EC" id="SM_OBSERVER_END" />
 		<packet opcodePrefix="ED" id="SM_CHAIR_SIT" />
 		<packet opcodePrefix="EE" id="SM_HENNA_EQUIP_LIST" />
-		<packet opcodePrefix="EF" id="264" />
+		<packet opcodePrefix="EF" id="SM_SELL_LIST_PROCURE" />
 		<packet opcodePrefix="F0" id="SM_GM_HENNA_INFO" />
 		<packet opcodePrefix="F1" id="SM_RADAR_CONTROL" />
 		<packet opcodePrefix="F2" id="271" />
@@ -503,16 +503,16 @@
 		<packet opcodePrefix="FE 20 00" id="SM_EX_SHOW_QUEST_INFO" />
 		<packet opcodePrefix="FE 21 00" id="SM_EX_SHOW_QUEST_MARK" />
 		<packet opcodePrefix="FE 22 00" id="SM_EX_SEND_MANOR_LIST" />
-		<packet opcodePrefix="FE 23 00" id="318" />
-		<packet opcodePrefix="FE 24 00" id="319" />
-		<packet opcodePrefix="FE 25 00" id="320" />
-		<packet opcodePrefix="FE 26 00" id="321" />
+		<packet opcodePrefix="FE 23 00" id="SM_EX_SHOW_SEED_INFO" />
+		<packet opcodePrefix="FE 24 00" id="SM_EX_SHOW_CROP_INFO" />
+		<packet opcodePrefix="FE 25 00" id="SM_EX_SHOW_MANOR_DEFAULT_INFO" />
+		<packet opcodePrefix="FE 26 00" id="SM_EX_SHOW_SEED_SETTING" />
 		<packet opcodePrefix="FE 27 00" id="SM_EX_FISHING_START_COMBAT" />
 		<packet opcodePrefix="FE 28 00" id="SM_EX_FISHING_HP_REGEN" />
 		<packet opcodePrefix="FE 29 00" id="SM_EX_ENCHANT_SKILL_LIST" />
 		<packet opcodePrefix="FE 2A 00" id="SM_EX_ENCHANT_SKILL_INFO" />
-		<packet opcodePrefix="FE 2B 00" id="322" />
-		<packet opcodePrefix="FE 2C 00" id="323" />
+		<packet opcodePrefix="FE 2B 00" id="SM_EX_SHOW_CROP_SETTING" />
+		<packet opcodePrefix="FE 2C 00" id="SM_EX_SHOW_SELL_CROP_LIST" />
 		<packet opcodePrefix="FE 2D 00" id="SM_EX_OLYMPIAD_MATCH_END" />
 		<packet opcodePrefix="FE 2E 00" id="SM_EX_MAIL_ARRIVED" />
 		<packet opcodePrefix="FE 2F 00" id="SM_EX_STORAGE_MAX_COUNT" />
@@ -588,7 +588,7 @@
 		<packet opcodePrefix="FE 75 00" id="413" />
 		<packet opcodePrefix="FE 76 00" id="414" />
 		<packet opcodePrefix="FE 77 00" id="415" />
-		<packet opcodePrefix="FE 78 00" id="324" />
+		<packet opcodePrefix="FE 78 00" id="SM_EX_SHOW_PROCURE_CROP_DETAIL" />
 		<packet opcodePrefix="FE 79 00" id="SM_EX_HERO_LIST" />
 		<packet opcodePrefix="FE 7A 00" id="SM_EX_OLYMPIAD_USER_INFO" />
 		<packet opcodePrefix="FE 7B 00" id="SM_EX_OLYMPIAD_SPELLED_INFO" />

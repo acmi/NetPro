@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_SHOW_SEED_SETTING" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Manor" type="PledgeBase" />
+	<dword alias="Seed count" id="seed_cnt" />
+	<loop id="seed_cnt">
+		<dword alias="Item" type="Item" />
+		<dword alias="Level" />
+		<byte alias="Reward 1 items" id="r1_cnt" />
+		<loop id="r1_cnt">
+			<dword alias="Reward 1" type="Item" />
+		</loop>
+		<byte alias="Reward 2 items" id="r2_cnt" />
+		<loop id="r2_cnt">
+			<dword alias="Reward 2" type="Item" />
+		</loop>
+		<dword alias="Maximum amount" />
+		<dword alias="Production price" />
+		<dword alias="Minimum price" />
+		<dword alias="Maximum price" />
+		<dword alias="Today's amount" />
+		<dword alias="Today's price" />
+		<dword alias="Next amount" />
+		<dword alias="Next price" />
+	</loop>
+</packet>

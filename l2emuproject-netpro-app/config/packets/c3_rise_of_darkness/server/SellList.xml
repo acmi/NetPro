@@ -34,7 +34,7 @@
 		<branch id="is_ticket" condition="LotteryTicket">
 			<unsignedWord alias="Selected numbers (lower)" type="LottoNumbers" />
 			<word alias="0" />
-			<word alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
+			<unsignedWord alias="Selected numbers (upper)" mod="ShiftLeft16" type="LottoNumbers" />
 		</branch>
 		<branch id="is_ticket" condition="MonsterRaceTicket">
 			<word alias="Race number" />

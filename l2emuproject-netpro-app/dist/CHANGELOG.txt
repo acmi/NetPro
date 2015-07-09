@@ -1,11 +1,19 @@
-1.0:
+VERSION [1.1]
+-------------
+New precompiled script cache naming scheme.
+Overriding opcode assignments now automatically invalidate inherited assignments.
+commons-ui dependency was discontinued and integrated directly into NP.
+A lot of definitions moved to previous protocol versions to increase their effective scope; legacy definitions added/updated.
+Updated henna related packet definitions for 2015-06-10 protocol version 24 henna stealth patch. See the associated XMLs on how to revert that if using with the installer's version 24 client.
 
+VERSION [1.0]
+-------------
 Further work on removing duplicate features from dependencies.
 Replaced an incompatible DDS reading library with an own-made reader specifically for Lineage II crests (DXT1).
 Removed anti-decompilation library integration.
 
-0.8-SNAPSHOT:
-
+VERSION [0.8-SNAPSHOT] (pre-releases)
+----------------------
 Further work on internal dependency redimization.
 Support for NA infinite odyssey protocol 24.
 Fixed an issue where reloading packet definitions would cause the active packet display configuration to be reset, even if it is exactly the same as saved to file.

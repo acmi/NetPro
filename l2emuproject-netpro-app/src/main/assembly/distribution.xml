@@ -29,7 +29,6 @@
       <outputDirectory>/</outputDirectory>
       <includes>
         <include>*.bat</include>
-        <include>*.cache</include>
         <include>*.sh</include>
         <include>*.txt</include>
       </includes>
@@ -38,10 +37,9 @@
       <directory>config/</directory>
       <outputDirectory>config/</outputDirectory>
       <excludes>
-      	<exclude>full</exclude>
-      	<exclude>modified</exclude>
       	<exclude>override.properties</exclude>
       	<exclude>**/.gitignore</exclude>
+      	<exclude>scripts/internal/**</exclude>
       </excludes>
       <includes>
       	<include>*.properties</include>

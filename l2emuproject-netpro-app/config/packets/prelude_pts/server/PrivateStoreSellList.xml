@@ -4,7 +4,7 @@
 	<dword alias="Viewer's adena" />
 	<dword alias="On sale item count" id="sale_cnt" />
 	<loop id="sale_cnt">
-		<dword alias="Main item type" type="ItemType2" id="type" />
+		<dword alias="Main item type" type="ItemType2" />
 		<dword alias="Item OID" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>

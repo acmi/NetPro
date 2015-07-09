@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item amount and price DWORDs changed to QWORDs -->
+<packet id="SM_EX_SHOW_CROP_SETTING" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Manor" type="PledgeBase" />
+	<dword alias="Crop count" id="crop_cnt" />
+	<loop id="crop_cnt">
+		<dword alias="Crop" type="Item" />
+		<dword alias="Seed level" />
+		<byte alias="Reward 1 items" id="r1_cnt" />
+		<loop id="r1_cnt">
+			<dword alias="Reward 1" type="Item" />
+		</loop>
+		<byte alias="Reward 2 items" id="r2_cnt" />
+		<loop id="r2_cnt">
+			<dword alias="Reward 2" type="Item" />
+		</loop>
+
+		<!-- NEW -->
+		<qword alias="Maximum amount" />
+		<qword alias="Production price" />
+		<qword alias="Minimum price" />
+		<qword alias="Maximum price" />
+		<qword alias="Today's amount" />
+		<qword alias="Today's price" />
+
+		<byte alias="Today's reward" />
+		<qword alias="Next amount" /> <!-- NEW -->
+		<qword alias="Next price" /> <!-- NEW -->
+		<byte alias="Next reward" />
+	</loop>
+</packet>

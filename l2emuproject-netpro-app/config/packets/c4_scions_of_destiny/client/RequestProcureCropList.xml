@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_PROCURE_CROP_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Crop count" id="crop_cnt" />
+	<loop id="crop_cnt">
+		<dword alias="Crop OID" type="ObjectID" />
+		<dword alias="Crop" type="Item" />
+		<dword alias="Buyer" type="PledgeBase" />
+		<dword alias="Amount" />
+	</loop>
+</packet>

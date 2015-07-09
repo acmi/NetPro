@@ -12,7 +12,7 @@
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 		<dword alias="Amount" />
-		<word alias="Main item type" type="ItemType2" id="type" />
+		<word alias="Main item type" type="ItemType2" />
 		<word alias="Blessed" type="YesOrNo" />
 		<word alias="Equipped" type="YesOrNo" />
 		<word alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />

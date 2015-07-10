@@ -1,62 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file was automatically generated when converting from the legacy definition format. -->
-<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
-<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
-<packet id="279" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<byte alias="Page" type="SevenSignsRecordTab" id="cond_1" />
+<!-- Score related DWORDs changed to QWORDs -->
+<packet id="SM_SSQ_STATUS" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Page" type="SevenSignsRecordTab" id="page" />
 	<byte alias="Current period" type="SevenSignsPeriod" />
-	<branch id="cond_1" condition="tab.General">
+	<branch id="page" condition="tab.General">
 		<dword alias="Current cycle" />
 		<dword alias="Period info" type="ImmutableSystemMessage" />
 		<dword alias="Period duration info" type="ImmutableSystemMessage" />
 
 		<byte alias="Viewer's cabal" type="Cabal" />
 		<byte alias="Viewer's seal" type="Seal" />
+
+		<!-- NEW -->
 		<qword alias="Contribution score" />
 		<qword alias="Ancient adena to be collected" />
-
 		<qword alias="Dusk contribution score" />
 		<qword alias="Dusk festival score" />
 		<qword alias="Dusk total score" />
+
 		<byte alias="Dusk total %" />
+
+		<!-- NEW -->
 		<qword alias="Dawn contribution score" />
 		<qword alias="Dawn festival score" />
 		<qword alias="Dawn total score" />
+
 		<byte alias="Dawn total %" />
 	</branch>
-	<branch id="cond_1" condition="tab.Festival">
+	<branch id="page" condition="tab.Festival">
 		<word alias="1" />
-		<byte alias="Festival count" id="index_0" />
-		<loop id="index_0">
+		<byte alias="Festival count" id="fest_cnt" />
+		<loop id="fest_cnt">
 			<byte alias="Festival" type="Festival" />
 			<dword alias="Minimal score" />
-			<qword alias="Dusk score" />
-			<byte alias="Achiever party size" id="index_1" />
-			<loop id="index_1">
+			<qword alias="Dusk score" /> <!-- NEW -->
+			<byte alias="Achiever party size" id="party_sz" />
+			<loop id="party_sz">
 				<string alias="Achiever name" />
 			</loop>
-			<qword alias="Dawn score" />
-			<byte alias="Achiever party size" id="index_1" />
-			<loop id="index_1">
+			<qword alias="Dawn score" /> <!-- NEW -->
+			<byte alias="Achiever party size" id="party_sz" />
+			<loop id="party_sz">
 				<string alias="Achiever name" />
 			</loop>
 		</loop>
 	</branch>
-	<branch id="cond_1" condition="tab.SealStatus">
+	<branch id="page" condition="tab.SealStatus">
 		<byte alias="% of registrations to retain an owned seal (on victory)" />
 		<byte alias="% of registrations to claim a seal (on victory)" />
-		<byte alias="Seal count" id="index_0" />
-		<loop id="index_0">
+		<byte alias="Seal count" id="seal_cnt" />
+		<loop id="seal_cnt">
 			<byte alias="Seal" type="Seal" />
 			<byte alias="Owner" type="Cabal" />
 			<byte alias="% of Dusk registrations" />
 			<byte alias="% of Dawn registrations" />
 		</loop>
 	</branch>
-	<branch id="cond_1" condition="tab.Projection">
+	<branch id="page" condition="tab.Projection">
 		<byte alias="Winning cabal" type="Cabal" />
-		<byte alias="Seal count" id="index_0" />
-		<loop id="index_0">
+		<byte alias="Seal count" id="seal_cnt" />
+		<loop id="seal_cnt">
 			<byte alias="Seal" type="Seal" />
 			<byte alias="Expected owner" type="Cabal" />
 			<dword alias="Explanation" type="ImmutableSystemMessage" />

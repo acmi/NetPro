@@ -181,8 +181,8 @@
 		<packet opcodePrefix="C5" id="CM_REQ_BUY_SEED" />
 		<packet opcodePrefix="C6" id="CM_CONFIRM_DLG" />
 		<packet opcodePrefix="C7" id="CM_REQ_PREVIEW_ITEM" />
-		<packet opcodePrefix="C8" id="178" />
-		<packet opcodePrefix="C9" id="179" />
+		<packet opcodePrefix="C8" id="CM_REQ_SSQ_STATUS" />
+		<packet opcodePrefix="C9" id="CM_PETITION_VOTE" />
 		<packet opcodePrefix="CB" id="CM_REPLY_GAME_GUARD_QUERY" />
 		<packet opcodePrefix="CC" id="CM_REQ_PLEDGE_POWER" />
 		<packet opcodePrefix="CD" id="CM_REQ_MAKE_MACRO" />
@@ -467,8 +467,8 @@
 		<packet opcodePrefix="F8" id="SM_SHOW_XMAS_SEAL" />
 		<packet opcodePrefix="F9" id="SM_ETC_STATUS_UPDATE" />
 		<packet opcodePrefix="FA" id="SM_SHORT_BUFF_STATUS_UPDATE" />
-		<packet opcodePrefix="FB" id="279" />
-		<packet opcodePrefix="FC" id="280" />
+		<packet opcodePrefix="FB" id="SM_SSQ_STATUS" />
+		<packet opcodePrefix="FC" id="SM_PETITION_VOTE" />
 		<packet opcodePrefix="FD" id="SM_AGIT_DECO_INFO" />
 		<packet opcodePrefix="FE 02 00" id="SM_EX_EVENT_MATCH_USER_INFO" />
 		<packet opcodePrefix="FE 03 00" id="SM_EX_COLOSSEUM_FENCE_INFO" />

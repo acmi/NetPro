@@ -3,8 +3,8 @@
 	<client>
 		<packet opcodePrefix="C5" id="CM_CONFIRM_DLG" />
 		<packet opcodePrefix="C6" id="CM_REQ_PREVIEW_ITEM" />
-		<packet opcodePrefix="C7" id="178" />
-		<packet opcodePrefix="C8" id="179" />
+		<packet opcodePrefix="C7" id="CM_REQ_SSQ_STATUS" />
+		<packet opcodePrefix="C8" id="CM_PETITION_VOTE" />
 		<packet opcodePrefix="CA" id="CM_REPLY_GAME_GUARD_QUERY" />
 		<packet opcodePrefix="CC" id="CM_REQ_SEND_L2_FRIEND_SAY" />
 		<packet opcodePrefix="CD" id="CM_REQ_OPEN_MINIMAP" />
@@ -20,8 +20,8 @@
 		<packet opcodePrefix="F2" id="SM_SHOW_XMAS_SEAL" />
 		<packet opcodePrefix="F3" id="SM_ETC_STATUS_UPDATE" />
 		<packet opcodePrefix="F4" id="SM_SHORT_BUFF_STATUS_UPDATE" />
-		<packet opcodePrefix="F5" id="279" />
-		<packet opcodePrefix="F6" id="280" />
+		<packet opcodePrefix="F5" id="SM_SSQ_STATUS" />
+		<packet opcodePrefix="F6" id="SM_PETITION_VOTE" />
 		<packet opcodePrefix="F7" id="SM_AGIT_DECO_INFO" />
 		<packet opcodePrefix="F8" id="SM_SSQ_INFO" />
 		<packet opcodePrefix="F9" id="SM_GAME_GUARD_QUERY" />

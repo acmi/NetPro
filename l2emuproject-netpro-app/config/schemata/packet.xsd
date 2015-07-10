@@ -207,6 +207,7 @@
 			<xs:enumeration value="PcTimer" />
 			<xs:enumeration value="PersonalStoreType" />
 			<xs:enumeration value="PetitionType" /> <!-- CLEO -->
+			<xs:enumeration value="PetitionRating" />
 			<xs:enumeration value="PlayerAction" />
 			<xs:enumeration value="PlayerCommand" />
 			<xs:enumeration value="Pledge" />

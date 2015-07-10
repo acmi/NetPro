@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Added 'XP %' field (DOUBLE), active pet state describing fields and vitality DWORD  -->
-<packet id="30" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_CHARACTER_SELECTION_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Created character count" id="index_0" />
 	<dword alias="Max character count" />
 	<byte alias="0" />

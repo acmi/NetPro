@@ -570,12 +570,6 @@
 		<!-- UNICODE "(Send)RequestMagicSkillList" -->
 		<packet id="CM_REQ_MAGIC_SKILL_LIST" name="RequestMagicSkillList" />
 		<!--
-		ASCII "ddd" (HF had it inadvertently changed to cddd)
-		UNICODE "RequestMagicSkillList"
-		UNICODE "(Send)%s"
-		-->
-		<packet id="CM__USER_ACK" name="UserAck" />
-		<!--
 		ASCII "cddc"
 		UNICODE "RequestMagicSkillUse"
 		UNICODE "(Send)%s"
@@ -1363,6 +1357,12 @@
 		-->
 		<packet id="CM_REQ_SEND_MSN_CHAT_LOG" name="RequestSendMsnChatLog" />
 		<!--
+		ASCII "ddd" (HF had it inadvertently changed to cddd)
+		UNICODE "RequestMagicSkillList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM__USER_ACK" name="UserAck" />
+		<!--
 		ASCII "cddd"
 		UNICODE "RequestListPartyWating"
 		UNICODE "(Send)%s"
@@ -1689,7 +1689,6 @@
 		<packet id="22" name="EquipItem" />
 		<packet id="23" name="UnequipItem" />
 		<packet id="28" name="ExBuySellList" />
-		<packet id="30" name="CharacterSelectionInfo" />
 		<packet id="31" name="LoginFail" />
 		<packet id="44" name="EquipItemSuccess" />
 		<packet id="45" name="EquipItemFail" />
@@ -1702,7 +1701,6 @@
 		<packet id="68" name="Dummy_42" />
 		<packet id="75" name="DismissPledge" />
 		<packet id="76" name="SetDismissPledge" />
-		<packet id="84" name="MagicAndSkillList" />
 		<packet id="94" name="Dummy_5C" />
 		<packet id="97" name="StopMoveWithLocation" />
 		<packet id="100" name="Dummy_62" />
@@ -2198,6 +2196,15 @@
 		-->
 		<packet id="SM_DELETE_OBJECT" name="DeleteObject" />
 		<!--
+		ASCII "dc"
+		ASCII "cdc"
+		ASCII "SdSddddddddddffQQfdddddddddddddddddddddddddddddddddddddddddddddddddddddddhhhhhdddffdddcdddddddffddddccc"
+		UNICODE "CharacterSelectionInfoPacket"
+		UNICODE "(Receive)%s count:%d"
+		UNICODE "cnt:%d, Lim:%d, Bd:%d"
+		-->
+		<packet id="SM_CHARACTER_SELECTION_INFO" name="CharacterSelectionInfo" />
+		<!--
 		ASCII "SdSddddddddddffQQddddd"
 		UNICODE "CharacterSelectedPacket"
 		UNICODE "(Receive)%s"
@@ -2402,6 +2409,11 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SET_DISMISS_PARTY" name="SetDismissParty" />
+		<!--
+		ASCII "dd"
+		UNICODE "(Receive) MagicAndSkillList"
+		-->
+		<packet id="SM_MAGIC_AND_SKILL_LIST" name="MagicAndSkillList" />
 		<!--
 		ASCII "hQd"
 		UNICODE "WareHouseDepositListPacket"
@@ -3446,6 +3458,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_REGEN_MAX" name="ExRegenMax" />
+		<!--
+		ASCII "ddd"
+		UNICODE "MagicAndSkillList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM__USER_ACK" name="UserAck" />
 		<!--
 		ASCII "dd"
 		ASCII "dSddddSd"

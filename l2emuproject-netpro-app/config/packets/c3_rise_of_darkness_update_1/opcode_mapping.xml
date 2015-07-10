@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
-		<removedPacket id="CM_REQ_MAGIC_SKILL_LIST" />
-		<removedPacket id="CM_REQ_PARTY_MATCH_CONFIG" />
-		<removedPacket id="CM_REQ_PARTY_MATCH_LIST" />
-		<removedPacket id="CM_REQ_PARTY_MATCH_DETAIL" />
 		<packet opcodePrefix="2E" id="CM__USER_ACK" />
 		<packet opcodePrefix="6F" id="CM_REQ_LIST_PARTY_WATING" />
 		<packet opcodePrefix="70" id="CM_REQ_MANAGE_PARTY_ROOM" />
@@ -16,8 +12,7 @@
 		<packet opcodePrefix="CF 05 00" id="CM_REQ_AUTO_SOUL_SHOT" />
 	</client>
 	<server>
-		<removedPacket id="SM_PARTY_MATCH_LIST" />
-		<removedPacket id="SM_PARTY_MATCH_DETAIL" />
+		<packet opcodePrefix="40" id="SM__USER_ACK" />
 		<packet opcodePrefix="96" id="SM_LIST_PARTY_WATING" />
 		<packet opcodePrefix="97" id="SM_PARTY_ROOM_INFO" />
 		<packet opcodePrefix="FE 02 00" id="SM_EX_EVENT_MATCH_LIST" />

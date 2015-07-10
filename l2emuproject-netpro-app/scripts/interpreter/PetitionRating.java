@@ -25,6 +25,6 @@ public final class PetitionRating extends ScriptedZeroBasedIntegerIdInterpreter
 	/** Constructs this interpreter. */
 	public PetitionRating()
 	{
-		super("Very good", "Good", "Fair", "Poor", "Very Poor");
+		super("Very Good", "Good", "Fair", "Poor", "Very Poor");
 	}
 }

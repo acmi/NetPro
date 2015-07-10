@@ -142,7 +142,7 @@
 		<packet opcodePrefix="1C" id="SM_SELL_LIST" />
 		<packet opcodePrefix="1D" id="SM_BUY_LIST" />
 		<packet opcodePrefix="1E" id="SM_DELETE_OBJECT" />
-		<packet opcodePrefix="1F" id="30" />
+		<packet opcodePrefix="1F" id="SM_CHARACTER_SELECTION_INFO" />
 		<packet opcodePrefix="20" id="31" />
 		<packet opcodePrefix="21" id="SM_CHARACTER_SELECTED" />
 		<packet opcodePrefix="22" id="SM_NPC_INFO" />
@@ -193,7 +193,7 @@
 		<packet opcodePrefix="4F" id="SM_SET_OUST_PARTY_MEMBER" />
 		<packet opcodePrefix="50" id="SM_DISMISS_PARTY" />
 		<packet opcodePrefix="51" id="SM_SET_DISMISS_PARTY" />
-		<packet opcodePrefix="52" id="84" />
+		<packet opcodePrefix="52" id="SM_MAGIC_AND_SKILL_LIST" />
 		<packet opcodePrefix="53" id="SM_WARE_HOUSE_DEPOSIT_LIST" />
 		<packet opcodePrefix="54" id="SM_WARE_HOUSE_WITHDRAW_LIST" />
 		<packet opcodePrefix="55" id="SM_WARE_HOUSE_DONE" />

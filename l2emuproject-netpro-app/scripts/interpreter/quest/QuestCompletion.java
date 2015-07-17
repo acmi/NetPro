@@ -68,10 +68,17 @@ public class QuestCompletion extends ScriptedFieldValueInterpreter implements By
 			{
 				if ((value[i] & (1 << b)) == 0)
 					continue;
-				
+					
 				tb.append('[').append(_questNames[(i << 3) | b]).append("], ");
 			}
 		}
+		
+		if (tb.length() < 2)
+		{
+			tb.moveToString();
+			return "None";
+		}
+		
 		tb.setLength(tb.length() - 2);
 		return tb.moveToString();
 	}

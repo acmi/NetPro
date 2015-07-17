@@ -84,7 +84,7 @@
 		<packet opcodePrefix="FE 8B 00" id="428" />
 		<packet opcodePrefix="FE 8C 00" id="429" />
 		<packet opcodePrefix="FE 8D 00" id="431" />
-		<packet opcodePrefix="FE 8E 00" id="432" />
+		<packet opcodePrefix="FE 8E 00" id="SM_EX_NPC_QUEST_HTML_MESSAGE" />
 		<packet opcodePrefix="FE 8F 00" id="433" />
 		<packet opcodePrefix="FE 90 00" id="434" />
 		<packet opcodePrefix="FE 91 00" id="435" />

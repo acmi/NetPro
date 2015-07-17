@@ -1824,7 +1824,6 @@
 		<packet id="429" name="ExPVPMatchCCRetire" />
 		<packet id="430" name="ExJumpToLocation" />
 		<packet id="431" name="ExShowTerritory" />
-		<packet id="432" name="NpcQuestHtmlMessage" />
 		<packet id="433" name="ExSendUIEvent" />
 		<packet id="434" name="ExNotifyBirthDay" />
 		<packet id="435" name="ExShowDominionRegistry" />
@@ -3779,7 +3778,14 @@
 		UNICODE "ExMultiPartyCommandChannelInfoPacket"
 		-->
 		<packet id="SM_EX_MULTI_PARTY_COMMAND_CHANNEL_INFO" name="ExMultiPartyCommandChannelInfo" />
-		
+
+		<!--
+		ASCII "dSd"
+		UNICODE "ExNpcQuestHtmlMessage"
+		UNICODE "(Receive)%s UserID:%d"
+		-->
+		<packet id="SM_EX_NPC_QUEST_HTML_MESSAGE" name="ExNpcQuestHtmlMessage" />
+
 		<!--
 		UNICODE "ExAutoFishAvailable"
 		UNICODE "(Receive)%s %d"

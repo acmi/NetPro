@@ -104,7 +104,7 @@
 		<packet opcodePrefix="FE 9F 00" id="449" />
 		<packet opcodePrefix="FE A0 00" id="450" />
 		<packet opcodePrefix="FE A1 00" id="451" />
-		<packet opcodePrefix="FE A2 00" id="452" />
+		<packet opcodePrefix="FE A2 00" id="SM_EX_SHOW_SEED_MAP_INFO" />
 		<packet opcodePrefix="FE A3 00" id="453" />
 		<packet opcodePrefix="FE A4 00" id="454" />
 		<packet opcodePrefix="FE A5 00" id="455" />

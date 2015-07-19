@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="SM_EX_STORAGE_MAX_COUNT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Inventory slots" />
-	<dword alias="Warehouse slots" />
-	<dword alias="Clan warehouse slots" />
-	<dword alias="Selling store slots" />
-	<dword alias="Buying store slots" />
-	<dword alias="Dwarven recipe book slots" />
-	<dword alias="Common recipe book slots" />
+	<dword alias="Inventory slots" /> <!-- inventory_normal -->
+	<dword alias="Warehouse slots" /> <!-- storage_private -->
+	<dword alias="Clan warehouse slots" /> <!-- storage_clan -->
+	<dword alias="Selling store slots" /> <!-- trade_sell -->
+	<dword alias="Buying store slots" /> <!-- trade_buy -->
+	<dword alias="Dwarven recipe book slots" /> <!-- recipe_dwarven -->
+	<dword alias="Common recipe book slots" /> <!-- recipe_common -->
 </packet>

@@ -1843,7 +1843,6 @@
 		<packet id="449" name="ExManageMpccRoomMember" />
 		<packet id="450" name="ExMpccRoomMember" />
 		<packet id="451" name="ExVitalityPointInfo" />
-		<packet id="452" name="ExShowSeedMapInfo" />
 		<packet id="453" name="ExMpccPartymasterList" />
 		<packet id="454" name="ExDominionWarStart" />
 		<packet id="455" name="ExDominionWarEnd" />
@@ -3785,6 +3784,12 @@
 		UNICODE "(Receive)%s UserID:%d"
 		-->
 		<packet id="SM_EX_NPC_QUEST_HTML_MESSAGE" name="ExNpcQuestHtmlMessage" />
+		<!--
+		ASCII "dddd"
+		UNICODE "ExShowSeedMapInfo"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_SEED_MAP_INFO" name="ExShowSeedMapInfo" />
 
 		<!--
 		UNICODE "ExAutoFishAvailable"

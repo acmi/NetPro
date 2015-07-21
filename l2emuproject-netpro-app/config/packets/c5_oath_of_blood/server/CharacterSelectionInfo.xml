@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- New DWORDs for hair accessory OID and item, class DWORD changed to cosmetic/visual class, with real class DWORD appended at the end of packet -->
-<!-- Further appended are: a DWORD field specifying whether this character should be selected and a CHAR (byte) field specifying the weapon enchant level -->
+<!-- XP DWORD changed to QWORD -->
+<!-- Added new hair accessory slot item's OID and class ID DWORDs at the end of packet -->
 <packet id="SM_CHARACTER_SELECTION_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Character Count" id="index_0" />
-	<loop id="index_0">
+	<dword alias="Character Count" id="char_cnt" />
+	<loop id="char_cnt">
 		<string alias="Character name" />
 		<dword alias="Character ID" />
 		<string alias="Account name" />
@@ -12,7 +12,7 @@
 		<dword alias="Builder level" />
 		<dword alias="Sex" type="Sex" />
 		<dword alias="Race" type="Race" />
-		<dword alias="Visible class" type="CharacterClass" /> <!-- NEW -->
+		<dword alias="Visible class" type="CharacterClass" />
 		<dword alias="Server" type="GameServerName" />
 		<dword alias="Location X" />
 		<dword alias="Location Y" />
@@ -20,7 +20,7 @@
 		<double alias="Current HP" />
 		<double alias="Current MP" />
 		<dword alias="SP" />
-		<dword alias="XP" />
+		<qword alias="XP" /> <!-- NEW -->
 		<dword alias="Level" />
 		<dword alias="Karma" />
 		<dword alias="PK Count" />
@@ -80,7 +80,7 @@
 		<dword alias="Weapon / Two Handed PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Hair Accessory PK" type="ObjectID"> <!-- NEW -->
+		<dword alias="Hair Accessory (top) PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
 
@@ -129,7 +129,7 @@
 		<dword alias="Weapon / Two Handed" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Hair Accessory" type="Item"> <!-- NEW -->
+		<dword alias="Hair Accessory (top)" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 
@@ -141,10 +141,16 @@
 		<double alias="Maximum MP" />
 
 		<dword alias="Days to deletion" />
-
-		<!-- NEW -->
 		<dword alias="Class" type="CharacterClass" />
 		<dword alias="Selected" type="YesOrNo" />
 		<byte alias="Weapon enchant level" type="EnchantEffect" />
+
+		<!-- NEW -->
+		<dword alias="Hair Accessory (bottom) PK" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Hair Accessory (bottom)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
 	</loop>
 </packet>

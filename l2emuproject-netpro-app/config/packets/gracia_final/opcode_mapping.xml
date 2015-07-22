@@ -3,9 +3,9 @@
 	<client>
 		<packet opcodePrefix="D0 2D 00" id="219" />
 		<packet opcodePrefix="D0 2E 00" id="CM_REQ_OLYMPIAD_MATCH_LIST" />
-		<packet opcodePrefix="D0 2F 00" id="203" />
-		<packet opcodePrefix="D0 30 00" id="204" />
-		<packet opcodePrefix="D0 31 00" id="205" />
+		<packet opcodePrefix="D0 2F 00" id="CM_REQ_ASK_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 30 00" id="CM_ANSWER_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 31 00" id="CM_REQ_LIST_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="D0 32 00" id="242" />
 		<packet opcodePrefix="D0 33 00" id="243" />
 		<packet opcodePrefix="D0 34 00" id="244" />

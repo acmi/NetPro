@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
-		<packet opcodePrefix="D0 14 00" id="203" />
-		<packet opcodePrefix="D0 15 00" id="204" />
-		<packet opcodePrefix="D0 16 00" id="205" />
-		<packet opcodePrefix="D0 17 00" id="206" />
+		<packet opcodePrefix="D0 14 00" id="CM_REQ_ASK_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 15 00" id="CM_ANSWER_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 16 00" id="CM_REQ_LIST_PARTY_MATCHING_WAITING_ROOM" />
+		<packet opcodePrefix="D0 17 00" id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="D0 18 00" id="207" />
 		<packet opcodePrefix="D0 19 00" id="208" />
 		<packet opcodePrefix="D0 1A 00" id="209" />
@@ -18,8 +18,8 @@
 	<server>
 		<packet opcodePrefix="FE 32 00" id="339" />
 		<packet opcodePrefix="FE 33 00" id="340" />
-		<packet opcodePrefix="FE 34 00" id="341" />
-		<packet opcodePrefix="FE 35 00" id="342" />
+		<packet opcodePrefix="FE 34 00" id="SM_EX_ASK_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="FE 35 00" id="SM_EX_LIST_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="FE 36 00" id="343" />
 		<packet opcodePrefix="FE 37 00" id="344" />
 		<packet opcodePrefix="FE 38 00" id="345" />

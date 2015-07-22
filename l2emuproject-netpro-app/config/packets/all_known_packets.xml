@@ -41,10 +41,6 @@
 		<packet id="129" name="RequestRide" />
 		<packet id="130" name="RequestReviveReply" />
 		<packet id="184" name="RequestReload" />
-		<packet id="203" name="RequestAskJoinPartyRoom" />
-		<packet id="204" name="RequestAnswerJoinPartyRoom" />
-		<packet id="205" name="RequestListPartyMatchingWaitingRoom" />
-		<packet id="206" name="RequestExitPartyMatchingWaitingRoom" />
 		<packet id="207" name="RequestGetBossRecord" />
 		<packet id="208" name="RequestPledgeSetAcademyMaster" />
 		<packet id="209" name="RequestPledgePowerGradeList" />
@@ -1508,6 +1504,30 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_OLYMPIAD_MATCH_LIST" name="RequestOlympiadMatchList" />
+		<!--
+		ASCII "chS"
+		UNICODE "RequestAskJoinPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ASK_JOIN_PARTY_ROOM" name="RequestAskJoinPartyRoom" />
+		<!--
+		ASCII "chd"
+		UNICODE "AnswerJoinPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_ANSWER_JOIN_PARTY_ROOM" name="AnswerJoinPartyRoom" />
+		<!--
+		ASCII "chdddd"
+		UNICODE "RequestListPartyMatchingWaitingRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_LIST_PARTY_MATCHING_WAITING_ROOM" name="RequestListPartyMatchingWaitingRoom" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestExitPartyMatchingWaitingRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" name="RequestExitPartyMatchingWaitingRoom" />
 		
 		<!--
 		ASCII "chcdd"
@@ -1734,8 +1754,6 @@
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
 		<packet id="340" name="ExGetBossRecord" />
-		<packet id="341" name="ExAskJoinPartyRoom" />
-		<packet id="342" name="ExListPartyMatchingWaitingRoom" />
 		<packet id="343" name="ExSetMpccRouting" />
 		<packet id="344" name="ExShowAdventurerGuideBook" />
 		<packet id="345" name="ExShowScreenMessage" />
@@ -3777,6 +3795,18 @@
 		UNICODE "ExMultiPartyCommandChannelInfoPacket"
 		-->
 		<packet id="SM_EX_MULTI_PARTY_COMMAND_CHANNEL_INFO" name="ExMultiPartyCommandChannelInfo" />
+		<!--
+		ASCII "SS"
+		UNICODE "ExAskJoinPartyRoom"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ASK_JOIN_PARTY_ROOM" name="ExAskJoinPartyRoom" />
+		<!--
+		ASCII "Sdddd"
+		UNICODE "ExListPartyMatchingWaitingRoom"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_LIST_PARTY_MATCHING_WAITING_ROOM" name="ExListPartyMatchingWaitingRoom" />
 
 		<!--
 		ASCII "dSd"

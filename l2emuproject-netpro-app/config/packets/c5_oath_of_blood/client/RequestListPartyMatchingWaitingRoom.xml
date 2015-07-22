@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_LIST_PARTY_MATCHING_WAITING_ROOM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Page" />
+	<dword alias="Minimum level" />
+	<dword alias="Maximum level" />
+	<dword alias="Level range" type="PartyMatchingLevels" />
+
+	<!-- Discovered on ertheia. Even in two sequential, otherwise identical packets, one may have this field, and the other may not -->
+	<!-- Best to investigate this later on. -->
+	<word alias="0" optional="true" />
+</packet>

@@ -222,7 +222,7 @@
 		<packet opcodePrefix="D0 22 00" id="239" />
 		<packet opcodePrefix="D0 23 00" id="240" />
 		<packet opcodePrefix="D0 24 00" id="241" />
-		<packet opcodePrefix="D0 25 00" id="206" />
+		<packet opcodePrefix="D0 25 00" id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="D0 26 00" id="222" />
 		<packet opcodePrefix="D0 27 00" id="223" />
 		<packet opcodePrefix="D0 28 00" id="224" />
@@ -232,9 +232,9 @@
 		<packet opcodePrefix="D0 2C 00" id="218" />
 		<packet opcodePrefix="D0 2E 00" id="219" />
 		<packet opcodePrefix="D0 2F 00" id="CM_REQ_OLYMPIAD_MATCH_LIST" />
-		<packet opcodePrefix="D0 30 00" id="203" />
-		<packet opcodePrefix="D0 31 00" id="204" />
-		<packet opcodePrefix="D0 32 00" id="205" />
+		<packet opcodePrefix="D0 30 00" id="CM_REQ_ASK_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 31 00" id="CM_ANSWER_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 32 00" id="CM_REQ_LIST_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="D0 33 00" id="242" />
 		<packet opcodePrefix="D0 34 00" id="243" />
 		<packet opcodePrefix="D0 35 00" id="244" />
@@ -521,8 +521,8 @@
 		<packet opcodePrefix="FE 32 00" id="338" />
 		<packet opcodePrefix="FE 33 00" id="339" />
 		<packet opcodePrefix="FE 34 00" id="340" />
-		<packet opcodePrefix="FE 35 00" id="341" />
-		<packet opcodePrefix="FE 36 00" id="342" />
+		<packet opcodePrefix="FE 35 00" id="SM_EX_ASK_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="FE 36 00" id="SM_EX_LIST_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="FE 37 00" id="343" />
 		<packet opcodePrefix="FE 38 00" id="344" />
 		<packet opcodePrefix="FE 39 00" id="345" />

@@ -15,14 +15,13 @@
 	<dependencies>
 		<dependency>
 			<groupId>net.l2emuproject</groupId>
-			<artifactId>l2emuproject-commons</artifactId>
+			<artifactId>l2emuproject-commons-mmo</artifactId>
 			<version>1.0-SNAPSHOT</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.google.guava</groupId>
-					<artifactId>guava</artifactId>
-				</exclusion>
-			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>net.l2emuproject</groupId>
+			<artifactId>l2emuproject-commons-geomath</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<build>

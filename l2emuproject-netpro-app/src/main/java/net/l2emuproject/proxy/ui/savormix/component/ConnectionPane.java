@@ -52,8 +52,6 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicButtonUI;
 
-import javolution.util.FastMap;
-
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.ClientProtocolVersion;
 import net.l2emuproject.network.IProtocolVersion;
@@ -75,9 +73,11 @@ import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend.CaptureSettingAccessor;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.HexUtil;
-import net.l2emuproject.util.L2Collections;
 import net.l2emuproject.util.L2FastSet;
+import net.l2emuproject.util.concurrent.MapUtils;
 import net.l2emuproject.util.logging.L2Logger;
+
+import javolution.util.FastMap;
 
 /**
  * Displays active and terminated connections as tabs. A placeholder tab is displayed before any
@@ -216,7 +216,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		}
 		else if (getSelectedComponent() != requestor)
 			return;
-		
+			
 		_captureSettingAccessor.onOpen(requestor);
 	}
 	
@@ -231,7 +231,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		final Component c = getSelectedComponent();
 		if (!(c instanceof PacketList))
 			return false;
-		
+			
 		final PacketList pl = (PacketList)c;
 		pl.setCaptureState(disabled ? ListCaptureState.CAPTURE_DISABLED : ListCaptureState.CAPTURE_ENABLED);
 		return true;
@@ -282,7 +282,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			list.notifyDefinitionsChanged();
 		for (final PacketList list : _logFile)
 			list.notifyDefinitionsChanged();
-		
+			
 		requestUpdateSummary(null);
 	}
 	
@@ -292,15 +292,15 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		SwingUtilities.invokeLater(() ->
 		{
 			// version is assigned to client
-				final PacketList pl = _live.get(affected);
-				if (pl == null)
-					return; // otherwise it will be set in addList
-					
-				pl.setProtocol(protocol);
-				pl.notifyDisplayConfigChanged(getDisplayConfig(protocol, true), null, null, getDisplayConfig(protocol, false), null, null);
+			final PacketList pl = _live.get(affected);
+			if (pl == null)
+				return; // otherwise it will be set in addList
 				
-				requestUpdateSummary(pl);
-			});
+			pl.setProtocol(protocol);
+			pl.notifyDisplayConfigChanged(getDisplayConfig(protocol, true), null, null, getDisplayConfig(protocol, false), null, null);
+			
+			requestUpdateSummary(pl);
+		});
 	}
 	
 	@Override
@@ -308,7 +308,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (_captureSettingAccessor.isGlobalCaptureDisabled())
 			return;
-		
+			
 		final byte[] body = new byte[packet.clear().remaining()];
 		packet.get(body);
 		
@@ -325,7 +325,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			
 			List<ReceivedPacket> list = _clientPacketsBeforeServerConnection.get(sender);
 			if (list == null)
-				list = L2Collections.putIfAbsent(_clientPacketsBeforeServerConnection, sender, new CopyOnWriteArrayList<>());
+				list = MapUtils.putIfAbsent(_clientPacketsBeforeServerConnection, sender, new CopyOnWriteArrayList<>());
 			list.add(rp);
 		});
 	}
@@ -335,7 +335,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (_captureSettingAccessor.isGlobalCaptureDisabled())
 			return;
-		
+			
 		final byte[] body = new byte[packet.clear().remaining()];
 		packet.get(body);
 		
@@ -407,7 +407,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (login && ProxyConfig.NO_TABS_FOR_LOGIN_CONNECTIONS)
 			return;
-		
+			
 		final String name;
 		{
 			final StringBuilder sb = new StringBuilder();
@@ -432,7 +432,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			final List<ReceivedPacket> clientPackets = _clientPacketsBeforeServerConnection.remove(key);
 			if (clientPackets != null && !_captureSettingAccessor.isGlobalCaptureDisabled())
 				list.addPackets(clientPackets, false);
-			
+				
 			addNewList(key, list, key.getProtocol(), name, tooltip);
 		});
 	}
@@ -444,7 +444,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		final PacketList pl = _live.get(client);
 		if (pl == null)
 			return;
-		
+			
 		_offline.add(pl);
 		pl.setCaptureState(ListCaptureState.OFFLINE);
 		SwingUtilities.invokeLater(() ->
@@ -481,7 +481,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			_live.put(key, list);
 		else
 			_logFile.add(list);
-		
+			
 		final ActionListener remover = e -> removeList(list, key);
 		
 		final JPopupMenu menu = new JPopupMenu();
@@ -509,7 +509,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		for (int i = 0; i < limit; ++i)
 			if (IDLE.equals(getTitleAt(i)))
 				removeTabAt(i);
-		
+				
 		final Icon icon;
 		if (key != null)
 			icon = list.isLogin() ? _iconLoginA : _iconGameA;
@@ -536,7 +536,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (key != null)
 			_live.remove(key);
-		
+			
 		_offline.remove(list);
 		_logFile.remove(list);
 		
@@ -545,7 +545,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		
 		if (getTabCount() == 0 || (getTabCount() == 1 && CONSOLE.equals(getTitleAt(0))))
 			addTab(IDLE, null, getPlaceHolder(), "No connections to display.");
-		
+			
 		requestUpdateSummary(null);
 		
 		list.onRemove();
@@ -555,7 +555,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (LoadOption.DISABLE_DEFS.isSet())
 			return Collections.singleton(IPacketTemplate.ANY_DYNAMIC_PACKET);
-		
+			
 		return (client ? _displayedClient : _displayedServer).get(protocol);
 	}
 	

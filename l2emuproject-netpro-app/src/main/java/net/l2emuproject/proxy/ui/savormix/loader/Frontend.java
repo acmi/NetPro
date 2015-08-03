@@ -23,10 +23,12 @@ import java.awt.HeadlessException;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.InetAddress;
-import java.net.URISyntaxException;
 import java.net.UnknownHostException;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -61,7 +63,6 @@ import javax.swing.Timer;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
 
-import net.l2emuproject.io.NewIOResourceHelper;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.IGameProtocolVersion;
 import net.l2emuproject.network.IProtocolVersion;
@@ -536,14 +537,17 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				else
 					suffix = "stable";
 					
-				try
+				try (final InputStream is = IMage.class.getResourceAsStream("about_" + suffix + ".htm"); final BufferedInputStream in = new BufferedInputStream(is))
 				{
-					final String text = NewIOResourceHelper.readAsString(IMage.class, "about_" + suffix + ".htm");
+					final ByteArrayOutputStream out = new ByteArrayOutputStream(in.available());
+					for (int b; (b = in.read()) != -1;)
+						out.write(b);
+					final String text = out.toString("UTF-8");
 					about.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, text.replace("\r\n", "").replace("<revision_number>", ProxyInfo.getRevisionNumber()), "About",
 							JOptionPane.INFORMATION_MESSAGE, new ImageIcon(IMage.class.getResource("icon-256.png"))));
 					help.add(about);
 				}
-				catch (IOException | URISyntaxException e)
+				catch (IOException e)
 				{
 					// whatever
 				}

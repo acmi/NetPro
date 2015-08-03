@@ -15,11 +15,11 @@
  */
 package net.l2emuproject.proxy.config;
 
-import net.l2emuproject.L2Initialization.ConfigPropertiesLoader;
 import net.l2emuproject.config.annotation.ConfigClass;
 import net.l2emuproject.config.annotation.ConfigField;
 import net.l2emuproject.config.annotation.ConfigGroupBeginning;
 import net.l2emuproject.config.annotation.ConfigGroupEnding;
+import net.l2emuproject.config.loader.ConfigPropertiesLoader;
 
 /**
  * L2EmuProject Packet Analysis &amp; Visualization Tool configuration provider.

@@ -69,7 +69,6 @@ import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 import net.l2emuproject.ui.table.FilterableTableHeader;
 import net.l2emuproject.ui.table.TriStateRowSorter;
-import net.l2emuproject.util.L2Collections;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -140,7 +139,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		{
 			if (e.getValueIsAdjusting())
 				return;
-			
+				
 			final int row = _list.getSelectedRow();
 			if (row == -1)
 			{
@@ -163,7 +162,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			{
 				if (Frontend.SCROLL_LOCK)
 					return;
-				
+					
 				_list.scrollRectToVisible(_list.getCellRect(_list.getRowCount() - 1, 0, true));
 			}
 		});
@@ -393,8 +392,8 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	{
 		final boolean unkC = _model._showFromClient.contains(ANY_DYNAMIC_PACKET), unkS = _model._showFromServer.contains(ANY_DYNAMIC_PACKET);
 		final int dcp = _model._showFromClient.size(), dsp = _model._showFromServer.size();
-		final long tcp = VersionnedPacketTable.getInstance().getKnownTemplates(_version, EndpointType.CLIENT).count(), tsp = VersionnedPacketTable.getInstance()
-				.getKnownTemplates(_version, EndpointType.SERVER).count();
+		final long tcp = VersionnedPacketTable.getInstance().getKnownTemplates(_version, EndpointType.CLIENT).count(),
+				tsp = VersionnedPacketTable.getInstance().getKnownTemplates(_version, EndpointType.SERVER).count();
 		return new PacketLogSummary(_version, unkC ? dcp - 1 : dcp, (int)tcp, unkC, unkS ? dsp - 1 : dsp, (int)tsp, unkS, _captureState == ListCaptureState.CAPTURE_DISABLED);
 	}
 	
@@ -432,7 +431,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		{
 			for (final PacketListEntry cached : _cached)
 				cached.queryTemplate(_owner.getProtocol());
-			
+				
 			int lastRow = getRowCount() - 1;
 			if (lastRow >= 0)
 				fireTableRowsUpdated(0, lastRow);
@@ -499,12 +498,12 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		{
 			if (_owner._captureState == ListCaptureState.CAPTURE_DISABLED)
 				return;
-			
+				
 			final PacketListEntry e = new PacketListEntry(_owner.getProtocol(), packet);
 			_cached.add(e);
 			if (fire)
 				_owner.updateCachedCount(_cached.size());
-			
+				
 			addPacket(e, fire);
 		}
 		
@@ -517,7 +516,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			final IPacketTemplate pt = VersionnedPacketTable.getInstance().getTemplate(_owner.getProtocol(), packet.getEndpoint(), packet.getBody());
 			if (!config.contains(pt.isDefined() ? pt : IPacketTemplate.ANY_DYNAMIC_PACKET))
 				return;
-			
+				
 			final int idx = _displayed.size();
 			_displayed.add(e);
 			if (fire)
@@ -529,7 +528,11 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		
 		private static boolean isEmpty(Set<?>... sets)
 		{
-			return !L2Collections.containsNotEmpty(sets);
+			for (final Set<?> set : sets)
+				if (set != null && !set.isEmpty())
+					return false;
+					
+			return true;
 		}
 		
 		private static <E> boolean contains(Set<E> set, E element)
@@ -543,13 +546,13 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 				Set<IPacketTemplate> displayedServerPackets, Set<IPacketTemplate> addedServerPackets, final Set<IPacketTemplate> removedServerPackets)
 		{
 			boolean rebuild = (isEmpty(addedClientPackets, removedClientPackets, addedServerPackets, removedServerPackets) || // no info supplied
-			!isEmpty(addedClientPackets, addedServerPackets)); // must reform anyway
-			
+					!isEmpty(addedClientPackets, addedServerPackets)); // must reform anyway
+					
 			if (removedClientPackets != null && removedClientPackets.size() > displayedClientPackets.size())
 				rebuild = true;
 			else if (removedServerPackets != null && removedServerPackets.size() > displayedServerPackets.size())
 				rebuild = true;
-			
+				
 			setDisplayed(displayedClientPackets, true);
 			setDisplayed(displayedServerPackets, false);
 			
@@ -562,7 +565,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 				
 				for (PacketListEntry e : _cached)
 					addPacket(e, false);
-				
+					
 				final int visible = _displayed.size();
 				if (visible > 0)
 					fireTableRowsInserted(0, visible - 1);
@@ -645,7 +648,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		{
 			if (displayed == null)
 				displayed = Collections.emptySet();
-			
+				
 			if (client)
 				_showFromClient = displayed;
 			else
@@ -657,10 +660,8 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	public enum ListCaptureState
 	{
 		/** New packets will be added to the packet table */
-		CAPTURE_ENABLED,
-		/** New packets will not be added to the packet table */
-		CAPTURE_DISABLED,
-		/** Attempts to add packets will not be made */
+		CAPTURE_ENABLED, /** New packets will not be added to the packet table */
+		CAPTURE_DISABLED, /** Attempts to add packets will not be made */
 		OFFLINE;
 	}
 }

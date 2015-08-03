@@ -22,6 +22,8 @@ import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_MODERN_KEY
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import net.l2emuproject.network.ILoginProtocolVersion;
 import net.l2emuproject.network.LoginProtocolVersion;
@@ -33,7 +35,6 @@ import net.l2emuproject.proxy.network.AbstractL2ClientProxy;
 import net.l2emuproject.proxy.network.game.L2GameServerInfo;
 import net.l2emuproject.proxy.network.login.server.L2LoginServer;
 import net.l2emuproject.proxy.network.packets.ProxyRepeatedPacket;
-import net.l2emuproject.util.LookupTable;
 
 /**
  * Internally represents a L2 client connected to a login server.
@@ -53,7 +54,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	/** Prelude protocol where packets are enciphered with C3/C4 transfer key */
 	public static final int FLAG_CUSTOM_PROTOCOL_PRELUDE_WITH_TRANSFER_KEY = 1 << 30;
 	
-	private final LookupTable<L2GameServerInfo> _servers;
+	private final Map<Integer, L2GameServerInfo> _servers;
 	private Integer _targetServer;
 	
 	private ICipher _cipher;
@@ -72,7 +73,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	{
 		super(mmoController, socketChannel);
 		
-		_servers = new LookupTable<>();
+		_servers = new ConcurrentHashMap<>();
 		_targetServer = null;
 		
 		_cipher = null;
@@ -203,7 +204,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	 * 
 	 * @return game server addresses
 	 */
-	public LookupTable<L2GameServerInfo> getServers()
+	public Map<Integer, L2GameServerInfo> getServers()
 	{
 		return _servers;
 	}

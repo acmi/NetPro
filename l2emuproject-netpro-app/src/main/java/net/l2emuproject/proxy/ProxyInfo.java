@@ -17,11 +17,13 @@ package net.l2emuproject.proxy;
 
 import eu.revengineer.simplejse.init.IScriptInitializer;
 
+import net.l2emuproject.config.annotation.ConfigField;
+import net.l2emuproject.geometry.IPoint3D;
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.lang.condition.ICondition;
 import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.proxy.network.AbstractL2Proxy;
 import net.l2emuproject.proxy.network.Proxy;
-import net.l2emuproject.ui.AsyncTask;
 import net.l2emuproject.util.jar.FormattedVersion;
 
 /**
@@ -37,10 +39,12 @@ public final class ProxyInfo
 	}
 	
 	private static final FormattedVersion PROXY_VERSION = new FormattedVersion(L2Proxy.class);
-	private static final FormattedVersion GENERIC_COMMONS_VERSION = new FormattedVersion(IProtocolVersion.class);
-	private static final FormattedVersion GENERIC_COMMONS_UI_VERSION = new FormattedVersion(AsyncTask.class);
 	private static final FormattedVersion PROXY_COMMONS_VERSION = new FormattedVersion(Proxy.class);
 	private static final FormattedVersion PROXY_COMMONS_L2_VERSION = new FormattedVersion(AbstractL2Proxy.class);
+	private static final FormattedVersion GENERIC_COMMONS_CONFIG_VERSION = new FormattedVersion(ConfigField.class);
+	private static final FormattedVersion GENERIC_COMMONS_ESSENTIALS_VERSION = new FormattedVersion(ICondition.class);
+	private static final FormattedVersion GENERIC_COMMONS_GEOMATH_VERSION = new FormattedVersion(IPoint3D.class);
+	private static final FormattedVersion GENERIC_COMMONS_MMO_VERSION = new FormattedVersion(IProtocolVersion.class);
 	private static final FormattedVersion SCRIPT_ENGINE_VERSION = new FormattedVersion(IScriptInitializer.class);
 	
 	/** Shows startup and version information. */
@@ -126,12 +130,14 @@ public final class ProxyInfo
 	{
 		// @formatter:off
 		final String[] full = {
-				"l2emuproject-netpro-app:        " + PROXY_VERSION.getFullVersionInfo(),
-				"l2emuproject-netpro-commons:    " + PROXY_COMMONS_VERSION.getFullVersionInfo(),
-				"l2emuproject-netpro-commons-l2: " + PROXY_COMMONS_L2_VERSION.getFullVersionInfo(),
-				"l2emuproject-commons:           " + GENERIC_COMMONS_VERSION.getFullVersionInfo(),
-				"l2emuproject-commons-ui:        " + GENERIC_COMMONS_UI_VERSION.getFullVersionInfo(),
-				"simplejse:                      " + SCRIPT_ENGINE_VERSION.getFullVersionInfo(),
+				"l2emuproject-netpro-app:         " + PROXY_VERSION.getFullVersionInfo(),
+				"l2emuproject-netpro-commons:     " + PROXY_COMMONS_VERSION.getFullVersionInfo(),
+				"l2emuproject-netpro-commons-l2:  " + PROXY_COMMONS_L2_VERSION.getFullVersionInfo(),
+				"l2emuproject-commons-config:     " + GENERIC_COMMONS_CONFIG_VERSION.getFullVersionInfo(),
+				"l2emuproject-commons-essentials: " + GENERIC_COMMONS_ESSENTIALS_VERSION.getFullVersionInfo(),
+				"l2emuproject-commons-geomath:    " + GENERIC_COMMONS_GEOMATH_VERSION.getFullVersionInfo(),
+				"l2emuproject-commons-mmo:        " + GENERIC_COMMONS_MMO_VERSION.getFullVersionInfo(),
+				"simplejse:                       " + SCRIPT_ENGINE_VERSION.getFullVersionInfo(),
 		};
 		// @formatter:on
 		return full;

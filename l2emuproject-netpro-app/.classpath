@@ -12,6 +12,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" output="target/script-classes" path="scripts"/>
+	<classpathentry excluding="**" kind="src" path="config"/>
 	<classpathentry kind="src" path="src/misc/java"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>

@@ -26,6 +26,7 @@ import java.util.Queue;
 import java.util.concurrent.atomic.AtomicReference;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -251,7 +252,15 @@ public final class Loader
 			});
 			L2Proxy.addStartupHook(VersionnedPacketTable::getInstance);
 			L2Proxy.addStartupHook(IPAliasManager::getInstance);
-			L2Proxy.main(); // launches the backend
+			try
+			{
+				L2Proxy.main(); // launches the backend
+			}
+			catch (Throwable t)
+			{
+				JOptionPane.showMessageDialog(null, t.getMessage(), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
+				System.exit(1);
+			}
 		}
 		
 		if (LoadOption.DISABLE_UI.isNotSet())

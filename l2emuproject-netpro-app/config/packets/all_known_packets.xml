@@ -1709,7 +1709,6 @@
 		<packet id="22" name="EquipItem" />
 		<packet id="23" name="UnequipItem" />
 		<packet id="28" name="ExBuySellList" />
-		<packet id="31" name="LoginFail" />
 		<packet id="44" name="EquipItemSuccess" />
 		<packet id="45" name="EquipItemFail" />
 		<packet id="46" name="UnEquipItemSuccess" />
@@ -2220,6 +2219,8 @@
 		UNICODE "cnt:%d, Lim:%d, Bd:%d"
 		-->
 		<packet id="SM_CHARACTER_SELECTION_INFO" name="CharacterSelectionInfo" />
+		<!-- UNICODE "LoginFailPacket" -->
+		<packet id="SM_LOGIN_FAIL" name="LoginFail" />
 		<!--
 		ASCII "SdSddddddddddffQQddddd"
 		UNICODE "CharacterSelectedPacket"

@@ -45,7 +45,7 @@
 		<packet opcodePrefix="11" id="SM_BUY_LIST" />
 		<packet opcodePrefix="12" id="SM_DELETE_OBJECT" />
 		<packet opcodePrefix="13" id="SM_CHARACTER_SELECTION_INFO" />
-		<packet opcodePrefix="14" id="31" />
+		<packet opcodePrefix="14" id="SM_LOGIN_FAIL" />
 		<packet opcodePrefix="15" id="SM_CHARACTER_SELECTED" />
 		<packet opcodePrefix="16" id="SM_NPC_INFO" />
 		<packet opcodePrefix="17" id="SM_NEW_CHARACTER_SUCCESS" />

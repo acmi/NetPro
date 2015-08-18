@@ -116,13 +116,13 @@
 					<doctitle>L2EMU Unique NetPro ${project.version}/r${git.commitsCount} documentation</doctitle>
 					<windowtitle>NetPro r${git.commitsCount} documentation</windowtitle>
 				</configuration>
-					<executions>
-						<execution>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

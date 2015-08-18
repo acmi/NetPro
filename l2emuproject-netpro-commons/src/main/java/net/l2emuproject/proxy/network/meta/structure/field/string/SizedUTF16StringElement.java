@@ -46,6 +46,6 @@ public final class SizedUTF16StringElement extends AbstractStringFieldElement
 	@Override
 	protected String readValue(MMOBuffer buf) throws BufferUnderflowException
 	{
-		return buf.readSWithLength();
+		return buf.readSS();
 	}
 }

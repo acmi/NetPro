@@ -76,6 +76,7 @@
 			<xs:element name="scriptAlias" type="scriptAliasType" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 		<xs:attribute name="alias" type="xs:token" use="required" />
+		<xs:attribute name="mod" type="modifierType" />
 		<xs:attribute name="type" type="interpreterType" />
 		<xs:attribute name="optional" type="xs:boolean" default="false" />
 	</xs:complexType>
@@ -355,6 +356,9 @@
 
 	<xs:simpleType name="modifierType">
 		<xs:restriction base="xs:token">
+			<xs:enumeration value="ClientDatModulus411" />
+			<xs:enumeration value="ClientDatModulus412" />
+			<xs:enumeration value="ClientDatModulus413" />
 			<xs:enumeration value="MinusOne" />
 			<xs:enumeration value="NewLotteryEvent" />
 			<xs:enumeration value="PlusOne" />

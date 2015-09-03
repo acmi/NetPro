@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- As client data files are now signed, a 2048-bit masked RSA modulus used to decipher/test the signature is sent to server for reference -->
+<!-- No change to structure -->
 <packet id="CM_SEND_PROTOCOL_VERSION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Protocol version" />
-
-	<!-- NEW -->
-	<bytes alias="RSA modulus" mod="ClientDatModulus411" type="ASCII">
+	<bytes alias="RSA modulus" mod="ClientDatModulus413" type="ASCII"> <!-- modifier changed -->
 		<length>256</length>
 	</bytes>
 </packet>

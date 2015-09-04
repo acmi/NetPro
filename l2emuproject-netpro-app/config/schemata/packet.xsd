@@ -168,6 +168,7 @@
 			<xs:enumeration value="ItemType2" />
 			<xs:enumeration value="KnownlistState" />
 			<xs:enumeration value="KrateiState" />
+			<xs:enumeration value="Language" />
 			<xs:enumeration value="LoginFailureReason" />
 			<xs:enumeration value="LootRights" />
 			<xs:enumeration value="LottoNumbers" />

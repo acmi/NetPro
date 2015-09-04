@@ -4,7 +4,7 @@
 	<string alias="Name" />
 	<dword alias="Character ID" />
 	<string alias="Title" />
-	
+
 	<dword alias="Session ID" />
 	<dword alias="Pledge ID" type="Pledge" />
 	<dword alias="Builder level" />
@@ -26,13 +26,15 @@
 	<dword alias="Game time" type="GameTime" />
 	<dword alias="0" />
 	<dword alias="Class" type="CharacterClass" />
+
 	<dword alias="GG (1)" />
 	<dword alias="GG (2)" />
 	<dword alias="GG (3)" />
 	<dword alias="GG (4)" />
-	<bytes alias="Unk">
+	<bytes alias="GG (5)">
 		<length>64</length>
 	</bytes>
+
 	<dword alias="CM opcode shuffling seed">
 		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_OBFUSCATION_KEY" />
 	</dword>

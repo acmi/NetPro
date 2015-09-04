@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file was automatically generated when converting from the legacy definition format. -->
-<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
-<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<!-- Fields have been reordered -->
 <packet id="CM_REQ_ENTER_WORLD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="GG (1)" />
-	<dword alias="GG (2)" />
-	<dword alias="GG (3)" />
-	<dword alias="GG (4)" />
-
-	<!-- NEW -->
-	<bytes alias="GG (5)">
-		<length>64</length>
-	</bytes>
-	<dword alias="GG (6)" />
 	<bytes alias="NIC IP" type="IPv4">
 		<length>4</length>
 	</bytes>
@@ -28,4 +16,13 @@
 	<bytes alias="Hop 4" type="IPv4">
 		<length>4</length>
 	</bytes>
+
+	<dword alias="GG (1)" />
+	<dword alias="GG (2)" />
+	<dword alias="GG (3)" />
+	<dword alias="GG (4)" />
+	<bytes alias="GG (5)">
+		<length>64</length>
+	</bytes>
+	<dword alias="GG (6)" />
 </packet>

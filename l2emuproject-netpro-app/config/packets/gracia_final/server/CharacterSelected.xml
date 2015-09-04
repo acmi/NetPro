@@ -38,9 +38,7 @@
 	<dword alias="GG (2)" />
 	<dword alias="GG (3)" />
 	<dword alias="GG (4)" />
-
-	<!-- Server always writes a large block of zeroes -->
-	<bytes alias="0">
+	<bytes alias="GG (5)">
 		<length>64</length>
 	</bytes>
 

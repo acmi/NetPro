@@ -165,7 +165,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			{
 				final JLabel name = new JLabel("L2EMU UNIQUE");
 				name.setHorizontalAlignment(SwingConstants.CENTER);
-				final JLabel desc = new JLabel("http://www.l2emu-unique.tk/");
+				final JLabel desc = new JLabel("http://www.l2emu-unique.net/");
 				desc.setHorizontalAlignment(SwingConstants.CENTER);
 				
 				L2ThreadPool.schedule(new ContributorAnimator(name, desc), 5000);

@@ -98,7 +98,7 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 			target.setTarget(this);
 		}
 		
-		if (getType().isServer())
+		if (_mmoController != null && getType().isServer())
 			EntityInfoCache.addSharedContext(new ServerSocketID(getInetSocketAddress()));
 	}
 	
@@ -294,6 +294,9 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	
 	private final void notifyProtocolVersion(IProtocolVersion version)
 	{
+		if (_mmoController == null)
+			return;
+			
 		for (PacketListener pl : getPacketListeners())
 		{
 			final long start = System.nanoTime();

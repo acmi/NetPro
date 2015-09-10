@@ -100,7 +100,10 @@ import net.l2emuproject.proxy.ui.savormix.io.AutoLogger;
 import net.l2emuproject.proxy.ui.savormix.io.PacketLogChooser;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
+import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackLogLoadTask;
+import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackRawLogLoadTask;
 import net.l2emuproject.ui.AsyncTask;
+import net.l2emuproject.ui.file.BetterExtensionFilter;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -124,6 +127,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	private final JMenu _configMenu;
 	private volatile Map<IProtocolVersion, PacketDisplayConfig> _configDialogs;
 	final PacketLogChooser _logChooser;
+	final JFileChooser _importChooser;
 	
 	final JCheckBox _cbGlobalCapture, _cbSessionCapture;
 	private final JLabel _labProtocol, _labCP, _labSP/*, _labListenSocket, _labServerSocket*/;
@@ -137,7 +141,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	AsyncTask<?, ?, ?> _gcTask;
 	
 	// TODO: load from preferences
-	File _lastLogDir = LOG_DIRECTORY.toFile(), _lastExportDir = LOG_DIRECTORY.toFile();
+	File _lastLogDir = LOG_DIRECTORY.toFile(), _lastImportDir = LOG_DIRECTORY.toFile(), _lastExportDir = LOG_DIRECTORY.toFile();
 	
 	/**
 	 * Constructs the main window and launches the backend.
@@ -145,6 +149,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	 * @throws HeadlessException
 	 *             if launched on a terminal
 	 */
+	@SuppressWarnings("unchecked")
 	public Frontend() throws HeadlessException
 	{
 		super("L2EMU Unique Network Protocol Analysis Application");
@@ -301,12 +306,134 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				file.add(load);
 			}
 			{
-				final JMenuItem save = new JMenuItem("Export…");
-				save.setToolTipText("Saves the selected packet log.");
-				save.setMnemonic(KeyEvent.VK_E);
-				save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
-				save.setEnabled(false);
-				//file.add(save);
+				_importChooser = new JFileChooser();
+				_importChooser.setAcceptAllFileFilterUsed(true);
+				_importChooser.setMultiSelectionEnabled(true);
+				
+				final JMenu imp = new JMenu("Import");
+				imp.setToolTipText("Imports packets from a 3rd party packet log file.");
+				imp.setMnemonic(KeyEvent.VK_I);
+				
+				{
+					final JMenuItem item = new JMenuItem("L2PacketHack log…");
+					item.setToolTipText("Opens a L2PacketHack (l2phx) packet log file.");
+					item.addActionListener(e ->
+					{
+						_importChooser.setFileFilter(BetterExtensionFilter.create("L2PacketHack packet log", "pLog"));
+						
+						int result = _importChooser.showOpenDialog(Frontend.this);
+						if (result != JFileChooser.APPROVE_OPTION)
+							return;
+							
+						final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
+						final Object[] selectionValues = table.getKnownProtocols(ServiceType.GAME).toArray();
+						
+						final Map<Path, IGameProtocolVersion> importedFiles = new HashMap<>();
+						for (final File selectedFile : _importChooser.getSelectedFiles())
+						{
+							final Object version = JOptionPane.showInputDialog(Frontend.this, selectedFile.getName(), "Select protocol version", JOptionPane.QUESTION_MESSAGE, null, selectionValues,
+									selectionValues[selectionValues.length - 1]);
+							if (version != null)
+								importedFiles.put(selectedFile.toPath(), (IGameProtocolVersion)version);
+						}
+						
+						new PacketHackLogLoadTask(Frontend.this).execute(importedFiles.entrySet().toArray(new Entry[importedFiles.size()]));
+					});
+					imp.add(item);
+				}
+				
+				{
+					final JMenuItem item = new JMenuItem("L2PacketHack raw log…");
+					item.setToolTipText("Opens a L2PacketHack (l2phx) raw packet log file.");
+					item.addActionListener(e ->
+					{
+						_importChooser.setFileFilter(BetterExtensionFilter.create("L2PacketHack raw packet log", "rawLog"));
+						
+						int result = _importChooser.showOpenDialog(Frontend.this);
+						if (result != JFileChooser.APPROVE_OPTION)
+							return;
+							
+						final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
+						final Object[] selectionValues = table.getKnownProtocols(ServiceType.GAME).toArray();
+						
+						final Map<Path, IGameProtocolVersion> importedFiles = new HashMap<>();
+						for (final File selectedFile : _importChooser.getSelectedFiles())
+						{
+							final Object version = JOptionPane.showInputDialog(Frontend.this, selectedFile.getName(), "Select protocol version", JOptionPane.QUESTION_MESSAGE, null, selectionValues,
+									selectionValues[selectionValues.length - 1]);
+							if (version != null)
+								importedFiles.put(selectedFile.toPath(), (IGameProtocolVersion)version);
+						}
+						
+						new PacketHackRawLogLoadTask(Frontend.this).execute(importedFiles.entrySet().toArray(new Entry[importedFiles.size()]));
+					});
+					imp.add(item);
+				}
+				
+				file.add(imp);
+			}
+			{
+				final JMenu export = new JMenu("Convert");
+				export.setToolTipText("Converts a packet log file to a different format.");
+				export.setMnemonic(KeyEvent.VK_E);
+				
+				{
+					final JMenu raw = new JMenu("Raw");
+					raw.setToolTipText("Conversions that reconstruct data as it was received from socket");
+					{
+						final JMenuItem stream = new JMenuItem("Stream…");
+						
+						raw.add(stream);
+					}
+					{
+						final JMenuItem phx = new JMenuItem("L2PacketHack raw log");
+						
+						raw.add(phx);
+					}
+					
+					export.add(raw);
+				}
+				
+				{
+					final JMenu raw = new JMenu("Plain");
+					raw.setToolTipText("Conversions that present data in text format");
+					{
+						final JMenuItem txt = new JMenuItem("Plaintext…");
+						
+						raw.add(txt);
+					}
+					{
+						final JMenuItem xml = new JMenuItem("XML…");
+						
+						raw.add(xml);
+					}
+					
+					export.add(raw);
+				}
+				
+				{
+					final JMenu raw = new JMenu("3rd party");
+					raw.setToolTipText("Conversions that reconstruct data in a format compatible with other tools");
+					{
+						final JMenuItem m1 = new JMenuItem("Wireshark");
+						
+						raw.add(m1);
+					}
+					{
+						final JMenuItem m2 = new JMenuItem("L2PacketHack packet log");
+						
+						raw.add(m2);
+					}
+					{
+						final JMenuItem m2 = new JMenuItem("packetsamurai");
+						
+						raw.add(m2);
+					}
+					
+					export.add(raw);
+				}
+				
+				file.add(export);
 			}
 			
 			file.addSeparator();
@@ -359,7 +486,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			}
 			{
 				final JMenuItem gc = new JMenuItem("SIMULATE_LM_ON_LF_TEXT");
-				gc.setToolTipText("SIMULATE_LM_ON_LF_TOOOLTIP");
+				gc.setToolTipText("SIMULATE_LM_ON_LF_TOOLTIP");
 				gc.addActionListener(e -> cp.onLowMemory(ConnectionPane.FLAG_LM_DROP_LISTS_LOGFILE));
 				//file.add(gc);
 			}

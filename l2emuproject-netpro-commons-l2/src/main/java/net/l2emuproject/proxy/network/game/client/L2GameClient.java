@@ -53,8 +53,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	 * @param socketChannel connection
 	 * @throws ClosedChannelException if the given channel was closed during operations
 	 */
-	protected L2GameClient(L2GameClientConnections mmoController, SocketChannel socketChannel)
-			throws ClosedChannelException
+	public L2GameClient(L2GameClientConnections mmoController, SocketChannel socketChannel) throws ClosedChannelException
 	{
 		super(mmoController, socketChannel);
 		
@@ -81,11 +80,11 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	}
 	
 	@Override
-	protected boolean decipher(ByteBuffer buf, DataSizeHolder dataSize)
+	public boolean decipher(ByteBuffer buf, DataSizeHolder dataSize)
 	{
 		if (isFirstTime())
 			return true;
-		
+			
 		final int limit = buf.limit();
 		buf.limit(buf.position() + dataSize.getSize());
 		try
@@ -186,7 +185,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 		return _firstTime;
 	}
 	
-	private void setFirstTime(boolean firstTime)
+	public void setFirstTime(boolean firstTime)
 	{
 		_firstTime = firstTime;
 	}

@@ -17,6 +17,7 @@ package net.l2emuproject.proxy.ui.savormix.io.task;
 
 import java.awt.Window;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.ByteBuffer;
@@ -25,12 +26,11 @@ import java.nio.channels.ClosedByInterruptException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Map.Entry;
 
 import javax.swing.SwingUtilities;
 
-import net.l2emuproject.network.IGameProtocolVersion;
 import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.ProtocolVersionManager;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
@@ -46,7 +46,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author _dev_
  */
-public class PacketHackLogLoadTask extends AbstractLogLoadTask<Entry<Path, IGameProtocolVersion>>implements IOConstants
+public class PacketHackLogLoadTask extends AbstractLogLoadTask<File>implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(PacketHackLogLoadTask.class);
 	
@@ -65,17 +65,43 @@ public class PacketHackLogLoadTask extends AbstractLogLoadTask<Entry<Path, IGame
 	}
 	
 	@Override
-	protected Void doInBackground(@SuppressWarnings("unchecked") Entry<Path, IGameProtocolVersion>... params)
+	protected Void doInBackground(File... params)
 	{
-		for (final Entry<Path, IGameProtocolVersion> log : params)
+		final ByteBuffer protocolVersion = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
+		for (final File f : params)
 		{
-			final Path p = log.getKey();
+			final Path p = f.toPath();
 			final String name = p.getFileName().toString();
 			
 			// quick prepare
 			SwingUtilities.invokeLater(() -> _dialog.setMaximum(name, Integer.MAX_VALUE));
 			
 			final LogLoadScriptManager sm = LogLoadScriptManager.getInstance();
+			
+			final IProtocolVersion protocol;
+			try (final BufferedReader br = Files.newBufferedReader(p, StandardCharsets.US_ASCII))
+			{
+				if (isCancelled())
+					break;
+					
+				final String spv = br.readLine();
+				if (spv == null)
+					continue;
+					
+				protocolVersion.position(0);
+				protocolVersion.put(HexUtil.hexStringToBytes(spv.substring(24, 32)));
+				protocol = ProtocolVersionManager.getInstance().getProtocol(protocolVersion.getInt(0), false);
+			}
+			catch (ClosedByInterruptException e)
+			{
+				LOG.info("Cancelled loading " + name);
+				continue;
+			}
+			catch (IOException | RuntimeException e)
+			{
+				LOG.error("Failed loading " + name, e);
+				continue;
+			}
 			
 			if (isCancelled())
 				break;
@@ -85,8 +111,6 @@ public class PacketHackLogLoadTask extends AbstractLogLoadTask<Entry<Path, IGame
 				if (isCancelled())
 					break;
 					
-				final IProtocolVersion protocol = log.getValue();
-				
 				try
 				{
 					SwingUtilities.invokeAndWait(new Runnable()
@@ -182,11 +206,22 @@ public class PacketHackLogLoadTask extends AbstractLogLoadTask<Entry<Path, IGame
 	{
 		_time.position(0);
 		_time.put(HexUtil.hexStringToBytes(packet.substring(2, 18)));
-		return _time.getLong(0);
+		return toUNIX(_time.getDouble(0));
 	}
 	
 	private byte[] getBody(String packet)
 	{
 		return HexUtil.hexStringToBytes(packet.substring(22));
+	}
+	
+	/**
+	 * Converts a Delphi {@code TDateTime} to a UNIX millis timestamp.
+	 * 
+	 * @param datetime Delphi datetime
+	 * @return Java timestamp
+	 */
+	public static final long toUNIX(double datetime)
+	{
+		return (long)((datetime - 25569D) * (24 * 60 * 60 * 1000));
 	}
 }

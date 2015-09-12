@@ -149,7 +149,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	 * @throws HeadlessException
 	 *             if launched on a terminal
 	 */
-	@SuppressWarnings("unchecked")
 	public Frontend() throws HeadlessException
 	{
 		super("L2EMU Unique Network Protocol Analysis Application");
@@ -325,19 +324,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 						if (result != JFileChooser.APPROVE_OPTION)
 							return;
 							
-						final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
-						final Object[] selectionValues = table.getKnownProtocols(ServiceType.GAME).toArray();
-						
-						final Map<Path, IGameProtocolVersion> importedFiles = new HashMap<>();
-						for (final File selectedFile : _importChooser.getSelectedFiles())
-						{
-							final Object version = JOptionPane.showInputDialog(Frontend.this, selectedFile.getName(), "Select protocol version", JOptionPane.QUESTION_MESSAGE, null, selectionValues,
-									selectionValues[selectionValues.length - 1]);
-							if (version != null)
-								importedFiles.put(selectedFile.toPath(), (IGameProtocolVersion)version);
-						}
-						
-						new PacketHackLogLoadTask(Frontend.this).execute(importedFiles.entrySet().toArray(new Entry[importedFiles.size()]));
+						new PacketHackLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
 					});
 					imp.add(item);
 				}
@@ -353,19 +340,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 						if (result != JFileChooser.APPROVE_OPTION)
 							return;
 							
-						final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
-						final Object[] selectionValues = table.getKnownProtocols(ServiceType.GAME).toArray();
-						
-						final Map<Path, IGameProtocolVersion> importedFiles = new HashMap<>();
-						for (final File selectedFile : _importChooser.getSelectedFiles())
-						{
-							final Object version = JOptionPane.showInputDialog(Frontend.this, selectedFile.getName(), "Select protocol version", JOptionPane.QUESTION_MESSAGE, null, selectionValues,
-									selectionValues[selectionValues.length - 1]);
-							if (version != null)
-								importedFiles.put(selectedFile.toPath(), (IGameProtocolVersion)version);
-						}
-						
-						new PacketHackRawLogLoadTask(Frontend.this).execute(importedFiles.entrySet().toArray(new Entry[importedFiles.size()]));
+						new PacketHackRawLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
 					});
 					imp.add(item);
 				}

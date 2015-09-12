@@ -16,6 +16,7 @@
 package net.l2emuproject.proxy.ui.savormix.io.task;
 
 import java.awt.Window;
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.ByteBuffer;
@@ -25,13 +26,12 @@ import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.Map.Entry;
 
 import javax.swing.SwingUtilities;
 
 import net.l2emuproject.io.EmptyChecksum;
-import net.l2emuproject.network.IGameProtocolVersion;
 import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.ProtocolVersionManager;
 import net.l2emuproject.network.mmocore.DataSizeHolder;
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.config.ProxyConfig;
@@ -53,7 +53,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author _dev_
  */
-public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<Entry<Path, IGameProtocolVersion>>implements IOConstants
+public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(PacketHackRawLogLoadTask.class);
 	
@@ -68,17 +68,35 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<Entry<Path, IG
 	}
 	
 	@Override
-	protected Void doInBackground(@SuppressWarnings("unchecked") Entry<Path, IGameProtocolVersion>... params)
+	protected Void doInBackground(File... params)
 	{
-		for (final Entry<Path, IGameProtocolVersion> log : params)
+		for (final File f : params)
 		{
-			final Path p = log.getKey();
+			final Path p = f.toPath();
 			final String name = p.getFileName().toString();
 			
 			// quick prepare
 			SwingUtilities.invokeLater(() -> _dialog.setMaximum(name, Integer.MAX_VALUE));
 			
 			final LogLoadScriptManager sm = LogLoadScriptManager.getInstance();
+			
+			final IProtocolVersion protocol;
+			try (final SeekableByteChannel channel = Files.newByteChannel(p, StandardOpenOption.READ);
+					final NewIOHelper ioh = new NewIOHelper(channel, ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN), EmptyChecksum.getInstance()))
+			{
+				ioh.setPositionInChannel(14);
+				protocol = ProtocolVersionManager.getInstance().getProtocol(ioh.readInt(), false);
+			}
+			catch (ClosedByInterruptException e)
+			{
+				LOG.info("Cancelled loading " + name);
+				continue;
+			}
+			catch (IOException | RuntimeException e)
+			{
+				LOG.error("Failed loading " + name, e);
+				continue;
+			}
 			
 			if (isCancelled())
 				break;
@@ -91,8 +109,6 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<Entry<Path, IG
 				if (isCancelled())
 					break;
 					
-				final IProtocolVersion protocol = log.getValue();
-				
 				try
 				{
 					SwingUtilities.invokeAndWait(new Runnable()
@@ -160,7 +176,7 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<Entry<Path, IG
 				{
 					final EndpointType type = EndpointType.valueOf(ioh.readByte() == 4);
 					final byte[] body = new byte[ioh.readChar() - 2];
-					final long time = ioh.readLong();
+					final long time = PacketHackLogLoadTask.toUNIX(Double.longBitsToDouble(ioh.readLong()));
 					ioh.readChar();
 					ioh.read(body); // packet
 					

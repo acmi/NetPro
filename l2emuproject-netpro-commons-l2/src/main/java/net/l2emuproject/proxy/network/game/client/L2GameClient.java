@@ -101,7 +101,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	}
 	
 	@Override
-	protected boolean encipher(ByteBuffer buf, int size)
+	public boolean encipher(ByteBuffer buf, int size)
 	{
 		if (isFirstTime())
 		{

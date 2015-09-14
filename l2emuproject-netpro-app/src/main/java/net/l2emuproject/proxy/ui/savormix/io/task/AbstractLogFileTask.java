@@ -19,34 +19,53 @@ import java.awt.Window;
 import java.util.List;
 
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
+import net.l2emuproject.proxy.ui.savormix.io.dialog.LoadProgressDialog;
+import net.l2emuproject.ui.AsyncTask;
 
 /**
- * Loads specified packet log files according to given log loading options. Loading is performed in a background thread, with a shared progress dialog.
+ * Processes specified packet log files in a background thread, with a shared progress dialog.
  * 
  * @author savormix
  * @param <T> log descriptor
  */
-public abstract class AbstractLogLoadTask<T> extends AbstractLogFileTask<T>implements IOConstants
+public abstract class AbstractLogFileTask<T> extends AsyncTask<T, ReceivedPacket, Void>implements IOConstants
 {
+	private final Window _owner;
+	private final String _desc;
+	
+	LoadProgressDialog _dialog;
+	
 	/**
-	 * Constructs a historical packet log loading task.
+	 * Constructs a historical packet log processing task.
 	 * 
 	 * @param owner associated window
+	 * @param desc task description
 	 */
-	protected AbstractLogLoadTask(Window owner)
+	protected AbstractLogFileTask(Window owner, String desc)
 	{
-		super(owner, "Loading");
+		_owner = owner;
+		_desc = desc;
 	}
 	
-	PacketList _list;
+	@Override
+	protected void onPreExecute()
+	{
+		_dialog = new LoadProgressDialog(_owner, _desc + " packets...", this);
+		_dialog.setVisible(true);
+	}
 	
 	@Override
 	protected void process(List<ReceivedPacket> packets)
 	{
-		super.process(packets);
-		
-		_list.addPackets(packets, false);
+		// TODO: do not count loaded packets here, count proc'd ones!
+		_dialog.addProgress(packets.size());
+	}
+	
+	@Override
+	protected void onPostExecute(Void result)
+	{
+		_dialog.setVisible(false);
+		_dialog.dispose();
 	}
 }

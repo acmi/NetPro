@@ -93,7 +93,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 	}
 	
 	@Override
-	protected boolean encipher(ByteBuffer buf, int size)
+	public boolean encipher(ByteBuffer buf, int size)
 	{
 		if (!isFirstTime())
 		{
@@ -148,7 +148,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 		return _firstTime;
 	}
 	
-	private void setFirstTime(boolean firstTime)
+	public void setFirstTime(boolean firstTime)
 	{
 		_firstTime = firstTime;
 	}

@@ -88,6 +88,7 @@ import net.l2emuproject.proxy.ui.savormix.component.DisabledComponentUI;
 import net.l2emuproject.proxy.ui.savormix.component.GcInfoDialog;
 import net.l2emuproject.proxy.ui.savormix.component.GcInfoDialog.MemorySizeUnit;
 import net.l2emuproject.proxy.ui.savormix.component.WatermarkPane;
+import net.l2emuproject.proxy.ui.savormix.component.conv.StreamOptionDialog;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketInject;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketListCleaner;
@@ -357,7 +358,11 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					raw.setToolTipText("Conversions that reconstruct data as it was received from socket");
 					{
 						final JMenuItem stream = new JMenuItem("Stream…");
-						
+						stream.addActionListener(e ->
+						{
+							final StreamOptionDialog dlg = new StreamOptionDialog(Frontend.this);
+							dlg.setVisible(true);
+						});
 						raw.add(stream);
 					}
 					{
@@ -458,12 +463,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					}.execute((Void[])null);
 				});
 				file.add(gc);
-			}
-			{
-				final JMenuItem gc = new JMenuItem("SIMULATE_LM_ON_LF_TEXT");
-				gc.setToolTipText("SIMULATE_LM_ON_LF_TOOLTIP");
-				gc.addActionListener(e -> cp.onLowMemory(ConnectionPane.FLAG_LM_DROP_LISTS_LOGFILE));
-				//file.add(gc);
 			}
 			
 			{
@@ -656,82 +655,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			}
 			mb.add(help);
 		}
-		
-		/*final JPanel globalControls = new JPanel(new BorderLayout());
-		
-		//setJMenuBar(mb);
-		globalControls.add(mb, BorderLayout.NORTH);
-		
-		{
-			final JPanel proxyCaptureHeap = new JPanel(new GridLayout(1, 0));
-			{
-				final JPanel panel = new JPanel();
-				final JLabel lab;
-				panel.add(lab = new JLabel("Proxy: "));
-				lab.setFont(lab.getFont().deriveFont(lab.getFont().getSize2D() - 1));
-				panel.add(_labProxyState = new JLabel());
-				_labProxyState.setFont(_labProxyState.getFont().deriveFont(_labProxyState.getFont().getSize2D() - 1));
-				/*panel.add(*//*_tbProxyState = new JToggleButton("Restrict");//);
-								updateProxyState();
-								
-								_tbProxyState.addActionListener(e ->
-								{
-								// set flag to drop connections
-								
-								updateProxyState();
-								});
-								proxyCaptureHeap.add(panel);
-								}
-								{
-								final JPanel panel = new JPanel();
-								panel.add(_cbGlobalCapture = new JCheckBox("Global capture"));
-								if (LoadOption.DISABLE_PROXY.isSet())
-								_cbGlobalCapture.setEnabled(false);
-								else
-								_cbGlobalCapture.setSelected(true);
-								_cbGlobalCapture.setFont(_cbGlobalCapture.getFont().deriveFont(_cbGlobalCapture.getFont().getSize2D() - 1));
-								proxyCaptureHeap.add(panel);
-								}
-								{
-								final JPanel panel = new JPanel();
-								panel.add(_pbHeapState = new JProgressBar(0, 1_000)
-								{
-								private static final long serialVersionUID = 6895671150559979086L;
-								
-								@Override
-								public Dimension getPreferredSize()
-								{
-								final Dimension d = super.getPreferredSize();
-								d.width = panel.getWidth();
-								return d;
-								}
-								});
-								_pbHeapState.setStringPainted(true);
-								_pbHeapState.setFont(_pbHeapState.getFont().deriveFont(_pbHeapState.getFont().getSize2D() - 1));
-								/*panel.add(*//*_btnManualGC = new JButton("GC");//);
-											_btnManualGC.setMargin(new Insets(0, 0, 0, 0));
-											_btnManualGC.setMultiClickThreshhold(1_000);
-											final Timer updater = new Timer(1_000, e ->
-											{
-											final long free = Runtime.getRuntime().freeMemory(), total = Runtime.getRuntime().totalMemory(), used = total - free;
-											final L2TextBuilder tb = new L2TextBuilder(BytesizeInterpreter.consolidate(used, BytesizeUnit.BYTES, BytesizeUnit.BYTES, BytesizeUnit.MEBIBYTES, "0 M"));
-											final int end = tb.indexOf(" ") + 1;
-											tb.setCharAt(end - 1, Character.toUpperCase(tb.charAt(end)));
-											tb.setLength(end);
-											_pbHeapState.setValue((int)(used * _pbHeapState.getMaximum() / total));
-											_pbHeapState.setString(tb.moveToString());
-											});
-											updater.setRepeats(true);
-											updater.setCoalesce(true);
-											updater.setInitialDelay(0);
-											updater.start();
-											proxyCaptureHeap.add(panel);
-											}
-											globalControls.add(proxyCaptureHeap, BorderLayout.SOUTH);
-											}
-											
-											root.add(globalControls, BorderLayout.NORTH);
-											*/
 		root.add(mb, BorderLayout.NORTH);
 	}
 	

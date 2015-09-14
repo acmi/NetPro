@@ -155,12 +155,12 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implement
 					{
 						fakeClient.decipher(wrapper, sz);
 						fakeClient.setFirstTime(false);
-						L2GameClientPackets.getInstance().handlePacket(wrapper, fakeClient, wrapper.get()).readAndChangeState(fakeClient, buf);
+						L2GameClientPackets.getInstance().handlePacket(wrapper, fakeClient, buf.readUC()).readAndChangeState(fakeClient, buf);
 					}
 					else
 					{
 						fakeServer.decipher(wrapper, sz);
-						L2GameServerPackets.getInstance().handlePacket(wrapper, fakeServer, wrapper.get()).readAndChangeState(fakeServer, buf);
+						L2GameServerPackets.getInstance().handlePacket(wrapper, fakeServer, buf.readUC()).readAndChangeState(fakeServer, buf);
 					}
 					sm.onLoadedPacket(false, client, body, _list.getProtocol(), cacheContext);
 				}
@@ -187,12 +187,12 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implement
 					{
 						fakeClient.decipher(wrapper, sz);
 						fakeClient.setFirstTime(false);
-						L2GameClientPackets.getInstance().handlePacket(wrapper, fakeClient, wrapper.get()).readAndChangeState(fakeClient, buf);
+						L2GameClientPackets.getInstance().handlePacket(wrapper, fakeClient, buf.readUC()).readAndChangeState(fakeClient, buf);
 					}
 					else
 					{
 						fakeServer.decipher(wrapper, sz);
-						L2GameServerPackets.getInstance().handlePacket(wrapper, fakeServer, wrapper.get()).readAndChangeState(fakeServer, buf);
+						L2GameServerPackets.getInstance().handlePacket(wrapper, fakeServer, buf.readUC()).readAndChangeState(fakeServer, buf);
 					}
 					sm.onLoadedPacket(false, type.isClient(), body, protocol, cacheContext);
 					

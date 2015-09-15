@@ -103,6 +103,7 @@ import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackLogVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackRawLogVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToXMLVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogVisitationTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackLogLoadTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackRawLogLoadTask;
@@ -353,59 +354,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				file.add(imp);
 			}
 			{
-				final JMenu export = new JMenu("Convert log(s) to");
-				export.setToolTipText("Converts a packet log file to a different format.");
-				export.setMnemonic(KeyEvent.VK_E);
+				final JMenu export = new JMenu("Bulk convert to");
+				export.setToolTipText("Converts packet log file(s) to a different format.");
+				export.setMnemonic(KeyEvent.VK_C);
 				
 				{
-					final JMenu raw = new JMenu("Raw");
-					raw.setToolTipText("Conversions that reconstruct data as it was received from socket");
-					{
-						final JMenuItem stream = new JMenuItem("Stream…");
-						_streamDialog = new StreamOptionDialog(Frontend.this);
-						stream.addActionListener(e -> _streamDialog.setVisible(true));
-						raw.add(stream);
-					}
-					{
-						final JMenuItem phx = new JMenuItem("L2PacketHack raw log");
-						phx.addActionListener(e ->
-						{
-							final int result = _logChooser.showOpenDialog(this);
-							if (result != JFileChooser.APPROVE_OPTION)
-								return;
-								
-							final File[] selected = _logChooser.getSelectedFiles();
-							final Path[] targets = new Path[selected.length];
-							for (int i = 0; i < targets.length; ++i)
-								targets[i] = selected[i].toPath();
-								
-							new LogVisitationTask(Frontend.this, "Converting", new ToL2PacketHackRawLogVisitor()).execute(targets);
-						});
-						raw.add(phx);
-					}
-					
-					export.add(raw);
-				}
-				
-				{
-					final JMenu raw = new JMenu("Plain");
-					raw.setToolTipText("Conversions that present data in text format");
-					{
-						final JMenuItem txt = new JMenuItem("Plaintext…");
-						
-						raw.add(txt);
-					}
-					{
-						final JMenuItem xml = new JMenuItem("XML…");
-						
-						raw.add(xml);
-					}
-					
-					export.add(raw);
-				}
-				
-				{
-					final JMenu raw = new JMenu("3rd party");
+					final JMenu raw = new JMenu("3rd party tools");
 					raw.setToolTipText("Conversions that reconstruct data in a format compatible with other tools");
 					{
 						final JMenuItem m2 = new JMenuItem("L2PacketHack packet log");
@@ -425,9 +379,70 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 						raw.add(m2);
 					}
 					{
+						final JMenuItem phx = new JMenuItem("L2PacketHack raw log");
+						phx.addActionListener(e ->
+						{
+							final int result = _logChooser.showOpenDialog(this);
+							if (result != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final File[] selected = _logChooser.getSelectedFiles();
+							final Path[] targets = new Path[selected.length];
+							for (int i = 0; i < targets.length; ++i)
+								targets[i] = selected[i].toPath();
+								
+							new LogVisitationTask(Frontend.this, "Converting", new ToL2PacketHackRawLogVisitor()).execute(targets);
+						});
+						raw.add(phx);
+					}
+					{
 						final JMenuItem m2 = new JMenuItem("packetsamurai");
 						
 						raw.add(m2);
+					}
+					
+					export.add(raw);
+				}
+				
+				{
+					final JMenu raw = new JMenu("Text");
+					raw.setToolTipText("Conversions that present data in textual format");
+					{
+						final JMenuItem txt = new JMenuItem("Plaintext");
+						
+						raw.add(txt);
+					}
+					{
+						final JMenuItem xml = new JMenuItem("XML");
+						xml.addActionListener(e ->
+						{
+							final int result = _logChooser.showOpenDialog(this);
+							if (result != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final File[] selected = _logChooser.getSelectedFiles();
+							final Path[] targets = new Path[selected.length];
+							for (int i = 0; i < targets.length; ++i)
+								targets[i] = selected[i].toPath();
+								
+							new LogVisitationTask(Frontend.this, "Converting", new ToXMLVisitor()).execute(targets);
+						});
+						raw.add(xml);
+					}
+					
+					export.add(raw);
+				}
+				
+				export.addSeparator();
+				
+				{
+					final JMenu raw = new JMenu("Other");
+					raw.setToolTipText("Conversions that reconstruct data as it was received from socket");
+					{
+						final JMenuItem stream = new JMenuItem("Stream…");
+						_streamDialog = new StreamOptionDialog(Frontend.this);
+						stream.addActionListener(e -> _streamDialog.setVisible(true));
+						raw.add(stream);
 					}
 					
 					export.add(raw);

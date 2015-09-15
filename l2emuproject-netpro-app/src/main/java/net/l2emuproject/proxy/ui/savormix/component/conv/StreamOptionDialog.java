@@ -33,7 +33,7 @@ import javax.swing.JRadioButton;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.ui.savormix.io.PacketLogChooser;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.proxy.ui.savormix.io.conv.RawStreamVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToRawStreamVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogVisitationTask;
 
@@ -117,7 +117,7 @@ public class StreamOptionDialog extends JDialog implements ActionListener, IOCon
 		for (int i = 0; i < targets.length; ++i)
 			targets[i] = selected[i].toPath();
 			
-		final HistoricalLogPacketVisitor visitor = new RawStreamVisitor(_client.isSelected() ? EndpointType.CLIENT : (_server.isSelected() ? EndpointType.SERVER : null), _timestamps.isSelected(),
+		final HistoricalLogPacketVisitor visitor = new ToRawStreamVisitor(_client.isSelected() ? EndpointType.CLIENT : (_server.isSelected() ? EndpointType.SERVER : null), _timestamps.isSelected(),
 				_reencipher.isSelected());
 		new LogVisitationTask(getOwner(), "Converting", visitor).execute(targets);
 		

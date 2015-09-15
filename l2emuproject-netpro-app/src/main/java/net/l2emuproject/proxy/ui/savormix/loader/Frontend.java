@@ -101,6 +101,9 @@ import net.l2emuproject.proxy.ui.savormix.io.AutoLogger;
 import net.l2emuproject.proxy.ui.savormix.io.PacketLogChooser;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackLogVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackRawLogVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.task.LogVisitationTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackLogLoadTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackRawLogLoadTask;
 import net.l2emuproject.ui.AsyncTask;
@@ -125,6 +128,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	public static boolean SCROLL_LOCK = false;
 	
 	private final PacketInject _injectDialog;
+	private final StreamOptionDialog _streamDialog;
 	private final JMenu _configMenu;
 	private volatile Map<IProtocolVersion, PacketDisplayConfig> _configDialogs;
 	final PacketLogChooser _logChooser;
@@ -349,7 +353,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				file.add(imp);
 			}
 			{
-				final JMenu export = new JMenu("Convert");
+				final JMenu export = new JMenu("Convert log(s) to");
 				export.setToolTipText("Converts a packet log file to a different format.");
 				export.setMnemonic(KeyEvent.VK_E);
 				
@@ -358,16 +362,25 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					raw.setToolTipText("Conversions that reconstruct data as it was received from socket");
 					{
 						final JMenuItem stream = new JMenuItem("Stream…");
-						stream.addActionListener(e ->
-						{
-							final StreamOptionDialog dlg = new StreamOptionDialog(Frontend.this);
-							dlg.setVisible(true);
-						});
+						_streamDialog = new StreamOptionDialog(Frontend.this);
+						stream.addActionListener(e -> _streamDialog.setVisible(true));
 						raw.add(stream);
 					}
 					{
 						final JMenuItem phx = new JMenuItem("L2PacketHack raw log");
-						
+						phx.addActionListener(e ->
+						{
+							final int result = _logChooser.showOpenDialog(this);
+							if (result != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final File[] selected = _logChooser.getSelectedFiles();
+							final Path[] targets = new Path[selected.length];
+							for (int i = 0; i < targets.length; ++i)
+								targets[i] = selected[i].toPath();
+								
+							new LogVisitationTask(Frontend.this, "Converting", new ToL2PacketHackRawLogVisitor()).execute(targets);
+						});
 						raw.add(phx);
 					}
 					
@@ -395,13 +408,20 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					final JMenu raw = new JMenu("3rd party");
 					raw.setToolTipText("Conversions that reconstruct data in a format compatible with other tools");
 					{
-						final JMenuItem m1 = new JMenuItem("Wireshark");
-						
-						raw.add(m1);
-					}
-					{
 						final JMenuItem m2 = new JMenuItem("L2PacketHack packet log");
-						
+						m2.addActionListener(e ->
+						{
+							final int result = _logChooser.showOpenDialog(this);
+							if (result != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final File[] selected = _logChooser.getSelectedFiles();
+							final Path[] targets = new Path[selected.length];
+							for (int i = 0; i < targets.length; ++i)
+								targets[i] = selected[i].toPath();
+								
+							new LogVisitationTask(Frontend.this, "Converting", new ToL2PacketHackLogVisitor()).execute(targets);
+						});
 						raw.add(m2);
 					}
 					{
@@ -418,7 +438,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			
 			file.addSeparator();
 			
-			// TODO: move to toolbar
 			{
 				final JMenuItem gc = new JMenuItem("Manual GC");
 				gc.setMnemonic(KeyEvent.VK_G);

@@ -43,23 +43,22 @@ public enum DataType
 	STRING('S', SafeColor.LIME_GREEN.getColor());
 	// @formatter:on
 	
-	//private final char _id;
+	private final char _id;
 	private final Color _color;
 	private final URL _icon;
 	
 	private DataType(char id, Color color)
 	{
-		//_id = id;
+		_id = id;
 		_color = color;
 		_icon = ImageUrlUtils.getInstance().toUrl("data_type", IconUtils.drawDataType(14, 14, color, Character.toLowerCase(id), 14));
 	}
 	
-	/*
 	public char getId()
 	{
 		return _id;
 	}
-	*/
+	
 	public Color getColor()
 	{
 		return _color;

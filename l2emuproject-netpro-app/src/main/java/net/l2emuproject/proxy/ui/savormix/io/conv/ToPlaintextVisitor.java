@@ -23,13 +23,17 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
 import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.proxy.ProxyInfo;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
 import net.l2emuproject.proxy.network.meta.PacketStructureElementVisitor;
@@ -61,6 +65,7 @@ import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
 import net.l2emuproject.util.HexUtil;
+import net.l2emuproject.util.ISODateTime;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -68,20 +73,24 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author _dev_
  */
-public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
+public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstants, ISODateTime
 {
-	static final L2Logger LOG = L2Logger.getLogger(ToXMLVisitor.class);
+	static final L2Logger LOG = L2Logger.getLogger(ToPlaintextVisitor.class);
+	
+	static final int PACKET_BOUNDARY_MARKER_LEN = 120;
 	
 	private final MMOBuffer _buf;
+	private final DateFormat _df;
 	
 	private IProtocolVersion _protocol;
 	private ICacheServerID _cacheContext;
 	BufferedWriter _writer;
 	
 	/** Constructs this visitor. */
-	public ToXMLVisitor()
+	public ToPlaintextVisitor()
 	{
 		_buf = new MMOBuffer();
+		_df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
 	}
 	
 	@Override
@@ -92,15 +101,21 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 		_protocol = logHeader.getProtocolVersion();
 		_cacheContext = new HistoricalPacketLog(logFile);
 		
-		_writer = Files.newBufferedWriter(logFile.resolveSibling(logFile.getFileName() + ".xml"));
-		_writer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<packetLog>\r\n");
+		_writer = Files.newBufferedWriter(logFile.resolveSibling(logFile.getFileName() + ".txt"));
+		_writer.append("[V").append(String.valueOf(logHeader.getVersion())).append("] ").append(logFile.getFileName().toString()).append("\r\n\r\n");
+		_writer.append("Protocol type: ").append(logHeader.isLogin() ? "Auth[Gate]D" : "Lineage II").append("\r\n");
+		_writer.append("Protocol version: ").append(String.valueOf(logHeader.getProtocol())).append('/').append(String.valueOf(logHeader.getProtocolVersion())).append("\r\n");
+		_writer.append("Packet count: ").append(String.valueOf(logHeader.getPackets())).append("\r\n");
+		_writer.append("Creation date: ").append(_df.format(new Date(logHeader.getCreated()))).append("\r\n\r\n");
+		
+		_writer.append("Text generation date: ").append(_df.format(new Date())).append("\r\n");
+		_writer.append("Generator version: ").append(ProxyInfo.getRevisionNumber()).append("\r\n");
 	}
 	
 	@Override
 	public void onPacket(ReceivedPacket packet) throws Exception
 	{
 		final boolean client = packet.getEndpoint().isClient();
-		_writer.append("\t<").append(client ? "client" : "server").append("Packet timestamp=\"").append(String.valueOf(packet.getReceived())).append("\" opcodes=\"");
 		
 		packetContent:
 		{
@@ -117,7 +132,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 				}
 				catch (InvalidPacketOpcodeSchemeException e)
 				{
-					_writer.append("\">\r\n\t\t<remainder>").append(HexUtil.bytesToHexString(body.array(), " ")).append("</remainder>\r\n");
+					_writer.append("INVALID PACKET").append(HexUtil.printData(body.array()));
 					break packetContent;
 				}
 				catch (PartialPayloadEnumerationException e)
@@ -137,8 +152,14 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 				ctx = new InterpreterContext(_cacheContext, wireframe);
 			}
 			
+			_writer.append("\r\n");
+			for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
+				_writer.append('=');
+			_writer.append("\r\n");
+			
 			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(_protocol, packet.getEndpoint(), body.array());
-			_writer.append(HexUtil.bytesToHexString(template.getPrefix(), " ")).append("\">\r\n");
+			_writer.append("\t[").append(client ? 'C' : 'S').append("] ").append(HexUtil.bytesToHexString(template.getPrefix(), ":")).append(' ').append(template.getName()).append("\r\n");
+			_writer.append('\t').append(_df.format(new Date(packet.getReceived()))).append("\r\n");
 			body.position(template.getPrefix().length);
 			
 			final Map<FieldValueReadOption, Object> options = new EnumMap<>(FieldValueReadOption.class);
@@ -153,8 +174,12 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 				{
 					try
 					{
-						if (bytesWithoutOpcodes < 1)
-							_writer.append("\t\t<!-- Trigger packet -->\r\n");
+						if (bytesWithoutOpcodes > 0)
+						{
+							for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
+								_writer.append('-');
+							_writer.append("\r\n");
+						}
 					}
 					catch (IOException e)
 					{
@@ -181,10 +206,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 					
 					try
 					{
-						_writer.append("\t\t");
-						for (int i = 1; i < _loops.size(); ++i)
-							_writer.append('\t');
-						_writer.append(expectedIterations > 0 ? "<loop>\r\n" : "<loop />\r\n");
+						_writer.append(expectedIterations > 0 ? "~~~~ Loop start ~~~~\r\n" : "~~~~ Empty loop ~~~~\r\n");
 					}
 					catch (IOException e)
 					{
@@ -195,12 +217,16 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 				@Override
 				public void onLoopIterationStart(LoopElement element) throws RuntimeException
 				{
+					final LoopVisitation lv = _loops.get(element);
+					if (!lv._useDelimiter)
+					{
+						lv._useDelimiter = true;
+						return;
+					}
+					
 					try
 					{
-						_writer.append("\t\t");
-						for (int i = 0; i < _loops.size(); ++i)
-							_writer.append('\t');
-						_writer.append("<iteration>\r\n");
+						_writer.append("~~ Loop element delimiter ~~\r\n");
 					}
 					catch (IOException e)
 					{
@@ -211,17 +237,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 				@Override
 				public void onLoopIterationEnd(LoopElement element) throws RuntimeException
 				{
-					try
-					{
-						_writer.append("\t\t");
-						for (int i = 0; i < _loops.size(); ++i)
-							_writer.append('\t');
-						_writer.append("</iteration>\r\n");
-					}
-					catch (IOException e)
-					{
-						throw new RuntimeException(e);
-					}
+					// do nothing
 				}
 				
 				@Override
@@ -232,10 +248,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 						
 					try
 					{
-						_writer.append("\t\t");
-						for (int i = 0; i < _loops.size(); ++i)
-							_writer.append('\t');
-						_writer.append("</loop>\r\n");
+						_writer.append("~~~~ Loop end ~~~~\r\n");
 					}
 					catch (IOException e)
 					{
@@ -246,13 +259,13 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 				@Override
 				public void onByteArrayField(AbstractByteArrayFieldElement element, ByteArrayFieldValue value) throws RuntimeException
 				{
-					writeToXML(element, value, value != null ? value.value() : null, DataType.BYTES, _loops.size());
+					writeAsText(element, value, value != null ? value.value() : null, DataType.BYTES);
 				}
 				
 				@Override
 				public void onDecimalField(AbstractDecimalFieldElement element, DecimalFieldValue value) throws RuntimeException
 				{
-					writeToXML(element, value, value != null ? value.value() : null, DataType.FLOAT, _loops.size());
+					writeAsText(element, value, value != null ? value.value() : null, DataType.FLOAT);
 				}
 				
 				@Override
@@ -297,13 +310,13 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 						default:
 							throw new IllegalArgumentException(element + " = " + value);
 					}
-					writeToXML(element, value, value != null ? value.value() : null, visualDataType, _loops.size());
+					writeAsText(element, value, value != null ? value.value() : null, visualDataType);
 				}
 				
 				@Override
 				public void onStringField(AbstractStringFieldElement element, StringFieldValue value) throws RuntimeException
 				{
-					writeToXML(element, value, value != null ? value.value() : null, DataType.STRING, _loops.size());
+					writeAsText(element, value, value != null ? value.value() : null, DataType.STRING);
 				}
 				
 				@Override
@@ -312,7 +325,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 					try
 					{
 						if (remainingBytes > 0)
-							_writer.append("\t\t<remainder>").append(HexUtil.bytesToHexString(body.array(), body.position() - (remainingBytes - body.remaining()), " ")).append("</remainder>\r\n");
+							_writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");
 					}
 					catch (IOException e2)
 					{
@@ -327,7 +340,8 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 					
 					try
 					{
-						_writer.append("\t\t<remainder>").append(HexUtil.bytesToHexString(body.array(), body.position(), " ")).append("</remainder>\r\n");
+						_writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");
+						_writer.append(e.toString()).append("\r\n");
 					}
 					catch (IOException e2)
 					{
@@ -343,7 +357,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 						
 					try
 					{
-						_writer.append("\t\t<remainder>").append(HexUtil.bytesToHexString(body.array(), body.position(), " ")).append("</remainder>\r\n");
+						_writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");
 					}
 					catch (IOException e)
 					{
@@ -352,20 +366,20 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 				}
 			}, body, options);
 		}
-		_writer.append("\t</").append(client ? "client" : "server").append("Packet>\r\n");
+		for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
+			_writer.append('=');
+		_writer.append("\r\n");
 	}
 	
-	void writeToXML(FieldElement<?> field, FieldValue value, Object readValue, DataType visualDataType, int loopIndent)
+	void writeAsText(FieldElement<?> field, FieldValue value, Object readValue, DataType visualDataType)
 	{
-		loopIndent <<= 1;
-		
 		Object interpretation = null;
 		
 		if (value != null)
 		{
 			interpretation = value.interpreted();
 			if (interpretation instanceof RenderedImage)
-				interpretation = "[IMAGE]";
+				interpretation = readValue;
 		}
 		
 		if (interpretation == null)
@@ -375,37 +389,20 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 			
 		try
 		{
-			_writer.append("\t\t");
-			for (int i = 0; i < loopIndent; ++i)
-				_writer.append('\t');
-			_writer.append("<").append(String.valueOf(visualDataType)).append(" name=\"").append(field.getAlias()).append("\">\r\n");
-			
-			_writer.append("\t\t\t");
-			for (int i = 0; i < loopIndent; ++i)
-				_writer.append('\t');
-			_writer.append("<interpretedValue>").append(String.valueOf(interpretation)).append("</interpretedValue>\r\n");
-			if (readValue != null)
+			final String interp = String.valueOf(interpretation);
+			_writer.append('[').append(visualDataType.getId()).append("] ").append(field.getAlias()).append(": ").append(interp);
+			switch (visualDataType)
 			{
-				if (readValue instanceof byte[])
-					readValue = HexUtil.bytesToHexString((byte[])readValue, " ");
-					
-				_writer.append("\t\t\t");
-				for (int i = 0; i < loopIndent; ++i)
-					_writer.append('\t');
-				_writer.append("<value>").append(String.valueOf(readValue)).append("</value>\r\n");
+				case BYTE:
+				case DWORD:
+				case FLOAT:
+				case QWORD:
+				case WORD:
+					final String read = String.valueOf(readValue);
+					if (!interp.equals(read))
+						_writer.append(" (").append(read).append(')');
 			}
-			if (value != null)
-			{
-				_writer.append("\t\t\t");
-				for (int i = 0; i < loopIndent; ++i)
-					_writer.append('\t');
-				_writer.append("<rawBytes>").append(HexUtil.bytesToHexString(value.raw(), " ")).append("</rawBytes>\r\n");
-			}
-			
-			_writer.append("\t\t");
-			for (int i = 0; i < loopIndent; ++i)
-				_writer.append('\t');
-			_writer.append("</").append(String.valueOf(visualDataType)).append(">\r\n");
+			_writer.append("\r\n");
 		}
 		catch (IOException e)
 		{
@@ -416,7 +413,6 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 	@Override
 	public void onEnd() throws Exception
 	{
-		_writer.append("</packetLog>");
 		_writer.flush();
 		_writer.close();
 	}
@@ -424,10 +420,12 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 	private static final class LoopVisitation
 	{
 		final int _iterationCount;
+		boolean _useDelimiter;
 		
 		LoopVisitation(int iterationCount)
 		{
 			_iterationCount = iterationCount;
+			_useDelimiter = false;
 		}
 	}
 }

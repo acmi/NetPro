@@ -20,6 +20,8 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
@@ -104,7 +106,9 @@ import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackLogVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackRawLogVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToPacketSamuraiLogVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToPlaintextVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToXMLVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogVisitationTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackLogLoadTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackRawLogLoadTask;
@@ -138,7 +142,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	final JFileChooser _importChooser;
 	
 	final JCheckBox _cbGlobalCapture, _cbSessionCapture;
-	private final JLabel _labProtocol, _labCP, _labSP/*, _labListenSocket, _labServerSocket*/;
+	private final JLabel _labProtocol, _labCP, _labSP;
 	private final JPanel _dc;
 	final JProgressBar _pbHeapState;
 	
@@ -380,54 +384,18 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					final JMenu raw = new JMenu("3rd party tools");
 					raw.setToolTipText("Conversions that reconstruct data in a format compatible with other tools");
 					{
-						final JMenuItem m2 = new JMenuItem("L2PacketHack packet log");
-						m2.addActionListener(e ->
-						{
-							final int result = _logChooser.showOpenDialog(this);
-							if (result != JFileChooser.APPROVE_OPTION)
-								return;
-								
-							final File[] selected = _logChooser.getSelectedFiles();
-							final Path[] targets = new Path[selected.length];
-							for (int i = 0; i < targets.length; ++i)
-								targets[i] = selected[i].toPath();
-								
-							new LogVisitationTask(Frontend.this, "Converting", new ToL2PacketHackLogVisitor()).execute(targets);
-						});
+						final JMenuItem m2 = new JMenuItem("L2PacketHack packet log…");
+						m2.addActionListener(new LogConversionInvoker(new ToL2PacketHackLogVisitor()));
 						raw.add(m2);
 					}
 					{
-						final JMenuItem phx = new JMenuItem("L2PacketHack raw log");
-						phx.addActionListener(e ->
-						{
-							final int result = _logChooser.showOpenDialog(this);
-							if (result != JFileChooser.APPROVE_OPTION)
-								return;
-								
-							final File[] selected = _logChooser.getSelectedFiles();
-							final Path[] targets = new Path[selected.length];
-							for (int i = 0; i < targets.length; ++i)
-								targets[i] = selected[i].toPath();
-								
-							new LogVisitationTask(Frontend.this, "Converting", new ToL2PacketHackRawLogVisitor()).execute(targets);
-						});
+						final JMenuItem phx = new JMenuItem("L2PacketHack raw log…");
+						phx.addActionListener(new LogConversionInvoker(new ToL2PacketHackRawLogVisitor()));
 						raw.add(phx);
 					}
 					{
-						final JMenuItem m2 = new JMenuItem("packetsamurai");
-						m2.addActionListener(e ->
-						{
-							final int result = _logChooser.showOpenDialog(this);
-							if (result != JFileChooser.APPROVE_OPTION)
-								return;
-								
-							final File[] selected = _logChooser.getSelectedFiles();
-							final Path[] targets = new Path[selected.length];
-							for (int i = 0; i < targets.length; ++i)
-								targets[i] = selected[i].toPath();
-								
-							new LogVisitationTask(Frontend.this, "Converting", new ToPacketSamuraiLogVisitor()).execute(targets);
-						});
+						final JMenuItem m2 = new JMenuItem("Packet Samurai log…");
+						m2.addActionListener(new LogConversionInvoker(new ToPacketSamuraiLogVisitor()));
 						raw.add(m2);
 					}
 					
@@ -438,37 +406,13 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					final JMenu raw = new JMenu("Text");
 					raw.setToolTipText("Conversions that present data in textual format");
 					{
-						final JMenuItem txt = new JMenuItem("Plaintext");
-						txt.addActionListener(e ->
-						{
-							final int result = _logChooser.showOpenDialog(this);
-							if (result != JFileChooser.APPROVE_OPTION)
-								return;
-								
-							final File[] selected = _logChooser.getSelectedFiles();
-							final Path[] targets = new Path[selected.length];
-							for (int i = 0; i < targets.length; ++i)
-								targets[i] = selected[i].toPath();
-								
-							//new LogVisitationTask(Frontend.this, "Converting", new ToPlaintextVisitor()).execute(targets);
-						});
+						final JMenuItem txt = new JMenuItem("Plaintext…");
+						txt.addActionListener(new LogConversionInvoker(new ToPlaintextVisitor()));
 						raw.add(txt);
 					}
 					{
-						final JMenuItem xml = new JMenuItem("XML");
-						xml.addActionListener(e ->
-						{
-							final int result = _logChooser.showOpenDialog(this);
-							if (result != JFileChooser.APPROVE_OPTION)
-								return;
-								
-							final File[] selected = _logChooser.getSelectedFiles();
-							final Path[] targets = new Path[selected.length];
-							for (int i = 0; i < targets.length; ++i)
-								targets[i] = selected[i].toPath();
-								
-							new LogVisitationTask(Frontend.this, "Converting", new ToXMLVisitor()).execute(targets);
-						});
+						final JMenuItem xml = new JMenuItem("XML…");
+						xml.addActionListener(new LogConversionInvoker(new ToXMLVisitor()));
 						raw.add(xml);
 					}
 					
@@ -961,6 +905,31 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		public void onOpen(PacketList packetLog)
 		{
 			updateBottomPanel(packetLog != null ? packetLog.getSummary() : PacketLogSummary.NO_LOG_VISIBLE);
+		}
+	}
+	
+	private final class LogConversionInvoker implements ActionListener
+	{
+		private final HistoricalLogPacketVisitor _visitor;
+		
+		LogConversionInvoker(HistoricalLogPacketVisitor visitor)
+		{
+			_visitor = visitor;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			final int result = _logChooser.showOpenDialog(Frontend.this);
+			if (result != JFileChooser.APPROVE_OPTION)
+				return;
+				
+			final File[] selected = _logChooser.getSelectedFiles();
+			final Path[] targets = new Path[selected.length];
+			for (int i = 0; i < targets.length; ++i)
+				targets[i] = selected[i].toPath();
+				
+			new LogVisitationTask(Frontend.this, "Converting", _visitor).execute(targets);
 		}
 	}
 }

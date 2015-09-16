@@ -103,6 +103,7 @@ import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackLogVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackRawLogVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToPacketSamuraiLogVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.conv.ToXMLVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogVisitationTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackLogLoadTask;
@@ -414,7 +415,19 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					}
 					{
 						final JMenuItem m2 = new JMenuItem("packetsamurai");
-						
+						m2.addActionListener(e ->
+						{
+							final int result = _logChooser.showOpenDialog(this);
+							if (result != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final File[] selected = _logChooser.getSelectedFiles();
+							final Path[] targets = new Path[selected.length];
+							for (int i = 0; i < targets.length; ++i)
+								targets[i] = selected[i].toPath();
+								
+							new LogVisitationTask(Frontend.this, "Converting", new ToPacketSamuraiLogVisitor()).execute(targets);
+						});
 						raw.add(m2);
 					}
 					

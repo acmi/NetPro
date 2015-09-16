@@ -138,20 +138,7 @@ public class PacketHackLogLoadTask extends AbstractLogLoadTask<File>implements I
 					break;
 					
 				final HistoricalPacketLog cacheContext = new HistoricalPacketLog(p);
-				
-				// skip the desired amount
 				String line;
-				for (int offset = 0/*llo.getOffset()*/; offset > 0 && (line = br.readLine()) != null; offset--)
-				{
-					final boolean client = isClientPacket(line); // client/server
-					final byte[] body = getBody(line);
-					
-					sm.onLoadedPacket(false, client, body, protocol, cacheContext);
-				}
-				
-				if (isCancelled())
-					break;
-					
 				// load packets
 				for (int count = Integer.MAX_VALUE; count > 0 && (line = br.readLine()) != null; count--)
 				{

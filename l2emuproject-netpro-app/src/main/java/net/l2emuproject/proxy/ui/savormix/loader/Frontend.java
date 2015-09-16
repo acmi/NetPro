@@ -107,6 +107,7 @@ import net.l2emuproject.proxy.ui.savormix.io.conv.ToXMLVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogVisitationTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackLogLoadTask;
 import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackRawLogLoadTask;
+import net.l2emuproject.proxy.ui.savormix.io.task.PacketSamuraiLogLoadTask;
 import net.l2emuproject.ui.AsyncTask;
 import net.l2emuproject.ui.file.BetterExtensionFilter;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
@@ -351,6 +352,22 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					imp.add(item);
 				}
 				
+				{
+					final JMenuItem item = new JMenuItem("Packet Samurai log…");
+					item.setToolTipText("Opens a Packet Samurai packet log file.");
+					item.addActionListener(e ->
+					{
+						_importChooser.setFileFilter(BetterExtensionFilter.create("Packet Samurai packet log", "psl"));
+						
+						int result = _importChooser.showOpenDialog(Frontend.this);
+						if (result != JFileChooser.APPROVE_OPTION)
+							return;
+							
+						new PacketSamuraiLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
+					});
+					imp.add(item);
+				}
+				
 				file.add(imp);
 			}
 			{
@@ -409,7 +426,19 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					raw.setToolTipText("Conversions that present data in textual format");
 					{
 						final JMenuItem txt = new JMenuItem("Plaintext");
-						
+						txt.addActionListener(e ->
+						{
+							final int result = _logChooser.showOpenDialog(this);
+							if (result != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final File[] selected = _logChooser.getSelectedFiles();
+							final Path[] targets = new Path[selected.length];
+							for (int i = 0; i < targets.length; ++i)
+								targets[i] = selected[i].toPath();
+								
+							//new LogVisitationTask(Frontend.this, "Converting", new ToPlaintextVisitor()).execute(targets);
+						});
 						raw.add(txt);
 					}
 					{

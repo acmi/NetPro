@@ -140,37 +140,6 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implement
 				final L2GameServer fakeServer = new L2GameServer(null, null, fakeClient);
 				final DataSizeHolder sz = new DataSizeHolder();
 				final MMOBuffer buf = new MMOBuffer();
-				// skip the desired amount
-				for (int offset = 0/*llo.getOffset()*/; offset > 0 && size - ioh.getPositionInChannel(false) > 0; offset--)
-				{
-					final boolean client = ioh.readByte() == 4; // client/server
-					final byte[] body = new byte[ioh.readChar() - 2];
-					ioh.readLong(); // time
-					ioh.readChar();
-					ioh.read(body); // packet
-					
-					final ByteBuffer wrapper = ByteBuffer.wrap(body).order(ByteOrder.LITTLE_ENDIAN);
-					sz.init(body.length);
-					if (client)
-					{
-						fakeClient.decipher(wrapper, sz);
-						fakeClient.setFirstTime(false);
-						L2GameClientPackets.getInstance().handlePacket(wrapper, fakeClient, buf.readUC()).readAndChangeState(fakeClient, buf);
-					}
-					else
-					{
-						fakeServer.decipher(wrapper, sz);
-						L2GameServerPackets.getInstance().handlePacket(wrapper, fakeServer, buf.readUC()).readAndChangeState(fakeServer, buf);
-					}
-					sm.onLoadedPacket(false, client, body, _list.getProtocol(), cacheContext);
-				}
-				
-				if (isCancelled())
-					break;
-					
-				if (size - ioh.getPositionInChannel(false) <= 0)
-					continue;
-					
 				// load packets
 				for (int count = Integer.MAX_VALUE; count > 0 && size - ioh.getPositionInChannel(false) > 0; count--)
 				{

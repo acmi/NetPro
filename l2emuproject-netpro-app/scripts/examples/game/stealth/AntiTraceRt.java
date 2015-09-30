@@ -47,14 +47,13 @@ public final class AntiTraceRt extends GameScript
 	@Override
 	protected void clientPacketArrived(L2GameClient sender, L2GameServer recipient, Packet packet)
 	{
-		if (recipient.getProtocol().isOlderThan(ClientProtocolVersion.VALIANCE))
+		if (sender.getProtocol().isOlderThan(ClientProtocolVersion.GRACIA_FINAL))
 			return;
 			
-		ByteBuffer newBody = packet.getDefaultBufferForModifications();
-		//newBody.position(85); // ignore opcode & whatever
-		newBody.position(1); // ignore opcode
+		final ByteBuffer newBody = packet.getDefaultBufferForModifications();
+		newBody.position(sender.getProtocol().isNewerThanOrEqualTo(ClientProtocolVersion.VALIANCE) ? 1 : 85); // ignore opcode & whatever
 		newBody.put(NULL_IPS);
-		// ignore anything else
+		// ignore everything else
 		packet.setForwardedBody(newBody);
 	}
 	

@@ -376,12 +376,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				file.add(imp);
 			}
 			{
-				final JMenu export = new JMenu("Bulk convert to");
+				final JMenu export = new JMenu("Transform to");
 				export.setToolTipText("Converts packet log file(s) to a different format.");
 				export.setMnemonic(KeyEvent.VK_C);
 				
 				{
-					final JMenu raw = new JMenu("3rd party tools");
+					final JMenu raw = new JMenu("3rd party formats");
 					raw.setToolTipText("Conversions that reconstruct data in a format compatible with other tools");
 					{
 						final JMenuItem m2 = new JMenuItem("L2PacketHack packet log…");

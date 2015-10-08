@@ -222,6 +222,11 @@
 		<packet id="381" name="RequestUserStatistics" />
 		<packet id="382" name="RequestFirstPlayStart" />
 		<packet id="383" name="RequestFlyMoveStart" />
+		<!--
+		ASCII "chSddddddSddddddddddSS"
+		UNICODE "RequestHardWareInfo"
+		UNICODE "(Send)%s"
+		-->
 		<packet id="384" name="RequestHardWareInfo" />
 		<packet id="385" name="RequestChangeAttributeTargetItem" />
 		<packet id="386" name="RequestChangeAttributeItem" />

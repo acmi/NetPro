@@ -53,7 +53,7 @@ public final class ProxyConfig extends ConfigPropertiesLoader
 	
 	/** Whether the proxy should read scripts from cache, if one is present. */
 	@ConfigGroupBeginning(name = "Debug")
-	@ConfigField(name = "DisableScriptCache", value = "false", eternal = true, comment = { "Whether to ignore the precompiled script cache, even though that will increase the application load time.", "The obvious advantadge is that you will not need to keep deleting the script cache after making changes in script source files." })
+	@ConfigField(name = "DisableScriptCache", value = "false", eternal = true, comment = { "Whether to ignore the precompiled script cache, even though doing so will increase the application load time.", "The obvious advantadge is that you will not need to keep deleting the script cache after making changes in script source files." })
 	public static boolean DISABLE_SCRIPT_CACHE;
 	
 	/** Whether to enable partial MMOCore activity logging. */

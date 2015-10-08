@@ -1,5 +1,10 @@
 VERSION [1.2]
 -------------
+Minor definition updates.
+Support for reading L2PacketHack (l2phx) and packetsamurai packet log files.
+Ability to export data contained in NetPro packet logs to various formats ([interpreted] text, l2phx, packetsamurai, etc.)
+Offline/non-logged packet content interpretation dialog (any protocol).
+AntiTraceRt now functions properly in Valiance and above.
 
 VERSION [1.1]
 -------------

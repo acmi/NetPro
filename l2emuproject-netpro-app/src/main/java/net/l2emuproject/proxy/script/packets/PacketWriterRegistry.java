@@ -24,7 +24,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.Proxy;
-import net.l2emuproject.util.L2Collections;
+import net.l2emuproject.util.concurrent.MapUtils;
 
 /**
  * Manages classes capable of writing packets and sending them to connection endpoints.
@@ -52,8 +52,8 @@ public final class PacketWriterRegistry
 	 * @throws UnknownPacketStructureException if there are no writers for the {@code recipient}'s protocol version
 	 * @throws InvalidPacketWriterArgumentsException if incorrect arguments were passed to the packet writer
 	 */
-	public void sendPacket(Proxy recipient, String packetIdentifier, Object... writerArgs) throws UnknownPacketIdentifierException, UnknownPacketStructureException,
-			InvalidPacketWriterArgumentsException
+	public void sendPacket(Proxy recipient, String packetIdentifier, Object... writerArgs)
+			throws UnknownPacketIdentifierException, UnknownPacketStructureException, InvalidPacketWriterArgumentsException
 	{
 		final List<PacketWriter> protocol2Writer = _packetWriters.get(recipient.getTarget().getType()).get(packetIdentifier);
 		if (protocol2Writer == null || protocol2Writer.isEmpty())
@@ -82,7 +82,7 @@ public final class PacketWriterRegistry
 	 */
 	public void registerWriter(EndpointType packetType, String packetIdentifier, PacketWriter packetWriter)
 	{
-		L2Collections.putIfAbsent(_packetWriters.get(packetType), packetIdentifier, new CopyOnWriteArrayList<>()).add(packetWriter);
+		MapUtils.putIfAbsent(_packetWriters.get(packetType), packetIdentifier, new CopyOnWriteArrayList<>()).add(packetWriter);
 	}
 	
 	/**

@@ -23,7 +23,6 @@ import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.List;
 
 import javax.swing.SwingUtilities;
 
@@ -35,16 +34,13 @@ import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LogLoadOptions;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
-import net.l2emuproject.proxy.ui.savormix.io.dialog.LoadProgressDialog;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
-import net.l2emuproject.ui.AsyncTask;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -54,13 +50,9 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void> implements IOConstants
+public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions>implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(LogLoadTask.class);
-	
-	private final Window _owner;
-	LoadProgressDialog _dialog;
-	PacketList _list;
 	
 	/**
 	 * Constructs a historical packet log loading task.
@@ -69,22 +61,7 @@ public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void>
 	 */
 	public LogLoadTask(Window owner)
 	{
-		_owner = owner;
-	}
-	
-	@Override
-	protected void onPreExecute()
-	{
-		_dialog = new LoadProgressDialog(_owner, "Loading packets...", this);
-		_dialog.setVisible(true);
-	}
-	
-	@Override
-	protected void process(List<ReceivedPacket> packets)
-	{
-		// TODO: do not count loaded packets here, count proc'd ones!
-		_dialog.addProgress(packets.size());
-		_list.addPackets(packets, false);
+		super(owner);
 	}
 	
 	@Override
@@ -111,7 +88,7 @@ public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void>
 			
 			if (isCancelled())
 				break;
-			
+				
 			try (final SeekableByteChannel channel = Files.newByteChannel(p, StandardOpenOption.READ); final NewIOHelper ioh = new NewIOHelper(channel))
 			{
 				final long size = Files.size(p);
@@ -120,7 +97,7 @@ public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void>
 				
 				if (isCancelled())
 					break;
-				
+					
 				final IProtocolVersion protocol = llo.getProtocol() != null ? llo.getProtocol() : lfh.getProtocolVersion();
 				
 				try
@@ -148,7 +125,7 @@ public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void>
 				
 				if (isCancelled())
 					break;
-				
+					
 				final HistoricalPacketLog cacheContext = new HistoricalPacketLog(p);
 				// skip the desired amount
 				for (int offset = 0/*llo.getOffset()*/; offset > 0 && size - ioh.getPositionInChannel(false) > lfh.getFooterSize(); offset--)
@@ -163,10 +140,10 @@ public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void>
 				
 				if (isCancelled())
 					break;
-				
+					
 				if (size - ioh.getPositionInChannel(false) <= lfh.getFooterSize())
 					continue;
-				
+					
 				// load packets
 				final OpcodeOwnerSet cps, sps;
 				if (llo.isDisplayable())
@@ -182,7 +159,7 @@ public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void>
 				}
 				else
 					cps = sps = null;
-				
+					
 				// former packet list entry point
 				
 				final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
@@ -207,7 +184,7 @@ public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void>
 					
 					if (isCancelled())
 						break;
-					
+						
 					// avoid I/O congestion and CPU overload
 					// modulo must be low enough and sleep must be large enough
 					// to avoid DPC blackouts (e.g. no media skipping when listening to music)
@@ -237,12 +214,5 @@ public class LogLoadTask extends AsyncTask<LogLoadOptions, ReceivedPacket, Void>
 			}
 		}
 		return null;
-	}
-	
-	@Override
-	protected void onPostExecute(Void result)
-	{
-		_dialog.setVisible(false);
-		_dialog.dispose();
 	}
 }

@@ -19,21 +19,16 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.SplashScreen;
 import java.awt.Window;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayDeque;
 import java.util.Locale;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicReference;
 
-import javafx.application.Platform;
-
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-
-import eu.revengineer.simplejse.exception.DependencyResolutionException;
-import eu.revengineer.simplejse.exception.MutableOperationInProgressException;
 
 import net.l2emuproject.proxy.L2Proxy;
 import net.l2emuproject.proxy.config.ProxyConfig;
@@ -55,6 +50,8 @@ import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.util.L2Utils;
 import net.l2emuproject.util.logging.L2Logger;
 import net.l2emuproject.util.logging.ListeningLog;
+
+import javafx.application.Platform;
 
 /**
  * Loads the GUI without pre-initializing LogManager (see {@link java.awt.Component} static
@@ -136,7 +133,7 @@ public final class Loader
 			{
 				if (LoadOption.IGNORE_UNKNOWN.isSet())
 					continue;
-				
+					
 				System.err.println("Unrecognized command line argument: " + arg);
 				System.exit(1);
 				return;
@@ -150,7 +147,7 @@ public final class Loader
 					{
 						if (!opt.isInHelp())
 							continue;
-						
+							
 						final String[] alias = opt.getAlias();
 						sb.append(alias[0]);
 						for (int i = 1; i < alias.length; ++i)
@@ -163,19 +160,19 @@ public final class Loader
 				default:
 					lo.setSystemProperty();
 					break;
-			// throw new InternalError("Unhandled load option: " + lo);
+				// throw new InternalError("Unhandled load option: " + lo);
 			}
 		}
 		
 		if (GraphicsEnvironment.isHeadless()) // a fool's hope
 			LoadOption.DISABLE_UI.setSystemProperty();
-		
+			
 		if (LoadOption.DISABLE_PROXY.isSet() && LoadOption.DISABLE_UI.isSet())
 			System.exit(0);
-		
+			
 		if (LoadOption.DISABLE_UI.isNotSet())
 			Platform.setImplicitExit(false);
-		
+			
 		final AtomicReference<Window> surrogateCallable = new AtomicReference<>();
 		if (LoadOption.DISABLE_UI.isNotSet() && LoadOption.HIDE_SPLASH.isNotSet())
 		{
@@ -220,7 +217,7 @@ public final class Loader
 		}
 		else
 			LOG_MESSAGES = new ArrayDeque<>(0);
-		
+			
 		{
 			L2Proxy.addStartupHook(() ->
 			{
@@ -236,18 +233,11 @@ public final class Loader
 				}
 				new ObjectAnalytics().onLoad();
 				
-				try
+				final NetProScriptCache cache = NetProScriptCache.getInstance();
+				if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()) && !cache.isCompilerUnavailable())
 				{
-					final NetProScriptCache cache = NetProScriptCache.getInstance();
-					if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()) && !cache.isCompilerUnavailable())
-					{
-						cache.compileAllScripts();
-						cache.writeToCache();
-					}
-				}
-				catch (MutableOperationInProgressException | DependencyResolutionException | IOException e)
-				{
-					throw new RuntimeException(e);
+					cache.compileAllScripts();
+					cache.writeToCache();
 				}
 				/*
 				catch (SystemJavaCompilerMissingError e)
@@ -262,7 +252,15 @@ public final class Loader
 			});
 			L2Proxy.addStartupHook(VersionnedPacketTable::getInstance);
 			L2Proxy.addStartupHook(IPAliasManager::getInstance);
-			L2Proxy.main(); // launches the backend
+			try
+			{
+				L2Proxy.main(); // launches the backend
+			}
+			catch (Throwable t)
+			{
+				JOptionPane.showMessageDialog(null, t.getMessage(), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
+				System.exit(1);
+			}
 		}
 		
 		if (LoadOption.DISABLE_UI.isNotSet())

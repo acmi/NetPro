@@ -3,11 +3,16 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="CM_C_LOGIN" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<string alias="Account name" />
+	<string alias="Account name">
+		<scriptAlias id="adp_account_name"/>
+	</string>
+	<!-- Data known to and verified by the game server -->
 	<dword alias="Account ID" />
-	<dword alias="Session key (game)" />
+	<dword alias="Session ID" />
+	<!-- Data passed back to the login server -->
 	<dword alias="Account ID" />
-	<dword alias="Session key (login)" />
-	<dword alias="1" />
+	<dword alias="Auth key" />
+
+	<dword alias="Localization" type="Language" />
 	<qword alias="Unknown" /> <!-- 485 (GF), 376 (GF U1), 512 (HF), 579 (GDS), etc etc -->
 </packet>

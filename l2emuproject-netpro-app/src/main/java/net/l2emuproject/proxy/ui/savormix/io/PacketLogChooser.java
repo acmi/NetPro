@@ -96,12 +96,12 @@ public class PacketLogChooser extends JFileChooser implements EventSink, SwingCo
 					cbDisplayableOnly.addActionListener(e ->
 					{
 						// startIgnoringEvents();
-							
-							_filter.setDisplayable(cbDisplayableOnly.isSelected());
-							_cbLegacy.setEnabled(cbDisplayableOnly.isSelected());
-							
-							SwingUtilities.invokeLater(rescan);
-						});
+						
+						_filter.setDisplayable(cbDisplayableOnly.isSelected());
+						_cbLegacy.setEnabled(cbDisplayableOnly.isSelected());
+						
+						SwingUtilities.invokeLater(rescan);
+					});
 					filter.add(cbDisplayableOnly);
 					
 					_cbLegacy.setEnabled(cbDisplayableOnly.isSelected());
@@ -147,7 +147,7 @@ public class PacketLogChooser extends JFileChooser implements EventSink, SwingCo
 								{
 									if (e.getStateChange() != ItemEvent.SELECTED)
 										return;
-									
+										
 									final Object current = selectedOrDefault(_cbLegacyLoginProtocol);
 									if (_lastItem == current)
 										return;
@@ -171,7 +171,7 @@ public class PacketLogChooser extends JFileChooser implements EventSink, SwingCo
 								{
 									if (e.getStateChange() != ItemEvent.SELECTED)
 										return;
-									
+										
 									final Object current = selectedOrDefault(_cbLegacyGameProtocol);
 									if (_lastItem == current)
 										return;
@@ -207,7 +207,7 @@ public class PacketLogChooser extends JFileChooser implements EventSink, SwingCo
 		final boolean realState = _cbLegacy.isSelected();
 		if (realState)
 			_cbLegacy.setSelected(false);
-		
+			
 		final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
 		{
 			IProtocolVersion prev = selectedOrDefault(_cbLegacyLoginProtocol);

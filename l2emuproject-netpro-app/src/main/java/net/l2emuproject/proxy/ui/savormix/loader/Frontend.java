@@ -20,13 +20,17 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.InetAddress;
-import java.net.URISyntaxException;
 import java.net.UnknownHostException;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -61,7 +65,6 @@ import javax.swing.Timer;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
 
-import net.l2emuproject.io.NewIOResourceHelper;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.IGameProtocolVersion;
 import net.l2emuproject.network.IProtocolVersion;
@@ -87,6 +90,8 @@ import net.l2emuproject.proxy.ui.savormix.component.DisabledComponentUI;
 import net.l2emuproject.proxy.ui.savormix.component.GcInfoDialog;
 import net.l2emuproject.proxy.ui.savormix.component.GcInfoDialog.MemorySizeUnit;
 import net.l2emuproject.proxy.ui.savormix.component.WatermarkPane;
+import net.l2emuproject.proxy.ui.savormix.component.conv.StreamOptionDialog;
+import net.l2emuproject.proxy.ui.savormix.component.packet.PacketExplainDialog;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketInject;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketListCleaner;
@@ -99,7 +104,18 @@ import net.l2emuproject.proxy.ui.savormix.io.AutoLogger;
 import net.l2emuproject.proxy.ui.savormix.io.PacketLogChooser;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackLogVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToL2PacketHackRawLogVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToPacketSamuraiLogVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToPlaintextVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToXMLVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
+import net.l2emuproject.proxy.ui.savormix.io.task.LogVisitationTask;
+import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackLogLoadTask;
+import net.l2emuproject.proxy.ui.savormix.io.task.PacketHackRawLogLoadTask;
+import net.l2emuproject.proxy.ui.savormix.io.task.PacketSamuraiLogLoadTask;
 import net.l2emuproject.ui.AsyncTask;
+import net.l2emuproject.ui.file.BetterExtensionFilter;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -120,12 +136,15 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	public static boolean SCROLL_LOCK = false;
 	
 	private final PacketInject _injectDialog;
+	private final PacketExplainDialog _explainDialog;
+	private final StreamOptionDialog _streamDialog;
 	private final JMenu _configMenu;
 	private volatile Map<IProtocolVersion, PacketDisplayConfig> _configDialogs;
 	final PacketLogChooser _logChooser;
+	final JFileChooser _importChooser;
 	
 	final JCheckBox _cbGlobalCapture, _cbSessionCapture;
-	private final JLabel _labProtocol, _labCP, _labSP/*, _labListenSocket, _labServerSocket*/;
+	private final JLabel _labProtocol, _labCP, _labSP;
 	private final JPanel _dc;
 	final JProgressBar _pbHeapState;
 	
@@ -136,7 +155,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	AsyncTask<?, ?, ?> _gcTask;
 	
 	// TODO: load from preferences
-	File _lastLogDir = LOG_DIRECTORY.toFile(), _lastExportDir = LOG_DIRECTORY.toFile();
+	File _lastLogDir = LOG_DIRECTORY.toFile(), _lastImportDir = LOG_DIRECTORY.toFile(), _lastExportDir = LOG_DIRECTORY.toFile();
 	
 	/**
 	 * Constructs the main window and launches the backend.
@@ -164,7 +183,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			{
 				final JLabel name = new JLabel("L2EMU UNIQUE");
 				name.setHorizontalAlignment(SwingConstants.CENTER);
-				final JLabel desc = new JLabel("http://www.l2emu-unique.tk/");
+				final JLabel desc = new JLabel("http://www.l2emu-unique.net/");
 				desc.setHorizontalAlignment(SwingConstants.CENTER);
 				
 				L2ThreadPool.schedule(new ContributorAnimator(name, desc), 5000);
@@ -276,6 +295,8 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			L2GameClientConnections.getInstance().addConnectionListener(getInjectDialog());
 		}
 		
+		_explainDialog = new PacketExplainDialog(this);
+		
 		JMenuBar mb = new JMenuBar();
 		{
 			JMenu file = new JMenu("File");
@@ -300,17 +321,128 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				file.add(load);
 			}
 			{
-				final JMenuItem save = new JMenuItem("Export…");
-				save.setToolTipText("Saves the selected packet log.");
-				save.setMnemonic(KeyEvent.VK_E);
-				save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
-				save.setEnabled(false);
-				//file.add(save);
+				_importChooser = new JFileChooser();
+				_importChooser.setAcceptAllFileFilterUsed(true);
+				_importChooser.setMultiSelectionEnabled(true);
+				
+				final JMenu imp = new JMenu("Import");
+				imp.setToolTipText("Imports packets from a 3rd party packet log file.");
+				imp.setMnemonic(KeyEvent.VK_I);
+				
+				{
+					final JMenuItem item = new JMenuItem("L2PacketHack log…");
+					item.setToolTipText("Opens a L2PacketHack (l2phx) packet log file.");
+					item.addActionListener(e ->
+					{
+						_importChooser.setFileFilter(BetterExtensionFilter.create("L2PacketHack packet log", "pLog"));
+						
+						int result = _importChooser.showOpenDialog(Frontend.this);
+						if (result != JFileChooser.APPROVE_OPTION)
+							return;
+							
+						new PacketHackLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
+					});
+					imp.add(item);
+				}
+				
+				{
+					final JMenuItem item = new JMenuItem("L2PacketHack raw log…");
+					item.setToolTipText("Opens a L2PacketHack (l2phx) raw packet log file.");
+					item.addActionListener(e ->
+					{
+						_importChooser.setFileFilter(BetterExtensionFilter.create("L2PacketHack raw packet log", "rawLog"));
+						
+						int result = _importChooser.showOpenDialog(Frontend.this);
+						if (result != JFileChooser.APPROVE_OPTION)
+							return;
+							
+						new PacketHackRawLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
+					});
+					imp.add(item);
+				}
+				
+				{
+					final JMenuItem item = new JMenuItem("Packet Samurai log…");
+					item.setToolTipText("Opens a Packet Samurai packet log file.");
+					item.addActionListener(e ->
+					{
+						_importChooser.setFileFilter(BetterExtensionFilter.create("Packet Samurai packet log", "psl"));
+						
+						int result = _importChooser.showOpenDialog(Frontend.this);
+						if (result != JFileChooser.APPROVE_OPTION)
+							return;
+							
+						new PacketSamuraiLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
+					});
+					imp.add(item);
+				}
+				
+				file.add(imp);
+			}
+			{
+				final JMenu export = new JMenu("Transform to");
+				export.setToolTipText("Converts packet log file(s) to a different format.");
+				export.setMnemonic(KeyEvent.VK_C);
+				
+				{
+					final JMenu raw = new JMenu("3rd party formats");
+					raw.setToolTipText("Conversions that reconstruct data in a format compatible with other tools");
+					{
+						final JMenuItem m2 = new JMenuItem("L2PacketHack packet log…");
+						m2.addActionListener(new LogConversionInvoker(new ToL2PacketHackLogVisitor()));
+						raw.add(m2);
+					}
+					{
+						final JMenuItem phx = new JMenuItem("L2PacketHack raw log…");
+						phx.addActionListener(new LogConversionInvoker(new ToL2PacketHackRawLogVisitor()));
+						raw.add(phx);
+					}
+					{
+						final JMenuItem m2 = new JMenuItem("Packet Samurai log…");
+						m2.addActionListener(new LogConversionInvoker(new ToPacketSamuraiLogVisitor()));
+						raw.add(m2);
+					}
+					
+					export.add(raw);
+				}
+				
+				{
+					final JMenu raw = new JMenu("Text");
+					raw.setToolTipText("Conversions that present data in textual format");
+					{
+						final JMenuItem txt = new JMenuItem("Plaintext…");
+						txt.addActionListener(new LogConversionInvoker(new ToPlaintextVisitor()));
+						raw.add(txt);
+					}
+					{
+						final JMenuItem xml = new JMenuItem("XML…");
+						xml.addActionListener(new LogConversionInvoker(new ToXMLVisitor()));
+						raw.add(xml);
+					}
+					
+					export.add(raw);
+				}
+				
+				export.addSeparator();
+				
+				{
+					final JMenu raw = new JMenu("Other");
+					raw.setToolTipText("Conversions that reconstruct data as it was received from socket");
+					{
+						final JMenuItem stream = new JMenuItem("Stream…");
+						_streamDialog = new StreamOptionDialog(Frontend.this);
+						stream.addActionListener(e -> _streamDialog.setVisible(true));
+						raw.add(stream);
+					}
+					
+					export.add(raw);
+				}
+				
+				file.add(export);
 			}
 			
 			file.addSeparator();
 			
-			// TODO: move to toolbar
 			{
 				final JMenuItem gc = new JMenuItem("Manual GC");
 				gc.setMnemonic(KeyEvent.VK_G);
@@ -355,12 +487,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					}.execute((Void[])null);
 				});
 				file.add(gc);
-			}
-			{
-				final JMenuItem gc = new JMenuItem("SIMULATE_LM_ON_LF_TEXT");
-				gc.setToolTipText("SIMULATE_LM_ON_LF_TOOOLTIP");
-				gc.addActionListener(e -> cp.onLowMemory(ConnectionPane.FLAG_LM_DROP_LISTS_LOGFILE));
-				//file.add(gc);
 			}
 			
 			{
@@ -419,6 +545,14 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				inject.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F8, 0));
 				inject.setToolTipText("Send own-made packets to the client or server.");
 				inject.addActionListener(e -> getInjectDialog().setVisible(true));
+				packets.add(inject);
+			}
+			{
+				final JMenuItem inject = new JMenuItem("Explain…");
+				inject.setEnabled(LoadOption.DISABLE_DEFS.isNotSet());
+				inject.setMnemonic(KeyEvent.VK_E);
+				inject.setToolTipText("Interpret raw bytes as a packet content in any protocol version.");
+				inject.addActionListener(e -> _explainDialog.setVisible(true));
 				packets.add(inject);
 			}
 			{
@@ -536,96 +670,23 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				else
 					suffix = "stable";
 					
-				try
+				try (final InputStream is = IMage.class.getResourceAsStream("about_" + suffix + ".htm"); final BufferedInputStream in = new BufferedInputStream(is))
 				{
-					final String text = NewIOResourceHelper.readAsString(IMage.class, "about_" + suffix + ".htm");
+					final ByteArrayOutputStream out = new ByteArrayOutputStream(in.available());
+					for (int b; (b = in.read()) != -1;)
+						out.write(b);
+					final String text = out.toString("UTF-8");
 					about.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, text.replace("\r\n", "").replace("<revision_number>", ProxyInfo.getRevisionNumber()), "About",
 							JOptionPane.INFORMATION_MESSAGE, new ImageIcon(IMage.class.getResource("icon-256.png"))));
 					help.add(about);
 				}
-				catch (IOException | URISyntaxException e)
+				catch (IOException e)
 				{
 					// whatever
 				}
 			}
 			mb.add(help);
 		}
-		
-		/*final JPanel globalControls = new JPanel(new BorderLayout());
-		
-		//setJMenuBar(mb);
-		globalControls.add(mb, BorderLayout.NORTH);
-		
-		{
-			final JPanel proxyCaptureHeap = new JPanel(new GridLayout(1, 0));
-			{
-				final JPanel panel = new JPanel();
-				final JLabel lab;
-				panel.add(lab = new JLabel("Proxy: "));
-				lab.setFont(lab.getFont().deriveFont(lab.getFont().getSize2D() - 1));
-				panel.add(_labProxyState = new JLabel());
-				_labProxyState.setFont(_labProxyState.getFont().deriveFont(_labProxyState.getFont().getSize2D() - 1));
-				/*panel.add(*//*_tbProxyState = new JToggleButton("Restrict");//);
-								updateProxyState();
-								
-								_tbProxyState.addActionListener(e ->
-								{
-								// set flag to drop connections
-								
-								updateProxyState();
-								});
-								proxyCaptureHeap.add(panel);
-								}
-								{
-								final JPanel panel = new JPanel();
-								panel.add(_cbGlobalCapture = new JCheckBox("Global capture"));
-								if (LoadOption.DISABLE_PROXY.isSet())
-								_cbGlobalCapture.setEnabled(false);
-								else
-								_cbGlobalCapture.setSelected(true);
-								_cbGlobalCapture.setFont(_cbGlobalCapture.getFont().deriveFont(_cbGlobalCapture.getFont().getSize2D() - 1));
-								proxyCaptureHeap.add(panel);
-								}
-								{
-								final JPanel panel = new JPanel();
-								panel.add(_pbHeapState = new JProgressBar(0, 1_000)
-								{
-								private static final long serialVersionUID = 6895671150559979086L;
-								
-								@Override
-								public Dimension getPreferredSize()
-								{
-								final Dimension d = super.getPreferredSize();
-								d.width = panel.getWidth();
-								return d;
-								}
-								});
-								_pbHeapState.setStringPainted(true);
-								_pbHeapState.setFont(_pbHeapState.getFont().deriveFont(_pbHeapState.getFont().getSize2D() - 1));
-								/*panel.add(*//*_btnManualGC = new JButton("GC");//);
-											_btnManualGC.setMargin(new Insets(0, 0, 0, 0));
-											_btnManualGC.setMultiClickThreshhold(1_000);
-											final Timer updater = new Timer(1_000, e ->
-											{
-											final long free = Runtime.getRuntime().freeMemory(), total = Runtime.getRuntime().totalMemory(), used = total - free;
-											final L2TextBuilder tb = new L2TextBuilder(BytesizeInterpreter.consolidate(used, BytesizeUnit.BYTES, BytesizeUnit.BYTES, BytesizeUnit.MEBIBYTES, "0 M"));
-											final int end = tb.indexOf(" ") + 1;
-											tb.setCharAt(end - 1, Character.toUpperCase(tb.charAt(end)));
-											tb.setLength(end);
-											_pbHeapState.setValue((int)(used * _pbHeapState.getMaximum() / total));
-											_pbHeapState.setString(tb.moveToString());
-											});
-											updater.setRepeats(true);
-											updater.setCoalesce(true);
-											updater.setInitialDelay(0);
-											updater.start();
-											proxyCaptureHeap.add(panel);
-											}
-											globalControls.add(proxyCaptureHeap, BorderLayout.SOUTH);
-											}
-											
-											root.add(globalControls, BorderLayout.NORTH);
-											*/
 		root.add(mb, BorderLayout.NORTH);
 	}
 	
@@ -687,9 +748,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		
 		rebuildProtocolMenu();
 		
-		//for (PacketDisplayConfig dlg : _configDialogs.values())
-		//	dlg.startImport(true);
-		
 		if (toBeShownAfterReload == null)
 			return;
 			
@@ -728,7 +786,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			categories.put(cat, menu);
 		}
 		
-		//final Map<IProtocolVersion, Path> initialConfigs = _configDialogs.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().getLastConfig()));
 		final Map<IProtocolVersion, Path> initialConfigs = new HashMap<>();
 		for (final Entry<IProtocolVersion, PacketDisplayConfig> e : _configDialogs.entrySet())
 			initialConfigs.put(e.getKey(), e.getValue().getLastConfig());
@@ -856,6 +913,31 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		public void onOpen(PacketList packetLog)
 		{
 			updateBottomPanel(packetLog != null ? packetLog.getSummary() : PacketLogSummary.NO_LOG_VISIBLE);
+		}
+	}
+	
+	private final class LogConversionInvoker implements ActionListener
+	{
+		private final HistoricalLogPacketVisitor _visitor;
+		
+		LogConversionInvoker(HistoricalLogPacketVisitor visitor)
+		{
+			_visitor = visitor;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			final int result = _logChooser.showOpenDialog(Frontend.this);
+			if (result != JFileChooser.APPROVE_OPTION)
+				return;
+				
+			final File[] selected = _logChooser.getSelectedFiles();
+			final Path[] targets = new Path[selected.length];
+			for (int i = 0; i < targets.length; ++i)
+				targets[i] = selected[i].toPath();
+				
+			new LogVisitationTask(Frontend.this, "Converting", _visitor).execute(targets);
 		}
 	}
 }

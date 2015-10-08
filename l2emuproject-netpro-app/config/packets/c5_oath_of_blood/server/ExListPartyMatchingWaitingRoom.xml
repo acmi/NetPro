@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_LIST_PARTY_MATCHING_WAITING_ROOM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Total waiting count" />
+	<dword alias="Player count" id="pr_wait_cnt" />
+	<loop id="pr_wait_cnt">
+		<string alias="Name" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Level" />
+	</loop>
+</packet>

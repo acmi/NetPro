@@ -4,7 +4,7 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 
 <!-- New in Valiance: Brooch/Jewel slot DWORDS and possibly Noble/Hero/Something flags at the end of packet. IDC, this will have to be validated -->
-<packet id="30" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_CHARACTER_SELECTION_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Created character count" id="index_0" />
 	<dword alias="Max character count" />
 	<byte alias="0" />

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.l2emuproject</groupId>
 	<artifactId>l2emuproject-netpro-main</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 	<name>${project.artifactId}-${project.version}</name>
 	<description>A proxy-type application to intercept, visualize and manipulate Lineage II network traffic.</description>
 	<packaging>pom</packaging>

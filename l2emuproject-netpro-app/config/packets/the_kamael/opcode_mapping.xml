@@ -181,8 +181,8 @@
 		<packet opcodePrefix="C5" id="CM_REQ_BUY_SEED" />
 		<packet opcodePrefix="C6" id="CM_CONFIRM_DLG" />
 		<packet opcodePrefix="C7" id="CM_REQ_PREVIEW_ITEM" />
-		<packet opcodePrefix="C8" id="178" />
-		<packet opcodePrefix="C9" id="179" />
+		<packet opcodePrefix="C8" id="CM_REQ_SSQ_STATUS" />
+		<packet opcodePrefix="C9" id="CM_PETITION_VOTE" />
 		<packet opcodePrefix="CB" id="CM_REPLY_GAME_GUARD_QUERY" />
 		<packet opcodePrefix="CC" id="CM_REQ_PLEDGE_POWER" />
 		<packet opcodePrefix="CD" id="CM_REQ_MAKE_MACRO" />
@@ -222,7 +222,7 @@
 		<packet opcodePrefix="D0 22 00" id="239" />
 		<packet opcodePrefix="D0 23 00" id="240" />
 		<packet opcodePrefix="D0 24 00" id="241" />
-		<packet opcodePrefix="D0 25 00" id="206" />
+		<packet opcodePrefix="D0 25 00" id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="D0 26 00" id="222" />
 		<packet opcodePrefix="D0 27 00" id="223" />
 		<packet opcodePrefix="D0 28 00" id="224" />
@@ -232,9 +232,9 @@
 		<packet opcodePrefix="D0 2C 00" id="218" />
 		<packet opcodePrefix="D0 2E 00" id="219" />
 		<packet opcodePrefix="D0 2F 00" id="CM_REQ_OLYMPIAD_MATCH_LIST" />
-		<packet opcodePrefix="D0 30 00" id="203" />
-		<packet opcodePrefix="D0 31 00" id="204" />
-		<packet opcodePrefix="D0 32 00" id="205" />
+		<packet opcodePrefix="D0 30 00" id="CM_REQ_ASK_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 31 00" id="CM_ANSWER_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 32 00" id="CM_REQ_LIST_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="D0 33 00" id="242" />
 		<packet opcodePrefix="D0 34 00" id="243" />
 		<packet opcodePrefix="D0 35 00" id="244" />
@@ -265,8 +265,8 @@
 		<packet opcodePrefix="06" id="SM_SELL_LIST" />
 		<packet opcodePrefix="07" id="SM_BUY_LIST" />
 		<packet opcodePrefix="08" id="SM_DELETE_OBJECT" />
-		<packet opcodePrefix="09" id="30" />
-		<packet opcodePrefix="0A" id="31" />
+		<packet opcodePrefix="09" id="SM_CHARACTER_SELECTION_INFO" />
+		<packet opcodePrefix="0A" id="SM_LOGIN_FAIL" />
 		<packet opcodePrefix="0B" id="SM_CHARACTER_SELECTED" />
 		<packet opcodePrefix="0C" id="SM_NPC_INFO" />
 		<packet opcodePrefix="0D" id="SM_NEW_CHARACTER_SUCCESS" />
@@ -467,8 +467,8 @@
 		<packet opcodePrefix="F8" id="SM_SHOW_XMAS_SEAL" />
 		<packet opcodePrefix="F9" id="SM_ETC_STATUS_UPDATE" />
 		<packet opcodePrefix="FA" id="SM_SHORT_BUFF_STATUS_UPDATE" />
-		<packet opcodePrefix="FB" id="279" />
-		<packet opcodePrefix="FC" id="280" />
+		<packet opcodePrefix="FB" id="SM_SSQ_STATUS" />
+		<packet opcodePrefix="FC" id="SM_PETITION_VOTE" />
 		<packet opcodePrefix="FD" id="SM_AGIT_DECO_INFO" />
 		<packet opcodePrefix="FE 02 00" id="SM_EX_EVENT_MATCH_USER_INFO" />
 		<packet opcodePrefix="FE 03 00" id="SM_EX_COLOSSEUM_FENCE_INFO" />
@@ -521,8 +521,8 @@
 		<packet opcodePrefix="FE 32 00" id="338" />
 		<packet opcodePrefix="FE 33 00" id="339" />
 		<packet opcodePrefix="FE 34 00" id="340" />
-		<packet opcodePrefix="FE 35 00" id="341" />
-		<packet opcodePrefix="FE 36 00" id="342" />
+		<packet opcodePrefix="FE 35 00" id="SM_EX_ASK_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="FE 36 00" id="SM_EX_LIST_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="FE 37 00" id="343" />
 		<packet opcodePrefix="FE 38 00" id="344" />
 		<packet opcodePrefix="FE 39 00" id="345" />

@@ -76,6 +76,7 @@
 			<xs:element name="scriptAlias" type="scriptAliasType" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 		<xs:attribute name="alias" type="xs:token" use="required" />
+		<xs:attribute name="mod" type="modifierType" />
 		<xs:attribute name="type" type="interpreterType" />
 		<xs:attribute name="optional" type="xs:boolean" default="false" />
 	</xs:complexType>
@@ -167,6 +168,7 @@
 			<xs:enumeration value="ItemType2" />
 			<xs:enumeration value="KnownlistState" />
 			<xs:enumeration value="KrateiState" />
+			<xs:enumeration value="Language" />
 			<xs:enumeration value="LoginFailureReason" />
 			<xs:enumeration value="LootRights" />
 			<xs:enumeration value="LottoNumbers" />
@@ -207,6 +209,7 @@
 			<xs:enumeration value="PcTimer" />
 			<xs:enumeration value="PersonalStoreType" />
 			<xs:enumeration value="PetitionType" /> <!-- CLEO -->
+			<xs:enumeration value="PetitionRating" />
 			<xs:enumeration value="PlayerAction" />
 			<xs:enumeration value="PlayerCommand" />
 			<xs:enumeration value="Pledge" />
@@ -354,6 +357,9 @@
 
 	<xs:simpleType name="modifierType">
 		<xs:restriction base="xs:token">
+			<xs:enumeration value="ClientDatModulus411" />
+			<xs:enumeration value="ClientDatModulus412" />
+			<xs:enumeration value="ClientDatModulus413" />
 			<xs:enumeration value="MinusOne" />
 			<xs:enumeration value="NewLotteryEvent" />
 			<xs:enumeration value="PlusOne" />

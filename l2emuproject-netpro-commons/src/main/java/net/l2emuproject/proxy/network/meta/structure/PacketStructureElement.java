@@ -22,4 +22,5 @@ package net.l2emuproject.proxy.network.meta.structure;
  */
 public interface PacketStructureElement
 {
+	// just a marker interface
 }

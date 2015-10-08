@@ -65,6 +65,12 @@ public abstract class ProxyReceivedPacket extends ReceivablePacket<Proxy, ProxyR
 		// do nothing by default
 	}
 	
+	public final void readAndChangeState(Proxy proxy, MMOBuffer buf)
+	{
+		setClient2(proxy);
+		readAndModify(buf, null);
+	}
+	
 	/**
 	 * Returns the internal proxy object that received this packet.
 	 * 
@@ -94,7 +100,7 @@ public abstract class ProxyReceivedPacket extends ReceivablePacket<Proxy, ProxyR
 		{
 			int bodySize = buf.getAvailableBytes();
 			byte[] bytes = new byte[1 + bodySize]; // opcode + body
-			bytes[0] = (byte) _opcode;
+			bytes[0] = (byte)_opcode;
 			buf.readB(bytes, 1, bodySize);
 			immutable = ByteBufferUtils.asReadOnly(ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN));
 		}

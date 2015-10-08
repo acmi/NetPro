@@ -21,16 +21,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import javolution.util.FastMap;
-
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import net.l2emuproject.proxy.state.entity.EntityInfo;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.util.L2Collections;
 import net.l2emuproject.util.L2FastSet;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
+import net.l2emuproject.util.concurrent.MapUtils;
 import net.l2emuproject.util.logging.L2Logger;
+
+import javolution.util.FastMap;
 
 /**
  * Contains information about entities reconstructed from intercepted network traffic.
@@ -67,7 +67,7 @@ public abstract class EntityInfoCache<E extends EntityInfo>
 		
 		FastMap<Integer, E> cached = _entities.get(context);
 		if (cached == null)
-			cached = L2Collections.putIfAbsent(_entities, context, new FastMap<Integer, E>().setShared(true));
+			cached = MapUtils.putIfAbsent(_entities, context, new FastMap<Integer, E>().setShared(true));
 		return getOrAdd(cached, id);
 	}
 	
@@ -103,7 +103,7 @@ public abstract class EntityInfoCache<E extends EntityInfo>
 		FastMap<Integer, E> unused = _entities.remove(context);
 		if (unused == null)
 			return;
-		
+			
 		L2ThreadPool.executeLongRunning(new ContextElementRemover(unused.values()));
 	}
 	

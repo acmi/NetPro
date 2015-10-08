@@ -30,7 +30,7 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 
-import net.l2emuproject.proxy.ui.savormix.io.task.LogLoadTask;
+import net.l2emuproject.proxy.ui.savormix.io.task.AbstractLogFileTask;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 
 /**
@@ -42,7 +42,7 @@ public class LoadProgressDialog extends JDialog implements WindowListener, KeyLi
 {
 	private static final long serialVersionUID = 7356528346907866660L;
 	
-	private final LogLoadTask _task;
+	private final AbstractLogFileTask<?> _task;
 	
 	private final JProgressBar _bar;
 	private final JLabel _file;
@@ -57,7 +57,7 @@ public class LoadProgressDialog extends JDialog implements WindowListener, KeyLi
 	 * @param title dialog title
 	 * @param task associated I/O task
 	 */
-	public LoadProgressDialog(Window owner, String title, LogLoadTask task)
+	public LoadProgressDialog(Window owner, String title, AbstractLogFileTask<?> task)
 	{
 		super(owner, title, ModalityType.MODELESS);
 		
@@ -119,6 +119,9 @@ public class LoadProgressDialog extends JDialog implements WindowListener, KeyLi
 		_maximum.setText(NumberFormat.getIntegerInstance(Loader.getLocale()).format(max));
 		_bar.setMaximum(max);
 		setProgress(0);
+		
+		if (max == Integer.MAX_VALUE)
+			_bar.setIndeterminate(true);
 	}
 	
 	/**

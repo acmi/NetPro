@@ -4,6 +4,6 @@
 	<bytes alias="Opcode is a DWORD">
 		<length>3</length>
 	</bytes>
-	<dword alias="Character ID" />
+	<dword alias="Character PK" />
 	<dword alias="Character OID" type="ObjectID" />
 </packet>

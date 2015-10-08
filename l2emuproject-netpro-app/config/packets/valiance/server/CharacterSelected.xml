@@ -3,7 +3,7 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 
-<!-- SP is now QWORD -->
+<!-- SP is now a QWORD -->
 <packet id="SM_CHARACTER_SELECTED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<string alias="Name" />
 	<dword alias="Character ID" />
@@ -40,10 +40,10 @@
 	<dword alias="GG (2)" />
 	<dword alias="GG (3)" />
 	<dword alias="GG (4)" />
-
-	<bytes alias="Unk">
+	<bytes alias="GG (5)">
 		<length>64</length>
 	</bytes>
+
 	<dword alias="CM opcode shuffling seed">
 		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_OBFUSCATION_KEY" />
 	</dword>

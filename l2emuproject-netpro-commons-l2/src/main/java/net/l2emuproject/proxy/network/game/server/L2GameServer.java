@@ -47,8 +47,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 	 * @param target client that originally initiated this connection
 	 * @throws ClosedChannelException if the given channel was closed during operations
 	 */
-	protected L2GameServer(L2GameServerConnections mmoController, SocketChannel socketChannel, L2GameClient target)
-			throws ClosedChannelException
+	public L2GameServer(L2GameServerConnections mmoController, SocketChannel socketChannel, L2GameClient target) throws ClosedChannelException
 	{
 		super(mmoController, socketChannel, target);
 		
@@ -71,7 +70,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 	}
 	
 	@Override
-	protected boolean decipher(ByteBuffer buf, DataSizeHolder dataSize)
+	public boolean decipher(ByteBuffer buf, DataSizeHolder dataSize)
 	{
 		if (isFirstTime())
 		{
@@ -94,7 +93,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 	}
 	
 	@Override
-	protected boolean encipher(ByteBuffer buf, int size)
+	public boolean encipher(ByteBuffer buf, int size)
 	{
 		if (!isFirstTime())
 		{
@@ -112,7 +111,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 		}
 		else
 			buf.position(buf.position() + size);
-		
+			
 		return true;
 	}
 	
@@ -149,7 +148,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 		return _firstTime;
 	}
 	
-	private void setFirstTime(boolean firstTime)
+	public void setFirstTime(boolean firstTime)
 	{
 		_firstTime = firstTime;
 	}
@@ -170,7 +169,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 		final L2GameClient client = getTargetClient();
 		if (client != null)
 			return client.getProtocol();
-		
+			
 		return ProtocolVersionManager.getInstance().getFallbackProtocolGame();
 	}
 	

@@ -23,8 +23,6 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import net.l2emuproject.util.logging.L2Logger;
-
 /**
  * Marks a package where images are located.
  * 
@@ -39,7 +37,6 @@ public interface IMage
 	default List<? extends Image> getIconList()
 	{
 		final List<BufferedImage> icons = new ArrayList<>(ICON_SIZES.length);
-		final L2Logger log = L2Logger.getLogger(getClass());
 		for (int sz : ICON_SIZES)
 		{
 			try
@@ -48,7 +45,8 @@ public interface IMage
 			}
 			catch (IOException e)
 			{
-				log.error("Could not read icon of size " + sz, e);
+				System.err.println("Could not read icon of size " + sz);
+				e.printStackTrace();
 			}
 		}
 		return icons;

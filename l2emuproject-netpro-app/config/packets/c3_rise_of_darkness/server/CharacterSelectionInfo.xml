@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- New DWORDs for hair accessory OID and item, class DWORD changed to cosmetic/visual class, with real class DWORD appended at the end of packet -->
 <!-- Further appended are: a DWORD field specifying whether this character should be selected and a CHAR (byte) field specifying the weapon enchant level -->
-<packet id="30" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_CHARACTER_SELECTION_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Character Count" id="index_0" />
 	<loop id="index_0">
 		<string alias="Character name" />
@@ -34,71 +34,72 @@
 		<dword alias="0" />
 		<dword alias="0" />
 
-		<dword alias="Underwear OID" type="ObjectID">
+		<!-- This injects a fake OID for a better presentation of this packet -->
+		<dword alias="Underwear PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Earring (right?) OID" type="ObjectID">
+		<dword alias="Earring (bottom/left) PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Earring (left?) OID" type="ObjectID">
+		<dword alias="Earring (top/right) PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Necklace OID" type="ObjectID">
+		<dword alias="Necklace PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Ring (right?) OID" type="ObjectID">
+		<dword alias="Ring (bottom/left) PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Ring (left?) OID" type="ObjectID">
+		<dword alias="Ring (top/right) PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Headgear OID" type="ObjectID">
+		<dword alias="Headgear PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Weapon OID" type="ObjectID">
+		<dword alias="Weapon PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Shield OID" type="ObjectID">
+		<dword alias="Shield [Sigil] PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Gloves OID" type="ObjectID">
+		<dword alias="Gloves PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Upper Body OID" type="ObjectID">
+		<dword alias="Upper Body PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Lower Body OID" type="ObjectID">
+		<dword alias="Lower Body PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Boots OID" type="ObjectID">
+		<dword alias="Boots PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Cloak OID" type="ObjectID">
+		<dword alias="Cloak PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Weapon / Two Handed OID" type="ObjectID">
+		<dword alias="Weapon / Two Handed PK" type="ObjectID">
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<dword alias="Hair Accessory OID" type="ObjectID"> <!-- NEW -->
+		<dword alias="Hair Accessory PK" type="ObjectID"> <!-- NEW -->
 			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
 
 		<dword alias="Underwear" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Earring (right?)" type="Item">
+		<dword alias="Earring (bottom/left)" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Earring (left?)" type="Item">
+		<dword alias="Earring (top/right)" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 		<dword alias="Necklace" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Ring (right?)" type="Item">
+		<dword alias="Ring (bottom/left)" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Ring (left?)" type="Item">
+		<dword alias="Ring (top/right)" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 		<dword alias="Headgear" type="Item">

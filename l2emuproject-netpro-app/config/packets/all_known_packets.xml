@@ -40,13 +40,7 @@
 		<packet id="128" name="RequestSEKCustom" />
 		<packet id="129" name="RequestRide" />
 		<packet id="130" name="RequestReviveReply" />
-		<packet id="178" name="RequestSSQStatus" />
-		<packet id="179" name="RequestPetitionVote" />
 		<packet id="184" name="RequestReload" />
-		<packet id="203" name="RequestAskJoinPartyRoom" />
-		<packet id="204" name="RequestAnswerJoinPartyRoom" />
-		<packet id="205" name="RequestListPartyMatchingWaitingRoom" />
-		<packet id="206" name="RequestExitPartyMatchingWaitingRoom" />
 		<packet id="207" name="RequestGetBossRecord" />
 		<packet id="208" name="RequestPledgeSetAcademyMaster" />
 		<packet id="209" name="RequestPledgePowerGradeList" />
@@ -228,6 +222,11 @@
 		<packet id="381" name="RequestUserStatistics" />
 		<packet id="382" name="RequestFirstPlayStart" />
 		<packet id="383" name="RequestFlyMoveStart" />
+		<!--
+		ASCII "chSddddddSddddddddddSS"
+		UNICODE "RequestHardWareInfo"
+		UNICODE "(Send)%s"
+		-->
 		<packet id="384" name="RequestHardWareInfo" />
 		<packet id="385" name="RequestChangeAttributeTargetItem" />
 		<packet id="386" name="RequestChangeAttributeItem" />
@@ -571,12 +570,6 @@
 		<packet id="CM_REQ_DISMISS_PARTY" name="RequestDismissParty" />
 		<!-- UNICODE "(Send)RequestMagicSkillList" -->
 		<packet id="CM_REQ_MAGIC_SKILL_LIST" name="RequestMagicSkillList" />
-		<!--
-		ASCII "ddd" (HF had it inadvertently changed to cddd)
-		UNICODE "RequestMagicSkillList"
-		UNICODE "(Send)%s"
-		-->
-		<packet id="CM__USER_ACK" name="UserAck" />
 		<!--
 		ASCII "cddc"
 		UNICODE "RequestMagicSkillUse"
@@ -1242,6 +1235,17 @@
 		<packet id="CM_REQ_OBSERVER_END" name="RequestObserverEnd" />
 		<!--
 		ASCII "cd"
+		UNICODE "RequestRecipeShopSellList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RECIPE_SHOP_SELL_LIST" name="RequestRecipeShopSellList" />
+		<!--
+		UNICODE "RequestObserverEndPacket"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_OBSERVER_END" name="RequestObserverEnd" />
+		<!--
+		ASCII "cd"
 		UNICODE "VoteSociality"
 		UNICODE "(Send)%s"
 		-->
@@ -1336,6 +1340,18 @@
 		-->
 		<packet id="CM_REQ_PREVIEW_ITEM" name="RequestPreviewItem" />
 		<!--
+		ASCII "cc"
+		UNICODE "RequestSSQStatus"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SSQ_STATUS" name="RequestSSQStatus" />
+		<!--
+		ASCII "cddS"
+		UNICODE "PetitionVote"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_PETITION_VOTE" name="PetitionVote" />
+		<!--
 		ASCII "cSS"
 		UNICODE "RequestSendL2FriendSay"
 		UNICODE "(Send)%s"
@@ -1352,6 +1368,12 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_SEND_MSN_CHAT_LOG" name="RequestSendMsnChatLog" />
+		<!--
+		ASCII "ddd" (HF had it inadvertently changed to cddd)
+		UNICODE "RequestMagicSkillList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM__USER_ACK" name="UserAck" />
 		<!--
 		ASCII "cddd"
 		UNICODE "RequestListPartyWating"
@@ -1498,6 +1520,30 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_OLYMPIAD_MATCH_LIST" name="RequestOlympiadMatchList" />
+		<!--
+		ASCII "chS"
+		UNICODE "RequestAskJoinPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ASK_JOIN_PARTY_ROOM" name="RequestAskJoinPartyRoom" />
+		<!--
+		ASCII "chd"
+		UNICODE "AnswerJoinPartyRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_ANSWER_JOIN_PARTY_ROOM" name="AnswerJoinPartyRoom" />
+		<!--
+		ASCII "chdddd"
+		UNICODE "RequestListPartyMatchingWaitingRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_LIST_PARTY_MATCHING_WAITING_ROOM" name="RequestListPartyMatchingWaitingRoom" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestExitPartyMatchingWaitingRoom"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" name="RequestExitPartyMatchingWaitingRoom" />
 		
 		<!--
 		ASCII "chcdd"
@@ -1679,8 +1725,6 @@
 		<packet id="22" name="EquipItem" />
 		<packet id="23" name="UnequipItem" />
 		<packet id="28" name="ExBuySellList" />
-		<packet id="30" name="CharacterSelectionInfo" />
-		<packet id="31" name="LoginFail" />
 		<packet id="44" name="EquipItemSuccess" />
 		<packet id="45" name="EquipItemFail" />
 		<packet id="46" name="UnEquipItemSuccess" />
@@ -1692,7 +1736,6 @@
 		<packet id="68" name="Dummy_42" />
 		<packet id="75" name="DismissPledge" />
 		<packet id="76" name="SetDismissPledge" />
-		<packet id="84" name="MagicAndSkillList" />
 		<packet id="94" name="Dummy_5C" />
 		<packet id="97" name="StopMoveWithLocation" />
 		<packet id="100" name="Dummy_62" />
@@ -1723,13 +1766,9 @@
 		<packet id="267" name="Dummy_EC" />
 		<packet id="270" name="Dummy_EE" />
 		<packet id="271" name="ClientSetTime" />
-		<packet id="279" name="SSQStatus" />
-		<packet id="280" name="PetitionVote" />
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
 		<packet id="340" name="ExGetBossRecord" />
-		<packet id="341" name="ExAskJoinPartyRoom" />
-		<packet id="342" name="ExListPartyMatchingWaitingRoom" />
 		<packet id="343" name="ExSetMpccRouting" />
 		<packet id="344" name="ExShowAdventurerGuideBook" />
 		<packet id="345" name="ExShowScreenMessage" />
@@ -1818,7 +1857,6 @@
 		<packet id="429" name="ExPVPMatchCCRetire" />
 		<packet id="430" name="ExJumpToLocation" />
 		<packet id="431" name="ExShowTerritory" />
-		<packet id="432" name="NpcQuestHtmlMessage" />
 		<packet id="433" name="ExSendUIEvent" />
 		<packet id="434" name="ExNotifyBirthDay" />
 		<packet id="435" name="ExShowDominionRegistry" />
@@ -1838,7 +1876,6 @@
 		<packet id="449" name="ExManageMpccRoomMember" />
 		<packet id="450" name="ExMpccRoomMember" />
 		<packet id="451" name="ExVitalityPointInfo" />
-		<packet id="452" name="ExShowSeedMapInfo" />
 		<packet id="453" name="ExMpccPartymasterList" />
 		<packet id="454" name="ExDominionWarStart" />
 		<packet id="455" name="ExDominionWarEnd" />
@@ -2190,6 +2227,17 @@
 		-->
 		<packet id="SM_DELETE_OBJECT" name="DeleteObject" />
 		<!--
+		ASCII "dc"
+		ASCII "cdc"
+		ASCII "SdSddddddddddffQQfdddddddddddddddddddddddddddddddddddddddddddddddddddddddhhhhhdddffdddcdddddddffddddccc"
+		UNICODE "CharacterSelectionInfoPacket"
+		UNICODE "(Receive)%s count:%d"
+		UNICODE "cnt:%d, Lim:%d, Bd:%d"
+		-->
+		<packet id="SM_CHARACTER_SELECTION_INFO" name="CharacterSelectionInfo" />
+		<!-- UNICODE "LoginFailPacket" -->
+		<packet id="SM_LOGIN_FAIL" name="LoginFail" />
+		<!--
 		ASCII "SdSddddddddddffQQddddd"
 		UNICODE "CharacterSelectedPacket"
 		UNICODE "(Receive)%s"
@@ -2394,6 +2442,11 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SET_DISMISS_PARTY" name="SetDismissParty" />
+		<!--
+		ASCII "dd"
+		UNICODE "(Receive) MagicAndSkillList"
+		-->
+		<packet id="SM_MAGIC_AND_SKILL_LIST" name="MagicAndSkillList" />
 		<!--
 		ASCII "hQd"
 		UNICODE "WareHouseDepositListPacket"
@@ -3380,6 +3433,24 @@
 		-->
 		<packet id="SM_SHORT_BUFF_STATUS_UPDATE" name="ShortBuffStatusUpdate" />
 		<!--
+		ASCII "dddccQQQQQcQQQc"
+		ASCII "cc"
+		ASCII "cdQc"
+		ASCII "Qc"
+		ASCII "ccc"
+		ASCII "cccc"
+		ASCII "cc"
+		ASCII "ccd"
+		UNICODE "SSQStatusPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_SSQ_STATUS" name="SSQStatus" />
+		<!--
+		UNICODE "PetitionVotePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PETITION_VOTE" name="PetitionVote" />
+		<!--
 		UNICODE "AgitDecoInfoPacket"
 		UNICODE "(Receive)%s"
 		-->
@@ -3421,8 +3492,175 @@
 		-->
 		<packet id="SM_EX_REGEN_MAX" name="ExRegenMax" />
 		<!--
+		ASCII "ddd"
+		UNICODE "MagicAndSkillList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM__USER_ACK" name="UserAck" />
+		<!--
 		ASCII "dd"
 		ASCII "dSddddSd"
+		ASCII "dS"
+		UNICODE "ListPartyWatingPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_LIST_PARTY_WATING" name="ListPartyWaiting" />
+		<!--
+		ASCII "ddddddS"
+		UNICODE "PartyRoomInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PARTY_ROOM_INFO" name="PartyRoomInfo" />
+		<!-- UNICODE "ExEventMatchListPacket" -->
+		<packet id="SM_EX_EVENT_MATCH_LIST" name="ExEventMatchList" />
+		<!--
+		ASCII "dccSS"
+		UNICODE "ExEventMatchObserverPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_OBSERVER" name="ExEventMatchObserver" />
+		<!--
+		ASCII "cS"
+		UNICODE "ExEventMatchMessagePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_MESSAGE" name="ExEventMatchMessage" />
+		<!--
+		ASCII "ddd"
+		UNICODE "ExEventMatchScorePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_SCORE" name="ExEventMatchScore" />
+		<!--
+		ASCII "dcd"
+		ASCII "dSdddddddddd"
+		UNICODE "ExEventMatchTeamInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_TEAM_INFO" name="ExEventMatchTeamInfo" />
+		<!--
+		UNICODE "ExEventMatchCreatePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_CREATE" name="ExEventMatchCreate" />
+		<!--
+		ASCII "dSdddddddd"
+		UNICODE "ExEventMatchUserInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_USER_INFO" name="ExEventMatchUserInfo" />
+		<!--
+		ASCII "ddddddd"
+		UNICODE "ExColosseumFenceInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_COLOSSEUM_FENCE_INFO" name="ExColosseumFenceInfo" />
+		<!--
+		ASCII "ddd"
+		ASCII "dhdh"
+		ASCII "dhhdh"
+		UNICODE "ExEventMatchSpelledInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_SPELLED_INFO" name="ExEventMatchSpelledInfo" />
+		<!--
+		UNICODE "ExEventMatchFirecrackerPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_FIRECRACKER" name="ExEventMatchFirecracker" />
+		<!--
+		ASCII "dc"
+		UNICODE "ExEventMatchTeamUnlockedPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_TEAM_UNLOCKED" name="ExEventMatchTeamUnlocked" />
+		<!--
+		UNICODE "ExEventMatchGMTestPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_GM_TEST" name="ExEventMatchGMTest" />
+		<!--
+		ASCII "dd"
+		ASCII "dSddddd"
+		UNICODE "ExPartyRoomMemberPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_PARTY_ROOM_MEMBER" name="ExPartyRoomMember" />
+		<!--
+		UNICODE "ExClosePartyRoomPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_CLOSE_PARTY_ROOM" name="ExClosePartyRoom" />
+		<!--
+		ASCII "ddSddddd"
+		UNICODE "ExManagePartyRoomMemberPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_MANAGE_PARTY_ROOM_MEMBER" name="ExManagePartyRoomMember" />
+		<!-- UNICODE "ExEventMatchLockResult" -->
+		<packet id="306" name="ExEventMatchLockResult" />
+		<!--
+		ASCII "dd"
+		UNICODE "ExAutoSoulShot"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_AUTO_SOUL_SHOT" name="ExAutoSoulShot" />
+		<!--
+		ASCII "dccScScd"
+		ASCII "ccdSdd"
+		UNICODE "ExEventMatchManagePacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_EVENT_MATCH_MANAGE" name="ExEventMatchManage" />
+		<!--
+		ASCII "dcdddc"
+		UNICODE "ExFishingStartPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_FISHING_START" name="ExFishingStart" />
+		<!--
+		ASCII "dc"
+		UNICODE "ExFishingEndPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_FISHING_END" name="ExFishingEnd" />
+		<!--
+		ASCII "dddccc"
+		UNICODE "ExFishingStartCombatPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_FISHING_START_COMBAT" name="ExFishingStartCombat" />
+		<!--
+		ASCII "dddcccdc"
+		UNICODE "ExFishingHpRegenPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_FISHING_HP_REGEN" name="ExFishingHpRegen" />
+		<!--
+		ASCII "dd"
+		ASCII "dd"
+		UNICODE "ExEnchantSkillListPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_SKILL_LIST" name="ExEnchantSkillList" />
+		<!--
+		ASCII "ddddd"
+		UNICODE "ExEnchantSkillInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_SKILL_INFO" name="ExEnchantSkillInfo" />
+		<!--
+		UNICODE "ExShowQuestInfoPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_QUEST_INFO" name="ExShowQuestInfo" />
+		<!--
+		ASCII "dd"
+		UNICODE "ExShowQuestMarkPacket"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_QUEST_MARK" name="ExShowQuestMark" />
+		<!--
 		ASCII "dS"
 		UNICODE "ListPartyWatingPacket"
 		UNICODE "(Receive)%s"
@@ -3735,6 +3973,31 @@
 		UNICODE "ExMultiPartyCommandChannelInfoPacket"
 		-->
 		<packet id="SM_EX_MULTI_PARTY_COMMAND_CHANNEL_INFO" name="ExMultiPartyCommandChannelInfo" />
+		<!--
+		ASCII "SS"
+		UNICODE "ExAskJoinPartyRoom"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ASK_JOIN_PARTY_ROOM" name="ExAskJoinPartyRoom" />
+		<!--
+		ASCII "Sdddd"
+		UNICODE "ExListPartyMatchingWaitingRoom"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_LIST_PARTY_MATCHING_WAITING_ROOM" name="ExListPartyMatchingWaitingRoom" />
+
+		<!--
+		ASCII "dSd"
+		UNICODE "ExNpcQuestHtmlMessage"
+		UNICODE "(Receive)%s UserID:%d"
+		-->
+		<packet id="SM_EX_NPC_QUEST_HTML_MESSAGE" name="ExNpcQuestHtmlMessage" />
+		<!--
+		ASCII "dddd"
+		UNICODE "ExShowSeedMapInfo"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_SEED_MAP_INFO" name="ExShowSeedMapInfo" />
 		
 		<!--
 		UNICODE "ExAutoFishAvailable"

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added relative angle related DWORDs and widescreen toggle DWORD -->
+<packet id="SM_SPECIAL_CAMERA" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Actor OID" type="ObjectID" />
+	<dword alias="Distance" />
+	<dword alias="Yaw" />
+	<dword alias="Pitch" />
+	<dword alias="Time" /> <!-- Usually 0, no visual effect -->
+	<dword alias="Duration" type="MillisRemaining" />
+
+	<!-- NEW -->
+	<dword alias="Relative yaw" />
+	<dword alias="Relative pitch" />
+	<dword alias="Widescreen" type="YesOrNo" />
+	<dword alias="Relative angle" type="YesOrNo" />
+</packet>

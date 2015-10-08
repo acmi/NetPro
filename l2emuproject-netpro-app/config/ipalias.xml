@@ -39,7 +39,7 @@
 	<address ip="112.175.192.16" alias="다크엘프" />
 	<address ip="112.175.192.35" alias="방송용 / 클래식" />
 	<address ip="112.175.192.51" alias="125번 서버" />
-	<address ip="112.175.192.65" alias="테스트 서버" /> <!-- Same as AuthD & the only PTS server in list, so let it override -->
+	<address ip="112.175.192.65" alias="테스트 서버" /> <!-- Same as AuthD and the only PTS server in list, so let it override -->
 	<address ip="112.175.192.50" alias="방송용" />
 	
 	<!-- JP:2203 -->

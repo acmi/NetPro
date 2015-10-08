@@ -42,8 +42,6 @@ import javax.swing.ListSelectionModel;
 import javax.swing.WindowConstants;
 import javax.swing.table.TableColumn;
 
-import javolution.util.FastSet;
-
 import net.l2emuproject.network.ILoginProtocolVersion;
 import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
@@ -58,7 +56,8 @@ import net.l2emuproject.proxy.ui.savormix.io.exception.InvalidFileException;
 import net.l2emuproject.proxy.ui.savormix.io.exception.UnsupportedFileException;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.ui.AsyncTask;
-import net.l2emuproject.util.L2Collections;
+
+import javolution.util.FastSet;
 
 /**
  * Allows to specify which packets should [not] be displayed in packet lists.<BR>
@@ -171,7 +170,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 								"Chain reaction warning", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 						if (answer != JOptionPane.YES_OPTION)
 							return;
-						
+							
 						new PacketDefinitionLoadTask(PacketDisplayConfig.this).execute((Void[])null);
 					});
 					north.add(export);
@@ -434,10 +433,10 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 		
 		if (!isUnsaved())
 			return;
-		
+			
 		if (!keepExportedFlag)
 			_exported = false;
-		
+			
 		propagateConfig();
 	}
 	
@@ -453,7 +452,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 		// notify listeners
 		final Set<IPacketTemplate> cn = getNewPackets(EndpointType.CLIENT), cr = getOldPackets(EndpointType.CLIENT);
 		final Set<IPacketTemplate> sn = getNewPackets(EndpointType.SERVER), sr = getOldPackets(EndpointType.SERVER);
-		if (L2Collections.containsNotEmpty(cn, cr, sn, sr))
+		if (containsNotEmpty(cn, cr, sn, sr))
 		{
 			for (final BatchPacketDisplayConfigListener pdcl : getBatchListeners())
 			{
@@ -463,6 +462,15 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 		
 		// accept changes internally
 		notifyChanges(true);
+	}
+	
+	private static boolean containsNotEmpty(Set<?>... array)
+	{
+		for (final Set<?> set : array)
+			if (set != null && !set.isEmpty())
+				return true;
+				
+		return false;
 	}
 	
 	boolean isUnsaved()
@@ -486,7 +494,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 			// initial load
 			if (list == null)
 				continue;
-			
+				
 			final PacketDisplayConfigListModel model = (PacketDisplayConfigListModel)list.getModel();
 			if (apply)
 				model.commit();

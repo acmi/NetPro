@@ -3,9 +3,9 @@
 	<client>
 		<packet opcodePrefix="D0 2D 00" id="219" />
 		<packet opcodePrefix="D0 2E 00" id="CM_REQ_OLYMPIAD_MATCH_LIST" />
-		<packet opcodePrefix="D0 2F 00" id="203" />
-		<packet opcodePrefix="D0 30 00" id="204" />
-		<packet opcodePrefix="D0 31 00" id="205" />
+		<packet opcodePrefix="D0 2F 00" id="CM_REQ_ASK_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 30 00" id="CM_ANSWER_JOIN_PARTY_ROOM" />
+		<packet opcodePrefix="D0 31 00" id="CM_REQ_LIST_PARTY_MATCHING_WAITING_ROOM" />
 		<packet opcodePrefix="D0 32 00" id="242" />
 		<packet opcodePrefix="D0 33 00" id="243" />
 		<packet opcodePrefix="D0 34 00" id="244" />
@@ -70,7 +70,7 @@
 		<packet opcodePrefix="FE 8A 00" id="428" />
 		<packet opcodePrefix="FE 8B 00" id="429" />
 		<packet opcodePrefix="FE 8C 00" id="431" />
-		<packet opcodePrefix="FE 8D 00" id="432" />
+		<packet opcodePrefix="FE 8D 00" id="SM_EX_NPC_QUEST_HTML_MESSAGE" />
 		<packet opcodePrefix="FE 8E 00" id="433" />
 		<packet opcodePrefix="FE 8F 00" id="434" />
 		<packet opcodePrefix="FE 90 00" id="435" />
@@ -90,7 +90,7 @@
 		<packet opcodePrefix="FE 9E 00" id="449" />
 		<packet opcodePrefix="FE 9F 00" id="450" />
 		<packet opcodePrefix="FE A0 00" id="451" />
-		<packet opcodePrefix="FE A1 00" id="452" />
+		<packet opcodePrefix="FE A1 00" id="SM_EX_SHOW_SEED_MAP_INFO" />
 		<packet opcodePrefix="FE A2 00" id="453" />
 		<packet opcodePrefix="FE A3 00" id="454" />
 		<packet opcodePrefix="FE A4 00" id="455" />

@@ -22,6 +22,8 @@ import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_MODERN_KEY
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import net.l2emuproject.network.ILoginProtocolVersion;
 import net.l2emuproject.network.LoginProtocolVersion;
@@ -33,7 +35,6 @@ import net.l2emuproject.proxy.network.AbstractL2ClientProxy;
 import net.l2emuproject.proxy.network.game.L2GameServerInfo;
 import net.l2emuproject.proxy.network.login.server.L2LoginServer;
 import net.l2emuproject.proxy.network.packets.ProxyRepeatedPacket;
-import net.l2emuproject.util.LookupTable;
 
 /**
  * Internally represents a L2 client connected to a login server.
@@ -50,8 +51,10 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	public static final int FLAG_SERVER_LIST_C2 = 1 << 2;
 	/** Indicates that this client should be treated as a C4 client, regardless of what the server is */
 	public static final int FLAG_MODERN_SERVER_2_TRANSFER_CLIENT = 1 << 3;
+	/** Prelude protocol where packets are enciphered with C3/C4 transfer key */
+	public static final int FLAG_CUSTOM_PROTOCOL_PRELUDE_WITH_TRANSFER_KEY = 1 << 30;
 	
-	private final LookupTable<L2GameServerInfo> _servers;
+	private final Map<Integer, L2GameServerInfo> _servers;
 	private Integer _targetServer;
 	
 	private ICipher _cipher;
@@ -66,12 +69,11 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	 * @param socketChannel connection
 	 * @throws ClosedChannelException if the given channel was closed during operations
 	 */
-	protected L2LoginClient(L2LoginClientConnections mmoController, SocketChannel socketChannel)
-			throws ClosedChannelException
+	protected L2LoginClient(L2LoginClientConnections mmoController, SocketChannel socketChannel) throws ClosedChannelException
 	{
 		super(mmoController, socketChannel);
 		
-		_servers = new LookupTable<>();
+		_servers = new ConcurrentHashMap<>();
 		_targetServer = null;
 		
 		_cipher = null;
@@ -100,29 +102,34 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	{
 		if (isProtocolFlagSet(FLAG_MODERN_SERVER_2_TRANSFER_CLIENT))
 			dataSize.__increase_size(8);
-		
+			
 		final int size = dataSize.getSize();
 		
 		// This forces proxy to work transparently with all possible login protocols
 		boolean legacyProtocol = getProtocol().isOlderThan(MODERN);
-		legacy: if (legacyProtocol && (size >= 128 + 16 || size == 32))
+		legacy: if (legacyProtocol)
 		{
-			final ICipher transfer = new LoginCipher(READ_ONLY_C3_C4_TRANSFER_KEY);
-			final ByteBuffer bb = ByteBuffer.allocate(size).order(buf.order());
-			System.arraycopy(buf.array(), buf.position(), bb.array(), 0, size);
-			transfer.decipher(bb);
-			
-			if (!LoginCipher.testChecksum(bb, 8)) // legacy client packet checksum scheme
-				break legacy;
-			
-			if (bb.get(0) != (size == 32 ? 0x07 : 0x00))
-				break legacy;
-			
-			enableProtocolFlags(FLAG_PROTOCOL_TRANSFER);
-			_cipher = transfer;
-			((L2LoginServer)getServer()).initCipher(READ_ONLY_C3_C4_TRANSFER_KEY);
-			System.arraycopy(bb.array(), 0, buf.array(), buf.position(), size);
-			return true;
+			if (isProtocolFlagSet(FLAG_CUSTOM_PROTOCOL_PRELUDE_WITH_TRANSFER_KEY))
+				_cipher = new LoginCipher(READ_ONLY_C3_C4_TRANSFER_KEY);
+			else if (size >= 128 + 16 || size == 32)
+			{
+				final ICipher transfer = new LoginCipher(READ_ONLY_C3_C4_TRANSFER_KEY);
+				final ByteBuffer bb = ByteBuffer.allocate(size).order(buf.order());
+				System.arraycopy(buf.array(), buf.position(), bb.array(), 0, size);
+				transfer.decipher(bb);
+				
+				if (!LoginCipher.testChecksum(bb, 8)) // legacy client packet checksum scheme
+					break legacy;
+					
+				if (bb.get(0) != (size == 32 ? 0x07 : 0x00))
+					break legacy;
+					
+				enableProtocolFlags(FLAG_PROTOCOL_TRANSFER);
+				_cipher = transfer;
+				((L2LoginServer)getServer()).initCipher(READ_ONLY_C3_C4_TRANSFER_KEY);
+				System.arraycopy(bb.array(), 0, buf.array(), buf.position(), size);
+				return true;
+			}
 		}
 		
 		final int limit = buf.limit();
@@ -197,7 +204,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	 * 
 	 * @return game server addresses
 	 */
-	public LookupTable<L2GameServerInfo> getServers()
+	public Map<Integer, L2GameServerInfo> getServers()
 	{
 		return _servers;
 	}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Make no mistake, even though it retains the name 'MagicAndSkillList', there's nothing in common between the two. -->
+<packet id="SM__USER_ACK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Character OID" type="ObjectID" />
+	<dword alias="Character PK" />
+	<dword alias="Unknown persistent ID" /> <!-- NEW -->
+</packet>

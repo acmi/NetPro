@@ -3,14 +3,14 @@
 	<dword alias="Hideout" type="PledgeBase" />
 	<byte alias="Fireplace level" /> <!-- [Recovery] HP -->
 	<byte alias="Carpet level" /> <!-- [Recovery] MP -->
-	<byte alias="0" />
+	<byte alias="Statue level" />
 	<byte alias="Chandelier level" /> <!-- [Recovery] XP -->
 	<byte alias="Mirror level" /> <!-- [Other] Teleport -->
-	<byte alias="0" />
+	<byte alias="Crystal level" />
 	<byte alias="Curtain level" /> <!-- [Deco] Curtains -->
-	<byte alias="0" />
+	<byte alias="Hanging level" />
 	<byte alias="Interior curtain level" /> <!-- [Other] Assist Magic -->
-	<byte alias="0" />
+	<byte alias="Flag level" />
 	<byte alias="Foyer level" /> <!-- [Deco] Front Platform -->
 	<byte alias="Magic Machine level" /> <!-- [Other] Item Creation -->
 	<bytes alias="0">

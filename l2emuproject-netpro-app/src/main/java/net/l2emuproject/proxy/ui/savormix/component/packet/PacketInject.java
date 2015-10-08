@@ -46,8 +46,6 @@ import javax.swing.WindowConstants;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import javolution.util.FastMap;
-
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -66,6 +64,8 @@ import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.HexUtil;
+
+import javolution.util.FastMap;
 
 /**
  * A simple dialog that allows to inject packets specifying their body as a space-delimited hex
@@ -175,10 +175,10 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 			final Pair<Proxy, ByteBuffer> setup = getCurrentBodyAndRecipient(false);
 			if (setup == null)
 				return;
-			
+				
 			if (_displayTask != null)
 				_displayTask.cancel(true);
-			
+				
 			final Proxy target = setup.getLeft();
 			_display.setProtocol(target.getProtocol());
 			_display.setCacheContext(PpeEnabledScript.getEntityContext(target));
@@ -303,7 +303,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		contentPane.add(root, BorderLayout.CENTER);
 		if (LoadOption.DISABLE_DEFS.isNotSet())
 			contentPane.add(_display, BorderLayout.EAST);
-		
+			
 		setLocationByPlatform(true);
 		pack();
 	}
@@ -313,11 +313,11 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		final ProxyWrapper pw = _cbConnections.getItemAt(_cbConnections.getSelectedIndex());
 		if (pw == null || pw == _placeholderConnection)
 			return null;
-		
+			
 		Proxy target = pw.getProxy();
 		if (_rbServer.isSelected())
 			target = target.getTarget();
-		
+			
 		try
 		{
 			// this still assumes pre-allocated checksum & its padding; this only pads as required for blowfish block cipher
@@ -346,7 +346,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		final Pair<Proxy, ByteBuffer> setup = getCurrentBodyAndRecipient(true);
 		if (setup == null)
 			return;
-		
+			
 		final Proxy target = setup.getLeft();
 		final ByteBuffer buf = setup.getRight();
 		target.sendPacket(new ProxyRepeatedPacket(buf.array()));
@@ -359,7 +359,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		final boolean login = client instanceof L2LoginClient;
 		if (login && ProxyConfig.NO_TABS_FOR_LOGIN_CONNECTIONS)
 			return;
-		
+			
 		final ProxyWrapper pw = new ProxyWrapper(client, login);
 		_connections.put(client, pw);
 		SwingUtilities.invokeLater(() -> _cbConnections.addItem(pw));
@@ -371,7 +371,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		final ProxyWrapper pw = _connections.remove(client);
 		if (pw == null)
 			return;
-		
+			
 		SwingUtilities.invokeLater(() ->
 		{
 			_cbConnections.removeItem(pw);
@@ -468,7 +468,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 			@Override
 			void write(MMOBuffer buf, String input) throws NumberFormatException
 			{
-				buf.writeD(Long.parseLong(input));
+				buf.writeD(Long.parseLong(input), false);
 			}
 			
 			@Override

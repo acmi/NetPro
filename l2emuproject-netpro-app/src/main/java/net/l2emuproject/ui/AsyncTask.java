@@ -172,7 +172,7 @@ public abstract class AsyncTask<Params, Progress, Result> extends SwingWorker<Re
 	{
 		if (getState() != StateValue.PENDING)
 			throw new IllegalStateException();
-		
+			
 		_params = params;
 		SwingUtilities.invokeLater(new Runnable()
 		{

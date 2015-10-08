@@ -91,6 +91,7 @@ import net.l2emuproject.proxy.ui.savormix.component.GcInfoDialog;
 import net.l2emuproject.proxy.ui.savormix.component.GcInfoDialog.MemorySizeUnit;
 import net.l2emuproject.proxy.ui.savormix.component.WatermarkPane;
 import net.l2emuproject.proxy.ui.savormix.component.conv.StreamOptionDialog;
+import net.l2emuproject.proxy.ui.savormix.component.packet.PacketExplainDialog;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketInject;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketListCleaner;
@@ -135,6 +136,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	public static boolean SCROLL_LOCK = false;
 	
 	private final PacketInject _injectDialog;
+	private final PacketExplainDialog _explainDialog;
 	private final StreamOptionDialog _streamDialog;
 	private final JMenu _configMenu;
 	private volatile Map<IProtocolVersion, PacketDisplayConfig> _configDialogs;
@@ -292,6 +294,8 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			L2LoginClientConnections.getInstance().addConnectionListener(getInjectDialog());
 			L2GameClientConnections.getInstance().addConnectionListener(getInjectDialog());
 		}
+		
+		_explainDialog = new PacketExplainDialog(this);
 		
 		JMenuBar mb = new JMenuBar();
 		{
@@ -544,6 +548,14 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				packets.add(inject);
 			}
 			{
+				final JMenuItem inject = new JMenuItem("Explain…");
+				inject.setEnabled(LoadOption.DISABLE_DEFS.isNotSet());
+				inject.setMnemonic(KeyEvent.VK_E);
+				inject.setToolTipText("Interpret raw bytes as a packet content in any protocol version.");
+				inject.addActionListener(e -> _explainDialog.setVisible(true));
+				packets.add(inject);
+			}
+			{
 				final JMenuItem scroll = new JCheckBoxMenuItem("Scroll lock", SCROLL_LOCK);
 				scroll.setEnabled(LoadOption.DISABLE_PROXY.isNotSet());
 				scroll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_SCROLL_LOCK, 0));
@@ -736,9 +748,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		
 		rebuildProtocolMenu();
 		
-		//for (PacketDisplayConfig dlg : _configDialogs.values())
-		//	dlg.startImport(true);
-		
 		if (toBeShownAfterReload == null)
 			return;
 			
@@ -777,7 +786,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			categories.put(cat, menu);
 		}
 		
-		//final Map<IProtocolVersion, Path> initialConfigs = _configDialogs.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().getLastConfig()));
 		final Map<IProtocolVersion, Path> initialConfigs = new HashMap<>();
 		for (final Entry<IProtocolVersion, PacketDisplayConfig> e : _configDialogs.entrySet())
 			initialConfigs.put(e.getKey(), e.getValue().getLastConfig());

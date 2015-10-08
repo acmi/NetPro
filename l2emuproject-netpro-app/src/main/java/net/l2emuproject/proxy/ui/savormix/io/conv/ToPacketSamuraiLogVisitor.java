@@ -89,6 +89,9 @@ public class ToPacketSamuraiLogVisitor implements HistoricalLogPacketVisitor, IO
 	@Override
 	public void onEnd() throws Exception
 	{
+		if (_writer == null)
+			return;
+			
 		_writer.flush();
 		
 		_writer.setPositionInChannel(1);

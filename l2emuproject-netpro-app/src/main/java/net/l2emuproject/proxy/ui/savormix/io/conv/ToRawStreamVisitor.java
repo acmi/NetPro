@@ -121,7 +121,10 @@ public class ToRawStreamVisitor implements HistoricalLogPacketVisitor, IOConstan
 	@Override
 	public void onEnd() throws Exception
 	{
-		_writer.flush();
-		_writer.close();
+		if (_writer != null)
+		{
+			_writer.flush();
+			_writer.close();
+		}
 	}
 }

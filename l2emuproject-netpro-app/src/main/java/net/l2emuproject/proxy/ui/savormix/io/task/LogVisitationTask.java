@@ -140,6 +140,11 @@ public class LogVisitationTask extends AbstractLogFileTask<Path>
 				LOG.info("Cancelled visitation of " + name);
 				continue;
 			}
+			catch (UnsupportedOperationException e)
+			{
+				LOG.info(getClass(), "Operation cannot be applied to file " + name);
+				continue;
+			}
 			//catch (IOException | RuntimeException e)
 			catch (Exception e)
 			{

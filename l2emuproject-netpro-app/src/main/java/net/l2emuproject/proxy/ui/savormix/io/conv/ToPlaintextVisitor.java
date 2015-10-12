@@ -33,7 +33,7 @@ import java.util.Map;
 
 import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
-import net.l2emuproject.proxy.ProxyInfo;
+import net.l2emuproject.proxy.NetProInfo;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
 import net.l2emuproject.proxy.network.meta.PacketStructureElementVisitor;
@@ -109,7 +109,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 		_writer.append("Creation date: ").append(_df.format(new Date(logHeader.getCreated()))).append("\r\n\r\n");
 		
 		_writer.append("Text generation date: ").append(_df.format(new Date())).append("\r\n");
-		_writer.append("Generator version: ").append(ProxyInfo.getRevisionNumber()).append("\r\n");
+		_writer.append("Generator version: ").append(NetProInfo.getRevisionNumber()).append("\r\n");
 	}
 	
 	@Override

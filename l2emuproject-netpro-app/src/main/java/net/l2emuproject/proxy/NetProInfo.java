@@ -31,9 +31,9 @@ import net.l2emuproject.util.jar.FormattedVersion;
  * 
  * @author savormix
  */
-public final class ProxyInfo
+public final class NetProInfo
 {
-	private ProxyInfo()
+	private NetProInfo()
 	{
 		// utility class
 	}
@@ -108,7 +108,7 @@ public final class ProxyInfo
 	 */
 	public static boolean isUnreleased()
 	{
-		return "exported".equals(ProxyInfo.getRevisionNumber());
+		return "exported".equals(NetProInfo.getRevisionNumber());
 	}
 	
 	/**

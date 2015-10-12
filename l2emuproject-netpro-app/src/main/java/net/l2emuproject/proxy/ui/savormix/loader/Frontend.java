@@ -68,7 +68,7 @@ import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.IGameProtocolVersion;
 import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.proxy.ProxyInfo;
+import net.l2emuproject.proxy.NetProInfo;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
@@ -210,8 +210,8 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			final JPanel labRevision = new JPanel();
 			{
 				final L2TextBuilder tb = new L2TextBuilder();
-				if (!"exported".equals(ProxyInfo.getRevisionNumber()))
-					tb.append('r').append(ProxyInfo.getRevisionNumber()).append(' ');
+				if (!"exported".equals(NetProInfo.getRevisionNumber()))
+					tb.append('r').append(NetProInfo.getRevisionNumber()).append(' ');
 				tb.append("executed on ").append(NetProScriptCache.getInstance().isCompilerUnavailable() ? "JRE" : "JDK");
 				labRevision.add(new JLabel(tb.moveToString()));
 			}
@@ -663,9 +663,9 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				about.setToolTipText("Shows information about this application.");
 				
 				final String suffix;
-				if (ProxyInfo.isUnreleased())
+				if (NetProInfo.isUnreleased())
 					suffix = "norelease";
-				else if (ProxyInfo.isSnapshot())
+				else if (NetProInfo.isSnapshot())
 					suffix = "snapshot";
 				else
 					suffix = "stable";
@@ -676,7 +676,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					for (int b; (b = in.read()) != -1;)
 						out.write(b);
 					final String text = out.toString("UTF-8");
-					about.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, text.replace("\r\n", "").replace("<revision_number>", ProxyInfo.getRevisionNumber()), "About",
+					about.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, text.replace("\r\n", "").replace("<revision_number>", NetProInfo.getRevisionNumber()), "About",
 							JOptionPane.INFORMATION_MESSAGE, new ImageIcon(IMage.class.getResource("icon-256.png"))));
 					help.add(about);
 				}

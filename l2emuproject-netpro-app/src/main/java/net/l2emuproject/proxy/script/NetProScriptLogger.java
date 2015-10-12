@@ -19,11 +19,11 @@ import eu.revengineer.simplejse.logging.GenericLogger;
 
 import net.l2emuproject.util.logging.L2Logger;
 
-final class NetProScriptLog implements GenericLogger
+final class NetProScriptLogger implements GenericLogger
 {
 	private final L2Logger _log;
 	
-	NetProScriptLog(L2Logger log)
+	NetProScriptLogger(L2Logger log)
 	{
 		_log = log;
 	}

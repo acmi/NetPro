@@ -7,7 +7,9 @@
 		<scriptAlias id="adp_account_name"/>
 	</string>
 	<!-- Data known to and verified by the game server -->
-	<dword alias="Account ID" />
+	<dword alias="Account ID">
+		<scriptAlias id="adp_account_pk"/>
+	</dword>
 	<dword alias="Session ID" />
 	<!-- Data passed back to the login server -->
 	<dword alias="Account ID" />

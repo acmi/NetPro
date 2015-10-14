@@ -45,6 +45,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	private boolean _handshakeDone;
 	
 	private String _account;
+	private Integer _accountPK;
 	
 	/**
 	 * Creates an internal object representing a game client connection.
@@ -211,7 +212,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	}
 	
 	/**
-	 * Returns the associated authorization service identifier.
+	 * Returns the associated authorization service identifier. If token auth is used, this is not an account name.
 	 * 
 	 * @return account name
 	 */
@@ -221,13 +222,33 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	}
 	
 	/**
-	 * Specifies the authorization service identifier to be associated with this connection.
+	 * Specifies the authorization service identifier to be associated with this connection. If token auth is used, this is not an account name.
 	 * 
 	 * @param account account name
 	 */
 	public void setAccount(String account)
 	{
 		_account = account;
+	}
+	
+	/**
+	 * Returns the associated authorization service identifier.
+	 * 
+	 * @return account ID
+	 */
+	public Integer getAccountPK()
+	{
+		return _accountPK;
+	}
+	
+	/**
+	 * Specifies the authorization service identifier to be associated with this connection.
+	 * 
+	 * @param accountPK account ID
+	 */
+	public void setAccountPK(Integer accountPK)
+	{
+		_accountPK = accountPK;
 	}
 	
 	/**

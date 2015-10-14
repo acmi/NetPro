@@ -57,6 +57,7 @@ import net.l2emuproject.proxy.network.meta.structure.field.integer.Int64FieldEle
 import net.l2emuproject.proxy.network.meta.structure.field.integer.Int8FieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.integer.UInt16FieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.integer.UInt8FieldElement;
+import net.l2emuproject.proxy.network.meta.structure.field.string.NulTerminated8BitStringElement;
 import net.l2emuproject.proxy.network.meta.structure.field.string.NulTerminatedUTF16StringElement;
 import net.l2emuproject.proxy.network.meta.structure.field.string.SizedUTF16StringElement;
 import net.l2emuproject.util.HexUtil;
@@ -286,6 +287,8 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 				return new NulTerminatedUTF16StringElement(id, alias, optional, fieldAliases, valueModifier, valueInterpreter);
 			case "sstring":
 				return new SizedUTF16StringElement(id, alias, optional, fieldAliases, valueModifier, valueInterpreter);
+			case "astring":
+				return new NulTerminated8BitStringElement(id, alias, optional, fieldAliases, valueModifier, valueInterpreter);
 			default: // whitespace, comment, etc
 				return null;
 		}

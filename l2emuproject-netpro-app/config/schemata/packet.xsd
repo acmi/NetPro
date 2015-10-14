@@ -19,6 +19,7 @@
 					<xs:element name="string" type="dataType" /> <!-- nul-terminated string (default) -->
 					<xs:element name="ntstring" type="dataType" /> <!-- nul-terminated string -->
 					<xs:element name="sstring" type="dataType" /> <!-- sized string -->
+					<xs:element name="astring" type="dataType" /> <!-- nul-terminated 8-bit character string (effectively 7-bit ascii with MSB=0) -->
 					<xs:element name="loop" type="loopType" />
 					<xs:element name="branch" type="branchType" />
 				</xs:choice>
@@ -42,6 +43,7 @@
 				<xs:element name="string" type="dataType" /> <!-- nul-terminated string (default) -->
 				<xs:element name="ntstring" type="dataType" /> <!-- nul-terminated string -->
 				<xs:element name="sstring" type="dataType" /> <!-- sized string -->
+				<xs:element name="astring" type="dataType" /> <!-- nul-terminated 8-bit character string (effectively 7-bit ascii with MSB=0) -->
 				<xs:element name="loop" type="loopType" />
 				<xs:element name="branch" type="branchType" />
 			</xs:choice>
@@ -307,6 +309,7 @@
 			
 			<xs:enumeration value="item.AttributeEnchantResult" />
 			<xs:enumeration value="item.MonsterRaceLane" />
+			<xs:enumeration value="item.SoulCrystal" />
 
 			<xs:enumeration value="party.PartyMatchingAffilation" />
 			<xs:enumeration value="party.PartyMatchingListMode" />

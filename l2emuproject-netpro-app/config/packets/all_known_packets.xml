@@ -10,6 +10,9 @@
 		-->
 		<packet id="LS_CM_AQ_GAMEGUARD" name="ResponseAuthGameGuard" />
 		<!--
+		This structure is typically used with opcode 0x00
+		
+		ASCII "cxddddddhcb"
 		UNICODE "Login Type %d is Not Used"
 		UNICODE "AQ_LOGIN : %d %d %d %d %d"
 		UNICODE "RL"
@@ -35,6 +38,16 @@
 		-->
 		<packet id="LS_CM_REQUEST_SERVER_LOGIN" name="RequestServerLogin" />
 		<packet id="LS_CM_0E" name="Unnamed 0E" />
+		<!--
+		This structure is typically used with opcode 0x12
+		
+		ASCII "cdddddssdhcs"
+		UNICODE "Login Type %d is Not Used"
+		UNICODE "AQ_LOGIN : %d %d %d %d %d"
+		UNICODE "RL"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="LS_CM_AQ_LOGIN__TOKEN" name="RequestLogin" /> <!-- RL = RequestLogin? -->
 		
 		<packet id="64" name="RequestReplySurrenderPledgeWar" />
 		<packet id="128" name="RequestSEKCustom" />

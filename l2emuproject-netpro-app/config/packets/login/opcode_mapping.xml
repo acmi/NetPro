@@ -4,6 +4,7 @@
 		<packet opcodePrefix="06" id="LS_CM_REQUEST_SC_CHECK" />
 		<packet opcodePrefix="07" id="LS_CM_AQ_GAMEGUARD" />
 		<packet opcodePrefix="0E" id="LS_CM_0E" />
+		<packet opcodePrefix="12" id="LS_CM_AQ_LOGIN__TOKEN" />
 	</client>
 	<server>
 		<packet opcodePrefix="0A" id="LS_SM_SC_CHECK_REQ" />

@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.item;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 
 /**
- * Interprets the given bit mask as additional structures with item data.
+ * Interprets a soul crystal effect, as seen in item detail tooltip.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class ItemInfoEx extends ScriptedBitmaskInterpreter
+public class SoulCrystal extends ScriptedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
-	public ItemInfoEx()
+	public SoulCrystal()
 	{
-		super("Augmentation", "Elemental attribute(s)", "Enchant bonus(es)", "Appearance", "Soul crystal effect(s)");
+		super(loadFromResource("ensoul.txt"));
 	}
 }

@@ -439,7 +439,7 @@
 439	Clan
 440	Party
 441	General
-442	Enter Chat
+442	WASD Movement - Enter Chat
 443	Use
 444	Chat
 445	Exchange
@@ -1885,7 +1885,7 @@
 1886	Tracking
 1887	Zoom-in Camera
 1888	Zoom-out Camera
-1889	Turn Camera 180ﾰ
+1889	Turn Camera 180°
 1890	Open GM Window
 1891	Open GM Petition Window
 1893	Switch to 1st-person POV
@@ -2178,7 +2178,7 @@
 2276	Instance
 2277	Request Match
 2278	Watch Match
-2279	Receive Reward
+2279	Receive
 2280	Check Information
 2281	1 vs. 1 Class Match
 2282	1 vs. 1 Match
@@ -3162,9 +3162,47 @@
 3360	Effect After Change
 3361	Not enough ingredients to enchant skills.
 3362	Pendant
-3363	Can be used
-3364	Can be used
+3363	Add Weapon
+3364	Add Soul Crystal
 3365	GFX debug
+3366	Strength (STR)\nAffects P. Atk.
+3367	Intelligence (INT)\nAffects M. Atk.
+3368	Dexterity (DEX)\nAffects Atk. Spd., P. Accuracy, P. Evasion, and P. Critical Rate.
+3369	Wit (WIT)\nAffects Casting Spd., M. Accuracy, M. Evasion, M. Critical Rate, and M. Def. Rate.
+3370	Constitution (CON)\nAffects Max HP/CP, HP/CP Recovery, Weight, Underwater Breathing, and Shield Defense Rate.
+3371	Mental (MEN)\nAffects M. Def., Max MP, MP Recovery, and Magic Cancel Rate.
+3372	Luck (LUC)\nAffects item enchantment/crafting/workshop success rate, additional bonus for Spoil/Plunder skills, Fortune Pocket acquisition rate, and Soul Stealth rate.
+3373	Charisma (CHA)\nAffects P. Atk., P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd., and Max HP/MP/CP.
+3374	Strength (STR)<br>Affects P. Atk.
+3375	Intelligence (INT)<br>Affects M. Atk.
+3376	Dexterity (DEX)<br>Affects Atk. Spd., P. Accuracy, P. Evasion, <br>and P. Critical Rate.
+3377	Wit (WIT)<br>Affects Casting Spd., M. Accuracy, M. Evasion, M. Critical Rate, <br>and M. Def. Rate.
+3378	Constitution (CON)<br>Affects Max HP/CP, HP/CP Recovery, Weight, Underwater Breathing, <br>and Shield Defense Rate.
+3379	Mental (MEN)<br>Affects M. Def., Max MP, MP Recovery, <br>and Magic Cancel Rate.
+3380	Luck (LUC)<br>Affects item enchantment/crafting/workshop success rate, <br>additional bonus for Spoil/Plunder skills, Fortune Pocket acquisition <br>rate, and Soul Stealth rate.
+3381	Charisma (CHA)<br>Affects P. Atk., P. Def., Atk. Spd., M. Atk., M. Def., <br>Casting Spd., and Max HP/MP/CP.
+3382	Play Report
+3383	EXP Acquired
+3384	Monsters Killed
+3385	Adena Acquired
+3386	Item Acquired
+3387	Start Soul Crystal Enchantment
+3388	Soul Crystal Effect
+3389	Current Effect
+3390	Effect After Applying Soul Crystal
+3391	Soul Crystal Enchantment Fee
+3392	All the information will be reset when you click.
+3393	No Soul Crystal Effect
+3394	<Soul Crystal Effect>
+3395	Retry
+3396	Exchangeable
+3397	Change List/Icon View
+3398	Selected Item Info
+3399	Exchange Amount
+3400	View Inventory
+3426	Full Screen Mode
+3427	Full Window Mode
+3428	Window Mode
 5001	L2 Store
 5002	All Items
 5003	Best
@@ -3354,3 +3392,694 @@
 5190	Attendance Check
 5191	Offering
 5192	https://secure.ncsoft.com/login
+5800	Times Left
+5801	Start Premium Lucky Game
+5802	Receive Bonus
+5803	Bonus
+5804	Start Regular Lucky Game
+5805	Grade A
+5806	Grade B
+5807	Grade C
+5808	Grade D
+5809	Probability
+5810	Premium
+5811	Gems
+5812	Recharge Gems
+5813	See List
+5814	Receive Gift
+5815	Total Purchase Amount
+5816	Purchase Quantity
+5817	Enter the amount you want to purchase.
+5818	Equipment/Fashion
+5819	VIP
+5820	Lucky Game
+5821	Remaining L2 Coins
+5822	Recharge L2 Coins
+5823	VIP Level
+5824	Benefits by VIP Level
+5825	My VIP Info
+5826	My VIP Points
+5827	Points to Level Up
+5828	Benefit Duration
+5829	Points Used
+5830	Points to be Used
+5831	Time to Enter
+5832	Enter Verification Number
+5833	Enter Verification Number (6 characters by mouse)
+5834	Ticket
+5835	Coins
+5836	L2 Coins
+5837	Hide Ability Mark
+5838	Clan Rewards
+5839	Show/Hide Offline Users
+5840	Members
+5841	Points
+5842	Login Bonus
+5843	Hunting Bonus
+5844	Login Bonus Help
+5845	Members Online
+5846	Hunting Bonus Help
+5847	Clan Hunting Status
+5848	Yesterday's Bonus
+5849	The clan reward is reset every day at 6:30 am.
+5850	Activity
+5851	Yesterday's Reward
+5852	No Rewards Available
+7001	Roll Dice to Distribute Items
+7002	Manual Distribution by Party Leader
+7003	Roll Dice
+7004	Give Up
+7005	Roll dice to obtain items above?
+7006	Party Help
+7007	Change Party Leader
+7008	Disband Party
+7009	Daily Mission
+7010	Event
+7011	Instance Zone
+7012	Event
+7013	Progress
+7014	Zone Name
+7015	Entry Info
+7016	Participants
+7017	Show All Levels
+7018	Always Show When Logging In
+7019	Grand Olympiad
+7020	First Castle Siege
+7021	Second Castle Siege
+7022	Clan Hall War
+7023	All Day
+7024	Regular
+7025	18:00-24:00
+7026	16:00-18:00
+7027	20:00-22:00
+7028	20:00
+7029	Always Available
+7030	Above 85
+7031	Above 40
+7032	Solo
+7033	In Party
+7034	Not in Progress
+7035	In Progress
+7036	End
+7037	Item Mall
+7038	General Chat
+7039	See Info
+7040	Request Trade
+7041	Request Party
+7042	Add Friend
+7043	Request Duel
+7044	Leave Party
+7045	Assign Party Leader
+7046	Kick Party Member
+7047	Manage Pets
+7048	Transportation Mode Change
+7049	Stop
+7050	Mount/Dismount
+7051	Revert Pet
+7052	Cancel Summon
+7053	Level-Up Guide
+7054	Advance
+7055	Move Left
+7056	Move Right
+7057	Turn Around and Go
+7058	Jump
+7059	Stop Advance
+7060	Menace
+7061	PC
+7062	Monster
+7063	NPC
+7064	Keybard Controls
+7065	Mouse Controls
+7066	2nd Password Settings
+7067	Register 2nd Password
+7068	Change 2nd Password
+7069	Cancel 2nd Password
+7070	Cancel Registration
+7071	You've registered a 2nd password. You will be asked for your 2nd password whenever you log in. \nYou can change the settings through the '2nd Password Settings' function on the bottom right.
+7072	You haven't set a 2nd password. We recommend you set a 2nd password for increased security.\nIf you want to set a 2nd password, go to the '2nd Password Settings' menu on the bottom right.
+7073	Would you like to go to the website to cancel your 2nd password?
+7074	Private Warehouse Password Settings
+7075	Register Private Warehouse Password
+7076	Change Private Warehouse Password
+7077	Cancel Private Warehouse Password
+7078	Register Private Warehouse Password
+7079	Please enter a password for your private warehouse for increased security.\nIf you don't want to register a password, click on Cancel.
+7080	Enter Private Warehouse Password
+7081	You've entered a password for your private warehouse. You will be prompted to enter your password whenever you deposit or withdraw items. You only need to enter the password the first time you use the warehouse when you log in for the day.\nYou can use the 'Private Warehouse Password Settings' function to make any changes.
+7082	You haven't registered a password for your private warehouse. We recommend you set one for increased security. In order to register a password for your private warehouse, use the 'Private Warehouse Password Settings' function.
+7083	Change Private Warehouse Password
+7084	Enter Private Warehouse Password
+7085	Enter a password for the private warehouse for increased security.
+7086	Play Time
+7087	Vitality Left
+7088	% (XP/SP increased)
+7089	Recommended Event
+7090	Instance Zone Available
+7091	Click on the icon on the left to see more information about recommended events \n and instance zones.
+7092	End game?
+7093	Safe Mode
+7094	You are playing in Safe Mode. You cannot do the things listed on the right when in Safe Mode.
+7095	List of Actions Not Available in Safe Mode
+7096	Cancel Safe Mode
+7097	Safe Mode
+7098	Cancel
+7099	Go to the website to cancel Safe Mode?
+7100	Olympiad Points
+7101	s information
+7102	Set Next Target
+7103	Manage Servitors
+7104	Window Mode
+7105	Party Window Display
+7106	Restart?
+7107	You can play the game normally if you cancel Safe Mode.
+7108	If you want to cancel Safe Mode, just click on Cancel Safe Mode.
+7109	Use Auction House / Adena Trading
+7110	Purchase / Sell / Use NPC Shop
+7111	Purchase / Sell / Use Private Shop
+7112	Exchange / Drop / Destroy Item
+7113	Use Clan / Private Warehouse
+7114	Transfer / Disband Clan
+7115	Use Premium Shop
+7116	Use Mail
+7117	Next Target
+7118	Next Lv.
+7119	Previous Lv.
+7120	Assist
+7121	Current Lv.
+7122	https://security2.plaync.co.kr/ncotp/intro/intro
+7123	https://security2.plaync.co.kr/ncotp/intro/intro
+7124	Adena Trading
+7125	Trade History
+7126	Adena Sold
+7127	Trade Ratio
+7128	Sale Price
+7129	L2 Coin
+7130	L2 Chip
+7131	Coins
+7132	Chips
+7133	Register Adena to Sell
+7134	Adena to Register
+7135	Sale Price
+7136	Fee for Selling
+7137	Sell Adena as shown above?
+7138	Failed to sell
+7139	Not enough coins to purchase this item. \nPlease recharge.
+7140	The item you selected has either been sold or canceled. \nPlease check again.
+7141	Recharge Coins
+7142	Purchase Adena
+7143	Adena to Purchase
+7144	Coins Consumed
+7145	Purchase Adena as shown above?
+7146	Notification
+7147	You've purchased the item you selected. \nThe item will be sent to your inventory. \nPlease check your purchase history from your Trading History window or the Mail.
+7148	Standard Trading Ratio
+7149	Adena List
+7150	Min-Max
+7151	Cancel Registration
+7152	Time Registered
+7153	Cancel the item you registered?
+7154	Registration failed
+7155	The amount of coins you registered is either below or above the min/max. \nPlease check the amount again.
+7156	Not enough Adena to register items. \nPlease check the amount of Adena you have.
+7157	You've canceled the selected item. \nThe canceled item will be sent to your inventory. \nPlease check your mailbox for details.
+7158	My Trade History
+7159	Trade Type
+7160	Trade Time
+7161	Purchase Complete
+7162	Sale Complete
+7163	Sale Fee
+7164	Registration Time Expired
+7165	Items whose registration time has expired will be sent to your mailbox, so please check before they disappear. \nAdena or L2 Chips that you purchased will be added to your inventory immediately.\n
+7166	<Details>
+7167	Adena Trader
+7168	Premium Shop
+7169	Pester
+7170	Limited Sale Items
+7171	Mileage Items
+7172	My Items
+7173	Search Items
+7174	Mileage
+7175	Regular
+7176	Move to Inventory
+7177	Not enough room in the inventory.
+7178	The weight limit of the inventory has been exceeded, so the item cannot be moved.
+7179	Desired Amount
+7180	Current Amount
+7181	When you purchase items with L2 Coins and L2 Chips, the L2 Chips are consumed first, and then the L2 Coins are consumed. Purchased items will be saved within your inventory in the Premium Shop.
+7182	Recharge L2 Coins
+7183	Not enough space. Please make more space in your inventory.
+7184	Not enough L2 Coins. Recharge?
+7185	Not enough L2 Mileage Points. You can receive L2 Mileage Points by purchasing L2 Coins.
+7186	Cannot send the gift because there's not enough space in the recipient's mailbox.
+7187	Cannot send the gift because there's not enough space in the recipient's inventory.
+7188	Total Amount
+7189	Cannot Pester because the recipient's mailox is full.
+7190	Related Items
+7191	Send Gift
+7192	Cannot open the Premium Shop while in a battle. Please end the battle and try again.
+7193	Acquisition Method
+7194	Date Acquired
+7195	Pestering Message
+7196	Foe
+7197	List of Foes
+7198	Revenge Count
+7199	See Location
+7200	See Equipment
+7201	List of Killers
+7202	Select the Killers you want to add to the\n List of Foes.
+7203	Times Killed
+7204	Do not show Foe Registration Notification Icon
+7205	Current XP / SP saved
+7206	Saving XP
+7207	Saving SP
+7208	Pause
+7209	Change Training
+7210	Saved XP
+7211	Saved SP
+7212	Bestow Timed Soul Crystal
+7213	Select the item to use the Timed Soul Crystal item on.
+7214	Items already bestowed with a Soul Crystal cannot be used for the Timed Soul Crystal item.
+7215	Chang Tactics
+7216	Show Raid Monsters
+7217	https://security2.plaync.co.kr/ncotp/intro/intro
+7218	Will be opening an external browser to open the page to purchase L2 Coins. Continue?
+7219	You've removed your 2nd password.
+7220	You've removed your Privatet Warehouse password.
+7221	You've disabled Safe Mode.
+7222	Confirm Private Warehouse Password
+7223	Activate Vitality Mode
+7224	Activate Vitality Mode?
+7225	Go to Premium Shop
+7226	Failed to activate Vitality Mode
+7227	Not enough Vitality Jewels to activate.\nGo to the Premium Shop to purchase some more items and try activating again.\nGo to the Premium Shop?
+7228	Activate
+7229	The item you registered cannot be canceled.\nPlease check whether the item was sold.
+7230	The gift was successfully sent.
+7231	Failed to send the gift. Please check the requirements and try again.
+7232	http://tiantang2.qq.com/index.shtml
+7233	1 million
+7234	10 million
+7235	100 million
+7236	Correct
+7237	Registering Adena\nThe minimum amount of Adena that can be registered is 1,000,000.
+7238	L2 Mileage Points
+7239	Preview
+7240	Sale Fee Exempted
+7241	All
+7242	Distance Left:
+7243	Not possible
+7244	Exchange
+7245	Drop
+7246	Destroy
+7247	Sell in Private Shop
+7248	Use Olympiad
+7249	Sell in Shop
+7250	Cannot be stored in the warehouse
+7251	Cannot be stored in the clan warehouse
+7252	Can be shared within the account through the Dimensional Merchant
+7253	Game Settings
+7254	Customer Support
+7255	http://lineage2.plaync.com
+7256	Replay
+7257	Staff
+7258	Log Out
+7259	Goal
+7260	Rewards
+7261	Inventory Shop
+7262	Regular Enchant
+7263	Improved Enchant
+7264	When you purchase items with L2 Coins and L2 Chips, the L2 Chips are consumed first, and then the L2 Coins are consumed. Purchased items will be saved in your inventory.
+7265	Training Zone
+7266	Free Instant Teleport
+7267	Paid Instant Teleport
+7268	Purchase Instant Teleport Items
+7269	Instant Teleport
+7270	Adventure Guide
+7271	Period
+7272	Equipped
+7273	Items
+7274	Quest Details
+7275	All
+7276	Main
+7277	Sub
+7278	Repeat
+7279	Daily
+7280	Party
+7281	Alliance
+7282	World Raid
+7283	Instance Zone
+7284	Boss
+7285	Clan
+7286	Siege
+7287	Fortress War
+7288	Territory War
+7289	Event
+7290	Items Equipped
+7291	Items Selected
+7292	Rewards according to amount
+7293	New Crafting Enchant
+7294	Improved Crafting
+7295	Safe Enchant
+7296	Set Options
+7297	Crafting Available
+7298	Fee
+7299	Other
+7300	Items to Craft
+7301	Items Needed
+7302	Craft Item
+7303	Enchant Available
+7304	Items to Enchant
+7305	Add an item to enchant.
+7306	Safe Enchant
+7307	Set Options Available
+7308	Items to bestow Set Options
+7309	Add an item to bestow Set Options.
+7310	Bestow Set Options
+7311	Augment
+7312	Soul Crystal
+7313	Bestow Attribute
+7314	Auction House
+7315	Change Set Options
+7316	Recommended Level
+7317	1-19
+7318	20-39
+7319	40-51
+7320	52-60
+7321	61-75
+7322	76-79
+7323	80-84
+7324	85-94
+7325	95-98
+7326	99
+7327	The item needed to use this function is not available in the inventory.
+7328	Confirm
+7329	It shows a character's level.
+7330	It shows a character's clan.
+7331	It shows a character's position in the clan.\nIf the character is not part of a clan, the character is marked as a wanderer.
+7332	It shows the character's current class.
+7333	It shows the character's HP. If it reaches 0, the character dies.
+7334	It shows the character's MP. It is consumed when using skills.
+7335	It shows the character's skill points. It is used when learning skills.
+7336	It shows the XP acquired when hunting monsters or finishing quests.\nThe character levels up when this reaches 100%.
+7337	It shows the character's CP gauge.\n CP is additional HP for PvP, and it is consumed before HP when receiving damage from other players. When the amount of damage received goes over the CP, your HP will be consumed.\nUse CP Potions to recover CP immediately.\nNot applied when fighting monsters.
+7338	It shows the total weight of items that the character can carry.\nOnce the weight gauge goes over 50%, the character's stats and speed will be reduced.
+7339	The higher it is, the greater the damage dealt with P. Atk. and P. Skills is.
+7340	The higher it is, the lower the damage received from P. Atk. and P. Skills is.
+7341	P. Atk. Success Rate
+7342	P. Atk. Evasion Rate
+7343	P. Atk. Critical Rate
+7344	The higher it is, the faster the character's Atk. Spd. is.
+7345	The higher it is, the faster the character's Spd. is.
+7346	The higher it is, the greater the damage dealt with M. Atk. and M. Skills is.
+7347	The higher it is, the lower the damage received from M. Atk. and M. Skills is.
+7348	M. Atk. Success Rate
+7349	M. Atk. Evasion Rate
+7350	M. Atk. Critical Rate
+7351	The higher it is, the faster the character's Casting Spd. is.
+7352	It shows a character's strength.\nIt affects P. Atk. and P. Critical Damage.
+7353	It shows a character's wisdom.\nIt affects M. Atk. and M. Critical Damage.
+7354	It shows a character's dexterity and accuracy.\nIt affects Atk. Spd., P. Accuracy, P. Evasion, and P. Critical Rate.
+7355	It shows a character's mental and practical ability.\nIt affects Casting Spd., M. Def. Rate, M. Critical Rate, M. Accuracy, M. Evasion, and XP restoration when using Scrolls of Resurrection.
+7356	It shows a character's strength.\nIt affects Max HP/MP/CP, HP Recovery, Shield Defense Rate, Weight Gauge, Breath Bar Underwater, HP deduction underwater, Stun/Bleed/Poison Resistance.
+7357	It shows a character's mental strength.\nIt affects M. Def., Max MP, MP Recovery, Magic Cancel Rate, and resistance to abnormal status (Curse debilitating stats, Silence, Fear, Paralysis, HP reduction magic with attributes, MP reduction magic, HP recovery speed reduction, skill cooldown increase, heal effect reduction).
+7358	It shows any attribute attacks for the 4 elemetns and Holy and Dark attributes.
+7359	The higher it is, the greater the damage from Attack Attribute attacks is.
+7360	The higher it is, the lower the damage from Fire Attribute attacks is.
+7361	The higher it is, the lower the damage from Wind Attribute attacks is.
+7362	The higher it is, the lower the damage from Holy Attribute attacks is.
+7363	The higher it is, the lower the damage from Water Attribute attacks is.
+7364	The higher it is, the lower the damage from Earth Attribute attacks is.
+7365	The higher it is, the lower the damage from Dark Attribute attacks is.
+7366	The number goes down upon PK, and it goes up if you kill a Chaotic character.\nIf the Reputation Points are negative, you'll become a chaotic character and your name will appear in red. If the Reputation Points are positive, you'll become a lawful charcter and your name will appear in green.\nChaotic characters can be attacked by village guard NPCs and other players.
+7367	PvP matches are for when both parties have agreed for a duel.\nPK count is for when a character kills another character without agreeing to battle.
+7368	You can obtain Individual Fame points by winning in Sieges, Fortress Wars, the Olympiad, and other battlegrounds.\nFor details, go find the Reputation Manager in the Town of Aden and the Town of Rune.
+7369	The Ratings are based on the number of recommendations you receive from other players, and the Recommendations are the number of times you can recommend other characters.
+7370	Immediate Resurrection
+7371	Use a Feather of Blessing to recover the lost XP from dying and to resurrect on the same spot.\nCharacters below Lv. 40 can resurrect on the same spot without a Feather of Blessing, and they can get a Novice Buff.\nStarting from Lv. 41, you need a Feather of Blessing to resurrect on the same spot.
+7372	Item Info
+7373	The quest cannot be started.
+7374	###############################################################################################################################################################################################################################################################
+7375	###############################################################################################################################################################################################################################################################
+7376	###############################################################################################################################################################################################################################################################
+7377	<font color='#FFDF4C'>Classes Available Next</font><br><br><font color='#FFDF4C'>Attack-type Wizard</font> - Water Attribute: Elven Wizard -> Spellsinger<br><font color='#FFDF4C'>Summoning Wizard</font> - Summon a Unicorn: Elven Wizard -> Elemental Summoner<br><font color='#FFDF4C'>Recovery Wizard</font> - Use Enchant: Oracle -> Elder
+7378	###############################################################################################################################################################################################################################################################
+7379	<font color='#FFDF4C'>Classes Available Next</font><br><br><font color='#FFDF4C'>Attack-type Wizard</font> - Wind Attribute: Dark Wizard -> Spellhowler<br><font color='#FFDF4C'>Summoning Wizard</font> - Summon Phantoms: Dark Wizard -> Phantom Summoner<br><font color='#FFDF4C'>Recovery Wizard</font> - Use Enchant: Shillien Oracle -> Shillien Elder
+7380	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Attack-type Warrior</font> - Use Two-handed Weapon: Orc Raider -> Destroyer<br><br><font color='#FFDF4C'>Attack Warrior</font> - Use Attack Weapons: Orc Raider -> Tyrant<br>
+7381	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Recovery Wizard</font> - Party Recovery, Party Enhancement: Orc Shaman -> Warcryer <br><br><font color='#FFDF4C'>Recovery Wizard</font> - Clan Recovery, Clan Enhancement: Orc Shaman -> Overlord<br>
+7382	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Attack Warrior</font> - Summon Mechanic: Artisan -> Warsmith<br><br><font color='#FFDF4C'>Attack-type Warior</font> - Use Critical Dagger: Scavenger -> Bounty Hunter<br>
+7383	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Attack-type Warrior</font> - Use Ancient Sword for Charge Attacks: Trooper  -> Berserker<br><br><font color='#FFDF4C'>Swordsman</font> - Use Attack Magic, Attack Skills: Trooper -> Soul Breaker<br>
+7384	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Long-range Warrior</font> - Use Crossbow, Traps: Warder -> Arbalester<br><br><font color='#FFDF4C'>Swordsman</font> - Use Attack Magic, Attack Skills: Warder -> Soul Breaker<br>
+7385	Class Trait
+7386	QT Novice Room
+7387	Can only be saved in the Private Warehouse
+7388	Can only be saved in the Clan Warehouse
+7389	Gatekeeper
+7390	Low
+7391	Normal
+7392	Somewhat High
+7393	High
+7394	Very High
+7395	Join Clan and Recruit Members
+7396	Application and Recommendation List
+7397	Clan Level
+7398	Clan Members
+7399	Yes
+7400	No
+7401	Search Clan
+7402	Clan Name
+7403	Clan Members
+7404	See Details
+7405	Request to Join Clan
+7406	Recruit Clan Members
+7407	Adventurer Level
+7408	Class Type
+7409	Class Transfer
+7410	Basic Class
+7411	1st Class Transfer
+7412	2nd Class Transfer
+7413	3rd Class Transfer
+7414	Awakening
+7415	Class Name
+7416	Search Adventurers
+7417	Adventurers List
+7418	Adventurer Name
+7419	Withdrawal Penalty Count
+7420	Recommend to Join Clan
+7421	Reject Application
+7422	Accept
+7423	Reject Recommendation
+7424	Request to Join Clan
+7425	Application Message
+7426	Make Request to Join
+7427	Recommend to Join Clan
+7428	Recommendation Message
+7429	Recommend to Join
+7430	Check Application
+7431	Monster to Hunt
+7432	Tuba
+7433	Clan Leader
+7434	Currently Online
+7435	Territory
+7436	Check Recommendation
+7437	Manage Clan Text
+7438	Goal
+7439	Waitlist
+7440	Minimize Window
+7441	Enter Room
+7442	Looting
+7443	Party Goal
+7444	Recruiting Classes
+7445	Dungeon
+7446	Hunting
+7447	My Class
+7448	You've entered the Party Room. In order to enter another room or channel, please exit the room.
+7449	No rooms are available. Please change the requirements and try again.
+7450	Players already in a party cannot enter other rooms that are recruiting members.
+7451	Players already in an alliance cannot enter other rooms that are recruiting members.
+7452	You've entered an Alliance room. In order to enter another room or join a party, please exit the room.
+7453	Max Occupancy
+7454	Class Type
+7455	Alliance
+7456	Invite to Alliance
+7457	Moon Festival Guide
+7458	Open Attendance
+7459	Open Help
+7460	Full Moon Attendance
+7461	Day
+7462	Moon Residents to Meet
+7463	Rewards
+7464	Check Attendance
+7465	* Go find the closest Moon Resident to get your attendance stamp.
+7466	Complete Check
+7467	Moon Festival Help
+7468	Request
+7469	Recommend
+7470	Accept Request
+7471	Accept Recommendation
+7472	Check the main quest.
+7473	I would like to join your clan.
+7474	Join our clan!
+7475	Soul Hound (M)
+7476	Soul Hound (F)
+7477	Soul Breaker (M)
+7478	Soul Breaker (F)
+7479	Moon Guardian Diana
+7480	Moon Rabbit Shiny
+7481	Moon Rabbit Sweety
+7482	Close Attendance
+7483	1) Moon Rabbits' locations: Talking Island Village, Town of Gludio, Town of Giran, Town of Aden, Town of Oren, Town of Rune, Ancient City Arcan.\n2) Moon Guardian Diana's location: Town of Giran
+7484	Required Skill
+7485	Recommended Skill
+7486	Selected Skill
+7487	Reset Skills
+7488	Only Skills that can be acquired
+7489	Preceding Skill Condition
+7490	Substitution Skill Condition
+7491	SP Consumption
+7492	Level-Up
+7493	Cannot be learned
+7494	Level-Up Available
+7495	Equipment to Use Skill
+7496	You've already learned that skill.
+7497	Acquired
+7498	Deleted
+7499	Available to Learn
+7500	Skill Level
+7501	Skill Casting Time
+7502	Skill Cooldown
+7503	MP Consumption
+7504	HP Consumption
+7505	Master/Student
+7506	Master/Student List
+7507	Relationship
+7508	Student
+7509	Graduate
+7510	Master
+7511	Students
+7512	Make into Master
+7513	Make into Apprentice
+7514	End Master-Student Relationship
+7515	Request Master
+7516	Request Student
+7517	Swords
+7518	Territory
+7519	Taxes Accumulated
+7520	Daily Reward
+7521	Today's Must-do List
+7522	Reward Name
+7523	Available
+7524	Not Available
+7525	Complete
+7526	Rewards Info
+7527	Conditions to Receive Reward
+7528	Time to Receive Reward
+7529	Receive Reward
+7530	See Today's Must-do List
+7531	Priority
+7532	Quest Notification
+7533	Regular
+7534	Required
+7535	Companion
+7536	Manage Companion
+7537	Total Summoned Time
+7538	Master Manager
+7539	Graduate
+7540	Party Room
+7541	Clan Room
+7542	Novice Room
+7543	Manage Room
+7544	Logged In Time
+7545	QT Logged In Time
+7546	Request Territory War
+7547	See Help
+7548	The Territory War starts at 20:00. If you are ready to fight, click the button below and you'll be teleported to your territory. You'll be supplied with items for the war as well.
+7549	Territory War Guide
+7550	Participate in Territory War
+7551	Request Mercenaries for Territory War
+7552	Complete Request for Mercenaries
+7553	QT Chat
+7554	Novice Room Login Duration Reward
+7555	Daily Login Duration Reward
+7556	Click the button below to go to your territory. Go and participate in the Territory War.
+7557	Change Points
+7558	Your Change Points have filled up. Click on Change to change right away.
+7559	Companion Name
+7560	Start QT Sound Chat Room
+7561	Change QT Sound Room
+7562	Receive Player Commendation Reward
+7563	You can purchase Soulshots in the General Store.
+7564	You can purchase Spiritshots in the General Store.
+7565	You can purchase Beast Soulshots from the Pet Manager.
+7566	You can purchase Beast Spiritshots from the Pet Manager.
+7567	76-99
+7568	Equipped
+7569	Core Time Daily Login Duration Reward
+7570	Recharge Duration for Timed Item
+7571	Add an item to recharge.
+7572	Time Left:
+7573	Recharge Duration
+7574	Time Left after Recharging
+7575	Rechare Duration
+7576	Exten Duration
+7577	Coupon Count
+7578	Exchange Gift with Coupon
+7579	The next slot is activated every day at 6:30 am.
+7580	Upgrade Equipment
+7581	Select Item to Upgrade
+7582	Item Info if Upgrade Succeeds
+7583	Status
+7584	Regular
+7585	Blessed
+7586	Item Type
+7587	You can upgrade Opus/Depaysement equipment to Dominant/Exponent equipment, Dominant/Exponent to Traum/Grandir, and Traum/Grandir to Lunaris/Radius.
+7588	The equipment to use this function cannot be found in the inventory.
+7589	You can upgrade a Depaysement weapon to Exponent, Exponent to Specter, and Specter to Amaranthine.
+7590	The weapon to use this function cannot be found in the inventory.
+7591	You can upgrade an Opus armor to Dominant, Dominant to Traum, and Traum to Radius.
+7592	The armor to use this function cannot be found in the inventory.
+7593	Attendance Stamp Coupon
+7594	Quest Window Options
+7595	See 3D Direction Indicator
+7596	Open Auto Map
+7597	Optimization Uniform On
+7598	Optimization Uniform Off
+7599	The instant teleport you are trying to use is a paid service.
+7600	1-99
+7601	Timed Soul Crystal Breaker
+7602	Add the item to remove the timed Soul Crystal from.
+7603	Remove Timed Soul Crystal
+7604	Basic XP
+7605	Vitality Additional XP
+7606	VIP Additional XP
+7607	XP Rune Additional XP
+7608	Player Commendation Additional XP
+7609	Receive Reward
+7610	Check Login
+7611	x 2
+7612	Dragon Coins
+7613	Use Dragon Coins
+7614	Dragon Coins Event
+7615	http://dragon coin event address
+7616	Event Manager
+7617	Show Outlines
+7618	Receive Gift
+7619	Summer Event
+7620	Available until the end of the event
+7621	Receive Summer Event Gifts
+7622	Receive 1 box every 30 minutes
+7623	Receive gifts when equipping item
+7624	Greater Safe Enchant
+7625	Do not see Alliance Commander's Orders
+7626	Space Bar
+7627	Notification Auto-registration
+7628	VT
+7629	Hostile Target
+7630	Friendly Target's Pet / Servitor
+7631	Hostile Target's Pet / Servitor
+7632	Delete Character
+7633	Hide all players' speech bubbles
+7634	Points Acquired when defeating Raid Bosses
+7635	This content will be opened later on.
+7636	ID Available
+7637	It shows a character's luck.\nIt affects item enchant/crafting/workshop success rates, spoil/plunder additional bonus, Fortune Pocket acquisition rate, and Soul Stealth.
+7638	It shows a character's authority.\nIt affects P. Atk., P. Def., Atk. Spd., M. Atk., M. Def., Casting Spd., and Max HP/MP/CP.

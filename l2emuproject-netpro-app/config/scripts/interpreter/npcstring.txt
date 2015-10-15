@@ -4,7 +4,7 @@
 4	none
 5	Withdraw the fee for the next time at $s1/$s2 $s3
 6	(<font color="FFAABB">$s1</font> Adena/$s2 Day(s))
-7	$s1<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=-270&reply=$s2000">Deactivate</a>$s3
+7	$s1<a action="bypass -h menu_select?ask=-270&reply=$s2">Deactivate</a>$s3
 8	Stage
 9	Stage $s1
 10	$s1%%
@@ -1709,9 +1709,11 @@
 26802	Traces of Evil (In Progress)
 26901	Invention Ambition
 26902	Invention Ambition (In Progress)
-27001	The One Who Ends Silence (Above Lv. 82)
-27002	The One Who Ends Silence (Above Lv. 82) (In Progress)
-27004	The One Who Ends Silence (Above Lv. 82)
+27001	The One Who Ends Silence (Lv. 82-85)
+27002	The One Who Ends Silence (Lv. 82-85) (In Progress)
+27003	The One Who Ends Silence (Lv. 82-85) (Done)
+27004	The One Who Ends Silence (Lv. 82-85)
+27011	Speak with Greymore
 27101	Proof of Valor
 27102	Proof of Valor (In Progress)
 27201	Wrath of Ancestors
@@ -1903,9 +1905,10 @@
 33601	Coins of Magic (Lv. 40-60)
 33602	Coins of Magic (Lv. 40-60) (In Progress)
 33604	Coins of Magic (Lv. 40-60)
-33701	Audience with the Land Dragon (Lv. 50-64)
-33702	Audience with the Land Dragon (Lv. 50-64) (In Progress)
-33704	Audience with the Land Dragon (Lv. 50-64)
+33701	Audience with the Land Dragon (Above Lv. 50)
+33702	Audience with the Land Dragon (Above Lv. 50) (In Progress)
+33703	Audience with the Land Dragon (Above Lv. 50) (Done)
+33704	Audience with the Land Dragon (Above Lv. 50)
 33801	Alligator Hunter
 33802	Alligator Hunter (In Progress)
 33804	Alligator Hunter
@@ -2567,9 +2570,12 @@
 61651	The power of constraint is getting weaker.  Your ritual has failed!
 61701	Gather the Flames (Lv. 74-80)
 61702	Gather the Flames (Lv. 74-80) (In Progress)
+61703	Gather the Flames (Lv. 74-80) (Done)
 61704	Gather the Flames (Lv. 74-80)
+61711	Speak with Vulcan
 61801	Into the Flames (Above Lv. 60)
 61802	Into the Flames (Above Lv. 60) (In Progress)
+61803	Into the Flames (Above Lv. 60) (Done)
 61804	Into the Flames (Above Lv. 60)
 61901	Relics of the Old Empire
 61902	Relics of the Old Empire (In Progress)
@@ -2634,26 +2640,33 @@
 64002	The Zero Hour (Above Lv. 81) (In Progress)
 64003	The Zero Hour (Above Lv. 81) (Done)
 64004	The Zero Hour (Above Lv. 81)
-64101	Attack Sailren! (Above Lv. 77)
-64102	Attack Sailren! (Above Lv. 77) (In Progress)
-64104	Attack Sailren! (Above Lv. 77)
+64101	Attack Sailren! (Lv. 77-85)
+64102	Attack Sailren! (Lv. 77-85) (In Progress)
+64104	Attack Sailren! (Lv. 77-85)
 64201	A Powerful Primeval Creature (Above Lv. 75)
 64202	A Powerful Primeval Creature (Above Lv. 75) (In Progress)
+64203	A Powerful Primeval Creature (Above Lv. 75) (Done)
 64204	A Powerful Primeval Creature (Above Lv. 75)
-64301	Rise and Fall of the Elroki Tribe (Above Lv. 75)
-64302	Rise and Fall of the Elroki Tribe (Above Lv. 75) (In Progress)
-64304	Rise and Fall of the Elroki Tribe (Above Lv. 75)
+64211	Speak with Dinn
+64301	Rise and Fall of the Elroki Tribe (Lv. 75-85)
+64302	Rise and Fall of the Elroki Tribe (Lv. 75-85) (In Progress)
+64303	Rise and Fall of the Elroki Tribe (Lv. 75-85) (Done)
+64304	Rise and Fall of the Elroki Tribe (Lv. 75-85)
+64311	Speak with the Magician
 64401	Grave Robber Annihilation
 64402	Grave Robber Annihilation (In Progress)
 64404	Grave Robber Annihilation
-64501	Ghosts of Batur (Above Lv. 80)
-64502	Ghosts of Batur (Above Lv. 80) (In Progress)
-64504	Ghosts of Batur (Above Lv. 80)
+64501	Ghosts of Batur (Lv. 80-85)
+64502	Ghosts of Batur (Lv. 80-85) (In Progress)
+64503	Ghosts of Batur (Lv. 80-85) (Done)
+64504	Ghosts of Batur (Lv. 80-85)
 64601	Signs of Revolt
 64602	Signs of Revolt (In Progress)
-64701	Influx of Machines (Above Lv. 70)
-64702	Influx of Machines (Above Lv. 70) (In Progress)
-64704	Influx of Machines (Above Lv. 70)
+64701	Influx of Machines (Lv. 70-80)
+64702	Influx of Machines (Lv. 70-80) (In Progress)
+64703	Influx of Machines (Lv. 70-80) (Done)
+64704	Influx of Machines (Lv. 70-80)
+64711	Speak with Gutenhagen
 64801	An Ice Merchant's Dream (Lv. 53-63)
 64802	An Ice Merchant's Dream (Lv. 53-63) (In Progress)
 64804	An Ice Merchant's Dream (Lv. 53-63)
@@ -2704,27 +2717,29 @@
 66323	<font color="fff802"> Moon Card: 3 </font>
 66324	<font color="fff802"> Moon Card: 4 </font>
 66325	<font color="fff802"> Moon Card: 5 </font>
-66501	Great Pirate Zaken's Treasure (Lv. 85~)
-66502	Great Pirate Zaken's Treasure (Lv. 85~) (In Progress)
-66504	Great Pirate Zaken's Treasure (Lv. 85~)
-66601	Leona Blackbird's Treasure (Lv. 85~)
-66602	Leona Blackbird's Treasure (Lv. 85~) (In Progress)
-66604	Leona Blackbird's Treasure (Lv. 85~)
-66701	Queen Beora's Legacy (Lv. 85~)
-66702	Queen Beora's Legacy (Lv. 85~) (In Progress)
-66704	Queen Beora's Legacy (Lv. 85~)
-66801	The Gladiator's Treasure (Lv. 85~)
-66802	The Gladiator's Treasure (Lv. 85~) (In Progress)
-66804	The Gladiator's Treasure (Lv. 85~)
-66901	High Priest's Treasure (Lv. 85~)
-66902	High Priest's Treasure (Lv. 85~) (In Progress)
-66904	High Priest's Treasure (Lv. 85~)
-67001	Turek Orc's Treasure (Lv. 85~)
-67002	Turek Orc's Treasure (Lv. 85~) (In Progress)
-67004	Turek Orc's Treasure (Lv. 85~)
-68801	Defeat the Elrokian Raiders! (Above Lv. 75)
-68802	Defeat the Elrokian Raiders! (Above Lv. 75) (In Progress)
-68804	Defeat the Elrokian Raiders! (Above Lv. 75)
+66501	Great Pirate Zaken's Treasure (Above Lv. 85)
+66502	Great Pirate Zaken's Treasure (Above Lv. 85) (In Progress)
+66504	Great Pirate Zaken's Treasure (Above Lv. 85)
+66601	Leona Blackbird's Treasure (Above Lv. 85)
+66602	Leona Blackbird's Treasure (Above Lv. 85) (In Progress)
+66604	Leona Blackbird's Treasure (Above Lv. 85)
+66701	Queen Beora's Legacy (Above Lv. 85)
+66702	Queen Beora's Legacy (Above Lv. 85) (In Progress)
+66704	Queen Beora's Legacy (Above Lv. 85)
+66801	The Gladiator's Treasure (Above Lv. 85)
+66802	The Gladiator's Treasure (Above Lv. 85) (In Progress)
+66804	The Gladiator's Treasure (Above Lv. 85)
+66901	High Priest's Treasure (Above Lv. 85)
+66902	High Priest's Treasure (Above Lv. 85) (In Progress)
+66904	High Priest's Treasure (Above Lv. 85)
+67001	Turek Orc's Treasure (Above Lv. 85)
+67002	Turek Orc's Treasure (Above Lv. 85) (In Progress)
+67004	Turek Orc's Treasure (Above Lv. 85)
+68801	Defeat the Elrokian Raiders! (Lv. 75-85)
+68802	Defeat the Elrokian Raiders! (Lv. 75-85) (In Progress)
+68803	Defeat the Elrokian Raiders! (Lv. 75-85) (Done)
+68804	Defeat the Elrokian Raiders! (Lv. 75-85)
+68811	Speak with Dinn
 69001	Jude's Request
 69002	Jude's Request (In Progress)
 69004	Jude's Request
@@ -3083,6 +3098,11 @@
 75970	Dark Crystal
 75971	Holy Crystal
 75972	Antharas' Symbol Dye
+76001	Block the Exit (Lv. 99-105)
+76002	Block the Exit (Lv. 99-105) (In Progress)
+76003	Block the Exit (Lv. 99-105) (Done)
+76004	Block the Exit (Lv. 99-105)
+76011	Speak with Curtiz
 76101	Assisting the Golden Ram Army (Lv. 65-70)
 76102	Assisting the Golden Ram Army (Lv. 65-70) (In Progress)
 76103	Assisting the Golden Ram Army (Lv. 65-70) (Complete)
@@ -3131,7 +3151,7 @@
 77502	Retrieving the Chaos Fragment (Above Lv. 99) (In Progress)
 77503	Retrieving the Chaos Fragment (Above Lv. 99) (Complete)
 77504	Retrieving the Chaos Fragment (Above Lv. 99)
-77521	You can obtain Chaos Fragments throughout all of Hellbound.
+77521	You can obtain Chaos Fragments in Beleth's Magic Circle or the Desert Quarry in Hellbound.
 77522	Well done! Your Chaos Fragments will be used to attract Beleth.
 77601	Slay Dark Lord Ekimus (Above Lv. 95)
 77602	Slay Dark Lord Ekimus (Above Lv. 95) (In Progress)
@@ -3139,31 +3159,42 @@
 77604	Slay Dark Lord Ekimus (Above Lv. 95)
 77611	Infiltrate the Hall of Suffering
 77612	Infiltrate the Heart of Infinity
+77613	Talk to Tepios
 77701	Slay Dark Lord Tiat (Lv. 93-97)
 77702	Slay Dark Lord Tiat (Lv. 93-97) (In Progress)
 77703	Slay Dark Lord Tiat (Lv. 93-97) (Complete)
 77704	Slay Dark Lord Tiat (Lv. 93-97)
 77711	Infiltrate the Seed of Destruction
-77801	Operation Roaring Flame (Above Lv. 99)
-77802	Operation Roaring Flame (Above Lv. 99) (In Progress)
-77803	Operation Roaring Flame (Above Lv. 99) (Complete)
-77804	Operation Roaring Flame (Above Lv. 99)
+77801	Operation Roaring Flame (Above Lv. 97)
+77802	Operation Roaring Flame (Above Lv. 97) (In Progress)
+77803	Operation Roaring Flame (Above Lv. 97) (Complete)
+77804	Operation Roaring Flame (Above Lv. 97)
 77901	Utilize the Darkness - Seed of Destruction (Lv. 93-97)
 77902	Utilize the Darkness - Seed of Destruction (Lv. 93-97) (In Progress)
 77903	Utilize the Darkness - Seed of Destruction (Lv. 93-97) (Complete)
 77904	Utilize the Darkness - Seed of Destruction (Lv. 93-97)
+77905	Talk to Allenos
 78001	Utilize the Darkness - Seed of Infinity (Above Lv. 95)
 78002	Utilize the Darkness - Seed of Infinity (Above Lv. 95) (In Progress)
 78003	Utilize the Darkness - Seed of Infinity (Above Lv. 95) (Complete)
 78004	Utilize the Darkness - Seed of Infinity (Above Lv. 95)
+78005	Talk to Tepios
 78101	Utilize the Darkness - Seed of Annihilation (Above Lv. 85)
 78102	Utilize the Darkness - Seed of Annihilation (Above Lv. 85) (In Progress)
 78103	Utilize the Darkness - Seed of Annihilation (Above Lv. 85) (Complete)
 78104	Utilize the Darkness - Seed of Annihilation (Above Lv. 85)
+78105	Talk to Klemis
 78201	Utilize the Darkness - Seed of Hellfire (Above Lv. 97)
 78202	Utilize the Darkness - Seed of Hellfire (Above Lv. 97) (In Progress)
 78203	Utilize the Darkness - Seed of Hellfire (Above Lv. 97) (Complete)
 78204	Utilize the Darkness - Seed of Hellfire (Above Lv. 97)
+78205	Talk to Sizrak
+78301	Vestige of the Magic Power (Above Lv. 99)
+78302	Vestige of the Magic Power (Above Lv. 99) (In Progress)
+78303	Vestige of the Magic Power (Above Lv. 99) (Done)
+78304	Vestige of the Magic Power (Above Lv. 99)
+78321	High-grade Fragments of Chaos can only be obtained in the Phantasmal Ridge.
+78322	Thank you! I will definitely beat Beleth!
 78401	The Quiet Killer (Lv. 65-70)
 78402	The Quiet Killer (Lv. 65-70) (In Progress)
 78403	The Quiet Killer (Lv. 65-70) (Done)
@@ -3184,63 +3215,63 @@
 78902	Waiting for Pa'agrio (Above Lv. 97) (In Progress)
 78903	Waiting for Pa'agrio (Above Lv. 97) (Done)
 78904	Waiting for Pa'agrio (Above Lv. 97)
-79001	Obtaining Ferin's Trust (Lv. 100~)
-79002	Obtaining Ferin's Trust (Lv. 100~) (In Progress)
-79003	Obtaining Ferin's Trust (Lv. 100~) (Done)
-79004	Obtaining Ferin's Trust (Lv. 100~)
-81201	First Stronghold's Barton (Lv. 101~)
-81202	First Stronghold's Barton (Lv. 101~) (In Progress)
-81203	First Stronghold's Barton (Lv. 101~) (Done)
-81204	First Stronghold's Barton (Lv. 101~)
+79001	Obtaining Ferin's Trust (Above Lv. 100)
+79002	Obtaining Ferin's Trust (Above Lv. 100) (In Progress)
+79003	Obtaining Ferin's Trust (Above Lv. 100) (Done)
+79004	Obtaining Ferin's Trust (Above Lv. 100)
+81201	First Stronghold's Barton (Above Lv. 101)
+81202	First Stronghold's Barton (Above Lv. 101) (In Progress)
+81203	First Stronghold's Barton (Above Lv. 101) (Done)
+81204	First Stronghold's Barton (Above Lv. 101)
 81205	Talk to Barton
-81301	Second Stronghold's Hayuk (Lv. 101~)
-81302	Second Stronghold's Hayuk (Lv. 101~) (In Progress)
-81303	Second Stronghold's Hayuk (Lv. 101~) (Done)
-81304	Second Stronghold's Hayuk (Lv. 101~)
+81301	Second Stronghold's Hayuk (Above Lv. 101)
+81302	Second Stronghold's Hayuk (Above Lv. 101) (In Progress)
+81303	Second Stronghold's Hayuk (Above Lv. 101) (Done)
+81304	Second Stronghold's Hayuk (Above Lv. 101)
 81305	Talk to Hayuk
-81401	Third Stronghold's Elise (Lv. 101~)
-81402	Third Stronghold's Elise (Lv. 101~) (In Progress)
-81403	Third Stronghold's Elise (Lv. 101~) (Done)
-81404	Third Stronghold's Elise (Lv. 101~)
+81401	Third Stronghold's Elise (Above Lv. 101)
+81402	Third Stronghold's Elise (Above Lv. 101) (In Progress)
+81403	Third Stronghold's Elise (Above Lv. 101) (Done)
+81404	Third Stronghold's Elise (Above Lv. 101)
 81405	Talk to Elise
-81501	Fourth Stronghold's Eliyah (Lv. 101~)
-81502	Fourth Stronghold's Eliyah (Lv. 101~) (In Progress)
-81503	Fourth Stronghold's Eliyah (Lv. 101~) (Done)
-81504	Fourth Stronghold's Eliyah (Lv. 101~)
+81501	Fourth Stronghold's Eliyah (Above Lv. 101)
+81502	Fourth Stronghold's Eliyah (Above Lv. 101) (In Progress)
+81503	Fourth Stronghold's Eliyah (Above Lv. 101) (Done)
+81504	Fourth Stronghold's Eliyah (Above Lv. 101)
 81505	Talk to Eliyah
-81601	Plans to Repair the Stronghold (Lv. 101~)
-81602	Plans to Repair the Stronghold (Lv. 101~) (In Progress)
-81603	Plans to Repair the Stronghold (Lv. 101~) (Done)
-81604	Plans to Repair the Stronghold (Lv. 101~)
+81601	Plans to Repair the Stronghold (Above Lv. 101)
+81602	Plans to Repair the Stronghold (Above Lv. 101) (In Progress)
+81603	Plans to Repair the Stronghold (Above Lv. 101) (Done)
+81604	Plans to Repair the Stronghold (Above Lv. 101)
 81605	Talk to Adolph
-81701	Black Atelia Research (Lv. 101~)
-81702	Black Atelia Research (Lv. 101~) (In Progress)
-81703	Black Atelia Research (Lv. 101~) (Done)
-81704	Black Atelia Research (Lv. 101~)
-82301	Disappeared Race, New Fairy (Lv. 100~)
-82302	Disappeared Race, New Fairy (Lv. 100~) (In Progress)
-82303	Disappeared Race, New Fairy (Lv. 100~) (Done)
-82304	Disappeared Race, New Fairy (Lv. 100~)
-82401	Raiding the Command Post (Lv. 101~)
-82402	Raiding the Command Post (Lv. 101~) (In Progress)
-82403	Raiding the Command Post (Lv. 101~) (Done)
-82404	Raiding the Command Post (Lv. 101~)
-82601	In Search of the Secret Weapon (Lv. 100~)
-82602	In Search of the Secret Weapon (Lv. 100~) (In Progress)
-82603	In Search of the Secret Weapon (Lv. 100~) (Done)
-82604	In Search of the Secret Weapon (Lv. 100~)
+81701	Black Atelia Research (Above Lv. 101)
+81702	Black Atelia Research (Above Lv. 101) (In Progress)
+81703	Black Atelia Research (Above Lv. 101) (Done)
+81704	Black Atelia Research (Above Lv. 101)
+82301	Disappeared Race, New Fairy (Above Lv. 100)
+82302	Disappeared Race, New Fairy (Above Lv. 100) (In Progress)
+82303	Disappeared Race, New Fairy (Above Lv. 100) (Done)
+82304	Disappeared Race, New Fairy (Above Lv. 100)
+82401	Raiding the Command Post (Above Lv. 101)
+82402	Raiding the Command Post (Above Lv. 101) (In Progress)
+82403	Raiding the Command Post (Above Lv. 101) (Done)
+82404	Raiding the Command Post (Above Lv. 101)
+82601	In Search of the Secret Weapon (Above Lv. 100)
+82602	In Search of the Secret Weapon (Above Lv. 100) (In Progress)
+82603	In Search of the Secret Weapon (Above Lv. 100) (Done)
+82604	In Search of the Secret Weapon (Above Lv. 100)
 82612	Talk to Neti
-82701	Einhasad's Order (Lv. 100~)
-82702	Einhasad's Order (Lv. 100~) (In Progress)
-82703	Einhasad's Order (Lv. 100~) (Done)
-82704	Einhasad's Order (Lv. 100~)
+82701	Einhasad's Order (Above Lv. 100)
+82702	Einhasad's Order (Above Lv. 100) (In Progress)
+82703	Einhasad's Order (Above Lv. 100) (Done)
+82704	Einhasad's Order (Above Lv. 100)
 82712	Talk to Sir Klaus Vasper
 82713	I can't believe Gludin was occupied. How will I face my ancestors in the afterlife?
 82714	Did you defeat them all? How did the mission go?
-82801	Eva's Blessing (Lv. 100~)
-82802	Eva's Blessing (Lv. 100~) (In Progress)
-82803	Eva's Blessing (Lv. 100~) (Done)
-82804	Eva's Blessing (Lv. 100~)
+82801	Eva's Blessing (Above Lv. 100)
+82802	Eva's Blessing (Above Lv. 100) (In Progress)
+82803	Eva's Blessing (Above Lv. 100) (Done)
+82804	Eva's Blessing (Above Lv. 100)
 82811	Rescuing Captives
 82812	Talk to Adonius
 82813	Ah, sorry. I got too excited since I was finally able to come out of that box.
@@ -3299,28 +3330,51 @@
 82882	Please be careful.
 82883	Are the others safe?
 82884	I'm in your debt. I'll never forget you.
-82901	Maphr's Salvation (Lv. 100~)
-82902	Maphr's Salvation (Lv. 100~) (In Progress)
-82903	Maphr's Salvation (Lv. 100~) (Done)
-82904	Maphr's Salvation (Lv. 100~)
+82901	Maphr's Salvation (Above Lv. 100)
+82902	Maphr's Salvation (Above Lv. 100) (In Progress)
+82903	Maphr's Salvation (Above Lv. 100) (Done)
+82904	Maphr's Salvation (Above Lv. 100)
 82912	Talk to Kluto
 82913	Phew. I'm finally out.
 82914	Did you find it? Please tell me some good news!
-83001	The Way of the Giant's Pawn (Lv. 100~)
-83002	The Way of the Giant's Pawn (Lv. 100~) (In Progress)
-83003	The Way of the Giant's Pawn (Lv. 100~) (Done)
-83004	The Way of the Giant's Pawn (Lv. 100~)
+83001	The Way of the Giant's Pawn (Above Lv. 100)
+83002	The Way of the Giant's Pawn (Above Lv. 100) (In Progress)
+83003	The Way of the Giant's Pawn (Above Lv. 100) (Done)
+83004	The Way of the Giant's Pawn (Above Lv. 100)
 83011	Defeat the Elite Soldiers of the Revolutionaries
 83012	Talk to Yeniche
 83013	Ugh. Can't believe I had to hide.
 83014	You've defeated them.
-83101	Sayha's Scheme (Lv. 100~)
-83102	Sayha's Scheme (Lv. 100~) (In Progress)
-83103	Sayha's Scheme (Lv. 100~) (Done)
-83104	Sayha's Scheme (Lv. 100~)
+83101	Sayha's Scheme (Above Lv. 100)
+83102	Sayha's Scheme (Above Lv. 100) (In Progress)
+83103	Sayha's Scheme (Above Lv. 100) (Done)
+83104	Sayha's Scheme (Above Lv. 100)
 83112	Talk to Yuyuria
 83113	There's no one, right?
 83114	Hopefully everything works out.
+83301	Devil's Treasure (Above Lv. 99)
+83302	Devil's Treasure (Above Lv. 99) (In Progress)
+83303	Devil's Treasure (Above Lv. 99) (Done)
+83304	Devil's Treasure (Above Lv. 99)
+83305	At a Crossroads
+83306	Destroy the Seal Device
+83307	Move Underground
+83308	Stop the Seal Archangel
+83309	Speak with Settlen
+83401	Against Dragonclaw (Above Lv. 99)
+83402	Against Dragonclaw (Above Lv. 99) (In Progress)
+83403	Against Dragonclaw (Above Lv. 99) (Done)
+83404	Against Dragonclaw (Above Lv. 99)
+83405	Defeat Kelbim
+83406	Speak with Settlen
+83407	Speak with Molly
+83501	Pitiable Melisa (Above Lv. 99)
+83502	Pitiable Melisa (Above Lv. 99) (In Progress)
+83503	Pitiable Melisa (Above Lv. 99) (Done)
+83504	Pitiable Melisa (Above Lv. 99)
+83505	Speak with Sayan
+83506	Look After Princess Melisa
+83507	Speak with Settlen
 85001	The Times Call for a New Hero - Aden
 85002	The Times Call for a New Hero - Aden (In Progress)
 85003	The Times Call for a New Hero - Aden (Done)
@@ -3441,6 +3495,35 @@
 90702	Dragon Trophy - Valakas (Above Lv. 84) (In Progress)
 90703	Dragon Trophy - Valakas (Above Lv. 84) (Done)
 90704	Dragon Trophy - Valakas (Above Lv. 84)
+91001	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95)
+91002	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95) (In Progress)
+91003	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95) (Done)
+91004	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95)
+91005	Defeat Monsters in the Seed of Annihilation
+91010	Speak with Blue
+91011	85
+91012	Seed of Annihilation
+91101	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96)
+91102	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96) (In Progress)
+91103	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96) (Done)
+91104	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96)
+91105	Defeat Monsters in the Guillotine Fortress
+91111	90
+91112	Guillotine Fortress
+91201	High-rank Request - Subjugation of the Seed of Hellfire (Above Lv. 97)
+91202	High-rank Request - Subjugation of the Seed of Hellfire (Above Lv. 97) (In Progress)
+91203	High-rank Request - Subjugation of the Seed of Hellfire (Above Lv. 97) (Done)
+91204	High-rank Request - Subjugation of the Seed of Hellfire (Above Lv. 97)
+91205	Defeat Monsters in the Seed of Hellfire
+91211	97
+91212	Seed of Hellfire
+91301	Top-rank Request - Subjugation of the Phantasmal Ridge (Above Lv. 99)
+91302	Top-rank Request - Subjugation of the Phantasmal Ridge (Above Lv. 99) (In Progress)
+91303	Top-rank Request - Subjugation of the Phantasmal Ridge (Above Lv. 99) (Done)
+91304	Top-rank Request - Subjugation of the Phantasmal Ridge (Above Lv. 99)
+91305	Defeat Monsters in the Phantasmal Ridge
+91311	99
+91312	Phantasmal Ridge
 94301	Filling the Energy of Destruction (Above Lv. 90)
 94302	Filling the Energy of Destruction (Above Lv. 90) (In Progress)
 94303	Filling the Energy of Destruction (Above Lv. 90) (Done)
@@ -3668,6 +3751,16 @@
 529601	Seven Signs, One Who Seeks the Power of the Seal (Above Lv. 81)
 529602	Seven Signs, One Who Seeks the Power of the Seal (Above Lv. 81) (In Progress)
 529603	Seven Signs, One Who Seeks the Power of the Seal (Above Lv. 81) (Done)
+529701	Grand Opening! Come to Our Tavern! (Above Lv. 99)
+529702	Grand Opening! Come to Our Tavern! (Above Lv. 99) (In Progress0
+529703	Grand Opening! Come to Our Tavern! (Above Lv. 99) (Done)
+529704	Grand Opening! Come to Our Tavern! (Above Lv. 99)
+529705	Speak with Lollia
+529706	Speak with Hanna
+529707	Speak with Mei
+529708	Speak with Brodien
+529709	Speak with Lupia
+529710	Speak with Lailly
 529901	How to Stand Up For Yourself
 529902	How to Stand Up For Yourself (In Progress)
 529903	How to Stand Up For Yourself (Done)
@@ -4326,10 +4419,10 @@
 544402	The Origin of Monsters (Above Lv. 99) (In Progress)
 544403	The Origin of Monsters (Above Lv. 99) (Complete)
 544404	The Origin of Monsters (Above Lv. 99)
-544501	An Impending Threat (Above Lv. 99)
-544502	An Impending Threat (Above Lv. 99) (In Progress)
-544503	An Impending Threat (Above Lv. 99) (Complete)
-544504	An Impending Threat (Above Lv. 99)
+544501	An Impending Threat (Above Lv. 97)
+544502	An Impending Threat (Above Lv. 97) (In Progress)
+544503	An Impending Threat (Above Lv. 97) (Complete)
+544504	An Impending Threat (Above Lv. 97)
 544511	Go to Tuska
 544512	Go to Bruener
 544601	Hit and Run (Above Lv. 99)
@@ -4411,6 +4504,10 @@
 546402	Be Prepared for Anything (Lv. 58-65) (In Progress)
 546403	Be Prepared for Anything (Lv. 58-65) (Complete)
 546404	Be Prepared for Anything (Lv. 58-65)
+546501	Soul Frost Sword (Above Lv. 40)
+546502	Soul Frost Sword (Above Lv. 40) (In Progress)
+546503	Soul Frost Sword (Above Lv. 40) (Done)
+546504	Soul Frost Sword (Above Lv. 40)
 547201	Winds of Fate: Encroaching Shadows (Above Lv. 85)
 547202	Winds of Fate: Encroaching Shadows (Above Lv. 85) (In Progress)
 547203	Winds of Fate: Encroaching Shadows (Above Lv. 85) (Done)
@@ -4450,6 +4547,11 @@
 550502	Jewel of Valakas (Above Lv. 84) (In Progress)
 550503	Jewel of Valakas (Above Lv. 84) (Done)
 550504	Jewel of Valakas (Above Lv. 84)
+550601	Diana's Request (Above Lv. 80)
+550602	Diana's Request (Above Lv. 80) (In Progress)
+550603	Diana's Request (Above Lv. 80) (Done)
+550604	Diana's Request (Above Lv. 80)
+550611	Talk to Diana
 570101	The Road to Destruction (Above Lv. 93)
 570102	The Road to Destruction (Above Lv. 93) (In Progress)
 570103	The Road to Destruction (Above Lv. 93) (Complete)
@@ -5087,86 +5189,86 @@
 582703	Step Up to Lead (Above Lv. 100) (Done)
 582704	Step Up to Lead (Above Lv. 100)
 582711	Party/Association Leader Bonus
-582901	In Search of the Cause (Lv. 100~)
-582902	In Search of the Cause (Lv. 100~) (In Progress)
-582903	In Search of the Cause (Lv. 100~) (Done)
-582904	In Search of the Cause (Lv. 100~)
+582901	In Search of the Cause (Above Lv. 100)
+582902	In Search of the Cause (Above Lv. 100) (In Progress)
+582903	In Search of the Cause (Above Lv. 100) (Done)
+582904	In Search of the Cause (Above Lv. 100)
 582911	Go to the Blackbird Campsite
 582912	Talk to Ferin
 582913	Talk to Cyphona
-583001	The Lost Garden of Spirits (Lv. 100~)
-583002	The Lost Garden of Spirits (Lv. 100~) (In Progress)
-583003	The Lost Garden of Spirits (Lv. 100~) (Done)
-583004	The Lost Garden of Spirits (Lv. 100~)
-583101	Unbelievable Sight (Lv. 100~)
-583102	Unbelievable Sight (Lv. 100~) (In Progress)
-583103	Unbelievable Sight (Lv. 100~) (Done)
-583104	Unbelievable Sight (Lv. 100~)
-583201	Energy of Sadness and Anger (Lv. 100~)
-583202	Energy of Sadness and Anger (Lv. 100~) (In Progress)
-583203	Energy of Sadness and Anger (Lv. 100~) (Done)
-583204	Energy of Sadness and Anger (Lv. 100~)
-583301	Put the Queen of Spirits to Sleep (Lv. 100~)
-583302	Put the Queen of Spirits to Sleep (Lv. 100~) (In Progress)
-583303	Put the Queen of Spirits to Sleep (Lv. 100~) (Done)
-583304	Put the Queen of Spirits to Sleep (Lv. 100~)
-583601	Disappeared Clan Member (Lv. 101~)
-583602	Disappeared Clan Member (Lv. 101~) (In Progress)
-583603	Disappeared Clan Member (Lv. 101~) (Done)
-583604	Disappeared Clan Member (Lv. 101~)
+583001	The Lost Garden of Spirits (Above Lv. 100)
+583002	The Lost Garden of Spirits (Above Lv. 100) (In Progress)
+583003	The Lost Garden of Spirits (Above Lv. 100) (Done)
+583004	The Lost Garden of Spirits (Above Lv. 100)
+583101	Unbelievable Sight (Above Lv. 100)
+583102	Unbelievable Sight (Above Lv. 100) (In Progress)
+583103	Unbelievable Sight (Above Lv. 100) (Done)
+583104	Unbelievable Sight (Above Lv. 100)
+583201	Energy of Sadness and Anger (Above Lv. 100)
+583202	Energy of Sadness and Anger (Above Lv. 100) (In Progress)
+583203	Energy of Sadness and Anger (Above Lv. 100) (Done)
+583204	Energy of Sadness and Anger (Above Lv. 100)
+583301	Put the Queen of Spirits to Sleep (Above Lv. 100)
+583302	Put the Queen of Spirits to Sleep (Above Lv. 100) (In Progress)
+583303	Put the Queen of Spirits to Sleep (Above Lv. 100) (Done)
+583304	Put the Queen of Spirits to Sleep (Above Lv. 100)
+583601	Disappeared Clan Member (Above Lv. 101)
+583602	Disappeared Clan Member (Above Lv. 101) (In Progress)
+583603	Disappeared Clan Member (Above Lv. 101) (Done)
+583604	Disappeared Clan Member (Above Lv. 101)
 583610	Talk to Elikia
-583701	Looking for the Blackbird Clan Member (Lv. 101~)
-583702	Looking for the Blackbird Clan Member (Lv. 101~) (In Progress)
-583703	Looking for the Blackbird Clan Member (Lv. 101~) (Done)
-583704	Looking for the Blackbird Clan Member (Lv. 101~)
+583701	Looking for the Blackbird Clan Member (Above Lv. 101)
+583702	Looking for the Blackbird Clan Member (Above Lv. 101) (In Progress)
+583703	Looking for the Blackbird Clan Member (Above Lv. 101) (Done)
+583704	Looking for the Blackbird Clan Member (Above Lv. 101)
 583710	Talk to Glenkinchie
-583801	The Reason For Not Being Able to Get Out (Lv. 101~)
-583802	The Reason For Not Being Able to Get Out (Lv. 101~) (In Progress)
-583803	The Reason For Not Being Able to Get Out (Lv. 101~) (Done)
-583804	The Reason For Not Being Able to Get Out (Lv. 101~)
+583801	The Reason For Not Being Able to Get Out (Above Lv. 101)
+583802	The Reason For Not Being Able to Get Out (Above Lv. 101) (In Progress)
+583803	The Reason For Not Being Able to Get Out (Above Lv. 101) (Done)
+583804	The Reason For Not Being Able to Get Out (Above Lv. 101)
 583810	Talk to Hurak
 583811	Defeat the Embryo
-583901	Blackbird's Name Value (Lv. 101~)
-583902	Blackbird's Name Value (Lv. 101~) (In Progress)
-583903	Blackbird's Name Value (Lv. 101~) (Done)
-583904	Blackbird's Name Value (Lv. 101~)
+583901	Blackbird's Name Value (Above Lv. 101)
+583902	Blackbird's Name Value (Above Lv. 101) (In Progress)
+583903	Blackbird's Name Value (Above Lv. 101) (Done)
+583904	Blackbird's Name Value (Above Lv. 101)
 583910	Talk to Laffian
 583911	Defeat the Embryo
-584001	Time to Recover (Lv. 101~)
-584002	Time to Recover (Lv. 101~) (In Progress)
-584003	Time to Recover (Lv. 101~) (Done)
-584004	Time to Recover (Lv. 101~)
+584001	Time to Recover (Above Lv. 101)
+584002	Time to Recover (Above Lv. 101) (In Progress)
+584003	Time to Recover (Above Lv. 101) (Done)
+584004	Time to Recover (Above Lv. 101)
 584010	Talk to Sherry
 584011	Defeat the Embryo
-584101	Deep Inside Atelia Fortress (Lv. 101~)
-584102	Deep Inside Atelia Fortress (Lv. 101~) (In Progress)
-584103	Deep Inside Atelia Fortress (Lv. 101~) (Done)
-584104	Deep Inside Atelia Fortress (Lv. 101~)
+584101	Deep Inside Atelia Fortress (Above Lv. 101)
+584102	Deep Inside Atelia Fortress (Above Lv. 101) (In Progress)
+584103	Deep Inside Atelia Fortress (Above Lv. 101) (Done)
+584104	Deep Inside Atelia Fortress (Above Lv. 101)
 584105	Talk to Kaysia
-584301	Anomaly in the Enchanted Valley (Lv. 100~)
-584302	Anomaly in the Enchanted Valley (Lv. 100~) (In Progress)
-584303	Anomaly in the Enchanted Valley (Lv. 100~) (Done)
-584304	Anomaly in the Enchanted Valley (Lv. 100~)
+584301	Anomaly in the Enchanted Valley (Above Lv. 100)
+584302	Anomaly in the Enchanted Valley (Above Lv. 100) (In Progress)
+584303	Anomaly in the Enchanted Valley (Above Lv. 100) (Done)
+584304	Anomaly in the Enchanted Valley (Above Lv. 100)
 584305	Talk to Mimyu
-584401	Bloody Battle - Seizing Supplies (Lv. 101~)
-584402	Bloody Battle - Seizing Supplies (Lv. 101~) (In Progress)
-584403	Bloody Battle - Seizing Supplies (Lv. 101~) (Done)
-584404	Bloody Battle - Seizing Supplies (Lv. 101~)
+584401	Bloody Battle - Seizing Supplies (Above Lv. 101)
+584402	Bloody Battle - Seizing Supplies (Above Lv. 101) (In Progress)
+584403	Bloody Battle - Seizing Supplies (Above Lv. 101) (Done)
+584404	Bloody Battle - Seizing Supplies (Above Lv. 101)
 584405	Supply Guards
-584501	Bloody Battle - Disturbance (Lv. 101~)
-584502	Bloody Battle - Disturbance (Lv. 101~) (In Progress)
-584503	Bloody Battle - Disturbance (Lv. 101~) (Done)
-584504	Bloody Battle - Disturbance (Lv. 101~)
+584501	Bloody Battle - Rescue the Smiths (Lv. 101 and Above)
+584502	Bloody Battle - Rescue the Smiths (Lv. 101 and Above) (In Progress)
+584503	Bloody Battle - Rescue the Smiths (Lv. 101 and Above) (Done)
+584504	Bloody Battle - Rescue the Smiths (Lv. 101 and Above)
 584505	Rescuing Karrod
 584506	Rescuing Aios
-584507	Rescuing Bronk
+584507	You dare steal our supplies?!
 584508	Rescuing Brunon
 584509	Rescuing Sumari
 584510	Rescuing Lansia
-584601	Bloody Battle - Meeting the Commander (Lv. 101~)
-584602	Bloody Battle - Meeting the Commander (Lv. 101~) (In Progress)
-584603	Bloody Battle - Meeting the Commander (Lv. 101~) (Done)
-584604	Bloody Battle - Meeting the Commander (Lv. 101~)
+584601	Bloody Battle - Meeting the Commander (Above Lv. 101)
+584602	Bloody Battle - Meeting the Commander (Above Lv. 101) (In Progress)
+584603	Bloody Battle - Meeting the Commander (Above Lv. 101) (Done)
+584604	Bloody Battle - Meeting the Commander (Above Lv. 101)
 584605	Defeat Burnstein
 584606	Talk to Devianne
 1000001	A non-permitted target has been discovered.
@@ -5780,7 +5882,7 @@
 1010096	Fellmere Harvesting Grounds (Lv. 17)
 1010097	Ruins of Agony (Lv. 25)
 1010098	Abandoned Camp (Lv. 21)
-1010099	Red Rock Ridge
+1010099	Red Rock Ridge (Lv. 30)
 1010100	Langk Lizardmen Dwellings (Lv. 16)
 1010101	Ruins of Despair (Lv. 30)
 1010102	Windawood Manor (Lv. 22)
@@ -6255,6 +6357,8 @@
 1010742	Whispering Woods
 1010743	Blackbird Campsite (Lv.100)
 1010744	Enchanted Valley (Lv. 100)
+1010745	Gludio Airship Wharf
+1010746	Underground Gainak
 1029350	What took so long? I waited for ever.
 1029351	I must ask Librarian Sophia about the book.
 1029352	This library... It's huge but there aren't many useful books, right?
@@ -6317,7 +6421,7 @@
 1032339	Do you see a scroll icon? Go that location.
 1032340	To your right the Administrative district and to the left is the Museum.
 1032341	When you use the teleporter, you can go to the Ruins of Ye Sagira.
-1032342	Have you been to Ruins of Ye Sagira?ﾠ You have to go at least once.
+1032342	Have you been to Ruins of Ye Sagira?  You have to go at least once.
 1032343	Training Ground is located straight ahead.
 1032344	While training in the Training Grounds, it becomes progressively difficult.
 1032345	Training Grounds access? You need to speak with Pantheon in the Museum.
@@ -6343,7 +6447,7 @@
 1034103	My summons are not afraid of Shilen's monsters.
 1034104	What do I feel when I kill Shilen's monsters? Recoil.
 1034105	Creatures Resurrected - Defend Yourself
-1034106	Creatures Resurrected - ﾠFirst Wave
+1034106	Creatures Resurrected -  First Wave
 1034107	Creatures Resurrected - Second Wave
 1034108	Creatures Resurrected - Third Wave
 1034109	Creatures Resurrected - Fourth Wave
@@ -8761,7 +8865,7 @@
 1801321	Vanguard of Aden! We have returned.
 1801322	Defeat all the monsters!
 1801323	You can no longer live here. Have a taste of the dimensional poison.
-1801324	ﾠNot bad for a bunch of humans. I'm leaving!
+1801324	 Not bad for a bunch of humans. I'm leaving!
 1801325	The ritual is complete. Now, I will show you hell.
 1801326	You puny insects don't know your place. You cannot stop me.
 1801327	No... How could this be... I can't go back to Nihil like this...
@@ -10268,6 +10372,264 @@
 1803015	Don't even think about leaving this place alive.
 1803016	Unit 7 Commander
 1803017	Unit 7 Elite Soldier
+1803018	The teleport gate to the 2nd floor has been activated.
+1803019	It looks like Captain Adolph wants to talk to the Party Leader. Go talk to Adolph.
+1803020	The teleport gate to the 3rd floor has been activated.
+1803021	You've successfully attacked the Command Post and defeated Commander Burnstein.
+1803022	Cannot teleport in the Ceremony of Chaos arena.
+1803023	Cannot teleport while the Olympiad is in progress.
+1803024	The soul will disappear in 30 seconds.
+1803025	The soul will disappear in 20 seconds.
+1803026	The soul will disappear in 10 seconds.
+1803027	The soul will disappear in 5 seconds.
+1803028	The soul will disappear in 4 seconds.
+1803029	The soul will disappear in 3 seconds.
+1803030	The soul will disappear in 2 seconds.
+1803031	The soul will disappear in 1 second.
+1803032	The soul has disappeared.
+1803033	The Soul Crystal has absorbed the soul successfully.
+1803034	The Soul Crystal was unable to absorb the soul.
+1803035	The Soul Crystal has caused a resonance so the level has dropped.
+1803036	Cannot use the Soul Crystal on the target.
+1803037	I've been waiting for you.
+1803038	The Dragonclaw Clan has lost the faith of the people and is hated by everyone.
+1803039	Molly is in danger. Please help her!
+1803040	I will not hand over the Altar of Earth!
+1803041	I'm the shield of the Dragonclaw clan!
+1803042	I failed to live up to my role as the shield of the clan..
+1803043	$s1, you've received the Altar of Earth Sealing Stone.
+1803044	Use the Altar of Earth Sealing Stone to seal the Altar of Earth!
+1803045	The Altar of Earth has been sealed! Now go on to the Altar of Wind!
+1803046	You've successfully sealed the Altar of Earth!
+1803047	Stop the infiltrators!
+1803048	You rebels! I will wipe out all of you!
+1803049	We are being pushed back! Request aid!
+1803050	Let's go! Against the Dragonclaw!
+1803051	We'll take care of this. You go defeat Kelbim!
+1803052	Stupid Haren! He was boasting that he would protect the Altar of Earth..
+1803053	Remove that dirty hand!
+1803054	I give up! Please don't kill me..
+1803055	$s1, you've received the Altar of Wind Sealing Stone.
+1803056	Use the Altar of Wind Sealing Stone to seal the Altar of Wind!
+1803057	The Altar of Wind has been sealed! Now go on to the Dungeon!
+1803058	You've successfully sealed the Altar of Wind!
+1803059	The door to the Dungeon has been opened!
+1803060	My blade is waiting for your blood.
+1803061	You rebels! This is as far as you'll get!
+1803062	You call that an attack?
+1803063	Come out! Hurricane! Cyclone!
+1803064	I can't believe I lost to the likes of you..
+1803065	Krrrrrr!
+1803066	Please let me out!
+1803067	The door to Kelbim's throne has opened!
+1803068	I knew you would come.
+1803069	A lot of people are suffering because of the Dragonclaw and Kelbim!
+1803070	Now is time to burn the Dragonclaw's flag!
+1803071	Kelbim! Punish that guy!
+1803072	Kelbim is on the other side.
+1803073	Please defeat Kelbim no matter what!
+1803074	The door to Kelbim's throne has opened!
+1803075	Protect Kelbim!
+1803076	For Dragonclaw!
+1803077	Punitive creatures! I will make you pay for your rebellion!
+1803078	I'm the master of Dragonclaw!
+1803079	I don't lose to anyone!
+1803080	How did I lose..
+1803081	Are you the leader? I'm so glad you are helping out.
+1803082	I almost died a few times excavating.
+1803083	Since we know of this great treasure, I'll make sure to reward you if we find it.
+1803084	I'm glad you are on my side! I'm excited!
+1803085	Watch out. There are a lot of monsters around here.
+1803086	Are you the ones who will be helping out? Welcome. I've been waiting for you.
+1803087	I had a hard time working by myself. I'm glad you are here now.
+1803088	Don't worry about the reward! We'll find that treasure.
+1803089	I'm glad powerful people like you guys are helping me.
+1803090	Wow! Watch out! Monsters might come out any minute now.
+1803091	Hello! I'm Deton, an archaeologist of the Kingdom of Aden.
+1803092	I don't know what I would've done without you here. Thanks for helping.
+1803093	I'm sure it will be a great treasure, so I'll make sure to reward you accordingly.
+1803094	Glad to have powerful people like you on my side.
+1803095	Watch out! There are monsters everywhere.
+1803096	Oh? This is a Flame Flower! Stand back. The Stakatos will come now.
+1803097	The Flame Flowers can only be saved with the Radiant Heal skill.
+1803098	Be careful. The flower will die if you hit it with another skill.
+1803099	Phew.. Those Stakatos.. They shouldn't come out for a while now.
+1803100	A Flame Flower! Can you believe it? It's a very magical flower.
+1803101	To save a Flame Flower.. Yes, you need to use Radiant Heal!
+1803102	If you try to use any other skill, the flower will die, so be careful.
+1803103	Those nasty Stakatos.. Anyway, it should be fine now.
+1803104	This!! I'm sure I've seen this before.. Yes.. That means, the Stakatos!!
+1803105	To save the Flame Flower you need Heal.. Wait! Radiant Heal! Yes, I'm sure!
+1803106	Well, there's not much difference, right? Or is there..?
+1803107	Anyway, the Stakatos will not come out anymore. Why? Well..
+1803108	Now, on to the next!
+1803109	Hmm? What is this? I don't think I've been around here before.. This eerie feeling..
+1803110	Wah! Save me! Saaaave me! I'll give you a thousand Adena!!!
+1803111	Let's keep going.
+1803112	What's this place? I've never seen this before.. Hmm..
+1803113	Wah! Save me! Please save me!
+1803114	Let's have some fun.
+1803115	Let's see.. I haven't been here before. Have I? I hope we don't run into weird creatures..
+1803116	Eek! Save this Dwarf! I'm just an archaeologist! I'll give you everything I have!!
+1803117	Eeeek! Great! I can't believe you defeated this giant scorpion!
+1803118	Well, let's keep going. Which way do you want to go? Left or right?
+1803119	I have a bad feeling about both, but I'll trust you guys.
+1803120	Oh? You truly are amazing. You actually defeated those nasty guys!
+1803121	The path splits now. Well, let's go! Which way?
+1803122	Both look pretty bad, but we must keep going!
+1803123	Eek! Don't bring it here. Anyway, you really are strong.
+1803124	Let's hurry. Which way? Test your luck at this crossroads.
+1803125	I'm worried either way, but I'll trust you guys.
+1803126	This way? Well, I trust you. I'll be safe, right?
+1803127	What! Look, this place isn't safe either!
+1803128	Eek! What..? Wait! I'll be waiting over there..
+1803129	You are decided? Well, let's hurry!
+1803130	Wahhh! It's dangerous! Watch out!
+1803131	Wait! I mean, good job. I'll just be waiting over there..
+1803132	This way? I see. Okay. I just need to follow you, right?
+1803133	Wahhh! This way was dangerous too! Save me!
+1803134	Huh? I think I saw something. I'll be right back.
+1803135	This way feels much safer. Good choice. The air feels different.
+1803136	Wahhh! What are these monsters! How old do you have be to get that big!
+1803137	Please get rid of these monsters. I'm sure it will be easy for you. I.. Have something to take care of..
+1803138	Okay, it does look better than the other way. The air feels better already.
+1803139	Again!! Please do something about those monsters! Where do they keep coming from?
+1803140	I'll leave those monsters to you. I'll go check out something over there. It's very important.
+1803141	Well, does it matter which way we go? I hope it's better than the other one at least.. Something smells good here.
+1803142	Wahh! Why do these monsters keep coming out? I should hunt them all and make some drinks.. Wah! Don't come near me!
+1803143	Do something about these monsters! Show me your strength! I'll be waiting over there..
+1803144	Oh! I've never been this far. This ancient language.. Isn't it beautiful?
+1803145	It says.. "The Sealed Tablet and the Sealing Device are one body.. The Flame Flowers will be your blessing.."
+1803146	The seal is coming apart! Just a little more!
+1803147	Yes! The seal is gone. Well, you go on ahead. I'll make some rubbed copies first.
+1803148	This.. Looks like instructions on how to remove the seal..
+1803149	Sealed Tablet.. Attack.. The Flame Flowers.. Oh! Plant the Flame Flowers around the tablet and attack it! Now!
+1803150	Yes! The seal is coming apart. Come on, let's do this!
+1803151	The seal is gone! Let's go now! I'll look around once more. You go on ahead!
+1803152	Hmm.. Can you read this? I should've paid more attention in the ancient language class..
+1803153	Well, we should try to destroy the tablet first. Something should happen then, right?
+1803154	Oh, yes! Look at that. The seal is breaking! Just a little more.
+1803155	Wow! The seal is gone! Ohhh! That's a pretty big hole. Well, grab on to my hand, and you may go in first.
+1803156	What's going on? Everyone's fighting very hard for me, I see.
+1803157	Huh? You actually thought we were going to share the treasures? Hah! Nice try.
+1803158	The powerful Tauti! I finally got it! It's mine!! Kahaha.
+1803159	This power.. I can feel it! Hm? Huh? What's this? Gwahhh!
+1803160	You are all fighting so hard for me!
+1803161	You fools! These treasures are mine! I was just using you all. Kuhaha.
+1803162	Tauti! The weapon that grants great power! This is mine now! Kahahaha!
+1803163	Kuh! What's this? I thought I would get more power..! Gwahhh!
+1803164	Nice, nice. I see that everyone's fighting hard for me.
+1803165	I can't believe you actually fell for that. I was just using you. Kahaha.
+1803166	Tauti! So this is Tauti. Give me your power! You are mine! Kahahaha!
+1803167	Kahahaha! I can feel the power. Yes.. This..? What.. This is not it! Gwah!
+1803168	Phew! It's hot in here. I've been here for over twenty years, but this is way too hot.
+1803169	Have I told you? My brothers' names are Ceton and Eton. Hahaha
+1803170	I used to be lean when I was young, but I guess this belly fat comes with age. You could say this is attractive in its own way.
+1803171	I heard that Tyrr Warrior Dwarves can't attack long range when jumping. Is that true? Just wondering..
+1803172	People used to think I was very old when I was a kid, but nowadays, everyone says I look younger than I am! Hahaha.
+1803173	You don't belong here!
+1803174	An evil thing has been sealed here. Do not get any closer.
+1803175	Are you not afraid of the gods' wrath?
+1803176	Do not lust after what's sealed here. It is not yours.
+1803177	I will forgive you if you retreat now.
+1803178	How stupid. Ignorance is a sin. I'll let you go this one time. Go!
+1803179	I cannot let those who were not able to win against themselves advance any further.
+1803180	Gods. Please show your powers to those who seek the devil.
+1803181	Don't even dream about it! Those who are not qualified won't even get a chance!
+1803182	Tauti is a cursed weapon. It must not be awakened.
+1803183	Why don't you believe me!
+1803184	Why are you seeking the devil's weapon? Stop!
+1803185	Do not let things get worse than this.
+1803186	Tauti must remain sealed here.
+1803187	The seal must not be undone.
+1803188	We have infiltrators. Protect the princess!
+1803189	How dare you come in to the princess' room!
+1803190	They came all the way here? We must stop them!
+1803191	Die, you monster!
+1803192	Guhhhh.
+1803193	Are you ready to hear the story?
+1803194	I'll start once everyone is seated.
+1803195	Heh! What should I talk about next? Hmm..
+1803196	Well, which story do you want to hear?
+1803197	I wonder what kind of stories are popular with the customers..
+1803198	Sit down first. I can't start otherwise.
+1803199	Should I start? Let's see if we're ready..
+1803200	I'll be starting now, so take a seat.
+1803201	Which story do you want to hear?
+1803202	I have many stories to tell.
+1803203	Please sit down so that I can start.
+1803204	Well! Whose story should I tell you today?
+1803205	Hurry! Sit down!
+1803206	Whose story do you want to hear?
+1803207	You have to be ready.
+1803208	Ice Knights got in. Defeat the Ice Knights.
+1803209	Ice Knights have appeared. Defeat the Ice Knights.
+1803210	Ifrit!!
+1803211	Arimanes!!
+1803212	Look around. The Flame Flowers have bloomed.
+1803213	A crossroads? I have a bad feeling about this.
+1803214	Left or right? Which way?
+1803215	Look at that Flame Golem. It's terrifying.
+1803216	A bunch of Flame Scarabs appeared. Watch out!
+1803217	Wow, a Sealed Tablet! It says to plant the Flame Flowers around and to attack the tablet.
+1803218	Let's go down this way. I'll be right behind you.
+1803219	There's no future for those who cannot win against themselves.
+1803220	Look at yourself and face yourself.
+1803221	A battle against yourself is more terrifying than death itself.
+1803222	The Mystic Tavern is open now.
+1803223	There's a tavern where you can listen to wonderful stories.
+1803224	Are you looking for the tavern? It's this way.
+1803225	Come on! Chances like these don't come by often.
+1803226	Adventurer! The tavern is this way.
+1803227	Sigh.. Busy as always.
+1803228	How long until we can tell stories to the customers too?
+1803229	I wonder what Hanna will be making today..
+1803230	Hey, you! We don't want drunk customers here.
+1803231	What do you think about our tavern? Isn't it great?
+1803232	You can place your order over there.
+1803233	Just relax and have a drink.
+1803234	Hanna's cooking is the best.
+1803235	You are a regular, right? Thanks for coming again.
+1803236	Here, you can forget about your responsibilities for a while.
+1803237	You can hear the story over there.
+1803238	Oh! It's a Flame Flower that is famous for its miracles!
+1803239	It's a Flame Flower. These should come in handy later on.
+1803240	A crossroads.. I don't know which way we should take.
+1803241	Well, how about you spit on your hand and see..
+1803242	It's a Flame Golem! Watch out!
+1803243	Ahhhh! A Flame Golem! Please help me!
+1803244	That Flame Scarab.. It's terrifying!
+1803245	Please get rid of all the Flame Scarabs!
+1803246	A Sealed Tablet, huh..
+1803247	It looks like something will happen if we attack the Sealed Tablet.
+1803248	Who would have thought there would be a secret region like this! Please! After you.
+1803249	I'll follow you soon. Go on ahead.
+1803250	Thank you for helping. You are the heroes of this era.
+1803251	Moooo, mooo.
+1803252	Baa, baa.
+1803253	Urggghh
+1803254	Urgh
+1803255	What your step.
+1803256	Lupia introduced me here, so that's how I started working here.
+1803257	Is there anything to clean up?
+1803258	I wonder if there's anyone coming from that side.
+1803259	I think we can wait for some more customers.
+1803260	An intense cold is coming. Look around.
+1803261	Use your mouse to move more smoothly.
+1803262	$s1, you obtained a Flame Flower.
+1803263	$s1 obtained a Flame Flower. Amazing!
+1803264	$s1! Look inside your bag. You obtained a Flame Flower.
+1803265	I will go back in 10 minutes. If you have anything to tell me, please hurry.
+1803266	I will go back in 5 minutes. If you have anything to tell me, please hurry.
+1803267	I will go back in 3 minutes. If you have anything to tell me, please hurry.
+1803268	I will go back in 2 minutes. If you have anything to tell me, please hurry.
+1803269	I will go back in 1 minute. If you have anything to tell me, please hurry.
+1803270	I will go back in 30 seconds. If you have anything to tell me, please hurry.
+1803271	I will go back in 20 seconds. If you have anything to tell me, please hurry.
+1803272	I will go back in 10 seconds. If you have anything to tell me, please hurry.
+1803273	If you want to listen to a story, come to me.
+1803274	Ready to listen to a story? Come now.
+1803275	If the story is still in progress, I can tell it again.
 1810363	You are too far from the corpse.
 1810364	Grudge of Ye Sagira victims have been relieved with your tears.
 1811000	Fighter
@@ -11425,7 +11787,7 @@
 10338006	Free me from this binding of light!
 10338007	Destroy the Ghost of Harnak… this corrupted creature.
 10338008	Free me... And I promise you the power of Giants!
-10338009	Fight for me...ﾠ The true leader of all the races!
+10338009	Fight for me...  The true leader of all the races!
 10338010	You may use Scroll of Afterlife from Hermuncus to Awaken.
 10338011	An intruder… interesting.
 10338012	Prove your worth…
@@ -11438,13 +11800,13 @@
 10338019	I want to hear you cry.
 10338020	Mortal!
 10338021	Lets see what you are made of!
-10338022	You will not free Hermuncus.ﾠ
+10338022	You will not free Hermuncus. 
 10338023	You'll have to kill us first!
 10338024	Trying to free Hermuncus…
 10338025	Repent and your death will be quick!
-10338026	You will never break the seal!ﾠ
+10338026	You will never break the seal! 
 10338027	Die traitor!
-10338028	Only the light may pass.ﾠ
+10338028	Only the light may pass. 
 10338029	You are not light. You may not pass.
 10338030	Prove your worth…
 10338031	Are you strong or weak... Of the Light or darkness…
@@ -11452,7 +11814,7 @@
 10338033	Warrior. I've finally got out of seal of light thanks to you.
 10338034	Is strength to defend the world what you wanted?
 10338035	I will awaken you...
-10338036	Receive this power form the ancient Giant.ﾠ
+10338036	Receive this power form the ancient Giant. 
 10338037	Use this new power when the time is right.
 10363001	Resurrected Soul
 11021701	We saw people use Sayune other than the Giant's Minions.

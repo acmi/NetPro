@@ -1,4 +1,4 @@
-0	/none
+0	/loc
 1	/GM
 3	/gmlist
 4	/sit
@@ -106,7 +106,7 @@
 106	/petmove
 107	/servitormove
 108	/unsummon
-109	/Olympiad Score
+109	/olympiadstat
 110	/graduatelist
 111	/duel
 112	/withdraw

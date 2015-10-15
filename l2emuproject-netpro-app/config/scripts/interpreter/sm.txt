@@ -78,7 +78,7 @@
 77	You cannot create another character. Please delete an existing character and try again.
 78	When you delete a character, any items in his/her possession will also be deleted. Do you really wish to delete $s1?
 79	This name already exists.
-80	Your title cannot exceed 16 characters in length.ﾠ Please try again.
+80	Your title cannot exceed 16 characters in length.  Please try again.
 81	Please select your race.
 82	Please select your occupation.
 83	Please select your gender.
@@ -92,7 +92,7 @@
 91	Please select your hairstyle.
 92	$s1 has worn off.
 93	You do not have enough SP for this.
-94	Copyright ﾩ NCSOFT Corporation. All Rights Reserved.
+94	Copyright © NCSOFT Corporation. All Rights Reserved.
 95	You have earned $s1 XP and $s2 SP.
 96	Your level has increased!
 97	This item cannot be moved.
@@ -424,23 +424,23 @@
 423	You have cancelled the enchanting process.
 424	Does not fit strengthening conditions of the scroll.
 425	Your Create Item level is too low to register this recipe.
-426	Your account has been reported for not paying for your PC Caf￩ usage.
+426	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 427	Please contact us.
 428	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-429	Your account has been restricted in accordance with our terms of service due to your fraudulent report of account theft. Reporting account theft through an account theft report may cause harm to other players. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-430	Your account has been restricted in accordance with our terms of service as you failed to verify your identity within a given time after an account theft report. You may  undo the restriction by visiting the NCSOFT website (https://support.lineage2.com) and going through the identity verification process in the account theft report. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+429	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+430	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 431	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-432	Your account has been restricted in accordance with our terms of service due to your selling, or attempting to sell, in-game goods or characters (account) for cash/real goods/goods from  another game. Your account is under suspension for 7 days since the date of exposure as decreed by the EULA, Section 3, Article 14. The account restriction will automatically be lifted after 7 days. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-433	Your account has been restricted in accordance with our terms of service due to your selling, or attempting to sell, in-game goods or characters (account) for cash/real goods/goods from another game. Your account is restricted as decreed by the EULA, Section 3, Article 14. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-434	Your account has been restricted in accordance with our terms of service due to misconduct or fraud. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-435	Your account has been restricted due to misconduct. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-436	Your account has been restricted due to your abuse of system weaknesses or bugs. Abusing bugs can cause grievous system errors or destroy the game balance. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-437	Your account has been restricted due to your use of illegal programs. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-438	Your account has been restricted in accordance with our terms of service due to your impersonation of an official Game Master or staff member. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+432	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+433	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+434	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+435	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+436	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+437	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+438	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 439	In accordance with the company's User Agreement and Operational Policy this account has been suspended at the account holder's request.  In order to restore the account, please  visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-440	Your account has been restricted at your parent/guardian's request as you are registered as a minor. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-441	Your account has been restricted in accordance with our terms of service due to your fraudulent use of another person's identity. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-442	Your account has been restricted in accordance with our terms of service due to your fraudulent transactions under another person's identity. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+440	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+441	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+442	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 443	You cannot use the game services as your identity has not been verified. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).Service Center</font>.
 444	This account and all related accounts have been restricted as you have requested a membership withdrawal.
 445	(Reference Number Regarding Membership Withdrawal Request: $s1)
@@ -448,9 +448,9 @@
 447	.
 448	There is a system error. Please try logging in again later.
 449	The username and password do not match.
-450	Please check your account information and try logging in again.
+450	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 451	The password you have entered is incorrect.
-452	Please check your account information and try logging in again.
+452	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 453	Incorrect account information.
 454	For more details, please contact our customer service center at https://support.lineage2.com.
 455	Account is already in use.
@@ -694,7 +694,7 @@
 693	The package that arrived is in another warehouse.
 694	No packages have arrived.
 695	You cannot set the name of the pet.
-696	Your account is restricted for not paying your PC room usage fees.
+696	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 697	The item enchant value is strange.
 698	The price is different than the same item on the sales list.
 699	Currently not purchasing.
@@ -1077,7 +1077,7 @@
 1076	The game cannot be terminated at this time.
 1077	A GameGuard Execution error has occurred.  Please send the *.erl file(s) located in the GameGuard folder to game@inca.co.kr.
 1078	When a user's keyboard input exceeds a certain cumulative score a chat ban will be applied. This is done to discourage spamming. Please avoid posting the same message multiple times during a short period.
-1079	ﾠThe target is currently banned from chatting.
+1079	 The target is currently banned from chatting.
 1080	Being permanent, are you sure you wish to use the facelift potion - Type A?
 1081	Being permanent, are you sure you wish to use the Dye Potion - Type A?
 1082	Do you wish to use the hair style change potion - Type A? It is permanent.
@@ -1185,7 +1185,7 @@
 1184	This is a period when server statistics are calculated.
 1185	days left until deletion.
 1186	To create a new account, please visit Lineage II's Support Website (https://support.lineage2.com).
-1187	If you've forgotten your account information or password, please visit Lineage II's Support Website (https://support.lineage2.com).
+1187	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 1188	Your selected target can no longer receive a recommendation.
 1189	The temporary alliance of the Castle Attacker team is in effect. It will be dissolved when the Castle Lord is replaced.
 1190	The temporary alliance of the Castle Attacker team has been dissolved.
@@ -1305,7 +1305,7 @@
 1304	The influence of the Seal of Strife has caused all defensive registrations to be canceled.
 1305	Seal Stones may only be transferred during the quest event period.
 1306	You are no longer trying on equipment.
-1307	Only during the seal validation period may you settle your account.
+1307	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 1308	Congratulations - You've completed a class transfer!
 1309	To use this option, you must have the latest version of Windows Live Messenger installed on your computer.
 1310	For full functionality, the latest version of Windows Live Messenger must be installed on your computer.
@@ -1794,7 +1794,7 @@
 1793	$c1 has been selected as the captain of $s2.
 1794	The Knights of $s1 have been created.
 1795	The Royal Guard of $s1 have been created.
-1796	Please verify your identity to confirm your ownership of your account at the NCsoft website.  For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
+1796	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 1797	$c1 has been promoted to $s2.
 1798	Clan Leader privileges have been transferred to $c1.
 1799	We are searching for BOT users. Please try again later.
@@ -1802,11 +1802,11 @@
 1801	The attempt to sell has failed.
 1802	The attempt to trade has failed.
 1803	Participation requests are no longer being accepted.
-1804	Your account has been restricted for a duration of 7 days due to your confirmed attempt at trade involving cash/server/other games. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-1805	Your account has been restricted for a duration of 30 days due to your confirmed second attempt at trade involving cash/server/other games. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
+1804	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+1805	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 1806	You account has been temporarily suspended for acquiring an item involved in account theft. Please verify your identity on our website. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-1807	Your account has been restricted for a duration of 30 days due to your confirmed attempt at trade involving cash/server/other games. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-1808	Your account has been restricted due to your confirmed second attempt at trade involving cash/server/other games. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
+1807	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+1808	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 1809	You cannot use the game services as your identity has not been verified. Please visit the NCSOFT website ( https://support.lineage2.com) and go through the personal verification process to lift the restriction. For more information, please visit the Support Center on the NCSOFT website.
 1810	The refuse invitation state has been activated.
 1811	The refuse invitation state has been removed.
@@ -1871,9 +1871,9 @@
 1870	A Command Channel with looting rights already exists.
 1871	Do you want to dismiss $c1 from the clan?
 1872	You have $s1 hour(s) and $s2 minute(s) left.
-1873	There are $s1 hour(s) and $s2 minute(s) left in the fixed use time for this PC Caf￩.
+1873	There are $s1 hour(s) and $s2 minute(s) left in the fixed use time for this PC Café.
 1874	There are $s1 minute(s) left for this individual user.
-1875	There are $s1 minute(s) left in the fixed use time for this PC Caf￩.
+1875	There are $s1 minute(s) left in the fixed use time for this PC Café.
 1876	Do you want to leave $s1 clan?
 1877	The game will end in $s1 minute(s).
 1878	The game will end in $s1 second(s).
@@ -1918,7 +1918,7 @@
 1917	Shilen's Breath has been purified.
 1918	Your pet is too high level to control.
 1919	The Olympiad registration period has ended.
-1920	Your account is currently inactive because you have not logged into the game for some time. You may reactivate your account by visit Lineage II's Support Website (https://support.lineage2.com).
+1920	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 1921	$s2 hour(s) and $s3 minute(s) have passed since $s1 has killed.
 1922	Because $s1 failed to kill for one full day, it has expired.
 1923	Court Wizard: The portal has been created!
@@ -2042,10 +2042,10 @@
 2041	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to setup private stores. To unlock all of the features of Lineage II, purchase the full version today.
 2042	This account has been suspended for non-payment based on the cell phone payment agreement.\nPlease go to http://us.ncsoft.com/en/.
 2043	You have exceeded your inventory volume limit and may not take this quest item. Please make room in your inventory and try again.
-2044	Some Lineage II features have been limited for free trials.ﾠTrial accounts aren't allowed to set up private workshops. To unlock all of the features of Lineage II, purchase the full version today.
-2045	Some Lineage II features have been limited for free trials.ﾠTrial accounts aren't allowed to use private workshops.ﾠTo unlock all of the features of Lineage II, purchase the full version today.
-2046	Some Lineage II features have been limited for free trials.ﾠTrial accounts aren't allowed buy items from private stores.ﾠTo unlock all of the features of Lineage II, purchase the full version today.
-2047	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to access clan warehouses.ﾠTo unlock all of the features of Lineage II, purchase the full version today.
+2044	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to set up private workshops. To unlock all of the features of Lineage II, purchase the full version today.
+2045	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to use private workshops. To unlock all of the features of Lineage II, purchase the full version today.
+2046	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed buy items from private stores. To unlock all of the features of Lineage II, purchase the full version today.
+2047	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to access clan warehouses. To unlock all of the features of Lineage II, purchase the full version today.
 2048	The shortcut in use conflicts with $s1. Do you wish to reset the conflicting shortcuts and use the saved shortcut?
 2049	The shortcut will be applied and saved in the server. Will you continue?
 2050	$s1 clan is trying to display a flag.
@@ -2053,8 +2053,8 @@
 2052	A guardian's consent is required before this account can be used to play Lineage II.\nPlease try again after this consent is provided.
 2053	This account has declined the User Agreement or is pending a withdrawal request. \nPlease try again after cancelling this request.
 2054	This account has been suspended. \nFor more information, please go to https://support.lineage2.com.
-2055	Your account has been suspended from all game services.\nFor more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-2056	Your account has been converted to an integrated account, and is unable to be accessed. \nPlease logon with the converted integrated account.
+2055	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2056	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2057	You have blocked $c1.
 2058	You already polymorphed and cannot polymorph again.
 2059	The nearby area is too narrow for you to polymorph. Please move to another area and try to polymorph again.
@@ -2089,7 +2089,7 @@
 2088	$s1 minute(s) until the fortress battle starts.
 2089	$s1 second(s) until the fortress battle starts.
 2090	The fortress battle $s1 has begun.
-2091	Your account can only be used after changing your password and secret question. \n Services will be available after changing your password and secret question from Lineage II's Support Website (https://support.lineage2.com).
+2091	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2092	You cannot bid due to a passed-in price.
 2093	The bid amount was $s1 Adena. Would you like to retrieve the bid amount?
 2094	Another user is purchasing. Please try again later.
@@ -2106,27 +2106,27 @@
 2105	You have entered another instant zone, therefore you cannot enter corresponding dungeon.
 2106	This dungeon will expire in $s1 minute(s). You will be forced out of the dungeon when the time expires.
 2107	This instant zone will be terminated in $s1 minute(s). You will be forced out of the dungeon when the time expires.
-2108	Your account has been restricted due to your use of illegal programs. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2108	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2109	During the server merge, your character name, $s1, conflicted with another. Your name may still be available. Please enter your desired name.
 2110	This character name already exists or is an invalid name. Please enter a new name.
 2111	Enter a shortcut to assign.
 2112	Sub-key can be CTRL, ALT, SHIFT and you may enter two sub-keys at a time. \n Example) CTRL + ALT + A
 2113	CTRL, ALT, SHIFT keys may be used as sub-key in expanded sub-key mode, and only ALT may be used as a sub-key in standard sub-key mode.
 2114	Forced attack and stand-in-place attacks assigned previously to Ctrl and Shift will be changed to Alt + Q and Alt + E when set as expanded sub-key mode, and CTRL and SHIFT will be available to assign to another shortcut. Will you continue?
-2115	Your account has been restricted due to your confirmed abuse of a bug pertaining to the NCoin. For more information, please visit http://us.ncsoft.com/en/.
-2116	Your account has been restricted due to your confirmed abuse of free NCoin. For more information, please visit http://us.ncsoft.com/en/.
-2117	Your account has been temporarily denied all game services due to connections with account registration done by means of identity theft. If you have no connection to the issue, please go through the personal verification process.  For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-2118	Your account has been denied all game services due to transaction fraud. For more information, please visit Lineage II's Support Website (https://support.lineage2.com)t>.
-2119	Your account has been denied all game services due to your confirmed account trade. \nFor more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-2120	Your account has been restricted for a duration of 10 days due to your use of illegal programs. All game services are denied for the aforementioned period, and a repeated offense will result in a permanent ban. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-2121	Your account has been denied all game services due to your confirmed use of illegal programs. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-2122	Your account has been denied all game services due to your confirmed use of illegal programs. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-2123	Your account has been denied all game service at your request. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
+2115	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2116	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2117	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2118	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2119	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2120	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2121	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2122	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2123	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2124	During the server merge, your clan name, $s1, conflicted with another. Your clan name may still be available. Please enter your desired name.
 2125	The clan name already exists or is an invalid name. Please enter another clan name.
-2126	Your account has been suspended for regularly posting illegal messages. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-2127	Your account has been suspended after being detected with an illegal message. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
-2128	Your account has been suspended from all game services for using the game for commercial purposes. For more information, please visit Lineage II's Support Website (https://support.lineage2.com).
+2126	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2127	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+2128	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2129	The augmented item cannot be converted. Please convert after the augmentation has been removed.
 2130	You cannot convert this item.
 2131	You have bid the highest price and have won the item. The item can be found in your personal warehouse.
@@ -2151,7 +2151,7 @@
 2150	Another elemental power has already been added. This elemental power cannot be added.
 2151	Your opponent has Magic Resistance, the damage was decreased.
 2152	The assigned shortcut will be deleted and the initial shortcut setting restored. Will you continue?
-2153	You are currently logged into 10 of your accounts and can no longer access your other accounts.
+2153	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2154	The target is not a flagpole so a flag cannot be displayed.
 2155	A flag is already being displayed, another flag cannot be displayed.
 2156	There are not enough necessary items to use the skill.
@@ -2282,7 +2282,7 @@
 2281	$c1 inflicted $s3 damage on $c2 and $s4 damage on the damage transfer target.
 2282	Leave Fantasy Isle.
 2283	You cannot transform while sitting.
-2284	You have obtained all the points you can get today in a place other than Internet Caf￩.
+2284	You have obtained all the points you can get today in a place other than Internet Café.
 2285	This skill cannot remove this trap.
 2286	You cannot wear $s1 because you are not wearing a bracelet.
 2287	You cannot equip $s1 because you do not have any available slots.
@@ -2344,7 +2344,7 @@
 2343	Failed. You have obtained $s2 of $s1.
 2344	You have been killed by an attack from $c1.
 2345	You have attacked and killed $c1.
-2346	Your account may have been involved in identity theft. As such, it has been temporarily restricted. If this does not apply to you, you may obtain normal service by going through self-identification on the homepage. Please refer to Lineage II's Support Website (https://support.lineage2.com) for more details.
+2346	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2347	$s1 second(s) to game end!
 2348	You cannot use My Teleports during a battle.
 2349	You cannot use My Teleports while participating a large-scale battle such as a castle siege, fortress siege, or clan hall siege.
@@ -2361,7 +2361,7 @@
 2360	My Teleports Spellbk: $s1
 2361	Current Location: $s1
 2362	The saved teleport location will be deleted. Do you wish to continue?
-2363	Your account has been denied all game services due to its confirmed registration under someone else's identity.  For more information, please visit the NCSOFT website (https://support.lineage2.com) Customer Service Center.
+2363	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2364	$s1 has expired.
 2365	An item in your possession has expired.
 2366	The limited-time item has disappeared because the remaining time ran out.
@@ -2484,7 +2484,7 @@
 2483	You have been reported as an illegal program user, so chatting is not allowed.
 2484	You have been reported as an illegal program user, so participating in a party is not allowed.
 2485	You have been reported as an illegal program user so your actions have been restricted.
-2486	You have been blocked due to verification that you are using a third party program. Subsequent violations may result in termination of your account rather than a penalty within the game.
+2486	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2487	You have been reported as an illegal program user, and your connection has been ended. Please contact our CS team to confirm your identity.
 2488	You cannot enter the Aerial Cleft because you are below the required level. Entry is possible only at level 75 or above.
 2489	You must target a control device in order to perform this action.
@@ -2806,7 +2806,7 @@
 2956	A user participating in the Olympiad cannot witness the battle.
 2957	A character born on February 29 will receive a gift on February 28.
 2958	An Agathion has already been summoned.
-2959	Your account has been temporarily restricted due to your speculated abnormal methods of gameplay. If you did not employ abnormal means to play the game, please visit the website and go through the personal verification process to lift the restriction. Please refer to the Support Center on the NCSOFT website (http://us.ncsoft.com/en/support) for more details.
+2959	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 2960	You need a(n) $s1.
 2961	You need $s2 $s1(s).
 2962	This item cannot be used in the current transformation state.
@@ -3027,7 +3027,7 @@
 3177	I did underestimate you a little bit, I admit! Haha.
 3178	Behold my frozen minions.
 3179	Obey my command and attack these invaders.
-3180	No!ﾠ How could this be... You are but mere mortals?!
+3180	No!  How could this be... You are but mere mortals?!
 3181	Very well. I will show you what despair looks like!
 3182	There's no turning back! This ends now!
 3183	Oh furious winds of light, slice through the darkness and defeat this evil!
@@ -3037,11 +3037,11 @@
 3187	Oh, this feeling. So familiar…now all this power is mine!
 3188	You who feel warm life force coursing through your veins.
 3189	I shall take your last breath. But not this day, return to me.
-3190	How dare you ignore my warning... Foolish creatures.ﾠHahaha...
+3190	How dare you ignore my warning... Foolish creatures. Hahaha...
 3191	Say goodbye to sunlight and welcome eternal ice.
 3192	Muhahaha... If you wish to be chilled to the bone, I'll gladly oblige.
-3193	How dare you enter my castle!ﾠHahaha... Foolish ones... Leave this place before the frost chills your blood.
-3194	Hmph!ﾠYou will not dodge my blizzard again!
+3193	How dare you enter my castle! Hahaha... Foolish ones... Leave this place before the frost chills your blood.
+3194	Hmph! You will not dodge my blizzard again!
 3195	All those who challenge my power shall feel the curse of ice.
 3196	I will seal your hearts with ice. Not even your breath will escape.
 3197	Really? Even my snowflakes could defeat you.
@@ -3167,12 +3167,12 @@
 3317	The Character PIN can only be entered by using a mouse.
 3318	The two numbers do not match.\nPlease try again.
 3319	You cannot use a PIN number consisting of only one number. Please try again.
-3320	You cannot use a PIN number that is already part of your account password. Please try again.
+3320	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 3321	You cannot use a PIN number consisting of repeated number patterns. Please try again.
 3322	Your Character PIN has been changed.
-3323	Please change your Character PIN for increased protection. You have to enter your Character PIN when a character is selected or deleted. (Use a password different from your account password.)
+3323	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 3324	Caution: The number arrangement will change at the next login.
-3325	Please enter a new PIN number after entering your current PIN number. (Use a password different from your account password.)
+3325	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 3326	The offer can be withdrawn within $s1 day(s) and $s2 hour(s).
 3327	The offer can be withdrawn within $s1 day(s).
 3328	The offer can be withdrawn within $s1 hour(s).
@@ -3430,7 +3430,7 @@
 3580	Kyaaaaa...Hyaaaaa… Hayah!
 3581	Hahaha… Defeat wasn't part of my plan. But, it doesn't matter... My research is almost complete…
 3582	I have done it all… for the glory of our goddess…
-3583	For her... I welcome death...ﾠﾠ
+3583	For her... I welcome death...  
 3584	Ugh!!!...
 3585	Kwaa... aaaahh... argh...
 3586	Hoho, don't you look delicious!
@@ -3476,7 +3476,7 @@
 3626	I am Hermuncus, leader of the Giants.
 3627	You are a hero. Your valiant soul resonates with the call of my soul.
 3628	The whole world reeks of blood. Can't you smell it? The end of the world is coming.
-3629	Behold the monster sent by your so-called goddess as her assassin.ﾠ
+3629	Behold the monster sent by your so-called goddess as her assassin. 
 3630	Hell gate Earth Wyrm Trasken!
 3631	Shilen has sent it to sacrifice me to her!
 3632	Behold, the ocean of blood created from the sacrifice of the Dark Elves!
@@ -4075,6 +4075,41 @@
 4318	Clan chat has been disabled for 1 minute due to spamming.
 4319	Clan chat has been disabled due to spamming. Please try again later.
 4320	Current Location : $s1 / $s2 / $s3 (Talking Island (Past))
+4321	You can redeem your reward $s1 minutes after logging in. $s2 minutes left.
+4322	You can redeem your reward now.
+4323	$s1 Exp
+4324	$s1 monsters
+4325	Less than $s1 minute
+4326	Enter a weapon.
+4327	Enter a weapon you would like to bestow a special ability to the slot.
+4328	Enter a Soul Crystal to the slot.\nClick on the Start button to go on to the next step.
+4329	Enter a Soul Crystal.
+4330	Select the Soul Crystal effect of the Soul Crystal you've entered.
+4331	The Soul Crystal effect is already in use.
+4332	If you apply another effect, the existing Soul Crystal effect will no longer be applied.\nContinue?
+4333	Succeeded in applying the Soul Crystal effect.
+4334	System error. Please try again.
+4335	Would you like to bestow the Soul Crystal effect as shown above?\nClick on the Confirm button to apply the Soul Crystal effect.
+4336	Bestowing ability
+4337	Cannot use the Soul Crystal System while using the private store/workshop.
+4338	Cannot use the Soul Crystal System while frozen.
+4339	Cannot use the Soul Crystal System while dead.
+4340	Cannot use the Soul Crystal System while trading.
+4341	Cannot use the Soul Crystal System while petrified.
+4342	Cannot use the Soul Crystal System while fishing.
+4343	Cannot use the Soul Crystal System while seated.
+4344	Cannot use the Soul Crystal System while in battle.
+4345	Please select a Soul Crystal effect from the list first.
+4346	Cannot use skills or items while faking death.
+4347	Stage $s1 $s2
+4348	Soul Crystal effects that have been applied cannot be removed.
+4349	Invalid Soul Crystal.
+4350	All the slots are in use. If you would like to apply another effect, drag a Soul Crystal to the corresponding slot to redo it.
+4351	Current Location: $s1 / $s2 / $s3 (Underground Gainak)
+4352	Current Location: $s1 / $s2 / $s3 (Forge of the Gods (Past))
+4353	Current Location: $s1 / $s2 / $s3 (Schuttgart Castle (Past))
+4354	Current Location: $s1 / $s2 / $s3 (Summer Labyrinth (Past))
+4355	Failed to apply the Soul Crystal effect because of abnormal circumstances.
 4601	- Great P. Def. and skillful Shield Defense<br>- Increased P. Def. for the whole party<br>- Protect party members
 4602	By the will of the Chaos, the power of Abelius, the Golden Commander of the ancient giants, has been combined with the ancient power of light. The blessing of the giants and the light upon him gave him the courage to be the fearless shield of the continent.
 4603	- Great P. Def.<br>- Increased P. Atk. For the whole party<br>Vampiric Rage and Reinforced Dark Panther
@@ -4335,111 +4370,111 @@
 4884	Re-edit the main menu. The edits made until now will not be saved.
 4885	Finish editing and save changes.
 4886	Finish editing without saving changes.
-5000	Your account has been restricted due to an account theft issue. If you have an email address registered to your account information, please check your inbox for an email message with details. If you have no direct connection to account theft, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>) and file a petition. For more details, please visit <font color='#FFDF4C'>1:1 Customer Service Center</font>.
-5001	Your account has been restricted in accordance with our terms of service due to your confirmed fraudulent report. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5002	Your account has been restricted in accordance with our terms of service as you failed to verify your identity within a given time after an account theft report. You may  undo the restriction by visiting the <font color='#FFDF4C'>Lineage II Support Website(</font><font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font><font color='#FFDF4C'>) 1:1 Customer Service Center<font color='#FFDF4C'>) Support Center</font> and going through the personal verification process in the account theft report. For more details, please visit <font color='#FFDF4C'>1:1 Customer Service Center</font>.
-5003	Your account has been restricted due to your abuse of game systems that resulted in damage to other players' gaming experience. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5004	Your account has been restricted in accordance with our terms of service due to your selling, or attempting to sell, in-game goods or characters (account) for cash/real goods/goods from  another game. Your account is under suspension for 7 days since the date of exposure as decreed by the EULA, Section 3, Article 14. The account restriction will automatically be lifted after 7 days. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5005	Your account has been restricted in accordance with our terms of service due to your selling, or attempting to sell, in-game goods or characters (account) for cash/real goods/goods from another game. Your account is restricted as decreed by the EULA, Section 3, Article 14. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5006	Your account has been restricted in accordance with our terms of service due to misconduct or fraud. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5007	Your account has been restricted due to misconduct. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5008	Your account has been restricted due to your abuse of system weaknesses or bugs. Abusing bugs can cause grievous system errors or destroy the game balance. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5009	Your account has been restricted due to your use of illegal programs. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5010	Your account has been restricted in accordance with our terms of service due to your confirmed abuse of in-game systems resulting in abnormal gameplay. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5011	Your account has been restricted at your request in accordance with our terms of service. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5012	Your account has been restricted in accordance with our terms of service due to your confirmed attempts at misconduct or fraud. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5013	Your account has been restricted in accordance with our terms of service due to your fraudulent use of another person's identity. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5014	Your account has been restricted in accordance with our terms of service due to your fraudulent transactions under another person's identity. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5015	Your account has been restricted in accordance with our terms of service due to your confirmed in-game gambling activities. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5016	For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5017	Please inquire through the <font color='#FFDF4C'>Lineage II Customer Service Center</font> or the <font color='#FFDF4C'>1:1 support</font> in the official website.
-5018	In order to play Lineage II, you must be <font color='#FFDF4C'>Ages 15 or above</font>. You must be <font color='#FFDF4C'>18 or above</font> in order to use the PvP servers.
-5019	To create a new account, please visit the <font color='#FFDF4C'>Lineage II Website </font><font color='#6699FF'>(<a href='asfunction:homePage'>https://login.lineage2.com/login/loginform</a>)</font> and click on the New Account Creation link.
-5020	If you have lost your account, please visit the  <font color='#FFDF4C'>Lineage II Website </font><font color='#6699FF'>(<a href='asfunction:homePage'>https://login.lineage2.com/login/loginform</a>)</font> and click on the Support link at the bottom of the page.
-5021	Users who did not complete the <font color='#FFDF4C'>Age 18 Verification</font> may not login between <font color='#FFDF4C'>10PM</font> and <font color='#FFDF4C'>6AM</font> the next day.
-5022	Please verify your identity to confirm your ownership of your account.  You may go through the verification process by visiting the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5023	Your account has been restricted due to your confirmed attempt at trade involving cash/other servers/other games. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5024	Your account has been restricted in accordance with an official request from an investigative agency (private law). This action was taken because the official request from the investigative agency has legal force. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5025	Your account has been temporarily restricted due to acquisition of an item connected to account theft. Please visit the homepage and go through the personal verification process to lift the restriction. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5026	Your account has been restricted due to your confirmed trade history involving cash/other servers/other games.  For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5027	Your account has been restricted due to your confirmed cash/account trade activities. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5028	You cannot use the game services as your identity has not been verified. Please the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>) and go to <font color='#FFDF4C'>)</font> to verify your identity. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5029	Your current account is inactive. If you do not log into the game for a period of time, your account turns into an inactive account.  You may convert your account to an active account by visiting the <font color='#FFDF4C'>Lineage II Support Website(</font><font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font><font color='#FFDF4C'>) 1:1 Customer Service Center.
-5030	<font color='#FFDF4C'>Logging in.</font>Please wait.
+5000	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5001	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5002	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5003	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5004	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5005	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5006	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5007	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5008	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5009	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5010	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5011	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5012	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5013	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5014	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5015	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5016	For more details, please visit the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>).
+5017	Please inquire through the <font color="FFDF4C">Lineage II Customer Service Center</font> or the <font color="FFDF4C">1:1 support</font> in the official website.
+5018	In order to play Lineage II, you must be <font color="FFDF4C">Ages 15 or above</font>. You must be <font color="FFDF4C">18 or above</font> in order to use the PvP servers.
+5019	To create a new account, please visit the <font color="FFDF4C">Lineage II Website </font><font color="6699FF">(<a href="asfunction:homePage">https://account.ncsoft.com/signup/index</a>)</font> and click on the New Account Creation link.
+5020	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5021	Users who did not complete the <font color="FFDF4C">Age 18 Verification</font> may not login between <font color="FFDF4C">10PM</font> and <font color="FFDF4C">6AM</font> the next day.
+5022	If you have lost your account, please visit the <font color="FFDF4C">Lineage II Website </font><font color="6699FF">(<a href="asfunction:homePage">https://login.lineage2.com/login</a>)</font> and click on the Support link at the bottom of the page.
+5023	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5024	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5025	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5026	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5027	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5028	You cannot use the game services as your identity has not been verified. Please the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>) and go to <font color="FFDF4C">)</font> to verify your identity. For more details, please visit the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>).
+5029	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5030	<font color="FFDF4C">Logging in.</font>Please wait.
 5031	The account has been temporarily restricted due to an incomplete cell phone (ARS) transaction. For more information, please visit http://us.ncsoft.com/en/.
-5032	Your account has not yet been authenticated. Please visit the <font color='#FFDF4C'>homepage(</font><font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com)</a></font> and confirm your account authentication.
-5033	Your account has not completed the <font color='#FFDF4C'>Parental Agreement</font>.<br> Please complete the <font color='#FFDF4C'>Parental Agreement</font> before logging in.
-5034	This account has declined the User Agreement or has requested for membership withdrawal.  Please try again after <br><font color='#FFDF4C'>cancelling the Game Agreement declination</font> or <font color='#FFDF4C'>cancelling the membership withdrawal request</font>.
-5035	All permissions on your account are restricted. <br>Please go to http://us.ncsoft.com/en/ for details.
-5036	Please inquire through the <font color='#FFDF4C'>Lineage II Support Website(</font><font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font><font color='#FFDF4C'>) 1:1 Customer Service Center<font color='#FFDF4C'>) Customer Service Center</font>.
-5037	You can no longer log in as your account has been converted to <font color='#FFDF4C'>Unified Account</font>. <br>Please try again through the <font color='#FFDF4C'>Unified Account</font>.
-5038	You must change your password and secret question in order to log in. Please the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>) and <font color='#FFDF4C'>change the password and secret question</font>.
-5039	Your account has been restricted due to your use of illegal programs. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5040	Your account has been restricted due to your confirmed abuse of a bug pertaining to the NCoin. For more information, please visit http://us.ncsoft.com/en/.
-5041	Your account has been restricted due to your confirmed abuse of free NCoin. For more information, please visit http://us.ncsoft.com/en/.
-5042	Your account has been temporarily denied all game services due to connections with account registration done by means of identity theft. If you have no connection to the issue, please go through the personal verification process.  For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5043	Your account has been denied all game services due to transaction fraud. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5044	your account has been denied all game services due to your confirmed account trade history. <br>For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5045	Your account has been restricted for a duration of 10 days due to your use of illegal programs. All game services are denied for the aforementioned period, and a repeated offense will result in a permanent ban. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5046	Your account has been denied all game services due to your confirmed use of illegal programs. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5047	Your account has been denied all game services due to your confirmed use of illegal programs. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5048	Your account has been denied all game service at your request. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5049	Your account has been restricted due to frequent posting of inappropriate content. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5050	Your account has been restricted due to a confirmed post in violation of the law. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5051	Your account has been denied all game services due to your confirmed use of the game for commercial purposes. For more details, please visit <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5052	You have entered <font color='#FFDF4C'>Regular Server</font>.
-5053	You have entered <font color='#FFDF4C'>Adult Server</font>.
-5054	You have entered <font color='#FFDF4C'>Teenage Server</font>.
-5055	You cannot do that because of <font color='#FFDF4C'>Fatigue</font>.
-5056	Your account has been put on standby for personal verification due to its speculated registration under someone else's identity. If  this is not the case, please visit the website and go through the personal verification process to lift the restriction. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5057	Your account has been denied all game services due to its confirmed registration under someone else's identity.  For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5058	Your account has been temporarily restricted due to your speculated abnormal methods of gameplay. If you did not employ abnormal means to play the game, please visit the website and go through the personal verification process to lift the restriction. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5059	Please enter more than <font color='#FFDF4C'>1 letter</font> and less than <font color='#FFDF4C'>16 letters</font>.
-5060	Welcome to <font color='#FFDF4C'>Lineage II</font>. Please click on the <font color='#FFDF4C'>Create Character</font> tab to go to the Character Creation screen.
-5061	A character belonging to a <font color='#FFDF4C'>clan</font> may not be deleted.
-5062	A <font color='#FFDF4C'>Clan Leader</font> may not be deleted. Please disband the clan and try again.
-5063	A <font color='#FFDF4C'>Clan Member</font> may not be deleted. Please leave the clan and try again.
-5064	Authentication has failed as you have entered an incorrect authentication number or did not enter the authentication number.  If you fail authentication <font color='#FFDF4C'>3 times</font> in a row, game access will be restricted for <font color='#FFDF4C'>30 minutes</font>.
+5032	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5033	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5034	This account has declined the User Agreement or has requested for membership withdrawal.  Please try again after <br><font color="FFDF4C">cancelling the Game Agreement declination</font> or <font color="FFDF4C">cancelling the membership withdrawal request</font>.
+5035	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5036	Please inquire through the <font color="FFDF4C">Lineage II Support Website(</font><font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font><font color="FFDF4C">) 1:1 Customer Service Center<font color="FFDF4C">) Customer Service Center</font>.
+5037	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5038	You must change your password and secret question in order to log in. Please the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>) and <font color="FFDF4C">change the password and secret question</font>.
+5039	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5040	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5041	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5042	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5043	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5044	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5045	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5046	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5047	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5048	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5049	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5050	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5051	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5052	You have entered <font color="FFDF4C">Regular Server</font>.
+5053	You have entered <font color="FFDF4C">Adult Server</font>.
+5054	You have entered <font color="FFDF4C">Teenage Server</font>.
+5055	You cannot do that because of <font color="FFDF4C">Fatigue</font>.
+5056	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5057	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5058	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5059	Please enter more than <font color="FFDF4C">1 letter</font> and less than <font color="FFDF4C">16 letters</font>.
+5060	Welcome to <font color="FFDF4C">Lineage II</font>. Please click on the <font color="FFDF4C">Create Character</font> tab to go to the Character Creation screen.
+5061	A character belonging to a <font color="FFDF4C">clan</font> may not be deleted.
+5062	A <font color="FFDF4C">Clan Leader</font> may not be deleted. Please disband the clan and try again.
+5063	A <font color="FFDF4C">Clan Member</font> may not be deleted. Please leave the clan and try again.
+5064	Authentication has failed as you have entered an incorrect authentication number or did not enter the authentication number.  If you fail authentication <font color="FFDF4C">3 times</font> in a row, game access will be restricted for <font color="FFDF4C">30 minutes</font>.
 5065	An unexpected error has occured. Please contact our Customer Support Team at https://support.lineage2.com
 5066	An unexpected error has occured. Please contact our Customer Support Team at https://support.lineage2.com
-5067	If you fail authentication <font color='#FFDF4C'>3 times</font> in a row,  game access will be restricted for <font color='#FFDF4C'>30 minutes</font>. Please try again later.
+5067	If you fail authentication <font color="FFDF4C">3 times</font> in a row,  game access will be restricted for <font color="FFDF4C">30 minutes</font>. Please try again later.
 5068	To request an NC OTP service,<br>run the cell phone NC OTP service<br>and enter the displayed NC OTP number within 1 minute.<br>If you did not make the request,<br>leave this part blank,<br>and click on the login tab.
-5069	Please enter card number <font color='#FFDF4C'>$s1</font>.
+5069	Please enter card number <font color="FFDF4C">$s1</font>.
 5070	<font size='15' color='#FFDF5F'>The Lineage II server has been restructured as of 06/11/14.</font><br><font size='13' color='#ABABAB'>Bartz, Fehyshar</font> → Bartz(New)<br><font size='13' color='#ABABAB'>Erica, Gustin, Teon</font> → Sieghardt(New)<br><font size='13' color='#ABABAB'>Franz, Irene, Aria</font> → Kain(New)
-5071	<font color='#FFDF4C'>We give various benefits to warriors who return after a long time.</font>
-5072	You can receive the benefits provided to dormant customers on <font color='#FFDF4C'>Lineage II Homepage > Dormant Membership Page</font>(<font color='#6699FF'><a href='asfunction:homePage'>lineage2.plaync.co.kr/service/freecoupon/dormancy</a></font>).<br>Receive benefits for dormant customers and log into the game again!
-5300	Your account has been restricted due to an account theft issue. If you have an email address registered to your account information, please check your inbox for an email message with details. If you have no direct connection to account theft, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>) and file a petition. For more details, please visit <font color='#FFDF4C'>1:1 Chat in Customer Service Center</font>.
-5301	Your account has been restricted in accordance with our terms of service due to your confirmed abuse of GM services or reporting services. For more details, please visit the <font color='#FFDF4C'>website(</font><font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font><font color='#FFDF4C'>) 1:1 Customer Service Center</font><font color='#FFDF4C'>) 1:1 Customer Service Center</font>.
-5302	Your account has been restricted in accordance with our terms of service as you failed to verify your identity within a given time after an account theft report. You may  undo the restriction by visiting the <font color='#FFDF4C'>Lineage II Support Website(</font><font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font><font color='#FFDF4C'>) 1:1 Customer Service Center<font color='#FFDF4C'>) Support Center</font> and going through the identity verification process in the account theft report. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5303	Your account has been restricted due to your abuse of game systems that resulted in damage to other players' gaming experience. For more details, please the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>)<font color='#FFDF4C'>)1:1 Chat in Customer Service Center</font>.
-5304	Your account has been restricted due to your confirmed attempt at commercial advertising or trade involving cash or other games. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5305	Your account has been restricted due to your confirmed cash/account trade activities. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5306	Your account has been restricted in accordance with our terms of service due to misconduct or fraud. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5307	Your account has been restricted due to the use of inappropriate language. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5308	Your account has been restricted due to your abuse of system weaknesses or bugs. Abusing bugs can cause serious system errors or destroy the game balance. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5309	Your account has been restricted due to development/distribution of an illegal program or modification of the server program. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5310	Your account has been restricted in accordance with our terms of service due to your confirmed abuse of in-game systems resulting in abnormal gameplay. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5311	Your account has been restricted at your request in accordance with our terms of service. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5312	Your account has been restricted in accordance with our terms of service due to your confirmed attempts at misconduct or fraud. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5313	Your account has been restricted in accordance with our terms of service due to your fraudulent use of another person's identity. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5314	Your account has been restricted in accordance with our terms of service due to your fraudulent transactions under another person's identity. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5315	Your account has been restricted in accordance with our terms of service due to your confirmed in-game gambling activities. Please refer to the Support Center on the NCSOFT website (http://us.ncsoft.com/en/support) for more details.
-5316	Your account has been restricted due to your use of illegal programs. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5317	Your account is temporarily restricted due to a complaint filed in the process of name changing. For more information, visit <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5318	Please verify your identity to confirm your ownership of your account at the NCsoft website.  For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5319	Your account has been restricted in accordance with an official request from an investigative agency (private law). This action was taken because the official request from the investigative agency has legal force. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5320	Your account has been temporarily restricted due to acquisition of an item connected to account theft. Please visit the homepage and go through the personal verification process to lift the restriction. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5321	Your account has been restricted due to your confirmed trade involving cash or other games. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5322	You cannot use the game services as your identity has not been verified. Please the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>) and go to <font color='#FFDF4C'>)</font> to verify your identity. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5323	Your account has been restricted due to your use of illegal programs. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5324	Your account has been restricted due to your unfair acquisition of items and disregard for item distribution rules agreed upon by members of your party. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5325	Your account has been denied all game services due to your confirmed use of the game for commercial purposes. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
+5071	<font color="FFDF4C">We give various benefits to warriors who return after a long time.</font>
+5072	You can receive the benefits provided to dormant customers on <font color="FFDF4C">Lineage II Homepage > Dormant Membership Page</font>(<font color="6699FF"><a href="asfunction:homePage">lineage2.plaync.co.kr/service/freecoupon/dormancy</a></font>).<br>Receive benefits for dormant customers and log into the game again!
+5300	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5301	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5302	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5303	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5304	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5305	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5306	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5307	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5308	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5309	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5310	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5311	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5312	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5313	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5314	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5315	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5316	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5317	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5318	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5319	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5320	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5321	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5322	You cannot use the game services as your identity has not been verified. Please the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>) and go to <font color="FFDF4C">)</font> to verify your identity. For more details, please visit the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>).
+5323	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5324	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5325	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 5326	The account has been temporarily restricted due to an incomplete cell phone (ARS) transaction. For more information, please visit http://us.ncsoft.com/en/.
-5327	Your account has been restricted due to your confirmed attempt at commercial advertising. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5328	Your identity verification has been temporarily suspended due to suspected account theft. If you are not involved in account theft, please verify your identity by clicking the 'Release' button in the login page. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5329	Your account has been temporarily restricted due to your speculated abnormal methods of gameplay. If you did not employ abnormal means to play the game, please visit the website and go through the personal verification process to lift the restriction. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5330	Your account has been restricted due to your abuse of system weaknesses or bugs. Abusing bugs can cause grievous system errors or destroy the game balance. For more details, please visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
-5331	Your account is temporarily restricted due to a complaint filed in the process of name changing. For more information,visit the <font color='#FFDF4C'>Lineage II Support Website</font>(<font color='#6699FF'><a href='asfunction:homePage'>https://support.lineage2.com</a></font>).
+5327	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5328	Your identity verification has been temporarily suspended due to suspected account theft. If you are not involved in account theft, please verify your identity by clicking the 'Release' button in the login page. For more details, please visit the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>).
+5329	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5330	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5331	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 6001	The item has been successfully purchased.
 6002	The item has failed to be purchased.
 6003	The item you selected cannot be purchased. Unfortunately, the sale period ended.
@@ -4613,10 +4648,10 @@
 6171	Lv. $s1 or below
 6172	Redirecting to the Lineage II website. Proceed?
 6173	The lower your Fame, the higher your chances of dropping items when you die with a PK count of $s1 or above.
-6174	Your Day $s1 Attendance Reward is ready. Click on the rewards icon.
-6175	Your Day $s1 PC Caf￩ Attendance Reward is ready. Click on the rewards icon.
+6174	Your Day $s1 Attendance Reward is ready. Click on the rewards icon.\n(You can redeem your reward 30 minutes after logging in.)
+6175	Your Day $s1 PC Café Attendance Reward is ready. Click on the rewards icon.
 6176	You've received your Attendance Reward for Day $s1.
-6177	You've received your PC Caf￩ Attendance Reward for Day $s1.
+6177	You've received your PC Café Attendance Reward for Day $s1.
 6178	The Attendance Reward cannot be received because the inventory weight/quantity limit has been exceeded.
 6179	Due to a system error, the Attendance Reward cannot be received. Please try again later by going to Menu > Attendance Check.
 6180	Your Day $s1 VIP Attendance Reward is ready. Click on the rewards icon.
@@ -4624,16 +4659,16 @@
 6182	You can no longer receive Attendance Check rewards.
 6183	Your VIP rank is too low to receive the reward.
 6184	Items in the Pet Inventory cannot be used as offerings.
-6185	New Registration Available
-6186	New Registration Available
-6187	New Registration Available
-6188	You do not meet the level requirements to receive the Attendance Reward. Please check the required level.
+6185	You can make another report in $s1-minute(s). You have $s2 point(s) remaining on this account.
+6186	You cannot report someone who is in battle or is using a private store or shop.
+6187	Cannot continue because another report is being processed. Please try again after entering the verification number.
+6188	You do not meet the level requirements to receive the Attendance Reward. Please check the required level. (You can redeem your reward 30 minutes after logging in.)
 6189	- You must receive the attendance reward in a given day to receive the next day's reward.\n- Get additional rewards for logging in from a PC Cafe.\n- Rewards received once cannot be reverted back.
 6190	This item cannot be used as an offering.
 6191	No more offerings can be registered.
 6192	How many $s1 would you like to register as offerings?
 6193	How many $s1 would you like to remove from the offerings?
-6194	Your Day $s1 Attendance Reward is ready. Click on the rewards icon.
+6194	Your Day $s1 Attendance Reward is ready. Click on the rewards icon.\n(You can redeem your reward 30 minutes after logging in.)
 6195	You've received your Attendance Reward for Day $s1.
 6196	The item cannot be received because the inventory weight/quantity limit has been exceeded.
 6197	Due to a system error, the Attendance Check cannot be used. Please try again later.
@@ -4644,7 +4679,7 @@
 6202	How many $s1 would you like to register as offerings?
 6203	How many $s1 would you like to remove from the offerings?
 6204	$c1 has succeeded in crafting $s2.
-6205	We're upgrading our systems, and you must migrate your account to continue playing. Click <BLUE02><u><a href='event:here'>here</a></u></BLUE02>to log into your NC Account
+6205	We're upgrading our systems, and you must migrate your account to continue playing. Click <BLUE02><u><a href='event:here'>here</a></u></BLUE02> to log into your NC Account
 6501	You cannot bookmark this location because you do not have a My Teleport Flag.
 6502	My Teleport Flag: $s1
 6503	The evil Thomas D. Turkey has appeared. Please save Santa.
@@ -4652,3 +4687,505 @@
 6505	You did not rescue Santa, and Thomas D. Turkey has disappeared.
 6506	Although you can't be certain, the air seems laden with the scent of freshly baked bread.
 6507	You feel refreshed. Everything appears clear.
+6800	Not enough L2 Coins. Please try again after recharging L2 Coins.
+6801	Currently cannot purchase this item.
+6802	Purchased items cannot be refunded.
+6803	Please enter the verification number within the given time to play the game.
+6804	When points disappear, the VIP level decreases.
+6805	Wrong verification number. A penalty will be given if you enter the wrong verification number $s1 times consecutively. (Times left: $s2)
+6806	Failed to verify due to a system error. Please try again.
+6807	Verification complete. Enjoy Lineage II. Thank you.
+6808	A penalty is given to the character if you fail to enter the verification number within the given time or fail to verify within 3 tries. (Penalty: $s1)
+6809	The targeted character has been reported for using an illegal program and the verification is in progress, so you cannot report again.
+6810	The reported character has already completed the verification process, or has already received the penalty for the report. The character cannot be reported again for a set time.
+6811	Unable to purchase because your VIP level is low.
+6812	You've purchased the maximum possible amount. You can purchase it again after the set time.
+6813	Unable to purchase because your VIP level is high.
+6814	After VIP Level 1, you can receive benefits according to your VIP Level.
+6815	You can receive benefits according to your VIP Level.
+6816	Cannot report characters that are fishing.
+6817	Lucky Game is not available.
+6818	You are missing $s1, so you cannot play the Lucky Game.
+6819	Cannot proceed with Lucky Game due to a system error. Please try again later.
+6820	Checking user information for Lucky Game. Please try again later.
+6821	You've exceeded the number of tries for Lucky Game. Cannot proceed.
+6822	Failed to receive the bonus reward.
+6823	The number of items that can be purchased for this product is limited for each account. You've exceeded the maximum amount, so you cannot purchase it.
+6824	Display the Ability Mark.
+6825	The client will be closed. Continue?
+6826	Your clan has achieved login bonus Lv. $s1.
+6827	Your clan has achieved hunting bonus Lv. $s1.
+6828	You don't have any Soulshots/Spiritshots. Please buy them at the shop.
+6829	You don't have any Beast Soulshots/Spiritshots. Please buy them at the shop.
+7001	Cannot proceed until the current dice roll is over.
+7002	Your inventory's weight/limit has been exceeded, so you can't participate in the dice roll.
+7003	You are outside the range to participate in the dice roll.
+7004	You do not meet the conditions to participate in the dice roll.
+7005	$c1 rolled the dice and got $s2 points.
+7006	$c1 rolled the highest with $s2 points and acquired the $s3%.
+7007	A party member is rolling the dice, so the party cannot be disbanded.
+7008	No item to use the general chat.
+7009	The next target has become a Menace.
+7010	The next target has been changed to a PC.
+7011	The next target has been changed to a monster.
+7012	The next target has been changed to an NPC.
+7013	Used item: $s1.
+7014	Cannot continue with the action until the dice roll is over.
+7015	Cannot drop or destroy an item until the dice roll is over.
+7016	Only the Party Leader may disband the party.
+7017	Please enter a message to use the general chat.
+7018	The use of teleport items, the mailbox, skills, as well as attacking, fighting, creating parties, recruiting clan members is limited in prison. Items cannot be dropped/destroyed either.
+7019	Will be opening an external browser. Continue?
+7020	$s1%;s Info
+7021	Cannot open the Private Shop or Workshop until the dice roll is over.
+7022	Cannot exchange items until the dice roll is over.
+7023	The Party Leader's inventory's weight/limit has been exceeded, so the item cannot be acquired.
+7024	$c1 rolled the highest with $s2 points and acquired $s4 $s3%.
+7025	$c1 rolled the highest with $s2 points and acquired + $s3$s4%.
+7026	$s1-member party
+7027	$s1~$s2-member party
+7028	Above Lv. $s1
+7029	$s1 hr
+7030	$s1~$s2 hrs
+7031	Accept $c1's invitation to the party? (Item Distribution: Auto Dice Roll)
+7032	Accept $c1's invitation to the party? (Item Distribution: Manually by Party Leader)
+7033	Looting Method: Auto Dice Roll
+7034	Looting Method: Manually by Party Leader
+7035	You've been playing for over 3 hours, so this action only has a 50% chance to work. Please take a break and come back.
+7036	You've been playing for over 5 hours, so this action will not work. Please take a break and come back.
+7037	The Party Leader has been playing for over 3 hours, so the party only has a 50% chance to obtain items.
+7038	The Party Leader has been playing for over 3 hours, so the party cannot obtain any items.
+7039	The moving status of your servitor/pet/companion will be fixed to the current location.
+7040	The moving status of your servitor/pet/companion will be changed to follow you.
+7041	Wrong password. Please check again.
+7042	<$s1> Check History
+7043	It's <$s1>, so send $s2 $s3%.
+7044	$s1 L2 Chips (Sale Fee : $s2 L2 Chips)
+7045	$s1 L2 Coins
+7046	$s1 L2 Mileage Points
+7047	$s1 days
+7048	$c1
+7049	$s1\n$s2
+7050	$s1\n$s2\n$s3
+7051	Gift from <Premium Shop> - $s1
+7052	$c1 has sent you a gift through the Premium Shop. Please check your gift within the inventory in the Premium Shop.
+7053	You've received a pestering message from the <Premium Shop>.
+7054	$c1 has asked you for a gift from the Premium Shop.
+7055	You got your revenge on $c1!
+7056	You've aded $c1% to your List of Foes for having killed you.
+7057	You've deleted $c1% from your List of Foes.
+7058	The Blood Crystal shows you the location of your foe, $c1. Your foe is in $s2.
+7059	Your foe is currently in a place that cannot be marked in the map.
+7060	The Avenger of Blood, $c1%, has gotten revenge on $c2 999 times!
+7061	Your foe $c1% has appeared nearby.
+7062	Your foe $c1, and $s2 others have appeared nearby.
+7063	Double-click or right-click on an Incomplete Training Crystal from your inventory to start saving XP.
+7064	Double-click or right-click on an Incomplete Tactics Crystal from your inventory to start saving SP.
+7065	Your XP will be saved on the Incomplete Training Crystal you selected.
+7066	Your SP will be saved on the Incomplete Tactics Crystal you selected.
+7067	You paused the saving of your XP. To resume, double-click or right-click on the Incomplete Training Crystal from your inventory.
+7068	You paused the saving of your SP. To resume, double-click or right-click on the Incomplete Tactics Crystal from your inventory.
+7069	You've saved $s1% XP on the Incomplete Training Crystal.
+7070	You've saved $s1% SP on the Incomplete Tactics Crystal.
+7071	You've saved all the XP and created a $s1%. Check your inventory.
+7072	You've saved all the SP and created a $s1%. Check your inventory.
+7073	You've reached the maximum amount of XP that can be filled in the Training Crystal, so it cannot be used. Level-up by hunting.
+7074	You've reached the maximum amount of SP that can be filled in the Tactics Crystal, so it cannot be used. Level-up by hunting.
+7075	You do not meet the conditions to use the Training Crystal.
+7076	You do not meet the conditions to use the Tactics Crystal.
+7077	A timed Soul Crystal effect has been bestowed!
+7078	Cannot bestow a timed Soul Crystal effect on that weapon. Weapons that already have a permanent Soul Crystal, or weapons whose grade do not match the grade of the Orange Soul Crystal or Shiny Orange Soul Crystal, timed items, and basic weapons cannot be bestowed with a timed Soul Crystal effect.
+7079	You are out of the range from the Party Leader, so you cannot get the item.
+7080	You've been logged in for $s1 hour(s) $s2 minute(s).
+7081	$c1% has killed you!
+7082	You cannot add yourself as a foe.
+7083	Failed to open the List of Foes. Please try again later.
+7084	The player is already registered as a foe.
+7085	You've exceeded the number of players you can register.
+7086	The target is not in your List of Foes. Please check again.
+7087	Delete $s1% from your List of Foes?
+7088	The user is in Safe Mode, so some actions are restricted.
+7089	You've already entered the Private Warehouse password.
+7090	The foe you selected is currently offline, so the location cannot be found.
+7091	You don't have any Blood Crystals in your inventory. You must purchase Blood Crystals in order to use this function.
+7092	In order to use a Blood Crystal, go on the Foes tab and click on See Location.
+7093	You've saved $s2 XP (Bonus $s3) in $s1.
+7094	You've saved $s2 SP (Bonus $s3) in $s1.
+7095	You've used a $s1% and increased XP by $s2.
+7096	You've used a $s1% and increased SP by $s2.
+7097	The timed Soul Crystal effect of $s1 will disappear in $s2 minutes.
+7098	The timed Soul Crystal effect of $s1 will disappear, and it will be unequipped.
+7099	You haven't registered a Private Warehouse password, so it cannot be changed or canceled.
+7100	Click on Start to bestow a timed Soul Crystal effect to the weapon.
+7101	$s1 L2 Chips
+7102	You cannot destroy Crystals that have been activated and have XP/SP saved.
+7103	The character has been added as a foe the max number of times allowed, so you cannot add the target as a foe.
+7104	Vitality Mode will be activated for $s1 hour(s) $s2 minute(s).
+7105	Vitality Mode has been activated and you received \n$s1% bonus XP/SP.\nTime Left: $s2 minutes\nToday's Vitality Mode Activations: $s3 times
+7106	Activate Vitality Mode by clicking on the Activate button to get \n300% bonus XP/SP.\nThe number of times Vitality Mode is activated is reset every day at 6:30 am\nand you get free activations for that day.
+7107	Amount: $s1
+7108	Items needed to activate: $s1
+7109	Mode Active Time : $s1 hrs
+7110	Adena to Register: $s1 Adena \n Sale Price: $s2 L2 Coins \n Sell the above Adena?
+7111	Adena to Register: $s1 Adena \n Sale Price: $s2 L2 Coins \n Time Left: $s3 \n Cancel the registered item?
+7112	Adena to Purchase: $s1 Adena \n Coins Consumed: $s2 L2 Coins \n Purchase the above Adena?
+7113	Not enough L2 Coins to make the purchase.
+7114	Vitality Mode is over.
+7115	$s1 Adena
+7116	$s1 Adena
+7117	The amount of coins you registered is either below or above the min/max. \nPlease check the amount again.
+7118	You cannot purchase items that you've registered.
+7119	You've purchased Adena.
+7120	The duration of the Adena Trading sale has expired so the Adena will be sent back to you.
+7121	You've canceled the registration so you'll be refunded the Adena.
+7122	You've purchased $s2 Adena with $s1 L2 Coins.
+7123	You've successfully registered the Adena.
+7124	You've failed to purchase the Adena.
+7125	You've acquired $s1 Adena.
+7126	You've acquired $s1 L2 Chips.
+7127	You've successfully sent a pestering message.
+7128	Failed to pester. Please check the conditions and try again.
+7129	You'll get free Vitality mode activations, and the number from the previous day will be reset.
+7130	The item you selected has either already been sold or canceled, so it's not available for purchase.\nPlease check again.
+7140	You do not have enough XP, so the  Karma amount cannot be reduced.
+7150	$s1m
+7151	<html><body>Click on the <font color='#FFDF4C'>TAB</font> to select the next target</body></html>
+7152	You cannot gift yourself.
+7153	Teleport to $s1?
+7154	Not enough Adventure Scrolls. \nGo to the Premium Shop?
+7155	You don't have any more quests to play.
+7156	You must select a quest to teleport instantly.
+7157	There are no items available for purchase in this shop.
+7158	There are no items available for your current level.
+7159	There are no items available for your current level in this shop.
+7160	Your inventory's weight/limit has been exceeded so you cannot purchase items.
+7161	Cannot open the Inventory Shop while in battle. Please finish your battle and try again.
+7162	Not enough L2 Coins to make the purchase. Go to the L2 Coins page to recharge?
+7163	Transferring to the L2 Coins page. Continue?
+7164	Cannot open the Adventure Guide while in battle. Please finish your battle and try again.
+7165	Cannot teleport to $s1.
+7166	Cannot teleport instantly while in battle. Please finish your battle and try again.
+7167	The Quest NPC's free Instant Teleports have been reset.
+7168	Defeated: $s1
+7169	Acquired: $s1
+7170	You've successfully purchased the item. Please check your inventory.
+7171	There are no items available for purchase in the Inventory Shop for your current level.
+7172	Not enough Adena to make the purchase.
+7173	Enter a Clan hall description.
+7174	The starting bid must be above 1 Adena.
+7175	Cannot use instant teleport right now.
+7176	Cannot teleport instantly while mounted. Please dismount and try again.
+7177	Cannot teleport instantly when in a boat. Please get off and try again.
+7178	Cannot teleport instantly when in an instance dungeon. Please go outside and try again.
+7179	Cannot teleport instantly when in an instance zone. Please go outside and try again.
+7180	Cannot teleport instantly while participating in the Olympiad. Please try again after the Olympiad is over.
+7181	Cannot open the Adventure Guide.
+7182	Cannot open the Adventure Guide while mounted. Please dismount and try again.
+7183	Cannot use instant teleport when dead.
+7184	Cannot teleport instantly when you are unable to move.
+7185	Probability: $s1
+7186	You can craft high-grade items with Improved Crafting. Select an item from the list.
+7187	Congratulations! You've crafted a $s1%. Please check your inventory.
+7188	Failed to craft the item. Please try again
+7189	With Safe Enchant, you get the additional enchant stats when it succeeds, and even if it fails, you can keep your equipment.
+7190	Congratulations! Safe Enchant was successful and you got + $s1 , + $s2$s3%.
+7191	Failed to Safe Enchant. Please try again.
+7192	You can bestow random Set Options to Set Equipment, and you can change Set Options for equipment that already has Set Options.
+7193	Set Options have been bestowed. + $s1$s2 $s3%.
+7194	Set Options have been changed successfully. + $s1$s2 $s3%.
+7195	Failed to change Set Options. Please try again.
+7196	Set Options have been bestowed. $s1 $s2%.
+7197	Set Options have been changed successfully. $s1 $s2%.
+7198	You moved too far, so the item cannot be crafted/enchanted/upgraded.
+7199	Cannot go to that location in this client.
+7200	The target cannot go to that location with the client being used.
+7201	The actual equipment might look different in this client.
+7202	There are $s1 players on the queue. If you click on Cancel, you'll be disconnected from the server.
+7203	There was an error on the queue. Please try again in a minute.
+7204	Currently crafting an item. Please wait.
+7205	Currently using Safe Enchant. Please wait.
+7206	Currently bestowing Set Options. Please wait.
+7207	Currently changing Set Options. Please wait.
+7208	Cannot teleport instantly when participating in sieges, fortress wars, territory wars, and other large-scale battles.
+7209	You are in a location from which you can't use Instant Teleport.
+7210	The launcher's login info is incocrect. Please run the launcher again, or submit a ticket.
+7211	If you start the game with this character in the current client, you'll be telepoted to Gludio. Continue?
+7212	If there's a party member that has logged in with the light client, the whole party won't be able to use certain functions.
+7213	Cannot use the function with this client.
+7214	We recommend you use a Scroll of Escape. (Check your inventory.)
+7215	Teleport to Gatekeeper ($s1)
+7216	Cannot use the Blacksmith of Awakening function while in battle.
+7217	Currently, you've set it so that other characters appear as transparent. Use the same key to make them appear normally again.
+7218	You haven't equipped a weapon. You must equip a weapon to use it.
+7219	You don't have a Feather of Blessing.\nFeathers of Blessing can be purchased from the Premium Shop.
+7220	You've reached the limit for accounts that can be logged in from your IP address.
+7221	You've acquired $s1 XP and $s2 additional XP.
+7222	You've acquired $s1 XP, $s2 additional XP, and $s3 party bonus XP.
+7223	Congratulations! Safe Enchant has succeeded and you'll maintain the + $s1$s2.
+7224	If you use Safe Enchant, you can only enchant an item up to + 16.
+7225	Cannot enter the room right now. Please try again later.
+7226	Characters below Lv. 40 cannot attack or be attacked by other characters.
+7227	Soulshot has been removed.
+7228	Spiritshot has been removed.
+7229	A Soulshot of grade $s1 is ready.
+7230	A Spiritshot of grade $s1 is ready.
+7231	The clan member is sponsoring another member so cannot be moved.
+7232	The item you registered cannot be canceled.\nPlease check whether the item was sold.
+7233	Cannot bestow a Soul Crystal.
+7234	You got disconnected from the server. Please login again.
+7235	Enchanted skills cannot be awakened. Use the Revert function to make it a basic skill again.
+7236	Awakened skills cannot be learned again.
+7237	The new password you entered is the same as the old password. Please enter a different password.
+7238	You are too far away to trade.
+7239	A clan that has already registered cannot register again.
+7240	Cannot cancel the defense registration of castles that have been occupied.
+7241	The lock function of the slots has been activated.
+7242	The recipient's inventory is full so you cannot make a gift.
+7243	Occupied castles are automatically registered as defense.
+7244	Over $s1
+7245	Apply to join the\n $s1 clan?
+7246	Recommend $s1 \nto join the clan?
+7247	<Clan Application>$s1 has applied to join your clan.
+7248	$s1 has applied to join your clan.
+7249	In order to see $s1's information, click on the See Application menu on the bottom of the mailbox.
+7250	$s1's Preview
+7251	Lv.: $s1 / Class: $s2\nClan Penalty for Leaving: $s3
+7252	<Clan Recommendation>The $s1 clan has made a recommendation to join the clan.
+7253	Clan Leader $s2 of the $s1 clan has made a recommendation to join the clan.
+7254	In order to see the $s1 clan's information, click on the Apply menu on the bottom of the mailbox.
+7255	$s1 Clan's Preview
+7256	Lv.: $s1 / Member Count: $s2 / Base: $s3
+7257	Select a recipient to send the recommendation to.
+7258	File size must be 8*12 and 256 color, in the .bmp format.
+7259	Find $s1% and get your attendance stamp!
+7260	Find Moon Rabbit Sweety to get your attendance stamp!
+7261	Find Moon Guardian Diana to get your attendance stamp!
+7262	You'll get the XP boost from the Moonlight now. During the Moon Festival, you'll get + 100% XP between 20:00-23:00 every day.
+7263	The Moonlight XP boost is over for today.
+7264	The Moonlight XP boost effect is on. During the Moon Festival, you'll get + 100% XP between 20:00-23:00 every day.
+7265	Day $s1
+7266	The clan's member limit has been reached so recommendations to join cannot be made.
+7267	The clan's member limit has been reached so the application cannot be accepted.
+7268	The clan's member limit has been reached so the recommendations cannot be accepted.
+7269	There's not enough space in the inventory so the action cannot be completed. Please try again after freeing up some space.
+7270	Not enough Mooncakes to complete the action. Please collect some more and try again.
+7271	Cannot join the clan because there are no members online. Please try again later.
+7272	You've reset your skills and received $s1 SP.
+7273	Accept $s1's application to join the clan?
+7274	Reject $s1's application to join the clan?
+7275	Cancel your application to the $s1 clan?
+7276	Accept the recommendation from the $s1 clan to join?
+7277	Reject the recommendation from the $s1 clan to join?
+7278	Cancel your recommendation to $s1 to join the clan?
+7279	You're already part of a clan, so you cannot apply again. Please check your clan info.
+7280	$s1 is already part of another clan, so you cannot make a recommendation.
+7281	Cannot make a recommendation to join the clan when the clan has requested to be disbanded.
+7282	Cannot make recommendations to join the clan when the actions of the clan are restricted.
+7283	Cannot make recommendations to join the clan when the clan is taking penalties.
+7284	The recipient of your recommendation has recently left a clan, so you cannot make the recommendation at this time.
+7285	$s1 has blocked you so you cannot make a recommendation to join.
+7286	You've made recommendations to the maximum number of characters available.
+7287	You've already made a recommendation to $s1.
+7288	The recipient is already part of a member, so you cannot make a recommendation to join.
+7289	$s1 has been restricted, so you cannot make a recommendation to join.
+7290	Cannot accept the recommendation because you are part of another clan.
+7291	Cannot accept the recommendation because you are restricted.
+7292	The target's Clan Leader has blocked $s1, so you cannot accept the recommendation.
+7293	Cannot acept the recommendation because you are in prison.
+7294	Cannot accept the recommendation because the clan has requested to be disbanded.
+7295	You cannot accept a recommendation because it hasn't been a day since you kicked a member out.
+7296	$s1 is in prison so you cannot make a recommendation.
+7297	It hasn't been a full day since $s1 left, so you cannot make a recommendation.
+7298	It's a new day for the Attendance Check since it's past 6:30 am. Open the Attendance Book from the Moon Festival Guide's window and check the Moon residents you need to meet today.
+7299	Delete the alliance text?
+7300	There was an error with the client and you were disconnected.
+7301	You've completed today's Attendance Check!
+7302	You've recommended $s1 to join.
+7303	You've applied to join the $s1 clan.
+7304	$s1 has already applied to join. Please check the list of applications and recommendations.
+7305	You've received a recommendation from the $s1 clan. Please check the list of applications and recommendations.
+7306	The user has deleted the character so the application cannot be accepted.
+7307	You've exceeded the maximum amount of applications you can send, so you cannot apply anymore.
+7308	You've exceeded the maximum amount of recommendations you can send, so you cannot send anymore.
+7309	The user has deleted the character so the character's information is not available.
+7310	The clan has been disbanded so its information is not available.
+7311	The clan has been disbanded so the recommendation cannot be accepted.
+7312	Cannot delete a character while there's a registration to trade Adena. Please cancel the registration and try again.
+7313	A Guard Captain cannot change affiliations.
+7314	A Knight Captain cannot change affiliations.
+7315	The Full Moon Attendance event ran for the past 14 days and ended today at 6:30 am.
+7316	Cannot destroy an item that is in use.
+7317	Cannot send more items than the amount you have.
+7318	The skill cannot be used with the current weapon. Would you like to learn it anyway?
+7319	The SP for skills you learned for your 3rd class will be refunded when you learn the 4th class skills.
+7320	The SP for skills you haven't learned for your 3rd class will not be refunded when you learn the 4th class skills.
+7321	Clans that already have a clan hall cannot participate in the clan hall auction.
+7322	You must learn the preceding skills before learning this skill.
+7323	You've reached Level $s1 $s2.
+7324	Congratulations! You've crafted $s2 $s1. Please check your inventory.
+7325	$s1 has requested to become your student.\n\nWould you like to accept the request?
+7326	$s1 has requested to become your master.\n\nWould you like to accept the request?
+7327	Would you like to end the master-student relationship with $s1?\n\nIf you end the relationship without graduating, you won't be able to establish another relationship for a full day.\n(If you end the relationship with a user who has graduated, the penalty won't be applied.)
+7328	$s1 hasn't completed the Master's Qualification quest, so is not able to become a master.
+7329	Already in a master-student relationship.
+7330	You cannot become another player's master if you are below Lv. 77.
+7331	You already have 6 students, so you cannot take on another student.
+7332	$s4 has a penalty, so cannot accept another request. Time left $s1 day(s) $s2 hour(s) $s3 minute(s).
+7333	You've reached the maximum number of students you can have. Please check your Friends - Students tab.
+7334	$s1 has blocked you, so you cannot take them on as a student.
+7335	$s1 has met the qualifications to become a master, so cannot be taken on as a student.
+7336	$s1 already has a master, so cannot be taken on as a student.
+7337	$s1 is above Lv. 77, so cannot be taken on as a student.
+7338	You've asked $s1 to become your student.
+7339	$s1 has 6 students, so cannot take on another student.
+7340	$s1 already has the maximum amount of students allowed, so cannot take on another student.
+7341	$s1 has blocked you, so cannot become your master.
+7342	$s1 has a penalty, so cannot become your student.
+7343	$s1 has a penalty, so cannot become your master.
+7344	You've asked $s1 to become your master.
+7345	$s1 has rejected your request to be a student.
+7346	$s1 has accepted your request to be a student. Please check your Friends - Students tab.
+7347	$s1 has rejected your request to be a master.
+7348	You've accepted $s1's request to be a student. Please check your Friends - Students tab.
+7349	You'ved ended your master-student relationship with $s1. You must wait a full day to find another one.
+7350	Your student $s1 has reached Lv. 77 and graduated.\nNow, even if your graduated student logs in, you won't get the buff.\nFind another student.
+7351	You've reached Lv. 77 and graduated. Graduated students can no longer receive the buff.
+7352	$s1  has become your master.
+7353	$s1 has become your student.
+7354	$s1 day(s), $s2 hour(s), $s3 minute(s)
+7355	Your student has achieved a goal so you are sending a reward.
+7356	Student: $s1\n\n Goal Achieved: $s2\n\n Reward: Proof of Master x$s3
+7357	$s1 Level-up Achievement
+7358	Class Transfer # $s1 Achievement
+7359	You've entered a QT room. Move to $s1?
+7360	The selected player didn't meet the qualifications to be a master.
+7361	You are already in your territory, so the teleport function won't work.
+7362	The Novice Buff has worn off. Go to the Newbie Helper to get the buff again.
+7363	You've requested to be a mercenary for the territory war.
+7364	This class cannot transform.
+7365	Not enough Transformation Points.
+7366	You cannot receive rewards.
+7367	Reward received.
+7368	Only the Clan Leader can create one.
+7369	You cannot end the relationship with another student. Only possible between master and student.
+7370	The information of the target cannot be viewed at this moment.
+7371	Cannot revoke your participation in the territory war. You can only cancel it up to 20 minutes before a territory war starts.
+7372	Cannot learn the skill because you do not meet the level requirement.
+7373	You've revoked your participation in the territory war.
+7374	The current party is supporting QT sound. Use the shortcut key to talk to your party members.
+7375	The clan's QT room hasn't been created, so you cannot enter.
+7376	Octavis.. the traitor who's been mesmerized by the light..
+7377	To you who have fallen, rather than fake light, I will grant you glorious darkness..
+7378	Spezion.. You poor soul.. You've been betrayed by the light..
+7379	Drink my blood.. And your revenge will be completed..
+7380	Child of annihilation.. I'll share my blood that is darker than death..
+7381	Rise up and complete the sacrifice for darkness..
+7382	No.. Just listen to my story..
+7383	For Einhasad!!!
+7384	No grade $s1 Soulshots available. Please go to the Grocery Shop or the Premium Shop to buy more.
+7385	No $s1 available. Please go to the Pet Manager or the Grocery Shop to buy more.
+7386	No grade $s1 Spiritshots available. Please go to the Grocery Shop or the Premium Shop to buy more.
+7387	Go to Teleport Device ($s1)
+7388	No grade $s1 Soulshots available. Please go to the Premium Shop to buy more.
+7389	No grade $s1 Spiritshots available. Please go to the Premium Shop to buy more.
+7390	Cannot use this function binded.
+7391	Cannot delete a character that has requested to join another clan.<br>Please cancel your request first and then delete the character.
+7392	The power of the god of wealth is active. You'll get 100% XP and 100% Adena between 20:00-23:00 every day during the New Year's event.
+7393	$s1 days
+7394	$s1 hours
+7395	$s1 minutes
+7396	Cannot extend the duration of this item.
+7397	Please unequip the item to extend the duration.
+7398	Cannot extend the duration any more.
+7399	Cannot perform the action while extending the duration.
+7400	Your inventory's weight/limit has been exceeded so you can't receive the attendance reward. Please free up some space and try again.
+7401	Cannot obtain the next stamp. The next stamp will be activated every day at 6:30 am.
+7402	Attendance Stamp Coupon: $s1
+7403	Currently using the attribute enchant. Please try again after it's done.
+7404	Currently augmenting an item. Please try again after it's done.
+7405	Currently canceling an augmentation. Please try again after it's done.
+7406	Currently removing an attribute. Please try again after it's done.
+7407	You can upgrade items with the equipment upgrade function. Select an item from the list.
+7408	Currently upgrading an item. Please wait.
+7409	Congratulations! It has been successfully upgraded to $s1%. Please check your inventory.
+7410	Failed to upgrade the item. Please try again.
+7411	Bestowing a Soul Crystal effect. Please try again after it's done.
+7412	Cannot deposit this item in this warehouse.
+7413	Succeeded in extending the duration. (Time Left: $s1 day(s) $s2 hour(s) $s3 minute(s))
+7414	Cannot participate in a territory war while transformed into a flying object.
+7415	Items deposited in the clan warehouse can only be retrieved by the clan leader.
+7416	You can only retrieve items from the Dimensional Merchant.
+7417	You've given up on the dice roll.
+7418	You've used $s1 Shield Capsules. You'll be protected from PK for a set amount of time.
+7419	Not enough Shield Capsules to use the function.
+7420	Cannot use Shield Capsules.
+7421	The Shield Capsule has been canceled.
+7422	You've obtained $s1 Dragon Coins as a reward for leveling up.
+7423	You have too many coins, so you cannot accumulate them any more. Please use the coins from our page.
+7424	You've obtained $s1 Dragon Coins from the Dragon Coin Pouch.
+7425	Cannot perform the action because another action is in process.
+7426	Cannot perform the action while using the Private Shop / Private Workshop.
+7427	Cannot perform the action while frozen.
+7428	Cannot perform the action while dead.
+7429	Cannot perform the action while trading.
+7430	Cannot perform the action while petrified.
+7431	Cannot perform the action while fishing.
+7432	Cannot perform the action with this item.
+7433	Cannot remove the timed Soul Crystal effect from this weapon.
+7434	The Great Growth event is here. XP from hunting, Adena drop rate, and item drop rate are all doubled between 20:00-22:00 every day.
+7435	Click on <$s1> to remove the timed Soul Crystal effect.
+7436	The timed Soul Crystal effect has been removed from $s1%.
+7437	Consecutive Logins: $s1 days.
+7438	Get Mileage Points for logging in consecutively each day.\n You have to log in once after 6:30 am each day to receive the consecutive login reward.
+7439	You've received $s1 Mileage Points for logging in consecutively.
+7440	You've received $s1 as a reward for the Fortune Dragon Statue event. Please check your inventory.
+7441	Charged $s1 L2 Mileage Points.
+7442	You've received $s1 as a reward for the Fortune Dragon Statue event. Please check your mailbox.
+7443	Fortune Dragon Statue Reward
+7444	You've received $s1 as a reward for the Fortune Dragon Statue event.
+7445	You've already received the reward for Day $s1.\n Receive your reward for Day $s2 tomorrow.
+7446	The Storm T-shirt Enchant event is here. Hunt monsters every day between 20:00-22:00 to obtain fragments that contain magic power of the storm.
+7447	Use the Fortune Bronze Dragon Statue?<br><font color="ccccdd">The Fortune Bronze Dragon Statue can be used up to Lv. 65. If you want to use it after that, go to Lionel Hunter and exchange it for a Fortune Silver Dragon Statue.</font><button fontcolor=d8c351 width=160 height=28 textoffsetx=45 textalign=left action="url http://lineage2.plaync.com" value="Event Details" back="L2UI_CT1_CN.Dialog_HelpIcon_Down" highlightTex="L2UI_CT1_CN.Dialog_HelpIcon_Over" fore="L2UI_CT1_CN.Dialog_HelpIcon">
+7448	Use the Fortune Silver Dragon Statue?<br><font color="ccccdd">The Fortune Silver Dragon Statue can be used up to Lv. 55. If you want to use it after that, go to Lionel Hunter and exchange it for a Fortune Gold Dragon Statue.</font><button fontcolor=d8c351 width=160 height=28 textoffsetx=45 textalign=left action="url http://lineage2.plaync.com" value="Event Details" back="L2UI_CT1_CN.Dialog_HelpIcon_Down" highlightTex="L2UI_CT1_CN.Dialog_HelpIcon_Over" fore="L2UI_CT1_CN.Dialog_HelpIcon">
+7449	Use the Fortune Gold Dragon Statue?<br><font color="ccccdd">The Fortune Gold Dragon Statue can be used up to Lv. 95. If you want to use it after that, go to Lionel Hunter and exchange it for a Fortune Diamond Dragon Statue.</font><button fontcolor=d8c351 width=160 height=28 textoffsetx=45 textalign=left action="url http://lineage2.plaync.com" value="Event Details" back="L2UI_CT1_CN.Dialog_HelpIcon_Down" highlightTex="L2UI_CT1_CN.Dialog_HelpIcon_Over" fore="L2UI_CT1_CN.Dialog_HelpIcon">
+7450	Use the Fortune Diamond Dragon Statue?<br><font color="ccccdd">The Fortune Diamond Dragon Statue can be used up to Lv. 95.</font><button fontcolor=d8c351 width=160 height=28 textoffsetx=45 textalign=left action="url http://lineage2.plaync.com" value="Event Details" back="L2UI_CT1_CN.Dialog_HelpIcon_Down" highlightTex="L2UI_CT1_CN.Dialog_HelpIcon_Over" fore="L2UI_CT1_CN.Dialog_HelpIcon">
+7451	You already have a clan hall, so you cannot bid.
+7452	You've exceeded the limit and cannot retrieve the item. Please check your limit in the inventory.
+7453	You've exceeded the limit so you cannot deposit the item. Please check your items in the warehouse.
+7454	You can check the time for re-entering the instance zone by using the  '/instancezone' command.
+7455	The system cannot be used with the light client.
+7456	Not enough seeds to make the purchase.
+7457	Not enough Adena to purchase seeds.
+7458	Please select the item and the amount and click on Confirm.
+7459	Wrong level to use.
+7460	It hasn't been 5 seconds since you tried to teleport. Please try teleporting again in 5 seconds.
+7461	Cannot pick up the target when in possession of a Territory Ward, Territorial Falg, or a Combat Flag.
+7462	Cannot pick up the target when you have a cursed weapon equipped.
+7463	Current Location: Ivory Tower Entrance
+7464	The Great Growth event is here. XP from hunting and item drop rate are doubled between 20:00-22:00 every day.
+7465	Cannot obtain the item from this location.
+7466	Cannot mount/dismount from a strider while in battle.
+7467	A team that entered first is currently in battle. Please wait until it's over.
+7468	You've received SP as an additional reward.
+7469	You received event items. Old Bronze Box x$s1, Faint Silver Box x$s2, Shiny Gold Box x$s3.
+7470	An event item is available. You've received an additional Old Bronze Box.
+7471	An event item is available. You've received an additional Faint Silver Box.
+7472	An event item is available. You've received an additional Shiny Gold Box.
+7473	If you don't receive the gift, you won't be able to receive any more event items.
+7474	Chaotic characters cannot teleport instantly through the Adventure Guide.
+7475	When you succeed at the Improved Safe Enchant, your enchant will go up + 1, and if it fails, your current enchant level will remain. (Not applicable when the current enchant level is above 12.)
+7476	Congratulations! Improved Safe Enchant was successful and you got + 1 , and got to + $s1.
+7477	Failed at Improved Safe Enchant. Please try again.
+7478	If you use Improved Safe Enchant, you can only enchant an item up to + 9.
+7479	Cannot acquire items when the inventory's weight/limit is over 80%.
+7480	Cannot acquire a Demonic/Blood Sword while in battle.
+7481	Cannot acquire a Demonic/Blood Sword while disarmed.
+7482	The clan war against the $s1 clan has started. The clan war will end in 21 days. Check the status on Clan Action>War Information. You can declare defeat starting from the 7th day, and once you do so, you won't be able to start a clan war with the same clan for another 21 days. If you are killed by a member of the opposing clan, you'll get the same penalty as when dying in a hunting zone.
+7483	It hasn't been 5 days since you refused a clan war, so your Clan Fame Points have been reduced.
+7484	The base is under attack.
+7485	The opposing clan has started the Seal of Ruler.
+7486	It hasn't been 7 days since you started the clan war with the $s1 clan, so you cannot declare defeat.
+7487	You are declaring a clan war to the $s1 clan. The clan war will start in 3 days. Declare war?
+7488	Cannot see the information of a character that is in disguise.
+7489	Purchase error - invalid user status.
+7490	Use skills to fight.\nYou can use skills by opening the Skill Window (K key).

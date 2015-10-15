@@ -1597,3 +1597,15 @@
 5001	mk_richness_talisman_lv2
 5002	mk_richness_talisman_lv3
 5003	mk_richness_talisman_lv4
+5004	mk_richness_talisman_lv1_conrec
+5005	mk_richness_talisman_lv2_conrec
+5006	mk_richness_talisman_lv3_conrec
+5007	mk_richness_talisman_lv4_conrec
+5008	mk_richness_talisman_lv1_us
+5009	mk_richness_talisman_lv2_us
+5010	mk_richness_talisman_lv3_us
+5011	mk_richness_talisman_lv4_us
+5012	mk_richness_talisman_lv1_conrec_us
+5013	mk_richness_talisman_lv2_conrec_us
+5014	mk_richness_talisman_lv3_conrec_us
+5015	mk_richness_talisman_lv4_conrec_us

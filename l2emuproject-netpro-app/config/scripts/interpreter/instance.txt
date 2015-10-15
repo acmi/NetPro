@@ -160,9 +160,9 @@
 160	Teredor Warzone
 161	Kimerian
 162	Kimerian (Epic)
-163	Emerald Square
-164	Steam Corridor
-165	Coral Garden
+163	Crystal Caverns
+164	Crystal Caverns
+165	Crystal Caverns
 166	Baylor Warzone
 167	Balok Warzone
 168	Coral Garden Hall
@@ -258,3 +258,6 @@
 258	Nightmare Kamaloka
 259	Embryo Command Post
 260	Ashen Shadow Revolutionaries
+261	Mystic Tavern
+262	Mystic Tavern
+263	Mystic Tavern

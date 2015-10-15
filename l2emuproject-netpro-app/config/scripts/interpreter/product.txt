@@ -1533,3 +1533,36 @@
 1011533	Horn-rimmed Glasses Pack (Vitality 7-day)
 1011534	11th Anniversary Coin x75
 1011535	Ultimate 11th Anniversary Coin Pack
+1011536	Abundance Box
+1011537	Recipe: Talisman - Abundance Lv. 1 (High-grade)
+1011538	Recipe: Talisman - Abundance Lv. 2 (High-grade)
+1011539	Recipe: Talisman - Abundance Lv. 3 (High-grade)
+1011540	Recipe: Talisman - Abundance Lv. 4 (High-grade)
+1011541	Dandy's Gift Box (7-day)
+1011542	Adventurer's Song - Eva's Protection (R-grade)
+1011543	Special Bait (x1000)
+1011544	Dual Expertise Rune Pack (R99-grade)
+1011545	Spirit Stone: Hair Accessory
+1011546	Auction House Fee 100% Voucher 3-unit Pack
+1011547	Nectar (x500)
+1011548	Ultimate Nectar Pack (x10000)
+1011549	Watermelon Pack
+1011550	Soul Avatar's Giant Placid
+1011551	Valiant Scroll (x10)
+1011552	School Uniform A Appearance Stone
+1011553	School Uniform B Appearance Stone
+1011554	Pirate Captain Appearance Stone
+1011555	Pirate Crew Appearance Stone
+1011556	Zaken's Spirit Sword Agathion
+1011557	Vitality Maintaining Potion Pack (x10)
+1011558	Pirate Hat Pack
+1011559	XP Buff 50% Pack (x20)
+1011560	Physical Reflect Shirt
+1011561	Magical Reflect Shirt
+1011562	Lineage II Baseball Outfit Bundle
+1011563	Clan Name Change Ticket
+1011564	Ultimate Gambler's Box
+1011565	Blessed Scroll: Enchant Elemental Shirt Pack
+1011566	Entrance Pass: Embryo Command Post
+1011567	Entrance Pass: Crystal Caverns
+1011568	Entrance Pass: Nightmare Kamaloka

@@ -18,16 +18,14 @@
 	<word alias="0" />
 	<byte alias="0" />
 	
-	<bytes alias="Padding[0]">
-		<length>3</length>
-	</bytes>
-	
 	<!-- NEW -->
 	<bytes alias="Unknown">
 		<length>16</length>
 	</bytes>
 	
-	<dword alias="0" /> <!-- NEW -->
+	<bytes alias="Padding[0]"> <!-- NEW -->
+		<length>4</length>
+	</bytes>
 	<bytes alias="Checksum">
 		<length>4</length>
 	</bytes>

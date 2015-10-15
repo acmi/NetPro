@@ -11,7 +11,7 @@
 	
 	<dword alias="8" />
 	<word alias="0" />
-	<byte alias="0" />
+	<byte alias="0/1" />
 	
 	<astring alias="Empty" /> <!-- Literal value; probably one of the cmdline params not yet in use -->
 	

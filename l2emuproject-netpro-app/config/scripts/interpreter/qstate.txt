@@ -120,7 +120,7 @@
 24	10	Mystic of Riddles (You've obtained a suspicious doll. Speak with the Mysterious Wizard who controls the Dark Mages.)
 24	11	Gathering Thoughts (The Mystic tells you to come back again when you're sure. Gather your thoughts and try talking to him again.)
 24	-1	[completed]
-25	-2	null
+25	-2	
 25	1	Put On a Poker Face (The Priest of Rune Castle has nothing to say.)
 25	2	Lost Doll (You lost the suspicious doll? Could you have lost it in Forest of the Dead?!)
 25	3	To the Rune Township Temple (You received the totem from the Mysterious Wizard again. Return to Priest Benedict and tell him what's on your mind!)
@@ -1590,8 +1590,8 @@
 187	1	Decoding the Metallograph (Lorain needs Nikola's help to decode the metal plate.  Speak with Nikola about the metal plate.)
 187	2	To Kusto (Nikola suggests you seek the help of a dwarf named Kusto.  Visit Kusto for more information.)
 187	-1	[completed]
-188	1	Restore the Broken Metal (Lorain needs Nikola's help to decode the metal plate.  Speak with Nikola about the metal plate.)
-188	2	Locksmith Dorothy (Nikola says that Locksmith Dorothy in Heine can restore the broken metal pieces. Visit Locksmith Dorothy.)
+188	1	Repairing the Gold Fragment (Lorain wants to find Nikola to repair the gold plate. Go find Nikola to ask for help.)
+188	2	Locksmith Dorothy (Nikola has told you that Locksmith Dorothy in Heine should be able to repair the gold plate. Go find her.)
 188	-1	[completed]
 189	1	To Lorain (Luka has decoded the metal plate. Take it back to Lorain.)
 189	2	Trace of Cruma (The decoded metal plate talks about a creature called the Cruma, and suggests that such a creature may still exist.  Speak to Priest Shegfield in Dion for more information.)
@@ -1604,10 +1604,10 @@
 190	4	Gesture of Reconciliation (Lorain asks you to take the news to Nikola. Will they be able to reconcile now?)
 190	5	The Last Step (Nikola believes that he and Lorain can reconcile at last. Your work here is done. Return to Kusto for your reward.)
 190	-1	[completed]
-191	1	To Lorain (Dorothy has finished repairing the broken metal pieces. Return it to Lorain.)
-191	2	Trace of Cruma (The repaired metal pieces reveal research into a creature called the Cruma.  It suggests one such creature may still exist.  Visit Priest Shegfield in Dion for more information.)
-191	3	There is no Cruma. (According to Priest Shegfield, it is no longer possible to find a living Cruma. Return to Lorain.)
-191	4	Contract Completion (Your work here is done. Return to Kusto to complete your contract.)
+191	1	To Lorain (The gold plate you left with Dorothy has been repaired. Take it to Lorain.)
+191	2	Trace of Cruma (The repaired gold plate talks about a creature called the Cruma, and suggests that such a creature may still exist.  Speak to Priest Shegfield in Dion for more information.)
+191	3	There is no Cruma (According to Priest Shegfield, it is impossible to find a living Cruma. Go find Lorain.)
+191	4	End of the Contract (The job is done. Go find Kusto to complete your contract.)
 191	-1	[completed]
 192	1	Croop's request (Warehouse Chief Croop has asked to find his cousin Jacob. Talk to him some more to hear more about the details.)
 192	2	More Concerns (Croop conveys to you his concerns over the recent deaths of several Dwarven Contractors.  Speak to Croop again to hear more.)
@@ -2041,7 +2041,7 @@
 236	19	New Privileges (Rodenpicula has allowed this. Let's go see Mather Nordill.)
 236	20	Seeds of Chaos (The seed of chaos found. But it says there's something wrong... Talk with Rodenpicula)
 236	-1	[completed]
-237	-2	null
+237	-2	
 237	1	Choosing Sides (Gatekeeper Flauen wants you to aid the town of Heine by choosing a side to support. But at present, you don't know anything about the two sides. Seek out Iason Heine in the Warehouse. He will give you more information with which to make your choice.)
 237	2	Soliciting Information (Iason Heine has just described to you the two emerging factions forming in Heine. As he is a busy man, he has asked you to research this issue thoroughly, then make a decision on his behalf. To do this, you must meet with supporters from each side. First, go see Head Blacksmith Roman at the village smithy and hear his opinions on Dr. Helvetica.)
 237	3	The Other Side (Now that you've heard about Dr. Helvetica, its time to learn something about Athenia. Go see High Priestess Morelyn and find out her views about the situation.)
@@ -2117,8 +2117,8 @@
 250	1	Plants in the Plains of Lizardmen (Go to the Plains of Lizardmen and take the Spores of Fantasy Mushrooms and Sticky Mushroom and the leaves of Energy Plant.  Monsters to be hunted - Fantasy Mushrooms, Sticky Mushrooms, and Energy Plant)
 250	2	Master Horticulturist (Spores of Fantasy Mushrooms and Sticky Mushrooms and the leaves of Energy Plant are all gathered. Take them to the investigation member Sally.)
 250	-1	[completed]
-251	1	Sel Mahum Intel (Sel Mahums are being trained at the Sel Mahum Training Grounds. Find any documentation on Sel Mahum training.ﾠ Instructors and Recruits should have this information.  Monsters to be hunted - Sel Mahum Drill Sergeant, Sel Mahum Recruit)
-251	2	Intel Gathered (Found a good amount of training material on the Sel Mahum.ﾠ Go back to the Guard Pinaps of Oren Village.)
+251	1	Sel Mahum Intel (Sel Mahums are being trained at the Sel Mahum Training Grounds. Find any documentation on Sel Mahum training.  Instructors and Recruits should have this information.  Monsters to be hunted - Sel Mahum Drill Sergeant, Sel Mahum Recruit)
+251	2	Intel Gathered (Found a good amount of training material on the Sel Mahum.  Go back to the Guard Pinaps of Oren Village.)
 251	-1	[completed]
 252	1	Find out what is causing that delicious smell. (Guard Stan of Oren Village wants to know about the smell coming out of the Sel Mahum Training Grounds. Go through the pockets of Sel Mahum Chef and Sel Mahum Squad Leaders to see if you can find information about the Sel Mahum's new stew.)
 252	2	Possible clues to the soup found. (Gathered information from Sel Mahum. Go back and speak to Guard Stan of Oren Village.)
@@ -2158,7 +2158,8 @@
 268	-1	[completed]
 269	1	Collect Energy Ore (Inventor Maru asks you to collect Energy Ore, which she needs as ingredients for her energy conversion device experiment. Energy Ore can be easily obtained from almost all the monsters in the Eastern Mining Zone.  Monsters to be hunted -  Red Eye Barbed Bat, Northern Trimden, Kerope Werewolf, Northern Goblin, Spine Golem, Kerope Werewolf Chief, Northern Goblin Leader, Enchanted Spine Golem)
 269	-1	[completed]
-270	1	Bring on the Noise (Priest Greymore infiltrated the Monastery of Silence and says that he will reward anyone who defeats the monks of the monastery. The rags of the monks will be counted by the 100.   Monsters to be hunted - Solina Savior, Solina Seeker, Solina Ascetic, Divine Judge, Divine Manager, Divine Worshipper, Divine Guardian, Divine Fighter, Divine Magus)
+270	1	Bring on the Noise (Priest Greymore infiltrated the Monastery of Silence and says that he will reward anyone who defeats the monks of the monastery.   Monsters to Hunt - Solina Savior, Solina Seeker, Solina Ascetic, Divine Judge, Divine Manager, Divine Worshipper, Divine Guardian, Divine Fighter, Divine Magus)
+270	2	Return to Greymore (You've defeated the Monks in the Monastery of Silence and collected the Monks' Rags. Now return to Priest Greymore who is hiding inside the Monastery of Silence.)
 270	-1	[completed]
 271	1	Kasha Wolf Fang (Praetorian Rukain treats young Orcs as if they were children. He believes that those who wish to become Orc Fighters must prove their valor by hunting kasha wolves and bringing back fifty of their fangs.)
 271	2	Return to Praetorian Rukain (You have taken 50 fangs from the kasha wolves. You have done what it takes to become a brave Orc Fighter. Return to Praetorian Rukain and receive your Proof of Valor.)
@@ -2181,7 +2182,7 @@
 277	2	Return to Gatekeeper Tamil (You've collected 20 Starstones by knocking down Greystone Golem. Bring them to Gatekeeper Tamil and have a new ritual ceremony.)
 277	-1	[completed]
 278	1	Kill the Bandits (Tunatun is concerned about the future of his farm while the Sel Mahum Farm Bandits and Ravagers are stealing his herd. Collect 300 Sel Mahum Mane's as proof that you have eliminated these bandits.  Monsters to be hunted - Farm Bandit, Farm Bandit)
-278	2	Return to Tunatun (You have collected all Sel Mahum Manes.ﾠ Go speak with Tunatun.)
+278	2	Return to Tunatun (You have collected all Sel Mahum Manes.  Go speak with Tunatun.)
 278	-1	[completed]
 279	1	Collect ingredients (Defeat monsters in the Tower of Infinitum and collect ingredients for the Seal Breaker so you can confront Demon Prince and Ranku.  Monsters to be hunted - Cosmic Scout, Cosmic Watcher, Cosmic Priest, and Cosmic Lord.)
 279	2	Collection Complete (All the ingredients for the Seal Breaker have been found. Talk to Jerian to have the ingredients transmuted.)
@@ -2205,7 +2206,7 @@
 288	-1	[completed]
 289	1	Taking back the Soup (Guard Stan thinks that the way to defeat the Sel Mahum is to take away their soup. Use foul fruit to poison the soup, weakening the Sel Mahum. The effect of the fruit will last for 3 minutes. Then defeat Sel Mahum to gather at least 100 full soup barrels and head back to Guard Stan of Oren Village.)
 289	-1	[completed]
-290	1	Sel Mahum Termination (The Sel Mahum Army is growing at a faster rate than expected.ﾠ Kill as many Sel Mahum as possible to reduce threat that they pose. Collect 400 Sel Mahum ID Tags as proof that you have thinned out their numbers.  Monsters to be hunted - Sel Mahum Sergeant, Sel Mahum Training Instructor, Sel Mahum Recruit, Sel Mahum Soldier.ﾠ)
+290	1	Sel Mahum Termination (The Sel Mahum Army is growing at a faster rate than expected.  Kill as many Sel Mahum as possible to reduce threat that they pose. Collect 400 Sel Mahum ID Tags as proof that you have thinned out their numbers.  Monsters to be hunted - Sel Mahum Sergeant, Sel Mahum Training Instructor, Sel Mahum Recruit, Sel Mahum Soldier. )
 290	-1	[completed]
 291	1	Maryse's Anger (Maryse Redbonnet lost her family and very nearly her own life to wolves as a child, and therefore burns with hatred for them. She asks that you hunt the black wolves around the village, gather forty of their pelts and bring them back to her. She will reward you with her grandmother's heirloom.)
 291	2	Maryse's Revenge (As Maryse Redbonnet requested, you've hunted wolves and collected 40 wolf pelts. Take them to her.)
@@ -2336,7 +2337,7 @@
 343	1	Nebulite Orb (Magic Trader Cema asks you to collect Nebulite orbs by killing monsters in a crater near the Ivory Tower of Oren. Dwarven Collector Marsha and Collector Trumpin were originally hired to do this work but Cema has not heard from them since they left. While collecting the orbs, if you happen to run into them, ask them what happened. Hunt manashen gargoyles, enchanted monster eyes, enchanted stone golems and enchanted iron golems.)
 343	-1	[completed]
 344	1	Relics of the Fallen Soldiers (Antharas Watchman Gilmore seeks to avenge the soldiers who were made undead after failing in their brave attempt to subjugate the evil beast 1,000 years ago. He requests that you destroy the cave servants and recover the belongings of the fallen soldiers. Hunt cave servants, cave servant archers, cave servant warriors, cave servant captains and the royal cave servant.)
-344	2	Delivery of Relics (Gilmore asks you to take the fallen heroes' belongings to their descendants.)
+344	2	Return to Gilmore (You've collected the fallen heroes' belongings as Gilmore asked you to do. You can't collect any more of these, so report back to Gilmore.)
 344	-1	[completed]
 345	1	Collecting Victim's Bones (Locksmith Dorothy's friends have gone missing along with the treasure of the Pirate Captain. Perhaps they were eaten by the Crokians on Alligator Beach. Search there for the victims' bones. Monsters to be hunted - Crokian, Crokian Warrior)
 345	2	In Search of a Dark Elf (You find Dorothy's friends' bones but no other clues. Dorothy tells you a rumor of a clay jar, in the possession of the Dark Elf Guild, that supposedly has the power to raise the dead.)
@@ -2381,7 +2382,7 @@
 348	28	Will New Blood Be Spilled? (As a reward for successfully completing the delivery, you are given the reward that was promised. Magister Hanellin asks if you would like to continue to work for her.)
 348	29	Blood Continues to Be Spilt (Magister Hanellin gives you more white fabric and asks that you kill seal angels and guardian angels. Deliver 10 blood-soaked cloths and you'll receive another reward.)
 348	-1	[completed]
-350	1	Very Special Weapon (Many Magisters and Maestros have been recruiting volunteers to form a united front against the coming dark days. They have developed methods of strengthening weaponry as a way of empowering individual members of their forces. They tell you that now is the time to grow individual strength to prepare for the approaching darkness and ask you to learn to use enhanced weaponry... Monsters that Soul Crystals can be used on - Watcher's Tomb: Maluk Knight, Maluk Berserker, Maluk Lord, Limal Karinness, Karik, Pytan, Pytan Knight Timak Outpost: Timak Orc Series, Timak Orc Troop Series Fields of Massacre: Doom Servant, Doom Guard, Doom Archer, Doom Trooper, Doom Warrior, Doom Knight Forsaken Plains: Halingka, Yintzu, Paliote, Hamrut, Kranrot Forest of Mirrors: Forest of Mirrors Ghost, Mirror, Harit Lizardman, Harit Lizardman Grunt, Harit Lizardman Archer Tower of Insolence: Erin Ediunce, Platinum Series, Angel Series Garden of Eva: Nos, Blade Stakato Series, Water Giant, Queen Undine Lad, Eva's Seeker, Theeder Piker, Theeder Mage, Doll Master, Light Worm, Garden Guard Leader, Garden Guard)
+350	1	Very Special Weapon (Many Magisters and Maestros have been recruiting volunteers to form a united front against the coming dark days. They have developed methods of strengthening weaponry as a way of empowering individual members of their forces. They tell you that now is the time to grow individual strength to prepare for the approaching darkness and ask you to learn to use enhanced weaponry... Monsters that Soul Crystals can be used on - Watchman's Grave: Malruk Knight, Malruk Berserker, Malruk Lord, Limal Karinness, Karik, Pytan, Pytan Knight Devil's Isle: Bloody Bat, Unpleasant Humming, Death Flyer, Fiend Archer, Musveren, Zaken's Royal Guard, Kaim Vanul, Pirate Zombie Captain, Doll Blader, Veil Master, Sairon, Sairon's Doll, Sairon's Puppet, Light Bringer Timak Outpost: Timak Orc Series, Timak Orc Troop Series Fields of Massacre: Doom Servant, Doom Guard, Doom Archer, Doom Trooper, Doom Warrior, Doom Knight Forsaken Plains: Halingka, Yintzu, Paliote, Hamrut, Kranrot Forest of Mirrors: Forest of Mirrors Ghost, Mirror, Harit Lizardman, Harit Lizardman Grunt, Harit Lizardman Archer Tower of Insolence: Erin Ediunce, Platinum Series, Angel Series Garden of Eva: Nos, Blade Stakato Series, Water Giant, Queen Undine Lad, Eva's Seeker, Theeder Piker, Theeder Mage, Doll Master, Light Worm, Garden Guard Leader, Garden Guard)
 350	-1	[completed]
 351	1	Subjugation of Tasaba Lizardmen (Captain Gosta of Heine asks you to kill the Tasaba Lizardmen that stole the cargo belonging to Iason Heine's Commercial Guild. Slay the Tasaba Lizardmen and bring back their fangs or the barrels of league that were stolen and Iason Heine will give you a reward. Kill the Tasaba Lizardmen and Tasaba Lizardmen shamans.)
 351	2	Iason Heine's Reward (The cargo belonging to the Commercial Guild of Iason Heine has been stolen by Tasaba Lizardmen. You are hunting them. Bring back their fangs and Iason Heine will give you a reward. Recover the barrels of league that were stolen and he will give you some bills of Iason Heine worth 1000 adena each. If you take them to Head Blacksmith Roman in Heine he will exchange them for items.)
@@ -2442,8 +2443,8 @@
 370	-1	[completed]
 371	1	Ancient Ash Urn (Seer Reva of the Town of Aden asks you to find an ancient ash urn. You can obtain it by going to the Tower of Insolence and killing Elmoreden's Lady, Archer Escort, Maid, and Escort Guard. You will receive an extra reward if you bring back 100 ash urns at once. If in your search you happen to find an ancient porcelain, take it to antique dealer Patrin in the Town of Oren and get it appraised. Monsters to hunt: Elmoreden's Lady, Elmoreden's Archer Escort, Elmoreden's Maid, and Elmoreden's Guardian Warrior.)
 371	-1	[completed]
-372	1	In Search of Ancient Documents (Warehouse Keeper Walderal belonging to the Gray Pillar Guild is looking for a blueprint of the Tower of Insolence to find out the technology secrets of the ancestors who have built the Tower of Insolence. Slay the powerful enemies in the Tower of Insolence and recover the blueprint!  If you find other books, ask Walderal about them. Monsters to hunt: Exhausted Vengeful Spirit, Wings of Viciousness, Terestian, Brutal Warrior, Dark Knight, Demon Priest, Heaven's Palace Knight, Heaven's Palace Fighter, Heaven's Palace Terminator, Heaven's Palace Priest, Heaven's Palace Judge, Heaven's Palace Sniper, Heaven's Palace Noble Warrior, Heaven's Palace Noble Knight, Heaven's Palace Seraphim, and Heaven's Palace Seraphim Escort)
-372	2	Collecting Ancient Documents (Warehouse Keeper Walderal is looking for the blueprint of the Tower of Insolence. Slay the powerful enemies in the Tower of Insolence and recover the blueprint. You should also look for some books that other people have been asking for. Take the "Revelation of the Seals" to Madam Claudia Athebaldt near Aden Castle or Magister Desmond in the Town of Aden. Take the "Imperial Genealogy" to Trader Holly in the Town of Aden. Take the "Ancient Epic" to Antique Dealer Patrin in the Town of Oren. Monsters to hunt: Exhausted Vengeful Spirit, Wings of Viciousness, Terestian, Brutal Warrior, Dark Knight, Demon Priest, Heaven's Palace Knight, Heaven's Palace Fighter, Heaven's Palace Terminator, Heaven's Palace Priest, Heaven's Palace Judge, Heaven's Palace Sniper, Heaven's Palace Noble Warrior, Heaven's Palace Noble Knight, Heaven's Palace, Heaven's Palace Seraphim, Heaven's Palace Seraphim Escort)
+372	1	In Search of Ancient Documents (Warehouse Keeper Walderal belongs to the Gray Pillar Guild. He needs a blueprint of the Tower of Insolence to further his research. Slay the powerful enemies in the Tower of Insolence and recover the blueprint! If you find other books, ask Walderal about them. You must kill the corrupt sages, Erin Ediunce, Hallate's inspectors, platinum tribe overlords, platinum guardian prefects and messenger angels.)
+372	2	Collecting Ancient Documents (Warehouse Keeper Walderal needs the blueprints for the Tower of Insolence. Defeat the powerful monsters in the Tower of Insolence and retrieve the blueprints. You should also look for some books that other people have been asking for. Take "The Revelation of the Seals" to Madam Claudia Athebaldt near Aden Castle or Magister Desmond in the Town of Aden. Take "The Imperial Genealogy" to Trader Holly in the Town of Aden. Take "The Ancient Epic" to Antique Dealer Patrin in the Town of Oren. Monsters to be hunted - corrupt sages, Erin Ediunce, Hallate's inspectors, platinum tribe overlords, platinum guardian prefects and messenger angels.)
 372	-1	[completed]
 373	1	Preparation of Reagents (You have agreed to obtain the reagent that Magic Trader Wesley needs for his magic research. Slay the evil creatures in the Tower of Insolence and the Blazing Swamp and collect reagent ingredients. Once you collect the ingredients, use the mixing urn in the basement of the Ivory Tower to create reagents. Refer to the note that is attached to the mixing urn for instructions on how to use the urn and for the formulas used to mix the ingredients. Monsters to hunt: In the Tower of Insolence: Drill Demon, Platinum Faction Solider, Platinum Faction Shaman, Platinum Faction Commander, and Binder Blazing Swamp: Lava Wyrms and Hames Orc Shaman)
 373	-1	[completed]
@@ -2723,7 +2724,7 @@
 457	1	A Lost Youngster (Gumiel who got lost in the Monastery of Silence asks you to get him out of the labyrinth-like monastery. Lead him outside either the west or east entrance.)
 457	2	Escape Succeeded (You've successfully lead the lost Gumiel out of the Monastery of Silence. Looks like he has something to say.)
 457	-1	[completed]
-458	1	Challenge Accepted (You have accepted Kelleyia's Challenge.ﾠBe sure to kill fully grown Alpine animals with Over-hit.   Monsters to be hunted - Alpine Kookaburra, Alpine Cougar, Alpine Buffalo, Alpine Grendel. ﾠ)
+458	1	Challenge Accepted (You have accepted Kelleyia's Challenge. Be sure to kill fully grown Alpine animals with Over-hit.   Monsters to be hunted - Alpine Kookaburra, Alpine Cougar, Alpine Buffalo, Alpine Grendel.  )
 458	2	Challenge Complete (You have killed your limit of 40 animals. Speak with Kelleyia to see how well you have done.)
 458	-1	[completed]
 459	1	Elimination of the Villain (Defeat Teredor, as requested by the dwarf in the Town of Schuttgart, Elder Filaur.)
@@ -2739,16 +2740,16 @@
 462	2	To Lydia? (You have succeeded in defeating one of ancient heroes, as requested by Divine Messenger Lydia who's at the Orbis Temple. You can go back to Lydia or carry out this mission one more time to defeat a hero. Which would you choose?)
 462	3	Heading Back to Lydia! (You have defeated ancient heroes twice, as requested by Divine Messenger Lydia who's at the Orbis Temple. Go back to Lydia.)
 462	-1	[completed]
-463	1	Data Log Search (Collect the Golem Corps Log that match today's value.ﾠ Golems always carry the same number of logs however the daily value always changes.  Monsters to be hunted - Cruel Pliers Golem, Horrific Drill Golem, Reconnoiter 28 Golem, Guard Golem, Micro Reconnoiter Golem, Great Chaos Golem, Boom Golem)
-463	2	Search Completed (You have collected all Golem Corp Logs that match today's number.ﾠ Return to Gutenhagen.)
+463	1	Data Log Search (Collect the Golem Corps Log that match today's value.  Golems always carry the same number of logs however the daily value always changes.  Monsters to be hunted - Cruel Pliers Golem, Horrific Drill Golem, Reconnoiter 28 Golem, Guard Golem, Micro Reconnoiter Golem, Great Chaos Golem, Boom Golem)
+463	2	Search Completed (You have collected all Golem Corp Logs that match today's number.  Return to Gutenhagen.)
 463	-1	[completed]
-464	-8	null
-464	-7	null
-464	-6	null
-464	-5	null
-464	-4	null
-464	-3	null
-464	-2	null
+464	-8	
+464	-7	
+464	-6	
+464	-5	
+464	-4	
+464	-3	
+464	-2	
 464	1	The Will of the Ancient Book (When opening the door of the safebox, you found an old book. Check the content of the book first, and follow its will. A certain Librarian might know what to do...)
 464	2	Owner of the book (Deliver this Ancient Book to the Cardinal Seresin.)
 464	3	Owner of the book (Deliver this Ancient Book to the Merchant Holly of Aden Village.)
@@ -2777,14 +2778,14 @@
 470	1	Valley of Saints (The Adventurers' Guide has a job from High Priest Agripel in the Town of Rune to eliminate creatures in the Valley of Saints. Monsters to hunt: Eye of Splendor, Claws of Splendor, Flash of Splendor, Blade of Splendor, Wisdom of Splendor, Disciple of Pilgrim, Page of Pilgrim, Fury of Splendor, Soul of Splendor, Pilgrim of Splendor, Victory of Splendor, Punishment of Splendor, Shout of Splendor, Alliance of Splendor, Signet of Splendor, Crown of Splendor, Judge of Fire, Judge of Light, Fang of Splendor, Wailing of Splendor, and Judge of Splendor)
 470	2	Return to High Priest Agripel (You have defeated several creatures and collected 20 piles of Remnant Ash. Return to High Priest Agripel in the Town of Rune at the Einhasad Temple to claim your reward.)
 470	-1	[completed]
-471	1	Hell's Prison Guard Veridan (ﾠDefeat Hell's Prison Guard Veridan summoned in the Emerald Square of Crystal Caverns.)
-471	2	Status Report (ﾠReturn to Fioren at the Parnassus.)
+471	1	Hell's Prison Guard Veridan ( Defeat Hell's Prison Guard Veridan summoned in the Emerald Square of Crystal Caverns.)
+471	2	Status Report ( Return to Fioren at the Parnassus.)
 471	-1	[completed]
 472	1	Flaming Kechi (Defeat Flaming Kechi in the Steam Corridor of Crystal Caverns.)
-472	2	Status Report (ﾠReturn to Fioren at the Crystal Oracle.)
+472	2	Status Report ( Return to Fioren at the Crystal Oracle.)
 472	-1	[completed]
 473	1	Grand Arbitrator Michaela (Defeat Grand Arbitrator Michaela in the Coral Garden of Crystal Caverns.)
-473	2	Status Report (ﾠReturn to Fioren at the Crystal Oracle.)
+473	2	Status Report ( Return to Fioren at the Crystal Oracle.)
 473	-1	[completed]
 474	1	To the Frozen Labyrinth (The Adventurer Helper has a work order from Captain Vishotsky in the Town of Schuttgart to hunt animals in the Frozen Labyrinth and gather the meat in order to replenish the food supplies. Monsters to hunt: Lost Buffalo, Frost Buffalo, Ursus Cub, Ursus, Lost Yeti, and Frost Yeti)
 474	2	Return to Captain Vishotsky (You have succeeded in gathering the meat that Vishotsky mentioned. Return to Captain Vishotsky in the Town of Schuttgart and deliver those.)
@@ -2955,7 +2956,8 @@
 616	2	Slay the Spirit of Fire! (Slay Nastron, a spirit of fire and steal the source of its power!  While carrying out the mission, if you attack a Varka Silenos, this mission will be cancelled automatically. Monster to hunt - Nastron, the Spirit of Fire.)
 616	3	Return to the Guide of Dead Souls! (Take the flaming heart of Nastron and return to Udan Mardui, Guide of Dead Souls.  While carrying out the mission, if you attack a Varka Silenos, this mission will be cancelled automatically.)
 616	-1	[completed]
-617	1	Collecting Flames (Blacksmith Vulcan is collecting the Torches located in the lower level of the Forge of the Gods. You can obtain them by slaying the monsters within the Forge of the Gods. Take 1,000 Torches to Vulcan and he will give you a random S-grade weapon recipe. Blacksmith Rooney, who is wandering in the Forge of the Gods, is also collecting the Torches. Take 1,200 Torches to him and he will give you an S-grade weapon recipe of your choice. Monsters to be hunted - All monsters in the Forge of the Gods)
+617	1	Collecting Flames (Blacksmith Vulcan is collecting the Torches located in the lower level of the Forge of the Gods. You can obtain them by slaying the monsters within the Forge of the Gods.  Monsters to Hunt - All monsters in the Forge of the Gods)
+617	2	Return to Vulcan (You've defeated all the monsters in the Forge of the Gods and collected the torches as Vulcan requested. Now return to Blacksmith Vulcan in the Forge of the Gods, Lower Level.)
 617	-1	[completed]
 618	1	Get the Vacualite (Klein says you must have a set of floating stones to enter the Flame Pass. You can create the set of floating stones with vacualite. Speak with Blacksmith Hilda in the Town of Goddard to obtain vacualite.)
 618	2	Obtain the Ore (You need Vacualite ore to make Vacualite. Hunt monsters in the Garden of Beasts and collect 50 Vacualite ore.  Monsters to be hunted - Kookaburras, Bandersnatch and Grendels)
@@ -2986,7 +2988,7 @@
 623	1	Pride of the Master Chef (Chef Jeremy asks you to obtain 100 Flava Leaves, 100 Pieces of Buffalo Meat and 100 Antelope Horns in order to make a dish that will definitely impress the nobles who insulted him.  Monsters to be hunted - Hot Springs Flava, Hot Springs Buffalo, Hot Springs Antelope)
 623	2	Delivering Rare Ingredients (You've obtained 100 each of flava leaves, buffalo meat and antelope horns. Deliver them to Chef Jeremy.)
 623	-1	[completed]
-624	1	Get the Bait (Chef Jeremy needs special yeti meats of the Icicle Emperor to win the cooking contest. He asks you to bring him some. Monsters to hunt: Hot Springs Atrox, Hot Springs Atroxspawn, Hot Springs Bandersnatchlings, and Hot Springs Nepenthes)
+624	1	Get the Bait (Chef Jeremy needs some yeti meat to win the cooking contest. He asks you to bring him some. Monsters to be hunted - Hot Springs Atrox, Hot Springs Atroxspawn, Hot Springs Bandersnatchlings, Hot Springs Nepenthes)
 624	2	Delivering Rare Ingredients (You've obtained 50 each of nepenthes stems, bandersnatchling foot soles and secret spices. Deliver them to Chef Jeremy.)
 624	3	Return to Jeremy (You've obtained all the ingredients Chef Jeremy requested. Now take them to him.)
 624	-1	[completed]
@@ -3008,8 +3010,8 @@
 628	-1	[completed]
 629	1	Slaughter the Stakatos! (Pierce, captain of the Golden Ram Mercenary Force has assigned you the task of driving out the stakatos. Go to the Swamp of Screams and slay splinter stakatos and needle stakatos. As proof of your success, collect 100 claws of stakatos. When you bring them back to the barracks of the mercenary force, you'll receive a reward. Monsters to be hunted - Splinter Stakatos, Splinter Stakato Workers, Splinter Stakato Soldiers, Splinter Stakato Drones, Needle Stakatos, Needle Stakato Workers, Needle Stakato Soldiers and Needle Stakato Drones)
 629	-1	[completed]
-631	1	Perfect Cut (Tunatun says he needs Prime Meat.ﾠ The best cut of meat comes from fully grown Alpine animals.ﾠ Feed the animals until they are fully grown, then slaughter them and collect the Prime Meat.  Monsters to be hunted - Adult Grendel, Adult Kookaburra, Adult Buffalo, Adult Cougar.)
-631	2	Return to Tunatun (You have 120 cuts of Prime Meat.ﾠ Speak with Tunatun to claim your reward.)
+631	1	Perfect Cut (Tunatun says he needs Prime Meat.  The best cut of meat comes from fully grown Alpine animals.  Feed the animals until they are fully grown, then slaughter them and collect the Prime Meat.  Monsters to be hunted - Adult Grendel, Adult Kookaburra, Adult Buffalo, Adult Cougar.)
+631	2	Return to Tunatun (You have 120 cuts of Prime Meat.  Speak with Tunatun to claim your reward.)
 631	-1	[completed]
 632	1	Vampire Hunting (The Mysterious Wizard in the Forest of the Dead town asks two things. Kill vampires and hunt the undead that show up at night. Do this for him. Monsters to be hunted -  Vampire - Devil Bats, Atrox and all other vampires in the Forest of the Dead. General Undead: Corrupted Knights, Resurrected Knights, Corrupted Royal Guards, Resurrected Royal Guards, Slaughter Executioners, Guillotine's Ghosts, Resurrected Guards, Ghosts of Guillotine, Ghosts of Rebel Soldiers, Ghosts of Rebel Leaders)
 632	2	Return to the Mysterious Wizard (You've collected 200 vampire hearts. Return to the Mysterious Wizard to receive your reward. Continue collecting undead brains if you like it! Collect more vampire hearts for more rewards.)
@@ -3038,9 +3040,11 @@
 641	1	Collect the Fragments of Gazkh (Shilen's statue says that one can get the Ghazk pieces when capturing the carnivorous Velociraptor and Pterosaur.  But you must get 30 pieces of Ghazk pieces!  Get all 30 Ghazk pieces and bring them to Shillien's statue.   Monsters to be hunted - Velociraptor, Pterosaur)
 641	2	Return to Shilen's Stone Statue (All 30 of the Ghazk pieces collected. Go back to the Shillien's statue and offer the Ghazk pieces.)
 641	-1	[completed]
-642	1	Collect Dinosaur Tissue and Eggs (The appearance of the newly found island's powerful monster has caused research about its origin and appearance and interest from artisans regarding what can be made from its parts. Dinn says that he has been gathering dinosaur tissue for such research. Defeat the dinosaurs and bring back their tissue to Dinn.  Monsters to be hunted - - Pterosaur, Tyrannosaurus, Velociraptor, and Dinosaur Egg.)
+642	1	Collect Dinosaur Tissue and Eggs (The appearance of the newly found island's powerful monster has caused research about its origin and appearance and interest from artisans regarding what can be made from its parts. Dinn says that he has been gathering dinosaur tissue for such research. Defeat the dinosaurs and the ancient eggs and bring back their tissue and the eggs to Dinn.  Monsters to Hunt - Pterosaur, Tyrannosaurus, Velociraptor, and Dinosaur Egg.)
+642	2	Return to Dinn (You've collected the Dinosaur Tissue and Ancient Eggs as Dinn requested. Now return to Dinn in the Primeval Isle.)
 642	-1	[completed]
-643	1	Ingredients for Magical Research (Magician Philberg, who studies ancient organisms, needs dinosaur bones for his research. Also, a native Elroki magician of the Primeval Isle needs bones of dinosaurs.  Monsters to be hunted - Deinonychus, Ornithomimus, Pachycephalosaurus, and Wild Strider.)
+643	1	Ingredients for Magical Research (Singsing from Pimeval Isle says that you can get a reward if you take dinosaur bones to a native Elroki magician of the Primeval Isle.  Monsters to Hunt - Deinonychus, Ornithomimus, Pachycephalosaurus, and Wild Strider.)
+643	2	To the native Elroki magician (You've collected all the Plain Dinosaur Bones as Singsing from Primeval Isle requested. Now take these to the magicians.)
 643	-1	[completed]
 644	1	Defeat the Grave Robber (The number of vengeful spirits among the graves of the tribe of the betrayers is growing because of increased grave robber activity. Defeat the grave robbers and take back 120 stolen grave items.  Monsters to be hunted - Grave Robber Scouts, Grave Robber Lookouts, Grave Robber Rangers, Grave Robber Guards, Grave Robber Fighters)
 644	2	Return to Karuda (You have taken back all 120 stolen grave items Karuda asked for. Return to Karuda.)
@@ -3052,7 +3056,7 @@
 646	2	Go to Torrant (You have snatched the Cursed Dolls Torrant asked for. Take them to him.)
 646	-1	[completed]
 647	1	Hunt the Horrifying Golem Army (Collector Gutenhagen has asked you to hunt Golems at the Pavel Ruins. Monsters to be hunted - Cruel Pincer Golem, Horrifying Jackhammer Golem, Scout-type Golem No. 28, Guard Golem, Micro Scout Golem, Great Chaos Golem, and Boom Golem.)
-647	2	Return to Gutenhagen (You've collected 500 fragments by hunting down the Golems in the Pavel Ruins. Return to Collector Gutenhagen in the Dwarven barracks.)
+647	2	Return to Gutenhagen (You've collected enough fragments by hunting down the Golems in the Pavel Ruins. Return to Collector Gutenhagen in the Dwarven barracks.)
 647	-1	[completed]
 648	1	Rafforty's Request (Rafforty asks you to find a Silver Ice Crystal. They are guarded by creatures in the Frozen Labyrinth.  Monsters to be hunted - Massive Maze Bandersnatch, Lost Watcher, Elder Lost Watcher, Panthera, Lost Gargoyle, Lost Gargoyle Youngling, Pronghorn, Pronghorn Spirit, Ice Tarantula, Frost Tarantula, Frost Steel Golem, Frost Buffalo, Lost Buffalo, Ursus, Lost Yeti, Frost Yeti)
 648	2	Save the Silver Hemocytes (Rafforty thanks you and tells you to save any Silver Hemocytes you may acquire for future needs. He also says that if you return with a Black Ice Crystal, he will give you a reward as a small token of appreciation for all your help.  You can make a Black Ice Crystal from the Ice Shelf.  Monsters to be hunted - Massive Maze Bandersnatch, Lost Watcher, Elder Lost Watcher, Panthera, Lost Gargoyle, Lost Gargoyle Youngling, Pronghorn, Pronghorn Spirit, Ice Tarantula, Frost Tarantula, Frost Steel Golem, Frost Buffalo, Lost Buffalo, Ursus, Lost Yeti, Frost Yeti)
@@ -3100,6 +3104,7 @@
 670	1	Turek Orc's Treasure (You've found a map that shows the location of the forgotten treasures of the Turek Orcs. Go to the region and get the treasure.)
 670	-1	[completed]
 688	1	Collect Necklaces (Trader Dinn of the Primeval Isle Wharf is anxious because Elrokian raiders are stealing items from the merchants. He promises to give you a reward if you capture the raiders and bring back their necklaces as proof.  Monster to Hunt: Elroki)
+688	2	Return to Dinn (You've defeated the Elrokian Raiders and collected the Dinosaur Fang Necklaces as proof. Now return to Dinn in the Primeval Isle and report.)
 688	-1	[completed]
 690	1	Jude's Request (Jude, who is around the oasis, collects the weapons of monsters in the Anomic Foundry. Only some of the monsters in the Anomic Foundry have what he wants, and he will only reward you for the Evil Weapons. Monsters to Hunt - Lesser Evils, Greater Evils)
 690	-1	[completed]
@@ -3121,14 +3126,14 @@
 697	-1	[completed]
 698	1	Blocking Resurrection (Officer Tepios at the Seed of Infinity has a mission to stop Ekimus, the Lord of the Seed of Infinity, from being resurrected. Stop the Soul Devourer from reaching the center of the  Heart of Death.)
 698	-1	[completed]
-699	1	Guardian of the Skies (Engineer Lekon of the Keucereus' Alliance Base asked if you would assist him with a serious mission, now that you have an Aura Bird skill. Collect Vulture's Gold Feathers by hunting Master Rider Valdstone, Vulture Riders, and Elite Vulture Riders around the skies of the Keucereus' Alliance Base, and bring them to Lekon. Monsters to be hunted - Master Rider Valdstone and Elite Rider Vulture Riders)
+699	1	Guardian of the Skies (Engineer Lekon of the Keucereus' Alliance Base asked if you would assist him with a serious mission, now that you have an Aurabird skill. Collect Vulture's Gold Feathers by hunting Master Rider Valdstone, Vulture Riders, and Elite Vulture Riders around the skies of the Keucereus' Alliance Base, and bring them to Lekon. Monsters to be hunted - Master Rider Valdstone and Elite Rider Vulture Riders)
 699	-1	[completed]
-700	1	Liberate the  Cursed Life (Soldier Orbyu, the Wharf Managing Soldier of the Keucereus Alliance Base, asks to recover the lost freedom of Cursed Lives by destroying Rok, which appears over the skies of Seed of Infinity, and his subordinate monsters. Hunt them and bring deadman's remains which they swallowed as an evidence. Monsters to be hunted - Rok, Mutant Bird, and Dra Hawks)
+700	1	Liberate the Curse Life. (Soldier Orbyu, the Wharf Managing Soldier of the Keucereus Alliance Base, asks to recover the lost freedom of Cursed Lives by destroying Rok, which appears over the skies of Seed of Infinity, and his subordinate monsters. Let's hunt them and bring deadman's remains which they swallowed as an evidence. Monsters to be hunted - Rok, Mutant Bird, and Dra Hawks)
 700	-1	[completed]
-701	1	Elimination of Monsters (War Mage Artius of the Keucereus Alliance Base explains that the cause of the soldiers' weakened morale is a monster called Banshee Queen Enira. Hunt the monsters and prove that it is not something that soldiers should be scared of. Let's bring the Banshee Queen's Eye and Deadman's remains as an evidence of a successful hunting. Monsters to be hunted - Banshee Queen Enira, Floating Skull, and Floating Zombie)
+701	1	Elimination of Monsters (War Mage Artius of the Keucereus Alliance Base explains that the cause of the soldiers' weakened morale is a monster called Banshee Queen Enira. Let's hunt the monsters and prove that it is not something that soldiers should be scared of. Let's bring the Banshee Queen's Eye and Deadman's remains as an evidence of a successful hunting. Monsters to be hunted - Banshee Queen Enira, Floating Skull, and Floating Zombie)
 701	-1	[completed]
 702	1	Preparation for Proving (Soldier Plenos of the Keucereus Alliance Base suggests a mission which can prove one's strength. The mission is to hunt Dius, the Deadman of Destruction, and his subordinate Drakes over the skies of Seed of Destruction. He says one should go and see Soldier Tenis, the injured soldier who's in the center of Keucereus Alliance Base, and ask for advice.)
-702	2	Materials for Preparation (Soldier Tenis, who got injured when he went out to hunt Dius, says that one cannot see Dius, the Deadman of Destruction, with an ordinary method. He says that one has to use the trap which he developed in order to bait Dius, the Deadman of Destruction. Thus he asks to bring 100 pieces of Drake's Flesh to be used as materials by capturing his subordinate Drak, which appears over the skies of Seed of Destruction. Monsters to be hunted - Drak, Drake Wing, and Mutated Drake Wing)
+702	2	Materials for Preparation (Soldier Tenis, who got injured when he went out to hunt Dius, says that one cannot see Dius, the Deadman of Destruction, with an ordinary method. He says that one has to use the trap which he developed in order to lure Dius, the Deadman of Destruction. Thus he asks to bring 100 pieces of Drake's Flesh to be used as materials by capturing his subordinate Drak, which appears over the skies of Seed of Destruction. Monsters to be hunted - Drak, Drake Wing, and Mutated Drake Wing)
 702	-1	[completed]
 708	1	What one does to become a Lord (Saius says you must be recognized by local forces in a territory in order to become a Lord. You should meet those who are in power in order to be recognized. Saius will tell you the detailed information a little later. Let's wait.)
 708	2	Find a representative. (Sayres says it will be enough if one can get a support from Blacksmith Pinter of the Grey Column guild, who's in charge of restoring Gludio territory. Saius asks you to appoint someone who can proceed with the work on behalf of you.)
@@ -3376,6 +3381,9 @@
 759	1	Eliminate the Main Body (Daichir, the Head Priest of the Earth, has called for an alliance of 200 or less of the most elite adventurers to go on a raid against Earth Wyrm Trasken. The task is to eliminate Trasken's main body. Monsters to hunt: Earth Wyrm Trasken)
 759	2	Return to Daichir (You have defeated Earth Wyrm Trasken. Return to Head Priest of the Earth Daichir.)
 759	-1	[completed]
+760	1	Subjugation of the Nightmare Kamaloka (Captain Kurtiz from the Town of Aden has asked you to defeat the monsters in Nightmare Kamaloka. Monsters to Hunt - Mino, Sola, Ariarc, Sirra, Dark Rider)
+760	2	Return to Curtiz (You've defeated all the monsters in Nightmare Kamaloka. Now return to Captain Kurtiz in the Town of Aden and report.)
+760	-1	[completed]
 761	1	Eliminating the Stakatos (Pierce, the captain of the Golden Ram Army, says the Stakatos have been stirring ominously as of late.  Hunt down the Stakatos in the Swamp of Screams, and bring back Intact Stakato Shells and Intact Stakato Talons as proof.  Monsters to hunt: All Stakato monsters in the Swamp of Screams)
 761	2	Collection Complete? (You have hunted the Stakatos in the Swamp of Screams and collected the Intact Stakato Shells. You can report back to  Mercenary Captain Pierce, or hunt more Stakatos to collect Intact Stakato Talons (Intact Stakato Talons cannot exceed a certain amount).)
 761	3	Collection Complete! (You have hunted Stakatos in the Swamp of Screams and collected enough Intact Stakato Shells and Intact Stakato Talons. Report back to Mercenary Captain Pierce.)
@@ -3417,9 +3425,9 @@
 772	1	Purifying the Souls of Refugees (Investigator Quincy has asked you to eliminate monsters in the Land of Chaos and bring back 50 Souls of Darkness, and offered a special reward for Faint Souls of Light. The more you bring back, the better you'll be rewarded. Monsters to hunt: Rubble, Large Rubble,  One-armed Zombie, Putrefied Zombie, Shelop, Kro, Gel, Poras, Death Worm)
 772	2	To Quincy the Investigator (You have collected 50 Souls of Darkness from monsters in the Land of Chaos. You can bring them back to Investigator Quincy, or gather more Faint Souls of Light for better rewards.)
 772	-1	[completed]
-775	1	Collecting the Chaos Fragment (Leona Blackbird has asked you to collect Chaos Fragment. Monsters to hunt: All monsters in Hellbound)
-775	2	Partial Success (Return to Leona Blackbird to receive the minimum reward, or continue hunting for greater rewards.)
-775	3	Return to Leona Blackbird (You have obtained the maximum number of Chaos Fragment. Report back to Leona Blackbird.)
+775	1	Collecting the Chaos Fragment (Leona Blackbird has asked you to collect Chaos Fragments. Monsters to hunt: All monsters in Beleth's Magic Circle or the Desert Quarry in Hellbound)
+775	2	Partial Success (You've retrieved all the Chaos Fragments from the monsters in Beleth's Magic Circle and the Desert Quarry. Return to Leona Blackbird to receive the minimum reward, or continue hunting for greater rewards.)
+775	3	Return to Leona Blackbird (You've collected all the Chaos Fragments from Beleth's Magic Circle and the Desert Quarry. Report back to Leona Blackbird.)
 775	-1	[completed]
 776	1	Infiltrate the Hall of Suffering (Officer Tepios has given you instructions on defeating Ekimus. You must infiltrate the Hall of Suffering after creating a command channel and entering through Jaedin at the entrance of the Seed of Infinity.)
 776	2	Infiltrate the Heart of Infinity (You have broken through all of the Hall of Suffering. Move onto the Heart of Infinity to take down Ekimus.)
@@ -3431,17 +3439,25 @@
 778	2	Mission Complete (You have collected enough broken weapon fragments with Turakan's secret letter. Return to Bruener at the entrance to Raider's Crossroads.)
 778	-1	[completed]
 779	1	Gather the Seed of Destruction Special Products (Sergeant Allenos has asked you to defeat monsters at the Seed of Destruction and bring back Tiat's Totems. You need at least 50 to be compensated, and can gather no more than 500. Monsters to hunt: All monsters within Seed of Destruction)
-779	2	Return to Allenos (You have gathered enough Tiat's Totems. Return to Sergeant Allenos.)
+779	2	Seeds of Destruction Collected (You have collected 50 Tiat's Totems. You can return to Sergeant Allenos, but you can also collect more if you wish. You can collect up to 500.)
+779	3	Return to Allenos (You have gathered enough Tiat's Totems. Return to Sergeant Allenos.)
 779	-1	[completed]
 780	1	Gather the Seed of Infinity Special Products (Officer Tepios has asked you to defeat monsters at the Seed of Infinity and bring back Marred Soul Crystals.  You need at least 50 to be compensated, and can gather no more than 500. Monsters to hunt: All monsters within Seed of Infinity)
-780	2	Return to Tepios (You have gathered enough Marred Soul Crystals. Return to Officer Tepios.)
+780	2	Seeds of Infinity Collected (You have collected 50 Marred Soul Crystals. You can return to Officer Tepios, but you can also collect more if you wish. You can collect up to 500.)
+780	3	Return to Tepios (You have gathered enough Marred Soul Crystals. Return to Officer Tepios.)
 780	-1	[completed]
 781	1	Gather the Seed of Annihilation Special Products (Officer Klemis has asked you to defeat monsters at the Seed of Annihilation and bring back Soul Stone Dust.  You need at least 50 to be compensated, and can gather no more than 500. Monsters to hunt: All monsters within Seed of Annihilation)
-781	2	Return to Klemis (You have gathered enough Soul Stone Dust. Return to Officer Klemis.)
+781	2	Seeds of Annihilation Collected (You have collected 50 Soul Stone Dust. You can return to Officer Klemis, but you can also collect more if you wish. You can collect up to 500.)
+781	3	Return to Klemis (You have gathered enough Soul Stone Dust. Return to Officer Klemis.)
 781	-1	[completed]
 782	1	Gather the Seed of Hellfire Special Products (Sizrak has asked you to defeat monsters at the Seed of Hellfire and bring back Disabled Petra.  You need at least 50 to be compensated, and can gather no more than 500. Monsters to hunt: All monsters within Seed of Hellfire)
-782	2	Return to Sizrak (You have gathered enough Disabled Petra. Return to Sizrak.)
+782	2	Seeds of Hellfire Collected (You have collected 50 Disabled Petra.You can return to Sizrak, , but you can also collect more if you wish. You can collect up to 500.)
+782	3	Return to Sizrak (You have gathered enough Disabled Petra. Return to Sizrak.)
 782	-1	[completed]
+783	1	Retrieving the Chaos Fragment (Leona Blackbird from Hellbound has asked you to collect the High-grade Fragments of Chaos from the Phantasmal Ridge. Monsters to Hunt - Smaug, Lunatikan, Jabberwok, Kanzaroth, Kandiloth, Garion, Garion Neti, Desert Wendigo, Koraza, Bend Beatle, Viper)
+783	2	Minimal Success (You've retrieved a few Fragments of Chaos from the monsters in the Phantasmal Ridge. You can receive the minimum rewards if you return to Leona Blackbird now. If you want more rewards, continue hunting.)
+783	3	Return to Leona Blackbird (You've retrieved all the Fragments of Chaos from the monsters in the Phantasmal Ridge. Now return to Leona Blackbird in Hellbound and report.)
+783	-1	[completed]
 784	1	Silence the Stakatos (Kahman wants you to help him by hunting down the Stakatos at the Swamp of Screams. As proof, bring back Stakato Chitin and Quality Stakato Chitin. Monsters to Hunt: Stakatos in the Swamp of Screams)
 784	2	The Collection (You have done enough hunting and gathering. Either report back to Kahman, or continue to hunt and gather some more. (Quality Stakato Chitins have a limit on how much you can gather.))
 784	3	Complete the Collection (You have done enough hunting and gathering. Report back to Kahman.)
@@ -3459,7 +3475,7 @@
 787	3	Complete the Collection (You have gathered enough for Namo. Report back to him.)
 787	-1	[completed]
 789	1	Collect Magma Crystals (Harp Zu Hestui has asked you to defeat monsters in the Blazing Swamp and bring back Magma Ores. Monsters to hunt: Magma Ailith, Magma Apophis, Lava Wyrm, Lava Drake, Lava Wendigo, Lava Stone Golem, Lava Leviah, Magma Salamander, Magma Dre Vanul, Magma Ifrit, Blazing Saurus, Blazing Wizard, Flame Preta, Flame Crow, Flame Rael, Flame Salamander, Flame Drake, Flame Votis)
-789	2	Almost Done? (You have collected 100 Magma Ores. You can take them to Harp Zu Hestui right now, but you can collect more if you want. You can collect up to 600.)
+789	2	Almost Done? (You have collected 100 Magma Ores. You can take them to Harp Zu Hestui right now, but you can collect more if you want. You can collect up to 400.)
 789	3	Completed! (You have collected all the Magma Ores. Report to Harp Zu Hestui.)
 789	-1	[completed]
 790	1	The Trial to Obtain Trust (Master Cyphona has asked you to defeat the spirits in the Garden of Spirits and collect their souls. Monsters to hunt - Kerberos Liger, Kerberos Fort, Kerberos Nero, Fury Sylph Barrena, Fury Sylph Temptress, Fury Sylph Purka, Fury Kerberos Liger, Fury Kerberos Nero)
@@ -3498,6 +3514,25 @@
 831	1	Breaking Trust (Wanderer Yuyuria, who was hiding inside a box, has asked you to defeat the Ashen Shadow Revolutionaries and to pring back Destroyed Mark Fragments as proof. Monster to Hunt - Revolutionaries' Altar)
 831	2	To Yuyuria (You've destroyed the altars that the Revolutionaries were protecting and collected all the Destroyed Mark Fragments. Go report to Wanderer Yuyuria.)
 831	-1	[completed]
+833	1	Defeat Flame Scorpions (You decided to help Archaeologist Deton to find some treasures. First, defeat the Flame Scorpion. Monster to Hunt - Flame Scorpion)
+833	2	At a Crossroads (You are at a crossroads. Select the path you want to go through.)
+833	3	Defeat Flame Golems (You've selected the place where the Flame Golem is. Defeat the Flame Golem. Monster to Hunt - Flame Golem)
+833	4	Defeat Flame Scarabs (You've selected the place where the Flame Scarab is. Defeat the Flame Scarab. Monster to Hunt - Flame Scarab)
+833	5	Destroy the Seal Device (You've defeated the monster. Destroy the Seal Device.)
+833	6	Move Underground (With the destruction of the Seal Device, a hole has opened up underground. Deton says that if you go through the undergrounds, you'll be able to find the treasures. Go through the underground path.)
+833	7	Stop the Seal Archangel (The Seal Archangel has appeared underground. Defeat the Seal Archangel. Monster to Hunt - Seal Archangel)
+833	8	To Tavern Owner Settlen (Settlen is looking for you. If you are done with the story, go find Settlen.)
+833	-1	[completed]
+834	1	Rescue Molly (Seal the Altar of Earth and the Altar of Wind, and rescue Molly.)
+834	2	Defeat Kelbim (Defeat Kelbim and recapture the Schuttgart Castle.)
+834	3	To Tavern Owner Settlen (Settlen is looking for you. If you are done with the story, go find Settlen.)
+834	-1	[completed]
+835	1	Speak with Sayan (Ask Sage Sayan how you can help heal Melisa.)
+835	2	Collect Ice Crystal Shards (Collect the Ice Crystal Shards spread throughout the Labyrinth in order to heal Melisa. Monsters to Hunt - Frost Glacier Golem, Glacier Golem)
+835	3	Return to Sayan (You've collected all the Ice Crystal Shards from the monsters in the Labyrinth. Return to Melisa's palace and report to Sage Sayan.)
+835	4	Look After Princess Melisa (Look after Princess Melisa as she gets treatment and recovers.)
+835	5	To Settlen (Settlen is looking for you. If you are done with the story, go find Settlen.)
+835	-1	[completed]
 901	1	Lavasaurus Research (In the Forge of the Gods, hunt Newborn, Fledgling, Adult, and Elderly Lavasauruses and obtain from them Lavasaurus Stone, Head, Body fragment, and Horn fragments.)
 901	2	Lavasaurus Fragments (Take the Lavasaurus fragments back to Blacksmith of Wind Rooney.)
 901	-1	[completed]
@@ -3558,7 +3593,7 @@
 10274	1	Extracting Star Stones (Engineer Lekon of the Keucereus Alliance Base suggests that you learn how to extract star stones now that you are now qualified to fly. We should collect 8 stones extracted from star stones over the skies of Keucereus and return to Lekon.)
 10274	2	To Lekon (All the necessary extracted stones have been collected. Return to Engineer Lekon of the Keucereus Alliance Base!)
 10274	-1	[completed]
-10275	-2	null
+10275	-2	
 10275	1	Gorgeous and skilled adventurer (It's not easy finding a warrior with both skills and the charisma. Wait, why not? Volunteer yourself.)
 10275	2	The Worries of Attribute Master Yin (What is Attribute Master Yin worried about? Go and see the Attribute Master inside of the village and hear what she says.)
 10275	3	First request from Attribute Master Yin (Attribute Master Yin of the Town of Aden has asked you to capture the Reckless Water Spirit which escaped from the lab during one of the experiments. Due to the delicate nature of this spirit she has instructed you to capture the reckless spirit using her sword. Go to the War-Torn Plains nearby the Town of Aden, and hunt the Reckless Water Spirit with Attribute Master Yin's sword. Monster to hunt - Reckless Water Spirit)
@@ -3628,7 +3663,7 @@
 10289	2	Mark of Darkness (Only the Mark of Darkness came out. If you bring this to Priest Greymore, he will laugh at you. Try to capture the Lord of Splendor, Anais once again.)
 10289	3	Mark of Splendor (Mark of Splendor, it is! Bring it to Priest Greymore.)
 10289	-1	[completed]
-10290	1	Defeat Antharas (Antharas Watchman Theodric has stated that it is nearly impossible to defeat Antharas now. Obtain proof that you have defeated Antharas and prove that it can be stopped. The Shabby Necklace will change upon successfully defeating Antharas. You need a large group in order to take on this task. ﾠ)
+10290	1	Defeat Antharas (Antharas Watchman Theodric has stated that it is nearly impossible to defeat Antharas now. Obtain proof that you have defeated Antharas and prove that it can be stopped. The Shabby Necklace will change upon successfully defeating Antharas. You need a large group in order to take on this task.  )
 10290	2	Antharas Conquered (Antharas has been defeated. The Shabby Necklace in your possession has changed into the Miracle Necklace. Take it back to Theodric as proof that the impossible is possible.)
 10290	-1	[completed]
 10291	1	Defeat Valakas (You have accepted the challenge to defeat Valakas. You can prove that you have destroyed the beast by containing some of its power in the necklace Klein gave you. You will need to form or be part of a large group to take on Valakas.)
@@ -3666,6 +3701,13 @@
 10296	4	Hardin's Call (You hear from Elcadia that Hardin is looking for you. Meet with Hardin.)
 10296	5	Mission Complete (Now all the missions are complete. Return to Franz through Wood and report back.)
 10296	-1	[completed]
+10297	1	Speak with Lollia (Settlen told you to talk to Lollia.)
+10297	2	Speak with Hanna (Lollia told you to talk to Hanna.)
+10297	3	Speak with Mei (Hanna told you to talk to Mei.)
+10297	4	Speak with Brodien (Mei told you to talk to Brodien.)
+10297	5	Speak with Lupia (Brodien told you to talk to Lupia.)
+10297	6	Speak with Lailly (Lupia told you to talk to Lailly.)
+10297	-1	[completed]
 10301	1	Magmeld Delegation Leader Lada (Speak to Magmeld Delegation Leader Lada who's in the Hunter's Village.)
 10301	2	Let's Capture Wisp Alive (You have to call Wisp, a creature of the spirits, and capture it in order to go to Slaski, the Hierarch of the Ancient city Arcan. You can call Wisp if you find a Large Verdant Wild that Wisp likes from nearby the cave located behind the Anghel Waterfall and use the glimmer Crystal. Monster to hunt: Wisp)
 10301	3	Let's Meet Hierarch Slaski (You have captured Wisp alive. Go to meet Hierarch Slaski, who can be found in the Ancient City Arcan, through the Teleport Portal. If you enter the cave located behind the Anghel Waterfall, you can go to the Ancient City Arcan.)
@@ -3692,12 +3734,12 @@
 10305	1	Tear the Fairy Cocoon (It says that Fairy Cocoon is a place to lock up fairy citizens who don't follow Kimerian. Get rid of Fairy Cocoons where its numbers are kept increasing. Cocoons can be defeated either by forcefully attacking them or by using Glimmer. Monsters to hunt: Cocoon and Large Cocoon)
 10305	2	Mission Complete (You have torn enough numbers of cocoons that you promised Noeti Mimilead. Go back to Noeti Mimilead.)
 10305	-1	[completed]
-10306	1	Back to Kimerian (Naomi Kasheron has decided to meet the corrupted leader Kimerian face-to-face.ﾠ Join together to face Kimerian. Monsters to hunt: Kimerian)
-10306	2	Kimerian Vanished (Kimerian has vanished.ﾠ Return to the village and talk to Naomi Kasheron.)
+10306	1	Back to Kimerian (Naomi Kasheron has decided to meet the corrupted leader Kimerian face-to-face.  Join together to face Kimerian. Monsters to hunt: Kimerian)
+10306	2	Kimerian Vanished (Kimerian has vanished.  Return to the village and talk to Naomi Kasheron.)
 10306	-1	[completed]
-10307	1	Kimerian's Real Side (Naomi Kasheron says that you can now face the real Kimerian.ﾠ Go with Naomi Kasheron to help defeat Kimerian. Monsters to hunt: Kimerian)
+10307	1	Kimerian's Real Side (Naomi Kasheron says that you can now face the real Kimerian.  Go with Naomi Kasheron to help defeat Kimerian. Monsters to hunt: Kimerian)
 10307	2	Josephina and the Decaying Darkness (Kimerian stated the reason why he became corrupted is because of the energy of the Decaying Darkness. Return to tell Naomi Kasheron about the story of the Decaying Darkness and then inform Josephina of her companion Izael.)
-10307	3	The Truth behind Kimerian's Corruption (The reason behind Kimerian's corruption is due to Spezion, having been awakened by the Decaying Darkness.ﾠ Inform the Fairy Hierarch Noeti Mimilead of this news..)
+10307	3	The Truth behind Kimerian's Corruption (The reason behind Kimerian's corruption is due to Spezion, having been awakened by the Decaying Darkness.  Inform the Fairy Hierarch Noeti Mimilead of this news..)
 10307	-1	[completed]
 10310	1	In the Garden of Genesis (Meet the Cat Clan's Horpina, who can be found in the Garden of Genesis and listen to the story.)
 10310	2	Go on the Hunt (Defeat 10 of the following monsters: Garden Sentry, Garden Scout, Garden Commander, Garden Destroyer and the Outdoor Gardener.)
@@ -3767,11 +3809,11 @@
 10329	-1	[completed]
 10330	1	Find Lakcis (Atran says Lakcis, who used to be a scholar, is having difficulties searching the ruins and needs you to go help him.)
 10330	-1	[completed]
-10331	-6	null
-10331	-5	null
-10331	-4	null
-10331	-3	null
-10331	-2	null
+10331	-6	
+10331	-5	
+10331	-4	
+10331	-3	
+10331	-2	
 10331	1	Speak with Lakcis (First you need to speak Lakcis and he will inform you about your new task. Go visit Gatekeeper Milia in Talking Island Village to go to the Ruins of Ye Sagira.)
 10331	2	Speak with Sebion (Find and speak with Sebion. He can be found in Exploration Zone 5. He will inform you about your next task.)
 10331	3	Defeat Nemertess (Go inside the Labyrinth of Belis and defeat Nemertess. When you're ready to go inside, speak with Sebion.)
@@ -3921,13 +3963,13 @@
 10358	3	Defeat Poslof (It says that Poslof only appears in a certain location. Find Poslof in the ruined house lot and defeat him. You can find his location on the map. Monsters to hunt: Poslof)
 10358	4	Deliver Sakum's Sketch (Poslof, the other self spilt out by Sakum, has been defeated. Deliver Sakum's composite sketch to an Adventure Guildsman in the Town of Gludio. You can teleport to the town using a Scroll of Escape or a Teleport Device.)
 10358	-1	[completed]
-10359	-8	null
-10359	-7	null
-10359	-6	null
-10359	-5	null
-10359	-4	null
-10359	-3	null
-10359	-2	null
+10359	-8	
+10359	-7	
+10359	-6	
+10359	-5	
+10359	-4	
+10359	-3	
+10359	-2	
 10359	1	Let's Go to Fred (It says that an Adventure Guildsman in the Town of Gludio received a message that Sakum is appearing in the Wasteland. Go to Guard Fred in the entrance of Wasteland and listen to his story. You can teleport to the Wasteland through a Gatekeeper.)
 10359	2	Enraged Monsters (Monsters where Sakum has appeared look different than before. It says that suspicious fragments are coming out from monsters in the Wasteland. Defeat monsters in the Wasteland and collect suspicious fragments. Monsters to hunt: Monster Eye Watcher, Lesser Basilisk, Basilisk, Skeleton Marauder, Granite Golem, Sahara, and Tyrant)
 10359	3	Completion of Collecting Suspicious Fragments (Suspicious fragments have been collected from monsters in the Wasteland. Return to Guard Fred.)
@@ -3940,13 +3982,13 @@
 10359	10	Reporting the Situation in the Wasteland (Sakum's scales have been found from monsters in the Wasteland. Report this fact to Grand Master Ellenia in the Warrior Guild of the Town of Gludio and ask him to find a right man to defeat Sakum.)
 10359	11	Reporting the Situation in the Wasteland (Sakum's scales have been found from monsters in the Wasteland. Report this fact to Grand Magister Esrandell in the Einhasad Temple of the Town of Gludio and ask him to find a right man to defeat Sakum.)
 10359	-1	[completed]
-10360	-8	null
-10360	-7	null
-10360	-6	null
-10360	-5	null
-10360	-4	null
-10360	-3	null
-10360	-2	null
+10360	-8	
+10360	-7	
+10360	-6	
+10360	-5	
+10360	-4	
+10360	-3	
+10360	-2	
 10360	1	Find Renfad (Reports say that Sakum is currently heading towards Dion. However, Sakum is currently in the Wasteland and is being tracked by several guards. Travel to the Wasteland and speak with Renfad.)
 10360	2	Defeat Kanilov (Guard Renfad says that you need to find Guard Joel who was sent to track and kill the Regenerated Kanilov. Monster to hunt: Regenerated Kanilov)
 10360	3	Kanilov Defeated (You have defeated the Kanilov created from Sakum. Speak with Guard Joel.)
@@ -3963,7 +4005,7 @@
 10360	14	Deliver the Shine Stone (The heart of Sakum was a Shine Stone, a power found only in the time of the Giants. Deliver this to Head Blacksmith Mendio in the Town of Gludio. You can teleport to the town using a Scroll of Escape or a Teleport Device.)
 10360	15	Deliver the Shine Stone (The heart of Sakum was a Shine Stone, a power found only in the time of the Giants. Deliver this to Grand Master Gershwin in the Town of Gludio. You can teleport to the town using a Scroll of Escape or a Teleport Device.)
 10360	-1	[completed]
-10361	1	Searching for Chesha (Lakcis wants you to pass on a message to Chesha. Find Chesha in the Ruins of Ye Sagira, Exploration Zone 1.ﾠ Use the Ye Sagira Teleport Devices to teleport to the Ruins and teleport between Exploration Zones.)
+10361	1	Searching for Chesha (Lakcis wants you to pass on a message to Chesha. Find Chesha in the Ruins of Ye Sagira, Exploration Zone 1.  Use the Ye Sagira Teleport Devices to teleport to the Ruins and teleport between Exploration Zones.)
 10361	-1	[completed]
 10362	1	Will of a Seeker (A Ranger never lets emotion get in the way of completing their task. Defeat 10 Husk Stalkers and 5 Husk Crawlers. Monsters to hunt: Husk Stalker and Husk Crawler)
 10362	2	Report to Chesha (You have completed the task Chesha sent you on… you did not let emotions get in the way of defeating the dead villagers infected by the Evil Fragment.)
@@ -3975,7 +4017,7 @@
 10363	4	Third Corpse (Another corpse found, and mourned. Hopefully this will bring piece to the souls who have found none.)
 10363	5	Fourth Corpse (Another corpse found, and mourned. You feel sympathy for the victims.)
 10363	6	Fifth Corpse (Found 5 corpses and mourned their death. Your kind act should give those souls the piece they need so their cries may end. Find Nagel.)
-10363	7	Nagel's Message (Celin has been worried over the difficulties Nagel has experienced. Find Celin and tell her about Nagel.ﾠ Use the Red Ye Sagira Teleport Device to go to the 3rd Exploration Zone.)
+10363	7	Nagel's Message (Celin has been worried over the difficulties Nagel has experienced. Find Celin and tell her about Nagel.  Use the Red Ye Sagira Teleport Device to go to the 3rd Exploration Zone.)
 10363	-1	[completed]
 10364	1	Uppity Walter (A fellow seeker doesn't have to be your best friend, but when your life is on the line, you better be able to work with the one next to you. It appears that Walter has a problem with Def. Speak to Walter to see if you can find out how to resolve this problem.)
 10364	2	Paper Collection (Walter is frustrated as he does not know why Def is angry at him. Walter mentioned that some old papers around here might help Def open up. Collect the old papers and find Def in the 4th Exploration Zone. Monsters to hunt: Husk Krapher and Husk Avian)
@@ -3984,11 +4026,11 @@
 10365	1	Follow King to Sebion (Def knows that Sebion can keep King safe and needs someone to follow King to make sure he doesn't get hurt on his journey. Follow King to Sebion.)
 10365	2	King Safe and Sound (King made to it to Sebion with your protection. Talk to Sebion.)
 10365	-1	[completed]
-10366	-6	null
-10366	-5	null
-10366	-4	null
-10366	-3	null
-10366	-2	null
+10366	-6	
+10366	-5	
+10366	-4	
+10366	-3	
+10366	-2	
 10366	1	Sebion's Report (Sebion said that the situation in the ruins has calm down and must be reported to your race master in the Administrative Office in Talking Island Village. You can teleport to the village using a Scroll of Escape.)
 10366	2	Report to High Priest Franco (Find High Priest Franco who can be found in the Administrative Office in Talking Island Village. You can teleport to the village using a Scroll of Escape.)
 10366	3	Report to Grand Master Rivian (Find Grand Master Rivian who can be found in the Administrative Office in Talking Island Village. You can teleport to the village using a Scroll of Escape.)
@@ -4257,7 +4299,7 @@
 10440	2	To Helvetica (You have slain enough Mucrokians to weaken their forces. Report back to Dr. Helvetica at the Field of Silence.)
 10440	3	To Athenia (You have slain enough Mucrokians to weaken their forces. Report back to Priestess Athenia at the Field of Whispers.)
 10440	-1	[completed]
-10441	-2	null
+10441	-2	
 10441	1	Eliminating Meccadan (After activating the Dimensional Gate, the Awakening Meccadan will appear. Defeat the Awakening Meccadan. Monsters to hunt - Awakening Meccadan)
 10441	2	To Helvetica (You have eliminated the Awakening Meccadan. Return to Dr. Helvetica in the Field of Silence.)
 10441	3	To Athenia (You have eliminated the Awakening Meccadan. Return to Priestess Athenia in the Field of Whispers.)
@@ -4311,12 +4353,12 @@
 10461	-1	[completed]
 10462	1	A Hand at Augmentation (Flutter, the Head Blacksmith of the Town of Oren, has provided you with the tools to practice augmenting and suggested that you try it.)
 10462	-1	[completed]
-10463	1	A Hand at Soul Crystal Enhancement (Flutter, the Head Blacksmith of the Town of Oren, has provided you with the tools to practice soul crystal enhancement and suggested that you try it.)
-10463	-1	[completed]
 10464	1	Better Equipment is Better (Paterson of the Town of Aden has suggested that you try something on your belt. See Olf Kanore for details.)
 10464	2	Bestowing Options on a Belt (Olf Kanore has given you information on how to add options to your belt. Give it a try.)
 10464	3	Return to Paterson (Report back to Paterson in the Town of Aden.)
 10464	-1	[completed]
+10465	1	Try the Soul Crystal System (You've collected the items needed to use the Soul Crystal System. Now is time to try it out.)
+10465	-1	[completed]
 10472	1	Counterfeit Gem (Queen Navari has charged you with investigating the alleged sales of fake Atelia in the Material Realm. Zephyra the Alchemist will be able to lend you a hand.)
 10472	2	The Hunt Begins (Zephyra says you need to wait for word from Veruti the Alchemist at the Town of Rune. Do as she says and get a blacksmith's opinion on who would make such a thing as a fake gem.)
 10472	3	A Dark Market (Apparently the Black Marketeers of Mammon are trading the fake Atelia in each major town. Try finding one for more information. (The closest village to Faeron would be the Town of Gludio.))
@@ -4352,6 +4394,11 @@
 10505	1	Crystal Imbued with Valakas' Energy (Valakas Watchman Klein asks you to defeat Valakas and to fill the empty crystal with the fire dragon's energy. Go to Valakas' Lair, defeat the land dragon Valakas, and bring back the crystal filled with the fallen beast's energy.)
 10505	2	Jewel of Valakas (You defeated the fire dragon Valakas and filled the crystal with the beasts energy! Bring it back to Valakas Watchman Klein.)
 10505	-1	[completed]
+10506	1	Defeating Demon Knight (Diana at the Talking Island Village has asked you to find her stolen accessories. First, go to the Tower of Insolence and defeat the Demon Knight to retrieve her earring. Monster to Hunt - Demon Knight)
+10506	2	Defeating Homunculus (You've defeated the Demon Knight in the Tower of Insolence and retrieved Diana's earring. Next, go to the Wall of Argos and defeat Homonculus to retrieve Diana's ring. Monster to Hunt - Homunculus)
+10506	3	Defeating Spiked Stakato Wizard (You retrieved Diana's ring after defeating Homunculus at the Wall of Argos. Lastly, go to the Stakato Nest and defeat Spiked Stakato Wizard to retrieve Diana's necklace. Monster to Hunt - Spiked Stakato Wizard)
+10506	4	Return to Diana (You've completed Diana's missions. Go back to the Talking Island Village to report to Diana.)
+10506	-1	[completed]
 10701	1	Back to the Seed of Destruction (You have been told by Admiral Keucereus to go to Sergeant Allenos at the Seed of Destruction.)
 10701	-1	[completed]
 10702	1	Back to the Seed of Infinity (You have been told by Admiral Keucereus to go to Officer Tepios at the Seed of Infinity.)
@@ -4443,12 +4490,12 @@
 10731	-1	[completed]
 10732	1	Enter Gereth (Queen Navari has filled you in on Faeron and the Dimensional Rift. Go see what Gereth has to tell you.)
 10732	-1	[completed]
-10733	-2	null
+10733	-2	
 10733	1	Acclimatize to the Material Realm (High Priest Gereth wrote you a recommendation, saying you would need a good teacher to help you adjust to the Material Realm. Talk to Dia and see what is next.)
 10733	2	To Master Katalin (Dia says your powers were probably shuttered due to the trauma of passing through the dimensions. Follow her advice and seek out Master Katalin in town.)
 10733	3	To Magister Ayanthe (Dia says your powers were probably shuttered due to the trauma of passing through the dimensions. Follow her advice and seek out Magister Ayanthe in town.)
 10733	-1	[completed]
-10734	-2	null
+10734	-2	
 10734	1	Fight the Dummy (Training seems to be the only way to adjusting to the Material Realm. Try a few hits on the training dummy.)
 10734	2	To Magister Ayanthe (The dummies didn't stand a chance. Return to Magister Ayanthe.)
 10734	3	To Master Katalin (The dummies didn't stand a chance. Return to Master Katalin.)
@@ -4517,7 +4564,7 @@
 10749	1	Compete in the Mysterious Mansion (Participate in the competition at the Mysterious Mansion. If you stay in the competition until the end, you can receive 1 Remnant of Competition. Participate 5 times and obtain 5 Remnants of Competition. Then, return to the Mysterious Butler (characters Lv. 99 or above can earn additional SP).)
 10749	2	Return to the Mysterious Butler (You collected 5 Remnants of Competition. Return to the Mysterious Butler.)
 10749	-1	[completed]
-10751	-2	null
+10751	-2	
 10751	1	A Plateau (Apparently it is difficult to free one's own power from its trauma-induced lock and key.)
 10751	2	A Step Toward Freedom (Queen Navari has suggested that you ask Master Katalin for help unleashing your power.)
 10751	3	A Step Toward Freedom (Queen Navari has suggested that you ask Magister Ayanthe for help unleashing your power.)
@@ -4528,7 +4575,7 @@
 10751	8	New Headway (The owner of the noted item turned out to be Telesha, and it was too late to save her. Return to Faeron Village to tell Master Katalin what has happened.)
 10751	9	New Headway (The owner of the noted item turned out to be Telesha, and it was too late to save her. Return to Faeron Village to tell Magister Ayanthe what has happened.)
 10751	-1	[completed]
-10752	-2	null
+10752	-2	
 10752	1	The Mysterious Hero (The item from the Wind Spirit Realm turned out to be a device used for prophecies among the ancient Ertheia. Karla can tell you more.)
 10752	2	Elmore's Capital (A man of Elmore named Kain seems to be Faeron's unexpected savior. Perhaps you can find more clues about him at the capital of Elmore. Go to Grand Master Siegmund of the Warrior Guild in the Town of Rune.)
 10752	3	The Sword of Kain (Lombert, the head blacksmith of the Town of Rune, is said to have once forged a sword for Kain Van Halter. Time to head to the blacksmith.)
@@ -4788,7 +4835,7 @@
 10839	1	For Revenge (Laffian has asked you to defeat the monsters in the Atelia Fortress. Monsters to hunt - Atelia Passionate Soldier, Atelia Elite Captain, Atelia High Priest, Fortress Dark Wizard)
 10839	2	Return to Laffian (You've defeated all the monsters in the Atelia Fortress. Go back to Laffian in the Atelia Fortress.)
 10839	-1	[completed]
-10840	1	More Time to Recover (Sherry needs time to recover and asked you to defeat the Embryo in the area. Monsters to hunt - Atelia Passionate Soldier, Atelia Elite Captain, Atelia High Priest, Fortress Dark Wizard, Atelia Flame Master, Fortress Archon)
+10840	1	More Time to Recover (Sherry needs time to recover and asked you to defeat the Embryo in the area. Monsters to hunt - Atelia Passionate Soldier, Atelia Elite Captain, Atelia High Priest, Fortress Dark Wizard, Atelia Flame Master, Embryo Archon)
 10840	2	Return to Sherry (You defeated all the monsters in the Atelia Fortress Area 4 while Sherry recovered. Go back to Sherry.)
 10840	-1	[completed]
 10841	1	Collecting Kelbim's Armor Pieces (Verdure Elder Elikia has asked you to defeat Kelbim in the Atelia Fortress and to bring back Kelbim's Armor Piece. Monster to hunt - Fallen Guardian of Atelia Kelbim)

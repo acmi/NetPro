@@ -689,7 +689,6 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 			if (account == null || rab.readFirstInteger32(DIALOG_TYPE) != 1 || !_attempted.add(client))
 				return;
 				
-			System.out.println("WELCOME TO HELL: account is " + account + "/" + client.getAccountPK());
 			final String pin = getAccountPINs().get(account);
 			if (pin == null)
 				return;

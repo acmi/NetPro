@@ -560,7 +560,7 @@
 			<constant>0x11</constant>
 			<constant>0xD0</constant>
 		</primary>
-		<secondary count="272">
+		<secondary count="277">
 			<constant>0x70</constant>
 			<constant>0x71</constant>
 		</secondary>

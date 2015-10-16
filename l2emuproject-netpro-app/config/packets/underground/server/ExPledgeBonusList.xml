@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_PLEDGE_BONUS_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Login bonus (.25)" type="Skill" />
+	<dword alias="Login bonus (.5)" type="Skill" />
+	<dword alias="Login bonus (.75)" type="Skill" />
+	<dword alias="Login bonus (max)" type="Skill" />
+	<dword alias="Hunting bonus (.25)" type="Item" />
+	<dword alias="Hunting bonus (.5)" type="Item" />
+	<dword alias="Hunting bonus (.75)" type="Item" />
+	<dword alias="Hunting bonus (max)" type="Item" />
+</packet>

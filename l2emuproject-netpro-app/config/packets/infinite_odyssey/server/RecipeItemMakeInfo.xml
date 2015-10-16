@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added two fields -->
+<packet id="SM_RECIPE_ITEM_MAKE_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Recipe" type="Recipe" />
+	<dword alias="Type" type="RecipeBook" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Result" type="ManufactureResult" />
+
+	<!-- NEW -->
+	<byte alias="" />
+	<qword alias="" />
+</packet>

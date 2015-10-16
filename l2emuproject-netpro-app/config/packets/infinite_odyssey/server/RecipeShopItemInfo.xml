@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added two fields -->
+<packet id="SM_RECIPE_SHOP_ITEM_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Manufacturer's OID" type="ObjectID" />
+	<dword alias="Recipe" type="Recipe" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Result" type="ManufactureResult" />
+	<qword alias="Price" />
+
+	<!-- NEW -->
+	<byte alias="" />
+	<qword alias="" />
+</packet>

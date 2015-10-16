@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="D0 07 01" id="CM_REQ_ITEM_ENSOUL" />
+		<packet opcodePrefix="D0 08 01" id="CM_REQ_VIP_PRODUCT_LIST" />
+		<packet opcodePrefix="D0 09 01" id="CM_REQ_VIP_LUCKY_GAME_INFO" />
+		<packet opcodePrefix="D0 0A 01" id="CM_REQ_VIP_LUCKY_GAME_ITEM_LIST" />
+		<packet opcodePrefix="D0 0B 01" id="CM_REQ_VIP_LUCKY_GAME_BONUS" />
+		<packet opcodePrefix="D0 0C 01" id="CM_EX_REQ_VIP_INFO" />
+		<packet opcodePrefix="D0 0D 01" id="CM_REQ_CAPTCHA_ANSWER" />
+		<packet opcodePrefix="D0 0E 01" id="CM_REQ_REFRESH_CAPTCHA_IMAGE" />
+		<packet opcodePrefix="D0 0F 01" id="CM_REQ_TODO_LIST" />
+		<packet opcodePrefix="D0 10 01" id="CM_REQ_TODO_LIST_HTML" />
+		<packet opcodePrefix="D0 11 01" id="CM_REQ_ONE_DAY_REWARD_RECEIVE" />
+		<packet opcodePrefix="D0 12 01" id="CM_REQ_PLEDGE_BONUS_OPEN" />
+		<packet opcodePrefix="D0 13 01" id="CM_REQ_PLEDGE_BONUS_REWARD_LIST" />
+		<packet opcodePrefix="D0 14 01" id="CM_REQ_PLEDGE_BONUS_REWARD" />
+		<packet opcodePrefix="D0 15 01" id="CM_REQ_SSO_AUTHN_TOKEN" />
+	</client>
+	<server>
+		<packet opcodePrefix="FE 7E 01" id="SM_EX_SHOW_ENSOUL_WINDOW" />
+		<packet opcodePrefix="FE 7F 01" id="SM_EX_ENSOUL_RESULT" />
+		<packet opcodePrefix="FE 80 01" id="SM_RECIVE_VIP_PRODUCT_LIST" />
+		<packet opcodePrefix="FE 81 01" id="SM_RECIVE_VIP_LUCKY_GAME_INFO" />
+		<packet opcodePrefix="FE 82 01" id="SM_RECIVE_VIP_LUCKY_GAME_ITEM_LIST" />
+		<packet opcodePrefix="FE 83 01" id="SM_RECIVE_VIP_LUCKY_GAME_RESULT" />
+		<packet opcodePrefix="FE 84 01" id="SM_RECIVE_VIP_INFO" />
+		<packet opcodePrefix="FE 85 01" id="SM_RECIVE_VIP_INFO_REMAIN_TIME" />
+		<packet opcodePrefix="FE 86 01" id="SM_RECEIVE_VIP_BOT_CAPTCHA_IMAGE" />
+		<packet opcodePrefix="FE 87 01" id="SM_RECEIVE_VIP_BOT_CAPTCHA_ANSWER_RESULT" />
+		<packet opcodePrefix="FE 88 01" id="SM_EX_ONE_DAY_RECEIVE_REWARD_LIST" />
+		<packet opcodePrefix="FE 89 01" id="SM_EX_CONNECTED_TIME_AND_GETTABLE_REWARD" />
+		<packet opcodePrefix="FE 8A 01" id="SM_EX_TODO_LIST_RECOMMAND" />
+		<packet opcodePrefix="FE 8B 01" id="SM_EX_TODO_LIST_INZONE" />
+		<packet opcodePrefix="FE 8C 01" id="SM_EX_TODO_LIST_HTML" />
+		<packet opcodePrefix="FE 8D 01" id="SM_EX_PLEDGE_BONUS_OPEN" />
+		<packet opcodePrefix="FE 8E 01" id="SM_EX_PLEDGE_BONUS_LIST" />
+		<packet opcodePrefix="FE 8F 01" id="SM_EX_PLEDGE_BONUS_MARK_RESET" />
+		<packet opcodePrefix="FE 90 01" id="SM_EX_PLEDGE_BONUS_UPDATE" />
+		<packet opcodePrefix="FE 91 01" id="SM_EX_SSO_AUTHN_TOKEN" />
+	</server>
+</mapping>

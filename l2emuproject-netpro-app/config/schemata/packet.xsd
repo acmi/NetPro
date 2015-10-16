@@ -287,6 +287,13 @@
 			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
 
 			<xs:enumeration value="commission.ItemCategory" />
+			
+			<xs:enumeration value="daily.DayOfWeek" />
+			<xs:enumeration value="daily.EventProgress" />
+			<xs:enumeration value="daily.InstanceEntry" />
+			<xs:enumeration value="daily.OneDayReward" />
+			<xs:enumeration value="daily.RewardStatus" />
+			<xs:enumeration value="daily.TodoListTab" />
 
 			<xs:enumeration value="equip.EquipmentSlot" />
 			<xs:enumeration value="equip.EquipmentState" />
@@ -307,8 +314,10 @@
 			<xs:enumeration value="fishing.FishType" />
 			<xs:enumeration value="fishing.LureType" />
 			
+			<xs:enumeration value="item.AutoShotState" />
 			<xs:enumeration value="item.AttributeEnchantResult" />
 			<xs:enumeration value="item.MonsterRaceLane" />
+			<xs:enumeration value="item.ShotType" />
 			<xs:enumeration value="item.SoulCrystal" />
 
 			<xs:enumeration value="party.PartyMatchingAffilation" />
@@ -317,6 +326,7 @@
 			<xs:enumeration value="pledge.ApplicationMode" />
 			<xs:enumeration value="pledge.ApplicationResponse" />
 			<xs:enumeration value="pledge.AllyCrestDDS" />
+			<xs:enumeration value="pledge.BonusType" />
 			<xs:enumeration value="pledge.LegacyPledgeAuthority" />
 			<xs:enumeration value="pledge.LegacyPledgePowerAction" />
 			<xs:enumeration value="pledge.PledgeAdvertisement" />

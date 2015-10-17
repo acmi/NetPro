@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Augmentation/enchant effect WORDs are now DWORDs -->
+<!-- Underground: Soul Crystal Effect extension -->
 <packet id="471" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Type" type="MailMessageType" />
 	<dword alias="Message ID" />
@@ -79,6 +80,17 @@
 				<word alias="Race number" />
 				<word alias="Bet" type="MonsterRaceBetMultiplier" />
 			</branch>
+		</branch>
+		<!-- NEW (Underground) -->
+		<branch id="extra_info" condition="bitmask.Bit4"> <!-- soul crystal (SA) info -->
+			<byte alias="Primary special abilities" id="sa1_cnt" />
+			<loop id="sa1_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+			<byte alias="Secondary special abilities" id="sa2_cnt" />
+			<loop id="sa2_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
 		</branch>
 		<dword alias="Item PK" />
 	</loop>

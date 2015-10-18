@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_ENSOUL_RESULT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="" /> <!-- Most likely success(1)/failure(0) -->
+	<byte alias="Primary special abilities" id="sa1_cnt" />
+	<loop id="sa1_cnt">
+		<dword alias="SA effect" type="item.SoulCrystal" />
+	</loop>
+	<byte alias="Secondary special abilities" id="sa2_cnt" />
+	<loop id="sa2_cnt">
+		<dword alias="SA effect" type="item.SoulCrystal" />
+	</loop>
+</packet>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_ITEM_ENSOUL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Item" type="ObjectID" />
+	<byte alias="Changes" id="cnt" />
+	<loop id="cnt">
+		<!-- When inserting a simple SC to an empty slot, both are '1' – most likely first is type of change (add=1/replace=?), and second is type (primary(1)/secondary(2)) -->
+		<byte alias="" />
+		<byte alias="" />
+		<dword alias="Soul Crystal" type="ObjectID" />
+		<dword alias="Effect" type="item.SoulCrystal" />
+	</loop>
+</packet>

@@ -21,7 +21,7 @@
 		<branch id="gs_list" condition="serverlist.ServerListC1">
 			<dword alias="Game server type" type="GameServerTypes" />
 			<branch id="gs_list" condition="serverlist.ServerListC2">
-				<byte alias="Game server brackets" type="YesOrNo" />
+				<byte alias="Region" />
 			</branch>
 		</branch>
 	</loop>

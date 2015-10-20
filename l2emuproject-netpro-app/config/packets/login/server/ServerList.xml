@@ -19,7 +19,7 @@
 		<word alias="Maximum players" />
 		<byte alias="Game server online" type="YesOrNo" />
 		<dword alias="Game server type" type="GameServerTypes" />
-		<byte alias="Game server brackets" type="YesOrNo" />
+		<byte alias="Region" />
 	</loop>
 	<word alias="Non-padded bytes" />
 	<byte alias="Game server count" id="gs_list" />

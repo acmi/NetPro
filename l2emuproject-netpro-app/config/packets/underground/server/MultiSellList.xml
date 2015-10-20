@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added soul crystal effect fields -->
+<packet id="SM_MULTI_SELL_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="List ID">
+		<scriptAlias id="dump_multisell_id" />
+	</dword>
+	<byte alias="0" />
+	<dword alias="Page" />
+	<dword alias="Last page" type="YesOrNo">
+		<scriptAlias id="dump_multisell_last" />
+	</dword>
+	<dword alias="Exchanges per page" />
+	<dword alias="Exchanges in this page" id="index_0" />
+	<byte alias="Chance-based" type="YesOrNo">
+		<scriptAlias id="dump_multisell_mode" />
+	</byte>
+	<loop id="index_0">
+		<dword alias="Exchange ID">
+			<scriptAlias id="dump_multisell_slot" />
+		</dword>
+		<branch description="Displayed on slot itself.">
+			<byte alias="Stackable" type="YesOrNo">
+				<scriptAlias id="dump_multisell_slot_stackable" />
+			</byte>
+			<word alias="Enchant level" />
+			<dword alias="Augmentation effect (1)" type="Augmentation" />
+			<dword alias="Augmentation effect (2)" type="Augmentation" />
+			<word alias="Attack element" type="ElementType" />
+			<word alias="Attack element power" type="ElementPower" />
+			<word alias="Fire defense" type="ElementPower" />
+			<word alias="Water defense" type="ElementPower" />
+			<word alias="Wind defense" type="ElementPower" />
+			<word alias="Earth defense" type="ElementPower" />
+			<word alias="Holy defense" type="ElementPower" />
+			<word alias="Dark defense" type="ElementPower" />
+
+			<!-- NEW -->
+			<byte alias="Primary special abilities" id="sa1_cnt" />
+			<loop id="sa1_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+			<byte alias="Secondary special abilities" id="sa2_cnt" />
+			<loop id="sa2_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+		</branch>
+		<word alias="Receivable count" id="produced">
+			<scriptAlias id="dump_multisell_prod_cnt" />
+		</word>
+		<word alias="Consumable count" id="consumed">
+			<scriptAlias id="dump_multisell_cons_cnt" />
+		</word>
+		<loop id="produced">
+			<dword alias="Receivable" type="Item">
+				<scriptAlias id="dump_multisell_prod_item" />
+			</dword>
+			<qword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+			<word alias="Main item type" type="ItemType2" />
+			<qword alias="Quantity">
+				<scriptAlias id="dump_multisell_prod_amount" />
+			</qword>
+			<word alias="Enchant level" />
+			<dword alias="Production chance (%)">
+				<scriptAlias id="dump_multisell_prod_chance" />
+			</dword>
+			<dword alias="Augmentation effect (1)" type="Augmentation" />
+			<dword alias="Augmentation effect (2)" type="Augmentation" />
+			<word alias="Attack element" type="ElementType" />
+			<word alias="Attack element power" type="ElementPower" />
+			<word alias="Fire defense" type="ElementPower" />
+			<word alias="Water defense" type="ElementPower" />
+			<word alias="Wind defense" type="ElementPower" />
+			<word alias="Earth defense" type="ElementPower" />
+			<word alias="Holy defense" type="ElementPower" />
+			<word alias="Dark defense" type="ElementPower" />
+
+			<!-- NEW -->
+			<byte alias="Primary special abilities" id="sa1_cnt" />
+			<loop id="sa1_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+			<byte alias="Secondary special abilities" id="sa2_cnt" />
+			<loop id="sa2_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+		</loop>
+		<loop id="consumed">
+			<dword alias="Consumable" type="Item">
+				<scriptAlias id="dump_multisell_cons_item" />
+			</dword>
+			<word alias="Main item type" type="ItemType2" />
+			<qword alias="Quantity">
+				<scriptAlias id="dump_multisell_cons_amount" />
+			</qword>
+			<word alias="Enchant level" />
+			<dword alias="Augmentation effect (1)" type="Augmentation" />
+			<dword alias="Augmentation effect (2)" type="Augmentation" />
+			<word alias="Attack element" type="ElementType" />
+			<word alias="Attack element power" type="ElementPower" />
+			<word alias="Fire defense" type="ElementPower" />
+			<word alias="Water defense" type="ElementPower" />
+			<word alias="Wind defense" type="ElementPower" />
+			<word alias="Earth defense" type="ElementPower" />
+			<word alias="Holy defense" type="ElementPower" />
+			<word alias="Dark defense" type="ElementPower" />
+
+			<!-- NEW -->
+			<byte alias="Primary special abilities" id="sa1_cnt" />
+			<loop id="sa1_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+			<byte alias="Secondary special abilities" id="sa2_cnt" />
+			<loop id="sa2_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+		</loop>
+	</loop>
+</packet>

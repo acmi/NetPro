@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter.daily;
+package interpreter.item;
 
 import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets an integer as a day of week.
+ * Interprets an integer as ensoul type.
  * 
  * @author _dev_
  */
-public class DayOfWeek extends ScriptedZeroBasedIntegerIdInterpreter
+public class EnsoulType extends ScriptedZeroBasedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
-	public DayOfWeek()
+	public EnsoulType()
 	{
-		super("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+		// TODO: value for "replace"
+		super(new InterpreterMetadata(1), "Add");
 	}
 }

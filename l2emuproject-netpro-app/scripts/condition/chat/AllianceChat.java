@@ -13,20 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter.daily;
+package condition.chat;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
 
 /**
- * Interprets an integer as a day of week.
+ * Tests whether the value of a byte/word/dword is equal to 9.<BR>
+ * <BR>
+ * Used to check the type of chat in <TT>ChatMessage</TT>.
  * 
  * @author _dev_
  */
-public class DayOfWeek extends ScriptedZeroBasedIntegerIdInterpreter
+public class AllianceChat extends ScriptedIntegerEqualityCondition
 {
-	/** Constructs this interpreter. */
-	public DayOfWeek()
+	/** Constructs this condition. */
+	public AllianceChat()
 	{
-		super("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+		super(9);
 	}
 }

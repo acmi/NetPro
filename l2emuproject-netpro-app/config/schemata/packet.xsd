@@ -316,6 +316,7 @@
 			
 			<xs:enumeration value="item.AutoShotState" />
 			<xs:enumeration value="item.AttributeEnchantResult" />
+			<xs:enumeration value="item.EnsoulType" />
 			<xs:enumeration value="item.MonsterRaceLane" />
 			<xs:enumeration value="item.ShotType" />
 			<xs:enumeration value="item.SoulCrystal" />
@@ -415,6 +416,9 @@
 			<xs:enumeration value="bitmask.Bit6" />
 			<xs:enumeration value="bitmask.Bit7" />
 			<xs:enumeration value="bitmask.NotAllBits" />
+			
+			<xs:enumeration value="chat.AllianceChat" />
+			<xs:enumeration value="chat.ClanChat" />
 			
 			<xs:enumeration value="equip.EquipableItemType" />
 			<xs:enumeration value="equip.NewlyEquipped" />

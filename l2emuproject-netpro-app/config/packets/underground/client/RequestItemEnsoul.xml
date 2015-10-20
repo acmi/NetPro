@@ -3,9 +3,8 @@
 	<dword alias="Item" type="ObjectID" />
 	<byte alias="Changes" id="cnt" />
 	<loop id="cnt">
-		<!-- When inserting a simple SC to an empty slot, both are '1' – most likely first is type of change (add=1/replace=?), and second is type (primary(1)/secondary(2)) -->
-		<byte alias="" />
-		<byte alias="" />
+		<byte alias="Change" type="item.EnsoulType" />
+		<byte alias="Slot number" />
 		<dword alias="Soul Crystal" type="ObjectID" />
 		<dword alias="Effect" type="item.SoulCrystal" />
 	</loop>

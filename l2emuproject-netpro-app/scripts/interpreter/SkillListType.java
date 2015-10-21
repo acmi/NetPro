@@ -27,6 +27,6 @@ public final class SkillListType extends ScriptedZeroBasedIntegerIdInterpreter
 	/** Constructs this interpreter. */
 	public SkillListType()
 	{
-		super("Class", "Fishing", "Pledge", "Pledge unit", null, "Certification", "Collection");
+		super("Class", "Fishing", "Pledge", "Pledge unit", null, "Certification", "Collection", null, null, "Skill linking");
 	}
 }

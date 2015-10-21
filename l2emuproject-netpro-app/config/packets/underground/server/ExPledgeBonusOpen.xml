@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="SM_EX_PLEDGE_BONUS_OPEN" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Online requirement" />
-	<dword alias="Currently online" />
+	<dword alias="Attendance requirement (max)" />
+	<dword alias="Current amount" />
 	<dword alias="Yesterday's reward" type="Skill" />
 	<byte alias="Reward level" />
 	<byte alias="Receivable" type="YesOrNo" />
-	<dword alias="Hunting requirement" />
+	<dword alias="Hunting requirement (max)" />
 	<dword alias="Current amount" />
 	<dword alias="Yesterday's reward" type="Item" />
 	<byte alias="Reward level" />

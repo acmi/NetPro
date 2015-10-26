@@ -2,7 +2,7 @@
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
 		<packet opcodePrefix="D0 03 01" id="CM_EX_SEND_CLIENT_INI" />
-		<packet opcodePrefix="D0 04 01" id="461" />
+		<packet opcodePrefix="D0 04 01" id="CM_REQ_EX_AUTO_FISH" />
 	</client>
 	<server>
 		<packet opcodePrefix="FE 78 01" id="680" />

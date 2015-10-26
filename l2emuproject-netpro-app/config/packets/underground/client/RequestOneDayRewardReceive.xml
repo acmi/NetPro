@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="CM_REQ_ONE_DAY_REWARD_RECEIVE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<unsignedByte alias="Reward" type="daily.OneDayReward" />
+
+	<!-- 2015-10-21, no change in protocol number -->
+	<byte alias="0" optional="true" />
 </packet>

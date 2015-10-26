@@ -317,7 +317,6 @@
 		<packet id="457" name="RequestAlchemyTryMixCube" />
 		<packet id="458" name="RequestAlchemyConversion" />
 		<packet id="459" name="RequestSendExecutedUIEventsCount" />
-		<packet id="461" name="RequestExAutoFish" />
 		<packet id="462" name="RequestRegistPartySubstitute" />
 		<packet id="463" name="RequestDeletePartySubstitute" />
 		<packet id="464" name="RequestRegistWaitingSubstitute" />
@@ -1559,6 +1558,12 @@
 		UNICODE "(Send)%s INIType : %s"
 		-->
 		<packet id="CM_EX_SEND_CLIENT_INI" name="ExSendClientINI" />
+		<!--
+		ASCII "chc"
+		UNICODE "RequestExAutoFish"
+		UNICODE "(Send)%s %d"
+		-->
+		<packet id="CM_REQ_EX_AUTO_FISH" name="RequestExAutoFish" />
 		
 		<!--
 		ASCII "ch"

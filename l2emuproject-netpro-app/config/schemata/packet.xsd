@@ -286,6 +286,10 @@
 			<xs:enumeration value="ave.AbnormalVisualEffectMask" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
 
+			<xs:enumeration value="coc.CuriousHouseArena" />
+			<xs:enumeration value="coc.CuriousHouseStatus" />
+			<xs:enumeration value="coc.CuriousHouseResult" />
+
 			<xs:enumeration value="commission.ItemCategory" />
 			
 			<xs:enumeration value="daily.DayOfWeek" />

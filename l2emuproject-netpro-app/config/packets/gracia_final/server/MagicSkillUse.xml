@@ -34,11 +34,18 @@
 	<dword alias="Caster Z">
 		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
 	</dword>
-	<!-- M. crit doesn't come into play here -->
-	<dword alias="0" id="index_0" /> <!-- 2, if a blow succeeds (crt. hit). All it does is play a critical hit sound (any number). Sad. -->
-	<loop id="index_0"> <!-- you can test by injecting 5 instead of 2 and client will crash -->
-		<word alias="0" /> <!-- Yes, it is a loop here. Always 0, regardless of half kill or what -->
+	<word alias="i_fatal_blow" type="YesOrNo" id="unk" />
+	<loop id="unk">
+		<word alias="0" />
 	</loop>
+	<word alias="Usage type" id="use_type" type="skill.SkillUseType" />
+	<branch id="use_type" condition="skill.TargetPoint"> <!-- not verified at this version -->
+		<dword alias="Ground target X" />
+		<dword alias="Ground target Y" />
+		<dword alias="Ground target Z" />
+	</branch>
+
+	<!-- NEW -->
 	<dword alias="Main target X">
 		<scriptAlias id="OIL_OBJECT_X_SERVER" />
 	</dword>

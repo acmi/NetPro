@@ -67,7 +67,9 @@ public class LogVisitationTask extends AbstractLogFileTask<Path>
 			final String name = p.getFileName().toString();
 			
 			final LogFileHeader header = LogIdentifyTask.getHeader(p);
-			
+			if (header == null)
+				continue;
+				
 			final int displayedPacketAmount = header.getPackets() != -1 ? header.getPackets() : Integer.MAX_VALUE;
 			
 			try (final SeekableByteChannel channel = Files.newByteChannel(p, StandardOpenOption.READ); final NewIOHelper ioh = new NewIOHelper(channel))

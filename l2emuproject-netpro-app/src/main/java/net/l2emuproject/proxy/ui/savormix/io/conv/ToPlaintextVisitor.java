@@ -34,6 +34,7 @@ import java.util.Map;
 import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.NetProInfo;
+import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
 import net.l2emuproject.proxy.network.meta.PacketStructureElementVisitor;
@@ -56,7 +57,7 @@ import net.l2emuproject.proxy.network.meta.structure.field.integer.AbstractInteg
 import net.l2emuproject.proxy.network.meta.structure.field.integer.IntegerFieldValue;
 import net.l2emuproject.proxy.network.meta.structure.field.string.AbstractStringFieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.string.StringFieldValue;
-import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
+import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.component.packet.DataType;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
@@ -83,7 +84,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 	private final DateFormat _df;
 	
 	private IProtocolVersion _protocol;
-	private ICacheServerID _cacheContext;
+	private HistoricalPacketLog _cacheContext;
 	BufferedWriter _writer;
 	
 	/** Constructs this visitor. */
@@ -151,6 +152,9 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				}
 				ctx = new InterpreterContext(_cacheContext, wireframe);
 			}
+			
+			// Enable object analytics and whatnot
+			LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(_protocol).isLogin(), client, body.array(), _protocol, _cacheContext);
 			
 			_writer.append("\r\n");
 			for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)

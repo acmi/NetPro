@@ -30,6 +30,7 @@ import java.util.Map;
 
 import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
 import net.l2emuproject.proxy.network.meta.PacketStructureElementVisitor;
@@ -52,7 +53,7 @@ import net.l2emuproject.proxy.network.meta.structure.field.integer.AbstractInteg
 import net.l2emuproject.proxy.network.meta.structure.field.integer.IntegerFieldValue;
 import net.l2emuproject.proxy.network.meta.structure.field.string.AbstractStringFieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.string.StringFieldValue;
-import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
+import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.component.packet.DataType;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
@@ -75,7 +76,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 	private final MMOBuffer _buf;
 	
 	private IProtocolVersion _protocol;
-	private ICacheServerID _cacheContext;
+	private HistoricalPacketLog _cacheContext;
 	BufferedWriter _writer;
 	
 	/** Constructs this visitor. */
@@ -136,6 +137,9 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 				}
 				ctx = new InterpreterContext(_cacheContext, wireframe);
 			}
+			
+			// Enable object analytics and whatnot
+			LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(_protocol).isLogin(), client, body.array(), _protocol, _cacheContext);
 			
 			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(_protocol, packet.getEndpoint(), body.array());
 			_writer.append(HexUtil.bytesToHexString(template.getPrefix(), " ")).append("\">\r\n");

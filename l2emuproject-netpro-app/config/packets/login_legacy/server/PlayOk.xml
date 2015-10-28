@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="LS_SM_PLAY_OK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Authorization keypart (2)" />
+	<dword alias="Game server session ID" />
 	<dword alias="Account ID" />
-	<byte alias="Game server" type="GameServerName" /> <!-- Verify in C1 OFF, please -->
+	<byte alias="Game server" type="GameServerName" />
 	
 	<bytes alias="Padding">
 		<length>6</length>

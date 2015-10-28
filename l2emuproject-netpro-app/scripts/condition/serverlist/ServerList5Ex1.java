@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package condition.serverlist;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
+import net.l2emuproject.proxy.network.meta.condition.IntegerCondition;
+import net.l2emuproject.proxy.script.condition.ScriptedFieldValueCondition;
 
 /**
- * Interprets the given bit mask as game server's types.
+ * Tests whether the server expects that client requests bare ServerList version 5, when version 5 is requested.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class GameServerTypes extends ScriptedBitmaskInterpreter
+public final class ServerList5Ex1 extends ScriptedFieldValueCondition implements IntegerCondition
 {
-	/** Constructs this interpreter. */
-	public GameServerTypes()
+	@Override
+	public boolean test(long value)
 	{
-		super("Normal", "Relax", "Test", "Nameless", "Legacy (only existing characters)", "Event", "Free");
+		return value != 164;
 	}
 }

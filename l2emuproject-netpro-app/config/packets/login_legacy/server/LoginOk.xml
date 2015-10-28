@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="LS_SM_LOGIN_OK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Account ID" />
-	<dword alias="Authorization keypart (1)" />
+	<dword alias="Auth key" />
 	
 	<bytes alias="[0]">
 		<length>8</length>

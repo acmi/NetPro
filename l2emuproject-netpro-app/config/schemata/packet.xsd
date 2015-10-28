@@ -146,9 +146,9 @@
 			<xs:enumeration value="FlyPathNode" />
 			<xs:enumeration value="FlyType" />
 			<xs:enumeration value="FriendStatusUpdate" />
+			<xs:enumeration value="GameServerKind" />
 			<xs:enumeration value="GameServerListVersion" />
 			<xs:enumeration value="GameServerName" />
-			<xs:enumeration value="GameServerTypes" />
 			<xs:enumeration value="GameTime" />
 			<xs:enumeration value="Gauge" />
 			<xs:enumeration value="GmView" />
@@ -243,6 +243,7 @@
 			<xs:enumeration value="SecAuthSetup" />
 			<xs:enumeration value="SecondsLeftToTime" />
 			<xs:enumeration value="SecondsSinceEpoch" />
+			<xs:enumeration value="ServerCharacterCount" />
 			<xs:enumeration value="ServitorType" />
 			<xs:enumeration value="SevenSignsPeriod" />
 			<xs:enumeration value="SevenSignsRecordTab" />
@@ -475,6 +476,8 @@
 			<xs:enumeration value="relation.Multiple" />
 			<xs:enumeration value="relation.Single" />
 			
+			<xs:enumeration value="serverlist.ServerList5Ex1" />
+			<xs:enumeration value="serverlist.ServerList5Ex2" />
 			<xs:enumeration value="serverlist.ServerListC1" />
 			<xs:enumeration value="serverlist.ServerListC2" />
 			

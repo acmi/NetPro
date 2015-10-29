@@ -15,23 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a GM view type.
  * 
  * @author savormix
  */
-public class GmView extends ScriptedLegacyIntegerIdInterpreter
+public class GmView extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public GmView()
 	{
-		addInterpretation(1, "Info");
-		addInterpretation(2, "Pledge");
-		addInterpretation(3, "Skills");
-		addInterpretation(4, "Active quests");
-		addInterpretation(5, "Inventory");
-		addInterpretation(6, "Warehouse");
+		super(new InterpreterMetadata(1), "Info", "Pledge", "Skills", "Active quests", "Inventory", "Warehouse");
 	}
 }

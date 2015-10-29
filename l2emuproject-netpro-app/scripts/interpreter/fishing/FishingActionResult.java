@@ -15,20 +15,18 @@
  */
 package interpreter.fishing;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a result of a fishing action.
  * 
  * @author savormix
  */
-public class FishingActionResult extends ScriptedLegacyIntegerIdInterpreter
+public class FishingActionResult extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public FishingActionResult()
 	{
-		addInterpretation(0, "N/A");
-		addInterpretation(1, "Success");
-		addInterpretation(2, "Failure");
+		super("N/A", "Success", "Failure");
 	}
 }

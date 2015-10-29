@@ -15,20 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a change of an item inside a collection.
  * 
  * @author savormix
  */
-public class ItemChange extends ScriptedLegacyIntegerIdInterpreter
+public class ItemChange extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public ItemChange()
 	{
-		addInterpretation(1, "Add");
-		addInterpretation(2, "Update");
-		addInterpretation(3, "Remove");
+		super(new InterpreterMetadata(1), "Add", "Update", "Remove");
 	}
 }

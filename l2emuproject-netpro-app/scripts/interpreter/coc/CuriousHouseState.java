@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.coc;
 
 import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets the given byte/word/dword as a gauge (shown above character) type.
+ * Interprets an integer as CoC participation state.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class Gauge extends ScriptedZeroBasedIntegerIdInterpreter
+public final class CuriousHouseState extends ScriptedZeroBasedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
-	public Gauge()
+	public CuriousHouseState()
 	{
-		super("Casting", "Shot cooldown", "Breath", "Satiation");
+		super("Not in progress", "Registration pending", "Registered", "Participating");
 	}
 }

@@ -288,8 +288,9 @@
 			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
 
 			<xs:enumeration value="coc.CuriousHouseArena" />
-			<xs:enumeration value="coc.CuriousHouseStatus" />
 			<xs:enumeration value="coc.CuriousHouseResult" />
+			<xs:enumeration value="coc.CuriousHouseState" />
+			<xs:enumeration value="coc.CuriousHouseStatus" />
 
 			<xs:enumeration value="commission.ItemCategory" />
 			

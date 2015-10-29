@@ -24,6 +24,7 @@ import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInter
  */
 public class EnchantResult extends ScriptedZeroBasedIntegerIdInterpreter
 {
+	/** Constructs this interpreter. */
 	public EnchantResult()
 	{
 		// @formatter:off

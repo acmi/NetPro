@@ -15,19 +15,16 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * @author _dev_
  */
-public class FriendStatusUpdate extends ScriptedLegacyIntegerIdInterpreter
+public class FriendStatusUpdate extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public FriendStatusUpdate()
 	{
-		addInterpretation(0, "Logged out");
-		addInterpretation(1, "Logged in");
-		addInterpretation(2, "Level changed");
-		addInterpretation(3, "Class changed");
+		super("Logged out", "Logged in", "Level changed", "Class changed");
 	}
 }

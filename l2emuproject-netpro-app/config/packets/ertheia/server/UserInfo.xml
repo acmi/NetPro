@@ -222,8 +222,9 @@
 	</branch>
 	<branch id="exUI_3" condition="bitmask.Bit1">
 		<word alias="Block size (9)" />
-		<dword alias="unk 1" />
-		<word alias="unk 0" />
+		<byte alias="unk 0" />
+		<dword alias="unk" />
+		<byte alias="unk 0" />
 		<byte alias="unk 0" />
 	</branch>
 	<!-- bit 0 is never used -->

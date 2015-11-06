@@ -66,8 +66,8 @@ import eu.revengineer.simplejse.logging.BytesizeInterpreter;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.network.IGameProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.NetProInfo;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ListenSocket;

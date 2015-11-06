@@ -22,9 +22,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 import net.l2emuproject.geometry.IPoint3D;
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;

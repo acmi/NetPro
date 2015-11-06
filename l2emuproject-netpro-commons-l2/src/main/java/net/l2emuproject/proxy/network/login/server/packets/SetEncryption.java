@@ -15,16 +15,16 @@
  */
 package net.l2emuproject.proxy.network.login.server.packets;
 
-import static net.l2emuproject.network.LoginProtocolVersion.TRANSFER_C3;
+import static net.l2emuproject.network.protocol.LoginProtocolVersion.TRANSFER_C3;
 import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_C3_C4_TRANSFER_KEY;
 import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_PRELUDE_KEY;
 
 import java.nio.BufferUnderflowException;
 
-import net.l2emuproject.network.ILoginProtocolVersion;
-import net.l2emuproject.network.LoginProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.ILoginProtocolVersion;
+import net.l2emuproject.network.protocol.LoginProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.PacketPayloadEnumerator;

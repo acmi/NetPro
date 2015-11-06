@@ -17,9 +17,9 @@ package net.l2emuproject.proxy.network.game.server.packets;
 
 import java.nio.BufferUnderflowException;
 
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IGameProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 import org.apache.commons.lang3.ArrayUtils;
 
-import net.l2emuproject.network.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;

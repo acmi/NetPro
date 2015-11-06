@@ -15,16 +15,16 @@
  */
 package net.l2emuproject.proxy.network.login.server;
 
-import static net.l2emuproject.network.LoginProtocolVersion.MODERN;
-import static net.l2emuproject.network.LoginProtocolVersion.PRELUDE_BETA;
+import static net.l2emuproject.network.protocol.LoginProtocolVersion.MODERN;
+import static net.l2emuproject.network.protocol.LoginProtocolVersion.PRELUDE_BETA;
 import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_MODERN_KEY;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
 
-import net.l2emuproject.network.ILoginProtocolVersion;
 import net.l2emuproject.network.mmocore.DataSizeHolder;
+import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 import net.l2emuproject.network.security.ICipher;
 import net.l2emuproject.network.security.LoginCipher;
 import net.l2emuproject.proxy.network.AbstractL2ServerProxy;

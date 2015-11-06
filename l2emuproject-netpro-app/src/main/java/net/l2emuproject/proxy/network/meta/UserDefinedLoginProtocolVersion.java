@@ -15,7 +15,7 @@
  */
 package net.l2emuproject.proxy.network.meta;
 
-import net.l2emuproject.network.ILoginProtocolVersion;
+import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 
 /**
  * A login protocol version constructed from user-supplied details.

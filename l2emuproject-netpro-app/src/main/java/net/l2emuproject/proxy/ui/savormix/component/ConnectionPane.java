@@ -53,8 +53,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicButtonUI;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ServiceType;

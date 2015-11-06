@@ -49,12 +49,12 @@ import org.xml.sax.SAXException;
 import eu.revengineer.simplejse.HasScriptDependencies;
 import eu.revengineer.simplejse.type.UnloadableScript;
 
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IGameProtocolVersion;
+import net.l2emuproject.network.IPv4AddressPrefix;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.network.security.LoginCipher;
 import net.l2emuproject.network.security.ScrambledRSAKeyPair;
-import net.l2emuproject.proxy.network.IPv4AddressPrefix;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;

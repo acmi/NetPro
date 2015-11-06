@@ -30,9 +30,9 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
+import net.l2emuproject.network.IPv4AddressPrefix;
+import net.l2emuproject.network.IPv4AddressTrie;
 import net.l2emuproject.proxy.network.BindableSocketSet;
-import net.l2emuproject.proxy.network.IPv4AddressPrefix;
-import net.l2emuproject.proxy.network.IPv4AddressTrie;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
@@ -48,9 +48,9 @@ public final class SocketManager implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(SocketManager.class);
 	
-	private static final Pattern IPV4_ADDRESS_PREFIX = Pattern
-			.compile("((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))/((?:[1-2]?[0-9])|(?:3[0-2]))");
-	
+	private static final Pattern IPV4_ADDRESS_PREFIX = Pattern.compile(
+			"((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))/((?:[1-2]?[0-9])|(?:3[0-2]))");
+			
 	private final IPv4AddressTrie<ListenSocket> _gameWorldHubSockets;
 	private final BindableSocketSet<ProxySocket> _authSockets;
 	
@@ -104,7 +104,7 @@ public final class SocketManager implements IOConstants
 			final Matcher cap = IPV4_ADDRESS_PREFIX.matcher(tmp);
 			if (!cap.matches())
 				throw new IllegalArgumentException(tmp);
-			
+				
 			final byte[] addr = new byte[4];
 			for (int i = 0; i < 4; ++i)
 				addr[i] = (byte)Integer.parseInt(cap.group(i + 1));
@@ -116,11 +116,11 @@ public final class SocketManager implements IOConstants
 		{
 			if (L2XMLUtils.getNodeAttributeBooleanValue(sock, "disabled", false))
 				continue;
-			
+				
 			final Node listen = L2XMLUtils.firstChildNamed(sock, "listen");
 			final Node svc = L2XMLUtils.firstChildNamed(sock, "service");
-			authSockets.add(new ProxySocket(InetAddress.getByName(L2XMLUtils.getString(listen, "ip")), L2XMLUtils.getInteger(listen, "port"), L2XMLUtils.getString(svc, "host"), L2XMLUtils.getInteger(
-					svc, "port")));
+			authSockets.add(new ProxySocket(InetAddress.getByName(L2XMLUtils.getString(listen, "ip")), L2XMLUtils.getInteger(listen, "port"), L2XMLUtils.getString(svc, "host"),
+					L2XMLUtils.getInteger(svc, "port")));
 		}
 		return ImmutablePair.of(gwSockets, authSockets);
 	}

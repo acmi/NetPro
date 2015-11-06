@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 

@@ -36,7 +36,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import net.l2emuproject.io.UnmanagedResource;
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ServiceType;

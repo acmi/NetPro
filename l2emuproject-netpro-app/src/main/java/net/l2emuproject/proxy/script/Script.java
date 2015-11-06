@@ -22,8 +22,8 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import eu.revengineer.simplejse.type.UnloadableScript;
 
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;

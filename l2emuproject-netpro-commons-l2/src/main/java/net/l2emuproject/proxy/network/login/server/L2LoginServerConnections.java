@@ -23,11 +23,11 @@ import java.nio.channels.SocketChannel;
 import java.util.Collections;
 import java.util.Set;
 
+import net.l2emuproject.network.IPv4AddressPrefix;
+import net.l2emuproject.network.IPv4AddressTrie;
 import net.l2emuproject.network.mmocore.MMOConfig;
 import net.l2emuproject.proxy.network.AbstractL2ServerConnections;
 import net.l2emuproject.proxy.network.BindableSocketSet;
-import net.l2emuproject.proxy.network.IPv4AddressPrefix;
-import net.l2emuproject.proxy.network.IPv4AddressTrie;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
 import net.l2emuproject.proxy.network.login.client.L2LoginClient;
@@ -92,7 +92,7 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections
 	{
 		if (client == null)
 			return;
-		
+			
 		InetSocketAddress receiverAddress = null;
 		try
 		{

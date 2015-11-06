@@ -18,8 +18,8 @@ package net.l2emuproject.proxy.network.meta;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.network.UnknownProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.UnknownProtocolVersion;
 
 /**
  * A class indicating an user-defined protocol version.<BR>

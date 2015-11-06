@@ -24,11 +24,11 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import net.l2emuproject.network.IGameProtocolVersion;
-import net.l2emuproject.network.ILoginProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.network.UnknownGameProtocolVersion;
-import net.l2emuproject.network.UnknownLoginProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.ILoginProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.UnknownGameProtocolVersion;
+import net.l2emuproject.network.protocol.UnknownLoginProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;

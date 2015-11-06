@@ -26,8 +26,8 @@ import java.util.Queue;
 import java.util.Set;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.ByteBufferUtils;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.exception.InvalidPacketOpcodeSchemeException;

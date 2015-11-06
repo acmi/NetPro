@@ -392,6 +392,7 @@
 
 	<xs:simpleType name="conditionType">
 		<xs:restriction base="xs:token">
+			<xs:enumeration value="AbnormalSkillType" />
 			<xs:enumeration value="BlockUnblockPlayer" />
 			<xs:enumeration value="DefaultChat" />
 			<xs:enumeration value="FerryShout" />

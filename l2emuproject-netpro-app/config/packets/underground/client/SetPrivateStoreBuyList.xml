@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added soul crystal effect fields -->
+<packet id="CM_SET_PRIVATE_STORE_BUY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Offer count" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Item" type="Item" id="is_ticket" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedByte alias="Selected numbers (truncated)" type="LottoNumbers" />
+			<byte alias="-1" /> <!-- This byte is simply replaced with -1 -->
+			<word alias="Selected numbers (truncated)" mod="ShiftLeft16" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<qword alias="Quantity" />
+		<qword alias="Price (per single unit)" />
+
+		<word alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+		<branch id="is_ticket" condition="GenericItem">
+			<dword alias="Visible item" type="Item" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<dword alias="Selected numbers" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+			<word alias="Race number" />
+			<byte alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+		<byte alias="Primary special abilities" id="sa1_cnt" />
+		<loop id="sa1_cnt">
+			<dword alias="SA effect" type="item.SoulCrystal" />
+		</loop>
+		<byte alias="Secondary special abilities" id="sa2_cnt" />
+		<loop id="sa2_cnt">
+			<dword alias="SA effect" type="item.SoulCrystal" />
+		</loop>
+	</loop>
+</packet>

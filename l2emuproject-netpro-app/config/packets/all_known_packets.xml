@@ -2014,6 +2014,11 @@
 		<packet id="534" name="PledgeSkillListRemove" />
 		<packet id="536" name="ExBR_LoadEventTopRankers" />
 		<packet id="537" name="ExBR_PremiumState" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "ddd"
+		UNICODE "ExShowChannelingEffectPacket"
+		-->
 		<packet id="538" name="ExShowChannelingEffect" />
 		<packet id="539" name="ExGetCrystalizingEstimation" />
 		<packet id="540" name="ExGetCrystalizingFail" />

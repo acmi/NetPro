@@ -327,6 +327,8 @@
 			<xs:enumeration value="item.ShotType" />
 			<xs:enumeration value="item.SoulCrystal" />
 
+			<xs:enumeration value="olympiad.InfoMode" />
+
 			<xs:enumeration value="party.PartyMatchingAffilation" />
 			<xs:enumeration value="party.PartyMatchingListMode" />
 

@@ -10,5 +10,5 @@
 	<dword alias="Unit" type="PledgeUnit" />
 
 	<!-- NEW -->
-	<byte alias="Attendance bonus" type="YesOrNo" />
+	<byte alias="Attendance bonus" type="pledge.Attendance" />
 </packet>

@@ -335,6 +335,7 @@
 			<xs:enumeration value="pledge.ApplicationMode" />
 			<xs:enumeration value="pledge.ApplicationResponse" />
 			<xs:enumeration value="pledge.AllyCrestDDS" />
+			<xs:enumeration value="pledge.Attendance" />
 			<xs:enumeration value="pledge.BonusType" />
 			<xs:enumeration value="pledge.LegacyPledgeAuthority" />
 			<xs:enumeration value="pledge.LegacyPledgePowerAction" />

@@ -14,5 +14,7 @@
 	<dword alias="Auth key" />
 	
 	<!-- NEW -->
-	<dword alias="Localization" type="Language" />
+	<dword alias="Localization" type="Language">
+		<scriptAlias id="localization" />
+	</dword>
 </packet>

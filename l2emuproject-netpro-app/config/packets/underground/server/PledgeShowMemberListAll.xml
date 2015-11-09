@@ -45,6 +45,6 @@
 		<dword alias="Apprentice" />
 
 		<!-- NEW -->
-		<byte alias="Attendance bonus" type="YesOrNo" />
+		<byte alias="Attendance bonus" type="pledge.Attendance" />
 	</loop>
 </packet>

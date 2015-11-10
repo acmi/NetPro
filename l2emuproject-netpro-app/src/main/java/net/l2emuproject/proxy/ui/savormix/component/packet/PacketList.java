@@ -16,10 +16,14 @@
 package net.l2emuproject.proxy.ui.savormix.component.packet;
 
 import static net.l2emuproject.proxy.network.meta.IPacketTemplate.ANY_DYNAMIC_PACKET;
+import static net.l2emuproject.util.ISODateTime.ISO_DATE_TIME_ZONE_MS;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
@@ -27,6 +31,7 @@ import java.awt.event.ComponentEvent;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -36,6 +41,7 @@ import java.util.RandomAccess;
 import java.util.Set;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -44,6 +50,7 @@ import javax.swing.JTable;
 import javax.swing.JViewport;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
+import javax.swing.TransferHandler;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
 
@@ -63,6 +70,7 @@ import net.l2emuproject.proxy.state.entity.cache.EntityInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToPlaintextVisitor;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend.PacketLogSummary;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
@@ -164,6 +172,22 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 					return;
 					
 				_list.scrollRectToVisible(_list.getCellRect(_list.getRowCount() - 1, 0, true));
+			}
+		});
+		_list.setTransferHandler(new TransferHandler()
+		{
+			private static final long serialVersionUID = 1L;
+			
+			@Override
+			protected Transferable createTransferable(JComponent c)
+			{
+				return selectedPacket();
+			}
+			
+			@Override
+			public int getSourceActions(JComponent c)
+			{
+				return COPY;
 			}
 		});
 		JPanel list = new JPanel();
@@ -374,6 +398,16 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	}
 	
 	/**
+	 * Returns whether this list is in packet refusal mode.
+	 * 
+	 * @return whether capture is disabled
+	 */
+	public boolean isSessionCaptureDisabled()
+	{
+		return _captureState == ListCaptureState.CAPTURE_DISABLED;
+	}
+	
+	/**
 	 * Sets the currently active capture mode.
 	 * 
 	 * @param captureState capture mode
@@ -394,7 +428,27 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		final int dcp = _model._showFromClient.size(), dsp = _model._showFromServer.size();
 		final long tcp = VersionnedPacketTable.getInstance().getKnownTemplates(_version, EndpointType.CLIENT).count(),
 				tsp = VersionnedPacketTable.getInstance().getKnownTemplates(_version, EndpointType.SERVER).count();
-		return new PacketLogSummary(_version, unkC ? dcp - 1 : dcp, (int)tcp, unkC, unkS ? dsp - 1 : dsp, (int)tsp, unkS, _captureState == ListCaptureState.CAPTURE_DISABLED);
+		return new PacketLogSummary(_version, unkC ? dcp - 1 : dcp, (int)tcp, unkC, unkS ? dsp - 1 : dsp, (int)tsp, unkS, isSessionCaptureDisabled());
+	}
+	
+	/** Copies the currently selected packet content (as text) to clipboard. */
+	public void selectedPacketToClipboard()
+	{
+		final Transferable t = selectedPacket();
+		if (t != null)
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(t, null);
+	}
+	
+	Transferable selectedPacket()
+	{
+		final int row = _list.getSelectedRow();
+		if (row == -1)
+			return null;
+			
+		final ReceivedPacket packet = _model.getValueAt(_list.getRowSorter().convertRowIndexToModel(row)).getPacket();
+		final StringBuilder sb = new StringBuilder();
+		ToPlaintextVisitor.writePacket(packet, _version, new MMOBuffer(), _cacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+		return new StringSelection(sb.toString());
 	}
 	
 	ICacheServerID getCacheContext()
@@ -660,8 +714,10 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	public enum ListCaptureState
 	{
 		/** New packets will be added to the packet table */
-		CAPTURE_ENABLED, /** New packets will not be added to the packet table */
-		CAPTURE_DISABLED, /** Attempts to add packets will not be made */
+		CAPTURE_ENABLED,
+		/** New packets will not be added to the packet table */
+		CAPTURE_DISABLED,
+		/** Attempts to add packets will not be made */
 		OFFLINE;
 	}
 }

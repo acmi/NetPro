@@ -22,6 +22,8 @@ import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.Collections;
+import java.util.Set;
 
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -31,7 +33,9 @@ import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
+import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
+import net.l2emuproject.util.BitMaskUtils;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -112,9 +116,10 @@ public class LogVisitationTask extends AbstractLogFileTask<Path>
 					final byte[] body = new byte[ioh.readChar()];
 					ioh.read(body);
 					final long time = ioh.readLong();
+					final Set<LoggedPacketFlag> flags = header.getVersion() >= 7 ? BitMaskUtils.setOf(ioh.readByte(), LoggedPacketFlag.class) : Collections.emptySet();
 					
 					final ReceivedPacket rp = new ReceivedPacket(ServiceType.valueOf(header.isLogin()), type, body, time);
-					_visitor.onPacket(rp);
+					_visitor.onPacket(rp, flags);
 					publish(rp);
 					
 					if (isCancelled())

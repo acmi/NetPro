@@ -15,6 +15,8 @@
  */
 package net.l2emuproject.proxy.ui.savormix.io.conv;
 
+import static net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag.HIDDEN;
+
 import java.awt.image.RenderedImage;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -27,6 +29,7 @@ import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
@@ -57,6 +60,7 @@ import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.component.packet.DataType;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
+import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
@@ -98,7 +102,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 	}
 	
 	@Override
-	public void onPacket(ReceivedPacket packet) throws Exception
+	public void onPacket(ReceivedPacket packet, Set<LoggedPacketFlag> flags) throws Exception
 	{
 		final boolean client = packet.getEndpoint().isClient();
 		_writer.append("\t<").append(client ? "client" : "server").append("Packet timestamp=\"").append(String.valueOf(packet.getReceived())).append("\" opcodes=\"");
@@ -141,6 +145,9 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants
 			// Enable object analytics and whatnot
 			LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(_protocol).isLogin(), client, body.array(), _protocol, _cacheContext);
 			
+			if (flags.contains(HIDDEN))
+				return;
+				
 			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(_protocol, packet.getEndpoint(), body.array());
 			_writer.append(HexUtil.bytesToHexString(template.getPrefix(), " ")).append("\">\r\n");
 			body.position(template.getPrefix().length);

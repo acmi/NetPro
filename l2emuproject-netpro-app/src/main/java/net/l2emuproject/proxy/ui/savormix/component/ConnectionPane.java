@@ -221,6 +221,21 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	}
 	
 	/**
+	 * Returns whether the operator has disabled packet capture for the specific connection.
+	 * 
+	 * @param client client connection
+	 * @return whether capture is disabled
+	 */
+	public boolean isCaptureDisabledFor(Proxy client)
+	{
+		if (_captureSettingAccessor.isGlobalCaptureDisabled())
+			return true;
+			
+		final PacketList pl = _live.get(client);
+		return pl != null ? pl.isSessionCaptureDisabled() : false;
+	}
+	
+	/**
 	 * Handles the session capture checkbox events. Enables/disables packet capture for the currently open tab.
 	 * 
 	 * @param disabled whether to disable capture

@@ -19,8 +19,8 @@ import java.util.Arrays;
 
 import org.apache.commons.lang3.ArrayUtils;
 
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
 
 /**

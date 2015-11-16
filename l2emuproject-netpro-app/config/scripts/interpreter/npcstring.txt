@@ -4,7 +4,7 @@
 4	none
 5	Withdraw the fee for the next time at $s1/$s2 $s3
 6	(<font color="FFAABB">$s1</font> Adena/$s2 Day(s))
-7	$s1<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=-270&reply=$s2000">Deactivate</a>$s3
+7	$s1<a action="bypass -h menu_select?ask=-270&reply=$s2">Deactivate</a>$s3
 8	Stage
 9	Stage $s1
 10	$s1%%
@@ -54,30 +54,30 @@
 1402	Whereabouts of the Archaeologist (In Progress)
 1403	Whereabouts of the Archaeologist (Done)
 1404	Whereabouts of the Archaeologist
-1501	Sweet Whispers (Above Lv. 60)
-1502	Sweet Whispers (Above Lv. 60) (In Progress)
-1503	Sweet Whispers (Above Lv. 60) (Done)
-1504	Sweet Whispers (Above Lv. 60)
-1601	The Coming Darkness (Above Lv. 62)
-1602	The Coming Darkness (Above Lv. 62) (In Progress)
-1603	The Coming Darkness (Above Lv. 62) (Done)
-1604	The Coming Darkness (Above Lv. 62)
-1701	Light and Darkness (Above Lv. 61)
-1702	Light and Darkness (Above Lv. 61) (In Progress)
-1703	Light and Darkness (Above Lv. 61) (Done)
-1704	Light and Darkness (Above Lv. 61)
+1501	Sweet Whispers (Lv. 60 and Above)
+1502	Sweet Whispers (Lv. 60 and Above) (In Progress)
+1503	Sweet Whispers (Lv. 60 and Above) (Done)
+1504	Sweet Whispers (Lv. 60 and Above)
+1601	The Coming Darkness (Lv. 62 and Above)
+1602	The Coming Darkness (Lv. 62 and Above) (In Progress)
+1603	The Coming Darkness (Lv. 62 and Above) (Done)
+1604	The Coming Darkness (Lv. 62 and Above)
+1701	Light and Darkness (Lv. 61 and Above)
+1702	Light and Darkness (Lv. 61 and Above) (In Progress)
+1703	Light and Darkness (Lv. 61 and Above) (Done)
+1704	Light and Darkness (Lv. 61 and Above)
 1801	Meeting with the Golden Ram
 1802	Meeting with the Golden Ram (In Progress)
 1803	Meeting with the Golden Ram (Done)
 1804	Meeting with the Golden Ram
-1901	Go to the Pastureland (Above Lv. 82)
-1902	Go to the Pastureland (Above Lv. 82) (In Progress)
-1903	Go to the Pastureland (Above Lv. 82) (Done)
-1904	Go to the Pastureland (Above Lv. 82)
-2001	Bring Up With Love (Above Lv. 82)
-2002	Bring Up With Love (Above Lv. 82) (In Progress)
-2003	Bring Up With Love (Above Lv. 82) (Done)
-2004	Bring Up with Love (Above Lv. 82)
+1901	Go to the Pastureland (Lv. 82 and Above)
+1902	Go to the Pastureland (Lv. 82 and Above) (In Progress)
+1903	Go to the Pastureland (Lv. 82 and Above) (Done)
+1904	Go to the Pastureland (Lv. 82 and Above)
+2001	Bring Up With Love (Lv. 82 and Above)
+2002	Bring Up With Love (Lv. 82 and Above) (In Progress)
+2003	Bring Up With Love (Lv. 82 and Above) (Done)
+2004	Bring Up with Love (Lv. 82 and Above)
 2005	Are you trying to tame me? Don't do that!
 2006	Don't give such a thing.  You can endanger yourself!
 2007	Yuck!  What is this?  It tastes terrible!
@@ -141,9 +141,9 @@
 2504	Hiding Behind the Truth
 2550	That box was sealed by my master, $s1! Don't touch it!
 2551	You've ended my immortal life! You're protected by the feudal lord, aren't you?
-2601	Tired of Waiting (Above Lv. 80)
-2602	Tired of Waiting (Above Lv. 80) (In Progress)
-2603	Tired of Waiting (Above Lv. 80) (Done)
+2601	Tired of Waiting (Lv. 80 and Above)
+2602	Tired of Waiting (Lv. 80 and Above) (In Progress)
+2603	Tired of Waiting (Lv. 80 and Above) (Done)
 2701	Chest Caught with a Wind Bait
 2702	Chest Caught with a Wind Bait (In Progress)
 2703	Chest Caught with a Wind Bait (Done)
@@ -164,30 +164,30 @@
 3102	Secret Buried in the Swamp (Lv. 66-76) (In Progress)
 3103	Secret Buried in the Swamp (Lv. 66-76) (Done)
 3104	Secret Buried in the Swamp (Lv. 66-76)
-3201	An Obvious Lie (Above Lv. 45)
-3202	An Obvious Lie (Above Lv. 45) (In Progress)
-3203	An Obvious Lie (Above Lv. 45) (Done)
-3204	An Obvious Lie (Above Lv. 45)
-3301	Make a Pair of Dress Shoes (Above Lv. 60)
-3302	Make a Pair of Dress Shoes (Above Lv. 60) (In Progress)
-3303	Make a Pair of Dress Shoes (Above Lv. 60) (Done)
-3304	Make a Pair of Dress Shoes (Above Lv. 60)
-3401	In Search of Cloth (Above Lv. 60)
-3402	In Search of Cloth (Above Lv. 60) (In Progress)
-3403	In Search of Cloth (Above Lv. 60) (Done)
-3404	In Search of Cloth (Above Lv. 60)
-3501	Find Glittering Jewelry (Above Lv. 60)
-3502	Find Glittering Jewelry (Above Lv. 60) (In Progress)
-3503	Find Glittering Jewelry (Above Lv. 60) (In Progress)
-3504	Find Glittering Jewelry (Above Lv. 60)
-3601	Make a Sewing Kit (Above Lv. 60)
-3602	Make a Sewing Kit (Above Lv. 60) (In Progress)
-3603	Make a Sewing Kit (Above Lv. 60) (Done)
-3604	Make a Sewing Kit (Above Lv. 60)
-3701	Make Formal Wear (Above Lv. 60)
-3702	Make Formal Wear (Above Lv. 60) (In Progress)
-3703	Make Formal Wear (Above Lv. 60) (Done)
-3704	Make Formal Wear (Above Lv. 60)
+3201	An Obvious Lie (Lv. 45 and Above)
+3202	An Obvious Lie (Lv. 45 and Above) (In Progress)
+3203	An Obvious Lie (Lv. 45 and Above) (Done)
+3204	An Obvious Lie (Lv. 45 and Above)
+3301	Make a Pair of Dress Shoes (Lv. 60 and Above)
+3302	Make a Pair of Dress Shoes (Lv. 60 and Above) (In Progress)
+3303	Make a Pair of Dress Shoes (Lv. 60 and Above) (Done)
+3304	Make a Pair of Dress Shoes (Lv. 60 and Above)
+3401	In Search of Cloth (Lv. 60 and Above)
+3402	In Search of Cloth (Lv. 60 and Above) (In Progress)
+3403	In Search of Cloth (Lv. 60 and Above) (Done)
+3404	In Search of Cloth (Lv. 60 and Above)
+3501	Find Glittering Jewelry (Lv. 60 and Above)
+3502	Find Glittering Jewelry (Lv. 60 and Above) (In Progress)
+3503	Find Glittering Jewelry (Lv. 60 and Above) (In Progress)
+3504	Find Glittering Jewelry (Lv. 60 and Above)
+3601	Make a Sewing Kit (Lv. 60 and Above)
+3602	Make a Sewing Kit (Lv. 60 and Above) (In Progress)
+3603	Make a Sewing Kit (Lv. 60 and Above) (Done)
+3604	Make a Sewing Kit (Lv. 60 and Above)
+3701	Make Formal Wear (Lv. 60 and Above)
+3702	Make Formal Wear (Lv. 60 and Above) (In Progress)
+3703	Make Formal Wear (Lv. 60 and Above) (Done)
+3704	Make Formal Wear (Lv. 60 and Above)
 3801	Dragon Fangs (Lv. 19-29)
 3802	Dragon Fangs (Lv. 19-29) (In Progress)
 3803	Dragon Fangs (Lv. 19-29) (Done)
@@ -196,10 +196,10 @@
 3902	Red-eyed Invader (Lv. 20-28) (In Progress)
 3903	Red-eyed Invader (Lv. 20-28) (Done)
 3904	Red-eyed Invader (Lv. 20-28)
-4001	A Special Order (Above Lv. 40)
-4002	A Special Order (Above Lv. 40) (In Progress)
-4003	A Special Order (Above Lv. 40) (Done)
-4004	A Special Order (Above Lv. 40)
+4001	A Special Order (Lv. 40 and Above)
+4002	A Special Order (Lv. 40 and Above) (In Progress)
+4003	A Special Order (Lv. 40 and Above) (Done)
+4004	A Special Order (Lv. 40 and Above)
 4101	The Adventurer's Challenge
 4102	The Adventurer's Challenge (In Progress)
 4103	The Adventurer's Challenge (Done)
@@ -208,18 +208,18 @@
 4153	Acquisition of Weapon Coupon for beginners complete. \n Go speak with the Newbie Helper.
 4154	Acquisition of race-specific weapon complete. \n Go find the Newbie Helper.
 4155	Last duty complete. \n Go find the Newbie Helper.
-4201	Help the Uncle! (Above Lv. 25)
-4202	Help the Uncle! (Above Lv. 25) (In Progress)
-4203	Help the Uncle! (Above Lv. 25) (Done)
-4204	Help the Uncle! (Above Lv. 25)
-4301	Help the Sister! (Above Lv. 26)
-4302	Help the Sister! (Above Lv. 26) (In Progress)
-4303	Help the Sister! (Above Lv. 26) (Done)
-4304	Help the Sister! (Above Lv. 26)
-4401	Help the Son! (Above Lv. 24)
-4402	Help the Son! (Above Lv. 24) (In Progress)
-4403	Help the Son! (Above Lv. 24) (Done)
-4404	Help the Son! (Above Lv. 24)
+4201	Help the Uncle! (Lv. 25 and Above)
+4202	Help the Uncle! (Lv. 25 and Above) (In Progress)
+4203	Help the Uncle! (Lv. 25 and Above) (Done)
+4204	Help the Uncle! (Lv. 25 and Above)
+4301	Help the Sister! (Lv. 26 and Above)
+4302	Help the Sister! (Lv. 26 and Above) (In Progress)
+4303	Help the Sister! (Lv. 26 and Above) (Done)
+4304	Help the Sister! (Lv. 26 and Above)
+4401	Help the Son! (Lv. 24 and Above)
+4402	Help the Son! (Lv. 24 and Above) (In Progress)
+4403	Help the Son! (Lv. 24 and Above) (Done)
+4404	Help the Son! (Lv. 24 and Above)
 4501	To Talking Island
 4502	To Talking Island (In Progress)
 4503	To Talking Island (Done)
@@ -258,10 +258,10 @@
 6052	You have good luck. I shall return.
 6053	You are strong. This was a mistake.
 6054	Who are you to join in the battle? How upsetting.
-6101	Law Enforcement (Above Lv. 76)
-6102	Law Enforcement (Above Lv. 76) (In Progress)
-6103	Law Enforcement (Above Lv. 76) (Done)
-6104	Law Enforcement (Above Lv. 76)
+6101	Law Enforcement (Lv. 76 and Above)
+6102	Law Enforcement (Lv. 76 and Above) (In Progress)
+6103	Law Enforcement (Lv. 76 and Above) (Done)
+6104	Law Enforcement (Lv. 76 and Above)
 6201	Path of the Trooper
 6202	Path of the Trooper (In Progress)
 6203	Path of the Trooper (Done)
@@ -1035,29 +1035,29 @@
 10801	Jumble, Tumble, Diamond Fuss
 10802	Jumble, Tumble, Diamond Fuss (In Progress)
 10803	Jumble, Tumble, Diamond Fuss (Done)
-10901	In Search of the Nest (Above Lv. 81)
-10902	In Search of the Nest (Above Lv. 81) (In Progress)
-10903	In Search of the Nest (Above Lv. 81) (Done)
-10904	In Search of the Nest (Above Lv. 81)
-11001	To the Primeval Isle (Above Lv. 75)
-11002	To the Primeval Isle (Above Lv. 75) (In Progress)
-11003	To the Primeval Isle (Above Lv. 75) (Done)
-11004	To the Primeval Isle (Above Lv. 75)
-11101	Elrokian Hunter's Proof (Above Lv. 75)
-11102	Elrokian Hunter's Proof (Above Lv. 75) (In Progress)
-11103	Elrokian Hunter's Proof (Above Lv. 75) (Done)
-11104	Elrokian Hunter's Proof (Above Lv. 75)
+10901	In Search of the Nest (Lv. 81 and Above)
+10902	In Search of the Nest (Lv. 81 and Above) (In Progress)
+10903	In Search of the Nest (Lv. 81 and Above) (Done)
+10904	In Search of the Nest (Lv. 81 and Above)
+11001	To the Primeval Isle (Lv. 75 and Above)
+11002	To the Primeval Isle (Lv. 75 and Above) (In Progress)
+11003	To the Primeval Isle (Lv. 75 and Above) (Done)
+11004	To the Primeval Isle (Lv. 75 and Above)
+11101	Elrokian Hunter's Proof (Lv. 75 and Above)
+11102	Elrokian Hunter's Proof (Lv. 75 and Above) (In Progress)
+11103	Elrokian Hunter's Proof (Lv. 75 and Above) (Done)
+11104	Elrokian Hunter's Proof (Lv. 75 and Above)
 11201	Walk of Fate
 11202	Walk of Fate (In Progress)
 11203	Walk of Fate (Done)
-11301	Status of the Beacon Tower (Above Lv. 80)
-11302	Status of the Beacon Tower (Above Lv. 80) (In Progress)
-11303	Status of the Beacon Tower (Above Lv. 80) (Done)
-11304	Status of the Beacon Tower (Above Lv. 80)
-11401	Resurrection of an Old Manager (Above Lv. 70)
-11402	Resurrection of an Old Manager (Above Lv. 70) (In Progress)
-11403	Resurrection of an Old Manager (Above Lv. 70) (Done)
-11404	Resurrection of an Old Manager (Above Lv. 70)
+11301	Status of the Beacon Tower (Lv. 80 and Above)
+11302	Status of the Beacon Tower (Lv. 80 and Above) (In Progress)
+11303	Status of the Beacon Tower (Lv. 80 and Above) (Done)
+11304	Status of the Beacon Tower (Lv. 80 and Above)
+11401	Resurrection of an Old Manager (Lv. 70 and Above)
+11402	Resurrection of an Old Manager (Lv. 70 and Above) (In Progress)
+11403	Resurrection of an Old Manager (Lv. 70 and Above) (Done)
+11404	Resurrection of an Old Manager (Lv. 70 and Above)
 11450	You, $s1, you attacked Wendy. Prepare to die!
 11451	$s1, your enemy was driven out. I will now withdraw and await your next command.
 11452	This enemy is far too powerful for me to fight. I must withdraw.
@@ -1109,10 +1109,10 @@
 11601	Beyond the Hills of Winter
 11602	Beyond the Hills of Winter (In Progress)
 11603	Beyond the Hills of Winter (Done)
-11701	The Ocean of Distant Stars (Above Lv. 39)
-11702	The Ocean of Distant Stars (Above Lv. 39) (In Progress)
-11703	The Ocean of Distant Stars (Above Lv. 39) (Done)
-11704	The Ocean of Distant Stars (Above Lv. 39)
+11701	The Ocean of Distant Stars (Lv. 39 and Above)
+11702	The Ocean of Distant Stars (Lv. 39 and Above) (In Progress)
+11703	The Ocean of Distant Stars (Lv. 39 and Above) (Done)
+11704	The Ocean of Distant Stars (Lv. 39 and Above)
 11801	To Lead and Be Led
 11802	To Lead and Be Led (In Progress)
 11803	To Lead and Be Led (Done)
@@ -1121,14 +1121,14 @@
 11902	Last Imperial Prince (Lv. 74-80) (In Progress)
 11903	Last Imperial Prince (Lv. 74-80) (Done)
 11904	Last Imperial Prince (Lv. 74-80)
-12001	Pavel's Last Research (Above Lv. 70)
-12002	Pavel's Last Research (Above Lv. 70) (In Progress)
-12003	Pavel's Last Research (Above Lv. 70) (Done)
-12004	Pavel's Last Research (Above Lv. 70)
-12101	Pavel the Giant (Above Lv. 70)
-12102	Pavel the Giant (Above Lv. 70) (In Progress)
-12103	Pavel the Giant (Above Lv. 70) (Done)
-12104	Pavel the Giant (Above Lv. 70)
+12001	Pavel's Last Research (Lv. 70 and Above)
+12002	Pavel's Last Research (Lv. 70 and Above) (In Progress)
+12003	Pavel's Last Research (Lv. 70 and Above) (Done)
+12004	Pavel's Last Research (Lv. 70 and Above)
+12101	Pavel the Giant (Lv. 70 and Above)
+12102	Pavel the Giant (Lv. 70 and Above) (In Progress)
+12103	Pavel the Giant (Lv. 70 and Above) (Done)
+12104	Pavel the Giant (Lv. 70 and Above)
 12201	Ominous News (Lv. 20-36)
 12202	Ominous News (Lv. 20-36) (In Progress)
 12203	Ominous News (Lv. 20-36) (Done)
@@ -1137,18 +1137,18 @@
 12302	The Leader and the Follower (In Progress)
 12303	The Leader and the Follower (Done)
 12304	The Leader and the Follower (Sponsor)
-12401	Meeting the Elroki (Above Lv. 75)
-12402	Meeting the Elroki (Above Lv. 75) (In Progress)
-12403	Meeting the Elroki (Above Lv. 75) (Done)
-12404	Meeting the Elroki (Above Lv. 75)
-12501	The Name of Evil 1 (Above Lv. 76)
-12502	The Name of Evil 1 (Above Lv. 76) (In Progress)
-12503	The Name of Evil 1 (Above Lv. 76) (Done)
-12504	The Name of Evil 1 (Above Lv. 76)
-12601	The Name of Evil 2 (Above Lv. 77)
-12602	The Name of Evil 2 (Above Lv. 77) (In Progress)
-12603	The Name of Evil 2 (Above Lv. 77) (Done)
-12604	The Name of Evil 2 (Above Lv. 77)
+12401	Meeting the Elroki (Lv. 75 and Above)
+12402	Meeting the Elroki (Lv. 75 and Above) (In Progress)
+12403	Meeting the Elroki (Lv. 75 and Above) (Done)
+12404	Meeting the Elroki (Lv. 75 and Above)
+12501	The Name of Evil 1 (Lv. 76 and Above)
+12502	The Name of Evil 1 (Lv. 76 and Above) (In Progress)
+12503	The Name of Evil 1 (Lv. 76 and Above) (Done)
+12504	The Name of Evil 1 (Lv. 76 and Above)
+12601	The Name of Evil 2 (Lv. 77 and Above)
+12602	The Name of Evil 2 (Lv. 77 and Above) (In Progress)
+12603	The Name of Evil 2 (Lv. 77 and Above) (Done)
+12604	The Name of Evil 2 (Lv. 77 and Above)
 12701	Kamael: A Window to the Future
 12702	Kamael: A Window to the Future (In Progress)
 12703	Kamael: A Window to the Future (Done)
@@ -1175,46 +1175,46 @@
 13302	That's Bloody Hot! (In Progress)
 13303	That's Bloody Hot! (Done)
 13304	That's Bloody Hot!
-13401	Temple Missionary (Above Lv. 35)
-13402	Temple Missionary (Above Lv. 35) (In Progress)
-13403	Temple Missionary (Above Lv. 35) (Done)
-13404	Temple Missionary (Above Lv. 35)
-13501	Temple Executor (Above Lv. 35)
-13502	Temple Executor (Above Lv. 35) (In Progress)
-13503	Temple Executor (Above Lv. 35) (Done)
-13504	Temple Executor (Above Lv. 35)
-13601	More Than Meets the Eye (Above Lv. 50)
-13602	More Than Meets the Eye (Above Lv. 50) (In Progress)
-13603	More Than Meets the Eye (Above Lv. 50) (Done)
-13604	More Than Meets the Eye (Above Lv. 50)
-13701	Temple Champion - 1 (Above Lv. 35)
-13702	Temple Champion - 1 (Above Lv. 35) (In Progress)
-13703	Temple Champion - 1 (Above Lv. 35) (Done)
-13704	Temple Champion - 1 (Above Lv. 35)
-13801	Temple Champion - 2 (Above Lv. 36)
-13802	Temple Champion - 2 (Above Lv. 36) (In Progress)
-13803	Temple Champion - 2 (Above Lv. 36) (Done)
-13804	Temple Champion - 2 (Above Lv. 36)
-13901	Shadow Fox - 1 (Above Lv. 37)
-13902	Shadow Fox - 1 (Above Lv. 37) (In Progress)
-13903	Shadow Fox - 1 (Above Lv. 37) (Done)
-13904	Shadow Fox - 1 (Above Lv. 37)
-14001	Shadow Fox - 2 (Above Lv. 37)
-14002	Shadow Fox - 2 (Above Lv. 37) (In Progress)
-14003	Shadow Fox - 2 (Above Lv. 37) (Done)
-14004	Shadow Fox - 2 (Above Lv. 37)
-14101	Shadow Fox - 3 (Above Lv. 37)
-14102	Shadow Fox - 3 (Above Lv. 37) (In Progress)
-14103	Shadow Fox - 3 (Above Lv. 37) (Done)
-14104	Shadow Fox - 3 (Above Lv. 37)
-14201	Fallen Angel - Request of Dawn (Above Lv. 38)
-14202	Fallen Angel - Request of Dawn (Above Lv. 38) (In Progress)
-14203	Fallen Angel - Request of Dawn (Above Lv. 38) (Done)
-14204	Fallen Angel - Request of Dawn (Above Lv. 38)
+13401	Temple Missionary (Lv. 35 and Above)
+13402	Temple Missionary (Lv. 35 and Above) (In Progress)
+13403	Temple Missionary (Lv. 35 and Above) (Done)
+13404	Temple Missionary (Lv. 35 and Above)
+13501	Temple Executor (Lv. 35 and Above)
+13502	Temple Executor (Lv. 35 and Above) (In Progress)
+13503	Temple Executor (Lv. 35 and Above) (Done)
+13504	Temple Executor (Lv. 35 and Above)
+13601	More Than Meets the Eye (Lv. 50 and Above)
+13602	More Than Meets the Eye (Lv. 50 and Above) (In Progress)
+13603	More Than Meets the Eye (Lv. 50 and Above) (Done)
+13604	More Than Meets the Eye (Lv. 50 and Above)
+13701	Temple Champion - 1 (Lv. 35 and Above)
+13702	Temple Champion - 1 (Lv. 35 and Above) (In Progress)
+13703	Temple Champion - 1 (Lv. 35 and Above) (Done)
+13704	Temple Champion - 1 (Lv. 35 and Above)
+13801	Temple Champion - 2 (Lv. 36 and Above)
+13802	Temple Champion - 2 (Lv. 36 and Above) (In Progress)
+13803	Temple Champion - 2 (Lv. 36 and Above) (Done)
+13804	Temple Champion - 2 (Lv. 36 and Above)
+13901	Shadow Fox - 1 (Lv. 37 and Above)
+13902	Shadow Fox - 1 (Lv. 37 and Above) (In Progress)
+13903	Shadow Fox - 1 (Lv. 37 and Above) (Done)
+13904	Shadow Fox - 1 (Lv. 37 and Above)
+14001	Shadow Fox - 2 (Lv. 37 and Above)
+14002	Shadow Fox - 2 (Lv. 37 and Above) (In Progress)
+14003	Shadow Fox - 2 (Lv. 37 and Above) (Done)
+14004	Shadow Fox - 2 (Lv. 37 and Above)
+14101	Shadow Fox - 3 (Lv. 37 and Above)
+14102	Shadow Fox - 3 (Lv. 37 and Above) (In Progress)
+14103	Shadow Fox - 3 (Lv. 37 and Above) (Done)
+14104	Shadow Fox - 3 (Lv. 37 and Above)
+14201	Fallen Angel - Request of Dawn (Lv. 38 and Above)
+14202	Fallen Angel - Request of Dawn (Lv. 38 and Above) (In Progress)
+14203	Fallen Angel - Request of Dawn (Lv. 38 and Above) (Done)
+14204	Fallen Angel - Request of Dawn (Lv. 38 and Above)
 14205	Fallen Angel - Select
-14301	Fallen Angel - Request of Dusk (Above Lv. 38)
-14302	Fallen Angel - Request of Dusk (Above Lv. 38) (In Progress)
-14303	Fallen Angel - Request of Dusk (Above Lv. 38) (Done)
+14301	Fallen Angel - Request of Dusk (Lv. 38 and Above)
+14302	Fallen Angel - Request of Dusk (Lv. 38 and Above) (In Progress)
+14303	Fallen Angel - Request of Dusk (Lv. 38 and Above) (Done)
 14401	Pailaka - Injured Dragon (Lv. 73-77)
 14402	Pailaka - Injured Dragon (Lv. 73-77) (In Progress)
 14403	Pailaka - Injured Dragon (Lv. 73-77) (done)
@@ -1224,14 +1224,14 @@
 14801	Path to Becoming an Exalted Mercenary
 14802	Path to Becoming an Exalted Mercenary (In Progress)
 14803	Path to Becoming an Exalted Mercenary (Done)
-14901	Primal Mother, Istina (Above Lv. 90)
-14902	Primal Mother, Istina (Above Lv. 90) (In Progress)
-14903	Primal Mother, Istina (Above Lv. 90) (Done)
-14904	Primal Mother, Istina (Above Lv. 90)
-15001	Extreme Challenge: Primal Mother Resurrected (Above Lv. 97)
-15002	Extreme Challenge: Primal Mother Resurrected (Above Lv. 97) (In Progress)
-15003	Extreme Challenge: Primal Mother Resurrected (Above Lv. 97) (Done)
-15004	Extreme Challenge: Primal Mother Resurrected (Above Lv. 97)
+14901	Primal Mother, Istina (Lv. 90 and Above)
+14902	Primal Mother, Istina (Lv. 90 and Above) (In Progress)
+14903	Primal Mother, Istina (Lv. 90 and Above) (Done)
+14904	Primal Mother, Istina (Lv. 90 and Above)
+15001	Extreme Challenge: Primal Mother Resurrected (Lv. 97 and Above)
+15002	Extreme Challenge: Primal Mother Resurrected (Lv. 97 and Above) (In Progress)
+15003	Extreme Challenge: Primal Mother Resurrected (Lv. 97 and Above) (Done)
+15004	Extreme Challenge: Primal Mother Resurrected (Lv. 97 and Above)
 15101	Cure for Fever
 15102	Cure for Fever (In Progress)
 15103	Cure for Fever (Done)
@@ -1319,10 +1319,10 @@
 17602	Steps for Honor (In Progress)
 17603	Steps for Honor (Done)
 17604	Steps for Honor
-17701	Split Destiny (Above Lv. 80)
-17702	Split Destiny (Above Lv. 80) (In Progress)
-17703	Split Destiny (Above Lv. 80) (Done)
-17704	Split Destiny (Above Lv. 80)
+17701	Split Destiny (Lv. 80 and Above)
+17702	Split Destiny (Lv. 80 and Above) (In Progress)
+17703	Split Destiny (Lv. 80 and Above) (Done)
+17704	Split Destiny (Lv. 80 and Above)
 17801	Iconic Trinity
 17802	Iconic Trinity (In Progress)
 17803	Iconic Trinity (Done)
@@ -1332,34 +1332,34 @@
 17951	The Veiled Creator...
 17952	The Conspiracy of the Ancient Race
 17953	Chaos and Time...
-18001	Infernal Flames Burning in Crystal Prison (Above Lv. 97)
-18002	Infernal Flames Burning in Crystal Prison (Above Lv. 97) (In Progress)
-18003	Infernal Flames Burning in Crystal Prison (Above Lv. 97) (Done)
-18004	Infernal Flames Burning in Crystal Prison (Above Lv. 97)
-18101	Devils Strike Back, Advent of Balok (Above Lv. 97)
-18102	Devils Strike Back, Advent of Balok (Above Lv. 97) (In Progress)
-18103	Devils Strike Back, Advent of Balok (Above Lv. 97) (Done)
-18104	Devils Strike Back, Advent of Balok (Above Lv. 97)
+18001	Infernal Flames Burning in Crystal Prison (Lv. 97 and Above)
+18002	Infernal Flames Burning in Crystal Prison (Lv. 97 and Above) (In Progress)
+18003	Infernal Flames Burning in Crystal Prison (Lv. 97 and Above) (Done)
+18004	Infernal Flames Burning in Crystal Prison (Lv. 97 and Above)
+18101	Devils Strike Back, Advent of Balok (Lv. 97 and Above)
+18102	Devils Strike Back, Advent of Balok (Lv. 97 and Above) (In Progress)
+18103	Devils Strike Back, Advent of Balok (Lv. 97 and Above) (Done)
+18104	Devils Strike Back, Advent of Balok (Lv. 97 and Above)
 18201	New Recruits
 18202	New Recruits (In Progress)
 18203	New Recruits (Done)
-18301	Relics Exploration (Above Lv. 40)
-18302	Relics Exploration (Above Lv. 40) (In Progress)
-18303	Relics Exploration (Above Lv. 40) (Done)
-18304	Relics Exploration (Above Lv. 40)
-18401	Art of Persuasion (Above Lv. 40)
-18402	Art of Persuasion (Above Lv. 40) (In Progress)
-18403	Art of Persuasion (Above Lv. 40) (Done)
-18404	Art of Persuasion (Above Lv. 40)
+18301	Relics Exploration (Lv. 40 and Above)
+18302	Relics Exploration (Lv. 40 and Above) (In Progress)
+18303	Relics Exploration (Lv. 40 and Above) (Done)
+18304	Relics Exploration (Lv. 40 and Above)
+18401	Art of Persuasion (Lv. 40 and Above)
+18402	Art of Persuasion (Lv. 40 and Above) (In Progress)
+18403	Art of Persuasion (Lv. 40 and Above) (Done)
+18404	Art of Persuasion (Lv. 40 and Above)
 18451	Intruder Alert! The alarm will self-destruct in 2 minutes.
 18452	The alarm will self-destruct in 60 seconds. Enter passcode to override.
 18453	The alarm will self-destruct in 30 seconds. Enter passcode to override.
 18454	The alarm will self-destruct in 10 seconds. Enter passcode to override.
 18455	Recorder crushed.
-18501	Nikola's Cooperation (Above Lv. 40)
-18502	Nikola's Cooperation (Above Lv. 40) (In Progress)
-18503	Nikola's Cooperation (Above Lv. 40) (Done)
-18504	Nikola's Cooperation (Above Lv. 40)
+18501	Nikola's Cooperation (Lv. 40 and Above)
+18502	Nikola's Cooperation (Lv. 40 and Above) (In Progress)
+18503	Nikola's Cooperation (Lv. 40 and Above) (Done)
+18504	Nikola's Cooperation (Lv. 40 and Above)
 18551	Intruder Alert! The alarm will self-destruct in 2 minutes.
 18552	The alarm will self-destruct in 60 seconds. Please evacuate immediately!
 18553	The alarm will self-destruct in 30 seconds. Please evacuate immediately!
@@ -1379,56 +1379,56 @@
 18567	Go on an adventure! Sing with the winds with the Ertheia, children of the wind!
 18568	
 18569	
-18601	Contract Execution (Above Lv. 41)
-18602	Contract Execution (Above Lv. 41) (In Progress)
-18603	Contract Execution (Above Lv. 41) (Done)
-18604	Contract Execution (Above Lv. 41)
-18701	Nikola's Heart (Above Lv. 41)
-18702	Nikola's Heart (Above Lv. 41) (In Progress)
-18703	Nikola's Heart (Above Lv. 41) (Done)
-18704	Nikola's Heart (Above Lv. 41)
-18801	Seal Removal (Above Lv. 41)
-18802	Seal Removal (Above Lv. 41) (In Progress)
-18803	Seal Removal (Above Lv. 41) (Done)
-18804	Seal Removal (Above Lv. 41)
-18901	Contract Completion (Above Lv. 42)
-18902	Contract Completion (Above Lv. 42) (In Progress)
-18903	Contract Completion (Above Lv. 42) (Done)
-18904	Contract Completion (Above Lv. 42)
-19001	Lost Dream (Above Lv. 42)
-19002	Lost Dream (Above Lv. 42) (In Progress)
-19003	Lost Dream (Above Lv. 42) (Done)
-19004	Lost Dream (Above Lv. 42)
-19101	Vain Conclusion (Above Lv. 42)
-19102	Vain Conclusion (Above Lv. 42) (In Progress)
-19103	Vain Conclusion (Above Lv. 42) (Done)
-19104	Vain Conclusion (Above Lv. 42)
-19201	Seven Signs, Series of Doubt (Above Lv. 79)
-19202	Seven Signs, Series of Doubt (Above Lv. 79) (In Progress)
-19203	Seven Signs, Series of Doubt (Above Lv. 79) (Done)
-19204	Seven Signs, Series of Doubt (Above Lv. 79)
-19301	Seven Signs, Dying Message (Above Lv. 79)
-19302	Seven Signs, Dying Message (Above Lv. 79) (In Progress)
-19303	Seven Signs, Dying Message (Above Lv. 79) (Done)
-19304	Seven Signs, Dying Message (Above Lv. 79)
+18601	Contract Execution (Lv. 41 and Above)
+18602	Contract Execution (Lv. 41 and Above) (In Progress)
+18603	Contract Execution (Lv. 41 and Above) (Done)
+18604	Contract Execution (Lv. 41 and Above)
+18701	Nikola's Heart (Lv. 41 and Above)
+18702	Nikola's Heart (Lv. 41 and Above) (In Progress)
+18703	Nikola's Heart (Lv. 41 and Above) (Done)
+18704	Nikola's Heart (Lv. 41 and Above)
+18801	Seal Removal (Lv. 41 and Above)
+18802	Seal Removal (Lv. 41 and Above) (In Progress)
+18803	Seal Removal (Lv. 41 and Above) (Done)
+18804	Seal Removal (Lv. 41 and Above)
+18901	Contract Completion (Lv. 42 and Above)
+18902	Contract Completion (Lv. 42 and Above) (In Progress)
+18903	Contract Completion (Lv. 42 and Above) (Done)
+18904	Contract Completion (Lv. 42 and Above)
+19001	Lost Dream (Lv. 42 and Above)
+19002	Lost Dream (Lv. 42 and Above) (In Progress)
+19003	Lost Dream (Lv. 42 and Above) (Done)
+19004	Lost Dream (Lv. 42 and Above)
+19101	Vain Conclusion (Lv. 42 and Above)
+19102	Vain Conclusion (Lv. 42 and Above) (In Progress)
+19103	Vain Conclusion (Lv. 42 and Above) (Done)
+19104	Vain Conclusion (Lv. 42 and Above)
+19201	Seven Signs, Series of Doubt (Lv. 79 and Above)
+19202	Seven Signs, Series of Doubt (Lv. 79 and Above) (In Progress)
+19203	Seven Signs, Series of Doubt (Lv. 79 and Above) (Done)
+19204	Seven Signs, Series of Doubt (Lv. 79 and Above)
+19301	Seven Signs, Dying Message (Lv. 79 and Above)
+19302	Seven Signs, Dying Message (Lv. 79 and Above) (In Progress)
+19303	Seven Signs, Dying Message (Lv. 79 and Above) (Done)
+19304	Seven Signs, Dying Message (Lv. 79 and Above)
 19305	Next time, you will not escape!
 19306	$s1! You may have won this time... But next time, I will surely capture you!
 19314	$s1! You are not the owner of that item.
-19401	Seven Signs, Mammon's Contract (Above Lv. 79)
-19402	Seven Signs, Mammon's Contract (Above Lv. 79) (In Progress)
-19403	Seven Signs, Mammon's Contract (Above Lv. 79) (Done)
-19404	Seven Signs, Mammon's Contract (Above Lv. 79)
-19501	Seven Signs, Secret Ritual of the Priests (Above Lv. 79)
-19502	Seven Signs, Secret Ritual of the Priests (Above Lv. 79) (In Progress)
-19503	Seven Signs, Secret Ritual of the Priests (Above Lv. 79) (Done)
-19504	Seven Signs, Secret Ritual of the Priests (Above Lv. 79)
+19401	Seven Signs, Mammon's Contract (Lv. 79 and Above)
+19402	Seven Signs, Mammon's Contract (Lv. 79 and Above) (In Progress)
+19403	Seven Signs, Mammon's Contract (Lv. 79 and Above) (Done)
+19404	Seven Signs, Mammon's Contract (Lv. 79 and Above)
+19501	Seven Signs, Secret Ritual of the Priests (Lv. 79 and Above)
+19502	Seven Signs, Secret Ritual of the Priests (Lv. 79 and Above) (In Progress)
+19503	Seven Signs, Secret Ritual of the Priests (Lv. 79 and Above) (Done)
+19504	Seven Signs, Secret Ritual of the Priests (Lv. 79 and Above)
 19505	Who are you?! A new face like you can't approach this place!
 19506	How dare you intrude with that transformation! Get lost!
 19514	Intruder! Protect the Priests of Dawn!
-19601	Seven Signs, Seal of the Emperor (Above Lv. 79)
-19602	Seven Signs, Seal of the Emperor (Above Lv. 79) (In Progress)
-19603	Seven Signs, Seal of the Emperor (Above Lv. 79) (Done)
-19604	Seven Signs, Seal of the Emperor (Above Lv. 79)
+19601	Seven Signs, Seal of the Emperor (Lv. 79 and Above)
+19602	Seven Signs, Seal of the Emperor (Lv. 79 and Above) (In Progress)
+19603	Seven Signs, Seal of the Emperor (Lv. 79 and Above) (Done)
+19604	Seven Signs, Seal of the Emperor (Lv. 79 and Above)
 19605	The ancient promise to the Emperor has been fulfilled.
 19606	For the eternity of Einhasad!!!
 19607	Dear Shillien's offsprings! You are not capable of confronting us!
@@ -1445,14 +1445,14 @@
 19618	You cannot be the match of Lilith. I'll teach you a lesson!
 19619	I must go back to Shilen just like this. Outrageous.
 19624	Who dares summon the merchant of mammon…?
-19701	Seven Signs, the Sacred Book of Seal (Above Lv. 79)
-19702	Seven Signs, the Sacred Book of Seal (Above Lv. 79) (In Progress)
-19703	Seven Signs, the Sacred Book of Seal (Above Lv. 79) (Done)
-19704	Seven Signs, the Sacred Book of Seal (Above Lv. 79)
-19801	Seven Signs, Embryo (Above Lv. 79)
-19802	Seven Signs, Embryo (Above Lv. 79) (In Progress)
-19803	Seven Signs, Embryo (Above Lv. 79) (Done)
-19804	Seven Signs, Embryo (Above Lv. 79)
+19701	Seven Signs, the Sacred Book of Seal (Lv. 79 and Above)
+19702	Seven Signs, the Sacred Book of Seal (Lv. 79 and Above) (In Progress)
+19703	Seven Signs, the Sacred Book of Seal (Lv. 79 and Above) (Done)
+19704	Seven Signs, the Sacred Book of Seal (Lv. 79 and Above)
+19801	Seven Signs, Embryo (Lv. 79 and Above)
+19802	Seven Signs, Embryo (Lv. 79 and Above) (In Progress)
+19803	Seven Signs, Embryo (Lv. 79 and Above) (Done)
+19804	Seven Signs, Embryo (Lv. 79 and Above)
 19805	We will be with you always...
 19806	You are not the owner of that item.
 19807	Embryo...
@@ -1476,10 +1476,10 @@
 20602	Dwarf's Tutorial (In Progress)
 20603	Dwarf's Tutorial (Done)
 20901	Kamael Tutorial
-21001	Obtain a Wolf Pet (Above Lv. 15)
-21002	Obtain a Wolf Pet (Above Lv. 15) (In Progress)
-21003	Obtain a Wolf Pet (Above Lv. 15) (Complete)
-21004	Obtain a Wolf Pet (Above Lv. 15)
+21001	Obtain a Wolf Pet (Lv. 15 and Above)
+21002	Obtain a Wolf Pet (Lv. 15 and Above) (In Progress)
+21003	Obtain a Wolf Pet (Lv. 15 and Above) (Complete)
+21004	Obtain a Wolf Pet (Lv. 15 and Above)
 21101	Trial of the Challenger
 21102	Trial of the Challenger (In Progress)
 21103	Trial of the Challenger (Done)
@@ -1618,21 +1618,21 @@
 23685	$s1, has everything been found?
 23686	Graaah, we're being attacked!
 23687	Safe travels!
-23701	Winds of Change (Above Lv. 82)
-23702	Winds of Change (Above Lv. 82) (In Progress)
-23703	Winds of Change (Above Lv. 82) (Done)
-23801	Success/Failure of Business (Above Lv. 82)
-23802	Success/Failure of Business (Above Lv. 82) (In Progress)
-23803	Success/Failure of Business (Above Lv. 82) (Done)
-23804	Success/Failure of Business (Above Lv. 82)
-23901	Won't You Join Us? (Above Lv. 82)
-23902	Won't You Join Us? (Above Lv. 82) (In Progress)
-23903	Won't You Join Us? (Above Lv. 82) (Done)
-23904	Won't You Join Us? (Above Lv. 82)
-24001	I'm the Only One You Can Trust (Above Lv. 81)
-24002	I'm the Only One You Can Trust (Above Lv. 81) (In Progress)
-24003	I'm the Only One You Can Trust (Above Lv. 81) (Done)
-24004	I'm the Only One You Can Trust (Above Lv. 81)
+23701	Winds of Change (Lv. 82 and Above)
+23702	Winds of Change (Lv. 82 and Above) (In Progress)
+23703	Winds of Change (Lv. 82 and Above) (Done)
+23801	Success/Failure of Business (Lv. 82 and Above)
+23802	Success/Failure of Business (Lv. 82 and Above) (In Progress)
+23803	Success/Failure of Business (Lv. 82 and Above) (Done)
+23804	Success/Failure of Business (Lv. 82 and Above)
+23901	Won't You Join Us? (Lv. 82 and Above)
+23902	Won't You Join Us? (Lv. 82 and Above) (In Progress)
+23903	Won't You Join Us? (Lv. 82 and Above) (Done)
+23904	Won't You Join Us? (Lv. 82 and Above)
+24001	I'm the Only One You Can Trust (Lv. 81 and Above)
+24002	I'm the Only One You Can Trust (Lv. 81 and Above) (In Progress)
+24003	I'm the Only One You Can Trust (Lv. 81 and Above) (Done)
+24004	I'm the Only One You Can Trust (Lv. 81 and Above)
 24101	Path of the Noblesse, Precious Soul - 1
 24102	Path of the Noblesse, Precious Soul - 1 (In Progress)
 24103	Path of the Noblesse, Precious Soul - 1 (Done)
@@ -1678,9 +1678,9 @@
 25202	It Smells Delicious! (In Progress)
 25203	It Smells Delicious! (Done)
 25204	It Smells Delicious!
-25401	Legendary Tales (Above Lv. 80)
-25402	Legendary Tales (Above Lv. 80) (In Progress)
-25403	Legendary Tales (Above Lv. 80) (Done)
+25401	Legendary Tales (Lv. 80 and Above)
+25402	Legendary Tales (Lv. 80 and Above) (In Progress)
+25403	Legendary Tales (Lv. 80 and Above) (Done)
 25701	The Guard is Busy
 25702	The Guard is Busy (In Progress)
 25703	The Guard is Busy (Done)
@@ -1709,9 +1709,11 @@
 26802	Traces of Evil (In Progress)
 26901	Invention Ambition
 26902	Invention Ambition (In Progress)
-27001	The One Who Ends Silence (Above Lv. 82)
-27002	The One Who Ends Silence (Above Lv. 82) (In Progress)
-27004	The One Who Ends Silence (Above Lv. 82)
+27001	The One Who Ends Silence (Lv. 82-85)
+27002	The One Who Ends Silence (Lv. 82-85) (In Progress)
+27003	The One Who Ends Silence (Lv. 82-85) (Done)
+27004	The One Who Ends Silence (Lv. 82-85)
+27011	Speak with Greymore
 27101	Proof of Valor
 27102	Proof of Valor (In Progress)
 27201	Wrath of Ancestors
@@ -1726,11 +1728,11 @@
 27602	Totem of the Hestui (In Progress)
 27701	Gatekeeper's Offering
 27702	Gatekeeper's Offering (In Progress)
-27801	Home Security (Above Lv. 82)
-27802	Home Security (Above Lv. 82) (In Progress)
-27901	Target of Opportunity (Above Lv. 82)
-27902	Target of Opportunity (Above Lv. 82) (In Progress)
-27904	Target of Opportunity (Above Lv. 82)
+27801	Home Security (Lv. 82 and Above)
+27802	Home Security (Lv. 82 and Above) (In Progress)
+27901	Target of Opportunity (Lv. 82 and Above)
+27902	Target of Opportunity (Lv. 82 and Above) (In Progress)
+27904	Target of Opportunity (Lv. 82 and Above)
 28001	The Food Chain
 28002	The Food Chain (In Progress)
 28101	Head for the Hills!
@@ -1780,18 +1782,18 @@
 30302	Collect Arrowheads (In Progress)
 30601	Crystals of Fire and Ice
 30602	Crystals of Fire and Ice (In Progress)
-30701	Control Device of the Giants (Above Lv. 79)
-30702	Control Device of the Giants (Above Lv. 79) (In Progress)
-30704	Control Device of the Giants (Above Lv. 79)
+30701	Control Device of the Giants (Lv. 79 and Above)
+30702	Control Device of the Giants (Lv. 79 and Above) (In Progress)
+30704	Control Device of the Giants (Lv. 79 and Above)
 30801	Maintaining the Field Business
 30802	Maintaining the Field Business (In Progress)
 30804	Maintaining the Field Business
 30901	For a Good Cause
 30902	For a Good Cause (In Progress)
 30904	For a Good Cause
-31001	Only What Remains (Above Lv. 81)
-31002	Only What Remains (Above Lv. 81) (In Progress)
-31004	Only What Remains (Above Lv. 81)
+31001	Only What Remains (Lv. 81 and Above)
+31002	Only What Remains (Lv. 81 and Above) (In Progress)
+31004	Only What Remains (Lv. 81 and Above)
 31101	Expulsion of Evil Spirits
 31102	Expulsion of Evil Spirits (In Progress)
 31104	Expulsion of Evil Spirits
@@ -1903,9 +1905,10 @@
 33601	Coins of Magic (Lv. 40-60)
 33602	Coins of Magic (Lv. 40-60) (In Progress)
 33604	Coins of Magic (Lv. 40-60)
-33701	Audience with the Land Dragon (Lv. 50-64)
-33702	Audience with the Land Dragon (Lv. 50-64) (In Progress)
-33704	Audience with the Land Dragon (Lv. 50-64)
+33701	Audience with the Land Dragon (Lv. 50 and Above)
+33702	Audience with the Land Dragon (Lv. 50 and Above) (In Progress)
+33703	Audience with the Land Dragon (Lv. 50 and Above) (Done)
+33704	Audience with the Land Dragon (Lv. 50 and Above)
 33801	Alligator Hunter
 33802	Alligator Hunter (In Progress)
 33804	Alligator Hunter
@@ -2017,12 +2020,12 @@
 37402	Whisper of Dreams - Part 1 (Lv. 56-66) (In Progress)
 37501	Whisper of Dreams - Part 2 (Lv. 60-74)
 37502	Whisper of Dreams - Part 2 (Lv. 60-74) (In Progress)
-37601	Exploration of the Giants' Cave - Part 1 (Above Lv. 79)
-37602	Exploration of the Giants' Cave - Part 1 (Above Lv. 79) (In Progress)
-37604	Exploration of the Giants' Cave - Part 1 (Above Lv. 79)
-37701	Exploration of the Giants' Cave - Part 2 (Above Lv. 79)
-37702	Exploration of the Giants' Cave - Part 2 (Above Lv. 79) (In Progress)
-37704	Exploration of the Giants' Cave - Part 2 (Above Lv. 79)
+37601	Exploration of the Giants' Cave - Part 1 (Lv. 79 and Above)
+37602	Exploration of the Giants' Cave - Part 1 (Lv. 79 and Above) (In Progress)
+37604	Exploration of the Giants' Cave - Part 1 (Lv. 79 and Above)
+37701	Exploration of the Giants' Cave - Part 2 (Lv. 79 and Above)
+37702	Exploration of the Giants' Cave - Part 2 (Lv. 79 and Above) (In Progress)
+37704	Exploration of the Giants' Cave - Part 2 (Lv. 79 and Above)
 37801	Grand Feast
 37802	Grand Feast (In Progress)
 37804	Grand Feast
@@ -2105,16 +2108,16 @@
 41901	Get a Pet
 41902	Get a Pet (In Progress)
 41904	Get a pet
-42001	Little Wing (Above Lv. 35)
-42002	Little Wing (Above Lv. 35) (In Progress)
-42004	Little Wing (Above Lv. 35)
+42001	Little Wing (Lv. 35 and Above)
+42002	Little Wing (Lv. 35 and Above) (In Progress)
+42004	Little Wing (Lv. 35 and Above)
 42046	Hey! Everybody watch the eggs!
 42047	I thought I'd caught one share... Whew!
 42048	The stone... the Elven stone... broke...
 42049	If the eggs get taken, we're dead!
-42101	Little Wing's Big Adventure (Above Lv. 45)
-42102	Little Wing's Big Adventure (Above Lv. 45) (In Progress)
-42104	Little Wing's Big Adventure (Above Lv. 45)
+42101	Little Wing's Big Adventure (Lv. 45 and Above)
+42102	Little Wing's Big Adventure (Lv. 45 and Above) (In Progress)
+42104	Little Wing's Big Adventure (Lv. 45 and Above)
 42111	Give me a Fairy Leaf...!
 42112	Why do you bother me again?
 42113	Hey, you've already drunk the essence of wind!
@@ -2155,32 +2158,32 @@
 43201	Birthday Party Song (Lv. 31-36)
 43202	Birthday Party Song (Lv. 31-36) (In Progress)
 43204	Birthday Party Song (Lv. 31-36)
-45001	Grave Robber Rescue (Above Lv. 80)
-45002	Grave Robber Rescue (Above Lv. 80) (In Progress)
-45003	Grave Robber Rescue (Above Lv. 80) (Done)
-45004	Grave Robber Rescue (Above Lv. 80)
-45101	Lucien's Altar (Above Lv. 80)
-45102	Lucien's Altar (Above Lv. 80) (In Progress)
-45103	Lucien's Altar (Above Lv. 80) (Done)
-45104	Lucien's Altar (Above Lv. 80)
-45201	Finding the Lost Soldiers (Above Lv. 85)
-45202	Finding the Lost Soldiers (Above Lv. 85) (In Progress)
-45203	Finding the Lost Soldiers (Above Lv. 85) (Done)
-45204	Finding the Lost Soldiers (Above Lv. 85)
-45301	Not Strong Enough Alone (Above Lv. 85)
-45302	Not Strong Enough Alone (Above Lv. 85) (In Progress)
-45303	Not Strong Enough Alone (Above Lv. 85) (Done)
-45304	Not Strong Enough Alone (Above Lv. 85)
-45401	Completely Lost (Above Lv. 85)
-45402	Completely Lost (Above Lv. 85) (In Progress)
-45403	Completely Lost (Above Lv. 85) (Done)
-45404	Completely Lost (Above Lv. 85)
-45501	Wings of Sand (Above Lv. 80)
-45502	Wings of Sand (Above Lv. 80) (In Progress)
-45503	Wings of Sand (Above Lv. 80) (Done)
-45601	Don't Know, Don't Care (Above Lv. 80)
-45602	Don't Know, Don't Care (Above Lv. 80) (In Progress)
-45603	Don't Know, Don't Care (Above Lv. 80) (Done)
+45001	Grave Robber Rescue (Lv. 80 and Above)
+45002	Grave Robber Rescue (Lv. 80 and Above) (In Progress)
+45003	Grave Robber Rescue (Lv. 80 and Above) (Done)
+45004	Grave Robber Rescue (Lv. 80 and Above)
+45101	Lucien's Altar (Lv. 80 and Above)
+45102	Lucien's Altar (Lv. 80 and Above) (In Progress)
+45103	Lucien's Altar (Lv. 80 and Above) (Done)
+45104	Lucien's Altar (Lv. 80 and Above)
+45201	Finding the Lost Soldiers (Lv. 85 and Above)
+45202	Finding the Lost Soldiers (Lv. 85 and Above) (In Progress)
+45203	Finding the Lost Soldiers (Lv. 85 and Above) (Done)
+45204	Finding the Lost Soldiers (Lv. 85 and Above)
+45301	Not Strong Enough Alone (Lv. 85 and Above)
+45302	Not Strong Enough Alone (Lv. 85 and Above) (In Progress)
+45303	Not Strong Enough Alone (Lv. 85 and Above) (Done)
+45304	Not Strong Enough Alone (Lv. 85 and Above)
+45401	Completely Lost (Lv. 85 and Above)
+45402	Completely Lost (Lv. 85 and Above) (In Progress)
+45403	Completely Lost (Lv. 85 and Above) (Done)
+45404	Completely Lost (Lv. 85 and Above)
+45501	Wings of Sand (Lv. 80 and Above)
+45502	Wings of Sand (Lv. 80 and Above) (In Progress)
+45503	Wings of Sand (Lv. 80 and Above) (Done)
+45601	Don't Know, Don't Care (Lv. 80 and Above)
+45602	Don't Know, Don't Care (Lv. 80 and Above) (In Progress)
+45603	Don't Know, Don't Care (Lv. 80 and Above) (Done)
 45650	$s1 received a $s2 item as a reward from the separated soul.
 45651	Sealed Vorpal Helmet
 45652	Sealed Vorpal Leather Helmet
@@ -2225,74 +2228,74 @@
 45691	Holy Crystal
 45692	Dark Crystal
 45693	Scroll: Enchant Weapon (S-grade)
-45701	Lost and Found (Above Lv. 82)
-45702	Lost and Found (Above Lv. 82) (In Progress)
-45703	Lost and Found (Above Lv. 82) (Done)
-45704	Lost and Found (Above Lv. 82)
-45801	Perfect Form (Above Lv. 82)
-45802	Perfect Form (Above Lv. 82) (In Progress)
-45803	Perfect Form (Above Lv. 82) (Done)
-45804	Perfect Form (Above Lv. 82)
-45901	Monstrosity in the Underground Mine, Teredor (Above Lv. 85)
-45902	Monstrosity in the Underground Mine, Teredor (Above Lv. 85) (In Progress)
-45903	Monstrosity in the Underground Mine, Teredor (Above Lv. 85) (Done)
-45904	Monstrosity in the Underground Mine, Teredor (Above Lv. 85)
-46001	Precious Research Ingredient (Above Lv. 85)
-46002	Precious Research Ingredient (Above Lv. 85) (In Progress)
-46003	Precious Research Ingredient (Above Lv. 85) (Done)
-46004	Precious Research Ingredient (Above Lv. 85)
+45701	Lost and Found (Lv. 82 and Above)
+45702	Lost and Found (Lv. 82 and Above) (In Progress)
+45703	Lost and Found (Lv. 82 and Above) (Done)
+45704	Lost and Found (Lv. 82 and Above)
+45801	Perfect Form (Lv. 82 and Above)
+45802	Perfect Form (Lv. 82 and Above) (In Progress)
+45803	Perfect Form (Lv. 82 and Above) (Done)
+45804	Perfect Form (Lv. 82 and Above)
+45901	Monstrosity in the Underground Mine, Teredor (Lv. 85 and Above)
+45902	Monstrosity in the Underground Mine, Teredor (Lv. 85 and Above) (In Progress)
+45903	Monstrosity in the Underground Mine, Teredor (Lv. 85 and Above) (Done)
+45904	Monstrosity in the Underground Mine, Teredor (Lv. 85 and Above)
+46001	Precious Research Ingredient (Lv. 85 and Above)
+46002	Precious Research Ingredient (Lv. 85 and Above) (In Progress)
+46003	Precious Research Ingredient (Lv. 85 and Above) (Done)
+46004	Precious Research Ingredient (Lv. 85 and Above)
 46101	Rumble in the Base
 46102	Rumble in the Base (In Progress)
 46103	Rumble in the Base (Done)
 46104	Rumble in the Base
-46201	Preserved Ancient Heroes (Above Lv. 95)
-46202	Preserved Ancient Heroes (Above Lv. 95) (In Progress)
-46203	Preserved Ancient Heroes (Above Lv. 95) (Done)
-46204	Preserved Ancient Heroes (Above Lv. 95)
-46301	I Must Be a Genius (Above Lv. 70)
-46302	I Must Be a Genius (Above Lv. 70) (In Progress)
-46303	I Must Be a Genius (Above Lv. 70) (Done)
-46304	I Must Be a Genius (Above Lv. 70)
+46201	Preserved Ancient Heroes (Lv. 95 and Above)
+46202	Preserved Ancient Heroes (Lv. 95 and Above) (In Progress)
+46203	Preserved Ancient Heroes (Lv. 95 and Above) (Done)
+46204	Preserved Ancient Heroes (Lv. 95 and Above)
+46301	I Must Be a Genius (Lv. 70 and Above)
+46302	I Must Be a Genius (Lv. 70 and Above) (In Progress)
+46303	I Must Be a Genius (Lv. 70 and Above) (Done)
+46304	I Must Be a Genius (Lv. 70 and Above)
 46350	Att... attack... $s1.. Ro... rogue... $s2..
-46401	Oath (Above Lv. 82)
-46402	Oath  (Above Lv. 82) (In Progress)
-46403	Oath  (Above Lv. 82) (Done)
-46501	We are Friends (Above Lv. 88)
-46502	We are Friends (Above Lv. 88) (In progress)
-46503	We are Friends (Above Lv. 88) (Done)
-46504	We are Friends (Above Lv. 88)
-46601	Placing My Small Power (Above Lv. 88)
-46602	Placing My Small Power (Above Lv. 88) (In Progress)
-46603	Placing My Small Power (Above Lv. 88) (Done)
-46604	Placing My Small Power (Above Lv. 88)
+46401	Oath (Lv. 82 and Above)
+46402	Oath  (Lv. 82 and Above) (In Progress)
+46403	Oath  (Lv. 82 and Above) (Done)
+46501	We are Friends (Lv. 88 and Above)
+46502	We are Friends (Lv. 88 and Above) (In progress)
+46503	We are Friends (Lv. 88 and Above) (Done)
+46504	We are Friends (Lv. 88 and Above)
+46601	Placing My Small Power (Lv. 88 and Above)
+46602	Placing My Small Power (Lv. 88 and Above) (In Progress)
+46603	Placing My Small Power (Lv. 88 and Above) (Done)
+46604	Placing My Small Power (Lv. 88 and Above)
 46701	The Oppressor and The Oppressed (Lv. 60-64)
 46702	The Oppressor and The Oppressed (Lv. 60-64) (In Progress)
 46703	The Oppressor and The Oppressed (Lv. 60-64) (Done)
 46704	The Oppressor and The Oppressed (Lv. 60-64)
-46801	Be Lost in the Mysterious Scent (Above Lv. 90)
-46802	Be Lost in the Mysterious Scent (Above Lv. 90) (In Progress)
-46803	Be Lost in the Mysterious Scent (Above Lv. 90) (Done)
-46804	Be Lost in the Mysterious Scent (Above Lv. 90)
-46901	Suspicious Gardener (Above Lv. 90)
-46902	Suspicious Gardener (Above Lv. 90) (In Progress)
-46903	Suspicious Gardener (Above Lv. 90) (Done)
-46904	Suspicious Gardener (Above Lv. 90)
+46801	Be Lost in the Mysterious Scent (Lv. 90 and Above)
+46802	Be Lost in the Mysterious Scent (Lv. 90 and Above) (In Progress)
+46803	Be Lost in the Mysterious Scent (Lv. 90 and Above) (Done)
+46804	Be Lost in the Mysterious Scent (Lv. 90 and Above)
+46901	Suspicious Gardener (Lv. 90 and Above)
+46902	Suspicious Gardener (Lv. 90 and Above) (In Progress)
+46903	Suspicious Gardener (Lv. 90 and Above) (Done)
+46904	Suspicious Gardener (Lv. 90 and Above)
 47001	Divinity Protector (Lv. 60-64)
 47002	Divinity Protector (Lv. 60-64) (In progress)
 47003	Divinity Protector (Lv. 60-64) (Done)
 47004	Divinity Protector (Lv. 60-64)
-47101	Breaking through Emerald Square (Above Lv. 97)
-47102	Breaking through Emerald Square (Above Lv. 97) (In Progress)
-47103	Breaking through Emerald Square (Above Lv. 97) (Done)
-47104	Breaking through Emerald Square (Above Lv. 97)
-47201	Challenge, Steam Corridor (Above Lv. 97)
-47202	Challenge, Steam Corridor (Above Lv. 97) (In Progress)
-47203	Challenge, Steam Corridor (Above Lv. 97) (Done)
-47204	Challenge, Steam Corridor (Above Lv. 97)
-47301	In the Coral Garden (Above Lv. 97)
-47302	In the Coral Garden (Above Lv. 97) (In Progress)
-47303	In the Coral Garden (Above Lv. 97) (Done)
-47304	In the Coral Garden (Above Lv. 97)
+47101	Breaking through Emerald Square (Lv. 97 and Above)
+47102	Breaking through Emerald Square (Lv. 97 and Above) (In Progress)
+47103	Breaking through Emerald Square (Lv. 97 and Above) (Done)
+47104	Breaking through Emerald Square (Lv. 97 and Above)
+47201	Challenge, Steam Corridor (Lv. 97 and Above)
+47202	Challenge, Steam Corridor (Lv. 97 and Above) (In Progress)
+47203	Challenge, Steam Corridor (Lv. 97 and Above) (Done)
+47204	Challenge, Steam Corridor (Lv. 97 and Above)
+47301	In the Coral Garden (Lv. 97 and Above)
+47302	In the Coral Garden (Lv. 97 and Above) (In Progress)
+47303	In the Coral Garden (Lv. 97 and Above) (Done)
+47304	In the Coral Garden (Lv. 97 and Above)
 47401	Waiting for the Summer (Lv. 60-64)
 47402	Waiting for the Summer (Lv. 60-64) (In Progress)
 47403	Waiting for the Summer (Lv. 60-64) (Done)
@@ -2340,22 +2343,22 @@
 47902	Destroying the Eggs of Trasken (In Progress)
 47903	Destroying the Eggs of Trasken (Done)
 47904	Destroying the Eggs of Trasken
-48001	Another Legacy of Cruma Tower (Above Lv. 38)
-48002	Another Legacy of Cruma Tower (Above Lv. 38) (In Progress)
-48003	Another Legacy of Cruma Tower (Above Lv. 38) (Done)
-48004	Another Legacy of Cruma Tower (Above Lv. 38)
-48101	Shadow Helper (Above Lv. 38)
-48102	Shadow Helper (Above Lv. 38) (In Progress)
-48103	Shadow Helper (Above Lv. 38) (Done)
-48104	Shadow Helper (Above Lv. 38)
-48201	Recertification of Value (Above Lv. 48)
-48202	Recertification of Value (Above Lv. 48) (In Progress)
-48203	Recertification of Value (Above Lv. 48) (Done)
-48204	Recertification of Value (Above Lv. 48)
-48301	Intended Tactic (Above Lv. 48)
-48302	Intended Tactic (Above Lv. 48) (In Progress)
-48303	Intended Tactic (Above Lv. 48) (Done)
-48304	Intended Tactic (Above Lv. 48)
+48001	Another Legacy of Cruma Tower (Lv. 38 and Above)
+48002	Another Legacy of Cruma Tower (Lv. 38 and Above) (In Progress)
+48003	Another Legacy of Cruma Tower (Lv. 38 and Above) (Done)
+48004	Another Legacy of Cruma Tower (Lv. 38 and Above)
+48101	Shadow Helper (Lv. 38 and Above)
+48102	Shadow Helper (Lv. 38 and Above) (In Progress)
+48103	Shadow Helper (Lv. 38 and Above) (Done)
+48104	Shadow Helper (Lv. 38 and Above)
+48201	Recertification of Value (Lv. 48 and Above)
+48202	Recertification of Value (Lv. 48 and Above) (In Progress)
+48203	Recertification of Value (Lv. 48 and Above) (Done)
+48204	Recertification of Value (Lv. 48 and Above)
+48301	Intended Tactic (Lv. 48 and Above)
+48302	Intended Tactic (Lv. 48 and Above) (In Progress)
+48303	Intended Tactic (Lv. 48 and Above) (Done)
+48304	Intended Tactic (Lv. 48 and Above)
 48501	Hot Spring Water (Lv. 70-74)
 48502	Hot Spring Water (Lv. 70-74) (In Progress)
 48503	Hot Spring Water (Lv. 70-74) (Done)
@@ -2389,16 +2392,16 @@
 49153	Hmm, thank you. So then, maybe I won't have to get involved...
 49154	Thanks, but... It looks like I might have to get involved...
 49155	So then, I will... No, no. I don't think I need to get involved.
-49201	Tomb Raiders (Above Lv. 80)
-49202	Tomb Raiders (Above Lv. 80) (In Progress)
-49203	Tomb Raiders (Above Lv. 80) (Done)
-49204	Tomb Raiders (Above Lv. 80)
+49201	Tomb Raiders (Lv. 80 and Above)
+49202	Tomb Raiders (Lv. 80 and Above) (In Progress)
+49203	Tomb Raiders (Lv. 80 and Above) (Done)
+49204	Tomb Raiders (Lv. 80 and Above)
 49250	Stop the monsters from collecting the relics.
 49251	Thanks again for today's work. I will see you tomorrow.
-49301	Kicking Out Unwelcome Guests (Above Lv. 95)
-49302	Kicking Out Unwelcome Guests (Above Lv. 95) (In Progress)
-49303	Kicking Out Unwelcome Guests (Above Lv. 95) (Done)
-49304	Kicking Out Unwelcome Guests (Above Lv. 95)
+49301	Kicking Out Unwelcome Guests (Lv. 95 and Above)
+49302	Kicking Out Unwelcome Guests (Lv. 95 and Above) (In Progress)
+49303	Kicking Out Unwelcome Guests (Lv. 95 and Above) (Done)
+49304	Kicking Out Unwelcome Guests (Lv. 95 and Above)
 49401	Incarnation of Greed Zellaka (Lv. 85-89) (Group)
 49402	Incarnation of Greed Zellaka (Lv. 85-89) (Group) (In Progress)
 49403	Incarnation of Greed Zellaka (Lv. 85-89) (Group) (Done)
@@ -2407,10 +2410,10 @@
 49502	Incarnation of Jealousy Pelline (Lv. 90-94) (Group) (In Progress)
 49503	Incarnation of Jealousy Pelline (Lv. 90-94) (Group) (Done)
 49504	Incarnation of Jealousy Pelline (Lv. 90-94) (Group)
-49601	Incarnation of Gluttony Kalios (Above Lv. 95) (Group)
-49602	Incarnation of Gluttony Kalios (Above Lv. 95) (Group) (In Progress)
-49603	Incarnation of Gluttony Kalios (Above Lv. 95) (Group) (Done)
-49604	Incarnation of Gluttony Kalios (Above Lv. 95) (Group)
+49601	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Group)
+49602	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Group) (In Progress)
+49603	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Group) (Done)
+49604	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Group)
 49701	Incarnation of Greed Zellaka (Lv. 85-89) (Solo)
 49702	Incarnation of Greed Zellaka (Lv. 85-89) (Solo) (In Progress)
 49703	Incarnation of Greed Zellaka (Lv. 85-89) (Solo) (Done)
@@ -2419,34 +2422,34 @@
 49802	Incarnation of Jealousy Pelline (Lv. 90-94) (Solo) (In Progress)
 49803	Incarnation of Jealousy Pelline (Lv. 90-94) (Solo) (Done)
 49804	Incarnation of Jealousy Pelline (Lv. 90-94) (Solo)
-49901	Incarnation of Gluttony Kalios (Above Lv. 95) (Solo)
-49902	Incarnation of Gluttony Kalios (Above Lv. 95) (Solo) (In Progress)
-49903	Incarnation of Gluttony Kalios (Above Lv. 95) (Solo) (Done)
-49904	Incarnation of Gluttony Kalios (Above Lv. 95) (Solo)
-50101	Proof of Clan Alliance (Above Lv. 1)
-50102	Proof of Clan Alliance (Above Lv. 1) (In Progress)
-50104	Proof of Clan Alliance (Above Lv. 1)
+49901	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Solo)
+49902	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Solo) (In Progress)
+49903	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Solo) (Done)
+49904	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Solo)
+50101	Proof of Clan Alliance (Lv. 1 and Above)
+50102	Proof of Clan Alliance (Lv. 1 and Above) (In Progress)
+50104	Proof of Clan Alliance (Lv. 1 and Above)
 50110	##########Bingo!##########
-50301	Pursuit of Clan Ambition! (Above Lv. 1)
-50302	Pursuit of Clan Ambition! (Above Lv. 1) (In Progress)
-50304	Pursuit of Clan Ambition! (Above Lv. 1)
+50301	Pursuit of Clan Ambition! (Lv. 1 and Above)
+50302	Pursuit of Clan Ambition! (Lv. 1 and Above) (In Progress)
+50304	Pursuit of Clan Ambition! (Lv. 1 and Above)
 50338	Blood and honor!
 50339	Curse of the gods on the one that defiles the property of the empire!
 50340	War and death!
 50341	Ambition and power!
-50401	Competition for the Bandit Stronghold (Above Lv. 1)
-50402	Competition for the Bandit Stronghold (Above Lv. 1) (In Progress)
-50404	Competition for the Bandit Stronghold (Above Lv. 1)
-50501	Blood Offering (Above Lv. 1)
-50502	Blood Offering (Above Lv. 1) (In Progress)
-50503	Blood Offering (Above Lv. 1) (Done)
-50504	Blood Offering (Above Lv. 1)
+50401	Competition for the Bandit Stronghold (Lv. 1 and Above)
+50402	Competition for the Bandit Stronghold (Lv. 1 and Above) (In Progress)
+50404	Competition for the Bandit Stronghold (Lv. 1 and Above)
+50501	Blood Offering (Lv. 1 and Above)
+50502	Blood Offering (Lv. 1 and Above) (In Progress)
+50503	Blood Offering (Lv. 1 and Above) (Done)
+50504	Blood Offering (Lv. 1 and Above)
 50701	Into the Chaos
 50702	Into the Chaos  (In Progress)
 50704	Into the Chaos
-50801	A Clan's Reputation (Above Lv. 1)
-50802	A Clan's Reputation (Above Lv. 1) (In Progress)
-50804	A Clan's Reputation (Above Lv. 1)
+50801	A Clan's Reputation (Lv. 1 and Above)
+50802	A Clan's Reputation (Lv. 1 and Above) (In Progress)
+50804	A Clan's Reputation (Lv. 1 and Above)
 50851	You have successfully completed a clan quest. $s1 points have been added to your clan's reputation score.
 50853	Gah...Shilen... Why must you make us suffer...
 50854	Shilen... abandoned us. It is our time... to die.
@@ -2457,31 +2460,31 @@
 50859	Will Dark Elves be forgotten after what we have done?
 50860	Unbelievers run... death will follow you.
 50861	I curse our blood.. I despise what we are.. Shilen…
-50901	A Clan's Fame (Above Lv. 1)
-50902	A Clan's Fame (Above Lv. 1) (In Progress)
-50904	A Clan's Fame (Above Lv. 1)
-51001	A Clan's Prestige (Above Lv. 1)
-51002	A Clan's Prestige (Above Lv. 1) (In Progress)
-51004	A Clan's Prestige (Above Lv. 1)
-51101	Awl Under Foot (Above Lv. 85)
-51102	Awl Under Foot (Above Lv. 85) (In Progress)
-51104	Awl Under Foot (Above Lv. 85)
-51201	Hidden Blade (Above Lv. 90)
-51202	Hidden Blade (Above Lv. 90) (In Progress)
-51204	Hidden Blade (Above Lv. 90)
+50901	A Clan's Fame (Lv. 1 and Above)
+50902	A Clan's Fame (Lv. 1 and Above) (In Progress)
+50904	A Clan's Fame (Lv. 1 and Above)
+51001	A Clan's Prestige (Lv. 1 and Above)
+51002	A Clan's Prestige (Lv. 1 and Above) (In Progress)
+51004	A Clan's Prestige (Lv. 1 and Above)
+51101	Awl Under Foot (Lv. 85 and Above)
+51102	Awl Under Foot (Lv. 85 and Above) (In Progress)
+51104	Awl Under Foot (Lv. 85 and Above)
+51201	Hidden Blade (Lv. 90 and Above)
+51202	Hidden Blade (Lv. 90 and Above) (In Progress)
+51204	Hidden Blade (Lv. 90 and Above)
 53901	Put on the Analysis Hat and try Analysis on me.
 53902	That's how you do it!
-55101	Olympiad Starter (Above Lv. 85)
-55102	Olympiad Starter  (Above Lv. 85) (In Progress)
-55103	Olympiad Starter  (Above Lv. 85) (Done)
-55104	Olympiad Starter (Above Lv. 85)
+55101	Olympiad Starter (Lv. 85 and Above)
+55102	Olympiad Starter  (Lv. 85 and Above) (In Progress)
+55103	Olympiad Starter  (Lv. 85 and Above) (Done)
+55104	Olympiad Starter (Lv. 85 and Above)
 55201	Olympiad Veteran
 55202	Olympiad Veteran (In Progress)
 55203	Olympiad Veteran (Done)
-55301	Olympiad Undefeated (Above Lv. 85)
-55302	Olympiad Undefeated  (Above Lv. 85) (In Progress)
-55303	Olympiad Undefeated (Above Lv. 85) (Done)
-55304	Olympiad Undefeated (Above Lv. 85)
+55301	Olympiad Undefeated (Lv. 85 and Above)
+55302	Olympiad Undefeated  (Lv. 85 and Above) (In Progress)
+55303	Olympiad Undefeated (Lv. 85 and Above) (Done)
+55304	Olympiad Undefeated (Lv. 85 and Above)
 60000	I'll start the furnace mechanism. Watch for the pattern.
 60001	Only 1 minute left!
 60002	Just 10 seconds left!
@@ -2567,10 +2570,13 @@
 61651	The power of constraint is getting weaker.  Your ritual has failed!
 61701	Gather the Flames (Lv. 74-80)
 61702	Gather the Flames (Lv. 74-80) (In Progress)
+61703	Gather the Flames (Lv. 74-80) (Done)
 61704	Gather the Flames (Lv. 74-80)
-61801	Into the Flames (Above Lv. 60)
-61802	Into the Flames (Above Lv. 60) (In Progress)
-61804	Into the Flames (Above Lv. 60)
+61711	Speak with Vulcan
+61801	Into the Flames (Lv. 60 and Above)
+61802	Into the Flames (Lv. 60 and Above) (In Progress)
+61803	Into the Flames (Lv. 60 and Above) (Done)
+61804	Into the Flames (Lv. 60 and Above)
 61901	Relics of the Old Empire
 61902	Relics of the Old Empire (In Progress)
 61904	Relics of the Old Empire
@@ -2606,8 +2612,8 @@
 62901	Clean up the Swamp of Screams
 62902	Clean up the Swamp of Screams (In Progress)
 62904	Clean Up the Swamp of Screams
-63101	Delicious Top Choice Meat (Above Lv. 82)
-63102	Delicious Top Choice Meat (Above Lv. 82) (In Progress)
+63101	Delicious Top Choice Meat (Lv. 82 and Above)
+63102	Delicious Top Choice Meat (Lv. 82 and Above) (In Progress)
 63201	Necromancer's Request
 63202	Necromancer's Request (In Progress)
 63204	Necromancer's Request
@@ -2630,54 +2636,61 @@
 63901	Guardians of the Holy Grail
 63902	Guardians of the Holy Grail (In Progress)
 63904	Guardians of the Holy Grail
-64001	The Zero Hour (Above Lv. 81)
-64002	The Zero Hour (Above Lv. 81) (In Progress)
-64003	The Zero Hour (Above Lv. 81) (Done)
-64004	The Zero Hour (Above Lv. 81)
-64101	Attack Sailren! (Above Lv. 77)
-64102	Attack Sailren! (Above Lv. 77) (In Progress)
-64104	Attack Sailren! (Above Lv. 77)
-64201	A Powerful Primeval Creature (Above Lv. 75)
-64202	A Powerful Primeval Creature (Above Lv. 75) (In Progress)
-64204	A Powerful Primeval Creature (Above Lv. 75)
-64301	Rise and Fall of the Elroki Tribe (Above Lv. 75)
-64302	Rise and Fall of the Elroki Tribe (Above Lv. 75) (In Progress)
-64304	Rise and Fall of the Elroki Tribe (Above Lv. 75)
+64001	The Zero Hour (Lv. 81 and Above)
+64002	The Zero Hour (Lv. 81 and Above) (In Progress)
+64003	The Zero Hour (Lv. 81 and Above) (Done)
+64004	The Zero Hour (Lv. 81 and Above)
+64101	Attack Sailren! (Lv. 77-85)
+64102	Attack Sailren! (Lv. 77-85) (In Progress)
+64104	Attack Sailren! (Lv. 77-85)
+64201	A Powerful Primeval Creature (Lv. 75 and Above)
+64202	A Powerful Primeval Creature (Lv. 75 and Above) (In Progress)
+64203	A Powerful Primeval Creature (Lv. 75 and Above) (Done)
+64204	A Powerful Primeval Creature (Lv. 75 and Above)
+64211	Speak with Dinn
+64301	Rise and Fall of the Elroki Tribe (Lv. 75-85)
+64302	Rise and Fall of the Elroki Tribe (Lv. 75-85) (In Progress)
+64303	Rise and Fall of the Elroki Tribe (Lv. 75-85) (Done)
+64304	Rise and Fall of the Elroki Tribe (Lv. 75-85)
+64311	Speak with the Magician
 64401	Grave Robber Annihilation
 64402	Grave Robber Annihilation (In Progress)
 64404	Grave Robber Annihilation
-64501	Ghosts of Batur (Above Lv. 80)
-64502	Ghosts of Batur (Above Lv. 80) (In Progress)
-64504	Ghosts of Batur (Above Lv. 80)
+64501	Ghosts of Batur (Lv. 80-85)
+64502	Ghosts of Batur (Lv. 80-85) (In Progress)
+64503	Ghosts of Batur (Lv. 80-85) (Done)
+64504	Ghosts of Batur (Lv. 80-85)
 64601	Signs of Revolt
 64602	Signs of Revolt (In Progress)
-64701	Influx of Machines (Above Lv. 70)
-64702	Influx of Machines (Above Lv. 70) (In Progress)
-64704	Influx of Machines (Above Lv. 70)
+64701	Influx of Machines (Lv. 70-80)
+64702	Influx of Machines (Lv. 70-80) (In Progress)
+64703	Influx of Machines (Lv. 70-80) (Done)
+64704	Influx of Machines (Lv. 70-80)
+64711	Speak with Gutenhagen
 64801	An Ice Merchant's Dream (Lv. 53-63)
 64802	An Ice Merchant's Dream (Lv. 53-63) (In Progress)
 64804	An Ice Merchant's Dream (Lv. 53-63)
 64901	A Looter and a Railroad Man
 64902	A Looter and a Railroad Man (In Progress)
 64904	A Looter and a Railroad Man
-65001	A Broken Dream (Above Lv. 39)
-65002	A Broken Dream (Above Lv. 39) (In Progress)
-65004	A Broken Dream (Above Lv. 39)
+65001	A Broken Dream (Lv. 39 and Above)
+65002	A Broken Dream (Lv. 39 and Above) (In Progress)
+65004	A Broken Dream (Lv. 39 and Above)
 65101	Runaway Youth
 65102	Runaway Youth (In Progress)
 65104	Runaway Youth
-65201	An Aged Ex-Adventurer (Above Lv. 46)
-65202	An Aged Ex-Adventurer (Above Lv. 46) (In Progress)
-65204	An Aged Ex-Adventurer (Above Lv. 46)
+65201	An Aged Ex-Adventurer (Lv. 46 and Above)
+65202	An Aged Ex-Adventurer (Lv. 46 and Above) (In Progress)
+65204	An Aged Ex-Adventurer (Lv. 46 and Above)
 65301	Wild Maiden
 65302	Wild Maiden (In Progress)
 65304	Wild Maiden
 65401	Journey to Settlement
 65402	Journey to Settlement (In Progress)
 65404	Journey to Settlement
-65501	A Grand Plan for Taming Wild Beasts (Above Lv. 1)
-65502	A Grand Plan for Taming Wild Beasts (Above Lv. 1) (In Progress)
-65504	A Grand Plan for Taming Wild Beasts (Above Lv. 1)
+65501	A Grand Plan for Taming Wild Beasts (Lv. 1 and Above)
+65502	A Grand Plan for Taming Wild Beasts (Lv. 1 and Above) (In Progress)
+65504	A Grand Plan for Taming Wild Beasts (Lv. 1 and Above)
 65901	I'd Rather Be Collecting Fairy Breath
 65902	I'd Rather Be Collecting Fairy Breath (In Progress)
 65904	I'd Rather Be Collecting Fairy Breath
@@ -2691,9 +2704,9 @@
 66202	A Game of Cards (Lv. 61-80) (In Progress)
 66204	A Game of Cards (Lv. 61-80)
 66300	No such card
-66301	Seductive Whispers (Above Lv. 50)
-66302	Seductive Whispers (Above Lv. 50) (In Progress)
-66304	Seductive Whispers (Above Lv. 50)
+66301	Seductive Whispers (Lv. 50 and Above)
+66302	Seductive Whispers (Lv. 50 and Above) (In Progress)
+66304	Seductive Whispers (Lv. 50 and Above)
 66311	<font color="ff453d"> Sun Card: 1 </font>
 66312	<font color="ff453d"> Sun Card: 2 </font>
 66313	<font color="ff453d"> Sun Card: 3 </font>
@@ -2704,27 +2717,29 @@
 66323	<font color="fff802"> Moon Card: 3 </font>
 66324	<font color="fff802"> Moon Card: 4 </font>
 66325	<font color="fff802"> Moon Card: 5 </font>
-66501	Great Pirate Zaken's Treasure (Lv. 85~)
-66502	Great Pirate Zaken's Treasure (Lv. 85~) (In Progress)
-66504	Great Pirate Zaken's Treasure (Lv. 85~)
-66601	Leona Blackbird's Treasure (Lv. 85~)
-66602	Leona Blackbird's Treasure (Lv. 85~) (In Progress)
-66604	Leona Blackbird's Treasure (Lv. 85~)
-66701	Queen Beora's Legacy (Lv. 85~)
-66702	Queen Beora's Legacy (Lv. 85~) (In Progress)
-66704	Queen Beora's Legacy (Lv. 85~)
-66801	The Gladiator's Treasure (Lv. 85~)
-66802	The Gladiator's Treasure (Lv. 85~) (In Progress)
-66804	The Gladiator's Treasure (Lv. 85~)
-66901	High Priest's Treasure (Lv. 85~)
-66902	High Priest's Treasure (Lv. 85~) (In Progress)
-66904	High Priest's Treasure (Lv. 85~)
-67001	Turek Orc's Treasure (Lv. 85~)
-67002	Turek Orc's Treasure (Lv. 85~) (In Progress)
-67004	Turek Orc's Treasure (Lv. 85~)
-68801	Defeat the Elrokian Raiders! (Above Lv. 75)
-68802	Defeat the Elrokian Raiders! (Above Lv. 75) (In Progress)
-68804	Defeat the Elrokian Raiders! (Above Lv. 75)
+66501	Great Pirate Zaken's Treasure (Lv. 85 and Above)
+66502	Great Pirate Zaken's Treasure (Lv. 85 and Above) (In Progress)
+66504	Great Pirate Zaken's Treasure (Lv. 85 and Above)
+66601	Leona Blackbird's Treasure (Lv. 85 and Above)
+66602	Leona Blackbird's Treasure (Lv. 85 and Above) (In Progress)
+66604	Leona Blackbird's Treasure (Lv. 85 and Above)
+66701	Queen Beora's Legacy (Lv. 85 and Above)
+66702	Queen Beora's Legacy (Lv. 85 and Above) (In Progress)
+66704	Queen Beora's Legacy (Lv. 85 and Above)
+66801	The Gladiator's Treasure (Lv. 85 and Above)
+66802	The Gladiator's Treasure (Lv. 85 and Above) (In Progress)
+66804	The Gladiator's Treasure (Lv. 85 and Above)
+66901	High Priest's Treasure (Lv. 85 and Above)
+66902	High Priest's Treasure (Lv. 85 and Above) (In Progress)
+66904	High Priest's Treasure (Lv. 85 and Above)
+67001	Turek Orc's Treasure (Lv. 85 and Above)
+67002	Turek Orc's Treasure (Lv. 85 and Above) (In Progress)
+67004	Turek Orc's Treasure (Lv. 85 and Above)
+68801	Defeat the Elrokian Raiders! (Lv. 75-85)
+68802	Defeat the Elrokian Raiders! (Lv. 75-85) (In Progress)
+68803	Defeat the Elrokian Raiders! (Lv. 75-85) (Done)
+68804	Defeat the Elrokian Raiders! (Lv. 75-85)
+68811	Speak with Dinn
 69001	Jude's Request
 69002	Jude's Request (In Progress)
 69004	Jude's Request
@@ -2751,17 +2766,17 @@
 69801	Block the Lord's Escape
 69802	Block the Lord's Escape (In Progress)
 69804	Block the Lord's Escape
-69901	Guardian of the Skies (Above Lv. 75)
-69902	Guardian of the Skies (Above Lv. 75) (In Progress)
-69904	Guardian of the Skies (Above Lv. 75)
-70001	Cursed Life (Above Lv. 75)
-70002	Cursed Life (Above Lv. 75) (In Progress)
-70101	Proof of Existence (Above Lv. 78)
-70102	Proof of Existence (Above Lv. 78) (In Progress)
-70104	Proof of Existence (Above Lv. 78)
-70201	A Trap for Revenge (Above Lv. 78)
-70202	A Trap for Revenge (Above Lv. 78) (In Progress)
-70204	A Trap for Revenge (Above Lv. 78)
+69901	Guardian of the Skies (Lv. 75 and Above)
+69902	Guardian of the Skies (Lv. 75 and Above) (In Progress)
+69904	Guardian of the Skies (Lv. 75 and Above)
+70001	Cursed Life (Lv. 75 and Above)
+70002	Cursed Life (Lv. 75 and Above) (In Progress)
+70101	Proof of Existence (Lv. 78 and Above)
+70102	Proof of Existence (Lv. 78 and Above) (In Progress)
+70104	Proof of Existence (Lv. 78 and Above)
+70201	A Trap for Revenge (Lv. 78 and Above)
+70202	A Trap for Revenge (Lv. 78 and Above) (In Progress)
+70204	A Trap for Revenge (Lv. 78 and Above)
 70801	Path to Becoming a Lord - Gludio
 70802	Path to Becoming a Lord - Gludio (In Progress)
 70804	Path to Becoming a Lord - Gludio
@@ -2847,12 +2862,12 @@
 72402	For the Sake of the Territory - Goddard (In Progress)
 72501	For the Sake of the Territory - Rune
 72502	For the Sake of the Territory - Rune (In Progress)
-72601	Light within the Darkness (Above Lv. 85)
-72602	Light within the Darkness (Above Lv. 85) (In Progress)
-72604	Light within the Darkness (Above Lv. 85)
-72701	Hope within the Darkness (Above Lv. 90)
-72702	Hope within the Darkness (Above Lv. 90) (In Progress)
-72704	Hope within the Darkness (Above Lv. 90)
+72601	Light within the Darkness (Lv. 85 and Above)
+72602	Light within the Darkness (Lv. 85 and Above) (In Progress)
+72604	Light within the Darkness (Lv. 85 and Above)
+72701	Hope within the Darkness (Lv. 90 and Above)
+72702	Hope within the Darkness (Lv. 90 and Above) (In Progress)
+72704	Hope within the Darkness (Lv. 90 and Above)
 72901	Protect the Territory Catapult!
 72902	Protect the Territory Catapult! (In Progress)
 72903	The mercenary quest number is $s1; memostate1 is $s2; and memostate2 is $s3.
@@ -2988,10 +3003,10 @@
 74204	Castle of Darkness: Liberation
 74251	You liberated the darkness-filled castle!
 74252	You and your comrades have completed a great feat!
-75001	Seven Flowers (Above Lv. 95)
-75002	Seven Flowers (Above Lv. 95) (In Progress)
-75003	Seven Flowers (Above Lv. 95) (Done)
-75004	Seven Flowers (Above Lv. 95)
+75001	Seven Flowers (Lv. 95 and Above)
+75002	Seven Flowers (Lv. 95 and Above) (In Progress)
+75003	Seven Flowers (Lv. 95 and Above) (Done)
+75004	Seven Flowers (Lv. 95 and Above)
 75011	$s1's Fresh Flower
 75012	$s1's Flower
 75013	$s1's Wilted Flower
@@ -3014,52 +3029,52 @@
 75058	My suffering is slowly washing away...
 75059	My suffering is washing away... Thank you.
 75060	Your comforting feels genuine.
-75101	Wraith' Liberation (Above Lv. 95)
-75102	Wraith' Liberation (Above Lv. 95) (In Progress)
-75103	Wraith' Liberation (Above Lv. 95) (Done)
-75104	Wraith' Liberation (Above Lv. 95)
+75101	Wraith' Liberation (Lv. 95 and Above)
+75102	Wraith' Liberation (Lv. 95 and Above) (In Progress)
+75103	Wraith' Liberation (Lv. 95 and Above) (Done)
+75104	Wraith' Liberation (Lv. 95 and Above)
 75151	You aren't planning on going by yourself, are you?
 75152	The mission is not yet complete.
 75153	Well done! Please report to Roderik about the completed mission.
-75201	Uncover the Secret (Above Lv. 93)
-75202	Uncover the Secret (Above Lv. 93) (In Progress)
-75203	Uncover the Secret (Above Lv. 93) (Complete)
-75204	Uncover the Secret (Above Lv. 93)
-75301	Reacting to a Crisis (Above Lv. 93)
-75302	Reacting to a Crisis (Above Lv. 93) (In Progress)
-75303	Reacting to a Crisis (Above Lv. 93) (Complete)
-75304	Reacting to a Crisis (Above Lv. 93)
-75401	Resistance Support (Above Lv. 97)
-75402	Resistance Support (Above Lv. 97) (In Progress)
-75403	Resistance Support (Above Lv. 97) (Done)
-75404	Resistance Support (Above Lv. 97)
+75201	Uncover the Secret (Lv. 93 and Above)
+75202	Uncover the Secret (Lv. 93 and Above) (In Progress)
+75203	Uncover the Secret (Lv. 93 and Above) (Complete)
+75204	Uncover the Secret (Lv. 93 and Above)
+75301	Reacting to a Crisis (Lv. 93 and Above)
+75302	Reacting to a Crisis (Lv. 93 and Above) (In Progress)
+75303	Reacting to a Crisis (Lv. 93 and Above) (Complete)
+75304	Reacting to a Crisis (Lv. 93 and Above)
+75401	Resistance Support (Lv. 97 and Above)
+75402	Resistance Support (Lv. 97 and Above) (In Progress)
+75403	Resistance Support (Lv. 97 and Above) (Done)
+75404	Resistance Support (Lv. 97 and Above)
 75450	You can find the Kundas on the 2nd floor of the Seed of Hellfire.
 75451	Well done. I hope you will do well tomorrow as well.
 75452	Receive the mission from Sizrak again tomorrow.
-75501	The Need for Petra (Above Lv. 97)
-75502	The Need for Petra (Above Lv. 97) (In Progress)
-75503	The Need for Petra (Above Lv. 97) (Done)
-75504	The Need for Petra (Above Lv. 97)
+75501	The Need for Petra (Lv. 97 and Above)
+75502	The Need for Petra (Lv. 97 and Above) (In Progress)
+75503	The Need for Petra (Lv. 97 and Above) (Done)
+75504	The Need for Petra (Lv. 97 and Above)
 75550	You can obtain Petras by defeating Zofans.
 75551	Well done. Then, I will see you tomorrow. Huhuhu.
 75552	Find Lord Aku tomorrow and receive another mission.
-75601	Top Quality Petra (Above Lv. 97)
-75602	Top Quality Petra (Above Lv. 97) (In Progress)
-75603	Top Quality Petra (Above Lv. 97) (Done)
-75604	Top Quality Petra (Above Lv. 97)
+75601	Top Quality Petra (Lv. 97 and Above)
+75602	Top Quality Petra (Lv. 97 and Above) (In Progress)
+75603	Top Quality Petra (Lv. 97 and Above) (Done)
+75604	Top Quality Petra (Lv. 97 and Above)
 75650	If you find top quality Petra, bring it to me again. OK?
-75701	Triol's Movement (Above Lv. 97)
-75702	Triol's Movement (Above Lv. 97) (In Progress)
-75703	Triol's Movement (Above Lv. 97) (Complete)
-75704	Triol's Movement (Above Lv. 97)
-75801	The Fallen King's Men (Above Lv. 97)
-75802	The Fallen King's Men (Above Lv. 97) (In Progress)
-75803	The Fallen King's Men (Above Lv. 97) (Complete)
-75804	The Fallen King's Men (Above Lv. 97)
-75901	The Dwarven Nightmare Continues (Above Lv. 98)
-75902	The Dwarven Nightmare Continues (Above Lv. 98) (In Progress)
-75903	The Dwarven Nightmare Continues (Above Lv. 98) (Complete)
-75904	The Dwarven Nightmare Continues (Above Lv. 98)
+75701	Triol's Movement (Lv. 97 and Above)
+75702	Triol's Movement (Lv. 97 and Above) (In Progress)
+75703	Triol's Movement (Lv. 97 and Above) (Complete)
+75704	Triol's Movement (Lv. 97 and Above)
+75801	The Fallen King's Men (Lv. 97 and Above)
+75802	The Fallen King's Men (Lv. 97 and Above) (In Progress)
+75803	The Fallen King's Men (Lv. 97 and Above) (Complete)
+75804	The Fallen King's Men (Lv. 97 and Above)
+75901	The Dwarven Nightmare Continues (Lv. 98 and Above)
+75902	The Dwarven Nightmare Continues (Lv. 98 and Above) (In Progress)
+75903	The Dwarven Nightmare Continues (Lv. 98 and Above) (Complete)
+75904	The Dwarven Nightmare Continues (Lv. 98 and Above)
 75950	$s1 has received $s2 as a reward from Head Priest of the Earth Daichir.
 75951	Amaranthine Shaper Fragment
 75952	Amaranthine Cutter Fragment
@@ -3083,6 +3098,11 @@
 75970	Dark Crystal
 75971	Holy Crystal
 75972	Antharas' Symbol Dye
+76001	Block the Exit (Lv. 99-105)
+76002	Block the Exit (Lv. 99-105) (In Progress)
+76003	Block the Exit (Lv. 99-105) (Done)
+76004	Block the Exit (Lv. 99-105)
+76011	Speak with Curtiz
 76101	Assisting the Golden Ram Army (Lv. 65-70)
 76102	Assisting the Golden Ram Army (Lv. 65-70) (In Progress)
 76103	Assisting the Golden Ram Army (Lv. 65-70) (Complete)
@@ -3123,47 +3143,58 @@
 77102	Partaking in the Purification Campaign (Lv. 81-84) (In Progress)
 77103	Partaking in the Purification Campaign (Lv. 81-84) (Complete)
 77104	Partaking in the Purification Campaign (Lv. 81-84)
-77201	Purifying Souls (Above Lv. 99)
-77202	Purifying Souls (Above Lv. 99) (In Progress)
-77203	Purifying Souls (Above Lv. 99) (Complete)
-77204	Purifying Souls (Above Lv. 99)
-77501	Retrieving the Chaos Fragment (Above Lv. 99)
-77502	Retrieving the Chaos Fragment (Above Lv. 99) (In Progress)
-77503	Retrieving the Chaos Fragment (Above Lv. 99) (Complete)
-77504	Retrieving the Chaos Fragment (Above Lv. 99)
-77521	You can obtain Chaos Fragments throughout all of Hellbound.
+77201	Purifying Souls (Lv. 99 and Above)
+77202	Purifying Souls (Lv. 99 and Above) (In Progress)
+77203	Purifying Souls (Lv. 99 and Above) (Complete)
+77204	Purifying Souls (Lv. 99 and Above)
+77501	Retrieving the Chaos Fragment (Lv. 99 and Above)
+77502	Retrieving the Chaos Fragment (Lv. 99 and Above) (In Progress)
+77503	Retrieving the Chaos Fragment (Lv. 99 and Above) (Complete)
+77504	Retrieving the Chaos Fragment (Lv. 99 and Above)
+77521	You can obtain Chaos Fragments in Beleth's Magic Circle or the Desert Quarry in Hellbound.
 77522	Well done! Your Chaos Fragments will be used to attract Beleth.
-77601	Slay Dark Lord Ekimus (Above Lv. 95)
-77602	Slay Dark Lord Ekimus (Above Lv. 95) (In Progress)
-77603	Slay Dark Lord Ekimus (Above Lv. 95) (Complete)
-77604	Slay Dark Lord Ekimus (Above Lv. 95)
+77601	Slay Dark Lord Ekimus (Lv. 95 and Above)
+77602	Slay Dark Lord Ekimus (Lv. 95 and Above) (In Progress)
+77603	Slay Dark Lord Ekimus (Lv. 95 and Above) (Complete)
+77604	Slay Dark Lord Ekimus (Lv. 95 and Above)
 77611	Infiltrate the Hall of Suffering
 77612	Infiltrate the Heart of Infinity
+77613	Talk to Tepios
 77701	Slay Dark Lord Tiat (Lv. 93-97)
 77702	Slay Dark Lord Tiat (Lv. 93-97) (In Progress)
 77703	Slay Dark Lord Tiat (Lv. 93-97) (Complete)
 77704	Slay Dark Lord Tiat (Lv. 93-97)
 77711	Infiltrate the Seed of Destruction
-77801	Operation Roaring Flame (Above Lv. 99)
-77802	Operation Roaring Flame (Above Lv. 99) (In Progress)
-77803	Operation Roaring Flame (Above Lv. 99) (Complete)
-77804	Operation Roaring Flame (Above Lv. 99)
+77801	Operation Roaring Flame (Lv. 97 and Above)
+77802	Operation Roaring Flame (Lv. 97 and Above) (In Progress)
+77803	Operation Roaring Flame (Lv. 97 and Above) (Complete)
+77804	Operation Roaring Flame (Lv. 97 and Above)
 77901	Utilize the Darkness - Seed of Destruction (Lv. 93-97)
 77902	Utilize the Darkness - Seed of Destruction (Lv. 93-97) (In Progress)
 77903	Utilize the Darkness - Seed of Destruction (Lv. 93-97) (Complete)
 77904	Utilize the Darkness - Seed of Destruction (Lv. 93-97)
-78001	Utilize the Darkness - Seed of Infinity (Above Lv. 95)
-78002	Utilize the Darkness - Seed of Infinity (Above Lv. 95) (In Progress)
-78003	Utilize the Darkness - Seed of Infinity (Above Lv. 95) (Complete)
-78004	Utilize the Darkness - Seed of Infinity (Above Lv. 95)
-78101	Utilize the Darkness - Seed of Annihilation (Above Lv. 85)
-78102	Utilize the Darkness - Seed of Annihilation (Above Lv. 85) (In Progress)
-78103	Utilize the Darkness - Seed of Annihilation (Above Lv. 85) (Complete)
-78104	Utilize the Darkness - Seed of Annihilation (Above Lv. 85)
-78201	Utilize the Darkness - Seed of Hellfire (Above Lv. 97)
-78202	Utilize the Darkness - Seed of Hellfire (Above Lv. 97) (In Progress)
-78203	Utilize the Darkness - Seed of Hellfire (Above Lv. 97) (Complete)
-78204	Utilize the Darkness - Seed of Hellfire (Above Lv. 97)
+77905	Talk to Allenos
+78001	Utilize the Darkness - Seed of Infinity (Lv. 95 and Above)
+78002	Utilize the Darkness - Seed of Infinity (Lv. 95 and Above) (In Progress)
+78003	Utilize the Darkness - Seed of Infinity (Lv. 95 and Above) (Complete)
+78004	Utilize the Darkness - Seed of Infinity (Lv. 95 and Above)
+78005	Talk to Tepios
+78101	Utilize the Darkness - Seed of Annihilation (Lv. 85 and Above)
+78102	Utilize the Darkness - Seed of Annihilation (Lv. 85 and Above) (In Progress)
+78103	Utilize the Darkness - Seed of Annihilation (Lv. 85 and Above) (Complete)
+78104	Utilize the Darkness - Seed of Annihilation (Lv. 85 and Above)
+78105	Talk to Klemis
+78201	Utilize the Darkness - Seed of Hellfire (Lv. 97 and Above)
+78202	Utilize the Darkness - Seed of Hellfire (Lv. 97 and Above) (In Progress)
+78203	Utilize the Darkness - Seed of Hellfire (Lv. 97 and Above) (Complete)
+78204	Utilize the Darkness - Seed of Hellfire (Lv. 97 and Above)
+78205	Talk to Sizrak
+78301	Vestige of the Magic Power (Lv. 99 and Above)
+78302	Vestige of the Magic Power (Lv. 99 and Above) (In Progress)
+78303	Vestige of the Magic Power (Lv. 99 and Above) (Done)
+78304	Vestige of the Magic Power (Lv. 99 and Above)
+78321	High-grade Fragments of Chaos can only be obtained in the Phantasmal Ridge.
+78322	Thank you! I will definitely beat Beleth!
 78401	The Quiet Killer (Lv. 65-70)
 78402	The Quiet Killer (Lv. 65-70) (In Progress)
 78403	The Quiet Killer (Lv. 65-70) (Done)
@@ -3180,67 +3211,67 @@
 78702	The Role of a Watcher (Lv. 76-85) (In Progress)
 78703	The Role of a Watcher (Lv. 76-85) (Done)
 78704	The Role of a Watcher (Lv. 76-85)
-78901	Waiting for Pa'agrio (Above Lv. 97)
-78902	Waiting for Pa'agrio (Above Lv. 97) (In Progress)
-78903	Waiting for Pa'agrio (Above Lv. 97) (Done)
-78904	Waiting for Pa'agrio (Above Lv. 97)
-79001	Obtaining Ferin's Trust (Lv. 100~)
-79002	Obtaining Ferin's Trust (Lv. 100~) (In Progress)
-79003	Obtaining Ferin's Trust (Lv. 100~) (Done)
-79004	Obtaining Ferin's Trust (Lv. 100~)
-81201	First Stronghold's Barton (Lv. 101~)
-81202	First Stronghold's Barton (Lv. 101~) (In Progress)
-81203	First Stronghold's Barton (Lv. 101~) (Done)
-81204	First Stronghold's Barton (Lv. 101~)
+78901	Waiting for Pa'agrio (Lv. 97 and Above)
+78902	Waiting for Pa'agrio (Lv. 97 and Above) (In Progress)
+78903	Waiting for Pa'agrio (Lv. 97 and Above) (Done)
+78904	Waiting for Pa'agrio (Lv. 97 and Above)
+79001	Obtaining Ferin's Trust (Lv. 100 and Above)
+79002	Obtaining Ferin's Trust (Lv. 100 and Above) (In Progress)
+79003	Obtaining Ferin's Trust (Lv. 100 and Above) (Done)
+79004	Obtaining Ferin's Trust (Lv. 100 and Above)
+81201	First Stronghold's Barton (Lv. 101 and Above)
+81202	First Stronghold's Barton (Lv. 101 and Above) (In Progress)
+81203	First Stronghold's Barton (Lv. 101 and Above) (Done)
+81204	First Stronghold's Barton (Lv. 101 and Above)
 81205	Talk to Barton
-81301	Second Stronghold's Hayuk (Lv. 101~)
-81302	Second Stronghold's Hayuk (Lv. 101~) (In Progress)
-81303	Second Stronghold's Hayuk (Lv. 101~) (Done)
-81304	Second Stronghold's Hayuk (Lv. 101~)
+81301	Second Stronghold's Hayuk (Lv. 101 and Above)
+81302	Second Stronghold's Hayuk (Lv. 101 and Above) (In Progress)
+81303	Second Stronghold's Hayuk (Lv. 101 and Above) (Done)
+81304	Second Stronghold's Hayuk (Lv. 101 and Above)
 81305	Talk to Hayuk
-81401	Third Stronghold's Elise (Lv. 101~)
-81402	Third Stronghold's Elise (Lv. 101~) (In Progress)
-81403	Third Stronghold's Elise (Lv. 101~) (Done)
-81404	Third Stronghold's Elise (Lv. 101~)
+81401	Third Stronghold's Elise (Lv. 101 and Above)
+81402	Third Stronghold's Elise (Lv. 101 and Above) (In Progress)
+81403	Third Stronghold's Elise (Lv. 101 and Above) (Done)
+81404	Third Stronghold's Elise (Lv. 101 and Above)
 81405	Talk to Elise
-81501	Fourth Stronghold's Eliyah (Lv. 101~)
-81502	Fourth Stronghold's Eliyah (Lv. 101~) (In Progress)
-81503	Fourth Stronghold's Eliyah (Lv. 101~) (Done)
-81504	Fourth Stronghold's Eliyah (Lv. 101~)
+81501	Fourth Stronghold's Eliyah (Lv. 101 and Above)
+81502	Fourth Stronghold's Eliyah (Lv. 101 and Above) (In Progress)
+81503	Fourth Stronghold's Eliyah (Lv. 101 and Above) (Done)
+81504	Fourth Stronghold's Eliyah (Lv. 101 and Above)
 81505	Talk to Eliyah
-81601	Plans to Repair the Stronghold (Lv. 101~)
-81602	Plans to Repair the Stronghold (Lv. 101~) (In Progress)
-81603	Plans to Repair the Stronghold (Lv. 101~) (Done)
-81604	Plans to Repair the Stronghold (Lv. 101~)
+81601	Plans to Repair the Stronghold (Lv. 101 and Above)
+81602	Plans to Repair the Stronghold (Lv. 101 and Above) (In Progress)
+81603	Plans to Repair the Stronghold (Lv. 101 and Above) (Done)
+81604	Plans to Repair the Stronghold (Lv. 101 and Above)
 81605	Talk to Adolph
-81701	Black Atelia Research (Lv. 101~)
-81702	Black Atelia Research (Lv. 101~) (In Progress)
-81703	Black Atelia Research (Lv. 101~) (Done)
-81704	Black Atelia Research (Lv. 101~)
-82301	Disappeared Race, New Fairy (Lv. 100~)
-82302	Disappeared Race, New Fairy (Lv. 100~) (In Progress)
-82303	Disappeared Race, New Fairy (Lv. 100~) (Done)
-82304	Disappeared Race, New Fairy (Lv. 100~)
-82401	Raiding the Command Post (Lv. 101~)
-82402	Raiding the Command Post (Lv. 101~) (In Progress)
-82403	Raiding the Command Post (Lv. 101~) (Done)
-82404	Raiding the Command Post (Lv. 101~)
-82601	In Search of the Secret Weapon (Lv. 100~)
-82602	In Search of the Secret Weapon (Lv. 100~) (In Progress)
-82603	In Search of the Secret Weapon (Lv. 100~) (Done)
-82604	In Search of the Secret Weapon (Lv. 100~)
+81701	Black Atelia Research (Lv. 101 and Above)
+81702	Black Atelia Research (Lv. 101 and Above) (In Progress)
+81703	Black Atelia Research (Lv. 101 and Above) (Done)
+81704	Black Atelia Research (Lv. 101 and Above)
+82301	Disappeared Race, New Fairy (Lv. 100 and Above)
+82302	Disappeared Race, New Fairy (Lv. 100 and Above) (In Progress)
+82303	Disappeared Race, New Fairy (Lv. 100 and Above) (Done)
+82304	Disappeared Race, New Fairy (Lv. 100 and Above)
+82401	Raiding the Command Post (Lv. 101 and Above)
+82402	Raiding the Command Post (Lv. 101 and Above) (In Progress)
+82403	Raiding the Command Post (Lv. 101 and Above) (Done)
+82404	Raiding the Command Post (Lv. 101 and Above)
+82601	In Search of the Secret Weapon (Lv. 100 and Above)
+82602	In Search of the Secret Weapon (Lv. 100 and Above) (In Progress)
+82603	In Search of the Secret Weapon (Lv. 100 and Above) (Done)
+82604	In Search of the Secret Weapon (Lv. 100 and Above)
 82612	Talk to Neti
-82701	Einhasad's Order (Lv. 100~)
-82702	Einhasad's Order (Lv. 100~) (In Progress)
-82703	Einhasad's Order (Lv. 100~) (Done)
-82704	Einhasad's Order (Lv. 100~)
+82701	Einhasad's Order (Lv. 100 and Above)
+82702	Einhasad's Order (Lv. 100 and Above) (In Progress)
+82703	Einhasad's Order (Lv. 100 and Above) (Done)
+82704	Einhasad's Order (Lv. 100 and Above)
 82712	Talk to Sir Klaus Vasper
 82713	I can't believe Gludin was occupied. How will I face my ancestors in the afterlife?
 82714	Did you defeat them all? How did the mission go?
-82801	Eva's Blessing (Lv. 100~)
-82802	Eva's Blessing (Lv. 100~) (In Progress)
-82803	Eva's Blessing (Lv. 100~) (Done)
-82804	Eva's Blessing (Lv. 100~)
+82801	Eva's Blessing (Lv. 100 and Above)
+82802	Eva's Blessing (Lv. 100 and Above) (In Progress)
+82803	Eva's Blessing (Lv. 100 and Above) (Done)
+82804	Eva's Blessing (Lv. 100 and Above)
 82811	Rescuing Captives
 82812	Talk to Adonius
 82813	Ah, sorry. I got too excited since I was finally able to come out of that box.
@@ -3299,28 +3330,51 @@
 82882	Please be careful.
 82883	Are the others safe?
 82884	I'm in your debt. I'll never forget you.
-82901	Maphr's Salvation (Lv. 100~)
-82902	Maphr's Salvation (Lv. 100~) (In Progress)
-82903	Maphr's Salvation (Lv. 100~) (Done)
-82904	Maphr's Salvation (Lv. 100~)
+82901	Maphr's Salvation (Lv. 100 and Above)
+82902	Maphr's Salvation (Lv. 100 and Above) (In Progress)
+82903	Maphr's Salvation (Lv. 100 and Above) (Done)
+82904	Maphr's Salvation (Lv. 100 and Above)
 82912	Talk to Kluto
 82913	Phew. I'm finally out.
 82914	Did you find it? Please tell me some good news!
-83001	The Way of the Giant's Pawn (Lv. 100~)
-83002	The Way of the Giant's Pawn (Lv. 100~) (In Progress)
-83003	The Way of the Giant's Pawn (Lv. 100~) (Done)
-83004	The Way of the Giant's Pawn (Lv. 100~)
+83001	The Way of the Giant's Pawn (Lv. 100 and Above)
+83002	The Way of the Giant's Pawn (Lv. 100 and Above) (In Progress)
+83003	The Way of the Giant's Pawn (Lv. 100 and Above) (Done)
+83004	The Way of the Giant's Pawn (Lv. 100 and Above)
 83011	Defeat the Elite Soldiers of the Revolutionaries
 83012	Talk to Yeniche
 83013	Ugh. Can't believe I had to hide.
 83014	You've defeated them.
-83101	Sayha's Scheme (Lv. 100~)
-83102	Sayha's Scheme (Lv. 100~) (In Progress)
-83103	Sayha's Scheme (Lv. 100~) (Done)
-83104	Sayha's Scheme (Lv. 100~)
+83101	Sayha's Scheme (Lv. 100 and Above)
+83102	Sayha's Scheme (Lv. 100 and Above) (In Progress)
+83103	Sayha's Scheme (Lv. 100 and Above) (Done)
+83104	Sayha's Scheme (Lv. 100 and Above)
 83112	Talk to Yuyuria
 83113	There's no one, right?
 83114	Hopefully everything works out.
+83301	Devil's Treasure (Lv. 99 and Above)
+83302	Devil's Treasure (Lv. 99 and Above) (In Progress)
+83303	Devil's Treasure (Lv. 99 and Above) (Done)
+83304	Devil's Treasure (Lv. 99 and Above)
+83305	At a Crossroads
+83306	Destroy the Seal Device
+83307	Move Underground
+83308	Stop the Seal Archangel
+83309	Speak with Settlen
+83401	Against Dragonclaw (Lv. 99 and Above)
+83402	Against Dragonclaw (Lv. 99 and Above) (In Progress)
+83403	Against Dragonclaw (Lv. 99 and Above) (Done)
+83404	Against Dragonclaw (Lv. 99 and Above)
+83405	Defeat Kelbim
+83406	Speak with Settlen
+83407	Speak with Molly
+83501	Pitiable Melisa (Lv. 99 and Above)
+83502	Pitiable Melisa (Lv. 99 and Above) (In Progress)
+83503	Pitiable Melisa (Lv. 99 and Above) (Done)
+83504	Pitiable Melisa (Lv. 99 and Above)
+83505	Speak with Sayan
+83506	Look After Princess Melisa
+83507	Speak with Settlen
 85001	The Times Call for a New Hero - Aden
 85002	The Times Call for a New Hero - Aden (In Progress)
 85003	The Times Call for a New Hero - Aden (Done)
@@ -3413,38 +3467,67 @@
 85795	Fashion Show Catwalk
 85796	Fantasy Isle Festival Promoter
 85797	Fashion Show Model
-90101	How a Lavasaurus is Made (Above Lv. 76)
-90102	How a Lavasaurus is Made (Above Lv. 76) (In Progress)
-90103	How a Lavasaurus is Made (Above Lv. 76) (Done)
-90104	How a Lavasaurus is Made (Above Lv. 76)
-90201	Reclaim Our Era (Above Lv. 80)
-90202	Reclaim Our Era (Above Lv. 80) (In Progress)
-90203	Reclaim Our Era (Above Lv. 80) (Done)
-90204	Reclaim Our Era (Above Lv. 80)
-90301	The Call of Antharas (Above Lv. 83)
-90302	The Call of Antharas (Above Lv. 83) (In Progress)
-90303	The Call of Antharas (Above Lv. 83) (Done)
-90304	The Call of Antharas (Above Lv. 83)
-90401	Dragon Trophy - Antharas (Above Lv. 84)
-90402	Dragon Trophy - Antharas (Above Lv. 84) (In Progress)
-90403	Dragon Trophy - Antharas (Above Lv. 84) (Done)
-90404	Dragon Trophy - Antharas (Above Lv. 84)
-90501	Refined Dragon Blood (Above Lv. 83)
-90502	Refined Dragon Blood (Above Lv. 83) (In Progress)
-90503	Refined Dragon Blood (Above Lv. 83) (Done)
-90504	Refined Dragon Blood (Above Lv. 83)
-90601	The Call of Valakas (Above Lv. 83)
-90602	The Call of Valakas (Above Lv. 83) (In Progress)
-90603	The Call of Valakas (Above Lv. 83) (Done)
-90604	The Call of Valakas (Above Lv. 83)
-90701	Dragon Trophy - Valakas (Above Lv. 84)
-90702	Dragon Trophy - Valakas (Above Lv. 84) (In Progress)
-90703	Dragon Trophy - Valakas (Above Lv. 84) (Done)
-90704	Dragon Trophy - Valakas (Above Lv. 84)
-94301	Filling the Energy of Destruction (Above Lv. 90)
-94302	Filling the Energy of Destruction (Above Lv. 90) (In Progress)
-94303	Filling the Energy of Destruction (Above Lv. 90) (Done)
-94304	Filling the Energy of Destruction (Above Lv. 90)
+90101	How a Lavasaurus is Made (Lv. 76 and Above)
+90102	How a Lavasaurus is Made (Lv. 76 and Above) (In Progress)
+90103	How a Lavasaurus is Made (Lv. 76 and Above) (Done)
+90104	How a Lavasaurus is Made (Lv. 76 and Above)
+90201	Reclaim Our Era (Lv. 80 and Above)
+90202	Reclaim Our Era (Lv. 80 and Above) (In Progress)
+90203	Reclaim Our Era (Lv. 80 and Above) (Done)
+90204	Reclaim Our Era (Lv. 80 and Above)
+90301	The Call of Antharas (Lv. 83 and Above)
+90302	The Call of Antharas (Lv. 83 and Above) (In Progress)
+90303	The Call of Antharas (Lv. 83 and Above) (Done)
+90304	The Call of Antharas (Lv. 83 and Above)
+90401	Dragon Trophy - Antharas (Lv. 84 and Above)
+90402	Dragon Trophy - Antharas (Lv. 84 and Above) (In Progress)
+90403	Dragon Trophy - Antharas (Lv. 84 and Above) (Done)
+90404	Dragon Trophy - Antharas (Lv. 84 and Above)
+90501	Refined Dragon Blood (Lv. 83 and Above)
+90502	Refined Dragon Blood (Lv. 83 and Above) (In Progress)
+90503	Refined Dragon Blood (Lv. 83 and Above) (Done)
+90504	Refined Dragon Blood (Lv. 83 and Above)
+90601	The Call of Valakas (Lv. 83 and Above)
+90602	The Call of Valakas (Lv. 83 and Above) (In Progress)
+90603	The Call of Valakas (Lv. 83 and Above) (Done)
+90604	The Call of Valakas (Lv. 83 and Above)
+90701	Dragon Trophy - Valakas (Lv. 84 and Above)
+90702	Dragon Trophy - Valakas (Lv. 84 and Above) (In Progress)
+90703	Dragon Trophy - Valakas (Lv. 84 and Above) (Done)
+90704	Dragon Trophy - Valakas (Lv. 84 and Above)
+91001	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95)
+91002	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95) (In Progress)
+91003	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95) (Done)
+91004	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95)
+91005	Defeat Monsters in the Seed of Annihilation
+91010	Speak with Blue
+91011	85
+91012	Seed of Annihilation
+91101	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96)
+91102	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96) (In Progress)
+91103	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96) (Done)
+91104	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96)
+91105	Defeat Monsters in the Guillotine Fortress
+91111	90
+91112	Guillotine Fortress
+91201	High-rank Request - Subjugation of the Seed of Hellfire (Lv. 97 and Above)
+91202	High-rank Request - Subjugation of the Seed of Hellfire (Lv. 97 and Above) (In Progress)
+91203	High-rank Request - Subjugation of the Seed of Hellfire (Lv. 97 and Above) (Done)
+91204	High-rank Request - Subjugation of the Seed of Hellfire (Lv. 97 and Above)
+91205	Defeat Monsters in the Seed of Hellfire
+91211	97
+91212	Seed of Hellfire
+91301	Top-rank Request - Subjugation of the Phantasmal Ridge (Lv. 99 and Above)
+91302	Top-rank Request - Subjugation of the Phantasmal Ridge (Lv. 99 and Above) (In Progress)
+91303	Top-rank Request - Subjugation of the Phantasmal Ridge (Lv. 99 and Above) (Done)
+91304	Top-rank Request - Subjugation of the Phantasmal Ridge (Lv. 99 and Above)
+91305	Defeat Monsters in the Phantasmal Ridge
+91311	99
+91312	Phantasmal Ridge
+94301	Filling the Energy of Destruction (Lv. 90 and Above)
+94302	Filling the Energy of Destruction (Lv. 90 and Above) (In Progress)
+94303	Filling the Energy of Destruction (Lv. 90 and Above) (Done)
+94304	Filling the Energy of Destruction (Lv. 90 and Above)
 98701	Ilvenis' Test
 98702	Ilvenis' Test (In Progress)
 98703	Empty Cannon
@@ -3575,99 +3658,109 @@
 527202	Light Fragment (In Progress)
 527203	Light Fragment (Done)
 527204	Light Fragment
-527301	Good Day to Fly (Above Lv. 75)
-527302	Good Day to Fly (Above Lv. 75) (In Progress)
-527303	Good Day to Fly (Above Lv. 75) (Done)
-527304	Good Day to Fly (Above Lv. 75)
-527401	Collecting in the Air (Above Lv. 75)
-527402	Collecting in the Air (Above Lv. 75) (In Progress)
-527403	Collecting in the Air (Above Lv. 75) (Done)
-527404	Collecting in the Air (Above Lv. 75)
-527501	Containing the Attribute Power (Above Lv. 76)
-527502	Containing the Attribute Power (Above Lv. 76) (In Progress)
-527503	Containing the Attribute Power (Above Lv. 76) (Done)
-527504	Containing the Attribute Power (Above Lv. 76)
-527601	Mutated Kaneus - Gludio (Above Lv. 18)
-527602	Mutated Kaneus - Gludio (Above Lv. 18) (In Progress)
-527603	Mutated Kaneus - Gludio (Above Lv. 18) (Done)
-527604	Mutated Kaneus - Gludio (Above Lv. 18)
-527701	Mutated Kaneus - Dion (Above Lv. 28)
-527702	Mutated Kaneus - Dion (Above Lv. 28) (In Progress)
-527703	Mutated Kaneus - Dion (Above Lv. 28) (Done)
-527704	Mutated Kaneus - Dion (Above Lv. 28)
-527801	Mutated Kaneus - Heine (Above Lv. 38)
-527802	Mutated Kaneus - Heine (Above Lv. 38) (In Progress)
-527803	Mutated Kaneus - Heine (Above Lv. 38) (Done)
-527804	Mutated Kaneus - Heine (Above Lv. 38)
-527901	Mutated Kaneus - Oren (Above Lv. 48)
-527902	Mutated Kaneus - Oren (Above Lv. 48) (In Progress)
-527903	Mutated Kaneus - Oren (Above Lv. 48) (Done)
-527904	Mutated Kaneus - Oren (Above Lv. 48)
-528001	Mutated Kaneus - Schuttgart (Above Lv. 58)
-528002	Mutated Kaneus - Schuttgart (Above Lv. 58) (In Progress)
-528003	Mutated Kaneus - Schuttgart (Above Lv. 58) (Done)
-528004	Mutated Kaneus - Schuttgart (Above Lv. 58)
-528101	Mutated Kaneus - Rune (Above Lv. 68)
-528102	Mutated Kaneus - Rune (Above Lv. 68) (In Progress)
-528103	Mutated Kaneus - Rune (Above Lv. 68) (Done)
-528104	Mutated Kaneus - Rune (Above Lv. 68)
-528201	To the Seed of Annihilation (Above Lv. 85)
-528202	To the Seed of Annihilation (Above Lv. 85) (In Progress)
-528203	To the Seed of Annihilation (Above Lv. 85) (Done)
-528301	Request of Ice Merchant (Above Lv. 82)
-528302	Request of Ice Merchant  (Above Lv. 82) (In Progress)
-528303	Request of Ice Merchant  (Above Lv. 82) (Done)
-528304	Request of Ice Merchant (Above Lv. 82)
-528401	Acquisition of Divine Sword (Above Lv. 82)
-528402	Acquisition of Divine Sword  (Above Lv. 82) (In Progress)
-528403	Acquisition of Divine Sword  (Above Lv. 82) (Done)
-528404	Acquisition of Divine Sword (Above Lv. 82)
-528501	Meeting Sirra (Above Lv. 82)
-528502	Meeting Sirra  (Above Lv. 82) (In Progress)
-528503	Meeting Sirra  (Above Lv. 82) (Done)
-528504	Meeting Sirra (Above Lv. 82)
+527301	Good Day to Fly (Lv. 75 and Above)
+527302	Good Day to Fly (Lv. 75 and Above) (In Progress)
+527303	Good Day to Fly (Lv. 75 and Above) (Done)
+527304	Good Day to Fly (Lv. 75 and Above)
+527401	Collecting in the Air (Lv. 75 and Above)
+527402	Collecting in the Air (Lv. 75 and Above) (In Progress)
+527403	Collecting in the Air (Lv. 75 and Above) (Done)
+527404	Collecting in the Air (Lv. 75 and Above)
+527501	Containing the Attribute Power (Lv. 76 and Above)
+527502	Containing the Attribute Power (Lv. 76 and Above) (In Progress)
+527503	Containing the Attribute Power (Lv. 76 and Above) (Done)
+527504	Containing the Attribute Power (Lv. 76 and Above)
+527601	Mutated Kaneus - Gludio (Lv. 18 and Above)
+527602	Mutated Kaneus - Gludio (Lv. 18 and Above) (In Progress)
+527603	Mutated Kaneus - Gludio (Lv. 18 and Above) (Done)
+527604	Mutated Kaneus - Gludio (Lv. 18 and Above)
+527701	Mutated Kaneus - Dion (Lv. 28 and Above)
+527702	Mutated Kaneus - Dion (Lv. 28 and Above) (In Progress)
+527703	Mutated Kaneus - Dion (Lv. 28 and Above) (Done)
+527704	Mutated Kaneus - Dion (Lv. 28 and Above)
+527801	Mutated Kaneus - Heine (Lv. 38 and Above)
+527802	Mutated Kaneus - Heine (Lv. 38 and Above) (In Progress)
+527803	Mutated Kaneus - Heine (Lv. 38 and Above) (Done)
+527804	Mutated Kaneus - Heine (Lv. 38 and Above)
+527901	Mutated Kaneus - Oren (Lv. 48 and Above)
+527902	Mutated Kaneus - Oren (Lv. 48 and Above) (In Progress)
+527903	Mutated Kaneus - Oren (Lv. 48 and Above) (Done)
+527904	Mutated Kaneus - Oren (Lv. 48 and Above)
+528001	Mutated Kaneus - Schuttgart (Lv. 58 and Above)
+528002	Mutated Kaneus - Schuttgart (Lv. 58 and Above) (In Progress)
+528003	Mutated Kaneus - Schuttgart (Lv. 58 and Above) (Done)
+528004	Mutated Kaneus - Schuttgart (Lv. 58 and Above)
+528101	Mutated Kaneus - Rune (Lv. 68 and Above)
+528102	Mutated Kaneus - Rune (Lv. 68 and Above) (In Progress)
+528103	Mutated Kaneus - Rune (Lv. 68 and Above) (Done)
+528104	Mutated Kaneus - Rune (Lv. 68 and Above)
+528201	To the Seed of Annihilation (Lv. 85 and Above)
+528202	To the Seed of Annihilation (Lv. 85 and Above) (In Progress)
+528203	To the Seed of Annihilation (Lv. 85 and Above) (Done)
+528301	Request of Ice Merchant (Lv. 82 and Above)
+528302	Request of Ice Merchant  (Lv. 82 and Above) (In Progress)
+528303	Request of Ice Merchant  (Lv. 82 and Above) (Done)
+528304	Request of Ice Merchant (Lv. 82 and Above)
+528401	Acquisition of Divine Sword (Lv. 82 and Above)
+528402	Acquisition of Divine Sword  (Lv. 82 and Above) (In Progress)
+528403	Acquisition of Divine Sword  (Lv. 82 and Above) (Done)
+528404	Acquisition of Divine Sword (Lv. 82 and Above)
+528501	Meeting Sirra (Lv. 82 and Above)
+528502	Meeting Sirra  (Lv. 82 and Above) (In Progress)
+528503	Meeting Sirra  (Lv. 82 and Above) (Done)
+528504	Meeting Sirra (Lv. 82 and Above)
 528551	There's nothing you can't say. I can't listen to you anymore!
-528601	Reunion with Sirra (Above Lv. 82)
-528602	Reunion with Sirra  (Above Lv. 82) (In Progress)
-528603	Reunion with Sirra  (Above Lv. 82) (Done)
-528604	Reunion with Sirra (Above Lv. 82)
+528601	Reunion with Sirra (Lv. 82 and Above)
+528602	Reunion with Sirra  (Lv. 82 and Above) (In Progress)
+528603	Reunion with Sirra  (Lv. 82 and Above) (Done)
+528604	Reunion with Sirra (Lv. 82 and Above)
 528651	You advanced bravely but got such a tiny result. Hohoho.
-528701	Story of Those Left (Above Lv. 82)
-528702	Story of Those Left  (Above Lv. 82) (In Progress)
-528703	Story of Those Left (Above Lv. 82) (Done)
-528704	Story of Those Left (Above Lv. 82)
-528801	Secret Mission (Above Lv. 82)
-528802	Secret Mission  (Above Lv. 82) (In Progress)
-528803	Secret Mission  (Above Lv. 82) (Done)
-528804	Secret Mission (Above Lv. 82)
-528901	Fade to Black (Above Lv. 82)
-528902	Fade to Black  (Above Lv. 82) (In Progress)
-528903	Fade to Black (Above Lv. 82) (Done)
-528904	Fade to Black (Above Lv. 82)
-529001	Land Dragon Conqueror (Above Lv. 83)
-529002	Land Dragon Conqueror (Above Lv. 83) (In Progress)
-529003	Land Dragon Conqueror (Above Lv. 83) (Done)
-529004	Land Dragon Conqueror (Above Lv. 83)
-529101	Fire Dragon Destroyer (Above Lv. 83)
-529102	Fire Dragon Destroyer (Above Lv. 83) (In Progress)
-529103	Fire Dragon Destroyer (Above Lv. 83) (Done)
-529104	Fire Dragon Destroyer (Above Lv. 83)
-529201	Seven Signs, Mysterious Girl (Above Lv. 81)
-529202	Seven Signs, Mysterious Girl (Above Lv. 81) (In Progress)
-529203	Seven Signs, Mysterious Girl (Above Lv. 81) (Done)
-529204	Seven Signs, Mysterious Girl (Above Lv. 81)
-529301	Seven Signs, Forbidden Book of the Elmoreden Kingdom (Above Lv. 81)
-529302	Seven Signs, Forbidden Book of the Elmoreden Kingdom (Above Lv. 81) (In Progress)
-529303	Seven Signs, Forbidden Book of the Elmoreden Kingdom (Above Lv. 81) (Done)
-529401	Seven Signs, To the Monastery of Silence (Above Lv. 81)
-529402	Seven Signs, To the Monastery of Silence (Above Lv. 81) (In Progress)
-529403	Seven Signs, To the Monastery of Silence (Above Lv. 81) (Done)
-529501	Seven Signs, Solina Tomb (Above Lv. 81)
-529502	Seven Signs, Solina Tomb (Above Lv. 81) (In Progress)
-529503	Seven Signs, Solina Tomb (Above Lv. 81) (Done)
-529601	Seven Signs, One Who Seeks the Power of the Seal (Above Lv. 81)
-529602	Seven Signs, One Who Seeks the Power of the Seal (Above Lv. 81) (In Progress)
-529603	Seven Signs, One Who Seeks the Power of the Seal (Above Lv. 81) (Done)
+528701	Story of Those Left (Lv. 82 and Above)
+528702	Story of Those Left  (Lv. 82 and Above) (In Progress)
+528703	Story of Those Left (Lv. 82 and Above) (Done)
+528704	Story of Those Left (Lv. 82 and Above)
+528801	Secret Mission (Lv. 82 and Above)
+528802	Secret Mission  (Lv. 82 and Above) (In Progress)
+528803	Secret Mission  (Lv. 82 and Above) (Done)
+528804	Secret Mission (Lv. 82 and Above)
+528901	Fade to Black (Lv. 82 and Above)
+528902	Fade to Black  (Lv. 82 and Above) (In Progress)
+528903	Fade to Black (Lv. 82 and Above) (Done)
+528904	Fade to Black (Lv. 82 and Above)
+529001	Land Dragon Conqueror (Lv. 83 and Above)
+529002	Land Dragon Conqueror (Lv. 83 and Above) (In Progress)
+529003	Land Dragon Conqueror (Lv. 83 and Above) (Done)
+529004	Land Dragon Conqueror (Lv. 83 and Above)
+529101	Fire Dragon Destroyer (Lv. 83 and Above)
+529102	Fire Dragon Destroyer (Lv. 83 and Above) (In Progress)
+529103	Fire Dragon Destroyer (Lv. 83 and Above) (Done)
+529104	Fire Dragon Destroyer (Lv. 83 and Above)
+529201	Seven Signs, Mysterious Girl (Lv. 81 and Above)
+529202	Seven Signs, Mysterious Girl (Lv. 81 and Above) (In Progress)
+529203	Seven Signs, Mysterious Girl (Lv. 81 and Above) (Done)
+529204	Seven Signs, Mysterious Girl (Lv. 81 and Above)
+529301	Seven Signs, Forbidden Book of the Elmoreden Kingdom (Lv. 81 and Above)
+529302	Seven Signs, Forbidden Book of the Elmoreden Kingdom (Lv. 81 and Above) (In Progress)
+529303	Seven Signs, Forbidden Book of the Elmoreden Kingdom (Lv. 81 and Above) (Done)
+529401	Seven Signs, To the Monastery of Silence (Lv. 81 and Above)
+529402	Seven Signs, To the Monastery of Silence (Lv. 81 and Above) (In Progress)
+529403	Seven Signs, To the Monastery of Silence (Lv. 81 and Above) (Done)
+529501	Seven Signs, Solina Tomb (Lv. 81 and Above)
+529502	Seven Signs, Solina Tomb (Lv. 81 and Above) (In Progress)
+529503	Seven Signs, Solina Tomb (Lv. 81 and Above) (Done)
+529601	Seven Signs, One Who Seeks the Power of the Seal (Lv. 81 and Above)
+529602	Seven Signs, One Who Seeks the Power of the Seal (Lv. 81 and Above) (In Progress)
+529603	Seven Signs, One Who Seeks the Power of the Seal (Lv. 81 and Above) (Done)
+529701	Grand Opening! Come to Our Tavern! (Lv. 99 and Above)
+529702	Grand Opening! Come to Our Tavern! (Lv. 99 and Above) (In Progress0
+529703	Grand Opening! Come to Our Tavern! (Lv. 99 and Above) (Done)
+529704	Grand Opening! Come to Our Tavern! (Lv. 99 and Above)
+529705	Speak with Lollia
+529706	Speak with Hanna
+529707	Speak with Mei
+529708	Speak with Brodien
+529709	Speak with Lupia
+529710	Speak with Lailly
 529901	How to Stand Up For Yourself
 529902	How to Stand Up For Yourself (In Progress)
 529903	How to Stand Up For Yourself (Done)
@@ -3676,35 +3769,35 @@
 530002	Berserk Outlaws (Lv. 50-54) (In Progress)
 530003	Berserk Outlaws (Lv. 50-54) (Done)
 530004	Berserk Outlaws (Lv. 50-54)
-530101	Shadow of Terror: Blackish Red Fog (Above Lv. 88)
-530102	Shadow of Terror: Blackish Red Fog (Above Lv. 88) (In Progress)
-530103	Shadow of Terror: Blackish Red Fog (Above Lv. 88) (Done)
-530104	Shadow of Terror: Blackish Red Fog (Above Lv. 88)
-530201	Unsettling Shadow and Rumors (Above Lv. 88)
-530202	Unsettling Shadow and Rumors (Above Lv. 88) (In Progress)
-530203	Unsettling Shadow and Rumors (Above Lv. 88) (Done)
-530204	Unsettling Shadow and Rumors (Above Lv. 88)
-530301	Verge of Light and Darkness (Above Lv. 90)
-530302	Verge of Light and Darkness (Above Lv. 90) (In Progress)
-530303	Verge of Light and Darkness (Above Lv. 90) (Done)
-530304	Verge of Light and Darkness (Above Lv. 90)
+530101	Shadow of Terror: Blackish Red Fog (Lv. 88 and Above)
+530102	Shadow of Terror: Blackish Red Fog (Lv. 88 and Above) (In Progress)
+530103	Shadow of Terror: Blackish Red Fog (Lv. 88 and Above) (Done)
+530104	Shadow of Terror: Blackish Red Fog (Lv. 88 and Above)
+530201	Unsettling Shadow and Rumors (Lv. 88 and Above)
+530202	Unsettling Shadow and Rumors (Lv. 88 and Above) (In Progress)
+530203	Unsettling Shadow and Rumors (Lv. 88 and Above) (Done)
+530204	Unsettling Shadow and Rumors (Lv. 88 and Above)
+530301	Verge of Light and Darkness (Lv. 90 and Above)
+530302	Verge of Light and Darkness (Lv. 90 and Above) (In Progress)
+530303	Verge of Light and Darkness (Lv. 90 and Above) (Done)
+530304	Verge of Light and Darkness (Lv. 90 and Above)
 530400	You can use the old roll of paper to begin the quest.
-530401	For the Forgotten Heroes (Above Lv. 90)
-530402	For the Forgotten Heroes (Above Lv. 90) (In Progress)
-530403	For the Forgotten Heroes (Above Lv. 90) (Completed)
-530404	For the Forgotten Heroes (Above Lv. 90)
-530501	Unstoppable Void Efforts (Above Lv. 88)
-530502	Unstoppable Void Efforts (Above Lv. 88) (In Progress)
-530503	Unstoppable Void Efforts (Above Lv. 88) (Done)
-530504	Unstoppable Void Efforts (Above Lv. 88)
-530601	The Corrupt Leader (Above Lv. 90)
-530602	The Corrupt Leader (Above Lv. 90) (In Progress)
-530603	The Corrupt Leader (Above Lv. 90) (Done)
-530604	The Corrupt Leader (Above Lv. 90)
-530701	The Corrupt Leader, His Truth (Above Lv. 90)
-530702	The Corrupt Leader, His Truth (Above Lv. 90) (In Progress)
-530703	The Corrupt Leader, His Truth (Above Lv. 90) (Done)
-530704	The Corrupt Leader, His Truth (Above Lv. 90)
+530401	For the Forgotten Heroes (Lv. 90 and Above)
+530402	For the Forgotten Heroes (Lv. 90 and Above) (In Progress)
+530403	For the Forgotten Heroes (Lv. 90 and Above) (Completed)
+530404	For the Forgotten Heroes (Lv. 90 and Above)
+530501	Unstoppable Void Efforts (Lv. 88 and Above)
+530502	Unstoppable Void Efforts (Lv. 88 and Above) (In Progress)
+530503	Unstoppable Void Efforts (Lv. 88 and Above) (Done)
+530504	Unstoppable Void Efforts (Lv. 88 and Above)
+530601	The Corrupt Leader (Lv. 90 and Above)
+530602	The Corrupt Leader (Lv. 90 and Above) (In Progress)
+530603	The Corrupt Leader (Lv. 90 and Above) (Done)
+530604	The Corrupt Leader (Lv. 90 and Above)
+530701	The Corrupt Leader, His Truth (Lv. 90 and Above)
+530702	The Corrupt Leader, His Truth (Lv. 90 and Above) (In Progress)
+530703	The Corrupt Leader, His Truth (Lv. 90 and Above) (Done)
+530704	The Corrupt Leader, His Truth (Lv. 90 and Above)
 530801	To Not Be Forgotten (Lv. 55-59)
 530802	To Not Be Forgotten (Lv. 55-59) (In Progress)
 530803	To Not Be Forgotten (Lv. 55-59) (Done)
@@ -3713,34 +3806,34 @@
 530902	Mysterious Letter (Lv. 65-69) (In Progress)
 530903	Mysterious Letter (Lv. 65-69) (Done)
 530904	Mysterious Letter (Lv. 65-69)
-531001	Twisted Creation Tree (Above Lv. 90)
-531002	Twisted Creation Tree (Above Lv. 90) (In Progress)
-531003	Twisted Creation Tree (Above Lv. 90) (Done)
-531004	Twisted Creation Tree (Above Lv. 90)
-531101	Day of Rest Is Over (Above Lv. 90)
-531102	Day of Rest Is Over (Above Lv. 90) (In Progress)
-531103	Day of Rest Is Over (Above Lv. 90) (Done)
-531104	Day of Rest Is Over (Above Lv. 90)
-531201	Abandoned Creation of Gods (Above Lv. 90)
-531202	Abandoned Creation of Gods (Above Lv. 90) (In Progress)
-531203	Abandoned Creation of Gods (Above Lv. 90) (Done)
-531204	Abandoned Creation of Gods (Above Lv. 90)
-531501	To the Prison of Darkness (Above Lv. 90)
-531502	To the Prison of Darkness (Above Lv. 90) (In Progress)
-531503	To the Prison of Darkness (Above Lv. 90) (Done)
-531504	To the Prison of Darkness (Above Lv. 90)
-531601	Undecaying Memory of the Past (Above Lv. 90)
-531602	Undecaying Memory of the Past (Above Lv. 90) (In Progress)
-531603	Undecaying Memory of the Past (Above Lv. 90) (Done)
-531604	Undecaying Memory of the Past (Above Lv. 90)
-531701	Witch of Orbis (Above Lv. 95)
-531702	Witch of Orbis (Above Lv. 95) (In Progress)
-531703	Witch of Orbis (Above Lv. 95) (Done)
-531704	Witch of Orbis (Above Lv. 95)
-531801	Decaying Darkness (Above Lv. 95)
-531802	Decaying Darkness (Above Lv. 95) (In progress)
-531803	Decaying Darkness (Above Lv. 95) (Done)
-531804	Decaying Darkness (Above Lv. 95)
+531001	Twisted Creation Tree (Lv. 90 and Above)
+531002	Twisted Creation Tree (Lv. 90 and Above) (In Progress)
+531003	Twisted Creation Tree (Lv. 90 and Above) (Done)
+531004	Twisted Creation Tree (Lv. 90 and Above)
+531101	Day of Rest Is Over (Lv. 90 and Above)
+531102	Day of Rest Is Over (Lv. 90 and Above) (In Progress)
+531103	Day of Rest Is Over (Lv. 90 and Above) (Done)
+531104	Day of Rest Is Over (Lv. 90 and Above)
+531201	Abandoned Creation of Gods (Lv. 90 and Above)
+531202	Abandoned Creation of Gods (Lv. 90 and Above) (In Progress)
+531203	Abandoned Creation of Gods (Lv. 90 and Above) (Done)
+531204	Abandoned Creation of Gods (Lv. 90 and Above)
+531501	To the Prison of Darkness (Lv. 90 and Above)
+531502	To the Prison of Darkness (Lv. 90 and Above) (In Progress)
+531503	To the Prison of Darkness (Lv. 90 and Above) (Done)
+531504	To the Prison of Darkness (Lv. 90 and Above)
+531601	Undecaying Memory of the Past (Lv. 90 and Above)
+531602	Undecaying Memory of the Past (Lv. 90 and Above) (In Progress)
+531603	Undecaying Memory of the Past (Lv. 90 and Above) (Done)
+531604	Undecaying Memory of the Past (Lv. 90 and Above)
+531701	Witch of Orbis (Lv. 95 and Above)
+531702	Witch of Orbis (Lv. 95 and Above) (In Progress)
+531703	Witch of Orbis (Lv. 95 and Above) (Done)
+531704	Witch of Orbis (Lv. 95 and Above)
+531801	Decaying Darkness (Lv. 95 and Above)
+531802	Decaying Darkness (Lv. 95 and Above) (In progress)
+531803	Decaying Darkness (Lv. 95 and Above) (Done)
+531804	Decaying Darkness (Lv. 95 and Above)
 532001	Let's Go to the Central Square (Lv. 1-20)
 532002	Let's Go to the Central Square (Lv. 1-20) (In Progress)
 532003	Let's Go to the Central Square (Lv. 1-20) (Done)
@@ -3792,10 +3885,10 @@
 533002	To the Ruins of Ye Sagira (Lv. 8-20) (In Progress)
 533003	To the Ruins of Ye Sagira (Lv. 8-20) (Done)
 533004	To the Ruins of Ye Sagira (Lv. 8-20)
-533101	Start of Fate (Above Lv. 18)
-533102	Start of Fate (Above Lv. 18) (In Progress)
-533103	Start of Fate (Above Lv. 18) (Done)
-533104	Start of Fate (Above Lv. 18)
+533101	Start of Fate (Lv. 18 and Above)
+533102	Start of Fate (Lv. 18 and Above) (In Progress)
+533103	Start of Fate (Lv. 18 and Above) (Done)
+533104	Start of Fate (Lv. 18 and Above)
 533131	Go to the entrance of the Ruins of Ye Sagira through Gatekeeper Milia in Talking Island Village.
 533201	Tough Road (Lv. 20-40)
 533202	Tough Road (Lv. 20-40) (In Progress)
@@ -3821,44 +3914,44 @@
 533702	Sakum's Influence (Lv. 28-40) (In Progress)
 533703	Sakum's Influence (Lv. 28-40) (Done)
 533704	Sakum's Influence (Lv. 28-40)
-533801	Seize Your Destiny (Above Lv. 85)
-533802	Seize Your Destiny (Above Lv. 85) (In Progress)
-533803	Seize Your Destiny (Above Lv. 85) (Done)
-533804	Seize Your Destiny (Above Lv. 85)
-533901	Fighting the Forgotten (Above Lv. 85)
-533902	Fighting the Forgotten (Above Lv. 85) (In Progress)
-533903	Fighting the Forgotten (Above Lv. 85) (Complete)
-533904	Fighting the Forgotten (Above Lv. 85)
+533801	Seize Your Destiny (Lv. 85 and Above)
+533802	Seize Your Destiny (Lv. 85 and Above) (In Progress)
+533803	Seize Your Destiny (Lv. 85 and Above) (Done)
+533804	Seize Your Destiny (Lv. 85 and Above)
+533901	Fighting the Forgotten (Lv. 85 and Above)
+533902	Fighting the Forgotten (Lv. 85 and Above) (In Progress)
+533903	Fighting the Forgotten (Lv. 85 and Above) (Complete)
+533904	Fighting the Forgotten (Lv. 85 and Above)
 533911	Conversation with Hadel
 533912	Eliminating the Ancient Ghosts
 534001	Revived Power of the Giant
 534002	Revived Power of the Giant (In Progress)
 534003	Revived Power of the Giant (Done)
 534004	Revived Power of the Giant
-534101	Day of Fate - Human Fate (Above Lv. 76)
-534102	Day of Fate - Human Fate (Above Lv. 76) (In Progress)
-534103	Day of Fate - Human Fate (Above Lv. 76) (Done)
-534104	Day of Fate - Human Fate (Above Lv. 76)
-534201	Day of Fate - Elven Fate (Above Lv. 76)
-534202	Day of Fate - Elven Fate (Above Lv. 76) (In Progress)
-534203	Day of Fate - Elven Fate (Above Lv. 76) (Done)
-534204	Day of Fate - Elven Fate (Above Lv. 76)
-534301	Day of Fate - Dark Elven Fate (Above Lv. 76)
-534302	Day of Fate - Dark Elven Fate (Above Lv. 76) (In Progress)
-534303	Day of Fate - Dark Elven Fate (Above Lv. 76) (Done)
-534304	Day of Fate - Dark Elven Fate (Above Lv. 76)
-534401	Day of Fate - Orc's Fate (Above Lv. 76)
-534402	Day of Fate - Orc's Fate (Above Lv. 76) (In Progress)
-534403	Day of Fate - Orc's Fate (Above Lv. 76) (Done)
-534404	Day of Fate - Orc's Fate (Above Lv. 76)
-534501	Day of Fate - Dwarf's Fate (Above Lv. 76)
-534502	Day of Fate - Dwarf's Fate (Above Lv. 76) (In Progress)
-534503	Day of Fate - Dwarf's Fate (Above Lv. 76) (Done)
-534504	Day of Fate - Dwarf's Fate (Above Lv. 76)
-534601	Day of Fate - Kamael's Fate (Above Lv. 76)
-534602	Day of Fate - Kamael's Fate (Above Lv. 76) (In Progress)
-534603	Day of Fate - Kamael's Fate (Above Lv. 76) (Done)
-534604	Day of Fate - Kamael's Fate (Above Lv. 76)
+534101	Day of Fate - Human Fate (Lv. 76 and Above)
+534102	Day of Fate - Human Fate (Lv. 76 and Above) (In Progress)
+534103	Day of Fate - Human Fate (Lv. 76 and Above) (Done)
+534104	Day of Fate - Human Fate (Lv. 76 and Above)
+534201	Day of Fate - Elven Fate (Lv. 76 and Above)
+534202	Day of Fate - Elven Fate (Lv. 76 and Above) (In Progress)
+534203	Day of Fate - Elven Fate (Lv. 76 and Above) (Done)
+534204	Day of Fate - Elven Fate (Lv. 76 and Above)
+534301	Day of Fate - Dark Elven Fate (Lv. 76 and Above)
+534302	Day of Fate - Dark Elven Fate (Lv. 76 and Above) (In Progress)
+534303	Day of Fate - Dark Elven Fate (Lv. 76 and Above) (Done)
+534304	Day of Fate - Dark Elven Fate (Lv. 76 and Above)
+534401	Day of Fate - Orc's Fate (Lv. 76 and Above)
+534402	Day of Fate - Orc's Fate (Lv. 76 and Above) (In Progress)
+534403	Day of Fate - Orc's Fate (Lv. 76 and Above) (Done)
+534404	Day of Fate - Orc's Fate (Lv. 76 and Above)
+534501	Day of Fate - Dwarf's Fate (Lv. 76 and Above)
+534502	Day of Fate - Dwarf's Fate (Lv. 76 and Above) (In Progress)
+534503	Day of Fate - Dwarf's Fate (Lv. 76 and Above) (Done)
+534504	Day of Fate - Dwarf's Fate (Lv. 76 and Above)
+534601	Day of Fate - Kamael's Fate (Lv. 76 and Above)
+534602	Day of Fate - Kamael's Fate (Lv. 76 and Above) (In Progress)
+534603	Day of Fate - Kamael's Fate (Lv. 76 and Above) (Done)
+534604	Day of Fate - Kamael's Fate (Lv. 76 and Above)
 534701	Seven Sign, Destruction Came about like that
 534702	Seven Sign, Destruction Came about like that (In Progress)
 534703	Seven Sign, Destruction Came about like that (Done)
@@ -3875,26 +3968,26 @@
 535002	Mother of Monstrosities (In Progress)
 535003	Mother of Monstrosities (Done)
 535004	Mother of Monstrosities
-535101	Owner of Hall (Above Lv. 95)
-535102	Owner of Hall (Above Lv. 95) (In Progress)
-535103	Owner of Hall (Above Lv. 95) (Done)
-535104	Owner of Hall (Above Lv. 95)
-535201	Legacy of Cruma Tower (Above Lv. 38)
-535202	Legacy of Cruma Tower (Above Lv. 38) (In Progress)
-535203	Legacy of Cruma Tower (Above Lv. 38) (Done)
-535204	Legacy of Cruma Tower (Above Lv. 38)
-535301	Certification of Value (Above Lv. 48)
-535302	Certification of Value (Above Lv. 48) (In Progress)
-535303	Certification of Value (Above Lv. 48) (Done)
-535304	Certification of Value (Above Lv. 48)
-535401	Resurrected Owner of Hall (Above Lv. 95)
-535402	Resurrected Owner of Hall (Above Lv. 95) (In Progress)
-535403	Resurrected Owner of Hall (Above Lv. 95) (Done)
-535404	Resurrected Owner of Hall (Above Lv. 95)
-535701	Altar of Blood that Awakens Destruction (Above Lv. 95)
-535702	Altar of Blood that Awakens Destruction (Above Lv. 95) (In Progress)
-535703	Altar of Blood that Awakens Destruction (Above Lv. 95) (Done)
-535704	Altar of Blood that Awakens Destruction (Above Lv. 95)
+535101	Owner of Hall (Lv. 95 and Above)
+535102	Owner of Hall (Lv. 95 and Above) (In Progress)
+535103	Owner of Hall (Lv. 95 and Above) (Done)
+535104	Owner of Hall (Lv. 95 and Above)
+535201	Legacy of Cruma Tower (Lv. 38 and Above)
+535202	Legacy of Cruma Tower (Lv. 38 and Above) (In Progress)
+535203	Legacy of Cruma Tower (Lv. 38 and Above) (Done)
+535204	Legacy of Cruma Tower (Lv. 38 and Above)
+535301	Certification of Value (Lv. 48 and Above)
+535302	Certification of Value (Lv. 48 and Above) (In Progress)
+535303	Certification of Value (Lv. 48 and Above) (Done)
+535304	Certification of Value (Lv. 48 and Above)
+535401	Resurrected Owner of Hall (Lv. 95 and Above)
+535402	Resurrected Owner of Hall (Lv. 95 and Above) (In Progress)
+535403	Resurrected Owner of Hall (Lv. 95 and Above) (Done)
+535404	Resurrected Owner of Hall (Lv. 95 and Above)
+535701	Altar of Blood that Awakens Destruction (Lv. 95 and Above)
+535702	Altar of Blood that Awakens Destruction (Lv. 95 and Above) (In Progress)
+535703	Altar of Blood that Awakens Destruction (Lv. 95 and Above) (Done)
+535704	Altar of Blood that Awakens Destruction (Lv. 95 and Above)
 535801	Divided Sakum, Poslof (Lv. 33-40)
 535802	Divided Sakum, Poslof (Lv. 33-40) (In Progress)
 535803	Divided Sakum, Poslof (Lv. 33-40) (In Progress)
@@ -3903,10 +3996,10 @@
 535902	Traces of Evil (Lv. 34-40) (In Progress)
 535903	Traces of Evil (Lv. 34-40) (Done)
 535904	Traces of Evil (Lv. 34-40)
-536001	Certification of Fate (Above Lv. 38)
-536002	Certification of Fate (Above Lv. 38) (In Progress)
-536003	Certification of Fate (Above Lv. 38) (Done)
-536004	Certification of Fate (Above Lv. 38)
+536001	Certification of Fate (Lv. 38 and Above)
+536002	Certification of Fate (Lv. 38 and Above) (In Progress)
+536003	Certification of Fate (Lv. 38 and Above) (Done)
+536004	Certification of Fate (Lv. 38 and Above)
 536101	Roles of the Seeker (Lv. 10-20)
 536102	Roles of the Seeker (Lv. 10-20) (In Progress)
 536103	Roles of the Seeker (Lv. 10-20) (Done)
@@ -3937,18 +4030,18 @@
 536603	Ruins Status Update (Lv. 16-25) (Done)
 536604	Ruins Status Update (Lv. 16-25)
 536631	Use the escape scroll in your inventory to go to the Administrative Office in Talking Island.
-536701	Start of Fate (Above Lv. 18)
-536702	Start of Fate (Above Lv. 18) (In Progress)
-536703	Start of Fate (Above Lv. 18) (Done)
-536704	Start of Fate (Above Lv. 18)
+536701	Start of Fate (Lv. 18 and Above)
+536702	Start of Fate (Lv. 18 and Above) (In Progress)
+536703	Start of Fate (Lv. 18 and Above) (Done)
+536704	Start of Fate (Lv. 18 and Above)
 536801	Monster Uprising (Lv. 34-40)
 536802	Monster Uprising (Lv. 34-40) (In Progress)
 536803	Monster Uprising (Lv. 34-40) (Done)
 536804	Monster Uprising (Lv. 34-40)
-536901	Noblesse, Soul Testing (Above Lv. 75)
-536902	Noblesse, Soul Testing (Above Lv. 75) (In Progress)
-536903	Noblesse, Soul Testing (Above Lv. 75) (Done)
-536904	Noblesse, Soul Testing (Above Lv. 75)
+536901	Noblesse, Soul Testing (Lv. 75 and Above)
+536902	Noblesse, Soul Testing (Lv. 75 and Above) (In Progress)
+536903	Noblesse, Soul Testing (Lv. 75 and Above) (Done)
+536904	Noblesse, Soul Testing (Lv. 75 and Above)
 537001	Menacing Times (Lv. 76-81)
 537002	Menacing Times (Lv. 76-81) (In Progress)
 537003	Menacing Times (Lv. 76-81) (Done)
@@ -3976,102 +4069,102 @@
 537204	Purgatory Volvere (Lv. 76-81)
 537250	Please defeat the monster called the Bloody Succubus.
 537251	If what you say is true, this must be very serious.
-537401	That Place Succubus (Above Lv. 80)
-537402	That Place Succubus (Above Lv. 80) (In Progress)
-537403	That Place Succubus (Above Lv. 80) (Done)
-537404	That Place Succubus (Above Lv. 80)
+537401	That Place Succubus (Lv. 80 and Above)
+537402	That Place Succubus (Lv. 80 and Above) (In Progress)
+537403	That Place Succubus (Lv. 80 and Above) (Done)
+537404	That Place Succubus (Lv. 80 and Above)
 537450	Then, I will look forward to your actions.
 537451	Thank you. With your help, we were able to survive a great crisis.
-537501	Succubus Disciples (Above Lv. 80)
-537502	Succubus Disciples (Above Lv. 80) (In Progress)
-537503	Succubus Disciples (Above Lv. 80) (Done)
-537504	Succubus Disciples (Above Lv. 80)
+537501	Succubus Disciples (Lv. 80 and Above)
+537502	Succubus Disciples (Lv. 80 and Above) (In Progress)
+537503	Succubus Disciples (Lv. 80 and Above) (Done)
+537504	Succubus Disciples (Lv. 80 and Above)
 537550	I shall await your safe return.
 537551	You are truly amazing for defeating the Succubus disciples.
 537601	Bloody Good Time
-537602	Bloody Good Time (Above Lv. 80) (In Progress)
-537603	Bloody Good Time (Above Lv. 80) (Done)
-537604	Bloody Good Time (Above Lv. 80)
+537602	Bloody Good Time (Lv. 80 and Above) (In Progress)
+537603	Bloody Good Time (Lv. 80 and Above) (Done)
+537604	Bloody Good Time (Lv. 80 and Above)
 537650	Go and speak with Vice Hierarch Casca.
 537651	Well done! I was right to entrust this to you.
-537701	The Invaded Execution Grounds (Above Lv. 95)
-537702	The Invaded Execution Grounds (Above Lv. 95) (In Progress)
-537703	The Invaded Execution Grounds (Above Lv. 95) (Done)
-537704	The Invaded Execution Grounds (Above Lv. 95)
+537701	The Invaded Execution Grounds (Lv. 95 and Above)
+537702	The Invaded Execution Grounds (Lv. 95 and Above) (In Progress)
+537703	The Invaded Execution Grounds (Lv. 95 and Above) (Done)
+537704	The Invaded Execution Grounds (Lv. 95 and Above)
 537751	Central Fortress Area Patrol
 537752	Western Fortress Area Patrol
 537753	Northern Fortress Area Patrol
 537754	Southeastern Fortress Area Patrol
 537755	Oh, gods! Thank you for sending us an adventurer like $s1!
 537756	The mission is not yet complete.
-537801	Weeding Work (Above Lv. 95)
-537802	Weeding Work (Above Lv. 95) (In Progress)
-537803	Weeding Work (Above Lv. 95) (Done)
-537804	Weeding Work (Above Lv. 95)
+537801	Weeding Work (Lv. 95 and Above)
+537802	Weeding Work (Lv. 95 and Above) (In Progress)
+537803	Weeding Work (Lv. 95 and Above) (Done)
+537804	Weeding Work (Lv. 95 and Above)
 537851	Please help us discover the cause of this chaos.
 537852	Thank you. It will certainly help the research.
-537901	An Uninvited Guest (Above Lv. 95)
-537902	An Uninvited Guest (Above Lv. 95) (In Progress)
-537903	An Uninvited Guest (Above Lv. 95) (Done)
-537904	An Uninvited Guest (Above Lv. 95)
+537901	An Uninvited Guest (Lv. 95 and Above)
+537902	An Uninvited Guest (Lv. 95 and Above) (In Progress)
+537903	An Uninvited Guest (Lv. 95 and Above) (Done)
+537904	An Uninvited Guest (Lv. 95 and Above)
 537921	Summon Scaldisect of Hellfire
 537952	Scaldisect of Hellfire! Be prepared for its attack.
 537953	You obtained a really important result! I will definitely tell the rulers of Dion!
 537954	Well done! Watchman Endrigo of the Guillotine Fortress will give you a new mission, so be sure to speak with him!
-538001	The Executioner's Execution (Above Lv. 95)
-538002	The Executioner's Execution (Above Lv. 95) (In Progress)
-538003	The Executioner's Execution (Above Lv. 95) (Done)
-538004	The Executioner's Execution (Above Lv. 95)
+538001	The Executioner's Execution (Lv. 95 and Above)
+538002	The Executioner's Execution (Lv. 95 and Above) (In Progress)
+538003	The Executioner's Execution (Lv. 95 and Above) (Done)
+538004	The Executioner's Execution (Lv. 95 and Above)
 538051	It is time to put this to an end. Are you ready?
 538052	You defeated the Guillotine of Death... I think that was truly amazing.
 538053	To defeat the Guillotine of Death... How amazing.
-538101	To the Seed of Hellfire (Above Lv. 97)
-538102	To the Seed of Hellfire (Above Lv. 97) (In Progress)
-538103	To the Seed of Hellfire (Above Lv. 97) (Done)
-538104	To the Seed of Hellfire (Above Lv. 97)
+538101	To the Seed of Hellfire (Lv. 97 and Above)
+538102	To the Seed of Hellfire (Lv. 97 and Above) (In Progress)
+538103	To the Seed of Hellfire (Lv. 97 and Above) (Done)
+538104	To the Seed of Hellfire (Lv. 97 and Above)
 538150	Hurry and go find Commander Kbaldir.
 538151	You can reach the Seed of Hellfire through the Seed Teleport Device.
 538152	I will look forward to your activity.
-538201	Day of Liberation (Above Lv. 97)
-538202	Day of Liberation (Above Lv. 97) (In Progress)
-538203	Day of Liberation (Above Lv. 97) (Done)
-538204	Day of Liberation (Above Lv. 97)
+538201	Day of Liberation (Lv. 97 and Above)
+538202	Day of Liberation (Lv. 97 and Above) (In Progress)
+538203	Day of Liberation (Lv. 97 and Above) (Done)
+538204	Day of Liberation (Lv. 97 and Above)
 538250	Now! Drive out that Tauti and his followers!
 538251	We are free! Feel the joy of victory?
-538301	Fergason's Offer (Above Lv. 97)
-538302	Fergason's Offer (Above Lv. 97) (In Progress)
-538303	Fergason's Offer (Above Lv. 97) (Done)
-538304	Fergason's Offer (Above Lv. 97)
+538301	Fergason's Offer (Lv. 97 and Above)
+538302	Fergason's Offer (Lv. 97 and Above) (In Progress)
+538303	Fergason's Offer (Lv. 97 and Above) (Done)
+538304	Fergason's Offer (Lv. 97 and Above)
 538350	Fergason. He is a good Dwarf. Go ahead and meet him.
 538351	Try to handle it discretely rather than drawing attention.
 538352	Hoho. You look pretty useful.
-538401	An Audience With Tauti (Above Lv. 97)
-538402	An Audience With Tauti (Above Lv. 97) (In Progress)
-538403	An Audience With Tauti (Above Lv. 97) (Done)
-538404	An Audience With Tauti (Above Lv. 97)
+538401	An Audience With Tauti (Lv. 97 and Above)
+538402	An Audience With Tauti (Lv. 97 and Above) (In Progress)
+538403	An Audience With Tauti (Lv. 97 and Above) (Done)
+538404	An Audience With Tauti (Lv. 97 and Above)
 538450	Then, I will entrust this to you. Hohoho.
 538451	Mind your manners when you see Lord Tauti, alright?
 538452	Hahaha! Now, my dream can finally come true!
-538501	Red Thread of Fate (Above Lv. 85)
-538502	Red Thread of Fate (Above Lv. 85) (In Progress)
-538503	Red Thread of Fate (Above Lv. 85) (Complete)
-538504	Red Thread of Fate (Above Lv. 85)
-538601	Mysterious Journey (Above Lv. 93)
-538602	Mysterious Journey (Above Lv. 93) (In Progress)
-538603	Mysterious Journey (Above Lv. 93) (Complete)
-538604	Mysterious Journey (Above Lv. 93)
-538701	Soulless One (Above Lv. 93)
-538702	Soulless One (Above Lv. 93) (In Progress)
-538703	Soulless One (Above Lv. 93) (Complete)
-538704	Soulless One (Above Lv. 93)
-538801	Conspiracy Behind Doors (Above Lv. 97)
-538802	Conspiracy Behind Doors (Above Lv. 97) (In Progress)
-538803	Conspiracy Behind Doors (Above Lv. 97) (Complete)
-538804	Conspiracy Behind Doors (Above Lv. 97)
-538901	The Voice of Authority (Above Lv. 97)
-538902	The Voice of Authority (Above Lv. 97) (In Progress)
-538903	The Voice of Authority (Above Lv. 97) (Complete)
-538904	The Voice of Authority (Above Lv. 97)
+538501	Red Thread of Fate (Lv. 85 and Above)
+538502	Red Thread of Fate (Lv. 85 and Above) (In Progress)
+538503	Red Thread of Fate (Lv. 85 and Above) (Complete)
+538504	Red Thread of Fate (Lv. 85 and Above)
+538601	Mysterious Journey (Lv. 93 and Above)
+538602	Mysterious Journey (Lv. 93 and Above) (In Progress)
+538603	Mysterious Journey (Lv. 93 and Above) (Complete)
+538604	Mysterious Journey (Lv. 93 and Above)
+538701	Soulless One (Lv. 93 and Above)
+538702	Soulless One (Lv. 93 and Above) (In Progress)
+538703	Soulless One (Lv. 93 and Above) (Complete)
+538704	Soulless One (Lv. 93 and Above)
+538801	Conspiracy Behind Doors (Lv. 97 and Above)
+538802	Conspiracy Behind Doors (Lv. 97 and Above) (In Progress)
+538803	Conspiracy Behind Doors (Lv. 97 and Above) (Complete)
+538804	Conspiracy Behind Doors (Lv. 97 and Above)
+538901	The Voice of Authority (Lv. 97 and Above)
+538902	The Voice of Authority (Lv. 97 and Above) (In Progress)
+538903	The Voice of Authority (Lv. 97 and Above) (Complete)
+538904	The Voice of Authority (Lv. 97 and Above)
 538951	Eliminate the Pagans in the Anteroom
 539001	Kekropus' Letter (Lv. 40-45)
 539002	Kekropus' Letter (Lv. 40-45) (In Progress)
@@ -4314,87 +4407,87 @@
 544104	Chasing Meccadan (Lv. 81-84)
 544151	Coveting the power of the Seal, huh? Such courage should be rewarded with…death!
 544152	Fools…you have…also…been used…by... Shilen…argh…even if I die, the Seal of Punishment will…arghhh…
-544201	The Annihilated Plains - 1 (Above Lv. 99)
-544202	The Annihilated Plains - 1 (Above Lv. 99) (In Progress)
-544203	The Annihilated Plains - 1 (Above Lv. 99) (Complete)
-544204	The Annihilated Plains - 1 (Above Lv. 99)
-544301	The Annihilated Plains - 2 (Above Lv. 99)
-544302	The Annihilated Plains - 2 (Above Lv. 99) (In Progress)
-544303	The Annihilated Plains - 2 (Above Lv. 99) (Complete)
-544304	The Annihilated Plains - 2 (Above Lv. 99)
-544401	The Origin of Monsters (Above Lv. 99)
-544402	The Origin of Monsters (Above Lv. 99) (In Progress)
-544403	The Origin of Monsters (Above Lv. 99) (Complete)
-544404	The Origin of Monsters (Above Lv. 99)
-544501	An Impending Threat (Above Lv. 99)
-544502	An Impending Threat (Above Lv. 99) (In Progress)
-544503	An Impending Threat (Above Lv. 99) (Complete)
-544504	An Impending Threat (Above Lv. 99)
+544201	The Annihilated Plains - 1 (Lv. 99 and Above)
+544202	The Annihilated Plains - 1 (Lv. 99 and Above) (In Progress)
+544203	The Annihilated Plains - 1 (Lv. 99 and Above) (Complete)
+544204	The Annihilated Plains - 1 (Lv. 99 and Above)
+544301	The Annihilated Plains - 2 (Lv. 99 and Above)
+544302	The Annihilated Plains - 2 (Lv. 99 and Above) (In Progress)
+544303	The Annihilated Plains - 2 (Lv. 99 and Above) (Complete)
+544304	The Annihilated Plains - 2 (Lv. 99 and Above)
+544401	The Origin of Monsters (Lv. 99 and Above)
+544402	The Origin of Monsters (Lv. 99 and Above) (In Progress)
+544403	The Origin of Monsters (Lv. 99 and Above) (Complete)
+544404	The Origin of Monsters (Lv. 99 and Above)
+544501	An Impending Threat (Lv. 97 and Above)
+544502	An Impending Threat (Lv. 97 and Above) (In Progress)
+544503	An Impending Threat (Lv. 97 and Above) (Complete)
+544504	An Impending Threat (Lv. 97 and Above)
 544511	Go to Tuska
 544512	Go to Bruener
-544601	Hit and Run (Above Lv. 99)
-544602	Hit and Run (Above Lv. 99) (In Progress)
-544603	Hit and Run (Above Lv. 99) (Complete)
-544604	Hit and Run (Above Lv. 99)
-544701	Timing is Everything (Above Lv. 99)
-544702	Timing is Everything (Above Lv. 99) (In Progress)
-544703	Timing is Everything (Above Lv. 99) (Complete)
-544704	Timing is Everything (Above Lv. 99)
+544601	Hit and Run (Lv. 99 and Above)
+544602	Hit and Run (Lv. 99 and Above) (In Progress)
+544603	Hit and Run (Lv. 99 and Above) (Complete)
+544604	Hit and Run (Lv. 99 and Above)
+544701	Timing is Everything (Lv. 99 and Above)
+544702	Timing is Everything (Lv. 99 and Above) (In Progress)
+544703	Timing is Everything (Lv. 99 and Above) (Complete)
+544704	Timing is Everything (Lv. 99 and Above)
 544711	Use Nerva's Temporary Prison Key
-545001	A Dark Ambition (Above Lv. 99)
-545002	A Dark Ambition (Above Lv. 99) (In Progress)
-545003	A Dark Ambition (Above Lv. 99) (Complete)
-545004	A Dark Ambition (Above Lv. 99)
-545201	Is it Edible? (Above Lv. 81)
-545202	Is it Edible? (Above Lv. 81) (In Progress)
-545203	Is it Edible? (Above Lv. 81) (Complete)
-545204	Is it Edible? (Above Lv. 81)
-545301	Stopping the Wind Dragon (Above Lv. 95)
-545302	Stopping the Wind Dragon (Above Lv. 95) (In Progress)
-545303	Stopping the Wind Dragon (Above Lv. 95) (Complete)
-545304	Stopping the Wind Dragon (Above Lv. 95)
-545501	Elikia's Letter (Above Lv. 99)
-545502	Elikia's Letter (Above Lv. 99) (In Progress)
-545503	Elikia's Letter (Above Lv. 99) (Complete)
-545504	Elikia's Letter (Above Lv. 99)
+545001	A Dark Ambition (Lv. 99 and Above)
+545002	A Dark Ambition (Lv. 99 and Above) (In Progress)
+545003	A Dark Ambition (Lv. 99 and Above) (Complete)
+545004	A Dark Ambition (Lv. 99 and Above)
+545201	Is it Edible? (Lv. 81 and Above)
+545202	Is it Edible? (Lv. 81 and Above) (In Progress)
+545203	Is it Edible? (Lv. 81 and Above) (Complete)
+545204	Is it Edible? (Lv. 81 and Above)
+545301	Stopping the Wind Dragon (Lv. 95 and Above)
+545302	Stopping the Wind Dragon (Lv. 95 and Above) (In Progress)
+545303	Stopping the Wind Dragon (Lv. 95 and Above) (Complete)
+545304	Stopping the Wind Dragon (Lv. 95 and Above)
+545501	Elikia's Letter (Lv. 99 and Above)
+545502	Elikia's Letter (Lv. 99 and Above) (In Progress)
+545503	Elikia's Letter (Lv. 99 and Above) (Complete)
+545504	Elikia's Letter (Lv. 99 and Above)
 545521	You must activate the Warp Gate behind me in order to teleport to Hellbound.
 545522	Have you made preparations for the mission? There isn't much time.
-545601	Operation: Rescue (Above Lv. 99)
-545602	Operation: Rescue (Above Lv. 99) (In Progress)
-545603	Operation: Rescue (Above Lv. 99) (Complete)
-545604	Operation: Rescue (Above Lv. 99)
+545601	Operation: Rescue (Lv. 99 and Above)
+545602	Operation: Rescue (Lv. 99 and Above) (In Progress)
+545603	Operation: Rescue (Lv. 99 and Above) (Complete)
+545604	Operation: Rescue (Lv. 99 and Above)
 545611	Free the Captives
 545621	I hope they are safe...
 545622	You should be proud of what you have done!
-545701	Kefensis' Hallucination (Above Lv. 99)
-545702	Kefensis' Hallucination (Above Lv. 99) (In Progress)
-545703	Kefensis' Hallucination (Above Lv. 99) (Complete)
-545704	Kefensis' Hallucination (Above Lv. 99)
+545701	Kefensis' Hallucination (Lv. 99 and Above)
+545702	Kefensis' Hallucination (Lv. 99 and Above) (In Progress)
+545703	Kefensis' Hallucination (Lv. 99 and Above) (Complete)
+545704	Kefensis' Hallucination (Lv. 99 and Above)
 545711	Test of the Desert Thirst
 545712	Meeting with the Phantom Monster
 545713	Defeat the Phantom Monster
 545721	You should go with trustworthy comrades!
 545722	An illusion? This place is truly worthy of being called the Mirage Hills.
-545801	To the Desert Quarry (Above Lv. 99)
-545802	To the Desert Quarry (Above Lv. 99) (In Progress)
-545803	To the Desert Quarry (Above Lv. 99) (Complete)
-545804	To the Desert Quarry (Above Lv. 99)
+545801	To the Desert Quarry (Lv. 99 and Above)
+545802	To the Desert Quarry (Lv. 99 and Above) (In Progress)
+545803	To the Desert Quarry (Lv. 99 and Above) (Complete)
+545804	To the Desert Quarry (Lv. 99 and Above)
 545811	Defeat the Evolved Monster
 545821	Can you do this much? Well? Get moving!
 545822	Should I get started?
-545901	A Sick Ambition (Above Lv. 99)
-545902	A Sick Ambition (Above Lv. 99) (In Progress)
-545903	A Sick Ambition (Above Lv. 99) (Complete)
-545904	A Sick Ambition (Above Lv. 99)
+545901	A Sick Ambition (Lv. 99 and Above)
+545902	A Sick Ambition (Lv. 99 and Above) (In Progress)
+545903	A Sick Ambition (Lv. 99 and Above) (Complete)
+545904	A Sick Ambition (Lv. 99 and Above)
 545921	Please defeat Beleth. We must save Hellbound.
 546001	Return of the Alligator Hunter (Lv. 40-46)
 546002	Return of the Alligator Hunter (Lv. 40-46) (In Progress)
 546003	Return of the Alligator Hunter (Lv. 40-46) (Complete)
 546004	Return of the Alligator Hunter (Lv. 40-46)
-546101	Tapping the Power Within (Above Lv. 99)
-546102	Tapping the Power Within (Above Lv. 99) (In Progress)
-546103	Tapping the Power Within (Above Lv. 99) (Complete)
-546104	Tapping the Power Within (Above Lv. 99)
+546101	Tapping the Power Within (Lv. 99 and Above)
+546102	Tapping the Power Within (Lv. 99 and Above) (In Progress)
+546103	Tapping the Power Within (Lv. 99 and Above) (Complete)
+546104	Tapping the Power Within (Lv. 99 and Above)
 546121	Does your fate not weigh upon you?
 546122	This is just the beginning.
 546123	Open the ability screen in the character information screen.\nPress "Adjust Points" to adjust the acquired SP and Ability points.
@@ -4411,10 +4504,14 @@
 546402	Be Prepared for Anything (Lv. 58-65) (In Progress)
 546403	Be Prepared for Anything (Lv. 58-65) (Complete)
 546404	Be Prepared for Anything (Lv. 58-65)
-547201	Winds of Fate: Encroaching Shadows (Above Lv. 85)
-547202	Winds of Fate: Encroaching Shadows (Above Lv. 85) (In Progress)
-547203	Winds of Fate: Encroaching Shadows (Above Lv. 85) (Done)
-547204	Winds of Fate: Encroaching Shadows (Above Lv. 85)
+546501	Soul Frost Sword (Lv. 40 and Above)
+546502	Soul Frost Sword (Lv. 40 and Above) (In Progress)
+546503	Soul Frost Sword (Lv. 40 and Above) (Done)
+546504	Soul Frost Sword (Lv. 40 and Above)
+547201	Winds of Fate: Encroaching Shadows (Lv. 85 and Above)
+547202	Winds of Fate: Encroaching Shadows (Lv. 85 and Above) (In Progress)
+547203	Winds of Fate: Encroaching Shadows (Lv. 85 and Above) (Done)
+547204	Winds of Fate: Encroaching Shadows (Lv. 85 and Above)
 547211	Talk to Zephyra
 547212	Talk to Momet
 547213	Talk to the Black Marketeer of Mammon
@@ -4430,46 +4527,51 @@
 547223	Aeore Healer: Master Healer
 547224	Talk to Hardin
 547225	Talk to Raina
-550101	Embroidered on a Cloak, Part 1: Zaken's Soul (Above Lv. 78)
-550102	Embroidered on a Cloak, Part 1: Zaken's Soul (Above Lv. 78) (In Progress)
-550103	Embroidered on a Cloak, Part 1: Zaken's Soul (Above Lv. 78) (Done)
-550104	Embroidered on a Cloak, Part 1: Zaken's Soul (Above Lv. 78)
-550201	Embroidered on a Cloak, Part 2: Freya's Soul (Above Lv. 82)
-550202	Embroidered on a Cloak, Part 2: Freya's Soul (Above Lv. 82) (In Progress)
-550203	Embroidered on a Cloak, Part 2: Freya's Soul (Above Lv. 82) (Done)
-550204	Embroidered on a Cloak, Part 2: Freya's Soul (Above Lv. 82)
-550301	Embroidered on a Cloak, Part 3: Frintezza's Soul (Above Lv. 80)
-550302	Embroidered on a Cloak, Part 3: Frintezza's Soul (Above Lv. 80) (In Progress)
-550303	Embroidered on a Cloak, Part 3: Frintezza's Soul (Above Lv. 80) (Done)
-550304	Embroidered on a Cloak, Part 3: Frintezza's Soul (Above Lv. 80)
-550401	Jewel of Antharas (Above Lv. 84)
-550402	Jewel of Antharas (Above Lv. 84) (In Progress)
-550403	Jewel of Antharas (Above Lv. 84) (Done)
-550404	Jewel of Antharas (Above Lv. 84)
-550501	Jewel of Valakas (Above Lv. 84)
-550502	Jewel of Valakas (Above Lv. 84) (In Progress)
-550503	Jewel of Valakas (Above Lv. 84) (Done)
-550504	Jewel of Valakas (Above Lv. 84)
-570101	The Road to Destruction (Above Lv. 93)
-570102	The Road to Destruction (Above Lv. 93) (In Progress)
-570103	The Road to Destruction (Above Lv. 93) (Complete)
-570104	The Road to Destruction (Above Lv. 93)
-570201	The Road to Infinity (Above Lv. 95)
-570202	The Road to Infinity (Above Lv. 95) (In Progress)
-570203	The Road to Infinity (Above Lv. 95) (Complete)
-570204	The Road to Infinity (Above Lv. 95)
-570301	Bottle of Istina's Soul (Above Lv. 97)
-570302	Bottle of Istina's Soul (Above Lv. 97) (In Progress)
-570303	Bottle of Istina's Soul (Above Lv. 97) (Complete)
-570304	Bottle of Istina's Soul (Above Lv. 97)
-570401	Bottle of Octavis's Soul (Above Lv. 95)
-570402	Bottle of Octavis's Soul (Above Lv. 95) (In Progress)
-570403	Bottle of Octavis's Soul (Above Lv. 95) (Complete)
-570404	Bottle of Octavis's Soul (Above Lv. 95)
-570501	Bottle of Tauti's Soul (Above Lv. 97)
-570502	Bottle of Tauti's Soul (Above Lv. 97) (In Progress)
-570503	Bottle of Tauti's Soul (Above Lv. 97) (Complete)
-570504	Bottle of Tauti's Soul (Above Lv. 97)
+550101	Embroidered on a Cloak, Part 1: Zaken's Soul (Lv. 78 and Above)
+550102	Embroidered on a Cloak, Part 1: Zaken's Soul (Lv. 78 and Above) (In Progress)
+550103	Embroidered on a Cloak, Part 1: Zaken's Soul (Lv. 78 and Above) (Done)
+550104	Embroidered on a Cloak, Part 1: Zaken's Soul (Lv. 78 and Above)
+550201	Embroidered on a Cloak, Part 2: Freya's Soul (Lv. 82 and Above)
+550202	Embroidered on a Cloak, Part 2: Freya's Soul (Lv. 82 and Above) (In Progress)
+550203	Embroidered on a Cloak, Part 2: Freya's Soul (Lv. 82 and Above) (Done)
+550204	Embroidered on a Cloak, Part 2: Freya's Soul (Lv. 82 and Above)
+550301	Embroidered on a Cloak, Part 3: Frintezza's Soul (Lv. 80 and Above)
+550302	Embroidered on a Cloak, Part 3: Frintezza's Soul (Lv. 80 and Above) (In Progress)
+550303	Embroidered on a Cloak, Part 3: Frintezza's Soul (Lv. 80 and Above) (Done)
+550304	Embroidered on a Cloak, Part 3: Frintezza's Soul (Lv. 80 and Above)
+550401	Jewel of Antharas (Lv. 84 and Above)
+550402	Jewel of Antharas (Lv. 84 and Above) (In Progress)
+550403	Jewel of Antharas (Lv. 84 and Above) (Done)
+550404	Jewel of Antharas (Lv. 84 and Above)
+550501	Jewel of Valakas (Lv. 84 and Above)
+550502	Jewel of Valakas (Lv. 84 and Above) (In Progress)
+550503	Jewel of Valakas (Lv. 84 and Above) (Done)
+550504	Jewel of Valakas (Lv. 84 and Above)
+550601	Diana's Request (Lv. 80 and Above)
+550602	Diana's Request (Lv. 80 and Above) (In Progress)
+550603	Diana's Request (Lv. 80 and Above) (Done)
+550604	Diana's Request (Lv. 80 and Above)
+550611	Talk to Diana
+570101	The Road to Destruction (Lv. 93 and Above)
+570102	The Road to Destruction (Lv. 93 and Above) (In Progress)
+570103	The Road to Destruction (Lv. 93 and Above) (Complete)
+570104	The Road to Destruction (Lv. 93 and Above)
+570201	The Road to Infinity (Lv. 95 and Above)
+570202	The Road to Infinity (Lv. 95 and Above) (In Progress)
+570203	The Road to Infinity (Lv. 95 and Above) (Complete)
+570204	The Road to Infinity (Lv. 95 and Above)
+570301	Bottle of Istina's Soul (Lv. 97 and Above)
+570302	Bottle of Istina's Soul (Lv. 97 and Above) (In Progress)
+570303	Bottle of Istina's Soul (Lv. 97 and Above) (Complete)
+570304	Bottle of Istina's Soul (Lv. 97 and Above)
+570401	Bottle of Octavis's Soul (Lv. 95 and Above)
+570402	Bottle of Octavis's Soul (Lv. 95 and Above) (In Progress)
+570403	Bottle of Octavis's Soul (Lv. 95 and Above) (Complete)
+570404	Bottle of Octavis's Soul (Lv. 95 and Above)
+570501	Bottle of Tauti's Soul (Lv. 97 and Above)
+570502	Bottle of Tauti's Soul (Lv. 97 and Above) (In Progress)
+570503	Bottle of Tauti's Soul (Lv. 97 and Above) (Complete)
+570504	Bottle of Tauti's Soul (Lv. 97 and Above)
 570701	Flames of Sorrow (Lv. 46-51)
 570702	Flames of Sorrow (Lv. 46-51) (In Progress)
 570703	Flames of Sorrow (Lv. 46-51) (Done)
@@ -4495,31 +4597,31 @@
 571203	The Minstrel's Song, Part 1 (Lv. 85-87) (Done)
 571204	The Minstrel's Song, Part 1 (Lv. 85-87)
 571211	Talk to Liberatto
-571301	The Hero's Journey: Bloody Swampland (Above Lv. 85)
-571302	The Hero's Journey: Bloody Swampland (Above Lv. 85) (In Progress)
-571303	The Hero's Journey: Bloody Swampland (Above Lv. 85) (Done)
-571304	The Hero's Journey: Bloody Swampland (Above Lv. 85)
+571301	The Hero's Journey: Bloody Swampland (Lv. 85 and Above)
+571302	The Hero's Journey: Bloody Swampland (Lv. 85 and Above) (In Progress)
+571303	The Hero's Journey: Bloody Swampland (Lv. 85 and Above) (Done)
+571304	The Hero's Journey: Bloody Swampland (Lv. 85 and Above)
 571311	Talk to Liberatto
 571312	Talk to Vollodos
 571313	Talk to Vollodos
-571401	The Hero's Journey: Seed of Annihilation (Above Lv. 85)
-571402	The Hero's Journey: Seed of Annihilation (Above Lv. 85) (In Progress)
-571403	The Hero's Journey: Seed of Annihilation (Above Lv. 85) (Done)
-571404	The Hero's Journey: Seed of Annihilation (Above Lv. 85)
+571401	The Hero's Journey: Seed of Annihilation (Lv. 85 and Above)
+571402	The Hero's Journey: Seed of Annihilation (Lv. 85 and Above) (In Progress)
+571403	The Hero's Journey: Seed of Annihilation (Lv. 85 and Above) (Done)
+571404	The Hero's Journey: Seed of Annihilation (Lv. 85 and Above)
 571411	Talk to Liberatto
 571412	Talk to Klemis
 571413	Talk to Klemis
-571501	The Hero's Journey: Harnak Underground Ruins (Above Lv. 85)
-571502	The Hero's Journey: Harnak Underground Ruins (Above Lv. 85) (In Progress)
-571503	The Hero's Journey: Harnak Underground Ruins (Above Lv. 85) (Done)
-571504	The Hero's Journey: Harnak Underground Ruins (Above Lv. 85)
+571501	The Hero's Journey: Harnak Underground Ruins (Lv. 85 and Above)
+571502	The Hero's Journey: Harnak Underground Ruins (Lv. 85 and Above) (In Progress)
+571503	The Hero's Journey: Harnak Underground Ruins (Lv. 85 and Above) (Done)
+571504	The Hero's Journey: Harnak Underground Ruins (Lv. 85 and Above)
 571511	Talk to Liberatto
 571512	Talk to Hadel
 571513	Talk to Hadel
-571601	The Hero's Journey: Kartia's Labyrinth (Above Lv. 85)
-571602	The Hero's Journey: Kartia's Labyrinth (Above Lv. 85) (In Progress)
-571603	The Hero's Journey: Kartia's Labyrinth (Above Lv. 85) (Done)
-571604	The Hero's Journey: Kartia's Labyrinth (Above Lv. 85)
+571601	The Hero's Journey: Kartia's Labyrinth (Lv. 85 and Above)
+571602	The Hero's Journey: Kartia's Labyrinth (Lv. 85 and Above) (In Progress)
+571603	The Hero's Journey: Kartia's Labyrinth (Lv. 85 and Above) (Done)
+571604	The Hero's Journey: Kartia's Labyrinth (Lv. 85 and Above)
 571611	Talk to Liberatto
 571612	Talk to Kartia Researcher
 571613	Talk to Kartia Researcher
@@ -4528,10 +4630,10 @@
 571703	The Minstrel's Song, Part 2 (Lv. 88-89) (Done)
 571704	The Minstrel's Song, Part 2 (Lv. 88-89)
 571711	Talk to Miso
-571801	The Hero's Journey: Fairy Settlement (Above Lv. 88)
-571802	The Hero's Journey: Fairy Settlement (Above Lv. 88) (In Progress)
-571803	The Hero's Journey: Fairy Settlement (Above Lv. 88) (Done)
-571804	The Hero's Journey: Fairy Settlement (Above Lv. 88)
+571801	The Hero's Journey: Fairy Settlement (Lv. 88 and Above)
+571802	The Hero's Journey: Fairy Settlement (Lv. 88 and Above) (In Progress)
+571803	The Hero's Journey: Fairy Settlement (Lv. 88 and Above) (Done)
+571804	The Hero's Journey: Fairy Settlement (Lv. 88 and Above)
 571811	Talk to Miso
 571812	Talk to Fairy Refugee
 571813	Talk to Fairy Refugee
@@ -4540,17 +4642,17 @@
 572003	The Minstrel's Song, Part 3 (Lv. 90-91) (Done)
 572004	The Minstrel's Song, Part 3 (Lv. 90-91)
 572011	Talk to Miso
-572101	The Hero's Journey: Prison of Darkness (Above Lv. 90)
-572102	The Hero's Journey: Prison of Darkness (Above Lv. 90) (In Progress)
-572103	The Hero's Journey: Prison of Darkness (Above Lv. 90) (Done)
-572104	The Hero's Journey: Prison of Darkness (Above Lv. 90)
+572101	The Hero's Journey: Prison of Darkness (Lv. 90 and Above)
+572102	The Hero's Journey: Prison of Darkness (Lv. 90 and Above) (In Progress)
+572103	The Hero's Journey: Prison of Darkness (Lv. 90 and Above) (Done)
+572104	The Hero's Journey: Prison of Darkness (Lv. 90 and Above)
 572111	Talk to Miso
 572112	Talk to Opera
 572113	Talk to Opera
-572201	The Hero's Journey: Fortuna (Above Lv. 90)
-572202	The Hero's Journey: Fortuna (Above Lv. 90) (In Progress)
-572203	The Hero's Journey: Fortuna (Above Lv. 90) (Done)
-572204	The Hero's Journey: Fortuna (Above Lv. 90)
+572201	The Hero's Journey: Fortuna (Lv. 90 and Above)
+572202	The Hero's Journey: Fortuna (Lv. 90 and Above) (In Progress)
+572203	The Hero's Journey: Fortuna (Lv. 90 and Above) (Done)
+572204	The Hero's Journey: Fortuna (Lv. 90 and Above)
 572211	Talk to Miso
 572212	Talk to Izael
 572213	Talk to Izael
@@ -4559,17 +4661,17 @@
 572303	The Minstrel's Song, Part 4 (Lv. 92-94) (Done)
 572304	The Minstrel's Song, Part 4 (Lv. 92-94)
 572311	Talk to Marmie
-572401	The Hero's Journey: Isle of Souls (Above Lv. 92)
-572402	The Hero's Journey: Isle of Souls (Above Lv. 92) (In Progress)
-572403	The Hero's Journey: Isle of Souls (Above Lv. 92) (Done)
-572404	The Hero's Journey: Isle of Souls (Above Lv. 92)
+572401	The Hero's Journey: Isle of Souls (Lv. 92 and Above)
+572402	The Hero's Journey: Isle of Souls (Lv. 92 and Above) (In Progress)
+572403	The Hero's Journey: Isle of Souls (Lv. 92 and Above) (Done)
+572404	The Hero's Journey: Isle of Souls (Lv. 92 and Above)
 572411	Talk to Marmie
 572412	Talk to Tauresia
 572413	Talk to Tauresia
-572501	The Hero's Journey: Nornil's Cave (Above Lv. 92)
-572502	The Hero's Journey: Nornil's Cave (Above Lv. 92) (In Progress)
-572503	The Hero's Journey: Nornil's Cave (Above Lv. 92) (Done)
-572504	The Hero's Journey: Nornil's Cave (Above Lv. 92)
+572501	The Hero's Journey: Nornil's Cave (Lv. 92 and Above)
+572502	The Hero's Journey: Nornil's Cave (Lv. 92 and Above) (In Progress)
+572503	The Hero's Journey: Nornil's Cave (Lv. 92 and Above) (Done)
+572504	The Hero's Journey: Nornil's Cave (Lv. 92 and Above)
 572511	Talk to Marmie
 572512	Talk to Verna
 572513	Talk to Verna
@@ -4578,38 +4680,38 @@
 572603	The Minstrel's Song, Part 5 (Lv. 95-96) (Done)
 572604	The Minstrel's Song, Part 5 (Lv. 95-96)
 572611	Talk to Tulesir
-572701	The Hero's Journey: Seal of Shilen (Above Lv. 95)
-572702	The Hero's Journey: Seal of Shilen (Above Lv. 95) (In Progress)
-572703	The Hero's Journey: Seal of Shilen (Above Lv. 95) (Done)
-572704	The Hero's Journey: Seal of Shilen (Above Lv. 95)
+572701	The Hero's Journey: Seal of Shilen (Lv. 95 and Above)
+572702	The Hero's Journey: Seal of Shilen (Lv. 95 and Above) (In Progress)
+572703	The Hero's Journey: Seal of Shilen (Lv. 95 and Above) (Done)
+572704	The Hero's Journey: Seal of Shilen (Lv. 95 and Above)
 572711	Talk to Tulesir
 572712	Talk to Aden Vanguard Member
 572713	Talk to Aden Vanguard Member
-572801	The Hero's Journey: Cemetary (Above Lv. 97)
-572802	The Hero's Journey: Cemetary (Above Lv. 97) (In Progress)
-572803	The Hero's Journey: Cemetary (Above Lv. 97) (Done)
-572804	The Hero's Journey: Cemetary (Above Lv. 97)
+572801	The Hero's Journey: Cemetary (Lv. 97 and Above)
+572802	The Hero's Journey: Cemetary (Lv. 97 and Above) (In Progress)
+572803	The Hero's Journey: Cemetary (Lv. 97 and Above) (Done)
+572804	The Hero's Journey: Cemetary (Lv. 97 and Above)
 572811	Talk to Tulesir
 572812	Talk to Aden Vanguard Member
 572813	Talk to Aden Vanguard Member
-572901	The Hero's Journey: Guillotine Fortress (Above Lv. 95)
-572902	The Hero's Journey: Guillotine Fortress (Above Lv. 95) (In Progress)
-572903	The Hero's Journey: Guillotine Fortress (Above Lv. 95) (Done)
-572904	The Hero's Journey: Guillotine Fortress (Above Lv. 95)
+572901	The Hero's Journey: Guillotine Fortress (Lv. 95 and Above)
+572902	The Hero's Journey: Guillotine Fortress (Lv. 95 and Above) (In Progress)
+572903	The Hero's Journey: Guillotine Fortress (Lv. 95 and Above) (Done)
+572904	The Hero's Journey: Guillotine Fortress (Lv. 95 and Above)
 572911	Talk to Tulesir
 572912	Talk to Mortania
 572913	Talk to Mortania
-573001	The Hero's Journey: Orbis Temple (Above Lv. 95)
-573002	The Hero's Journey: Orbis Temple (Above Lv. 95) (In Progress)
-573003	The Hero's Journey: Orbis Temple (Above Lv. 95) (Done)
-573004	The Hero's Journey: Orbis Temple (Above Lv. 95)
+573001	The Hero's Journey: Orbis Temple (Lv. 95 and Above)
+573002	The Hero's Journey: Orbis Temple (Lv. 95 and Above) (In Progress)
+573003	The Hero's Journey: Orbis Temple (Lv. 95 and Above) (Done)
+573004	The Hero's Journey: Orbis Temple (Lv. 95 and Above)
 573011	Talk to Tulesir
 573012	Talk to Severin
 573013	Talk to Severin
-573101	The Minstrel's Song, Part 6 (Above Lv. 97)
-573102	The Minstrel's Song, Part 6 (Above Lv. 97) (In Progress)
-573103	The Minstrel's Song, Part 6 (Above Lv. 97) (Done)
-573104	The Minstrel's Song, Part 6 (Above Lv. 97)
+573101	The Minstrel's Song, Part 6 (Lv. 97 and Above)
+573102	The Minstrel's Song, Part 6 (Lv. 97 and Above) (In Progress)
+573103	The Minstrel's Song, Part 6 (Lv. 97 and Above) (Done)
+573104	The Minstrel's Song, Part 6 (Lv. 97 and Above)
 573111	Talk to Tulesir
 573201	A Foreign Land (Lv. 1-20)
 573202	A Foreign Land (Lv. 1-20) (In Progress)
@@ -4689,37 +4791,37 @@
 574604	See the World (Lv. 19-25)
 574605	Talk to Astiel
 574606	Talk to Levian
-574701	The Hero's Journey: Pagan Temple (Above Lv. 97)
-574702	The Hero's Journey: Pagan Temple (Above Lv. 97) (In Progress)
-574703	The Hero's Journey: Pagan Temple (Above Lv. 97) (Done)
-574704	The Hero's Journey: Pagan Temple (Above Lv. 97)
+574701	The Hero's Journey: Pagan Temple (Lv. 97 and Above)
+574702	The Hero's Journey: Pagan Temple (Lv. 97 and Above) (In Progress)
+574703	The Hero's Journey: Pagan Temple (Lv. 97 and Above) (Done)
+574704	The Hero's Journey: Pagan Temple (Lv. 97 and Above)
 574711	Talk to Tulesir
 574712	Talk to Kargos
 574713	Talk to Kargos
-574801	Mysterious Suggestion - 1 (Above Lv. 76)
-574802	Mysterious Suggestion - 1 (Above Lv. 76) (In Progress)
-574803	Mysterious Suggestion - 1 (Above Lv. 76) (Done)
-574804	Mysterious Suggestion - 1 (Above Lv. 76)
-574901	Mysterious Suggestion - 2 (Above Lv. 76)
-574902	Mysterious Suggestion - 2 (Above Lv. 76) (In Progress)
-574903	Mysterious Suggestion - 2 (Above Lv. 76) (Done)
-574904	Mysterious Suggestion - 2 (Above Lv. 76)
+574801	Mysterious Suggestion - 1 (Lv. 76 and Above)
+574802	Mysterious Suggestion - 1 (Lv. 76 and Above) (In Progress)
+574803	Mysterious Suggestion - 1 (Lv. 76 and Above) (Done)
+574804	Mysterious Suggestion - 1 (Lv. 76 and Above)
+574901	Mysterious Suggestion - 2 (Lv. 76 and Above)
+574902	Mysterious Suggestion - 2 (Lv. 76 and Above) (In Progress)
+574903	Mysterious Suggestion - 2 (Lv. 76 and Above) (Done)
+574904	Mysterious Suggestion - 2 (Lv. 76 and Above)
 574905	Open the item screen and double-click the empty water bottle!
 574906	If you double-click the empty bottle, it will become full of water.
 574907	Click the flame flower, then double click the trowel.
 574908	If you double-click the Helping Seed item, a Tree of Helping will be planted.
-575101	Winds of Fate: Encounters (Above Lv. 38)
-575102	Winds of Fate: Encounters (Above Lv. 38) (In Progress)
-575103	Winds of Fate: Encounters (Above Lv. 38) (Done)
-575104	Winds of Fate: Encounters (Above Lv. 76)
+575101	Winds of Fate: Encounters (Lv. 38 and Above)
+575102	Winds of Fate: Encounters (Lv. 38 and Above) (In Progress)
+575103	Winds of Fate: Encounters (Lv. 38 and Above) (Done)
+575104	Winds of Fate: Encounters (Lv. 76 and Above)
 575110	Talk to Katalin
 575111	Talk to Ayanthe
 575112	Talk to Raymond
 575113	Kill Skeletons
-575201	Winds of Fate: A Promise (Above Lv. 76)
-575202	Winds of Fate: A Promise (Above Lv. 76) (In Progress)
-575203	Winds of Fate: A Promise (Above Lv. 76) (Done)
-575204	Winds of Fate: A Promise (Above Lv. 76)
+575201	Winds of Fate: A Promise (Lv. 76 and Above)
+575202	Winds of Fate: A Promise (Lv. 76 and Above) (In Progress)
+575203	Winds of Fate: A Promise (Lv. 76 and Above) (Done)
+575204	Winds of Fate: A Promise (Lv. 76 and Above)
 575211	Talk to Karla
 575212	Talk to Siegmund
 575213	Talk to Lombert
@@ -4728,10 +4830,10 @@
 575216	Talk to the Ghost
 575217	A Place of Vengeance
 575218	Giselle Von Hellmann
-575301	Winds of Fate: Choices (Above Lv. 85)
-575302	Winds of Fate: Choices (Above Lv. 85) (In Progress)
-575303	Winds of Fate: Choices (Above Lv. 85) (Done)
-575304	Winds of Fate: Choices (Above Lv. 85)
+575301	Winds of Fate: Choices (Lv. 85 and Above)
+575302	Winds of Fate: Choices (Lv. 85 and Above) (In Progress)
+575303	Winds of Fate: Choices (Lv. 85 and Above) (Done)
+575304	Winds of Fate: Choices (Lv. 85 and Above)
 575310	Talk to Arkenias
 575311	Nebulite Eye: Crystal Eye
 575312	Nebulite Watch: Broken Stone of Purity
@@ -4754,15 +4856,15 @@
 575602	An Interdimensional Draft (Lv. 20-99) (In Progress)
 575603	An Interdimensional Draft (Lv. 20-99) (Complete)
 575604	An Interdimensional Draft (Lv. 20-99)
-575701	Quieting the Storm (Above Lv. 24)
-575702	Quieting the Storm (Above Lv. 24) (In Progress)
-575703	Quieting the Storm (Above Lv. 24) (Complete)
-575704	Quieting the Storm (Above Lv. 24)
+575701	Quieting the Storm (Lv. 24 and Above)
+575702	Quieting the Storm (Lv. 24 and Above) (In Progress)
+575703	Quieting the Storm (Lv. 24 and Above) (Complete)
+575704	Quieting the Storm (Lv. 24 and Above)
 575711	Immense Windima or Giant Windima
-575801	The Oath of the Wind (Above Lv. 28)
-575802	The Oath of the Wind (Above Lv. 28) (In Progress)
-575803	The Oath of the Wind (Above Lv. 28) (Complete)
-575804	The Oath of the Wind (Above Lv. 28)
+575801	The Oath of the Wind (Lv. 28 and Above)
+575802	The Oath of the Wind (Lv. 28 and Above) (In Progress)
+575803	The Oath of the Wind (Lv. 28 and Above) (Complete)
+575804	The Oath of the Wind (Lv. 28 and Above)
 575811	Ask Pio for a Summon
 576001	Letters from the Queen: Orc Barracks (Lv. 30-39)
 576002	Letters from the Queen: Orc Barracks (Lv. 30-39) (In Progress)
@@ -4770,53 +4872,53 @@
 576004	Letters from the Queen: Orc Barracks (Lv. 30-39)
 576011	Talk to Levian
 576012	Talk to Piotur
-576101	An Orc in Love (Above Lv. 30)
-576102	An Orc in Love (Above Lv. 30) (In Progress)
-576103	An Orc in Love (Above Lv. 30) (Complete)
-576104	An Orc in Love (Above Lv. 30)
+576101	An Orc in Love (Lv. 30 and Above)
+576102	An Orc in Love (Lv. 30 and Above) (In Progress)
+576103	An Orc in Love (Lv. 30 and Above) (Complete)
+576104	An Orc in Love (Lv. 30 and Above)
 576111	Kill Turek Orcs
-576201	Marionette Spirit (Above Lv. 34)
-576202	Marionette Spirit (Above Lv. 34) (In Progress)
-576203	Marionette Spirit (Above Lv. 34) (Complete)
-576204	Marionette Spirit (Above Lv. 34)
-576301	Terrifying Chertuba (Above Lv. 34)
-576302	Terrifying Chertuba (Above Lv. 34) (In Progress)
-576303	Terrifying Chertuba (Above Lv. 34) (Complete)
-576304	Terrifying Chertuba (Above Lv. 34)
+576201	Marionette Spirit (Lv. 34 and Above)
+576202	Marionette Spirit (Lv. 34 and Above) (In Progress)
+576203	Marionette Spirit (Lv. 34 and Above) (Complete)
+576204	Marionette Spirit (Lv. 34 and Above)
+576301	Terrifying Chertuba (Lv. 34 and Above)
+576302	Terrifying Chertuba (Lv. 34 and Above) (In Progress)
+576303	Terrifying Chertuba (Lv. 34 and Above) (Complete)
+576304	Terrifying Chertuba (Lv. 34 and Above)
 576311	Kill Elite Turek Orcs
 576312	Chertuba's Illusion or Chertuba's Mirage
-576401	Free Spirit (Above Lv. 38)
-576402	Free Spirit (Above Lv. 38) (In Progress)
-576403	Free Spirit (Above Lv. 38) (Done)
-576404	Free Spirit (Above Lv. 38)
+576401	Free Spirit (Lv. 38 and Above)
+576402	Free Spirit (Lv. 38 and Above) (In Progress)
+576403	Free Spirit (Lv. 38 and Above) (Done)
+576404	Free Spirit (Lv. 38 and Above)
 576411	Free the Imprisoned Spirits
-576601	A New Craft (Above Lv. 40)
-576602	A New Craft (Above Lv. 40) (In Progress)
-576603	A New Craft (Above Lv. 40) (Done)
-576604	A New Craft (Above Lv. 40)
-576701	A Whole New Level of Alchemy (Above Lv. 97)
-576702	A Whole New Level of Alchemy (Above Lv. 97) (In Progress)
-576703	A Whole New Level of Alchemy (Above Lv. 97) (Done)
-576704	A Whole New Level of Alchemy (Above Lv. 97)
+576601	A New Craft (Lv. 40 and Above)
+576602	A New Craft (Lv. 40 and Above) (In Progress)
+576603	A New Craft (Lv. 40 and Above) (Done)
+576604	A New Craft (Lv. 40 and Above)
+576701	A Whole New Level of Alchemy (Lv. 97 and Above)
+576702	A Whole New Level of Alchemy (Lv. 97 and Above) (In Progress)
+576703	A Whole New Level of Alchemy (Lv. 97 and Above) (Done)
+576704	A Whole New Level of Alchemy (Lv. 97 and Above)
 576901	Letters from the Queen: Cruma Tower, Part 1 (Lv. 40-45)
 576902	Letters from the Queen: Cruma Tower, Part 1 (Lv. 40-45) (In Progress)
 576903	Letters from the Queen: Cruma Tower, Part 1 (Lv. 40-45) (Done)
 576904	Letters from the Queen: Cruma Tower, Part 1 (Lv. 40-45)
 576911	Talk to Sylvain
 576912	Talk to Lorain
-577001	In Search of the Grail (Above Lv. 40)
-577002	In Search of the Grail (Above Lv. 40) (In Progress)
-577003	In Search of the Grail (Above Lv. 40) (Done)
-577004	In Search of the Grail (Above Lv. 40)
-577101	Volatile Power (Above Lv. 44)
-577102	Volatile Power (Above Lv. 44) (In Progress)
-577103	Volatile Power (Above Lv. 44) (Done)
-577104	Volatile Power (Above Lv. 44)
+577001	In Search of the Grail (Lv. 40 and Above)
+577002	In Search of the Grail (Lv. 40 and Above) (In Progress)
+577003	In Search of the Grail (Lv. 40 and Above) (Done)
+577004	In Search of the Grail (Lv. 40 and Above)
+577101	Volatile Power (Lv. 44 and Above)
+577102	Volatile Power (Lv. 44 and Above) (In Progress)
+577103	Volatile Power (Lv. 44 and Above) (Done)
+577104	Volatile Power (Lv. 44 and Above)
 577111	Find the Hidden Crusher
-577201	Reports from Cruma Tower, Part 1 (Above Lv. 45)
-577202	Reports from Cruma Tower, Part 1 (Above Lv. 45) (In Progress)
-577203	Reports from Cruma Tower, Part 1 (Above Lv. 45) (Done)
-577204	Reports from Cruma Tower, Part 1 (Above Lv. 45)
+577201	Reports from Cruma Tower, Part 1 (Lv. 45 and Above)
+577202	Reports from Cruma Tower, Part 1 (Lv. 45 and Above) (In Progress)
+577203	Reports from Cruma Tower, Part 1 (Lv. 45 and Above) (Done)
+577204	Reports from Cruma Tower, Part 1 (Lv. 45 and Above)
 577211	Ask Janssen to Summon an Owl
 577212	Talk to the Owl
 577401	Letters from the Queen: Cruma Tower, Part 2 (Lv. 46-50)
@@ -4825,21 +4927,21 @@
 577404	Letters from the Queen: Cruma Tower, Part 2 (Lv. 46-50)
 577411	Talk to Sylvain
 577412	Talk to Rombel
-577501	In Search of an Ancient Giant (Above Lv. 46)
-577502	In Search of an Ancient Giant (Above Lv. 46) (In Progress)
-577503	In Search of an Ancient Giant (Above Lv. 46) (Done)
-577504	In Search of an Ancient Giant (Above Lv. 46)
+577501	In Search of an Ancient Giant (Lv. 46 and Above)
+577502	In Search of an Ancient Giant (Lv. 46 and Above) (In Progress)
+577503	In Search of an Ancient Giant (Lv. 46 and Above) (Done)
+577504	In Search of an Ancient Giant (Lv. 46 and Above)
 577511	Go to Underground Lv. 2
-577601	The Wrath of the Giants (Above Lv. 48)
-577602	The Wrath of the Giants (Above Lv. 48) (In Progress)
-577603	The Wrath of the Giants (Above Lv. 48) (Done)
-577604	The Wrath of the Giants (Above Lv. 48)
+577601	The Wrath of the Giants (Lv. 48 and Above)
+577602	The Wrath of the Giants (Lv. 48 and Above) (In Progress)
+577603	The Wrath of the Giants (Lv. 48 and Above) (Done)
+577604	The Wrath of the Giants (Lv. 48 and Above)
 577611	Find the Broken Device
 577612	Talk to the Ancient Giant
-577701	Reports from Cruma Tower, Part 2 (Above Lv. 49)
-577702	Reports from Cruma Tower, Part 2 (Above Lv. 49) (In Progress)
-577703	Reports from Cruma Tower, Part 2 (Above Lv. 49) (Done)
-577704	Reports from Cruma Tower, Part 2 (Above Lv. 49)
+577701	Reports from Cruma Tower, Part 2 (Lv. 49 and Above)
+577702	Reports from Cruma Tower, Part 2 (Lv. 49 and Above) (In Progress)
+577703	Reports from Cruma Tower, Part 2 (Lv. 49 and Above) (Done)
+577704	Reports from Cruma Tower, Part 2 (Lv. 49 and Above)
 577711	Ask Belkadhi to Summon an Owl
 577712	Talk to the Owl
 577901	Letters from the Queen: Sea of Spores (Lv. 52-57)
@@ -4984,25 +5086,25 @@
 580903	The Hero's Journey: Blazing Swamp (Lv. 97-99) (Done)
 580904	The Hero's Journey: Blazing Swamp (Lv. 97-99)
 580905	Talk to Harp Zu Hestui
-581101	Exalted, One Who Faces the Limit (Above Lv. 99)
-581102	Exalted, One Who Faces the Limit (Above Lv. 99) (In Progress)
-581103	Exalted, One Who Faces the Limit (Above Lv. 99) (Done)
-581104	Exalted, One Who Faces the Limit (Above Lv. 99)
+581101	Exalted, One Who Faces the Limit (Lv. 99 and Above)
+581102	Exalted, One Who Faces the Limit (Lv. 99 and Above) (In Progress)
+581103	Exalted, One Who Faces the Limit (Lv. 99 and Above) (Done)
+581104	Exalted, One Who Faces the Limit (Lv. 99 and Above)
 581111	16 Ability Points
-581201	Facing Sadness (Above Lv. 99)
-581202	Facing Sadness (Above Lv. 99) (In Progress)
-581203	Facing Sadness (Above Lv. 99) (Done)
-581204	Facing Sadness (Above Lv. 99)
+581201	Facing Sadness (Lv. 99 and Above)
+581202	Facing Sadness (Lv. 99 and Above) (In Progress)
+581203	Facing Sadness (Lv. 99 and Above) (Done)
+581204	Facing Sadness (Lv. 99 and Above)
 581211	Defeat Target Monsters
-581301	For Glory (Above Lv. 99)
-581302	For Glory (Above Lv. 99) (In Progress)
-581303	For Glory (Above Lv. 99) (Done)
-581304	For Glory (Above Lv. 99)
+581301	For Glory (Lv. 99 and Above)
+581302	For Glory (Lv. 99 and Above) (In Progress)
+581303	For Glory (Lv. 99 and Above) (Done)
+581304	For Glory (Lv. 99 and Above)
 581311	Participate in the Ceremony of Chaos
-581401	Befitting of the Status (Above Lv. 99)
-581402	Befitting of the Status (Above Lv. 99) (In Progress)
-581403	Befitting of the Status (Above Lv. 99) (Done)
-581404	Befitting of the Status (Above Lv. 99)
+581401	Befitting of the Status (Lv. 99 and Above)
+581402	Befitting of the Status (Lv. 99 and Above) (In Progress)
+581403	Befitting of the Status (Lv. 99 and Above) (Done)
+581404	Befitting of the Status (Lv. 99 and Above)
 581411	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=10814&reply=101">Lady's Hairpin</button>
 581412	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=10814&reply=102">Party Hat</button>
 581413	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=10814&reply=103">Daisy Hairpin</button>
@@ -5035,138 +5137,138 @@
 581464	Pirate King Hat
 581465	Pirate's Eyepatch
 581466	Arrow-pierced Apple
-581501	Step Up (Above Lv. 99)
-581502	Step Up (Above Lv. 99) (In Progress)
-581503	Step Up (Above Lv. 99) (Done)
-581504	Step Up (Above Lv. 99)
+581501	Step Up (Lv. 99 and Above)
+581502	Step Up (Lv. 99 and Above) (In Progress)
+581503	Step Up (Lv. 99 and Above) (Done)
+581504	Step Up (Lv. 99 and Above)
 581511	World Chat
-581701	Exalted, One Who Overcomes the Limit (Above Lv. 99)
-581702	Exalted, One Who Overcomes the Limit (Above Lv. 99) (In Progress)
-581703	Exalted, One Who Overcomes the Limit (Above Lv. 99) (Done)
-581704	Exalted, One Who Overcomes the Limit (Above Lv. 99)
+581701	Exalted, One Who Overcomes the Limit (Lv. 99 and Above)
+581702	Exalted, One Who Overcomes the Limit (Lv. 99 and Above) (In Progress)
+581703	Exalted, One Who Overcomes the Limit (Lv. 99 and Above) (Done)
+581704	Exalted, One Who Overcomes the Limit (Lv. 99 and Above)
 581711	Reach Lv. 100
 581801	Confronting a Giant Monster (Above Lv.99)
 581802	Confronting a Giant Monster (Above Lv.99) (In Progress)
 581803	Confronting a Giant Monster (Above Lv.99) (Done)
 581804	Confronting a Giant Monster (Above Lv.99)
 581811	Defeat Earth Wyrm or Obtain a Dark Soul Stone
-581901	For Honor (Above Lv. 99)
-581902	For Honor (Above Lv. 99) (In Progress)
-581903	For Honor (Above Lv. 99) (Done)
-581904	For Honor (Above Lv. 99)
+581901	For Honor (Lv. 99 and Above)
+581902	For Honor (Lv. 99 and Above) (In Progress)
+581903	For Honor (Lv. 99 and Above) (Done)
+581904	For Honor (Lv. 99 and Above)
 581911	Participate in the Olympiad
-582001	Relationships Befitting of the Status (Above Lv. 99)
-582002	Relationships Befitting of the Status (Above Lv. 99) (In Progress)
-582003	Relationships Befitting of the Status (Above Lv. 99) (Done)
-582004	Relationships Befitting of the Status (Above Lv. 99)
-582101	Helping Others (Above Lv. 99)
-582102	Helping Others (Above Lv. 99) (In Progress)
-582103	Helping Others (Above Lv. 99) (Done)
-582104	Helping Others (Above Lv. 99)
-582301	Exalted, One Who Shatters the Limit (Above Lv. 100)
-582302	Exalted, One Who Shatters the Limit (Above Lv. 100) (In Progress)
-582303	Exalted, One Who Shatters the Limit (Above Lv. 100) (Done)
-582304	Exalted, One Who Shatters the Limit (Above Lv. 100)
+582001	Relationships Befitting of the Status (Lv. 99 and Above)
+582002	Relationships Befitting of the Status (Lv. 99 and Above) (In Progress)
+582003	Relationships Befitting of the Status (Lv. 99 and Above) (Done)
+582004	Relationships Befitting of the Status (Lv. 99 and Above)
+582101	Helping Others (Lv. 99 and Above)
+582102	Helping Others (Lv. 99 and Above) (In Progress)
+582103	Helping Others (Lv. 99 and Above) (Done)
+582104	Helping Others (Lv. 99 and Above)
+582301	Exalted, One Who Shatters the Limit (Lv. 100 and Above)
+582302	Exalted, One Who Shatters the Limit (Lv. 100 and Above) (In Progress)
+582303	Exalted, One Who Shatters the Limit (Lv. 100 and Above) (Done)
+582304	Exalted, One Who Shatters the Limit (Lv. 100 and Above)
 582311	Reach Lv. 100 for the Dual Class
 582351	Congratulations! You've received the Exalted status.
 582401	Confronting the Greatest Danger (Above Lv.99)
 582402	Confronting the Greatest Danger (Above Lv.99) (In Progress)
 582403	Confronting the Greatest Danger (Above Lv.99) (Done)
 582404	Confronting the Greatest Danger (Above Lv.99)
-582501	For Victory (Above Lv. 100)
-582502	For Victory (Above Lv. 100) (In Progress)
-582503	For Victory (Above Lv. 100) (Done)
-582504	For Victory (Above Lv. 100)
+582501	For Victory (Lv. 100 and Above)
+582502	For Victory (Lv. 100 and Above) (In Progress)
+582503	For Victory (Lv. 100 and Above) (Done)
+582504	For Victory (Lv. 100 and Above)
 582511	Participate in the Dimensional Raid
-582601	Luck Befitting of the Status (Above Lv. 100)
-582602	Luck Befitting of the Status (Above Lv. 100) (In Progress)
-582603	Luck Befitting of the Status (Above Lv. 100) (Done)
-582604	Luck Befitting of the Status (Above Lv. 100)
-582701	Step Up to Lead (Above Lv. 100)
-582702	Step Up to Lead (Above Lv. 100) (In Progress)
-582703	Step Up to Lead (Above Lv. 100) (Done)
-582704	Step Up to Lead (Above Lv. 100)
+582601	Luck Befitting of the Status (Lv. 100 and Above)
+582602	Luck Befitting of the Status (Lv. 100 and Above) (In Progress)
+582603	Luck Befitting of the Status (Lv. 100 and Above) (Done)
+582604	Luck Befitting of the Status (Lv. 100 and Above)
+582701	Step Up to Lead (Lv. 100 and Above)
+582702	Step Up to Lead (Lv. 100 and Above) (In Progress)
+582703	Step Up to Lead (Lv. 100 and Above) (Done)
+582704	Step Up to Lead (Lv. 100 and Above)
 582711	Party/Association Leader Bonus
-582901	In Search of the Cause (Lv. 100~)
-582902	In Search of the Cause (Lv. 100~) (In Progress)
-582903	In Search of the Cause (Lv. 100~) (Done)
-582904	In Search of the Cause (Lv. 100~)
+582901	In Search of the Cause (Lv. 100 and Above)
+582902	In Search of the Cause (Lv. 100 and Above) (In Progress)
+582903	In Search of the Cause (Lv. 100 and Above) (Done)
+582904	In Search of the Cause (Lv. 100 and Above)
 582911	Go to the Blackbird Campsite
 582912	Talk to Ferin
 582913	Talk to Cyphona
-583001	The Lost Garden of Spirits (Lv. 100~)
-583002	The Lost Garden of Spirits (Lv. 100~) (In Progress)
-583003	The Lost Garden of Spirits (Lv. 100~) (Done)
-583004	The Lost Garden of Spirits (Lv. 100~)
-583101	Unbelievable Sight (Lv. 100~)
-583102	Unbelievable Sight (Lv. 100~) (In Progress)
-583103	Unbelievable Sight (Lv. 100~) (Done)
-583104	Unbelievable Sight (Lv. 100~)
-583201	Energy of Sadness and Anger (Lv. 100~)
-583202	Energy of Sadness and Anger (Lv. 100~) (In Progress)
-583203	Energy of Sadness and Anger (Lv. 100~) (Done)
-583204	Energy of Sadness and Anger (Lv. 100~)
-583301	Put the Queen of Spirits to Sleep (Lv. 100~)
-583302	Put the Queen of Spirits to Sleep (Lv. 100~) (In Progress)
-583303	Put the Queen of Spirits to Sleep (Lv. 100~) (Done)
-583304	Put the Queen of Spirits to Sleep (Lv. 100~)
-583601	Disappeared Clan Member (Lv. 101~)
-583602	Disappeared Clan Member (Lv. 101~) (In Progress)
-583603	Disappeared Clan Member (Lv. 101~) (Done)
-583604	Disappeared Clan Member (Lv. 101~)
+583001	The Lost Garden of Spirits (Lv. 100 and Above)
+583002	The Lost Garden of Spirits (Lv. 100 and Above) (In Progress)
+583003	The Lost Garden of Spirits (Lv. 100 and Above) (Done)
+583004	The Lost Garden of Spirits (Lv. 100 and Above)
+583101	Unbelievable Sight (Lv. 100 and Above)
+583102	Unbelievable Sight (Lv. 100 and Above) (In Progress)
+583103	Unbelievable Sight (Lv. 100 and Above) (Done)
+583104	Unbelievable Sight (Lv. 100 and Above)
+583201	Energy of Sadness and Anger (Lv. 100 and Above)
+583202	Energy of Sadness and Anger (Lv. 100 and Above) (In Progress)
+583203	Energy of Sadness and Anger (Lv. 100 and Above) (Done)
+583204	Energy of Sadness and Anger (Lv. 100 and Above)
+583301	Put the Queen of Spirits to Sleep (Lv. 100 and Above)
+583302	Put the Queen of Spirits to Sleep (Lv. 100 and Above) (In Progress)
+583303	Put the Queen of Spirits to Sleep (Lv. 100 and Above) (Done)
+583304	Put the Queen of Spirits to Sleep (Lv. 100 and Above)
+583601	Disappeared Clan Member (Lv. 101 and Above)
+583602	Disappeared Clan Member (Lv. 101 and Above) (In Progress)
+583603	Disappeared Clan Member (Lv. 101 and Above) (Done)
+583604	Disappeared Clan Member (Lv. 101 and Above)
 583610	Talk to Elikia
-583701	Looking for the Blackbird Clan Member (Lv. 101~)
-583702	Looking for the Blackbird Clan Member (Lv. 101~) (In Progress)
-583703	Looking for the Blackbird Clan Member (Lv. 101~) (Done)
-583704	Looking for the Blackbird Clan Member (Lv. 101~)
+583701	Looking for the Blackbird Clan Member (Lv. 101 and Above)
+583702	Looking for the Blackbird Clan Member (Lv. 101 and Above) (In Progress)
+583703	Looking for the Blackbird Clan Member (Lv. 101 and Above) (Done)
+583704	Looking for the Blackbird Clan Member (Lv. 101 and Above)
 583710	Talk to Glenkinchie
-583801	The Reason For Not Being Able to Get Out (Lv. 101~)
-583802	The Reason For Not Being Able to Get Out (Lv. 101~) (In Progress)
-583803	The Reason For Not Being Able to Get Out (Lv. 101~) (Done)
-583804	The Reason For Not Being Able to Get Out (Lv. 101~)
+583801	The Reason For Not Being Able to Get Out (Lv. 101 and Above)
+583802	The Reason For Not Being Able to Get Out (Lv. 101 and Above) (In Progress)
+583803	The Reason For Not Being Able to Get Out (Lv. 101 and Above) (Done)
+583804	The Reason For Not Being Able to Get Out (Lv. 101 and Above)
 583810	Talk to Hurak
 583811	Defeat the Embryo
-583901	Blackbird's Name Value (Lv. 101~)
-583902	Blackbird's Name Value (Lv. 101~) (In Progress)
-583903	Blackbird's Name Value (Lv. 101~) (Done)
-583904	Blackbird's Name Value (Lv. 101~)
+583901	Blackbird's Name Value (Lv. 101 and Above)
+583902	Blackbird's Name Value (Lv. 101 and Above) (In Progress)
+583903	Blackbird's Name Value (Lv. 101 and Above) (Done)
+583904	Blackbird's Name Value (Lv. 101 and Above)
 583910	Talk to Laffian
 583911	Defeat the Embryo
-584001	Time to Recover (Lv. 101~)
-584002	Time to Recover (Lv. 101~) (In Progress)
-584003	Time to Recover (Lv. 101~) (Done)
-584004	Time to Recover (Lv. 101~)
+584001	Time to Recover (Lv. 101 and Above)
+584002	Time to Recover (Lv. 101 and Above) (In Progress)
+584003	Time to Recover (Lv. 101 and Above) (Done)
+584004	Time to Recover (Lv. 101 and Above)
 584010	Talk to Sherry
 584011	Defeat the Embryo
-584101	Deep Inside Atelia Fortress (Lv. 101~)
-584102	Deep Inside Atelia Fortress (Lv. 101~) (In Progress)
-584103	Deep Inside Atelia Fortress (Lv. 101~) (Done)
-584104	Deep Inside Atelia Fortress (Lv. 101~)
+584101	Deep Inside Atelia Fortress (Lv. 101 and Above)
+584102	Deep Inside Atelia Fortress (Lv. 101 and Above) (In Progress)
+584103	Deep Inside Atelia Fortress (Lv. 101 and Above) (Done)
+584104	Deep Inside Atelia Fortress (Lv. 101 and Above)
 584105	Talk to Kaysia
-584301	Anomaly in the Enchanted Valley (Lv. 100~)
-584302	Anomaly in the Enchanted Valley (Lv. 100~) (In Progress)
-584303	Anomaly in the Enchanted Valley (Lv. 100~) (Done)
-584304	Anomaly in the Enchanted Valley (Lv. 100~)
+584301	Anomaly in the Enchanted Valley (Lv. 100 and Above)
+584302	Anomaly in the Enchanted Valley (Lv. 100 and Above) (In Progress)
+584303	Anomaly in the Enchanted Valley (Lv. 100 and Above) (Done)
+584304	Anomaly in the Enchanted Valley (Lv. 100 and Above)
 584305	Talk to Mimyu
-584401	Bloody Battle - Seizing Supplies (Lv. 101~)
-584402	Bloody Battle - Seizing Supplies (Lv. 101~) (In Progress)
-584403	Bloody Battle - Seizing Supplies (Lv. 101~) (Done)
-584404	Bloody Battle - Seizing Supplies (Lv. 101~)
+584401	Bloody Battle - Seizing Supplies (Lv. 101 and Above)
+584402	Bloody Battle - Seizing Supplies (Lv. 101 and Above) (In Progress)
+584403	Bloody Battle - Seizing Supplies (Lv. 101 and Above) (Done)
+584404	Bloody Battle - Seizing Supplies (Lv. 101 and Above)
 584405	Supply Guards
-584501	Bloody Battle - Disturbance (Lv. 101~)
-584502	Bloody Battle - Disturbance (Lv. 101~) (In Progress)
-584503	Bloody Battle - Disturbance (Lv. 101~) (Done)
-584504	Bloody Battle - Disturbance (Lv. 101~)
+584501	Bloody Battle - Rescue the Smiths (Lv. 101 and Above)
+584502	Bloody Battle - Rescue the Smiths (Lv. 101 and Above) (In Progress)
+584503	Bloody Battle - Rescue the Smiths (Lv. 101 and Above) (Done)
+584504	Bloody Battle - Rescue the Smiths (Lv. 101 and Above)
 584505	Rescuing Karrod
 584506	Rescuing Aios
-584507	Rescuing Bronk
+584507	You dare steal our supplies?!
 584508	Rescuing Brunon
 584509	Rescuing Sumari
 584510	Rescuing Lansia
-584601	Bloody Battle - Meeting the Commander (Lv. 101~)
-584602	Bloody Battle - Meeting the Commander (Lv. 101~) (In Progress)
-584603	Bloody Battle - Meeting the Commander (Lv. 101~) (Done)
-584604	Bloody Battle - Meeting the Commander (Lv. 101~)
+584601	Bloody Battle - Meeting the Commander (Lv. 101 and Above)
+584602	Bloody Battle - Meeting the Commander (Lv. 101 and Above) (In Progress)
+584603	Bloody Battle - Meeting the Commander (Lv. 101 and Above) (Done)
+584604	Bloody Battle - Meeting the Commander (Lv. 101 and Above)
 584605	Defeat Burnstein
 584606	Talk to Devianne
 1000001	A non-permitted target has been discovered.
@@ -5780,7 +5882,7 @@
 1010096	Fellmere Harvesting Grounds (Lv. 17)
 1010097	Ruins of Agony (Lv. 25)
 1010098	Abandoned Camp (Lv. 21)
-1010099	Red Rock Ridge
+1010099	Red Rock Ridge (Lv. 30)
 1010100	Langk Lizardmen Dwellings (Lv. 16)
 1010101	Ruins of Despair (Lv. 30)
 1010102	Windawood Manor (Lv. 22)
@@ -6255,6 +6357,8 @@
 1010742	Whispering Woods
 1010743	Blackbird Campsite (Lv.100)
 1010744	Enchanted Valley (Lv. 100)
+1010745	Gludio Airship Wharf
+1010746	Underground Gainak
 1029350	What took so long? I waited for ever.
 1029351	I must ask Librarian Sophia about the book.
 1029352	This library... It's huge but there aren't many useful books, right?
@@ -6317,7 +6421,7 @@
 1032339	Do you see a scroll icon? Go that location.
 1032340	To your right the Administrative district and to the left is the Museum.
 1032341	When you use the teleporter, you can go to the Ruins of Ye Sagira.
-1032342	Have you been to Ruins of Ye Sagira?ﾠ You have to go at least once.
+1032342	Have you been to Ruins of Ye Sagira?  You have to go at least once.
 1032343	Training Ground is located straight ahead.
 1032344	While training in the Training Grounds, it becomes progressively difficult.
 1032345	Training Grounds access? You need to speak with Pantheon in the Museum.
@@ -6343,7 +6447,7 @@
 1034103	My summons are not afraid of Shilen's monsters.
 1034104	What do I feel when I kill Shilen's monsters? Recoil.
 1034105	Creatures Resurrected - Defend Yourself
-1034106	Creatures Resurrected - ﾠFirst Wave
+1034106	Creatures Resurrected -  First Wave
 1034107	Creatures Resurrected - Second Wave
 1034108	Creatures Resurrected - Third Wave
 1034109	Creatures Resurrected - Fourth Wave
@@ -8761,7 +8865,7 @@
 1801321	Vanguard of Aden! We have returned.
 1801322	Defeat all the monsters!
 1801323	You can no longer live here. Have a taste of the dimensional poison.
-1801324	ﾠNot bad for a bunch of humans. I'm leaving!
+1801324	 Not bad for a bunch of humans. I'm leaving!
 1801325	The ritual is complete. Now, I will show you hell.
 1801326	You puny insects don't know your place. You cannot stop me.
 1801327	No... How could this be... I can't go back to Nihil like this...
@@ -10268,6 +10372,264 @@
 1803015	Don't even think about leaving this place alive.
 1803016	Unit 7 Commander
 1803017	Unit 7 Elite Soldier
+1803018	The teleport gate to the 2nd floor has been activated.
+1803019	It looks like Captain Adolph wants to talk to the Party Leader. Go talk to Adolph.
+1803020	The teleport gate to the 3rd floor has been activated.
+1803021	You've successfully attacked the Command Post and defeated Commander Burnstein.
+1803022	Cannot teleport in the Ceremony of Chaos arena.
+1803023	Cannot teleport while the Olympiad is in progress.
+1803024	The soul will disappear in 30 seconds.
+1803025	The soul will disappear in 20 seconds.
+1803026	The soul will disappear in 10 seconds.
+1803027	The soul will disappear in 5 seconds.
+1803028	The soul will disappear in 4 seconds.
+1803029	The soul will disappear in 3 seconds.
+1803030	The soul will disappear in 2 seconds.
+1803031	The soul will disappear in 1 second.
+1803032	The soul has disappeared.
+1803033	The Soul Crystal has absorbed the soul successfully.
+1803034	The Soul Crystal was unable to absorb the soul.
+1803035	The Soul Crystal has caused a resonance so the level has dropped.
+1803036	Cannot use the Soul Crystal on the target.
+1803037	I've been waiting for you.
+1803038	The Dragonclaw Clan has lost the faith of the people and is hated by everyone.
+1803039	Molly is in danger. Please help her!
+1803040	I will not hand over the Altar of Earth!
+1803041	I'm the shield of the Dragonclaw clan!
+1803042	I failed to live up to my role as the shield of the clan..
+1803043	$s1, you've received the Altar of Earth Sealing Stone.
+1803044	Use the Altar of Earth Sealing Stone to seal the Altar of Earth!
+1803045	The Altar of Earth has been sealed! Now go on to the Altar of Wind!
+1803046	You've successfully sealed the Altar of Earth!
+1803047	Stop the infiltrators!
+1803048	You rebels! I will wipe out all of you!
+1803049	We are being pushed back! Request aid!
+1803050	Let's go! Against the Dragonclaw!
+1803051	We'll take care of this. You go defeat Kelbim!
+1803052	Stupid Haren! He was boasting that he would protect the Altar of Earth..
+1803053	Remove that dirty hand!
+1803054	I give up! Please don't kill me..
+1803055	$s1, you've received the Altar of Wind Sealing Stone.
+1803056	Use the Altar of Wind Sealing Stone to seal the Altar of Wind!
+1803057	The Altar of Wind has been sealed! Now go on to the Dungeon!
+1803058	You've successfully sealed the Altar of Wind!
+1803059	The door to the Dungeon has been opened!
+1803060	My blade is waiting for your blood.
+1803061	You rebels! This is as far as you'll get!
+1803062	You call that an attack?
+1803063	Come out! Hurricane! Cyclone!
+1803064	I can't believe I lost to the likes of you..
+1803065	Krrrrrr!
+1803066	Please let me out!
+1803067	The door to Kelbim's throne has opened!
+1803068	I knew you would come.
+1803069	A lot of people are suffering because of the Dragonclaw and Kelbim!
+1803070	Now is time to burn the Dragonclaw's flag!
+1803071	Kelbim! Punish that guy!
+1803072	Kelbim is on the other side.
+1803073	Please defeat Kelbim no matter what!
+1803074	The door to Kelbim's throne has opened!
+1803075	Protect Kelbim!
+1803076	For Dragonclaw!
+1803077	Punitive creatures! I will make you pay for your rebellion!
+1803078	I'm the master of Dragonclaw!
+1803079	I don't lose to anyone!
+1803080	How did I lose..
+1803081	Are you the leader? I'm so glad you are helping out.
+1803082	I almost died a few times excavating.
+1803083	Since we know of this great treasure, I'll make sure to reward you if we find it.
+1803084	I'm glad you are on my side! I'm excited!
+1803085	Watch out. There are a lot of monsters around here.
+1803086	Are you the ones who will be helping out? Welcome. I've been waiting for you.
+1803087	I had a hard time working by myself. I'm glad you are here now.
+1803088	Don't worry about the reward! We'll find that treasure.
+1803089	I'm glad powerful people like you guys are helping me.
+1803090	Wow! Watch out! Monsters might come out any minute now.
+1803091	Hello! I'm Deton, an archaeologist of the Kingdom of Aden.
+1803092	I don't know what I would've done without you here. Thanks for helping.
+1803093	I'm sure it will be a great treasure, so I'll make sure to reward you accordingly.
+1803094	Glad to have powerful people like you on my side.
+1803095	Watch out! There are monsters everywhere.
+1803096	Oh? This is a Flame Flower! Stand back. The Stakatos will come now.
+1803097	The Flame Flowers can only be saved with the Radiant Heal skill.
+1803098	Be careful. The flower will die if you hit it with another skill.
+1803099	Phew.. Those Stakatos.. They shouldn't come out for a while now.
+1803100	A Flame Flower! Can you believe it? It's a very magical flower.
+1803101	To save a Flame Flower.. Yes, you need to use Radiant Heal!
+1803102	If you try to use any other skill, the flower will die, so be careful.
+1803103	Those nasty Stakatos.. Anyway, it should be fine now.
+1803104	This!! I'm sure I've seen this before.. Yes.. That means, the Stakatos!!
+1803105	To save the Flame Flower you need Heal.. Wait! Radiant Heal! Yes, I'm sure!
+1803106	Well, there's not much difference, right? Or is there..?
+1803107	Anyway, the Stakatos will not come out anymore. Why? Well..
+1803108	Now, on to the next!
+1803109	Hmm? What is this? I don't think I've been around here before.. This eerie feeling..
+1803110	Wah! Save me! Saaaave me! I'll give you a thousand Adena!!!
+1803111	Let's keep going.
+1803112	What's this place? I've never seen this before.. Hmm..
+1803113	Wah! Save me! Please save me!
+1803114	Let's have some fun.
+1803115	Let's see.. I haven't been here before. Have I? I hope we don't run into weird creatures..
+1803116	Eek! Save this Dwarf! I'm just an archaeologist! I'll give you everything I have!!
+1803117	Eeeek! Great! I can't believe you defeated this giant scorpion!
+1803118	Well, let's keep going. Which way do you want to go? Left or right?
+1803119	I have a bad feeling about both, but I'll trust you guys.
+1803120	Oh? You truly are amazing. You actually defeated those nasty guys!
+1803121	The path splits now. Well, let's go! Which way?
+1803122	Both look pretty bad, but we must keep going!
+1803123	Eek! Don't bring it here. Anyway, you really are strong.
+1803124	Let's hurry. Which way? Test your luck at this crossroads.
+1803125	I'm worried either way, but I'll trust you guys.
+1803126	This way? Well, I trust you. I'll be safe, right?
+1803127	What! Look, this place isn't safe either!
+1803128	Eek! What..? Wait! I'll be waiting over there..
+1803129	You are decided? Well, let's hurry!
+1803130	Wahhh! It's dangerous! Watch out!
+1803131	Wait! I mean, good job. I'll just be waiting over there..
+1803132	This way? I see. Okay. I just need to follow you, right?
+1803133	Wahhh! This way was dangerous too! Save me!
+1803134	Huh? I think I saw something. I'll be right back.
+1803135	This way feels much safer. Good choice. The air feels different.
+1803136	Wahhh! What are these monsters! How old do you have be to get that big!
+1803137	Please get rid of these monsters. I'm sure it will be easy for you. I.. Have something to take care of..
+1803138	Okay, it does look better than the other way. The air feels better already.
+1803139	Again!! Please do something about those monsters! Where do they keep coming from?
+1803140	I'll leave those monsters to you. I'll go check out something over there. It's very important.
+1803141	Well, does it matter which way we go? I hope it's better than the other one at least.. Something smells good here.
+1803142	Wahh! Why do these monsters keep coming out? I should hunt them all and make some drinks.. Wah! Don't come near me!
+1803143	Do something about these monsters! Show me your strength! I'll be waiting over there..
+1803144	Oh! I've never been this far. This ancient language.. Isn't it beautiful?
+1803145	It says.. "The Sealed Tablet and the Sealing Device are one body.. The Flame Flowers will be your blessing.."
+1803146	The seal is coming apart! Just a little more!
+1803147	Yes! The seal is gone. Well, you go on ahead. I'll make some rubbed copies first.
+1803148	This.. Looks like instructions on how to remove the seal..
+1803149	Sealed Tablet.. Attack.. The Flame Flowers.. Oh! Plant the Flame Flowers around the tablet and attack it! Now!
+1803150	Yes! The seal is coming apart. Come on, let's do this!
+1803151	The seal is gone! Let's go now! I'll look around once more. You go on ahead!
+1803152	Hmm.. Can you read this? I should've paid more attention in the ancient language class..
+1803153	Well, we should try to destroy the tablet first. Something should happen then, right?
+1803154	Oh, yes! Look at that. The seal is breaking! Just a little more.
+1803155	Wow! The seal is gone! Ohhh! That's a pretty big hole. Well, grab on to my hand, and you may go in first.
+1803156	What's going on? Everyone's fighting very hard for me, I see.
+1803157	Huh? You actually thought we were going to share the treasures? Hah! Nice try.
+1803158	The powerful Tauti! I finally got it! It's mine!! Kahaha.
+1803159	This power.. I can feel it! Hm? Huh? What's this? Gwahhh!
+1803160	You are all fighting so hard for me!
+1803161	You fools! These treasures are mine! I was just using you all. Kuhaha.
+1803162	Tauti! The weapon that grants great power! This is mine now! Kahahaha!
+1803163	Kuh! What's this? I thought I would get more power..! Gwahhh!
+1803164	Nice, nice. I see that everyone's fighting hard for me.
+1803165	I can't believe you actually fell for that. I was just using you. Kahaha.
+1803166	Tauti! So this is Tauti. Give me your power! You are mine! Kahahaha!
+1803167	Kahahaha! I can feel the power. Yes.. This..? What.. This is not it! Gwah!
+1803168	Phew! It's hot in here. I've been here for over twenty years, but this is way too hot.
+1803169	Have I told you? My brothers' names are Ceton and Eton. Hahaha
+1803170	I used to be lean when I was young, but I guess this belly fat comes with age. You could say this is attractive in its own way.
+1803171	I heard that Tyrr Warrior Dwarves can't attack long range when jumping. Is that true? Just wondering..
+1803172	People used to think I was very old when I was a kid, but nowadays, everyone says I look younger than I am! Hahaha.
+1803173	You don't belong here!
+1803174	An evil thing has been sealed here. Do not get any closer.
+1803175	Are you not afraid of the gods' wrath?
+1803176	Do not lust after what's sealed here. It is not yours.
+1803177	I will forgive you if you retreat now.
+1803178	How stupid. Ignorance is a sin. I'll let you go this one time. Go!
+1803179	I cannot let those who were not able to win against themselves advance any further.
+1803180	Gods. Please show your powers to those who seek the devil.
+1803181	Don't even dream about it! Those who are not qualified won't even get a chance!
+1803182	Tauti is a cursed weapon. It must not be awakened.
+1803183	Why don't you believe me!
+1803184	Why are you seeking the devil's weapon? Stop!
+1803185	Do not let things get worse than this.
+1803186	Tauti must remain sealed here.
+1803187	The seal must not be undone.
+1803188	We have infiltrators. Protect the princess!
+1803189	How dare you come in to the princess' room!
+1803190	They came all the way here? We must stop them!
+1803191	Die, you monster!
+1803192	Guhhhh.
+1803193	Are you ready to hear the story?
+1803194	I'll start once everyone is seated.
+1803195	Heh! What should I talk about next? Hmm..
+1803196	Well, which story do you want to hear?
+1803197	I wonder what kind of stories are popular with the customers..
+1803198	Sit down first. I can't start otherwise.
+1803199	Should I start? Let's see if we're ready..
+1803200	I'll be starting now, so take a seat.
+1803201	Which story do you want to hear?
+1803202	I have many stories to tell.
+1803203	Please sit down so that I can start.
+1803204	Well! Whose story should I tell you today?
+1803205	Hurry! Sit down!
+1803206	Whose story do you want to hear?
+1803207	You have to be ready.
+1803208	Ice Knights got in. Defeat the Ice Knights.
+1803209	Ice Knights have appeared. Defeat the Ice Knights.
+1803210	Ifrit!!
+1803211	Arimanes!!
+1803212	Look around. The Flame Flowers have bloomed.
+1803213	A crossroads? I have a bad feeling about this.
+1803214	Left or right? Which way?
+1803215	Look at that Flame Golem. It's terrifying.
+1803216	A bunch of Flame Scarabs appeared. Watch out!
+1803217	Wow, a Sealed Tablet! It says to plant the Flame Flowers around and to attack the tablet.
+1803218	Let's go down this way. I'll be right behind you.
+1803219	There's no future for those who cannot win against themselves.
+1803220	Look at yourself and face yourself.
+1803221	A battle against yourself is more terrifying than death itself.
+1803222	The Mystic Tavern is open now.
+1803223	There's a tavern where you can listen to wonderful stories.
+1803224	Are you looking for the tavern? It's this way.
+1803225	Come on! Chances like these don't come by often.
+1803226	Adventurer! The tavern is this way.
+1803227	Sigh.. Busy as always.
+1803228	How long until we can tell stories to the customers too?
+1803229	I wonder what Hanna will be making today..
+1803230	Hey, you! We don't want drunk customers here.
+1803231	What do you think about our tavern? Isn't it great?
+1803232	You can place your order over there.
+1803233	Just relax and have a drink.
+1803234	Hanna's cooking is the best.
+1803235	You are a regular, right? Thanks for coming again.
+1803236	Here, you can forget about your responsibilities for a while.
+1803237	You can hear the story over there.
+1803238	Oh! It's a Flame Flower that is famous for its miracles!
+1803239	It's a Flame Flower. These should come in handy later on.
+1803240	A crossroads.. I don't know which way we should take.
+1803241	Well, how about you spit on your hand and see..
+1803242	It's a Flame Golem! Watch out!
+1803243	Ahhhh! A Flame Golem! Please help me!
+1803244	That Flame Scarab.. It's terrifying!
+1803245	Please get rid of all the Flame Scarabs!
+1803246	A Sealed Tablet, huh..
+1803247	It looks like something will happen if we attack the Sealed Tablet.
+1803248	Who would have thought there would be a secret region like this! Please! After you.
+1803249	I'll follow you soon. Go on ahead.
+1803250	Thank you for helping. You are the heroes of this era.
+1803251	Moooo, mooo.
+1803252	Baa, baa.
+1803253	Urggghh
+1803254	Urgh
+1803255	What your step.
+1803256	Lupia introduced me here, so that's how I started working here.
+1803257	Is there anything to clean up?
+1803258	I wonder if there's anyone coming from that side.
+1803259	I think we can wait for some more customers.
+1803260	An intense cold is coming. Look around.
+1803261	Use your mouse to move more smoothly.
+1803262	$s1, you obtained a Flame Flower.
+1803263	$s1 obtained a Flame Flower. Amazing!
+1803264	$s1! Look inside your bag. You obtained a Flame Flower.
+1803265	I will go back in 10 minutes. If you have anything to tell me, please hurry.
+1803266	I will go back in 5 minutes. If you have anything to tell me, please hurry.
+1803267	I will go back in 3 minutes. If you have anything to tell me, please hurry.
+1803268	I will go back in 2 minutes. If you have anything to tell me, please hurry.
+1803269	I will go back in 1 minute. If you have anything to tell me, please hurry.
+1803270	I will go back in 30 seconds. If you have anything to tell me, please hurry.
+1803271	I will go back in 20 seconds. If you have anything to tell me, please hurry.
+1803272	I will go back in 10 seconds. If you have anything to tell me, please hurry.
+1803273	If you want to listen to a story, come to me.
+1803274	Ready to listen to a story? Come now.
+1803275	If the story is still in progress, I can tell it again.
 1810363	You are too far from the corpse.
 1810364	Grudge of Ye Sagira victims have been relieved with your tears.
 1811000	Fighter
@@ -11425,7 +11787,7 @@
 10338006	Free me from this binding of light!
 10338007	Destroy the Ghost of Harnak… this corrupted creature.
 10338008	Free me... And I promise you the power of Giants!
-10338009	Fight for me...ﾠ The true leader of all the races!
+10338009	Fight for me...  The true leader of all the races!
 10338010	You may use Scroll of Afterlife from Hermuncus to Awaken.
 10338011	An intruder… interesting.
 10338012	Prove your worth…
@@ -11438,13 +11800,13 @@
 10338019	I want to hear you cry.
 10338020	Mortal!
 10338021	Lets see what you are made of!
-10338022	You will not free Hermuncus.ﾠ
+10338022	You will not free Hermuncus. 
 10338023	You'll have to kill us first!
 10338024	Trying to free Hermuncus…
 10338025	Repent and your death will be quick!
-10338026	You will never break the seal!ﾠ
+10338026	You will never break the seal! 
 10338027	Die traitor!
-10338028	Only the light may pass.ﾠ
+10338028	Only the light may pass. 
 10338029	You are not light. You may not pass.
 10338030	Prove your worth…
 10338031	Are you strong or weak... Of the Light or darkness…
@@ -11452,7 +11814,7 @@
 10338033	Warrior. I've finally got out of seal of light thanks to you.
 10338034	Is strength to defend the world what you wanted?
 10338035	I will awaken you...
-10338036	Receive this power form the ancient Giant.ﾠ
+10338036	Receive this power form the ancient Giant. 
 10338037	Use this new power when the time is right.
 10363001	Resurrected Soul
 11021701	We saw people use Sayune other than the Giant's Minions.

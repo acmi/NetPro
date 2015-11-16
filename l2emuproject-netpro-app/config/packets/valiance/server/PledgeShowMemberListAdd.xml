@@ -8,6 +8,6 @@
 	<dword alias="Class" type="CharacterClass" />
 	<dword alias="Sex" type="Sex" />
 	<dword alias="Race" type="Race" />
-	<dword alias="Member OID" type="ObjectID" /> <!-- ??? -->
+	<dword alias="Member OID" type="ObjectID" />
 	<dword alias="Unit" type="PledgeUnit" />
 </packet>

@@ -21,6 +21,7 @@ import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.Set;
 
 import net.l2emuproject.io.EmptyChecksum;
 import net.l2emuproject.network.mmocore.MMOBuffer;
@@ -30,6 +31,7 @@ import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.game.server.L2GameServerPackets;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
+import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
@@ -69,7 +71,7 @@ public class ToL2PacketHackRawLogVisitor implements HistoricalLogPacketVisitor, 
 	}
 	
 	@Override
-	public void onPacket(ReceivedPacket packet) throws Exception
+	public void onPacket(ReceivedPacket packet, Set<LoggedPacketFlag> flags) throws Exception
 	{
 		final boolean client = packet.getEndpoint().isClient();
 		

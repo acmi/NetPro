@@ -26,9 +26,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOConnection;
 import net.l2emuproject.network.mmocore.MMOLogger;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;
 import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.network.listener.PacketManipulator;

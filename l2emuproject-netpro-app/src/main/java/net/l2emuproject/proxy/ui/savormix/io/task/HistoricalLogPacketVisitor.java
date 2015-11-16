@@ -15,8 +15,11 @@
  */
 package net.l2emuproject.proxy.ui.savormix.io.task;
 
+import java.util.Set;
+
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
+import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 
 /**
  * Defines a visitor of packets in a historical packet log.
@@ -37,9 +40,10 @@ public interface HistoricalLogPacketVisitor
 	 * Requests this visitor to process a packet.
 	 * 
 	 * @param packet packet to visit
+	 * @param flags additional packet info
 	 * @throws Exception if anything goes wrong during processing
 	 */
-	void onPacket(ReceivedPacket packet) throws Exception;
+	void onPacket(ReceivedPacket packet, Set<LoggedPacketFlag> flags) throws Exception;
 	
 	/**
 	 * Called to report end of historical log file.

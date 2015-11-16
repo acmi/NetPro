@@ -17,11 +17,11 @@
 		<byte alias="PvP allowed" type="YesOrNo" />
 		<word alias="Online players" />
 		<word alias="Maximum players" />
-		<byte alias="Game server online" type="YesOrNo" />
+		<byte alias="Online" type="YesOrNo" />
 		<branch id="gs_list" condition="serverlist.ServerListC1">
-			<dword alias="Game server type" type="GameServerTypes" />
+			<dword alias="Type(s)" type="GameServerKind" />
 			<branch id="gs_list" condition="serverlist.ServerListC2">
-				<byte alias="Game server brackets" type="YesOrNo" />
+				<byte alias="Region" />
 			</branch>
 		</branch>
 	</loop>

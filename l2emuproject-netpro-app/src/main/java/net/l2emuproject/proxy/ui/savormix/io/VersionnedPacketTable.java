@@ -49,11 +49,11 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
-import net.l2emuproject.network.IGameProtocolVersion;
-import net.l2emuproject.network.ILoginProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionFactory;
-import net.l2emuproject.network.ProtocolVersionManager;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.ILoginProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionFactory;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;

@@ -3,14 +3,15 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="597" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="1" />
-	<word alias="2" />
-	<dword alias="Member Count" id="index_0" />
-	<loop id="index_0">
-		<dword alias="Member OID" type="ObjectID" />
-		<dword alias="List Position" />
-		<dword alias="Points" />
-		<dword alias="Points" />
-		<dword alias="0" />
+	<dword alias="Spectating" type="YesOrNo" />
+	<word alias="Result" type="coc.CuriousHouseResult" />
+	<dword alias="Maximum challenger count" />
+	<dword alias="Challenger count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Challenger OID" type="ObjectID" />
+		<dword alias="Challenger number" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Lasted for" type="TimeRemaining" />
+		<dword alias="Kills" />
 	</loop>
 </packet>

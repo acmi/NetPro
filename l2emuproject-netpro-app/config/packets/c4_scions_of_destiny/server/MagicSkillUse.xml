@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: this definition might be under a wrong version folder -->
-
 <!-- New WORD indicating skill usage type -->
 <packet id="SM_MAGIC_SKILL_USE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Caster OID" type="ObjectID">
@@ -40,7 +38,7 @@
 
 	<!-- NEW -->
 	<word alias="Usage type" id="use_type" type="skill.SkillUseType" />
-	<branch id="use_type" condition="skill.TargetPoint"> <!-- not verified at this version -->
+	<branch id="use_type" condition="skill.TargetPoint">
 		<dword alias="Ground target X" />
 		<dword alias="Ground target Y" />
 		<dword alias="Ground target Z" />

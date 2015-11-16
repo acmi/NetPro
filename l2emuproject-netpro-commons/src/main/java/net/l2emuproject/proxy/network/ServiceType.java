@@ -15,9 +15,9 @@
  */
 package net.l2emuproject.proxy.network;
 
-import net.l2emuproject.network.IGameProtocolVersion;
-import net.l2emuproject.network.ILoginProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.ILoginProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.util.EnumValues;
 
 /**

@@ -3,5 +3,5 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="591" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="State" /> <!-- 0=disable, 1=enable, 2=participant -->
+	<dword alias="State" type="coc.CuriousHouseState" />
 </packet>

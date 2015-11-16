@@ -175,9 +175,6 @@
 2081	Canabion of Plague
 2082	Canabion of Plague, Doppler
 2083	Canabion of Plague, Void
-2501	Lucky Pig, The Spirit of Fortune
-2502	Wingless Lucky Pig
-2503	Wingless Lucky Pig
 2507	Ancient Kartia Scout
 2508	Ancient Kartia Guard
 2509	Ancient Kartia Watchman
@@ -396,7 +393,7 @@
 5006	Holiday Tree
 5007	Evolution Deliverer, Beginning of Flames
 5008	Evolution Guide, Root of Flames
-5009	Instant Zone Roadblock D￩cor
+5009	Instant Zone Roadblock Décor
 5010	Queen of Hearts, Valentine Messenger
 8401	Jermann, Ancient Kartia's Ruler
 8402	Jermann, Ancient Kartia's Ruler
@@ -565,10 +562,10 @@
 8565	Kamaloka's Treasure Chest
 8566	Kamaloka's Fancy Treasure Chest
 8567	Kamaloka's Treasure Chest
-8568	Katura Fire Altar
-8569	Katura Water Altar
-8570	Katura Dark Altar
-8571	Katura Earth Altar
+8568	Katura Altar of Fire
+8569	Katura Altar of Water
+8570	Katura Altar of Darkness
+8571	Katura Altar of Earth
 8572	invisible1
 8573	Fire Katura
 8574	Ice Katura
@@ -622,6 +619,7 @@
 8622	Baby Bear, Brianna
 8623	Campfire
 8624	Kotatz
+8625	Diana, Contest Participant
 12077	Wolf
 12311	Hatchling of the Wind
 12312	Hatchling of the Stars
@@ -904,14 +902,14 @@
 13268	Aqua Elf
 13269	Hot Weather
 13270	Sultriness
-13271	Young Watermelon
-13272	Defective Watermelon
-13273	Rain Watermelon
-13274	Large Rain Watermelon
-13275	Young Honey Watermelon
-13276	Defective Honey Watermelon
-13277	Rain Honey Watermelon
-13278	Large Rain Honey Watermelon
+13271	Growing Watermelon
+13272	Rotten Watermelon
+13273	Fresh Watermelon
+13274	Plump Watermelon
+13275	Growing Honey Watermelon
+13276	Rotten Honey Watermelon
+13277	Fresh Honey Watermelon
+13278	Plump Honey Watermelon
 13279	Uldie
 13280	Belldandy
 13281	Skooldie, Event manager
@@ -1105,6 +1103,8 @@
 13469	Decoy
 13470	Protection Stone
 13471	[not named in client]
+13472	Little Angel Cat, Love Envoy
+13473	Blue Dynasty Unicorn
 14001	Reanimated Man
 14002	Reanimated Man
 14003	Reanimated Man
@@ -2271,12 +2271,12 @@
 15176	Unicorn Cherub
 15177	Unicorn Cherub
 15178	Unicorn Cherub
-15179	Soul Specter
-15180	Soul Specter
-15181	Soul Specter
-15182	Soul Specter
-15183	Soul Specter
-15184	Soul Specter
+15179	Dark Crusader
+15180	Dark Crusader
+15181	Dark Crusader
+15182	Dark Crusader
+15183	Dark Crusader
+15184	Dark Crusader
 15185	Banshee Queen
 15186	Banshee Queen
 15187	Banshee Queen
@@ -3065,9 +3065,6 @@
 18661	[not named in client]
 18662	[not named in client]
 18663	[not named in client]
-18664	Lucky Pig
-18665	Lucky Pig
-18666	Lucky Pig
 18667	Ward of Death
 18668	Ward of Death
 18669	[not named in client]
@@ -3723,7 +3720,7 @@
 19320	Yin, Spicula Clone Generator
 19321	For Raid Presentation Purposes
 19322	Yuti, Captain
-19323	Raider's Crossroads D￩cor
+19323	Raider's Crossroads Décor
 19324	For Raid Presentation Purposes
 19325	Sticky Mushroom
 19326	For Raid Presentation Purposes
@@ -3880,16 +3877,16 @@
 19477	Generator
 19478	Immariel
 19479	Generator Guard
-19480	Dimensional War D￩cor Transparent 1
-19481	Dimensional War D￩cor Transparent 2
-19482	Dimensional War D￩cor Camp
-19483	Dimensional War D￩cor Clan Hall
-19484	Dimensional War D￩cor Flag
-19485	Dimensional War D￩cor Stake
-19486	Dimensional War D￩cor Relic 1
-19487	Dimensional War D￩cor Relic 2
-19488	Dimensional War D￩cor Ballista 1
-19489	Dimensional War D￩cor Ballista 2
+19480	Dimensional War Décor Transparent 1
+19481	Dimensional War Décor Transparent 2
+19482	Dimensional War Décor Camp
+19483	Dimensional War Décor Clan Hall
+19484	Dimensional War Décor Flag
+19485	Dimensional War Décor Stake
+19486	Dimensional War Décor Relic 1
+19487	Dimensional War Décor Relic 2
+19488	Dimensional War Décor Ballista 1
+19489	Dimensional War Décor Ballista 2
 19490	Seal Remnant
 19491	[not named in client]
 19492	Masa
@@ -3982,7 +3979,38 @@
 19600	Flower Bud
 19601	[not named in client]
 19602	[not named in client]
-19603	[not named in client]
+19603	Training Dummy
+19604	[not named in client]
+19605	Soul
+19606	Flame Flower
+19607	Seal Tombstone
+19608	Seal Device
+19609	[not named in client]
+19610	[not named in client]
+19611	Insurgent Backup Soldier
+19612	[not named in client]
+19613	[not named in client]
+19614	[not named in client]
+19615	[not named in client]
+19616	[not named in client]
+19617	Soul
+19618	Soul
+19619	Soul
+19620	Soul
+19621	Soul
+19622	Soul, Quest
+19623	[not named in client]
+19624	Altar of Earth
+19625	Altar of Wind
+19626	[not named in client]
+19627	Tauti
+19628	Soul
+19629	Soul
+19630	Soul
+19631	Soul
+19632	Soul
+19633	[not named in client]
+19634	Time Bomb, Deton
 20001	Gremlin
 20002	Rabbit
 20003	Goblin
@@ -6360,6 +6388,56 @@
 23674	Unit 7 Commander, Ashen Shadow
 23675	Unit 8 Commander, Ashen Shadow
 23676	Unit 8 Commander, Ashen Shadow
+23677	Fortress Raider, Army Recruit
+23678	Fortress Guardian Captain, Army Recruit
+23679	Atelia Passionate Soldier, Army Recruit
+23680	Flame Golem
+23681	Flame Stakato
+23682	Flame Scorpion
+23683	Seal Archangel
+23684	Seal Angel
+23685	Seal Angel
+23686	Frost Glacier Golem
+23687	Frost Glacier Golem, Frostbringer
+23688	Frost Knight
+23689	Freya
+23690	Kelbim, Dragonclaw Clan Leader
+23691	Haren, Dragonclaw Knight Captain
+23692	Fiora, Dragonclaw Knight Captain
+23693	Typhoon, Dragonclaw Royal Guard Captain
+23694	Royal Guard Knight
+23695	Royal Guard Healer
+23696	Domithan, Dragonclaw Royal Guard
+23697	Knight Soldier
+23698	Knight Archer
+23699	Royal Guard Wizard
+23700	Altar Guardian
+23701	Knight Guard, Dragonclaw Clan
+23702	Duran, Dragonclaw Royal Guard
+23703	Ice Knight, Winter Omen
+23704	Ifrit, Master of Flames
+23705	Arimanes, Master of Flames
+23706	Kelbim's Follower
+23707	Kelbim's Follower
+23708	Kelbim's Follower
+23709	Flame Scarab
+23710	Knight Guardian
+23711	Altar Guardian Soldier
+23712	Altar Guardian Archer
+23713	Altar Guardian Wizard
+23714	Cyclone, Typhoon's Guardian
+23715	Hurricane, Typhoon's Guardian
+23716	Wild Hog Cannon
+23717	Siege Golem
+23718	Glacier Golem
+23719	Frozen Knight
+23720	Panthera
+23721	Maze Buffalo
+23722	Frost Buffalo
+23723	Frost Ursus
+23724	Buffalo
+23725	Ursus
+23726	Frost Glacier Golem
 25001	Greyclaw Kutus, Raid Boss
 25002	Kutus' Escort, Raid Fighter
 25003	Kutus' Pawn, Raid Fighter
@@ -8265,7 +8343,7 @@
 29292	Nerva Orc Elite
 29293	Theor, Dimensional Invader
 29294	Tebird, Dimensional Invader
-29295	Tegape, Dimensional Invader
+29295	Tegaffe, Dimensional Invader
 29296	Nerva Orc Assassin
 29297	Nerva Orc Ambusher
 29298	Varbasion, Dimensional Invader
@@ -11880,9 +11958,9 @@
 33919	Linea, Raid Herald
 33920	Altar of Souls
 33921	Allenos, Sergeant
-33922	Lara the Cat, Disguised from her Superiors, Event Manager
-33923	Lara the Cat's Boss, Event Manager
-33924	Lara the Cat's Buff Test
+33922	Lara, Disguised
+33923	Mr. Boss, The Boss
+33924	Lara's Buff Test
 33925	Chaotic Chronicle, Memory Fragment Manager
 33926	Chaotic Throne, Squash Manager
 33927	Goddess of Destruction, Yogi's Staff Manager
@@ -12041,7 +12119,7 @@
 34080	Pritty, Beauty Merchant
 34081	Supree, Grocer
 34082	Tyke, Rewards Manager
-34083	Eleven, Event Manager
+34083	Nevele, Event Manager
 34084	Piero
 34085	Eleveny, Group Reward Box
 34086	Eleveny
@@ -12114,6 +12192,63 @@
 34153	Kluto, Blacksmith
 34154	Yeniche, Grand Master
 34155	Yuyuria, Wanderer
+34156	Peeves, Fisher
+34157	[not named in client]
+34158	[not named in client]
+34159	[not named in client]
+34160	[not named in client]
+34161	[not named in client]
+34162	[not named in client]
+34163	[not named in client]
+34164	[not named in client]
+34165	[not named in client]
+34166	[not named in client]
+34167	[not named in client]
+34168	[not named in client]
+34169	[not named in client]
+34170	Deton, Archaeologist
+34171	Melisa, Princess
+34172	Sayan, Sage
+34173	Kanna, Knight Captain
+34174	Sirra
+34175	Knight
+34176	Molly
+34177	Molly
+34178	Angora
+34179	Insurgent Messenger
+34180	Settlen, Owner
+34181	Lailly, Madame
+34182	Lollia, Only Daughter
+34183	Hanna, Kitchen Employee
+34184	Brodien, Employee
+34185	Lupia, Employee
+34186	Mei, Employee
+34187	Adventure Guildsman, PC Manager
+34188	Plie, Gatekeeper
+34189	Mistress, Auction House Manager
+34190	Attitude, Grocer
+34191	Tutu, Warehouse Keeper
+34192	Fouette, Warehouse Keeper
+34197	Glissade, Administrative Manager
+34198	Piroue, Administrative Aide
+34199	Melisa, Princess
+34200	Mystic Summoning
+34201	Miss Patch, Master of Exclusives
+34202	Tavern Employee
+34203	Tavern Employee
+34204	Tavern Employee
+34205	Tavern Employee
+34206	Tavern Employee
+34207	Tavern Employee
+34208	Bartman, Blacksmith
+34209	Roa, Assistant
+34210	Red, Wealthy Merchant
+34211	Green, Elder
+34212	Black, Artisan
+34213	Pink, Grocer
+34214	Blue, Bodyguard
+34215	[not named in client]
+34216	[not named in client]
 35010	Mercenary
 35011	Mercenary
 35012	Mercenary

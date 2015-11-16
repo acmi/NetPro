@@ -15,7 +15,7 @@
  */
 package net.l2emuproject.proxy.network;
 
-import static net.l2emuproject.network.LoginProtocolVersion.MODERN;
+import static net.l2emuproject.network.protocol.LoginProtocolVersion.MODERN;
 
 import java.nio.ByteBuffer;
 import java.util.Iterator;
@@ -26,9 +26,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import javolution.util.FastMap;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.network.ILoginProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOLogger;
+import net.l2emuproject.network.protocol.ILoginProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.security.LoginCipher;
 import net.l2emuproject.proxy.network.packets.ProxyRepeatedPacket;
 import net.l2emuproject.util.concurrent.L2ThreadPool;

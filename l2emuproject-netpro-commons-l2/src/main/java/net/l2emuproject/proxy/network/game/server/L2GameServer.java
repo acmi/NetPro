@@ -21,9 +21,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
 
-import net.l2emuproject.network.IGameProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
 import net.l2emuproject.network.mmocore.DataSizeHolder;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.network.security.EmptyCipher;
 import net.l2emuproject.network.security.ICipher;
 import net.l2emuproject.proxy.network.AbstractL2ServerProxy;

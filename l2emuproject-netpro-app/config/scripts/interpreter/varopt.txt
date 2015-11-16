@@ -24970,8 +24970,8 @@
 24970	M. Def. + 13.0 Speed + 7.
 24971	M. Def. + 14.0 Speed + 7.
 24972	M. Def. + 15.0 Speed + 7. P. Skill Damage + 93. MP Consumption - \n3%.
-24973	M. Def. + 16.0 Speed + 7. P. Skill Damage + 93. MP Consumption - \n3%.
-24974	M. Def. + 17.0 Speed + 7. P. Skill Damage + 93. MP Consumption - \n3%.
+24973	M. Def. + 16.0 Speed + 7. P. Skill Damage + 93. MP Consumption - \n3%. P. Critical Damage + 41.3. M. Critical Rate + 20.
+24974	M. Def. + 17.0 Speed + 7. P. Skill Damage + 93. MP Consumption - \n3%. P. Critical Damage + 41.3. M. Critical Rate + 20.
 24975	CON +2
 24976	CON +2, and MEN +2
 24977	INT +2, STR +2, CON +2, MEN +2
@@ -24981,7 +24981,7 @@
 24981	Passive: Speed + 7.
 24982	Active: Can use Blessed Escape. Can be used every \n20 hours.
 24983	Active: Becomes invincible for 7 seconds. Can be u\nsed every 20 hours.
-24984	M. Def. + 18. Speed + 7. P. Skill Damage + 93. MP Consumption - 3%.
+24984	M. Def. + 18. Speed + 7. P. Skill Damage + 93. MP Consumption - 3%. P. Critical Damage + 41.3. M. Critical Rate + 20.
 24985	STR +3, DEX +2, CON +3, INT +3, WIT +2, MEN +3
 24986	P. Def. + 12.19
 24987	M. Def. + 10.51
@@ -30228,13 +30228,13 @@
 30228	M. Def. + 9.0
 30229	M. Def. + 10.0
 30230	M. Def. + 11.0
-30231	M. Def. + 12.0 Speed + 7
-30232	M. Def. + 13.0 Speed + 7, Max HP + 200, Max MP + 200
-30233	M. Def. + 14.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3%
-30234	M. Def. + 15.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3%
-30235	M. Def. + 16.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3%
-30236	M. Def. + 17.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3%
-30237	M. Def. + 18.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3%
+30231	M. Def. + 12.0 Speed + 7 CON +2 and MEN +1
+30232	M. Def. + 13.0 Speed + 7, Max HP + 200, Max MP + 200 STR +1, CON +2, INT +1, MEN +2
+30233	M. Def. + 14.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% Resistance to Water/Fire/Wind/Earth + 20. STR +2, \nDEX +1, CON +2, INT +2, WIT +1, MEN +2
+30234	M. Def. + 15.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% Resistance to Water/Fire/Wind/Earth + 25. Increase\ns Damage Reflect Resistance. STR +2, DEX +1, CON +\n2, INT +2, WIT +1, MEN +2
+30235	M. Def. + 16.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% Resistance to Water/Fire/Wind/Earth + 30. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN +\n 2
+30236	M. Def. + 17.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% Resistance to Water/Fire/Wind/Earth + 35. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN +\n 3
+30237	M. Def. + 18.0 Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% Resistance to Water/Fire/Wind/Earth + 40. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN +\n 3
 30238	Active: Power of Pa'agrio
 30239	Active: Power of Pa'agrio
 30240	Active: Portal of Sayha
@@ -30300,13 +30300,13 @@
 30300	M. Def. + 9
 30301	M. Def. + 10
 30302	M. Def. + 11 Speed + 7
-30303	M. Def. + 12 Speed + 7
-30304	M. Def. + 13 Speed + 7
-30305	M. Def. + 14 Speed + 7
-30306	M. Def. + 15 Speed + 7
-30307	M. Def. + 16 Speed + 7
-30308	M. Def. + 17 Speed + 7
-30309	M. Def. + 18 Speed + 7
+30303	M. Def. + 12 Speed + 7 Max HP + 510\nMax MP + 510\nAttribute Resistance +\n 6\nSTR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, M\nEN + 1
+30304	M. Def. + 13 Speed + 7 Max HP + 520\nMax MP + 520\nSkill MP Consumption -\n 3%\nAttribute Resistance + 12\nSTR + 2, DEX + 2, \nCON + 2, INT + 2, WIT + 2, MEN + 2
+30305	M. Def. + 14 Speed + 7 Max HP + 531\nMax MP + 531\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nAttribute Resi\nstance + 18\nSTR + 3, DEX + 3, CON + 2, INT + 3, W\nIT + 3, MEN + 2
+30306	M. Def. + 15 Speed + 7 Max HP + 536\nMax MP + 536\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nAttribute Resistance + 24\nSTR + 3, DEX + 3,\n CON + 3, INT + 3, WIT + 3, MEN + 3
+30307	M. Def. + 16 Speed + 7 Max HP + 541\nMax MP + 541\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nSkill Cooldown - 3%\nAttribute Resistance + \n30\nSTR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, M\nEN + 3
+30308	M. Def. + 17 Speed + 7 Max HP + 547\nMax MP + 547\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5 Vampiric Rage +\n 5%\nSkill Cooldown - 3%\nReceived Damage - 3%;Att\nribute Resistance + 36\nSTR + 4, DEX + 4, CON + 4,\n INT + 4, WIT + 4, MEN + 4
+30309	M. Def. + 18 Speed + 7 Max HP + 552\nMax MP + 552\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nSkill Cooldown - 3%\nReceived Damage - 3%\nA\nttribute Resistance + 36\nSTR + 4, DEX + 4, CON + \n4, INT + 4, WIT + 4, MEN + 4
 30310	Active: Einhasad's Wrath
 30311	Active: Einhasad's Wrath/Einhasad's Protection
 30312	Active: Einhasad's Wrath/Einhasad's Protection/Ein\nhasad's Silence
@@ -32383,9 +32383,9 @@
 32383	Passive: P. Atk. + 3%.
 32384	Passive: P. Atk. + 4%.
 32385	Passive: P. Atk. + 5%.
-32386	Passive: P. Atk. + 3%.
-32387	Passive: P. Atk. + 4%.
-32388	Passive: P. Atk. + 5%.
+32386	Passive: P. Def. + 3%.
+32387	Passive: P. Def. + 4%.
+32388	Passive: P. Def. + 5%.
 32389	Passive: Atk. Spd. + 3%.
 32390	Passive: Atk. Spd. + 4%.
 32391	Passive: Atk. Spd. + 5%.
@@ -32538,9 +32538,9 @@
 32538	Passive: P. Atk. + 5%.
 32539	Passive: P. Atk. + 6%.
 32540	Passive: P. Atk. + 7%.
-32541	Passive: P. Atk. + 5%.
-32542	Passive: P. Atk. + 6%.
-32543	Passive: P. Atk. + 7%.
+32541	Passive: P. Def. + 5%.
+32542	Passive: P. Def. + 6%.
+32543	Passive: P. Def. + 7%.
 32544	Passive: Atk. Spd. + 5%.
 32545	Passive: Atk. Spd. + 6%.
 32546	Passive: Atk. Spd. + 7%.
@@ -32693,9 +32693,9 @@
 32693	Passive: P. Atk. + 8%.
 32694	Passive: P. Atk. + 9%.
 32695	Passive: P. Atk. + 10%.
-32696	Passive: P. Atk. + 8%.
-32697	Passive: P. Atk. + 9%.
-32698	Passive: P. Atk. + 10%.
+32696	Passive: P. Def. + 8%.
+32697	Passive: P. Def. + 9%.
+32698	Passive: P. Def. + 10%.
 32699	Passive: Atk. Spd. + 8%.
 32700	Passive: Atk. Spd. + 9%.
 32701	Passive: Atk. Spd. + 10%.
@@ -32923,37 +32923,37 @@
 32923	Atk. Spd. + 10%
 32924	Atk. Spd. + 12%
 32925	Atk. Spd. + 15%
-32926	Atk. Spd. + 15%, P. Critical Rate + 30
-32927	Atk. Spd. + 15%, P. Critical Rate + 60
-32928	Atk. Spd. + 15%, P. Critical Rate + 100
-32929	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 5%
-32930	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 10%
-32931	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 15%
-32932	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 15%, P. Atk. + 7 NPC Damage + 10%
+32926	Atk. Spd. + 15%, P. Critical Damage + 3%
+32927	Atk. Spd. + 15%, P. Critical Damage + 6%
+32928	Atk. Spd. + 15%, P. Critical Damage + 10%
+32929	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 5%
+32930	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 10%
+32931	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 15%
+32932	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 15%, P. Atk. + 7 NPC Damage + 10%
 32933	Atk. Spd. + 5%
 32934	Atk. Spd. + 7%
 32935	Atk. Spd. + 10%
 32936	Atk. Spd. + 12%
 32937	Atk. Spd. + 15%
-32938	Atk. Spd. + 15%, P. Critical Rate + 30
-32939	Atk. Spd. + 15%, P. Critical Rate + 60
-32940	Atk. Spd. + 15%, P. Critical Rate + 100
-32941	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 5%
-32942	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 10%
-32943	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 15%
-32944	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 15%, P. Atk. + 7 NPC Damage + 10%
+32938	Atk. Spd. + 15%, P. Critical Damage + 3%
+32939	Atk. Spd. + 15%, P. Critical Damage + 6%
+32940	Atk. Spd. + 15%, P. Critical Damage + 10%
+32941	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 5%
+32942	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 10%
+32943	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 15%
+32944	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 15%, P. Atk. + 7 NPC Damage + 10%
 32945	Atk. Spd. + 5%
 32946	Atk. Spd. + 7%
 32947	Atk. Spd. + 10%
 32948	Atk. Spd. + 12%
 32949	Atk. Spd. + 15%
-32950	Atk. Spd. + 15%, P. Critical Rate + 30
-32951	Atk. Spd. + 15%, P. Critical Rate + 60
-32952	Atk. Spd. + 15%, P. Critical Rate + 100
-32953	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 5%
-32954	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 10%
-32955	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 15%
-32956	Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP\n + 15%, P. Atk. + 7 NPC Damage + 10%
+32950	Atk. Spd. + 15%, P. Critical Damage + 3%
+32951	Atk. Spd. + 15%, P. Critical Damage + 6%
+32952	Atk. Spd. + 15%, P. Critical Damage + 10%
+32953	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 5%
+32954	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 10%
+32955	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 15%
+32956	Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/\nMP + 15%, P. Atk. + 7 NPC Damage + 10%
 32957	Casting Spd. + 5%
 32958	Casting Spd. + 7%
 32959	Casting Spd. + 10%
@@ -32971,13 +32971,13 @@
 32971	Casting Spd. + 10%
 32972	Casting Spd. + 12%
 32973	Casting Spd. + 15%
-32974	Casting Spd. + 15%, M. Critical Rate + 30
-32975	Casting Spd. + 15%, M. Critical Rate + 60
-32976	Casting Spd. + 15%, M. Critical Rate + 100
-32977	Casting Spd. + 15%, M. Critical Rate + 100, Max HP\n/MP + 5%
-32978	Casting Spd. + 15%, M. Critical Rate + 100, Max HP\n/MP + 10%
-32979	Casting Spd. + 15%, M. Critical Rate + 100, Max HP\n/MP + 15%
-32980	Casting Spd. + 15%, M. Critical Rate + 100, Max HP\n/MP + 15%, M. Atk. + 7 NPC Damage + 10%
+32974	Casting Spd. + 15%, M. Critical Damage 3%
+32975	Casting Spd. + 15%, M. Critical Damage 6%
+32976	Casting Spd. + 15%, M. Critical Damage 10%
+32977	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 5%
+32978	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 10%
+32979	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 15%
+32980	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 15%, M. Atk. + 7 NPC Damage + 10%
 40001	Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. C\nan be used in the Olympiad.
 40002	Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. \nCan be used in the Olympiad.
 40003	Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, \nAttribute Def. + 5. Can be used in the Olympiad.

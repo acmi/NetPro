@@ -50,11 +50,12 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.event.ChangeListener;
 import javax.swing.plaf.basic.BasicButtonUI;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ServiceType;
@@ -69,6 +70,7 @@ import net.l2emuproject.proxy.ui.listener.BatchPacketDisplayConfigListener;
 import net.l2emuproject.proxy.ui.savormix.IconUtils;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList.ListCaptureState;
+import net.l2emuproject.proxy.ui.savormix.component.packet.PacketTableAccessor;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend.CaptureSettingAccessor;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
@@ -128,8 +130,9 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	 * Creates a tabbed pane to display packets for each connection.
 	 * 
 	 * @param captureSettingAccessor link to the details panel
+	 * @param selectionChangeListener handling tab selection
 	 */
-	public ConnectionPane(CaptureSettingAccessor captureSettingAccessor)
+	public ConnectionPane(CaptureSettingAccessor captureSettingAccessor, ChangeListener selectionChangeListener)
 	{
 		super(SwingConstants.TOP, JTabbedPane.WRAP_TAB_LAYOUT);
 		
@@ -159,6 +162,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		getPlaceHolder().add(empty);
 		
 		addChangeListener(e -> requestUpdateSummary(null));
+		addChangeListener(selectionChangeListener);
 		
 		if (LoadOption.HIDE_LOG_CONSOLE.isNotSet())
 			addTab(CONSOLE, null, new ConsolePanel(), "View messages logged to console.");
@@ -218,6 +222,36 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			return;
 			
 		_captureSettingAccessor.onOpen(requestor);
+	}
+	
+	/**
+	 * Returns the currently visible packet table accessor or {@code null}.
+	 * 
+	 * @return visible table or {@code null}
+	 */
+	public PacketTableAccessor getCurrentTable()
+	{
+		final Component c = getSelectedComponent();
+		if (!(c instanceof PacketList))
+			return null;
+			
+		final PacketList pl = (PacketList)c;
+		return pl.getAccessor();
+	}
+	
+	/**
+	 * Returns whether the operator has disabled packet capture for the specific connection.
+	 * 
+	 * @param client client connection
+	 * @return whether capture is disabled
+	 */
+	public boolean isCaptureDisabledFor(Proxy client)
+	{
+		if (_captureSettingAccessor.isGlobalCaptureDisabled())
+			return true;
+			
+		final PacketList pl = _live.get(client);
+		return pl != null ? pl.isSessionCaptureDisabled() : false;
 	}
 	
 	/**

@@ -30,10 +30,10 @@ import java.nio.file.StandardOpenOption;
 import javax.swing.SwingUtilities;
 
 import net.l2emuproject.io.EmptyChecksum;
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
 import net.l2emuproject.network.mmocore.DataSizeHolder;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="LS_CM_AQ_LOGIN__TOKEN" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Session ID" />
+	<dword alias="GG (1)" />
+	<dword alias="GG (2)" />
+	<dword alias="GG (3)" />
+	<dword alias="GG (4)" />
+	
+	<astring alias="AuthProviderCode" />
+	<astring alias="AuthnToken" />
+	
+	<dword alias="8" />
+	<word alias="0" />
+	<byte alias="0/1" />
+	
+	<astring alias="Empty" /> <!-- Literal value; probably one of the cmdline params not yet in use -->
+	
+	<!-- The rest is padding, except for 4th last DWORD, which is the checksum -->
+</packet>

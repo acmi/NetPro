@@ -17,7 +17,7 @@ package net.l2emuproject.proxy.network.listener;
 
 import java.nio.ByteBuffer;
 
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.Proxy;
 
 /**

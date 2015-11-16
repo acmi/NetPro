@@ -15,7 +15,7 @@
  */
 package net.l2emuproject.proxy.network.login.client;
 
-import static net.l2emuproject.network.LoginProtocolVersion.MODERN;
+import static net.l2emuproject.network.protocol.LoginProtocolVersion.MODERN;
 import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_C3_C4_TRANSFER_KEY;
 import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_MODERN_KEY;
 
@@ -25,10 +25,10 @@ import java.nio.channels.SocketChannel;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import net.l2emuproject.network.ILoginProtocolVersion;
-import net.l2emuproject.network.LoginProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
 import net.l2emuproject.network.mmocore.DataSizeHolder;
+import net.l2emuproject.network.protocol.ILoginProtocolVersion;
+import net.l2emuproject.network.protocol.LoginProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.network.security.ICipher;
 import net.l2emuproject.network.security.LoginCipher;
 import net.l2emuproject.proxy.network.AbstractL2ClientProxy;

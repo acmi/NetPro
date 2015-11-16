@@ -15,8 +15,8 @@
  */
 package net.l2emuproject.proxy.network.meta;
 
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.exception.InvalidPacketOpcodeSchemeException;
 import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationException;
 import net.l2emuproject.proxy.network.packets.IPacketSource;

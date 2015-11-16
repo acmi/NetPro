@@ -24,6 +24,7 @@ import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInter
  */
 public class ElementType extends ScriptedZeroBasedIntegerIdInterpreter
 {
+	/** Constructs this interpreter. */
 	public ElementType()
 	{
 		super(new InterpreterMetadata(-2), "N/A", "None", "Fire", "Water", "Wind", "Earth", "Holy", "Dark");

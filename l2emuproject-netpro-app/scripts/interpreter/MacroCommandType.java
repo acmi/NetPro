@@ -15,20 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a command's type.
  * 
  * @author savormix
  */
-public class MacroCommandType extends ScriptedLegacyIntegerIdInterpreter
+public class MacroCommandType extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public MacroCommandType()
 	{
-		addInterpretation(1, "Skill");
-		addInterpretation(3, "Chat/Action");
-		addInterpretation(4, "Shortcut");
+		super(new InterpreterMetadata(1), "Skill", null, "Chat/Action", "Shortcut", null, "Delay");
 	}
 }

@@ -214,36 +214,36 @@
 214	Lv. 2 Legendary INT Dye INT + 4, WIT - 2, Water Resistance + 10
 215	Lv. 2 Legendary WIT Dye WIT + 4, MEN - 2, Wind Resistance + 10
 216	Lv. 2 Legendary MEN Dye MEN + 4, INT - 2, Holy Resistance + 10
-217	Lv. 3 Giant's STR Dye STR + 5, DEX - 4
-218	Lv. 3 Giant's DEX Dye DEX + 5, CON - 4
-219	Lv. 3 Giant's CON Dye CON + 5, STR - 4
-220	Lv. 3 Giant's INT Dye INT + 5, WIT - 4
-221	Lv. 3 Giant's WIT Dye WIT + 5, MEN - 4
-222	Lv. 3 Giant's MEN Dye MEN + 5, INT - 4
-223	Lv. 3 Ancient STR Dye STR + 5, DEX - 4, Fire Resistance + 15
-224	Lv. 3 Ancient DEX Dye DEX + 5, CON - 4, Earth Resistance + 15
-225	Lv. 3 Ancient CON Dye CON + 5, STR - 4, Dark Resistance + 15
-226	Lv. 3 Ancient INT Dye INT + 5, WIT - 4, Water Resistance + 15
-227	Lv. 3 Ancient WIT Dye WIT + 5, MEN - 4, Wind Resistance + 15
-228	Lv. 3 Ancient MEN Dye MEN + 5, INT - 4, Holy Resistance + 15
-229	Lv. 3 Legendary STR Dye STR + 5, DEX - 3, Fire Resistance + 15
-230	Lv. 3 Legendary DEX Dye DEX + 5, CON - 3, Earth Resistance + 15
-231	Lv. 3 Legendary CON Dye CON + 5, STR - 3, Dark Resistance + 15
-232	Lv. 3 Legendary INT Dye INT + 5, WIT - 3, Water Resistance + 15
-233	Lv. 3 Legendary WIT Dye WIT + 5, MEN - 3, Wind Resistance + 15
-234	Lv. 3 Legendary MEN Dye MEN + 5, INT - 3, Holy Resistance + 15
-235	Lv. 4 Giant's STR Dye STR + 5, DEX - 2
-236	Lv. 4 Giant's DEX Dye DEX + 5, CON - 2
-237	Lv. 4 Giant's CON Dye CON + 5, STR - 2
-238	Lv. 4 Giant's INT Dye INT + 5, WIT - 2
-239	Lv. 4 Giant's WIT Dye WIT + 5, MEN - 2
-240	Lv. 4 Giant's MEN Dye MEN + 5, INT - 2
-241	Lv. 4 Ancient STR Dye STR + 5, DEX - 2, Fire Resistance + 20
-242	Lv. 4 Ancient DEX Dye DEX + 5, CON - 2, Earth Resistance + 20
-243	Lv. 4 Ancient CON Dye CON + 5, STR - 2, Dark Resistance + 20
-244	Lv. 4 Ancient INT Dye INT + 5, WIT - 2, Water Resistance + 20
-245	Lv. 4 Ancient WIT Dye WIT + 5, MEN - 2, Wind Resistance + 20
-246	Lv. 4 Ancient MEN Dye MEN + 5, INT - 2, Holy Resistance + 20
+217	Lv. 3 Giant's STR Dye STR + 5, DEX -  4
+218	Lv. 3 Giant's DEX Dye DEX + 5, CON -  4
+219	Lv. 3 Giant's CON Dye CON + 5, STR -  4
+220	Lv. 3 Giant's INT Dye INT + 5, WIT -  4
+221	Lv. 3 Giant's WIT Dye WIT + 5, MEN -  4
+222	Lv. 3 Giant's MEN Dye MEN + 5, INT -  4
+223	Lv. 3 Ancient STR Dye STR + 5, DEX -  4, Fire Resistance + 15
+224	Lv. 3 Ancient DEX Dye DEX + 5, CON -  4, Earth Resistance + 15
+225	Lv. 3 Ancient CON Dye CON + 5, STR -  4, Dark Resistance + 15
+226	Lv. 3 Ancient INT Dye INT + 5, WIT -  4, Water Resistance + 15
+227	Lv. 3 Ancient WIT Dye WIT + 5, MEN -  4, Wind Resistance + 15
+228	Lv. 3 Ancient MEN Dye MEN + 5, INT -  4, Holy Resistance + 15
+229	Lv. 3 Legendary STR Dye STR + 5, DEX -  3, Fire Resistance + 15
+230	Lv. 3 Legendary DEX Dye DEX + 5, CON -  3, Earth Resistance + 15
+231	Lv. 3 Legendary CON Dye CON + 5, STR -  3, Dark Resistance + 15
+232	Lv. 3 Legendary INT Dye INT + 5, WIT -  3, Water Resistance + 15
+233	Lv. 3 Legendary WIT Dye WIT + 5, MEN -  3, Wind Resistance + 15
+234	Lv. 3 Legendary MEN Dye MEN + 5, INT -  3, Holy Resistance + 15
+235	Lv. 4 Giant's STR Dye STR + 5, DEX -  2
+236	Lv. 4 Giant's DEX Dye DEX + 5, CON -  2
+237	Lv. 4 Giant's CON Dye CON + 5, STR -  2
+238	Lv. 4 Giant's INT Dye INT + 5, WIT -  2
+239	Lv. 4 Giant's WIT Dye WIT + 5, MEN -  2
+240	Lv. 4 Giant's MEN Dye MEN + 5, INT -  2
+241	Lv. 4 Ancient STR Dye STR + 5, DEX -  2, Fire Resistance + 20
+242	Lv. 4 Ancient DEX Dye DEX + 5, CON -  2, Earth Resistance + 20
+243	Lv. 4 Ancient CON Dye CON + 5, STR -  2, Dark Resistance + 20
+244	Lv. 4 Ancient INT Dye INT + 5, WIT -  2, Water Resistance + 20
+245	Lv. 4 Ancient WIT Dye WIT + 5, MEN -  2, Wind Resistance + 20
+246	Lv. 4 Ancient MEN Dye MEN + 5, INT -  2, Holy Resistance + 20
 247	Lv. 4 Legendary STR Dye STR + 5, DEX - 1, Fire Resistance + 20
 248	Lv. 4 Legendary DEX Dye DEX + 5, CON - 1, Earth Resistance + 20
 249	Lv. 4 Legendary CON Dye CON + 5, STR - 1, Dark Resistance + 20
@@ -438,23 +438,24 @@
 438	Lv. 3 Windy LUC Dye (Charisma) LUC + 4, CHA + 3
 439	Lv. 4 Windy LUC Dye (Charisma) LUC + 5, CHA + 4
 440	Lv. 5 Windy LUC Dye (Charisma) LUC + 5, CHA + 5
-500	Mysterious Human Dye Fire/Water/Wind/Earth Stats + 10, Debuff Resistance + 1%.\nActive Skill: Unbind
-501	Mysterious Elf Dye Water Resistance + 20, P./M. Critical Rate + 10.\nActive Skill: Prevision
-502	Mysterious Dark Elf Dye Wind Resistance + 20, P./M. Critical Damage + 1%.\nActive Skill: Disparition
-503	Mysterious Orc Dye Fire Resistance + 20, HP/MP/CP + 1%.\nActive Skill: Savage
-504	Mysterious Dwarf Dye Earth Resistance + 20, Skill Cooldown - 1%.\nActive Skill: Endurance
-505	Mysterious Kamael Dye Dark Resistance + 20, PVP Damage + 1%.\nActive Skill: Soul Protection
-506	Wondrous Hunt Dye When HP is 90% or above, P. Def. + 20% and Speed + 33 in the Olympiad and the Ceremony of Chaos.
-507	Wondrous Slaughter Dye In a battlefield, Received Damage - 2% and Damage Reflect Resistance + 2. Skill Lv. up with each PC kill up to Lv. 5. Accumulated skill effect disappears when the character dies.
-508	Mysterious Dark Resistance Dye Dark Resistance + 120 when fighting normal monsters.
-509	Mysterious Holy Resistance Dye Holy Resistance + 120 when fighting normal monsters.
-510	Mysterious Fire Resistance Dye Fire Resistance + 120 when fighting normal monsters.
-511	Mysterious Water Resistance Dye Water Resistance + 120 when fighting normal monsters.
-512	Mysterious Wind Resistance Dye Wind Resistance + 120 when fighting normal monsters.
-513	Mysterious Earth Resistance Dye Earth Resistance + 120 when fighting normal monsters.
-514	Mysterious Abnormal State Resistance Dye Hold, Sleep, Paralysis, Poison, Bleed, Stun, and Mental Attack Resistance + 20. Buff Cancellation Resistance + 20. Has a 5% chance of reflecting physical and magical abnormal states.
-515	Mysterious Invincibility Boost Dye Duration for Invincibility against normal hits and skills increases by 50%.
-516	Mysterious World Boss Defense Dye P./M. Def. + 15% when fighting Antharas, Valakas or Lindvior.
-517	Mysterious Antharas Defense Dye P./M. Def. + 20% when fighting Antharas.
-518	Mysterious Valakas Defense Dye P./M. Def. + 20% when fighting Valakas.
-519	Mysterious Lindvior Defense Dye P./M. Def. + 20% when fighitng Lindvior.
+500	Mysterious Human Dye 7-day
+501	Mysterious Elf Dye 7-day
+502	Mysterious Dark Elf Dye 7-day
+503	Mysterious Orc Dye 7-day
+504	Mysterious Dwarf Dye 7-day
+505	Mysterious Kamael Dye 7-day
+506	Wondrous Hunt Dye 1-day
+507	Wondrous Slaughter Dye 1-day
+508	Mysterious Dark Resistance Dye 7-day
+509	Mysterious Holy Resistance Dye 7-day
+510	Mysterious Fire Resistance Dye 7-day
+511	Mysterious Water Resistance Dye 7-day
+512	Mysterious Wind Resistance Dye 7-day
+513	Mysterious Earth Resistance Dye 7-day
+514	Mysterious Abnormal State Resistance Dye 7-day
+515	Mysterious Invincibility Boost Dye 7-day
+516	Mysterious World Boss Defense Dye 7-day
+517	Mysterious Antharas Defense Dye 7-day
+518	Mysterious Valakas Defense Dye 7-day
+519	Mysterious Lindvior Defense Dye 7-day
+520	Mysterious Abnormal State Resistance Dye 30-day

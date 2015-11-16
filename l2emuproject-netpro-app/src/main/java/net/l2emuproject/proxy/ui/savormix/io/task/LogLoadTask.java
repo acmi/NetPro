@@ -15,6 +15,8 @@
  */
 package net.l2emuproject.proxy.ui.savormix.io.task;
 
+import static net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag.HIDDEN;
+
 import java.awt.Window;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -23,10 +25,12 @@ import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.Collections;
+import java.util.Set;
 
 import javax.swing.SwingUtilities;
 
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
@@ -36,11 +40,13 @@ import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LogLoadOptions;
+import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
+import net.l2emuproject.util.BitMaskUtils;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -50,7 +56,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions>implements IOConstants
+public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(LogLoadTask.class);
 	
@@ -134,7 +140,9 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions>implements I
 					final byte[] body = new byte[ioh.readChar()];
 					ioh.read(body); // packet
 					ioh.readLong(); // time
-					
+					if (lfh.getVersion() >= 7)
+						ioh.readByte();
+						
 					sm.onLoadedPacket(lfh.isLogin(), client, body, _list.getProtocol(), cacheContext);
 				}
 				
@@ -169,9 +177,13 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions>implements I
 					final byte[] body = new byte[ioh.readChar()];
 					ioh.read(body);
 					final long time = ioh.readLong();
+					final Set<LoggedPacketFlag> flags = lfh.getVersion() >= 7 ? BitMaskUtils.setOf(ioh.readByte(), LoggedPacketFlag.class) : Collections.emptySet();
 					
 					sm.onLoadedPacket(lfh.isLogin(), type.isClient(), body, protocol, cacheContext);
 					
+					if (flags.contains(HIDDEN))
+						continue;
+						
 					if (cps != null && sps != null)
 					{
 						final IPacketTemplate pt = table.getTemplate(protocol, type, body);

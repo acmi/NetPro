@@ -3,12 +3,12 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="594" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="1" />
-	<dword alias="Member Max Count" />
-	<dword alias="Member Count" id="index_0" />
-	<loop id="index_0">
-		<dword alias="Member OID" type="ObjectID" />
-		<dword alias="List Position" />
+	<dword alias="Spectating" type="YesOrNo" />
+	<dword alias="Maximum challenger count" />
+	<dword alias="Challenger count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Challenger OID" type="ObjectID" />
+		<dword alias="Challenger number" />
 		<dword alias="Max HP" />
 		<dword alias="Max CP" />
 		<dword alias="Current HP" />

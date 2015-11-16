@@ -15,6 +15,8 @@
  */
 package net.l2emuproject.proxy.ui.savormix.io.conv;
 
+import static net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag.HIDDEN;
+
 import java.awt.image.RenderedImage;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -30,10 +32,13 @@ import java.util.Date;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.regex.Pattern;
 
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
-import net.l2emuproject.proxy.ProxyInfo;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.NetProInfo;
+import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
 import net.l2emuproject.proxy.network.meta.PacketStructureElementVisitor;
@@ -56,10 +61,12 @@ import net.l2emuproject.proxy.network.meta.structure.field.integer.AbstractInteg
 import net.l2emuproject.proxy.network.meta.structure.field.integer.IntegerFieldValue;
 import net.l2emuproject.proxy.network.meta.structure.field.string.AbstractStringFieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.string.StringFieldValue;
+import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.component.packet.DataType;
 import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
+import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
@@ -77,13 +84,14 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 {
 	static final L2Logger LOG = L2Logger.getLogger(ToPlaintextVisitor.class);
 	
-	static final int PACKET_BOUNDARY_MARKER_LEN = 120;
+	private static final int PACKET_BOUNDARY_MARKER_LEN = 80;
+	private static final Pattern HTML_IMG = Pattern.compile("<img src=\".+\" />");
 	
 	private final MMOBuffer _buf;
 	private final DateFormat _df;
 	
 	private IProtocolVersion _protocol;
-	private ICacheServerID _cacheContext;
+	private HistoricalPacketLog _cacheContext;
 	BufferedWriter _writer;
 	
 	/** Constructs this visitor. */
@@ -109,11 +117,37 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 		_writer.append("Creation date: ").append(_df.format(new Date(logHeader.getCreated()))).append("\r\n\r\n");
 		
 		_writer.append("Text generation date: ").append(_df.format(new Date())).append("\r\n");
-		_writer.append("Generator version: ").append(ProxyInfo.getRevisionNumber()).append("\r\n");
+		_writer.append("Generator version: ").append(NetProInfo.getRevisionNumber()).append("\r\n");
 	}
 	
 	@Override
-	public void onPacket(ReceivedPacket packet) throws Exception
+	public void onPacket(ReceivedPacket packet, Set<LoggedPacketFlag> flags) throws Exception
+	{
+		_writer.append("\r\n");
+		writePacket(packet, _protocol, _buf, _cacheContext, _df, _writer, flags.contains(HIDDEN));
+		_writer.append("\r\n");
+	}
+	
+	/**
+	 * Writes a packet in an interpreted plaintext form to {@code writer}.
+	 * 
+	 * @param packet a packet
+	 * @param protocol protocol version
+	 * @param buf preallocated content wrapper
+	 * @param cacheContext entity cache context
+	 * @param df preferred date format
+	 * @param writer a string builder wrapper
+	 * @return {@code writer}
+	 * @throws IOException if packet content cannot be written
+	 */
+	public static final Appendable writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, Appendable writer) throws IOException
+	{
+		writePacket(packet, protocol, buf, cacheContext, df, writer, false);
+		return writer;
+	}
+	
+	private static final void writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, Appendable writer, boolean hidden)
+			throws IOException
 	{
 		final boolean client = packet.getEndpoint().isClient();
 		
@@ -128,11 +162,16 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				{
 					//ServerListTypePublisher.LIST_TYPE.set(_owner.getServerListType());
 					final ByteBuffer independentWrapper = body.duplicate().order(body.order());
-					wireframe = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(_protocol, _buf.setByteBuffer(independentWrapper), packet::getEndpoint);
+					wireframe = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(protocol, buf.setByteBuffer(independentWrapper), packet::getEndpoint);
 				}
 				catch (InvalidPacketOpcodeSchemeException e)
 				{
-					_writer.append("INVALID PACKET").append(HexUtil.printData(body.array()));
+					if (!hidden)
+					{
+						for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
+							writer.append('=');
+						writer.append("\r\n").append("INVALID PACKET").append(HexUtil.printData(body.array()));
+					}
 					break packetContent;
 				}
 				catch (PartialPayloadEnumerationException e)
@@ -140,7 +179,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					wireframe = e.getBuffer();
 					
 					final IPacketTemplate template = e.getTemplate();
-					if (template.isDefined())
+					if (!hidden && template.isDefined())
 					{
 						final String message = (packet.getEndpoint().isClient() ? "[C] " : "[S] ") + e.getTemplate();
 						if (e.getUnusedBytes() != -1)
@@ -149,17 +188,23 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 							LOG.error(message, e);
 					}
 				}
-				ctx = new InterpreterContext(_cacheContext, wireframe);
+				ctx = new InterpreterContext(cacheContext, wireframe);
 			}
 			
-			_writer.append("\r\n");
+			// Enable object analytics and whatnot
+			if (cacheContext instanceof HistoricalPacketLog)
+				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext);
+				
+			if (hidden)
+				return;
+				
 			for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
-				_writer.append('=');
-			_writer.append("\r\n");
+				writer.append('=');
+			writer.append("\r\n");
 			
-			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(_protocol, packet.getEndpoint(), body.array());
-			_writer.append("\t[").append(client ? 'C' : 'S').append("] ").append(HexUtil.bytesToHexString(template.getPrefix(), ":")).append(' ').append(template.getName()).append("\r\n");
-			_writer.append('\t').append(_df.format(new Date(packet.getReceived()))).append("\r\n");
+			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(protocol, packet.getEndpoint(), body.array());
+			writer.append("\t[").append(client ? 'C' : 'S').append("] ").append(HexUtil.bytesToHexString(template.getPrefix(), ":")).append(' ').append(template.getName()).append("\r\n");
+			writer.append('\t').append(df.format(new Date(packet.getReceived()))).append("\r\n");
 			body.position(template.getPrefix().length);
 			
 			final Map<FieldValueReadOption, Object> options = new EnumMap<>(FieldValueReadOption.class);
@@ -177,8 +222,8 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 						if (bytesWithoutOpcodes > 0)
 						{
 							for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
-								_writer.append('-');
-							_writer.append("\r\n");
+								writer.append('-');
+							writer.append("\r\n");
 						}
 					}
 					catch (IOException e)
@@ -206,7 +251,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					
 					try
 					{
-						_writer.append(expectedIterations > 0 ? "~~~~ Loop start ~~~~\r\n" : "~~~~ Empty loop ~~~~\r\n");
+						writer.append(expectedIterations > 0 ? "~~~~ Loop start ~~~~\r\n" : "~~~~ Empty loop ~~~~\r\n");
 					}
 					catch (IOException e)
 					{
@@ -226,7 +271,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					
 					try
 					{
-						_writer.append("~~ Loop element delimiter ~~\r\n");
+						writer.append("~~ Loop element delimiter ~~\r\n");
 					}
 					catch (IOException e)
 					{
@@ -248,7 +293,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 						
 					try
 					{
-						_writer.append("~~~~ Loop end ~~~~\r\n");
+						writer.append("~~~~ Loop end ~~~~\r\n");
 					}
 					catch (IOException e)
 					{
@@ -259,13 +304,13 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				@Override
 				public void onByteArrayField(AbstractByteArrayFieldElement element, ByteArrayFieldValue value) throws RuntimeException
 				{
-					writeAsText(element, value, value != null ? value.value() : null, DataType.BYTES);
+					writeAsText(writer, element, value, value != null ? value.value() : null, DataType.BYTES);
 				}
 				
 				@Override
 				public void onDecimalField(AbstractDecimalFieldElement element, DecimalFieldValue value) throws RuntimeException
 				{
-					writeAsText(element, value, value != null ? value.value() : null, DataType.FLOAT);
+					writeAsText(writer, element, value, value != null ? value.value() : null, DataType.FLOAT);
 				}
 				
 				@Override
@@ -310,13 +355,13 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 						default:
 							throw new IllegalArgumentException(element + " = " + value);
 					}
-					writeAsText(element, value, value != null ? value.value() : null, visualDataType);
+					writeAsText(writer, element, value, value != null ? value.value() : null, visualDataType);
 				}
 				
 				@Override
 				public void onStringField(AbstractStringFieldElement element, StringFieldValue value) throws RuntimeException
 				{
-					writeAsText(element, value, value != null ? value.value() : null, DataType.STRING);
+					writeAsText(writer, element, value, value != null ? value.value() : null, DataType.STRING);
 				}
 				
 				@Override
@@ -325,7 +370,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					try
 					{
 						if (remainingBytes > 0)
-							_writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");
+							writer.append("and ").append(String.valueOf(remainingBytes)).append(" more bytes…\r\n");
 					}
 					catch (IOException e2)
 					{
@@ -340,8 +385,8 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					
 					try
 					{
-						_writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");
-						_writer.append(e.toString()).append("\r\n");
+						writer.append("and ").append(String.valueOf(remainingBytes)).append(" more bytes…\r\n");
+						writer.append(e.toString()).append("\r\n");
 					}
 					catch (IOException e2)
 					{
@@ -357,7 +402,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 						
 					try
 					{
-						_writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");
+						writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");
 					}
 					catch (IOException e)
 					{
@@ -367,11 +412,10 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			}, body, options);
 		}
 		for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
-			_writer.append('=');
-		_writer.append("\r\n");
+			writer.append('=');
 	}
 	
-	void writeAsText(FieldElement<?> field, FieldValue value, Object readValue, DataType visualDataType)
+	static final void writeAsText(Appendable writer, FieldElement<?> field, FieldValue value, Object readValue, DataType visualDataType)
 	{
 		Object interpretation = null;
 		
@@ -386,11 +430,16 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			interpretation = "N/A";
 		else if (interpretation instanceof byte[])
 			interpretation = HexUtil.bytesToHexString((byte[])interpretation, " ");
-			
+		else if (interpretation instanceof CharSequence)
+		{
+			final String alt = HTML_IMG.matcher(String.valueOf(interpretation)).replaceAll("");
+			interpretation = alt.isEmpty() ? readValue : alt;
+		}
+		
 		try
 		{
 			final String interp = String.valueOf(interpretation);
-			_writer.append('[').append(visualDataType.getId()).append("] ").append(field.getAlias()).append(": ").append(interp);
+			writer.append('[').append(visualDataType.getId()).append("] ").append(field.getAlias()).append(": ").append(interp);
 			switch (visualDataType)
 			{
 				case BYTE:
@@ -400,9 +449,9 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				case WORD:
 					final String read = String.valueOf(readValue);
 					if (!interp.equals(read))
-						_writer.append(" (").append(read).append(')');
+						writer.append(" (").append(read).append(')');
 			}
-			_writer.append("\r\n");
+			writer.append("\r\n");
 		}
 		catch (IOException e)
 		{

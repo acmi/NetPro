@@ -14,18 +14,18 @@
 	<dword alias="GG (3)" />
 	<dword alias="GG (4)" />
 	
-	<byte alias="8" />
-	
-	<bytes alias="Padding[0]">
-		<length>6</length>
-	</bytes>
+	<dword alias="8" />
+	<word alias="0" />
+	<byte alias="0" />
 	
 	<!-- NEW -->
 	<bytes alias="Unknown">
 		<length>16</length>
 	</bytes>
 	
-	<dword alias="0" /> <!-- NEW -->
+	<bytes alias="Padding[0]"> <!-- NEW -->
+		<length>4</length>
+	</bytes>
 	<bytes alias="Checksum">
 		<length>4</length>
 	</bytes>

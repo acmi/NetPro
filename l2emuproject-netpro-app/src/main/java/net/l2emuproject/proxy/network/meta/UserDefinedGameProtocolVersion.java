@@ -15,11 +15,11 @@
  */
 package net.l2emuproject.proxy.network.meta;
 
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IGameProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
-import net.l2emuproject.network.UnknownProtocolVersion;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
+import net.l2emuproject.network.protocol.UnknownProtocolVersion;
 
 /**
  * A game protocol version constructed from user-supplied details.

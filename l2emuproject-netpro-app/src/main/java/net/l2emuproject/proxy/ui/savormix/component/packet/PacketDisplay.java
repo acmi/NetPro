@@ -35,7 +35,7 @@ import org.w3c.dom.events.EventListener;
 import org.w3c.dom.events.EventTarget;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.ImageUrlUtils;

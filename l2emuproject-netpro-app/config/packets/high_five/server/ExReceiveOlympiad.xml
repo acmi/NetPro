@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="514" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="View" id="mode" type="olympiad.InfoMode" />
+	<branch id="mode" condition="Zero">
+		<dword alias="Match count" id="cnt" />
+		<dword alias="Incomplete list" type="YesOrNo" />
+		<loop id="cnt">
+			<dword alias="Stadium ID" />
+			<dword alias="Type" type="OlympiadMatch" />
+			<dword alias="State" type="MatchState" />
+			<string alias="Red" />
+			<string alias="Blue" />
+		</loop>
+	</branch>
+	<branch id="mode" condition="Positive">
+		<dword alias="0" />
+		<string alias="Winner" />
+
+		<dword alias="Side" type="OlympiadSide" />
+		<dword alias="1" />
+		<string alias="Name" />
+		<string alias="Pledge name" />
+		<dword alias="Pledge ID" type="Pledge" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Damage" />
+		<dword alias="Point total" />
+		<dword alias="Points earned" />
+
+		<dword alias="Side" type="OlympiadSide" />
+		<dword alias="1" />
+		<string alias="Name" />
+		<string alias="Pledge name" />
+		<dword alias="Pledge ID" type="Pledge" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Damage" />
+		<dword alias="Point total" />
+		<dword alias="Points earned" />
+	</branch>
+</packet>

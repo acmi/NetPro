@@ -15,22 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a Seven Signs festival division.
  * 
  * @author savormix
  */
-public class Festival extends ScriptedLegacyIntegerIdInterpreter
+public class Festival extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public Festival()
 	{
-		addInterpretation(1, "Level 31 and below");
-		addInterpretation(2, "Level 42 and below");
-		addInterpretation(3, "Level 53 and below");
-		addInterpretation(4, "Level 64 and below");
-		addInterpretation(5, "No level limit");
+		super(new InterpreterMetadata(1), "Level 31 and below", "Level 42 and below", "Level 53 and below", "Level 64 and below", "No level limit");
 	}
 }

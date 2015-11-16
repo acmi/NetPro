@@ -17,19 +17,24 @@
 		<byte alias="PvP allowed" type="YesOrNo" />
 		<word alias="Online players" />
 		<word alias="Maximum players" />
-		<byte alias="Game server online" type="YesOrNo" />
-		<dword alias="Game server type" type="GameServerTypes" />
-		<byte alias="Game server brackets" type="YesOrNo" />
+		<byte alias="Online" type="YesOrNo" />
+		<dword alias="Type(s)" type="GameServerKind" />
+		<byte alias="Region" />
 	</loop>
-	<word alias="Non-padded bytes" />
-	<byte alias="Game server count" id="gs_list" />
-	<loop id="gs_list">
-		<byte alias="Game server" type="GameServerName" />
-		<byte alias="Total characters" />
-		<byte alias="Pending deletion" id="timestamp_list" />
-		<loop id="timestamp_list">
-			<dword alias="Date of removal" type="SecondsSinceEpoch" />
+	<word alias="Non-padded bytes" id="bytesize" />
+	<branch id="bytesize" condition="serverlist.ServerList5Ex2">
+		<bytes alias="Characters" type="ServerCharacterCount" />
+	</branch>
+	<branch id="bytesize" condition="serverlist.ServerList5Ex1">
+		<byte alias="Game server count" id="gs_list" />
+		<loop id="gs_list">
+			<byte alias="Game server" type="GameServerName" />
+			<byte alias="Total characters" />
+			<byte alias="Pending deletion" id="timestamp_list" />
+			<loop id="timestamp_list">
+				<dword alias="Date of removal" type="SecondsSinceEpoch" />
+			</loop>
 		</loop>
-	</loop>
+	</branch>
 	<!-- The rest is padding, except for 2nd last DWORD, which is the checksum -->
 </packet>

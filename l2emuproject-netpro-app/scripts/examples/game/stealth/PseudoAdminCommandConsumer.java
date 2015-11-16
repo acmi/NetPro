@@ -15,7 +15,7 @@
  */
 package examples.game.stealth;
 
-import static net.l2emuproject.network.ClientProtocolVersion.THE_KAMAEL;
+import static net.l2emuproject.network.protocol.ClientProtocolVersion.THE_KAMAEL;
 
 import java.nio.ByteBuffer;
 

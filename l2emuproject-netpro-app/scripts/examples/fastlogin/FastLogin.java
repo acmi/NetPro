@@ -46,17 +46,15 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
-import util.packet.CommonPacketSender;
-
 import eu.revengineer.simplejse.HasScriptDependencies;
 import eu.revengineer.simplejse.type.UnloadableScript;
 
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IGameProtocolVersion;
+import net.l2emuproject.network.IPv4AddressPrefix;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.network.security.LoginCipher;
 import net.l2emuproject.network.security.ScrambledRSAKeyPair;
-import net.l2emuproject.proxy.network.IPv4AddressPrefix;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
@@ -72,6 +70,8 @@ import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.util.L2XMLUtils;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
 import net.l2emuproject.util.logging.L2Logger;
+
+import util.packet.CommonPacketSender;
 
 /**
  * A script that allows users to input fake credentials while logging in. Obscure e-mail addresses and secure passwords may be used without
@@ -172,7 +172,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 				final Node ipconfig = L2XMLUtils.getChildNodeByName(creds, "servedIPs");
 				if (ipconfig == null)
 					break restrictIPs;
-				
+					
 				if (L2XMLUtils.getNodeAttributeBooleanValue(ipconfig, "includeLAN", false))
 				{
 					_servedIPs.add(new IPv4AddressPrefix(new byte[] { 127, 0, 0, 0 }, 8));
@@ -197,6 +197,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 				final String alias = L2XMLUtils.getString(acc, "fakeName").toLowerCase(Locale.ENGLISH);
 				final String user = L2XMLUtils.getString(acc, "user").toLowerCase(Locale.ENGLISH);
 				final String pass = L2XMLUtils.getString(acc, "pass");
+				final int accountID = L2XMLUtils.getNodeAttributeIntValue(acc, "id", -1);
 				final Node sc = L2XMLUtils.getChildNodeByName(acc, "card");
 				int sz = 0;
 				if (sc != null)
@@ -222,7 +223,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 				}
 				else
 					scKeys = ArrayUtils.EMPTY_INT_ARRAY;
-				_fakeUsers.put(alias, new Credentials(user, pass, scKeys));
+				_fakeUsers.put(alias, new Credentials(user, pass, accountID, scKeys));
 				
 				final String pin = L2XMLUtils.getString(acc, "pin", null);
 				if (pin != null)
@@ -245,11 +246,11 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 	{
 		if (_servedIPs.isEmpty())
 			return true;
-		
+			
 		for (final IPv4AddressPrefix ipv4 : _servedIPs)
 			if (ipv4.isIncluded(client.getInetAddress()))
 				return true;
-		
+				
 		return false;
 	}
 	
@@ -267,7 +268,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 	{
 		if (_interceptionKeyPair == null || _fakeUsers.isEmpty() || !isServed(recipient))
 			return;
-		
+			
 		final ByteBuffer buf = packet.getDefaultBufferForModifications();
 		if (buf.get(0) == OP_SC_CHECK_REQ)
 		{
@@ -313,7 +314,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 		buf.position(1 + 8);
 		if (buf.remaining() < 128)
 			return;
-		
+			
 		final byte[] modulus = new byte[BLOCK_SIZE_RSA];
 		{
 			//buf.position(1 + 8);
@@ -332,7 +333,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 	{
 		if (_interceptionKeyPair == null || _fakeUsers.isEmpty() || !isServed(sender))
 			return;
-		
+			
 		final ByteBuffer buf = packet.getDefaultBufferForModifications();
 		
 		if (buf.get(0) == OP_REQ_SC_CHECK)
@@ -376,7 +377,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 			final Credentials realData = _fakeUsers.get(fakeName);
 			if (realData == null)
 				return;
-			
+				
 			ByteBuffer writer;
 			{
 				writer = ByteBuffer.wrap(userBlock);
@@ -423,7 +424,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 				realData = _fakeUsers.get(fakeName);
 				if (realData == null)
 					break replaceData;
-				
+					
 				ByteBuffer writer;
 				int additionalOffset;
 				{
@@ -455,7 +456,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 				realData = _fakeUsers.get(fakeName);
 				if (realData == null)
 					break replaceData;
-				
+					
 				ByteBuffer writer;
 				int additionalOffset;
 				{
@@ -493,7 +494,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 			buf.put(userBlock = rsa.doFinal(userBlock));
 			if (passBlock != null)
 				buf.put(passBlock = rsa.doFinal(passBlock));
-			
+				
 			packet.setForwardedBody(buf);
 		}
 		catch (GeneralSecurityException | IllegalArgumentException e)
@@ -513,7 +514,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 		
 		if (rsaBlock[sizeOffset] != BLOCK_SIZE_RSA - ++sizeOffset)
 			throw new IllegalArgumentException();
-		
+			
 		return sizeOffset;
 	}
 	
@@ -546,6 +547,15 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 		return realData != null ? realData._account : clientLogonName;
 	}
 	
+	String toRealAccount(int accountPK)
+	{
+		for (final Credentials realData : _fakeUsers.values())
+			if (realData._accountPK != -1 && accountPK == realData._accountPK)
+				return realData._account;
+				
+		return null;
+	}
+	
 	@Override
 	public void onLoad() throws RuntimeException
 	{
@@ -569,12 +579,14 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 	private static final class Credentials
 	{
 		final String _account, _password;
+		final int _accountPK;
 		final int[] _scKeys;
 		
-		Credentials(String account, String password, int... scKeys)
+		Credentials(String account, String password, int accountPK, int... scKeys)
 		{
 			_account = account;
 			_password = password;
+			_accountPK = accountPK;
 			_scKeys = scKeys;
 		}
 	}
@@ -604,6 +616,8 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 	{
 		@ScriptFieldAlias
 		private static final String ACCOUNT_NAME = "adp_account_name";
+		@ScriptFieldAlias
+		private static final String ACCOUNT_PK = "adp_account_pk";
 		
 		@Override
 		public String getName()
@@ -614,6 +628,18 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 		@Override
 		public void handleClientPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 		{
+			// prefer ID-based approach
+			final int accountPK = buf.readFirstInteger32(ACCOUNT_PK);
+			client.setAccountPK(accountPK);
+			
+			// please note: this will work with AuthD (and AuthD+AuthGateD), but not with shit tier login servers such as hAuthD or anything l2j-based
+			final String realAccountByID = toRealAccount(accountPK);
+			if (realAccountByID != null)
+			{
+				client.setAccount(realAccountByID);
+				return;
+			}
+			
 			final String clientLogonName = buf.readFirstString(ACCOUNT_NAME).toLowerCase(Locale.ENGLISH);
 			client.setAccount(toRealAccount(clientLogonName));
 		}
@@ -662,15 +688,15 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 			final String account = client.getAccount();
 			if (account == null || rab.readFirstInteger32(DIALOG_TYPE) != 1 || !_attempted.add(client))
 				return;
-			
+				
 			final String pin = getAccountPINs().get(account);
 			if (pin == null)
 				return;
-			
+				
 			final IGameProtocolVersion pv = client.getProtocol();
 			if (!pv.isNewerThanOrEqualTo(ClientProtocolVersion.VALIANCE))
 				return;
-			
+				
 			final int size = 3 + CommonPacketSender.stdStringSize(pin);
 			final ByteBuffer bb = CommonPacketSender.allocate(size);
 			final MMOBuffer buf = CommonPacketSender.allocate(bb);
@@ -718,7 +744,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 			final String realName = toRealAccount(clientLoginName);
 			if (realName == null || clientLoginName.equals(realName))
 				return;
-			
+				
 			final int extraBytes = CommonPacketSender.stdStringSize(realName) - CommonPacketSender.stdStringSize(clientLoginName);
 			final ByteBuffer bb = ByteBuffer.allocate(old.capacity() + extraBytes).order(old.order());
 			bb.put(old.get(0));

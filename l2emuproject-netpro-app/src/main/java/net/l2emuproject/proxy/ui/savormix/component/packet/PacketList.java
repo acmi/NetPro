@@ -16,17 +16,22 @@
 package net.l2emuproject.proxy.ui.savormix.component.packet;
 
 import static net.l2emuproject.proxy.network.meta.IPacketTemplate.ANY_DYNAMIC_PACKET;
+import static net.l2emuproject.util.ISODateTime.ISO_DATE_TIME_ZONE_MS;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -36,6 +41,7 @@ import java.util.RandomAccess;
 import java.util.Set;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -43,13 +49,16 @@ import javax.swing.JSplitPane;
 import javax.swing.JTable;
 import javax.swing.JViewport;
 import javax.swing.ListSelectionModel;
+import javax.swing.RowSorter;
 import javax.swing.SwingUtilities;
+import javax.swing.TransferHandler;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
 
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
+import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.login.client.packets.RequestServerList;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
@@ -63,6 +72,7 @@ import net.l2emuproject.proxy.state.entity.cache.EntityInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
+import net.l2emuproject.proxy.ui.savormix.io.conv.ToPlaintextVisitor;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend.PacketLogSummary;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
@@ -90,7 +100,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	
 	private final boolean _login;
 	
-	private final ICacheServerID _cacheContext;
+	final ICacheServerID _cacheContext;
 	
 	final PacketListModel _model;
 	final JTable _list;
@@ -101,7 +111,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	final PacketDisplay _display;
 	private final NumberFormat _formatter;
 	
-	private IProtocolVersion _version;
+	IProtocolVersion _version;
 	
 	volatile ListCaptureState _captureState;
 	
@@ -166,6 +176,31 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 				_list.scrollRectToVisible(_list.getCellRect(_list.getRowCount() - 1, 0, true));
 			}
 		});
+		_list.setTransferHandler(new TransferHandler()
+		{
+			private static final long serialVersionUID = 3211306296809776535L;
+			
+			@Override
+			protected Transferable createTransferable(JComponent c)
+			{
+				final L2TextBuilder sb = new L2TextBuilder();
+				try
+				{
+					ToPlaintextVisitor.writePacket(getSelectedPacket(), _version, new MMOBuffer(), _cacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+				}
+				catch (IOException e)
+				{
+					// L2TB doesn't throw
+				}
+				return new StringSelection(sb.moveToString());
+			}
+			
+			@Override
+			public int getSourceActions(JComponent c)
+			{
+				return COPY;
+			}
+		});
 		JPanel list = new JPanel();
 		list.setMinimumSize(new Dimension(400, 200));
 		list.setPreferredSize(new Dimension(400, 200));
@@ -219,6 +254,16 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		_version = login ? pvm.getFallbackProtocolLogin() : pvm.getFallbackProtocolGame();
 		
 		setRightComponent(_display);
+	}
+	
+	/**
+	 * Returns the packet list accessor.
+	 * 
+	 * @return packet table accessor
+	 */
+	public PacketTableAccessor getAccessor()
+	{
+		return new ListExcerpt();
 	}
 	
 	/** Removes all packets currently cached within this component. */
@@ -374,6 +419,16 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	}
 	
 	/**
+	 * Returns whether this list is in packet refusal mode.
+	 * 
+	 * @return whether capture is disabled
+	 */
+	public boolean isSessionCaptureDisabled()
+	{
+		return _captureState == ListCaptureState.CAPTURE_DISABLED;
+	}
+	
+	/**
 	 * Sets the currently active capture mode.
 	 * 
 	 * @param captureState capture mode
@@ -394,7 +449,16 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		final int dcp = _model._showFromClient.size(), dsp = _model._showFromServer.size();
 		final long tcp = VersionnedPacketTable.getInstance().getKnownTemplates(_version, EndpointType.CLIENT).count(),
 				tsp = VersionnedPacketTable.getInstance().getKnownTemplates(_version, EndpointType.SERVER).count();
-		return new PacketLogSummary(_version, unkC ? dcp - 1 : dcp, (int)tcp, unkC, unkS ? dsp - 1 : dsp, (int)tsp, unkS, _captureState == ListCaptureState.CAPTURE_DISABLED);
+		return new PacketLogSummary(_version, unkC ? dcp - 1 : dcp, (int)tcp, unkC, unkS ? dsp - 1 : dsp, (int)tsp, unkS, isSessionCaptureDisabled());
+	}
+	
+	ReceivedPacket getSelectedPacket()
+	{
+		final int row = _list.getSelectedRow();
+		if (row == -1)
+			return null;
+			
+		return _model.getValueAt(_list.getRowSorter().convertRowIndexToModel(row)).getPacket();
 	}
 	
 	ICacheServerID getCacheContext()
@@ -411,7 +475,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		
 		private final PacketList _owner;
 		
-		private final List<PacketListEntry> _displayed, _cached;
+		final List<PacketListEntry> _displayed, _cached;
 		
 		Set<IPacketTemplate> _showFromClient, _showFromServer;
 		
@@ -660,8 +724,68 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	public enum ListCaptureState
 	{
 		/** New packets will be added to the packet table */
-		CAPTURE_ENABLED, /** New packets will not be added to the packet table */
-		CAPTURE_DISABLED, /** Attempts to add packets will not be made */
+		CAPTURE_ENABLED,
+		/** New packets will not be added to the packet table */
+		CAPTURE_DISABLED,
+		/** Attempts to add packets will not be made */
 		OFFLINE;
+	}
+	
+	private final class ListExcerpt implements PacketTableAccessor
+	{
+		ListExcerpt()
+		{
+			// nothing special
+		}
+		
+		@Override
+		public ReceivedPacket getSelectedPacket()
+		{
+			return PacketList.this.getSelectedPacket();
+		}
+		
+		@Override
+		public List<ReceivedPacket> getVisiblePackets()
+		{
+			final RowSorter<?> view = _list.getRowSorter();
+			final int total = view.getViewRowCount();
+			if (total == 0)
+				return Collections.emptyList();
+				
+			final List<ReceivedPacket> result = new ArrayList<>(total);
+			for (int i = 0; i < total; ++i)
+				result.add(_model.getValueAt(view.convertRowIndexToModel(i)).getPacket());
+			return result;
+		}
+		
+		@Override
+		public List<ReceivedPacket> getTablePackets()
+		{
+			final List<ReceivedPacket> result = new ArrayList<ReceivedPacket>(_model._displayed.size());
+			for (final PacketListEntry e : _model._displayed)
+				result.add(e.getPacket());
+			return result;
+		}
+		
+		@Override
+		public List<ReceivedPacket> getMemoryPackets()
+		{
+			final List<ReceivedPacket> result = new ArrayList<ReceivedPacket>(_model._cached.size());
+			for (final PacketListEntry e : _model._cached)
+				result.add(e.getPacket());
+			return result;
+		}
+		
+		@Override
+		public IProtocolVersion getProtocolVersion()
+		{
+			return _version;
+		}
+		
+		@Override
+		public ICacheServerID getCacheContext()
+		{
+			return _cacheContext;
+		}
 	}
 }

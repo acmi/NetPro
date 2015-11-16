@@ -15,7 +15,7 @@
  */
 package net.l2emuproject.proxy.script.packets;
 
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 
 /**
  * An exception to notify caller that there are no writers capable of forming the desired packet for the given protocol version.

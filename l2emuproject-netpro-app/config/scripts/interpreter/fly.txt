@@ -50,3 +50,5 @@
 44	6	Beleth's Magic Circle
 44	8	Desert Quarry
 44	13	Phantasmal Ridge
+79	2	Western Enchanted Valley
+79	4	Eastern Enchanted Valley

@@ -116,11 +116,12 @@ public interface IAbnormalVisualEffect
 		"herb_magic_ave",
 		// 70
 		null,
-		null,
-		null,
-		null,
-		null,
+		"d_hellfire (Destruction)",
+		"d_hellfire (Annihilation)",
+		"d_hellfire (Hellfire)",
+		"d_hellfire (Desire)",
 		// 75
+		"d_hellfire (Longing)",
 		null,
 		null,
 		null,

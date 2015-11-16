@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a DWORD to specify the type of shot -->
+<packet id="SM_EX_AUTO_SOUL_SHOT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Shot" type="Item" />
+	<dword alias="Enabled" type="item.AutoShotState" />
+
+	<!-- NEW -->
+	<dword alias="Group" type="item.ShotType" />
+</packet>

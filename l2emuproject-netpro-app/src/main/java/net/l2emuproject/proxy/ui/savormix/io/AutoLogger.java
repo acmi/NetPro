@@ -19,15 +19,19 @@ import java.awt.Window;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
+import java.util.Collections;
+import java.util.Set;
 
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;
 import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
+import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogIdentifyTask;
+import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 
 /**
  * Manages automatic packet logging.
@@ -43,6 +47,7 @@ public final class AutoLogger implements IOConstants, ConnectionListener, Packet
 	// version 3 contains wrong non-obfuscated 74 2nd ops (not supported)
 	// version 4 does not count how many packets have been written
 	// version 5 does not track which packets have been written
+	// version 6 does not provide support for optional packet flags
 	
 	private final PacketLogThread _ioThread;
 	
@@ -75,7 +80,7 @@ public final class AutoLogger implements IOConstants, ConnectionListener, Packet
 	{
 		final byte[] body = new byte[packet.clear().limit()];
 		packet.get(body);
-		getIoThread().firePacket(sender, new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time));
+		getIoThread().firePacket(sender, new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time), getPacketFlags(sender));
 	}
 	
 	@Override
@@ -83,7 +88,16 @@ public final class AutoLogger implements IOConstants, ConnectionListener, Packet
 	{
 		final byte[] body = new byte[packet.clear().limit()];
 		packet.get(body);
-		getIoThread().firePacket(recipient, new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time));
+		getIoThread().firePacket(recipient, new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time), getPacketFlags(recipient));
+	}
+	
+	private static final Set<LoggedPacketFlag> getPacketFlags(Proxy client)
+	{
+		final ConnectionPane cp = Loader.getActiveUIPane();
+		if (cp == null)
+			return Collections.emptySet();
+			
+		return cp.isCaptureDisabledFor(client) ? Collections.singleton(LoggedPacketFlag.HIDDEN) : Collections.emptySet();
 	}
 	
 	@Override
@@ -105,7 +119,7 @@ public final class AutoLogger implements IOConstants, ConnectionListener, Packet
 		final Path[] paths = new Path[files.length];
 		for (int i = 0; i < paths.length; i++)
 			paths[i] = files[i].toPath();
-		
+			
 		new LogIdentifyTask(owner, defaultLoginProtocol, defaultGameProtocol).execute(paths);
 	}
 	

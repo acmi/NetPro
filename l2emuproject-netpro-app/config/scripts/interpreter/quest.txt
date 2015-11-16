@@ -176,10 +176,10 @@
 185	Nikola's Cooperation
 186	Contract Execution
 187	Nikola's Heart
-188	Seal Removal
+188	Release of the Seal
 189	Contract Completion
 190	Lost Dream
-191	Vain Conclusion
+191	Empty Ending
 192	Seven Signs, Series of Doubt
 193	Seven Signs, Dying Message
 194	Seven Signs, Mammon's Contract
@@ -540,6 +540,7 @@
 757	Triol's Movement
 758	The Fallen King's Men
 759	The Dwarven Nightmare Continues
+760	Block the Exit
 761	Assisting the Golden Ram Army
 762	An Ominous Request
 763	A Daunting Task
@@ -559,6 +560,7 @@
 780	Utilize the Darkness - Seed of Infinity
 781	Utilize the Darkness - Seed of Annihilation
 782	Utilize the Darkness - Seed of Hellfire
+783	Vestige of the Magic Power
 784	The Quiet Killer
 785	A Suspicious Ingredient
 786	Awaiting the Voice of the Gods
@@ -575,6 +577,9 @@
 829	Maphr's Salvation
 830	The Way of the Giant's Pawn
 831	Sayha's Scheme
+833	Devil's Treasure, Tauti
+834	Against Dragonclaw
+835	Pitiable Melisa
 901	How Lavasauruses Are Made
 902	Reclaim Our Era
 903	The Call of Antharas
@@ -613,6 +618,7 @@
 10294	Seven Signs, To the Monastery of Silence
 10295	Seven Signs, Solina's Tomb
 10296	Seven Signs, One Who Seeks the Power of the Seal
+10297	Grand Opening! Come to Our Tavern!
 10301	Shadow of Terror: Blackish Red Fog
 10302	Unsettling Shadow and Rumors
 10303	Crossroads between Light and Darkness
@@ -750,14 +756,15 @@
 10460	Return of the Alligator Hunter
 10461	Tapping the Power Within
 10462	Temper a Rusting Blade
-10463	The Soul of a Sword
 10464	Be Prepared for Anything
+10465	Soul Frost Sword
 10472	Winds of Fate: Encroaching Shadows
 10501	Embroidered on a Cloak, Part 1: Zaken's Soul
 10502	Embroidered on a Cloak, Part 2: Freya's Soul
 10503	Embroidered on a Cloak, Part 3: Frintezza's Soul
 10504	Jewel of Antharas
 10505	Jewel of Valakas
+10506	Diana's Request
 10701	The Road to Destruction
 10702	The Road to Infinity
 10703	Bottle of Istina's Soul

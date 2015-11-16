@@ -1533,3 +1533,89 @@
 1011533	Horn-rimmed Glasses Pack (Vitality 7-day)
 1011534	11th Anniversary Coin x75
 1011535	Ultimate 11th Anniversary Coin Pack
+1011536	Abundance Box
+1011537	Recipe: Talisman - Abundance Lv. 1 (High-grade)
+1011538	Recipe: Talisman - Abundance Lv. 2 (High-grade)
+1011539	Recipe: Talisman - Abundance Lv. 3 (High-grade)
+1011540	Recipe: Talisman - Abundance Lv. 4 (High-grade)
+1011541	Dandy's Gift Box (7-day)
+1011542	Adventurer's Song - Eva's Protection (R-grade)
+1011543	Special Bait (x1000)
+1011544	Dual Expertise Rune Pack (R99-grade)
+1011545	Spirit Stone: Hair Accessory
+1011546	Auction House Fee 100% Voucher 3-unit Pack
+1011547	Nectar (x500)
+1011548	Ultimate Nectar Pack (x10000)
+1011549	Watermelon Pack
+1011550	Soul Avatar's Giant Placid
+1011551	Valiant Scroll (x10)
+1011552	School Uniform A Appearance Stone
+1011553	School Uniform B Appearance Stone
+1011554	Pirate Captain Appearance Stone
+1011555	Pirate Crew Appearance Stone
+1011556	Zaken's Spirit Sword Agathion
+1011557	Vitality Maintaining Potion Pack (x10)
+1011558	Pirate Hat Pack
+1011559	XP Buff 50% Pack (x20)
+1011560	Physical Reflect Shirt
+1011561	Magical Reflect Shirt
+1011562	Lineage II Baseball Outfit Bundle
+1011563	Clan Name Change Ticket
+1011564	Ultimate Gambler's Box
+1011565	Blessed Scroll: Enchant Elemental Shirt Pack
+1011566	Entrance Pass: Embryo Command Post
+1011567	Entrance Pass: Crystal Caverns
+1011568	Entrance Pass: Nightmare Kamaloka
+1011569	Monster Research
+1011570	Ultimate Monster Research Pack (x1000)
+1011571	Power Shirt Pack
+1011572	Blessed Scroll: Enchant Power Shirt
+1011573	XP Bottle Agathion Pack 10-Hour
+1011574	Apparition Stone (Lv. 88)
+1011575	Apparition Stone (Lv. 93)
+1011576	Apparition Stone (Lv. 98)
+1011577	Mysterious Wind Scroll
+1011578	Heavenly CP Cookie
+1011579	Emperor's Dessert Set (Attack Type)
+1011580	Emperor's Dessert Set (Wizard Type)
+1011581	Emperor's Dessert Set (Defense Type)
+1011582	Feather of Blessing
+1011583	Valiant Scroll
+1011584	MP Recovering Potion
+1011585	Super Healthy Juice (HP)
+1011586	Super Healthy Juice (CP)
+1011587	Entrance Pass: Baylor
+1011588	Entrance Pass: Octavis (Normal)
+1011589	Entrance Pass: Istina (Normal)
+1011590	Entrance Pass: Nornil's Garden (Spicula)
+1011591	Entrance Pass: Fortuna
+1011592	Entrance Pass: Spezion (Epic)
+1011593	Entrance Pass: Kartia's Labyrinth Lv. 85 Solo
+1011594	Entrance Pass: Kartia's Labyrinth Lv. 90 Solo
+1011595	Entrance Pass: Kartia's Labyrinth Lv. 95 Solo
+1011596	Entrance Pass: Kartia's Labyrinth Lv. 85 Party
+1011597	Entrance Pass: Kartia's Labyrinth Lv. 90 Party
+1011598	Entrance Pass: Kartia's Labyrinth Lv. 95 Party
+1011599	Entrance Pass: Ancient Kartia's Labyrinth
+1011600	Traces of Ancient Kartia's Labyrinth
+1011601	Beast Soulshot
+1011602	Mysterious Soulshot (R-grade)
+1011603	Mysterious Blessed Spiritshot (R-grade)
+1011604	Rose Spirit Coupon
+1011605	Superior Minion Coupon
+1011606	Dual Expertise Rune Pack (R99-grade)
+1011607	XP Buff 50% - 1 Hour
+1011608	Appearance Stone: Dark Assassin
+1011609	Ninja Outfit Bundle
+1011610	Metal Suit Outfit Bundle
+1011611	Military Outfit Bundle
+1011612	Maid Outfit Bundle
+1011613	Appearance Stone: Transparent Armor
+1011614	Appearance Stone: Japanese Weapon
+1011615	Appearance Stone: Cat Fighter (Ertheia Only)
+1011616	Appearance Stone: Cat Staff (Ertheia Only)
+1011617	Scroll: Modify Demonic Sword Zariche (30-day)
+1011618	Scroll: Modify Bloody Sword Akamanah (30-day)
+1011619	Noble Pack
+1011620	Divine Pack
+1011621	Ultimate Pack

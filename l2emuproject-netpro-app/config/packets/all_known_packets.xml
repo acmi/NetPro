@@ -10,6 +10,9 @@
 		-->
 		<packet id="LS_CM_AQ_GAMEGUARD" name="ResponseAuthGameGuard" />
 		<!--
+		This structure is typically used with opcode 0x00
+		
+		ASCII "cxddddddhcb"
 		UNICODE "Login Type %d is Not Used"
 		UNICODE "AQ_LOGIN : %d %d %d %d %d"
 		UNICODE "RL"
@@ -35,6 +38,16 @@
 		-->
 		<packet id="LS_CM_REQUEST_SERVER_LOGIN" name="RequestServerLogin" />
 		<packet id="LS_CM_0E" name="Unnamed 0E" />
+		<!--
+		This structure is typically used with opcode 0x12
+		
+		ASCII "cdddddssdhcs"
+		UNICODE "Login Type %d is Not Used"
+		UNICODE "AQ_LOGIN : %d %d %d %d %d"
+		UNICODE "RL"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="LS_CM_AQ_LOGIN__TOKEN" name="RequestLogin" /> <!-- RL = RequestLogin? -->
 		
 		<packet id="64" name="RequestReplySurrenderPledgeWar" />
 		<packet id="128" name="RequestSEKCustom" />
@@ -304,7 +317,6 @@
 		<packet id="457" name="RequestAlchemyTryMixCube" />
 		<packet id="458" name="RequestAlchemyConversion" />
 		<packet id="459" name="RequestSendExecutedUIEventsCount" />
-		<packet id="461" name="RequestExAutoFish" />
 		<packet id="462" name="RequestRegistPartySubstitute" />
 		<packet id="463" name="RequestDeletePartySubstitute" />
 		<packet id="464" name="RequestRegistWaitingSubstitute" />
@@ -1557,6 +1569,12 @@
 		UNICODE "(Send)%s INIType : %s"
 		-->
 		<packet id="CM_EX_SEND_CLIENT_INI" name="ExSendClientINI" />
+		<!--
+		ASCII "chc"
+		UNICODE "RequestExAutoFish"
+		UNICODE "(Send)%s %d"
+		-->
+		<packet id="CM_REQ_EX_AUTO_FISH" name="RequestExAutoFish" />
 		
 		<!--
 		ASCII "ch"
@@ -1612,6 +1630,56 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_REFRESH_CAPTCHA_IMAGE" name="RequestRefreshCaptchaImage" />
+		<!--
+		ASCII "ccdd"
+		ASCII "chdcb"
+		UNICODE "RequestItemEnsoul"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ITEM_ENSOUL" name="RequestItemEnsoul" />
+		<!--
+		ASCII "chcc"
+		UNICODE "RequestTodoList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_TODO_LIST" name="RequestTodoList" />
+		<!--
+		ASCII "chcS"
+		UNICODE "RequestTodoListHTML"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_TODO_LIST_HTML" name="RequestTodoListHTML" />
+		<!--
+		ASCII "chc"
+		UNICODE "RequestOneDayRewardReceive"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ONE_DAY_REWARD_RECEIVE" name="RequestOneDayRewardReceive" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestPledgeBonusOpen"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PLEDGE_BONUS_OPEN" name="RequestPledgeBonusOpen" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestPledgeBonusRewardList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PLEDGE_BONUS_REWARD_LIST" name="RequestPledgeBonusRewardList" />
+		<!--
+		ASCII "chc"
+		UNICODE "RequestPledgeBonusReward"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_PLEDGE_BONUS_REWARD" name="RequestPledgeBonusReward" />
+		<!--
+		ASCII "ch"
+		UNICODE "Steam_Log : RequestSSOAuthnToken"
+		UNICODE "RequestSSOAuthnToken"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_SSO_AUTHN_TOKEN" name="RequestSSOAuthnToken" />
 	</client>
 	<server>
 		<!--
@@ -1957,6 +2025,11 @@
 		<packet id="534" name="PledgeSkillListRemove" />
 		<packet id="536" name="ExBR_LoadEventTopRankers" />
 		<packet id="537" name="ExBR_PremiumState" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "ddd"
+		UNICODE "ExShowChannelingEffectPacket"
+		-->
 		<packet id="538" name="ExShowChannelingEffect" />
 		<packet id="539" name="ExGetCrystalizingEstimation" />
 		<packet id="540" name="ExGetCrystalizingFail" />
@@ -3906,9 +3979,9 @@
 		-->
 		<packet id="SM_EX_CLOSE_MPCC" name="ExCloseMPCC" />
 		<!--
-		UNICODE "(Receive)%s"
 		ASCII "Sd"
 		UNICODE "ExAskJoinMPCCPacket"
+		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_ASK_JOIN_MPCC" name="ExAskJoinMPCC" />
 		<!--
@@ -4065,5 +4138,80 @@
 		<packet id="SM_RECEIVE_VIP_BOT_CAPTCHA_IMAGE" name="ReceiveVipBotCaptchaImage" />
 		<!-- UNICODE "ReceiveVipBotCaptchaAnswerResult" -->
 		<packet id="SM_RECEIVE_VIP_BOT_CAPTCHA_ANSWER_RESULT" name="ReceiveVipBotCaptchaAnswerResult" />
+		<!--
+		UNICODE "ExShowEnsoulWindow"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_ENSOUL_WINDOW" name="ExShowEnsoulWindow" />
+		<!--
+		UNICODE "ExEnsoulResult"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENSOUL_RESULT" name="ExEnsoulResult" />
+		<!--
+		ASCII "ddd"
+		ASCII "hccdd"
+		UNICODE " (%d / %d)"
+		UNICODE "ExOneDayReceiveRewardList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ONE_DAY_RECEIVE_REWARD_LIST" name="ExOneDayReceiveRewardList" />
+		<!--
+		ASCII "dddddd"
+		ASCII "ddddd"
+		UNICODE "ExConnectedTimeAndGettableReward"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_CONNECTED_TIME_AND_GETTABLE_REWARD" name="ExConnectedTimeAndGetTableReward" />
+		<!--
+		ASCII "cSShhhhcc"
+		UNICODE " ~ "
+		UNICODE "ExTodoListRecommand"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_TODO_LIST_RECOMMAND" name="ExTodoListRecommend" />
+		<!--
+		ASCII "cSShhhhcc"
+		UNICODE " ~ "
+		UNICODE "ExTodoListInzone"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_TODO_LIST_INZONE" name="ExTodoListInzone" />
+		<!--
+		ASCII "cSS"
+		UNICODE "ExTodoListHTML"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_TODO_LIST_HTML" name="ExTodoListHTML" />
+		<!--
+		 ASCII "dddccdddcc"
+		 UNICODE "ExPledgeBonusOpen"
+		 UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_PLEDGE_BONUS_OPEN" name="ExPledgeBonusOpen" />
+		<!--
+		ASCII "dddddddd"
+		UNICODE "ExPledgeBonusList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_PLEDGE_BONUS_LIST" name="ExPledgeBonusList" />
+		<!--
+		UNICODE "ExPledgeBonusMarkReset"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_PLEDGE_BONUS_MARK_RESET" name="ExPledgeBonusMarkReset" />
+		<!--
+		ASCII "cd"
+		UNICODE "ExPledgeBonusUpdate"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_PLEDGE_BONUS_UPDATE" name="ExPledgeBonusUpdate" />
+		<!--
+		UNICODE "(Receive)%s"
+		ASCII "cb"
+		UNICODE "Steam_Log : ExSSOAuthnToken() [%d] [%s]"
+		UNICODE "ExSSOAuthnToken"
+		-->
+		<packet id="SM_EX_SSO_AUTHN_TOKEN" name="ExSSOAuthnToken" />
 	</server>
 </packets>

@@ -30,13 +30,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import net.l2emuproject.io.UnmanagedResource;
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ServiceType;
@@ -44,6 +45,7 @@ import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
+import net.l2emuproject.util.BitMaskUtils;
 import net.l2emuproject.util.Rnd;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -91,7 +93,7 @@ public class PacketLogThread extends Thread implements IOConstants
 			{
 				if (isInterrupted())
 					break;
-				
+					
 				final Object action;
 				try
 				{
@@ -115,7 +117,7 @@ public class PacketLogThread extends Thread implements IOConstants
 						// _log.warn("Unfinished connection; delaying logging for " + ci.getClient());
 						if (client.isDced())
 							continue;
-						
+							
 						_actions.add(ci);
 						
 						// let's waste some CPU to see if we should stop using CPU
@@ -125,7 +127,7 @@ public class PacketLogThread extends Thread implements IOConstants
 							// a connection that is still pending completion; safe to wait 
 							if (pendingAction instanceof ConInfo && ((ConInfo)pendingAction).getClient().getTarget() == null)
 								continue;
-							
+								
 							// any other action should be processed immediately
 							continue actionHandling;
 						}
@@ -188,6 +190,7 @@ public class PacketLogThread extends Thread implements IOConstants
 							ioh.writeChar(buf.length);
 							ioh.write(buf);
 							ioh.writeLong(packet.getReceived());
+							ioh.writeByte((int)BitMaskUtils.maskOf(pi.getFlags()));
 							
 							log.onPacket(packet);
 						}
@@ -218,7 +221,7 @@ public class PacketLogThread extends Thread implements IOConstants
 		LOG.info("Finalizing open files.");
 		for (Entry<Proxy, PacketLog> e : _files.entrySet())
 			closeFile(e.getValue(), e.getKey().getProtocol());
-		
+			
 		LOG.info("Packet logging terminated successfully.");
 	}
 	
@@ -247,10 +250,11 @@ public class PacketLogThread extends Thread implements IOConstants
 	 * 
 	 * @param client connected client
 	 * @param packet received packet
+	 * @param flags additional info about the packet
 	 */
-	public void firePacket(Proxy client, ReceivedPacket packet)
+	public void firePacket(Proxy client, ReceivedPacket packet, Set<LoggedPacketFlag> flags)
 	{
-		_actions.add(new PackInfo(client, packet));
+		_actions.add(new PackInfo(client, packet, flags));
 	}
 	
 	/**
@@ -300,7 +304,7 @@ public class PacketLogThread extends Thread implements IOConstants
 			{
 				if (LoadOption.FORCE_FULL_LOG_FILENAME.isSet())
 					fn.append(type.isLogin() ? 'L' : 'G').append(provider.getTarget().getHostAddress()).append('_');
-				
+					
 				final Date d = new Date(connection.getTime());
 				fn.append(_filenameFormat.format(d)).append('_');
 				fn.append(Rnd.getString(5, Rnd.LETTERS_AND_DIGITS)).append('.').append(LOG_EXTENSION);
@@ -332,7 +336,7 @@ public class PacketLogThread extends Thread implements IOConstants
 	{
 		if (log == null)
 			return;
-		
+			
 		try (final NewIOHelper ioh = log.getWriter())
 		{
 			final long footerStartPos = ioh.getPositionInChannel(true);
@@ -405,11 +409,13 @@ public class PacketLogThread extends Thread implements IOConstants
 	{
 		private final Proxy _client;
 		private final ReceivedPacket _packet;
+		private final Set<LoggedPacketFlag> _flags;
 		
-		PackInfo(Proxy provider, ReceivedPacket packet)
+		PackInfo(Proxy provider, ReceivedPacket packet, Set<LoggedPacketFlag> flags)
 		{
 			_client = provider;
 			_packet = packet;
+			_flags = flags;
 		}
 		
 		public Proxy getClient()
@@ -420,6 +426,11 @@ public class PacketLogThread extends Thread implements IOConstants
 		public ReceivedPacket getPacket()
 		{
 			return _packet;
+		}
+		
+		public Set<LoggedPacketFlag> getFlags()
+		{
+			return _flags;
 		}
 	}
 }

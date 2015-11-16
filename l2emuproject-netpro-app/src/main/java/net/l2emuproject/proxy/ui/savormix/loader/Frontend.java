@@ -15,11 +15,15 @@
  */
 package net.l2emuproject.proxy.ui.savormix.loader;
 
+import static net.l2emuproject.util.ISODateTime.ISO_DATE_TIME_ZONE_MS;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
@@ -33,9 +37,13 @@ import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.file.Path;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -58,6 +66,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
@@ -66,9 +75,10 @@ import eu.revengineer.simplejse.logging.BytesizeInterpreter;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.network.IGameProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.proxy.ProxyInfo;
+import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.NetProInfo;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
@@ -82,6 +92,7 @@ import net.l2emuproject.proxy.network.meta.UserDefinedProtocolVersion;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.setup.SocketManager;
+import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.EventSink;
 import net.l2emuproject.proxy.ui.savormix.IMage;
 import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
@@ -95,8 +106,11 @@ import net.l2emuproject.proxy.ui.savormix.component.packet.PacketExplainDialog;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketInject;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketListCleaner;
+import net.l2emuproject.proxy.ui.savormix.component.packet.PacketTableAccessor;
 import net.l2emuproject.proxy.ui.savormix.component.packet.config.PacketDefinitionLoadTask;
 import net.l2emuproject.proxy.ui.savormix.component.packet.config.PacketDisplayConfig;
+import net.l2emuproject.proxy.ui.savormix.component.packet.task.PacketTextLogTask;
+import net.l2emuproject.proxy.ui.savormix.component.packet.task.PacketXMLLogTask;
 import net.l2emuproject.proxy.ui.savormix.component.script.task.AllScriptReloadTask;
 import net.l2emuproject.proxy.ui.savormix.component.script.task.CompiledScriptSearchTask;
 import net.l2emuproject.proxy.ui.savormix.component.script.task.DirectoryIndexSearchTask;
@@ -131,6 +145,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 {
 	private static final long serialVersionUID = 508940951025465462L;
 	private static final L2Logger LOG = L2Logger.getLogger(Frontend.class);
+	private static final int MAX_PACKETS_TO_CLIPBOARD = 1000;
 	
 	/** Whether ignore new packets as they arrive. */
 	public static boolean SCROLL_LOCK = false;
@@ -147,6 +162,8 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 	private final JLabel _labProtocol, _labCP, _labSP;
 	private final JPanel _dc;
 	final JProgressBar _pbHeapState;
+	
+	final JMenu _mExport;
 	
 	private final BufferedImage _watermark;
 	private final EventSink _sink;
@@ -210,8 +227,8 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 			final JPanel labRevision = new JPanel();
 			{
 				final L2TextBuilder tb = new L2TextBuilder();
-				if (!"exported".equals(ProxyInfo.getRevisionNumber()))
-					tb.append('r').append(ProxyInfo.getRevisionNumber()).append(' ');
+				if (!"exported".equals(NetProInfo.getRevisionNumber()))
+					tb.append('r').append(NetProInfo.getRevisionNumber()).append(' ');
 				tb.append("executed on ").append(NetProScriptCache.getInstance().isCompilerUnavailable() ? "JRE" : "JDK");
 				labRevision.add(new JLabel(tb.moveToString()));
 			}
@@ -249,7 +266,9 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		}
 		root.add(bottom, BorderLayout.SOUTH);
 		
-		final ConnectionPane cp = new ConnectionPane(new CaptureSettingAccessor());
+		_mExport = new JMenu("Export");
+		
+		final ConnectionPane cp = new ConnectionPane(new CaptureSettingAccessor(), e -> _mExport.setEnabled(((JTabbedPane)e.getSource()).getSelectedComponent() instanceof PacketList));
 		new PacketListCleaner(cp).start();
 		if (LoadOption.DISABLE_PROXY.isNotSet())
 		{
@@ -378,6 +397,384 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				}
 				
 				file.add(imp);
+			}
+			{
+				_mExport.setToolTipText("Exports individual packets to a specific format.");
+				_mExport.setMnemonic(KeyEvent.VK_E);
+				
+				{
+					final JMenu submenu = new JMenu("Selected packet");
+					submenu.setMnemonic(KeyEvent.VK_S);
+					{
+						final JMenuItem item = new JMenuItem("Text (clipboard)");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null || pta.getSelectedPacket() == null)
+							{
+								JOptionPane.showMessageDialog(Frontend.this, "Please select a packet first.", "No packet", JOptionPane.WARNING_MESSAGE);
+								return;
+							}
+							
+							final L2TextBuilder sb = new L2TextBuilder();
+							try
+							{
+								ToPlaintextVisitor.writePacket(pta.getSelectedPacket(), pta.getProtocolVersion(), new MMOBuffer(), pta.getCacheContext(), new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS),
+										sb);
+								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+							}
+							catch (IOException ex)
+							{
+								// L2TB doesn't throw
+							}
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("XML (clipboard)");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null || pta.getSelectedPacket() == null)
+							{
+								JOptionPane.showMessageDialog(Frontend.this, "Please select a packet first.", "No packet", JOptionPane.WARNING_MESSAGE);
+								return;
+							}
+							
+							final L2TextBuilder sb = new L2TextBuilder();
+							try
+							{
+								ToXMLVisitor.writePacket(pta.getSelectedPacket(), pta.getProtocolVersion(), new MMOBuffer(), pta.getCacheContext(), new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+							}
+							catch (IOException ex)
+							{
+								// L2TB doesn't throw
+							}
+						});
+						submenu.add(item);
+					}
+					_mExport.add(submenu);
+				}
+				{
+					final JMenu submenu = new JMenu("Visible table packets");
+					submenu.setMnemonic(KeyEvent.VK_V);
+					{
+						final JMenuItem item = new JMenuItem("Text (clipboard)");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final Iterator<ReceivedPacket> it = pta.getVisiblePackets().iterator();
+							if (!it.hasNext())
+								return;
+								
+							final MMOBuffer buf = new MMOBuffer();
+							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
+							final L2TextBuilder sb = new L2TextBuilder();
+							try
+							{
+								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
+									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+								if (it.hasNext())
+									sb.append("\r\n…");
+								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+							}
+							catch (IOException ex)
+							{
+								// L2TB doesn't throw
+							}
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("Text (file)…");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final JFileChooser saveDlg = new JFileChooser();
+							saveDlg.setFileFilter(BetterExtensionFilter.create("Plaintext packet log", "txt"));
+							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final Collection<ReceivedPacket> packets = pta.getVisiblePackets();
+							new PacketTextLogTask(Frontend.this, "Visible", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
+									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("XML (clipboard)");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final Iterator<ReceivedPacket> it = pta.getVisiblePackets().iterator();
+							if (!it.hasNext())
+								return;
+								
+							final MMOBuffer buf = new MMOBuffer();
+							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
+							final L2TextBuilder sb = new L2TextBuilder();
+							try
+							{
+								ToXMLVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
+									ToXMLVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+								if (it.hasNext())
+									sb.append("\r\n…");
+								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+							}
+							catch (IOException ex)
+							{
+								// L2TB doesn't throw
+							}
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("XML (file)…");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final JFileChooser saveDlg = new JFileChooser();
+							saveDlg.setFileFilter(BetterExtensionFilter.create("XML packet log", "xml"));
+							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final Collection<ReceivedPacket> packets = pta.getVisiblePackets();
+							new PacketXMLLogTask(Frontend.this, "Visible", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
+									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
+						});
+						submenu.add(item);
+					}
+					// TODO: 3rd party logs
+					_mExport.add(submenu);
+				}
+				{
+					final JMenu submenu = new JMenu("Table packets");
+					submenu.setMnemonic(KeyEvent.VK_T);
+					{
+						final JMenuItem item = new JMenuItem("Text (clipboard)");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final Iterator<ReceivedPacket> it = pta.getTablePackets().iterator();
+							if (!it.hasNext())
+								return;
+								
+							final MMOBuffer buf = new MMOBuffer();
+							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
+							final L2TextBuilder sb = new L2TextBuilder();
+							try
+							{
+								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
+									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+								if (it.hasNext())
+									sb.append("\r\n…");
+								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+							}
+							catch (IOException ex)
+							{
+								// L2TB doesn't throw
+							}
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("Text (file)…");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final JFileChooser saveDlg = new JFileChooser();
+							saveDlg.setFileFilter(BetterExtensionFilter.create("Plaintext packet log", "txt"));
+							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final Collection<ReceivedPacket> packets = pta.getTablePackets();
+							new PacketTextLogTask(Frontend.this, "Table", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
+									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("XML (clipboard)");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final Iterator<ReceivedPacket> it = pta.getTablePackets().iterator();
+							if (!it.hasNext())
+								return;
+								
+							final MMOBuffer buf = new MMOBuffer();
+							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
+							final L2TextBuilder sb = new L2TextBuilder();
+							try
+							{
+								ToXMLVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
+									ToXMLVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+								if (it.hasNext())
+									sb.append("\r\n…");
+								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+							}
+							catch (IOException ex)
+							{
+								// L2TB doesn't throw
+							}
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("XML (file)…");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final JFileChooser saveDlg = new JFileChooser();
+							saveDlg.setFileFilter(BetterExtensionFilter.create("XML packet log", "xml"));
+							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final Collection<ReceivedPacket> packets = pta.getTablePackets();
+							new PacketXMLLogTask(Frontend.this, "Table", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
+									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
+						});
+						submenu.add(item);
+					}
+					// TODO: 3rd party logs
+					_mExport.add(submenu);
+				}
+				{
+					final JMenu submenu = new JMenu("Memory packets");
+					submenu.setMnemonic(KeyEvent.VK_M);
+					{
+						final JMenuItem item = new JMenuItem("Text (clipboard)");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final Iterator<ReceivedPacket> it = pta.getMemoryPackets().iterator();
+							if (!it.hasNext())
+								return;
+								
+							final MMOBuffer buf = new MMOBuffer();
+							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
+							final L2TextBuilder sb = new L2TextBuilder();
+							try
+							{
+								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
+									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+								if (it.hasNext())
+									sb.append("\r\n…");
+								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+							}
+							catch (IOException ex)
+							{
+								// L2TB doesn't throw
+							}
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("Text (file)…");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final JFileChooser saveDlg = new JFileChooser();
+							saveDlg.setFileFilter(BetterExtensionFilter.create("Plaintext packet log", "txt"));
+							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final Collection<ReceivedPacket> packets = pta.getMemoryPackets();
+							new PacketTextLogTask(Frontend.this, "Memory", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
+									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("XML (clipboard)");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final Iterator<ReceivedPacket> it = pta.getMemoryPackets().iterator();
+							if (!it.hasNext())
+								return;
+								
+							final MMOBuffer buf = new MMOBuffer();
+							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
+							final L2TextBuilder sb = new L2TextBuilder();
+							try
+							{
+								ToXMLVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
+									ToXMLVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+								if (it.hasNext())
+									sb.append("\r\n…");
+								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+							}
+							catch (IOException ex)
+							{
+								// L2TB doesn't throw
+							}
+						});
+						submenu.add(item);
+					}
+					{
+						final JMenuItem item = new JMenuItem("XML (file)…");
+						item.addActionListener(e ->
+						{
+							final PacketTableAccessor pta = cp.getCurrentTable();
+							if (pta == null)
+								return;
+								
+							final JFileChooser saveDlg = new JFileChooser();
+							saveDlg.setFileFilter(BetterExtensionFilter.create("XML packet log", "xml"));
+							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
+								return;
+								
+							final Collection<ReceivedPacket> packets = pta.getMemoryPackets();
+							new PacketXMLLogTask(Frontend.this, "Memory", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
+									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
+						});
+						submenu.add(item);
+					}
+					// TODO: 3rd party logs
+					_mExport.add(submenu);
+				}
+				file.add(_mExport);
 			}
 			{
 				final JMenu export = new JMenu("Transform to");
@@ -663,9 +1060,9 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				about.setToolTipText("Shows information about this application.");
 				
 				final String suffix;
-				if (ProxyInfo.isUnreleased())
+				if (NetProInfo.isUnreleased())
 					suffix = "norelease";
-				else if (ProxyInfo.isSnapshot())
+				else if (NetProInfo.isSnapshot())
 					suffix = "snapshot";
 				else
 					suffix = "stable";
@@ -676,7 +1073,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 					for (int b; (b = in.read()) != -1;)
 						out.write(b);
 					final String text = out.toString("UTF-8");
-					about.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, text.replace("\r\n", "").replace("<revision_number>", ProxyInfo.getRevisionNumber()), "About",
+					about.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, text.replace("\r\n", "").replace("<revision_number>", NetProInfo.getRevisionNumber()), "About",
 							JOptionPane.INFORMATION_MESSAGE, new ImageIcon(IMage.class.getResource("icon-256.png"))));
 					help.add(about);
 				}

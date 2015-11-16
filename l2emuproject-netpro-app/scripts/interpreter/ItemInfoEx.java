@@ -27,6 +27,6 @@ public class ItemInfoEx extends ScriptedBitmaskInterpreter
 	/** Constructs this interpreter. */
 	public ItemInfoEx()
 	{
-		super("Augmentation", "Elemental attribute(s)", "Enchant bonus(es)", "Appearance");
+		super("Augmentation", "Elemental attribute(s)", "Enchant bonus(es)", "Appearance", "Soul crystal effect(s)");
 	}
 }

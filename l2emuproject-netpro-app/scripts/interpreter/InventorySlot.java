@@ -41,9 +41,9 @@ public class InventorySlot extends ScriptedFieldValueInterpreter implements Inte
 	@Override
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
-		if (value == -1)
+		if (value == -1 || value == 255)
 			return getSpecialInterpretation();
-		
+			
 		return value;
 	}
 }

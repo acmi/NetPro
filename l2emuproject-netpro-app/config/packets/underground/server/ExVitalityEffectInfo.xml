@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added additional XP bonus WORD -->
+<packet id="584" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Vitality" type="VitalityLevel" />
+	<dword alias="XP bonus (percent)" />
+	<word alias="Additional bonus (percent)" /> <!-- NEW -->
+	<word alias="Remaining vitality item uses" />
+	<word alias="Total allowed vitality item uses" />
+</packet>

@@ -18,8 +18,8 @@ package net.l2emuproject.proxy.ui.savormix.io;
 import java.nio.file.Path;
 import java.util.Map;
 
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.EndpointType;
 
 /**

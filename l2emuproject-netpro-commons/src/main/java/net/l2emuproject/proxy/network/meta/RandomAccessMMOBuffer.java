@@ -22,8 +22,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueModifierException;

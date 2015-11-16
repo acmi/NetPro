@@ -15,20 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as an inventory item group usage restriction.
  * 
  * @author savormix
  */
-public class ItemRestriction extends ScriptedLegacyIntegerIdInterpreter
+public class ItemRestriction extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public ItemRestriction()
 	{
-		addInterpretation(-1, "None");
-		addInterpretation(0, "Disallow special item usage");
-		addInterpretation(1, "Only allow special item usage");
+		super(new InterpreterMetadata(-1), "None", "Disallow special item usage", "Only allow special item usage");
 	}
 }

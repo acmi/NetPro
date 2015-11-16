@@ -78,7 +78,7 @@ public class L2Proxy
 	public static void main(String... args)
 	{
 		AppInit.defaultInit();
-		ProxyInfo.showStartupInfo();
+		NetProInfo.showStartupInfo();
 		
 		final L2Logger logger = L2Logger.getLogger(L2Proxy.class);
 		logger.debug("Loading configuration…");
@@ -221,7 +221,7 @@ public class L2Proxy
 		else
 			lsc = null;
 			
-		AppInit.defaultPostInit(ProxyInfo.getFullVersionInfo());
+		AppInit.defaultPostInit(NetProInfo.getFullVersionInfo());
 		
 		if (lsc != null)
 		{

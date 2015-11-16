@@ -19,10 +19,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
 
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IGameProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
 import net.l2emuproject.network.mmocore.DataSizeHolder;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.network.security.EmptyCipher;
 import net.l2emuproject.network.security.GameCipher;
 import net.l2emuproject.network.security.ICipher;
@@ -45,6 +45,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	private boolean _handshakeDone;
 	
 	private String _account;
+	private Integer _accountPK;
 	
 	/**
 	 * Creates an internal object representing a game client connection.
@@ -211,7 +212,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	}
 	
 	/**
-	 * Returns the associated authorization service identifier.
+	 * Returns the associated authorization service identifier. If token auth is used, this is not an account name.
 	 * 
 	 * @return account name
 	 */
@@ -221,13 +222,33 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	}
 	
 	/**
-	 * Specifies the authorization service identifier to be associated with this connection.
+	 * Specifies the authorization service identifier to be associated with this connection. If token auth is used, this is not an account name.
 	 * 
 	 * @param account account name
 	 */
 	public void setAccount(String account)
 	{
 		_account = account;
+	}
+	
+	/**
+	 * Returns the associated authorization service identifier.
+	 * 
+	 * @return account ID
+	 */
+	public Integer getAccountPK()
+	{
+		return _accountPK;
+	}
+	
+	/**
+	 * Specifies the authorization service identifier to be associated with this connection.
+	 * 
+	 * @param accountPK account ID
+	 */
+	public void setAccountPK(Integer accountPK)
+	{
+		_accountPK = accountPK;
 	}
 	
 	/**

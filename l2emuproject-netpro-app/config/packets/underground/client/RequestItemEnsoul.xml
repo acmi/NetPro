@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_ITEM_ENSOUL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Item" type="ObjectID" />
+	<byte alias="Changes" id="cnt" />
+	<loop id="cnt">
+		<byte alias="Change" type="item.EnsoulType" />
+		<byte alias="Slot number" />
+		<dword alias="Soul Crystal" type="ObjectID" />
+		<dword alias="Effect" type="item.SoulCrystal" />
+	</loop>
+</packet>

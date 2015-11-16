@@ -15,20 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a base item type.
  * 
  * @author savormix
  */
-public class ItemType1 extends ScriptedLegacyIntegerIdInterpreter
+public class ItemType1 extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public ItemType1()
 	{
-		addInterpretation(0, "Weapon/Jewels"); // acc as well
-		addInterpretation(1, "Armor/Shield");
-		addInterpretation(4, "Adena/Quest item");
+		super("Weapon/Jewels/Accessory", "Armor/Shield", null, null, "Adena/Quest item");
 	}
 }

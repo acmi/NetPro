@@ -15,9 +15,9 @@
  */
 package util.packet;
 
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IGameProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
 
 /**

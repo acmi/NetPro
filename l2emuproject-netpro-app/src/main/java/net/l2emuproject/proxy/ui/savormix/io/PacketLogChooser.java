@@ -35,7 +35,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.ui.savormix.EventSink;
 import net.l2emuproject.proxy.ui.savormix.component.DisabledComponentUI;

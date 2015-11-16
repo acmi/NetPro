@@ -15,21 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a gauge (shown above character) type.
  * 
  * @author savormix
  */
-public class Gauge extends ScriptedLegacyIntegerIdInterpreter
+public class Gauge extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public Gauge()
 	{
-		addInterpretation(0, "Casting");
-		addInterpretation(1, "Shot cooldown");
-		addInterpretation(2, "Breath");
-		addInterpretation(3, "Satiation");
+		super("Casting", "Shot cooldown", "Breath", "Satiation");
 	}
 }

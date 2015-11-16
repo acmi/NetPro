@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.l2emuproject</groupId>
 	<artifactId>l2emuproject-netpro-main</artifactId>
-	<version>1.2</version>
+	<version>1.3</version>
 	<name>${project.artifactId}-${project.version}</name>
 	<description>A proxy-type application to intercept, visualize and manipulate Lineage II network traffic.</description>
 	<packaging>pom</packaging>
@@ -56,7 +56,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.18.1</version>
+				<version>2.19</version>
 				<configuration>
 					<skipTests>true</skipTests>
 					<forkMode>pertest</forkMode>
@@ -80,7 +80,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
+				<version>2.10</version>
 				<configuration>
 					<addGroupIdToProjectName>true</addGroupIdToProjectName>
 					<downloadSources>true</downloadSources>
@@ -147,7 +147,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
-					<version>2.5.3</version>
+					<version>2.6</version>
 					<configuration>
 						<appendAssemblyId>false</appendAssemblyId>
 						<descriptors>

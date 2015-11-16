@@ -22,9 +22,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 import net.l2emuproject.geometry.IPoint3D;
-import net.l2emuproject.network.ClientProtocolVersion;
-import net.l2emuproject.network.IProtocolVersion;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
@@ -98,7 +98,7 @@ public final class CommonPacketSender extends PacketWriterScript
 	@Override
 	public IProtocolVersion newestSupportedProtocolVersion()
 	{
-		return ClientProtocolVersion.INFINITE_ODYSSEY;
+		return ClientProtocolVersion.UNDERGROUND;
 	}
 	
 	@Override
@@ -117,8 +117,7 @@ public final class CommonPacketSender extends PacketWriterScript
 					break;
 				case SAY2:
 					final int chat = ((Number)args[0]).intValue();
-					final String talker = String.valueOf(args[1]),
-					message = String.valueOf(args[2]);
+					final String talker = String.valueOf(args[1]), message = String.valueOf(args[2]);
 					if (chat == CHAT_PM)
 						sendPrivateMessage((L2GameClient)recipient, talker, message, ((Number)args[3]).intValue(), ((Number)args[4]).intValue());
 					else
@@ -222,7 +221,7 @@ public final class CommonPacketSender extends PacketWriterScript
 			throw new InvalidPacketWriterArgumentsException("Use the designated method for private messages");
 		if (chat == 13)
 			throw new InvalidPacketWriterArgumentsException("Method only accepts talker as string");
-		
+			
 		final int size = 1 + 4 + 4 + stdStringSize(talker) + 4 + stdStringSize(message);
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
@@ -279,7 +278,7 @@ public final class CommonPacketSender extends PacketWriterScript
 		buf.writeS(message);
 		for (int i = 0; i < 4; ++i)
 			buf.writeS("");
-		
+			
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
@@ -557,7 +556,7 @@ public final class CommonPacketSender extends PacketWriterScript
 	{
 		if (capacity > 0xFF_FC)
 			throw new IllegalArgumentException("Invalid packet size: " + capacity);
-		
+			
 		return ByteBuffer.allocate(capacity).order(ByteOrder.LITTLE_ENDIAN);
 	}
 	

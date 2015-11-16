@@ -24,7 +24,7 @@ import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
  */
 public class Skill extends ScriptedIntegerEqualityCondition
 {
-	/** Constructs this interpreter. */
+	/** Constructs this condition. */
 	public Skill()
 	{
 		super(1);

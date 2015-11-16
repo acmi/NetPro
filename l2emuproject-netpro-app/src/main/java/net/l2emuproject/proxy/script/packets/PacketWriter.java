@@ -15,7 +15,7 @@
  */
 package net.l2emuproject.proxy.script.packets;
 
-import net.l2emuproject.network.IProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.Proxy;
 
 /**

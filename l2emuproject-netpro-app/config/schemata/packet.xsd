@@ -19,6 +19,7 @@
 					<xs:element name="string" type="dataType" /> <!-- nul-terminated string (default) -->
 					<xs:element name="ntstring" type="dataType" /> <!-- nul-terminated string -->
 					<xs:element name="sstring" type="dataType" /> <!-- sized string -->
+					<xs:element name="astring" type="dataType" /> <!-- nul-terminated 8-bit character string (effectively 7-bit ascii with MSB=0) -->
 					<xs:element name="loop" type="loopType" />
 					<xs:element name="branch" type="branchType" />
 				</xs:choice>
@@ -42,6 +43,7 @@
 				<xs:element name="string" type="dataType" /> <!-- nul-terminated string (default) -->
 				<xs:element name="ntstring" type="dataType" /> <!-- nul-terminated string -->
 				<xs:element name="sstring" type="dataType" /> <!-- sized string -->
+				<xs:element name="astring" type="dataType" /> <!-- nul-terminated 8-bit character string (effectively 7-bit ascii with MSB=0) -->
 				<xs:element name="loop" type="loopType" />
 				<xs:element name="branch" type="branchType" />
 			</xs:choice>
@@ -144,9 +146,9 @@
 			<xs:enumeration value="FlyPathNode" />
 			<xs:enumeration value="FlyType" />
 			<xs:enumeration value="FriendStatusUpdate" />
+			<xs:enumeration value="GameServerKind" />
 			<xs:enumeration value="GameServerListVersion" />
 			<xs:enumeration value="GameServerName" />
-			<xs:enumeration value="GameServerTypes" />
 			<xs:enumeration value="GameTime" />
 			<xs:enumeration value="Gauge" />
 			<xs:enumeration value="GmView" />
@@ -241,6 +243,7 @@
 			<xs:enumeration value="SecAuthSetup" />
 			<xs:enumeration value="SecondsLeftToTime" />
 			<xs:enumeration value="SecondsSinceEpoch" />
+			<xs:enumeration value="ServerCharacterCount" />
 			<xs:enumeration value="ServitorType" />
 			<xs:enumeration value="SevenSignsPeriod" />
 			<xs:enumeration value="SevenSignsRecordTab" />
@@ -284,7 +287,19 @@
 			<xs:enumeration value="ave.AbnormalVisualEffectMask" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
 
+			<xs:enumeration value="coc.CuriousHouseArena" />
+			<xs:enumeration value="coc.CuriousHouseResult" />
+			<xs:enumeration value="coc.CuriousHouseState" />
+			<xs:enumeration value="coc.CuriousHouseStatus" />
+
 			<xs:enumeration value="commission.ItemCategory" />
+			
+			<xs:enumeration value="daily.DayOfWeek" />
+			<xs:enumeration value="daily.EventProgress" />
+			<xs:enumeration value="daily.InstanceEntry" />
+			<xs:enumeration value="daily.OneDayReward" />
+			<xs:enumeration value="daily.RewardStatus" />
+			<xs:enumeration value="daily.TodoListTab" />
 
 			<xs:enumeration value="equip.EquipmentSlot" />
 			<xs:enumeration value="equip.EquipmentState" />
@@ -305,8 +320,14 @@
 			<xs:enumeration value="fishing.FishType" />
 			<xs:enumeration value="fishing.LureType" />
 			
+			<xs:enumeration value="item.AutoShotState" />
 			<xs:enumeration value="item.AttributeEnchantResult" />
+			<xs:enumeration value="item.EnsoulType" />
 			<xs:enumeration value="item.MonsterRaceLane" />
+			<xs:enumeration value="item.ShotType" />
+			<xs:enumeration value="item.SoulCrystal" />
+
+			<xs:enumeration value="olympiad.InfoMode" />
 
 			<xs:enumeration value="party.PartyMatchingAffilation" />
 			<xs:enumeration value="party.PartyMatchingListMode" />
@@ -314,6 +335,8 @@
 			<xs:enumeration value="pledge.ApplicationMode" />
 			<xs:enumeration value="pledge.ApplicationResponse" />
 			<xs:enumeration value="pledge.AllyCrestDDS" />
+			<xs:enumeration value="pledge.Attendance" />
+			<xs:enumeration value="pledge.BonusType" />
 			<xs:enumeration value="pledge.LegacyPledgeAuthority" />
 			<xs:enumeration value="pledge.LegacyPledgePowerAction" />
 			<xs:enumeration value="pledge.PledgeAdvertisement" />
@@ -372,6 +395,7 @@
 
 	<xs:simpleType name="conditionType">
 		<xs:restriction base="xs:token">
+			<xs:enumeration value="AbnormalSkillType" />
 			<xs:enumeration value="BlockUnblockPlayer" />
 			<xs:enumeration value="DefaultChat" />
 			<xs:enumeration value="FerryShout" />
@@ -403,6 +427,9 @@
 			<xs:enumeration value="bitmask.Bit7" />
 			<xs:enumeration value="bitmask.NotAllBits" />
 			
+			<xs:enumeration value="chat.AllianceChat" />
+			<xs:enumeration value="chat.ClanChat" />
+			
 			<xs:enumeration value="equip.EquipableItemType" />
 			<xs:enumeration value="equip.NewlyEquipped" />
 			<xs:enumeration value="equip.NonEquipableItemType" />
@@ -414,6 +441,7 @@
 			<xs:enumeration value="friend.LevelChange" />
 			
 			<xs:enumeration value="macro.ActionOrChat" />
+			<xs:enumeration value="macro.Delay" />
 			<xs:enumeration value="macro.Shortcut" />
 			<xs:enumeration value="macro.Skill" />
 			
@@ -454,6 +482,8 @@
 			<xs:enumeration value="relation.Multiple" />
 			<xs:enumeration value="relation.Single" />
 			
+			<xs:enumeration value="serverlist.ServerList5Ex1" />
+			<xs:enumeration value="serverlist.ServerList5Ex2" />
 			<xs:enumeration value="serverlist.ServerListC1" />
 			<xs:enumeration value="serverlist.ServerListC2" />
 			

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_SEND_PROTOCOL_VERSION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Protocol version" />
+	<dword alias="Account ID" />
+	<bytes alias="RSA modulus" mod="ClientDatModulus413" type="ASCII">
+		<length>256</length>
+	</bytes>
+	<dword alias="" />
+</packet>

@@ -37,8 +37,8 @@ import javax.swing.SwingWorker;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
 
-import net.l2emuproject.network.IProtocolVersion;
-import net.l2emuproject.network.ProtocolVersionManager;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.meta.UserDefinedProtocolVersion;
 import net.l2emuproject.proxy.ui.savormix.io.dialog.LogIdentificationProgress.LogIdModel.LogIdEntry;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogIdentifyTask;

@@ -24,6 +24,7 @@ import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInter
  */
 public final class DuelTeam extends ScriptedZeroBasedIntegerIdInterpreter
 {
+	/** Constructs this interpreter. */
 	public DuelTeam()
 	{
 		super("None", "Blue", "Red");

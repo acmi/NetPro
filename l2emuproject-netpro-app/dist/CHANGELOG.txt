@@ -1,5 +1,11 @@
 VERSION [1.3]
 -------------
+Underground support.
+Minor definition updates.
+Ability to copy (CTRL+C) a packet directly from the packet list in interpreted format (instead of row contents).
+Ability to export UI packet list content to text/XML. [rocknowx]
+Non-captured packets should be invisible in log files as well. [rocknowx]
+XML format now specifies network protocol revision.
 
 VERSION [1.2]
 -------------

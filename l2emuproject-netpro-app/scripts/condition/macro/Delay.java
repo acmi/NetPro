@@ -18,15 +18,15 @@ package condition.macro;
 import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
 
 /**
- * Tests whether the value of a byte/word/dword is equal to 4.
+ * Tests whether the value of a byte/word/dword is equal to 6.
  * 
  * @author _dev_
  */
-public class Shortcut extends ScriptedIntegerEqualityCondition
+public class Delay extends ScriptedIntegerEqualityCondition
 {
 	/** Constructs this condition. */
-	public Shortcut()
+	public Delay()
 	{
-		super(4);
+		super(6);
 	}
 }

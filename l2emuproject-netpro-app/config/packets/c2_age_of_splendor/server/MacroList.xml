@@ -19,6 +19,11 @@
 				<byte alias="0" />
 				<string alias="Command" />
 			</branch>
+			<branch id="type" condition="macro.Delay">
+				<dword alias="Delay" type="TimeRemaining" />
+				<byte alias="0" />
+				<string alias="" />
+			</branch>
 			<branch id="type" condition="macro.Shortcut">
 				<dword alias="Tab" mod="PlusOne" />
 				<byte alias="Slot" mod="PlusOne" />

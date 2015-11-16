@@ -441,6 +441,7 @@
 			<xs:enumeration value="friend.LevelChange" />
 			
 			<xs:enumeration value="macro.ActionOrChat" />
+			<xs:enumeration value="macro.Delay" />
 			<xs:enumeration value="macro.Shortcut" />
 			<xs:enumeration value="macro.Skill" />
 			

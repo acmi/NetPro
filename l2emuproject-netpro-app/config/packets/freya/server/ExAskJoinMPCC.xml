@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added an unknown DWORD at the end of packet -->
+<packet id="SM_EX_ASK_JOIN_MPCC" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<string alias="Invitor name" />
+
+	<!-- NEW -->
+	<dword alias="0"/>
+</packet>

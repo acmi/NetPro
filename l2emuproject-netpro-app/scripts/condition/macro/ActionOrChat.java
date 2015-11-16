@@ -24,7 +24,7 @@ import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
  */
 public class ActionOrChat extends ScriptedIntegerEqualityCondition
 {
-	/** Constructs this interpreter. */
+	/** Constructs this condition. */
 	public ActionOrChat()
 	{
 		super(3);

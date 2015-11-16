@@ -3807,9 +3807,9 @@
 		-->
 		<packet id="SM_EX_CLOSE_MPCC" name="ExCloseMPCC" />
 		<!--
-		UNICODE "(Receive)%s"
 		ASCII "Sd"
 		UNICODE "ExAskJoinMPCCPacket"
+		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_ASK_JOIN_MPCC" name="ExAskJoinMPCC" />
 		<!--

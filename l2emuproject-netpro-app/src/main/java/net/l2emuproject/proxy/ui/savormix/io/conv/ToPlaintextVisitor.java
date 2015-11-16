@@ -136,18 +136,14 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 	 * @param buf preallocated content wrapper
 	 * @param cacheContext entity cache context
 	 * @param df preferred date format
-	 * @param writer a string builder
+	 * @param writer a string builder wrapper
+	 * @return {@code writer}
+	 * @throws IOException if packet content cannot be written
 	 */
-	public static final void writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, StringBuilder writer)
+	public static final Appendable writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, Appendable writer) throws IOException
 	{
-		try
-		{
-			writePacket(packet, protocol, buf, cacheContext, df, writer, false);
-		}
-		catch (IOException e)
-		{
-			// StringBuilder does not throw
-		}
+		writePacket(packet, protocol, buf, cacheContext, df, writer, false);
+		return writer;
 	}
 	
 	private static final void writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, Appendable writer, boolean hidden)

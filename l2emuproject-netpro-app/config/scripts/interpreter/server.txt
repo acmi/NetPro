@@ -18,7 +18,7 @@
 18	Magmeld (GMT-2)
 19	Bartz (GMT-5)
 20	Event Server
-21	Frikios
+21	Zaken (NEW)
 22	Ophylia
 23	Shakdun
 24	Tarziph

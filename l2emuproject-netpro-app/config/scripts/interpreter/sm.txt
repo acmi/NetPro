@@ -4101,7 +4101,7 @@
 4344	Cannot use the Soul Crystal System while in battle.
 4345	Please select a Soul Crystal effect from the list first.
 4346	Cannot use skills or items while faking death.
-4347	Stage $s1 $s2
+4347	Stage $s2 - $s1
 4348	Soul Crystal effects that have been applied cannot be removed.
 4349	Invalid Soul Crystal.
 4350	All the slots are in use. If you would like to apply another effect, drag a Soul Crystal to the corresponding slot to redo it.
@@ -4478,7 +4478,7 @@
 6001	The item has been successfully purchased.
 6002	The item has failed to be purchased.
 6003	The item you selected cannot be purchased. Unfortunately, the sale period ended.
-6004	Enchant failed. The enchant skill for the corresponding item will be exactly retained.
+6004	Enchant failed. The enchant value for the corresponding item will be exactly retained.
 6005	You do not have enough NCoin.
 6006	The item cannot be received because the inventory weight/quantity limit has been exceeded.
 6007	The item cannot be received because the inventory weight/quantity limit has been exceeded.

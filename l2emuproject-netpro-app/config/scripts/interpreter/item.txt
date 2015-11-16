@@ -22732,7 +22732,7 @@
 23235	Seductive Swimsuit Appearance Stone
 23236	Scroll of Escape: Uthanka's Tomb
 23237	Agathion - Pirate Captain Uthanka
-23238	Blessed Scroll: Enchant Elemental Shirt Pack
+23238	Blessed Scroll: Enchant Elemental Shirt Pack Pa'agrio
 23239	Enchanted Pa'agrio's Shirt Pack
 23240	Pa'agrio's Shirt
 23241	Blessed Scroll: Enchant Elemental Shirt
@@ -22793,13 +22793,13 @@
 23296	Drop Rate Rune 50% Pack (30-day)
 23297	Drop Rate Rune 100% Pack (30-day)
 23298	Drop Rate Rune 200% Pack (30-day)
-23299	Blessed Scroll: Enchant Elemental Shirt Pack
+23299	Blessed Scroll: Enchant Elemental Shirt Pack Sayha
 23300	Enchanted Sayha's Shirt Pack
 23301	Sayha's Shirt
-23302	Blessed Scroll: Enchant Elemental Shirt Pack
+23302	Blessed Scroll: Enchant Elemental Shirt Pack Eva
 23303	Enchanted Eva's Shirt Pack
 23304	Eva's Shirt
-23305	Blessed Scroll: Enchant Elemental Shirt Pack
+23305	Blessed Scroll: Enchant Elemental Shirt Pack Maphr
 23306	Enchanted Maphr's Shirt Pack
 23307	Maphr's Shirt
 23308	Recipe: Elven Radler Event
@@ -27073,9 +27073,42 @@
 27602	Abundance Box
 27603	Daily Mission Reward Chest
 27604	Amaranthine Double Crystal Enhancement Box
-27605	NoItemName
-27606	NoItemName
-27607	NoItemName
+27605	Blessed Amaranthine Pack (Physical)
+27606	Blessed Amaranthine Pack (Magical)
+27607	Blessed Amaranthine Pack (Dual Weapons)
+27608	Card Pouch Event
+27609	Infinite Odyssey - Schuttgart Castle Event
+27610	Infinite Odyssey - Forge of the Gods Event
+27611	Infinite Odyssey - Summer Labyrinth Event
+27612	Infinite Odyssey - Frozen Labyrinth Event
+27613	New Territory Card: Ashen Shadow Revolutionaries Event
+27614	New Territory Card: Garden of Spirits Event
+27615	New Territory Card: Underground Gainak Event
+27616	Mystic Tavern Card: Settlen's Tavern Event
+27617	Mystic Tavern Card: Kelbim Event
+27618	Mystic Tavern Card: Dwarf Archaeologist Event
+27619	Mystic Tavern Card: Tauti Event
+27620	Mystic Tavern Card: Freya Event
+27621	Embryo's Card: Atelia Fortress Event
+27622	Embryo's Card: Command Post Event
+27623	Embryo's Card: Kelbim Raid Event
+27624	Legendary Card: Exalted Event
+27625	Hidden Card Event
+27626	Aspiring Orc Ruler of Aden Event
+27627	Agathion - Matryoshka (7-day)
+27628	Agathion - Matryoshka (30-day)
+27629	Agathion - Minion Eye (7-day)
+27630	Agathion - Minion Eye (7-day)
+27631	Prestige Rune 100% Pack 1-hour
+27632	Fancy Fishing Rod
+27633	Fancy Fishing Rod 1-day
+27634	Fancy Fishing Rod Pack (1-day)
+27635	Fancy Fishing Rod 7-day
+27636	Fancy Fishing Rod Pack (7-day)
+27637	Fancy Fishing Rod 30-day
+27638	Fancy Fishing Rod Pack (30-day)
+27639	Hidden Treasure Chest
+27640	Heine Fishing Coin
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste

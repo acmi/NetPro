@@ -1566,3 +1566,56 @@
 1011566	Entrance Pass: Embryo Command Post
 1011567	Entrance Pass: Crystal Caverns
 1011568	Entrance Pass: Nightmare Kamaloka
+1011569	Monster Research
+1011570	Ultimate Monster Research Pack (x1000)
+1011571	Power Shirt Pack
+1011572	Blessed Scroll: Enchant Power Shirt
+1011573	XP Bottle Agathion Pack 10-Hour
+1011574	Apparition Stone (Lv. 88)
+1011575	Apparition Stone (Lv. 93)
+1011576	Apparition Stone (Lv. 98)
+1011577	Mysterious Wind Scroll
+1011578	Heavenly CP Cookie
+1011579	Emperor's Dessert Set (Attack Type)
+1011580	Emperor's Dessert Set (Wizard Type)
+1011581	Emperor's Dessert Set (Defense Type)
+1011582	Feather of Blessing
+1011583	Valiant Scroll
+1011584	MP Recovering Potion
+1011585	Super Healthy Juice (HP)
+1011586	Super Healthy Juice (CP)
+1011587	Entrance Pass: Baylor
+1011588	Entrance Pass: Octavis (Normal)
+1011589	Entrance Pass: Istina (Normal)
+1011590	Entrance Pass: Nornil's Garden (Spicula)
+1011591	Entrance Pass: Fortuna
+1011592	Entrance Pass: Spezion (Epic)
+1011593	Entrance Pass: Kartia's Labyrinth Lv. 85 Solo
+1011594	Entrance Pass: Kartia's Labyrinth Lv. 90 Solo
+1011595	Entrance Pass: Kartia's Labyrinth Lv. 95 Solo
+1011596	Entrance Pass: Kartia's Labyrinth Lv. 85 Party
+1011597	Entrance Pass: Kartia's Labyrinth Lv. 90 Party
+1011598	Entrance Pass: Kartia's Labyrinth Lv. 95 Party
+1011599	Entrance Pass: Ancient Kartia's Labyrinth
+1011600	Traces of Ancient Kartia's Labyrinth
+1011601	Beast Soulshot
+1011602	Mysterious Soulshot (R-grade)
+1011603	Mysterious Blessed Spiritshot (R-grade)
+1011604	Rose Spirit Coupon
+1011605	Superior Minion Coupon
+1011606	Dual Expertise Rune Pack (R99-grade)
+1011607	XP Buff 50% - 1 Hour
+1011608	Appearance Stone: Dark Assassin
+1011609	Ninja Outfit Bundle
+1011610	Metal Suit Outfit Bundle
+1011611	Military Outfit Bundle
+1011612	Maid Outfit Bundle
+1011613	Appearance Stone: Transparent Armor
+1011614	Appearance Stone: Japanese Weapon
+1011615	Appearance Stone: Cat Fighter (Ertheia Only)
+1011616	Appearance Stone: Cat Staff (Ertheia Only)
+1011617	Scroll: Modify Demonic Sword Zariche (30-day)
+1011618	Scroll: Modify Bloody Sword Akamanah (30-day)
+1011619	Noble Pack
+1011620	Divine Pack
+1011621	Ultimate Pack

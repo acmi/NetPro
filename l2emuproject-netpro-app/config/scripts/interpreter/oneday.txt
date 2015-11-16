@@ -1,5 +1,5 @@
 26	Reach Level (Lv. 4)
-28	Reach Level (Lv. 6 Ertheia
+28	Reach Level (Lv. 6 Ertheia)
 31	Reach Level (Lv. 9)
 34	Reach Level (Lv. 12)
 37	Reach Level (Lv. 15)

@@ -12210,7 +12210,7 @@
 34171	Melisa, Princess
 34172	Sayan, Sage
 34173	Kanna, Knight Captain
-34174	Sirr
+34174	Sirra
 34175	Knight
 34176	Molly
 34177	Molly

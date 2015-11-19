@@ -326,6 +326,9 @@
 			<xs:enumeration value="item.MonsterRaceLane" />
 			<xs:enumeration value="item.ShotType" />
 			<xs:enumeration value="item.SoulCrystal" />
+			
+			<xs:enumeration value="lucky.FortuneReading" />
+			<xs:enumeration value="lucky.ReadingResult" />
 
 			<xs:enumeration value="olympiad.InfoMode" />
 

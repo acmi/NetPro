@@ -18,15 +18,15 @@ package condition;
 import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
 
 /**
- * Unknown usage.
+ * Determines whether an effect duration is too long to be contained within a standard field size.
  * 
  * @author _dev_
  */
-public final class AbnormalSkillType extends ScriptedIntegerEqualityCondition
+public final class LongEffect extends ScriptedIntegerEqualityCondition
 {
 	/** Constructs this condition. */
-	public AbnormalSkillType()
+	public LongEffect()
 	{
-		super(100);
+		super(Short.MAX_VALUE);
 	}
 }

@@ -15,6 +15,9 @@
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
 		</dword>
 		<dword alias="0" />
-		<word alias="Time left" type="TimeRemaining" />
+		<word alias="Time left" type="TimeRemaining" id="ex" />
+		<branch id="ex" condition="LongEffect">
+			<dword alias="Total time left" type="TimeRemaining" />
+		</branch>
 	</loop>
 </packet>

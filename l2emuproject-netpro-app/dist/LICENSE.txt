@@ -173,9 +173,9 @@
 
 
 ADDITIONAL DISCLAIMER:
-The terms of the license above also apply to l2emuproject-commons and l2emuproject-commons-ui
-under the condition of redistribution with this application or any of its (in)direct fork(s) and
-with the exception that the authors may selectively waive your right to receive fully documented
-source code, or source code in any form for these libraries.
+The terms of the license above also apply to l2emuproject-commons-config, l2emuproject-commons-essentials,
+l2emuproject-commons-geomath and l2emuproject-commons-mmo under the condition of redistribution with this
+application or any of its (in)direct fork(s) and with the exception that the authors may selectively waive
+your right to receive fully documented source code, or source code in any form for these libraries.
 The terms of this disclaimer may automatically be deemed obsolete once these components are licensed
 as open source, but the invalidation may not be done retroactively.

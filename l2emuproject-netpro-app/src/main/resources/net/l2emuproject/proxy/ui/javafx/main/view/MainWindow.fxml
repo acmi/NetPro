@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="629.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TabPane id="connection_pane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab id="connection_pane/console" text="%main.consoletab.title">
+               <content>
+                  <BorderPane>
+                     <center>
+                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                           <font>
+                              <Font name="Consolas" size="12.0" />
+                           </font>
+                        </TextArea>
+                     </center>
+                     <bottom>
+                        <GridPane BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%main.consoletab.clear" />
+                              <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="%main.consoletab.wrap" GridPane.columnIndex="1" />
+                              <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%main.consoletab.scroll" GridPane.columnIndex="2" />
+                              <Slider blockIncrement="1.0" majorTickUnit="5.0" max="28.0" min="5.0" minorTickCount="4" showTickMarks="true" snapToTicks="true" value="12.0" GridPane.columnIndex="3" />
+                           </children>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                        </GridPane>
+                     </bottom>
+                  </BorderPane>
+               </content></Tab>
+          <Tab id="connection_pane/idle" text="%main.idletab.title">
+               <content>
+                  <FlowPane alignment="TOP_CENTER">
+                     <children>
+                        <Label text="%main.idletab.description" />
+                     </children>
+                  </FlowPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <ProgressBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" progress="0.0" />
+                  <Label text="%main.memory" />
+               </children>
+            </StackPane>
+            <FlowPane alignment="CENTER" GridPane.columnIndex="2">
+               <children>
+                  <Label text="%main.javaenv" />
+               </children>
+            </FlowPane>
+            <CheckBox mnemonicParsing="false" text="%main.capture.curtab" visible="false" />
+            <CheckBox mnemonicParsing="false" text="%main.capture.global" GridPane.rowIndex="1" />
+            <FlowPane alignment="CENTER" GridPane.columnIndex="1">
+               <children>
+                  <Label text="[000] Protocol 0000-01-01" visible="false" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="%main.pdc" visible="false" />
+               </children>
+            </FlowPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu text="%menu.file.title">
+            <items>
+                  <MenuItem text="%menu.file.open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <Menu text="%menu.file.import.title">
+                    <items>
+                      <MenuItem text="%menu.file.3rdpt.phx" />
+                        <MenuItem text="%menu.file.3rdpt.phx_raw" />
+                        <MenuItem text="%menu.file.3rdpt.ps" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu disable="true" text="%menu.file.export.title">
+                    <items>
+                        <Menu text="%menu.file.export.selected">
+                          <items>
+                            <MenuItem text="%menu.file.export.plain.clipboard" />
+                              <MenuItem text="%menu.file.export.xml.clipboard" />
+                          </items>
+                        </Menu>
+                        <Menu text="%menu.file.export.visible">
+                           <items>
+                              <MenuItem text="%menu.file.export.plain.clipboard" />
+                              <MenuItem text="%menu.file.export.plain.file" />
+                              <MenuItem text="%menu.file.export.xml.clipboard" />
+                              <MenuItem text="%menu.file.export.xml.file" />
+                           </items>
+                        </Menu>
+                        <Menu text="%menu.file.export.table">
+                           <items>
+                              <MenuItem text="%menu.file.export.plain.clipboard" />
+                              <MenuItem text="%menu.file.export.plain.file" />
+                              <MenuItem text="%menu.file.export.xml.clipboard" />
+                              <MenuItem text="%menu.file.export.xml.file" />
+                           </items>
+                        </Menu>
+                        <Menu text="%menu.file.export.memory">
+                           <items>
+                              <MenuItem text="%menu.file.export.plain.clipboard" />
+                              <MenuItem text="%menu.file.export.plain.file" />
+                              <MenuItem text="%menu.file.export.xml.clipboard" />
+                              <MenuItem text="%menu.file.export.xml.file" />
+                           </items>
+                        </Menu>
+                    </items>
+                  </Menu>
+                  <Menu text="%menu.file.transform.title">
+                    <items>
+                        <Menu text="%menu.file.transform.3rdpt.title">
+                          <items>
+                              <MenuItem text="%menu.file.3rdpt.phx" />
+                              <MenuItem text="%menu.file.3rdpt.phx_raw" />
+                              <MenuItem text="%menu.file.3rdpt.ps" />
+                          </items>
+                        </Menu>
+                        <Menu text="%menu.file.transform.text.title">
+                          <items>
+                            <MenuItem text="%menu.file.transform.text.plain" />
+                              <MenuItem text="%menu.file.transform.text.xml" />
+                          </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu text="%menu.file.transform.misc.title">
+                          <items>
+                            <MenuItem text="%menu.file.transform.misc.stream" />
+                          </items>
+                        </Menu>
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem text="%menu.file.gc" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem text="%menu.file.exit">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu text="%menu.packets.title">
+            <items>
+              <MenuItem text="%menu.packets.scroll" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu text="%menu.packets.display" />
+                  <MenuItem text="%menu.packets.explain" />
+                  <MenuItem text="%menu.packets.inject" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem text="%menu.packets.reload" />
+            </items>
+          </Menu>
+            <Menu text="%menu.scripts.title">
+              <items>
+                  <MenuItem text="%menu.scripts.load.one" />
+                  <MenuItem text="%menu.scripts.unload" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem text="%menu.scripts.load.all" />
+              </items>
+            </Menu>
+          <Menu text="%menu.help.title">
+            <items>
+              <MenuItem text="%menu.help.config" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem text="%menu.help.about" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

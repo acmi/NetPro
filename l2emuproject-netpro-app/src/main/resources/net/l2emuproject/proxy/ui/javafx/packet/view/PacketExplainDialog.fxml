@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.SplitPane?>
+
+
+<SplitPane dividerPositions="0.5" prefHeight="467.0" prefWidth="574.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.66">
+   <items>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="%packetex.protocol.prompt" GridPane.rowIndex="1" />
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <RadioButton mnemonicParsing="false" text="%packetex.type.client">
+                           <FlowPane.margin>
+                              <Insets right="5.0" />
+                           </FlowPane.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="packetType" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="%packetex.type.server" toggleGroup="$packetType">
+                           <FlowPane.margin>
+                              <Insets left="5.0" />
+                           </FlowPane.margin>
+                        </RadioButton>
+                     </children>
+                  </FlowPane>
+               </children>
+            </GridPane>
+         </top>
+         <bottom>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%packetex.loadfile" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <TextArea prefHeight="200.0" prefWidth="200.0" promptText="%packetex.content.prompt" wrapText="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Consolas" size="12.0" />
+               </font>
+            </TextArea>
+         </center>
+      </BorderPane>
+      <fx:include source="PacketInterpView.fxml" />
+   </items>
+</SplitPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<SplitPane id="packetInterpView" dividerPositions="0.75" orientation="VERTICAL" prefHeight="464.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <content>
+            <WebView prefHeight="-1.0" prefWidth="-1.0" />
+         </content>
+      </ScrollPane>
+      <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <content>
+            <WebView prefHeight="-1.0" prefWidth="-1.0" />
+         </content>
+      </ScrollPane>
+   </items>
+</SplitPane>

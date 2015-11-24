@@ -287,6 +287,13 @@
 			<xs:enumeration value="ave.AbnormalVisualEffectMask" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
 
+			<xs:enumeration value="chat.ChatTokenType" />
+			<xs:enumeration value="chat.ChatToken1Value" />
+			<xs:enumeration value="chat.ChatToken2Value" />
+			<xs:enumeration value="chat.ChatToken3Value" />
+			<xs:enumeration value="chat.ChatToken4Value" />
+			<xs:enumeration value="chat.ChatToken5Value" />
+
 			<xs:enumeration value="coc.CuriousHouseArena" />
 			<xs:enumeration value="coc.CuriousHouseResult" />
 			<xs:enumeration value="coc.CuriousHouseState" />

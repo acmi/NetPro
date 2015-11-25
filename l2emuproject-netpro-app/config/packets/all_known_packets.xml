@@ -296,8 +296,6 @@
 		<packet id="436" name="RequestDivideAdenaCancel" />
 		<packet id="437" name="RequestDivideAdena" />
 		<packet id="442" name="RequestStopMove" />
-		<packet id="443" name="RequestAbilityWndOpen" />
-		<packet id="444" name="RequestAbilityWndClose" />
 		<packet id="445" name="RequestExPCCafeRequestOpenWindowWithoutNPC" />
 		<packet id="446" name="RequestLuckyGamePlay" />
 		<packet id="447" name="RequestNotifyTrainingRoomEnd" />
@@ -1574,6 +1572,18 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_CHANGE_ABILITY_POINT" name="RequestChangeAbilityPoint" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestAbilityWndOpen"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ABILITY_WND_OPEN" name="RequestAbilityWndOpen" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestAbilityWndClose"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ABILITY_WND_CLOSE" name="RequestAbilityWndClose" />
 
 		<!--
 		UNICODE "ExSendClientINI"

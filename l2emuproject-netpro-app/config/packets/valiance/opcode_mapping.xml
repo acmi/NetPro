@@ -45,8 +45,8 @@
 		<packet opcodePrefix="D0 EF 00" id="CM_REQ_ABILITY_LIST" />
 		<packet opcodePrefix="D0 F0 00" id="CM_REQ_RESET_ABILITY_POINT" />
 		<packet opcodePrefix="D0 F1 00" id="CM_REQ_CHANGE_ABILITY_POINT" />
-		<packet opcodePrefix="D0 F2 00" id="443" />
-		<packet opcodePrefix="D0 F3 00" id="444" />
+		<packet opcodePrefix="D0 F2 00" id="CM_REQ_ABILITY_WND_OPEN" />
+		<packet opcodePrefix="D0 F3 00" id="CM_REQ_ABILITY_WND_CLOSE" />
 		<packet opcodePrefix="D0 F4 00" id="445" />
 		<packet opcodePrefix="D0 F6 00" id="446" />
 		<packet opcodePrefix="D0 F7 00" id="447" />

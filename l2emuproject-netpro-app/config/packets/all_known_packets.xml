@@ -295,10 +295,6 @@
 		<packet id="435" name="RequestDivideAdenaStart" />
 		<packet id="436" name="RequestDivideAdenaCancel" />
 		<packet id="437" name="RequestDivideAdena" />
-		<packet id="438" name="RequestAcquireAbilityList" />
-		<packet id="439" name="RequestAbilityList" />
-		<packet id="440" name="RequestResetAbilityPoint" />
-		<packet id="441" name="RequestChangeAbilityPoint" />
 		<packet id="442" name="RequestStopMove" />
 		<packet id="443" name="RequestAbilityWndOpen" />
 		<packet id="444" name="RequestAbilityWndClose" />
@@ -1545,14 +1541,40 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" name="RequestExitPartyMatchingWaitingRoom" />
-		
+
 		<!--
 		ASCII "chcdd"
 		UNICODE "RequestExEvent_Campaign_Info"
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_EX_EVENT_CAMPAIGN_INFO" name="RequestExEventCampaignInfo" />
-		
+
+		<!--
+		ASCII "dd"
+		ASCII "chdb"
+		UNICODE "RequestAcquireAbilityList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ACQUIRE_ABILITY_LIST" name="RequestAcquireAbilityList" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestAbilityList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ABILITY_LIST" name="RequestAbilityList" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestResetAbilityPoint"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RESET_ABILITY_POINT" name="RequestResetAbilityPoint" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestChangeAbilityPoint"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CHANGE_ABILITY_POINT" name="RequestChangeAbilityPoint" />
+
 		<!--
 		UNICODE "ExSendClientINI"
 		UNICODE "(Send)%s INIType : %s"
@@ -1564,7 +1586,7 @@
 		UNICODE "(Send)%s %d"
 		-->
 		<packet id="CM_REQ_EX_AUTO_FISH" name="RequestExAutoFish" />
-		
+
 		<!--
 		ASCII "ch"
 		UNICODE "RequestVipAttendanceItemList"
@@ -2009,8 +2031,6 @@
 		<packet id="528" name="ExNpcInfoAbnormalVisualEffect" />
 		<packet id="530" name="ExSummonInfo" />
 		<packet id="531" name="ExNpcInfoState" />
-		<packet id="532" name="Dummy_FF" />
-		<packet id="533" name="ExDummy_FE_00" />
 		<packet id="534" name="PledgeSkillListRemove" />
 		<packet id="536" name="ExBR_LoadEventTopRankers" />
 		<packet id="537" name="ExBR_PremiumState" />
@@ -2136,15 +2156,12 @@
 		<packet id="652" name="ExDivideAdenaCancel" />
 		<packet id="653" name="ExDivideAdenaDone" />
 		<packet id="654" name="ExPetInfo" />
-		<packet id="655" name="ExAcquireAPSkillList" />
 		<packet id="656" name="ExStartLuckyGame" />
 		<packet id="657" name="ExBettingLuckyGameResult" />
 		<packet id="658" name="ExTrainingZone_Admission" />
 		<packet id="659" name="ExTrainingZone_Leaving" />
 		<packet id="660" name="ExPeriodicHenna" />
-		<packet id="661" name="ExShowAPListWnd" />
 		<packet id="662" name="ExUserInfoInvenWeight" />
-		<packet id="663" name="ExCloseAPListWnd" />
 		<packet id="664" name="ExEnchantOneOK" />
 		<packet id="665" name="ExEnchantOneFail" />
 		<packet id="666" name="ExEnchantOneRemoveOK" />
@@ -3899,6 +3916,24 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_SHOW_SEED_MAP_INFO" name="ExShowSeedMapInfo" />
+
+		<!--
+		ASCII "dQQdddd"
+		ASCII "dd"
+		UNICODE "ExAcquireAPSkillList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ACQUIRE_AP_SKILL_LIST" name="ExAcquireAPSkillList" />
+		<!--
+		UNICODE "ExShowAPListWnd"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_AP_LIST_WND" name="ExShowAPListWnd" />
+		<!--
+		UNICODE "ExCloseAPListWnd"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_CLOSE_AP_LIST_WND" name="ExCloseAPListWnd" />
 
 		<!--
 		UNICODE "ExAutoFishAvailable"

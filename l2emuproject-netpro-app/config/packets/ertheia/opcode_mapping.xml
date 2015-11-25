@@ -66,10 +66,10 @@
 		<packet opcodePrefix="D0 E6 00" id="435" />
 		<packet opcodePrefix="D0 E7 00" id="436" />
 		<packet opcodePrefix="D0 E8 00" id="437" />
-		<packet opcodePrefix="D0 E9 00" id="438" />
-		<packet opcodePrefix="D0 EA 00" id="439" />
-		<packet opcodePrefix="D0 EB 00" id="440" />
-		<packet opcodePrefix="D0 EC 00" id="441" />
+		<packet opcodePrefix="D0 E9 00" id="CM_REQ_ACQUIRE_ABILITY_LIST" />
+		<packet opcodePrefix="D0 EA 00" id="CM_REQ_ABILITY_LIST" />
+		<packet opcodePrefix="D0 EB 00" id="CM_REQ_RESET_ABILITY_POINT" />
+		<packet opcodePrefix="D0 EC 00" id="CM_REQ_CHANGE_ABILITY_POINT" />
 		<packet opcodePrefix="D0 ED 00" id="442" />
 		<packet opcodePrefix="D0 EE 00" id="443" />
 		<packet opcodePrefix="D0 EF 00" id="444" />
@@ -194,15 +194,15 @@
 		<packet opcodePrefix="FE 5B 01" id="651" />
 		<packet opcodePrefix="FE 5C 01" id="652" />
 		<packet opcodePrefix="FE 5D 01" id="653" />
-		<packet opcodePrefix="FE 5F 01" id="655" />
+		<packet opcodePrefix="FE 5F 01" id="SM_EX_ACQUIRE_AP_SKILL_LIST" />
 		<packet opcodePrefix="FE 60 01" id="656" />
 		<packet opcodePrefix="FE 61 01" id="657" />
 		<packet opcodePrefix="FE 62 01" id="658" />
 		<packet opcodePrefix="FE 63 01" id="659" />
 		<packet opcodePrefix="FE 64 01" id="660" />
-		<packet opcodePrefix="FE 65 01" id="661" />
+		<packet opcodePrefix="FE 65 01" id="SM_EX_SHOW_AP_LIST_WND" />
 		<packet opcodePrefix="FE 66 01" id="662" />
-		<packet opcodePrefix="FE 67 01" id="663" />
+		<packet opcodePrefix="FE 67 01" id="SM_EX_CLOSE_AP_LIST_WND" />
 		<packet opcodePrefix="FE 68 01" id="664" />
 		<packet opcodePrefix="FE 69 01" id="665" />
 		<packet opcodePrefix="FE 6A 01" id="666" />
@@ -219,6 +219,5 @@
 		<packet opcodePrefix="FE 75 01" id="677" />
 		<packet opcodePrefix="FE 76 01" id="678" />
 		<packet opcodePrefix="FE 77 01" id="679" />
-		<packet opcodePrefix="FF" id="532" />
 	</server>
 </mapping>

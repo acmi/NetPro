@@ -40,10 +40,12 @@ public final class SkillListType extends ScriptedIntegerIdInterpreter
 		result.put(1L, "Fishing");
 		result.put(2L, "Pledge");
 		result.put(3L, "Pledge unit");
-		result.put(5L, "Certification");
+		result.put(5L, "Subclass certification");
 		result.put(6L, "Collection");
 		result.put(9L, "Linking");
-		result.put(57L, "Revelation of Chaos");
+		result.put(47L, "Dualclass certification");
+		result.put(57L, "Revelation of Chaos (Main)");
+		result.put(59L, "Revelation of Chaos (Dual Class)");
 		return result;
 	}
 }

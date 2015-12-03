@@ -15,7 +15,9 @@
  */
 package net.l2emuproject.proxy.ui.i18n;
 
+import java.util.Collections;
 import java.util.Locale;
+import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -28,6 +30,8 @@ public final class UIStrings
 {
 	/** Effective locale */
 	public static volatile Locale CURRENT_LOCALE = Locale.getDefault();
+	/** All locales that have translated strings */
+	public static final Map<String, Locale> SUPPORTED_LOCALES = Collections.singletonMap("English", Locale.ENGLISH);
 	
 	private UIStrings()
 	{
@@ -56,12 +60,22 @@ public final class UIStrings
 	{
 		try
 		{
-			return String.format(CURRENT_LOCALE, ResourceBundle.getBundle(UIStrings.class.getName(), CURRENT_LOCALE).getString(name), tokens);
+			return String.format(CURRENT_LOCALE, getBundle().getString(name), tokens);
 		}
 		catch (MissingResourceException e)
 		{
 			final int idx = name.indexOf('.') + 1;
 			return name.substring(idx).replace('.', '_').toUpperCase(Locale.ENGLISH);
 		}
+	}
+	
+	/**
+	 * Retrieves the localized resource bundle currently in use.
+	 * 
+	 * @return resource bundle
+	 */
+	public static final ResourceBundle getBundle()
+	{
+		return ResourceBundle.getBundle(UIStrings.class.getName(), CURRENT_LOCALE);
 	}
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="766.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.AboutDialogController">
+   <children>
+      <ImageView pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../savormix/icon-256.png" />
+         </image>
+      </ImageView>
+      <BorderPane>
+         <center>
+            <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="500.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%about.copyright" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="%about.license.header" textAlignment="JUSTIFY" wrapText="true" />
+                  <Hyperlink onAction="#openLicense" text="%about.license.link" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+                  <Label text="%about.license.footer" textAlignment="JUSTIFY" wrapText="true" />
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <BorderPane BorderPane.alignment="CENTER">
+               <left>
+                  <Label fx:id="_labBuild" text="%about.build.stable" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#closeDialog" prefWidth="75.0" text="%generic.button.ok" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" right="5.0" />
+                     </BorderPane.margin>
+                  </Button>
+               </right>
+            </BorderPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</HBox>

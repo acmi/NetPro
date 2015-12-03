@@ -232,6 +232,7 @@ public final class Loader
 					HighLevelEventGenerator.getInstance().onLoad();
 				}
 				new ObjectAnalytics().onLoad();
+				new PledgeAnalytics().onLoad();
 				
 				final NetProScriptCache cache = NetProScriptCache.getInstance();
 				if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()) && !cache.isCompilerUnavailable())
@@ -265,8 +266,6 @@ public final class Loader
 		
 		if (LoadOption.DISABLE_UI.isNotSet())
 		{
-			new PledgeAnalytics().onLoad();
-			
 			final L2Logger log = L2Logger.getLogger(UILoader.class);
 			L2Utils.printSection("Admin UI");
 			log.info("Initializing...");

@@ -39,6 +39,7 @@ import net.l2emuproject.proxy.network.game.server.L2GameServerConnections;
 import net.l2emuproject.proxy.network.login.client.L2LoginClientConnections;
 import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
 import net.l2emuproject.proxy.setup.SocketManager;
+import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.savormix.io.AutoLogger;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.AppInit;
@@ -55,6 +56,7 @@ import net.l2emuproject.util.logging.L2Logger;
 public class L2Proxy
 {
 	private static Collection<StartupHook> STARTUP_HOOKS = new ArrayList<>();
+	private static StartupStateReporter STATE_REPORTER;
 	
 	/**
 	 * Adds a task to be executed after fundamental initialization, but before starting the proxy server.
@@ -71,12 +73,24 @@ public class L2Proxy
 	}
 	
 	/**
+	 * Sets the current state reporter.
+	 * 
+	 * @param reporter state reporter
+	 */
+	public static void setStartupReporter(StartupStateReporter reporter)
+	{
+		STATE_REPORTER = reporter;
+	}
+	
+	/**
 	 * Launches the proxy core.
 	 * 
 	 * @param args ignored
 	 */
 	public static void main(String... args)
 	{
+		if (STATE_REPORTER != null)
+			STATE_REPORTER.onState(UIStrings.get("startup.config"));
 		AppInit.defaultInit();
 		NetProInfo.showStartupInfo();
 		
@@ -146,6 +160,8 @@ public class L2Proxy
 		final L2LoginServerConnections lsc;
 		if (LoadOption.DISABLE_PROXY.isNotSet())
 		{
+			if (STATE_REPORTER != null)
+				STATE_REPORTER.onState(UIStrings.get("startup.sockets"));
 			logger.debug("Setting up sockets…");
 			final SocketManager sm = SocketManager.getInstance();
 			final L2LoginClientConnections lcc = L2LoginClientConnections.getInstance();
@@ -206,6 +222,8 @@ public class L2Proxy
 				return;
 			}
 			
+			if (STATE_REPORTER != null)
+				STATE_REPORTER.onState(UIStrings.get("startup.autologger"));
 			logger.trace("Setting up automatic packet logging…");
 			{
 				final AutoLogger al = AutoLogger.getInstance();

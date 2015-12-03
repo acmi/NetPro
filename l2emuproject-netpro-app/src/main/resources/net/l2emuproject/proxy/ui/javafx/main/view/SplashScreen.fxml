@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane alignment="TOP_CENTER" style="-fx-background-color: rgb(0,0,0,0);" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.SplashScreenController">
+   <children>
+      <ImageView pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon-256.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="_labDescription" alignment="CENTER" maxWidth="220.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <StackPane.margin>
+            <Insets top="165.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</StackPane>

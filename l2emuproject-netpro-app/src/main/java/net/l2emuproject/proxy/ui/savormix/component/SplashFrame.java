@@ -35,14 +35,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import net.l2emuproject.proxy.ui.savormix.IMage;
+import net.l2emuproject.proxy.ui.javafx.FXLocator;
 
 /**
  * A splash dialog with reflection effect. Just a few tutorials clashed together.
  * 
  * @author savormix
  */
-public class SplashFrame extends JFrame implements IMage
+public class SplashFrame extends JFrame
 {
 	private static final long serialVersionUID = 8598763124585822805L;
 	
@@ -56,11 +56,11 @@ public class SplashFrame extends JFrame implements IMage
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setUndecorated(true);
 		
-		setIconImages(getIconList());
+		//setIconImages(getIconList());
 		
 		try
 		{
-			final BufferedImage avatar = ImageIO.read(IMage.class.getResource("l2emu_logo.png"));
+			final BufferedImage avatar = ImageIO.read(FXLocator.class.getResource("icon-256.png"));
 			final int width = avatar.getWidth();
 			final int height = avatar.getHeight();
 			setSize(width, height);

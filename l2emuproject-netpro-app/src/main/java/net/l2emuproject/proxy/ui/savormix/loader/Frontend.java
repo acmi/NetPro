@@ -29,11 +29,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.file.Path;
@@ -51,9 +48,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFileChooser;
@@ -94,7 +89,6 @@ import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.setup.SocketManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.EventSink;
-import net.l2emuproject.proxy.ui.savormix.IMage;
 import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
 import net.l2emuproject.proxy.ui.savormix.component.ContributorAnimator;
 import net.l2emuproject.proxy.ui.savormix.component.DisabledComponentUI;
@@ -141,7 +135,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public final class Frontend extends JFrame implements IOConstants, EventSink, IMage
+public final class Frontend extends JFrame implements IOConstants, EventSink
 {
 	private static final long serialVersionUID = 508940951025465462L;
 	private static final L2Logger LOG = L2Logger.getLogger(Frontend.class);
@@ -185,7 +179,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		super("L2EMU Unique Network Protocol Analysis Application");
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setIconImages(getIconList());
+		//setIconImages(getIconList());
 		
 		// Layout
 		final Container root = getContentPane();
@@ -285,22 +279,22 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 		_cbSessionCapture.addActionListener(e -> cp.onSessionCaptureChanged(_cbSessionCapture.isSelected()));
 		root.add(cp, BorderLayout.CENTER);
 		
-		try
+		//try
 		{
-			_watermark = LoadOption.HIDE_OVERLAY.isNotSet() ? ImageIO.read(IMage.class.getResource("l2emu_logo.png")) : null;
+			_watermark = /*LoadOption.HIDE_OVERLAY.isNotSet() ? ImageIO.read(IMage.class.getResource("l2emu_logo.png")) : */null;
 			final WatermarkPane gp = new WatermarkPane(_watermark);
 			_sink = gp;
 			setGlassPane(gp);
 			getGlassPane().setVisible(true);
 		}
-		catch (IOException e)
+		//catch (IOException e)
 		{
-			throw new RuntimeException(e);
+			//throw new RuntimeException(e);
 		}
-		catch (NullPointerException e)
+		//catch (NullPointerException e)
 		{
-			LOG.warn("Watermark overlay image is missing.");
-			throw e;
+			//LOG.warn("Watermark overlay image is missing.");
+			//throw e;
 		}
 		
 		setPreferredSize(new Dimension(780, 580));
@@ -1051,36 +1045,6 @@ public final class Frontend extends JFrame implements IOConstants, EventSink, IM
 				
 				explain.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, info, "Current configuration", JOptionPane.INFORMATION_MESSAGE));
 				help.add(explain);
-			}
-			help.addSeparator();
-			{
-				JMenuItem about = new JMenuItem("About");
-				about.setMnemonic(KeyEvent.VK_A);
-				about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
-				about.setToolTipText("Shows information about this application.");
-				
-				final String suffix;
-				if (NetProInfo.isUnreleased())
-					suffix = "norelease";
-				else if (NetProInfo.isSnapshot())
-					suffix = "snapshot";
-				else
-					suffix = "stable";
-					
-				try (final InputStream is = IMage.class.getResourceAsStream("about_" + suffix + ".htm"); final BufferedInputStream in = new BufferedInputStream(is))
-				{
-					final ByteArrayOutputStream out = new ByteArrayOutputStream(in.available());
-					for (int b; (b = in.read()) != -1;)
-						out.write(b);
-					final String text = out.toString("UTF-8");
-					about.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, text.replace("\r\n", "").replace("<revision_number>", NetProInfo.getRevisionNumber()), "About",
-							JOptionPane.INFORMATION_MESSAGE, new ImageIcon(IMage.class.getResource("icon-256.png"))));
-					help.add(about);
-				}
-				catch (IOException e)
-				{
-					// whatever
-				}
 			}
 			mb.add(help);
 		}

@@ -286,6 +286,8 @@
 			<xs:enumeration value="ave.AbnormalVisualEffect" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
+			
+			<xs:enumeration value="auth.Billing" />
 
 			<xs:enumeration value="chat.ChatTokenType" />
 			<xs:enumeration value="chat.ChatToken1Value" />

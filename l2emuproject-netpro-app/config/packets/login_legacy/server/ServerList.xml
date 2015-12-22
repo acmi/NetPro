@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="LS_SM_SERVER_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<byte alias="Game server count" id="gs_list" />
-	<byte alias="Last game server" type="GameServerName" />
+	<branch id="gs_list" condition="serverlist.ServerListPrelude">
+		<byte alias="Last game server" type="GameServerName" />
+	</branch>
 	<loop id="gs_list">
 		<byte alias="Game server" type="GameServerName">
 			<scriptAlias id="__INVASIVE_AUTO_EXTRACT_GS_ID" />
 		</byte>
+		<branch id="gs_list" condition="serverlist.ServerListNamed">
+			<bytes alias="Server name" type="auth.CustomServerName">
+				<length>40</length>
+			</bytes>
+		</branch>
 		<bytes alias="IPv4" type="IPv4">
 			<length>4</length>
 			<scriptAlias id="__INVASIVE_AUTO_REPLACE_GS_IP" />
@@ -13,15 +20,17 @@
 		<dword alias="Port">
 			<scriptAlias id="__INVASIVE_AUTO_REPLACE_GS_PORT" />
 		</dword>
-		<byte alias="Minimum player age" />
-		<byte alias="PvP allowed" type="YesOrNo" />
-		<word alias="Online players" />
-		<word alias="Maximum players" />
-		<byte alias="Online" type="YesOrNo" />
-		<branch id="gs_list" condition="serverlist.ServerListC1">
-			<dword alias="Type(s)" type="GameServerKind" />
-			<branch id="gs_list" condition="serverlist.ServerListC2">
-				<byte alias="Region" />
+		<branch id="gs_list" condition="serverlist.ServerListPrelude">
+			<byte alias="Minimum player age" />
+			<byte alias="PvP allowed" type="YesOrNo" />
+			<word alias="Online players" />
+			<word alias="Maximum players" />
+			<byte alias="Online" type="YesOrNo" />
+			<branch id="gs_list" condition="serverlist.ServerListC1">
+				<dword alias="Type(s)" type="GameServerKind" />
+				<branch id="gs_list" condition="serverlist.ServerListC2">
+					<byte alias="Region" />
+				</branch>
 			</branch>
 		</branch>
 	</loop>

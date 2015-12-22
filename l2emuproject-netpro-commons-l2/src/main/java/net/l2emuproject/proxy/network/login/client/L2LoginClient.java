@@ -45,12 +45,18 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 {
 	/** Indicates a specific protocol that was used after C3 and before C4 */
 	public static final int FLAG_PROTOCOL_TRANSFER = 1 << 0;
+	/** Indicates that each game server will specify its additional and dynamic information. */
+	public static final int FLAG_SERVER_LIST_C0 = 1 << 1;
+	/** Indicates that each listed server will specify its name */
+	public static final int FLAG_SERVER_LIST_NAMED = 1 << 2;
 	/** Indicates that each listed server will specify the type mask */
-	public static final int FLAG_SERVER_LIST_C1 = 1 << 1;
+	public static final int FLAG_SERVER_LIST_C1 = 1 << 3;
 	/** Indicates that each listed server will specify the bracket flag */
-	public static final int FLAG_SERVER_LIST_C2 = 1 << 2;
+	public static final int FLAG_SERVER_LIST_C2 = 1 << 4;
+	/** Indicates that each listed server will specify player's character count(s) */
+	public static final int FLAG_SERVER_LIST_FREYA = 1 << 5;
 	/** Indicates that this client should be treated as a C4 client, regardless of what the server is */
-	public static final int FLAG_MODERN_SERVER_2_TRANSFER_CLIENT = 1 << 3;
+	public static final int FLAG_MODERN_SERVER_2_TRANSFER_CLIENT = 1 << 6;
 	/** Prelude protocol where packets are enciphered with C3/C4 transfer key */
 	public static final int FLAG_CUSTOM_PROTOCOL_PRELUDE_WITH_TRANSFER_KEY = 1 << 30;
 	

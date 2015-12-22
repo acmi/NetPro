@@ -288,6 +288,7 @@
 			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
 			
 			<xs:enumeration value="auth.Billing" />
+			<xs:enumeration value="auth.CustomServerName" />
 
 			<xs:enumeration value="chat.ChatTokenType" />
 			<xs:enumeration value="chat.ChatToken1Value" />
@@ -498,6 +499,9 @@
 			<xs:enumeration value="serverlist.ServerList5Ex2" />
 			<xs:enumeration value="serverlist.ServerListC1" />
 			<xs:enumeration value="serverlist.ServerListC2" />
+			<xs:enumeration value="serverlist.ServerListFreya" />
+			<xs:enumeration value="serverlist.ServerListNamed" />
+			<xs:enumeration value="serverlist.ServerListPrelude" />
 			
 			<xs:enumeration value="servitor.Pet" />
 			<xs:enumeration value="servitor.Summon" />

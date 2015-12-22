@@ -15,8 +15,11 @@
  */
 package net.l2emuproject.proxy.network.login.client.packets;
 
+import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_C0;
 import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_C1;
 import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_C2;
+import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_FREYA;
+import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_NAMED;
 
 import java.nio.BufferUnderflowException;
 
@@ -40,11 +43,17 @@ public final class RequestServerList extends L2LoginClientPacket implements Requ
 	public static final int OPCODE = 0x05;
 	
 	/** Indicates that each game server will have its basic information specified. */
+	public static final int TYPE_BARE = 0;
+	/** Indicates that each game server will have its additional and dynamic information specified. */
 	public static final int TYPE_C0 = 1;
+	/** Indicates that each game server will have its name specified. */
+	public static final int TYPE_NAMED = 2;
 	/** Indicates that each game server will have its type mask specified. */
 	public static final int TYPE_C1 = 3;
 	/** Indicates that each game server will have its bracket flag specified. */
 	public static final int TYPE_C2 = 4;
+	/** Indicates that each game server will have player's character count(s) specified. */
+	public static final int TYPE_FREYA = 5;
 	
 	/** Constructs a packet to extract the ID of the game server to be connected to. */
 	public RequestServerList()
@@ -63,7 +72,7 @@ public final class RequestServerList extends L2LoginClientPacket implements Requ
 				final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
 				if (ppe == null)
 					break usePPE;
-				
+					
 				RandomAccessMMOBuffer enumerator = null;
 				try
 				{
@@ -90,11 +99,24 @@ public final class RequestServerList extends L2LoginClientPacket implements Requ
 			type = buf.readC();
 		}
 		
-		if (type >= TYPE_C1)
+		if (type >= TYPE_C0)
 		{
-			getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_C1);
-			if (type >= TYPE_C2)
-				getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_C2);
+			getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_C0);
+			if (type == TYPE_NAMED)
+			{
+				getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_NAMED);
+				return;
+			}
+			if (type >= TYPE_C1)
+			{
+				getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_C1);
+				if (type >= TYPE_C2)
+				{
+					getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_C2);
+					if (type >= TYPE_FREYA)
+						getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_FREYA);
+				}
+			}
 		}
 	}
 	

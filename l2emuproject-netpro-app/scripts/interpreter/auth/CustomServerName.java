@@ -15,29 +15,22 @@
  */
 package interpreter.auth;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import java.nio.charset.StandardCharsets;
+
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
- * Interprets the given integer as billing mode.
+ * Interprets the given 40 byte array as a custom server name.
  * 
  * @author _dev_
  */
-public class Billing extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public class CustomServerName extends ScriptedFieldValueInterpreter implements ByteArrayInterpreter
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object getInterpretation(byte[] value, ICacheServerID entityCacheContext)
 	{
-		if (value == 1002)
-			return "Free server";
-			
-		final int method = (int)value % 1000 / 100;
-		if (method == 2)
-			return "Paid time";
-		if (method == 5)
-			return "Flat rate prepaid, otherwise paid time";
-			
-		return "Subscription";
+		return new String(value, StandardCharsets.UTF_16LE).trim();
 	}
 }

@@ -35,6 +35,6 @@ public class InvalidFieldValueConditionException extends InvalidMetaclassExcepti
 	 */
 	public InvalidFieldValueConditionException(FieldValueCondition condition, String alias, String expectedSuperclass)
 	{
-		super(condition, alias, expectedSuperclass);
+		super("Condition", condition, alias, expectedSuperclass);
 	}
 }

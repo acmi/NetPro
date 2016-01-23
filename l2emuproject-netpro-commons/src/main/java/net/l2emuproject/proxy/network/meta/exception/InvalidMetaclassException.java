@@ -30,13 +30,14 @@ public class InvalidMetaclassException extends Exception
 	/**
 	 * Constructs this exception.
 	 * 
+	 * @param subtype metaclass subtype
 	 * @param meta metaclass instance
 	 * @param alias meta type alias
 	 * @param expectedSuperclass expected supertype
 	 */
-	public InvalidMetaclassException(Object meta, String alias, String expectedSuperclass)
+	public InvalidMetaclassException(String subtype, Object meta, String alias, String expectedSuperclass)
 	{
-		super(meta != null ? (meta + "(" + alias + ")" + " cannot be cast to " + expectedSuperclass) : (alias + " is missing"));
+		super(meta != null ? (subtype + " " + meta + "(" + alias + ")" + " cannot be cast to " + expectedSuperclass) : (subtype + " '" + alias + "' is missing"));
 		
 		_alias = alias;
 		_missing = meta == null;

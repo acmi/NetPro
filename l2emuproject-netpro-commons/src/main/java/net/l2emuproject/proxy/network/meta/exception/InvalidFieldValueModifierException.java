@@ -35,6 +35,6 @@ public class InvalidFieldValueModifierException extends InvalidMetaclassExceptio
 	 */
 	public InvalidFieldValueModifierException(FieldValueModifier modifier, String alias, String expectedSuperclass)
 	{
-		super(modifier, alias, expectedSuperclass);
+		super("Modifier", modifier, alias, expectedSuperclass);
 	}
 }

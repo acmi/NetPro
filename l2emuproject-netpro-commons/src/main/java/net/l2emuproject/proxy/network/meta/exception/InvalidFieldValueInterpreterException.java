@@ -35,6 +35,6 @@ public class InvalidFieldValueInterpreterException extends InvalidMetaclassExcep
 	 */
 	public InvalidFieldValueInterpreterException(FieldValueInterpreter interpreter, String alias, String expectedSuperclass)
 	{
-		super(interpreter, alias, expectedSuperclass);
+		super("Interpreter", interpreter, alias, expectedSuperclass);
 	}
 }

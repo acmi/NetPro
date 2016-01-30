@@ -454,7 +454,12 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			interpretation = "N/A";
 		else if (interpretation instanceof byte[])
 			interpretation = HexUtil.bytesToHexString((byte[])interpretation, " ");
-			
+		else if (HTML_TAG.matcher(String.valueOf(readValue)).find())
+		{
+			// prepare Lineage II HTML for WebView
+			interpretation = String.valueOf(interpretation).replace("<", "&lt;").replace(">", "&gt;").replace("\r\n", "<br>").replace("\n", "<br>");
+		}
+		
 		final MutableInt hyperID = _currentHyperlinkID.get(visualDataType);
 		hyperID.increment();
 		_packetBuilder.append("<a href=\"").append(visualDataType).append("__").append(hyperID.intValue()).append("\">");

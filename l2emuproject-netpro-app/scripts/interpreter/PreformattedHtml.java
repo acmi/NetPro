@@ -29,9 +29,12 @@ public class PreformattedHtml extends ScriptedFieldValueInterpreter implements S
 	@Override
 	public Object getInterpretation(String value, ICacheServerID entityCacheContext)
 	{
+		/*
 		if (value.startsWith(".."))
 			return value;
-		
-		return value.replace("<", "&lt;").replace(">", "&gt;");
+			
+		return value.replace("<", "&lt;").replace(">", "&gt;").replace("\r\n", "<br>").replace("\n", "<br>");
+		*/
+		return value;
 	}
 }

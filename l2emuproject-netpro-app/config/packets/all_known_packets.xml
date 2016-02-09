@@ -37,6 +37,16 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="LS_CM_REQUEST_SERVER_LOGIN" name="RequestServerLogin" />
+		<!--
+		This structure is typically used with opcode 0x0B
+		
+		ASCII "cdxddddddhc"
+		UNICODE "Login Type %d is Not Used"
+		UNICODE "AQ_LOGIN : %d %d %d %d %d"
+		UNICODE "RL"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="LS_CM_AQ_LOGIN__WEB" name="RequestLogin" /> <!-- RL = RequestLogin? -->
 		<packet id="LS_CM_0E" name="Unnamed 0E" />
 		<!--
 		This structure is typically used with opcode 0x12

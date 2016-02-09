@@ -3,6 +3,7 @@
 	<client>
 		<packet opcodePrefix="06" id="LS_CM_REQUEST_SC_CHECK" />
 		<packet opcodePrefix="07" id="LS_CM_AQ_GAMEGUARD" />
+		<packet opcodePrefix="0B" id="LS_CM_AQ_LOGIN__WEB" />
 		<packet opcodePrefix="0E" id="LS_CM_0E" />
 		<packet opcodePrefix="12" id="LS_CM_AQ_LOGIN__TOKEN" />
 	</client>

@@ -9,7 +9,7 @@
 	<astring alias="AuthProviderCode" />
 	<astring alias="AuthnToken" />
 	
-	<dword alias="8" />
+	<dword alias="Game ID" />
 	<word alias="0" />
 	<byte alias="0/1" />
 	

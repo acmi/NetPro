@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="629.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController">
+<BorderPane prefHeight="629.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController">
    <center>
       <TabPane fx:id="_tpConnections" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
         <tabs>
@@ -72,7 +72,7 @@
          <children>
             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <ProgressBar fx:id="_pbJvmHeap" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" progress="1.0" />
+                  <ProgressBar fx:id="_pbJvmHeap" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" progress="0.5" />
                   <Label fx:id="_labJvmHeap" style="-fx-background-color: rgba(255,255,255,0.45);" text="%main.memory">
                      <padding>
                         <Insets left="2.0" right="2.0" />
@@ -107,16 +107,16 @@
         <menus>
           <Menu text="%menu.file.title">
             <items>
-                  <MenuItem fx:id="_openNetProLog" text="%menu.file.open">
+                  <MenuItem onAction="#showOpenLogNP" text="%menu.file.open">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <Menu text="%menu.file.import.title">
                     <items>
-                      <MenuItem fx:id="_openPhxLog" text="%menu.file.3rdpt.phx" />
-                        <MenuItem fx:id="_openPhxRawLog" text="%menu.file.3rdpt.phx_raw" />
-                        <MenuItem fx:id="_openPacketSamuraiLog" text="%menu.file.3rdpt.ps" />
+                      <MenuItem onAction="#showOpenLogPH" text="%menu.file.3rdpt.phx" />
+                        <MenuItem onAction="#showOpenLogRawPH" text="%menu.file.3rdpt.phx_raw" />
+                        <MenuItem onAction="#showOpenLogPS" text="%menu.file.3rdpt.ps" />
                     </items>
                   </Menu>
                   <SeparatorMenuItem mnemonicParsing="false" />
@@ -124,16 +124,16 @@
                     <items>
                         <Menu fx:id="_mSelectedPacketExport" text="%menu.file.export.selected">
                           <items>
-                            <MenuItem fx:id="_selectedPacket2Plaintext" text="%menu.file.export.plain.clipboard" />
-                              <MenuItem fx:id="_selectedPacket2XML" text="%menu.file.export.xml.clipboard" />
+                            <MenuItem onAction="#copySelectedPacket" text="%menu.file.export.plain.clipboard" />
+                              <MenuItem onAction="#copySelectedPacketXML" text="%menu.file.export.xml.clipboard" />
                           </items>
                         </Menu>
                         <Menu text="%menu.file.export.visible">
                            <items>
-                              <MenuItem fx:id="_visiblePackets2Plaintext" text="%menu.file.export.plain.clipboard" />
-                              <MenuItem fx:id="_visiblePackets2PlaintextFile" text="%menu.file.export.plain.file" />
-                              <MenuItem fx:id="_visiblePackets2XML" text="%menu.file.export.xml.clipboard" />
-                              <MenuItem fx:id="_visiblePackets2XMLFile" text="%menu.file.export.xml.file" />
+                              <MenuItem onAction="#copyVisiblePackets" text="%menu.file.export.plain.clipboard" />
+                              <MenuItem onAction="#showSaveVisiblePackets" text="%menu.file.export.plain.file" />
+                              <MenuItem onAction="#copyVisiblePacketsXML" text="%menu.file.export.xml.clipboard" />
+                              <MenuItem onAction="#showSaveVisiblePacketsXML" text="%menu.file.export.xml.file" />
                            </items>
                         </Menu>
                         <Menu text="%menu.file.export.table">
@@ -179,9 +179,9 @@
                   </Menu>
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <CheckMenuItem fx:id="_showLogConsole" onAction="#toggleConsole" selected="true" text="%menu.file.log" />
-                  <MenuItem fx:id="_jvmGC" text="%menu.file.gc" />
+                  <MenuItem onAction="#doGC" text="%menu.file.gc" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-              <MenuItem fx:id="_jvmExit" text="%menu.file.exit">
+              <MenuItem onAction="#exitApp" text="%menu.file.exit">
                      <accelerator>
                         <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -201,10 +201,10 @@
           </Menu>
             <Menu fx:id="_mScripts" text="%menu.scripts.title">
               <items>
-                  <MenuItem fx:id="_scriptLoad" text="%menu.scripts.load.one" />
-                  <MenuItem fx:id="_scriptUnload" text="%menu.scripts.unload" />
+                  <MenuItem fx:id="_scriptLoad" onAction="#loadScript" text="%menu.scripts.load.one" />
+                  <MenuItem fx:id="_scriptUnload" onAction="#unloadScript" text="%menu.scripts.unload" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                <MenuItem fx:id="_scriptLoadAll" text="%menu.scripts.load.all" />
+                <MenuItem fx:id="_scriptLoadAll" onAction="#loadAllScripts" text="%menu.scripts.load.all" />
               </items>
             </Menu>
           <Menu text="%menu.help.title">

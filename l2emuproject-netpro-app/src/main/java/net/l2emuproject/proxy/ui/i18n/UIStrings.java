@@ -65,7 +65,9 @@ public final class UIStrings
 		catch (MissingResourceException e)
 		{
 			final int idx = name.indexOf('.') + 1;
-			return name.substring(idx).replace('.', '_').toUpperCase(Locale.ENGLISH);
+			// NOTE: normal underscore has a special meaning related to JavaFX mnemonic parsing
+			// A0 for non-breaking space
+			return name.substring(idx).replace('.', '\u00B7').toUpperCase(Locale.ENGLISH);
 		}
 	}
 	

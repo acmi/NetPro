@@ -18,21 +18,26 @@ package net.l2emuproject.proxy.ui.javafx.main.view;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import eu.revengineer.simplejse.logging.BytesizeInterpreter;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.lang.management.ShutdownManager;
+import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.FXLocator;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
+import net.l2emuproject.util.concurrent.L2ThreadPool;
 import net.l2emuproject.util.logging.L2Logger;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ObservableValueBase;
 import javafx.event.ActionEvent;
@@ -50,6 +55,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -283,6 +289,112 @@ public class MainWindowController implements Initializable
 	}
 	
 	@FXML
+	private void clearConsole(ActionEvent evt)
+	{
+		final Date now = new Date();
+		_taConsole.setPromptText(UIStrings.get("main.consoletab.prompt", now, now, now));
+		_taConsole.clear();
+	}
+	
+	@FXML
+	void copySelectedPacket(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void copySelectedPacketXML(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void copyVisiblePackets(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void copyVisiblePacketsXML(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void doGC(ActionEvent event)
+	{
+		L2ThreadPool.submitLongRunning(System::gc);
+	}
+	
+	@FXML
+	void exitApp(ActionEvent event)
+	{
+		Platform.exit();
+		ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN);
+	}
+	
+	@FXML
+	void showOpenLogNP(ActionEvent event)
+	{
+		//final FileChooser fc = new FileChooser();
+		//fc.set
+	}
+	
+	@FXML
+	void showOpenLogPH(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void showOpenLogPS(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void showOpenLogRawPH(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void showSaveVisiblePackets(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void showSaveVisiblePacketsXML(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
+	void loadScript(ActionEvent event)
+	{
+		final TextInputDialog nameDialog = new TextInputDialog();
+		nameDialog.setTitle(UIStrings.get("scripts.load.dialog.title"));
+		nameDialog.setHeaderText(UIStrings.get("scripts.fqcn.explanation"));
+		final Optional<String> result = nameDialog.showAndWait();
+	}
+	
+	@FXML
+	void unloadScript(ActionEvent event)
+	{
+		final TextInputDialog nameDialog = new TextInputDialog();
+		nameDialog.setTitle(UIStrings.get("scripts.unload.dialog.title"));
+		nameDialog.setHeaderText(UIStrings.get("scripts.fqcn.explanation"));
+		final Optional<String> result = nameDialog.showAndWait();
+	}
+	
+	@FXML
+	void loadAllScripts(ActionEvent event)
+	{
+	
+	}
+	
+	@FXML
 	private void toggleConsole(ActionEvent evt)
 	{
 		if (_showLogConsole.isSelected())
@@ -294,20 +406,12 @@ public class MainWindowController implements Initializable
 			_tpConnections.getTabs().remove(_tabConsole);
 	}
 	
-	@FXML
-	private void clearConsole(ActionEvent evt)
-	{
-		final Date now = new Date();
-		_taConsole.setPromptText(UIStrings.get("main.consoletab.prompt", now, now, now));
-		_taConsole.clear();
-	}
-	
 	/**
 	 * Adds a new message to the console tab.
 	 * 
 	 * @param message log entry
 	 */
-	public void appendLogEntry(String message)
+	public void appendToConsole(String message)
 	{
 		final double left = _taConsole.getScrollLeft(), top = _taConsole.getScrollTop();
 		_taConsole.appendText(message);

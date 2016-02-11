@@ -2,12 +2,26 @@ package net.l2emuproject.proxy;
 
 import java.awt.GraphicsEnvironment;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ArrayBlockingQueue;
+
+import javax.tools.Diagnostic;
+import javax.tools.Diagnostic.Kind;
+import javax.tools.JavaFileObject;
+
+import eu.revengineer.simplejse.reporting.AptReportingHandler;
+import eu.revengineer.simplejse.reporting.JavacReportingHandler;
 
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
@@ -23,6 +37,7 @@ import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
 import net.l2emuproject.proxy.ui.javafx.FXLocator;
+import net.l2emuproject.proxy.ui.javafx.main.view.CompilationErrorExpandableController;
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.main.view.SplashScreenController;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
@@ -40,6 +55,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
@@ -55,7 +73,7 @@ public class NetPro extends Application
 	private static final Queue<String> PENDING_LOG_ENTRIES = new ArrayBlockingQueue<>(50_000, true);
 	private static final StringProperty LOADING_STAGE_DESCRIPTION = new SimpleStringProperty(null);
 	
-	private static Stage SPLASH_STAGE, PRIMARY_STAGE;
+	static Stage SPLASH_STAGE, PRIMARY_STAGE;
 	
 	@Override
 	public void start(Stage primaryStage)
@@ -161,12 +179,56 @@ public class NetPro extends Application
 			new ObjectAnalytics().onLoad();
 			
 			if (reporter != null)
-				reporter.onState(UIStrings.get("startup.scripts"));
-			final NetProScriptCache cache = NetProScriptCache.getInstance();
-			if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()) && !cache.isCompilerUnavailable())
 			{
-				cache.compileAllScripts();
-				cache.writeToCache();
+				reporter.onState(UIStrings.get("startup.scripts"));
+				
+				final InteractiveScriptCompilationHandler interactiveErrorReporter = new InteractiveScriptCompilationHandler(reporter);
+				NetProScriptCache.INITIALIZER_APT_HANDLER = interactiveErrorReporter;
+				NetProScriptCache.INITIALIZER_JAVAC_HANDLER = interactiveErrorReporter;
+			}
+			
+			final NetProScriptCache cache = NetProScriptCache.getInstance();
+			scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()))
+			{
+				if (!cache.isCompilerUnavailable())
+				{
+					cache.compileAllScripts();
+					cache.writeToCache();
+					break scripts;
+				}
+				
+				if (reporter == null)
+					break scripts;
+					
+				synchronized (reporter)
+				{
+					Platform.runLater(() ->
+					{
+						final Alert confirmDlg = new Alert(AlertType.WARNING);
+						confirmDlg.setTitle(UIStrings.get("startup.scripts.jre.nocache.dialog.title"));
+						confirmDlg.setHeaderText(UIStrings.get("startup.scripts.jre.nocache.dialog.header"));
+						confirmDlg.setContentText(UIStrings.get("startup.scripts.jre.nocache.dialog.content", System.getProperty("java.home"), NetProScriptCache.getScriptCacheName()));
+						confirmDlg.getButtonTypes().setAll(new ButtonType(UIStrings.get("startup.scripts.jre.nocache.dialog.button.continue"), ButtonData.YES),
+								new ButtonType(UIStrings.get("startup.scripts.jre.nocache.dialog.button.exit"), ButtonData.NO));
+								
+						confirmDlg.initOwner(SPLASH_STAGE);
+						confirmDlg.initModality(Modality.APPLICATION_MODAL);
+						confirmDlg.initStyle(StageStyle.DECORATED);
+						
+						final Optional<ButtonType> result = confirmDlg.showAndWait();
+						if (!result.isPresent() || result.get().getButtonData() != ButtonData.YES)
+						{
+							Platform.exit();
+							System.exit(0);
+						}
+						
+						synchronized (reporter)
+						{
+							reporter.notifyAll();
+						}
+					});
+					reporter.wait();
+				}
 			}
 			
 			if (reporter != null)
@@ -213,7 +275,7 @@ public class NetPro extends Application
 				final Timeline tlLogging = new Timeline(new KeyFrame(Duration.ZERO, evt ->
 				{
 					for (String msg; (msg = PENDING_LOG_ENTRIES.poll()) != null;)
-						controller.appendLogEntry(msg);
+						controller.appendToConsole(msg);
 				}), new KeyFrame(Duration.seconds(0.2)));
 				tlLogging.setCycleCount(Animation.INDEFINITE);
 				tlLogging.play();
@@ -294,5 +356,199 @@ public class NetPro extends Application
 		}
 		
 		loadInOrder();
+	}
+	
+	private static final class InteractiveScriptCompilationHandler implements AptReportingHandler, JavacReportingHandler
+	{
+		private final List<String> _messages;
+		private final Object _lock;
+		
+		InteractiveScriptCompilationHandler(Object lock)
+		{
+			_messages = new LinkedList<>();
+			_lock = lock;
+		}
+		
+		@Override
+		public void onCustomDiagnostic(String diagnosticText)
+		{
+			_messages.add(diagnosticText);
+		}
+		
+		@Override
+		public void onSanityDiagnostic(String diagnosticText)
+		{
+			onCustomDiagnostic("-=[!ASSERT!]=--> " + diagnosticText);
+		}
+		
+		@Override
+		public void report(Diagnostic<? extends JavaFileObject> diagnostic)
+		{
+			if (diagnostic.getKind() == Kind.ERROR)
+				_messages.add(diagnostic.toString());
+		}
+		
+		@Override
+		public void onFirstStart()
+		{
+			onStart();
+		}
+		
+		@Override
+		public void onStart()
+		{
+			_messages.clear();
+		}
+		
+		@Override
+		public void onInitialEnd(Collection<Path> erroneousScripts)
+		{
+			onEnd(erroneousScripts, true);
+		}
+		
+		@Override
+		public void onEnd(Collection<Path> erroneousScripts)
+		{
+			onEnd(erroneousScripts, false);
+		}
+		
+		private void onEnd(Collection<Path> erroneousScripts, boolean init)
+		{
+			// this is apt, so we do not need to inform about "success" less than halfway there
+			if (erroneousScripts.isEmpty())
+				return;
+				
+			try
+			{
+				synchronized (_lock)
+				{
+					Platform.runLater(() ->
+					{
+						final Alert confirmDlg = new Alert(init ? AlertType.WARNING : AlertType.ERROR);
+						confirmDlg.setTitle(UIStrings.get("startup.scripts.err.dialog.title"));
+						if (init)
+						{
+							confirmDlg.setHeaderText(UIStrings.get("startup.scripts.err.dialog.header.init"));
+							confirmDlg.setContentText(UIStrings.get("startup.scripts.err.dialog.content.init", System.getProperty("java.home")));
+							confirmDlg.getButtonTypes().setAll(new ButtonType(UIStrings.get("startup.scripts.err.dialog.button.continue"), ButtonData.YES),
+									new ButtonType(UIStrings.get("startup.scripts.err.dialog.button.exit"), ButtonData.NO));
+						}
+						else
+						{
+							confirmDlg.setHeaderText(UIStrings.get("startup.scripts.err.dialog.header"));
+							confirmDlg.setContentText(UIStrings.get("startup.scripts.err.dialog.content", System.getProperty("java.home")));
+						}
+						
+						try
+						{
+							final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(CompilationErrorExpandableController.class), UIStrings.getBundle());
+							confirmDlg.getDialogPane().setExpandableContent(loader.load());
+							confirmDlg.getDialogPane().setExpanded(!init);
+							
+							final CompilationErrorExpandableController controller = loader.getController();
+							final StringBuilder sbScripts = new StringBuilder(), sbErrors = new StringBuilder();
+							final Iterator<Path> itScript = erroneousScripts.iterator();
+							sbScripts.append(itScript.next());
+							while (itScript.hasNext())
+								sbScripts.append("\r\n").append(itScript.next());
+							if (!_messages.isEmpty())
+							{
+								final Iterator<String> itErr = _messages.iterator();
+								sbErrors.append(itErr.next());
+								while (itErr.hasNext())
+									sbErrors.append("\r\n").append(itErr.next());
+							}
+							controller.setErroneousScripts(sbScripts.toString(), sbErrors.toString());
+						}
+						catch (IOException e)
+						{
+							throw new AssertionError("Compilation error view is missing", e);
+						}
+						
+						confirmDlg.initOwner(SPLASH_STAGE);
+						confirmDlg.initModality(Modality.APPLICATION_MODAL);
+						confirmDlg.initStyle(StageStyle.DECORATED);
+						
+						final Optional<ButtonType> result = confirmDlg.showAndWait();
+						if (!result.isPresent() || result.get().getButtonData() == ButtonData.NO)
+						{
+							Platform.exit();
+							System.exit(0);
+						}
+						
+						synchronized (_lock)
+						{
+							_lock.notifyAll();
+						}
+					});
+					_lock.wait();
+				}
+			}
+			catch (InterruptedException e)
+			{
+				throw new RuntimeException(e);
+			}
+		}
+		
+		@Override
+		public void onFailure()
+		{
+			try
+			{
+				synchronized (_lock)
+				{
+					Platform.runLater(() ->
+					{
+						final Alert confirmDlg = new Alert(AlertType.ERROR);
+						confirmDlg.setTitle(UIStrings.get("startup.scripts.err.apt.fail.dialog.title"));
+						confirmDlg.setHeaderText(UIStrings.get("startup.scripts.err.apt.fail.dialog.header"));
+						confirmDlg.setContentText(UIStrings.get("startup.scripts.err.apt.fail.dialog.content", System.getProperty("java.home")));
+						confirmDlg.getButtonTypes().setAll(new ButtonType(UIStrings.get("startup.scripts.err.apt.fail.dialog.button.continue"), ButtonData.YES),
+								new ButtonType(UIStrings.get("startup.scripts.err.apt.fail.dialog.button.exit"), ButtonData.NO));
+								
+						confirmDlg.initOwner(SPLASH_STAGE);
+						confirmDlg.initModality(Modality.APPLICATION_MODAL);
+						confirmDlg.initStyle(StageStyle.DECORATED);
+						
+						final Optional<ButtonType> result = confirmDlg.showAndWait();
+						if (!result.isPresent() || result.get().getButtonData() != ButtonData.YES)
+						{
+							Platform.exit();
+							System.exit(0);
+						}
+						
+						synchronized (_lock)
+						{
+							_lock.notifyAll();
+						}
+					});
+					_lock.wait();
+				}
+			}
+			catch (InterruptedException e)
+			{
+				throw new RuntimeException(e);
+			}
+		}
+		
+		@Override
+		public void onInitialEnd(Map<Collection<Path>, Collection<String>> compilationErrors)
+		{
+			onEnd(compilationErrors.keySet(), true);
+		}
+		
+		@Override
+		public void onEnd(Map<Collection<Path>, Collection<String>> compilationErrors)
+		{
+			onEnd(compilationErrors.keySet(), false);
+		}
+		
+		private void onEnd(Set<Collection<Path>> erroneousScripts, boolean init)
+		{
+			final List<Path> scripts = new ArrayList<>();
+			for (final Collection<Path> paths : erroneousScripts)
+				scripts.addAll(paths);
+			onEnd(scripts, init);
+		}
 	}
 }

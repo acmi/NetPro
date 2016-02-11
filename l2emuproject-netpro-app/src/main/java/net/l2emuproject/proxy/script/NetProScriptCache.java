@@ -23,7 +23,9 @@ import eu.revengineer.simplejse.JavaClassScriptCache;
 import eu.revengineer.simplejse.config.JCSCConfig;
 import eu.revengineer.simplejse.config.JCSCConfigFlag;
 import eu.revengineer.simplejse.init.ReloadableScriptInitializer;
-import eu.revengineer.simplejse.init.SimpleAbstractScriptInitializer;
+import eu.revengineer.simplejse.reporting.AptReportingHandler;
+import eu.revengineer.simplejse.reporting.DiagnosticLogFile;
+import eu.revengineer.simplejse.reporting.JavacReportingHandler;
 
 import net.l2emuproject.lang.management.StartupManager;
 import net.l2emuproject.proxy.NetProInfo;
@@ -38,9 +40,25 @@ import net.l2emuproject.util.logging.L2Logger;
  */
 public class NetProScriptCache extends JavaClassScriptCache
 {
+	/** Allows to override the default {@code apt} handler */
+	public static AptReportingHandler INITIALIZER_APT_HANDLER = new DiagnosticLogFile(Paths.get("script_apt.log"));
+	/** Allows to override the default {@code javac} handler */
+	public static JavacReportingHandler INITIALIZER_JAVAC_HANDLER = new DiagnosticLogFile(Paths.get("script.log"));
+	
 	NetProScriptCache(JCSCConfig config)
 	{
 		super(config);
+	}
+	
+	/**
+	 * Returns the expected precompiled script cache filename.
+	 * 
+	 * @return script cache name
+	 */
+	public static final String getScriptCacheName()
+	{
+		final String ver = NetProInfo.isUnreleased() ? "" : "_" + (NetProInfo.isSnapshot() ? NetProInfo.getRevisionNumber() : NetProInfo.getVersion());
+		return "script" + ver + ".cache";
 	}
 	
 	/**
@@ -70,16 +88,14 @@ public class NetProScriptCache extends JavaClassScriptCache
 		
 		static
 		{
-			SimpleAbstractScriptInitializer.LOG = new NetProScriptLogger(L2Logger.getLogger(ReloadableScriptInitializer.class));
-			JavaClassScriptCache.LOG = new NetProScriptLogger(L2Logger.getLogger(NetProScriptCache.class));
+			JavaClassScriptCache.installLoggers(c -> new NetProScriptLogger(L2Logger.getLogger(c)));
 			
 			INITIALIZER = new ReloadableScriptInitializer();
 			
 			final Set<JCSCConfigFlag> flags = EnumSet.noneOf(JCSCConfigFlag.class);
 			flags.add(JCSCConfigFlag.DEFLATE_CACHE);
 			
-			final String ver = NetProInfo.isUnreleased() ? "" : "_" + (NetProInfo.isSnapshot() ? NetProInfo.getRevisionNumber() : NetProInfo.getVersion());
-			INSTANCE = new NetProScriptCache(new JCSCConfig(Paths.get("scripts"), Paths.get("script" + ver + ".cache"), Paths.get("script_apt.log"), Paths.get("script.log"), flags, INITIALIZER));
+			INSTANCE = new NetProScriptCache(new JCSCConfig(Paths.get("scripts"), Paths.get(getScriptCacheName()), INITIALIZER_APT_HANDLER, INITIALIZER_JAVAC_HANDLER, flags, INITIALIZER));
 			
 			StartupManager.markInitialized(NetProScriptCache.class);
 		}

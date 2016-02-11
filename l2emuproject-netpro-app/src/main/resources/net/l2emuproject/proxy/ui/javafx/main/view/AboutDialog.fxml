@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="766.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.AboutDialogController">
+<HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="766.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.AboutDialogController">
    <children>
       <ImageView pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../savormix/icon-256.png" />
+            <Image url="@../../icon-256.png" />
          </image>
       </ImageView>
       <BorderPane>

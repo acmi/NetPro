@@ -77,9 +77,9 @@
 		<packet opcodePrefix="D0 F2 00" id="446" />
 		<packet opcodePrefix="D0 F3 00" id="447" />
 		<packet opcodePrefix="D0 F4 00" id="CM_REQ_NEW_ENCHANT_PUSH_ONE" />
-		<packet opcodePrefix="D0 F5 00" id="449" />
+		<packet opcodePrefix="D0 F5 00" id="CM_REQ_NEW_ENCHANT_REMOVE_ONE" />
 		<packet opcodePrefix="D0 F6 00" id="CM_REQ_NEW_ENCHANT_PUSH_TWO" />
-		<packet opcodePrefix="D0 F7 00" id="451" />
+		<packet opcodePrefix="D0 F7 00" id="CM_REQ_NEW_ENCHANT_REMOVE_TWO" />
 		<packet opcodePrefix="D0 F8 00" id="CM_REQ_NEW_ENCHANT_CLOSE" />
 		<packet opcodePrefix="D0 F9 00" id="CM_REQ_NEW_ENCHANT_TRY" />
 		<packet opcodePrefix="D0 FD 00" id="454" />
@@ -205,12 +205,12 @@
 		<packet opcodePrefix="FE 67 01" id="SM_EX_CLOSE_AP_LIST_WND" />
 		<packet opcodePrefix="FE 68 01" id="SM_EX_ENCHANT_ONE_OK" />
 		<packet opcodePrefix="FE 69 01" id="SM_EX_ENCHANT_ONE_FAIL" />
-		<packet opcodePrefix="FE 6A 01" id="666" />
-		<packet opcodePrefix="FE 6B 01" id="667" />
+		<packet opcodePrefix="FE 6A 01" id="SM_EX_ENCHANT_ONE_REMOVE_OK" />
+		<packet opcodePrefix="FE 6B 01" id="SM_EX_ENCHANT_ONE_REMOVE_FAIL" />
 		<packet opcodePrefix="FE 6C 01" id="SM_EX_ENCHANT_TWO_OK" />
 		<packet opcodePrefix="FE 6D 01" id="SM_EX_ENCHANT_TWO_FAIL" />
-		<packet opcodePrefix="FE 6E 01" id="670" />
-		<packet opcodePrefix="FE 6F 01" id="671" />
+		<packet opcodePrefix="FE 6E 01" id="SM_EX_ENCHANT_TWO_REMOVE_OK" />
+		<packet opcodePrefix="FE 6F 01" id="SM_EX_ENCHANT_TWO_REMOVE_FAIL" />
 		<packet opcodePrefix="FE 70 01" id="SM_EX_ENCHANT_SUCCESS" />
 		<packet opcodePrefix="FE 71 01" id="SM_EX_ENCHANT_FAIL" />
 		<packet opcodePrefix="FE 72 01" id="674" />

@@ -309,8 +309,6 @@
 		<packet id="445" name="RequestExPCCafeRequestOpenWindowWithoutNPC" />
 		<packet id="446" name="RequestLuckyGamePlay" />
 		<packet id="447" name="RequestNotifyTrainingRoomEnd" />
-		<packet id="449" name="RequestNewEnchantRemoveOne" />
-		<packet id="451" name="RequestNewEnchantRemoveTwo" />
 		<packet id="454" name="RequestTargetActionMenu" />
 		<packet id="455" name="RequestExSendSelectedQuestZoneID" />
 		<packet id="456" name="RequestAlchemySkillList" />
@@ -1598,10 +1596,22 @@
 		<packet id="CM_REQ_NEW_ENCHANT_PUSH_ONE" name="RequestNewEnchantPushOne" />
 		<!--
 		ASCII "chd"
+		UNICODE "RequestNewEnchantRemoveOne"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_REMOVE_ONE" name="RequestNewEnchantRemoveOne" />
+		<!--
+		ASCII "chd"
 		UNICODE "RequestNewEnchantPushTwo"
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_NEW_ENCHANT_PUSH_TWO" name="RequestNewEnchantPushTwo" />
+		<!--
+		ASCII "chd"
+		UNICODE "RequestNewEnchantRemoveTwo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_REMOVE_TWO" name="RequestNewEnchantRemoveTwo" />
 		<!--
 		ASCII "ch"
 		UNICODE "RequestNewEnchantClose"
@@ -2202,10 +2212,6 @@
 		<packet id="659" name="ExTrainingZone_Leaving" />
 		<packet id="660" name="ExPeriodicHenna" />
 		<packet id="662" name="ExUserInfoInvenWeight" />
-		<packet id="666" name="ExEnchantOneRemoveOK" />
-		<packet id="667" name="ExEnchantOneRemoveFail" />
-		<packet id="670" name="ExEnchantTwoRemoveOK" />
-		<packet id="671" name="ExEnchantTwoRemoveFail" />
 		<packet id="674" name="ExAccountAttendanceInfo" />
 		<packet id="675" name="ExWorldChatCnt" />
 		<packet id="676" name="ExAlchemySkillList" />
@@ -3979,6 +3985,16 @@
 		-->
 		<packet id="SM_EX_ENCHANT_ONE_FAIL" name="ExEnchantOneFail" />
 		<!--
+		UNICODE "ExEnchantOneRemoveOK"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_ONE_REMOVE_OK" name="ExEnchantOneRemoveOK" />
+		<!--
+		UNICODE "ExEnchantOneRemoveFail"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_ONE_REMOVE_FAIL" name="ExEnchantOneRemoveFail" />
+		<!--
 		UNICODE "ExEnchantTwoOK"
 		UNICODE "(Receive)%s"
 		-->
@@ -3988,6 +4004,16 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_ENCHANT_TWO_FAIL" name="ExEnchantTwoFail" />
+		<!--
+		UNICODE "ExEnchantTwoRemoveOK"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_TWO_REMOVE_OK" name="ExEnchantTwoRemoveOK" />
+		<!--
+		UNICODE "ExEnchantTwoRemoveFail"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_TWO_REMOVE_FAIL" name="ExEnchantTwoRemoveFail" />
 		<!--
 		UNICODE "ExEnchantSucess"
 		UNICODE "(Receive)%s"

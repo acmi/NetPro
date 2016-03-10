@@ -15,22 +15,39 @@
  */
 package net.l2emuproject.proxy.ui.javafx.main.view;
 
+import static javafx.scene.control.Alert.AlertType.ERROR;
+import static javafx.scene.control.Alert.AlertType.INFORMATION;
+import static javafx.scene.control.Alert.AlertType.WARNING;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.concurrent.Future;
+import java.util.function.Consumer;
 
+import eu.revengineer.simplejse.exception.DependencyResolutionException;
+import eu.revengineer.simplejse.exception.MutableOperationInProgressException;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
+import eu.revengineer.simplejse.type.UnloadableScript;
 
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
 import net.l2emuproject.proxy.ui.javafx.FXLocator;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
+import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -44,9 +61,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Accordion;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
@@ -56,10 +79,12 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.TitledPane;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.Window;
 import javafx.util.Duration;
 
 /**
@@ -282,10 +307,16 @@ public class MainWindowController implements Initializable
 			
 			final Stage about = new Stage(StageStyle.TRANSPARENT);
 			about.initModality(Modality.APPLICATION_MODAL);
+			about.initOwner(getMainWindow());
 			about.setTitle(UIStrings.get("about.title"));
 			about.setScene(aboutDialog);
-			about.showAndWait();
+			about.show();
 		});
+	}
+	
+	private Window getMainWindow()
+	{
+		return _tpConnections.getScene().getWindow();
 	}
 	
 	@FXML
@@ -299,25 +330,25 @@ public class MainWindowController implements Initializable
 	@FXML
 	void copySelectedPacket(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
 	void copySelectedPacketXML(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
 	void copyVisiblePackets(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
 	void copyVisiblePacketsXML(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
@@ -343,55 +374,331 @@ public class MainWindowController implements Initializable
 	@FXML
 	void showOpenLogPH(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
 	void showOpenLogPS(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
 	void showOpenLogRawPH(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
 	void showSaveVisiblePackets(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
 	void showSaveVisiblePacketsXML(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML
-	void loadScript(ActionEvent event)
+	private void loadScript(ActionEvent event)
 	{
-		final TextInputDialog nameDialog = new TextInputDialog();
-		nameDialog.setTitle(UIStrings.get("scripts.load.dialog.title"));
-		nameDialog.setHeaderText(UIStrings.get("scripts.fqcn.explanation"));
-		final Optional<String> result = nameDialog.showAndWait();
+		askForScriptName("scripts.load.dialog.title", "scripts.fqcn.explanation", this::loadScript);
 	}
 	
 	@FXML
-	void unloadScript(ActionEvent event)
+	private void unloadScript(ActionEvent event)
 	{
-		final TextInputDialog nameDialog = new TextInputDialog();
-		nameDialog.setTitle(UIStrings.get("scripts.unload.dialog.title"));
-		nameDialog.setHeaderText(UIStrings.get("scripts.fqcn.explanation"));
+		askForScriptName("scripts.unload.dialog.title", "scripts.fqcn.explanation", this::unloadScript);
+	}
+	
+	private void askForScriptName(String inputDialogTitle, String inputDialogHeader, Consumer<WaitingIndicatorDialogController> action)
+	{
+		final TextInputDialog nameDialog = initScriptDialog(new TextInputDialog(), inputDialogTitle, inputDialogHeader, null);
 		final Optional<String> result = nameDialog.showAndWait();
+		if (!result.isPresent())
+			return;
+		
+		final String pattern = result.get();
+		final WaitingIndicatorDialogController waitDialog = showWaitDialog("generic.waitdlg.title", "scripts.load.waitdlg.content.index", pattern);
+		waitDialog.getWindow().setUserData(pattern);
+		
+		action.accept(waitDialog);
+	}
+	
+	private WaitingIndicatorDialogController showWaitDialog(String title, String description, Object... descriptionTokens)
+	{
+		try
+		{
+			final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(WaitingIndicatorDialogController.class), UIStrings.getBundle());
+			final Scene scene = new Scene(loader.load(), null);
+			
+			final Stage stage = new Stage(StageStyle.UTILITY);
+			stage.initModality(Modality.NONE);
+			stage.initOwner(getMainWindow());
+			stage.setTitle(UIStrings.get(title));
+			stage.setScene(scene);
+			stage.getIcons().addAll(FXLocator.getIconListFX());
+			stage.sizeToScene();
+			stage.setResizable(false);
+			
+			final WaitingIndicatorDialogController controller = loader.getController();
+			controller.setContentText(UIStrings.get(description, descriptionTokens));
+			
+			stage.show();
+			return controller;
+		}
+		catch (IOException e)
+		{
+			throw new AssertionError("Waiting dialog is missing", e);
+		}
+	}
+	
+	private void loadScript(WaitingIndicatorDialogController waitDialogController)
+	{
+		final Window waitDialogWindow = waitDialogController.getWindow();
+		final String pattern = String.valueOf(waitDialogWindow.getUserData());
+		
+		final Future<?> task = L2ThreadPool.submitLongRunning(() ->
+		{
+			try
+			{
+				final Set<String> matchingScripts = new TreeSet<>(NetProScriptCache.getInstance().findIndexedScripts(pattern, Integer.MAX_VALUE, 0));
+				
+				Platform.runLater(() ->
+				{
+					waitDialogController.onWaitEnd();
+					
+					if (matchingScripts.isEmpty())
+					{
+						makeScriptAlert(INFORMATION, "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.nonexistent", "scripts.load.err.dialog.content.nonexistent", pattern).show();
+						return;
+					}
+					
+					final String result;
+					if (matchingScripts.size() > 1)
+					{
+						final Optional<String> resultWrapper = showChoiceDialog("scripts.load.dialog.title", "scripts.load.dialog.header.select", matchingScripts);
+						if (!resultWrapper.isPresent())
+							return;
+						
+						result = resultWrapper.get();
+					}
+					else
+						result = matchingScripts.iterator().next();
+					
+					final WaitingIndicatorDialogController nextWaitDialogController = showWaitDialog("generic.waitdlg.title", "scripts.load.waitdlg.content.compile", result);
+					final Future<?> nextTask = L2ThreadPool.submitLongRunning(() ->
+					{
+						final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
+						try
+						{
+							NetProScriptCache.getInstance().compileSingleScript(result, fqcn2Exception);
+						}
+						catch (MutableOperationInProgressException e)
+						{
+							nextWaitDialogController.onWaitEnd();
+							
+							makeScriptAlert(ERROR, "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.singleop", "scripts.load.err.dialog.content.singleop", result).show();
+							return;
+						}
+						catch (DependencyResolutionException e)
+						{
+							nextWaitDialogController.onWaitEnd();
+							
+							makeScriptAlert(ERROR, "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.apt", "scripts.load.err.dialog.content.apt", System.getProperty("java.home"));
+							return;
+						}
+						catch (IOException e)
+						{
+							nextWaitDialogController.onWaitEnd();
+							
+							initScriptDialog(new ExceptionAlert(e), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.runtime", null).show();
+							return;
+						}
+						catch (IllegalArgumentException e)
+						{
+							nextWaitDialogController.onWaitEnd();
+							
+							makeScriptAlert(INFORMATION, "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.nonexistent", "scripts.load.err.dialog.content.nonexistent", result).show();
+							return;
+						}
+						
+						Platform.runLater(() ->
+						{
+							nextWaitDialogController.onWaitEnd();
+							
+							if (fqcn2Exception.isEmpty())
+							{
+								makeScriptAlert(INFORMATION, "scripts.load.done.dialog.title", "scripts.load.done.dialog.header", "scripts.load.done.dialog.content", result).show();
+								return;
+							}
+							
+							final Alert alert = makeScriptAlert(WARNING, "scripts.load.done.dialog.title", "scripts.load.done.dialog.header", "scripts.load.done.dialog.content.runtime", result);
+							alert.getDialogPane().setExpandableContent(makeScriptExceptionMapExpandabeContent(fqcn2Exception));
+							alert.show();
+						});
+					});
+					nextWaitDialogController.setCancelAction(() -> nextTask.cancel(true));
+				});
+			}
+			catch (MutableOperationInProgressException e)
+			{
+				waitDialogController.onWaitEnd();
+				
+				makeScriptAlert(ERROR, "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.singleop", "scripts.load.err.dialog.content.singleop", pattern).show();
+			}
+			catch (InterruptedException e)
+			{
+				// application shutting down
+				waitDialogController.onWaitEnd();
+			}
+			catch (IOException ex)
+			{
+				initScriptDialog(new ExceptionAlert(ex), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.runtime", null).show();
+			}
+		});
+		waitDialogController.setCancelAction(() -> task.cancel(true));
+	}
+	
+	private void unloadScript(WaitingIndicatorDialogController waitDialogController)
+	{
+		final Window waitDialogWindow = waitDialogController.getWindow();
+		final String pattern = String.valueOf(waitDialogWindow.getUserData());
+		// the script is in memory, so finding it does not need a background task
+		try
+		{
+			final Set<String> matchingScripts = new TreeSet<>(NetProScriptCache.getInstance().findCompiledScripts(pattern, Integer.MAX_VALUE, 0));
+			// Remove unmanaged or already unloaded scripts
+			for (final Iterator<String> it = matchingScripts.iterator(); it.hasNext();)
+				if (NetProScriptCache.getInitializer().getManagedScript(it.next()) == null)
+					it.remove();
+			
+			waitDialogController.onWaitEnd();
+			
+			if (matchingScripts.isEmpty())
+			{
+				makeScriptAlert(INFORMATION, "scripts.unload.err.dialog.title", "scripts.unload.err.dialog.header.nonexistent", "scripts.unload.err.dialog.content.nonexistent", pattern).show();
+				return;
+			}
+			
+			final String result;
+			if (matchingScripts.size() > 1)
+			{
+				final Optional<String> resultWrapper = showChoiceDialog("scripts.unload.dialog.title", "scripts.unload.dialog.header.select", matchingScripts);
+				if (!resultWrapper.isPresent())
+					return;
+				
+				result = resultWrapper.get();
+			}
+			else
+				result = matchingScripts.iterator().next();
+			
+			final WaitingIndicatorDialogController nextWaitDialogController = showWaitDialog("generic.waitdlg.title", "scripts.unload.waitdlg.content", result);
+			final Future<?> task = L2ThreadPool.submitLongRunning(() ->
+			{
+				final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
+				try
+				{
+					NetProScriptCache.getInitializer().unloadScript(result, fqcn2Exception);
+				}
+				catch (IllegalArgumentException e)
+				{
+					nextWaitDialogController.onWaitEnd();
+					
+					makeScriptAlert(INFORMATION, "scripts.unload.err.dialog.title", "scripts.unload.err.dialog.header.nonexistent", "scripts.unload.err.dialog.content.nonexistent", result);
+					return;
+				}
+				
+				Platform.runLater(() ->
+				{
+					nextWaitDialogController.onWaitEnd();
+					
+					if (fqcn2Exception.isEmpty())
+					{
+						makeScriptAlert(INFORMATION, "scripts.unload.done.dialog.title", "scripts.unload.done.dialog.header", "scripts.unload.done.dialog.content", result).show();
+						return;
+					}
+					
+					final Alert alert = makeScriptAlert(WARNING, "scripts.unload.done.dialog.title", "scripts.unload.done.dialog.header", "scripts.unload.done.dialog.content.runtime", result);
+					alert.getDialogPane().setExpandableContent(makeScriptExceptionMapExpandabeContent(fqcn2Exception));
+					alert.show();
+				});
+			});
+			nextWaitDialogController.setCancelAction(() -> task.cancel(true));
+		}
+		catch (MutableOperationInProgressException e)
+		{
+			waitDialogController.onWaitEnd();
+			
+			makeScriptAlert(ERROR, "scripts.unload.err.dialog.title", "scripts.unload.err.dialog.header.singleop", "scripts.unload.err.dialog.content.singleop", pattern).show();
+		}
+		catch (InterruptedException e)
+		{
+			// application shutting down
+			waitDialogController.onWaitEnd();
+		}
+	}
+	
+	private <E> Optional<E> showChoiceDialog(String title, String header, Set<E> choices)
+	{
+		return initScriptDialog(new ChoiceDialog<>(choices.iterator().next(), choices), title, header, null).showAndWait();
+	}
+	
+	/**
+	 * Creates a user-friendly view of the given script exception map.
+	 * 
+	 * @param fqcn2Exception script exception map
+	 * @return exception map representation
+	 */
+	public static final Node makeScriptExceptionMapExpandabeContent(Map<Class<?>, RuntimeException> fqcn2Exception)
+	{
+		if (fqcn2Exception.isEmpty())
+			return null;
+		
+		final Accordion accordion = new Accordion();
+		accordion.setMinWidth(600);
+		accordion.setMinHeight(400);
+		for (final Entry<Class<?>, RuntimeException> e : fqcn2Exception.entrySet())
+		{
+			final Class<?> scriptClass = e.getKey();
+			final TextArea taStackTrace = new TextArea(StackTraceUtil.traceToString(StackTraceUtil.stripUntilFirstMethodCall(e.getValue(), true, scriptClass.getClassLoader(), UnloadableScript.class,
+					"onFirstLoad", "onReload", "onLoad", "onStateSave", "onUnload")));
+			taStackTrace.setMaxHeight(Double.MAX_VALUE);
+			taStackTrace.setMaxWidth(Double.MAX_VALUE);
+			
+			final TitledPane pane = new TitledPane(scriptClass.getName(), taStackTrace);
+			accordion.getPanes().add(pane);
+		}
+		if (fqcn2Exception.size() == 1)
+			accordion.setExpandedPane(accordion.getPanes().iterator().next());
+		return accordion;
+	}
+	
+	private final Alert makeScriptAlert(AlertType type, String title, String header, String content, Object... contentTokens)
+	{
+		return initScriptDialog(new Alert(type), title, header, content, contentTokens);
+	}
+	
+	private final <T, D extends Dialog<T>> D initScriptDialog(D dialog, String title, String header, String content, Object... contentTokens)
+	{
+		dialog.initModality(Modality.NONE);
+		dialog.initOwner(getMainWindow());
+		dialog.initStyle(StageStyle.UTILITY);
+		
+		dialog.setTitle(UIStrings.get(title));
+		dialog.setHeaderText(UIStrings.get(header));
+		if (content != null)
+			dialog.setContentText(UIStrings.get(content, contentTokens));
+		
+		return dialog;
 	}
 	
 	@FXML
 	void loadAllScripts(ActionEvent event)
 	{
-	
+		
 	}
 	
 	@FXML

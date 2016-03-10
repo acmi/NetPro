@@ -15,13 +15,10 @@
  */
 package net.l2emuproject.proxy.ui.javafx;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
 import org.apache.commons.lang3.StringUtils;
 
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.util.StackTraceUtil;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
@@ -43,21 +40,10 @@ public class ExceptionAlert extends Alert
 	{
 		super(AlertType.ERROR, StringUtils.isBlank(t.getLocalizedMessage()) ? UIStrings.get("generic.exception.nodesc") : t.getLocalizedMessage());
 		initModality(Modality.APPLICATION_MODAL);
-		setTitle("Uncaught exception");
+		setTitle(UIStrings.get("generic.exception.uncaught"));
 		setHeaderText(t.getClass().getSimpleName());
 		
-		final String stackTrace;
-		try (final StringWriter sw = new StringWriter(); final PrintWriter pw = new PrintWriter(sw))
-		{
-			t.printStackTrace(pw);
-			stackTrace = sw.toString();
-		}
-		catch (IOException e)
-		{
-			throw new AssertionError(StringWriter.class.getName(), e);
-		}
-		
-		final TextArea taStackTrace = new TextArea(stackTrace);
+		final TextArea taStackTrace = new TextArea(StackTraceUtil.traceToString(t));
 		taStackTrace.setMaxHeight(Double.MAX_VALUE);
 		taStackTrace.setMaxWidth(Double.MAX_VALUE);
 		getDialogPane().setExpandableContent(taStackTrace);

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.concurrent.ArrayBlockingQueue;
 
 import javax.tools.Diagnostic;
@@ -23,6 +25,8 @@ import javax.tools.JavaFileObject;
 import eu.revengineer.simplejse.reporting.AptReportingHandler;
 import eu.revengineer.simplejse.reporting.JavacReportingHandler;
 
+import net.l2emuproject.lang.management.ShutdownManager;
+import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.script.NetProScriptCache;
@@ -143,7 +147,7 @@ public class NetPro extends Application
 		}
 		else
 			language = languages.isEmpty() ? null : languages.iterator().next();
-			
+		
 		UIStrings.CURRENT_LOCALE = language != null ? UIStrings.SUPPORTED_LOCALES.getOrDefault(language, Locale.ENGLISH) : Locale.ENGLISH;
 		
 		new Thread(NetPro::loadInOrder, "ApplicationStartThread").start();
@@ -188,18 +192,19 @@ public class NetPro extends Application
 			}
 			
 			final NetProScriptCache cache = NetProScriptCache.getInstance();
-			scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()))
+			final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
+			scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache(fqcn2Exception)))
 			{
 				if (!cache.isCompilerUnavailable())
 				{
-					cache.compileAllScripts();
+					cache.compileAllScripts(fqcn2Exception);
 					cache.writeToCache();
 					break scripts;
 				}
 				
 				if (reporter == null)
 					break scripts;
-					
+				
 				synchronized (reporter)
 				{
 					Platform.runLater(() ->
@@ -210,7 +215,7 @@ public class NetPro extends Application
 						confirmDlg.setContentText(UIStrings.get("startup.scripts.jre.nocache.dialog.content", System.getProperty("java.home"), NetProScriptCache.getScriptCacheName()));
 						confirmDlg.getButtonTypes().setAll(new ButtonType(UIStrings.get("startup.scripts.jre.nocache.dialog.button.continue"), ButtonData.YES),
 								new ButtonType(UIStrings.get("startup.scripts.jre.nocache.dialog.button.exit"), ButtonData.NO));
-								
+						
 						confirmDlg.initOwner(SPLASH_STAGE);
 						confirmDlg.initModality(Modality.APPLICATION_MODAL);
 						confirmDlg.initStyle(StageStyle.DECORATED);
@@ -219,7 +224,7 @@ public class NetPro extends Application
 						if (!result.isPresent() || result.get().getButtonData() != ButtonData.YES)
 						{
 							Platform.exit();
-							System.exit(0);
+							ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN);
 						}
 						
 						synchronized (reporter)
@@ -232,7 +237,35 @@ public class NetPro extends Application
 			}
 			
 			if (reporter != null)
+			{
+				if (!fqcn2Exception.isEmpty())
+				{
+					synchronized (reporter)
+					{
+						Platform.runLater(() ->
+						{
+							final Alert alert = new Alert(AlertType.WARNING);
+							alert.initModality(Modality.APPLICATION_MODAL);
+							alert.initOwner(SPLASH_STAGE);
+							alert.initStyle(StageStyle.UTILITY);
+							alert.setTitle(UIStrings.get("startup.scripts.err.dialog.title.init"));
+							alert.setHeaderText(UIStrings.get("startup.scripts.err.dialog.header.init"));
+							alert.setContentText(UIStrings.get("startup.scripts.err.dialog.content.init"));
+							
+							alert.getDialogPane().setExpandableContent(MainWindowController.makeScriptExceptionMapExpandabeContent(fqcn2Exception));
+							alert.showAndWait();
+							
+							synchronized (reporter)
+							{
+								reporter.notifyAll();
+							}
+						});
+						reporter.wait();
+					}
+				}
+				
 				reporter.onState(UIStrings.get("startup.definitions"));
+			}
 			VersionnedPacketTable.getInstance();
 			if (reporter != null)
 				reporter.onState(UIStrings.get("startup.ipalias"));
@@ -256,14 +289,14 @@ public class NetPro extends Application
 				dlgFail.initOwner(SPLASH_STAGE);
 				dlgFail.showAndWait();
 				Platform.exit();
-				System.exit(1);
+				ShutdownManager.exit(TerminationStatus.RUNTIME_UNCAUGHT_ERROR);
 			});
 			return;
 		}
 		
 		if (reporter == null)
 			return;
-			
+		
 		reporter.onState(UIStrings.get("startup.ui"));
 		Platform.runLater(() ->
 		{
@@ -313,7 +346,7 @@ public class NetPro extends Application
 			{
 				if (StartupOption.IGNORE_UNKNOWN.isSet())
 					continue;
-					
+				
 				System.err.println("Unrecognized command line argument: " + arg);
 				continue;
 			}
@@ -326,7 +359,7 @@ public class NetPro extends Application
 					{
 						if (!opt.isInHelp())
 							continue;
-							
+						
 						final String[] alias = opt.getAlias();
 						sb.append(alias[0]);
 						for (int i = 1; i < alias.length; ++i)
@@ -345,10 +378,10 @@ public class NetPro extends Application
 		
 		if (GraphicsEnvironment.isHeadless()) // a fool's hope
 			StartupOption.DISABLE_UI.setSystemProperty();
-			
+		
 		if (StartupOption.DISABLE_PROXY.isSet() && StartupOption.DISABLE_UI.isSet())
 			System.exit(0);
-			
+		
 		if (StartupOption.DISABLE_UI.isNotSet())
 		{
 			launch(args);
@@ -417,7 +450,7 @@ public class NetPro extends Application
 			// this is apt, so we do not need to inform about "success" less than halfway there
 			if (erroneousScripts.isEmpty())
 				return;
-				
+			
 			try
 			{
 				synchronized (_lock)
@@ -428,15 +461,15 @@ public class NetPro extends Application
 						confirmDlg.setTitle(UIStrings.get("startup.scripts.err.dialog.title"));
 						if (init)
 						{
-							confirmDlg.setHeaderText(UIStrings.get("startup.scripts.err.dialog.header.init"));
-							confirmDlg.setContentText(UIStrings.get("startup.scripts.err.dialog.content.init", System.getProperty("java.home")));
+							confirmDlg.setHeaderText(UIStrings.get("startup.scripts.err.dialog.header"));
+							confirmDlg.setContentText(UIStrings.get("startup.scripts.err.dialog.content", System.getProperty("java.home")));
 							confirmDlg.getButtonTypes().setAll(new ButtonType(UIStrings.get("startup.scripts.err.dialog.button.continue"), ButtonData.YES),
 									new ButtonType(UIStrings.get("startup.scripts.err.dialog.button.exit"), ButtonData.NO));
 						}
 						else
 						{
-							confirmDlg.setHeaderText(UIStrings.get("startup.scripts.err.dialog.header"));
-							confirmDlg.setContentText(UIStrings.get("startup.scripts.err.dialog.content", System.getProperty("java.home")));
+							confirmDlg.setHeaderText(UIStrings.get("scripts.load.err.dialog.header.compile"));
+							confirmDlg.setContentText(UIStrings.get("scripts.load.err.dialog.content.compile", System.getProperty("java.home")));
 						}
 						
 						try
@@ -473,7 +506,7 @@ public class NetPro extends Application
 						if (!result.isPresent() || result.get().getButtonData() == ButtonData.NO)
 						{
 							Platform.exit();
-							System.exit(0);
+							ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN);
 						}
 						
 						synchronized (_lock)
@@ -505,7 +538,7 @@ public class NetPro extends Application
 						confirmDlg.setContentText(UIStrings.get("startup.scripts.err.apt.fail.dialog.content", System.getProperty("java.home")));
 						confirmDlg.getButtonTypes().setAll(new ButtonType(UIStrings.get("startup.scripts.err.apt.fail.dialog.button.continue"), ButtonData.YES),
 								new ButtonType(UIStrings.get("startup.scripts.err.apt.fail.dialog.button.exit"), ButtonData.NO));
-								
+						
 						confirmDlg.initOwner(SPLASH_STAGE);
 						confirmDlg.initModality(Modality.APPLICATION_MODAL);
 						confirmDlg.initStyle(StageStyle.DECORATED);
@@ -514,7 +547,7 @@ public class NetPro extends Application
 						if (!result.isPresent() || result.get().getButtonData() != ButtonData.YES)
 						{
 							Platform.exit();
-							System.exit(0);
+							ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN);
 						}
 						
 						synchronized (_lock)
@@ -549,6 +582,15 @@ public class NetPro extends Application
 			for (final Collection<Path> paths : erroneousScripts)
 				scripts.addAll(paths);
 			onEnd(scripts, init);
+		}
+	}
+	
+	private static final class ClassNameComparator implements Comparator<Class<?>>
+	{
+		@Override
+		public int compare(Class<?> o1, Class<?> o2)
+		{
+			return o1.getName().compareTo(o2.getName());
 		}
 	}
 }

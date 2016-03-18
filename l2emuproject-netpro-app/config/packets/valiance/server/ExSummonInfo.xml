@@ -27,10 +27,12 @@
 	</branch>
 	<word alias="Block size" />
 	<branch description="The block">
-		<branch id="exNI_2" condition="bitmask.Bit7" description="Condition is wrong">
+		<branch id="exNI_1" condition="bitmask.Bit7" description="Template">
 			<dword alias="NPC" type="Npc">
 				<scriptAlias id="OIC_NPC_TEMPLATE" />
 			</dword>
+		</branch>
+		<branch id="exNI_1" condition="bitmask.Bit2" description="Location"> <!-- Valid branch -->
 			<dword alias="Location X">
 				<scriptAlias id="OIL_OBJECT_X_SERVER" />
 			</dword>
@@ -43,27 +45,32 @@
 			<dword alias="Yaw">
 				<scriptAlias id="OIL_OBJECT_YAW" />
 			</dword>
+		</branch>
+		<branch id="exNI_1" condition="bitmask.Bit0" description="Action speeds">
 			<dword alias="Casting speed" />
 			<dword alias="Attack speed" />
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit7" description="Multipliers">
 			<single alias="Movement speed multiplier" />
 			<single alias="Attack speed multiplier" />
 		</branch>
-		<branch id="exNI_2" condition="bitmask.Bit6" description="Equipment">
+		<branch id="exNI_2" condition="bitmask.Bit6" description="Equipment"> <!-- Valid branch -->
 			<dword alias="Main weapon" type="Item" />
 			<dword alias="Chest armor" type="Item" />
 			<dword alias="Shield/support weapon" type="Item" />
 		</branch>
-		<branch id="exNI_2" condition="bitmask.Bit5" description="Condition is wrong">
+		<branch id="exNI_1" condition="bitmask.Bit3" description="Movement mode"> <!-- Valid branch -->
 			<byte alias="1" /> <!-- Identified as 'Show title', even though status = 0 deals with that -->
 			<byte alias="Movement mode" type="MoveType" />
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit1" description="Environment">
 			<byte alias="Environment" type="Environment" />
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit4">
 			<byte alias="Flying" type="YesOrNo" />
 			<bytes alias="0">
-				<length>1</length>
+				<length>2</length>
 			</bytes>
-		</branch>
-		<branch id="exNI_2" condition="bitmask.Bit1" description="Single byte, purpose unknown">
-			<byte alias="0" />
 		</branch>
 		<branch id="exNI_2" condition="bitmask.Bit0" description="Single byte, purpose unknown">
 			<byte alias="" />
@@ -78,42 +85,42 @@
 			<dword alias="unk 0" />
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit1" description="Single dword, found on traps and elsewhere">
-			<dword alias="0/1/100/101" />
+			<dword alias="0/1/2/3/100/101" />
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit3" description="Single byte, purpose unknown">
 			<byte alias="" /> <!-- "4" found on Teredor -->
 		</branch>
-		<branch id="exNI_4" condition="bitmask.Bit7" description="Cur HP">
+		<branch id="exNI_4" condition="bitmask.Bit7" description="Cur HP"> <!-- Valid branch -->
 			<dword alias="Current HP" />
 		</branch>
-		<branch id="exNI_4" condition="bitmask.Bit6" description="Cur MP">
+		<branch id="exNI_4" condition="bitmask.Bit6" description="Cur MP"> <!-- Valid branch -->
 			<dword alias="Current MP" />
 		</branch>
-		<branch id="exNI_4" condition="bitmask.Bit5" description="Max HP">
+		<branch id="exNI_4" condition="bitmask.Bit5" description="Max HP"> <!-- Valid branch -->
 			<dword alias="Max HP" />
 		</branch>
-		<branch id="exNI_4" condition="bitmask.Bit4" description="Max MP">
+		<branch id="exNI_4" condition="bitmask.Bit4" description="Max MP"> <!-- Valid branch -->
 			<dword alias="Max MP" />
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit3" description="Single byte, purpose unknown">
 			<byte alias="1/2" />
 		</branch>
-		<branch id="exNI_1" condition="bitmask.Bit4" description="Name"> <!-- Unexpected, but that's where it is -->
+		<branch id="exNI_1" condition="bitmask.Bit4" description="Name"> <!-- Valid branch --> <!-- Unexpected, but that's where it is -->
 			<string alias="Name">
 				<scriptAlias id="OIC_GIVEN_NAME" />
 			</string>
 		</branch>
-		<branch id="exNI_4" condition="bitmask.Bit0" description="Name (npcstring)">
+		<branch id="exNI_4" condition="bitmask.Bit0" description="Name (npcstring)"> <!-- Valid branch -->
 			<dword alias="Name" type="ImmutableNpcString" />
 		</branch>
 		<branch id="exNI_5" condition="bitmask.NotAllBits">
-			<branch id="exNI_5" condition="bitmask.Bit7" description="Title (npcstring)">
+			<branch id="exNI_5" condition="bitmask.Bit7" description="Title (npcstring)"> <!-- Valid branch -->
 				<dword alias="Title" type="ImmutableNpcString" />
 			</branch>
-			<branch id="exNI_5" condition="bitmask.Bit6" description="PvP">
+			<branch id="exNI_5" condition="bitmask.Bit6" description="PvP"> <!-- Valid branch -->
 				<byte alias="In PvP" type="Pvp" />
 			</branch>
-			<branch id="exNI_5" condition="bitmask.Bit5" description="Reputation">
+			<branch id="exNI_5" condition="bitmask.Bit5" description="Reputation"> <!-- Valid branch -->
 				<dword alias="Reputation" />
 			</branch>
 			<branch id="exNI_5" condition="bitmask.Bit4" description="Pledge/alliance">

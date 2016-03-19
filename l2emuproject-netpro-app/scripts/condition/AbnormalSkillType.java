@@ -15,6 +15,8 @@
  */
 package condition;
 
+import eu.revengineer.simplejse.type.ReloadableScript;
+
 import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
 
 /**
@@ -22,11 +24,45 @@ import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
  * 
  * @author _dev_
  */
-public final class AbnormalSkillType extends ScriptedIntegerEqualityCondition
+public final class AbnormalSkillType extends ScriptedIntegerEqualityCondition implements ReloadableScript
 {
 	/** Constructs this condition. */
 	public AbnormalSkillType()
 	{
 		super(100);
+	}
+	
+	@Override
+	public void onLoad() throws RuntimeException
+	{
+		super.onLoad();
+		
+		//throw new RuntimeException("hung af");
+	}
+	
+	@Override
+	public void onUnload() throws RuntimeException
+	{
+		super.onUnload();
+		
+		throw new RuntimeException("hung af");
+	}
+	
+	@Override
+	public void onFirstLoad() throws RuntimeException
+	{
+		//throw new RuntimeException("hung af");
+	}
+	
+	@Override
+	public byte[] onStateSave() throws RuntimeException
+	{
+		throw new RuntimeException("hung af");
+	}
+	
+	@Override
+	public void onReload(byte[] state) throws RuntimeException
+	{
+		throw new RuntimeException("hung af");
 	}
 }

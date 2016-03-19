@@ -112,6 +112,7 @@
                         <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
+                  <MenuItem onAction="#showRepairLogNP" text="%menu.file.repair" />
                   <Menu text="%menu.file.import.title">
                     <items>
                       <MenuItem onAction="#showOpenLogPH" text="%menu.file.3rdpt.phx" />
@@ -201,17 +202,17 @@
           </Menu>
             <Menu fx:id="_mScripts" text="%menu.scripts.title">
               <items>
-                  <MenuItem fx:id="_scriptLoad" onAction="#loadScript" text="%menu.scripts.load.one" />
-                  <MenuItem fx:id="_scriptUnload" onAction="#unloadScript" text="%menu.scripts.unload" />
+                  <MenuItem onAction="#loadScript" text="%menu.scripts.load.one" />
+                  <MenuItem onAction="#unloadScript" text="%menu.scripts.unload" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                <MenuItem fx:id="_scriptLoadAll" onAction="#loadAllScripts" text="%menu.scripts.load.all" />
+                <MenuItem onAction="#loadAllScripts" text="%menu.scripts.load.all" />
               </items>
             </Menu>
           <Menu text="%menu.help.title">
             <items>
               <MenuItem fx:id="_configExplainer" text="%menu.help.config" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="_about" text="%menu.help.about" />
+                  <MenuItem onAction="#showAbout" text="%menu.help.about" />
             </items>
           </Menu>
         </menus>

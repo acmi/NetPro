@@ -30,11 +30,11 @@ import javax.swing.filechooser.FileFilter;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
+import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
-import net.l2emuproject.proxy.ui.savormix.io.task.LogIdentifyTask;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 import net.l2emuproject.ui.file.BetterExtensionFilter;
@@ -159,7 +159,7 @@ public class PacketLogFilter extends FileFilter
 			
 			private boolean accept()
 			{
-				_header = LogIdentifyTask.getHeader(_p = pathname.toPath());
+				_header = /*LogIdentifyTask.getHeader(_p = pathname.toPath())*/null;
 				if (_header == null)
 					return false;
 				
@@ -180,7 +180,7 @@ public class PacketLogFilter extends FileFilter
 						continue;
 					
 					final ByteBuffer buf = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
-					for (final Entry<Integer, Integer> e : _header.getLoggedPackets(type).entrySet())
+					for (final Entry<Integer, Integer> e : (type.isClient() ? _header.getCp() : _header.getSp()).entrySet())
 					{
 						if (e.getValue() < 1)
 							continue;
@@ -198,9 +198,9 @@ public class PacketLogFilter extends FileFilter
 			private void preinit()
 			{
 				if (_header.getProtocol() == -1 && isLegacyFiltered())
-					_protocol = _header.isLogin() ? _legacyFilter._loginProtocol : _legacyFilter._gameProtocol;
+					_protocol = _header.getService().isLogin() ? _legacyFilter._loginProtocol : _legacyFilter._gameProtocol;
 				else
-					_protocol = ProtocolVersionManager.getInstance().getProtocol(_header.getProtocol(), _header.isLogin());
+					_protocol = ProtocolVersionManager.getInstance().getProtocol(_header.getProtocol(), _header.getService().isLogin());
 				
 				_ui = Loader.getActiveFrontend();
 				_pt = VersionnedPacketTable.getInstance();

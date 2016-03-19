@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.l2emuproject.proxy.ui.savormix.io;
+package net.l2emuproject.proxy.io;
 
 import java.nio.file.Path;
 import java.util.Map;
 
-import net.l2emuproject.network.protocol.IProtocolVersion;
-import net.l2emuproject.network.protocol.ProtocolVersionManager;
-import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.network.ServiceType;
 
 /**
  * A class that stores a packet log header.
@@ -30,12 +28,13 @@ import net.l2emuproject.proxy.network.EndpointType;
 public class LogFileHeader
 {
 	private final Path _logFile;
+	private final long _logFileSize;
 	private final int _version;
 	private final int _headerSize;
 	private final int _footerSize;
 	private final long _footerStart;
 	private final long _created;
-	private final boolean _login;
+	private final ServiceType _service;
 	private final int _protocol;
 	
 	private final int _packets;
@@ -46,27 +45,29 @@ public class LogFileHeader
 	 * Constructs this header.
 	 * 
 	 * @param logFile path to the associated log file
+	 * @param logFileSize size of the log file or {@code -1}
 	 * @param version log file format version
 	 * @param headerSize header size in bytes
 	 * @param footerSize footer size in bytes
 	 * @param footerStart footer offset
 	 * @param created log file creation timestamp
-	 * @param login whether the log is for login service
+	 * @param service associated service type
 	 * @param protocol network protocol version (-1 for legacy format logs)
 	 * @param packets amount of packets within the file (-1 for legacy format logs)
 	 * @param cp client packet amounts within the file (empty for legacy format logs)
 	 * @param sp server packet amounts within the file (empty for legacy format logs)
 	 */
-	public LogFileHeader(Path logFile, int version, int headerSize, int footerSize, long footerStart, long created, boolean login, int protocol, int packets, Map<Integer, Integer> cp,
+	LogFileHeader(Path logFile, long logFileSize, int version, int headerSize, int footerSize, long footerStart, long created, ServiceType service, int protocol, int packets, Map<Integer, Integer> cp,
 			Map<Integer, Integer> sp)
 	{
 		_logFile = logFile;
+		_logFileSize = logFileSize;
 		_version = version;
 		_headerSize = headerSize;
 		_footerSize = footerSize;
 		_footerStart = footerStart;
 		_created = created;
-		_login = login;
+		_service = service;
 		_protocol = protocol;
 		
 		_packets = packets;
@@ -85,6 +86,16 @@ public class LogFileHeader
 	}
 	
 	/**
+	 * Returns the associated historical packet log file size.
+	 * 
+	 * @return size of the associated log file or {@code -1}
+	 */
+	public long getLogFileSize()
+	{
+		return _logFileSize;
+	}
+	
+	/**
 	 * Returns the packet log file format version.
 	 * 
 	 * @return log file format version
@@ -97,11 +108,11 @@ public class LogFileHeader
 	/**
 	 * Returns the service type of the contained packets.
 	 * 
-	 * @return whether the log is for login service
+	 * @return service type
 	 */
-	public boolean isLogin()
+	public ServiceType getService()
 	{
-		return _login;
+		return _service;
 	}
 	
 	/**
@@ -155,16 +166,6 @@ public class LogFileHeader
 	}
 	
 	/**
-	 * Returns the closest matching protocol version available for use.
-	 * 
-	 * @return network protocol version
-	 */
-	public IProtocolVersion getProtocolVersion()
-	{
-		return ProtocolVersionManager.getInstance().getProtocol(getProtocol(), isLogin());
-	}
-	
-	/**
 	 * Returns the client packet amount map for the associated packet log file.
 	 * 
 	 * @return client packet amounts within the file
@@ -182,17 +183,6 @@ public class LogFileHeader
 	public Map<Integer, Integer> getSp()
 	{
 		return _sp;
-	}
-	
-	/**
-	 * Returns the packet amount map for the associated packet log file.
-	 * 
-	 * @param type client/server
-	 * @return packet amounts within the file
-	 */
-	public Map<Integer, Integer> getLoggedPackets(EndpointType type)
-	{
-		return type.isClient() ? getCp() : getSp();
 	}
 	
 	/**

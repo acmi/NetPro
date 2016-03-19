@@ -26,8 +26,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.Set;
 
 import net.l2emuproject.io.EmptyChecksum;
+import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
@@ -51,9 +51,9 @@ public class ToPacketSamuraiLogVisitor implements HistoricalLogPacketVisitor, IO
 	@Override
 	public void onStart(LogFileHeader logHeader) throws Exception
 	{
-		if (logHeader.isLogin())
+		if (logHeader.getService().isLogin())
 			throw new UnsupportedOperationException();
-			
+		
 		final Path logFile = logHeader.getLogFile();
 		final SeekableByteChannel channel = Files.newByteChannel(logFile.resolveSibling(logFile.getFileName() + ".psl"), StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING,
 				StandardOpenOption.CREATE);
@@ -82,7 +82,7 @@ public class ToPacketSamuraiLogVisitor implements HistoricalLogPacketVisitor, IO
 	{
 		if (flags.contains(HIDDEN))
 			return;
-			
+		
 		final boolean client = packet.getEndpoint().isClient();
 		
 		_writer.writeByte(client ? 0 : 1);
@@ -98,7 +98,7 @@ public class ToPacketSamuraiLogVisitor implements HistoricalLogPacketVisitor, IO
 	{
 		if (_writer == null)
 			return;
-			
+		
 		_writer.flush();
 		
 		_writer.setPositionInChannel(1);

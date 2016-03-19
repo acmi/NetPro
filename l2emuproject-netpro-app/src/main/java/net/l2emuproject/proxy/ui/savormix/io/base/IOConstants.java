@@ -62,7 +62,7 @@ public interface IOConstants
 	/** Prefix for a valid packet log file. */
 	long LOG_MAGIC = 0xFFFF00ACDC000FEEL;
 	/** Prefix for a valid packet log file that was not successfully finalized (application crash, power outage, etc). [indicates that recovery is possible] */
-	long LOG_MAGIC_TRUNCATED = 0xF411_F411_F411_F411L;
+	long LOG_MAGIC_INCOMPLETE = 0xF411_F411_F411_F411L;
 	/** Default packet log file extension */
 	String LOG_EXTENSION = "plog";
 	/** Version of packet log file format for files written by this application. */

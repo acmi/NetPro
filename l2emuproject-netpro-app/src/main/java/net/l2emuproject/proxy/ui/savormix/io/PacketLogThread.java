@@ -318,7 +318,7 @@ public class PacketLogThread extends Thread implements IOConstants
 			chan = Files.newByteChannel(log, StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE);
 			final NewIOHelper ioh = new NewIOHelper(chan);
 			
-			ioh.writeLong(LOG_MAGIC_TRUNCATED).writeByte(LOG_VERSION);
+			ioh.writeLong(LOG_MAGIC_INCOMPLETE).writeByte(LOG_VERSION);
 			ioh.writeInt(8 + 1 + 4 + 4 + 8 + 8 + 1 + 4).writeInt(0).writeLong(-1); // header size, footer size, footer start
 			ioh.writeLong(connection.getTime()).writeBoolean(type.isLogin()).writeInt(-1); // protocol version
 			

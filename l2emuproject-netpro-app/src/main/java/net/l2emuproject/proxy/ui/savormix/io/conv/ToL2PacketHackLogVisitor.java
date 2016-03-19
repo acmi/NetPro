@@ -25,8 +25,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Set;
 
+import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
@@ -52,9 +52,9 @@ public class ToL2PacketHackLogVisitor implements HistoricalLogPacketVisitor, IOC
 	@Override
 	public void onStart(LogFileHeader logHeader) throws Exception
 	{
-		if (logHeader.isLogin())
+		if (logHeader.getService().isLogin())
 			throw new UnsupportedOperationException();
-			
+		
 		final Path logFile = logHeader.getLogFile();
 		_writer = Files.newBufferedWriter(logFile.resolveSibling(logFile.getFileName() + ".pLog"), StandardCharsets.US_ASCII);
 	}
@@ -64,7 +64,7 @@ public class ToL2PacketHackLogVisitor implements HistoricalLogPacketVisitor, IOC
 	{
 		if (flags.contains(HIDDEN))
 			return;
-			
+		
 		final boolean client = packet.getEndpoint().isClient();
 		
 		_buf.clear();

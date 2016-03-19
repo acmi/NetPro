@@ -25,13 +25,13 @@ import java.util.Set;
 
 import net.l2emuproject.io.EmptyChecksum;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.client.L2GameClientPackets;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.game.server.L2GameServerPackets;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
@@ -72,9 +72,9 @@ public class ToRawStreamVisitor implements HistoricalLogPacketVisitor, IOConstan
 	@Override
 	public void onStart(LogFileHeader logHeader) throws Exception
 	{
-		if (logHeader.isLogin())
+		if (logHeader.getService().isLogin())
 			throw new UnsupportedOperationException();
-			
+		
 		_fakeClient = new L2GameClient(null, null);
 		_fakeServer = new L2GameServer(null, null, _fakeClient);
 		
@@ -93,10 +93,10 @@ public class ToRawStreamVisitor implements HistoricalLogPacketVisitor, IOConstan
 			_writer.writeBoolean(client);
 		else if (_streamType != packet.getEndpoint())
 			return;
-			
+		
 		if (_timestamps)
 			_writer.writeLong(packet.getReceived());
-			
+		
 		final ByteBuffer wrapper = ByteBuffer.wrap(packet.getBody()).order(ByteOrder.LITTLE_ENDIAN);
 		if (_encipher)
 		{

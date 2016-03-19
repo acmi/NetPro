@@ -39,9 +39,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
-import net.l2emuproject.proxy.network.ServiceType;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
+import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.component.GcInfoDialog.MemorySizeUnit;
-import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LogLoadOptions;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
@@ -162,13 +162,13 @@ public class LogLoadHelper extends JDialog implements ActionListener, KeyListene
 				{
 					final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
 					_protocol = new JComboBox<IProtocolVersion>();
-					for (final IProtocolVersion pv : table.getKnownProtocols(ServiceType.valueOf(header.isLogin())))
+					for (final IProtocolVersion pv : table.getKnownProtocols(header.getService()))
 						_protocol.addItem(pv);
 					
 					if (header.getProtocol() == -1 && _defaultLegacyProtocol != null)
 						_protocol.setSelectedItem(_defaultLegacyProtocol);
 					else
-						_protocol.setSelectedItem(header.getProtocolVersion());
+						_protocol.setSelectedItem(ProtocolVersionManager.getInstance().getProtocol(header.getProtocol(), header.getService().isLogin()));
 					
 					pro.add(_protocol);
 				}
@@ -232,7 +232,8 @@ public class LogLoadHelper extends JDialog implements ActionListener, KeyListene
 		dispose();
 		
 		// load the file
-		LogLoadOptions llo = new LogLoadOptions(_header, _protocol.getItemAt(_protocol.getSelectedIndex()), _displayable.isSelected(),/* _direction.getSelectedIndex() == 0, getOffset(), */getCount());
+		LogLoadOptions llo = new LogLoadOptions(_header, _protocol.getItemAt(_protocol.getSelectedIndex()), _displayable.isSelected(),
+				/* _direction.getSelectedIndex() == 0, getOffset(), */getCount());
 		new LogLoadTask(getOwner()).execute(llo);
 	}
 	

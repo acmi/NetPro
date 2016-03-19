@@ -6,7 +6,7 @@
 <?import org.google.jhsheets.filtered.*?>
 <?import org.google.jhsheets.filtered.tablecolumn.*?>
 
-<SplitPane dividerPositions="0.6" prefHeight="352.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.6" prefHeight="352.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController">
    <items>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <bottom>
@@ -20,23 +20,23 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%packettab.footer.clear.table" GridPane.rowIndex="1" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%packettab.footer.clear.memory" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearTable" text="%packettab.footer.clear.table" GridPane.rowIndex="1" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearMemory" text="%packettab.footer.clear.memory" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <FlowPane alignment="CENTER">
                      <children>
-                        <Label text="%packettab.footer.count.table" />
+                        <Label fx:id="_labTablePacketCount" text="%packettab.footer.count.table" />
                      </children>
                   </FlowPane>
                   <FlowPane alignment="CENTER" GridPane.columnIndex="1">
                      <children>
-                        <Label text="%packettab.footer.count.memory" />
+                        <Label fx:id="_labMemoryPacketCount" text="%packettab.footer.count.memory" />
                      </children>
                   </FlowPane>
                </children>
             </GridPane>
          </bottom>
          <center>
-            <FilteredTableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <FilteredTableView fx:id="_tvPackets" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" text="%packettab.table.column.sender" />
                 <FilterableStringTableColumn editable="false" maxWidth="180.0" minWidth="80.0" text="%packettab.table.column.opcodes" />

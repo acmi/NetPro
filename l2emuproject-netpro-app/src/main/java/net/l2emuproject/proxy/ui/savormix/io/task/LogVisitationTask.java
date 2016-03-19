@@ -29,10 +29,9 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import net.l2emuproject.proxy.config.ProxyConfig;
+import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.network.EndpointType;
-import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.util.BitMaskUtils;
@@ -70,10 +69,10 @@ public class LogVisitationTask extends AbstractLogFileTask<Path>
 		{
 			final String name = p.getFileName().toString();
 			
-			final LogFileHeader header = LogIdentifyTask.getHeader(p);
+			final LogFileHeader header = /*LogIdentifyTask.getHeader(p)*/null;
 			if (header == null)
 				continue;
-				
+			
 			final int displayedPacketAmount = header.getPackets() != -1 ? header.getPackets() : Integer.MAX_VALUE;
 			
 			try (final SeekableByteChannel channel = Files.newByteChannel(p, StandardOpenOption.READ); final NewIOHelper ioh = new NewIOHelper(channel))
@@ -85,7 +84,7 @@ public class LogVisitationTask extends AbstractLogFileTask<Path>
 				
 				if (isCancelled())
 					break;
-					
+				
 				try
 				{
 					SwingUtilities.invokeAndWait(new Runnable()
@@ -109,7 +108,7 @@ public class LogVisitationTask extends AbstractLogFileTask<Path>
 				
 				if (isCancelled())
 					break;
-					
+				
 				for (int count = displayedPacketAmount; count > 0 && size - ioh.getPositionInChannel(false) > header.getFooterSize(); count--)
 				{
 					final EndpointType type = EndpointType.valueOf(ioh.readBoolean());
@@ -118,13 +117,13 @@ public class LogVisitationTask extends AbstractLogFileTask<Path>
 					final long time = ioh.readLong();
 					final Set<LoggedPacketFlag> flags = header.getVersion() >= 7 ? BitMaskUtils.setOf(ioh.readByte(), LoggedPacketFlag.class) : Collections.emptySet();
 					
-					final ReceivedPacket rp = new ReceivedPacket(ServiceType.valueOf(header.isLogin()), type, body, time);
+					final ReceivedPacket rp = new ReceivedPacket(header.getService(), type, body, time);
 					_visitor.onPacket(rp, flags);
 					publish(rp);
 					
 					if (isCancelled())
 						break;
-						
+					
 					// avoid I/O congestion and CPU overload
 					// modulo must be low enough and sleep must be large enough
 					// to avoid DPC blackouts (e.g. no media skipping when listening to music)

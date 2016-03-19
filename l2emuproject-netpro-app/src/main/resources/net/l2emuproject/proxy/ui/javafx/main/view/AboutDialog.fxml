@@ -43,7 +43,7 @@
                   <Label fx:id="_labBuild" text="%about.build.stable" BorderPane.alignment="CENTER" />
                </left>
                <right>
-                  <Button defaultButton="true" mnemonicParsing="false" onAction="#closeDialog" prefWidth="75.0" text="%generic.button.ok" BorderPane.alignment="CENTER">
+                  <Button defaultButton="true" onAction="#closeDialog" prefWidth="75.0" text="%generic.button.ok" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="5.0" right="5.0" />
                      </BorderPane.margin>

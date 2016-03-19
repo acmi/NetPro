@@ -1,3 +1,18 @@
+/*
+ * Copyright 2011-2015 L2EMU UNIQUE
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package net.l2emuproject.proxy;
 
 import java.awt.GraphicsEnvironment;
@@ -5,7 +20,6 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -41,6 +55,7 @@ import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
 import net.l2emuproject.proxy.ui.javafx.FXLocator;
+import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.main.view.CompilationErrorExpandableController;
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.main.view.SplashScreenController;
@@ -83,6 +98,12 @@ public class NetPro extends Application
 	public void start(Stage primaryStage)
 	{
 		PRIMARY_STAGE = primaryStage;
+		PRIMARY_STAGE.setOnHidden(e -> ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN));
+		
+		final WindowTracker windowTracker = WindowTracker.getInstance();
+		final Timeline tlWindowTrackerCleanup = new Timeline(new KeyFrame(Duration.ZERO), new KeyFrame(Duration.minutes(5), e -> windowTracker.cleanup()));
+		tlWindowTrackerCleanup.setCycleCount(Animation.INDEFINITE);
+		tlWindowTrackerCleanup.play();
 		
 		try
 		{
@@ -94,6 +115,7 @@ public class NetPro extends Application
 			SPLASH_STAGE = new Stage(StageStyle.TRANSPARENT);
 			SPLASH_STAGE.setScene(scene);
 			SPLASH_STAGE.getIcons().addAll(FXLocator.getIconListFX());
+			windowTracker.add(SPLASH_STAGE);
 			SPLASH_STAGE.show();
 			
 			final Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
@@ -137,6 +159,7 @@ public class NetPro extends Application
 			dlgSelectLanguage.initOwner(SPLASH_STAGE);
 			dlgSelectLanguage.initStyle(StageStyle.UTILITY);
 			
+			windowTracker.add(dlgSelectLanguage);
 			final Optional<String> result = dlgSelectLanguage.showAndWait();
 			if (!result.isPresent())
 			{
@@ -220,6 +243,7 @@ public class NetPro extends Application
 						confirmDlg.initModality(Modality.APPLICATION_MODAL);
 						confirmDlg.initStyle(StageStyle.DECORATED);
 						
+						WindowTracker.getInstance().add(confirmDlg);
 						final Optional<ButtonType> result = confirmDlg.showAndWait();
 						if (!result.isPresent() || result.get().getButtonData() != ButtonData.YES)
 						{
@@ -253,6 +277,7 @@ public class NetPro extends Application
 							alert.setContentText(UIStrings.get("startup.scripts.err.dialog.content.init"));
 							
 							alert.getDialogPane().setExpandableContent(MainWindowController.makeScriptExceptionMapExpandabeContent(fqcn2Exception));
+							WindowTracker.getInstance().add(alert);
 							alert.showAndWait();
 							
 							synchronized (reporter)
@@ -287,8 +312,8 @@ public class NetPro extends Application
 			{
 				final Alert dlgFail = new ExceptionAlert(t);
 				dlgFail.initOwner(SPLASH_STAGE);
+				WindowTracker.getInstance().add(dlgFail);
 				dlgFail.showAndWait();
-				Platform.exit();
 				ShutdownManager.exit(TerminationStatus.RUNTIME_UNCAUGHT_ERROR);
 			});
 			return;
@@ -315,6 +340,7 @@ public class NetPro extends Application
 				PRIMARY_STAGE.setScene(scene);
 				PRIMARY_STAGE.setTitle("NetPro" + (NetProInfo.isUnreleased() ? "" : " " + (NetProInfo.isSnapshot() ? "r" + NetProInfo.getRevisionNumber() : NetProInfo.getVersion())));
 				PRIMARY_STAGE.getIcons().addAll(FXLocator.getIconListFX());
+				WindowTracker.getInstance().add(PRIMARY_STAGE);
 				PRIMARY_STAGE.show();
 			}
 			catch (IOException e)
@@ -502,6 +528,7 @@ public class NetPro extends Application
 						confirmDlg.initModality(Modality.APPLICATION_MODAL);
 						confirmDlg.initStyle(StageStyle.DECORATED);
 						
+						WindowTracker.getInstance().add(confirmDlg);
 						final Optional<ButtonType> result = confirmDlg.showAndWait();
 						if (!result.isPresent() || result.get().getButtonData() == ButtonData.NO)
 						{
@@ -543,6 +570,7 @@ public class NetPro extends Application
 						confirmDlg.initModality(Modality.APPLICATION_MODAL);
 						confirmDlg.initStyle(StageStyle.DECORATED);
 						
+						WindowTracker.getInstance().add(confirmDlg);
 						final Optional<ButtonType> result = confirmDlg.showAndWait();
 						if (!result.isPresent() || result.get().getButtonData() != ButtonData.YES)
 						{
@@ -582,15 +610,6 @@ public class NetPro extends Application
 			for (final Collection<Path> paths : erroneousScripts)
 				scripts.addAll(paths);
 			onEnd(scripts, init);
-		}
-	}
-	
-	private static final class ClassNameComparator implements Comparator<Class<?>>
-	{
-		@Override
-		public int compare(Class<?> o1, Class<?> o2)
-		{
-			return o1.getName().compareTo(o2.getName());
 		}
 	}
 }

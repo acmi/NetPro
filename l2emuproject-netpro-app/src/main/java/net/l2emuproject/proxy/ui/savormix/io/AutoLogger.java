@@ -30,7 +30,6 @@ import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.proxy.ui.savormix.io.task.LogIdentifyTask;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 
 /**
@@ -96,7 +95,7 @@ public final class AutoLogger implements IOConstants, ConnectionListener, Packet
 		final ConnectionPane cp = Loader.getActiveUIPane();
 		if (cp == null)
 			return Collections.emptySet();
-			
+		
 		return cp.isCaptureDisabledFor(client) ? Collections.singleton(LoggedPacketFlag.HIDDEN) : Collections.emptySet();
 	}
 	
@@ -119,8 +118,8 @@ public final class AutoLogger implements IOConstants, ConnectionListener, Packet
 		final Path[] paths = new Path[files.length];
 		for (int i = 0; i < paths.length; i++)
 			paths[i] = files[i].toPath();
-			
-		new LogIdentifyTask(owner, defaultLoginProtocol, defaultGameProtocol).execute(paths);
+		
+		//new LogIdentifyTask(owner, defaultLoginProtocol, defaultGameProtocol).execute(paths);
 	}
 	
 	private PacketLogThread getIoThread()

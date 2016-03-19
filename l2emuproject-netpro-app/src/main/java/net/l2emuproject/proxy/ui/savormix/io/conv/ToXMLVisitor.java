@@ -35,6 +35,8 @@ import java.util.Set;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
+import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
@@ -62,7 +64,6 @@ import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.component.packet.DataType;
-import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
@@ -100,7 +101,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 	{
 		final Path logFile = logHeader.getLogFile();
 		
-		_protocol = logHeader.getProtocolVersion();
+		_protocol = ProtocolVersionManager.getInstance().getProtocol(logHeader.getProtocol(), logHeader.getService().isLogin());
 		_cacheContext = new HistoricalPacketLog(logFile);
 		
 		_writer = Files.newBufferedWriter(logFile.resolveSibling(logFile.getFileName() + ".xml"));
@@ -137,7 +138,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 		final boolean client = packet.getEndpoint().isClient();
 		if (!hidden)
 			writer.append("\t<").append(client ? "client" : "server").append("Packet timestamp=\"").append(String.valueOf(packet.getReceived())).append("\" opcodes=\"");
-			
+		
 		packetContent:
 		{
 			final ByteBuffer body = ByteBuffer.wrap(packet.getBody()).order(ByteOrder.LITTLE_ENDIAN);
@@ -177,10 +178,10 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 			// Enable object analytics and whatnot
 			if (cacheContext instanceof HistoricalPacketLog)
 				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext);
-				
+			
 			if (hidden)
 				return;
-				
+			
 			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(protocol, packet.getEndpoint(), body.array());
 			writer.append(HexUtil.bytesToHexString(template.getPrefix(), " ")).append("\">\r\n");
 			body.position(template.getPrefix().length);
@@ -273,7 +274,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 				{
 					if (_loops.remove(element)._iterationCount < 1)
 						return;
-						
+					
 					try
 					{
 						writer.append("\t\t");
@@ -322,7 +323,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 					}
 					else
 						fieldWidth = value.raw().length;
-						
+					
 					final DataType visualDataType;
 					switch (fieldWidth)
 					{
@@ -384,7 +385,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 				{
 					if (remainingBytes < 1)
 						return;
-						
+					
 					try
 					{
 						writer.append("\t\t<remainder>").append(HexUtil.bytesToHexString(body.array(), body.position(), " ")).append("</remainder>\r\n");
@@ -416,7 +417,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 			interpretation = "N/A";
 		else if (interpretation instanceof byte[])
 			interpretation = HexUtil.bytesToHexString((byte[])interpretation, " ");
-			
+		
 		try
 		{
 			writer.append("\t\t");
@@ -432,7 +433,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 			{
 				if (readValue instanceof byte[])
 					readValue = HexUtil.bytesToHexString((byte[])readValue, " ");
-					
+				
 				writer.append("\t\t\t");
 				for (int i = 0; i < loopIndent; ++i)
 					writer.append('\t');

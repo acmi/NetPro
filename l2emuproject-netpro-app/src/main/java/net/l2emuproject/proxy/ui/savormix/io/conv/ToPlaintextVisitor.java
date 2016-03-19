@@ -37,7 +37,9 @@ import java.util.regex.Pattern;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.NetProInfo;
+import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
@@ -65,7 +67,6 @@ import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.component.packet.DataType;
-import net.l2emuproject.proxy.ui.savormix.io.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
@@ -106,13 +107,13 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 	{
 		final Path logFile = logHeader.getLogFile();
 		
-		_protocol = logHeader.getProtocolVersion();
+		_protocol = ProtocolVersionManager.getInstance().getProtocol(logHeader.getProtocol(), logHeader.getService().isLogin());
 		_cacheContext = new HistoricalPacketLog(logFile);
 		
 		_writer = Files.newBufferedWriter(logFile.resolveSibling(logFile.getFileName() + ".txt"));
 		_writer.append("[V").append(String.valueOf(logHeader.getVersion())).append("] ").append(logFile.getFileName().toString()).append("\r\n\r\n");
-		_writer.append("Protocol type: ").append(logHeader.isLogin() ? "Auth[Gate]D" : "Lineage II").append("\r\n");
-		_writer.append("Protocol version: ").append(String.valueOf(logHeader.getProtocol())).append('/').append(String.valueOf(logHeader.getProtocolVersion())).append("\r\n");
+		_writer.append("Protocol type: ").append(logHeader.getService().isLogin() ? "Auth[Gate]D" : "Lineage II").append("\r\n");
+		_writer.append("Protocol version: ").append(String.valueOf(logHeader.getProtocol())).append('/').append(String.valueOf(_protocol)).append("\r\n");
 		_writer.append("Packet count: ").append(String.valueOf(logHeader.getPackets())).append("\r\n");
 		_writer.append("Creation date: ").append(_df.format(new Date(logHeader.getCreated()))).append("\r\n\r\n");
 		
@@ -194,10 +195,10 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			// Enable object analytics and whatnot
 			if (cacheContext instanceof HistoricalPacketLog)
 				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext);
-				
+			
 			if (hidden)
 				return;
-				
+			
 			for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
 				writer.append('=');
 			writer.append("\r\n");
@@ -290,7 +291,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				{
 					if (_loops.remove(element)._iterationCount < 1)
 						return;
-						
+					
 					try
 					{
 						writer.append("~~~~ Loop end ~~~~\r\n");
@@ -336,7 +337,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					}
 					else
 						fieldWidth = value.raw().length;
-						
+					
 					final DataType visualDataType;
 					switch (fieldWidth)
 					{
@@ -399,7 +400,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				{
 					if (remainingBytes < 1)
 						return;
-						
+					
 					try
 					{
 						writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");

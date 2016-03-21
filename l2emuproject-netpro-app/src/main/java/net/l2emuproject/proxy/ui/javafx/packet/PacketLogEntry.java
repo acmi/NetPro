@@ -19,6 +19,7 @@ import java.util.Locale;
 
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
@@ -52,6 +53,26 @@ public final class PacketLogEntry
 		_name = new SimpleStringProperty("PacketNameHere");
 	}
 	
+	public EndpointType getEndpoint()
+	{
+		return _packet.getEndpoint();
+	}
+	
+	public String getSender()
+	{
+		return _packet.getEndpoint().isClient() ? "C" : "S";
+	}
+	
+	public String getOpcode()
+	{
+		return _opcode.get();
+	}
+	
+	public String getName()
+	{
+		return _name.get();
+	}
+	
 	/**
 	 * (Generates and) caches the user-friendly packet opcode and name values, as defined by {@code version}.
 	 * 
@@ -68,5 +89,11 @@ public final class PacketLogEntry
 		_opcode.set(sb.toString().toUpperCase(Locale.ENGLISH).intern());
 		
 		_name.set(packetTemplate.getName() != null ? packetTemplate.getName() : ("Unknown " + _opcode.get().toUpperCase(Locale.ENGLISH)).intern());
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "[" + getSender() + "] " + _opcode + " " + _name;
 	}
 }

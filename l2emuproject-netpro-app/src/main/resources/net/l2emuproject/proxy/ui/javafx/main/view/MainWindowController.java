@@ -83,8 +83,10 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -248,7 +250,7 @@ public class MainWindowController implements Initializable, IOConstants
 	private CheckMenuItem _showLogConsole;
 	
 	@FXML
-	private MenuItem _scrollLock;
+	private CheckMenuItem _scrollLock;
 	
 	@FXML
 	private Menu _mPacketDisplay;
@@ -304,7 +306,12 @@ public class MainWindowController implements Initializable, IOConstants
 		});
 	}
 	
-	private Window getMainWindow()
+	/**
+	 * Returns the primary application window.
+	 * 
+	 * @return main application window
+	 */
+	public Window getMainWindow()
 	{
 		return _tpConnections.getScene().getWindow();
 	}
@@ -460,12 +467,14 @@ public class MainWindowController implements Initializable, IOConstants
 						final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(PacketLogLoadOptionController.class), UIStrings.getBundle());
 						final TitledPane tab = loader.load();
 						final PacketLogLoadOptionController controller = loader.getController();
+						controller.setMainWindow(this);
 						
 						final ServiceType service = validLogFile.getService();
 						final String filename = validLogFile.getLogFile().getFileName().toString();
 						controller.setPacketLog(filename, approxSize, exactSize, HexUtil.fillHex(validLogFile.getVersion(), 2), integerFormat.format(validLogFile.getPackets()),
 								FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
 								ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin()));
+						tab.setUserData(validLogFile);
 						tabs[i] = tab;
 					}
 				}
@@ -534,13 +543,14 @@ public class MainWindowController implements Initializable, IOConstants
 	@FXML
 	private void toggleConsole(ActionEvent evt)
 	{
+		final ObservableList<Tab> tabs = _tpConnections.getTabs();
 		if (_showLogConsole.isSelected())
 		{
-			_tpConnections.getTabs().add(0, _tabConsole);
+			tabs.add(0, _tabConsole);
 			_tpConnections.getSelectionModel().select(0);
 		}
 		else
-			_tpConnections.getTabs().remove(_tabConsole);
+			tabs.remove(_tabConsole);
 	}
 	
 	@FXML
@@ -890,6 +900,16 @@ public class MainWindowController implements Initializable, IOConstants
 	}
 	
 	/**
+	 * Returns the scroll lock property.
+	 * 
+	 * @return scroll lock
+	 */
+	public BooleanProperty scrollLockProperty()
+	{
+		return _scrollLock.selectedProperty();
+	}
+	
+	/**
 	 * Adds a new message to the console tab.
 	 * 
 	 * @param message log entry
@@ -904,5 +924,24 @@ public class MainWindowController implements Initializable, IOConstants
 			_taConsole.setScrollLeft(left);
 			_taConsole.setScrollTop(top);
 		}
+	}
+	
+	/**
+	 * Adds a new tab to the connection pane.
+	 * 
+	 * @param tab a tab
+	 */
+	public void addConnectionTab(Tab tab)
+	{
+		final ObservableList<Tab> tabs = _tpConnections.getTabs();
+		tab.setOnClosed(e ->
+		{
+			final int threshold = tabs.contains(_tabConsole) ? 1 : 0;
+			if (tabs.size() <= threshold)
+				tabs.add(_tabIdle);
+		});
+		tabs.remove(_tabIdle);
+		tabs.add(tab);
+		_tpConnections.getSelectionModel().select(tab);
 	}
 }

@@ -27,7 +27,9 @@ import java.nio.file.StandardOpenOption;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
+import net.l2emuproject.proxy.io.LogLoadOptions.LogLoadFlag;
 import net.l2emuproject.proxy.io.exception.DamagedPacketLogFileException;
 import net.l2emuproject.proxy.io.exception.EmptyPacketLogException;
 import net.l2emuproject.proxy.io.exception.FilesizeMeasureException;
@@ -37,6 +39,7 @@ import net.l2emuproject.proxy.io.exception.TruncatedPacketLogFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
+import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 
@@ -48,6 +51,30 @@ public final class PacketLogFileUtils implements IOConstants
 	private PacketLogFileUtils()
 	{
 		// utility class
+	}
+	
+	public static final NetProPacketLogFileIterator getPacketIterator(LogFileHeader logFileMetadata) throws IOException
+	{
+		return new NetProPacketLogFileIterator(logFileMetadata);
+	}
+	
+	public static final boolean isLoadable(LogFilePacket packet, LogLoadOptions options)
+	{
+		final Set<LoggedPacketFlag> packetFlags = packet.getFlags();
+		final Set<LogLoadFlag> loadFlags = options.getFlags();
+		
+		if (packetFlags.contains(LoggedPacketFlag.SYNTHETIC) && !loadFlags.contains(LogLoadFlag.INCLUDE_SYNTHETIC))
+			return false;
+		if (packetFlags.contains(LoggedPacketFlag.HIDDEN) && !loadFlags.contains(LogLoadFlag.INCLUDE_NON_CAPTURED))
+			return false;
+		
+		return true;
+	}
+	
+	public static final boolean isVisible(LogFilePacket packet, LogLoadOptions options)
+	{
+		// TODO: obey display config for protocol
+		return true;
 	}
 	
 	/**

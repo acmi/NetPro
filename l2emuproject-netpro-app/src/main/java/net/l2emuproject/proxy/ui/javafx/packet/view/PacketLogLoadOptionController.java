@@ -15,22 +15,56 @@
  */
 package net.l2emuproject.proxy.ui.javafx.packet.view;
 
+import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.initNonModalUtilityDialog;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.makeNonModalUtilityAlert;
 
-import net.l2emuproject.network.protocol.IProtocolVersion;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.LogFileHeader;
+import net.l2emuproject.proxy.io.LogFilePacket;
+import net.l2emuproject.proxy.io.LogLoadOptions;
+import net.l2emuproject.proxy.io.LogLoadOptions.LogLoadFlag;
+import net.l2emuproject.proxy.io.NetProPacketLogFileIterator;
+import net.l2emuproject.proxy.io.PacketLogFileUtils;
+import net.l2emuproject.proxy.io.exception.LogFileIterationIOException;
+import net.l2emuproject.proxy.script.LogLoadScriptManager;
+import net.l2emuproject.proxy.ui.ReceivedPacket;
+import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
+import net.l2emuproject.proxy.ui.javafx.FXLocator;
+import net.l2emuproject.proxy.ui.javafx.WindowTracker;
+import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
+import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
+import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
+import net.l2emuproject.util.StackTraceUtil;
+import net.l2emuproject.util.concurrent.L2ThreadPool;
+
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.Tooltip;
 import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
 /**
@@ -38,6 +72,8 @@ import javafx.stage.Window;
  */
 public final class PacketLogLoadOptionController
 {
+	private MainWindowController _mainWindow;
+	
 	@FXML
 	private TitledPane _tpWrapper;
 	
@@ -73,6 +109,29 @@ public final class PacketLogLoadOptionController
 	@FXML
 	private void loadPacketLog(ActionEvent event)
 	{
+		if (_mainWindow == null)
+		{
+			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "open.netpro.err.dialog.header.runtime",
+					"open.netpro.err.dialog.content.internal", "PLLO_1");
+			alert.initModality(Modality.WINDOW_MODAL);
+			alert.show();
+			return;
+		}
+		
+		final LogFileHeader logFileHeader;
+		try
+		{
+			logFileHeader = (LogFileHeader)_tpWrapper.getUserData();
+		}
+		catch (NullPointerException | ClassCastException e)
+		{
+			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "open.netpro.err.dialog.header.runtime",
+					"open.netpro.err.dialog.content.internal", "PLLO_2");
+			alert.initModality(Modality.WINDOW_MODAL);
+			alert.show();
+			return;
+		}
+		
 		final IProtocolVersion protocolVersion = _cbProtocol.getSelectionModel().getSelectedItem();
 		if (protocolVersion == null)
 		{
@@ -82,6 +141,118 @@ public final class PacketLogLoadOptionController
 			alert.show();
 			return;
 		}
+		
+		final String filename = logFileHeader.getLogFile().getFileName().toString();
+		
+		final Tab tab;
+		final PacketLogTabController controller;
+		
+		final Scene progressDialogScene;
+		final LogFileLoadProgressDialogController progressDialog;
+		try
+		{
+			FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(PacketLogTabController.class), UIStrings.getBundle());
+			tab = new Tab(filename, loader.load());
+			controller = loader.getController();
+			
+			loader = new FXMLLoader(FXLocator.getFXML(LogFileLoadProgressDialogController.class), UIStrings.getBundle());
+			progressDialogScene = new Scene(loader.load(), null);
+			progressDialog = loader.getController();
+		}
+		catch (IOException e)
+		{
+			final ExceptionAlert alert = initNonModalUtilityDialog(new ExceptionAlert(StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName())), getDialogWindow(),
+					"ui.fxml.err.dialog.missing.title", "ui.fxml.err.dialog.missing.header", null);
+			alert.initModality(Modality.WINDOW_MODAL);
+			alert.show();
+			return;
+		}
+		
+		getDialogWindow().hide();
+		_mainWindow.addConnectionTab(tab);
+		controller.installScrollLock(_mainWindow.scrollLockProperty());
+		final int totalPackets = logFileHeader.getPackets();
+		progressDialog.setFilename(filename);
+		progressDialog.setLoadedAmount(0, totalPackets);
+		
+		final Stage progressDialogWindow = new Stage(StageStyle.UTILITY);
+		progressDialogWindow.initModality(Modality.NONE);
+		progressDialogWindow.initOwner(_mainWindow.getMainWindow());
+		progressDialogWindow.setTitle(UIStrings.get("open.netpro.loaddlg.title"));
+		progressDialogWindow.setScene(progressDialogScene);
+		progressDialogWindow.getIcons().addAll(FXLocator.getIconListFX());
+		progressDialogWindow.sizeToScene();
+		progressDialogWindow.setResizable(false);
+		WindowTracker.getInstance().add(progressDialogWindow);
+		progressDialogWindow.show();
+		
+		final Set<LogLoadFlag> flags = EnumSet.noneOf(LogLoadFlag.class);
+		if (_cbInvisible.isSelected())
+			flags.add(LogLoadFlag.INCLUDE_NON_VISIBLE);
+		if (_cbInjected.isSelected())
+			flags.add(LogLoadFlag.INCLUDE_SYNTHETIC);
+		if (_cbNonCaptured.isSelected())
+			flags.add(LogLoadFlag.INCLUDE_NON_CAPTURED);
+		final LogLoadOptions options = new LogLoadOptions(protocolVersion, flags);
+		final HistoricalPacketLog cacheContext = new HistoricalPacketLog(logFileHeader.getLogFile());
+		final LogLoadScriptManager scriptManager = LogLoadScriptManager.getInstance();
+		
+		final AtomicBoolean canUpdateUI = new AtomicBoolean(true);
+		final AtomicInteger packetsRead = new AtomicInteger(0);
+		final List<PacketLogEntry> packets = new ArrayList<>();
+		final Future<?> loadTask = L2ThreadPool.submitLongRunning(() ->
+		{
+			try (final NetProPacketLogFileIterator it = PacketLogFileUtils.getPacketIterator(logFileHeader))
+			{
+				while (it.hasNext())
+				{
+					if (Thread.interrupted())
+						return;
+					
+					final LogFilePacket packet = it.next();
+					packetsRead.incrementAndGet();
+					// scripts enable analytics on packets that will be visible in the table
+					scriptManager.onLoadedPacket(logFileHeader.getService().isLogin(), packet.getEndpoint().isClient(), packet.getContent(), protocolVersion, cacheContext);
+					if (PacketLogFileUtils.isLoadable(packet, options))
+					{
+						final PacketLogEntry packetEntry = new PacketLogEntry(new ReceivedPacket(logFileHeader.getService(), packet.getEndpoint(), packet.getContent(), packet.getReceivalTime()));
+						packetEntry.updateView(protocolVersion);
+						
+						synchronized (packets)
+						{
+							packets.add(packetEntry);
+							if (canUpdateUI.getAndSet(false))
+							{
+								Platform.runLater(() ->
+								{
+									synchronized (packets)
+									{
+										for (final PacketLogEntry packetOnUI : packets)
+											controller.addPacket(packetOnUI);
+										packets.clear();
+										progressDialog.setLoadedAmount(packetsRead.get(), totalPackets);
+										canUpdateUI.set(true);
+									}
+								});
+							}
+						}
+					}
+				}
+			}
+			catch (IOException e) // trying to open
+			{
+				
+			}
+			catch (LogFileIterationIOException e) // during read
+			{
+				
+			}
+			finally
+			{
+				Platform.runLater(progressDialogWindow::hide);
+			}
+		});
+		progressDialog.setTask(loadTask);
 	}
 	
 	@FXML
@@ -105,6 +276,16 @@ public final class PacketLogLoadOptionController
 		
 		// if animation is enabled, this must run after animation completes
 		wnd.sizeToScene();
+	}
+	
+	/**
+	 * Links this controller with the main window.
+	 * 
+	 * @param mainWindow primary application window
+	 */
+	public void setMainWindow(MainWindowController mainWindow)
+	{
+		_mainWindow = mainWindow;
 	}
 	
 	/**

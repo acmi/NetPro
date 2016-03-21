@@ -1,0 +1,11 @@
+.table-view {
+	-fx-fixed-cell-size: 24px;
+}
+
+.table-row-cell:even:client {
+	-fx-control-inner-background: derive(-fx-default-button,55%);
+}
+
+.table-row-cell:odd:client {
+	-fx-control-inner-background-alt: derive(-fx-default-button,25%);
+}

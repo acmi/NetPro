@@ -23,6 +23,10 @@ import java.util.ResourceBundle;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.StringExpression;
+import javafx.beans.property.SimpleStringProperty;
+
 /**
  * @author _dev_
  */
@@ -68,6 +72,28 @@ public final class UIStrings
 			// NOTE: normal underscore has a special meaning related to JavaFX mnemonic parsing
 			// A0 for non-breaking space
 			return name.substring(idx).replace('.', '\u00B7').toUpperCase(Locale.ENGLISH);
+		}
+	}
+	
+	/**
+	 * Retrieves a localized version of the specified text as a JavaFX-compatible expression.
+	 * 
+	 * @param name text identifier
+	 * @param tokens input tokens
+	 * @return localized string expression
+	 */
+	public static final StringExpression getEx(String name, Object... tokens)
+	{
+		try
+		{
+			return Bindings.format(CURRENT_LOCALE, getBundle().getString(name), tokens);
+		}
+		catch (MissingResourceException e)
+		{
+			final int idx = name.indexOf('.') + 1;
+			// NOTE: normal underscore has a special meaning related to JavaFX mnemonic parsing
+			// A0 for non-breaking space
+			return new SimpleStringProperty(name.substring(idx).replace('.', '\u00B7').toUpperCase(Locale.ENGLISH));
 		}
 	}
 	

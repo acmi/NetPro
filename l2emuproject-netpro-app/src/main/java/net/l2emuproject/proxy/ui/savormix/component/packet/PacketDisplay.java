@@ -21,12 +21,6 @@ import java.net.URL;
 import java.util.Collections;
 import java.util.Set;
 
-import javafx.application.Platform;
-import javafx.concurrent.Worker;
-import javafx.embed.swing.JFXPanel;
-import javafx.scene.Scene;
-import javafx.scene.web.WebView;
-
 import javax.swing.JSplitPane;
 
 import org.w3c.dom.Document;
@@ -38,9 +32,14 @@ import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.ImageUrlUtils;
 import net.l2emuproject.ui.AsyncTask;
 import net.l2emuproject.util.HexUtil;
+
+import javafx.application.Platform;
+import javafx.concurrent.Worker;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Scene;
+import javafx.scene.web.WebView;
 
 /**
  * Displays a packet in two text boxes: one for raw hex octets delimited by spaces, another for a
@@ -53,7 +52,6 @@ import net.l2emuproject.util.HexUtil;
  * 
  * @author savormix
  */
-@SuppressWarnings("restriction")
 public class PacketDisplay extends JSplitPane
 {
 	private static final long serialVersionUID = -4507197091627669116L;
@@ -71,7 +69,6 @@ public class PacketDisplay extends JSplitPane
 	
 	private AsyncTask<?, ?, ?> _displayTask;
 	private Reference<ReceivedPacket> _currentlyVisiblePacket;
-	private Set<URL> _displayedImages;
 	
 	/**
 	 * Creates a split pane to display packet body and contents.<BR>
@@ -152,8 +149,6 @@ public class PacketDisplay extends JSplitPane
 			}
 		});
 		
-		_displayedImages = Collections.emptySet();
-		
 		_currentlyVisiblePacket = new WeakReference<>(null);
 	}
 	
@@ -208,19 +203,19 @@ public class PacketDisplay extends JSplitPane
 			return;
 		
 		_currentlyVisiblePacket = new WeakReference<>(packet);
-		_displayTask = new PacketDisplayTask(this).execute(packet);
+		//_displayTask = new PacketDisplayTask(this).execute(packet);
 	}
 	
-	/**
+	/*
 	 * Dissociates currently active display task from this component, if applicable.
 	 * 
 	 * @param task currently active task
-	 */
+	 *
 	public void unsetDisplayTask(PacketDisplayTask task)
 	{
 		if (_displayTask == task)
 			_displayTask = null;
-	}
+	}*/
 	
 	@Override
 	public void finalize() throws Throwable
@@ -251,8 +246,8 @@ public class PacketDisplay extends JSplitPane
 	 */
 	public void releaseImages(Set<URL> newSet)
 	{
-		ImageUrlUtils.getInstance().release(_displayedImages);
-		_displayedImages = newSet;
+		//ImageUrlUtils.getInstance().release(_displayedImages);
+		//_displayedImages = newSet;
 	}
 	
 	/**

@@ -39,8 +39,8 @@ public class Alliance extends ScriptedFieldValueInterpreter implements IntegerIn
 		if (ai.getCrestID() != 0)
 		{
 			final AllianceCrestInfo aci = AllianceCrestInfoCache.getInstance().getOrAdd(ai.getCrestID(), entityCacheContext);
-			if (aci.getCrest() != null)
-				sb.append("<img src=\"").append(aci.getCrest()).append("\" border=\"0\" />");
+			if (aci.getCrestImgSrc() != null)
+				sb.append("<img src=\"").append(aci.getCrestImgSrc()).append("\" border=\"0\" />");
 		}
 		sb.append(ai.getName());
 		

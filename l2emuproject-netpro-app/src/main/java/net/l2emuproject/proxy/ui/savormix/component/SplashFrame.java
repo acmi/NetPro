@@ -35,7 +35,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import net.l2emuproject.proxy.ui.javafx.FXLocator;
+import net.l2emuproject.proxy.ui.javafx.FXUtils;
 
 /**
  * A splash dialog with reflection effect. Just a few tutorials clashed together.
@@ -60,7 +60,7 @@ public class SplashFrame extends JFrame
 		
 		try
 		{
-			final BufferedImage avatar = ImageIO.read(FXLocator.class.getResource("icon-256.png"));
+			final BufferedImage avatar = ImageIO.read(FXUtils.class.getResource("icon-256.png"));
 			final int width = avatar.getWidth();
 			final int height = avatar.getHeight();
 			setSize(width, height);

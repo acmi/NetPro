@@ -38,7 +38,6 @@ import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.util.HexUtil;
 
@@ -56,7 +55,7 @@ public class PacketExplainDialog extends JDialog
 	private final PacketDisplay _display;
 	
 	final Timer _displayUpdater;
-	PacketDisplayTask _displayTask;
+	//PacketDisplayTask _displayTask;
 	
 	/**
 	 * Constructs this dialog.
@@ -111,15 +110,15 @@ public class PacketExplainDialog extends JDialog
 			final ExplanationSetup setup = getCurrentSetup();
 			if (setup == null)
 				return;
-				
-			if (_displayTask != null)
-				_displayTask.cancel(true);
-				
+			
+			//if (_displayTask != null)
+			//	_displayTask.cancel(true);
+			
 			final IProtocolVersion version = setup._version;
 			_display.setProtocol(version);
 			_display.setCacheContext(_cacheContext);
-			_displayTask = new PacketDisplayTask(_display);
-			_displayTask.execute(new ReceivedPacket(ServiceType.valueOf(version), setup._type, setup._content));
+			//_displayTask = new PacketDisplayTask(_display);
+			//_displayTask.execute(new ReceivedPacket(ServiceType.valueOf(version), setup._type, setup._content));
 		});
 		_displayUpdater.setRepeats(false);
 		
@@ -188,7 +187,7 @@ public class PacketExplainDialog extends JDialog
 		final IProtocolVersion version = selectedOrDefault(_cbProtocols);
 		if (version == null)
 			return null;
-			
+		
 		return new ExplanationSetup(version, EndpointType.valueOf(_rbClient.isSelected()), HexUtil.hexStringToBytes(_taBody.getText().replace('\r', ' ').replace('\n', ' ')));
 	}
 	
@@ -206,7 +205,7 @@ public class PacketExplainDialog extends JDialog
 		}
 	}
 	
-	private static final class DialogCacheContext extends NotARealProxyObject<JDialog>implements ICacheServerID
+	private static final class DialogCacheContext extends NotARealProxyObject<JDialog> implements ICacheServerID
 	{
 		DialogCacheContext(PacketExplainDialog dialog)
 		{

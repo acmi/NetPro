@@ -40,8 +40,8 @@ public class Pledge extends ScriptedFieldValueInterpreter implements IntegerInte
 		if (pi.getCrestID() != 0)
 		{
 			final PledgeCrestInfo pci = PledgeCrestInfoCache.getInstance().getOrAdd(pi.getCrestID(), entityCacheContext);
-			if (pci.getCrest() != null)
-				sb.append("<img src=\"").append(pci.getCrest()).append("\" border=\"0\" />");
+			if (pci.getCrestImgSrc() != null)
+				sb.append("<img src=\"").append(pci.getCrestImgSrc()).append("\" border=\"0\" />");
 		}
 		sb.append(pi.getName());
 		

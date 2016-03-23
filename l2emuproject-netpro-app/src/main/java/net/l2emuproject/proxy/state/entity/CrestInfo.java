@@ -18,19 +18,11 @@ package net.l2emuproject.proxy.state.entity;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.net.URL;
-import java.util.Collections;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.zip.Adler32;
-import java.util.zip.Checksum;
 
 import javax.imageio.ImageIO;
 
 import net.l2emuproject.proxy.ui.dds.DDSReader;
-import net.l2emuproject.proxy.ui.savormix.io.ImageUrlUtils;
-import net.l2emuproject.util.concurrent.L2ThreadPool;
+import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -43,9 +35,7 @@ public abstract class CrestInfo extends EntityInfo
 	static final L2Logger LOG = L2Logger.getLogger(CrestInfo.class);
 	
 	final String _type;
-	URL _crest;
-	long _crestCrc;
-	private volatile Future<?/*Void*/> _ioTask;
+	String _crestImgSrc;
 	
 	/**
 	 * Creates a crest entity.
@@ -79,9 +69,9 @@ public abstract class CrestInfo extends EntityInfo
 	 * 
 	 * @return crest URL
 	 */
-	public URL getCrest()
+	public String getCrestImgSrc()
 	{
-		return _crest;
+		return _crestImgSrc;
 	}
 	
 	/**
@@ -93,85 +83,42 @@ public abstract class CrestInfo extends EntityInfo
 	{
 		if (crest.length == 0)
 		{
-			_crest = null;
+			_crestImgSrc = null;
 			return;
 		}
 		
-		if (_ioTask != null)
-			_ioTask.cancel(true);
-		_ioTask = L2ThreadPool.submitLongRunning(new AsyncImageSaver(crest));
-	}
-	
-	@Override
-	public void release()
-	{
-		if (_ioTask != null)
+		BufferedImage image;
+		try
 		{
-			_ioTask.cancel(true);
+			image = DDSReader.getCrestTexture(crest);
+		}
+		catch (IllegalArgumentException e)
+		{
+			// legacy crests (BMP)
 			try
 			{
-				if (!_ioTask.isDone())
-					_ioTask.get();
+				image = ImageIO.read(new ByteArrayInputStream(crest));
 			}
-			catch (InterruptedException | ExecutionException | CancellationException e)
+			catch (IOException e2)
 			{
-				// ignore and continue
-			}
-		}
-		if (_crest != null)
-			ImageUrlUtils.getInstance().release(Collections.singleton(_crest));
-	}
-	
-	private final class AsyncImageSaver implements Runnable
-	{
-		private final byte[] _ddsImage;
-		
-		AsyncImageSaver(byte[] ddsImage)
-		{
-			_ddsImage = ddsImage;
-		}
-		
-		@Override
-		public void run()
-		{
-			final long crc;
-			{
-				final Checksum cs = new Adler32();
-				cs.update(_ddsImage, 0, _ddsImage.length);
-				crc = cs.getValue();
-			}
-			
-			if (crc == _crestCrc)
-				return;
-			
-			release();
-			
-			BufferedImage image;
-			try
-			{
-				image = DDSReader.getCrestTexture(_ddsImage);
-			}
-			catch (IllegalArgumentException e)
-			{
-				// legacy crests (BMP)
-				try
-				{
-					image = ImageIO.read(new ByteArrayInputStream(_ddsImage));
-				}
-				catch (IOException e2)
-				{
-					LOG.error("Legacy crest image", e2);
-					return;
-				}
-			}
-			catch (UnsupportedOperationException e)
-			{
-				LOG.info("Unsupported DDS image (crest) received");
+				LOG.error("Legacy crest image", e2);
 				return;
 			}
-			
-			_crest = ImageUrlUtils.getInstance().toUrl(_type, image.getSubimage(image.getWidth() - getActualWidth(), image.getHeight() - getActualHeight(), getActualWidth(), getActualHeight()));
-			_crestCrc = crc;
+		}
+		catch (UnsupportedOperationException e)
+		{
+			LOG.info("Unsupported DDS image (crest) received");
+			return;
+		}
+		
+		try
+		{
+			_crestImgSrc = FXUtils.getImageSrcForWebEngine(image);
+		}
+		catch (IOException e)
+		{
+			_crestImgSrc = null;
+			LOG.error("Unexpected error", e);
 		}
 	}
 }

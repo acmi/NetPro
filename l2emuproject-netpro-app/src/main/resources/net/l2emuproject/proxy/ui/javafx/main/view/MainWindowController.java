@@ -67,7 +67,7 @@ import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.ui.i18n.BytesizeFormat;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
-import net.l2emuproject.proxy.ui.javafx.FXLocator;
+import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
@@ -464,7 +464,7 @@ public class MainWindowController implements Initializable, IOConstants
 							exactSize = UIStrings.get("load.infodlg.details.size.unavailable.tooltip");
 						}
 						
-						final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(PacketLogLoadOptionController.class), UIStrings.getBundle());
+						final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(PacketLogLoadOptionController.class), UIStrings.getBundle());
 						final TitledPane tab = loader.load();
 						final PacketLogLoadOptionController controller = loader.getController();
 						controller.setMainWindow(this);
@@ -491,7 +491,7 @@ public class MainWindowController implements Initializable, IOConstants
 				// no owner here - any invalid load options should only block the confirm window, but not the main window
 				confirmStage.setTitle(UIStrings.get("load.infodlg.title"));
 				confirmStage.setScene(new Scene(tabPane));
-				confirmStage.getIcons().addAll(FXLocator.getIconListFX());
+				confirmStage.getIcons().addAll(FXUtils.getIconListFX());
 				WindowTracker.getInstance().add(confirmStage);
 				confirmStage.show();
 			});
@@ -848,7 +848,7 @@ public class MainWindowController implements Initializable, IOConstants
 		final Scene aboutDialog;
 		try
 		{
-			final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(AboutDialogController.class), UIStrings.getBundle());
+			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(AboutDialogController.class), UIStrings.getBundle());
 			aboutDialog = new Scene(loader.load());
 		}
 		catch (IOException e)
@@ -874,7 +874,7 @@ public class MainWindowController implements Initializable, IOConstants
 	{
 		try
 		{
-			final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(WaitingIndicatorDialogController.class), UIStrings.getBundle());
+			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(WaitingIndicatorDialogController.class), UIStrings.getBundle());
 			final Scene scene = new Scene(loader.load(), null);
 			
 			final Stage stage = new Stage(StageStyle.UTILITY);
@@ -882,7 +882,7 @@ public class MainWindowController implements Initializable, IOConstants
 			stage.initOwner(getMainWindow());
 			stage.setTitle(UIStrings.get(title));
 			stage.setScene(scene);
-			stage.getIcons().addAll(FXLocator.getIconListFX());
+			stage.getIcons().addAll(FXUtils.getIconListFX());
 			stage.sizeToScene();
 			stage.setResizable(false);
 			

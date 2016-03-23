@@ -27,8 +27,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearTable" text="%packettab.footer.clear.table" GridPane.rowIndex="1" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearMemory" text="%packettab.footer.clear.memory" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="_btnClearTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearTable" text="%packettab.footer.clear.table" GridPane.rowIndex="1" />
+                  <Button fx:id="_btnClearMemory" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearMemory" text="%packettab.footer.clear.memory" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <FlowPane alignment="CENTER">
                      <children>
                         <Label fx:id="_labTablePacketCount" text="%packettab.footer.count.table" />
@@ -55,6 +55,6 @@
             </FilteredTableView>
          </center>
       </BorderPane>
-      <fx:include source="PacketInterpView.fxml" />
+      <fx:include fx:id="_packetDisplay" source="PacketInterpView.fxml" />
    </items>
 </SplitPane>

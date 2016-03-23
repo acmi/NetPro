@@ -13,30 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.l2emuproject.proxy.ui.savormix.component.packet;
+package net.l2emuproject.proxy.ui.javafx.packet;
 
 import java.awt.image.RenderedImage;
-import java.net.URL;
+import java.io.IOException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
 import java.util.EnumMap;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.mutable.MutableInt;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
 import net.l2emuproject.proxy.network.meta.PacketStructureElementVisitor;
@@ -60,161 +58,91 @@ import net.l2emuproject.proxy.network.meta.structure.field.integer.AbstractInteg
 import net.l2emuproject.proxy.network.meta.structure.field.integer.IntegerFieldValue;
 import net.l2emuproject.proxy.network.meta.structure.field.string.AbstractStringFieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.string.StringFieldValue;
+import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.ImageUrlUtils;
+import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.proxy.ui.javafx.FXUtils;
+import net.l2emuproject.proxy.ui.savormix.component.packet.DataType;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
-import net.l2emuproject.proxy.ui.savormix.loader.Loader;
-import net.l2emuproject.ui.AsyncTask;
 import net.l2emuproject.util.HexUtil;
 import net.l2emuproject.util.ISODateTime;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
- * Interprets a packet (if a proper definition has been loaded) and displays the results.
+ * A dedicated class to control how received packets are rendered in HTML.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL>> implements ISODateTime
+public final class Packet2Html implements ISODateTime
 {
-	static final L2Logger LOG = L2Logger.getLogger(PacketDisplayTask.class);
+	static final L2Logger LOG = L2Logger.getLogger(Packet2Html.class);
 	private static final Pattern HTML_TAG = Pattern.compile("<html", Pattern.LITERAL | Pattern.CASE_INSENSITIVE);
 	
-	final PacketDisplay _owner;
-	
 	final L2TextBuilder _packetBuilder, _packetBodyBuilder;
+	private final Map<DataType, MutableInt> _currentHyperlinkID;
 	
-	byte[] _packet;
-	private Set<URL> _displayedImages;
-	private Map<DataType, MutableInt> _currentHyperlinkID;
+	final ReceivedPacket _packet;
+	private final IProtocolVersion _protocol;
+	private final ICacheServerID _cacheContext;
 	
-	/**
-	 * Creates a packet information display task.
-	 * 
-	 * @param owner associated component
-	 */
-	public PacketDisplayTask(PacketDisplay owner)
+	private Packet2Html(ReceivedPacket packet, IProtocolVersion protocol, ICacheServerID cacheContext)
 	{
-		_owner = owner;
-		
 		_packetBodyBuilder = new L2TextBuilder();
 		_packetBuilder = new L2TextBuilder();
-		
-		_packet = ArrayUtils.EMPTY_BYTE_ARRAY;
-	}
-	
-	@Override
-	protected void onPreExecute()
-	{
-		_owner.setContent(publish(0), null, PacketDisplay.FLAG_BODY | PacketDisplay.FLAG_CONTENT);
-	}
-	
-	@Override
-	protected Set<URL> doInBackground(ReceivedPacket... params)
-	{
 		_currentHyperlinkID = new HashMap<>();
 		for (DataType dt : DataType.values())
 			_currentHyperlinkID.put(dt, new MutableInt());
-		_displayedImages = new HashSet<>();
-		try
-		{
-			displayParsedPacket(params[0]);
-		}
-		catch (Throwable t)
-		{
-			try
-			{
-				LOG.error(VersionnedPacketTable.getInstance().getTemplate(_owner.getProtocol(), params[0].getEndpoint(), params[0].getBody()), t);
-			}
-			catch (Throwable t1)
-			{
-				LOG.error("", t);
-			}
-		}
-		return _displayedImages;
+		
+		_packet = packet;
+		_protocol = protocol;
+		_cacheContext = cacheContext;
 	}
 	
-	@Override
-	protected void onPostExecute(Set<URL> result)
+	/**
+	 * Returns a fully interpreted view over the given packet (left) along with an associated raw data view (right).<BR>
+	 * Please manually set {@link ServerListTypePublisher#LIST_TYPE} as necessary prior to calling this method.
+	 * 
+	 * @param packet a packet
+	 * @param protocol network protocol version
+	 * @param cacheContext entity cache context
+	 * @return packet in HTML format
+	 */
+	public static final Pair<String, String> getHTML(ReceivedPacket packet, IProtocolVersion protocol, ICacheServerID cacheContext)
 	{
-		final String html = _packetBuilder.moveToString();
-		final String htmlBytes = _packetBodyBuilder.moveToString();
-		_owner.setContent(html, htmlBytes, PacketDisplay.FLAG_BODY | PacketDisplay.FLAG_CONTENT);
-		_owner.unsetDisplayTask(this);
-		
-		/*
-		try (final BufferedWriter bw = Files.newBufferedWriter(Paths.get("CONTENT_INT.txt")))
-		{
-			bw.write(html);
-		}
-		catch (IOException e)
-		{
-			// ignore
-		}
-		try (final BufferedWriter bw = Files.newBufferedWriter(Paths.get("CONTENT_RAW.txt")))
-		{
-			bw.write(htmlBytes);
-		}
-		catch (IOException e)
-		{
-			// ignore
-		}
-		*/
+		return new Packet2Html(packet, protocol, cacheContext).parsePacket();
 	}
 	
-	@Override
-	protected void process(List<String> chunks)
+	private Pair<String, String> result()
 	{
-		final String progress = chunks.get(chunks.size() - 1);
-		_owner.setContent(progress, progress, PacketDisplay.FLAG_BODY | PacketDisplay.FLAG_CONTENT);
+		return ImmutablePair.of(_packetBuilder.moveToString(), _packetBodyBuilder.moveToString());
 	}
 	
-	String publish(int progress)
+	private Pair<String, String> parsePacket()
 	{
-		final L2TextBuilder sb = new L2TextBuilder("<center>Reading bytes...<br /><font size=\"+5\">");
-		sb.append(NumberFormat.getPercentInstance(Loader.getLocale()).format((double)progress / _packet.length));
-		final NumberFormat nf = NumberFormat.getIntegerInstance(Loader.getLocale());
-		sb.append("</font><br />").append(nf.format(progress)).append('/').append(nf.format(_packet.length));
-		sb.append("</center>");
-		return sb.moveToString();
-	}
-	
-	private ByteBuffer createBuffer()
-	{
-		return ByteBuffer.wrap(_packet).asReadOnlyBuffer().order(ByteOrder.LITTLE_ENDIAN);
-	}
-	
-	private void displayParsedPacket(ReceivedPacket packet)
-	{
-		_owner.releaseImages(_displayedImages);
-		
-		_packet = packet.getBody();
-		
-		final ByteBuffer body = createBuffer();
-		
-		final boolean unsent = packet.getReceived() == ReceivedPacket.UNSENT_PACKET_TIMESTAMP;
-		
+		final boolean unsent = _packet.getReceived() == ReceivedPacket.UNSENT_PACKET_TIMESTAMP;
 		if (!unsent)
 		{
 			_packetBuilder.append("<em>Received on: ");
-			_packetBuilder.appendNewline(new SimpleDateFormat(ISO_TIME_MS).format(new Date(packet.getReceived())));
+			_packetBuilder.appendNewline(new SimpleDateFormat(ISO_TIME_MS).format(new Date(_packet.getReceived())));
 			_packetBuilder.appendNewline("</em><br /><br />");
 		}
+		
+		final ByteBuffer body = ByteBuffer.wrap(_packet.getBody()).asReadOnlyBuffer().order(ByteOrder.LITTLE_ENDIAN);
 		
 		final InterpreterContext ctx;
 		{
 			RandomAccessMMOBuffer wireframe;
 			try
 			{
-				ServerListTypePublisher.LIST_TYPE.set(_owner.getServerListType());
 				final ByteBuffer independentWrapper = body.duplicate().order(body.order());
-				wireframe = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(_owner.getProtocol(), new MMOBuffer().setByteBuffer(independentWrapper), packet::getEndpoint);
+				wireframe = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(_protocol, new MMOBuffer().setByteBuffer(independentWrapper), _packet::getEndpoint);
 			}
 			catch (InvalidPacketOpcodeSchemeException e)
 			{
 				// 2ez4me
 				_packetBuilder.append("<center><strong>Invalid packet</strong></center><br />");
-				_packetBodyBuilder.append(HexUtil.bytesToHexString(_packet, " ")); // incomplete opcode(s)
-				return;
+				_packetBodyBuilder.append(HexUtil.bytesToHexString(_packet.getBody(), " ")); // incomplete opcode(s)
+				return result();
 			}
 			catch (PartialPayloadEnumerationException e)
 			{
@@ -223,24 +151,25 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 				final IPacketTemplate template = e.getTemplate();
 				if (!unsent && template.isDefined())
 				{
-					final String message = (packet.getEndpoint().isClient() ? "[C] " : "[S] ") + e.getTemplate();
+					final String message = (_packet.getEndpoint().isClient() ? "[C] " : "[S] ") + e.getTemplate();
 					if (e.getUnusedBytes() != -1)
 						LOG.info(message + " " + e.getMessage());
 					else
 						LOG.error(message, e);
 				}
 			}
-			ctx = new InterpreterContext(_owner.getCacheContext(), wireframe);
+			ctx = new InterpreterContext(_cacheContext, wireframe);
 		}
 		
-		final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(_owner.getProtocol(), packet.getEndpoint(), _packet);
-		_packetBodyBuilder.append(HexUtil.bytesToHexString(template.getPrefix(), " ")); // opcodes
+		final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(_protocol, _packet.getEndpoint(), _packet.getBody());
+		final String opcodes = HexUtil.bytesToHexString(template.getPrefix(), " ");
+		_packetBodyBuilder.append("<div title=\"").append(opcodes).append(": ").append(template.getName()).append("\">").append(opcodes).append("</div>"); // opcodes
 		body.position(template.getPrefix().length);
 		
 		if (unsent)
 		{
-			_packetBuilder.append("<center><em>").append(_owner.getProtocol()).append("<br />[");
-			_packetBuilder.append(packet.getEndpoint().isClient() ? 'C' : 'S').append("] ");
+			_packetBuilder.append("<center><em>").append(_protocol).append("<br />[");
+			_packetBuilder.append(_packet.getEndpoint().isClient() ? 'C' : 'S').append("] ");
 			_packetBuilder.append(HexUtil.bytesToHexString(template.getPrefix(), ":"));
 			if (template.getName() != null)
 				_packetBuilder.append(' ').append(template.getName());
@@ -324,22 +253,18 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			@Override
 			public void onByteArrayField(AbstractByteArrayFieldElement element, ByteArrayFieldValue value) throws RuntimeException
 			{
-				testCancel();
 				displayAsHtml(element, value, value != null ? value.value() : null, DataType.BYTES);
 			}
 			
 			@Override
 			public void onDecimalField(AbstractDecimalFieldElement element, DecimalFieldValue value) throws RuntimeException
 			{
-				testCancel();
 				displayAsHtml(element, value, value != null ? value.value() : null, DataType.FLOAT);
 			}
 			
 			@Override
 			public void onIntegerField(AbstractIntegerFieldElement element, IntegerFieldValue value) throws RuntimeException
 			{
-				testCancel();
-				
 				int fieldWidth = 4;
 				if (value == null)
 				{
@@ -385,7 +310,6 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			@Override
 			public void onStringField(AbstractStringFieldElement element, StringFieldValue value) throws RuntimeException
 			{
-				testCancel();
 				displayAsHtml(element, value, value != null ? value.value() : null, DataType.STRING);
 			}
 			
@@ -395,20 +319,19 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 				_packetBuilder.appendNewline("<br /><center><strong>EXPECTED MORE DATA</strong><br />");
 				_packetBuilder.appendNewline("(according to packet definition)</center><br />");
 				if (remainingBytes > 0)
-					_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet, body.position() - (remainingBytes - body.remaining()), " "));
+					_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet.getBody(), body.position() - (remainingBytes - body.remaining()), " "));
 			}
 			
 			@Override
 			public void onException(Exception e, int remainingBytes)
 			{
-				if (!(e instanceof TaskCancelledException))
-					LOG.error("", e);
+				LOG.error("", e);
 				
 				_packetBuilder.append("<br /><center><strong>").append(e.getMessage()).appendNewline("<br />");
 				if (remainingBytes > 0)
 				{
 					_packetBuilder.append("<br />Unidentified bytes: ").append(remainingBytes).appendNewline("</strong></center><br />");
-					_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet, body.position(), " "));
+					_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet.getBody(), body.position(), " "));
 				}
 			}
 			
@@ -419,17 +342,10 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 					return;
 				
 				_packetBuilder.append("<br /><center><strong>Unidentified bytes: ").append(remainingBytes).appendNewline("</strong></center><br />");
-				_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet, body.position(), " "));
-			}
-			
-			private void testCancel() throws TaskCancelledException
-			{
-				if (isCancelled())
-					throw new TaskCancelledException();
-				
-				publish(body.position());
+				_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet.getBody(), body.position(), " "));
 			}
 		}, body, options);
+		return result();
 	}
 	
 	void displayAsHtml(FieldElement<?> field, FieldValue value, Object readValue, DataType visualDataType)
@@ -442,9 +358,16 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			interpretation = value.interpreted();
 			if (interpretation instanceof RenderedImage)
 			{
-				final URL url = ImageUrlUtils.getInstance().toUrl(field.getAlias(), (RenderedImage)interpretation);
-				_displayedImages.add(url);
-				interpretation = new StringBuilder("<img src=\"").append(url).append("\" border=\"0\" />").toString();
+				String imgSrc = FXUtils.class.getResource("icon-16.png").toString();
+				try
+				{
+					imgSrc = FXUtils.getImageSrcForWebEngine((RenderedImage)interpretation);
+				}
+				catch (IOException e)
+				{
+					LOG.error("Unexpected error", e);
+				}
+				interpretation = new StringBuilder("<img src=\"").append(imgSrc).append("\" border=\"0\" />").toString();
 			}
 			else if (field.getID() != null)
 				wrapTag = "em"; // emphasize a named field
@@ -455,11 +378,13 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 		else if (interpretation instanceof byte[])
 			interpretation = HexUtil.bytesToHexString((byte[])interpretation, " ");
 		
+		_packetBuilder.append("<img src=\"").append(visualDataType.getIconImgSrc()).append("\" title=\"").append(UIStrings.get(visualDataType.getIconTooltip())).append("\" border=\"0\" />");
+		
 		final MutableInt hyperID = _currentHyperlinkID.get(visualDataType);
 		hyperID.increment();
 		_packetBuilder.append("<a href=\"").append(visualDataType).append("__").append(hyperID.intValue()).append("\">");
-		_packetBuilder.append("<img src=\"").append(visualDataType.getIcon()).append("\" border=\"0\" />");
 		_packetBuilder.append(field.getAlias()).append(": ").append(interpretation);
+		String appendedReadValue = null;
 		if (readValue != null)
 		{
 			if (readValue instanceof byte[])
@@ -467,13 +392,20 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			
 			final String read = String.valueOf(readValue), interp = String.valueOf(interpretation);
 			if (!interp.equals(read) && !HTML_TAG.matcher(read).find())
-				_packetBuilder.append(" (").append(read).append(")");
+				_packetBuilder.append(" (").append(appendedReadValue = read).append(")");
 		}
 		_packetBuilder.appendNewline("</a><br />");
 		
 		if (value != null)
 		{
-			_packetBodyBuilder.append(" <font class=\"").append(visualDataType).append("_\">");
+			_packetBodyBuilder.append(" <font class=\"").append(visualDataType).append("_\"").append(" title=\"").append(field.getAlias());
+			if (visualDataType != DataType.BYTES && !(value.interpreted() instanceof RenderedImage))
+			{
+				_packetBodyBuilder.append(": ").append(interpretation);
+				if (appendedReadValue != null)
+					_packetBodyBuilder.append(" (").append(appendedReadValue).append(")");
+			}
+			_packetBodyBuilder.append("\">");
 			if (wrapTag != null)
 				_packetBodyBuilder.append('<').append(wrapTag).append('>');
 			_packetBodyBuilder.append(HexUtil.bytesToHexString(value.raw(), " "));
@@ -492,16 +424,6 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 		{
 			_iterationCount = iterationCount;
 			_useDelimiter = false;
-		}
-	}
-	
-	private static final class TaskCancelledException extends RuntimeException
-	{
-		private static final long serialVersionUID = 1456795209939227370L;
-		
-		TaskCancelledException()
-		{
-			super("Display task has been cancelled");
 		}
 	}
 }

@@ -19,7 +19,6 @@ import java.util.Locale;
 
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.protocol.IProtocolVersion;
-import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
@@ -37,6 +36,7 @@ public final class PacketLogEntry
 {
 	private final ReceivedPacket _packet;
 	
+	private IProtocolVersion _protocol;
 	// precomputed values to avoid constant polling/generation
 	private final StringProperty _opcode, _name;
 	
@@ -53,21 +53,51 @@ public final class PacketLogEntry
 		_name = new SimpleStringProperty("PacketNameHere");
 	}
 	
-	public EndpointType getEndpoint()
+	/**
+	 * Returns the associated packet.
+	 * 
+	 * @return the packet
+	 */
+	public ReceivedPacket getPacket()
 	{
-		return _packet.getEndpoint();
+		return _packet;
 	}
 	
+	/**
+	 * Returns the network protocol version assigned to this packet.
+	 * 
+	 * @return protocol version
+	 */
+	public IProtocolVersion getProtocol()
+	{
+		return _protocol;
+	}
+	
+	/**
+	 * Returns the value to be displayed in the first column.
+	 * 
+	 * @return sender
+	 */
 	public String getSender()
 	{
 		return _packet.getEndpoint().isClient() ? "C" : "S";
 	}
 	
+	/**
+	 * Returns the value to be displayed in the second column.
+	 * 
+	 * @return opcode(s)
+	 */
 	public String getOpcode()
 	{
 		return _opcode.get();
 	}
 	
+	/**
+	 * Returns the value to be displayed in the third column.
+	 * 
+	 * @return name
+	 */
 	public String getName()
 	{
 		return _name.get();
@@ -80,7 +110,7 @@ public final class PacketLogEntry
 	 */
 	public void updateView(IProtocolVersion version)
 	{
-		final IPacketTemplate packetTemplate = VersionnedPacketTable.getInstance().getTemplate(version, _packet.getEndpoint(), _packet.getBody());
+		final IPacketTemplate packetTemplate = VersionnedPacketTable.getInstance().getTemplate(_protocol = version, _packet.getEndpoint(), _packet.getBody());
 		
 		final byte[] prefix = packetTemplate.getPrefix();
 		final L2TextBuilder sb = HexUtil.fillHex(new L2TextBuilder(2 + 3 * (prefix.length - 1)), prefix[0] & 0xFF, 2, null);
@@ -88,12 +118,12 @@ public final class PacketLogEntry
 			HexUtil.fillHex(sb.append(':'), prefix[i] & 0xFF, 2, null);
 		_opcode.set(sb.toString().toUpperCase(Locale.ENGLISH).intern());
 		
-		_name.set(packetTemplate.getName() != null ? packetTemplate.getName() : ("Unknown " + _opcode.get().toUpperCase(Locale.ENGLISH)).intern());
+		_name.set(packetTemplate.getName() != null ? packetTemplate.getName() : ("Unknown " + _opcode.get()).intern());
 	}
 	
 	@Override
 	public String toString()
 	{
-		return "[" + getSender() + "] " + _opcode + " " + _name;
+		return "[" + getSender() + "] " + _opcode.get() + " " + _name.get();
 	}
 }

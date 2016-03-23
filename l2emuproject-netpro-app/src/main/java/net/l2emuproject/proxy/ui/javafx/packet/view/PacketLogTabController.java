@@ -19,13 +19,17 @@ import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ResourceBundle;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.google.jhsheets.filtered.FilteredTableView;
 import org.google.jhsheets.filtered.operators.StringOperator;
 import org.google.jhsheets.filtered.tablecolumn.ColumnFilterEvent;
 import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
+import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.proxy.ui.javafx.packet.Packet2Html;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 
 import javafx.animation.KeyFrame;
@@ -40,6 +44,7 @@ import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
@@ -53,6 +58,12 @@ import javafx.util.Duration;
  */
 public class PacketLogTabController implements Initializable
 {
+	@FXML
+	private Button _btnClearTable;
+	
+	@FXML
+	private Button _btnClearMemory;
+	
 	@FXML
 	private Label _labTablePacketCount;
 	
@@ -71,9 +82,15 @@ public class PacketLogTabController implements Initializable
 	@FXML
 	private FilterableStringTableColumn<PacketLogEntry, String> _colName;
 	
+	@FXML
+	private PacketInterpViewController _packetDisplayController;
+	
 	private static final int AUTO_SCROLL_THRESHOLD = 250;
 	
 	private final ObservableList<PacketLogEntry> _memoryPackets, _tablePackets;
+	
+	private ICacheServerID _entityCacheContext;
+	
 	private BooleanProperty _scrollLockProperty;
 	private boolean _autoScrollPending;
 	
@@ -97,8 +114,17 @@ public class PacketLogTabController implements Initializable
 		_tvPackets.setRowFactory(tv ->
 		{
 			final TableRow<PacketLogEntry> row = new TableRow<>();
-			row.itemProperty().addListener((obs, old, neu) -> row.pseudoClassStateChanged(clientPacketRowClass, neu != null ? neu.getEndpoint().isClient() : false));
+			row.itemProperty().addListener((obs, old, neu) -> row.pseudoClassStateChanged(clientPacketRowClass, neu != null ? neu.getPacket().getEndpoint().isClient() : false));
 			return row;
+		});
+		_tvPackets.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) ->
+		{
+			if (old == neu || neu == null)
+				return;
+			
+			//ServerListTypePublisher.LIST_TYPE.set(_owner.getServerListType());
+			final Pair<String, String> html = Packet2Html.getHTML(neu.getPacket(), neu.getProtocol(), _entityCacheContext);
+			_packetDisplayController.setContent(html.getLeft(), html.getRight());
 		});
 		
 		final SortedList<PacketLogEntry> sortableTablePackets = new SortedList<>(_tablePackets);
@@ -108,16 +134,8 @@ public class PacketLogTabController implements Initializable
 		{
 			final ObservableList<PacketLogEntry> filterMatchingPackets = FXCollections.observableArrayList();
 			for (final PacketLogEntry packetEntry : _memoryPackets)
-			{
-				final boolean hidden;
-				if (e.sourceColumn() == _colOpcode)
-					hidden = isHiddenByOpcode(packetEntry);
-				else
-					hidden = isHiddenByName(packetEntry);
-				
-				if (!hidden)
+				if (!isHiddenByDisplayConfig(packetEntry) && !isHiddenByOpcode(packetEntry) && !isHiddenByName(packetEntry))
 					filterMatchingPackets.add(packetEntry);
-			}
 			_tablePackets.setAll(filterMatchingPackets);
 		});
 		
@@ -164,9 +182,14 @@ public class PacketLogTabController implements Initializable
 	private boolean isHiddenByName(PacketLogEntry packetEntry)
 	{
 		for (final StringOperator filter : _colName.getFilters())
-			if (isHidden(packetEntry.getOpcode(), filter))
+			if (isHidden(packetEntry.getName(), filter))
 				return true;
 		
+		return false;
+	}
+	
+	private boolean isHiddenByDisplayConfig(PacketLogEntry packetEntry)
+	{
 		return false;
 	}
 	
@@ -213,6 +236,20 @@ public class PacketLogTabController implements Initializable
 	}
 	
 	/**
+	 * Associates an entity cache context.
+	 * 
+	 * @param entityCacheContext entity cache context
+	 */
+	public void setEntityCacheContext(ICacheServerID entityCacheContext)
+	{
+		_entityCacheContext = entityCacheContext;
+		
+		final boolean live = entityCacheContext instanceof ServerSocketID;
+		_btnClearMemory.setDisable(!live);
+		_btnClearTable.setDisable(!live);
+	}
+	
+	/**
 	 * Adds a new packet to the underlying table view.
 	 * 
 	 * @param packet a packet
@@ -221,15 +258,11 @@ public class PacketLogTabController implements Initializable
 	{
 		_memoryPackets.add(packet);
 		
-		if (isHiddenByOpcode(packet) || isHiddenByName(packet))
+		if (isHiddenByDisplayConfig(packet) || isHiddenByOpcode(packet) || isHiddenByName(packet))
 			return;
 		
 		_tablePackets.add(packet);
-		
-		if (_scrollLockProperty.get())
-			return;
-		
-		_autoScrollPending = true;
+		_autoScrollPending = !_scrollLockProperty.get();
 	}
 	
 	/**

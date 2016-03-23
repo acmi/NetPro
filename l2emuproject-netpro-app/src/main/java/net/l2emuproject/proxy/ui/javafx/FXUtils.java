@@ -15,16 +15,23 @@
  */
 package net.l2emuproject.proxy.ui.javafx;
 
+import java.awt.image.RenderedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
+
+import javax.imageio.IIOException;
+import javax.imageio.ImageIO;
 
 /**
  * Contains methods for easy resource access.
  * 
  * @author _dev_
  */
-public final class FXLocator
+public final class FXUtils
 {
 	private static final int[] ICON_SIZES = { 16, 20, 24, 32, 40, 48, 64, 256 };
 	
@@ -49,7 +56,22 @@ public final class FXLocator
 	{
 		final List<javafx.scene.image.Image> icons = new ArrayList<>(ICON_SIZES.length);
 		for (int sz : ICON_SIZES)
-			icons.add(new javafx.scene.image.Image(FXLocator.class.getResource("icon-" + sz + ".png").toString()));
+			icons.add(new javafx.scene.image.Image(FXUtils.class.getResource("icon-" + sz + ".png").toString()));
 		return icons;
+	}
+	
+	/**
+	 * Encodes the image as a whole into PNG, then into Base64 and finally into an URI suitable for the HTML {@code <img>} tag.
+	 * 
+	 * @param image an image
+	 * @return image as URI (image within the URI)
+	 * @throws IIOException if there is a fault with an image writer
+	 * @throws IOException in case of a general I/O error
+	 */
+	public static final String getImageSrcForWebEngine(RenderedImage image) throws IIOException, IOException
+	{
+		final ByteArrayOutputStream output = new ByteArrayOutputStream();
+		ImageIO.write(image, "PNG", output);
+		return "data:base64," + Base64.getMimeEncoder().encodeToString(output.toByteArray());
 	}
 }

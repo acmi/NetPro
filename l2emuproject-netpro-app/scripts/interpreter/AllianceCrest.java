@@ -32,11 +32,11 @@ public class AllianceCrest extends ScriptedFieldValueInterpreter implements Inte
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
 		final AllianceCrestInfo aci = AllianceCrestInfoCache.getInstance().getOrAdd((int)value, entityCacheContext);
-		if (aci.getCrest() == null)
+		if (aci.getCrestImgSrc() == null)
 			return value;
 		
 		final StringBuilder sb = new StringBuilder();
-		sb.append("<img src=\"").append(aci.getCrest()).append("\" border=\"0\" />");
+		sb.append("<img src=\"").append(aci.getCrestImgSrc()).append("\" border=\"0\" />");
 		return sb.toString();
 	}
 }

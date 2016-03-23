@@ -55,13 +55,11 @@ import net.l2emuproject.network.security.LoginCipher;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.network.ByteBufferUtils;
 import net.l2emuproject.proxy.network.Proxy;
-import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;
 import net.l2emuproject.proxy.network.login.client.L2LoginClient;
 import net.l2emuproject.proxy.network.packets.ProxyRepeatedPacket;
 import net.l2emuproject.proxy.script.PpeEnabledScript;
 import net.l2emuproject.proxy.setup.IPAliasManager;
-import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.HexUtil;
 
@@ -101,7 +99,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 	
 	private final PacketDisplay _display;
 	final Timer _displayUpdater;
-	PacketDisplayTask _displayTask;
+	//PacketDisplayTask _displayTask;
 	
 	/**
 	 * Constructs a basic packet injection dialog.
@@ -175,15 +173,15 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 			final Pair<Proxy, ByteBuffer> setup = getCurrentBodyAndRecipient(false);
 			if (setup == null)
 				return;
-				
-			if (_displayTask != null)
-				_displayTask.cancel(true);
-				
+			
+			//if (_displayTask != null)
+			//	_displayTask.cancel(true);
+			
 			final Proxy target = setup.getLeft();
 			_display.setProtocol(target.getProtocol());
 			_display.setCacheContext(PpeEnabledScript.getEntityContext(target));
-			_displayTask = new PacketDisplayTask(_display);
-			_displayTask.execute(new ReceivedPacket(ServiceType.valueOf(target.getProtocol()), target.getTarget().getType(), setup.getRight().array()));
+			//_displayTask = new PacketDisplayTask(_display);
+			//_displayTask.execute(new ReceivedPacket(ServiceType.valueOf(target.getProtocol()), target.getTarget().getType(), setup.getRight().array()));
 		});
 		_displayUpdater.setRepeats(false);
 		
@@ -303,7 +301,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		contentPane.add(root, BorderLayout.CENTER);
 		if (LoadOption.DISABLE_DEFS.isNotSet())
 			contentPane.add(_display, BorderLayout.EAST);
-			
+		
 		setLocationByPlatform(true);
 		pack();
 	}
@@ -313,11 +311,11 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		final ProxyWrapper pw = _cbConnections.getItemAt(_cbConnections.getSelectedIndex());
 		if (pw == null || pw == _placeholderConnection)
 			return null;
-			
+		
 		Proxy target = pw.getProxy();
 		if (_rbServer.isSelected())
 			target = target.getTarget();
-			
+		
 		try
 		{
 			// this still assumes pre-allocated checksum & its padding; this only pads as required for blowfish block cipher
@@ -346,7 +344,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		final Pair<Proxy, ByteBuffer> setup = getCurrentBodyAndRecipient(true);
 		if (setup == null)
 			return;
-			
+		
 		final Proxy target = setup.getLeft();
 		final ByteBuffer buf = setup.getRight();
 		target.sendPacket(new ProxyRepeatedPacket(buf.array()));
@@ -359,7 +357,7 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		final boolean login = client instanceof L2LoginClient;
 		if (login && ProxyConfig.NO_TABS_FOR_LOGIN_CONNECTIONS)
 			return;
-			
+		
 		final ProxyWrapper pw = new ProxyWrapper(client, login);
 		_connections.put(client, pw);
 		SwingUtilities.invokeLater(() -> _cbConnections.addItem(pw));
@@ -371,17 +369,17 @@ public class PacketInject extends JDialog implements ActionListener, ConnectionL
 		final ProxyWrapper pw = _connections.remove(client);
 		if (pw == null)
 			return;
-			
+		
 		SwingUtilities.invokeLater(() ->
 		{
 			_cbConnections.removeItem(pw);
 			if (_cbConnections.getItemCount() <= 1)
 			{
 				_displayUpdater.stop();
-				if (_displayTask != null)
+				//if (_displayTask != null)
 				{
-					_displayTask.cancel(true);
-					_displayTask = null;
+					//_displayTask.cancel(true);
+					//_displayTask = null;
 				}
 				_display.displayPacket(null);
 			}

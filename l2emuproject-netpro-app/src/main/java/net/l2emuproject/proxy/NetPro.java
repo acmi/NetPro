@@ -54,7 +54,7 @@ import net.l2emuproject.proxy.script.game.PpeGameScriptRegistry;
 import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
-import net.l2emuproject.proxy.ui.javafx.FXLocator;
+import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.main.view.CompilationErrorExpandableController;
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
@@ -107,14 +107,14 @@ public class NetPro extends Application
 		
 		try
 		{
-			final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(SplashScreenController.class), UIStrings.getBundle());
+			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(SplashScreenController.class), UIStrings.getBundle());
 			final Scene scene = new Scene(loader.load(), null);
 			final SplashScreenController controller = loader.getController();
 			controller.bindDescription(LOADING_STAGE_DESCRIPTION);
 			
 			SPLASH_STAGE = new Stage(StageStyle.TRANSPARENT);
 			SPLASH_STAGE.setScene(scene);
-			SPLASH_STAGE.getIcons().addAll(FXLocator.getIconListFX());
+			SPLASH_STAGE.getIcons().addAll(FXUtils.getIconListFX());
 			windowTracker.add(SPLASH_STAGE);
 			SPLASH_STAGE.show();
 			
@@ -327,7 +327,7 @@ public class NetPro extends Application
 		{
 			try
 			{
-				final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(MainWindowController.class), UIStrings.getBundle());
+				final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(MainWindowController.class), UIStrings.getBundle());
 				final Scene scene = new Scene(loader.load());
 				final MainWindowController controller = loader.getController();
 				final Timeline tlLogging = new Timeline(new KeyFrame(Duration.ZERO, evt ->
@@ -339,7 +339,7 @@ public class NetPro extends Application
 				tlLogging.play();
 				PRIMARY_STAGE.setScene(scene);
 				PRIMARY_STAGE.setTitle("NetPro" + (NetProInfo.isUnreleased() ? "" : " " + (NetProInfo.isSnapshot() ? "r" + NetProInfo.getRevisionNumber() : NetProInfo.getVersion())));
-				PRIMARY_STAGE.getIcons().addAll(FXLocator.getIconListFX());
+				PRIMARY_STAGE.getIcons().addAll(FXUtils.getIconListFX());
 				WindowTracker.getInstance().add(PRIMARY_STAGE);
 				PRIMARY_STAGE.show();
 			}
@@ -500,7 +500,7 @@ public class NetPro extends Application
 						
 						try
 						{
-							final FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(CompilationErrorExpandableController.class), UIStrings.getBundle());
+							final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(CompilationErrorExpandableController.class), UIStrings.getBundle());
 							confirmDlg.getDialogPane().setExpandableContent(loader.load());
 							confirmDlg.getDialogPane().setExpanded(!init);
 							

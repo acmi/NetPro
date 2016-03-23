@@ -16,12 +16,13 @@
 package net.l2emuproject.proxy.ui.savormix.component.packet;
 
 import java.awt.Color;
-import java.net.URL;
+import java.io.IOException;
 import java.util.Locale;
 
+import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.savormix.IconUtils;
 import net.l2emuproject.proxy.ui.savormix.SafeColor;
-import net.l2emuproject.proxy.ui.savormix.io.ImageUrlUtils;
+import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * Represents data types used in packet definitions.<BR>
@@ -45,13 +46,27 @@ public enum DataType
 	
 	private final char _id;
 	private final Color _color;
-	private final URL _icon;
+	private final String _iconImgSrc;
+	private final String _iconTooltip;
 	
 	private DataType(char id, Color color)
 	{
 		_id = id;
 		_color = color;
-		_icon = ImageUrlUtils.getInstance().toUrl("data_type", IconUtils.drawDataType(14, 14, color, Character.toLowerCase(id), 14));
+		String iconImgSrc = FXUtils.class.getResource("icon-16.png").toString();
+		try
+		{
+			iconImgSrc = FXUtils.getImageSrcForWebEngine(IconUtils.drawDataType(14, 14, color, Character.toLowerCase(id), 14));
+		}
+		catch (IOException e)
+		{
+			L2Logger.getLogger(DataType.class).error("Unexpected error", e);
+		}
+		finally
+		{
+			_iconImgSrc = iconImgSrc;
+		}
+		_iconTooltip = "packethtml.datatype.tooltip." + this;
 	}
 	
 	public char getId()
@@ -64,9 +79,14 @@ public enum DataType
 		return _color;
 	}
 	
-	public URL getIcon()
+	public String getIconImgSrc()
 	{
-		return _icon;
+		return _iconImgSrc;
+	}
+	
+	public String getIconTooltip()
+	{
+		return _iconTooltip;
 	}
 	
 	@Override

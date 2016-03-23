@@ -27,6 +27,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.io.LogFilePacket;
@@ -39,7 +41,7 @@ import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
-import net.l2emuproject.proxy.ui.javafx.FXLocator;
+import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
@@ -68,6 +70,8 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
 /**
+ * Handles the packet log loading option selection dialog.
+ * 
  * @author _dev_
  */
 public final class PacketLogLoadOptionController
@@ -151,11 +155,11 @@ public final class PacketLogLoadOptionController
 		final LogFileLoadProgressDialogController progressDialog;
 		try
 		{
-			FXMLLoader loader = new FXMLLoader(FXLocator.getFXML(PacketLogTabController.class), UIStrings.getBundle());
+			FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(PacketLogTabController.class), UIStrings.getBundle());
 			tab = new Tab(filename, loader.load());
 			controller = loader.getController();
 			
-			loader = new FXMLLoader(FXLocator.getFXML(LogFileLoadProgressDialogController.class), UIStrings.getBundle());
+			loader = new FXMLLoader(FXUtils.getFXML(LogFileLoadProgressDialogController.class), UIStrings.getBundle());
 			progressDialogScene = new Scene(loader.load(), null);
 			progressDialog = loader.getController();
 		}
@@ -168,9 +172,13 @@ public final class PacketLogLoadOptionController
 			return;
 		}
 		
-		getDialogWindow().hide();
-		_mainWindow.addConnectionTab(tab);
+		final HistoricalPacketLog cacheContext = new HistoricalPacketLog(logFileHeader.getLogFile());
+		controller.setEntityCacheContext(cacheContext);
 		controller.installScrollLock(_mainWindow.scrollLockProperty());
+		
+		getDialogWindow().hide();
+		tab.setUserData(controller);
+		_mainWindow.addConnectionTab(tab);
 		final int totalPackets = logFileHeader.getPackets();
 		progressDialog.setFilename(filename);
 		progressDialog.setLoadedAmount(0, totalPackets);
@@ -180,7 +188,7 @@ public final class PacketLogLoadOptionController
 		progressDialogWindow.initOwner(_mainWindow.getMainWindow());
 		progressDialogWindow.setTitle(UIStrings.get("open.netpro.loaddlg.title"));
 		progressDialogWindow.setScene(progressDialogScene);
-		progressDialogWindow.getIcons().addAll(FXLocator.getIconListFX());
+		progressDialogWindow.getIcons().addAll(FXUtils.getIconListFX());
 		progressDialogWindow.sizeToScene();
 		progressDialogWindow.setResizable(false);
 		WindowTracker.getInstance().add(progressDialogWindow);
@@ -194,7 +202,6 @@ public final class PacketLogLoadOptionController
 		if (_cbNonCaptured.isSelected())
 			flags.add(LogLoadFlag.INCLUDE_NON_CAPTURED);
 		final LogLoadOptions options = new LogLoadOptions(protocolVersion, flags);
-		final HistoricalPacketLog cacheContext = new HistoricalPacketLog(logFileHeader.getLogFile());
 		final LogLoadScriptManager scriptManager = LogLoadScriptManager.getInstance();
 		
 		final AtomicBoolean canUpdateUI = new AtomicBoolean(true);
@@ -241,11 +248,15 @@ public final class PacketLogLoadOptionController
 			}
 			catch (IOException e) // trying to open
 			{
-				
+				final Throwable t = StackTraceUtil.stripRunnable(e);
+				Platform.runLater(initNonModalUtilityDialog(new ExceptionAlert(t), getDialogWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
+						"open.netpro.err.dialog.header.io", ArrayUtils.EMPTY_OBJECT_ARRAY, null)::show);
 			}
 			catch (LogFileIterationIOException e) // during read
 			{
-				
+				final Throwable t = StackTraceUtil.stripRunnable(e.getCause());
+				Platform.runLater(initNonModalUtilityDialog(new ExceptionAlert(t), getDialogWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
+						"open.netpro.err.dialog.header.io", ArrayUtils.EMPTY_OBJECT_ARRAY, null)::show);
 			}
 			finally
 			{

@@ -38,11 +38,6 @@ import javafx.scene.web.WebView;
  */
 public class PacketInterpViewController implements Initializable
 {
-	/** Indicates that the interpretation of the packet body should be updated. */
-	public static final int FLAG_CONTENT = 1 << 0;
-	/** Indicates that the raw packet body display should be updated. */
-	public static final int FLAG_BODY = 1 << 1;
-	
 	private static final String EVENT_CLICK = "click";
 	private static final String CONTENT_STYLE, RAW_STYLE;
 	
@@ -59,7 +54,7 @@ public class PacketInterpViewController implements Initializable
 		{
 			if (newState != Worker.State.SUCCEEDED)
 				return;
-				
+			
 			final Document doc = _interpretedContentView.getEngine().getDocument();
 			final NodeList nodes = doc.getElementsByTagName("a");
 			for (int i = 0; i < nodes.getLength(); i++)
@@ -72,14 +67,11 @@ public class PacketInterpViewController implements Initializable
 	 * 
 	 * @param content interpretation or {@code null}
 	 * @param body raw body or {@code null}
-	 * @param flags components to update
 	 */
-	public void setContent(final String content, final String body, final int flags)
+	public void setContent(final String content, final String body)
 	{
-		if ((flags & FLAG_CONTENT) == FLAG_CONTENT)
-			_interpretedContentView.getEngine().loadContent(content != null ? CONTENT_STYLE + content : null);
-		if ((flags & FLAG_BODY) == FLAG_BODY)
-			_hexOctetView.getEngine().loadContent(body != null ? RAW_STYLE + body : null);
+		_interpretedContentView.getEngine().loadContent(content != null ? CONTENT_STYLE + content : null);
+		_hexOctetView.getEngine().loadContent(body != null ? RAW_STYLE + body : null);
 	}
 	
 	static

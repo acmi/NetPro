@@ -32,11 +32,11 @@ public class PledgeCrest extends ScriptedFieldValueInterpreter implements Intege
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
 		final PledgeCrestInfo pci = PledgeCrestInfoCache.getInstance().getOrAdd((int)value, entityCacheContext);
-		if (pci.getCrest() == null)
+		if (pci.getCrestImgSrc() == null)
 			return value;
 		
 		final StringBuilder sb = new StringBuilder();
-		sb.append("<img src=\"").append(pci.getCrest()).append("\" border=\"0\" />");
+		sb.append("<img src=\"").append(pci.getCrestImgSrc()).append("\" border=\"0\" />");
 		return sb.toString();
 	}
 }

@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.web.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.web.WebView?>
 
-<SplitPane id="packetInterpView" dividerPositions="0.75" orientation="VERTICAL" prefHeight="464.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketInterpViewController">
+<SplitPane id="packetInterpView" dividerPositions="0.75" orientation="VERTICAL" prefHeight="464.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketInterpViewController">
    <items>
-      <ScrollPane id="_interpretedContentView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
-         <content>
-            <WebView fx:id="_interpretedContentView" prefHeight="-1.0" prefWidth="-1.0" />
-         </content>
-      </ScrollPane>
-      <ScrollPane id="_hexOctetView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
-         <content>
-            <WebView fx:id="_hexOctetView" prefHeight="-1.0" prefWidth="-1.0" />
-         </content>
-      </ScrollPane>
+      <WebView fx:id="_interpretedContentView" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" />
+      <WebView fx:id="_hexOctetView" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" />
    </items>
 </SplitPane>

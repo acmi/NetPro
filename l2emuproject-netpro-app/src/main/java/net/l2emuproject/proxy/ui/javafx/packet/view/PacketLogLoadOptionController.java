@@ -15,10 +15,11 @@
  */
 package net.l2emuproject.proxy.ui.javafx.packet.view;
 
-import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.initNonModalUtilityDialog;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.makeNonModalUtilityAlert;
+import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.wrapException;
 
 import java.io.IOException;
+import java.nio.channels.ClosedByInterruptException;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
@@ -26,8 +27,6 @@ import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import org.apache.commons.lang3.ArrayUtils;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.io.LogFileHeader;
@@ -40,7 +39,6 @@ import net.l2emuproject.proxy.io.exception.LogFileIterationIOException;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
-import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
 import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
@@ -165,10 +163,8 @@ public final class PacketLogLoadOptionController
 		}
 		catch (IOException e)
 		{
-			final ExceptionAlert alert = initNonModalUtilityDialog(new ExceptionAlert(StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName())), getDialogWindow(),
-					"ui.fxml.err.dialog.missing.title", "ui.fxml.err.dialog.missing.header", null);
-			alert.initModality(Modality.WINDOW_MODAL);
-			alert.show();
+			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
+			wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, getDialogWindow(), Modality.WINDOW_MODAL).show();
 			return;
 		}
 		
@@ -248,15 +244,21 @@ public final class PacketLogLoadOptionController
 			}
 			catch (IOException e) // trying to open
 			{
-				final Throwable t = StackTraceUtil.stripRunnable(e);
-				Platform.runLater(initNonModalUtilityDialog(new ExceptionAlert(t), getDialogWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
-						"open.netpro.err.dialog.header.io", ArrayUtils.EMPTY_OBJECT_ARRAY, null)::show);
+				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
+				Platform.runLater(
+						() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+				{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
 			}
-			catch (LogFileIterationIOException e) // during read
+			catch (LogFileIterationIOException ew) // during read
 			{
-				final Throwable t = StackTraceUtil.stripRunnable(e.getCause());
-				Platform.runLater(initNonModalUtilityDialog(new ExceptionAlert(t), getDialogWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
-						"open.netpro.err.dialog.header.io", ArrayUtils.EMPTY_OBJECT_ARRAY, null)::show);
+				final Throwable e = ew.getCause();
+				if (e instanceof ClosedByInterruptException) // user cancelled operation
+					return;
+				
+				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
+				Platform.runLater(
+						() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+				{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
 			}
 			finally
 			{

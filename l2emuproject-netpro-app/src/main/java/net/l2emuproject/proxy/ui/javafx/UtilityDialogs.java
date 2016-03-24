@@ -76,4 +76,11 @@ public final class UtilityDialogs
 		WindowTracker.getInstance().add(dialog);
 		return dialog;
 	}
+	
+	public static final ExceptionAlert wrapException(Throwable t, String title, Object[] titleTokens, String header, Object[] headerTokens, Window owner, Modality modality)
+	{
+		final ExceptionAlert alert = new ExceptionAlert(t, owner, UIStrings.get(title, titleTokens), UIStrings.get(header, headerTokens));
+		alert.initModality(modality);
+		return alert;
+	}
 }

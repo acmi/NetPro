@@ -21,6 +21,7 @@ import static javafx.scene.control.Alert.AlertType.WARNING;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.initNonModalUtilityDialog;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.makeNonModalUtilityAlert;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.showChoiceDialog;
+import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.wrapException;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,6 +29,7 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -40,8 +42,6 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.concurrent.Future;
 import java.util.function.Consumer;
-
-import org.apache.commons.lang3.ArrayUtils;
 
 import eu.revengineer.simplejse.exception.DependencyResolutionException;
 import eu.revengineer.simplejse.exception.MutableOperationInProgressException;
@@ -108,6 +108,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -292,6 +294,21 @@ public class MainWindowController implements Initializable, IOConstants
 		tlHeapUsage.play();
 		_labJvmType.setText(UIStrings.get("main.javaenv", NetProScriptCache.getInstance().isCompilerUnavailable() ? "JRE" : "JDK"));
 		
+		_tpConnections.addEventHandler(KeyEvent.KEY_PRESSED, e ->
+		{
+			if (e.getCode() != KeyCode.F3 || e.isAltDown())
+				return;
+			
+			e.consume(); // always consume it here while tabpane/any child is focused
+			
+			final Tab currentTab = _tpConnections.getSelectionModel().getSelectedItem();
+			if (currentTab != null && currentTab.isClosable())
+			{
+				_tpConnections.getTabs().remove(currentTab);
+				currentTab.getOnClosed().handle(null);
+			}
+		});
+		
 		_taConsole.wrapTextProperty().bind(_tbConsoleWrap.selectedProperty());
 		_taConsole.styleProperty().bind(Bindings.concat("-fx-font-size:", _sConsoleFontSize.valueProperty(), "; -fx-font-family: Consolas, monospace"));
 		clearConsole(null);
@@ -387,9 +404,10 @@ public class MainWindowController implements Initializable, IOConstants
 				}
 				catch (FilesizeMeasureException | IOException e)
 				{
-					final Throwable t = StackTraceUtil.stripRunnable(e);
-					Platform.runLater(() -> initNonModalUtilityDialog(new ExceptionAlert(t), getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
-							"open.netpro.err.dialog.header.io", ArrayUtils.EMPTY_OBJECT_ARRAY, null).show());
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					Platform.runLater(
+							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+					{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
 				}
 				catch (InsufficientlyLargeLogFileException e)
 				{
@@ -427,9 +445,10 @@ public class MainWindowController implements Initializable, IOConstants
 				}
 				catch (RuntimeException e)
 				{
-					final Throwable t = StackTraceUtil.stripRunnable(e);
-					Platform.runLater(() -> initNonModalUtilityDialog(new ExceptionAlert(t), getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
-							"open.netpro.err.dialog.header.runtime", null, null).show());
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					Platform.runLater(
+							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+					{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
 				}
 			}
 			
@@ -480,8 +499,8 @@ public class MainWindowController implements Initializable, IOConstants
 				}
 				catch (IOException e)
 				{
-					initNonModalUtilityDialog(new ExceptionAlert(StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName())), getMainWindow(),
-							"ui.fxml.err.dialog.missing.title", "ui.fxml.err.dialog.missing.header", null).show();
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, getMainWindow(), Modality.NONE).show();
 					return;
 				}
 				
@@ -708,7 +727,7 @@ public class MainWindowController implements Initializable, IOConstants
 			}
 			catch (IOException ex)
 			{
-				initNonModalUtilityDialog(new ExceptionAlert(ex), getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.runtime", null).show();
+				wrapException(ex, "scripts.load.err.dialog.title", null, "scripts.load.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show();
 			}
 		});
 		waitDialogController.setCancelAction(() -> task.cancel(true));
@@ -816,7 +835,7 @@ public class MainWindowController implements Initializable, IOConstants
 		{
 			final Class<?> scriptClass = e.getKey();
 			final TextArea taStackTrace = new TextArea(StackTraceUtil.traceToString(StackTraceUtil.stripUntilFirstMethodCall(e.getValue(), true, scriptClass.getClassLoader(), UnloadableScript.class,
-					"onFirstLoad", "onReload", "onLoad", "onStateSave", "onUnload")));
+					Collections.emptySet(), "onFirstLoad", "onReload", "onLoad", "onStateSave", "onUnload")));
 			taStackTrace.setMaxHeight(Double.MAX_VALUE);
 			taStackTrace.setMaxWidth(Double.MAX_VALUE);
 			

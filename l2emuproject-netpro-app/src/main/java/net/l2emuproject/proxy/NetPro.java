@@ -115,6 +115,11 @@ public class NetPro extends Application
 			SPLASH_STAGE = new Stage(StageStyle.TRANSPARENT);
 			SPLASH_STAGE.setScene(scene);
 			SPLASH_STAGE.getIcons().addAll(FXUtils.getIconListFX());
+			SPLASH_STAGE.setOnHidden(e ->
+			{
+				Platform.exit();
+				System.exit(0);
+			});
 			windowTracker.add(SPLASH_STAGE);
 			SPLASH_STAGE.show();
 			
@@ -310,8 +315,7 @@ public class NetPro extends Application
 			}
 			Platform.runLater(() ->
 			{
-				final Alert dlgFail = new ExceptionAlert(t);
-				dlgFail.initOwner(SPLASH_STAGE);
+				final Alert dlgFail = new ExceptionAlert(t, SPLASH_STAGE);
 				WindowTracker.getInstance().add(dlgFail);
 				dlgFail.showAndWait();
 				ShutdownManager.exit(TerminationStatus.RUNTIME_UNCAUGHT_ERROR);
@@ -340,7 +344,7 @@ public class NetPro extends Application
 				PRIMARY_STAGE.setScene(scene);
 				PRIMARY_STAGE.setTitle("NetPro" + (NetProInfo.isUnreleased() ? "" : " " + (NetProInfo.isSnapshot() ? "r" + NetProInfo.getRevisionNumber() : NetProInfo.getVersion())));
 				PRIMARY_STAGE.getIcons().addAll(FXUtils.getIconListFX());
-				WindowTracker.getInstance().add(PRIMARY_STAGE);
+				WindowTracker.getInstance().add(PRIMARY_STAGE, false);
 				PRIMARY_STAGE.show();
 			}
 			catch (IOException e)
@@ -351,6 +355,7 @@ public class NetPro extends Application
 			{
 				if (SPLASH_STAGE != null)
 				{
+					SPLASH_STAGE.setOnHidden(null);
 					SPLASH_STAGE.hide();
 					SPLASH_STAGE = null;
 				}

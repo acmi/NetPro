@@ -23,7 +23,10 @@ import java.util.Set;
 import net.l2emuproject.lang.management.ShutdownManager;
 
 import javafx.application.Platform;
+import javafx.scene.Scene;
 import javafx.scene.control.Dialog;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Window;
 
 /**
@@ -57,7 +60,20 @@ public class WindowTracker
 	 */
 	public void add(Window window)
 	{
+		add(window, true);
+	}
+	
+	/**
+	 * Adds a window to be closed during shutdown. Must be called on the FX application thread.
+	 * 
+	 * @param window a window
+	 * @param shortcuts whether to install keyboard shortcuts
+	 */
+	public void add(Window window, boolean shortcuts)
+	{
 		_windows.add(new WeakReference<>(window));
+		if (shortcuts)
+			addShorcuts(window.getScene());
 	}
 	
 	/**
@@ -68,6 +84,7 @@ public class WindowTracker
 	public void add(Dialog<?> dialog)
 	{
 		_dialogs.add(new WeakReference<>(dialog));
+		addShorcuts(dialog.getDialogPane().getScene());
 	}
 	
 	/** Removes expired references. Must be called on the FX application thread. */
@@ -79,6 +96,18 @@ public class WindowTracker
 		for (final Iterator<WeakReference<Window>> it = _windows.iterator(); it.hasNext();)
 			if (it.next().get() == null)
 				it.remove();
+	}
+	
+	private void addShorcuts(Scene scene)
+	{
+		scene.addEventHandler(KeyEvent.KEY_PRESSED, e ->
+		{
+			if (e.getCode() != KeyCode.F3 || e.isAltDown())
+				return;
+			
+			e.consume();
+			scene.getWindow().hide();
+		});
 	}
 	
 	void onShutdown()

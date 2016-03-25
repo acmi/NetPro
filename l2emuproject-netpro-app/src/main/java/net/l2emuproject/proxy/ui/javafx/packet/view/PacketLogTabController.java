@@ -26,6 +26,7 @@ import org.google.jhsheets.filtered.tablecolumn.ColumnFilterEvent;
 import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
@@ -36,7 +37,9 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.SortedList;
@@ -89,6 +92,7 @@ public class PacketLogTabController implements Initializable
 	
 	private final ObservableList<PacketLogEntry> _memoryPackets, _tablePackets;
 	
+	private final ObjectProperty<IProtocolVersion> _protocolProperty;
 	private ICacheServerID _entityCacheContext;
 	
 	private BooleanProperty _scrollLockProperty;
@@ -100,6 +104,16 @@ public class PacketLogTabController implements Initializable
 		_memoryPackets = FXCollections.observableArrayList();
 		_tablePackets = FXCollections.observableArrayList();
 		
+		_protocolProperty = new SimpleObjectProperty<>(ProtocolVersionManager.getInstance().getFallbackProtocolGame());
+		_protocolProperty.addListener((obs, old, neu) ->
+		{
+			if (neu == null)
+				return;
+			
+			for (final PacketLogEntry e : _memoryPackets)
+				e.updateView(neu);
+			_tvPackets.refresh();
+		});
 		_scrollLockProperty = new SimpleBooleanProperty(false);
 	}
 	
@@ -123,7 +137,7 @@ public class PacketLogTabController implements Initializable
 				return;
 			
 			//ServerListTypePublisher.LIST_TYPE.set(_owner.getServerListType());
-			final Pair<String, String> html = Packet2Html.getHTML(neu.getPacket(), neu.getProtocol(), _entityCacheContext);
+			final Pair<String, String> html = Packet2Html.getHTML(neu.getPacket(), _protocolProperty.get(), _entityCacheContext);
 			_packetDisplayController.setContent(html.getLeft(), html.getRight());
 		});
 		
@@ -223,16 +237,13 @@ public class PacketLogTabController implements Initializable
 	}
 	
 	/**
-	 * Allows the automatic scrolldown behavior to be controlled for the packet table.
+	 * Returns the associated network protocol property.
 	 * 
-	 * @param scrollLockProperty scroll lock
+	 * @return protocol property
 	 */
-	public void installScrollLock(BooleanProperty scrollLockProperty)
+	public ObjectProperty<IProtocolVersion> protocolProperty()
 	{
-		if (scrollLockProperty == null)
-			scrollLockProperty = new SimpleBooleanProperty(false);
-		
-		_scrollLockProperty = scrollLockProperty;
+		return _protocolProperty;
 	}
 	
 	/**
@@ -250,6 +261,19 @@ public class PacketLogTabController implements Initializable
 	}
 	
 	/**
+	 * Allows the automatic scrolldown behavior to be controlled for the packet table.
+	 * 
+	 * @param scrollLockProperty scroll lock
+	 */
+	public void installScrollLock(BooleanProperty scrollLockProperty)
+	{
+		if (scrollLockProperty == null)
+			scrollLockProperty = new SimpleBooleanProperty(false);
+		
+		_scrollLockProperty = scrollLockProperty;
+	}
+	
+	/**
 	 * Adds a new packet to the underlying table view.
 	 * 
 	 * @param packet a packet
@@ -263,17 +287,5 @@ public class PacketLogTabController implements Initializable
 		
 		_tablePackets.add(packet);
 		_autoScrollPending = !_scrollLockProperty.get();
-	}
-	
-	/**
-	 * Refreshes packet rows based on packet definitions associated with {@code protocol}.
-	 * 
-	 * @param protocol a network protocol version
-	 */
-	public void updateView(IProtocolVersion protocol)
-	{
-		for (final PacketLogEntry e : _memoryPackets)
-			e.updateView(protocol);
-		_tvPackets.refresh();
 	}
 }

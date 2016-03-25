@@ -70,6 +70,7 @@ import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
 import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogLoadOptionController;
+import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
@@ -294,6 +295,22 @@ public class MainWindowController implements Initializable, IOConstants
 		tlHeapUsage.play();
 		_labJvmType.setText(UIStrings.get("main.javaenv", NetProScriptCache.getInstance().isCompilerUnavailable() ? "JRE" : "JDK"));
 		
+		_tpConnections.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) ->
+		{
+			final Object ctrl = neu != null ? neu.getUserData() : null;
+			if (ctrl == null || !(ctrl instanceof PacketLogTabController))
+			{
+				_cbCaptureSession.setVisible(false);
+				_labProtocol.setVisible(false);
+				_labPacketDisplayConfig.setVisible(false);
+				return;
+			}
+			
+			_labProtocol.setVisible(true);
+			
+			final PacketLogTabController controller = (PacketLogTabController)ctrl;
+			_labProtocol.textProperty().bind(Bindings.convert(controller.protocolProperty()));
+		});
 		_tpConnections.addEventHandler(KeyEvent.KEY_PRESSED, e ->
 		{
 			if (e.getCode() != KeyCode.F3 || e.isAltDown())

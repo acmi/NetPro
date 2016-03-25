@@ -35,8 +35,6 @@ import javafx.beans.property.StringProperty;
 public final class PacketLogEntry
 {
 	private final ReceivedPacket _packet;
-	
-	private IProtocolVersion _protocol;
 	// precomputed values to avoid constant polling/generation
 	private final StringProperty _opcode, _name;
 	
@@ -61,16 +59,6 @@ public final class PacketLogEntry
 	public ReceivedPacket getPacket()
 	{
 		return _packet;
-	}
-	
-	/**
-	 * Returns the network protocol version assigned to this packet.
-	 * 
-	 * @return protocol version
-	 */
-	public IProtocolVersion getProtocol()
-	{
-		return _protocol;
 	}
 	
 	/**
@@ -110,7 +98,7 @@ public final class PacketLogEntry
 	 */
 	public void updateView(IProtocolVersion version)
 	{
-		final IPacketTemplate packetTemplate = VersionnedPacketTable.getInstance().getTemplate(_protocol = version, _packet.getEndpoint(), _packet.getBody());
+		final IPacketTemplate packetTemplate = VersionnedPacketTable.getInstance().getTemplate(version, _packet.getEndpoint(), _packet.getBody());
 		
 		final byte[] prefix = packetTemplate.getPrefix();
 		final L2TextBuilder sb = HexUtil.fillHex(new L2TextBuilder(2 + 3 * (prefix.length - 1)), prefix[0] & 0xFF, 2, null);

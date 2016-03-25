@@ -179,7 +179,7 @@
 		<packet opcodePrefix="D0 CA 00" id="406" />
 		<packet opcodePrefix="D0 CB 00" id="407" />
 		<packet opcodePrefix="D0 CC 00" id="408" />
-		<packet opcodePrefix="D0 CD 00" id="350" />
+		<packet opcodePrefix="D0 CD 00" id="CM_NC_GUARD_SEND_DATA_TO_SERVER" />
 		<packet opcodePrefix="D0 CE 00" id="467" />
 		<packet opcodePrefix="D0 CF 00" id="468" />
 		<packet opcodePrefix="D0 D0 00" id="469" />

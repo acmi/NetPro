@@ -212,7 +212,6 @@
 		<packet id="347" name="RequestUseGoodsInventoryItem" />
 		<packet id="348" name="RequestWebSessionID" />
 		<packet id="349" name="RequestCharacterNameCreatable" />
-		<packet id="350" name="NCGuardSendDataToServer" />
 		<packet id="351" name="RequestBR_NewIConCashBtnWnd" />
 		<packet id="353" name="RequestGetOnShuttle" />
 		<packet id="354" name="RequestGetOffShuttle" />
@@ -1543,6 +1542,16 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" name="RequestExitPartyMatchingWaitingRoom" />
+		
+		<!--
+		ASCII "chdb"
+		UNICODE "CGSendDataToServer"
+		
+		ASCII "chdb"
+		UNICODE "NCGuardSendDataToServer"
+		UNICODE "(Send)%s DataSize:%d"
+		-->
+		<packet id="CM_NC_GUARD_SEND_DATA_TO_SERVER" name="NCGuardSendDataToServer" />
 
 		<!--
 		ASCII "chcdd"
@@ -2157,7 +2166,6 @@
 		<packet id="603" name="ExPut_Shape_Shifting_Extraction_Item_Result" />
 		<packet id="604" name="ExShape_Shifting_Result" />
 		<packet id="605" name="ExCastleState" />
-		<packet id="606" name="ExNCGuardReceiveDataFromServer" />
 		<packet id="607" name="ExKalieEvent" />
 		<packet id="608" name="ExKalieEventJackpotUser" />
 		<packet id="609" name="ExAbnormalVisualEffectInfo" />
@@ -3956,6 +3964,12 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_SHOW_SEED_MAP_INFO" name="ExShowSeedMapInfo" />
+
+		<!--
+		UNICODE "ExNCGuardReceiveDataFromServer"
+		UNICODE "(Receive)%s DataSize:%d"
+		-->
+		<packet id="SM_EX_NC_GUARD_RECEIVE_DATA_FROM_SERVER" name="ExNCGuardReceiveDataFromServer" />
 
 		<!--
 		ASCII "dQQdddd"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
-		<packet opcodePrefix="D0 D0 00" id="350" />
+		<packet opcodePrefix="D0 D0 00" id="CM_NC_GUARD_SEND_DATA_TO_SERVER" />
 	</client>
 	<server>
 		<packet opcodePrefix="FE 23 01" id="590" />
@@ -19,7 +19,7 @@
 		<packet opcodePrefix="FE 30 01" id="603" />
 		<packet opcodePrefix="FE 31 01" id="604" />
 		<packet opcodePrefix="FE 32 01" id="605" />
-		<packet opcodePrefix="FE 33 01" id="606" />
+		<packet opcodePrefix="FE 33 01" id="SM_EX_NC_GUARD_RECEIVE_DATA_FROM_SERVER" />
 		<packet opcodePrefix="FE 34 01" id="617" />
 	</server>
 </mapping>

@@ -250,7 +250,7 @@
 		<packet opcodePrefix="FE 31 01" id="603" />
 		<packet opcodePrefix="FE 32 01" id="604" />
 		<packet opcodePrefix="FE 33 01" id="605" />
-		<packet opcodePrefix="FE 34 01" id="606" />
+		<packet opcodePrefix="FE 34 01" id="SM_EX_NC_GUARD_RECEIVE_DATA_FROM_SERVER" />
 		<packet opcodePrefix="FE 35 01" id="617" />
 	</server>
 </mapping>

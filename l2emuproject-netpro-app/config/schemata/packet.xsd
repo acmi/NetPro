@@ -410,6 +410,8 @@
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="BlockUnblockPlayer" />
 			<xs:enumeration value="DefaultChat" />
+			<xs:enumeration value="EngineObjectAdd" />
+			<xs:enumeration value="EngineObjectUpdate" />
 			<xs:enumeration value="FerryShout" />
 			<xs:enumeration value="GenericItem" />
 			<xs:enumeration value="LongEffect" />

@@ -27,6 +27,6 @@ public class ExNpcInfoFieldMask4 extends ScriptedBitmaskInterpreter
 	/** Constructs this interpreter. */
 	public ExNpcInfoFieldMask4()
 	{
-		super("Name (fstring)", (Object)null, null, null, "Max MP", "Max HP", "Cur MP", "Cur HP");
+		super("Name (fstring)", "F4 B1", "Following", "F4 B3", "Max MP", "Max HP", "Cur MP", "Cur HP");
 	}
 }

@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter.structure;
+package condition;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
+import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
 
 /**
- * Interprets the fifth field mask byte of the ExNpcInfo/ExPetInfo/ExSummonInfo packet.
+ * Tests that the given integer is equal to 1.
  * 
  * @author _dev_
  */
-public class ExNpcInfoFieldMask5 extends ScriptedBitmaskInterpreter
+public class EngineObjectUpdate extends ScriptedIntegerEqualityCondition
 {
-	/** Constructs this interpreter. */
-	public ExNpcInfoFieldMask5()
+	/** Constructs this condition. */
+	public EngineObjectUpdate()
 	{
-		super("F5 B0", "F5 B1", "F5 B2", "State flags", "Pledge/alliance", "Reputation", "PvP", "Title (fstring)");
+		super(1);
 	}
 }

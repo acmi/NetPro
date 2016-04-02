@@ -85,13 +85,10 @@
 			<!-- content unknown -->
 		</branch>
 		<branch id="exNI_2" condition="bitmask.Bit1" description="Environment">
-			<!-- content unknown -->
 			<byte alias="Environment" type="Environment" />
 		</branch>
-		<branch id="exNI_2" condition="bitmask.Bit0">
-			<!-- content unknown -->
-			<!-- either 4 bytes or 1 byte -->
-			<byte alias="F2 B0" />
+		<branch id="exNI_2" condition="bitmask.Bit0" description="Duel">
+			<byte alias="Duel team" type="DuelTeam" />
 		</branch>
 
 		<!-- Fields #3 -->
@@ -107,7 +104,10 @@
 			<dword alias="Owner OID" type="ObjectID" />
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit4">
-			<dword alias="F3 B4" />
+			<byte alias="F3 B4 #1" />
+			<byte alias="Ability level" />
+			<byte alias="F3 B4 #3" />
+			<byte alias="F3 B4 #4" />
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit3">
 			<byte alias="F3 B3" />
@@ -119,8 +119,6 @@
 			</bytes>
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit0">
-			<!-- content unknown -->
-			<!-- either 4 bytes or 1 byte -->
 			<dword alias="F3 B0" />
 		</branch>
 		

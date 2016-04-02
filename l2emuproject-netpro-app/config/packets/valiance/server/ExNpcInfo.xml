@@ -27,8 +27,8 @@
 	F1 B6: [always on]
 	F1 B7: (above all others) 4 bytes [npc template]
 	
-	F2 B0 + F3 B0: 5 bytes
-	F2 B1:
+	F2 B0: 1 byte [duel team]
+	F2 B1: 1 byte [environment]
 	F2 B2:
 	F2 B3: 1 byte [movement mode]
 	F2 B4: 1 byte [show title]
@@ -36,10 +36,11 @@
 	F2 B6: 12 bytes [weapon, chest, shield]
 	F2 B7: 8 bytes (below F1 B2 + F1 B3) [move multi, attack multi]
 	
+	F3 B0: 4 bytes
 	F3 B1: 4 bytes (below F2 B6)
 	F3 B2: 0 bytes [no effect on either block]
 	F3 B3: 1 byte (below F3 B1)
-	F3 B4: 4 bytes
+	F3 B4: 4 bytes [ability level…]
 	F3 B5: 4 bytes [owner]
 	F3 B6: [flying…]
 	F3 B7: [unused]
@@ -143,13 +144,10 @@
 			<!-- content unknown -->
 		</branch>
 		<branch id="exNI_2" condition="bitmask.Bit1" description="Environment">
-			<!-- content unknown -->
 			<byte alias="Environment" type="Environment" />
 		</branch>
-		<branch id="exNI_2" condition="bitmask.Bit0">
-			<!-- content unknown -->
-			<!-- either 4 bytes or 1 byte -->
-			<byte alias="F2 B0" />
+		<branch id="exNI_2" condition="bitmask.Bit0" description="Duel">
+			<byte alias="Duel team" type="DuelTeam" />
 		</branch>
 
 		<!-- Fields #3 -->
@@ -165,7 +163,10 @@
 			<dword alias="Owner OID" type="ObjectID" />
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit4">
-			<dword alias="F3 B4" />
+			<byte alias="F3 B4 #1" />
+			<byte alias="Ability level" />
+			<byte alias="F3 B4 #3" />
+			<byte alias="F3 B4 #4" />
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit3">
 			<byte alias="F3 B3" />
@@ -177,8 +178,6 @@
 			</bytes>
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit0">
-			<!-- content unknown -->
-			<!-- either 4 bytes or 1 byte -->
 			<dword alias="F3 B0" />
 		</branch>
 		

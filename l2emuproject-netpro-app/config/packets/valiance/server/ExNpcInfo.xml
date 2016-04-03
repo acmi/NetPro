@@ -47,7 +47,7 @@
 	
 	F4 B0: 4 bytes [name as npcstring]
 	F4 B1: [always on]
-	F4 B2: 8 bytes (below F3 B1)
+	F4 B2: 8 bytes (below F3 B1) [actor to follow, distance]
 	F4 B3: 1 byte
 	F4 B4: 4 bytes (below F4 B5) [max MP]
 	F4 B5: 4 bytes (below F4 B6) [max HP]

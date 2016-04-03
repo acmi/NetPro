@@ -17,33 +17,64 @@
 	</dword>
 	<string alias="Name">
 		<scriptAlias id="OIC_PLAYER_NAME" />
+		<scriptAlias id="ci_player_name"/>
 	</string>
-	<word alias="Race" type="Race" />
-	<byte alias="Sex" type="Sex" />
+	<word alias="Race" type="Race">
+		<scriptAlias id="ci_player_race"/>
+	</word>
+	<byte alias="Sex" type="Sex">
+		<scriptAlias id="ci_player_sex"/>
+	</byte>
 	<dword alias="Visible class" type="CharacterClass" />
 
-	<dword alias="Underwear" type="Item" />
-	<dword alias="Headgear" type="Item" />
-	<dword alias="Weapon" type="Item" />
-	<dword alias="Shield [Sigil]" type="Item" />
-	<dword alias="Gloves" type="Item" />
-	<dword alias="Upper Body" type="Item" />
-	<dword alias="Lower Body" type="Item" />
-	<dword alias="Boots" type="Item" />
-	<dword alias="Cloak" type="Item" />
+	<dword alias="Underwear" type="Item">
+		<scriptAlias id="ci_player_armor_under"/>
+	</dword>
+	<dword alias="Headgear" type="Item">
+		<scriptAlias id="ci_player_armor_head"/>
+	</dword>
+	<dword alias="Weapon" type="Item">
+		<scriptAlias id="ci_player_weapon"/>
+	</dword>
+	<dword alias="Shield [Sigil]" type="Item">
+		<scriptAlias id="ci_player_shield"/>
+	</dword>
+	<dword alias="Gloves" type="Item">
+		<scriptAlias id="ci_player_armor_gloves"/>
+	</dword>
+	<dword alias="Upper Body" type="Item">
+		<scriptAlias id="ci_player_armor_chest"/>
+	</dword>
+	<dword alias="Lower Body" type="Item">
+		<scriptAlias id="ci_player_armor_pants"/>
+	</dword>
+	<dword alias="Boots" type="Item">
+		<scriptAlias id="ci_player_armor_boots"/>
+	</dword>
+	<dword alias="Cloak" type="Item">
+		<scriptAlias id="ci_player_armor_cloak"/>
+	</dword>
 	<dword alias="Weapon / Two Handed" type="Item" />
-	<dword alias="Hair Accessory (top)" type="Item" />
-	<dword alias="Hair Accessory (bottom)" type="Item" />
+	<dword alias="Hair Accessory (top)" type="Item">
+		<scriptAlias id="ci_player_hair1"/>
+	</dword>
+	<dword alias="Hair Accessory (bottom)" type="Item">
+		<scriptAlias id="ci_player_hair2"/>
+	</dword>
 
 	<!-- NEW -->
-	<dword alias="Weapon augmentation effect (1)" type="Augmentation" />
-	<dword alias="Weapon augmentation effect (2)" type="Augmentation" />
+	<dword alias="Weapon augmentation effect (1)" type="Augmentation">
+		<scriptAlias id="ci_player_weapon_op1"/>
+	</dword>
+	<dword alias="Weapon augmentation effect (2)" type="Augmentation">
+		<scriptAlias id="ci_player_weapon_op2"/>
+	</dword>
 	<dword alias="Shield [Sigil] augmentation effect (1)" type="Augmentation" />
 	<dword alias="Shield [Sigil] augmentation effect (2)" type="Augmentation" />
 	<dword alias="Weapon / Two Handed augmentation effect (1)" type="Augmentation" />
 	<dword alias="Weapon / Two Handed augmentation effect (2)" type="Augmentation" />
 
-	<byte alias="Talisman slots" />
+	<byte alias="Armor enchant glow" />
 
 	<dword alias="Visible Weapon" type="Item" />
 	<dword alias="Visible Shield [Sigil]" type="Item" />
@@ -85,10 +116,12 @@
 	<dword alias="Face" type="Alphabet" />
 	<string alias="Title">
 		<scriptAlias id="OIC_PLAYER_TITLE" />
+		<scriptAlias id="ci_player_title"/>
 	</string>
 
 	<dword alias="Pledge ID" type="Pledge">
 		<scriptAlias id="PIC_PLEDGE_ID" />
+		<scriptAlias id="ci_player_pledge"/>
 	</dword>
 	<dword alias="Pledge crest ID" type="PledgeCrest">
 		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
@@ -104,7 +137,7 @@
 	<byte alias="Movement mode" type="MoveType" />
 	<byte alias="In combat" type="YesOrNo" />
 	<byte alias="Lying dead" type="YesOrNo" />
-	<byte alias="Builder" type="YesOrNo" />
+	<byte alias="Knownlist state" type="KnownlistState" />
 	<byte alias="Mount type" type="MountType" />
 	<byte alias="Private store" type="PersonalStoreType" />
 	<word alias="Cubic count" id="index_0" />
@@ -115,12 +148,18 @@
 	<byte alias="Environment" type="Environment" />
 	<word alias="Evaluation score" />
 	<dword alias="Mount" type="Npc" />
-	<dword alias="Class" type="CharacterClass" />
+	<dword alias="Class" type="CharacterClass">
+		<scriptAlias id="ci_player_subjob"/>
+	</dword>
 	<dword alias="0" />
-	<byte alias="Weapon enchant glow" type="EnchantEffect" />
+	<byte alias="Weapon enchant glow" type="EnchantEffect">
+		<scriptAlias id="ci_player_weapon_enchant"/>
+	</byte>
 	<byte alias="Duel team" type="DuelTeam" />
 	<dword alias="Pledge insignia ID" />
-	<byte alias="Noble" type="YesOrNo" />
+	<byte alias="Noble" type="YesOrNo">
+		<scriptAlias id="ci_player_noble"/>
+	</byte>
 	<byte alias="Hero" type="YesOrNo" />
 
 	<byte alias="Fishing" type="YesOrNo" />
@@ -154,5 +193,7 @@
 	</loop>
 	<byte alias="0" />
 	<byte alias="Show Hair Accessory" type="YesOrNo" />
-	<byte alias="Ability points" type="AbilityWingIcon" optional="true" />
+	<byte alias="Ability points" type="AbilityWingIcon" optional="true">
+		<scriptAlias id="ci_player_ap"/>
+	</byte>
 </packet>

@@ -24,8 +24,8 @@ import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.util.HexUtil;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.ReadOnlyStringProperty;
+import javafx.beans.property.ReadOnlyStringWrapper;
 
 /**
  * A packet wrapper for the packet table view.
@@ -34,9 +34,12 @@ import javafx.beans.property.StringProperty;
  */
 public final class PacketLogEntry
 {
+	private static final ReadOnlyStringProperty SENDER_CLIENT = new ReadOnlyStringWrapper("C").getReadOnlyProperty();
+	private static final ReadOnlyStringProperty SENDER_SERVER = new ReadOnlyStringWrapper("S").getReadOnlyProperty();
+	
 	private final ReceivedPacket _packet;
 	// precomputed values to avoid constant polling/generation
-	private final StringProperty _opcode, _name;
+	private final ReadOnlyStringWrapper _opcode, _name;
 	
 	/**
 	 * Creates a packet wrapper.
@@ -47,8 +50,8 @@ public final class PacketLogEntry
 	{
 		_packet = packet;
 		
-		_opcode = new SimpleStringProperty("XX");
-		_name = new SimpleStringProperty("PacketNameHere");
+		_opcode = new ReadOnlyStringWrapper("XX");
+		_name = new ReadOnlyStringWrapper("PacketNameHere");
 	}
 	
 	/**
@@ -68,7 +71,17 @@ public final class PacketLogEntry
 	 */
 	public String getSender()
 	{
-		return _packet.getEndpoint().isClient() ? "C" : "S";
+		return senderProperty().get();
+	}
+	
+	/**
+	 * Returns the property of the value to be displayed in the first column.
+	 * 
+	 * @return opcode(s)
+	 */
+	public ReadOnlyStringProperty senderProperty()
+	{
+		return _packet.getEndpoint().isClient() ? SENDER_CLIENT : SENDER_SERVER;
 	}
 	
 	/**
@@ -82,6 +95,16 @@ public final class PacketLogEntry
 	}
 	
 	/**
+	 * Returns the property of the value to be displayed in the second column.
+	 * 
+	 * @return opcode(s)
+	 */
+	public ReadOnlyStringProperty opcodeProperty()
+	{
+		return _opcode.getReadOnlyProperty();
+	}
+	
+	/**
 	 * Returns the value to be displayed in the third column.
 	 * 
 	 * @return name
@@ -89,6 +112,16 @@ public final class PacketLogEntry
 	public String getName()
 	{
 		return _name.get();
+	}
+	
+	/**
+	 * Returns the property of the value to be displayed in the third column.
+	 * 
+	 * @return name
+	 */
+	public ReadOnlyStringProperty nameProperty()
+	{
+		return _name.getReadOnlyProperty();
 	}
 	
 	/**

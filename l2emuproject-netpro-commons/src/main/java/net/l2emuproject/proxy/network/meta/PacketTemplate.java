@@ -26,6 +26,7 @@ import java.util.Map;
 import org.apache.commons.lang3.ArrayUtils;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.condition.ByteArrayCondition;
 import net.l2emuproject.proxy.network.meta.condition.DecimalCondition;
 import net.l2emuproject.proxy.network.meta.condition.IntegerCondition;
@@ -68,6 +69,7 @@ public final class PacketTemplate implements IPacketTemplate, Comparable<OpcodeO
 	private final String _name;
 	private final List<PacketStructureElement> _structure;
 	private final boolean _hasScriptAliases;
+	private final IProtocolVersion _definitionVersion;
 	
 	/**
 	 * Creates a packet template.
@@ -75,8 +77,9 @@ public final class PacketTemplate implements IPacketTemplate, Comparable<OpcodeO
 	 * @param prefix raw opcode array
 	 * @param name packet name
 	 * @param structure compact structure definition
+	 * @param definitionVersion protocol version in which this definition ({@code structure}) was originally declared
 	 */
-	public PacketTemplate(byte[] prefix, String name, List<PacketStructureElement> structure)
+	public PacketTemplate(byte[] prefix, String name, List<PacketStructureElement> structure, IProtocolVersion definitionVersion)
 	{
 		_prefix = prefix;
 		_name = name;
@@ -92,6 +95,8 @@ public final class PacketTemplate implements IPacketTemplate, Comparable<OpcodeO
 			}
 		}
 		_hasScriptAliases = hasScriptAliases;
+		
+		_definitionVersion = definitionVersion;
 	}
 	
 	/**
@@ -101,7 +106,7 @@ public final class PacketTemplate implements IPacketTemplate, Comparable<OpcodeO
 	 */
 	public PacketTemplate(byte[] prefix)
 	{
-		this(prefix, null, Collections.emptyList());
+		this(prefix, null, Collections.emptyList(), null);
 	}
 	
 	@Override
@@ -123,15 +128,15 @@ public final class PacketTemplate implements IPacketTemplate, Comparable<OpcodeO
 	}
 	
 	@Override
-	public boolean isDefined()
-	{
-		return _name != null;
-	}
-	
-	@Override
 	public boolean isWithScriptAliases()
 	{
 		return _hasScriptAliases;
+	}
+	
+	@Override
+	public IProtocolVersion getDefinitionVersion()
+	{
+		return _definitionVersion;
 	}
 	
 	@Override

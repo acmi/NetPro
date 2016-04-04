@@ -35,6 +35,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.FieldValueCondition;
 import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
 import net.l2emuproject.proxy.network.meta.FieldValueModifier;
@@ -71,6 +72,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 {
 	private static final L2Logger LOG = L2Logger.getLogger(EndpointPacketLoader.class);
 	
+	private final IProtocolVersion _protocolVersion;
 	private final Map<String, byte[]> _id2Prefix;
 	private final Map<String, String> _id2Name;
 	private final Map<String, IPacketTemplate> _packetsByID;
@@ -78,8 +80,9 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 	
 	private int _added, _updated;
 	
-	EndpointPacketLoader(Map<String, byte[]> id2Prefix, Map<String, String> id2Name, Map<String, IPacketTemplate> packetsByID, ByteBuffer structureBuffer)
+	EndpointPacketLoader(IProtocolVersion protocolVersion, Map<String, byte[]> id2Prefix, Map<String, String> id2Name, Map<String, IPacketTemplate> packetsByID, ByteBuffer structureBuffer)
 	{
+		_protocolVersion = protocolVersion;
 		_id2Prefix = id2Prefix;
 		_id2Name = id2Name;
 		{
@@ -92,14 +95,14 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 				final byte[] realPrefix = _id2Prefix.get(e.getKey());
 				if (realPrefix == null)
 					continue;
-					
+				
 				final IPacketTemplate template = e.getValue();
-				_packets.add(new PacketTemplate(realPrefix, template.getName(), template.getStructure()));
+				_packets.add(new PacketTemplate(realPrefix, template.getName(), template.getStructure(), template.getDefinitionVersion()));
 				
 				final String first = prefix2TemplateName.putIfAbsent(realPrefix, template.getName());
 				if (first == null)
 					continue;
-					
+				
 				LOG.warn(HexUtil.bytesToHexString(realPrefix, ":") + " " + first + " conflicts with " + template.getName());
 			}
 		}
@@ -138,7 +141,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 			return result;
 		}
 		
-		final IPacketTemplate template = new PacketTemplate(prefix, name, childrenOf(packet, name));
+		final IPacketTemplate template = new PacketTemplate(prefix, name, childrenOf(packet, name), _protocolVersion);
 		final IPacketTemplate previousDefinition = _packetsByID.remove(id);
 		if (previousDefinition != null)
 		{
@@ -158,7 +161,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 		}
 		else
 			++_added;
-			
+		
 		_packetsByID.put(id, template);
 		_packets.add(template);
 		
@@ -246,7 +249,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 		final Set<String> fieldAliases = new HashSet<>();
 		for (final Node n : L2XMLUtils.listNodesByNodeName(xmlNode, "scriptAlias"))
 			fieldAliases.add(L2XMLUtils.getAttribute(n, "id"));
-			
+		
 		// now, select type of element
 		switch (xmlNode.getNodeName())
 		{
@@ -254,7 +257,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 				final Node len = L2XMLUtils.getChildNodeByName(xmlNode, "length");
 				if (len == null)
 					return new DynamicSizeByteArrayFieldElement(id, alias, optional, fieldAliases, valueModifier, valueInterpreter);
-					
+				
 				final String str = len.getTextContent().trim();
 				int length = 0;
 				try

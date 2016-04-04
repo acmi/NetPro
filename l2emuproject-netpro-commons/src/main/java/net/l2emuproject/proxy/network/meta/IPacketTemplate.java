@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet.OpcodeOwner;
 import net.l2emuproject.proxy.network.meta.structure.PacketStructureElement;
@@ -35,7 +36,8 @@ import net.l2emuproject.proxy.network.meta.structure.field.FieldValueReadOption;
 public interface IPacketTemplate extends OpcodeOwner
 {
 	/** Represents any possible packet, regardless of how many opcodes it may have. Used to indicate that a packet is not known or expected. */
-	final IPacketTemplate ANY_DYNAMIC_PACKET = new IPacketTemplate() {
+	final IPacketTemplate ANY_DYNAMIC_PACKET = new IPacketTemplate()
+	{
 		@Override
 		public byte[] getPrefix()
 		{
@@ -55,15 +57,15 @@ public interface IPacketTemplate extends OpcodeOwner
 		}
 		
 		@Override
-		public boolean isDefined()
+		public boolean isWithScriptAliases()
 		{
 			return false;
 		}
 		
 		@Override
-		public boolean isWithScriptAliases()
+		public IProtocolVersion getDefinitionVersion()
 		{
-			return false;
+			return null;
 		}
 		
 		@Override
@@ -123,11 +125,21 @@ public interface IPacketTemplate extends OpcodeOwner
 	List<PacketStructureElement> getStructure();
 	
 	/**
+	 * Returns the version of the protocol that originally declared this definition, if applicable.
+	 * 
+	 * @return earliest protocol to use this definition (or {@code null})
+	 */
+	IProtocolVersion getDefinitionVersion();
+	
+	/**
 	 * Specifies whether this is a predefined or an auto-generated packet template.
 	 * 
 	 * @return {@code true} if this template is predefined, {@code false} otherwise
 	 */
-	boolean isDefined();
+	default boolean isDefined()
+	{
+		return getDefinitionVersion() != null;
+	}
 	
 	/**
 	 * Specifies whether this template contains any fields with script aliases that may be used by PPE enabled scripts.

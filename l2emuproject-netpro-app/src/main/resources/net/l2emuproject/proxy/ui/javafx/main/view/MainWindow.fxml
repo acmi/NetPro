@@ -145,14 +145,6 @@
                               <MenuItem onAction="#copySelectedPacketXML" text="%menu.file.export.xml.clipboard" />
                           </items>
                         </Menu>
-                        <Menu text="%menu.file.export.visible">
-                           <items>
-                              <MenuItem onAction="#copyVisiblePackets" text="%menu.file.export.plain.clipboard" />
-                              <MenuItem onAction="#showSaveVisiblePackets" text="%menu.file.export.plain.file" />
-                              <MenuItem onAction="#copyVisiblePacketsXML" text="%menu.file.export.xml.clipboard" />
-                              <MenuItem onAction="#showSaveVisiblePacketsXML" text="%menu.file.export.xml.file" />
-                           </items>
-                        </Menu>
                         <Menu text="%menu.file.export.table">
                            <items>
                               <MenuItem fx:id="_tablePackets2Plaintext" text="%menu.file.export.plain.clipboard" />

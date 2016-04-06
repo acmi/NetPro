@@ -52,10 +52,10 @@
 		<packet opcodePrefix="36" id="CM_CAN_NOT_MOVE_ANYMORE" />
 		<packet opcodePrefix="37" id="CM_REQ_TARGET_CANCEL" />
 		<packet opcodePrefix="38" id="CM_SAY2" />
-		<!-- packet opcodePrefix="39 00" id="CM_SUPER_CMD_CHARACTER_INFO" /-->
-		<!-- packet opcodePrefix="39 01" id="CM_SUPER_CMD_SUMMON_CMD" /-->
-		<!-- packet opcodePrefix="39 02" id="CM_SUPER_CMD_SERVER_STATUS" /-->
-		<!-- packet opcodePrefix="39 03" id="CM_SEND_L2_PARAM_SETTING" /-->
+		<packet opcodePrefix="39 00" id="CM_SUPER_CMD_CHARACTER_INFO" />
+		<packet opcodePrefix="39 01" id="CM_SUPER_CMD_SUMMON_CMD" />
+		<packet opcodePrefix="39 02" id="CM_SUPER_CMD_SERVER_STATUS" />
+		<packet opcodePrefix="39 03" id="CM_SEND_L2_PARAM_SETTING" />
 		<packet opcodePrefix="3E" id="CM_REQ_MAGIC_LIST" />
 		<packet opcodePrefix="3C" id="CM_REQ_PLEDGE_MEMBER_LIST" />
 		<packet opcodePrefix="3F" id="CM_REQ_SKILL_ITEM" />

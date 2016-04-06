@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>org.google.jhsheets</groupId>
 			<artifactId>FilterableTableColumns</artifactId>
-			<version>0.9.3-logless-SNAPSHOT</version>
+			<version>1.0.0-logless-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

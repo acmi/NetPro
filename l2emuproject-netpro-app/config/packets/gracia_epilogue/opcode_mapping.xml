@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
-		<!-- removedPacket id="CM_SUPER_CMD_CHARACTER_INFO" /-->
-		<!-- removedPacket id="CM_SUPER_CMD_SUMMON_CMD" /-->
-		<!-- removedPacket id="CM_SUPER_CMD_SERVER_STATUS" /-->
-		<!-- removedPacket id="CM_SEND_L2_PARAM_SETTING" /-->
+		<removedPacket id="CM_SUPER_CMD_CHARACTER_INFO" />
+		<removedPacket id="CM_SUPER_CMD_SUMMON_CMD" />
+		<removedPacket id="CM_SUPER_CMD_SERVER_STATUS" />
+		<removedPacket id="CM_SEND_L2_PARAM_SETTING" />
 		<packet opcodePrefix="D0 65 00" id="292" />
 		<packet opcodePrefix="D0 66 00" id="293" />
 		<packet opcodePrefix="D0 67 00" id="294" />

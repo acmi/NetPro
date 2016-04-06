@@ -31,7 +31,7 @@ import net.l2emuproject.proxy.network.meta.IPacketTemplate;
  */
 public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 {
-	private final Map<T, Map<EndpointType, PacketTemplateContainer>> _containers;
+	private final Map<T, Map<EndpointType, PacketPrefixResolver>> _containers;
 	private final T _fallback;
 	
 	/**
@@ -40,9 +40,9 @@ public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 	 * @param containers packet templates
 	 * @param fallback protocol to use if the original has no templates
 	 */
-	public VersionnedPacketTemplateContainer(Map<T, Map<EndpointType, PacketTemplateContainer>> containers, T fallback)
+	public VersionnedPacketTemplateContainer(Map<T, Map<EndpointType, PacketPrefixResolver>> containers, T fallback)
 	{
-		final Map<EndpointType, PacketTemplateContainer> fallbackMap = containers.get(fallback);
+		final Map<EndpointType, PacketPrefixResolver> fallbackMap = containers.get(fallback);
 		if (fallbackMap == null || fallbackMap.size() != 2)
 			throw new IllegalArgumentException(fallback.toString() + " not in " + containers.keySet());
 		
@@ -75,11 +75,11 @@ public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 	 */
 	public IPacketTemplate getTemplate(T version, EndpointType endpoint, byte[] packet, int offset, int length)
 	{
-		final Map<EndpointType, PacketTemplateContainer> map = _containers.get(version);
+		final Map<EndpointType, PacketPrefixResolver> map = _containers.get(version);
 		if (map == null)
 			return getTemplate(_fallback, endpoint, packet, offset, length);
 		
-		final PacketTemplateContainer container = map.get(endpoint);
+		final PacketPrefixResolver container = map.get(endpoint);
 		if (container == null)
 			return getTemplate(_fallback, endpoint, packet, offset, length);
 		
@@ -98,11 +98,11 @@ public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 	 */
 	public IPacketTemplate getTemplate(T version, EndpointType endpoint, ByteBuffer packet)
 	{
-		final Map<EndpointType, PacketTemplateContainer> map = _containers.get(version);
+		final Map<EndpointType, PacketPrefixResolver> map = _containers.get(version);
 		if (map == null)
 			return getTemplate(_fallback, endpoint, packet);
 		
-		final PacketTemplateContainer container = map.get(endpoint);
+		final PacketPrefixResolver container = map.get(endpoint);
 		if (container == null)
 			return getTemplate(_fallback, endpoint, packet);
 		
@@ -118,15 +118,15 @@ public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 	 */
 	public Stream<IPacketTemplate> getTemplates(T version, EndpointType endpoint)
 	{
-		final Map<EndpointType, PacketTemplateContainer> map = _containers.get(version);
+		final Map<EndpointType, PacketPrefixResolver> map = _containers.get(version);
 		if (map == null)
 			return getTemplates(_fallback, endpoint);
 		
-		final PacketTemplateContainer container = map.get(endpoint);
+		final PacketPrefixResolver container = map.get(endpoint);
 		if (container == null)
 			return getTemplates(_fallback, endpoint);
 		
-		return container.getTemplates().stream();
+		return container.getAllTemplates().stream();
 	}
 	
 	/**

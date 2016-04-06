@@ -40,7 +40,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -61,7 +60,7 @@ import net.l2emuproject.proxy.network.meta.L2PacketTablePayloadEnumerator;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
 import net.l2emuproject.proxy.network.meta.UserDefinedGameProtocolVersion;
 import net.l2emuproject.proxy.network.meta.UserDefinedLoginProtocolVersion;
-import net.l2emuproject.proxy.network.meta.container.PacketTemplateContainer;
+import net.l2emuproject.proxy.network.meta.container.PacketPrefixResolver;
 import net.l2emuproject.proxy.network.meta.container.VersionnedPacketTemplateContainer;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
@@ -77,7 +76,7 @@ import net.l2emuproject.util.logging.L2Logger;
 public class VersionnedPacketTable implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(VersionnedPacketTable.class);
-	private static final Map<ByteArrayWrapper, byte[]> INTERNED_PACKET_PREFIXES = new ConcurrentHashMap<>(2_000);
+	private static final Map<ByteArrayWrapper, byte[]> INTERNED_PACKET_PREFIXES = new HashMap<>();
 	
 	volatile ProtocolDefinitions _definitions;
 	
@@ -181,7 +180,7 @@ public class VersionnedPacketTable implements IOConstants
 	}
 	
 	// TODO: revise
-	private void loadConfig()
+	private synchronized void loadConfig()
 	{
 		final Path definitionRoot = CONFIG_DIRECTORY.resolve("packets");
 		
@@ -287,8 +286,8 @@ public class VersionnedPacketTable implements IOConstants
 			if (gp.isEmpty())
 				throw new RuntimeException("No game protocols defined");
 			
-			final Map<UserDefinedLoginProtocolVersion, Map<EndpointType, PacketTemplateContainer>> loginMap;
-			final Map<UserDefinedGameProtocolVersion, Map<EndpointType, PacketTemplateContainer>> gameMap;
+			final Map<UserDefinedLoginProtocolVersion, Map<EndpointType, PacketPrefixResolver>> loginMap;
+			final Map<UserDefinedGameProtocolVersion, Map<EndpointType, PacketPrefixResolver>> gameMap;
 			if (LoadOption.DISABLE_DEFS.isNotSet())
 			{
 				LOG.info("Loading packet definitions…");
@@ -469,9 +468,9 @@ public class VersionnedPacketTable implements IOConstants
 							}
 						}
 						
-						final Map<EndpointType, PacketTemplateContainer> endpointMap = new EnumMap<>(EndpointType.class);
-						endpointMap.put(EndpointType.CLIENT, new PacketTemplateContainer(clientPackets));
-						endpointMap.put(EndpointType.SERVER, new PacketTemplateContainer(serverPackets));
+						final Map<EndpointType, PacketPrefixResolver> endpointMap = new EnumMap<>(EndpointType.class);
+						endpointMap.put(EndpointType.CLIENT, new PacketPrefixResolver(clientPackets));
+						endpointMap.put(EndpointType.SERVER, new PacketPrefixResolver(serverPackets));
 						loginMap.put(protocol, endpointMap);
 					}
 				}
@@ -656,9 +655,9 @@ public class VersionnedPacketTable implements IOConstants
 							}
 						}
 						
-						final Map<EndpointType, PacketTemplateContainer> endpointMap = new EnumMap<>(EndpointType.class);
-						endpointMap.put(EndpointType.CLIENT, new PacketTemplateContainer(clientPackets));
-						endpointMap.put(EndpointType.SERVER, new PacketTemplateContainer(serverPackets));
+						final Map<EndpointType, PacketPrefixResolver> endpointMap = new EnumMap<>(EndpointType.class);
+						endpointMap.put(EndpointType.CLIENT, new PacketPrefixResolver(clientPackets));
+						endpointMap.put(EndpointType.SERVER, new PacketPrefixResolver(serverPackets));
 						gameMap.put(e.getKey(), endpointMap);
 					}
 				}
@@ -666,15 +665,15 @@ public class VersionnedPacketTable implements IOConstants
 			else
 			{
 				{
-					final Map<EndpointType, PacketTemplateContainer> endpointMap = new EnumMap<>(EndpointType.class);
-					endpointMap.put(EndpointType.CLIENT, new PacketTemplateContainer());
-					endpointMap.put(EndpointType.SERVER, new PacketTemplateContainer());
+					final Map<EndpointType, PacketPrefixResolver> endpointMap = new EnumMap<>(EndpointType.class);
+					endpointMap.put(EndpointType.CLIENT, new PacketPrefixResolver(Collections.emptySet()));
+					endpointMap.put(EndpointType.SERVER, new PacketPrefixResolver(Collections.emptySet()));
 					loginMap = Collections.singletonMap(lp.lastKey(), endpointMap);
 				}
 				{
-					final Map<EndpointType, PacketTemplateContainer> endpointMap = new EnumMap<>(EndpointType.class);
-					endpointMap.put(EndpointType.CLIENT, new PacketTemplateContainer());
-					endpointMap.put(EndpointType.SERVER, new PacketTemplateContainer());
+					final Map<EndpointType, PacketPrefixResolver> endpointMap = new EnumMap<>(EndpointType.class);
+					endpointMap.put(EndpointType.CLIENT, new PacketPrefixResolver(Collections.emptySet()));
+					endpointMap.put(EndpointType.SERVER, new PacketPrefixResolver(Collections.emptySet()));
 					gameMap = Collections.singletonMap(gp.lastKey(), endpointMap);
 				}
 			}

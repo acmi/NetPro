@@ -25,11 +25,7 @@ import java.util.Set;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
-import net.l2emuproject.proxy.ui.savormix.io.PacketDisplayConfigManager;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.ui.file.BetterExtensionFilter;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -62,7 +58,7 @@ public class ConfigExportBlockingTask extends BlockingTask<PacketDisplayConfig, 
 		final JFileChooser fc = new JFileChooser(_dir);
 		fc.setDialogType(JFileChooser.SAVE_DIALOG);
 		fc.setMultiSelectionEnabled(false);
-		fc.setFileFilter(BetterExtensionFilter.create("Packet display configuration", IOConstants.DISPLAY_CONFIG_EXTENSION));
+		//fc.setFileFilter(BetterExtensionFilter.create("Packet display configuration", IOConstants.DISPLAY_CONFIG_EXTENSION));
 		final int result = fc.showSaveDialog(getBlockedWindow());
 		if (result != JFileChooser.APPROVE_OPTION)
 		{
@@ -74,8 +70,8 @@ public class ConfigExportBlockingTask extends BlockingTask<PacketDisplayConfig, 
 		{
 			final Path path = _dir.toPath();
 			final String file = path.getFileName().toString();
-			if (!file.contains("."))
-				_dir = path.resolveSibling(file + "." + IOConstants.DISPLAY_CONFIG_EXTENSION).toFile();
+			//if (!file.contains("."))
+			//	_dir = path.resolveSibling(file + "." + IOConstants.DISPLAY_CONFIG_EXTENSION).toFile();
 		}
 		getBlockedWindow().setLastConfig(_dir);
 		
@@ -104,6 +100,7 @@ public class ConfigExportBlockingTask extends BlockingTask<PacketDisplayConfig, 
 			byTypeS[i] = set;
 		}
 		
+		/*
 		try
 		{
 			PacketDisplayConfigManager.getInstance().save(_dir.toPath(), getBlockedWindow().getVersion(), byTypeS[0], byTypeS[1], ServiceType.valueOf(getBlockedWindow().getVersion()).isLogin());
@@ -113,6 +110,7 @@ public class ConfigExportBlockingTask extends BlockingTask<PacketDisplayConfig, 
 			_log.error("Cannot export packet display configuration.", e);
 			publish(e);
 		}
+		*/
 		
 		return _dir;
 	}

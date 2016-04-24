@@ -42,6 +42,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.concurrent.Future;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 import eu.revengineer.simplejse.exception.DependencyResolutionException;
 import eu.revengineer.simplejse.exception.MutableOperationInProgressException;
@@ -53,6 +54,7 @@ import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
+import net.l2emuproject.proxy.NetPro;
 import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.io.PacketLogFileUtils;
 import net.l2emuproject.proxy.io.exception.DamagedPacketLogFileException;
@@ -103,6 +105,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
@@ -723,7 +726,7 @@ public class MainWindowController implements Initializable, IOConstants
 							
 							final Alert alert = makeNonModalUtilityAlert(WARNING, getMainWindow(), "scripts.load.done.dialog.title", "scripts.load.done.dialog.header",
 									"scripts.load.done.dialog.content.runtime", result);
-							alert.getDialogPane().setExpandableContent(makeScriptExceptionMapExpandabeContent(fqcn2Exception));
+							alert.getDialogPane().setExpandableContent(makeScriptExceptionMapExpandableContent(fqcn2Exception));
 							alert.show();
 						});
 					});
@@ -814,7 +817,7 @@ public class MainWindowController implements Initializable, IOConstants
 					
 					final Alert alert = makeNonModalUtilityAlert(WARNING, getMainWindow(), "scripts.unload.done.dialog.title", "scripts.unload.done.dialog.header",
 							"scripts.unload.done.dialog.content.runtime", result);
-					alert.getDialogPane().setExpandableContent(makeScriptExceptionMapExpandabeContent(fqcn2Exception));
+					alert.getDialogPane().setExpandableContent(makeScriptExceptionMapExpandableContent(fqcn2Exception));
 					alert.show();
 				});
 			});
@@ -840,7 +843,36 @@ public class MainWindowController implements Initializable, IOConstants
 	 * @param fqcn2Exception script exception map
 	 * @return exception map representation
 	 */
-	public static final Node makeScriptExceptionMapExpandabeContent(Map<Class<?>, RuntimeException> fqcn2Exception)
+	public static final Node makeScriptExceptionMapExpandableContent(Map<Class<?>, RuntimeException> fqcn2Exception)
+	{
+		if (fqcn2Exception.isEmpty())
+			return null;
+		
+		try
+		{
+			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(ExceptionSummaryDialogController.class), UIStrings.getBundle());
+			final SplitPane result = loader.load();
+			final ExceptionSummaryDialogController controller = loader.getController();
+			controller.setAllExceptions(fqcn2Exception, Class::getName, (c, t) -> StackTraceUtil.traceToString(StackTraceUtil.stripUntilFirstMethodCall(t, true, c.getClassLoader(),
+					UnloadableScript.class, Collections.emptySet(), "onFirstLoad", "onReload", "onLoad", "onStateSave", "onUnload")));
+			return result;
+		}
+		catch (IOException e)
+		{
+			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
+			wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, null, Modality.WINDOW_MODAL).showAndWait();
+			return null;
+		}
+	}
+	
+	/**
+	 * Creates a user-friendly view of the given throwable map.
+	 * 
+	 * @param fqcn2Exception script exception map
+	 * @param exceptionPreprocessor prepares exceptions for display
+	 * @return exception map representation
+	 */
+	public static final <T extends Throwable> Node makeThrowableMapExpandableContent(Map<?, T> fqcn2Exception, Function<T, Throwable> exceptionPreprocessor)
 	{
 		if (fqcn2Exception.isEmpty())
 			return null;
@@ -848,15 +880,13 @@ public class MainWindowController implements Initializable, IOConstants
 		final Accordion accordion = new Accordion();
 		accordion.setMinWidth(600);
 		accordion.setMinHeight(400);
-		for (final Entry<Class<?>, RuntimeException> e : fqcn2Exception.entrySet())
+		for (final Entry<?, T> e : fqcn2Exception.entrySet())
 		{
-			final Class<?> scriptClass = e.getKey();
-			final TextArea taStackTrace = new TextArea(StackTraceUtil.traceToString(StackTraceUtil.stripUntilFirstMethodCall(e.getValue(), true, scriptClass.getClassLoader(), UnloadableScript.class,
-					Collections.emptySet(), "onFirstLoad", "onReload", "onLoad", "onStateSave", "onUnload")));
+			final TextArea taStackTrace = new TextArea(StackTraceUtil.traceToString(exceptionPreprocessor.apply(e.getValue())));
 			taStackTrace.setMaxHeight(Double.MAX_VALUE);
 			taStackTrace.setMaxWidth(Double.MAX_VALUE);
 			
-			final TitledPane pane = new TitledPane(scriptClass.getName(), taStackTrace);
+			final TitledPane pane = new TitledPane(String.valueOf(e.getKey()), taStackTrace);
 			accordion.getPanes().add(pane);
 		}
 		if (fqcn2Exception.size() == 1)

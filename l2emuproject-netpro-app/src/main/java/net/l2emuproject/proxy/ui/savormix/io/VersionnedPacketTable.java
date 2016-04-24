@@ -40,6 +40,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -76,7 +77,7 @@ import net.l2emuproject.util.logging.L2Logger;
 public class VersionnedPacketTable implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(VersionnedPacketTable.class);
-	private static final Map<ByteArrayWrapper, byte[]> INTERNED_PACKET_PREFIXES = new HashMap<>();
+	private static final Map<ByteArrayWrapper, byte[]> INTERNED_PACKET_PREFIXES = new ConcurrentHashMap<>();
 	
 	volatile ProtocolDefinitions _definitions;
 	
@@ -695,6 +696,17 @@ public class VersionnedPacketTable implements IOConstants
 		final byte[] equivalent = HexUtil.hexStringToBytes(bytes);
 		final byte[] interned = INTERNED_PACKET_PREFIXES.putIfAbsent(new ByteArrayWrapper(equivalent), equivalent);
 		return interned != null ? interned : equivalent;
+	}
+	
+	/**
+	 * Returns an interned version of the given byte array, iff such a byte array was already interned.
+	 * 
+	 * @param prefix a packet prefix
+	 * @return an equivalent byte array
+	 */
+	public static final byte[] internedValueOf(byte[] prefix)
+	{
+		return INTERNED_PACKET_PREFIXES.getOrDefault(new ByteArrayWrapper(prefix), prefix);
 	}
 	
 	private static final class VersionInfo

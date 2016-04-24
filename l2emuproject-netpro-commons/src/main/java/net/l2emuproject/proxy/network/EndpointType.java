@@ -57,4 +57,7 @@ public enum EndpointType
 	{
 		return client ? CLIENT : SERVER;
 	}
+	
+	/** Client, Server */
+	public static final EndpointType[] VALUES = values();
 }

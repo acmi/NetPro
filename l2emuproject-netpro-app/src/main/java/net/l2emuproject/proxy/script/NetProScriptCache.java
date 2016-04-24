@@ -94,6 +94,7 @@ public class NetProScriptCache extends JavaClassScriptCache
 			
 			final Set<JCSCConfigFlag> flags = EnumSet.noneOf(JCSCConfigFlag.class);
 			flags.add(JCSCConfigFlag.DEFLATE_CACHE);
+			flags.add(JCSCConfigFlag.DO_NOT_LOAD_STALE_CACHE);
 			
 			INSTANCE = new NetProScriptCache(new JCSCConfig(Paths.get("scripts"), Paths.get(getScriptCacheName()), INITIALIZER_APT_HANDLER, INITIALIZER_JAVAC_HANDLER, flags, INITIALIZER));
 			

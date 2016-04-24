@@ -15,8 +15,12 @@
  */
 package net.l2emuproject.proxy;
 
+import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.wrapException;
+
 import java.awt.GraphicsEnvironment;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,11 +35,13 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Semaphore;
 
 import javax.tools.Diagnostic;
 import javax.tools.Diagnostic.Kind;
 import javax.tools.JavaFileObject;
 
+import eu.revengineer.simplejse.exception.StaleScriptCacheException;
 import eu.revengineer.simplejse.reporting.AptReportingHandler;
 import eu.revengineer.simplejse.reporting.JavacReportingHandler;
 
@@ -57,10 +63,13 @@ import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
 import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.main.view.CompilationErrorExpandableController;
+import net.l2emuproject.proxy.ui.javafx.main.view.ExceptionSummaryDialogController;
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.main.view.SplashScreenController;
+import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
+import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.logging.ListeningLog;
 
 import javafx.animation.Animation;
@@ -72,12 +81,21 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
+import javafx.geometry.VPos;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.SplitPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -85,6 +103,8 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 /**
+ * Starts the application with a GUI.
+ * 
  * @author _dev_
  */
 public class NetPro extends Application
@@ -100,43 +120,62 @@ public class NetPro extends Application
 		PRIMARY_STAGE = primaryStage;
 		PRIMARY_STAGE.setOnHidden(e -> ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN));
 		
+		// automatically discard disposed windows from tracker
 		final WindowTracker windowTracker = WindowTracker.getInstance();
 		final Timeline tlWindowTrackerCleanup = new Timeline(new KeyFrame(Duration.ZERO), new KeyFrame(Duration.minutes(5), e -> windowTracker.cleanup()));
 		tlWindowTrackerCleanup.setCycleCount(Animation.INDEFINITE);
 		tlWindowTrackerCleanup.play();
 		
+		// 1. SHOW SPLASH SCREEN
+		SPLASH_STAGE = new Stage(StageStyle.TRANSPARENT);
 		try
 		{
+			// 1.1 DYNAMIC SPLASH SCREEN
 			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(SplashScreenController.class), UIStrings.getBundle());
-			final Scene scene = new Scene(loader.load(), null);
-			final SplashScreenController controller = loader.getController();
-			controller.bindDescription(LOADING_STAGE_DESCRIPTION);
-			
-			SPLASH_STAGE = new Stage(StageStyle.TRANSPARENT);
-			SPLASH_STAGE.setScene(scene);
-			SPLASH_STAGE.getIcons().addAll(FXUtils.getIconListFX());
-			SPLASH_STAGE.setOnHidden(e ->
-			{
-				Platform.exit();
-				System.exit(0);
-			});
-			windowTracker.add(SPLASH_STAGE);
-			SPLASH_STAGE.show();
-			
-			final Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-			SPLASH_STAGE.setX((screenBounds.getWidth() - SPLASH_STAGE.getWidth()) / 2D);
-			SPLASH_STAGE.setY((screenBounds.getHeight() - SPLASH_STAGE.getHeight()) / 2D);
+			if (loader.hashCode() != 0)
+				throw new IOException("message here");
+			SPLASH_STAGE.setScene(new Scene(loader.load(), null));
+			loader.<SplashScreenController> getController().bindDescription(LOADING_STAGE_DESCRIPTION);
 		}
 		catch (IOException e)
 		{
-			throw new AssertionError("Splash screen is missing", e);
+			// 1.2 STATIC SPLASH SCREEN
+			final int altSize = 256;
+			final Canvas canvas = new Canvas(altSize, altSize);
+			final GraphicsContext gc = canvas.getGraphicsContext2D();
+			gc.setFill(Color.BLACK);
+			gc.fillRect(0, 0, altSize, altSize);
+			
+			gc.setFill(Color.WHITE);
+			gc.setTextAlign(TextAlignment.CENTER);
+			gc.setTextBaseline(VPos.BOTTOM);
+			gc.fillText(e.getMessage(), altSize >> 1, altSize);
+			gc.setTextBaseline(VPos.CENTER);
+			gc.setFont(Font.font(altSize * 0.75));
+			gc.fillText("NP", altSize >> 1, altSize >> 1);
+			SPLASH_STAGE.setScene(new Scene(new Group(canvas), null));
 		}
+		SPLASH_STAGE.getIcons().addAll(FXUtils.getIconListFX());
+		SPLASH_STAGE.setOnHidden(e ->
+		{
+			Platform.exit();
+			System.exit(0);
+		});
+		windowTracker.add(SPLASH_STAGE);
+		SPLASH_STAGE.show();
 		
+		final Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+		SPLASH_STAGE.setX((screenBounds.getWidth() - SPLASH_STAGE.getWidth()) / 2D);
+		SPLASH_STAGE.setY((screenBounds.getHeight() - SPLASH_STAGE.getHeight()) / 2D);
+		
+		// 2. LANGUAGE SELECTION
 		final String language;
 		final Set<String> languages = UIStrings.SUPPORTED_LOCALES.keySet();
 		if (languages.size() > 1)
 		{
+			// 2.1 SHOW LANGUAGE SELECTION
 			String defaultChoice = null;
+			// 2.1.1 SET DEFAULT SELECTION BASED ON DEFAULT LOCALE
 			for (final Entry<String, Locale> e : UIStrings.SUPPORTED_LOCALES.entrySet())
 			{
 				if (e.getValue().getLanguage().equals(UIStrings.CURRENT_LOCALE.getLanguage()))
@@ -147,6 +186,7 @@ public class NetPro extends Application
 			}
 			if (defaultChoice == null)
 			{
+				// 2.1.2 SET DEFAULT SELECTION TO ENGLISH
 				for (final Entry<String, Locale> e : UIStrings.SUPPORTED_LOCALES.entrySet())
 				{
 					if (e.getValue().getLanguage().equals(Locale.ENGLISH.getLanguage()))
@@ -157,6 +197,7 @@ public class NetPro extends Application
 				}
 			}
 			
+			// 2.1.3 QUERY USER FOR LANGUAGE
 			final ChoiceDialog<String> dlgSelectLanguage = new ChoiceDialog<String>(defaultChoice, languages);
 			dlgSelectLanguage.setHeaderText("Select preferred language:");
 			dlgSelectLanguage.setTitle("Language selection");
@@ -173,30 +214,41 @@ public class NetPro extends Application
 			}
 			language = result.get();
 		}
-		else
+		else // 2.2 SELECT THE ONLY OPTION
 			language = languages.isEmpty() ? null : languages.iterator().next();
 		
 		UIStrings.CURRENT_LOCALE = language != null ? UIStrings.SUPPORTED_LOCALES.getOrDefault(language, Locale.ENGLISH) : Locale.ENGLISH;
 		
-		new Thread(NetPro::loadInOrder, "ApplicationStartThread").start();
+		// 3. START UNDERLYING APPLICATION
+		new Thread(NetPro::loadInOrder, "NetProStartupThread").start();
 	}
 	
+	/** Starts the underlying application. Additional actions are performed if the GUI elements were pre-initialized. */
 	private static void loadInOrder()
 	{
-		final StartupStateReporter reporter = PRIMARY_STAGE != null ? desc -> Platform.runLater(() -> LOADING_STAGE_DESCRIPTION.setValue(desc)) : null;
-		
-		ListeningLog.addListener(message ->
+		// 1. DETERMINE IF GUI IS AVAILABLE
+		final StartupStateReporter reporter;
+		if (PRIMARY_STAGE != null)
 		{
-			final boolean added = PENDING_LOG_ENTRIES.offer(message);
-			if (!added)
+			// 1.1 GET ACCESS TO SPLASH SCREEN
+			reporter = desc -> Platform.runLater(() -> LOADING_STAGE_DESCRIPTION.setValue(desc));
+			// 1.2 SETUP UI LOGGING FORWARDER
+			ListeningLog.addListener(message ->
 			{
-				PENDING_LOG_ENTRIES.clear();
-				PENDING_LOG_ENTRIES.offer("|--------------------|--------------------|");
-			}
-		});
+				final boolean added = PENDING_LOG_ENTRIES.offer(message);
+				if (!added)
+				{
+					PENDING_LOG_ENTRIES.clear();
+					PENDING_LOG_ENTRIES.offer("|--------------------|--------------------|");
+				}
+			});
+		}
+		else
+			reporter = null;
 		
 		L2Proxy.addStartupHook(() ->
 		{
+			// 2.1 INSTALL ANALYTICS
 			if (reporter != null)
 				reporter.onState(UIStrings.get("startup.analytics"));
 			LogLoadScriptManager.getInstance().addScript(PpeEnabledLoaderScriptRegistry.getInstance());
@@ -210,6 +262,7 @@ public class NetPro extends Application
 			}
 			new ObjectAnalytics().onLoad();
 			
+			// 2.2 LOAD USER SCRIPTS
 			if (reporter != null)
 			{
 				reporter.onState(UIStrings.get("startup.scripts"));
@@ -221,10 +274,25 @@ public class NetPro extends Application
 			
 			final NetProScriptCache cache = NetProScriptCache.getInstance();
 			final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
-			scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache(fqcn2Exception)))
+			scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet())
 			{
+				if (!ProxyConfig.DISABLE_SCRIPT_CACHE)
+				{
+					// 2.2.1 LOAD PRECOMPILED CACHE
+					try
+					{
+						cache.restoreFromCache(fqcn2Exception);
+						break scripts;
+					}
+					catch (IOException | StaleScriptCacheException e)
+					{
+						// proceed to compilation
+					}
+				}
+				
 				if (!cache.isCompilerUnavailable())
 				{
+					// 2.2.2 COMPILE AND LOAD SCRIPTS
 					cache.compileAllScripts(fqcn2Exception);
 					cache.writeToCache();
 					break scripts;
@@ -233,6 +301,7 @@ public class NetPro extends Application
 				if (reporter == null)
 					break scripts;
 				
+				// 2.2.3 ASK TO CONTINUE WITH NO SCRIPTS LOADED
 				synchronized (reporter)
 				{
 					Platform.runLater(() ->
@@ -269,6 +338,7 @@ public class NetPro extends Application
 			{
 				if (!fqcn2Exception.isEmpty())
 				{
+					// 2.2.4 REPORT SCRIPT INITIALIZATION ERRORS
 					synchronized (reporter)
 					{
 						Platform.runLater(() ->
@@ -281,7 +351,7 @@ public class NetPro extends Application
 							alert.setHeaderText(UIStrings.get("startup.scripts.err.dialog.header.init"));
 							alert.setContentText(UIStrings.get("startup.scripts.err.dialog.content.init"));
 							
-							alert.getDialogPane().setExpandableContent(MainWindowController.makeScriptExceptionMapExpandabeContent(fqcn2Exception));
+							alert.getDialogPane().setExpandableContent(MainWindowController.makeScriptExceptionMapExpandableContent(fqcn2Exception));
 							WindowTracker.getInstance().add(alert);
 							alert.showAndWait();
 							
@@ -296,44 +366,96 @@ public class NetPro extends Application
 				
 				reporter.onState(UIStrings.get("startup.definitions"));
 			}
+			
+			// 2.3 LOAD NETWORK PROTOCOL RELATED DEFINITIONS
 			VersionnedPacketTable.getInstance();
 			if (reporter != null)
+			{
+				// 2.3.1 LOAD PROTOCOL BASED PACKET HIDING CONFIG
+				final Semaphore semaphore = new Semaphore(0);
+				ProtocolPacketHidingManager.AUTOMATIC_LOADING_EXCEPTION_HANDLER = exceptions ->
+				{
+					if (!exceptions.isEmpty())
+					{
+						Platform.runLater(() ->
+						{
+							final Alert alert = new Alert(AlertType.WARNING);
+							alert.initModality(Modality.APPLICATION_MODAL);
+							alert.initOwner(SPLASH_STAGE);
+							alert.initStyle(StageStyle.UTILITY);
+							alert.setTitle(UIStrings.get("startup.definitions.hiding.err.dialog.title"));
+							alert.setHeaderText(UIStrings.get("startup.definitions.hiding.err.dialog.header"));
+							alert.setContentText(UIStrings.get("startup.definitions.hiding.err.dialog.content"));
+							
+							alert.getDialogPane().setExpandableContent(makeThrowableMapExpandableContent(exceptions));
+							WindowTracker.getInstance().add(alert);
+							alert.showAndWait();
+							
+							// different thread
+							semaphore.release();
+						});
+					}
+					else // same thread
+						semaphore.release();
+				};
+				ProtocolPacketHidingManager.getInstance();
+				semaphore.acquire();
+				
 				reporter.onState(UIStrings.get("startup.ipalias"));
+			}
+			// 2.4 LOAD IP ALIASES
 			IPAliasManager.getInstance();
 		});
 		
+		// 2. START THE PROXY SERVER AND LOAD DEPENDENCIES
 		try
 		{
 			L2Proxy.main(); // launches the backend
 		}
 		catch (Throwable t)
 		{
-			if (SPLASH_STAGE == null)
+			// 2.F HANDLE FAILURE
+			
+			// 2.F.1 WRITE A LOG FILE
+			try (final PrintWriter out = new PrintWriter("crash_" + System.currentTimeMillis() + ".txt", StandardCharsets.UTF_8.name()))
 			{
-				System.exit(-1);
-				return;
+				t.printStackTrace(out);
 			}
-			Platform.runLater(() ->
+			catch (Throwable th)
 			{
-				final Alert dlgFail = new ExceptionAlert(t, SPLASH_STAGE);
-				WindowTracker.getInstance().add(dlgFail);
-				dlgFail.showAndWait();
-				ShutdownManager.exit(TerminationStatus.RUNTIME_UNCAUGHT_ERROR);
-			});
+				// too bad, really
+			}
+			
+			if (SPLASH_STAGE != null)
+			{
+				// 2.F.2.1 SHOW GUI DIALOG
+				Platform.runLater(() ->
+				{
+					final Alert dlgFail = new ExceptionAlert(t, SPLASH_STAGE);
+					WindowTracker.getInstance().add(dlgFail);
+					dlgFail.showAndWait();
+				});
+			}
+			else // 2.F.2.2 WRITE TO CONSOLE
+				t.printStackTrace(System.err);
+			ShutdownManager.exit(TerminationStatus.RUNTIME_UNCAUGHT_ERROR);
 			return;
 		}
 		
 		if (reporter == null)
 			return;
 		
+		// 3. OPEN GUI
 		reporter.onState(UIStrings.get("startup.ui"));
 		Platform.runLater(() ->
 		{
+			// 3.1 OPEN MAIN WINDOW
 			try
 			{
 				final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(MainWindowController.class), UIStrings.getBundle());
 				final Scene scene = new Scene(loader.load());
 				final MainWindowController controller = loader.getController();
+				// 3.2 LINK LOGGING WITH UI CONSOLE
 				final Timeline tlLogging = new Timeline(new KeyFrame(Duration.ZERO, evt ->
 				{
 					for (String msg; (msg = PENDING_LOG_ENTRIES.poll()) != null;)
@@ -349,18 +471,43 @@ public class NetPro extends Application
 			}
 			catch (IOException e)
 			{
-				throw new AssertionError("Main window is missing", e);
+				// 3.F MAIN WINDOW MISSING, WARN AND EXIT
+				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
+				wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, SPLASH_STAGE, Modality.WINDOW_MODAL).showAndWait();
+				ShutdownManager.exit(TerminationStatus.ENVIRONMENT_MISSING_COMPONENT_OR_SERVICE);
 			}
 			finally
 			{
 				if (SPLASH_STAGE != null)
 				{
+					// 3.3 CLOSE SPLASH SCREEN
 					SPLASH_STAGE.setOnHidden(null);
 					SPLASH_STAGE.hide();
 					SPLASH_STAGE = null;
 				}
 			}
 		});
+	}
+	
+	private static final <T extends Throwable> Node makeThrowableMapExpandableContent(Map<Path, T> path2Exception)
+	{
+		if (path2Exception.isEmpty())
+			return null;
+		
+		try
+		{
+			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(ExceptionSummaryDialogController.class), UIStrings.getBundle());
+			final SplitPane result = loader.load();
+			final ExceptionSummaryDialogController controller = loader.getController();
+			controller.setAllExceptions(path2Exception, p -> p.getFileName().toString(), t -> StackTraceUtil.traceToString(StackTraceUtil.stripUntilClassContext(t, true, NetPro.class.getName())));
+			return result;
+		}
+		catch (IOException e)
+		{
+			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
+			wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, SPLASH_STAGE, Modality.WINDOW_MODAL).showAndWait();
+			return null;
+		}
 	}
 	
 	/**

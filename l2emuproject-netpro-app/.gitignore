@@ -1,4 +1,5 @@
 /target
 /log
+/.script.cache
 /script.cache
 /script.log

@@ -21,9 +21,6 @@ import java.util.List;
 
 import javax.swing.JFileChooser;
 
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.ui.file.BetterExtensionFilter;
-
 /**
  * A task that loads the given packet display configuration.
  * 
@@ -66,7 +63,7 @@ public class ConfigImportBlockingTask extends BlockingTask<PacketDisplayConfig, 
 		final JFileChooser fc = new JFileChooser(_dir);
 		fc.setDialogType(JFileChooser.OPEN_DIALOG);
 		fc.setMultiSelectionEnabled(false);
-		fc.setFileFilter(BetterExtensionFilter.create("Packet display configuration", IOConstants.DISPLAY_CONFIG_EXTENSION));
+		//fc.setFileFilter(BetterExtensionFilter.create("Packet display configuration", IOConstants.DISPLAY_CONFIG_EXTENSION));
 		final int result = fc.showOpenDialog(getBlockedWindow());
 		if (result != JFileChooser.APPROVE_OPTION)
 			return null;

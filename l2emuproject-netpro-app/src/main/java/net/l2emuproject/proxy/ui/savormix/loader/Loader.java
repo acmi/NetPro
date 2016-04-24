@@ -31,9 +31,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import net.l2emuproject.proxy.L2Proxy;
-import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
-import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.script.PpeEnabledLoaderScriptRegistry;
 import net.l2emuproject.proxy.script.ScriptManager;
 import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics;
@@ -133,7 +131,7 @@ public final class Loader
 			{
 				if (LoadOption.IGNORE_UNKNOWN.isSet())
 					continue;
-					
+				
 				System.err.println("Unrecognized command line argument: " + arg);
 				System.exit(1);
 				return;
@@ -147,7 +145,7 @@ public final class Loader
 					{
 						if (!opt.isInHelp())
 							continue;
-							
+						
 						final String[] alias = opt.getAlias();
 						sb.append(alias[0]);
 						for (int i = 1; i < alias.length; ++i)
@@ -166,13 +164,13 @@ public final class Loader
 		
 		if (GraphicsEnvironment.isHeadless()) // a fool's hope
 			LoadOption.DISABLE_UI.setSystemProperty();
-			
+		
 		if (LoadOption.DISABLE_PROXY.isSet() && LoadOption.DISABLE_UI.isSet())
 			System.exit(0);
-			
+		
 		if (LoadOption.DISABLE_UI.isNotSet())
 			Platform.setImplicitExit(false);
-			
+		
 		final AtomicReference<Window> surrogateCallable = new AtomicReference<>();
 		if (LoadOption.DISABLE_UI.isNotSet() && LoadOption.HIDE_SPLASH.isNotSet())
 		{
@@ -217,7 +215,7 @@ public final class Loader
 		}
 		else
 			LOG_MESSAGES = new ArrayDeque<>(0);
-			
+		
 		{
 			L2Proxy.addStartupHook(() ->
 			{
@@ -233,21 +231,12 @@ public final class Loader
 				}
 				new ObjectAnalytics().onLoad();
 				new PledgeAnalytics().onLoad();
-				
+				/*
 				final NetProScriptCache cache = NetProScriptCache.getInstance();
 				if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()) && !cache.isCompilerUnavailable())
 				{
 					cache.compileAllScripts();
 					cache.writeToCache();
-				}
-				/*
-				catch (SystemJavaCompilerMissingError e)
-				{
-					JOptionPane.showMessageDialog(surrogateCallable.get(),
-							"NetPro requires features that are only present in a JDK.\nPlease ensure that the application is launched via a JDK executable.", "Invalid runtime environment",
-							JOptionPane.ERROR_MESSAGE);
-					L2Logger.getLogger(Loader.class).info("The system Java compiler is missing. Please run via a JDK executable or add tools.jar to classpath.");
-					throw e;
 				}
 				*/
 			});

@@ -83,12 +83,20 @@ public interface IOConstants
 	/** [legacy] Fixed footer size in previous file format versions. */
 	int LOG_FOOTER_SIZE_5 = LOG_FOOTER_SIZE_PRE_5 + 4;
 	
+	/** Default directory for packet hiding configurations. */
+	Path PROTOCOL_PACKET_HIDING_DIR = APPLICATION_DIRECTORY.resolve("packet_hiding");
 	/** Prefix for a valid packet display configuration file. */
-	long DISPLAY_CONFIG_MAGIC = 0xFFFF00ACDC00FEEDL;
+	long PROTOCOL_PACKET_HIDING_MAGIC = 0x4E50205048494445L;
 	/** Default packet display configuration file extension */
-	String DISPLAY_CONFIG_EXTENSION = "pdc";
+	String PROTOCOL_PACKET_HIDING_EXTENSION = "nph";
 	/** Version of packet display configuration file format for files written by this application. */
-	int DISPLAY_CONFIG_VERSION = 3;
+	int PROTOCOL_PACKET_HIDING_VERSION = 1;
+	
+	long HISTORICAL_LOG_MAGIC_COMPLETE = 0x4E5020504C4F472BL;
+	long HISTORICAL_LOG_MAGIC_INCOMPLETE = 0x4E5020504C4F472DL;
+	String HISTORICAL_LOG_EXTENSION = "npl";
+	int HISTORICAL_LOG_VERSION = 1;
+	int HISTORICAL_LOG_REQUIRED_VERSION = 1;
 	
 	/**
 	 * Opens a resource file.

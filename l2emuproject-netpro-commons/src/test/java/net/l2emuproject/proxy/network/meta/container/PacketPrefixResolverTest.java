@@ -124,7 +124,7 @@ public class PacketPrefixResolverTest
 		expected.add(REVIVE);
 		assertThat(resolver.getAllTemplates(), is(equalTo(expected)));
 		
-		assertThat(resolver.resolve(Arrays.copyOf(OP_EX_EMUI, 2)), is(nullValue()));
+		assertThat(resolver.resolve(ByteBuffer.wrap(Arrays.copyOf(OP_EX_EMUI, 2)).asReadOnlyBuffer()), is(nullValue()));
 	}
 	
 	/**

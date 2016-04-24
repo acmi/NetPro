@@ -26,7 +26,6 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
@@ -45,12 +44,10 @@ import javax.swing.table.TableColumn;
 import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
-import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.ui.listener.BatchPacketDisplayConfigListener;
 import net.l2emuproject.proxy.ui.savormix.component.BlockableDialog;
-import net.l2emuproject.proxy.ui.savormix.io.PacketDisplayConfigManager;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.exception.InvalidFileException;
 import net.l2emuproject.proxy.ui.savormix.io.exception.UnsupportedFileException;
@@ -170,7 +167,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 								"Chain reaction warning", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 						if (answer != JOptionPane.YES_OPTION)
 							return;
-							
+						
 						new PacketDefinitionLoadTask(PacketDisplayConfig.this).execute((Void[])null);
 					});
 					north.add(export);
@@ -187,7 +184,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 		// pack();
 		
 		{
-			final Path preload = APPLICATION_DIRECTORY.resolve(version.getVersion() + "." + DISPLAY_CONFIG_EXTENSION);
+			final Path preload = APPLICATION_DIRECTORY.resolve(version.getVersion() + "."/* + DISPLAY_CONFIG_EXTENSION*/);
 			final Path cfg = initialConfig != null ? initialConfig : preload;
 			_loadTask = new PacketContainerLoadTask(this, cfg).execute(true);
 			_lastConfig = cfg.toFile();
@@ -275,6 +272,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 			sets[type.ordinal() & 1].addAll(containers[type.ordinal() & 1].getCommitted());
 		}
 		
+		/*
 		try
 		{
 			PacketDisplayConfigManager.getInstance().load(config, ServiceType.valueOf(login), sets[0], sets[1]);
@@ -284,6 +282,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 			if (!optional)
 				throw e;
 		}
+		*/
 		
 		for (final EndpointType proxyType : EndpointType.values())
 		{
@@ -433,10 +432,10 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 		
 		if (!isUnsaved())
 			return;
-			
+		
 		if (!keepExportedFlag)
 			_exported = false;
-			
+		
 		propagateConfig();
 	}
 	
@@ -469,7 +468,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 		for (final Set<?> set : array)
 			if (set != null && !set.isEmpty())
 				return true;
-				
+		
 		return false;
 	}
 	
@@ -494,7 +493,7 @@ public class PacketDisplayConfig extends BlockableDialog implements ActionListen
 			// initial load
 			if (list == null)
 				continue;
-				
+			
 			final PacketDisplayConfigListModel model = (PacketDisplayConfigListModel)list.getModel();
 			if (apply)
 				model.commit();

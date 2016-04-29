@@ -108,7 +108,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	{
 		if (isProtocolFlagSet(FLAG_MODERN_SERVER_2_TRANSFER_CLIENT))
 			dataSize.__increase_size(8);
-			
+		
 		final int size = dataSize.getSize();
 		
 		// This forces proxy to work transparently with all possible login protocols
@@ -126,10 +126,10 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 				
 				if (!LoginCipher.testChecksum(bb, 8)) // legacy client packet checksum scheme
 					break legacy;
-					
+				
 				if (bb.get(0) != (size == 32 ? 0x07 : 0x00))
 					break legacy;
-					
+				
 				enableProtocolFlags(FLAG_PROTOCOL_TRANSFER);
 				_cipher = transfer;
 				((L2LoginServer)getServer()).initCipher(READ_ONLY_C3_C4_TRANSFER_KEY);

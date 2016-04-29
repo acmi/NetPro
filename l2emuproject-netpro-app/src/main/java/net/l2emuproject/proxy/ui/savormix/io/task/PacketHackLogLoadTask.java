@@ -46,7 +46,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author _dev_
  */
-public class PacketHackLogLoadTask extends AbstractLogLoadTask<File>implements IOConstants
+public class PacketHackLogLoadTask extends AbstractLogLoadTask<File> implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(PacketHackLogLoadTask.class);
 	
@@ -83,11 +83,11 @@ public class PacketHackLogLoadTask extends AbstractLogLoadTask<File>implements I
 			{
 				if (isCancelled())
 					break;
-					
+				
 				final String spv = br.readLine();
 				if (spv == null)
 					continue;
-					
+				
 				protocolVersion.position(0);
 				protocolVersion.put(HexUtil.hexStringToBytes(spv.substring(24, 32)));
 				protocol = ProtocolVersionManager.getInstance().getProtocol(protocolVersion.getInt(0), false);
@@ -105,12 +105,12 @@ public class PacketHackLogLoadTask extends AbstractLogLoadTask<File>implements I
 			
 			if (isCancelled())
 				break;
-				
+			
 			try (final BufferedReader br = Files.newBufferedReader(p, StandardCharsets.US_ASCII))
 			{
 				if (isCancelled())
 					break;
-					
+				
 				try
 				{
 					SwingUtilities.invokeAndWait(new Runnable()
@@ -136,7 +136,7 @@ public class PacketHackLogLoadTask extends AbstractLogLoadTask<File>implements I
 				
 				if (isCancelled())
 					break;
-					
+				
 				final HistoricalPacketLog cacheContext = new HistoricalPacketLog(p);
 				String line;
 				// load packets
@@ -146,13 +146,13 @@ public class PacketHackLogLoadTask extends AbstractLogLoadTask<File>implements I
 					final byte[] body = getBody(line);
 					final long time = getTime(line);
 					
-					sm.onLoadedPacket(false, type.isClient(), body, protocol, cacheContext);
+					sm.onLoadedPacket(false, type.isClient(), body, protocol, cacheContext, time);
 					
 					publish(new ReceivedPacket(ServiceType.GAME, type, body, time));
 					
 					if (isCancelled())
 						break;
-						
+					
 					// avoid I/O congestion and CPU overload
 					// modulo must be low enough and sleep must be large enough
 					// to avoid DPC blackouts (e.g. no media skipping when listening to music)

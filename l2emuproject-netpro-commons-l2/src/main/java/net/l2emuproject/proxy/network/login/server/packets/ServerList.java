@@ -68,7 +68,7 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 		// not trying to intercept
 		if (gameWorldSocket == null)
 			return;
-			
+		
 		final byte[] fakeIp = gameWorldSocket.getBindAddress().getAddress();
 		final int fakePort = gameWorldSocket.getListenPort();
 		
@@ -83,7 +83,7 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 			final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
 			if (ppe == null)
 				break usePPE;
-				
+			
 			RandomAccessMMOBuffer enumerator = null;
 			try
 			{
@@ -141,7 +141,7 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 			
 			if (named)
 				buf.skip(40);
-				
+			
 			final int pos = newBody.position();
 			byte[] realIPv4 = buf.readB(4);
 			int port = buf.readD();

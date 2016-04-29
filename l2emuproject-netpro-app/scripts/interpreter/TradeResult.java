@@ -27,6 +27,6 @@ public class TradeResult extends ScriptedZeroBasedIntegerIdInterpreter
 	/** Constructs this interpreter. */
 	public TradeResult()
 	{
-		super(new InterpreterMetadata(1), "Completed", "Cancelled");
+		super("Cannot be started", "Completed", "Cancelled");
 	}
 }

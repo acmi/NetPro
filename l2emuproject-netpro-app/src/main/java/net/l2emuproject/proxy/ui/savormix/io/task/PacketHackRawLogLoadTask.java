@@ -53,7 +53,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author _dev_
  */
-public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implements IOConstants
+public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File> implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(PacketHackRawLogLoadTask.class);
 	
@@ -100,7 +100,7 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implement
 			
 			if (isCancelled())
 				break;
-				
+			
 			try (final SeekableByteChannel channel = Files.newByteChannel(p, StandardOpenOption.READ);
 					final NewIOHelper ioh = new NewIOHelper(channel, ByteBuffer.allocate(DEFAULT_BUFFER_SIZE).order(ByteOrder.LITTLE_ENDIAN), EmptyChecksum.getInstance()))
 			{
@@ -108,7 +108,7 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implement
 				
 				if (isCancelled())
 					break;
-					
+				
 				try
 				{
 					SwingUtilities.invokeAndWait(new Runnable()
@@ -134,7 +134,7 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implement
 				
 				if (isCancelled())
 					break;
-					
+				
 				final HistoricalPacketLog cacheContext = new HistoricalPacketLog(p);
 				final L2GameClient fakeClient = new L2GameClient(null, null);
 				final L2GameServer fakeServer = new L2GameServer(null, null, fakeClient);
@@ -163,13 +163,13 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File>implement
 						fakeServer.decipher(wrapper, sz);
 						L2GameServerPackets.getInstance().handlePacket(wrapper, fakeServer, buf.readUC()).readAndChangeState(fakeServer, buf);
 					}
-					sm.onLoadedPacket(false, type.isClient(), body, protocol, cacheContext);
+					sm.onLoadedPacket(false, type.isClient(), body, protocol, cacheContext, time);
 					
 					publish(new ReceivedPacket(ServiceType.GAME, type, body, time));
 					
 					if (isCancelled())
 						break;
-						
+					
 					// avoid I/O congestion and CPU overload
 					// modulo must be low enough and sleep must be large enough
 					// to avoid DPC blackouts (e.g. no media skipping when listening to music)

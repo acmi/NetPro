@@ -55,7 +55,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author _dev_
  */
-public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File>implements IOConstants
+public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File> implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(PacketSamuraiLogLoadTask.class);
 	
@@ -86,10 +86,10 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File>implement
 			{
 				if (isCancelled())
 					break;
-					
+				
 				if (ioh.readByte() != 7)
 					continue;
-					
+				
 				totalPackets = ioh.readInt();
 				// quick prepare
 				SwingUtilities.invokeLater(() -> _dialog.setMaximum(name, totalPackets));
@@ -100,7 +100,7 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File>implement
 				// disallow opening individual parts (cannot decipher/recover opcodes that way)
 				if (part > 0)
 					continue;
-					
+				
 				ioh.readChar();
 				ioh.readInt();
 				ioh.readInt();
@@ -110,11 +110,11 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File>implement
 					continue;
 				while (ioh.readChar() != 0)
 					continue;
-					
+				
 				// undocumented feature
 				if (ioh.readLong() != 0)
 					continue;
-					
+				
 				ioh.readLong();
 				enc = ioh.readBoolean();
 				
@@ -135,7 +135,7 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File>implement
 			
 			if (isCancelled())
 				break;
-				
+			
 			try
 			{
 				SwingUtilities.invokeAndWait(new Runnable()
@@ -195,7 +195,7 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File>implement
 			
 			if (isCancelled())
 				return null;
-				
+			
 			ioh.readByte();
 			final int totalPackets = ioh.readInt();
 			result = ioh.readBoolean();
@@ -228,7 +228,7 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File>implement
 			
 			if (isCancelled())
 				return null;
-				
+			
 			final LogLoadScriptManager sm = LogLoadScriptManager.getInstance();
 			// load packets
 			for (int count = totalPackets; count > 0 && size - ioh.getPositionInChannel(false) > 0; count--)
@@ -261,12 +261,12 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File>implement
 						ctx._fakeServer.decipher(wrapper, ctx._sz);
 					L2GameServerPackets.getInstance().handlePacket(wrapper, ctx._fakeServer, ctx._buf.readUC()).readAndChangeState(ctx._fakeServer, ctx._buf);
 				}
-				sm.onLoadedPacket(false, type.isClient(), body, ctx._protocol, ctx._cacheContext);
+				sm.onLoadedPacket(false, type.isClient(), body, ctx._protocol, ctx._cacheContext, time);
 				publish(new ReceivedPacket(ServiceType.GAME, type, body, time));
 				
 				if (isCancelled())
 					return null;
-					
+				
 				// avoid I/O congestion and CPU overload
 				// modulo must be low enough and sleep must be large enough
 				// to avoid DPC blackouts (e.g. no media skipping when listening to music)

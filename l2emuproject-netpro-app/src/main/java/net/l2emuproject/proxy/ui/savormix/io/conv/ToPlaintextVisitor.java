@@ -193,7 +193,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			
 			// Enable object analytics and whatnot
 			if (cacheContext instanceof HistoricalPacketLog)
-				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext);
+				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext, packet.getReceived());
 			
 			if (hidden)
 				return;

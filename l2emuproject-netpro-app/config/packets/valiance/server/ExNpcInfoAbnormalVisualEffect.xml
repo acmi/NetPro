@@ -4,9 +4,9 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="528" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="NPC OID" type="ObjectID" />
-	<dword alias="Unk" />
+	<dword alias="Transformation" type="Transformation" />
 	<word alias="Visual effects" id="ave_cnt" />
 	<loop id="ave_cnt">
-		<word alias="Effect" type="ave.AbnormalVisualEffect" />
+		<word alias="Visual effect" type="ave.AbnormalVisualEffect" />
 	</loop>
 </packet>

@@ -5,7 +5,7 @@
 <packet id="648" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Character OID" type="ObjectID" />
 	<dword alias="Transformation" type="Transformation" />
-	<word alias="Visual effects" id="ave_cnt" />
+	<dword alias="Visual effects" id="ave_cnt" />
 	<loop id="ave_cnt">
 		<word alias="Visual effect" type="ave.AbnormalVisualEffect" />
 	</loop>

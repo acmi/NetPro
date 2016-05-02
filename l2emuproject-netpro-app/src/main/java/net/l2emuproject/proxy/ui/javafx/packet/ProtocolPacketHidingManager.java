@@ -15,8 +15,10 @@
  */
 package net.l2emuproject.proxy.ui.javafx.packet;
 
+import java.io.EOFException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.BufferUnderflowException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
@@ -35,6 +37,9 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.function.Consumer;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.exception.DamagedFileException;
+import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
+import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
@@ -163,20 +168,32 @@ public final class ProtocolPacketHidingManager implements IOConstants
 		}
 	}
 	
-	private IPacketHidingConfig readHidingConfig(Path file) throws IOException
+	private IPacketHidingConfig readHidingConfig(Path file) throws InsufficientlyLargeFileException, UnknownFileTypeException, DamagedFileException, IOException
 	{
 		final Map<EndpointType, Set<byte[]>> type2Prefixes = new EnumMap<EndpointType, Set<byte[]>>(EndpointType.class);
 		for (final EndpointType type : EndpointType.VALUES)
 			type2Prefixes.put(type, new HashSet<>());
 		try (final SeekableByteChannel channel = Files.newByteChannel(file, StandardOpenOption.READ); final NewIOHelper in = new NewIOHelper(channel))
 		{
-			in.readLong(); // magic
-			in.readByte(); // version
+			try
+			{
+				final long magicValue = in.readLong(); // magic
+				if (magicValue != PROTOCOL_PACKET_HIDING_MAGIC)
+					throw new UnknownFileTypeException(magicValue);
+				if (in.readByte() < 1) // version
+					throw new DamagedFileException("version");
+			}
+			catch (BufferUnderflowException | EOFException e)
+			{
+				throw new InsufficientlyLargeFileException();
+			}
 			
 			final int blockCount = in.readByte() & 0xFF;
 			for (int i = 0; i < blockCount; ++i)
 			{
 				final int blockSize = in.readInt();
+				if (blockSize < 5)
+					throw new DamagedFileException("block size");
 				final int typeValue = in.readByte() & 0xFF;
 				final Set<byte[]> prefixSet;
 				try
@@ -190,6 +207,8 @@ public final class ProtocolPacketHidingManager implements IOConstants
 					continue;
 				}
 				final int prefixCount = in.readInt();
+				if (prefixCount < 0)
+					throw new DamagedFileException("prefix count");
 				for (int j = 0; j < prefixCount; ++j)
 				{
 					final int totalSize = in.readByte();

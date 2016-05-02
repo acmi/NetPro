@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.io;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
@@ -30,11 +31,11 @@ import java.util.Map;
 import java.util.Set;
 
 import net.l2emuproject.proxy.io.LogLoadOptions.LogLoadFlag;
-import net.l2emuproject.proxy.io.exception.DamagedPacketLogFileException;
+import net.l2emuproject.proxy.io.exception.DamagedFileException;
 import net.l2emuproject.proxy.io.exception.EmptyPacketLogException;
 import net.l2emuproject.proxy.io.exception.FilesizeMeasureException;
 import net.l2emuproject.proxy.io.exception.IncompletePacketLogFileException;
-import net.l2emuproject.proxy.io.exception.InsufficientlyLargeLogFileException;
+import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
 import net.l2emuproject.proxy.io.exception.TruncatedPacketLogFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.network.EndpointType;
@@ -83,17 +84,17 @@ public final class PacketLogFileUtils implements IOConstants
 	 * @param packetLogFile path to log file
 	 * @return log file metadata
 	 * @throws FilesizeMeasureException if it was not possible to determine the size of the file, but it is necessary to validate the log file (older versions only)
-	 * @throws InsufficientlyLargeLogFileException if the given file is too small to be a NetPro packet log
+	 * @throws InsufficientlyLargeFileException if the given file is too small to be a NetPro packet log
 	 * @throws IncompletePacketLogFileException if the given file is either a work in progress or it's generation was abruptly terminated
 	 * @throws UnknownFileTypeException if the given file is not a NetPro packet log (different/unknown format)
 	 * @throws TruncatedPacketLogFileException if the given file does not include all mandatory metadata fields
 	 * @throws EmptyPacketLogException if the given packet log is empty
-	 * @throws DamagedPacketLogFileException if the given file contains incoherent metadata
+	 * @throws DamagedFileException if the given file contains incoherent metadata
 	 * @throws InterruptedException if the operation was cancelled by the user
 	 * @throws IOException in case of a general I/O error
 	 */
-	public static final LogFileHeader getMetadata(Path packetLogFile) throws FilesizeMeasureException, InsufficientlyLargeLogFileException, IncompletePacketLogFileException, UnknownFileTypeException,
-			TruncatedPacketLogFileException, EmptyPacketLogException, DamagedPacketLogFileException, InterruptedException, IOException
+	public static final LogFileHeader getMetadata(Path packetLogFile) throws FilesizeMeasureException, InsufficientlyLargeFileException, IncompletePacketLogFileException, UnknownFileTypeException,
+			TruncatedPacketLogFileException, EmptyPacketLogException, DamagedFileException, InterruptedException, IOException
 	{
 		FilesizeMeasureException fail = null;
 		long size = -1;
@@ -101,7 +102,7 @@ public final class PacketLogFileUtils implements IOConstants
 		{
 			size = Files.size(packetLogFile);
 			if (size < 9)
-				throw new InsufficientlyLargeLogFileException();
+				throw new InsufficientlyLargeFileException();
 		}
 		catch (IOException e)
 		{
@@ -119,9 +120,9 @@ public final class PacketLogFileUtils implements IOConstants
 				if (magicValue != LOG_MAGIC)
 					throw new UnknownFileTypeException(magicValue);
 			}
-			catch (BufferOverflowException e)
+			catch (BufferOverflowException | EOFException e)
 			{
-				throw new InsufficientlyLargeLogFileException();
+				throw new InsufficientlyLargeFileException();
 			}
 			
 			final int logFileVersion;
@@ -131,11 +132,11 @@ public final class PacketLogFileUtils implements IOConstants
 			}
 			catch (BufferOverflowException e)
 			{
-				throw new InsufficientlyLargeLogFileException();
+				throw new InsufficientlyLargeFileException();
 			}
 			
 			if (logFileVersion < 1)
-				throw new DamagedPacketLogFileException("Packet log version");
+				throw new DamagedFileException("Packet log version");
 			
 			final int headerSize, footerSize;
 			final long footerStartPosition;
@@ -147,9 +148,9 @@ public final class PacketLogFileUtils implements IOConstants
 				footerStartPosition = in.readLong(); // kind of useless?
 				
 				if (headerSize < 0)
-					throw new DamagedPacketLogFileException("Header size");
+					throw new DamagedFileException("Header size");
 				if (footerSize < 0)
-					throw new DamagedPacketLogFileException("Footer size");
+					throw new DamagedFileException("Footer size");
 			}
 			else
 			{
@@ -165,9 +166,9 @@ public final class PacketLogFileUtils implements IOConstants
 			}
 			
 			if (footerStartPosition < headerSize)
-				throw new DamagedPacketLogFileException("Footer position");
+				throw new DamagedFileException("Footer position");
 			if (size != -1 && footerSize != size - footerStartPosition)
-				throw new DamagedPacketLogFileException("Footer size");
+				throw new DamagedFileException("Footer size");
 			
 			// default header fields
 			ServiceType service = ServiceType.GAME;
@@ -191,12 +192,12 @@ public final class PacketLogFileUtils implements IOConstants
 			
 			final long unreadHeaderBytes = headerSize - in.getPositionInChannel(false);
 			if (unreadHeaderBytes < 0)
-				throw new DamagedPacketLogFileException("Header size");
+				throw new DamagedFileException("Header size");
 			
 			if (unreadHeaderBytes > 0)
 			{
 				if (logFileVersion <= LOG_VERSION)
-					throw new DamagedPacketLogFileException("Header size");
+					throw new DamagedFileException("Header size");
 			}
 			
 			if (Thread.interrupted())
@@ -236,7 +237,7 @@ public final class PacketLogFileUtils implements IOConstants
 				in.setPositionInChannel(footerStartPosition);
 				totalPackets = in.readInt();
 				if (totalPackets < 0)
-					throw new DamagedPacketLogFileException("Packet amount");
+					throw new DamagedFileException("Packet amount");
 				if (totalPackets == 0)
 					throw new EmptyPacketLogException();
 				

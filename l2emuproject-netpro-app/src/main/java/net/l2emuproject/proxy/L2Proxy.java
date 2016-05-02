@@ -45,7 +45,6 @@ import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.AppInit;
 import net.l2emuproject.util.L2Utils;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
-import net.l2emuproject.util.concurrent.ThreadPoolInitializer;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -91,11 +90,14 @@ public class L2Proxy
 	{
 		if (STATE_REPORTER != null)
 			STATE_REPORTER.onState(UIStrings.get("startup.config"));
+		// 1. INIT LOGGING, ORDERED SHUTDOWN HOOK, DEADLOCK DETECTION, FALLBACK EXCEPTION HANDLER
 		AppInit.defaultInit();
+		// 2. LOG APP LOGO/VERSION
 		NetProInfo.showStartupInfo();
 		
 		final L2Logger logger = L2Logger.getLogger(L2Proxy.class);
 		logger.debug("Loading configuration…");
+		// 3. LOAD CONFIG PROPERTIES
 		try
 		{
 			CurrentConfigManager.getInstance().registerAll(ConfigMarker.class.getPackage()).load();
@@ -108,13 +110,11 @@ public class L2Proxy
 		}
 		logger.spam("…SUCCESS");
 		
+		// 4. INIT TP
 		logger.spam("Setting up thread pools…");
 		try
 		{
-			L2ThreadPool.initThreadPools(new ThreadPoolInitializer()
-			{
-				// FIXME: this needs to be done eventually
-			});
+			L2ThreadPool.initThreadPools(new NetProThreadPools());
 		}
 		catch (Exception e)
 		{
@@ -137,6 +137,7 @@ public class L2Proxy
 			logger.spam("Sleep intervals set.");
 		}
 		
+		// 5. EXECUTE POST-INIT HOOKS
 		logger.debug("Executing hooks before network init…");
 		synchronized (L2Proxy.class)
 		{
@@ -160,6 +161,7 @@ public class L2Proxy
 		final L2LoginServerConnections lsc;
 		if (LoadOption.DISABLE_PROXY.isNotSet())
 		{
+			// 6. OPEN SOCKETS
 			if (STATE_REPORTER != null)
 				STATE_REPORTER.onState(UIStrings.get("startup.sockets"));
 			logger.debug("Setting up sockets…");
@@ -238,11 +240,13 @@ public class L2Proxy
 		}
 		else
 			lsc = null;
-			
+		
+		// 7. LOG JVM INFO AND EXECUTE GENERIC STARTUP HOOKS
 		AppInit.defaultPostInit(NetProInfo.getFullVersionInfo());
 		
 		if (lsc != null)
 		{
+			// 8. LOG SOCKET INFO
 			L2Utils.printSection("Proxy");
 			L2TextBuilder tb = new L2TextBuilder();
 			tb.appendNewline("Configuration:");

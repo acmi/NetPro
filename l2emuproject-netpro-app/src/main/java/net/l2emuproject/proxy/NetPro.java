@@ -132,8 +132,6 @@ public class NetPro extends Application
 		{
 			// 1.1 DYNAMIC SPLASH SCREEN
 			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(SplashScreenController.class), UIStrings.getBundle());
-			if (loader.hashCode() != 0)
-				throw new IOException("message here");
 			SPLASH_STAGE.setScene(new Scene(loader.load(), null));
 			loader.<SplashScreenController> getController().bindDescription(LOADING_STAGE_DESCRIPTION);
 		}

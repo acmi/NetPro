@@ -20,12 +20,12 @@ package net.l2emuproject.proxy.io.exception;
  * 
  * @author _dev_
  */
-public final class InsufficientlyLargeLogFileException extends Exception
+public final class InsufficientlyLargeFileException extends Exception
 {
 	private static final long serialVersionUID = -8021493507274867323L;
 	
 	/** Creates this exception. */
-	public InsufficientlyLargeLogFileException()
+	public InsufficientlyLargeFileException()
 	{
 		super();
 	}

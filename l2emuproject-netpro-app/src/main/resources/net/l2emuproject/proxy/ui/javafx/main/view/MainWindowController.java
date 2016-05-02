@@ -34,7 +34,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -42,7 +41,6 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.concurrent.Future;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 import eu.revengineer.simplejse.exception.DependencyResolutionException;
 import eu.revengineer.simplejse.exception.MutableOperationInProgressException;
@@ -57,11 +55,11 @@ import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.NetPro;
 import net.l2emuproject.proxy.io.LogFileHeader;
 import net.l2emuproject.proxy.io.PacketLogFileUtils;
-import net.l2emuproject.proxy.io.exception.DamagedPacketLogFileException;
+import net.l2emuproject.proxy.io.exception.DamagedFileException;
 import net.l2emuproject.proxy.io.exception.EmptyPacketLogException;
 import net.l2emuproject.proxy.io.exception.FilesizeMeasureException;
 import net.l2emuproject.proxy.io.exception.IncompletePacketLogFileException;
-import net.l2emuproject.proxy.io.exception.InsufficientlyLargeLogFileException;
+import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
 import net.l2emuproject.proxy.io.exception.TruncatedPacketLogFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.network.ServiceType;
@@ -429,7 +427,7 @@ public class MainWindowController implements Initializable, IOConstants
 							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
 					{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
 				}
-				catch (InsufficientlyLargeLogFileException e)
+				catch (InsufficientlyLargeFileException e)
 				{
 					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
 							"open.netpro.err.dialog.header.toosmall", null, "open.netpro.err.dialog.content.toosmall", filename).show());
@@ -458,7 +456,7 @@ public class MainWindowController implements Initializable, IOConstants
 					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.empty",
 							null, "open.netpro.err.dialog.content.empty", filename).show());
 				}
-				catch (DamagedPacketLogFileException e)
+				catch (DamagedFileException e)
 				{
 					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.damaged",
 							null, "open.netpro.err.dialog.content.damaged", filename).show());
@@ -863,35 +861,6 @@ public class MainWindowController implements Initializable, IOConstants
 			wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, null, Modality.WINDOW_MODAL).showAndWait();
 			return null;
 		}
-	}
-	
-	/**
-	 * Creates a user-friendly view of the given throwable map.
-	 * 
-	 * @param fqcn2Exception script exception map
-	 * @param exceptionPreprocessor prepares exceptions for display
-	 * @return exception map representation
-	 */
-	public static final <T extends Throwable> Node makeThrowableMapExpandableContent(Map<?, T> fqcn2Exception, Function<T, Throwable> exceptionPreprocessor)
-	{
-		if (fqcn2Exception.isEmpty())
-			return null;
-		
-		final Accordion accordion = new Accordion();
-		accordion.setMinWidth(600);
-		accordion.setMinHeight(400);
-		for (final Entry<?, T> e : fqcn2Exception.entrySet())
-		{
-			final TextArea taStackTrace = new TextArea(StackTraceUtil.traceToString(exceptionPreprocessor.apply(e.getValue())));
-			taStackTrace.setMaxHeight(Double.MAX_VALUE);
-			taStackTrace.setMaxWidth(Double.MAX_VALUE);
-			
-			final TitledPane pane = new TitledPane(String.valueOf(e.getKey()), taStackTrace);
-			accordion.getPanes().add(pane);
-		}
-		if (fqcn2Exception.size() == 1)
-			accordion.setExpandedPane(accordion.getPanes().iterator().next());
-		return accordion;
 	}
 	
 	@FXML

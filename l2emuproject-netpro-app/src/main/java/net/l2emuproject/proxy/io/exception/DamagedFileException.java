@@ -20,7 +20,7 @@ package net.l2emuproject.proxy.io.exception;
  * 
  * @author _dev_
  */
-public final class DamagedPacketLogFileException extends Exception
+public final class DamagedFileException extends Exception
 {
 	private static final long serialVersionUID = -2737423206478728307L;
 	
@@ -29,7 +29,7 @@ public final class DamagedPacketLogFileException extends Exception
 	 * 
 	 * @param fieldNameOrDescription a description of incoherent data
 	 */
-	public DamagedPacketLogFileException(String fieldNameOrDescription)
+	public DamagedFileException(String fieldNameOrDescription)
 	{
 		super(fieldNameOrDescription);
 	}

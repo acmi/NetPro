@@ -42,7 +42,7 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor
 	/** Creates a single-threaded executor for packet notifications. */
 	ForwardedNotificationExecutor()
 	{
-		super(1, r ->
+		super(0, r ->
 		{
 			final Thread t = new Thread(r, "PacketNotifier-" + THREAD_COUNTER.getAndIncrement());
 			t.setPriority(Thread.NORM_PRIORITY - 1);
@@ -50,7 +50,7 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor
 		});
 		
 		setMaximumPoolSize(1);
-		setKeepAliveTime(5, TimeUnit.MINUTES);
+		setKeepAliveTime(1, TimeUnit.MINUTES);
 	}
 	
 	@Override

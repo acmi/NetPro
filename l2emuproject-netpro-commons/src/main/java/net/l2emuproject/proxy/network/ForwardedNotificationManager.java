@@ -19,14 +19,14 @@ import java.nio.ByteBuffer;
 import java.util.Map;
 import java.util.Set;
 
-import javolution.util.FastMap;
-
 import net.l2emuproject.proxy.network.Proxy.AsyncDisconnectionNotifier;
 import net.l2emuproject.proxy.network.ProxyConnections.AsyncConnectionNotifier;
 import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.network.listener.PacketManipulator;
 import net.l2emuproject.util.Rnd;
 import net.l2emuproject.util.logging.L2Logger;
+
+import javolution.util.FastMap;
 
 /**
  * Ensures that forwarded packet notifications are executed in order for each client/server pair.
@@ -85,15 +85,11 @@ public class ForwardedNotificationManager
 	 */
 	public void addDisconnectionNotification(AsyncDisconnectionNotifier notification)
 	{
-		final ForwardedNotificationExecutor exec = _client2Executor.get(notification.getClient());
-		if (exec == null)
-		{
+		final ForwardedNotificationExecutor exec = _client2Executor.remove(notification.getClient());
+		if (exec != null)
+			exec.execute(notification);
+		else
 			LOG.warn("Disconnection notification on an inactive connection?!");
-			return;
-		}
-		
-		_client2Executor.remove(notification.getClient());
-		exec.execute(notification);
 	}
 	
 	/**

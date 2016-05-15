@@ -20,10 +20,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 
 /**
  * Interprets the given byte array as quest completion flags.

@@ -40,11 +40,11 @@ import javax.swing.SwingConstants;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
-import net.l2emuproject.proxy.io.LogFileHeader;
+import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
+import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
 import net.l2emuproject.proxy.ui.savormix.component.GcInfoDialog.MemorySizeUnit;
 import net.l2emuproject.proxy.ui.savormix.io.LogLoadOptions;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogLoadTask;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 

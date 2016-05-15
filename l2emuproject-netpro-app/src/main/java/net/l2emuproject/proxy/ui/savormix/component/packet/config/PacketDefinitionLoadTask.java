@@ -17,7 +17,7 @@ package net.l2emuproject.proxy.ui.savormix.component.packet.config;
 
 import java.awt.Window;
 
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 
 /**

@@ -15,13 +15,11 @@
  */
 package net.l2emuproject.proxy.ui.javafx.packet;
 
-import java.util.Locale;
-
-import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
+import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.util.HexUtil;
 
 import javafx.beans.property.ReadOnlyStringProperty;
@@ -133,13 +131,8 @@ public final class PacketLogEntry
 	{
 		final IPacketTemplate packetTemplate = VersionnedPacketTable.getInstance().getTemplate(version, _packet.getEndpoint(), _packet.getBody());
 		
-		final byte[] prefix = packetTemplate.getPrefix();
-		final L2TextBuilder sb = HexUtil.fillHex(new L2TextBuilder(2 + 3 * (prefix.length - 1)), prefix[0] & 0xFF, 2, null);
-		for (int i = 1; i < prefix.length; ++i)
-			HexUtil.fillHex(sb.append(':'), prefix[i] & 0xFF, 2, null);
-		_opcode.set(sb.toString().toUpperCase(Locale.ENGLISH).intern());
-		
-		_name.set(packetTemplate.getName() != null ? packetTemplate.getName() : ("Unknown " + _opcode.get()).intern());
+		_opcode.set(HexUtil.bytesToHexString(packetTemplate.getPrefix(), ":").intern());
+		_name.set(packetTemplate.isDefined() ? packetTemplate.getName() : UIStrings.get("packetdc.table.unknownpacket", _opcode.get()).intern());
 	}
 	
 	@Override

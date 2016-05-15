@@ -31,6 +31,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import net.l2emuproject.proxy.L2Proxy;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.script.PpeEnabledLoaderScriptRegistry;
 import net.l2emuproject.proxy.script.ScriptManager;
@@ -44,7 +45,6 @@ import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.setup.SettingsManager;
 import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
 import net.l2emuproject.proxy.ui.savormix.component.SplashFrame;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.util.L2Utils;
 import net.l2emuproject.util.logging.L2Logger;
 import net.l2emuproject.util.logging.ListeningLog;

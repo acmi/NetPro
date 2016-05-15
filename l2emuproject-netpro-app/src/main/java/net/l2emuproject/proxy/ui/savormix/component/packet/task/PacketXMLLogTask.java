@@ -24,9 +24,9 @@ import java.text.SimpleDateFormat;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.conversion.ToXMLVisitor;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.conv.ToXMLVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.AbstractPacketWriteTask;
 import net.l2emuproject.util.ISODateTime;
 

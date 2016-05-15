@@ -17,9 +17,9 @@ package net.l2emuproject.proxy.ui.savormix.io.task;
 
 import java.util.Set;
 
-import net.l2emuproject.proxy.io.LogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.LoggedPacketFlag;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
 
 /**
  * Defines a visitor of packets in a historical packet log.

@@ -32,10 +32,10 @@ import org.xml.sax.SAXException;
 
 import net.l2emuproject.network.IPv4AddressPrefix;
 import net.l2emuproject.network.IPv4AddressTrie;
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.BindableSocketSet;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.util.L2XMLUtils;
 import net.l2emuproject.util.logging.L2Logger;
 

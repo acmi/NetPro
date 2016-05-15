@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-<?import java.lang.*?>
-<?import org.google.jhsheets.filtered.*?>
-<?import javafx.scene.control.*?>
-<?import org.google.jhsheets.filtered.*?>
-<?import org.google.jhsheets.filtered.tablecolumn.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.google.jhsheets.filtered.FilteredTableView?>
+<?import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <FilteredTableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <FilteredTableView fx:id="_tvTemplates" fixedCellSize="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
-          <FilterableBooleanTableColumn editable="false" maxWidth="21.0" minWidth="21.0" prefWidth="21.0" text="%packetdc.table.column.enable" />
+            <TableColumn fx:id="_tcShowInTab" maxWidth="-1.0" minWidth="25.0" prefWidth="-1.0" resizable="false" text="%packetdc.table.column.enable.tab" />
+            <TableColumn maxWidth="-1.0" minWidth="25.0" prefWidth="-1.0" resizable="false" text="%packetdc.table.column.enable.protocol" />
           <FilterableStringTableColumn editable="false" maxWidth="180.0" minWidth="80.0" text="%packettab.table.column.opcodes" />
           <FilterableStringTableColumn editable="false" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="193.0" text="%packettab.table.column.name" />
         </columns>
@@ -30,8 +34,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%packetdc.table.select.all" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%packetdc.table.select.none" GridPane.columnIndex="1" />
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setAllVisible" text="%packetdc.table.select.all" />
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setAllHidden" text="%packetdc.table.select.none" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </bottom>

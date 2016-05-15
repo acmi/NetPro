@@ -24,7 +24,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="629.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController">
+<BorderPane prefHeight="629.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController">
    <center>
       <TabPane fx:id="_tpConnections" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
         <tabs>
@@ -102,14 +102,10 @@
             </FlowPane>
             <CheckBox fx:id="_cbCaptureSession" mnemonicParsing="false" text="%main.capture.curtab" visible="false" />
             <CheckBox fx:id="_cbCaptureGlobal" mnemonicParsing="false" text="%main.capture.global" GridPane.rowIndex="1" />
+            <Button fx:id="_btnPacketHidingConfig" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#showPacketHidingConfig" text="%main.pdc" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <FlowPane alignment="CENTER" GridPane.columnIndex="1">
                <children>
                   <Label fx:id="_labProtocol" text="[000] Protocol 0000-01-01" visible="false" />
-               </children>
-            </FlowPane>
-            <FlowPane alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <Label fx:id="_labPacketDisplayConfig" text="%main.pdc" visible="false" />
                </children>
             </FlowPane>
          </children>
@@ -145,20 +141,20 @@
                               <MenuItem onAction="#copySelectedPacketXML" text="%menu.file.export.xml.clipboard" />
                           </items>
                         </Menu>
-                        <Menu text="%menu.file.export.table">
+                        <Menu fx:id="_mVisiblePacketExport" text="%menu.file.export.table">
                            <items>
-                              <MenuItem fx:id="_tablePackets2Plaintext" text="%menu.file.export.plain.clipboard" />
-                              <MenuItem fx:id="_tablePackets2PlaintextFile" text="%menu.file.export.plain.file" />
-                              <MenuItem fx:id="_tablePackets2XML" text="%menu.file.export.xml.clipboard" />
-                              <MenuItem fx:id="_tablePackets2XMLFile" text="%menu.file.export.xml.file" />
+                              <MenuItem onAction="#copyVisiblePackets" text="%menu.file.export.plain.clipboard" />
+                              <MenuItem text="%menu.file.export.plain.file" />
+                              <MenuItem onAction="#copyVisiblePacketsXML" text="%menu.file.export.xml.clipboard" />
+                              <MenuItem text="%menu.file.export.xml.file" />
                            </items>
                         </Menu>
-                        <Menu text="%menu.file.export.memory">
+                        <Menu fx:id="_mMemoryPacketExport" text="%menu.file.export.memory">
                            <items>
-                              <MenuItem fx:id="_memoryPackets2Plaintext" text="%menu.file.export.plain.clipboard" />
-                              <MenuItem fx:id="_memoryPackets2PlaintextFile" text="%menu.file.export.plain.file" />
-                              <MenuItem fx:id="_memoryPackets2XML" text="%menu.file.export.xml.clipboard" />
-                              <MenuItem fx:id="_memoryPackets2XMLFile" text="%menu.file.export.xml.file" />
+                              <MenuItem text="%menu.file.export.plain.clipboard" />
+                              <MenuItem text="%menu.file.export.plain.file" />
+                              <MenuItem text="%menu.file.export.xml.clipboard" />
+                              <MenuItem text="%menu.file.export.xml.file" />
                            </items>
                         </Menu>
                     </items>
@@ -218,7 +214,7 @@
             </Menu>
           <Menu text="%menu.help.title">
             <items>
-              <MenuItem fx:id="_configExplainer" text="%menu.help.config" />
+              <MenuItem onAction="#showConfigExplainDialog" text="%menu.help.config" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem onAction="#showAbout" text="%menu.help.about" />
             </items>

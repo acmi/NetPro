@@ -25,10 +25,10 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import eu.revengineer.simplejse.type.UnloadableScript;
 
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.interpreter.IntegerIdInterpreter;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**

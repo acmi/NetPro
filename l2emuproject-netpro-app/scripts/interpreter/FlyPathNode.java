@@ -20,12 +20,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
 import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**

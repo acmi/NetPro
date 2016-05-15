@@ -17,6 +17,8 @@ package net.l2emuproject.proxy.network.meta.container;
 
 import java.util.Arrays;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import javolution.util.FastComparator;
 import javolution.util.FastSet;
 
@@ -41,7 +43,8 @@ public class OpcodeOwnerSet extends FastSet<OpcodeOwnerSet.OpcodeOwner>
 	private static final long serialVersionUID = -6865928644610736327L;
 	
 	/** This comparator can both distinguish packets as well as sort them in a user-friendly ascending order. */
-	public static final FastComparator<OpcodeOwner> COMPARATOR = new FastComparator<OpcodeOwner>() {
+	public static final FastComparator<OpcodeOwner> COMPARATOR = new FastComparator<OpcodeOwner>()
+	{
 		private static final long serialVersionUID = -8037053272233195878L;
 		
 		@Override
@@ -60,43 +63,7 @@ public class OpcodeOwnerSet extends FastSet<OpcodeOwnerSet.OpcodeOwner>
 		public int compare(OpcodeOwner o1, OpcodeOwner o2)
 		{
 			final byte[] prefix1 = o1.getPrefix(), prefix2 = o2.getPrefix();
-			
-			if (prefix1.length == 0)
-			{
-				if (prefix2.length == 0)
-					return 0;
-				else
-					return -1;
-			}
-			else if (prefix2.length == 0)
-				return +1;
-			
-			final int first1 = prefix1[0] & 0xFF, first2 = prefix2[0] & 0xFF;
-			if (first1 < first2)
-				return -1;
-			if (first1 > first2)
-				return +1;
-			
-			if (prefix1.length < 3 || prefix2.length < 3)
-				return 0;
-			
-			final int second1 = prefix1[1] & 0xFF | ((prefix1[2] & 0xFF) << 8), second2 = prefix2[1] & 0xFF | ((prefix2[2] & 0xFF) << 8);
-			if (second1 < second2)
-				return -1;
-			if (second1 > second2)
-				return +1;
-			
-			for (int i = 3; prefix1.length - i >= 4 && prefix2.length - i >= 4; i += 4)
-			{
-				final int next1 = prefix1[i] & 0xFF | ((prefix1[i + 1] & 0xFF) << 8) | ((prefix1[i + 2] & 0xFF) << 16) | ((prefix1[i + 3] & 0xFF) << 24);
-				final int next2 = prefix2[i] & 0xFF | ((prefix2[i + 1] & 0xFF) << 8) | ((prefix2[i + 2] & 0xFF) << 16) | ((prefix2[i + 3] & 0xFF) << 24);
-				if (next1 < next2)
-					return -1;
-				if (next1 > next2)
-					return +1;
-			}
-			
-			return 0;
+			return comparePacketPrefixes(prefix1, prefix2);
 		}
 		
 		@Override
@@ -110,5 +77,64 @@ public class OpcodeOwnerSet extends FastSet<OpcodeOwnerSet.OpcodeOwner>
 	public OpcodeOwnerSet()
 	{
 		setValueComparator(COMPARATOR);
+	}
+	
+	public static final int comparePacketPrefixes(byte[] prefix1, byte[] prefix2)
+	{
+		if (ArrayUtils.isEmpty(prefix1))
+		{
+			if (ArrayUtils.isEmpty(prefix2))
+			{
+				return 0;
+			}
+			
+			return -1;
+		}
+		else if (ArrayUtils.isEmpty(prefix2))
+			return +1;
+		
+		if (prefix1.length < prefix2.length)
+			return -1;
+		if (prefix1.length > prefix2.length)
+			return +1;
+		
+		{
+			final int first1 = prefix1[0] & 0xFF, first2 = prefix2[0] & 0xFF;
+			if (first1 < first2)
+				return -1;
+			if (first1 > first2)
+				return +1;
+		}
+		
+		if (prefix1.length != 3 && prefix1.length != 7)
+		{
+			for (int i = 1; i < prefix1.length; ++i)
+			{
+				final int e1 = prefix1[i] & 0xFF, e2 = prefix2[i] & 0xFF;
+				if (e1 < e2)
+					return -1;
+				if (e1 > e2)
+					return +1;
+			}
+			return 0;
+		}
+		
+		final int second1 = prefix1[1] & 0xFF | ((prefix1[2] & 0xFF) << 8), second2 = prefix2[1] & 0xFF | ((prefix2[2] & 0xFF) << 8);
+		if (second1 < second2)
+			return -1;
+		if (second1 > second2)
+			return +1;
+		
+		for (int i = 3; prefix1.length - i >= 4 && prefix2.length - i >= 4; i += 4)
+		{
+			final int next1 = prefix1[i] & 0xFF | ((prefix1[i + 1] & 0xFF) << 8) | ((prefix1[i + 2] & 0xFF) << 16) | ((prefix1[i + 3] & 0xFF) << 24);
+			final int next2 = prefix2[i] & 0xFF | ((prefix2[i + 1] & 0xFF) << 8) | ((prefix2[i + 2] & 0xFF) << 16) | ((prefix2[i + 3] & 0xFF) << 24);
+			if (next1 < next2)
+				return -1;
+			if (next1 > next2)
+				return +1;
+		}
+		
+		return 0;
 	}
 }

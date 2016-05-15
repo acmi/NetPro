@@ -18,9 +18,9 @@ package net.l2emuproject.proxy.ui.savormix.io.task;
 import java.awt.Window;
 import java.util.List;
 
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.component.packet.PacketList;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 
 /**
  * Loads specified packet log files according to given log loading options. Loading is performed in a background thread, with a shared progress dialog.

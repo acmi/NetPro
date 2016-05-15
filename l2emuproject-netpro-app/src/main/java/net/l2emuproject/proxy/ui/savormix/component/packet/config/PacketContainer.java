@@ -20,9 +20,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 
 /**
  * A class that tracks packet display configuration for a single endpoint.

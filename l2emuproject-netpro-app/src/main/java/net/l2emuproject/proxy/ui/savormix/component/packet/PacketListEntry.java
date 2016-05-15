@@ -19,9 +19,9 @@ import java.util.Locale;
 
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.util.HexUtil;
 
 /**

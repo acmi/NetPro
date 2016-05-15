@@ -15,7 +15,7 @@
  */
 package net.l2emuproject.proxy.ui.savormix.io.task;
 
-import static net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag.HIDDEN;
+import static net.l2emuproject.proxy.io.packetlog.LoggedPacketFlag.HIDDEN;
 
 import java.awt.Window;
 import java.io.IOException;
@@ -33,7 +33,11 @@ import javax.swing.SwingUtilities;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.config.ProxyConfig;
-import net.l2emuproject.proxy.io.LogFileHeader;
+import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.proxy.io.NewIOHelper;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
+import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.LoggedPacketFlag;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
@@ -41,10 +45,6 @@ import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.savormix.io.LogLoadOptions;
-import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 import net.l2emuproject.util.BitMaskUtils;

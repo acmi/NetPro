@@ -43,12 +43,12 @@ import javax.swing.table.TableColumn;
 
 import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.ui.listener.BatchPacketDisplayConfigListener;
 import net.l2emuproject.proxy.ui.savormix.component.BlockableDialog;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.exception.InvalidFileException;
 import net.l2emuproject.proxy.ui.savormix.io.exception.UnsupportedFileException;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;

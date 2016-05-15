@@ -53,8 +53,8 @@ import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.NetPro;
-import net.l2emuproject.proxy.io.LogFileHeader;
-import net.l2emuproject.proxy.io.PacketLogFileUtils;
+import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.io.exception.DamagedFileException;
 import net.l2emuproject.proxy.io.exception.EmptyPacketLogException;
 import net.l2emuproject.proxy.io.exception.FilesizeMeasureException;
@@ -62,6 +62,8 @@ import net.l2emuproject.proxy.io.exception.IncompletePacketLogFileException;
 import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
 import net.l2emuproject.proxy.io.exception.TruncatedPacketLogFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
+import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.PacketLogFileUtils;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.ui.i18n.BytesizeFormat;
@@ -69,10 +71,9 @@ import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
 import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
-import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogLoadOptionController;
+import net.l2emuproject.proxy.ui.javafx.error.view.ExceptionSummaryDialogController;
+import net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.HexUtil;
 import net.l2emuproject.util.StackTraceUtil;
@@ -96,6 +97,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Label;
@@ -110,6 +112,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.DirectoryChooser;
@@ -128,7 +131,7 @@ public class MainWindowController implements Initializable, IOConstants
 {
 	static final L2Logger LOG = L2Logger.getLogger(MainWindowController.class);
 	
-	private File lastOpenDirectory = IOConstants.LOG_DIRECTORY.toFile();
+	private File _lastOpenDirectory = IOConstants.LOG_DIRECTORY.toFile();
 	
 	@FXML
 	private TabPane _tpConnections;
@@ -167,22 +170,10 @@ public class MainWindowController implements Initializable, IOConstants
 	private CheckBox _cbCaptureGlobal;
 	
 	@FXML
+	private Button _btnPacketHidingConfig;
+	
+	@FXML
 	private Label _labProtocol;
-	
-	@FXML
-	private Label _labPacketDisplayConfig;
-	
-	@FXML
-	private MenuItem _openNetProLog;
-	
-	@FXML
-	private MenuItem _openPhxLog;
-	
-	@FXML
-	private MenuItem _openPhxRawLog;
-	
-	@FXML
-	private MenuItem _openPacketSamuraiLog;
 	
 	@FXML
 	private Menu _mExport;
@@ -191,46 +182,10 @@ public class MainWindowController implements Initializable, IOConstants
 	private Menu _mSelectedPacketExport;
 	
 	@FXML
-	private MenuItem _selectedPacket2Plaintext;
+	private Menu _mVisiblePacketExport;
 	
 	@FXML
-	private MenuItem _selectedPacket2XML;
-	
-	@FXML
-	private MenuItem _visiblePackets2Plaintext;
-	
-	@FXML
-	private MenuItem _visiblePackets2PlaintextFile;
-	
-	@FXML
-	private MenuItem _visiblePackets2XML;
-	
-	@FXML
-	private MenuItem _visiblePackets2XMLFile;
-	
-	@FXML
-	private MenuItem _tablePackets2Plaintext;
-	
-	@FXML
-	private MenuItem _tablePackets2PlaintextFile;
-	
-	@FXML
-	private MenuItem _tablePackets2XML;
-	
-	@FXML
-	private MenuItem _tablePackets2XMLFile;
-	
-	@FXML
-	private MenuItem _memoryPackets2Plaintext;
-	
-	@FXML
-	private MenuItem _memoryPackets2PlaintextFile;
-	
-	@FXML
-	private MenuItem _memoryPackets2XML;
-	
-	@FXML
-	private MenuItem _memoryPackets2XMLFile;
+	private Menu _mMemoryPacketExport;
 	
 	@FXML
 	private MenuItem _npLog2PhxLog;
@@ -271,9 +226,6 @@ public class MainWindowController implements Initializable, IOConstants
 	@FXML
 	private Menu _mScripts;
 	
-	@FXML
-	private MenuItem _configExplainer;
-	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
@@ -294,23 +246,35 @@ public class MainWindowController implements Initializable, IOConstants
 		}), new KeyFrame(Duration.seconds(1)));
 		tlHeapUsage.setCycleCount(Animation.INDEFINITE);
 		tlHeapUsage.play();
-		_labJvmType.setText(UIStrings.get("main.javaenv", NetProScriptCache.getInstance().isCompilerUnavailable() ? "JRE" : "JDK"));
+		_labJvmType.setText(UIStrings.get("main.javaenv", NetProScriptCache.getInstance().isCompilerUnavailable() ? "JRE" : "JDK", System.getProperty("java.specification.version", "1.?"),
+				System.getProperty("java.vm.specification.version", "1.?")));
+		final String javaPath = System.getProperty("java.home");
+		if (javaPath != null)
+			_labJvmType.setTooltip(new Tooltip(javaPath));
 		
 		_tpConnections.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) ->
 		{
 			final Object ctrl = neu != null ? neu.getUserData() : null;
 			if (ctrl == null || !(ctrl instanceof PacketLogTabController))
 			{
+				_mExport.setDisable(true);
+				
 				_cbCaptureSession.setVisible(false);
 				_labProtocol.setVisible(false);
-				_labPacketDisplayConfig.setVisible(false);
+				_btnPacketHidingConfig.setVisible(false);
 				return;
 			}
 			
-			_labProtocol.setVisible(true);
-			
 			final PacketLogTabController controller = (PacketLogTabController)ctrl;
+			
+			_mSelectedPacketExport.disableProperty().bind(Bindings.not(controller.anyPacketSelected()));
+			_mVisiblePacketExport.disableProperty().bind(Bindings.not(controller.hasVisiblePackets()));
+			_mMemoryPacketExport.disableProperty().bind(Bindings.not(controller.hasMemoryPackets()));
+			_mExport.setDisable(false);
+			
 			_labProtocol.textProperty().bind(Bindings.convert(controller.protocolProperty()));
+			_labProtocol.setVisible(true);
+			_btnPacketHidingConfig.setVisible(true);
 		});
 		_tpConnections.addEventHandler(KeyEvent.KEY_PRESSED, e ->
 		{
@@ -351,6 +315,16 @@ public class MainWindowController implements Initializable, IOConstants
 		return _tpConnections.getScene().getWindow();
 	}
 	
+	private PacketLogTabController getCurrentPacketTabController()
+	{
+		final Tab packetTab = _tpConnections.getSelectionModel().getSelectedItem();
+		if (packetTab == null)
+			return null;
+		
+		final Object controller = packetTab.getUserData();
+		return packetTab.getUserData() instanceof PacketLogTabController ? (PacketLogTabController)controller : null;
+	}
+	
 	@FXML
 	private void clearConsole(ActionEvent evt)
 	{
@@ -360,15 +334,25 @@ public class MainWindowController implements Initializable, IOConstants
 	}
 	
 	@FXML
-	void copySelectedPacket(ActionEvent event)
+	private void showPacketHidingConfig(ActionEvent evt)
 	{
 		
 	}
 	
 	@FXML
+	void copySelectedPacket(ActionEvent event)
+	{
+		final PacketLogTabController controller = getCurrentPacketTabController();
+		if (controller != null)
+			controller.copyPacketAsPlaintext(event);
+	}
+	
+	@FXML
 	void copySelectedPacketXML(ActionEvent event)
 	{
-		
+		final PacketLogTabController controller = getCurrentPacketTabController();
+		if (controller != null)
+			controller.copyPacketAsXML(event);
 	}
 	
 	@FXML
@@ -393,13 +377,13 @@ public class MainWindowController implements Initializable, IOConstants
 		final FileChooser fc = new FileChooser();
 		fc.setTitle(UIStrings.get("open.netpro.fileselect.title"));
 		fc.getExtensionFilters().addAll(new ExtensionFilter(UIStrings.get("open.netpro.fileselect.description"), "*.plog"), new ExtensionFilter(UIStrings.get("generic.filedlg.allfiles"), "*.*"));
-		fc.setInitialDirectory(lastOpenDirectory);
+		fc.setInitialDirectory(_lastOpenDirectory);
 		
 		final List<File> selectedFiles = fc.showOpenMultipleDialog(getMainWindow());
 		if (selectedFiles == null || selectedFiles.isEmpty())
 			return;
 		
-		lastOpenDirectory = selectedFiles.iterator().next().getParentFile();
+		_lastOpenDirectory = selectedFiles.iterator().next().getParentFile();
 		
 		final WaitingIndicatorDialogController waitDialog = showWaitDialog("generic.waitdlg.title", selectedFiles.size() > 1 ? "open.netpro.waitdlg.header.multiple" : "open.netpro.waitdlg.header",
 				selectedFiles.size() > 1 ? String.valueOf(selectedFiles.size()) : selectedFiles.iterator().next().getName());
@@ -899,6 +883,12 @@ public class MainWindowController implements Initializable, IOConstants
 		about.setScene(aboutDialog);
 		WindowTracker.getInstance().add(about);
 		about.show();
+	}
+	
+	@FXML
+	private void showConfigExplainDialog(ActionEvent event)
+	{
+		
 	}
 	
 	// ------------------------

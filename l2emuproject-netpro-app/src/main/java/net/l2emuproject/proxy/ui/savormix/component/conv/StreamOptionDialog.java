@@ -30,10 +30,10 @@ import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.proxy.io.conversion.ToRawStreamVisitor;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.ui.savormix.io.PacketLogChooser;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.proxy.ui.savormix.io.conv.ToRawStreamVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalLogPacketVisitor;
 import net.l2emuproject.proxy.ui.savormix.io.task.LogVisitationTask;
 

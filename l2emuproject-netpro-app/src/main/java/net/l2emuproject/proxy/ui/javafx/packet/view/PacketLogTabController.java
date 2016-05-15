@@ -15,9 +15,18 @@
  */
 package net.l2emuproject.proxy.ui.javafx.packet.view;
 
+import static net.l2emuproject.util.ISODateTime.ISO_DATE_TIME_ZONE_MS;
+
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.io.IOException;
 import java.net.URL;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.google.jhsheets.filtered.FilteredTableView;
@@ -25,17 +34,29 @@ import org.google.jhsheets.filtered.operators.StringOperator;
 import org.google.jhsheets.filtered.tablecolumn.ColumnFilterEvent;
 import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn;
 
+import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
+import net.l2emuproject.proxy.io.conversion.ToPlaintextVisitor;
+import net.l2emuproject.proxy.io.conversion.ToXMLVisitor;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
+import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
+import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.Packet2Html;
+import net.l2emuproject.proxy.ui.javafx.packet.PacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
+import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -48,7 +69,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -88,6 +113,15 @@ public class PacketLogTabController implements Initializable
 	@FXML
 	private PacketInterpViewController _packetDisplayController;
 	
+	@FXML
+	private CheckMenuItem _cmiIgnoreFilters;
+	
+	@FXML
+	private Menu _mHidePacket;
+	
+	@FXML
+	private MenuItem _miHidePacketInProtocol;
+	
 	private static final int AUTO_SCROLL_THRESHOLD = 250;
 	
 	private final ObservableList<PacketLogEntry> _memoryPackets, _tablePackets;
@@ -97,6 +131,8 @@ public class PacketLogTabController implements Initializable
 	
 	private BooleanProperty _scrollLockProperty;
 	private boolean _autoScrollPending;
+	
+	private IPacketHidingConfig _packetHidingConfig;
 	
 	/** Creates this controller. */
 	public PacketLogTabController()
@@ -110,11 +146,16 @@ public class PacketLogTabController implements Initializable
 			if (neu == null)
 				return;
 			
+			final Map<EndpointType, Set<byte[]>> tabConfig = _packetHidingConfig.getSaveableFormat();
+			_packetHidingConfig = new PacketHidingConfig(ProtocolPacketHidingManager.getInstance().getHidingConfiguration(neu), tabConfig.get(EndpointType.CLIENT), tabConfig.get(EndpointType.SERVER));
+			
 			for (final PacketLogEntry e : _memoryPackets)
 				e.updateView(neu);
 			_tvPackets.refresh();
 		});
 		_scrollLockProperty = new SimpleBooleanProperty(false);
+		// will only be modified on the UI thread
+		_packetHidingConfig = new PacketHidingConfig(new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes), new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes));
 	}
 	
 	@Override
@@ -131,10 +172,19 @@ public class PacketLogTabController implements Initializable
 			row.itemProperty().addListener((obs, old, neu) -> row.pseudoClassStateChanged(clientPacketRowClass, neu != null ? neu.getPacket().getEndpoint().isClient() : false));
 			return row;
 		});
+		
+		final ContextMenu contextMenu = _tvPackets.getContextMenu();
 		_tvPackets.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) ->
 		{
-			if (old == neu || neu == null)
+			if (neu == null)
+			{
+				_tvPackets.setContextMenu(null);
 				return;
+			}
+			
+			_mHidePacket.textProperty().bind(UIStrings.getEx("packettab.cmenu.hiding.menu", neu.nameProperty()));
+			_miHidePacketInProtocol.textProperty().bind(UIStrings.getEx("packettab.cmenu.hiding.protocol", Bindings.convert(_protocolProperty)));
+			_tvPackets.setContextMenu(contextMenu);
 			
 			//ServerListTypePublisher.LIST_TYPE.set(_owner.getServerListType());
 			final Pair<String, String> html = Packet2Html.getHTML(neu.getPacket(), _protocolProperty.get(), _entityCacheContext);
@@ -144,14 +194,7 @@ public class PacketLogTabController implements Initializable
 		final SortedList<PacketLogEntry> sortableTablePackets = new SortedList<>(_tablePackets);
 		sortableTablePackets.comparatorProperty().bind(_tvPackets.comparatorProperty());
 		_tvPackets.setItems(sortableTablePackets);
-		_tvPackets.addEventHandler(ColumnFilterEvent.FILTER_CHANGED_EVENT, e ->
-		{
-			final ObservableList<PacketLogEntry> filterMatchingPackets = FXCollections.observableArrayList();
-			for (final PacketLogEntry packetEntry : _memoryPackets)
-				if (!isHiddenByDisplayConfig(packetEntry) && !isHiddenByOpcode(packetEntry) && !isHiddenByName(packetEntry))
-					filterMatchingPackets.add(packetEntry);
-			_tablePackets.setAll(filterMatchingPackets);
-		});
+		_tvPackets.addEventHandler(ColumnFilterEvent.FILTER_CHANGED_EVENT, e -> applyFilters());
 		
 		_colSender.setCellValueFactory(new PropertyValueFactory<>("sender"));
 		_colOpcode.setCellValueFactory(new PropertyValueFactory<>("opcode"));
@@ -169,6 +212,8 @@ public class PacketLogTabController implements Initializable
 		}));
 		tlAutoScroll.setCycleCount(Timeline.INDEFINITE);
 		tlAutoScroll.play();
+		
+		_cmiIgnoreFilters.selectedProperty().addListener((obs, old, neu) -> applyFilters());
 	}
 	
 	@FXML
@@ -182,6 +227,88 @@ public class PacketLogTabController implements Initializable
 	private void clearTable(ActionEvent event)
 	{
 		_tablePackets.clear();
+	}
+	
+	@FXML
+	public void copyPacketAsPlaintext(ActionEvent event)
+	{
+		final PacketLogEntry packetEntry = _tvPackets.getSelectionModel().getSelectedItem();
+		if (packetEntry == null)
+			return;
+		
+		final L2TextBuilder sb = new L2TextBuilder();
+		try
+		{
+			ToPlaintextVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), new MMOBuffer(), _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+		}
+		catch (IOException e)
+		{
+			// L2TB doesn't throw
+			throw new AssertionError("L2TextBuilder", e);
+		}
+	}
+	
+	@FXML
+	public void copyPacketAsXML(ActionEvent event)
+	{
+		final PacketLogEntry packetEntry = _tvPackets.getSelectionModel().getSelectedItem();
+		if (packetEntry == null)
+			return;
+		
+		final L2TextBuilder sb = new L2TextBuilder();
+		try
+		{
+			ToXMLVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), new MMOBuffer(), _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
+		}
+		catch (IOException e)
+		{
+			// L2TB doesn't throw
+			throw new AssertionError("L2TextBuilder", e);
+		}
+	}
+	
+	@FXML
+	private void hidePacketInTab(ActionEvent event)
+	{
+		hideSelectedPacket(_packetHidingConfig);
+	}
+	
+	@FXML
+	private void hidePacketInProtocol(ActionEvent event)
+	{
+		final IProtocolVersion protocol = _protocolProperty.get();
+		hideSelectedPacket(ProtocolPacketHidingManager.getInstance().getHidingConfiguration(protocol));
+		ProtocolPacketHidingManager.getInstance().markModified(protocol);
+	}
+	
+	private void hideSelectedPacket(IPacketHidingConfig hidingConfig)
+	{
+		final PacketLogEntry packetEntry = _tvPackets.getSelectionModel().getSelectedItem();
+		if (packetEntry == null)
+			return;
+		
+		final ReceivedPacket packet = packetEntry.getPacket();
+		final EndpointType endpoint = packet.getEndpoint();
+		hidingConfig.setHidden(endpoint, VersionnedPacketTable.getInstance().getTemplate(_protocolProperty.get(), endpoint, packet.getBody()));
+		
+		applyFilters();
+	}
+	
+	private void applyFilters()
+	{
+		if (_cmiIgnoreFilters.isSelected())
+		{
+			_tablePackets.setAll(_memoryPackets);
+			return;
+		}
+		
+		final ObservableList<PacketLogEntry> filterMatchingPackets = FXCollections.observableArrayList();
+		for (final PacketLogEntry packetEntry : _memoryPackets)
+			if (!isHiddenByDisplayConfig(packetEntry) && !isHiddenByOpcode(packetEntry) && !isHiddenByName(packetEntry))
+				filterMatchingPackets.add(packetEntry);
+		_tablePackets.setAll(filterMatchingPackets);
 	}
 	
 	private boolean isHiddenByOpcode(PacketLogEntry packetEntry)
@@ -204,7 +331,9 @@ public class PacketLogTabController implements Initializable
 	
 	private boolean isHiddenByDisplayConfig(PacketLogEntry packetEntry)
 	{
-		return false;
+		final ReceivedPacket packet = packetEntry.getPacket();
+		final EndpointType endpoint = packet.getEndpoint();
+		return _packetHidingConfig.isHidden(endpoint, VersionnedPacketTable.getInstance().getTemplate(_protocolProperty.get(), endpoint, packet.getBody()));
 	}
 	
 	private boolean isHidden(String actualValue, StringOperator filter)
@@ -234,6 +363,21 @@ public class PacketLogTabController implements Initializable
 				break;
 		}
 		return false;
+	}
+	
+	public BooleanBinding anyPacketSelected()
+	{
+		return _tvPackets.getSelectionModel().selectedItemProperty().isNotNull();
+	}
+	
+	public BooleanBinding hasVisiblePackets()
+	{
+		return Bindings.size(_tablePackets).greaterThan(0);
+	}
+	
+	public BooleanBinding hasMemoryPackets()
+	{
+		return Bindings.size(_memoryPackets).greaterThan(0);
 	}
 	
 	/**

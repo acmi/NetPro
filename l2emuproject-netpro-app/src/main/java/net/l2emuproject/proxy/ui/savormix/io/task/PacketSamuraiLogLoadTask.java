@@ -37,6 +37,8 @@ import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.config.ProxyConfig;
+import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.proxy.io.NewIOHelper;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
@@ -45,8 +47,6 @@ import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.game.server.L2GameServerPackets;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 import net.l2emuproject.util.logging.L2Logger;
 

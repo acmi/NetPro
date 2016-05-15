@@ -28,6 +28,7 @@ import java.util.regex.PatternSyntaxException;
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.ClientProtocolVersion;
 import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
@@ -37,7 +38,6 @@ import net.l2emuproject.proxy.network.meta.SimplePpeProvider;
 import net.l2emuproject.proxy.network.meta.exception.InvalidPacketOpcodeSchemeException;
 import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationException;
 import net.l2emuproject.proxy.script.game.GameScript;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**

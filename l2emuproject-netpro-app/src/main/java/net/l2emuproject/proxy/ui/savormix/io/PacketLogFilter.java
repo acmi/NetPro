@@ -30,11 +30,12 @@ import javax.swing.filechooser.FileFilter;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
-import net.l2emuproject.proxy.io.LogFileHeader;
+import net.l2emuproject.proxy.io.NewIOHelper;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
+import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
-import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend;
 import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 import net.l2emuproject.ui.file.BetterExtensionFilter;

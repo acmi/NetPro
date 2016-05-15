@@ -29,11 +29,11 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import net.l2emuproject.proxy.config.ProxyConfig;
-import net.l2emuproject.proxy.io.LogFileHeader;
+import net.l2emuproject.proxy.io.NewIOHelper;
+import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.LoggedPacketFlag;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.LoggedPacketFlag;
-import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.util.BitMaskUtils;
 import net.l2emuproject.util.logging.L2Logger;
 

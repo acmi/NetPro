@@ -59,6 +59,8 @@ import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
+import net.l2emuproject.proxy.io.conversion.ToPlaintextVisitor;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.login.client.packets.RequestServerList;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
@@ -71,8 +73,6 @@ import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationEx
 import net.l2emuproject.proxy.state.entity.cache.EntityInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
-import net.l2emuproject.proxy.ui.savormix.io.conv.ToPlaintextVisitor;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend;
 import net.l2emuproject.proxy.ui.savormix.loader.Frontend.PacketLogSummary;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;

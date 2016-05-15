@@ -16,7 +16,7 @@
 package net.l2emuproject.proxy.ui.savormix.io;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
-import net.l2emuproject.proxy.io.LogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
 
 /**
  * A class that specifies options to be used when loading a historical packet log file.

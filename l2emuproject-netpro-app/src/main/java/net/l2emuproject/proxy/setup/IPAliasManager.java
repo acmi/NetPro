@@ -26,7 +26,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.util.L2XMLUtils;
 import net.l2emuproject.util.logging.L2Logger;
 

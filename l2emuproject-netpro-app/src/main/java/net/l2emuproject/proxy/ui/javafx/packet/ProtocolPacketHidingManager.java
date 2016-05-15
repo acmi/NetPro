@@ -33,18 +33,20 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.function.Consumer;
 
+import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.proxy.io.NewIOHelper;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.io.exception.DamagedFileException;
 import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
-import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.proxy.ui.savormix.io.base.NewIOHelper;
 import net.l2emuproject.util.concurrent.MapUtils;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -59,14 +61,38 @@ public final class ProtocolPacketHidingManager implements IOConstants
 	/** Allows custom handling of exceptions that occur when loading default protocol packet hiding configurations. */
 	public static Consumer<Map<Path, Exception>> AUTOMATIC_LOADING_EXCEPTION_HANDLER = null;
 	
-	private volatile Map<IProtocolVersion, IPacketHidingConfig> _configurations;
+	private static final String AUTH_PREFIX = "auth_", GAME_PREFIX = "l2_";
+	
+	private final Map<IProtocolVersion, IPacketHidingConfig> _configurations;
+	private final Set<IProtocolVersion> _pendingSave;
 	
 	ProtocolPacketHidingManager()
 	{
-		_configurations = Collections.emptyMap();
+		_configurations = new ConcurrentHashMap<>();
+		_pendingSave = new CopyOnWriteArraySet<>();
 		
 		if (AUTOMATIC_LOADING_EXCEPTION_HANDLER != null)
 			AUTOMATIC_LOADING_EXCEPTION_HANDLER.accept(autoLoad());
+		
+		ShutdownManager.addShutdownHook(() ->
+		{
+			for (final IProtocolVersion protocol : _pendingSave)
+			{
+				final IPacketHidingConfig cfg = _configurations.get(protocol);
+				if (cfg != null)
+				{
+					try
+					{
+						saveHidingConfiguration(PROTOCOL_PACKET_HIDING_DIR
+								.resolve((ServiceType.valueOf(protocol).isLogin() ? AUTH_PREFIX : GAME_PREFIX) + protocol.getVersion() + "." + PROTOCOL_PACKET_HIDING_EXTENSION), cfg);
+					}
+					catch (IOException e)
+					{
+						LOG.error("Config autosave for " + protocol, e);
+					}
+				}
+			}
+		});
 	}
 	
 	/**
@@ -79,6 +105,17 @@ public final class ProtocolPacketHidingManager implements IOConstants
 	{
 		final IPacketHidingConfig config = _configurations.get(protocol);
 		return config != null ? config : MapUtils.putIfAbsent(_configurations, protocol, newHidingConfig(Collections.emptySet(), Collections.emptySet()));
+	}
+	
+	/**
+	 * Marks the packet hiding configuration associated with the given protocol as modified.
+	 * 
+	 * @param protocol protocol version
+	 */
+	public void markModified(IProtocolVersion protocol)
+	{
+		if (_configurations.containsKey(protocol))
+			_pendingSave.add(protocol);
 	}
 	
 	/**
@@ -99,8 +136,8 @@ public final class ProtocolPacketHidingManager implements IOConstants
 		final Map<Path, Exception> report = new TreeMap<Path, Exception>();
 		
 		final Map<ServiceType, String> type2Prefix = new EnumMap<>(ServiceType.class);
-		type2Prefix.put(ServiceType.LOGIN, "auth_");
-		type2Prefix.put(ServiceType.GAME, "l2_");
+		type2Prefix.put(ServiceType.LOGIN, AUTH_PREFIX);
+		type2Prefix.put(ServiceType.GAME, GAME_PREFIX);
 		
 		final Map<IProtocolVersion, IPacketHidingConfig> configurations = new HashMap<>();
 		for (final Entry<ServiceType, String> e : type2Prefix.entrySet())
@@ -126,14 +163,14 @@ public final class ProtocolPacketHidingManager implements IOConstants
 			}
 			LOG.info("Loaded packet hiding configurations for " + totalConfigurations + " " + e.getKey().toString().toLowerCase(Locale.ENGLISH) + " protocol versions.");
 		}
-		_configurations = configurations.isEmpty() ? Collections.emptyMap() : configurations;
+		_configurations.putAll(configurations);
 		
 		return Collections.unmodifiableMap(report);
 	}
 	
 	private void saveToFile(Path file, Set<byte[]> clientPacketPrefixes, Set<byte[]> serverPacketPrefixes) throws IOException
 	{
-		Files.createDirectories(file.getParent());
+		Files.createDirectories(file.resolve(".."));
 		try (final SeekableByteChannel channel = Files.newByteChannel(file, StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
 				final NewIOHelper out = new NewIOHelper(channel))
 		{
@@ -161,8 +198,10 @@ public final class ProtocolPacketHidingManager implements IOConstants
 				}
 				final long nextBlockPos = out.getPositionInChannel(true);
 				final long blockSize = nextBlockPos - blockSizePos - 4;
+				out.flush();
 				out.setPositionInChannel(blockSizePos);
 				out.writeInt((int)blockSize);
+				out.flush();
 				out.setPositionInChannel(nextBlockPos);
 			}
 		}

@@ -18,8 +18,8 @@ package net.l2emuproject.proxy.ui.savormix.io.task;
 import java.awt.Window;
 import java.util.List;
 
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.proxy.ui.savormix.io.dialog.LoadProgressDialog;
 import net.l2emuproject.ui.AsyncTask;
 

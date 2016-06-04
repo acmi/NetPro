@@ -18,7 +18,7 @@
 <?import org.google.jhsheets.filtered.FilteredTableView?>
 <?import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn?>
 
-<SplitPane dividerPositions="0.6" prefHeight="352.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController">
+<SplitPane dividerPositions="0.55" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="352.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController">
    <items>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <bottom>
@@ -51,7 +51,7 @@
             <FilteredTableView fx:id="_tvPackets" fixedCellSize="24.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@PacketTable.css" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="_colSender" editable="false" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" text="%packettab.table.column.sender" />
-                <FilterableStringTableColumn fx:id="_colOpcode" editable="false" maxWidth="180.0" minWidth="80.0" text="%packettab.table.column.opcodes" />
+                <TableColumn fx:id="_colOpcode" editable="false" maxWidth="180.0" minWidth="60.0" prefWidth="60.0" text="%packettab.table.column.opcodes" />
                 <FilterableStringTableColumn fx:id="_colName" editable="false" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="193.0" text="%packettab.table.column.name" />
               </columns>
                <columnResizePolicy>
@@ -63,7 +63,7 @@
                         <Menu text="%packettab.cmenu.copy.menu">
                           <items>
                             <MenuItem onAction="#copyPacketAsPlaintext" text="%packettab.cmenu.copy.txt" />
-                              <MenuItem onAction="#copyPacketAsXML" text="%packettab.cmenu.copy.xml" />
+                            <MenuItem onAction="#copyPacketAsXML" text="%packettab.cmenu.copy.xml" />
                           </items>
                         </Menu>
                         <Menu fx:id="_mHidePacket" text="%packettab.cmenu.hiding.menu">

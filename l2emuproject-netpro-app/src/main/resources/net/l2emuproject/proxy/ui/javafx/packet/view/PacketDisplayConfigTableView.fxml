@@ -10,14 +10,14 @@
 <?import org.google.jhsheets.filtered.FilteredTableView?>
 <?import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigTableViewController">
    <center>
-      <FilteredTableView fx:id="_tvTemplates" fixedCellSize="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <FilteredTableView fx:id="_tvTemplates" editable="true" fixedCellSize="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
             <TableColumn fx:id="_tcShowInTab" maxWidth="-1.0" minWidth="25.0" prefWidth="-1.0" resizable="false" text="%packetdc.table.column.enable.tab" />
-            <TableColumn maxWidth="-1.0" minWidth="25.0" prefWidth="-1.0" resizable="false" text="%packetdc.table.column.enable.protocol" />
-          <FilterableStringTableColumn editable="false" maxWidth="180.0" minWidth="80.0" text="%packettab.table.column.opcodes" />
-          <FilterableStringTableColumn editable="false" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="193.0" text="%packettab.table.column.name" />
+            <TableColumn fx:id="_tcShowInProtocol" maxWidth="-1.0" minWidth="25.0" prefWidth="-1.0" resizable="false" text="%packetdc.table.column.enable.protocol" />
+          	<TableColumn fx:id="_tcTemplateOps" editable="false" maxWidth="180.0" minWidth="60.0" prefWidth="60.0" text="%packettab.table.column.opcodes" />
+          	<FilterableStringTableColumn fx:id="_tcTemplateName" editable="false" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="193.0" text="%packettab.table.column.name" />
         </columns>
         <columnResizePolicy>
           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -34,8 +34,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setAllVisible" text="%packetdc.table.select.all" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setAllHidden" text="%packetdc.table.select.none" GridPane.columnIndex="1" />
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setAllVisible" text="%packetdc.table.select.all" />
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setAllHidden" text="%packetdc.table.select.none" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </bottom>

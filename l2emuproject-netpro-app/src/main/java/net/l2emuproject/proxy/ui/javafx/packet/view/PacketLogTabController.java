@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -39,7 +41,6 @@ import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.io.conversion.ToPlaintextVisitor;
-import net.l2emuproject.proxy.io.conversion.ToXMLVisitor;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
@@ -105,7 +106,7 @@ public class PacketLogTabController implements Initializable
 	private TableColumn<PacketLogEntry, String> _colSender;
 	
 	@FXML
-	private FilterableStringTableColumn<PacketLogEntry, String> _colOpcode;
+	private TableColumn<PacketLogEntry, String> _colOpcode;
 	
 	@FXML
 	private FilterableStringTableColumn<PacketLogEntry, String> _colName;
@@ -174,6 +175,7 @@ public class PacketLogTabController implements Initializable
 		});
 		
 		final ContextMenu contextMenu = _tvPackets.getContextMenu();
+		_tvPackets.setContextMenu(null);
 		_tvPackets.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) ->
 		{
 			if (neu == null)
@@ -236,17 +238,7 @@ public class PacketLogTabController implements Initializable
 		if (packetEntry == null)
 			return;
 		
-		final L2TextBuilder sb = new L2TextBuilder();
-		try
-		{
-			ToPlaintextVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), new MMOBuffer(), _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
-			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
-		}
-		catch (IOException e)
-		{
-			// L2TB doesn't throw
-			throw new AssertionError("L2TextBuilder", e);
-		}
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(toPlaintext(Collections.singletonList(packetEntry))), null);
 	}
 	
 	@FXML
@@ -256,17 +248,19 @@ public class PacketLogTabController implements Initializable
 		if (packetEntry == null)
 			return;
 		
-		final L2TextBuilder sb = new L2TextBuilder();
-		try
-		{
-			ToXMLVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), new MMOBuffer(), _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
-			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
-		}
-		catch (IOException e)
-		{
-			// L2TB doesn't throw
-			throw new AssertionError("L2TextBuilder", e);
-		}
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(toXML(Collections.singletonList(packetEntry))), null);
+	}
+	
+	@FXML
+	public void copyVisiblePacketsAsPlaintext(ActionEvent event)
+	{
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(toPlaintext(_tablePackets)), null);
+	}
+	
+	@FXML
+	public void copyVisiblePacketsAsXML(ActionEvent event)
+	{
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(toXML(_tablePackets)), null);
 	}
 	
 	@FXML
@@ -296,27 +290,13 @@ public class PacketLogTabController implements Initializable
 		applyFilters();
 	}
 	
-	private void applyFilters()
-	{
-		if (_cmiIgnoreFilters.isSelected())
-		{
-			_tablePackets.setAll(_memoryPackets);
-			return;
-		}
-		
-		final ObservableList<PacketLogEntry> filterMatchingPackets = FXCollections.observableArrayList();
-		for (final PacketLogEntry packetEntry : _memoryPackets)
-			if (!isHiddenByDisplayConfig(packetEntry) && !isHiddenByOpcode(packetEntry) && !isHiddenByName(packetEntry))
-				filterMatchingPackets.add(packetEntry);
-		_tablePackets.setAll(filterMatchingPackets);
-	}
-	
 	private boolean isHiddenByOpcode(PacketLogEntry packetEntry)
 	{
+		/*
 		for (final StringOperator filter : _colOpcode.getFilters())
 			if (isHidden(packetEntry.getOpcode(), filter))
 				return true;
-		
+		*/
 		return false;
 	}
 	
@@ -365,16 +345,65 @@ public class PacketLogTabController implements Initializable
 		return false;
 	}
 	
+	private String toPlaintext(List<PacketLogEntry> packets)
+	{
+		final L2TextBuilder sb = new L2TextBuilder();
+		try
+		{
+			final MMOBuffer buf = new MMOBuffer();
+			for (final PacketLogEntry packetEntry : packets)
+				ToPlaintextVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), buf, _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+			return sb.moveToString();
+		}
+		catch (IOException e)
+		{
+			// L2TB doesn't throw
+			throw new AssertionError("L2TextBuilder", e);
+		}
+	}
+	
+	private String toXML(List<PacketLogEntry> packets)
+	{
+		final L2TextBuilder sb = new L2TextBuilder();
+		try
+		{
+			final MMOBuffer buf = new MMOBuffer();
+			for (final PacketLogEntry packetEntry : packets)
+				ToPlaintextVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), buf, _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+			return sb.moveToString();
+		}
+		catch (IOException e)
+		{
+			// L2TB doesn't throw
+			throw new AssertionError("L2TextBuilder", e);
+		}
+	}
+	
+	/**
+	 * Returns a binding that specifies whether the currently selected tab has a packet table with an entry selected.
+	 * 
+	 * @return if there is a selected packet
+	 */
 	public BooleanBinding anyPacketSelected()
 	{
 		return _tvPackets.getSelectionModel().selectedItemProperty().isNotNull();
 	}
 	
+	/**
+	 * Returns a binding that specifies whether the currently selected tab has a packet table with at least one packet (after all filters applied).
+	 * 
+	 * @return if there is a selected packet
+	 */
 	public BooleanBinding hasVisiblePackets()
 	{
 		return Bindings.size(_tablePackets).greaterThan(0);
 	}
 	
+	/**
+	 * Returns a binding that specifies whether the currently selected tab has a packet table with at least one packet (regardless of filters).
+	 * 
+	 * @return if there is a selected packet
+	 */
 	public BooleanBinding hasMemoryPackets()
 	{
 		return Bindings.size(_memoryPackets).greaterThan(0);
@@ -388,6 +417,31 @@ public class PacketLogTabController implements Initializable
 	public ObjectProperty<IProtocolVersion> protocolProperty()
 	{
 		return _protocolProperty;
+	}
+	
+	/**
+	 * Returns the packet hiding configuration associated with this tab.
+	 * 
+	 * @return packet hiding configuration
+	 */
+	public IPacketHidingConfig getPacketHidingConfig()
+	{
+		return _packetHidingConfig;
+	}
+	
+	public void applyFilters()
+	{
+		if (_cmiIgnoreFilters.isSelected())
+		{
+			_tablePackets.setAll(_memoryPackets);
+			return;
+		}
+		
+		final ObservableList<PacketLogEntry> filterMatchingPackets = FXCollections.observableArrayList();
+		for (final PacketLogEntry packetEntry : _memoryPackets)
+			if (!isHiddenByDisplayConfig(packetEntry) && !isHiddenByOpcode(packetEntry) && !isHiddenByName(packetEntry))
+				filterMatchingPackets.add(packetEntry);
+		_tablePackets.setAll(filterMatchingPackets);
 	}
 	
 	/**

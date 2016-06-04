@@ -20,8 +20,10 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
 
+import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
+import net.l2emuproject.util.HexUtil;
 
 /**
  * A reference implementation of {@link IPacketHidingConfig}.
@@ -83,6 +85,19 @@ public class PacketHidingConfig implements IPacketHidingConfig
 		return _configuration;
 	}
 	
+	@Override
+	public String toString()
+	{
+		final L2TextBuilder tb = new L2TextBuilder("{CLIENT=[");
+		for (final byte[] prefix : _configuration.getOrDefault(EndpointType.CLIENT, Collections.emptySet()))
+			tb.append(HexUtil.bytesToHexString(prefix, ":")).append(", ");
+		tb.setLength(tb.length() - 2).append("], SERVER=[");
+		for (final byte[] prefix : _configuration.getOrDefault(EndpointType.SERVER, Collections.emptySet()))
+			tb.append(HexUtil.bytesToHexString(prefix, ":")).append(", ");
+		tb.setLength(tb.length() - 2).append("]}");
+		return tb.moveToString();
+	}
+	
 	private static final class AllPackets implements IPacketHidingConfig
 	{
 		static final AllPackets CONFIG = new AllPackets();
@@ -109,6 +124,12 @@ public class PacketHidingConfig implements IPacketHidingConfig
 		public Map<EndpointType, Set<byte[]>> getSaveableFormat()
 		{
 			return Collections.emptyMap();
+		}
+		
+		@Override
+		public String toString()
+		{
+			return "{}";
 		}
 	}
 }

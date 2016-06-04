@@ -165,7 +165,7 @@ public final class PacketLogLoadOptionController
 		catch (IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
-			wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, getDialogWindow(), Modality.WINDOW_MODAL).show();
+			wrapException(t, "generic.err.fxml.dialog.title", null, "generic.err.fxml.dialog.header", null, getDialogWindow(), Modality.WINDOW_MODAL).show();
 			return;
 		}
 		

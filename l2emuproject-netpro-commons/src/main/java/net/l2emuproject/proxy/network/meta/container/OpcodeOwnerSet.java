@@ -16,6 +16,7 @@
 package net.l2emuproject.proxy.network.meta.container;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -79,6 +80,13 @@ public class OpcodeOwnerSet extends FastSet<OpcodeOwnerSet.OpcodeOwner>
 		setValueComparator(COMPARATOR);
 	}
 	
+	/**
+	 * Orders packets by prefix in Lineage II opcode style.
+	 * 
+	 * @param prefix1 first packet prefix
+	 * @param prefix2 second packet prefix
+	 * @return {@link Comparator#compare(Object, Object)}
+	 */
 	public static final int comparePacketPrefixes(byte[] prefix1, byte[] prefix2)
 	{
 		if (ArrayUtils.isEmpty(prefix1))

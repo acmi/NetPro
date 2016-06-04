@@ -154,8 +154,12 @@ public class NetPro extends Application
 			SPLASH_STAGE.setScene(new Scene(new Group(canvas), null));
 		}
 		SPLASH_STAGE.getIcons().addAll(FXUtils.getIconListFX());
+		ShutdownManager.isInProgress();
 		SPLASH_STAGE.setOnHidden(e ->
 		{
+			if (ShutdownManager.isRunningHooks())
+				return;
+			
 			Platform.exit();
 			System.exit(0);
 		});
@@ -471,7 +475,7 @@ public class NetPro extends Application
 			{
 				// 3.F MAIN WINDOW MISSING, WARN AND EXIT
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
-				wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, SPLASH_STAGE, Modality.WINDOW_MODAL).showAndWait();
+				wrapException(t, "generic.err.fxml.dialog.title", null, "generic.err.fxml.dialog.header", null, SPLASH_STAGE, Modality.WINDOW_MODAL).showAndWait();
 				ShutdownManager.exit(TerminationStatus.ENVIRONMENT_MISSING_COMPONENT_OR_SERVICE);
 			}
 			finally
@@ -503,7 +507,7 @@ public class NetPro extends Application
 		catch (IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
-			wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, SPLASH_STAGE, Modality.WINDOW_MODAL).showAndWait();
+			wrapException(t, "generic.err.fxml.dialog.title", null, "generic.err.fxml.dialog.header", null, SPLASH_STAGE, Modality.WINDOW_MODAL).showAndWait();
 			return null;
 		}
 	}

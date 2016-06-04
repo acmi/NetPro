@@ -174,6 +174,18 @@ public class VersionnedPacketTable implements IOConstants
 		return getTemplates(protocol, endpoint).filter(IPacketTemplate::isDefined);
 	}
 	
+	/**
+	 * Returns all currently known packet definitions for the given protocol and endpoint. Includes generated packet templates to represent encountered unknown packets.
+	 * 
+	 * @param protocol network protocol version
+	 * @param endpoint client/server
+	 * @return all packet templates at current point of time
+	 */
+	public Stream<IPacketTemplate> getCurrentTemplates(IProtocolVersion protocol, EndpointType endpoint)
+	{
+		return getTemplates(protocol, endpoint);
+	}
+	
 	/** Reloads all protocol version and packet definitions. This is an atomic operation, as a partially loaded table will never be exposed. */
 	public void reloadConfig()
 	{

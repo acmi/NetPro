@@ -15,18 +15,43 @@
  */
 package net.l2emuproject.proxy.ui.javafx.packet.view;
 
+import java.util.Set;
+
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.network.meta.IPacketTemplate;
+import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+
 /**
- * @author Tadas
+ * @author _dev_
  */
 public class PacketDisplayConfigDialogController
 {
+	@FXML
+	private PacketDisplayConfigTableViewController _clientPacketTableController;
 	
-	/**
-	 * 
-	 */
-	public PacketDisplayConfigDialogController()
+	@FXML
+	private PacketDisplayConfigTableViewController _serverPacketTableController;
+	
+	@FXML
+	private void exportHidingConfig(ActionEvent event)
 	{
-		// TODO Auto-generated constructor stub
+		
 	}
 	
+	@FXML
+	private void importHidingConfig(ActionEvent event)
+	{
+		
+	}
+	
+	public void setPacketTemplates(Set<IPacketTemplate> clientPackets, Set<IPacketTemplate> serverPackets, IPacketHidingConfig tabHidingConfig, IProtocolVersion protocolVersion,
+			Runnable onConfigChange)
+	{
+		_clientPacketTableController.setTemplates(clientPackets, EndpointType.CLIENT, tabHidingConfig, protocolVersion, onConfigChange);
+		_serverPacketTableController.setTemplates(serverPackets, EndpointType.SERVER, tabHidingConfig, protocolVersion, onConfigChange);
+	}
 }

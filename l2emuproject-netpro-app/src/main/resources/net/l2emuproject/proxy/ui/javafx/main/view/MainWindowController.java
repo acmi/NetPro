@@ -41,6 +41,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.concurrent.Future;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import eu.revengineer.simplejse.exception.DependencyResolutionException;
 import eu.revengineer.simplejse.exception.MutableOperationInProgressException;
@@ -51,6 +52,7 @@ import eu.revengineer.simplejse.type.UnloadableScript;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.NetPro;
 import net.l2emuproject.proxy.io.IOConstants;
@@ -64,7 +66,10 @@ import net.l2emuproject.proxy.io.exception.TruncatedPacketLogFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
 import net.l2emuproject.proxy.io.packetlog.PacketLogFileUtils;
+import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
+import net.l2emuproject.proxy.network.meta.IPacketTemplate;
+import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.ui.i18n.BytesizeFormat;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
@@ -73,6 +78,7 @@ import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.error.view.ExceptionSummaryDialogController;
 import net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController;
+import net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.HexUtil;
@@ -97,7 +103,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Label;
@@ -115,6 +120,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -125,6 +131,8 @@ import javafx.stage.Window;
 import javafx.util.Duration;
 
 /**
+ * A controller that takes care of UI elements found in the primary application screen (the one that is always open).
+ * 
  * @author _dev_
  */
 public class MainWindowController implements Initializable, IOConstants
@@ -170,7 +178,13 @@ public class MainWindowController implements Initializable, IOConstants
 	private CheckBox _cbCaptureGlobal;
 	
 	@FXML
-	private Button _btnPacketHidingConfig;
+	private ToggleButton _tbPacketHidingConfig;
+	
+	@FXML
+	private BorderPane _packetHidingWrapper;
+	
+	@FXML
+	private PacketDisplayConfigDialogController _packetHidingConfigController;
 	
 	@FXML
 	private Label _labProtocol;
@@ -254,6 +268,9 @@ public class MainWindowController implements Initializable, IOConstants
 		
 		_tpConnections.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) ->
 		{
+			_packetHidingWrapper.setVisible(false);
+			_tbPacketHidingConfig.setSelected(false);
+			
 			final Object ctrl = neu != null ? neu.getUserData() : null;
 			if (ctrl == null || !(ctrl instanceof PacketLogTabController))
 			{
@@ -261,7 +278,7 @@ public class MainWindowController implements Initializable, IOConstants
 				
 				_cbCaptureSession.setVisible(false);
 				_labProtocol.setVisible(false);
-				_btnPacketHidingConfig.setVisible(false);
+				_tbPacketHidingConfig.setVisible(false);
 				return;
 			}
 			
@@ -274,7 +291,7 @@ public class MainWindowController implements Initializable, IOConstants
 			
 			_labProtocol.textProperty().bind(Bindings.convert(controller.protocolProperty()));
 			_labProtocol.setVisible(true);
-			_btnPacketHidingConfig.setVisible(true);
+			_tbPacketHidingConfig.setVisible(true);
 		});
 		_tpConnections.addEventHandler(KeyEvent.KEY_PRESSED, e ->
 		{
@@ -336,7 +353,25 @@ public class MainWindowController implements Initializable, IOConstants
 	@FXML
 	private void showPacketHidingConfig(ActionEvent evt)
 	{
+		if (!_tbPacketHidingConfig.isSelected())
+		{
+			_packetHidingWrapper.setVisible(false);
+			return;
+		}
 		
+		final PacketLogTabController packetTabController = getCurrentPacketTabController();
+		if (packetTabController == null)
+		{
+			_tbPacketHidingConfig.setSelected(false);
+			return;
+		}
+		
+		final IProtocolVersion protocol = packetTabController.protocolProperty().get();
+		final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
+		final Set<IPacketTemplate> clientPackets = table.getCurrentTemplates(protocol, EndpointType.CLIENT).collect(Collectors.toCollection(() -> new TreeSet<>(OpcodeOwnerSet.COMPARATOR)));
+		final Set<IPacketTemplate> serverPackets = table.getCurrentTemplates(protocol, EndpointType.SERVER).collect(Collectors.toCollection(() -> new TreeSet<>(OpcodeOwnerSet.COMPARATOR)));
+		_packetHidingConfigController.setPacketTemplates(clientPackets, serverPackets, packetTabController.getPacketHidingConfig(), protocol, packetTabController::applyFilters);
+		_packetHidingWrapper.setVisible(true);
 	}
 	
 	@FXML
@@ -358,13 +393,17 @@ public class MainWindowController implements Initializable, IOConstants
 	@FXML
 	void copyVisiblePackets(ActionEvent event)
 	{
-		
+		final PacketLogTabController controller = getCurrentPacketTabController();
+		if (controller != null)
+			controller.copyVisiblePacketsAsPlaintext(event);
 	}
 	
 	@FXML
 	void copyVisiblePacketsXML(ActionEvent event)
 	{
-		
+		final PacketLogTabController controller = getCurrentPacketTabController();
+		if (controller != null)
+			controller.copyVisiblePacketsAsXML(event);
 	}
 	
 	// --------------------------
@@ -502,7 +541,7 @@ public class MainWindowController implements Initializable, IOConstants
 				catch (IOException e)
 				{
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
-					wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, getMainWindow(), Modality.NONE).show();
+					wrapException(t, "generic.err.fxml.dialog.title", null, "generic.err.fxml.dialog.header", null, getMainWindow(), Modality.NONE).show();
 					return;
 				}
 				
@@ -842,7 +881,7 @@ public class MainWindowController implements Initializable, IOConstants
 		catch (IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
-			wrapException(t, "ui.fxml.err.dialog.missing.title", null, "ui.fxml.err.dialog.missing.header", null, null, Modality.WINDOW_MODAL).showAndWait();
+			wrapException(t, "generic.err.fxml.dialog.title", null, "generic.err.fxml.dialog.header", null, null, Modality.WINDOW_MODAL).showAndWait();
 			return null;
 		}
 	}

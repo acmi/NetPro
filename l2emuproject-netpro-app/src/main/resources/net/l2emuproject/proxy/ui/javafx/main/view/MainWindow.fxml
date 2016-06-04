@@ -26,53 +26,66 @@
 
 <BorderPane prefHeight="629.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController">
    <center>
-      <TabPane fx:id="_tpConnections" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
-        <tabs>
-          <Tab fx:id="_tabConsole" closable="false" text="%main.consoletab.title">
-               <content>
-                  <BorderPane>
-                     <center>
-                        <TextArea fx:id="_taConsole" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="%main.consoletab.prompt" wrapText="true">
-                           <font>
-                              <Font name="Consolas" size="12.0" />
-                           </font>
-                        </TextArea>
-                     </center>
-                     <bottom>
-                        <GridPane BorderPane.alignment="CENTER">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <TabPane fx:id="_tpConnections" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="ALL_TABS">
+              <tabs>
+                <Tab fx:id="_tabConsole" closable="false" text="%main.consoletab.title">
+                     <content>
+                        <BorderPane>
+                           <center>
+                              <TextArea fx:id="_taConsole" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="%main.consoletab.prompt" wrapText="true">
+                                 <font>
+                                    <Font name="Consolas" size="12.0" />
+                                 </font>
+                              </TextArea>
+                           </center>
+                           <bottom>
+                              <GridPane BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearConsole" text="%main.consoletab.clear" />
+                                    <ToggleButton fx:id="_tbConsoleWrap" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="%main.consoletab.wrap" GridPane.columnIndex="1" />
+                                    <ToggleButton fx:id="_tbConsoleScroll" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%main.consoletab.scroll" GridPane.columnIndex="2" />
+                                    <Slider fx:id="_sConsoleFontSize" blockIncrement="1.0" majorTickUnit="5.0" max="28.0" min="5.0" minorTickCount="4" showTickMarks="true" snapToTicks="true" value="12.0" GridPane.columnIndex="3" />
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </GridPane>
+                           </bottom>
+                        </BorderPane>
+                     </content>
+                  </Tab>
+                <Tab id="connection_pane/idle" fx:id="_tabIdle" closable="false" text="%main.idletab.title">
+                     <content>
+                        <FlowPane alignment="TOP_CENTER">
                            <children>
-                              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearConsole" text="%main.consoletab.clear" />
-                              <ToggleButton fx:id="_tbConsoleWrap" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="%main.consoletab.wrap" GridPane.columnIndex="1" />
-                              <ToggleButton fx:id="_tbConsoleScroll" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%main.consoletab.scroll" GridPane.columnIndex="2" />
-                              <Slider fx:id="_sConsoleFontSize" blockIncrement="1.0" majorTickUnit="5.0" max="28.0" min="5.0" minorTickCount="4" showTickMarks="true" snapToTicks="true" value="12.0" GridPane.columnIndex="3" />
+                              <Label text="%main.idletab.description" />
                            </children>
-                           <BorderPane.margin>
-                              <Insets />
-                           </BorderPane.margin>
-                        </GridPane>
-                     </bottom>
-                  </BorderPane>
-               </content></Tab>
-          <Tab id="connection_pane/idle" fx:id="_tabIdle" closable="false" text="%main.idletab.title">
-               <content>
-                  <FlowPane alignment="TOP_CENTER">
-                     <children>
-                        <Label text="%main.idletab.description" />
-                     </children>
-                  </FlowPane>
-               </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+                        </FlowPane>
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <BorderPane fx:id="_packetHidingWrapper" maxWidth="1000.0" visible="false">
+               <center>
+         			<fx:include fx:id="_packetHidingConfig" source="../../packet/view/PacketDisplayConfigDialog.fxml" />
+               </center>
+               <padding>
+                  <Insets top="28.0" />
+               </padding>
+            </BorderPane>
+         </children>
+      </StackPane>
    </center>
    <bottom>
       <GridPane>
@@ -102,7 +115,7 @@
             </FlowPane>
             <CheckBox fx:id="_cbCaptureSession" mnemonicParsing="false" text="%main.capture.curtab" visible="false" />
             <CheckBox fx:id="_cbCaptureGlobal" mnemonicParsing="false" text="%main.capture.global" GridPane.rowIndex="1" />
-            <Button fx:id="_btnPacketHidingConfig" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#showPacketHidingConfig" text="%main.pdc" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ToggleButton fx:id="_tbPacketHidingConfig" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#showPacketHidingConfig" text="%main.pdc" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <FlowPane alignment="CENTER" GridPane.columnIndex="1">
                <children>
                   <Label fx:id="_labProtocol" text="[000] Protocol 0000-01-01" visible="false" />

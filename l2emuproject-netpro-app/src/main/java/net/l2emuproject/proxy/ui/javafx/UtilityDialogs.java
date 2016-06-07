@@ -15,16 +15,21 @@
  */
 package net.l2emuproject.proxy.ui.javafx;
 
+import java.io.IOException;
 import java.util.Optional;
 import java.util.Set;
 
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.proxy.ui.javafx.main.view.WaitingIndicatorDialogController;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Dialog;
 import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
@@ -43,6 +48,11 @@ public final class UtilityDialogs
 	public static final <E> Optional<E> showChoiceDialog(Window ownerWindow, String title, String header, Set<E> choices)
 	{
 		return initNonModalUtilityDialog(new ChoiceDialog<>(choices.iterator().next(), choices), ownerWindow, title, header, null).showAndWait();
+	}
+	
+	public static final <E> Optional<E> showChoiceDialog(Window ownerWindow, String title, String header, E... choices)
+	{
+		return initNonModalUtilityDialog(new ChoiceDialog<>(choices[0], choices), ownerWindow, title, header, null).showAndWait();
 	}
 	
 	public static final Alert makeNonModalUtilityAlert(AlertType type, Window ownerWindow, String title, String header, String content, Object... contentTokens)
@@ -82,5 +92,34 @@ public final class UtilityDialogs
 		final ExceptionAlert alert = new ExceptionAlert(t, owner, UIStrings.get(title, titleTokens), UIStrings.get(header, headerTokens));
 		alert.initModality(modality);
 		return alert;
+	}
+	
+	public static final WaitingIndicatorDialogController showWaitDialog(Window ownerWindow, String title, String description, Object... descriptionTokens)
+	{
+		try
+		{
+			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(WaitingIndicatorDialogController.class), UIStrings.getBundle());
+			final Scene scene = new Scene(loader.load(), null);
+			
+			final Stage stage = new Stage(StageStyle.UTILITY);
+			stage.initModality(Modality.NONE);
+			stage.initOwner(ownerWindow);
+			stage.setTitle(UIStrings.get(title));
+			stage.setScene(scene);
+			stage.getIcons().addAll(FXUtils.getIconListFX());
+			stage.sizeToScene();
+			stage.setResizable(false);
+			
+			final WaitingIndicatorDialogController controller = loader.getController();
+			controller.setContentText(UIStrings.get(description, descriptionTokens));
+			
+			WindowTracker.getInstance().add(stage);
+			stage.show();
+			return controller;
+		}
+		catch (IOException e)
+		{
+			throw new AssertionError("Waiting dialog is missing", e);
+		}
 	}
 }

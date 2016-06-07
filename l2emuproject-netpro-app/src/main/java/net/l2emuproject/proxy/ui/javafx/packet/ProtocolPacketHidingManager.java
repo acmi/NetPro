@@ -15,15 +15,10 @@
  */
 package net.l2emuproject.proxy.ui.javafx.packet;
 
-import java.io.EOFException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.BufferUnderflowException;
-import java.nio.channels.SeekableByteChannel;
-import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -33,22 +28,19 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.function.Consumer;
 
 import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.io.IOConstants;
-import net.l2emuproject.proxy.io.NewIOHelper;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
-import net.l2emuproject.proxy.io.exception.DamagedFileException;
-import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
-import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
-import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.io.packethiding.PacketHidingConfigFileUtils;
 import net.l2emuproject.proxy.network.ServiceType;
-import net.l2emuproject.util.concurrent.MapUtils;
 import net.l2emuproject.util.logging.L2Logger;
+
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.SimpleObjectProperty;
 
 /**
  * Manages protocol-based packet hiding configurations and their persistence (both manual and automatic).
@@ -57,19 +49,21 @@ import net.l2emuproject.util.logging.L2Logger;
  */
 public final class ProtocolPacketHidingManager implements IOConstants
 {
-	private static final L2Logger LOG = L2Logger.getLogger(ProtocolPacketHidingManager.class);
 	/** Allows custom handling of exceptions that occur when loading default protocol packet hiding configurations. */
 	public static Consumer<Map<Path, Exception>> AUTOMATIC_LOADING_EXCEPTION_HANDLER = null;
 	
+	private static final L2Logger LOG = L2Logger.getLogger(ProtocolPacketHidingManager.class);
+	
 	private static final String AUTH_PREFIX = "auth_", GAME_PREFIX = "l2_";
 	
-	private final Map<IProtocolVersion, IPacketHidingConfig> _configurations;
+	// should only be interacted from the JavaFX thread
+	private final Map<IProtocolVersion, ObjectProperty<IPacketHidingConfig>> _configurations;
 	private final Set<IProtocolVersion> _pendingSave;
 	
 	ProtocolPacketHidingManager()
 	{
-		_configurations = new ConcurrentHashMap<>();
-		_pendingSave = new CopyOnWriteArraySet<>();
+		_configurations = new HashMap<>();
+		_pendingSave = new HashSet<>();
 		
 		if (AUTOMATIC_LOADING_EXCEPTION_HANDLER != null)
 			AUTOMATIC_LOADING_EXCEPTION_HANDLER.accept(autoLoad());
@@ -78,17 +72,21 @@ public final class ProtocolPacketHidingManager implements IOConstants
 		{
 			for (final IProtocolVersion protocol : _pendingSave)
 			{
-				final IPacketHidingConfig cfg = _configurations.get(protocol);
+				final ObjectProperty<IPacketHidingConfig> cfg = _configurations.get(protocol);
 				if (cfg != null)
 				{
 					try
 					{
-						saveHidingConfiguration(PROTOCOL_PACKET_HIDING_DIR
-								.resolve((ServiceType.valueOf(protocol).isLogin() ? AUTH_PREFIX : GAME_PREFIX) + protocol.getVersion() + "." + PROTOCOL_PACKET_HIDING_EXTENSION), cfg);
+						PacketHidingConfigFileUtils.saveHidingConfiguration(PROTOCOL_PACKET_HIDING_DIR
+								.resolve((ServiceType.valueOf(protocol).isLogin() ? AUTH_PREFIX : GAME_PREFIX) + protocol.getVersion() + "." + PROTOCOL_PACKET_HIDING_EXTENSION), cfg.get());
 					}
 					catch (IOException e)
 					{
 						LOG.error("Config autosave for " + protocol, e);
+					}
+					catch (InterruptedException e)
+					{
+						break;
 					}
 				}
 			}
@@ -101,10 +99,10 @@ public final class ProtocolPacketHidingManager implements IOConstants
 	 * @param protocol protocol version
 	 * @return packet hiding configuration
 	 */
-	public IPacketHidingConfig getHidingConfiguration(IProtocolVersion protocol)
+	public ObjectProperty<IPacketHidingConfig> getHidingConfiguration(IProtocolVersion protocol)
 	{
-		final IPacketHidingConfig config = _configurations.get(protocol);
-		return config != null ? config : MapUtils.putIfAbsent(_configurations, protocol, newHidingConfig(Collections.emptySet(), Collections.emptySet()));
+		final ObjectProperty<IPacketHidingConfig> config = _configurations.get(protocol);
+		return config != null ? config : _configurations.computeIfAbsent(protocol, p -> new SimpleObjectProperty<>(newHidingConfig()));
 	}
 	
 	/**
@@ -118,19 +116,6 @@ public final class ProtocolPacketHidingManager implements IOConstants
 			_pendingSave.add(protocol);
 	}
 	
-	/**
-	 * Saves the given packet hiding configuration to file.
-	 * 
-	 * @param file output file
-	 * @param configuration packet hiding configuration
-	 * @throws IOException if the configuration could not be saved
-	 */
-	public void saveHidingConfiguration(Path file, IPacketHidingConfig configuration) throws IOException
-	{
-		final Map<EndpointType, Set<byte[]>> type2Prefixes = configuration.getSaveableFormat();
-		saveToFile(file, type2Prefixes.getOrDefault(EndpointType.CLIENT, Collections.emptySet()), type2Prefixes.getOrDefault(EndpointType.SERVER, Collections.emptySet()));
-	}
-	
 	private Map<Path, Exception> autoLoad()
 	{
 		final Map<Path, Exception> report = new TreeMap<Path, Exception>();
@@ -139,7 +124,7 @@ public final class ProtocolPacketHidingManager implements IOConstants
 		type2Prefix.put(ServiceType.LOGIN, AUTH_PREFIX);
 		type2Prefix.put(ServiceType.GAME, GAME_PREFIX);
 		
-		final Map<IProtocolVersion, IPacketHidingConfig> configurations = new HashMap<>();
+		final Map<IProtocolVersion, ReadOnlyObjectWrapper<IPacketHidingConfig>> configurations = new HashMap<>();
 		for (final Entry<ServiceType, String> e : type2Prefix.entrySet())
 		{
 			int totalConfigurations = 0;
@@ -148,13 +133,13 @@ public final class ProtocolPacketHidingManager implements IOConstants
 				final Path file = PROTOCOL_PACKET_HIDING_DIR.resolve(e.getValue() + protocol.getVersion() + "." + PROTOCOL_PACKET_HIDING_EXTENSION);
 				try
 				{
-					configurations.put(protocol, readHidingConfig(file));
+					configurations.put(protocol, new ReadOnlyObjectWrapper<>(PacketHidingConfigFileUtils.readHidingConfiguration(file)));
 					++totalConfigurations;
 				}
 				catch (FileNotFoundException | NoSuchFileException ex)
 				{
 					// nothing to be loaded automatically
-					configurations.put(protocol, newHidingConfig(Collections.emptySet(), Collections.emptySet()));
+					configurations.put(protocol, new ReadOnlyObjectWrapper<>(newHidingConfig()));
 				}
 				catch (Exception ex)
 				{
@@ -168,103 +153,9 @@ public final class ProtocolPacketHidingManager implements IOConstants
 		return Collections.unmodifiableMap(report);
 	}
 	
-	private void saveToFile(Path file, Set<byte[]> clientPacketPrefixes, Set<byte[]> serverPacketPrefixes) throws IOException
+	private IPacketHidingConfig newHidingConfig()
 	{
-		Files.createDirectories(file.resolve(".."));
-		try (final SeekableByteChannel channel = Files.newByteChannel(file, StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-				final NewIOHelper out = new NewIOHelper(channel))
-		{
-			out.writeLong(PROTOCOL_PACKET_HIDING_MAGIC);
-			out.writeByte(PROTOCOL_PACKET_HIDING_VERSION);
-			
-			final Map<EndpointType, Set<byte[]>> type2Prefixes = new EnumMap<>(EndpointType.class);
-			type2Prefixes.put(EndpointType.CLIENT, clientPacketPrefixes);
-			type2Prefixes.put(EndpointType.SERVER, serverPacketPrefixes);
-			
-			out.writeByte(type2Prefixes.size());
-			for (final Entry<EndpointType, Set<byte[]>> e : type2Prefixes.entrySet())
-			{
-				final long blockSizePos = out.getPositionInChannel(true);
-				out.writeInt(0); // block size
-				out.writeByte(e.getKey().ordinal());
-				
-				final Set<byte[]> prefixes = e.getValue();
-				out.writeInt(prefixes.size());
-				for (final byte[] prefix : prefixes)
-				{
-					out.writeByte(1 + prefix.length); // Total entry size
-					out.writeByte(prefix.length); // Prefix length
-					out.write(prefix);
-				}
-				final long nextBlockPos = out.getPositionInChannel(true);
-				final long blockSize = nextBlockPos - blockSizePos - 4;
-				out.flush();
-				out.setPositionInChannel(blockSizePos);
-				out.writeInt((int)blockSize);
-				out.flush();
-				out.setPositionInChannel(nextBlockPos);
-			}
-		}
-	}
-	
-	private IPacketHidingConfig readHidingConfig(Path file) throws InsufficientlyLargeFileException, UnknownFileTypeException, DamagedFileException, IOException
-	{
-		final Map<EndpointType, Set<byte[]>> type2Prefixes = new EnumMap<EndpointType, Set<byte[]>>(EndpointType.class);
-		for (final EndpointType type : EndpointType.VALUES)
-			type2Prefixes.put(type, new HashSet<>());
-		try (final SeekableByteChannel channel = Files.newByteChannel(file, StandardOpenOption.READ); final NewIOHelper in = new NewIOHelper(channel))
-		{
-			try
-			{
-				final long magicValue = in.readLong(); // magic
-				if (magicValue != PROTOCOL_PACKET_HIDING_MAGIC)
-					throw new UnknownFileTypeException(magicValue);
-				if (in.readByte() < 1) // version
-					throw new DamagedFileException("version");
-			}
-			catch (BufferUnderflowException | EOFException e)
-			{
-				throw new InsufficientlyLargeFileException();
-			}
-			
-			final int blockCount = in.readByte() & 0xFF;
-			for (int i = 0; i < blockCount; ++i)
-			{
-				final int blockSize = in.readInt();
-				if (blockSize < 5)
-					throw new DamagedFileException("block size");
-				final int typeValue = in.readByte() & 0xFF;
-				final Set<byte[]> prefixSet;
-				try
-				{
-					prefixSet = type2Prefixes.get(EndpointType.VALUES[typeValue]);
-				}
-				catch (ArrayIndexOutOfBoundsException e)
-				{
-					LOG.warn("Skipping a block with invalid type: " + typeValue + " in " + file.getFileName());
-					in.skip(blockSize - 1, false);
-					continue;
-				}
-				final int prefixCount = in.readInt();
-				if (prefixCount < 0)
-					throw new DamagedFileException("prefix count");
-				for (int j = 0; j < prefixCount; ++j)
-				{
-					final int totalSize = in.readByte();
-					final int prefixSize = in.readByte();
-					final byte[] prefix = new byte[prefixSize];
-					in.read(prefix);
-					prefixSet.add(VersionnedPacketTable.internedValueOf(prefix));
-					in.skip(totalSize - prefixSize - 1, false);
-				}
-			}
-		}
-		return newHidingConfig(type2Prefixes.get(EndpointType.CLIENT), type2Prefixes.get(EndpointType.SERVER));
-	}
-	
-	private IPacketHidingConfig newHidingConfig(Set<byte[]> clientPrefixes, Set<byte[]> serverPrefixes)
-	{
-		return new PacketHidingConfig(new CopyOnWriteArraySet<>(clientPrefixes), new CopyOnWriteArraySet<>(serverPrefixes));
+		return new PacketHidingConfig(new HashSet<>(Collections.emptySet()), new HashSet<>(Collections.emptySet()));
 	}
 	
 	/**

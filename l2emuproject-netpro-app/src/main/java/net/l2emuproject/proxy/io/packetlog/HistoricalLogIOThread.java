@@ -16,6 +16,7 @@
 package net.l2emuproject.proxy.io.packetlog;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,31 +44,34 @@ import net.l2emuproject.proxy.io.NewIOHelper;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ServiceType;
+import net.l2emuproject.proxy.network.listener.ConnectionListener;
+import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
+import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
+import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 import net.l2emuproject.util.BitMaskUtils;
 import net.l2emuproject.util.Rnd;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
- * This class manages packet log file creation and generation.
+ * This class manages historical packet log file creation and generation.
  * 
  * @author savormix
  */
-// FIXME: if
-public class PacketLogThread extends Thread implements IOConstants
+public class HistoricalLogIOThread extends Thread implements IOConstants, ConnectionListener, PacketListener
 {
-	static final L2Logger LOG = L2Logger.getLogger(PacketLogThread.class);
+	static final L2Logger LOG = L2Logger.getLogger(HistoricalLogIOThread.class);
 	
 	private final DateFormat _filenameFormat;
 	private final Map<Proxy, PacketLog> _files;
-	private final Map<Proxy, List<PackInfo>> _delayed;
+	private final Map<Proxy, List<PacketWrapper>> _delayed;
 	
 	private final BlockingQueue<Object> _actions;
 	
-	PacketLogThread()
+	HistoricalLogIOThread()
 	{
-		super("PacketLogThread");
+		super(HistoricalLogIOThread.class.getSimpleName());
 		
 		setPriority(NORM_PRIORITY - 1);
 		
@@ -80,7 +84,7 @@ public class PacketLogThread extends Thread implements IOConstants
 		net.l2emuproject.lang.management.ShutdownManager.addShutdownHook(() ->
 		{
 			LOG.info("Interrupting...");
-			PacketLogThread.this.interrupt();
+			HistoricalLogIOThread.this.interrupt();
 		});
 	}
 	
@@ -93,7 +97,7 @@ public class PacketLogThread extends Thread implements IOConstants
 			{
 				if (isInterrupted())
 					break;
-					
+				
 				final Object action;
 				try
 				{
@@ -108,16 +112,16 @@ public class PacketLogThread extends Thread implements IOConstants
 				{
 					closeFile(_files.remove(action), ((Proxy)action).getProtocol());
 				}
-				else if (action instanceof ConInfo)
+				else if (action instanceof ConnectionWrapper)
 				{
-					final ConInfo ci = (ConInfo)action;
-					final Proxy client = ci.getClient();
+					final ConnectionWrapper ci = (ConnectionWrapper)action;
+					final Proxy client = ci._client;
 					if (client.getTarget() == null)
 					{
 						// _log.warn("Unfinished connection; delaying logging for " + ci.getClient());
 						if (client.isDced())
 							continue;
-							
+						
 						_actions.add(ci);
 						
 						// let's waste some CPU to see if we should stop using CPU
@@ -125,9 +129,9 @@ public class PacketLogThread extends Thread implements IOConstants
 						for (Object pendingAction : _actions)
 						{
 							// a connection that is still pending completion; safe to wait 
-							if (pendingAction instanceof ConInfo && ((ConInfo)pendingAction).getClient().getTarget() == null)
+							if (pendingAction instanceof ConnectionWrapper && ((ConnectionWrapper)pendingAction)._client.getTarget() == null)
 								continue;
-								
+							
 							// any other action should be processed immediately
 							continue actionHandling;
 						}
@@ -145,34 +149,30 @@ public class PacketLogThread extends Thread implements IOConstants
 					}
 					openFile(ci);
 				}
-				else if (action instanceof PackInfo)
+				else if (action instanceof PacketWrapper)
 				{
 					final PacketLog log;
 					final NewIOHelper ioh;
-					List<PackInfo> delayed;
+					List<PacketWrapper> delayed;
 					{
-						final PackInfo pi = (PackInfo)action;
-						log = _files.get(pi.getClient());
+						final PacketWrapper pi = (PacketWrapper)action;
+						final Proxy client = pi._client;
+						log = _files.get(client);
 						if (log == null)
 						{
 							if (_actions.isEmpty())
 							{
-								LOG.warn("No open log for " + pi.getClient() + ", discarding packet.");
+								LOG.warn("No open log for " + client + ", discarding packet.");
 								continue;
 							}
-							delayed = _delayed.get(pi.getClient());
-							if (delayed == null)
-							{
-								delayed = new LinkedList<>();
-								_delayed.put(pi.getClient(), delayed);
-							}
+							delayed = _delayed.computeIfAbsent(client, c -> new LinkedList<>());
 							delayed.add(pi);
 							continue;
 						}
 						
 						ioh = log.getWriter();
 						
-						delayed = _delayed.remove(pi.getClient());
+						delayed = _delayed.remove(client);
 						if (delayed != null)
 							delayed.add(pi);
 						else
@@ -181,23 +181,23 @@ public class PacketLogThread extends Thread implements IOConstants
 					
 					try
 					{
-						for (final PackInfo pi : delayed)
+						for (final PacketWrapper pi : delayed)
 						{
-							final ReceivedPacket packet = pi.getPacket();
-							final byte[] buf = packet.getBody(); // DO NOT LINK!
+							final ReceivedPacket packet = pi._packet;
+							final byte[] buf = packet.getBody();
 							
 							ioh.writeBoolean(packet.getEndpoint().isClient());
 							ioh.writeChar(buf.length);
 							ioh.write(buf);
 							ioh.writeLong(packet.getReceived());
-							ioh.writeByte((int)BitMaskUtils.maskOf(pi.getFlags()));
+							ioh.writeByte((int)BitMaskUtils.maskOf(pi._flags));
 							
 							log.onPacket(packet);
 						}
 					}
 					catch (IOException e)
 					{
-						_files.remove(((PackInfo)action).getClient());
+						_files.remove(((PacketWrapper)action)._client);
 						UnmanagedResource.close(ioh);
 						LOG.error("A packet cannot be logged to file!", e);
 					}
@@ -221,40 +221,8 @@ public class PacketLogThread extends Thread implements IOConstants
 		LOG.info("Finalizing open files.");
 		for (Entry<Proxy, PacketLog> e : _files.entrySet())
 			closeFile(e.getValue(), e.getKey().getProtocol());
-			
+		
 		LOG.info("Packet logging terminated successfully.");
-	}
-	
-	/**
-	 * Notifies the packet log I/O thread about a new log to be created.
-	 * 
-	 * @param client newly connected client
-	 */
-	public void fireConnection(Proxy client)
-	{
-		_actions.add(new ConInfo(client));
-	}
-	
-	/**
-	 * Notifies the packet log I/O thread about a completed log that requires finalization.
-	 * 
-	 * @param client disconnected client
-	 */
-	public void fireDisconnection(Proxy client)
-	{
-		_actions.add(client);
-	}
-	
-	/**
-	 * Notifies the packet log I/O thread about a new packet to be logged.
-	 * 
-	 * @param client connected client
-	 * @param packet received packet
-	 * @param flags additional info about the packet
-	 */
-	public void firePacket(Proxy client, ReceivedPacket packet, Set<LoggedPacketFlag> flags)
-	{
-		_actions.add(new PackInfo(client, packet, flags));
 	}
 	
 	/**
@@ -265,9 +233,9 @@ public class PacketLogThread extends Thread implements IOConstants
 	 * @param connection
 	 *            pending connection
 	 */
-	private void openFile(ConInfo connection)
+	private void openFile(ConnectionWrapper connection)
 	{
-		final Proxy provider = connection.getClient();
+		final Proxy provider = connection._client;
 		if (provider.isDced())
 		{
 			LOG.warn("Log will not be opened for " + provider);
@@ -283,7 +251,7 @@ public class PacketLogThread extends Thread implements IOConstants
 			}
 		}
 		
-		final ServiceType type = ServiceType.valueOf(connection.getClient().getProtocol());
+		final ServiceType type = ServiceType.valueOf(connection._client.getProtocol());
 		
 		final Path log;
 		{
@@ -304,8 +272,8 @@ public class PacketLogThread extends Thread implements IOConstants
 			{
 				if (LoadOption.FORCE_FULL_LOG_FILENAME.isSet())
 					fn.append(type.isLogin() ? 'L' : 'G').append(provider.getTarget().getHostAddress()).append('_');
-					
-				final Date d = new Date(connection.getTime());
+				
+				final Date d = new Date(connection._time);
 				fn.append(_filenameFormat.format(d)).append('_');
 				fn.append(Rnd.getString(5, Rnd.LETTERS_AND_DIGITS)).append('.').append(LOG_EXTENSION);
 			}
@@ -320,7 +288,7 @@ public class PacketLogThread extends Thread implements IOConstants
 			
 			ioh.writeLong(LOG_MAGIC_INCOMPLETE).writeByte(LOG_VERSION);
 			ioh.writeInt(8 + 1 + 4 + 4 + 8 + 8 + 1 + 4).writeInt(0).writeLong(-1); // header size, footer size, footer start
-			ioh.writeLong(connection.getTime()).writeBoolean(type.isLogin()).writeInt(-1); // protocol version
+			ioh.writeLong(connection._time).writeBoolean(type.isLogin()).writeInt(-1); // protocol version
 			
 			_files.put(provider, new PacketLog(ioh));
 		}
@@ -336,7 +304,7 @@ public class PacketLogThread extends Thread implements IOConstants
 	{
 		if (log == null)
 			return;
-			
+		
 		try (final NewIOHelper ioh = log.getWriter())
 		{
 			final long footerStartPos = ioh.getPositionInChannel(true);
@@ -383,54 +351,99 @@ public class PacketLogThread extends Thread implements IOConstants
 		}
 	}
 	
-	private static class ConInfo
+	private static class ConnectionWrapper
 	{
-		private final Proxy _client;
-		private final long _time;
+		final Proxy _client;
+		final long _time;
 		
-		ConInfo(Proxy client)
+		ConnectionWrapper(Proxy client)
 		{
 			_client = client;
 			_time = System.currentTimeMillis();
 		}
-		
-		public Proxy getClient()
-		{
-			return _client;
-		}
-		
-		public long getTime()
-		{
-			return _time;
-		}
 	}
 	
-	private static class PackInfo
+	private static class PacketWrapper
 	{
-		private final Proxy _client;
-		private final ReceivedPacket _packet;
-		private final Set<LoggedPacketFlag> _flags;
+		final Proxy _client;
+		final ReceivedPacket _packet;
+		final Set<LoggedPacketFlag> _flags;
 		
-		PackInfo(Proxy provider, ReceivedPacket packet, Set<LoggedPacketFlag> flags)
+		PacketWrapper(Proxy provider, ReceivedPacket packet, Set<LoggedPacketFlag> flags)
 		{
 			_client = provider;
 			_packet = packet;
 			_flags = flags;
 		}
+	}
+	
+	@Override
+	public void onClientPacket(Proxy sender, Proxy recipient, ByteBuffer packet, long time) throws RuntimeException
+	{
+		final byte[] body = new byte[packet.clear().limit()];
+		packet.get(body);
+		_actions.add(new PacketWrapper(sender, new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time), getPacketFlags(sender)));
+	}
+	
+	@Override
+	public void onServerPacket(Proxy sender, Proxy recipient, ByteBuffer packet, long time) throws RuntimeException
+	{
+		final byte[] body = new byte[packet.clear().limit()];
+		packet.get(body);
+		_actions.add(new PacketWrapper(recipient, new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time), getPacketFlags(recipient)));
+	}
+	
+	@Override
+	public void onProtocolVersion(Proxy affected, IProtocolVersion version) throws RuntimeException
+	{
+		// ignore
+	}
+	
+	@Override
+	public void onClientConnection(Proxy client)
+	{
+		_actions.add(new ConnectionWrapper(client));
+	}
+	
+	@Override
+	public void onServerConnection(Proxy server)
+	{
+		// ignore
+	}
+	
+	@Override
+	public void onDisconnection(Proxy client, Proxy server)
+	{
+		_actions.add(client);
+	}
+	
+	private static final Set<LoggedPacketFlag> CAPTURE_DISABLED_FLAGS = Collections.singleton(LoggedPacketFlag.HIDDEN);
+	
+	private static final Set<LoggedPacketFlag> getPacketFlags(Proxy client)
+	{
+		final ConnectionPane cp = Loader.getActiveUIPane();
+		if (cp == null)
+			return Collections.emptySet();
 		
-		public Proxy getClient()
+		return cp.isCaptureDisabledFor(client) ? CAPTURE_DISABLED_FLAGS : Collections.emptySet();
+	}
+	
+	/**
+	 * Returns a singleton instance of this type.
+	 * 
+	 * @return an instance of this class
+	 */
+	public static final HistoricalLogIOThread getInstance()
+	{
+		return SingletonHolder.INSTANCE;
+	}
+	
+	private static final class SingletonHolder
+	{
+		static final HistoricalLogIOThread INSTANCE;
+		static
 		{
-			return _client;
-		}
-		
-		public ReceivedPacket getPacket()
-		{
-			return _packet;
-		}
-		
-		public Set<LoggedPacketFlag> getFlags()
-		{
-			return _flags;
+			(INSTANCE = new HistoricalLogIOThread()).start();
 		}
 	}
 }

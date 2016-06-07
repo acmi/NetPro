@@ -32,23 +32,7 @@ import net.l2emuproject.util.HexUtil;
  */
 public class PacketHidingConfig implements IPacketHidingConfig
 {
-	private final IPacketHidingConfig _parentConfig;
 	private final Map<EndpointType, Set<byte[]>> _configuration;
-	
-	/**
-	 * Creates a packet display configuration.
-	 * 
-	 * @param parentConfig inherited configuration
-	 * @param clientPacketPrefixes client packet opcodes
-	 * @param serverPacketPrefixes server packet opcodes
-	 */
-	public PacketHidingConfig(IPacketHidingConfig parentConfig, Set<byte[]> clientPacketPrefixes, Set<byte[]> serverPacketPrefixes)
-	{
-		_parentConfig = parentConfig;
-		_configuration = new EnumMap<>(EndpointType.class);
-		_configuration.put(EndpointType.CLIENT, clientPacketPrefixes);
-		_configuration.put(EndpointType.SERVER, serverPacketPrefixes);
-	}
 	
 	/**
 	 * Creates a packet display configuration.
@@ -58,25 +42,25 @@ public class PacketHidingConfig implements IPacketHidingConfig
 	 */
 	public PacketHidingConfig(Set<byte[]> clientPacketPrefixes, Set<byte[]> serverPacketPrefixes)
 	{
-		this(AllPackets.CONFIG, clientPacketPrefixes, serverPacketPrefixes);
+		_configuration = new EnumMap<>(EndpointType.class);
+		_configuration.put(EndpointType.CLIENT, clientPacketPrefixes);
+		_configuration.put(EndpointType.SERVER, serverPacketPrefixes);
 	}
 	
 	@Override
 	public boolean isHidden(EndpointType senderType, IPacketTemplate packetType)
 	{
-		return _configuration.getOrDefault(senderType, Collections.emptySet()).contains(packetType.getPrefix()) || _parentConfig.isHidden(senderType, packetType);
+		return _configuration.getOrDefault(senderType, Collections.emptySet()).contains(packetType.getPrefix());
 	}
 	
 	@Override
-	public void setHidden(EndpointType senderType, IPacketTemplate packetType)
+	public void setHidden(EndpointType senderType, IPacketTemplate packetType, boolean hidden)
 	{
-		_configuration.get(senderType).add(packetType.getPrefix());
-	}
-	
-	@Override
-	public void setVisible(EndpointType senderType, IPacketTemplate packetType)
-	{
-		_configuration.get(senderType).remove(packetType.getPrefix());
+		final Set<byte[]> config = _configuration.get(senderType);
+		if (hidden)
+			config.add(packetType.getPrefix());
+		else
+			config.remove(packetType.getPrefix());
 	}
 	
 	@Override
@@ -96,40 +80,5 @@ public class PacketHidingConfig implements IPacketHidingConfig
 			tb.append(HexUtil.bytesToHexString(prefix, ":")).append(", ");
 		tb.setLength(tb.length() - 2).append("]}");
 		return tb.moveToString();
-	}
-	
-	private static final class AllPackets implements IPacketHidingConfig
-	{
-		static final AllPackets CONFIG = new AllPackets();
-		
-		@Override
-		public boolean isHidden(EndpointType senderType, IPacketTemplate packetType)
-		{
-			return false;
-		}
-		
-		@Override
-		public void setHidden(EndpointType senderType, IPacketTemplate packetType)
-		{
-			throw new UnsupportedOperationException();
-		}
-		
-		@Override
-		public void setVisible(EndpointType senderType, IPacketTemplate packetType)
-		{
-			// do nothing
-		}
-		
-		@Override
-		public Map<EndpointType, Set<byte[]>> getSaveableFormat()
-		{
-			return Collections.emptyMap();
-		}
-		
-		@Override
-		public String toString()
-		{
-			return "{}";
-		}
 	}
 }

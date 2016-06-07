@@ -32,7 +32,7 @@ import net.l2emuproject.lang.management.StartupManager.StartupHook;
 import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.config.ConfigMarker;
 import net.l2emuproject.proxy.config.ProxyConfig;
-import net.l2emuproject.proxy.io.packetlog.AutoLogger;
+import net.l2emuproject.proxy.io.packetlog.HistoricalLogIOThread;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
 import net.l2emuproject.proxy.network.game.client.L2GameClientConnections;
@@ -228,13 +228,13 @@ public class L2Proxy
 				STATE_REPORTER.onState(UIStrings.get("startup.autologger"));
 			logger.trace("Setting up automatic packet logging…");
 			{
-				final AutoLogger al = AutoLogger.getInstance();
-				lcc.addConnectionListener(al);
-				lcc.addPacketListener(al);
-				lsc.addPacketListener(al);
-				gcc.addConnectionListener(al);
-				gcc.addPacketListener(al);
-				L2GameServerConnections.getInstance().addPacketListener(al);
+				final HistoricalLogIOThread ioThread = HistoricalLogIOThread.getInstance();
+				lcc.addConnectionListener(ioThread);
+				lcc.addPacketListener(ioThread);
+				lsc.addPacketListener(ioThread);
+				gcc.addConnectionListener(ioThread);
+				gcc.addPacketListener(ioThread);
+				L2GameServerConnections.getInstance().addPacketListener(ioThread);
 			}
 			logger.spam("…SUCCESS");
 		}

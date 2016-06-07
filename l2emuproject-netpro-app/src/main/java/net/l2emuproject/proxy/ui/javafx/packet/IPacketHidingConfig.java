@@ -38,20 +38,13 @@ public interface IPacketHidingConfig
 	boolean isHidden(EndpointType senderType, IPacketTemplate packetType);
 	
 	/**
-	 * Hides packets of the specified type.
+	 * (Un)hides packets of the specified type.
 	 * 
 	 * @param senderType packet sender type
 	 * @param packetType packet type (template)
+	 * @param hidden {@code true} to hide, {@code false} to make visible
 	 */
-	void setHidden(EndpointType senderType, IPacketTemplate packetType);
-	
-	/**
-	 * Makes packets of the specified type visible.
-	 * 
-	 * @param senderType packet sender type
-	 * @param packetType packet type (template)
-	 */
-	void setVisible(EndpointType senderType, IPacketTemplate packetType);
+	void setHidden(EndpointType senderType, IPacketTemplate packetType, boolean hidden);
 	
 	/**
 	 * Returns an equivalent of this packet display configuration suitable for {@link ProtocolPacketHidingManager}.

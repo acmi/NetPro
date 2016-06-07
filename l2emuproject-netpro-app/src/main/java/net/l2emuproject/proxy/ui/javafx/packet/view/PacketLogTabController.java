@@ -25,9 +25,7 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.Set;
 import java.util.TreeSet;
 
 import org.apache.commons.lang3.tuple.Pair;
@@ -43,11 +41,13 @@ import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.io.conversion.ToPlaintextVisitor;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.Packet2Html;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketHidingConfig;
@@ -133,7 +133,7 @@ public class PacketLogTabController implements Initializable
 	private BooleanProperty _scrollLockProperty;
 	private boolean _autoScrollPending;
 	
-	private IPacketHidingConfig _packetHidingConfig;
+	private ObjectProperty<IPacketHidingConfig> _packetHidingConfigProperty;
 	
 	/** Creates this controller. */
 	public PacketLogTabController()
@@ -147,16 +147,14 @@ public class PacketLogTabController implements Initializable
 			if (neu == null)
 				return;
 			
-			final Map<EndpointType, Set<byte[]>> tabConfig = _packetHidingConfig.getSaveableFormat();
-			_packetHidingConfig = new PacketHidingConfig(ProtocolPacketHidingManager.getInstance().getHidingConfiguration(neu), tabConfig.get(EndpointType.CLIENT), tabConfig.get(EndpointType.SERVER));
-			
 			for (final PacketLogEntry e : _memoryPackets)
 				e.updateView(neu);
 			_tvPackets.refresh();
 		});
 		_scrollLockProperty = new SimpleBooleanProperty(false);
 		// will only be modified on the UI thread
-		_packetHidingConfig = new PacketHidingConfig(new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes), new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes));
+		_packetHidingConfigProperty = new SimpleObjectProperty<IPacketHidingConfig>(
+				new PacketHidingConfig(new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes), new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes)));
 	}
 	
 	@Override
@@ -266,15 +264,17 @@ public class PacketLogTabController implements Initializable
 	@FXML
 	private void hidePacketInTab(ActionEvent event)
 	{
-		hideSelectedPacket(_packetHidingConfig);
+		hideSelectedPacket(_packetHidingConfigProperty.get());
 	}
 	
 	@FXML
 	private void hidePacketInProtocol(ActionEvent event)
 	{
 		final IProtocolVersion protocol = _protocolProperty.get();
-		hideSelectedPacket(ProtocolPacketHidingManager.getInstance().getHidingConfiguration(protocol));
+		hideSelectedPacket(ProtocolPacketHidingManager.getInstance().getHidingConfiguration(protocol).get());
 		ProtocolPacketHidingManager.getInstance().markModified(protocol);
+		
+		// FIXME: update other tabs with same protocol
 	}
 	
 	private void hideSelectedPacket(IPacketHidingConfig hidingConfig)
@@ -285,7 +285,7 @@ public class PacketLogTabController implements Initializable
 		
 		final ReceivedPacket packet = packetEntry.getPacket();
 		final EndpointType endpoint = packet.getEndpoint();
-		hidingConfig.setHidden(endpoint, VersionnedPacketTable.getInstance().getTemplate(_protocolProperty.get(), endpoint, packet.getBody()));
+		hidingConfig.setHidden(endpoint, VersionnedPacketTable.getInstance().getTemplate(_protocolProperty.get(), endpoint, packet.getBody()), true);
 		
 		applyFilters();
 	}
@@ -303,7 +303,7 @@ public class PacketLogTabController implements Initializable
 	private boolean isHiddenByName(PacketLogEntry packetEntry)
 	{
 		for (final StringOperator filter : _colName.getFilters())
-			if (isHidden(packetEntry.getName(), filter))
+			if (FXUtils.isHidden(packetEntry.getName(), filter))
 				return true;
 		
 		return false;
@@ -313,36 +313,9 @@ public class PacketLogTabController implements Initializable
 	{
 		final ReceivedPacket packet = packetEntry.getPacket();
 		final EndpointType endpoint = packet.getEndpoint();
-		return _packetHidingConfig.isHidden(endpoint, VersionnedPacketTable.getInstance().getTemplate(_protocolProperty.get(), endpoint, packet.getBody()));
-	}
-	
-	private boolean isHidden(String actualValue, StringOperator filter)
-	{
-		final String filterValue = filter.getValue();
-		switch (filter.getType())
-		{
-			case EQUALS:
-				if (!actualValue.equals(filterValue))
-					return true;
-				break;
-			case NOTEQUALS:
-				if (actualValue.equals(filterValue))
-					return true;
-				break;
-			case CONTAINS:
-				if (!actualValue.contains(filterValue))
-					return true;
-				break;
-			case STARTSWITH:
-				if (!actualValue.startsWith(filterValue))
-					return true;
-				break;
-			case ENDSWITH:
-				if (!actualValue.endsWith(filterValue))
-					return true;
-				break;
-		}
-		return false;
+		final IProtocolVersion protocol = _protocolProperty.get();
+		final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(protocol, endpoint, packet.getBody());
+		return _packetHidingConfigProperty.get().isHidden(endpoint, template) || ProtocolPacketHidingManager.getInstance().getHidingConfiguration(protocol).get().isHidden(endpoint, template);
 	}
 	
 	private String toPlaintext(List<PacketLogEntry> packets)
@@ -424,9 +397,9 @@ public class PacketLogTabController implements Initializable
 	 * 
 	 * @return packet hiding configuration
 	 */
-	public IPacketHidingConfig getPacketHidingConfig()
+	public ObjectProperty<IPacketHidingConfig> packetHidingConfigProperty()
 	{
-		return _packetHidingConfig;
+		return _packetHidingConfigProperty;
 	}
 	
 	public void applyFilters()

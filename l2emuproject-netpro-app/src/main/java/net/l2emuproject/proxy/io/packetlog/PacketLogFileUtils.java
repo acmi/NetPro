@@ -92,7 +92,8 @@ public final class PacketLogFileUtils implements IOConstants
 		
 		final EndpointType endpoint = packet.getEndpoint();
 		final IProtocolVersion protocol = options.getProtocol();
-		return !ProtocolPacketHidingManager.getInstance().getHidingConfiguration(protocol).isHidden(endpoint, VersionnedPacketTable.getInstance().getTemplate(protocol, endpoint, packet.getContent()));
+		return !ProtocolPacketHidingManager.getInstance().getHidingConfiguration(protocol).get().isHidden(endpoint,
+				VersionnedPacketTable.getInstance().getTemplate(protocol, endpoint, packet.getContent()));
 	}
 	
 	/**

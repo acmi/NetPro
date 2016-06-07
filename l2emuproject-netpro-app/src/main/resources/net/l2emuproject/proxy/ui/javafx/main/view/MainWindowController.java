@@ -21,6 +21,7 @@ import static javafx.scene.control.Alert.AlertType.WARNING;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.initNonModalUtilityDialog;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.makeNonModalUtilityAlert;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.showChoiceDialog;
+import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.showWaitDialog;
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.wrapException;
 
 import java.io.File;
@@ -339,7 +340,7 @@ public class MainWindowController implements Initializable, IOConstants
 			return null;
 		
 		final Object controller = packetTab.getUserData();
-		return packetTab.getUserData() instanceof PacketLogTabController ? (PacketLogTabController)controller : null;
+		return controller instanceof PacketLogTabController ? (PacketLogTabController)controller : null;
 	}
 	
 	@FXML
@@ -370,12 +371,24 @@ public class MainWindowController implements Initializable, IOConstants
 		final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
 		final Set<IPacketTemplate> clientPackets = table.getCurrentTemplates(protocol, EndpointType.CLIENT).collect(Collectors.toCollection(() -> new TreeSet<>(OpcodeOwnerSet.COMPARATOR)));
 		final Set<IPacketTemplate> serverPackets = table.getCurrentTemplates(protocol, EndpointType.SERVER).collect(Collectors.toCollection(() -> new TreeSet<>(OpcodeOwnerSet.COMPARATOR)));
-		_packetHidingConfigController.setPacketTemplates(clientPackets, serverPackets, packetTabController.getPacketHidingConfig(), protocol, packetTabController::applyFilters);
+		_packetHidingConfigController.setPacketTemplates(clientPackets, serverPackets, packetTabController.packetHidingConfigProperty(), packetTabController::applyFilters, protocol, () ->
+		{
+			for (final Tab tab : _tpConnections.getTabs())
+			{
+				final Object userData = tab.getUserData();
+				if (!(userData instanceof PacketLogTabController))
+					continue;
+				
+				final PacketLogTabController controller = (PacketLogTabController)userData;
+				if (protocol.equals(controller.protocolProperty().get()))
+					controller.applyFilters();
+			}
+		});
 		_packetHidingWrapper.setVisible(true);
 	}
 	
 	@FXML
-	void copySelectedPacket(ActionEvent event)
+	private void copySelectedPacket(ActionEvent event)
 	{
 		final PacketLogTabController controller = getCurrentPacketTabController();
 		if (controller != null)
@@ -383,7 +396,7 @@ public class MainWindowController implements Initializable, IOConstants
 	}
 	
 	@FXML
-	void copySelectedPacketXML(ActionEvent event)
+	private void copySelectedPacketXML(ActionEvent event)
 	{
 		final PacketLogTabController controller = getCurrentPacketTabController();
 		if (controller != null)
@@ -391,7 +404,7 @@ public class MainWindowController implements Initializable, IOConstants
 	}
 	
 	@FXML
-	void copyVisiblePackets(ActionEvent event)
+	private void copyVisiblePackets(ActionEvent event)
 	{
 		final PacketLogTabController controller = getCurrentPacketTabController();
 		if (controller != null)
@@ -399,7 +412,7 @@ public class MainWindowController implements Initializable, IOConstants
 	}
 	
 	@FXML
-	void copyVisiblePacketsXML(ActionEvent event)
+	private void copyVisiblePacketsXML(ActionEvent event)
 	{
 		final PacketLogTabController controller = getCurrentPacketTabController();
 		if (controller != null)
@@ -411,11 +424,12 @@ public class MainWindowController implements Initializable, IOConstants
 	// --------------------------
 	
 	@FXML
-	void showOpenLogNP(ActionEvent event)
+	private void showOpenLogNP(ActionEvent event)
 	{
 		final FileChooser fc = new FileChooser();
 		fc.setTitle(UIStrings.get("open.netpro.fileselect.title"));
-		fc.getExtensionFilters().addAll(new ExtensionFilter(UIStrings.get("open.netpro.fileselect.description"), "*.plog"), new ExtensionFilter(UIStrings.get("generic.filedlg.allfiles"), "*.*"));
+		fc.getExtensionFilters().addAll(new ExtensionFilter(UIStrings.get("open.netpro.fileselect.description"), "*." + LOG_EXTENSION),
+				new ExtensionFilter(UIStrings.get("generic.filedlg.allfiles"), "*.*"));
 		fc.setInitialDirectory(_lastOpenDirectory);
 		
 		final List<File> selectedFiles = fc.showOpenMultipleDialog(getMainWindow());
@@ -424,7 +438,8 @@ public class MainWindowController implements Initializable, IOConstants
 		
 		_lastOpenDirectory = selectedFiles.iterator().next().getParentFile();
 		
-		final WaitingIndicatorDialogController waitDialog = showWaitDialog("generic.waitdlg.title", selectedFiles.size() > 1 ? "open.netpro.waitdlg.header.multiple" : "open.netpro.waitdlg.header",
+		final WaitingIndicatorDialogController waitDialog = showWaitDialog(getMainWindow(), "generic.waitdlg.title",
+				selectedFiles.size() > 1 ? "open.netpro.waitdlg.header.multiple" : "open.netpro.waitdlg.header",
 				selectedFiles.size() > 1 ? String.valueOf(selectedFiles.size()) : selectedFiles.iterator().next().getName());
 		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() ->
 		{
@@ -440,8 +455,8 @@ public class MainWindowController implements Initializable, IOConstants
 				catch (InterruptedException e)
 				{
 					// cancelled by user
-					waitDialog.onWaitEnd();
-					return;
+					validLogFiles.clear();
+					break;
 				}
 				catch (FilesizeMeasureException | IOException e)
 				{
@@ -560,7 +575,7 @@ public class MainWindowController implements Initializable, IOConstants
 	}
 	
 	@FXML
-	void showRepairLogNP(ActionEvent event)
+	private void showRepairLogNP(ActionEvent event)
 	{
 		final DirectoryChooser dc = new DirectoryChooser();
 		dc.setTitle(UIStrings.get("repair.netpro.dirselect.title"));
@@ -571,31 +586,31 @@ public class MainWindowController implements Initializable, IOConstants
 	}
 	
 	@FXML
-	void showOpenLogPH(ActionEvent event)
+	private void showOpenLogPH(ActionEvent event)
 	{
 		
 	}
 	
 	@FXML
-	void showOpenLogPS(ActionEvent event)
+	private void showOpenLogPS(ActionEvent event)
 	{
 		
 	}
 	
 	@FXML
-	void showOpenLogRawPH(ActionEvent event)
+	private void showOpenLogRawPH(ActionEvent event)
 	{
 		
 	}
 	
 	@FXML
-	void showSaveVisiblePackets(ActionEvent event)
+	private void showSaveVisiblePackets(ActionEvent event)
 	{
 		
 	}
 	
 	@FXML
-	void showSaveVisiblePacketsXML(ActionEvent event)
+	private void showSaveVisiblePacketsXML(ActionEvent event)
 	{
 		
 	}
@@ -654,7 +669,7 @@ public class MainWindowController implements Initializable, IOConstants
 			return;
 		
 		final String pattern = result.get();
-		final WaitingIndicatorDialogController waitDialog = showWaitDialog("generic.waitdlg.title", "scripts.load.waitdlg.content.index", pattern);
+		final WaitingIndicatorDialogController waitDialog = showWaitDialog(getMainWindow(), "generic.waitdlg.title", "scripts.load.waitdlg.content.index", pattern);
 		waitDialog.getWindow().setUserData(pattern);
 		
 		action.accept(waitDialog);
@@ -694,7 +709,7 @@ public class MainWindowController implements Initializable, IOConstants
 					else
 						result = matchingScripts.iterator().next();
 					
-					final WaitingIndicatorDialogController nextWaitDialogController = showWaitDialog("generic.waitdlg.title", "scripts.load.waitdlg.content.compile", result);
+					final WaitingIndicatorDialogController nextWaitDialogController = showWaitDialog(getMainWindow(), "generic.waitdlg.title", "scripts.load.waitdlg.content.compile", result);
 					final Future<?> nextTask = L2ThreadPool.submitLongRunning(() ->
 					{
 						final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
@@ -808,7 +823,7 @@ public class MainWindowController implements Initializable, IOConstants
 			else
 				result = matchingScripts.iterator().next();
 			
-			final WaitingIndicatorDialogController nextWaitDialogController = showWaitDialog("generic.waitdlg.title", "scripts.unload.waitdlg.content", result);
+			final WaitingIndicatorDialogController nextWaitDialogController = showWaitDialog(getMainWindow(), "generic.waitdlg.title", "scripts.unload.waitdlg.content", result);
 			final Future<?> task = L2ThreadPool.submitLongRunning(() ->
 			{
 				final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
@@ -933,35 +948,6 @@ public class MainWindowController implements Initializable, IOConstants
 	// ------------------------
 	// ========== HELP MENU END
 	// ------------------------
-	
-	private WaitingIndicatorDialogController showWaitDialog(String title, String description, Object... descriptionTokens)
-	{
-		try
-		{
-			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(WaitingIndicatorDialogController.class), UIStrings.getBundle());
-			final Scene scene = new Scene(loader.load(), null);
-			
-			final Stage stage = new Stage(StageStyle.UTILITY);
-			stage.initModality(Modality.NONE);
-			stage.initOwner(getMainWindow());
-			stage.setTitle(UIStrings.get(title));
-			stage.setScene(scene);
-			stage.getIcons().addAll(FXUtils.getIconListFX());
-			stage.sizeToScene();
-			stage.setResizable(false);
-			
-			final WaitingIndicatorDialogController controller = loader.getController();
-			controller.setContentText(UIStrings.get(description, descriptionTokens));
-			
-			WindowTracker.getInstance().add(stage);
-			stage.show();
-			return controller;
-		}
-		catch (IOException e)
-		{
-			throw new AssertionError("Waiting dialog is missing", e);
-		}
-	}
 	
 	/**
 	 * Returns the scroll lock property.

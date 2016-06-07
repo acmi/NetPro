@@ -12,7 +12,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigTableViewController">
    <center>
-      <FilteredTableView fx:id="_tvTemplates" editable="true" fixedCellSize="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <FilteredTableView fx:id="_tvTemplates" editable="true" fixedCellSize="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
         <columns>
             <TableColumn fx:id="_tcShowInTab" maxWidth="-1.0" minWidth="25.0" prefWidth="-1.0" resizable="false" text="%packetdc.table.column.enable.tab" />
             <TableColumn fx:id="_tcShowInProtocol" maxWidth="-1.0" minWidth="25.0" prefWidth="-1.0" resizable="false" text="%packetdc.table.column.enable.protocol" />

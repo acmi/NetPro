@@ -81,7 +81,6 @@ import net.l2emuproject.proxy.io.conversion.ToPacketSamuraiLogVisitor;
 import net.l2emuproject.proxy.io.conversion.ToPlaintextVisitor;
 import net.l2emuproject.proxy.io.conversion.ToXMLVisitor;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
-import net.l2emuproject.proxy.io.packetlog.AutoLogger;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
@@ -327,9 +326,9 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					int result = _logChooser.showOpenDialog(Frontend.this);
 					if (result != JFileChooser.APPROVE_OPTION)
 						return;
-						
+					
 					_lastLogDir = _logChooser.getCurrentDirectory();
-					AutoLogger.loadConnections(Frontend.this, _logChooser.getDefaultLegacyLoginProtocol(), _logChooser.getDefaultLegacyGameProtocol(), _logChooser.getSelectedFiles());
+					//AutoLogger.loadConnections(Frontend.this, _logChooser.getDefaultLegacyLoginProtocol(), _logChooser.getDefaultLegacyGameProtocol(), _logChooser.getSelectedFiles());
 				});
 				file.add(load);
 			}
@@ -352,7 +351,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 						int result = _importChooser.showOpenDialog(Frontend.this);
 						if (result != JFileChooser.APPROVE_OPTION)
 							return;
-							
+						
 						new PacketHackLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
 					});
 					imp.add(item);
@@ -368,7 +367,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 						int result = _importChooser.showOpenDialog(Frontend.this);
 						if (result != JFileChooser.APPROVE_OPTION)
 							return;
-							
+						
 						new PacketHackRawLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
 					});
 					imp.add(item);
@@ -384,7 +383,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 						int result = _importChooser.showOpenDialog(Frontend.this);
 						if (result != JFileChooser.APPROVE_OPTION)
 							return;
-							
+						
 						new PacketSamuraiLogLoadTask(Frontend.this).execute(_importChooser.getSelectedFiles());
 					});
 					imp.add(item);
@@ -460,11 +459,11 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final Iterator<ReceivedPacket> it = pta.getVisiblePackets().iterator();
 							if (!it.hasNext())
 								return;
-								
+							
 							final MMOBuffer buf = new MMOBuffer();
 							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
 							final L2TextBuilder sb = new L2TextBuilder();
@@ -491,12 +490,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final JFileChooser saveDlg = new JFileChooser();
 							saveDlg.setFileFilter(BetterExtensionFilter.create("Plaintext packet log", "txt"));
 							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
 								return;
-								
+							
 							final Collection<ReceivedPacket> packets = pta.getVisiblePackets();
 							new PacketTextLogTask(Frontend.this, "Visible", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
 									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
@@ -510,11 +509,11 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final Iterator<ReceivedPacket> it = pta.getVisiblePackets().iterator();
 							if (!it.hasNext())
 								return;
-								
+							
 							final MMOBuffer buf = new MMOBuffer();
 							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
 							final L2TextBuilder sb = new L2TextBuilder();
@@ -541,12 +540,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final JFileChooser saveDlg = new JFileChooser();
 							saveDlg.setFileFilter(BetterExtensionFilter.create("XML packet log", "xml"));
 							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
 								return;
-								
+							
 							final Collection<ReceivedPacket> packets = pta.getVisiblePackets();
 							new PacketXMLLogTask(Frontend.this, "Visible", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
 									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
@@ -566,11 +565,11 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final Iterator<ReceivedPacket> it = pta.getTablePackets().iterator();
 							if (!it.hasNext())
 								return;
-								
+							
 							final MMOBuffer buf = new MMOBuffer();
 							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
 							final L2TextBuilder sb = new L2TextBuilder();
@@ -597,12 +596,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final JFileChooser saveDlg = new JFileChooser();
 							saveDlg.setFileFilter(BetterExtensionFilter.create("Plaintext packet log", "txt"));
 							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
 								return;
-								
+							
 							final Collection<ReceivedPacket> packets = pta.getTablePackets();
 							new PacketTextLogTask(Frontend.this, "Table", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
 									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
@@ -616,11 +615,11 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final Iterator<ReceivedPacket> it = pta.getTablePackets().iterator();
 							if (!it.hasNext())
 								return;
-								
+							
 							final MMOBuffer buf = new MMOBuffer();
 							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
 							final L2TextBuilder sb = new L2TextBuilder();
@@ -647,12 +646,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final JFileChooser saveDlg = new JFileChooser();
 							saveDlg.setFileFilter(BetterExtensionFilter.create("XML packet log", "xml"));
 							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
 								return;
-								
+							
 							final Collection<ReceivedPacket> packets = pta.getTablePackets();
 							new PacketXMLLogTask(Frontend.this, "Table", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
 									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
@@ -672,11 +671,11 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final Iterator<ReceivedPacket> it = pta.getMemoryPackets().iterator();
 							if (!it.hasNext())
 								return;
-								
+							
 							final MMOBuffer buf = new MMOBuffer();
 							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
 							final L2TextBuilder sb = new L2TextBuilder();
@@ -703,12 +702,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final JFileChooser saveDlg = new JFileChooser();
 							saveDlg.setFileFilter(BetterExtensionFilter.create("Plaintext packet log", "txt"));
 							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
 								return;
-								
+							
 							final Collection<ReceivedPacket> packets = pta.getMemoryPackets();
 							new PacketTextLogTask(Frontend.this, "Memory", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
 									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
@@ -722,11 +721,11 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final Iterator<ReceivedPacket> it = pta.getMemoryPackets().iterator();
 							if (!it.hasNext())
 								return;
-								
+							
 							final MMOBuffer buf = new MMOBuffer();
 							final DateFormat df = new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS);
 							final L2TextBuilder sb = new L2TextBuilder();
@@ -753,12 +752,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
-								
+							
 							final JFileChooser saveDlg = new JFileChooser();
 							saveDlg.setFileFilter(BetterExtensionFilter.create("XML packet log", "xml"));
 							if (saveDlg.showSaveDialog(Frontend.this) != JFileChooser.APPROVE_OPTION)
 								return;
-								
+							
 							final Collection<ReceivedPacket> packets = pta.getMemoryPackets();
 							new PacketXMLLogTask(Frontend.this, "Memory", saveDlg.getSelectedFile().toPath(), pta.getProtocolVersion(), pta.getCacheContext())
 									.execute(packets.toArray(new ReceivedPacket[packets.size()]));
@@ -843,7 +842,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				{
 					if (_gcTask != null)
 						return;
-						
+					
 					gc.setEnabled(false);
 					_gcTask = new AsyncTask<Void, Void, Void>()
 					{
@@ -923,7 +922,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 					if (answer != JOptionPane.YES_OPTION)
 						return;
-						
+					
 					new PacketDefinitionLoadTask(Frontend.this).execute((Void[])null);
 				});
 				packets.add(reload);
@@ -974,7 +973,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 									"This will attempt to load all scripts from the script directory. Managed scripts will be unloaded/reloaded, unmanaged scripts will be loaded a second time. Continue?",
 									"Confirm action", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE) != JOptionPane.YES_OPTION)
 								return;
-								
+							
 							new AllScriptReloadTask(Frontend.this).execute((Void[])null);
 						});
 						scripts.add(item);
@@ -1086,10 +1085,10 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 		final PacketDisplayConfig dialog = _configDialogs.get(version);
 		if (dialog != null)
 			return dialog.getPackets(type);
-			
+		
 		if (LoadOption.DISABLE_DEFS.isNotSet())
 			return Collections.emptySet();
-			
+		
 		// otherwise, all packets are unknown & forced visible
 		return Collections.singleton(IPacketTemplate.ANY_DYNAMIC_PACKET);
 	}
@@ -1111,7 +1110,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 		
 		if (toBeShownAfterReload == null)
 			return;
-			
+		
 		final PacketDisplayConfig dlg = _configDialogs.get(toBeShownAfterReload);
 		if (dlg != null)
 			dlg.setVisible(true);
@@ -1142,7 +1141,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 			JMenu menu = categories.get(cat);
 			if (menu != null)
 				continue;
-				
+			
 			menu = new JMenu(cat);
 			categories.put(cat, menu);
 		}
@@ -1150,14 +1149,14 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 		final Map<IProtocolVersion, Path> initialConfigs = new HashMap<>();
 		for (final Entry<IProtocolVersion, PacketDisplayConfig> e : _configDialogs.entrySet())
 			initialConfigs.put(e.getKey(), e.getValue().getLastConfig());
-			
+		
 		final JMenu loginMenu = new JMenu("Login");
 		for (int i = 0; i < allProtocols.size(); ++i)
 		{
 			final IProtocolVersion protocol = allProtocols.get(i);
 			if (!(protocol instanceof UserDefinedProtocolVersion))
 				continue;
-				
+			
 			final UserDefinedProtocolVersion user = (UserDefinedProtocolVersion)protocol;
 			
 			final PacketDisplayConfig dlg = new PacketDisplayConfig(this, _watermark, protocol, initialConfigs.get(protocol));
@@ -1177,7 +1176,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 		_configMenu.addSeparator();
 		for (final JMenu catMenu : categories.values())
 			_configMenu.add(catMenu);
-			
+		
 		_configDialogs = configDialogs;
 	}
 	
@@ -1292,12 +1291,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 			final int result = _logChooser.showOpenDialog(Frontend.this);
 			if (result != JFileChooser.APPROVE_OPTION)
 				return;
-				
+			
 			final File[] selected = _logChooser.getSelectedFiles();
 			final Path[] targets = new Path[selected.length];
 			for (int i = 0; i < targets.length; ++i)
 				targets[i] = selected[i].toPath();
-				
+			
 			new LogVisitationTask(Frontend.this, "Converting", _visitor).execute(targets);
 		}
 	}

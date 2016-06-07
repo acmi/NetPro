@@ -26,6 +26,8 @@ import java.util.List;
 import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
 
+import org.google.jhsheets.filtered.operators.StringOperator;
+
 /**
  * Contains methods for easy resource access.
  * 
@@ -73,5 +75,41 @@ public final class FXUtils
 		final ByteArrayOutputStream output = new ByteArrayOutputStream();
 		ImageIO.write(image, "PNG", output);
 		return "data:base64," + Base64.getMimeEncoder().encodeToString(output.toByteArray());
+	}
+	
+	/**
+	 * Tests a {@link String} value against the given filter.
+	 * 
+	 * @param actualValue cell value
+	 * @param filter filter
+	 * @return {@code true}, if cell should not be visible, {@code false} otherwise
+	 */
+	public static final boolean isHidden(String actualValue, StringOperator filter)
+	{
+		final String filterValue = filter.getValue();
+		switch (filter.getType())
+		{
+			case EQUALS:
+				if (!actualValue.equals(filterValue))
+					return true;
+				break;
+			case NOTEQUALS:
+				if (actualValue.equals(filterValue))
+					return true;
+				break;
+			case CONTAINS:
+				if (!actualValue.contains(filterValue))
+					return true;
+				break;
+			case STARTSWITH:
+				if (!actualValue.startsWith(filterValue))
+					return true;
+				break;
+			case ENDSWITH:
+				if (!actualValue.endsWith(filterValue))
+					return true;
+				break;
+		}
+		return false;
 	}
 }

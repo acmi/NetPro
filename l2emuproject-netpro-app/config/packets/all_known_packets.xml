@@ -1915,7 +1915,6 @@
 		<packet id="348" name="PledgePowerGradeList" />
 		<packet id="349" name="PledgeReceivePowerInfo" />
 		<packet id="350" name="PledgeReceiveMemberInfo" />
-		<packet id="351" name="PledgeReceiveWarList" />
 		<packet id="352" name="PledgeReceiveSubPledgeCreated" />
 		<packet id="353" name="ExRedSky" />
 		<packet id="354" name="PledgeReceiveUpdatePower" />
@@ -3951,6 +3950,13 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_LIST_PARTY_MATCHING_WAITING_ROOM" name="ExListPartyMatchingWaitingRoom" />
+		<!--
+		ASCII "dd"
+		ASCII "Sddddd"
+		UNICODE "PledgeReceiveWarList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_RECEIVE_WAR_LIST" name="PledgeReceiveWarList" />
 
 		<!--
 		ASCII "dSd"

@@ -4,13 +4,18 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="SM_PLEDGE_RECEIVE_WAR_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Tab" type="PledgeWarTab" />
-	<dword alias="Pledge count" id="index_0" />
-	<loop id="index_0">
+	<dword alias="Pledge count" id="cnt" />
+	<loop id="cnt">
 		<string alias="Pledge name" />
-		<dword alias="Status" /> <!-- 0=declared, 1=under attack, 2=blood declaration(gave up) -->
+		<dword alias="Status" type="pledge.PledgeWarStatus" id="state" />
 		<dword alias="Time in war" type="TimeRemaining" />
 		<dword alias="Score" />
-
-		<!-- if status = 2: <dword alias="0" /> <dword alias="0" /> -->
+		<dword alias="Recently gained points" />
+		<branch id="state" condition="pledge.BloodDeclaration">
+			<dword alias="Kills until auto-accept" />
+		</branch>
+		<branch id="state" condition="pledge.NonBloodDeclaration">
+			<dword alias="0" />
+		</branch>
 	</loop>
 </packet>

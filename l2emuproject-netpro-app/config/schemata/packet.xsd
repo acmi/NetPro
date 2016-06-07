@@ -358,6 +358,7 @@
 			<xs:enumeration value="pledge.PledgeSearchType" />
 			<xs:enumeration value="pledge.PledgeStatus" />
 			<xs:enumeration value="pledge.PledgeWarReply" />
+			<xs:enumeration value="pledge.PledgeWarStatus" />
 			
 			<xs:enumeration value="primitive.ServerPrimitive" />
 
@@ -487,7 +488,9 @@
 			<xs:enumeration value="param.TinyNumberValue" />
 			<xs:enumeration value="param.Zone" />
 			
+			<xs:enumeration value="pledge.BloodDeclaration" />
 			<xs:enumeration value="pledge.LegacyPledgePowerChange" />
+			<xs:enumeration value="pledge.NonBloodDeclaration" />
 			
 			<xs:enumeration value="primitive.ExtendedPrimitive" />
 			<xs:enumeration value="primitive.LineSegment" />

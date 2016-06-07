@@ -28,7 +28,7 @@
 		<packet opcodePrefix="FE 3B 00" id="348" />
 		<packet opcodePrefix="FE 3C 00" id="349" />
 		<packet opcodePrefix="FE 3D 00" id="350" />
-		<packet opcodePrefix="FE 3E 00" id="351" />
+		<packet opcodePrefix="FE 3E 00" id="SM_PLEDGE_RECEIVE_WAR_LIST" />
 		<packet opcodePrefix="FE 3F 00" id="352" />
 		<packet opcodePrefix="FE 40 00" id="353" />
 		<packet opcodePrefix="FE 41 00" id="354" />

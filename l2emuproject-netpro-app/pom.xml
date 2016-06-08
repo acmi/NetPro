@@ -44,78 +44,27 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
+							<classpathLayoutType>custom</classpathLayoutType> <!-- Maven ignores 'simple' and forces 'repository' at all times -->
+							<customClasspathLayout>lib/$${artifact.artifactId}-$${artifact.version}$${dashClassifier?}.$${artifact.extension}</customClasspathLayout>
 						</manifest>
 						<manifestEntries>
 							<Main-Class>net.l2emuproject.proxy.ui.savormix.loader.Loader</Main-Class>
 							<SplashScreen-Image>net/l2emuproject/proxy/ui/savormix/l2emu_logo.png</SplashScreen-Image>
 						</manifestEntries>
 					</archive>
-					<excludes>
-						<exclude>src/misc</exclude>
-					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.versioneye</groupId>
+				<artifactId>versioneye-maven-plugin</artifactId>
+				<configuration>
+					<projectId>5757073259c02a000e913724</projectId>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-	<profiles>
-		<profile>
-			<id>install-javafx</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-install-plugin</artifactId>
-						<version>2.5.2</version>
-						<executions>
-							<execution>
-								<id>install-javafx</id>
-								<goals>
-									<goal>install-file</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<file>${env.JAVA_HOME}/jre/lib/jfxrt.jar</file>
-									<groupId>javafx</groupId>
-									<artifactId>javafx</artifactId>
-									<version>2.2.51</version>
-									<packaging>jar</packaging>
-									<javadoc>http://docs.oracle.com/javafx/2/api/</javadoc>
-                        			<!--<sources>no source available</sources>-->
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<artifactId>maven-resources-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>install-javafx-bin</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>copy-resources</goal>
-								</goals>
-								<configuration>
-									<outputDirectory>${settings.localRepository}/javafx/javafx</outputDirectory>
-									<useBuildFilters>false</useBuildFilters>
-									<resources>
-										<resource>
-											<directory>${env.JAVA_HOME}/jre</directory>
-											<includes>
-												<include>bin/*.dll</include>
-											</includes>
-										</resource>
-									</resources>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 </project>

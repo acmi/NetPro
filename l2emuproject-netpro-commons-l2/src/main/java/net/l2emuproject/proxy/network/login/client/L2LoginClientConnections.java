@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
 
+import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.network.mmocore.MMOConfig;
 import net.l2emuproject.proxy.network.AbstractL2ClientConnections;
 import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
@@ -28,17 +29,18 @@ import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
  * 
  * @author savormix
  */
-public final class L2LoginClientConnections extends AbstractL2ClientConnections
+public final class L2LoginClientConnections extends AbstractL2ClientConnections implements NetProThreadPriority
 {
 	private static final class SingletonHolder
 	{
 		static
 		{
-			final MMOConfig cfg = new MMOConfig("LC Proxy");
-			// this application might be run on user-class machines, so go easy on the CPU
-			cfg.setAcceptionSelectorSleepTime(Integer.getInteger(L2LoginClientConnections.class.getName() + "#" + PROPERTY_ACC_INTERVAL, 2_500));
-			cfg.setReadWriteSelectorSleepTime(Integer.getInteger(L2LoginClientConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 100));
-			cfg.setThreadCount(1);
+			final MMOConfig cfg = new MMOConfig("Client[Auth]");
+			cfg.setAcceptInterval(Integer.getInteger(L2LoginClientConnections.class.getName() + "#" + PROPERTY_ACC_INTERVAL, 2_500));
+			cfg.setAcceptPriority(ACCEPTOR_AUTH);
+			cfg.setIOInterval(Integer.getInteger(L2LoginClientConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 100));
+			cfg.setIOPriority(NETWORK_IO_AUTH);
+			cfg.setIOThreadCount(1);
 			
 			try
 			{

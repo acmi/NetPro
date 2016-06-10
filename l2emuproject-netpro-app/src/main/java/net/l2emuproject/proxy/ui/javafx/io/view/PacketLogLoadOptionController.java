@@ -33,9 +33,9 @@ import net.l2emuproject.proxy.io.exception.LogFileIterationIOException;
 import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
 import net.l2emuproject.proxy.io.packetlog.LogFilePacket;
 import net.l2emuproject.proxy.io.packetlog.LogLoadOptions;
+import net.l2emuproject.proxy.io.packetlog.LogLoadOptions.LogLoadFlag;
 import net.l2emuproject.proxy.io.packetlog.NetProPacketLogFileIterator;
 import net.l2emuproject.proxy.io.packetlog.PacketLogFileUtils;
-import net.l2emuproject.proxy.io.packetlog.LogLoadOptions.LogLoadFlag;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
@@ -173,8 +173,9 @@ public final class PacketLogLoadOptionController
 		controller.protocolProperty().set(protocolVersion);
 		controller.setEntityCacheContext(cacheContext);
 		controller.installScrollLock(_mainWindow.scrollLockProperty());
+		controller.setOnProtocolPacketHidingConfigurationChange(_mainWindow::refreshFilters);
 		
-		getDialogWindow().hide();
+		closeTab(event);
 		tab.setUserData(controller);
 		_mainWindow.addConnectionTab(tab);
 		final int totalPackets = logFileHeader.getPackets();

@@ -105,14 +105,14 @@ public class ToRawStreamVisitor implements HistoricalLogPacketVisitor, IOConstan
 			{
 				L2GameClientPackets.getInstance().handlePacket(wrapper, _fakeClient, _buf.readUC()).readAndChangeState(_fakeClient, _buf);
 				wrapper.clear();
-				_fakeServer.encipher(wrapper, wrapper.limit());
+				_fakeServer.encipher(wrapper);
 				_fakeServer.setFirstTime(false);
 			}
 			else
 			{
 				L2GameServerPackets.getInstance().handlePacket(wrapper, _fakeServer, _buf.readUC()).readAndChangeState(_fakeServer, _buf);
 				wrapper.clear();
-				_fakeClient.encipher(wrapper, wrapper.limit());
+				_fakeClient.encipher(wrapper);
 			}
 		}
 		

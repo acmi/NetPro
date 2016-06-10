@@ -54,6 +54,17 @@ public final class PacketHidingConfigFileUtils implements IOConstants
 		// utility class
 	}
 	
+	/**
+	 * Restores a packet hiding configuration from file.
+	 * 
+	 * @param file a file
+	 * @return packet hiding configuration
+	 * @throws InsufficientlyLargeFileException if the given file is too small to be a NetPro packet hiding configuration
+	 * @throws UnknownFileTypeException if the given file is not a NetPro packet hiding configuration (different/unknown format)
+	 * @throws DamagedFileException if the given file contains incoherent metadata
+	 * @throws IOException in case of a general I/O error
+	 * @throws InterruptedException if the operation was cancelled by the user
+	 */
 	public static final IPacketHidingConfig readHidingConfiguration(Path file)
 			throws InsufficientlyLargeFileException, UnknownFileTypeException, DamagedFileException, IOException, InterruptedException
 	{

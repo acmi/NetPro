@@ -371,19 +371,8 @@ public class MainWindowController implements Initializable, IOConstants
 		final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
 		final Set<IPacketTemplate> clientPackets = table.getCurrentTemplates(protocol, EndpointType.CLIENT).collect(Collectors.toCollection(() -> new TreeSet<>(OpcodeOwnerSet.COMPARATOR)));
 		final Set<IPacketTemplate> serverPackets = table.getCurrentTemplates(protocol, EndpointType.SERVER).collect(Collectors.toCollection(() -> new TreeSet<>(OpcodeOwnerSet.COMPARATOR)));
-		_packetHidingConfigController.setPacketTemplates(clientPackets, serverPackets, packetTabController.packetHidingConfigProperty(), packetTabController::applyFilters, protocol, () ->
-		{
-			for (final Tab tab : _tpConnections.getTabs())
-			{
-				final Object userData = tab.getUserData();
-				if (!(userData instanceof PacketLogTabController))
-					continue;
-				
-				final PacketLogTabController controller = (PacketLogTabController)userData;
-				if (protocol.equals(controller.protocolProperty().get()))
-					controller.applyFilters();
-			}
-		});
+		_packetHidingConfigController.setPacketTemplates(clientPackets, serverPackets, packetTabController.packetHidingConfigProperty(), packetTabController::applyFilters, protocol,
+				() -> refreshFilters(protocol));
 		_packetHidingWrapper.setVisible(true);
 	}
 	
@@ -567,6 +556,7 @@ public class MainWindowController implements Initializable, IOConstants
 				confirmStage.setTitle(UIStrings.get("load.infodlg.title"));
 				confirmStage.setScene(new Scene(tabPane));
 				confirmStage.getIcons().addAll(FXUtils.getIconListFX());
+				confirmStage.setAlwaysOnTop(true);
 				WindowTracker.getInstance().add(confirmStage);
 				confirmStage.show();
 			});
@@ -935,6 +925,7 @@ public class MainWindowController implements Initializable, IOConstants
 		about.initOwner(getMainWindow());
 		about.setTitle(UIStrings.get("about.title"));
 		about.setScene(aboutDialog);
+		about.getIcons().addAll(FXUtils.getIconListFX());
 		WindowTracker.getInstance().add(about);
 		about.show();
 	}
@@ -973,6 +964,26 @@ public class MainWindowController implements Initializable, IOConstants
 		{
 			_taConsole.setScrollLeft(left);
 			_taConsole.setScrollTop(top);
+		}
+	}
+	
+	/**
+	 * Updates packet hiding configuration and other filters on all tabs that are associated with the given protocol.
+	 * If {@code protocolVersion} is {@code null}, all tabs will be refreshed.
+	 * 
+	 * @param protocolVersion protocol version or {@code null}
+	 */
+	public void refreshFilters(IProtocolVersion protocolVersion)
+	{
+		for (final Tab tab : _tpConnections.getTabs())
+		{
+			final Object userData = tab.getUserData();
+			if (!(userData instanceof PacketLogTabController))
+				continue;
+			
+			final PacketLogTabController controller = (PacketLogTabController)userData;
+			if (protocolVersion == null || protocolVersion.equals(controller.protocolProperty().get()))
+				controller.applyFilters();
 		}
 	}
 	

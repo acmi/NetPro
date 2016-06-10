@@ -17,8 +17,8 @@ package net.l2emuproject.proxy.network;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
+import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.proxy.network.listener.PacketManipulator;
 import net.l2emuproject.util.concurrent.RunnableStatsManager;
 import net.l2emuproject.util.logging.L2Logger;
@@ -29,23 +29,26 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor
+public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor implements NetProThreadPriority
 {
 	private static final L2Logger LOG = L2Logger.getLogger(ForwardedNotificationExecutor.class);
-	private static final AtomicInteger THREAD_COUNTER = new AtomicInteger();
 	
 	private static final int SINGLE_SEQUENTIAL_LISTENER_WARNING_THRESHOLD = 5;
 	
 	// perfectly possible due to 1 thread
 	private long _start;
 	
-	/** Creates a single-threaded executor for packet notifications. */
-	ForwardedNotificationExecutor()
+	/**
+	 * Creates a single-threaded executor for packet notifications.
+	 * 
+	 * @param no executor number
+	 */
+	ForwardedNotificationExecutor(int no)
 	{
 		super(0, r ->
 		{
-			final Thread t = new Thread(r, "PacketNotifier-" + THREAD_COUNTER.getAndIncrement());
-			t.setPriority(Thread.NORM_PRIORITY - 1);
+			final Thread t = new Thread(r, "PacketNotifier-" + no);
+			t.setPriority(ASYNC_PACKET_NOTIFIER);
 			return t;
 		});
 		

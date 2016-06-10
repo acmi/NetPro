@@ -23,6 +23,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Collections;
 import java.util.Set;
 
+import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.network.IPv4AddressPrefix;
 import net.l2emuproject.network.IPv4AddressTrie;
 import net.l2emuproject.network.mmocore.MMOConfig;
@@ -37,16 +38,18 @@ import net.l2emuproject.proxy.network.login.client.L2LoginClient;
  * 
  * @author savormix
  */
-public final class L2LoginServerConnections extends AbstractL2ServerConnections
+public final class L2LoginServerConnections extends AbstractL2ServerConnections implements NetProThreadPriority
 {
 	private static final class SingletonHolder
 	{
 		static
 		{
-			final MMOConfig cfg = new MMOConfig("LS Proxy");
-			// this application might be run on user-class machines, so go easy on the CPU
-			cfg.setReadWriteSelectorSleepTime(Integer.getInteger(L2LoginServerConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 100));
-			cfg.setThreadCount(1);
+			final MMOConfig cfg = new MMOConfig("Server[Auth]");
+			cfg.setConnectCompletionInterval(200);
+			cfg.setConnectPriority(CONNECTOR_AUTH);
+			cfg.setIOInterval(Integer.getInteger(L2LoginServerConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 3));
+			cfg.setIOPriority(NETWORK_IO_AUTH);
+			cfg.setIOThreadCount(1);
 			
 			try
 			{
@@ -92,7 +95,7 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections
 	{
 		if (client == null)
 			return;
-			
+		
 		InetSocketAddress receiverAddress = null;
 		try
 		{

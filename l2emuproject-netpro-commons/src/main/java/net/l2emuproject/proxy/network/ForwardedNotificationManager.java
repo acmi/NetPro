@@ -45,7 +45,7 @@ public class ForwardedNotificationManager
 		// being deep down in a library, nothing better to do
 		_executors = new ForwardedNotificationExecutor[Runtime.getRuntime().availableProcessors()];
 		for (int i = 0; i < _executors.length; ++i)
-			_executors[i] = new ForwardedNotificationExecutor();
+			_executors[i] = new ForwardedNotificationExecutor(i + 1);
 		
 		_client2Executor = new FastMap<Proxy, ForwardedNotificationExecutor>().setShared(true);
 		

@@ -26,32 +26,47 @@ import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleBooleanProperty;
 
 /**
+ * Represents a packet template row in a packet hiding configuration table.
+ * 
  * @author _dev_
  */
 public class PacketTemplateEntry
 {
-	private final IPacketTemplate _template;
-	private final boolean _visibleInTab, _visibleInProtocol;
 	private final BooleanProperty _visibleInTabProperty, _visibleInProtocolProperty;
 	// precomputed values to avoid constant polling/generation
 	private final ReadOnlyStringWrapper _opcode, _name;
 	
+	/**
+	 * Constructs this wrapper.
+	 * 
+	 * @param template packet template
+	 * @param visibleInTab whether packets of the given template are visible in the associated tab
+	 * @param visibleInProtocol whether packets of the given template are visible in tabs of the associated protocol
+	 * @param protocolVersion protocol version
+	 */
 	public PacketTemplateEntry(IPacketTemplate template, boolean visibleInTab, boolean visibleInProtocol, IProtocolVersion protocolVersion)
 	{
-		_template = template;
-		_visibleInTab = visibleInTab;
-		_visibleInProtocol = visibleInProtocol;
 		_visibleInTabProperty = new SimpleBooleanProperty(visibleInTab);
 		_visibleInProtocolProperty = new SimpleBooleanProperty(visibleInProtocol);
 		_opcode = new ReadOnlyStringWrapper(HexUtil.bytesToHexString(template.getPrefix(), ":").intern());
 		_name = new ReadOnlyStringWrapper(template.isDefined() ? template.getName() : UIStrings.get("packetdc.table.unknownpacket", _opcode.get()).intern());
 	}
 	
+	/**
+	 * Returns the template related packet visibility in associated tab property.
+	 * 
+	 * @return are packets visible in tab
+	 */
 	public BooleanProperty visibleInTabProperty()
 	{
 		return _visibleInTabProperty;
 	}
 	
+	/**
+	 * Returns the template related packet visibility in associated protocol property.
+	 * 
+	 * @return are packets visible in protocol
+	 */
 	public BooleanProperty visibleInProtocolProperty()
 	{
 		return _visibleInProtocolProperty;

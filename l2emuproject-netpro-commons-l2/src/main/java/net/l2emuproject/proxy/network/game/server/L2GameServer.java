@@ -21,7 +21,6 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
 
-import net.l2emuproject.network.mmocore.DataSizeHolder;
 import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.network.security.EmptyCipher;
@@ -70,7 +69,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 	}
 	
 	@Override
-	public boolean decipher(ByteBuffer buf, DataSizeHolder dataSize)
+	public boolean decipher(ByteBuffer buf)
 	{
 		if (isFirstTime())
 		{
@@ -78,41 +77,18 @@ public final class L2GameServer extends AbstractL2ServerProxy
 			return true;
 		}
 		
-		final int limit = buf.limit();
-		buf.limit(buf.position() + dataSize.getSize());
-		try
-		{
-			getCipher().decipher(buf);
-		}
-		finally
-		{
-			buf.limit(limit);
-		}
-		
+		getCipher().decipher(buf);
 		return true;
 	}
 	
 	@Override
-	public boolean encipher(ByteBuffer buf, int size)
+	public void encipher(ByteBuffer buf)
 	{
 		if (!isFirstTime())
 		{
-			final int limit = buf.limit();
-			buf.limit(buf.position() + size);
-			try
-			{
-				getTargetClient().getDeobfuscator().encodeOpcodes(buf);
-				getCipher().encipher(buf);
-			}
-			finally
-			{
-				buf.limit(limit);
-			}
+			getTargetClient().getDeobfuscator().encodeOpcodes(buf);
+			getCipher().encipher(buf);
 		}
-		else
-			buf.position(buf.position() + size);
-			
-		return true;
 	}
 	
 	@Override
@@ -169,7 +145,7 @@ public final class L2GameServer extends AbstractL2ServerProxy
 		final L2GameClient client = getTargetClient();
 		if (client != null)
 			return client.getProtocol();
-			
+		
 		return ProtocolVersionManager.getInstance().getFallbackProtocolGame();
 	}
 	

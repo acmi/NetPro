@@ -23,7 +23,6 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
 
-import net.l2emuproject.network.mmocore.DataSizeHolder;
 import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 import net.l2emuproject.network.security.ICipher;
 import net.l2emuproject.network.security.LoginCipher;
@@ -49,8 +48,7 @@ public final class L2LoginServer extends AbstractL2ServerProxy
 	 * @param target client that originally initiated this connection
 	 * @throws ClosedChannelException if the given channel was closed during operations
 	 */
-	protected L2LoginServer(L2LoginServerConnections mmoController, SocketChannel socketChannel, L2LoginClient target)
-			throws ClosedChannelException
+	protected L2LoginServer(L2LoginServerConnections mmoController, SocketChannel socketChannel, L2LoginClient target) throws ClosedChannelException
 	{
 		super(mmoController, socketChannel, target);
 		
@@ -74,7 +72,7 @@ public final class L2LoginServer extends AbstractL2ServerProxy
 	}
 	
 	@Override
-	protected boolean decipher(ByteBuffer buf, DataSizeHolder dataSize)
+	protected boolean decipher(ByteBuffer buf)
 	{
 		final boolean first = isFirstTime();
 		if (first)
@@ -89,32 +87,22 @@ public final class L2LoginServer extends AbstractL2ServerProxy
 			}
 		}
 		
-		final int limit = buf.limit();
-		buf.limit(buf.position() + dataSize.getSize());
-		try
+		final ICipher cipher = first ? new LoginCipher(READ_ONLY_MODERN_KEY) : getCipher();
+		cipher.decipher(buf);
+		if (first)
+			LoginCipher.complementDecipherInitialPacket(buf);
+		else if (!LoginCipher.testChecksum(buf, 8)) // server packet checksum scheme
 		{
-			final ICipher cipher = first ? new LoginCipher(READ_ONLY_MODERN_KEY) : getCipher();
-			cipher.decipher(buf);
-			if (first)
-				LoginCipher.complementDecipherInitialPacket(buf);
-			else if (!LoginCipher.testChecksum(buf, 8)) // server packet checksum scheme
-			{
-				LOG.info("Malformed server packet received from " + getHostAddress());
-				_fail2j = true;
-				// do nothing, since hAuthD & generic l2j login servers send such packets
-				// return false;
-			}
+			LOG.info("Malformed server packet received from " + getHostAddress());
+			_fail2j = true;
+			// do nothing, since hAuthD & generic l2j login servers send such packets
+			// return false;
 		}
-		finally
-		{
-			buf.limit(limit);
-		}
-		
 		return true;
 	}
 	
 	@Override
-	protected boolean encipher(ByteBuffer buf, int size)
+	protected void encipher(ByteBuffer buf)
 	{
 		// at this point, we could choose two possible paths:
 		// 1. This is a bare, self-built packet
@@ -123,19 +111,8 @@ public final class L2LoginServer extends AbstractL2ServerProxy
 		// as you can understand, we simply assume the latter
 		//size += (8 - (size & 7)) & 7; // padding
 		
-		final int limit = buf.limit();
-		buf.limit(buf.position() + size);
-		try
-		{
-			LoginCipher.injectChecksum(buf, getProtocol().isOlderThan(MODERN) ? 8 : 16); // [legacy] client packet checksum scheme
-			getCipher().encipher(buf);
-		}
-		finally
-		{
-			buf.limit(limit);
-		}
-		
-		return true;
+		LoginCipher.injectChecksum(buf, getProtocol().isOlderThan(MODERN) ? 8 : 16); // [legacy] client packet checksum scheme
+		getCipher().encipher(buf);
 	}
 	
 	@Override

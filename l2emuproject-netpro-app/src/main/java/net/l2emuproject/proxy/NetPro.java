@@ -45,6 +45,7 @@ import eu.revengineer.simplejse.exception.StaleScriptCacheException;
 import eu.revengineer.simplejse.reporting.AptReportingHandler;
 import eu.revengineer.simplejse.reporting.JavacReportingHandler;
 
+import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.config.ProxyConfig;
@@ -107,7 +108,7 @@ import javafx.util.Duration;
  * 
  * @author _dev_
  */
-public class NetPro extends Application
+public class NetPro extends Application implements NetProThreadPriority
 {
 	private static final Queue<String> PENDING_LOG_ENTRIES = new ArrayBlockingQueue<>(50_000, true);
 	private static final StringProperty LOADING_STAGE_DESCRIPTION = new SimpleStringProperty(null);
@@ -222,7 +223,9 @@ public class NetPro extends Application
 		UIStrings.CURRENT_LOCALE = language != null ? UIStrings.SUPPORTED_LOCALES.getOrDefault(language, Locale.ENGLISH) : Locale.ENGLISH;
 		
 		// 3. START UNDERLYING APPLICATION
-		new Thread(NetPro::loadInOrder, "NetProStartupThread").start();
+		final Thread startupThread = new Thread(NetPro::loadInOrder, "NetProStartupThread");
+		startupThread.setPriority(STARTUP);
+		startupThread.start();
 	}
 	
 	/** Starts the underlying application. Additional actions are performed if the GUI elements were pre-initialized. */

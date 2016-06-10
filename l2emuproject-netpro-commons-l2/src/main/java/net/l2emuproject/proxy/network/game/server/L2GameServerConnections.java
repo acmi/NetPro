@@ -21,11 +21,13 @@ import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
 import java.util.Arrays;
 
+import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.network.mmocore.MMOConfig;
 import net.l2emuproject.proxy.network.AbstractL2ServerConnections;
 import net.l2emuproject.proxy.network.game.L2GameServerInfo;
 import net.l2emuproject.proxy.network.game.L2SessionManager;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
+import net.l2emuproject.proxy.network.game.client.L2GameClientConnections;
 
 /**
  * Manages outgoing connections to game servers initiated when a L2 client connects to this proxy on
@@ -33,17 +35,18 @@ import net.l2emuproject.proxy.network.game.client.L2GameClient;
  * 
  * @author savormix
  */
-public final class L2GameServerConnections extends AbstractL2ServerConnections
+public final class L2GameServerConnections extends AbstractL2ServerConnections implements NetProThreadPriority
 {
 	private static final class SingletonHolder
 	{
 		static
 		{
-			final MMOConfig cfg = new MMOConfig("GS Proxy");
-			// this app is not likely to serve thousands of connections
-			// so we can try to minimize the latency caused by proxying the connection
-			cfg.setReadWriteSelectorSleepTime(Integer.getInteger(L2GameServerConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 3));
-			cfg.setThreadCount(1);
+			final MMOConfig cfg = new MMOConfig("Server[L2]");
+			cfg.setConnectCompletionInterval(50);
+			cfg.setConnectPriority(CONNECTOR_GAME);
+			cfg.setIOInterval(Integer.getInteger(L2GameClientConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 3));
+			cfg.setIOPriority(NETWORK_IO_GAME);
+			cfg.setIOThreadCount(1);
 			
 			try
 			{

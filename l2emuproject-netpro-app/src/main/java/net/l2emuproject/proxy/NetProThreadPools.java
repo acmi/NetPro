@@ -22,6 +22,7 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
 import net.l2emuproject.util.concurrent.ThreadPoolInitializer;
 
@@ -30,13 +31,13 @@ import net.l2emuproject.util.concurrent.ThreadPoolInitializer;
  * 
  * @author _dev_
  */
-final class NetProThreadPools implements ThreadPoolInitializer
+final class NetProThreadPools implements ThreadPoolInitializer, NetProThreadPriority
 {
 	@Override
 	public Set<ScheduledThreadPoolExecutor> getScheduledPools()
 	{
 		// Scheduled pools will primarily handle MMOLoggers and various other recurring tasks
-		final ScheduledThreadPoolExecutor pool = new ScheduledThreadPoolExecutor(1, L2ThreadPool.getDefaultSPFactory());
+		final ScheduledThreadPoolExecutor pool = new ScheduledThreadPoolExecutor(1, L2ThreadPool.getDefaultSPFactory(TP_SCHEDULED));
 		pool.setKeepAliveTime(2, TimeUnit.MINUTES);
 		return Collections.singleton(pool);
 	}
@@ -45,13 +46,13 @@ final class NetProThreadPools implements ThreadPoolInitializer
 	public Set<ThreadPoolExecutor> getInstantPools()
 	{
 		// Asynchronous packet notifications have dedicated executors, so this shall be primarily for scripts that require fast execution outside the notification thread
-		return Collections.singleton(new ThreadPoolExecutor(0, Integer.MAX_VALUE, 15L, TimeUnit.SECONDS, new SynchronousQueue<>(), L2ThreadPool.getDefaultIPFactory()));
+		return Collections.singleton(new ThreadPoolExecutor(0, Integer.MAX_VALUE, 15L, TimeUnit.SECONDS, new SynchronousQueue<>(), L2ThreadPool.getDefaultIPFactory(TP_INSTANT)));
 	}
 	
 	@Override
 	public Set<ThreadPoolExecutor> getLongRunningPools()
 	{
 		// Typically for user-invoked I/O related tasks, either via UI or scripts
-		return Collections.singleton(new ThreadPoolExecutor(0, Integer.MAX_VALUE, 1L, TimeUnit.MINUTES, new SynchronousQueue<>(), L2ThreadPool.getDefaultLPFactory()));
+		return Collections.singleton(new ThreadPoolExecutor(0, Integer.MAX_VALUE, 1L, TimeUnit.MINUTES, new SynchronousQueue<>(), L2ThreadPool.getDefaultLPFactory(TP_LONG)));
 	}
 }

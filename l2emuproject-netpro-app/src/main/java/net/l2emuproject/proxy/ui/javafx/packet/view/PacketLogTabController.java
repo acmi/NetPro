@@ -27,6 +27,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.TreeSet;
+import java.util.function.Consumer;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.google.jhsheets.filtered.FilteredTableView;
@@ -39,6 +40,7 @@ import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.io.conversion.ToPlaintextVisitor;
+import net.l2emuproject.proxy.io.conversion.ToXMLVisitor;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
@@ -133,7 +135,8 @@ public class PacketLogTabController implements Initializable
 	private BooleanProperty _scrollLockProperty;
 	private boolean _autoScrollPending;
 	
-	private ObjectProperty<IPacketHidingConfig> _packetHidingConfigProperty;
+	private final ObjectProperty<IPacketHidingConfig> _packetHidingConfigProperty;
+	private Consumer<IProtocolVersion> _onProtocolHidingConfigChange;
 	
 	/** Creates this controller. */
 	public PacketLogTabController()
@@ -155,6 +158,10 @@ public class PacketLogTabController implements Initializable
 		// will only be modified on the UI thread
 		_packetHidingConfigProperty = new SimpleObjectProperty<IPacketHidingConfig>(
 				new PacketHidingConfig(new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes), new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes)));
+		_onProtocolHidingConfigChange = p ->
+		{
+			// Do nothing
+		};
 	}
 	
 	@Override
@@ -229,6 +236,11 @@ public class PacketLogTabController implements Initializable
 		_tablePackets.clear();
 	}
 	
+	/**
+	 * Copies the currently selected packet to clipboard in plaintext form.
+	 * 
+	 * @param event input event
+	 */
 	@FXML
 	public void copyPacketAsPlaintext(ActionEvent event)
 	{
@@ -236,9 +248,14 @@ public class PacketLogTabController implements Initializable
 		if (packetEntry == null)
 			return;
 		
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(toPlaintext(Collections.singletonList(packetEntry))), null);
+		copyString(toPlaintext(Collections.singletonList(packetEntry)));
 	}
 	
+	/**
+	 * Copies the currently selected packet to clipboard in XML form.
+	 * 
+	 * @param event input event
+	 */
 	@FXML
 	public void copyPacketAsXML(ActionEvent event)
 	{
@@ -246,19 +263,34 @@ public class PacketLogTabController implements Initializable
 		if (packetEntry == null)
 			return;
 		
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(toXML(Collections.singletonList(packetEntry))), null);
+		copyString(toXML(Collections.singletonList(packetEntry)));
 	}
 	
+	/**
+	 * Copies all visible packets (regardless of scrollbar position) to clipboard in plaintext form.
+	 * 
+	 * @param event input event
+	 */
 	@FXML
 	public void copyVisiblePacketsAsPlaintext(ActionEvent event)
 	{
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(toPlaintext(_tablePackets)), null);
+		copyString(toPlaintext(_tablePackets));
 	}
 	
+	/**
+	 * Copies all visible packets (regardless of scrollbar position) to clipboard in XML form.
+	 * 
+	 * @param event input event
+	 */
 	@FXML
 	public void copyVisiblePacketsAsXML(ActionEvent event)
 	{
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(toXML(_tablePackets)), null);
+		copyString(toXML(_tablePackets));
+	}
+	
+	private void copyString(String string)
+	{
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(string), null);
 	}
 	
 	@FXML
@@ -273,8 +305,7 @@ public class PacketLogTabController implements Initializable
 		final IProtocolVersion protocol = _protocolProperty.get();
 		hideSelectedPacket(ProtocolPacketHidingManager.getInstance().getHidingConfiguration(protocol).get());
 		ProtocolPacketHidingManager.getInstance().markModified(protocol);
-		
-		// FIXME: update other tabs with same protocol
+		_onProtocolHidingConfigChange.accept(protocol);
 	}
 	
 	private void hideSelectedPacket(IPacketHidingConfig hidingConfig)
@@ -288,16 +319,6 @@ public class PacketLogTabController implements Initializable
 		hidingConfig.setHidden(endpoint, VersionnedPacketTable.getInstance().getTemplate(_protocolProperty.get(), endpoint, packet.getBody()), true);
 		
 		applyFilters();
-	}
-	
-	private boolean isHiddenByOpcode(PacketLogEntry packetEntry)
-	{
-		/*
-		for (final StringOperator filter : _colOpcode.getFilters())
-			if (isHidden(packetEntry.getOpcode(), filter))
-				return true;
-		*/
-		return false;
 	}
 	
 	private boolean isHiddenByName(PacketLogEntry packetEntry)
@@ -342,7 +363,7 @@ public class PacketLogTabController implements Initializable
 		{
 			final MMOBuffer buf = new MMOBuffer();
 			for (final PacketLogEntry packetEntry : packets)
-				ToPlaintextVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), buf, _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+				ToXMLVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), buf, _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
 			return sb.moveToString();
 		}
 		catch (IOException e)
@@ -402,6 +423,7 @@ public class PacketLogTabController implements Initializable
 		return _packetHidingConfigProperty;
 	}
 	
+	/** Updates packet table view in response to a change of applied filters. */
 	public void applyFilters()
 	{
 		if (_cmiIgnoreFilters.isSelected())
@@ -412,7 +434,7 @@ public class PacketLogTabController implements Initializable
 		
 		final ObservableList<PacketLogEntry> filterMatchingPackets = FXCollections.observableArrayList();
 		for (final PacketLogEntry packetEntry : _memoryPackets)
-			if (!isHiddenByDisplayConfig(packetEntry) && !isHiddenByOpcode(packetEntry) && !isHiddenByName(packetEntry))
+			if (!isHiddenByDisplayConfig(packetEntry) && !isHiddenByName(packetEntry))
 				filterMatchingPackets.add(packetEntry);
 		_tablePackets.setAll(filterMatchingPackets);
 	}
@@ -445,6 +467,16 @@ public class PacketLogTabController implements Initializable
 	}
 	
 	/**
+	 * Assigns an action to be taken when a packet template is set to hidden in the associated protocol's configuration.
+	 * 
+	 * @param onProtocolHidingConfigChange an action
+	 */
+	public void setOnProtocolPacketHidingConfigurationChange(Consumer<IProtocolVersion> onProtocolHidingConfigChange)
+	{
+		_onProtocolHidingConfigChange = onProtocolHidingConfigChange;
+	}
+	
+	/**
 	 * Adds a new packet to the underlying table view.
 	 * 
 	 * @param packet a packet
@@ -453,7 +485,7 @@ public class PacketLogTabController implements Initializable
 	{
 		_memoryPackets.add(packet);
 		
-		if (isHiddenByDisplayConfig(packet) || isHiddenByOpcode(packet) || isHiddenByName(packet))
+		if (isHiddenByDisplayConfig(packet) || isHiddenByName(packet))
 			return;
 		
 		_tablePackets.add(packet);

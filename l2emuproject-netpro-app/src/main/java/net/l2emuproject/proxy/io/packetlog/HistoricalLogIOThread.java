@@ -38,6 +38,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import net.l2emuproject.io.UnmanagedResource;
+import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.io.NewIOHelper;
@@ -59,7 +60,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public class HistoricalLogIOThread extends Thread implements IOConstants, ConnectionListener, PacketListener
+public class HistoricalLogIOThread extends Thread implements IOConstants, ConnectionListener, PacketListener, NetProThreadPriority
 {
 	static final L2Logger LOG = L2Logger.getLogger(HistoricalLogIOThread.class);
 	
@@ -73,7 +74,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 	{
 		super(HistoricalLogIOThread.class.getSimpleName());
 		
-		setPriority(NORM_PRIORITY - 1);
+		setPriority(HISTORICAL_LOG_IO);
 		
 		_filenameFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.ENGLISH);
 		_files = new HashMap<>();

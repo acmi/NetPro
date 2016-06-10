@@ -15,6 +15,9 @@
  */
 package net.l2emuproject.proxy.ui.javafx.main.view;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,6 +27,7 @@ import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
 /**
@@ -45,7 +49,19 @@ public class AboutDialogController implements Initializable
 	@FXML
 	private void openLicense(ActionEvent event)
 	{
-		// might do this eventually
+		if (!Desktop.isDesktopSupported())
+			return;
+		
+		final Desktop desktop = Desktop.getDesktop();
+		try
+		{
+			if (desktop.isSupported(Desktop.Action.BROWSE))
+				desktop.browse(URI.create(((Hyperlink)event.getSource()).getText()));
+		}
+		catch (IOException | IllegalArgumentException e)
+		{
+			// too bad
+		}
 	}
 	
 	@Override
@@ -58,7 +74,7 @@ public class AboutDialogController implements Initializable
 			build = "snapshot";
 		else
 			build = "stable";
-			
+		
 		_labBuild.setText(UIStrings.get("about.build." + build, NetProInfo.getRevisionNumber()));
 	}
 }

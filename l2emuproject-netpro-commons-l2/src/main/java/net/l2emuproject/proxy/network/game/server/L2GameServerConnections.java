@@ -40,11 +40,10 @@ public final class L2GameServerConnections extends AbstractL2ServerConnections
 		static
 		{
 			final MMOConfig cfg = new MMOConfig("GS Proxy");
-			cfg.setKeepAlive(true);
 			// this app is not likely to serve thousands of connections
 			// so we can try to minimize the latency caused by proxying the connection
-			cfg.setReadWriteSelectorSleepTime(Integer.getInteger(L2GameServerConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 3));
-			cfg.setThreadCount(1);
+			cfg.setIOInterval(Integer.getInteger(L2GameServerConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 3));
+			cfg.setIOThreadCount(1);
 			
 			try
 			{
@@ -83,7 +82,7 @@ public final class L2GameServerConnections extends AbstractL2ServerConnections
 	{
 		if (client == null)
 			return;
-			
+		
 		final L2GameServerInfo gsi = L2SessionManager.getInstance().getRoute(client);
 		if (gsi == null)
 		{

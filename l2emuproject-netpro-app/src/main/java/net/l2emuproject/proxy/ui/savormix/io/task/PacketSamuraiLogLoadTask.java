@@ -32,7 +32,6 @@ import java.nio.file.StandardOpenOption;
 import javax.swing.SwingUtilities;
 
 import net.l2emuproject.io.EmptyChecksum;
-import net.l2emuproject.network.mmocore.DataSizeHolder;
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
@@ -239,13 +238,12 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File> implemen
 				ioh.read(body);
 				
 				final ByteBuffer wrapper = ByteBuffer.wrap(body).order(ByteOrder.LITTLE_ENDIAN);
-				ctx._sz.init(body.length);
 				ctx._buf.setByteBuffer(wrapper);
 				if (type.isClient())
 				{
 					if (ctx._enciphered)
 					{
-						ctx._fakeClient.decipher(wrapper, ctx._sz);
+						ctx._fakeClient.decipher(wrapper);
 						ctx._fakeClient.setFirstTime(false);
 					}
 					else
@@ -258,7 +256,7 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File> implemen
 				else
 				{
 					if (ctx._enciphered)
-						ctx._fakeServer.decipher(wrapper, ctx._sz);
+						ctx._fakeServer.decipher(wrapper);
 					L2GameServerPackets.getInstance().handlePacket(wrapper, ctx._fakeServer, ctx._buf.readUC()).readAndChangeState(ctx._fakeServer, ctx._buf);
 				}
 				sm.onLoadedPacket(false, type.isClient(), body, ctx._protocol, ctx._cacheContext, time);
@@ -300,7 +298,6 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File> implemen
 		final HistoricalPacketLog _cacheContext;
 		final L2GameClient _fakeClient;
 		final L2GameServer _fakeServer;
-		final DataSizeHolder _sz;
 		final MMOBuffer _buf;
 		
 		PacketLogContext(Path logFile, IProtocolVersion protocol, boolean enciphered) throws IOException
@@ -311,7 +308,6 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File> implemen
 			_cacheContext = new HistoricalPacketLog(logFile);
 			_fakeClient = new L2GameClient(null, null);
 			_fakeServer = new L2GameServer(null, null, _fakeClient);
-			_sz = new DataSizeHolder();
 			_buf = new MMOBuffer();
 		}
 	}

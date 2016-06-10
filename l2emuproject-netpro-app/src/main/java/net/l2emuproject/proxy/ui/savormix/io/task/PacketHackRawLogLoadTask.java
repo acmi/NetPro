@@ -30,7 +30,6 @@ import java.nio.file.StandardOpenOption;
 import javax.swing.SwingUtilities;
 
 import net.l2emuproject.io.EmptyChecksum;
-import net.l2emuproject.network.mmocore.DataSizeHolder;
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
@@ -138,7 +137,6 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File> implemen
 				final HistoricalPacketLog cacheContext = new HistoricalPacketLog(p);
 				final L2GameClient fakeClient = new L2GameClient(null, null);
 				final L2GameServer fakeServer = new L2GameServer(null, null, fakeClient);
-				final DataSizeHolder sz = new DataSizeHolder();
 				final MMOBuffer buf = new MMOBuffer();
 				// load packets
 				for (int count = Integer.MAX_VALUE; count > 0 && size - ioh.getPositionInChannel(false) > 0; count--)
@@ -150,17 +148,16 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File> implemen
 					ioh.read(body); // packet
 					
 					final ByteBuffer wrapper = ByteBuffer.wrap(body).order(ByteOrder.LITTLE_ENDIAN);
-					sz.init(body.length);
 					buf.setByteBuffer(wrapper);
 					if (type.isClient())
 					{
-						fakeClient.decipher(wrapper, sz);
+						fakeClient.decipher(wrapper);
 						fakeClient.setFirstTime(false);
 						L2GameClientPackets.getInstance().handlePacket(wrapper, fakeClient, buf.readUC()).readAndChangeState(fakeClient, buf);
 					}
 					else
 					{
-						fakeServer.decipher(wrapper, sz);
+						fakeServer.decipher(wrapper);
 						L2GameServerPackets.getInstance().handlePacket(wrapper, fakeServer, buf.readUC()).readAndChangeState(fakeServer, buf);
 					}
 					sm.onLoadedPacket(false, type.isClient(), body, protocol, cacheContext, time);

@@ -16,12 +16,11 @@
 package net.l2emuproject.proxy.script;
 
 import java.nio.file.Paths;
-import java.util.EnumSet;
-import java.util.Set;
 
 import eu.revengineer.simplejse.JavaClassScriptCache;
 import eu.revengineer.simplejse.config.JCSCConfig;
 import eu.revengineer.simplejse.config.JCSCConfigFlag;
+import eu.revengineer.simplejse.config.ScriptEngineConfig;
 import eu.revengineer.simplejse.init.ReloadableScriptInitializer;
 import eu.revengineer.simplejse.init.SimpleAbstractScriptInitializer;
 
@@ -38,7 +37,7 @@ import net.l2emuproject.util.logging.L2Logger;
  */
 public class NetProScriptCache extends JavaClassScriptCache
 {
-	NetProScriptCache(JCSCConfig config)
+	NetProScriptCache(ScriptEngineConfig config)
 	{
 		super(config);
 	}
@@ -75,11 +74,9 @@ public class NetProScriptCache extends JavaClassScriptCache
 			
 			INITIALIZER = new ReloadableScriptInitializer();
 			
-			final Set<JCSCConfigFlag> flags = EnumSet.noneOf(JCSCConfigFlag.class);
-			flags.add(JCSCConfigFlag.DEFLATE_CACHE);
-			
 			final String ver = NetProInfo.isUnreleased() ? "" : "_" + (NetProInfo.isSnapshot() ? NetProInfo.getRevisionNumber() : NetProInfo.getVersion());
-			INSTANCE = new NetProScriptCache(new JCSCConfig(Paths.get("scripts"), Paths.get("script" + ver + ".cache"), Paths.get("script_apt.log"), Paths.get("script.log"), flags, INITIALIZER));
+			INSTANCE = new NetProScriptCache(
+					JCSCConfig.create(Paths.get("scripts"), Paths.get("script" + ver + ".cache"), Paths.get("script_apt.log"), Paths.get("script.log"), INITIALIZER, JCSCConfigFlag.DEFLATE_CACHE));
 			
 			StartupManager.markInitialized(NetProScriptCache.class);
 		}

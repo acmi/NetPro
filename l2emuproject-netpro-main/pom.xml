@@ -45,7 +45,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.0.1</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -94,7 +94,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.3</version>
+				<version>2.10.4</version>
 				<configuration>
 					<skip>false</skip>
 					<quiet>false</quiet>
@@ -108,7 +108,7 @@
 					<detectLinks>true</detectLinks> <!-- Not maintained -->
 					<validateLinks>true</validateLinks>
 					<links>
-						<link>http://jse.revengineer.eu/simple/v1.0/apidocs</link>
+						<link>http://jse.revengineer.eu/simple/v2.0.2/apidocs</link>
 					</links>
 
 					<author>true</author>
@@ -116,7 +116,6 @@
 					<linkSource>true</linkSource>
 					<show>protected</show>
 					<nohelp>false</nohelp>
-					<excludePackageNames>net.l2emuproject.proxy.script.interpreter.gen.*</excludePackageNames>
 
 					<doctitle>L2EMU Unique NetPro ${project.version}/r${git.commitsCount} documentation</doctitle>
 					<windowtitle>NetPro r${git.commitsCount} documentation</windowtitle>

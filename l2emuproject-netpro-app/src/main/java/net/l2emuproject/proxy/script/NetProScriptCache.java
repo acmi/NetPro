@@ -15,17 +15,32 @@
  */
 package net.l2emuproject.proxy.script;
 
+import static eu.revengineer.simplejse.config.JCSCConfigFlag.DEFLATE_CACHE;
+import static eu.revengineer.simplejse.config.JCSCConfigFlag.DO_NOT_LOAD_STALE_CACHE;
+
+import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import eu.revengineer.simplejse.JavaClassScriptCache;
+import eu.revengineer.simplejse.SupportedCompilerType;
+import eu.revengineer.simplejse.config.CompilerOptions;
+import eu.revengineer.simplejse.config.CompilerOptionsImpl;
 import eu.revengineer.simplejse.config.JCSCConfig;
 import eu.revengineer.simplejse.config.JCSCConfigFlag;
 import eu.revengineer.simplejse.config.ScriptEngineConfig;
 import eu.revengineer.simplejse.init.ReloadableScriptInitializer;
 import eu.revengineer.simplejse.init.SimpleAbstractScriptInitializer;
+import eu.revengineer.simplejse.reporting.DiagnosticLogFile;
 
+import net.l2emuproject.lang.L2System;
 import net.l2emuproject.lang.management.StartupManager;
 import net.l2emuproject.proxy.NetProInfo;
+import net.l2emuproject.util.jar.ClasspathExtractor;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -40,6 +55,12 @@ public class NetProScriptCache extends JavaClassScriptCache
 	NetProScriptCache(ScriptEngineConfig config)
 	{
 		super(config);
+	}
+	
+	/** Allows a stale precompiled script cache to be loaded. */
+	public void setStaleCacheOK()
+	{
+		SingletonHolder.FLAGS.remove(DO_NOT_LOAD_STALE_CACHE);
 	}
 	
 	/**
@@ -66,6 +87,7 @@ public class NetProScriptCache extends JavaClassScriptCache
 	{
 		static final ReloadableScriptInitializer INITIALIZER;
 		static final NetProScriptCache INSTANCE;
+		static final Set<JCSCConfigFlag> FLAGS;
 		
 		static
 		{
@@ -75,8 +97,45 @@ public class NetProScriptCache extends JavaClassScriptCache
 			INITIALIZER = new ReloadableScriptInitializer();
 			
 			final String ver = NetProInfo.isUnreleased() ? "" : "_" + (NetProInfo.isSnapshot() ? NetProInfo.getRevisionNumber() : NetProInfo.getVersion());
-			INSTANCE = new NetProScriptCache(
-					JCSCConfig.create(Paths.get("scripts"), Paths.get("script" + ver + ".cache"), Paths.get("script_apt.log"), Paths.get("script.log"), INITIALIZER, JCSCConfigFlag.DEFLATE_CACHE));
+			Map<SupportedCompilerType, CompilerOptions> compilerOptions = CompilerOptionsImpl.DEFAULTS;
+			{
+				final String separator = System.getProperty("path.separator", ";"), classpath = System.getProperty("java.class.path", "no" + separator + "classpath");
+				if (!L2System.isIDEMode() && classpath.split(separator).length == 1 && classpath.endsWith(".jar"))
+				{
+					// java -jar somename.jar
+					final String ecjCP;
+					try
+					{
+						ecjCP = ClasspathExtractor.getClasspathOf(classpath);
+					}
+					catch (IOException e)
+					{
+						throw new AssertionError("classpath", e);
+					}
+					compilerOptions = new EnumMap<>(SupportedCompilerType.class);
+					// JDK compiler will correctly interpret jar files on classpath
+					compilerOptions.put(SupportedCompilerType.JDK, CompilerOptionsImpl.DEFAULTS.get(SupportedCompilerType.JDK));
+					// JDT batch compiler will take literal values from classpath; we know for NP that NP jar has ALL library jars
+					// so we do not need to recurse further; we can just use it as the classpath for ECJ
+					final CompilerOptions oldECJ = CompilerOptionsImpl.DEFAULTS.get(SupportedCompilerType.ECJ);
+					final List<String> proc = new ArrayList<>();
+					for (final String old : oldECJ.getProcessorOptions())
+						proc.add(old);
+					proc.add("-classpath");
+					proc.add(ecjCP);
+					final List<String> comp = new ArrayList<>();
+					for (final String old : oldECJ.getCompilerOptions())
+						comp.add(old);
+					comp.add("-classpath");
+					comp.add(ecjCP);
+					compilerOptions.put(SupportedCompilerType.ECJ, new CompilerOptionsImpl(proc, comp));
+				}
+			}
+			final ScriptEngineConfig config = JCSCConfig.create(Paths.get("scripts"), Paths.get("script" + ver + ".cache"), JCSCConfig.DEFAULT_ENCODING, compilerOptions,
+					new DiagnosticLogFile(Paths.get("script_apt.log")), new DiagnosticLogFile(Paths.get("script.log")), INITIALIZER, JCSCConfig.DEFAULT_BUFFER_SIZE, JCSCConfig.DEFAULT_WRITER_SUPPLIER,
+					DEFLATE_CACHE, DO_NOT_LOAD_STALE_CACHE);
+			INSTANCE = new NetProScriptCache(config);
+			FLAGS = config.getFlags();
 			
 			StartupManager.markInitialized(NetProScriptCache.class);
 		}

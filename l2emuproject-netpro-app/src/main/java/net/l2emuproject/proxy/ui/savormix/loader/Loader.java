@@ -51,6 +51,7 @@ import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
 import net.l2emuproject.proxy.ui.savormix.component.SplashFrame;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.util.L2Utils;
+import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.logging.L2Logger;
 import net.l2emuproject.util.logging.ListeningLog;
 
@@ -242,10 +243,20 @@ public final class Loader
 					{
 						try
 						{
-							cache.restoreFromCache(null);
+							cache.restoreFromCache();
 							break scripts;
 						}
-						catch (IOException | StaleScriptCacheException e)
+						catch (StaleScriptCacheException e)
+						{
+							if (cache.isCompilerUnavailable())
+							{
+								cache.setStaleCacheOK();
+								cache.restoreFromCache();
+								break scripts;
+							}
+							// otherwise proceed to compilation
+						}
+						catch (IOException e)
 						{
 							// proceed to compilation
 						}
@@ -253,8 +264,7 @@ public final class Loader
 					
 					if (!cache.isCompilerUnavailable())
 					{
-						// 2.2.2 COMPILE AND LOAD SCRIPTS
-						cache.compileAllScripts(null);
+						cache.compileAllScripts();
 						cache.writeToCache();
 					}
 				}
@@ -267,7 +277,7 @@ public final class Loader
 			}
 			catch (Throwable t)
 			{
-				JOptionPane.showMessageDialog(null, t.getMessage(), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, StackTraceUtil.traceToString(t), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
 				System.exit(1);
 			}
 		}

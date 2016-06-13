@@ -15,13 +15,14 @@
  */
 package net.l2emuproject.proxy.script;
 
+import static eu.revengineer.simplejse.config.JCSCConfigFlag.DEFLATE_CACHE;
+import static eu.revengineer.simplejse.config.JCSCConfigFlag.DO_NOT_LOAD_STALE_CACHE;
+
 import java.nio.file.Paths;
-import java.util.EnumSet;
-import java.util.Set;
 
 import eu.revengineer.simplejse.JavaClassScriptCache;
 import eu.revengineer.simplejse.config.JCSCConfig;
-import eu.revengineer.simplejse.config.JCSCConfigFlag;
+import eu.revengineer.simplejse.config.ScriptEngineConfig;
 import eu.revengineer.simplejse.init.ReloadableScriptInitializer;
 import eu.revengineer.simplejse.reporting.AptReportingHandler;
 import eu.revengineer.simplejse.reporting.DiagnosticLogFile;
@@ -45,7 +46,7 @@ public class NetProScriptCache extends JavaClassScriptCache
 	/** Allows to override the default {@code javac} handler */
 	public static JavacReportingHandler INITIALIZER_JAVAC_HANDLER = new DiagnosticLogFile(Paths.get("script.log"));
 	
-	NetProScriptCache(JCSCConfig config)
+	NetProScriptCache(ScriptEngineConfig config)
 	{
 		super(config);
 	}
@@ -91,12 +92,8 @@ public class NetProScriptCache extends JavaClassScriptCache
 			JavaClassScriptCache.installLoggers(c -> new NetProScriptLogger(L2Logger.getLogger(c)));
 			
 			INITIALIZER = new ReloadableScriptInitializer();
-			
-			final Set<JCSCConfigFlag> flags = EnumSet.noneOf(JCSCConfigFlag.class);
-			flags.add(JCSCConfigFlag.DEFLATE_CACHE);
-			flags.add(JCSCConfigFlag.DO_NOT_LOAD_STALE_CACHE);
-			
-			INSTANCE = new NetProScriptCache(new JCSCConfig(Paths.get("scripts"), Paths.get(getScriptCacheName()), INITIALIZER_APT_HANDLER, INITIALIZER_JAVAC_HANDLER, flags, INITIALIZER));
+			INSTANCE = new NetProScriptCache(
+					JCSCConfig.create(Paths.get("scripts"), Paths.get(getScriptCacheName()), INITIALIZER_APT_HANDLER, INITIALIZER_JAVAC_HANDLER, INITIALIZER, DEFLATE_CACHE, DO_NOT_LOAD_STALE_CACHE));
 			
 			StartupManager.markInitialized(NetProScriptCache.class);
 		}

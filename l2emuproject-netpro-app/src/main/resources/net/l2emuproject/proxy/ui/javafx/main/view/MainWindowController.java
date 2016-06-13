@@ -32,12 +32,14 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.concurrent.Future;
@@ -50,6 +52,7 @@ import eu.revengineer.simplejse.logging.BytesizeInterpreter;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
 import eu.revengineer.simplejse.type.UnloadableScript;
 
+import net.l2emuproject.lang.L2System;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
@@ -70,6 +73,7 @@ import net.l2emuproject.proxy.io.packetlog.PacketLogFileUtils;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
+import net.l2emuproject.proxy.network.meta.UserDefinedProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.ui.i18n.BytesizeFormat;
@@ -79,6 +83,7 @@ import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.error.view.ExceptionSummaryDialogController;
 import net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController;
+import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
@@ -93,6 +98,7 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -104,12 +110,14 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
@@ -203,24 +211,6 @@ public class MainWindowController implements Initializable, IOConstants
 	private Menu _mMemoryPacketExport;
 	
 	@FXML
-	private MenuItem _npLog2PhxLog;
-	
-	@FXML
-	private MenuItem _npLog2PhxRawLog;
-	
-	@FXML
-	private MenuItem _npLog2PacketSamuraiLog;
-	
-	@FXML
-	private MenuItem _npLog2Plaintext;
-	
-	@FXML
-	private MenuItem _npLog2XML;
-	
-	@FXML
-	private MenuItem _npLog2Stream;
-	
-	@FXML
 	private CheckMenuItem _showLogConsole;
 	
 	@FXML
@@ -230,16 +220,15 @@ public class MainWindowController implements Initializable, IOConstants
 	private Menu _mPacketDisplay;
 	
 	@FXML
-	private MenuItem _packetExplainer;
-	
-	@FXML
-	private MenuItem _packetBuilder;
-	
-	@FXML
-	private MenuItem _packetReload;
-	
-	@FXML
 	private Menu _mScripts;
+	
+	private final Map<IProtocolVersion, Stage> _openPacketHidingConfigWindows;
+	
+	/** Constructs this controller. */
+	public MainWindowController()
+	{
+		_openPacketHidingConfigWindows = new HashMap<>();
+	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -261,7 +250,7 @@ public class MainWindowController implements Initializable, IOConstants
 		}), new KeyFrame(Duration.seconds(1)));
 		tlHeapUsage.setCycleCount(Animation.INDEFINITE);
 		tlHeapUsage.play();
-		_labJvmType.setText(UIStrings.get("main.javaenv", NetProScriptCache.getInstance().isCompilerUnavailable() ? "JRE" : "JDK", System.getProperty("java.specification.version", "1.?"),
+		_labJvmType.setText(UIStrings.get("main.javaenv", L2System.isJREMode() ? "JRE" : "JDK", System.getProperty("java.specification.version", "1.?"),
 				System.getProperty("java.vm.specification.version", "1.?")));
 		final String javaPath = System.getProperty("java.home");
 		if (javaPath != null)
@@ -321,6 +310,102 @@ public class MainWindowController implements Initializable, IOConstants
 				return LoadOption.DISABLE_SCRIPTS.isSet() || NetProScriptCache.getInstance().isCompilerUnavailable();
 			}
 		});
+		
+		rebuildProtocolMenu();
+	}
+	
+	private void rebuildProtocolMenu()
+	{
+		for (final Window wnd : _openPacketHidingConfigWindows.values())
+			wnd.hide();
+		_openPacketHidingConfigWindows.clear();
+		
+		_mPacketDisplay.getItems().clear();
+		_mPacketDisplay.setDisable(LoadOption.DISABLE_DEFS.isSet());
+		if (_mPacketDisplay.isDisable())
+			return;
+		
+		final ObservableList<MenuItem> allCategories = _mPacketDisplay.getItems();
+		
+		final Menu authSubmenu = new Menu("Auth");
+		for (final IProtocolVersion protocol : VersionnedPacketTable.getInstance().getKnownProtocols(ServiceType.LOGIN))
+		{
+			if (!(protocol instanceof UserDefinedProtocolVersion))
+				continue;
+			
+			final MenuItem mi = new MenuItem(String.valueOf(protocol));
+			mi.setUserData(protocol);
+			mi.setOnAction(this::openProtocolPacketHidingConfigWindow);
+			authSubmenu.getItems().add(mi);
+		}
+		allCategories.add(authSubmenu);
+		allCategories.add(new SeparatorMenuItem());
+		
+		final SortedMap<String, Menu> gameProtocolCategories = new TreeMap<>();
+		for (final IProtocolVersion protocol : VersionnedPacketTable.getInstance().getKnownProtocols(ServiceType.GAME))
+		{
+			if (!(protocol instanceof UserDefinedProtocolVersion))
+				continue;
+			
+			final MenuItem mi = new MenuItem(String.valueOf(protocol));
+			mi.setUserData(protocol);
+			mi.setOnAction(this::openProtocolPacketHidingConfigWindow);
+			gameProtocolCategories.computeIfAbsent(((UserDefinedProtocolVersion)protocol).getCategory(), Menu::new).getItems().add(mi);
+		}
+		allCategories.addAll(gameProtocolCategories.values());
+	}
+	
+	private void openProtocolPacketHidingConfigWindow(ActionEvent event)
+	{
+		final Object userData = ((MenuItem)event.getSource()).getUserData();
+		if (!(userData instanceof IProtocolVersion))
+		{
+			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getMainWindow(), "generic.err.internal.title", "generic.err.internal.header", null, "MWC_OPPHC");
+			alert.initModality(Modality.WINDOW_MODAL);
+			alert.show();
+			return;
+		}
+		
+		final IProtocolVersion protocol = (IProtocolVersion)userData;
+		final Stage openWnd = _openPacketHidingConfigWindows.get(protocol);
+		if (openWnd != null)
+		{
+			openWnd.toFront();
+			return;
+		}
+		
+		final PacketLogTabController currentTabController = getCurrentPacketTabController();
+		if (protocol.equals(currentTabController.protocolProperty().get()))
+		{
+			if (_tbPacketHidingConfig.isSelected())
+				return; // an UI control is already open
+				
+			_tbPacketHidingConfig.setSelected(true);
+			showPacketHidingConfig(event);
+			return;
+		}
+		
+		try
+		{
+			final Stage wnd = new Stage(StageStyle.DECORATED);
+			wnd.setTitle(String.valueOf(protocol));
+			wnd.getIcons().addAll(FXUtils.getIconListFX());
+			
+			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(PacketDisplayConfigDialogController.class), UIStrings.getBundle());
+			wnd.setScene(new Scene(loader.load(), null));
+			final PacketDisplayConfigDialogController controller = loader.getController();
+			setPacketTemplates(controller, protocol, null, null);
+			
+			wnd.setOnHidden(e -> _openPacketHidingConfigWindows.remove(protocol, wnd));
+			_openPacketHidingConfigWindows.put(protocol, wnd);
+			wnd.show();
+		}
+		catch (IOException e)
+		{
+			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.NONE).show();
+			return;
+		}
 	}
 	
 	/**
@@ -368,12 +453,21 @@ public class MainWindowController implements Initializable, IOConstants
 		}
 		
 		final IProtocolVersion protocol = packetTabController.protocolProperty().get();
+		final Stage openWnd = _openPacketHidingConfigWindows.get(protocol);
+		if (openWnd != null)
+			openWnd.hide(); // do not have two UI controls open at the same time
+			
+		setPacketTemplates(_packetHidingConfigController, protocol, packetTabController.packetHidingConfigProperty(), packetTabController::applyFilters);
+		_packetHidingWrapper.setVisible(true);
+	}
+	
+	private final void setPacketTemplates(PacketDisplayConfigDialogController controller, IProtocolVersion protocol, ObjectProperty<IPacketHidingConfig> tabHidingConfigProperty,
+			Runnable onTabConfigChage)
+	{
 		final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
 		final Set<IPacketTemplate> clientPackets = table.getCurrentTemplates(protocol, EndpointType.CLIENT).collect(Collectors.toCollection(() -> new TreeSet<>(OpcodeOwnerSet.COMPARATOR)));
 		final Set<IPacketTemplate> serverPackets = table.getCurrentTemplates(protocol, EndpointType.SERVER).collect(Collectors.toCollection(() -> new TreeSet<>(OpcodeOwnerSet.COMPARATOR)));
-		_packetHidingConfigController.setPacketTemplates(clientPackets, serverPackets, packetTabController.packetHidingConfigProperty(), packetTabController::applyFilters, protocol,
-				() -> refreshFilters(protocol));
-		_packetHidingWrapper.setVisible(true);
+		controller.setPacketTemplates(clientPackets, serverPackets, tabHidingConfigProperty, onTabConfigChage, protocol, () -> refreshFilters(protocol));
 	}
 	
 	@FXML
@@ -545,7 +639,7 @@ public class MainWindowController implements Initializable, IOConstants
 				catch (IOException e)
 				{
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
-					wrapException(t, "generic.err.fxml.dialog.title", null, "generic.err.fxml.dialog.header", null, getMainWindow(), Modality.NONE).show();
+					wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.NONE).show();
 					return;
 				}
 				
@@ -603,6 +697,72 @@ public class MainWindowController implements Initializable, IOConstants
 	private void showSaveVisiblePacketsXML(ActionEvent event)
 	{
 		
+	}
+	
+	@FXML
+	private void showSaveMemoryPackets(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void showSaveMemoryPacketsXML(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void showConvertToPlaintext(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void showConvertToXML(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void showConvertToPhx(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void showConvertToPhxRaw(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void showConvertToPacketSamurai(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void showConvertToStream(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void showPacketExplainer(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void openNewPacketInjectDialog(ActionEvent event)
+	{
+		
+	}
+	
+	@FXML
+	private void reloadDefinitions(ActionEvent event)
+	{
+		rebuildProtocolMenu();
 	}
 	
 	@FXML
@@ -886,7 +1046,7 @@ public class MainWindowController implements Initializable, IOConstants
 		catch (IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
-			wrapException(t, "generic.err.fxml.dialog.title", null, "generic.err.fxml.dialog.header", null, null, Modality.WINDOW_MODAL).showAndWait();
+			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, null, Modality.WINDOW_MODAL).showAndWait();
 			return null;
 		}
 	}

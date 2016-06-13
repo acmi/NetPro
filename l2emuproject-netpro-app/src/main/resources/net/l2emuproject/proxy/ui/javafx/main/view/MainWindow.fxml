@@ -157,17 +157,17 @@
                         <Menu fx:id="_mVisiblePacketExport" text="%menu.file.export.table">
                            <items>
                               <MenuItem onAction="#copyVisiblePackets" text="%menu.file.export.plain.clipboard" />
-                              <MenuItem text="%menu.file.export.plain.file" />
+                              <MenuItem onAction="#showSaveVisiblePackets" text="%menu.file.export.plain.file" />
                               <MenuItem onAction="#copyVisiblePacketsXML" text="%menu.file.export.xml.clipboard" />
-                              <MenuItem text="%menu.file.export.xml.file" />
+                              <MenuItem onAction="#showSaveVisiblePacketsXML" text="%menu.file.export.xml.file" />
                            </items>
                         </Menu>
                         <Menu fx:id="_mMemoryPacketExport" text="%menu.file.export.memory">
                            <items>
                               <MenuItem text="%menu.file.export.plain.clipboard" />
-                              <MenuItem text="%menu.file.export.plain.file" />
+                              <MenuItem onAction="#showSaveMemoryPackets" text="%menu.file.export.plain.file" />
                               <MenuItem text="%menu.file.export.xml.clipboard" />
-                              <MenuItem text="%menu.file.export.xml.file" />
+                              <MenuItem onAction="#showSaveMemoryPacketsXML" text="%menu.file.export.xml.file" />
                            </items>
                         </Menu>
                     </items>
@@ -176,21 +176,21 @@
                     <items>
                         <Menu text="%menu.file.transform.3rdpt.title">
                           <items>
-                              <MenuItem fx:id="_npLog2PhxLog" text="%menu.file.3rdpt.phx" />
-                              <MenuItem fx:id="_npLog2PhxRawLog" text="%menu.file.3rdpt.phx_raw" />
-                              <MenuItem fx:id="_npLog2PacketSamuraiLog" text="%menu.file.3rdpt.ps" />
+                              <MenuItem onAction="#showConvertToPhx" text="%menu.file.3rdpt.phx" />
+                              <MenuItem onAction="#showConvertToPhxRaw" text="%menu.file.3rdpt.phx_raw" />
+                              <MenuItem onAction="#showConvertToPacketSamurai" text="%menu.file.3rdpt.ps" />
                           </items>
                         </Menu>
                         <Menu text="%menu.file.transform.text.title">
                           <items>
-                            <MenuItem fx:id="_npLog2Plaintext" text="%menu.file.transform.text.plain" />
-                              <MenuItem fx:id="_npLog2XML" text="%menu.file.transform.text.xml" />
+                            <MenuItem onAction="#showConvertToPlaintext" text="%menu.file.transform.text.plain" />
+                              <MenuItem onAction="#showConvertToXML" text="%menu.file.transform.text.xml" />
                           </items>
                         </Menu>
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <Menu text="%menu.file.transform.misc.title">
                           <items>
-                            <MenuItem fx:id="_npLog2Stream" text="%menu.file.transform.misc.stream" />
+                            <MenuItem onAction="#showConvertToStream" text="%menu.file.transform.misc.stream" />
                           </items>
                         </Menu>
                     </items>
@@ -211,10 +211,10 @@
                   <CheckMenuItem fx:id="_scrollLock" text="%menu.packets.scroll" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <Menu fx:id="_mPacketDisplay" text="%menu.packets.display" />
-                  <MenuItem fx:id="_packetExplainer" text="%menu.packets.explain" />
-                  <MenuItem fx:id="_packetBuilder" text="%menu.packets.inject" />
+                  <MenuItem onAction="#showPacketExplainer" text="%menu.packets.explain" />
+                  <MenuItem onAction="#openNewPacketInjectDialog" text="%menu.packets.inject" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="_packetReload" text="%menu.packets.reload" />
+                  <MenuItem onAction="#reloadDefinitions" text="%menu.packets.reload" />
             </items>
           </Menu>
             <Menu fx:id="_mScripts" text="%menu.scripts.title">

@@ -114,8 +114,7 @@ public final class PacketLogLoadOptionController
 	{
 		if (_mainWindow == null)
 		{
-			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "open.netpro.err.dialog.header.runtime",
-					"open.netpro.err.dialog.content.internal", "PLLO_1");
+			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "generic.err.internal.header", null, "PLLO_1");
 			alert.initModality(Modality.WINDOW_MODAL);
 			alert.show();
 			return;
@@ -128,8 +127,7 @@ public final class PacketLogLoadOptionController
 		}
 		catch (NullPointerException | ClassCastException e)
 		{
-			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "open.netpro.err.dialog.header.runtime",
-					"open.netpro.err.dialog.content.internal", "PLLO_2");
+			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "generic.err.internal.header", null, "PLLO_2");
 			alert.initModality(Modality.WINDOW_MODAL);
 			alert.show();
 			return;
@@ -165,7 +163,7 @@ public final class PacketLogLoadOptionController
 		catch (IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
-			wrapException(t, "generic.err.fxml.dialog.title", null, "generic.err.fxml.dialog.header", null, getDialogWindow(), Modality.WINDOW_MODAL).show();
+			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getDialogWindow(), Modality.WINDOW_MODAL).show();
 			return;
 		}
 		

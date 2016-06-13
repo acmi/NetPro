@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane prefHeight="504.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController">
+<BorderPane minHeight="320.0" minWidth="550.0" prefHeight="550.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController">
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>

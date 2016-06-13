@@ -193,18 +193,19 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			
 			// Enable object analytics and whatnot
 			if (cacheContext instanceof HistoricalPacketLog)
-				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext);
-				
+				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext, packet.getReceived());
+			
 			if (hidden)
 				return;
-				
+			
 			for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
 				writer.append('=');
 			writer.append("\r\n");
 			
 			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(protocol, packet.getEndpoint(), body.array());
 			writer.append("\t[").append(client ? 'C' : 'S').append("] ").append(HexUtil.bytesToHexString(template.getPrefix(), ":")).append(' ').append(template.getName()).append("\r\n");
-			writer.append('\t').append(df.format(new Date(packet.getReceived()))).append("\r\n");
+			if (packet.getReceived() != ReceivedPacket.UNSENT_PACKET_TIMESTAMP)
+				writer.append('\t').append(df.format(new Date(packet.getReceived()))).append("\r\n");
 			body.position(template.getPrefix().length);
 			
 			final Map<FieldValueReadOption, Object> options = new EnumMap<>(FieldValueReadOption.class);
@@ -290,7 +291,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				{
 					if (_loops.remove(element)._iterationCount < 1)
 						return;
-						
+					
 					try
 					{
 						writer.append("~~~~ Loop end ~~~~\r\n");
@@ -336,7 +337,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					}
 					else
 						fieldWidth = value.raw().length;
-						
+					
 					final DataType visualDataType;
 					switch (fieldWidth)
 					{
@@ -399,7 +400,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				{
 					if (remainingBytes < 1)
 						return;
-						
+					
 					try
 					{
 						writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");

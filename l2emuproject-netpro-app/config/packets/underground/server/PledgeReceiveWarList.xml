@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_PLEDGE_RECEIVE_WAR_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Tab" type="PledgeWarTab" />
+	<dword alias="Pledge count" id="cnt" />
+	<loop id="cnt">
+		<string alias="Pledge name" />
+		<dword alias="Status" type="pledge.PledgeWarStatus" id="state" />
+		<dword alias="Time in war" type="TimeRemaining" />
+		<dword alias="Score" />
+		<dword alias="Recently gained points" />
+		<branch id="state" condition="pledge.BloodDeclaration">
+			<dword alias="Kills until auto-accept" />
+		</branch>
+		<branch id="state" condition="pledge.NonBloodDeclaration">
+			<dword alias="0" />
+		</branch>
+	</loop>
+</packet>

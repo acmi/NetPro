@@ -25,7 +25,6 @@ import java.nio.channels.SocketChannel;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import net.l2emuproject.network.mmocore.DataSizeHolder;
 import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 import net.l2emuproject.network.protocol.LoginProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
@@ -45,12 +44,18 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 {
 	/** Indicates a specific protocol that was used after C3 and before C4 */
 	public static final int FLAG_PROTOCOL_TRANSFER = 1 << 0;
+	/** Indicates that each game server will specify its additional and dynamic information. */
+	public static final int FLAG_SERVER_LIST_C0 = 1 << 1;
+	/** Indicates that each listed server will specify its name */
+	public static final int FLAG_SERVER_LIST_NAMED = 1 << 2;
 	/** Indicates that each listed server will specify the type mask */
-	public static final int FLAG_SERVER_LIST_C1 = 1 << 1;
+	public static final int FLAG_SERVER_LIST_C1 = 1 << 3;
 	/** Indicates that each listed server will specify the bracket flag */
-	public static final int FLAG_SERVER_LIST_C2 = 1 << 2;
+	public static final int FLAG_SERVER_LIST_C2 = 1 << 4;
+	/** Indicates that each listed server will specify player's character count(s) */
+	public static final int FLAG_SERVER_LIST_FREYA = 1 << 5;
 	/** Indicates that this client should be treated as a C4 client, regardless of what the server is */
-	public static final int FLAG_MODERN_SERVER_2_TRANSFER_CLIENT = 1 << 3;
+	public static final int FLAG_MODERN_SERVER_2_TRANSFER_CLIENT = 1 << 6;
 	/** Prelude protocol where packets are enciphered with C3/C4 transfer key */
 	public static final int FLAG_CUSTOM_PROTOCOL_PRELUDE_WITH_TRANSFER_KEY = 1 << 30;
 	
@@ -98,12 +103,9 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	}
 	
 	@Override
-	protected boolean decipher(ByteBuffer buf, DataSizeHolder dataSize)
+	protected boolean decipher(ByteBuffer buf)
 	{
-		if (isProtocolFlagSet(FLAG_MODERN_SERVER_2_TRANSFER_CLIENT))
-			dataSize.__increase_size(8);
-			
-		final int size = dataSize.getSize();
+		final int size = buf.remaining();
 		
 		// This forces proxy to work transparently with all possible login protocols
 		boolean legacyProtocol = getProtocol().isOlderThan(MODERN);
@@ -120,10 +122,10 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 				
 				if (!LoginCipher.testChecksum(bb, 8)) // legacy client packet checksum scheme
 					break legacy;
-					
+				
 				if (bb.get(0) != (size == 32 ? 0x07 : 0x00))
 					break legacy;
-					
+				
 				enableProtocolFlags(FLAG_PROTOCOL_TRANSFER);
 				_cipher = transfer;
 				((L2LoginServer)getServer()).initCipher(READ_ONLY_C3_C4_TRANSFER_KEY);
@@ -132,38 +134,36 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 			}
 		}
 		
-		final int limit = buf.limit();
-		buf.limit(buf.position() + size);
-		try
+		getCipher().decipher(buf);
+		if (isProtocolFlagSet(FLAG_MODERN_SERVER_2_TRANSFER_CLIENT))
 		{
-			getCipher().decipher(buf);
-			if (isProtocolFlagSet(FLAG_MODERN_SERVER_2_TRANSFER_CLIENT))
-				buf.putLong(buf.limit() - 8, 0L);
-			if (!LoginCipher.testChecksum(buf, legacyProtocol ? 8 : 16)) // [legacy] client packet checksum scheme
-			{
-				LOG.info("Malformed client packet received from " + getHostAddress());
-				close(new ProxyRepeatedPacket(new byte[] { 0x01, 0x01 })); // system error, try again (in case this was not an incompatible connection attempt)
-				return false;
-			}
+			final int pos = buf.position();
+			// allocate 8 extra bytes
+			final ByteBuffer fake = ByteBuffer.allocate(buf.capacity() + 8);
+			buf.clear();
+			fake.put(buf).position(pos); // same position, different limit
+			buf.position(pos); // recover position
+			buf = fake; // test checksum on the fake one
 		}
-		finally
+		if (!LoginCipher.testChecksum(buf, legacyProtocol ? 8 : 16)) // [legacy] client packet checksum scheme
 		{
-			buf.limit(limit);
+			LOG.info("Malformed client packet received from " + getHostAddress());
+			close(new ProxyRepeatedPacket(new byte[] { 0x01, 0x01 })); // system error, try again (in case this was not an incompatible connection attempt)
+			return false;
 		}
 		
 		return true;
 	}
 	
 	@Override
-	protected boolean encipher(ByteBuffer buf, int size)
+	protected void encipher(ByteBuffer buf)
 	{
 		final boolean first = isFirstTime();
 		if (first && (getProtocol().isOlderThanOrEqualTo(LoginProtocolVersion.TRANSFER_C4) || isProtocolFlagSet(FLAG_PROTOCOL_TRANSFER) || isProtocolFlagSet(FLAG_MODERN_SERVER_2_TRANSFER_CLIENT)))
-		{
-			buf.position(buf.position() + size);
-			return true;
-		}
+			return;
 		
+		// this assumes a valid packet was received
+		int size = buf.remaining();
 		size += (8 - (size & 7)) & 7; // padding
 		
 		final int limit = buf.limit();
@@ -182,8 +182,6 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 		{
 			buf.limit(limit);
 		}
-		
-		return true;
 	}
 	
 	@Override

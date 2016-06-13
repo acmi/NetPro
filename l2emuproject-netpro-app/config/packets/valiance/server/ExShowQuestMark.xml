@@ -9,7 +9,7 @@
 		<scriptAlias id="__INTERP_QUEST_ID" />
 		<scriptAlias id="tutorial_solver_quest_mark_id" />
 	</dword>
-	<dword alias="State" type="QuestState"> <!-- NEW -->
+	<dword alias="State" type="QuestState" optional="true"> <!-- NEW (although certain quests, e.g. 756, do not use this field) -->
 		<scriptAlias id="__INTERP_QUEST_STATE" />
 		<scriptAlias id="tutorial_solver_quest_mark_state" />
 	</dword>

@@ -10,8 +10,14 @@
 		<word alias="Level" type="skill.SkillLevel">
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
 		</word>
-		<word alias="Unknown" /> <!-- NEW -->
-		<word alias="Time left" type="TimeRemaining" /> <!-- NEW -->
+
+		<!-- NEW -->
+		<word alias="Unknown" />
+		<word alias="Time left" type="TimeRemaining" id="ex" />
+		<branch id="ex" condition="LongEffect">
+			<dword alias="Total time left" type="TimeRemaining" />
+		</branch>
+
 		<dword alias="Caster OID" type="ObjectID" />
 	</loop>
 </packet>

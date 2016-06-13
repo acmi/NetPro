@@ -37,6 +37,16 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="LS_CM_REQUEST_SERVER_LOGIN" name="RequestServerLogin" />
+		<!--
+		This structure is typically used with opcode 0x0B
+		
+		ASCII "cdxddddddhc"
+		UNICODE "Login Type %d is Not Used"
+		UNICODE "AQ_LOGIN : %d %d %d %d %d"
+		UNICODE "RL"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="LS_CM_AQ_LOGIN__WEB" name="RequestLogin" /> <!-- RL = RequestLogin? -->
 		<packet id="LS_CM_0E" name="Unnamed 0E" />
 		<!--
 		This structure is typically used with opcode 0x12
@@ -202,7 +212,6 @@
 		<packet id="347" name="RequestUseGoodsInventoryItem" />
 		<packet id="348" name="RequestWebSessionID" />
 		<packet id="349" name="RequestCharacterNameCreatable" />
-		<packet id="350" name="NCGuardSendDataToServer" />
 		<packet id="351" name="RequestBR_NewIConCashBtnWnd" />
 		<packet id="353" name="RequestGetOnShuttle" />
 		<packet id="354" name="RequestGetOffShuttle" />
@@ -295,22 +304,10 @@
 		<packet id="435" name="RequestDivideAdenaStart" />
 		<packet id="436" name="RequestDivideAdenaCancel" />
 		<packet id="437" name="RequestDivideAdena" />
-		<packet id="438" name="RequestAcquireAbilityList" />
-		<packet id="439" name="RequestAbilityList" />
-		<packet id="440" name="RequestResetAbilityPoint" />
-		<packet id="441" name="RequestChangeAbilityPoint" />
 		<packet id="442" name="RequestStopMove" />
-		<packet id="443" name="RequestAbilityWndOpen" />
-		<packet id="444" name="RequestAbilityWndClose" />
 		<packet id="445" name="RequestExPCCafeRequestOpenWindowWithoutNPC" />
 		<packet id="446" name="RequestLuckyGamePlay" />
 		<packet id="447" name="RequestNotifyTrainingRoomEnd" />
-		<packet id="448" name="RequestNewEnchantPushOne" />
-		<packet id="449" name="RequestNewEnchantRemoveOne" />
-		<packet id="450" name="RequestNewEnchantPushTwo" />
-		<packet id="451" name="RequestNewEnchantRemoveTwo" />
-		<packet id="452" name="RequestNewEnchantClose" />
-		<packet id="453" name="RequestNewEnchantTry" />
 		<packet id="454" name="RequestTargetActionMenu" />
 		<packet id="455" name="RequestExSendSelectedQuestZoneID" />
 		<packet id="456" name="RequestAlchemySkillList" />
@@ -1558,12 +1555,96 @@
 		<packet id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" name="RequestExitPartyMatchingWaitingRoom" />
 		
 		<!--
+		ASCII "chdb"
+		UNICODE "CGSendDataToServer"
+		
+		ASCII "chdb"
+		UNICODE "NCGuardSendDataToServer"
+		UNICODE "(Send)%s DataSize:%d"
+		-->
+		<packet id="CM_NC_GUARD_SEND_DATA_TO_SERVER" name="NCGuardSendDataToServer" />
+
+		<!--
 		ASCII "chcdd"
 		UNICODE "RequestExEvent_Campaign_Info"
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_EX_EVENT_CAMPAIGN_INFO" name="RequestExEventCampaignInfo" />
-		
+
+		<!--
+		ASCII "dd"
+		ASCII "chdb"
+		UNICODE "RequestAcquireAbilityList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ACQUIRE_ABILITY_LIST" name="RequestAcquireAbilityList" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestAbilityList"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ABILITY_LIST" name="RequestAbilityList" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestResetAbilityPoint"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_RESET_ABILITY_POINT" name="RequestResetAbilityPoint" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestChangeAbilityPoint"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_CHANGE_ABILITY_POINT" name="RequestChangeAbilityPoint" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestAbilityWndOpen"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ABILITY_WND_OPEN" name="RequestAbilityWndOpen" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestAbilityWndClose"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_ABILITY_WND_CLOSE" name="RequestAbilityWndClose" />
+		<!--
+		ASCII "chd"
+		UNICODE "RequestNewEnchantPushOne"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_PUSH_ONE" name="RequestNewEnchantPushOne" />
+		<!--
+		ASCII "chd"
+		UNICODE "RequestNewEnchantRemoveOne"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_REMOVE_ONE" name="RequestNewEnchantRemoveOne" />
+		<!--
+		ASCII "chd"
+		UNICODE "RequestNewEnchantPushTwo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_PUSH_TWO" name="RequestNewEnchantPushTwo" />
+		<!--
+		ASCII "chd"
+		UNICODE "RequestNewEnchantRemoveTwo"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_REMOVE_TWO" name="RequestNewEnchantRemoveTwo" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestNewEnchantClose"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_CLOSE" name="RequestNewEnchantClose" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestNewEnchantTry"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_TRY" name="RequestNewEnchantTry" />
+
 		<!--
 		UNICODE "ExSendClientINI"
 		UNICODE "(Send)%s INIType : %s"
@@ -1575,7 +1656,7 @@
 		UNICODE "(Send)%s %d"
 		-->
 		<packet id="CM_REQ_EX_AUTO_FISH" name="RequestExAutoFish" />
-		
+
 		<!--
 		ASCII "ch"
 		UNICODE "RequestVipAttendanceItemList"
@@ -1845,7 +1926,6 @@
 		<packet id="348" name="PledgePowerGradeList" />
 		<packet id="349" name="PledgeReceivePowerInfo" />
 		<packet id="350" name="PledgeReceiveMemberInfo" />
-		<packet id="351" name="PledgeReceiveWarList" />
 		<packet id="352" name="PledgeReceiveSubPledgeCreated" />
 		<packet id="353" name="ExRedSky" />
 		<packet id="354" name="PledgeReceiveUpdatePower" />
@@ -2020,8 +2100,6 @@
 		<packet id="528" name="ExNpcInfoAbnormalVisualEffect" />
 		<packet id="530" name="ExSummonInfo" />
 		<packet id="531" name="ExNpcInfoState" />
-		<packet id="532" name="Dummy_FF" />
-		<packet id="533" name="ExDummy_FE_00" />
 		<packet id="534" name="PledgeSkillListRemove" />
 		<packet id="536" name="ExBR_LoadEventTopRankers" />
 		<packet id="537" name="ExBR_PremiumState" />
@@ -2098,7 +2176,6 @@
 		<packet id="603" name="ExPut_Shape_Shifting_Extraction_Item_Result" />
 		<packet id="604" name="ExShape_Shifting_Result" />
 		<packet id="605" name="ExCastleState" />
-		<packet id="606" name="ExNCGuardReceiveDataFromServer" />
 		<packet id="607" name="ExKalieEvent" />
 		<packet id="608" name="ExKalieEventJackpotUser" />
 		<packet id="609" name="ExAbnormalVisualEffectInfo" />
@@ -2147,25 +2224,12 @@
 		<packet id="652" name="ExDivideAdenaCancel" />
 		<packet id="653" name="ExDivideAdenaDone" />
 		<packet id="654" name="ExPetInfo" />
-		<packet id="655" name="ExAcquireAPSkillList" />
 		<packet id="656" name="ExStartLuckyGame" />
 		<packet id="657" name="ExBettingLuckyGameResult" />
 		<packet id="658" name="ExTrainingZone_Admission" />
 		<packet id="659" name="ExTrainingZone_Leaving" />
 		<packet id="660" name="ExPeriodicHenna" />
-		<packet id="661" name="ExShowAPListWnd" />
 		<packet id="662" name="ExUserInfoInvenWeight" />
-		<packet id="663" name="ExCloseAPListWnd" />
-		<packet id="664" name="ExEnchantOneOK" />
-		<packet id="665" name="ExEnchantOneFail" />
-		<packet id="666" name="ExEnchantOneRemoveOK" />
-		<packet id="667" name="ExEnchantOneRemoveFail" />
-		<packet id="668" name="ExEnchantTwoOK" />
-		<packet id="669" name="ExEnchantTwoFail" />
-		<packet id="670" name="ExEnchantTwoRemoveOK" />
-		<packet id="671" name="ExEnchantTwoRemoveFail" />
-		<packet id="672" name="ExEnchantSucess" />
-		<packet id="673" name="ExEnchantFail" />
 		<packet id="674" name="ExAccountAttendanceInfo" />
 		<packet id="675" name="ExWorldChatCnt" />
 		<packet id="676" name="ExAlchemySkillList" />
@@ -4058,6 +4122,13 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_LIST_PARTY_MATCHING_WAITING_ROOM" name="ExListPartyMatchingWaitingRoom" />
+		<!--
+		ASCII "dd"
+		ASCII "Sddddd"
+		UNICODE "PledgeReceiveWarList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_PLEDGE_RECEIVE_WAR_LIST" name="PledgeReceiveWarList" />
 
 		<!--
 		ASCII "dSd"
@@ -4072,6 +4143,81 @@
 		-->
 		<packet id="SM_EX_SHOW_SEED_MAP_INFO" name="ExShowSeedMapInfo" />
 		
+		<!--
+		UNICODE "ExNCGuardReceiveDataFromServer"
+		UNICODE "(Receive)%s DataSize:%d"
+		-->
+		<packet id="SM_EX_NC_GUARD_RECEIVE_DATA_FROM_SERVER" name="ExNCGuardReceiveDataFromServer" />
+
+		<!--
+		ASCII "dQQdddd"
+		ASCII "dd"
+		UNICODE "ExAcquireAPSkillList"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ACQUIRE_AP_SKILL_LIST" name="ExAcquireAPSkillList" />
+		<!--
+		UNICODE "ExShowAPListWnd"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_SHOW_AP_LIST_WND" name="ExShowAPListWnd" />
+		<!--
+		UNICODE "ExCloseAPListWnd"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_CLOSE_AP_LIST_WND" name="ExCloseAPListWnd" />
+		<!--
+		UNICODE "ExEnchantOneOK"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_ONE_OK" name="ExEnchantOneOK" />
+		<!--
+		UNICODE "ExEnchantOneFail"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_ONE_FAIL" name="ExEnchantOneFail" />
+		<!--
+		UNICODE "ExEnchantOneRemoveOK"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_ONE_REMOVE_OK" name="ExEnchantOneRemoveOK" />
+		<!--
+		UNICODE "ExEnchantOneRemoveFail"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_ONE_REMOVE_FAIL" name="ExEnchantOneRemoveFail" />
+		<!--
+		UNICODE "ExEnchantTwoOK"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_TWO_OK" name="ExEnchantTwoOK" />
+		<!--
+		UNICODE "ExEnchantTwoFail"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_TWO_FAIL" name="ExEnchantTwoFail" />
+		<!--
+		UNICODE "ExEnchantTwoRemoveOK"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_TWO_REMOVE_OK" name="ExEnchantTwoRemoveOK" />
+		<!--
+		UNICODE "ExEnchantTwoRemoveFail"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_TWO_REMOVE_FAIL" name="ExEnchantTwoRemoveFail" />
+		<!--
+		UNICODE "ExEnchantSucess"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_SUCCESS" name="ExEnchantSucess" />
+		<!--
+		ASCII "dd"
+		UNICODE "ExEnchantFail"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_ENCHANT_FAIL" name="ExEnchantFail" />
+
 		<!--
 		UNICODE "ExAutoFishAvailable"
 		UNICODE "(Receive)%s %d"

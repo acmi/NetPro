@@ -74,7 +74,7 @@ public class ToRawStreamVisitor implements HistoricalLogPacketVisitor, IOConstan
 	{
 		if (logHeader.isLogin())
 			throw new UnsupportedOperationException();
-			
+		
 		_fakeClient = new L2GameClient(null, null);
 		_fakeServer = new L2GameServer(null, null, _fakeClient);
 		
@@ -93,10 +93,10 @@ public class ToRawStreamVisitor implements HistoricalLogPacketVisitor, IOConstan
 			_writer.writeBoolean(client);
 		else if (_streamType != packet.getEndpoint())
 			return;
-			
+		
 		if (_timestamps)
 			_writer.writeLong(packet.getReceived());
-			
+		
 		final ByteBuffer wrapper = ByteBuffer.wrap(packet.getBody()).order(ByteOrder.LITTLE_ENDIAN);
 		if (_encipher)
 		{
@@ -105,14 +105,14 @@ public class ToRawStreamVisitor implements HistoricalLogPacketVisitor, IOConstan
 			{
 				L2GameClientPackets.getInstance().handlePacket(wrapper, _fakeClient, _buf.readUC()).readAndChangeState(_fakeClient, _buf);
 				wrapper.clear();
-				_fakeServer.encipher(wrapper, wrapper.limit());
+				_fakeServer.encipher(wrapper);
 				_fakeServer.setFirstTime(false);
 			}
 			else
 			{
 				L2GameServerPackets.getInstance().handlePacket(wrapper, _fakeServer, _buf.readUC()).readAndChangeState(_fakeServer, _buf);
 				wrapper.clear();
-				_fakeClient.encipher(wrapper, wrapper.limit());
+				_fakeClient.encipher(wrapper);
 			}
 		}
 		

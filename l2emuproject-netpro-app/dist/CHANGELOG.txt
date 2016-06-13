@@ -1,3 +1,13 @@
+VERSION [1.4]
+-------------
+Various packet definition updates.
+Interpreter data update in response to Underground updates.
+Fixed L2 html (chat/community board) handling within webview and copying as text/xml. [Zealar]
+Fixed build after updating dependency versions. [rocknowx]
+ECJ will now be shipped by default and used when NetPro is run via a JRE, so scripting features can be used.
+NetPro will now automatically detect changes to scripts and recompile as necessary.
+Changed Windows launcher to be much more compatible, which should work by default even on a x86 client JRE. Unix launcher retains old parameters.
+
 VERSION [1.3]
 -------------
 Underground support.

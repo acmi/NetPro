@@ -94,7 +94,7 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 			
 			if (isCancelled())
 				break;
-				
+			
 			try (final SeekableByteChannel channel = Files.newByteChannel(p, StandardOpenOption.READ); final NewIOHelper ioh = new NewIOHelper(channel))
 			{
 				final long size = Files.size(p);
@@ -103,7 +103,7 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 				
 				if (isCancelled())
 					break;
-					
+				
 				final IProtocolVersion protocol = llo.getProtocol() != null ? llo.getProtocol() : lfh.getProtocolVersion();
 				
 				try
@@ -131,7 +131,7 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 				
 				if (isCancelled())
 					break;
-					
+				
 				final HistoricalPacketLog cacheContext = new HistoricalPacketLog(p);
 				// skip the desired amount
 				for (int offset = 0/*llo.getOffset()*/; offset > 0 && size - ioh.getPositionInChannel(false) > lfh.getFooterSize(); offset--)
@@ -139,19 +139,19 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 					final boolean client = ioh.readBoolean(); // client/server
 					final byte[] body = new byte[ioh.readChar()];
 					ioh.read(body); // packet
-					ioh.readLong(); // time
+					final long receivedOn = ioh.readLong(); // time
 					if (lfh.getVersion() >= 7)
 						ioh.readByte();
-						
-					sm.onLoadedPacket(lfh.isLogin(), client, body, _list.getProtocol(), cacheContext);
+					
+					sm.onLoadedPacket(lfh.isLogin(), client, body, _list.getProtocol(), cacheContext, receivedOn);
 				}
 				
 				if (isCancelled())
 					break;
-					
+				
 				if (size - ioh.getPositionInChannel(false) <= lfh.getFooterSize())
 					continue;
-					
+				
 				// load packets
 				final OpcodeOwnerSet cps, sps;
 				if (llo.isDisplayable())
@@ -167,7 +167,7 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 				}
 				else
 					cps = sps = null;
-					
+				
 				// former packet list entry point
 				
 				final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
@@ -179,11 +179,11 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 					final long time = ioh.readLong();
 					final Set<LoggedPacketFlag> flags = lfh.getVersion() >= 7 ? BitMaskUtils.setOf(ioh.readByte(), LoggedPacketFlag.class) : Collections.emptySet();
 					
-					sm.onLoadedPacket(lfh.isLogin(), type.isClient(), body, protocol, cacheContext);
+					sm.onLoadedPacket(lfh.isLogin(), type.isClient(), body, protocol, cacheContext, time);
 					
 					if (flags.contains(HIDDEN))
 						continue;
-						
+					
 					if (cps != null && sps != null)
 					{
 						final IPacketTemplate pt = table.getTemplate(protocol, type, body);
@@ -196,7 +196,7 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 					
 					if (isCancelled())
 						break;
-						
+					
 					// avoid I/O congestion and CPU overload
 					// modulo must be low enough and sleep must be large enough
 					// to avoid DPC blackouts (e.g. no media skipping when listening to music)

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- STEALTH PATCH WARNING: this definition is only valid for Underground clients updated on 2016-01-13 or later -->
+
+<!-- Stealth patch: memos are no longer available so that blocklist size could be increased -->
+<packet id="225" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Players" id="block_cnt" />
+	<loop id="block_cnt">
+		<string alias="Name" />
+	</loop>
+</packet>

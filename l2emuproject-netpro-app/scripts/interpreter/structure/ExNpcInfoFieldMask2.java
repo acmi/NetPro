@@ -27,6 +27,6 @@ public class ExNpcInfoFieldMask2 extends ScriptedBitmaskInterpreter
 	/** Constructs this interpreter. */
 	public ExNpcInfoFieldMask2()
 	{
-		super(null, (Object)null, null, null, null, null, "Equipment", null);
+		super("Duel", "Environment", "F2 B2", "Movement", "ST=1", "F2 B5", "Equipment", "Multipliers");
 	}
 }

@@ -45,8 +45,8 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections
 		{
 			final MMOConfig cfg = new MMOConfig("LS Proxy");
 			// this application might be run on user-class machines, so go easy on the CPU
-			cfg.setReadWriteSelectorSleepTime(Integer.getInteger(L2LoginServerConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 100));
-			cfg.setThreadCount(1);
+			cfg.setIOInterval(Integer.getInteger(L2LoginServerConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 100));
+			cfg.setIOThreadCount(1);
 			
 			try
 			{
@@ -92,7 +92,7 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections
 	{
 		if (client == null)
 			return;
-			
+		
 		InetSocketAddress receiverAddress = null;
 		try
 		{

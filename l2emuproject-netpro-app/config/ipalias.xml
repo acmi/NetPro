@@ -12,6 +12,7 @@
 	<address ip="112.175.192.65" alias="KR PTS" />
 	<address ip="106.186.45.250" alias="JP" />
 	<address ip="210.68.144.4" alias="TW" />
+	<address ip="109.105.156.10" alias="EU" />
 	
 	<!-- Individual servers -->
 	<!-- NA:7777 -->
@@ -57,4 +58,9 @@
 	<address ip="106.186.46.44" alias="キャスティエン" />
 	<address ip="106.186.46.61" alias="アイリーン" />
 	<address ip="106.186.46.47" alias="タルカイ" />
+	
+	<!-- EU:7777 -->
+	<address ip="109.105.156.14" alias="Ken Rauhel" />
+	<address ip="109.105.156.11" alias="Core" />
+	<address ip="109.105.156.21" alias="PTS1" />
 </addresses>

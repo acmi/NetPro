@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Added three fields -->
+<!-- Added offering related loop -->
 <packet id="CM_REQ_RECIPE_ITEM_MAKE_SELF" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Recipe" type="Recipe" />
 
 	<!-- NEW -->
-	<dword alias="" />
-	<dword alias="" />
-	<qword alias="" />
+	<dword alias="Offerings" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item OID" type="ObjectID" />
+		<qword alias="Amount" />
+	</loop>
+	<branch id="cnt" condition="Zero">
+		<bytes alias="">
+			<length>12</length>
+		</bytes>
+	</branch>
 </packet>

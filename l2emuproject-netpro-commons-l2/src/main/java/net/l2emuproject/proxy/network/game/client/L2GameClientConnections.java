@@ -36,11 +36,11 @@ public final class L2GameClientConnections extends AbstractL2ClientConnections
 		{
 			final MMOConfig cfg = new MMOConfig("GC Proxy");
 			// this application might be run on user-class machines, so go easy on the CPU here
-			cfg.setAcceptionSelectorSleepTime(Integer.getInteger(L2GameClientConnections.class.getName() + "#" + PROPERTY_ACC_INTERVAL, 750));
+			cfg.setAcceptInterval(Integer.getInteger(L2GameClientConnections.class.getName() + "#" + PROPERTY_ACC_INTERVAL, 750));
 			// on the other hand, this app is not likely to serve thousands of connections
 			// so we can try to minimize the latency caused by proxying the connection
-			cfg.setReadWriteSelectorSleepTime(Integer.getInteger(L2GameClientConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 3)); // minimize delay, as not many clients are served
-			cfg.setThreadCount(1);
+			cfg.setIOInterval(Integer.getInteger(L2GameClientConnections.class.getName() + "#" + PROPERTY_RW_INTERVAL, 3)); // minimize delay, as not many clients are served
+			cfg.setIOThreadCount(1);
 			
 			try
 			{

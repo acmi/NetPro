@@ -27,6 +27,6 @@ public class ExNpcInfoFieldMask5 extends ScriptedBitmaskInterpreter
 	/** Constructs this interpreter. */
 	public ExNpcInfoFieldMask5()
 	{
-		super(null, (Object)null, "AVE", "State flags", "Pledge/alliance", "Reputation", "PvP", "Title (fstring)");
+		super("F5 B0", "F5 B1", "F5 B2", "State flags", "Pledge/alliance", "Reputation", "PvP", "Title (fstring)");
 	}
 }

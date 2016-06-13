@@ -15,8 +15,13 @@
 			<scriptAlias id="LUA_SELF_EFFECT_SKILL_LVL" />
 		</dword>
 		<dword alias="0" />
-		<word alias="Time left" type="TimeRemaining">
+		<word alias="Time left" type="TimeRemaining" id="ex">
 			<scriptAlias id="LUA_SELF_EFFECT_SECONDS_LEFT" />
 		</word>
+		<branch id="ex" condition="LongEffect">
+			<dword alias="Total time left" type="TimeRemaining">
+				<scriptAlias id="LUA_SELF_EFFECT_SECONDS_LEFT_EX" />
+			</dword>
+		</branch>
 	</loop>
 </packet>

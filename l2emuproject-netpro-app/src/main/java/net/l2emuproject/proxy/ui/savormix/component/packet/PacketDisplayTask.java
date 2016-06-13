@@ -315,7 +315,7 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			{
 				if (_loops.remove(element)._iterationCount < 1)
 					return;
-				
+					
 				_packetBuilder.append("<font class=\"loopLabel\">");
 				_packetBuilder.appendNewline("~~~~ Loop end ~~~~</font><br />");
 				_packetBodyBuilder.appendNewline("<br /></p>");
@@ -360,7 +360,7 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 				}
 				else
 					fieldWidth = value.raw().length;
-				
+					
 				final DataType visualDataType;
 				switch (fieldWidth)
 				{
@@ -403,7 +403,7 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			{
 				if (!(e instanceof TaskCancelledException))
 					LOG.error("", e);
-				
+					
 				_packetBuilder.append("<br /><center><strong>").append(e.getMessage()).appendNewline("<br />");
 				if (remainingBytes > 0)
 				{
@@ -417,7 +417,7 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			{
 				if (remainingBytes < 1)
 					return;
-				
+					
 				_packetBuilder.append("<br /><center><strong>Unidentified bytes: ").append(remainingBytes).appendNewline("</strong></center><br />");
 				_packetBodyBuilder.append(' ').append(HexUtil.bytesToHexString(_packet, body.position(), " "));
 			}
@@ -426,7 +426,7 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			{
 				if (isCancelled())
 					throw new TaskCancelledException();
-				
+					
 				publish(body.position());
 			}
 		}, body, options);
@@ -454,6 +454,11 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 			interpretation = "N/A";
 		else if (interpretation instanceof byte[])
 			interpretation = HexUtil.bytesToHexString((byte[])interpretation, " ");
+		else if (HTML_TAG.matcher(String.valueOf(readValue)).find())
+		{
+			// prepare Lineage II HTML for WebView
+			interpretation = String.valueOf(interpretation).replace("<", "&lt;").replace(">", "&gt;").replace("\r\n", "<br>").replace("\n", "<br>");
+		}
 		
 		final MutableInt hyperID = _currentHyperlinkID.get(visualDataType);
 		hyperID.increment();
@@ -464,7 +469,7 @@ public class PacketDisplayTask extends AsyncTask<ReceivedPacket, String, Set<URL
 		{
 			if (readValue instanceof byte[])
 				readValue = HexUtil.bytesToHexString((byte[])readValue, " ");
-			
+				
 			final String read = String.valueOf(readValue), interp = String.valueOf(interpretation);
 			if (!interp.equals(read) && !HTML_TAG.matcher(read).find())
 				_packetBuilder.append(" (").append(read).append(")");

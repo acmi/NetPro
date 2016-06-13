@@ -15,11 +15,15 @@
  */
 package net.l2emuproject.proxy.network.login.server.packets;
 
+import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_C0;
 import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_C1;
 import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_C2;
+import static net.l2emuproject.proxy.network.login.client.L2LoginClient.FLAG_SERVER_LIST_NAMED;
+import static net.l2emuproject.proxy.network.login.client.packets.RequestServerList.TYPE_BARE;
 import static net.l2emuproject.proxy.network.login.client.packets.RequestServerList.TYPE_C0;
 import static net.l2emuproject.proxy.network.login.client.packets.RequestServerList.TYPE_C1;
 import static net.l2emuproject.proxy.network.login.client.packets.RequestServerList.TYPE_C2;
+import static net.l2emuproject.proxy.network.login.client.packets.RequestServerList.TYPE_NAMED;
 
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
@@ -45,8 +49,7 @@ import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationEx
  * 
  * @author savormix
  */
-public final class ServerList extends L2LoginServerPacket implements RequiredInvasiveOperations,
-		ServerListTypePublisher
+public final class ServerList extends L2LoginServerPacket implements RequiredInvasiveOperations, ServerListTypePublisher
 {
 	/** Packet's identifier */
 	public static final int OPCODE = 0x04;
@@ -73,6 +76,7 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 		buf.setByteBuffer(newBody);
 		buf.readUC(); // opcode
 		
+		final boolean c0 = client.isProtocolFlagSet(FLAG_SERVER_LIST_C0), named = client.isProtocolFlagSet(FLAG_SERVER_LIST_NAMED);
 		final boolean c1 = client.isProtocolFlagSet(FLAG_SERVER_LIST_C1), c2 = client.isProtocolFlagSet(FLAG_SERVER_LIST_C2);
 		usePPE:
 		{
@@ -83,7 +87,7 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 			RandomAccessMMOBuffer enumerator = null;
 			try
 			{
-				LIST_TYPE.set(c2 ? TYPE_C2 : c1 ? TYPE_C1 : TYPE_C0);
+				LIST_TYPE.set(c2 ? TYPE_C2 : c1 ? TYPE_C1 : named ? TYPE_NAMED : c0 ? TYPE_C0 : TYPE_BARE);
 				enumerator = ppe.enumeratePacketPayload(getClient().getProtocol(), buf, getClient());
 			}
 			catch (InvalidPacketOpcodeSchemeException e)
@@ -127,13 +131,16 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 			return;
 		}
 		
-		LOG.warn("Using precompiled logic");
+		LOG.warn("Using precompiled logic (only versions 0 to 5 supported)");
 		
 		final int size = buf.readC();
 		buf.readC(); // last server ID
 		for (int i = 0; i < size; i++)
 		{
 			int id = buf.readC(); // server ID
+			
+			if (named)
+				buf.skip(40);
 			
 			final int pos = newBody.position();
 			byte[] realIPv4 = buf.readB(4);
@@ -146,13 +153,15 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 				buf.writeC(fakeIp[j]);
 			buf.writeD(fakePort);
 			
-			buf.skip(7); // other info
-			
-			if (c1)
+			if (c0)
 			{
-				buf.skip(4);
-				if (c2)
-					buf.skip(1);
+				buf.skip(7); // other info
+				if (c1)
+				{
+					buf.skip(4);
+					if (c2)
+						buf.skip(1);
+				}
 			}
 		}
 		

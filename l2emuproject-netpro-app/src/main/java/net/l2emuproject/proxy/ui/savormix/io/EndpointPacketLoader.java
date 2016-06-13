@@ -200,7 +200,10 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 				}
 				catch (InvalidFieldValueConditionException e)
 				{
-					LOG.error(packetName, e);
+					if (e.isMissing())
+						LOG.info(e.getMessage());
+					else
+						LOG.error(packetName, e);
 					return null;
 				}
 			}
@@ -223,7 +226,10 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 			}
 			catch (InvalidFieldValueModifierException e)
 			{
-				LOG.error(packetName, e);
+				if (e.isMissing())
+					LOG.info(e.getMessage());
+				else
+					LOG.error(packetName, e);
 				// do not re-report this error during runtime
 				valueModifier = null;
 			}
@@ -237,7 +243,10 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 			}
 			catch (InvalidFieldValueInterpreterException e)
 			{
-				LOG.error(packetName, e);
+				if (e.isMissing())
+					LOG.info(e.getMessage());
+				else
+					LOG.error(packetName, e);
 				// do not re-report this error during runtime
 				valueInterpreter = null;
 			}

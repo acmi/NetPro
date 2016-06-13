@@ -90,8 +90,11 @@
 			</loop>
 		</branch>
 	</loop>
-	<word alias="Special item count" id="index_0_cond_1" />
-	<loop id="index_0_cond_1">
+	<word alias="Special item count" id="spec_cnt" />
+	<branch id="spec_cnt" condition="Positive">
+		<byte alias="Restriction" type="ItemRestriction" />
+	</branch>
+	<loop id="spec_cnt">
 		<dword alias="Special item" type="Item" />
 	</loop>
 </packet>

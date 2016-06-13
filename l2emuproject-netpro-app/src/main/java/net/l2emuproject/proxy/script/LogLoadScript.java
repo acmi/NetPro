@@ -74,9 +74,10 @@ public abstract class LogLoadScript
 	 * @param buf client packet
 	 * @param version protocol version
 	 * @param cacheContext cache context
+	 * @param receivedOn packet arrival time
 	 * @throws RuntimeException if an unexpected situation happens
 	 */
-	protected abstract void handleClientPacket(MMOBuffer buf, IProtocolVersion version, HistoricalPacketLog cacheContext) throws RuntimeException;
+	protected abstract void handleClientPacket(MMOBuffer buf, IProtocolVersion version, HistoricalPacketLog cacheContext, long receivedOn) throws RuntimeException;
 	
 	/**
 	 * Performs actions based on a loaded packet's content.<BR>
@@ -94,9 +95,10 @@ public abstract class LogLoadScript
 	 * @param buf client packet
 	 * @param version protocol version
 	 * @param cacheContext cache context
+	 * @param receivedOn packet arrival time
 	 * @throws RuntimeException if an unexpected situation happens
 	 */
-	protected abstract void handleServerPacket(MMOBuffer buf, IProtocolVersion version, HistoricalPacketLog cacheContext) throws RuntimeException;
+	protected abstract void handleServerPacket(MMOBuffer buf, IProtocolVersion version, HistoricalPacketLog cacheContext, long receivedOn) throws RuntimeException;
 	
 	/**
 	 * Returns whether a specific 1-byte opcode is handled by this script.

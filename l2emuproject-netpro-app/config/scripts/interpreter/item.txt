@@ -133,7 +133,7 @@
 133	Raid Sword
 134	Sword of Nightmare
 135	Samurai Long Sword
-136	(Not in Use)
+136	Zodiac Agathion Pack
 137	(Not in Use)
 138	(Not in Use)
 139	Agathion - Angry Devil Pack (7-day)
@@ -27098,7 +27098,7 @@
 27627	Agathion - Matryoshka (7-day)
 27628	Agathion - Matryoshka (30-day)
 27629	Agathion - Minion Eye (7-day)
-27630	Agathion - Minion Eye (7-day)
+27630	Agathion - Minion Eye (30-day)
 27631	Prestige Rune 100% Pack 1-hour
 27632	Fancy Fishing Rod
 27633	Fancy Fishing Rod 1-day
@@ -27109,6 +27109,132 @@
 27638	Fancy Fishing Rod Pack (30-day)
 27639	Hidden Treasure Chest
 27640	Heine Fishing Coin
+27641	Heine Exclusive Bait (85-89)
+27642	Heine Exclusive Bait (90-94)
+27643	Heine Exclusive Bait (95-98)
+27644	Heine Exclusive Bait (99-)
+27645	Heine Exclusive Bait Coupon
+27646	Exclusive Reward Chest
+27647	Heine Exclusive Reward Chest
+27648	Heine Exclusive Fishing Tools - 300 Pack
+27649	Heine Exclusive Fishing Tools - 3,000 Pack
+27650	Heine Exclusive Bait (85-89)
+27651	Heine Exclusive Bait (90-94)
+27652	Heine Exclusive Bait (95-98)
+27653	Heine Exclusive Bait (99-)
+27654	Heine Exclusive Bait Coupon
+27655	Exclusive Reward Chest
+27656	Heine Exclusive Reward Chest
+27657	Heine Exclusive Fishing Tools - 300 Pack
+27658	Heine Exclusive Fishing Tools - 3,000 Pack
+27659	Anniversary Coin Event
+27660	Shadai's Jewelry Box
+27661	Shadai's Shiny Jewelry Box
+27662	La Vie En Rose's Brilliant Brooch Pack
+27663	Supply Box Top-grade
+27664	Tauti's Ring 7-day
+27665	Earth Wyrm Heart Ring 7-day
+27666	Freya's Ice Crystal
+27667	Freya's Luxury Shopping Bag
+27668	Freya's Gift Box
+27669	Sirra's Gift Box
+27670	Snow Man's Gift Box
+27671	Freya's Fated Support Box
+27672	Black Freya's Kindness
+27673	Freya's Scroll of Storm
+27674	Freya's Wish Stick
+27675	Freya's Wish-filled Gift
+27676	Sirra's Wish-filled Gift
+27677	Snowman's Wish-filled Gift
+27678	Gran Kain's Necklace Stage 1
+27679	Gran Kain's Necklace Stage 2
+27680	Gran Kain's Necklace Stage 3
+27681	Gran Kain's Necklace Stage 4
+27682	Gran Kain's Necklace Stage 5
+27683	Gran Kain's Necklace Stage 6
+27684	Einhasad's Necklace Stage 1
+27685	Einhasad's Necklace Stage 2
+27686	Einhasad's Necklace Stage 3
+27687	Einhasad's Necklace Stage 4
+27688	Einhasad's Necklace Stage 5
+27689	Einhasad's Necklace Stage 6
+27690	Pa'agrio's Earring Stage 1
+27691	Pa'agrio's Earring Stage 2
+27692	Pa'agrio's Earring Stage 3
+27693	Pa'agrio's Earring Stage 4
+27694	Pa'agrio's Earring Stage 5
+27695	Pa'agrio's Earring Stage 6
+27696	Eva's Earring Stage 1
+27697	Eva's Earring Stage 2
+27698	Eva's Earring Stage 3
+27699	Eva's Earring Stage 4
+27700	Eva's Earring Stage 5
+27701	Eva's Earring Stage 6
+27702	Sayha's Ring Stage 1
+27703	Sayha's Ring Stage 2
+27704	Sayha's Ring Stage 3
+27705	Sayha's Ring Stage 4
+27706	Sayha's Ring Stage 5
+27707	Sayha's Ring Stage 6
+27708	Maphr's Ring Stage 1
+27709	Maphr's Ring Stage 2
+27710	Maphr's Ring Stage 3
+27711	Maphr's Ring Stage 4
+27712	Maphr's Ring Stage 5
+27713	Maphr's Ring Stage 6
+27714	Recipe: Gran Kain's Necklace - Stage 1
+27715	Recipe: Gran Kain's Necklace - Stage 2
+27716	Recipe: Gran Kain's Necklace - Stage 3
+27717	Recipe: Gran Kain's Necklace - Stage 1 (25%)
+27718	Recipe: Gran Kain's Necklace - Stage 2 (25%)
+27719	Recipe: Gran Kain's Necklace - Stage 3 (25%)
+27720	Recipe: Gran Kain's Necklace - Stage 4 (25%)
+27721	Recipe: Gran Kain's Necklace - Stage 5 (25%)
+27722	Recipe: Gran Kain's Necklace - Stage 6 (25%)
+27723	Recipe: Einhasad's Necklace - Stage 1 (25%)
+27724	Recipe: Einhasad's Necklace - Stage 2 (25%)
+27725	Recipe: Einhasad's Necklace - Stage 3 (25%)
+27726	Recipe: Einhasad's Necklace - Stage 4 (25%)
+27727	Recipe: Einhasad's Necklace - Stage 5 (25%)
+27728	Recipe: Einhasad's Necklace - Stage 6 (25%)
+27729	Recipe: Pa'agrio's Earring - Stage 1 (25%)
+27730	Recipe: Pa'agrio's Earring - Stage 2 (25%)
+27731	Recipe: Pa'agrio's Earring - Stage 3 (25%)
+27732	Recipe: Pa'agrio's Earring - Stage 4 (25%)
+27733	Recipe: Pa'agrio's Earring - Stage 5 (25%)
+27734	Recipe: Pa'agrio's Earring - Stage 6 (25%)
+27735	Recipe: Eva's Earring - Stage 1 (25%)
+27736	Recipe: Eva's Earring - Stage 2 (25%)
+27737	Recipe: Eva's Earring - Stage 3 (25%)
+27738	Recipe: Eva's Earring - Stage 4 (25%)
+27739	Recipe: Eva's Earring - Stage 5 (25%)
+27740	Recipe: Eva's Earring - Stage 6 (25%)
+27741	Recipe: Sayha's Ring - Stage 1 (25%)
+27742	Recipe: Sayha's Ring - Stage 2 (25%)
+27743	Recipe: Sayha's Ring - Stage 3 (25%)
+27744	Recipe: Sayha's Ring - Stage 4 (25%)
+27745	Recipe: Sayha's Ring - Stage 5 (25%)
+27746	Recipe: Sayha's Ring - Stage 6 (25%)
+27747	Recipe: Maphr's Ring - Stage 1 (25%)
+27748	Recipe: Maphr's Ring - Stage 2 (25%)
+27749	Recipe: Maphr's Ring - Stage 3 (25%)
+27750	Recipe: Maphr's Ring - Stage 4 (25%)
+27751	Recipe: Maphr's Ring - Stage 5 (25%)
+27752	Recipe: Maphr's Ring - Stage 6 (25%)
+27753	Luck Box 1 Underground
+27754	Luck Box 2 Underground
+27755	Luck Box 3 Underground
+27756	+7 Shiny Elemental Shirt Pack
+27757	+7 Physical Reflect Shirt Pack
+27758	+7 Magical Reflect Shirt Pack
+27759	+7 Pa'agrio's Shirt Pack
+27760	+7 Sayha's Shirt Pack
+27761	+7 Eva's Shirt Pack
+27762	+7 Maphr's Shirt Pack
+27763	Shadai's Shiny Jewelry Box
+28355	Prestige Cube 7-day
+28356	Prestige Cube Pack 7-day
+28381	Abundance Box Infinite
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -31883,10 +32009,10 @@
 34771	Sayha's Shirt Event
 34772	Eva's Shirt Event
 34773	Maphr's Shirt Event
-34774	Scroll of Blessing (R1-grade) Event
-34775	Scroll of Blessing (R2-grade) Event
-34776	Scroll of Blessing (R95-grade) Event
-34777	Scroll of Blessing (R99-grade) Event
+34774	Scroll of Blessing: (R1-grade) Event
+34775	Scroll of Blessing: (R2-grade) Event
+34776	Scroll of Blessing: (R95-grade) Event
+34777	Scroll of Blessing: (R99-grade) Event
 34778	Squash Ring (Warrior) Event
 34779	Squash Earring (Warrior) Event
 34780	Squash Necklace Event
@@ -33212,8 +33338,8 @@
 36113	Vulcan's True Gold
 36114	Vulcan's Pure Silver
 36115	Vulcan's Blood Fire
-36116	Scroll of Blessing (R-grade) Campaign
-36117	Scroll of Blessing (R95-grade) Campaign
+36116	Scroll of Blessing: (R-grade) Campaign
+36117	Scroll of Blessing: (R95-grade) Campaign
 36118	Elegia Sigil - Ceremony of Chaos
 36119	Elegia Shield - Ceremony of Chaos
 36120	Clan Cloak - Clan Hall (Contestable)
@@ -33255,10 +33381,10 @@
 36156	Enhanced Kaliel's Attribute Crystal Pack
 36157	Scroll: Enchant Hair Accessory Pack
 36158	Spirit Stone: Hair Accessory Pack
-36159	Scroll of Blessing (R1-grade)
-36160	Scroll of Blessing (R2-grade)
-36161	Scroll of Blessing (R95-grade)
-36162	Scroll of Blessing (R99-grade)
+36159	Scroll of Blessing: (R1-grade)
+36160	Scroll of Blessing: (R2-grade)
+36161	Scroll of Blessing: (R95-grade)
+36162	Scroll of Blessing: (R99-grade)
 36163	Giant's Scroll: Enchant Weapon (R-grade)
 36164	Giant's Scroll: Enchant Armor (R-grade)
 36165	Kaliel's Soul Box

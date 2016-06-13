@@ -60,7 +60,7 @@ public class ToL2PacketHackRawLogVisitor implements HistoricalLogPacketVisitor, 
 	{
 		if (logHeader.isLogin())
 			throw new UnsupportedOperationException();
-			
+		
 		_fakeClient = new L2GameClient(null, null);
 		_fakeServer = new L2GameServer(null, null, _fakeClient);
 		
@@ -85,14 +85,14 @@ public class ToL2PacketHackRawLogVisitor implements HistoricalLogPacketVisitor, 
 		{
 			L2GameClientPackets.getInstance().handlePacket(wrapper, _fakeClient, _buf.readUC()).readAndChangeState(_fakeClient, _buf);
 			wrapper.clear();
-			_fakeServer.encipher(wrapper, wrapper.limit());
+			_fakeServer.encipher(wrapper);
 			_fakeServer.setFirstTime(false);
 		}
 		else
 		{
 			L2GameServerPackets.getInstance().handlePacket(wrapper, _fakeServer, _buf.readUC()).readAndChangeState(_fakeServer, _buf);
 			wrapper.clear();
-			_fakeClient.encipher(wrapper, wrapper.limit());
+			_fakeClient.encipher(wrapper);
 		}
 		
 		_writer.writeChar(wrapper.clear().limit() + 2);

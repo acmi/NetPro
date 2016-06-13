@@ -17,7 +17,11 @@ package interpreter;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
+import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
+import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
+import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
  * Interprets the given byte/word/dword as a pledge's residence.
@@ -30,5 +34,26 @@ public class PledgeBase extends ScriptedIntegerIdInterpreter
 	public PledgeBase()
 	{
 		super(loadFromResource("residence.txt", ImmutablePair.of(-1L, "None"), ImmutablePair.of(0L, "None")));
+	}
+	
+	@Override
+	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	{
+		final Object result = super.getInterpretation(value, entityCacheContext);
+		if (!(result instanceof Long))
+			return result;
+			
+		final Long interp = (Long)result;
+		if (interp.longValue() != value)
+			return result;
+			
+		try
+		{
+			return MetaclassRegistry.getInstance().getInterpreter("Instance", IntegerInterpreter.class).getInterpretation(value, entityCacheContext);
+		}
+		catch (InvalidFieldValueInterpreterException e)
+		{
+			return result;
+		}
 	}
 }

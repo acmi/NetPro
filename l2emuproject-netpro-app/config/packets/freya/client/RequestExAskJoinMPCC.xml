@@ -4,5 +4,5 @@
 	<string alias="Invitee name" />
 
 	<!-- NEW -->
-	<dword alias="0"/>
+	<dword alias="0" optional="true" /> <!-- and then in the future it was removed again… -->
 </packet>

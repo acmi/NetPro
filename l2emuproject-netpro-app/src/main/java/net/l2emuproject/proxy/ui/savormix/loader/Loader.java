@@ -19,6 +19,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.SplashScreen;
 import java.awt.Window;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayDeque;
 import java.util.Locale;
@@ -29,6 +30,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+
+import eu.revengineer.simplejse.exception.StaleScriptCacheException;
 
 import net.l2emuproject.proxy.L2Proxy;
 import net.l2emuproject.proxy.config.ProxyConfig;
@@ -48,6 +51,7 @@ import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
 import net.l2emuproject.proxy.ui.savormix.component.SplashFrame;
 import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
 import net.l2emuproject.util.L2Utils;
+import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.logging.L2Logger;
 import net.l2emuproject.util.logging.ListeningLog;
 
@@ -64,7 +68,6 @@ import javafx.application.Platform;
  * 
  * @author savormix
  */
-@SuppressWarnings("restriction")
 public final class Loader
 {
 	static Frontend ACTIVE_FRONTEND;
@@ -133,7 +136,7 @@ public final class Loader
 			{
 				if (LoadOption.IGNORE_UNKNOWN.isSet())
 					continue;
-					
+				
 				System.err.println("Unrecognized command line argument: " + arg);
 				System.exit(1);
 				return;
@@ -147,7 +150,7 @@ public final class Loader
 					{
 						if (!opt.isInHelp())
 							continue;
-							
+						
 						final String[] alias = opt.getAlias();
 						sb.append(alias[0]);
 						for (int i = 1; i < alias.length; ++i)
@@ -166,13 +169,13 @@ public final class Loader
 		
 		if (GraphicsEnvironment.isHeadless()) // a fool's hope
 			LoadOption.DISABLE_UI.setSystemProperty();
-			
+		
 		if (LoadOption.DISABLE_PROXY.isSet() && LoadOption.DISABLE_UI.isSet())
 			System.exit(0);
-			
+		
 		if (LoadOption.DISABLE_UI.isNotSet())
 			Platform.setImplicitExit(false);
-			
+		
 		final AtomicReference<Window> surrogateCallable = new AtomicReference<>();
 		if (LoadOption.DISABLE_UI.isNotSet() && LoadOption.HIDE_SPLASH.isNotSet())
 		{
@@ -217,7 +220,7 @@ public final class Loader
 		}
 		else
 			LOG_MESSAGES = new ArrayDeque<>(0);
-			
+		
 		{
 			L2Proxy.addStartupHook(() ->
 			{
@@ -234,21 +237,37 @@ public final class Loader
 				new ObjectAnalytics().onLoad();
 				
 				final NetProScriptCache cache = NetProScriptCache.getInstance();
-				if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()) && !cache.isCompilerUnavailable())
+				scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet())
 				{
-					cache.compileAllScripts();
-					cache.writeToCache();
+					if (!ProxyConfig.DISABLE_SCRIPT_CACHE)
+					{
+						try
+						{
+							cache.restoreFromCache();
+							break scripts;
+						}
+						catch (StaleScriptCacheException e)
+						{
+							if (cache.isCompilerUnavailable())
+							{
+								cache.setStaleCacheOK();
+								cache.restoreFromCache();
+								break scripts;
+							}
+							// otherwise proceed to compilation
+						}
+						catch (IOException e)
+						{
+							// proceed to compilation
+						}
+					}
+					
+					if (!cache.isCompilerUnavailable())
+					{
+						cache.compileAllScripts();
+						cache.writeToCache();
+					}
 				}
-				/*
-				catch (SystemJavaCompilerMissingError e)
-				{
-					JOptionPane.showMessageDialog(surrogateCallable.get(),
-							"NetPro requires features that are only present in a JDK.\nPlease ensure that the application is launched via a JDK executable.", "Invalid runtime environment",
-							JOptionPane.ERROR_MESSAGE);
-					L2Logger.getLogger(Loader.class).info("The system Java compiler is missing. Please run via a JDK executable or add tools.jar to classpath.");
-					throw e;
-				}
-				*/
 			});
 			L2Proxy.addStartupHook(VersionnedPacketTable::getInstance);
 			L2Proxy.addStartupHook(IPAliasManager::getInstance);
@@ -258,7 +277,7 @@ public final class Loader
 			}
 			catch (Throwable t)
 			{
-				JOptionPane.showMessageDialog(null, t.getMessage(), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, StackTraceUtil.traceToString(t), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
 				System.exit(1);
 			}
 		}

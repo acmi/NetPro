@@ -21,12 +21,6 @@ import java.net.URL;
 import java.util.Collections;
 import java.util.Set;
 
-import javafx.application.Platform;
-import javafx.concurrent.Worker;
-import javafx.embed.swing.JFXPanel;
-import javafx.scene.Scene;
-import javafx.scene.web.WebView;
-
 import javax.swing.JSplitPane;
 
 import org.w3c.dom.Document;
@@ -42,6 +36,12 @@ import net.l2emuproject.proxy.ui.savormix.io.ImageUrlUtils;
 import net.l2emuproject.ui.AsyncTask;
 import net.l2emuproject.util.HexUtil;
 
+import javafx.application.Platform;
+import javafx.concurrent.Worker;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Scene;
+import javafx.scene.web.WebView;
+
 /**
  * Displays a packet in two text boxes: one for raw hex octets delimited by spaces, another for a
  * field-value list based on the packet's structure definition. <BR>
@@ -53,7 +53,6 @@ import net.l2emuproject.util.HexUtil;
  * 
  * @author savormix
  */
-@SuppressWarnings("restriction")
 public class PacketDisplay extends JSplitPane
 {
 	private static final long serialVersionUID = -4507197091627669116L;
@@ -121,6 +120,7 @@ public class PacketDisplay extends JSplitPane
 		Platform.runLater(new Runnable()
 		{
 			final JFXPanel _tp, _bp;
+			
 			{
 				setTopComponent(_tp = new JFXPanel());
 				setBottomComponent(_bp = new JFXPanel());
@@ -141,7 +141,7 @@ public class PacketDisplay extends JSplitPane
 					{
 						if (newState != Worker.State.SUCCEEDED)
 							return;
-						
+							
 						final Document doc = _contentDisplay.getEngine().getDocument();
 						final NodeList nodes = doc.getElementsByTagName("a");
 						for (int i = 0; i < nodes.getLength(); i++)
@@ -206,7 +206,7 @@ public class PacketDisplay extends JSplitPane
 		
 		if (_currentlyVisiblePacket.get() == packet)
 			return;
-		
+			
 		_currentlyVisiblePacket = new WeakReference<>(packet);
 		_displayTask = new PacketDisplayTask(this).execute(packet);
 	}

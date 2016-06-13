@@ -14,7 +14,7 @@
 	<dword alias="GG (3)" />
 	<dword alias="GG (4)" />
 	
-	<dword alias="8" />
+	<dword alias="Game ID" />
 	<word alias="0" />
 	<byte alias="0" />
 	

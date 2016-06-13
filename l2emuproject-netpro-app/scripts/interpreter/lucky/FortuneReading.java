@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package condition;
+package interpreter.lucky;
 
-import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Unknown usage.
+ * Interprets an integer as a fortune reading type.
  * 
  * @author _dev_
  */
-public final class AbnormalSkillType extends ScriptedIntegerEqualityCondition
+public class FortuneReading extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	/** Constructs this condition. */
-	public AbnormalSkillType()
+	/** Constructs this interpreter. */
+	public FortuneReading()
 	{
-		super(100);
+		super(new InterpreterMetadata(1), "Standard", "Luxury");
 	}
 }

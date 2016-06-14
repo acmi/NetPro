@@ -41,8 +41,13 @@ import javax.tools.Diagnostic;
 import javax.tools.Diagnostic.Kind;
 import javax.tools.JavaFileObject;
 
+import org.apache.commons.lang3.mutable.MutableBoolean;
+
+import eu.revengineer.simplejse.config.JCSCConfig;
+import eu.revengineer.simplejse.exception.IncompatibleScriptCacheException;
 import eu.revengineer.simplejse.exception.StaleScriptCacheException;
 import eu.revengineer.simplejse.reporting.AptReportingHandler;
+import eu.revengineer.simplejse.reporting.DiagnosticLogFile;
 import eu.revengineer.simplejse.reporting.JavacReportingHandler;
 
 import net.l2emuproject.lang.NetProThreadPriority;
@@ -280,23 +285,69 @@ public class NetPro extends Application implements NetProThreadPriority
 			final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
 			scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet())
 			{
-				if (!ProxyConfig.DISABLE_SCRIPT_CACHE)
+				loadCache: if (!ProxyConfig.DISABLE_SCRIPT_CACHE)
 				{
 					// 2.2.1 LOAD PRECOMPILED CACHE
 					try
 					{
-						cache.restoreFromCache(fqcn2Exception);
-						break scripts;
+						try
+						{
+							cache.restoreFromCache(fqcn2Exception);
+							break scripts;
+						}
+						catch (StaleScriptCacheException e)
+						{
+							if (reporter == null)
+								break loadCache; // proceed to compilation
+								
+							// 2.2.2 ASK TO REBUILD STALE CACHE
+							synchronized (reporter)
+							{
+								final MutableBoolean recompile = new MutableBoolean(false);
+								Platform.runLater(() ->
+								{
+									final Alert confirmDlg = new Alert(AlertType.WARNING);
+									confirmDlg.setTitle(UIStrings.get("startup.scripts.stalecache.dialog.title"));
+									confirmDlg.setHeaderText(UIStrings.get("startup.scripts.stalecache.dialog.header"));
+									confirmDlg.setContentText(UIStrings.get("startup.scripts.stalecache.dialog.content", UIStrings.get("generic.button.yes"), UIStrings.get("generic.button.no")));
+									confirmDlg.getButtonTypes().setAll(new ButtonType(UIStrings.get("generic.button.yes"), ButtonData.YES),
+											new ButtonType(UIStrings.get("generic.button.no"), ButtonData.NO));
+									
+									confirmDlg.initOwner(SPLASH_STAGE);
+									confirmDlg.initModality(Modality.APPLICATION_MODAL);
+									confirmDlg.initStyle(StageStyle.DECORATED);
+									
+									WindowTracker.getInstance().add(confirmDlg);
+									final Optional<ButtonType> result = confirmDlg.showAndWait();
+									if (result.isPresent() && result.get().getButtonData() == ButtonData.YES)
+										recompile.setTrue();
+									
+									synchronized (reporter)
+									{
+										reporter.notifyAll();
+									}
+								});
+								reporter.wait();
+								
+								if (recompile.booleanValue())
+									break loadCache;
+							}
+							
+							cache.setStaleCacheOK();
+							cache.restoreFromCache(fqcn2Exception);
+							break scripts;
+						}
 					}
-					catch (IOException | StaleScriptCacheException e)
+					catch (IncompatibleScriptCacheException | IOException e)
 					{
+						fqcn2Exception.clear();
 						// proceed to compilation
 					}
 				}
 				
 				if (!cache.isCompilerUnavailable())
 				{
-					// 2.2.2 COMPILE AND LOAD SCRIPTS
+					// 2.2.3 COMPILE AND LOAD SCRIPTS
 					cache.compileAllScripts(fqcn2Exception);
 					cache.writeToCache();
 					break scripts;
@@ -305,7 +356,7 @@ public class NetPro extends Application implements NetProThreadPriority
 				if (reporter == null)
 					break scripts;
 				
-				// 2.2.3 ASK TO CONTINUE WITH NO SCRIPTS LOADED
+				// 2.2.4 ASK TO CONTINUE WITH NO SCRIPTS LOADED
 				synchronized (reporter)
 				{
 					Platform.runLater(() ->
@@ -324,10 +375,7 @@ public class NetPro extends Application implements NetProThreadPriority
 						WindowTracker.getInstance().add(confirmDlg);
 						final Optional<ButtonType> result = confirmDlg.showAndWait();
 						if (!result.isPresent() || result.get().getButtonData() != ButtonData.YES)
-						{
-							Platform.exit();
 							ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN);
-						}
 						
 						synchronized (reporter)
 						{
@@ -342,7 +390,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			{
 				if (!fqcn2Exception.isEmpty())
 				{
-					// 2.2.4 REPORT SCRIPT INITIALIZATION ERRORS
+					// 2.2.5 REPORT SCRIPT INITIALIZATION ERRORS
 					synchronized (reporter)
 					{
 						Platform.runLater(() ->
@@ -600,7 +648,7 @@ public class NetPro extends Application implements NetProThreadPriority
 		public void report(Diagnostic<? extends JavaFileObject> diagnostic)
 		{
 			if (diagnostic.getKind() == Kind.ERROR)
-				_messages.add(diagnostic.toString());
+				_messages.add(DiagnosticLogFile.formatDiagnostic(diagnostic, JCSCConfig.DEFAULT_ENCODING));
 		}
 		
 		@Override
@@ -687,10 +735,7 @@ public class NetPro extends Application implements NetProThreadPriority
 						WindowTracker.getInstance().add(confirmDlg);
 						final Optional<ButtonType> result = confirmDlg.showAndWait();
 						if (!result.isPresent() || result.get().getButtonData() == ButtonData.NO)
-						{
-							Platform.exit();
 							ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN);
-						}
 						
 						synchronized (_lock)
 						{
@@ -729,10 +774,7 @@ public class NetPro extends Application implements NetProThreadPriority
 						WindowTracker.getInstance().add(confirmDlg);
 						final Optional<ButtonType> result = confirmDlg.showAndWait();
 						if (!result.isPresent() || result.get().getButtonData() != ButtonData.YES)
-						{
-							Platform.exit();
 							ShutdownManager.exit(TerminationStatus.MANUAL_SHUTDOWN);
-						}
 						
 						synchronized (_lock)
 						{

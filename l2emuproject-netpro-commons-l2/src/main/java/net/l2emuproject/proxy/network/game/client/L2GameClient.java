@@ -163,6 +163,11 @@ public final class L2GameClient extends AbstractL2ClientProxy
 		return _firstTime;
 	}
 	
+	/**
+	 * A method required for emulated (non-live) connections.
+	 * 
+	 * @param firstTime whether no packets have been enciphered yet
+	 */
 	public void setFirstTime(boolean firstTime)
 	{
 		_firstTime = firstTime;

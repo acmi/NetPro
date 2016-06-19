@@ -25,4 +25,7 @@ public interface NpcHtmlRecipient
 	/** Identifies a field with standard NPC/item HTML shown to client. */
 	@ScriptFieldAlias
 	String HTML_CONTENT = "html_content";
+	/** Identifies a field with HTML dialog title. */
+	@ScriptFieldAlias
+	String HTML_TITLE = "dump_html_item_title";
 }

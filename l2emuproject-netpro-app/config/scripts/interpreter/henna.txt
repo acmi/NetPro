@@ -458,4 +458,9 @@
 517	Mysterious Antharas Defense Dye 7-day
 518	Mysterious Valakas Defense Dye 7-day
 519	Mysterious Lindvior Defense Dye 7-day
-520	Mysterious Abnormal State Resistance Dye 30-day
+520	Academy STR Dye STR + 1
+521	Academy CON Dye CON + 1
+522	Academy DEX Dye DEX + 1
+523	Academy INT Dye INT + 1
+524	Academy MEN Dye MEN + 1
+525	Academy WIT Dye WIT + 1

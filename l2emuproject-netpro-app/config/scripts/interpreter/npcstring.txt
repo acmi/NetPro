@@ -168,26 +168,26 @@
 3202	An Obvious Lie (Lv. 45 and Above) (In Progress)
 3203	An Obvious Lie (Lv. 45 and Above) (Done)
 3204	An Obvious Lie (Lv. 45 and Above)
-3301	Make a Pair of Dress Shoes (Lv. 60 and Above)
-3302	Make a Pair of Dress Shoes (Lv. 60 and Above) (In Progress)
-3303	Make a Pair of Dress Shoes (Lv. 60 and Above) (Done)
-3304	Make a Pair of Dress Shoes (Lv. 60 and Above)
-3401	In Search of Cloth (Lv. 60 and Above)
-3402	In Search of Cloth (Lv. 60 and Above) (In Progress)
-3403	In Search of Cloth (Lv. 60 and Above) (Done)
-3404	In Search of Cloth (Lv. 60 and Above)
-3501	Find Glittering Jewelry (Lv. 60 and Above)
-3502	Find Glittering Jewelry (Lv. 60 and Above) (In Progress)
-3503	Find Glittering Jewelry (Lv. 60 and Above) (In Progress)
-3504	Find Glittering Jewelry (Lv. 60 and Above)
-3601	Make a Sewing Kit (Lv. 60 and Above)
-3602	Make a Sewing Kit (Lv. 60 and Above) (In Progress)
-3603	Make a Sewing Kit (Lv. 60 and Above) (Done)
-3604	Make a Sewing Kit (Lv. 60 and Above)
-3701	Make Formal Wear (Lv. 60 and Above)
-3702	Make Formal Wear (Lv. 60 and Above) (In Progress)
-3703	Make Formal Wear (Lv. 60 and Above) (Done)
-3704	Make Formal Wear (Lv. 60 and Above)
+3301	Make a Pair of Dress Shoes (Lv. 85 and above)
+3302	Make a Pair of Dress Shoes (Lv. 85 and above) (In Progress)
+3303	Make a Pair of Dress Shoes (Lv. 85 and above) (Done)
+3304	Make a Pair of Dress Shoes (Lv. 85 and above)
+3401	In Search of Cloth (Lv. 85 and above)
+3402	In Search of Cloth (Lv. 85 and above) (In Progress)
+3403	In Search of Cloth (Lv. 85 and above) (Done)
+3404	In Search of Cloth (Lv. 85 and above)
+3501	Find Glittering Jewelry (Lv. 85 and above)
+3502	Find Glittering Jewelry (Lv. 85 and above) (In Progress)
+3503	Find Glittering Jewelry (Lv. 85 and above) (Done)
+3504	Find Glittering Jewelry (Lv. 85 and above)
+3601	Make a Sewing Kit (Lv. 85 and above)
+3602	Make a Sewing Kit (Lv. 85 and above) (In Progress)
+3603	Make a Sewing Kit (Lv. 85 and above) (Done)
+3604	Make a Sewing Kit (Lv. 85 and above)
+3701	Make Formal Wear (Lv. 85 and above)
+3702	Make Formal Wear (Lv. 85 and above) (In Progress)
+3703	Make Formal Wear (Lv. 85 and above) (Done)
+3704	Make Formal Wear (Lv. 85 and above)
 3801	Dragon Fangs (Lv. 19-29)
 3802	Dragon Fangs (Lv. 19-29) (In Progress)
 3803	Dragon Fangs (Lv. 19-29) (Done)
@@ -196,10 +196,10 @@
 3902	Red-eyed Invader (Lv. 20-28) (In Progress)
 3903	Red-eyed Invader (Lv. 20-28) (Done)
 3904	Red-eyed Invader (Lv. 20-28)
-4001	A Special Order (Lv. 40 and Above)
-4002	A Special Order (Lv. 40 and Above) (In Progress)
-4003	A Special Order (Lv. 40 and Above) (Done)
-4004	A Special Order (Lv. 40 and Above)
+4001	A Special Order (Lv. 85 and above)
+4002	A Special Order (Lv. 85 and above) (In Progress)
+4003	A Special Order (Lv. 85 and above) (Done)
+4004	A Special Order (Lv. 85 and above)
 4101	The Adventurer's Challenge
 4102	The Adventurer's Challenge (In Progress)
 4103	The Adventurer's Challenge (Done)
@@ -1905,10 +1905,10 @@
 33601	Coins of Magic (Lv. 40-60)
 33602	Coins of Magic (Lv. 40-60) (In Progress)
 33604	Coins of Magic (Lv. 40-60)
-33701	Audience with the Land Dragon (Lv. 50 and Above)
-33702	Audience with the Land Dragon (Lv. 50 and Above) (In Progress)
-33703	Audience with the Land Dragon (Lv. 50 and Above) (Done)
-33704	Audience with the Land Dragon (Lv. 50 and Above)
+33701	Audience with the Land Dragon (Lv. 85 and above)
+33702	Audience with the Land Dragon (Lv. 85 and above) (In Progress)
+33703	Audience with the Land Dragon (Lv. 85 and above) (Done)
+33704	Audience with the Land Dragon (Lv. 85 and above)
 33801	Alligator Hunter
 33802	Alligator Hunter (In Progress)
 33804	Alligator Hunter
@@ -2128,8 +2128,6 @@
 42118	We must protect the fairy tree!
 42119	Get out of the sacred tree, you scoundrels!
 42120	Death to the thieves of the pure water of the world!
-42201	Repent Your Sins
-42202	Repent Your Sins (In Progress)
 42231	Hey, it seems like you need my help, doesn't it?
 42232	Almost got it... Ouch! Stop!  Damn these bloody manacles!
 42233	Oh, that smarts!
@@ -2379,10 +2377,10 @@
 48902	In This Quiet Place (Lv. 75-79) (In Progress)
 48903	In This Quiet Place (Lv. 75-79) (Done)
 48904	In This Quiet Place (Lv. 75-79)
-49001	Duty of the Survivor (Lv. 85-89)
-49002	Duty of the Survivor (Lv. 85-89) (In Progress)
-49003	Duty of the Survivor (Lv. 85-89) (Completed)
-49004	Duty of the Survivor (Lv. 85-89)
+49001	Duty of the Survivor (Lv. 85-95)
+49002	Duty of the Survivor (Lv. 85-95) (In Progress)
+49003	Duty of the Survivor (Lv. 85-95) (Completed)
+49004	Duty of the Survivor (Lv. 85-95)
 49101	In Nomine Patris (Lv. 76-81)
 49102	In Nomine Patris (Lv. 76-81) (In Progress)
 49103	In Nomine Patris (Lv. 76-81) (Done)
@@ -2398,10 +2396,10 @@
 49204	Tomb Raiders (Lv. 80 and Above)
 49250	Stop the monsters from collecting the relics.
 49251	Thanks again for today's work. I will see you tomorrow.
-49301	Kicking Out Unwelcome Guests (Lv. 95 and Above)
-49302	Kicking Out Unwelcome Guests (Lv. 95 and Above) (In Progress)
-49303	Kicking Out Unwelcome Guests (Lv. 95 and Above) (Done)
-49304	Kicking Out Unwelcome Guests (Lv. 95 and Above)
+49301	Kicking Out Unwelcome Guests (Lv. 95-105)
+49302	Kicking Out Unwelcome Guests (Lv. 95-105) (In Progress)
+49303	Kicking Out Unwelcome Guests (Lv. 95-105) (Done)
+49304	Kicking Out Unwelcome Guests (Lv. 95-105)
 49401	Incarnation of Greed Zellaka (Lv. 85-89) (Group)
 49402	Incarnation of Greed Zellaka (Lv. 85-89) (Group) (In Progress)
 49403	Incarnation of Greed Zellaka (Lv. 85-89) (Group) (Done)
@@ -2426,6 +2424,10 @@
 49902	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Solo) (In Progress)
 49903	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Solo) (Done)
 49904	Incarnation of Gluttony Kalios (Lv. 95 and Above) (Solo)
+50001	Brothers Bound in Chains (Lv. 85 and above)
+50002	Brothers Bound in Chains (Lv. 85 and above) (In Progress)
+50003	Brothers Bound in Chains (Lv. 85 and above) (Done)
+50004	Brothers Bound in Chains (Lv. 85 and above)
 50101	Proof of Clan Alliance (Lv. 1 and Above)
 50102	Proof of Clan Alliance (Lv. 1 and Above) (In Progress)
 50104	Proof of Clan Alliance (Lv. 1 and Above)
@@ -2573,10 +2575,10 @@
 61703	Gather the Flames (Lv. 74-80) (Done)
 61704	Gather the Flames (Lv. 74-80)
 61711	Speak with Vulcan
-61801	Into the Flames (Lv. 60 and Above)
-61802	Into the Flames (Lv. 60 and Above) (In Progress)
-61803	Into the Flames (Lv. 60 and Above) (Done)
-61804	Into the Flames (Lv. 60 and Above)
+61801	Into the Flames (Lv. 85 and above)
+61802	Into the Flames (Lv. 85 and above) (In Progress)
+61803	Into the Flames (Lv. 85 and above) (Done)
+61804	Into the Flames (Lv. 85 and above)
 61901	Relics of the Old Empire
 61902	Relics of the Old Empire (In Progress)
 61904	Relics of the Old Empire
@@ -3003,6 +3005,31 @@
 74204	Castle of Darkness: Liberation
 74251	You liberated the darkness-filled castle!
 74252	You and your comrades have completed a great feat!
+74401	The Alligator Hunter Returns (Lv. 40-45)
+74402	The Alligator Hunter Returns (Lv. 40-45) (In Progress)
+74404	The Alligator Hunter Returns (Lv. 40-45)
+74411	Speak with Enron
+74412	Speak with Flutter
+74501	The Outlaws are Incoming (Lv. 46-51)
+74502	The Outlaws are Incoming (Lv. 46-51) (In Progress)
+74504	The Outlaws are Incoming (Lv. 46-51)
+74511	Speak with Kelios
+74512	Speak with Mouen
+74601	The Reason One Cannot Wait (Lv. 52-57)
+74602	The Reason One Cannot Wait (Lv. 52-57) (In Progress)
+74604	The Reason One Cannot Wait (Lv. 52-57)
+74611	Speak with Andy
+74612	Speak with Paterson
+74701	Defending the Forsaken Plains (Lv. 58-60)
+74702	Defending the Forsaken Plains (Lv. 58-60) (In Progress)
+74704	Defending the Forsaken Plains (Lv. 58-60)
+74711	Speak with Eblune
+74712	Speak with Paterson
+74801	Endless Revenge (Lv. 61-64)
+74802	Endless Revenge (Lv. 61-64) (In Progress)
+74804	Endless Revenge (Lv. 61-64)
+74811	Speak with Shuvann
+74812	Speak with Mathias
 75001	Seven Flowers (Lv. 95 and Above)
 75002	Seven Flowers (Lv. 95 and Above) (In Progress)
 75003	Seven Flowers (Lv. 95 and Above) (Done)
@@ -3036,10 +3063,11 @@
 75151	You aren't planning on going by yourself, are you?
 75152	The mission is not yet complete.
 75153	Well done! Please report to Roderik about the completed mission.
-75201	Uncover the Secret (Lv. 93 and Above)
-75202	Uncover the Secret (Lv. 93 and Above) (In Progress)
-75203	Uncover the Secret (Lv. 93 and Above) (Complete)
-75204	Uncover the Secret (Lv. 93 and Above)
+75201	Uncover the Secret (Lv. 93-103)
+75202	Uncover the Secret (Lv. 93-103) (In Progress)
+75203	Uncover the Secret (Lv. 93-103) (Done)
+75204	Uncover the Secret (Lv. 93-103)
+75205	Speak with Hesed
 75301	Reacting to a Crisis (Lv. 93 and Above)
 75302	Reacting to a Crisis (Lv. 93 and Above) (In Progress)
 75303	Reacting to a Crisis (Lv. 93 and Above) (Complete)
@@ -3103,26 +3131,37 @@
 76003	Block the Exit (Lv. 99-105) (Done)
 76004	Block the Exit (Lv. 99-105)
 76011	Speak with Curtiz
-76101	Assisting the Golden Ram Army (Lv. 65-70)
-76102	Assisting the Golden Ram Army (Lv. 65-70) (In Progress)
-76103	Assisting the Golden Ram Army (Lv. 65-70) (Complete)
-76104	Assisting the Golden Ram Army (Lv. 65-70)
-76201	An Ominous Request (Lv. 65-70)
-76202	An Ominous Request (Lv. 65-70) (In Progress)
-76203	An Ominous Request (Lv. 65-70) (Complete)
-76204	An Ominous Request (Lv. 65-70)
+76101	Assisting the Golden Ram Army (Lv. 65-69)
+76102	Assisting the Golden Ram Army (Lv. 65-69) (In Progress)
+76104	Assisting the Golden Ram Army (Lv. 65-69)
+76111	Speak with Dokara
+76112	Speak with Andrei
+76201	An Ominous Request (Lv. 65-69)
+76202	An Ominous Request (Lv. 65-69) (In Progress)
+76204	An Ominous Request (Lv. 65-69)
+76211	Speak with Hatuba
+76212	Speak with Andrei
 76301	A Daunting Task (Lv. 70-75)
 76302	A Daunting Task (Lv. 70-75) (In Progress)
-76303	A Daunting Task (Lv. 70-75) (Complete)
 76304	A Daunting Task (Lv. 70-75)
+76311	Speak with Janitt
+76312	Speak with Andrei
 76401	Weakening the Varka Silenos Forces (Lv. 76-80)
 76402	Weakening the Varka Silenos Forces (Lv. 76-80) (In Progress)
-76403	Weakening the Varka Silenos Forces (Lv. 76-80) (Complete)
 76404	Weakening the Varka Silenos Forces (Lv. 76-80)
+76411	Speak with Hansen
+76412	Speak with Maximilian
 76501	Weakening the Ketra Orc Forces (Lv. 76-80)
 76502	Weakening the Ketra Orc Forces (Lv. 76-80) (In Progress)
-76503	Weakening the Ketra Orc Forces (Lv. 76-80) (Complete)
 76504	Weakening the Ketra Orc Forces (Lv. 76-80)
+76511	Speak with Lugonnes
+76512	Speak with Maximilian
+76601	10-day Adventure (Lv. 85 and above)
+76602	10-day Adventure (Lv. 85 and above) (In Progress)
+76603	10-day Adventure (Lv. 85 and above) (Done)
+76604	10-day Adventure (Lv. 85 and above)
+76605	Log of the World
+76606	Log of the Labyrinth
 76701	Banishing Evil (Lv. 81-84)
 76702	Banishing Evil (Lv. 81-84) (In Progress)
 76703	Banishing Evil (Lv. 81-84) (Complete)
@@ -3147,11 +3186,22 @@
 77202	Purifying Souls (Lv. 99 and Above) (In Progress)
 77203	Purifying Souls (Lv. 99 and Above) (Complete)
 77204	Purifying Souls (Lv. 99 and Above)
+77301	To Calm the Flood (Lv. 88-98)
+77302	To Calm the Flood (Lv. 88-98) (In Progress)
+77303	To Calm the Flood (Lv. 88-98) (Done)
+77304	To Calm the Flood (Lv. 88-98)
+77401	Dreaming of Peace (Lv. 90-100)
+77402	Dreaming of peace (Lv. 90-100) (In Progress)
+77403	Dreaming of peace (Lv. 90-100) (Done)
+77404	Dreaming of Peace (Lv. 90-100)
+77405	Defeat the violent monsters
 77501	Retrieving the Chaos Fragment (Lv. 99 and Above)
 77502	Retrieving the Chaos Fragment (Lv. 99 and Above) (In Progress)
 77503	Retrieving the Chaos Fragment (Lv. 99 and Above) (Complete)
 77504	Retrieving the Chaos Fragment (Lv. 99 and Above)
-77521	You can obtain Chaos Fragments in Beleth's Magic Circle or the Desert Quarry in Hellbound.
+77511	Select quest stage
+77512	Speak with Leona Blackbird
+77521	You can obtain Chaos Fragments in Hellbound, Beleth's Magic Circle, and the Desert Quarry.
 77522	Well done! Your Chaos Fragments will be used to attract Beleth.
 77601	Slay Dark Lord Ekimus (Lv. 95 and Above)
 77602	Slay Dark Lord Ekimus (Lv. 95 and Above) (In Progress)
@@ -3193,6 +3243,8 @@
 78302	Vestige of the Magic Power (Lv. 99 and Above) (In Progress)
 78303	Vestige of the Magic Power (Lv. 99 and Above) (Done)
 78304	Vestige of the Magic Power (Lv. 99 and Above)
+78311	Select quest stage
+78312	Speak with Leona Blackbird
 78321	High-grade Fragments of Chaos can only be obtained in the Phantasmal Ridge.
 78322	Thank you! I will definitely beat Beleth!
 78401	The Quiet Killer (Lv. 65-70)
@@ -3207,10 +3259,12 @@
 78602	Awaiting the Voice of the Gods (Lv. 70-75) (In Progress)
 78603	Awaiting the Voice of the Gods (Lv. 70-75) (Done)
 78604	Awaiting the Voice of the Gods (Lv. 70-75)
-78701	The Role of a Watcher (Lv. 76-85)
-78702	The Role of a Watcher (Lv. 76-85) (In Progress)
-78703	The Role of a Watcher (Lv. 76-85) (Done)
-78704	The Role of a Watcher (Lv. 76-85)
+78701	The Role of a Watcher (Lv. 81-84)
+78702	The Role of a Watcher (Lv. 81-84) (In Progress)
+78703	The Role of a Watcher (Lv. 81-84) (Done)
+78704	The Role of a Watcher (Lv. 81-84)
+78711	Speak with Namo
+78712	Speak with Maximilian
 78901	Waiting for Pa'agrio (Lv. 97 and Above)
 78902	Waiting for Pa'agrio (Lv. 97 and Above) (In Progress)
 78903	Waiting for Pa'agrio (Lv. 97 and Above) (Done)
@@ -3219,6 +3273,45 @@
 79002	Obtaining Ferin's Trust (Lv. 100 and Above) (In Progress)
 79003	Obtaining Ferin's Trust (Lv. 100 and Above) (Done)
 79004	Obtaining Ferin's Trust (Lv. 100 and Above)
+79011	Select quest stage
+79012	Speak with Master Cyphona
+79201	The Superion Giants (Lv. 102 and above)
+79202	The Superion Giants (Lv. 102 and above) (In Progress)
+79203	The Superion Giants (Lv. 102 and above) (Done)
+79204	The Superion Giants (Lv. 102 and above)
+79210	Talk to Histie
+79301	A Clue Amidst Despair (Lv. 100 and above)
+79302	A Clue Amidst Despair (Lv. 100 and above) (In Progress)
+79303	A Clue Amidst Despair (Lv. 100 and above) (Done)
+79304	A Clue Amidst Despair (Lv. 100 and above)
+79305	Defeating the Superion Scouts
+79310	Talk to Kekropus
+80002	Hunter Guild Request - Altar of Evil (Lv. 85-93) (In Progress)
+80003	Hunter Guild Request - Altar of Evil (Lv. 85-93) (Done)
+80005	Defeating the Giant Monsters
+80010	Speak with Arcturus
+80102	Hunter Guild Request - Gludio Territory (Lv. 85-93) (In Progress)
+80103	Hunter Guild Request - Gludio Territory (Lv. 85-93) (Done)
+80202	Hunter Guild Request - Turek Orc Campsite (Lv. 87-97) (In Progress)
+80203	Hunter Guild Request - Turek Orc Campsite (Lv. 87-97) (Done)
+80302	Hunter Guild Request - Elven Forest (Lv. 88-98) (In Progress)
+80303	Hunter Guild Request - Elven Forest (Lv. 88-98) (Done)
+80402	Hunter Guild Request - Fairy Settlement (Lv. 88-98) (In Progress)
+80403	Hunter Guild Request - Fairy Settlement (Lv. 88-98) (Done)
+80502	Hunter Guild Request - Garden of Beasts (Lv. 89-99) (In Progress)
+80503	Hunter Guild Request - Garden of Beasts (Lv. 89-99) (Done)
+80602	Hunter Guild Request - North of the Town of Giran (Lv. 92-102) (In Progress)
+80603	Hunter Guild Request - North of the Town of Giran (Lv. 92-102) (Done)
+80702	Hunter Guild Request - Cruma Marshlands (Lv. 92-102) (In Progress)
+80703	Hunter Guild Request - Cruma Marshlands (Lv. 92-102) (Done)
+80802	Hunter Guild Request - The Fields (Lv. 92-102) (In Progress)
+80803	Hunter Guild Request - The Fields (Lv. 92-102) (Done)
+80902	Hunter Guild Request - The Immortal Plateau (Lv. 93-103) (In Progress)
+80903	Hunter Guild Request - The Immortal Plateau (Lv. 93-103) (Done)
+81002	Hunter Guild Request - Isle of Souls (Lv. 93-103) (In Progress)
+81003	Hunter Guild Request - Isle of Souls (Lv. 93-103) (Done)
+81102	Hunter Guild Request - Cemetery (Lv. 93-103) (In Progress)
+81103	Hunter Guild Request - Cemetery (Lv. 93-103) (Done)
 81201	First Stronghold's Barton (Lv. 101 and Above)
 81202	First Stronghold's Barton (Lv. 101 and Above) (In Progress)
 81203	First Stronghold's Barton (Lv. 101 and Above) (Done)
@@ -3243,7 +3336,8 @@
 81602	Plans to Repair the Stronghold (Lv. 101 and Above) (In Progress)
 81603	Plans to Repair the Stronghold (Lv. 101 and Above) (Done)
 81604	Plans to Repair the Stronghold (Lv. 101 and Above)
-81605	Talk to Adolph
+81611	Select quest stage
+81612	Speak with Aden Vanguard Captain Adolph
 81701	Black Atelia Research (Lv. 101 and Above)
 81702	Black Atelia Research (Lv. 101 and Above) (In Progress)
 81703	Black Atelia Research (Lv. 101 and Above) (Done)
@@ -3252,10 +3346,14 @@
 82302	Disappeared Race, New Fairy (Lv. 100 and Above) (In Progress)
 82303	Disappeared Race, New Fairy (Lv. 100 and Above) (Done)
 82304	Disappeared Race, New Fairy (Lv. 100 and Above)
+82311	Select quest stage
+82312	Speak with Fairy Mimyu
 82401	Raiding the Command Post (Lv. 101 and Above)
 82402	Raiding the Command Post (Lv. 101 and Above) (In Progress)
 82403	Raiding the Command Post (Lv. 101 and Above) (Done)
 82404	Raiding the Command Post (Lv. 101 and Above)
+82502	Hunter Guild Request - Valley of Saints (Lv. 93-103) (In Progress)
+82503	Hunter Guild Request - Valley of Saints (Lv. 93-103) (Done)
 82601	In Search of the Secret Weapon (Lv. 100 and Above)
 82602	In Search of the Secret Weapon (Lv. 100 and Above) (In Progress)
 82603	In Search of the Secret Weapon (Lv. 100 and Above) (Done)
@@ -3352,6 +3450,8 @@
 83112	Talk to Yuyuria
 83113	There's no one, right?
 83114	Hopefully everything works out.
+83202	Hunter Guild Request - Southern Region, Isle of Prayer (Lv. 96-106) (In Progress)
+83203	Hunter Guild Request - Southern Region, Isle of Prayer (Lv. 96-106) (Done)
 83301	Devil's Treasure (Lv. 99 and Above)
 83302	Devil's Treasure (Lv. 99 and Above) (In Progress)
 83303	Devil's Treasure (Lv. 99 and Above) (Done)
@@ -3375,6 +3475,80 @@
 83505	Speak with Sayan
 83506	Look After Princess Melisa
 83507	Speak with Settlen
+83601	Request from the Blackbird Clan (Lv. 99 and above)
+83602	Request from the Blackbird Clan (Lv. 99 and above) (In Progress)
+83603	Request from the Blackbird Clan (Lv. 99 and above) (Done)
+83604	Request from the Blackbird Clan (Lv. 99 and above)
+83605	Helping the Blackbird Clan
+83606	Speak with Deborah
+83701	Request from the Giant Trackers (Lv. 100 and above)
+83702	Request from the Giant Trackers (Lv. 100 and above) (In Progress)
+83703	Request from the Giant Trackers (Lv. 100 and above) (Done)
+83704	Request from the Giant Trackers (Lv. 100 and above)
+83705	Helping the Giant Trackers
+83706	Speak with Lamunes
+83801	Request from the Mother Tree Guardians (Lv. 100 and above)
+83802	Request from the Mother Tree Guardians (Lv. 100 and above) (In Progress)
+83803	Request from the Mother Tree Guardians (Lv. 100 and above) (Done)
+83804	Request from the Mother Tree Guardians (Lv. 100 and above)
+83805	Helping the Mother Tree Guardians
+83806	Speak with Marienne
+83901	Request from the Unworldly Visitors (Lv. 100 and above)
+83902	Request from the Unworldly Visitors (Lv. 100 and above) (In Progress)
+83903	Request from the Unworldly Visitors (Lv. 100 and above) (Done)
+83904	Request from the Unworldly Visitors (Lv. 100 and above)
+83905	Helping the Unworldly Visitors
+83906	Speak with Qyuris
+84001	Request from the Kingdom's Royal Guard (Lv. 101 and above)
+84002	Request from the Kingdom's Royal Guard (Lv. 101 and above) (In Progress)
+84003	Request from the Kingdom's Royal Guard (Lv. 101 and above) (Done)
+84004	Request from the Kingdom's Royal Guard (Lv. 101 and above)
+84005	Helping the Kingdom's Royal Guard
+84006	Speak with James
+84101	Contamination Containment (Lv. 100 and above)
+84102	Contamination Containment (Lv. 100 and above) (In Progress)
+84103	Contamination Containment (Lv. 100 and above) (Done)
+84104	Contamination Containment (Lv. 100 and above)
+84105	Defeat the Enraged Nymph
+84111	Select quest stage
+84112	Speak with the Guardian Irene
+84201	Captive Demons (Lv. 100 and above)
+84202	Captive Demons (Lv. 100 and above) (In Progress)
+84203	Captive Demons (Lv. 100 and above) (Done)
+84204	Captive Demons (Lv. 100 and above)
+84205	Defeating the Captive Demons
+84211	Select quest stage
+84212	Speak with Sthor
+84301	Giant Evolution Control (Lv. 100 and above)
+84302	Giant Evolution Control (Lv. 100 and above) (In Progress)
+84303	Giant Evolution Control (Lv. 100 and above) (Done)
+84304	Giant Evolution Control (Lv. 100 and above)
+84305	Eliminate the Marred Giant
+84311	Select quest stage
+84312	Speak with Krenaht
+84401	Giant's Treasure (Lv. 100 and above)
+84402	Giant's Treasure (Lv. 100 and above) (In Progress)
+84403	Giant's Treasure (Lv. 100 and above) (Done)
+84404	Giant's Treasure (Lv. 100 and above)
+84411	Select quest stage
+84412	Speak with Krenaht
+84501	Sabotage the Embryo Supplies (Lv. 101 and above)
+84502	Sabotage the Embryo Supplies (Lv. 101 and above) (In Progress)
+84503	Sabotage the Embryo Supplies (Lv. 101 and above) (Done)
+84504	Sabotage the Embryo Supplies (Lv. 101 and above)
+84511	Select quest stage
+84512	Speak with Logart Van Dyke
+84601	Building up Strength (Lv. 101 and above)
+84602	Building up Strength (Lv. 101 and above) (In Progress)
+84603	Building up Strength (Lv. 101 and above) (Done)
+84604	Building up Strength (Lv. 101 and above)
+84605	Rescue the Captive Miners
+84606	Rescue the Captive Scouts
+84607	Rescue the Captive Chefs
+84608	Rescue the Captive Wizards
+84609	Rescue the Captive Citizens
+84611	Select quest stage
+84612	Speak with Dinford
 85001	The Times Call for a New Hero - Aden
 85002	The Times Call for a New Hero - Aden (In Progress)
 85003	The Times Call for a New Hero - Aden (Done)
@@ -3475,55 +3649,136 @@
 90202	Reclaim Our Era (Lv. 80 and Above) (In Progress)
 90203	Reclaim Our Era (Lv. 80 and Above) (Done)
 90204	Reclaim Our Era (Lv. 80 and Above)
-90301	The Call of Antharas (Lv. 83 and Above)
-90302	The Call of Antharas (Lv. 83 and Above) (In Progress)
-90303	The Call of Antharas (Lv. 83 and Above) (Done)
-90304	The Call of Antharas (Lv. 83 and Above)
-90401	Dragon Trophy - Antharas (Lv. 84 and Above)
-90402	Dragon Trophy - Antharas (Lv. 84 and Above) (In Progress)
-90403	Dragon Trophy - Antharas (Lv. 84 and Above) (Done)
-90404	Dragon Trophy - Antharas (Lv. 84 and Above)
-90501	Refined Dragon Blood (Lv. 83 and Above)
-90502	Refined Dragon Blood (Lv. 83 and Above) (In Progress)
-90503	Refined Dragon Blood (Lv. 83 and Above) (Done)
-90504	Refined Dragon Blood (Lv. 83 and Above)
-90601	The Call of Valakas (Lv. 83 and Above)
-90602	The Call of Valakas (Lv. 83 and Above) (In Progress)
-90603	The Call of Valakas (Lv. 83 and Above) (Done)
-90604	The Call of Valakas (Lv. 83 and Above)
-90701	Dragon Trophy - Valakas (Lv. 84 and Above)
-90702	Dragon Trophy - Valakas (Lv. 84 and Above) (In Progress)
-90703	Dragon Trophy - Valakas (Lv. 84 and Above) (Done)
-90704	Dragon Trophy - Valakas (Lv. 84 and Above)
-91001	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95)
-91002	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95) (In Progress)
-91003	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95) (Done)
-91004	Low-rank Request - Subjugation of the Seed of Annihilation (Lv. 85-95)
-91005	Defeat Monsters in the Seed of Annihilation
-91010	Speak with Blue
+90301	The Call of Antharas (Lv. 85 and above)
+90302	The Call of Antharas (Lv. 85 and above) (In Progress)
+90303	The Call of Antharas (Lv. 85 and above) (Done)
+90304	The Call of Antharas (Lv. 85 and above)
+90401	Dragon Trophy - Antharas (Lv. 85 and above)
+90402	Dragon Trophy - Antharas (Lv. 85 and above) (In Progress)
+90403	Dragon Trophy - Antharas (Lv. 85 and above) (Done)
+90404	Dragon Trophy - Antharas (Lv. 85 and above)
+90501	Refined Dragon Blood (Lv. 85 and above)
+90502	Refined Dragon Blood (Lv. 85 and above) (In Progress)
+90503	Refined Dragon Blood (Lv. 85 and above) (Done)
+90504	Refined Dragon Blood (Lv. 85 and above)
+90601	The Call of Valakas (Lv. 85 and above)
+90602	The Call of Valakas (Lv. 85 and above) (In Progress)
+90603	The Call of Valakas (Lv. 85 and above) (Done)
+90604	The Call of Valakas (Lv. 85 and above)
+90701	Dragon Trophy - Valakas (Lv. 85 and above)
+90702	Dragon Trophy - Valakas (Lv. 85 and above) (In Progress)
+90703	Dragon Trophy - Valakas (Lv. 85 and above) (Done)
+90704	Dragon Trophy - Valakas (Lv. 85 and above)
+91001	Special Requests from the Adventure Guild - Lv1 (Lv. 85-89)
+91002	Special Requests from the Adventure Guild - Lv1 (Lv. 85-89) (In Progress)
+91003	Special Requests from the Adventure Guild - Lv1 (Lv. 85-89) (Done)
+91004	Special Requests from the Adventure Guild - Lv1 (Lv. 85-89)
+91005	Defeat Monsters
+91010	Speak with the Adventure Guildsman
 91011	85
-91012	Seed of Annihilation
-91101	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96)
-91102	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96) (In Progress)
-91103	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96) (Done)
-91104	Mid-rank Request - Subjugation of the Guillotine Fortress (Lv. 90-96)
+91012	Bloody Swampland and Altar of Evil
+91101	Special Requests from the Adventure Guild - Lv2 (Lv. 90-93)
+91102	Special Requests from the Adventure Guild - Lv2 (Lv. 90-93) (In Progress)
+91103	Special Requests from the Adventure Guild - Lv2 (Lv. 90-93) (Done)
+91104	Special Requests from the Adventure Guild - Lv2 (Lv. 90-93)
 91105	Defeat Monsters in the Guillotine Fortress
 91111	90
 91112	Guillotine Fortress
-91201	High-rank Request - Subjugation of the Seed of Hellfire (Lv. 97 and Above)
-91202	High-rank Request - Subjugation of the Seed of Hellfire (Lv. 97 and Above) (In Progress)
-91203	High-rank Request - Subjugation of the Seed of Hellfire (Lv. 97 and Above) (Done)
-91204	High-rank Request - Subjugation of the Seed of Hellfire (Lv. 97 and Above)
+91201	Special Requests from the Adventure Guild - Lv3 (Lv. 94-96)
+91202	Special Requests from the Adventure Guild - Lv3 (Lv. 94-96) (In Progress)
+91203	Special Requests from the Adventure Guild - Lv3 (Lv. 94-96) (Done)
+91204	Special Requests from the Adventure Guild - Lv3 (Lv. 94-96)
 91205	Defeat Monsters in the Seed of Hellfire
-91211	97
+91211	94
 91212	Seed of Hellfire
-91301	Top-rank Request - Subjugation of the Phantasmal Ridge (Lv. 99 and Above)
-91302	Top-rank Request - Subjugation of the Phantasmal Ridge (Lv. 99 and Above) (In Progress)
-91303	Top-rank Request - Subjugation of the Phantasmal Ridge (Lv. 99 and Above) (Done)
-91304	Top-rank Request - Subjugation of the Phantasmal Ridge (Lv. 99 and Above)
+91301	Special Requests from the Adventure Guild - Lv4 (Lv. 97-99)
+91302	Special Requests from the Adventure Guild - Lv4 (Lv. 97-99) (In Progress)
+91303	Special Requests from the Adventure Guild - Lv4 (Lv. 97-99) (Done)
+91304	Special Requests from the Adventure Guild - Lv4 (Lv. 97-99)
 91305	Defeat Monsters in the Phantasmal Ridge
-91311	99
-91312	Phantasmal Ridge
+91311	97
+91312	Pagan Temple, Blazing Swamp and Cemetery
+91401	Special Requests from the Adventure Guild - Lv5 (Lv. 100 and above)
+91402	Special Requests from the Adventure Guild - Lv5 (Lv. 100 and above) (In Progress)
+91403	Special Requests from the Adventure Guild - Lv5 (Lv. 100 and above) (Done)
+91404	Special Requests from the Adventure Guild - Lv5 (Lv. 100 and above)
+91405	Defeat Monsters
+91411	100
+91412	Enchanted Valley and Upper Level of the Giant's Cave
+92001	Defeating the Varka Silenos (Lv. 76-80)
+92002	Defeating the Varka Silenos (Lv. 76-80) (In Progress)
+92003	Defeating the Varka Silenos (Lv. 76-80) (Done)
+92004	Defeating the Varka Silenos (Lv. 76-80)
+92101	Defeating the Ketra Orcs (Lv. 76-80)
+92102	Defeating the Ketra Orcs (Lv. 76-80) (In Progress)
+92103	Defeating the Ketra Orcs (Lv. 76-80) (Done)
+92104	Defeating the Ketra Orcs (Lv. 76-80)
+92202	Hunter Guild Request - Northern Region, Isle of Prayer (Lv. 96-106) (In Progress)
+92203	Hunter Guild Request - Northern Region, Isle of Prayer (Lv. 96-106) (Done)
+92301	Shinedust Extraction (Lv. 100 and above)
+92302	Shinedust Extraction (Lv. 100 and above) (In Progress)
+92303	Shinedust Extraction (Lv. 100 and above) (Done)
+92304	Shinedust Extraction (Lv. 100 and above)
+92311	Select quest stage
+92312	Speak with Schumadriba or Sthor
+92401	Giant of the Restoration Room (Lv. 100 and above)
+92402	Giant of the Restoration Room (Lv. 100 and above) (In Progress)
+92403	Giant of the Restoration Room (Lv. 100 and above) (Done)
+92404	Giant of the Restoration Room (Lv. 100 and above)
+92405	Select quest
+92410	Speak with Vice Hierarch Schumadriba
+92411	Eliminate the Giant
+92502	Hunter Guild Request - Garden of Spirits (Lv. 98-108) (In Progress)
+92503	Hunter Guild Request - Garden of Spirits (Lv. 98-108) (Done)
+92601	Exploring the Dimension - 30-day Search Operation (Lv. 95 and above)
+92602	Exploring the Dimension - 30-day Search Operation (Lv. 95 and above) (In Progress)
+92603	Exploring the Dimension - 30-day Search Operation (Lv. 95 and above) (Done)
+92604	Exploring the Dimension - 30-day Search Operation (Lv. 95 and above)
+92801	100-day Subjugation Operation (Lv. 100 and above)
+92802	100-day Subjugation Operation (Lv. 100 and above) (In Progress)
+92803	100-day Subjugation Operation (Lv. 100 and above) (Done)
+92804	100-day Subjugation Operation (Lv. 100 and above)
+92805	Defeating the Dimensional Monsters
+92810	Speak with Lias
+92901	Commando Rescue (Lv. 99 and above)
+92902	Commando Rescue (Lv. 99 and above) (In Progress)
+92903	Commando Rescue (Lv. 99 and above) (Done)
+92904	Commando Rescue (Lv. 99 and above)
+92911	Speak with Masa
+92912	Commando Rescue
+92913	Speak with Sporcha
+93001	Disparaging the Phantoms (Lv. 99 and above)
+93002	Disparaging the Phantoms (Lv. 99 and above) (In Progress)
+93003	Disparaging the Phantoms (Lv. 99 and above) (Done)
+93004	Disparaging the Phantoms (Lv. 99 and above)
+93011	Select quest stage
+93012	Speak with Sporcha
+93101	Memories of the Wind (Lv. 100 and above)
+93102	Memories of the Wind (Lv. 100 and above) (In Progress)
+93103	Memories of the Wind (Lv. 100 and above) (Done)
+93104	Memories of the Wind (Lv. 100 and above)
+93111	Select quest stage
+93112	Speak with Cyphona
+93201	Sayha's Energy (Lv. 100 and above)
+93202	Sayha's Energy (Lv. 100 and above) (In Progress)
+93203	Sayha's Energy (Lv. 100 and above) (Done)
+93204	Sayha's Energy (Lv. 100 and above)
+93211	Select quest stage
+93212	Speak with Belas
+93701	To revive the Fishing Guild (Lv. 85 and above)
+93702	To revive the Fishing Guild (Lv. 85 and above) (In Progress)
+93703	To revive the Fishing Guild (Lv. 85 and above) (Done)
+93704	To revive the Fishing Guild (Lv. 85 and above)
+93705	Fishing
+93710	Speak with the Fishing Guild Member
+93801	The Fisherman's Other Hobby (Lv. 85 and above)
+93802	The Fisherman's Other Hobby (Lv. 85 and above) (In Progress)
+93803	The Fisherman's Other Hobby (Lv. 85 and above) (Done)
+93804	The Fisherman's Other Hobby (Lv. 85 and above)
+93805	Deliver the Hobby Mark
+93810	Conversation with Santiago
+94002	Hunter Guild Request - Atelia Fortress (Lv. 98-108) (In Progress)
+94003	Hunter Guild Request - Atelia Fortress (Lv. 98-108) (Done)
 94301	Filling the Energy of Destruction (Lv. 90 and Above)
 94302	Filling the Energy of Destruction (Lv. 90 and Above) (In Progress)
 94303	Filling the Energy of Destruction (Lv. 90 and Above) (Done)
@@ -3727,14 +3982,14 @@
 528902	Fade to Black  (Lv. 82 and Above) (In Progress)
 528903	Fade to Black (Lv. 82 and Above) (Done)
 528904	Fade to Black (Lv. 82 and Above)
-529001	Land Dragon Conqueror (Lv. 83 and Above)
-529002	Land Dragon Conqueror (Lv. 83 and Above) (In Progress)
-529003	Land Dragon Conqueror (Lv. 83 and Above) (Done)
-529004	Land Dragon Conqueror (Lv. 83 and Above)
-529101	Fire Dragon Destroyer (Lv. 83 and Above)
-529102	Fire Dragon Destroyer (Lv. 83 and Above) (In Progress)
-529103	Fire Dragon Destroyer (Lv. 83 and Above) (Done)
-529104	Fire Dragon Destroyer (Lv. 83 and Above)
+529001	Land Dragon Conqueror (Lv. 85 and above)
+529002	Land Dragon Conqueror (Lv. 85 and above) (In Progress)
+529003	Land Dragon Conqueror (Lv. 85 and above) (Done)
+529004	Land Dragon Conqueror (Lv. 85 and above)
+529101	Fire Dragon Destroyer (Lv. 85 and above)
+529102	Fire Dragon Destroyer (Lv. 85 and above) (In Progress)
+529103	Fire Dragon Destroyer (Lv. 85 and above) (Done)
+529104	Fire Dragon Destroyer (Lv. 85 and above)
 529201	Seven Signs, Mysterious Girl (Lv. 81 and Above)
 529202	Seven Signs, Mysterious Girl (Lv. 81 and Above) (In Progress)
 529203	Seven Signs, Mysterious Girl (Lv. 81 and Above) (Done)
@@ -3761,6 +4016,10 @@
 529708	Speak with Brodien
 529709	Speak with Lupia
 529710	Speak with Lailly
+529801	Wasteland Queen (Lv. 40-43)
+529802	Wasteland Queen (Lv. 40-43) (In Progress)
+529803	Wasteland Queen (Lv. 40-43) (Done)
+529804	Wasteland Queen (Lv. 40-43)
 529901	How to Stand Up For Yourself
 529902	How to Stand Up For Yourself (In Progress)
 529903	How to Stand Up For Yourself (Done)
@@ -3838,57 +4097,38 @@
 532002	Let's Go to the Central Square (Lv. 1-20) (In Progress)
 532003	Let's Go to the Central Square (Lv. 1-20) (Done)
 532004	Let's Go to the Central Square (Lv. 1-20)
+532005	Speak with Theodore
 532101	Qualifications of the Seeker (Lv. 1-20)
 532102	Qualifications of the Seeker (Lv. 1-20) (In Progress)
 532103	Qualifications of the Seeker (Lv. 1-20) (Done)
 532104	Qualifications of the Seeker (Lv. 1-20)
-532201	Searching for the Mysterious Power (Lv. 1-20)
-532202	Searching for the Mysterious Power (Lv. 1-20) (In Progress)
-532203	Searching for the Mysterious Power (Lv. 1-20) (Done)
-532204	Searching for the Mysterious Power (Lv. 1-20)
-532301	Train Like It's Real (Lv. 1-20)
-532302	Train Like It's Real (Lv. 1-20) (In Progress)
-532303	Train Like It's Real (Lv. 1-20) (Complete)
-532304	Train Like It's Real (Lv. 1-20)
-532311	Eliminate the Training Golem
-532312	Eliminate the Training Golem
 532331	Help the guards take down the monsters in the underground training facility.
 532332	Talk to Aymen to exit the underground training facility.
 532333	Return to Shannon at Talking Island Village's basic training field.
-532401	Finding Magister Gallint (Lv. 1-20)
-532402	Finding Magister Gallint (Lv. 1-20) (In Progress)
-532403	Finding Magister Gallint (Lv. 1-20) (Done)
-532404	Finding Magister Gallint (Lv. 1-20)
 532501	Searching for New Power (Lv. 1-20)
 532502	Searching for New Power (Lv. 1-20) (In Progress)
 532503	Searching for New Power (Lv. 1-20) (Done)
 532504	Searching for New Power (Lv. 1-20)
-532601	Respect Your Elders! (Lv. 1-20)
-532602	Respect Your Elders! (Lv. 1-20) (In Progress)
-532603	Respect Your Elders! (Lv. 1-20) (Done)
-532604	Respect Your Elders! (Lv. 1-20)
-532701	Intruder Who Wants the Book of Giants (Lv. 1-20)
-532702	Intruder Who Wants the Book of Giants (Lv. 1-20) (In Progress)
-532703	Intruder Who Wants the Book of Giants (Lv. 1-20) (Done)
-532704	Intruder Who Wants the Book of Giants (Lv. 1-20)
 532731	Among the 4 bookshelves, find the one containing a volume called "The War of Gods and Giants".
 532732	Talk to Toyron to return to the museum lobby.
-532801	Request to Seal the Evil Fragment (Lv. 1-20)
-532802	Request to Seal the Evil Fragment (Lv. 1-20) (In Progress)
-532803	Request to Seal the Evil Fragment (Lv. 1-20) (Done)
-532804	Request to Seal the Evil Fragment (Lv. 1-20)
-532901	Backup Seekers (Lv. 1-20)
-532902	Backup Seekers (Lv. 1-20) (In Progress)
-532903	Backup Seekers (Lv. 1-20) (Done)
-532904	Backup Seekers (Lv. 1-20)
-533001	To the Ruins of Ye Sagira (Lv. 8-20)
-533002	To the Ruins of Ye Sagira (Lv. 8-20) (In Progress)
-533003	To the Ruins of Ye Sagira (Lv. 8-20) (Done)
-533004	To the Ruins of Ye Sagira (Lv. 8-20)
+533001	To the Ruins of Ye Sagira (Lv. 7-20)
+533002	To the Ruins of Ye Sagira (Lv. 7-20) (In Progress)
+533003	To the Ruins of Ye Sagira (Lv. 7-20) (Done)
+533004	To the Ruins of Ye Sagira (Lv. 7-20)
+533005	Speak with Lakcis
+533006	Speak with Milia
 533101	Start of Fate (Lv. 18 and Above)
 533102	Start of Fate (Lv. 18 and Above) (In Progress)
 533103	Start of Fate (Lv. 18 and Above) (Done)
 533104	Start of Fate (Lv. 18 and Above)
+533105	Defeating Nemertess
+533106	Speak with Sebion
+533107	Speak with Franco
+533108	Speak with Rivian
+533109	Speak with Devon
+533110	Speak with Took
+533111	Speak with Moka
+533112	Speak with Valfar
 533131	Go to the entrance of the Ruins of Ye Sagira through Gatekeeper Milia in Talking Island Village.
 533201	Tough Road (Lv. 20-40)
 533202	Tough Road (Lv. 20-40) (In Progress)
@@ -4005,30 +4245,38 @@
 536103	Roles of the Seeker (Lv. 10-20) (Done)
 536104	Roles of the Seeker (Lv. 10-20)
 536131	Enter the Ruins of Ye Sagira through the Ye Sagira Teleport Device.
-536132	Use the Ye Sagira Teleport Device to go to Exploration Area 1.
-536201	Certification of the Seeker (Lv. 10-20)
-536202	Certification of the Seeker (Lv. 10-20) (In Progress)
-536203	Certification of the Seeker (Lv. 10-20) (Done)
-536204	Certification of the Seeker (Lv. 10-20)
-536233	Use the Ye Sagira Teleport Device to go to Exploration Area 2.
-536301	Request of the Seeker (Lv. 12-20)
-536302	Request of the Seeker (Lv. 12-20) (In Progress)
-536303	Request of the Seeker (Lv. 12-20) (Done)
-536304	Request of the Seeker (Lv. 12-20)
-536341	Use the Ye Sagira Teleport Device to go to Exploration Area 3.
-536401	Obligations of the Seeker (Lv. 14-25)
-536402	Obligations of the Seeker (Lv. 14-25) (In Progress)
-536403	Obligations of the Seeker (Lv. 14-25) (Done)
-536404	Obligations of the Seeker (Lv. 14-25)
-536442	Use the Ye Sagira Teleport Device to go to Exploration Area 4.
-536501	Seeker Escort (Lv. 16-25)
-536502	Seeker Escort (Lv. 16-25) (In Progress)
-536503	Seeker Escort (Lv. 16-25) (Done)
-536504	Seeker Escort (Lv. 16-25)
-536601	Ruins Status Update (Lv. 16-25)
-536602	Ruins Status Update (Lv. 16-25) (In Progress)
-536603	Ruins Status Update (Lv. 16-25) (Done)
-536604	Ruins Status Update (Lv. 16-25)
+536132	Use the Ye Sagira Teleport Device shining with a red shimmer to go to Exploration Area 1.
+536201	Certification of the Seeker (Lv. 9-20)
+536202	Certification of the Seeker (Lv. 9-20) (In Progress)
+536203	Certification of the Seeker (Lv. 9-20) (Done)
+536204	Certification of the Seeker (Lv. 9-20)
+536205	Speak with Chesha
+536206	Speak with Nagel
+536233	Use the Ye Sagira Teleport Device shining with a red shimmer to go to Exploration Area 2.
+536301	Request of the Seeker (Lv. 11-20)
+536302	Request of the Seeker (Lv. 11-20) (In Progress)
+536303	Request of the Seeker (Lv. 11-20) (Done)
+536304	Request of the Seeker (Lv. 11-20)
+536305	Speak with Celin
+536341	Use the Ye Sagira Teleport Device shining with a red shimmer to go to Exploration Area 3.
+536401	Obligations of the Seeker (Lv. 13-25)
+536402	Obligations of the Seeker (Lv. 13-25) (In Progress)
+536403	Obligations of the Seeker (Lv. 13-25) (Done)
+536404	Obligations of the Seeker (Lv. 13-25)
+536405	Speak with Walter
+536406	Speak with Dep
+536442	Use the Ye Sagira Teleport Device shining with a red shimmer to go to Exploration Area 4.
+536501	For the Searchdog King (Lv. 15-20)
+536502	For the Searchdog King (Lv. 15-20) (In Progress)
+536503	For the Searchdog King (Lv. 15-20) (Done)
+536504	For the Searchdog King (Lv. 15-20)
+536505	Use the Ye Sagira Teleport Device shining with a red shimmer to go to Exploration Area 5.
+536601	Report on the Situation at the Ruins (Lv. 17-25)
+536602	Report on the Situation at the Ruins (Lv. 17-25) (In Progress)
+536603	Report on the Situation at the Ruins (Lv. 17-25) (Done)
+536604	Report on the Situation at the Ruins (Lv. 17-25)
+536605	Speak with Sebion
+536606	Defeat the Husks
 536631	Use the escape scroll in your inventory to go to the Administrative Office in Talking Island.
 536701	Start of Fate (Lv. 18 and Above)
 536702	Start of Fate (Lv. 18 and Above) (In Progress)
@@ -4069,6 +4317,10 @@
 537204	Purgatory Volvere (Lv. 76-81)
 537250	Please defeat the monster called the Bloody Succubus.
 537251	If what you say is true, this must be very serious.
+537301	Exploring the Dimension - Sealing the Dimension (Lv. 95-99)
+537302	Exploring the Dimension - Sealing the Dimension (Lv. 95-99) (In Progress)
+537303	Exploring the Dimension - Sealing the Dimension (Done) (Lv. 95-99)
+537304	Exploring the Dimension - Sealing the Dimension (Lv. 95-99)
 537401	That Place Succubus (Lv. 80 and Above)
 537402	That Place Succubus (Lv. 80 and Above) (In Progress)
 537403	That Place Succubus (Lv. 80 and Above) (Done)
@@ -4170,6 +4422,16 @@
 539002	Kekropus' Letter (Lv. 40-45) (In Progress)
 539003	Kekropus' Letter (Lv. 40-45) (Complete)
 539004	Kekropus' Letter (Lv. 40-45)
+539011	Level 30 accomplished
+539012	Level 40 accomplished
+539013	Level 46 accomplished
+539014	Level 52 accomplished
+539015	Level 58 accomplished
+539016	Level 61 accomplished
+539017	Level 65 accomplished
+539018	Level 70 accomplished
+539019	Level 76 accomplished
+539020	Level 81 accomplished
 539031	Talk to Bathis
 539032	Talk to Bathis Again
 539033	Talk to Gosta
@@ -4200,6 +4462,10 @@
 539503	Not a Traitor (Lv. 46-52) (Complete)
 539504	Not a Traitor (Lv. 46-52)
 539511	Eliminate the Oel Mahum Monsters
+539601	Witch of Spores (Lv. 52-67)
+539602	Witch of Spores (Lv. 52-67) (In Progress)
+539603	Witch of Spores (Lv. 52-67) (Done)
+539604	Witch of Spores (Lv. 52-67)
 539701	Kekropus' Letter: A Suspicious Badge (Lv. 52-57)
 539702	Kekropus' Letter: A Suspicious Badge (Lv. 52-57) (In Progress)
 539703	Kekropus' Letter: A Suspicious Badge (Lv. 52-57) (Complete)
@@ -4253,6 +4519,12 @@
 540653	Die!
 540654	Do not touch that flower!
 540655	Hah! You believe that is enough to stand in the path of darkness?
+540701	Let's Go Fishing (Lv. 85 and above)
+540702	Let's Go Fishing (Lv. 85 and above) (In Progress)
+540703	Let's Go Fishing (Lv. 85 and above) (Done)
+540704	Let's Go Fishing (Lv. 85 and above)
+540711	Hear about fishing
+540712	Fishing practice
 540801	Kekropus' Letter: The Swamp of Screams (Lv. 65-69)
 540802	Kekropus' Letter: The Swamp of Screams (Lv. 65-69) (In Progress)
 540803	Kekropus' Letter: The Swamp of Screams (Lv. 65-69) (Complete)
@@ -4301,10 +4573,20 @@
 541602	In Search of the Eye of Argos (Lv. 70-75) (In Progress)
 541603	In Search of the Eye of Argos (Lv. 70-75) (Complete)
 541604	In Search of the Eye of Argos (Lv. 70-75)
+541611	Defeat the Beasts of the Valley
+541612	Speak with the Eye of Argos
+541613	Speak with Janitt
 541701	Daimon the White-eyed (Lv. 70-75)
 541702	Daimon the White-eyed (Lv. 70-75) (In Progress)
 541703	Daimon the White-eyed (Lv. 70-75) (Complete)
 541704	Daimon the White-eyed (Lv. 70-75)
+541711	Defeat the Beasts of the Valley
+541712	Speak with the Eye of Argos
+541713	Speak with Janitt
+541801	The Immortal Pirate King (Lv. 83-90)
+541802	The Immortal Pirate King (Lv. 83-90) (In Progress)
+541803	The Immortal Pirate King (Lv. 83-90) (Done)
+541804	The Immortal Pirate King (Lv. 83-90)
 541901	Kekropus' Letter: Kampf's Whereabouts (Lv. 76-80)
 541902	Kekropus' Letter: Kampf's Whereabouts (Lv. 76-80) (In Progress)
 541903	Kekropus' Letter: Kampf's Whereabouts (Lv. 76-80) (Complete)
@@ -4450,6 +4732,8 @@
 545502	Elikia's Letter (Lv. 99 and Above) (In Progress)
 545503	Elikia's Letter (Lv. 99 and Above) (Complete)
 545504	Elikia's Letter (Lv. 99 and Above)
+545511	Speak with Devianne
+545512	Speak with Leona
 545521	You must activate the Warp Gate behind me in order to teleport to Hellbound.
 545522	Have you made preparations for the mission? There isn't much time.
 545601	Operation: Rescue (Lv. 99 and Above)
@@ -4457,6 +4741,7 @@
 545603	Operation: Rescue (Lv. 99 and Above) (Complete)
 545604	Operation: Rescue (Lv. 99 and Above)
 545611	Free the Captives
+545612	Speak with Devianne
 545621	I hope they are safe...
 545622	You should be proud of what you have done!
 545701	Kefensis' Hallucination (Lv. 99 and Above)
@@ -4466,6 +4751,7 @@
 545711	Test of the Desert Thirst
 545712	Meeting with the Phantom Monster
 545713	Defeat the Phantom Monster
+545714	Speak with Devianne
 545721	You should go with trustworthy comrades!
 545722	An illusion? This place is truly worthy of being called the Mirage Hills.
 545801	To the Desert Quarry (Lv. 99 and Above)
@@ -4473,12 +4759,15 @@
 545803	To the Desert Quarry (Lv. 99 and Above) (Complete)
 545804	To the Desert Quarry (Lv. 99 and Above)
 545811	Defeat the Evolved Monster
+545812	Speak with Erica Ken Weber
 545821	Can you do this much? Well? Get moving!
 545822	Should I get started?
 545901	A Sick Ambition (Lv. 99 and Above)
 545902	A Sick Ambition (Lv. 99 and Above) (In Progress)
 545903	A Sick Ambition (Lv. 99 and Above) (Complete)
 545904	A Sick Ambition (Lv. 99 and Above)
+545911	Defeat Beleth or Darion
+545912	Speak with Leona
 545921	Please defeat Beleth. We must save Hellbound.
 546001	Return of the Alligator Hunter (Lv. 40-46)
 546002	Return of the Alligator Hunter (Lv. 40-46) (In Progress)
@@ -4492,10 +4781,10 @@
 546122	This is just the beginning.
 546123	Open the ability screen in the character information screen.\nPress "Adjust Points" to adjust the acquired SP and Ability points.
 546151	The letter from Lionel Hunter has arrived.\nClick the question mark icon to read the letter's contents.
-546201	Temper a Rusting Blade (Lv. 46-52)
-546202	Temper a Rusting Blade (Lv. 46-52) (In Progress)
-546203	Temper a Rusting Blade (Lv. 46-52) (Complete)
-546204	Temper a Rusting Blade (Lv. 46-52)
+546201	Temper a Rusting Blade (Lv. 85)
+546202	Temper a Rusting Blade (Lv. 85) (In Progress)
+546203	Temper a Rusting Blade (Lv. 85) (Done)
+546204	Temper a Rusting Blade (Lv. 85)
 546301	The Soul of a Sword (Lv. 52-58)
 546302	The Soul of a Sword (Lv. 52-58) (In Progress)
 546303	The Soul of a Sword (Lv. 52-58) (Complete)
@@ -4504,10 +4793,10 @@
 546402	Be Prepared for Anything (Lv. 58-65) (In Progress)
 546403	Be Prepared for Anything (Lv. 58-65) (Complete)
 546404	Be Prepared for Anything (Lv. 58-65)
-546501	Soul Frost Sword (Lv. 40 and Above)
-546502	Soul Frost Sword (Lv. 40 and Above) (In Progress)
-546503	Soul Frost Sword (Lv. 40 and Above) (Done)
-546504	Soul Frost Sword (Lv. 40 and Above)
+546501	Soul Frost Sword (Lv. 85 and above)
+546502	Soul Frost Sword (Lv. 85 and above) (In Progress)
+546503	Soul Frost Sword (Lv. 85 and above) (Done)
+546504	Soul Frost Sword (Lv. 85 and above)
 547201	Winds of Fate: Encroaching Shadows (Lv. 85 and Above)
 547202	Winds of Fate: Encroaching Shadows (Lv. 85 and Above) (In Progress)
 547203	Winds of Fate: Encroaching Shadows (Lv. 85 and Above) (Done)
@@ -4539,19 +4828,144 @@
 550302	Embroidered on a Cloak, Part 3: Frintezza's Soul (Lv. 80 and Above) (In Progress)
 550303	Embroidered on a Cloak, Part 3: Frintezza's Soul (Lv. 80 and Above) (Done)
 550304	Embroidered on a Cloak, Part 3: Frintezza's Soul (Lv. 80 and Above)
-550401	Jewel of Antharas (Lv. 84 and Above)
-550402	Jewel of Antharas (Lv. 84 and Above) (In Progress)
-550403	Jewel of Antharas (Lv. 84 and Above) (Done)
-550404	Jewel of Antharas (Lv. 84 and Above)
-550501	Jewel of Valakas (Lv. 84 and Above)
-550502	Jewel of Valakas (Lv. 84 and Above) (In Progress)
-550503	Jewel of Valakas (Lv. 84 and Above) (Done)
-550504	Jewel of Valakas (Lv. 84 and Above)
+550401	Jewel of Antharas (Lv. 85 and above)
+550402	Jewel of Antharas (Lv. 85 and above) (In Progress)
+550403	Jewel of Antharas (Lv. 85 and above) (Done)
+550404	Jewel of Antharas (Lv. 85 and above)
+550501	Jewel of Valakas (Lv. 85 and above)
+550502	Jewel of Valakas (Lv. 85 and above) (In Progress)
+550503	Jewel of Valakas (Lv. 85 and above) (Done)
+550504	Jewel of Valakas (Lv. 85 and above)
 550601	Diana's Request (Lv. 80 and Above)
 550602	Diana's Request (Lv. 80 and Above) (In Progress)
 550603	Diana's Request (Lv. 80 and Above) (Done)
 550604	Diana's Request (Lv. 80 and Above)
 550611	Talk to Diana
+552101	Queen Navari's Letter: Varka Silenos Barracks (Lv. 76-80)
+552102	Queen Navari's Letter: Varka Silenos Barracks (Lv. 76-80) (In Progress)
+552103	Queen Navari's Letter: Varka Silenos Barracks (Lv. 76-80) (Done)
+552104	Queen Navari's Letter: Varka Silenos Barracks (Lv. 76-80)
+552111	Speak with High Priest Gregory
+552112	Speak with Hadel
+552201	The Dark Secret of Varka Silenos (Lv.76-80)
+552202	The Dark Secret of Varka Silenos (Lv.76-80) (In Progress)
+552203	The Dark Secret of Varka Silenos (Lv.76-80) (Done)
+552204	The Dark Secret of Varka Silenos (Lv.76-80)
+552301	The Assassination of the Varka Silenos Commander (Lv.76-80)
+552302	The Assassination of the Varka Silenos Commander (Lv.76-80) (In Progress)
+552303	The Assassination of the Varka Silenos Commander (Lv.76-80) (Done)
+552304	The Assassination of the Varka Silenos Commander (Lv.76-80)
+552401	The Assassination of the Varka Silenos Commander Chief (Lv.76-80)
+552402	The Assassination of the Varka Silenos Commander Chief (Lv.76-80) (In Progress)
+552403	The Assassination of the Varka Silenos Commander Chief (Lv.76-80) (Done)
+552404	The Assassination of the Varka Silenos Commander Chief (Lv.76-80)
+552501	Queen Navari's Letter, Ketra Orc Outpost (Lv. 76-80)
+552502	Queen Navari's Letter, Ketra Orc Outpost (Lv. 76-80) (In Progress)
+552503	Queen Navari's Letter, Ketra Orc Outpost (Lv. 76-80) (Done)
+552504	Queen Navari's Letter, Ketra Orc Outpost (Lv. 76-80)
+552511	Speak with High Priest Gregory
+552512	Speak with Lugonnes
+552601	The Dark Secret of the Ketra Orcs (Lv. 76-80)
+552602	The Dark Secret of the Ketra Orcs (Lv. 76-80) (In Progress)
+552603	The Dark Secret of the Ketra Orcs (Lv. 76-80) (Done)
+552604	The Dark Secret of the Ketra Orcs (Lv. 76-80)
+552701	The Assassination of the Ketra Orc Commander (Lv. 76-80)
+552702	The Assassination of the Ketra Orc Commander (Lv. 76-80) (In Progress)
+552703	The Assassination of the Ketra Orc Commander (Lv. 76-80) (Done)
+552704	The Assassination of the Ketra Orc Commander (Lv. 76-80)
+552801	The Assassination of the Ketra Orc Chief (Lv. 76-80)
+552802	The Assassination of the Ketra Orc Chief (Lv. 76-80) (In Progress)
+552803	The Assassination of the Ketra Orc Chief (Lv. 76-80) (Done)
+552804	The Assassination of the Ketra Orc Chief (Lv. 76-80)
+553001	Kekropus' Letter, The Dragon's Transition (Lv. 81-84)
+553002	Kekropus' Letter, The Dragon's Transition (Lv. 81-84) (In Progress)
+553003	Kekropus' Letter, The Dragon's Transition (Lv. 81-84) (Done)
+553004	Kekropus' Letter, The Dragon's Transition (Lv. 81-84)
+553011	Speak with Captain Jeronin
+553012	Speak with Namo
+553101	Odd Happenings at Dragon Valley (Lv. 81-84)
+553102	Odd Happenings at Dragon Valley (Lv. 81-84) (In Progress)
+553103	Odd Happenings at Dragon Valley (Lv. 81-84) (Done)
+553104	Odd Happenings at Dragon Valley (Lv. 81-84)
+553111	Subjugation in the Northern Dragon Valley
+553201	Uncovering the Conspiracy (Lv. 81-84)
+553202	Uncovering the Conspiracy (Lv. 81-84) (In Progress)
+553203	Uncovering the Conspiracy (Lv. 81-84) (Done)
+553204	Uncovering the Conspiracy (Lv. 81-84)
+553211	Subjugation in the Southern Dragon Valley
+553401	Hatchling Research (Lv. 81-84)
+553402	Hatchling Research (Lv. 81-84) (In Progress)
+553403	Hatchling Research (Lv. 81-84) (Done)
+553404	Hatchling Research (Lv. 81-84)
+553405	Speak with Stena
+553601	For True Independence (Lv. 100 and above)
+553602	For True Independence (Lv. 100 and above) (In Progress)
+553603	For True Independence (Lv. 100 and above) (Done)
+553604	For True Independence (Lv. 100 and above)
+553611	Speak with Hierarch Kekropus
+553701	Kamael's Disarray (Lv. 100 and above)
+553702	Kamael's Disarray (Lv. 100 and above) (In Progress)
+553703	Kamael's Disarray (Lv. 100 and above) (Done)
+553704	Kamael's Disarray (Lv. 100 and above)
+553706	Helping the Evolution of the Lesser Giant
+553710	Speak with Retbach
+553711	Helping the Giant's Evolution
+553712	Talk to Kekropus
+553801	Giant's Evolution (Lv. 100 and above)
+553802	Giant's Evolution (Lv. 100 and above) (In Progress)
+553803	Giant's Evolution (Lv. 100 and above) (Done)
+553804	Giant's Evolution (Lv. 100 and above)
+553805	Speak with Retbach
+553810	Henchman of the Giants! Surrender your head for our independence!
+553811	You ungrateful fiend! I shall report this to Hermuncus!
+553812	Your assistance is appreciated. I shall report this to Krenaht.
+553901	Energy Supply Cutoff Plan (Lv. 100 and above)
+553902	Energy Supply Cutoff Plan (Lv. 100 and above) (In Progress)
+553903	Energy Supply Cutoff Plan (Lv. 100 and above) (Done)
+553904	Energy Supply Cutoff Plan (Lv. 100 and above)
+553910	Talk to Kekropus
+554001	Thwarting Mimir's Plan (Lv. 100 and above)
+554002	Thwarting Mimir's Plan (Lv. 100 and above) (In Progress)
+554003	Thwarting Mimir's Plan (Lv. 100 and above) (Done)
+554004	Thwarting Mimir's Plan (Lv. 100 and above)
+554010	Talk to Kekropus
+554101	Train Like the Real Thing (Lv. 1-20)
+554102	Train Like the Real Thing (Lv. 1-20) (In Progress)
+554103	Train Like the Real Thing (Lv. 1-20) (Done)
+554104	Train Like the Real Thing (Lv. 1-20)
+554105	Speak with Shannon
+554106	Speak with the Adventurer's Guide
+554107	Defeating the Scarecrow
+554201	Searching for New Power (Lv. 1-20)
+554202	Searching for New Power (Lv. 1-20) (In Progress)
+554203	Searching for New Power (Lv. 1-20) (Done)
+554204	Searching for New Power (Lv. 1-20)
+554205	Speak with Toyron
+554206	Search the bookcase
+554210	Prepare to use the skill ‘Power Strike' or ‘Mortal Blow'.
+554211	Prepare to use the skill ‘Wind Strike'.
+554212	Prepare to use the skill ‘Power Strike' or ‘Iron Punch'.
+554213	Prepare to use the skill ‘Chill Flame'.
+554214	Prepare to use the skill ‘Spoil'.
+554215	Prepare to use the skill ‘Fallen Attack' or ‘Fallen Arrow'.
+554301	Shedding Weight (Lv. 1-20)
+554302	Shedding Weight (Lv. 1-20) (In Progress)
+554303	Shedding Weight (Lv. 1-20) (Done)
+554304	Shedding Weight (Lv. 1-20)
+554305	Speak with Wilford
+554401	Commando Supplies (Lv. 1-20)
+554402	Commando Supplies (Lv. 1-20) (In Progress)
+554403	Commando Supplies (Lv. 1-20) (Done)
+554404	Commando Supplies (Lv. 1-20)
+554405	Speak with Katerina
+554406	Speak with Lector
+554407	Speak with Jackson
+554408	Speak with Trevor
+565801	Makkum in the Dimension (Lv. 100 and above)
+565802	Makkum in the Dimension (Lv. 100 and above) (In Progress)
+565803	Makkum in the Dimension (Lv. 100 and above) (Done)
+565804	Makkum in the Dimension (Lv. 100 and above)
+565805	Dimensional Makkum
 570101	The Road to Destruction (Lv. 93 and Above)
 570102	The Road to Destruction (Lv. 93 and Above) (In Progress)
 570103	The Road to Destruction (Lv. 93 and Above) (Complete)
@@ -4630,6 +5044,7 @@
 571703	The Minstrel's Song, Part 2 (Lv. 88-89) (Done)
 571704	The Minstrel's Song, Part 2 (Lv. 88-89)
 571711	Talk to Miso
+571712	Speak with Lada
 571801	The Hero's Journey: Fairy Settlement (Lv. 88 and Above)
 571802	The Hero's Journey: Fairy Settlement (Lv. 88 and Above) (In Progress)
 571803	The Hero's Journey: Fairy Settlement (Lv. 88 and Above) (Done)
@@ -4637,11 +5052,12 @@
 571811	Talk to Miso
 571812	Talk to Fairy Refugee
 571813	Talk to Fairy Refugee
-572001	The Minstrel's Song, Part 3 (Lv. 90-91)
-572002	The Minstrel's Song, Part 3 (Lv. 90-91) (In Progress)
-572003	The Minstrel's Song, Part 3 (Lv. 90-91) (Done)
-572004	The Minstrel's Song, Part 3 (Lv. 90-91)
+572001	The Minstrel's Song, Part 3 (Lv. 90-92)
+572002	The Minstrel's Song, Part 3 (Lv. 90-92) (In Progress)
+572003	The Minstrel's Song, Part 3 (Lv. 90-92) (Done)
+572004	The Minstrel's Song, Part 3 (Lv. 90-92)
 572011	Talk to Miso
+572012	Speak with Nerupa
 572101	The Hero's Journey: Prison of Darkness (Lv. 90 and Above)
 572102	The Hero's Journey: Prison of Darkness (Lv. 90 and Above) (In Progress)
 572103	The Hero's Journey: Prison of Darkness (Lv. 90 and Above) (Done)
@@ -4656,11 +5072,12 @@
 572211	Talk to Miso
 572212	Talk to Izael
 572213	Talk to Izael
-572301	The Minstrel's Song, Part 4 (Lv. 92-94)
-572302	The Minstrel's Song, Part 4 (Lv. 92-94) (In Progress)
-572303	The Minstrel's Song, Part 4 (Lv. 92-94) (Done)
+572301	The Minstrel's Song, Part 4 (Lv. 93-94)
+572302	The Minstrel's Song, Part 4 (Lv. 93-94) (In Progress)
+572303	The Minstrel's Song, Part 4 (Lv. 93-94) (Done)
 572304	The Minstrel's Song, Part 4 (Lv. 92-94)
 572311	Talk to Marmie
+572312	Speak with Tapoy
 572401	The Hero's Journey: Isle of Souls (Lv. 92 and Above)
 572402	The Hero's Journey: Isle of Souls (Lv. 92 and Above) (In Progress)
 572403	The Hero's Journey: Isle of Souls (Lv. 92 and Above) (Done)
@@ -4680,6 +5097,7 @@
 572603	The Minstrel's Song, Part 5 (Lv. 95-96) (Done)
 572604	The Minstrel's Song, Part 5 (Lv. 95-96)
 572611	Talk to Tulesir
+572612	Speak with Agent Georgio
 572701	The Hero's Journey: Seal of Shilen (Lv. 95 and Above)
 572702	The Hero's Journey: Seal of Shilen (Lv. 95 and Above) (In Progress)
 572703	The Hero's Journey: Seal of Shilen (Lv. 95 and Above) (Done)
@@ -4708,10 +5126,10 @@
 573011	Talk to Tulesir
 573012	Talk to Severin
 573013	Talk to Severin
-573101	The Minstrel's Song, Part 6 (Lv. 97 and Above)
-573102	The Minstrel's Song, Part 6 (Lv. 97 and Above) (In Progress)
-573103	The Minstrel's Song, Part 6 (Lv. 97 and Above) (Done)
-573104	The Minstrel's Song, Part 6 (Lv. 97 and Above)
+573101	The Minstrel's Song, Part 6 (Lv. 97-99)
+573102	The Minstrel's Song, Part 6 (Lv. 97-99) (In Progress)
+573103	The Minstrel's Song, Part 6 (Lv. 97-99) (Done)
+573104	The Minstrel's Song, Part 6 (Lv. 97-99)
 573111	Talk to Tulesir
 573201	A Foreign Land (Lv. 1-20)
 573202	A Foreign Land (Lv. 1-20) (In Progress)
@@ -4798,14 +5216,14 @@
 574711	Talk to Tulesir
 574712	Talk to Kargos
 574713	Talk to Kargos
-574801	Mysterious Suggestion - 1 (Lv. 76 and Above)
-574802	Mysterious Suggestion - 1 (Lv. 76 and Above) (In Progress)
-574803	Mysterious Suggestion - 1 (Lv. 76 and Above) (Done)
-574804	Mysterious Suggestion - 1 (Lv. 76 and Above)
-574901	Mysterious Suggestion - 2 (Lv. 76 and Above)
-574902	Mysterious Suggestion - 2 (Lv. 76 and Above) (In Progress)
-574903	Mysterious Suggestion - 2 (Lv. 76 and Above) (Done)
-574904	Mysterious Suggestion - 2 (Lv. 76 and Above)
+574801	Mysterious Suggestion - 1 (Lv. 85 and above)
+574802	Mysterious Suggestion - 1 (Lv. 85 and above) (In Progress)
+574803	Mysterious Suggestion - 1 (Lv. 85 and above) (Done)
+574804	Mysterious Suggestion - 1 (Lv. 85 and above)
+574901	Mysterious Suggestion - 2 (Lv. 85 and above)
+574902	Mysterious Suggestion - 2 (Lv. 85 and above) (In Progress)
+574903	Mysterious Suggestion - 2 (Lv. 85 and above) (Done)
+574904	Mysterious Suggestion - 2 (Lv. 85 and above)
 574905	Open the item screen and double-click the empty water bottle!
 574906	If you double-click the empty bottle, it will become full of water.
 574907	Click the flame flower, then double click the trowel.
@@ -4892,10 +5310,10 @@
 576403	Free Spirit (Lv. 38 and Above) (Done)
 576404	Free Spirit (Lv. 38 and Above)
 576411	Free the Imprisoned Spirits
-576601	A New Craft (Lv. 40 and Above)
-576602	A New Craft (Lv. 40 and Above) (In Progress)
-576603	A New Craft (Lv. 40 and Above) (Done)
-576604	A New Craft (Lv. 40 and Above)
+576601	A New Craft (Lv. 85 and above)
+576602	A New Craft (Lv. 85 and above) (In Progress)
+576603	A New Craft (Lv. 85 and above) (Done)
+576604	A New Craft (Lv. 85 and Above)
 576701	A Whole New Level of Alchemy (Lv. 97 and Above)
 576702	A Whole New Level of Alchemy (Lv. 97 and Above) (In Progress)
 576703	A Whole New Level of Alchemy (Lv. 97 and Above) (Done)
@@ -5033,26 +5451,30 @@
 579602	The Eye that Defied the Gods (Lv. 70-75) (In Progress)
 579603	The Eye that Defied the Gods (Lv. 70-75) (Done)
 579604	The Eye that Defied the Gods (Lv. 70-75)
+579611	Defeat the Beasts of the Valley
+579612	Speak with the Eye of Argos
 579701	Crossing Fate (Lv. 70-75)
 579702	Crossing Fate (Lv. 70-75) (In Progress)
 579703	Crossing Fate (Lv. 70-75) (Done)
 579704	Crossing Fate (Lv. 70-75)
-579801	Letters from the Queen: Dragon Valley (Lv. 76-84)
-579802	Letters from the Queen: Dragon Valley (Lv. 76-84) (In Progress)
-579803	Letters from the Queen: Dragon Valley (Lv. 76-84) (Done)
-579804	Letters from the Queen: Dragon Valley (Lv. 76-84)
+579711	Defeat the Beasts of the Valley
+579712	Speak with the Eye of Argos
+579801	Letters from the Queen: Dragon Valley (Lv. 81-84)
+579802	Letters from the Queen: Dragon Valley (Lv. 81-84) (In Progress)
+579803	Letters from the Queen: Dragon Valley (Lv. 81-84) (Done)
+579804	Letters from the Queen: Dragon Valley (Lv. 81-84)
 579811	Talk to Maximilian
 579812	Talk to Namo
-579901	Strange Things Afoot in the Valley (Lv. 76-85)
-579902	Strange Things Afoot in the Valley (Lv. 76-85) (In Progress)
-579903	Strange Things Afoot in the Valley (Lv. 76-85) (Done)
-579904	Strange Things Afoot in the Valley (Lv. 76-85)
-579911	Kill Monsters in the Dragon Valley
-580001	Reconnaissance at Dragon Valley (Lv. 76-85)
-580002	Reconnaissance at Dragon Valley (Lv. 76-85) (In Progress)
-580003	Reconnaissance at Dragon Valley (Lv. 76-85) (Done)
-580004	Reconnaissance at Dragon Valley (Lv. 76-85)
-580011	Kill Monsters in Dragon Valley
+579901	Strange Things Afoot in the Valley (Lv. 81-84)
+579902	Strange Things Afoot in the Valley (Lv. 81-84) (In Progress)
+579903	Strange Things Afoot in the Valley (Lv. 81-84) (Done)
+579904	Strange Things Afoot in the Valley (Lv. 81-84)
+579911	Subjugation in the Northern Dragon Valley
+580001	Reconnaissance at Dragon Valley (Lv. 81-84)
+580002	Reconnaissance at Dragon Valley (Lv. 81-84) (In Progress)
+580003	Reconnaissance at Dragon Valley (Lv. 81-84) (Done)
+580004	Reconnaissance at Dragon Valley (Lv. 81-84)
+580011	Subjugation in the Southern Dragon Valley
 580101	The Dimensional Warp, Part 1
 580102	The Dimensional Warp, Part 1 (In Progress)
 580103	The Dimensional Warp, Part 1 (Done)
@@ -5200,18 +5622,22 @@
 583002	The Lost Garden of Spirits (Lv. 100 and Above) (In Progress)
 583003	The Lost Garden of Spirits (Lv. 100 and Above) (Done)
 583004	The Lost Garden of Spirits (Lv. 100 and Above)
+583012	Speak with Cyphona
 583101	Unbelievable Sight (Lv. 100 and Above)
 583102	Unbelievable Sight (Lv. 100 and Above) (In Progress)
 583103	Unbelievable Sight (Lv. 100 and Above) (Done)
 583104	Unbelievable Sight (Lv. 100 and Above)
+583112	Speak with Belas
 583201	Energy of Sadness and Anger (Lv. 100 and Above)
 583202	Energy of Sadness and Anger (Lv. 100 and Above) (In Progress)
 583203	Energy of Sadness and Anger (Lv. 100 and Above) (Done)
 583204	Energy of Sadness and Anger (Lv. 100 and Above)
+583212	Speak with Belas
 583301	Put the Queen of Spirits to Sleep (Lv. 100 and Above)
 583302	Put the Queen of Spirits to Sleep (Lv. 100 and Above) (In Progress)
 583303	Put the Queen of Spirits to Sleep (Lv. 100 and Above) (Done)
 583304	Put the Queen of Spirits to Sleep (Lv. 100 and Above)
+583312	Speak with Ferin
 583601	Disappeared Clan Member (Lv. 101 and Above)
 583602	Disappeared Clan Member (Lv. 101 and Above) (In Progress)
 583603	Disappeared Clan Member (Lv. 101 and Above) (Done)
@@ -5271,6 +5697,67 @@
 584604	Bloody Battle - Meeting the Commander (Lv. 101 and Above)
 584605	Defeat Burnstein
 584606	Talk to Devianne
+584801	Trials before the Battle (Lv. 99 and above)
+584802	Trials before the Battle (Lv. 99 and above) (In Progress)
+584803	Trials before the Battle (Lv. 99 and above) (Done)
+584804	Trials before the Battle (Lv. 99 and above)
+584811	Speak with Leona
+584812	Speak with Devianne
+584813	Speak with Erica Ken Weber
+584814	Speak with Sporcha
+584815	Speak with Leona
+584901	Trials for Adaptation (Lv. 100 and above)
+584902	Trials for Adaptation (Lv. 100 and above) (In Progress)
+584903	Trials for Adaptation (Lv. 100 and above) (Done)
+584904	Trials for Adaptation (Lv. 100 and above)
+584911	Speak with Ferin
+584912	Speak with Eubina
+584913	Speak with Rotoeh
+584914	Speak with Cyphona
+584915	Speak with Belas
+584916	Speak with Ferin
+585101	Elven Botany (Lv. 100 and above)
+585102	Elven Botany (Lv. 100 and above) (In Progress)
+585103	Elven Botany (Lv. 100 and above) (Done)
+585104	Elven Botany (Lv. 100 and above)
+585201	The Mother Tree Revival Project (Lv. 100 and above)
+585202	The Mother Tree Revival Project (Lv. 100 and above) (In Progress)
+585203	The Mother Tree Revival Project (Lv. 100 and above) (Done)
+585204	The Mother Tree Revival Project (Lv. 100 and above)
+585205	Speak with Celestiel
+585210	Defeat the Contaminated Nymph Rose
+585211	Defeat the Contaminated Nymph Lily
+585212	Defeat the Contaminated Nymph Tulip
+585213	Defeat the Contaminated Nymph Kosmos
+585301	To Weaken the Giants (Lv. 100 and above)
+585302	To Weaken the Giants (Lv. 100 and above) (In Progress)
+585303	To Weaken the Giants (Lv. 100 and above) (Done)
+585304	To Weaken the Giants (Lv. 100 and above)
+585401	To Seize the Fortress (Lv. 101 and above)
+585402	To Seize the Fortress (Lv. 101 and above) (In Progress)
+585403	To Seize the Fortress (Lv. 101 and above) (Done)
+585404	To Seize the Fortress (Lv. 101 and above)
+585601	Superion Appears (Lv. 102 and above)
+585602	Superion Appears (Lv. 102 and above) (In Progress)
+585603	Superion Appears (Lv. 102 and above) (Done)
+585604	Superion Appears (Lv. 102 and above)
+585605	Talk to Meldina
+585606	Talk to Kekropus
+585607	Talk to Histie
+585701	Secret Teleport (Lv. 102 and above)
+585702	Secret Teleport (Lv. 102 and above) (In Progress)
+585703	Secret Teleport (Lv. 102 and above) (Done)
+585704	Secret Teleport (Lv. 102 and above)
+585705	Talk to Histie
+585706	Talk to Kekropus
+585801	Queen Ramona, Controller of the Vessel (Lv. 102 and above)
+585802	Queen Ramona, Controller of the Vessel (Lv. 102 and above) (In Progress)
+585803	Queen Ramona, Controller of the Vessel (Lv. 102 and above) (Done)
+585804	Queen Ramona, Controller of the Vessel (Lv. 102 and above)
+585901	Own the Earth and the Heavens (Lv. 102 and above)
+585902	Own the Earth and the Heavens (Lv. 102 and above) (In Progress)
+585903	Own the Earth and the Heavens (Lv. 102 and above) (Done)
+585904	Own the Earth and the Heavens (Lv. 102 and above)
 1000001	A non-permitted target has been discovered.
 1000002	Intruder removal system initiated.
 1000003	Removing intruders.
@@ -6165,7 +6652,7 @@
 1010550	Devil's Pass (Lv. 60)
 1010551	The bullets are being loaded.
 1010552	You can start at the scheduled time.
-1010553	Entrance to the Giant's Cave (Lv. 80)
+1010553	Entrance to the Giant's Cave (Lv. 100)
 1010554	Upper Level of the Giant's Cave
 1010555	Lower Level of the Giant's Cave
 1010556	Immortal Plateau, Northern Region
@@ -6185,7 +6672,7 @@
 1010570	Ice Merchant Cabin
 1010571	Crypts of Disgrace (Lv. 80)
 1010572	Plunderous Plains (Lv. 30)
-1010573	Pavel Ruins (Lv. 73)
+1010573	Pavel Ruins (Lv. 85)
 1010574	Town of Schuttgart
 1010575	Monastery of Silence (Lv. 80)
 1010576	Monastery of Silence: Rear Gate
@@ -7487,7 +7974,7 @@
 1620089	No you cannot. Master~!
 1620090	Master~! -_-
 1620091	......
-1620092	This is a hideout made with 'Shine Stone' used in Giant's Dimensional technique.  Supposedly the capital of the Giants that have not been found is still in the dimensional gap somewhere...
+1620092	This is a hideout made with 'Shine Stone' used in Giant's Dimensional technique.  Supposedly the capital of the Giants that hasn't been found yet is still somewhere in the Dimensional Crack...
 1620093	The Earth Wyrm has lost consciousness.
 1620094	The Earth Wyrm stopped gathering energy.
 1620095	The Earth Wyrm completed gathering energy.
@@ -7544,6 +8031,15 @@
 1717815	Where did they go? Hmm… we'll withdraw for now. Can't find anything to serve as offerings here.
 1717816	I heard this is where I could find them… I guess I'll have to look elsewhere.
 1717817	Come out, Triol's Troopers! Let's bring this creature to Lord Triol!
+1717818	You have gained $s1 Blackbird Clan Faction points.
+1717819	You have gained $s1 Mother Tree Guardian Faction points.
+1717820	You have gained $s1 Giant Trackers Faction points.
+1717821	You have gained $s1 Unworldly Visitors Faction points.
+1717822	You have gained $s1 Kingdom's Royal Guard Faction points.
+1717823	The Energy of Wind vanishes, and the nearby spirits are weakened.
+1717824	The Energy of Wind summons other spirits.
+1717825	The unstable energy causes ‘El Fera' to materialize.
+1717826	The Energy of Wind spreads, strengthening the nearby spirits.
 1800001	(Queen Ant)  # $s1's Command Channel has looting rights.
 1800002	(Core)  # $s1's Command Channel has looting rights.
 1800003	(Orphen)  # $s1's Command Channel has looting rights.
@@ -9872,7 +10368,7 @@
 1802515	Talk to Magister Ayanthe.
 1802516	Fight using Skills!
 1802517	Talk to Master Katalin.
-1802518	The southern part of Dragon Valley is much more dangerous than the north! Be careful.
+1802518	The eastern part of Dragon Valley is much more dangerous than the west! Be careful.
 1802519	This place swarms with Dragons by day, and Undead by night.
 1802520	Monsters appear here and there, confused by the Whirling Vortex.
 1802521	Hey, that hurt! You just wait here, and I'll be back as a stronger dragon!
@@ -10009,7 +10505,7 @@
 1802652	Time for judgment, fools!
 1802653	Run if you wish to live.
 1802654	A dragon appears, confused by the dimensional gale!
-1802655	An eerie red force has branded you with '$s1'.
+1802655	‘$s1‘ An eerie red force has branded you with the Reaper's Seal.
 1802656	You can go to Underground Lv. 3 using the elevator in the back.
 1802657	You cannot Liberate while your servitor is present.
 1802658	You cannot Liberate while transformed.
@@ -10144,7 +10640,7 @@
 1802787	Your arrogance will lead to even more pain.
 1802788	How foolish. Not knowing is a sin!
 1802789	How did I lose to these worthless creatures?
-1802790	This pains me. I couldn’t even get my revenge!
+1802790	This pains me. I couldn't even get my revenge!
 1802791	I will show you what true strength is.
 1802792	Is this it?
 1802793	Ha, ha, ha! Be afraid!
@@ -10630,6 +11126,61 @@
 1803273	If you want to listen to a story, come to me.
 1803274	Ready to listen to a story? Come now.
 1803275	If the story is still in progress, I can tell it again.
+1803276	Demons Foreman
+1803277	Giants Foreman
+1803278	Shaqrima Bathus grants one of your party members the key to the Giants' Room of Relics.
+1803279	Evolved with Shine Energy
+1803280	Controller is started; entrance to the room of relics is blocked after 30 seconds.
+1803281	Intruder discovered in the room of relics; defensive device triggered for 5 minutes.
+1803282	Successfully discovered the Giant's Relic in the Giants' Room of Relics.
+1803283	Exit the Giants' Room of Relics after 20 seconds.
+1803284	Relic Guardian who has responded to $s1
+1803285	Shaqrima Bathus responds to attacks from party members who carry a Resistance Mark of Stage 4 or higher.
+1803286	The warrior $s1 has obtained an Enchant Scroll from the Dimension Dissolver.
+1803287	The warrior $s1 has obtained an Enchant Scroll and a Lv.5 Dye from the Dimension Dissolver.
+1803288	The warrior $s1 has obtained an Enchant Scroll and Soul Crystal from the Dimension Dissolver.
+1803289	The warrior $s1 has obtained an Enchant Scroll and an R99 Amaranthine Weapon from the Dimension Dissolver.
+1803290	The warrior $s1 has obtained an Enchant Scroll, a Lv. 5 Dye, and all R99 Amaranthine Weapons from the Dimension Dissolver.
+1803291	The warrior $s1 has obtained an Enchant Scroll, a Soul Crystal, and an R99 Amaranthine Weapon from the Dimension Dissolver.
+1803292	The warrior $s1 has obtained an Enchant Scroll, a Lv. 5 Dye, and an R99 Amaranthine Weapon from the Dimension Dissolver.
+1803293	The warrior $s1 has obtained an Enchant Scroll, a Lv.5 Dye, and a Soul Crystal from the Dimension Dissolver.
+1803294	The warrior $s1 has begun battle with the Enchant Scroll.
+1803295	A Dimensional Vagabond has appeared in the Dimensional Rift. Begin battle within 15 seconds.
+1803296	The Dimensional Vagabond has teleported $s1 times to another room. After 5 teleports, the Dimensional Vagabond will disappear.
+1803297	The Dimensional Vagabond was not attacked, and disappears somewhere into the Dimensional Rift.
+1803298	After defeating the Dimensional Vagabond, $s1 and $s2 have obtained the Key to the Dimension Dissolver's Prison.
+1803299	You have received a party leader bonus.
+1803300	You have received an association leader bonus.
+1803301	Can be used by users with Lv. 20-39 who have completed the 1st class transfer.
+1803302	Can be used by users with Lv. 40-60 who have completed the 2nd class transfer.
+1803303	Can be used by users with Lv. 61-75 who have completed the 2nd class transfer.
+1803304	Can be used by users with Lv. 76-84 who have completed the 3rd class transfer.
+1803305	Can be used by awakened users with Lv. 85 and above.
+1803306	After defeating the Dimensional Vagabond, $s1 has obtained the Key to the Dimension Dissolver's Prison.
+1803307	$s1, thank you for saving me.
+1803308	Please rescue the others as well.
+1803309	I've escaped by the skin of my life, thanks to you.
+1803310	Please accept this humble gift of thanks.
+1803311	It would be an honor to aid you with my humble abilities.
+1803312	Thank you for saving my life. Who are you, again?
+1803313	So that was the last of the enemies...
+1803314	Where's my backpack?
+1803315	This is all I have to give.
+1803316	Please avenge me with this power.
+1803317	How dare you try to get in my way!
+1803318	You little...!
+1803319	$s1….how dare you!
+1803320	You shall...all...die!!!
+1803321	I...shall...destroy...you!!!
+1803322	Disappear...!!!
+1803323	Thank you. I am truly indebted to you.
+1803324	I shall return and continue scouting!
+1803325	Heh, thanks you for saving me. I bid you good health.
+1803326	Thank you. I shall take refuge in a safe place.
+1803327	Th..thank you. Blessings be upon you.
+1803328	You have gained $s1 Fishing Guild Faction points.
+1803329	Speak with the ‘Adventurers' Guide for Training'.
+1803330	Speak with Toyron in order to return to Shannon.
 1810363	You are too far from the corpse.
 1810364	Grudge of Ye Sagira victims have been relieved with your tears.
 1811000	Fighter
@@ -11577,6 +12128,26 @@
 2010114	$s1! Please give me an advance order!
 2010115	Huh hu hu. Did you think you caught me? Can you really find me?
 2010116	Thank you for fighting well until the end. I will request that you be additionally rewarded.
+2222001	The Aden warriors begin battle with the Giant Emperor Helios.
+2222002	Helios begins enchanting his giant minions on the Aden continent using the Emperor's Authority
+2222003	Helios' appearance changes, and he begins to grow stronger.
+2222004	The siege cannon Leopold on the throne of Helios begins to prepare to fire.
+2222005	The Enuma Elish Spear on the throne of Helios is prepared and placed in position.
+2222006	The Kamael Origins above the throne of Helios begin to soar.
+2222007	Helios uses the Pranarach Shield of Light to minimize damage.
+2222008	Helios, defeated, takes flight deep in to the Superion Fort. His throne is rendered inactive.
+2222009	Mimillion falls, and the Red Lightning Spear vanishes.
+2222010	Mimillus falls, and the Blue Lightning Spear vanishes.
+2222011	The heroes, drained of their powers, have been banished from the Throne of Helios by Helios' powers.
+2222012	Helios picks up the Red Lightning Spear and begins gathering his power.
+2222013	Helios picks up the Blue Lightning Spear and begins gathering his power.
+2222014	Mimillion and Mimillus appear in order to protect the Enuma Elish of Red Lightning and the Enuma Elish of Blue Lightning.
+2222015	Helios Boss War - Information Message 7
+2222016	Helios Boss War - Information Message 8
+2222017	Helios Boss War - Information Message 9
+2222018	Helios Boss War - Information Message 10
+2222019	Helios Boss War - Information Message 11
+2222020	Helios Boss War - Information Message 12
 2518001	Sacrifice has been killed! (Sacrifice left: $s1)
 2518002	All have been sacrificed. You have failed.
 2518003	Sacrifice left: $s1
@@ -11690,6 +12261,7 @@
 3000098	Your eyes are so pretty!
 3000099	Ah! Please close your eyes. If not, I will fall into them.
 3000100	Talk to me now! I'll disappear in 10 seconds.
+3000101	Sibis' Letter has arrived.\nClick the question mark icon to read its contents.
 8888001	Intruder. The gate will soon be closed.
 8888002	Who dare to interrupt our rest...
 8888003	Those who came here looking for cursed ones... welcome.

@@ -52,3 +52,7 @@
 44	13	Phantasmal Ridge
 79	2	Western Enchanted Valley
 79	4	Eastern Enchanted Valley
+80	2	Superion Starboard
+80	4	Superion Port
+84	1	Blackbird Campsite
+85	1	Blackbird Campsite

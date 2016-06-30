@@ -1156,6 +1156,7 @@
 22230007	Fort Gate
 22230008	Fort Gate
 22230500	Flagpole
+22230711	Controller Room Gate
 22250001	Water Wall
 22250002	Water Wall
 22250003	Water Wall
@@ -1526,6 +1527,13 @@
 25190010	Fort Gate
 25190011	Fort Gate
 25190012	Fort Gate
+25190021	Relic Door
+25190022	Relic Door
+25190023	Relic Door
+25190024	Relic Door
+25190025	Relic Door
+25190026	Relic Door
+25190027	Relic Door
 25190500	Flagpole
 26150104	Gate
 26150106	Gate

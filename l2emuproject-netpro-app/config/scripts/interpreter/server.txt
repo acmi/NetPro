@@ -18,8 +18,8 @@
 18	Magmeld (GMT-2)
 19	Bartz (GMT-5)
 20	Event Server
-21	Zaken (NEW)
-22	Ophylia
+21	Zaken (GMT-6)
+22	Freya (GMT+1)
 23	Shakdun
 24	Tarziph
 25	Aria

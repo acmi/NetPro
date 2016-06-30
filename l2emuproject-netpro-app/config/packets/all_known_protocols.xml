@@ -566,4 +566,18 @@
 		</secondary>
 		<definitions dir="underground" />
 	</protocol>
+	<protocol id="56" alias="Helios" category="10. Helios">
+		<version date="2016-06-29">64</version>
+		<primary>
+			<constant>0x12</constant>
+			<constant>0xB1</constant>
+			<constant>0x11</constant>
+			<constant>0xD0</constant>
+		</primary>
+		<secondary count="294">
+			<constant>0x70</constant>
+			<constant>0x71</constant>
+		</secondary>
+		<definitions dir="helios" />
+	</protocol>
 </protocols>

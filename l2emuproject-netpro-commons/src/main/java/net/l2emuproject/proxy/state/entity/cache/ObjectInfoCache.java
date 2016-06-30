@@ -20,8 +20,8 @@ import java.util.Collection;
 import java.util.Map.Entry;
 import java.util.stream.Stream;
 
-import net.l2emuproject.geometry.IPoint3D;
-import net.l2emuproject.geometry.PointGeometry;
+import net.l2emuproject.geometry.point.IPoint3D;
+import net.l2emuproject.geometry.point.PointGeometry;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.state.entity.type.EntityWithTemplateType;

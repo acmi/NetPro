@@ -15,8 +15,8 @@
  */
 package net.l2emuproject.proxy.state.entity;
 
-import net.l2emuproject.geometry.IPoint2D;
-import net.l2emuproject.geometry.PointGeometry;
+import net.l2emuproject.geometry.point.IPoint2D;
+import net.l2emuproject.geometry.point.PointGeometry;
 import net.l2emuproject.proxy.state.entity.type.EntityWithTemplateType;
 import net.l2emuproject.proxy.state.entity.type.ObjectType;
 import net.l2emuproject.util.logging.L2Logger;

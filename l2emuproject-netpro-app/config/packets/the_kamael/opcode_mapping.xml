@@ -458,7 +458,7 @@
 		<packet opcodePrefix="EF" id="SM_SELL_LIST_PROCURE" />
 		<packet opcodePrefix="F0" id="SM_GM_HENNA_INFO" />
 		<packet opcodePrefix="F1" id="SM_RADAR_CONTROL" />
-		<packet opcodePrefix="F2" id="271" />
+		<packet opcodePrefix="F2" id="SM_CLIENT_SET_TIME" />
 		<packet opcodePrefix="F3" id="SM_CONFIRM_DLG" />
 		<packet opcodePrefix="F4" id="SM_PARTY_SPELLED" />
 		<packet opcodePrefix="F5" id="SM_SHOP_PREVIEW_LIST" />

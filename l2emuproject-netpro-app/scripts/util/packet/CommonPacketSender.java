@@ -21,7 +21,7 @@ import static net.l2emuproject.proxy.network.EndpointType.SERVER;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-import net.l2emuproject.geometry.IPoint3D;
+import net.l2emuproject.geometry.point.IPoint3D;
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.ClientProtocolVersion;
 import net.l2emuproject.network.protocol.IProtocolVersion;

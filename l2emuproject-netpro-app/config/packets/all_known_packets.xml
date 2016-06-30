@@ -1913,7 +1913,6 @@
 		<packet id="241" name="Dummy_70" />
 		<packet id="267" name="Dummy_EC" />
 		<packet id="270" name="Dummy_EE" />
-		<packet id="271" name="ClientSetTime" />
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
 		<packet id="340" name="ExGetBossRecord" />
@@ -3520,6 +3519,11 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_GAME_GUARD_QUERY" name="GameGuardQuery" />
+		<!--
+		ASCII "dd"
+		UNICODE "(Receive)ClientSetTimePacket"
+		-->
+		<packet id="SM_CLIENT_SET_TIME" name="ClientSetTime" />
 		<!--
 		ASCII "dd"
 		ASCII "ddd"

@@ -19,7 +19,7 @@ import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TAR
 
 import java.util.List;
 
-import net.l2emuproject.geometry.PointGeometry;
+import net.l2emuproject.geometry.point.PointGeometry;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;

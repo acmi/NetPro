@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a byte at the start of packet -->
+<packet id="SM_EX_ONE_DAY_RECEIVE_REWARD_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="23" /> <!-- NEW -->
+
+	<dword alias="Viewer's class" type="CharacterClass" />
+	<dword alias="Day" type="daily.DayOfWeek" />
+	<dword alias="Rewards" id="cnt" />
+	<loop id="cnt">
+		<word alias="Reward" type="daily.OneDayReward" />
+		<byte alias="Status" type="daily.RewardStatus" />
+		<byte alias="Requires multiple completion" type="YesOrNo" />
+		<dword alias="Current progress" />
+		<dword alias="Required total" />
+	</loop>
+</packet>

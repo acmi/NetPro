@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Macro icon CHAR (byte) changed to DWORD -->
+<packet id="SM_MACRO_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Action" type="MacroChange" />
+	<dword alias="Affected macro" /> <!-- 0 if sent on enter world -->
+	<byte alias="Total affected macros" /> <!-- macro count if sent on enter world; 1 on add/update, 0 on delete -->
+	<byte alias="Macros" id="macro_cnt" /> <!-- client supports bulk updates, but L2OFF does not: 1 on enterworld/add/update, 0 on delete -->
+	<loop id="macro_cnt">
+		<dword alias="Macro ID" />
+		<string alias="Name" />
+		<string alias="Description" />
+		<string alias="Acronym" />
+		<dword alias="Icon" type="MacroIcon" /> <!-- NEW -->
+		<byte alias="Command count" id="cmd_cnt" />
+		<loop id="cmd_cnt">
+			<byte alias="Sequence number" />
+			<byte alias="Type" type="MacroCommandType" id="type" />
+			<branch id="type" condition="macro.ActionOrChat">
+				<dword alias="0" />
+				<byte alias="0" />
+				<string alias="Command" />
+			</branch>
+			<branch id="type" condition="macro.Delay">
+				<dword alias="Delay" type="TimeRemaining" />
+				<byte alias="0" />
+				<string alias="" />
+			</branch>
+			<branch id="type" condition="macro.Shortcut">
+				<dword alias="Tab" mod="PlusOne" />
+				<byte alias="Slot" mod="PlusOne" />
+				<string alias="" />
+			</branch>
+			<branch id="type" condition="macro.Skill">
+				<dword alias="Skill" type="Skill" />
+				<byte alias="1" />
+				<string alias="" />
+			</branch>
+		</loop>
+	</loop>
+</packet>

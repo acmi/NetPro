@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added two new server status DWORDs at the end of packet -->
+<packet id="447" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Page count" />
+	<dword alias="Rooms" id="index_0" />
+	<loop id="index_0">
+		<dword alias="Room ID" />
+		<string alias="Name" />
+		<dword alias="Region" type="PartyRoomRegion" />
+		<dword alias="Minimum level to join" />
+		<dword alias="Maximum level to join" />
+		<dword alias="Room member count" />
+		<dword alias="Room size" />
+		<string alias="Leader" />
+	</loop>
+
+	<!-- NEW -->
+	<dword alias="Total amount of parties" />
+	<dword alias="Total amount of party members" />
+</packet>

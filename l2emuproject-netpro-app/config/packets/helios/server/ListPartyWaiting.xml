@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added two new server status DWORDs at the end of packet -->
+<packet id="SM_LIST_PARTY_WATING" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Page count" />
+	<dword alias="Room count" id="room_cnt" />
+	<loop id="room_cnt">
+		<dword alias="Room ID" />
+		<string alias="Room title" />
+		<dword alias="Location" type="PartyRoomRegion" />
+		<dword alias="Minimum level to join" />
+		<dword alias="Maximum level to join" />
+		<dword alias="Size" />
+		<string alias="Leader name" />
+		<dword alias="Member count" id="member_cnt" />
+		<loop id="member_cnt">
+			<dword alias="Member class" type="CharacterClass" />
+			<string alias="Member name" />
+		</loop>
+	</loop>
+
+	<!-- NEW -->
+	<dword alias="Total amount of parties" />
+	<dword alias="Total amount of party members" />
+</packet>

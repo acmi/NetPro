@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Item format replaced with extensions -->
+<packet id="558" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="AuctionListType" id="cond_1" />
+	<branch id="cond_1" condition="Positive">
+		<dword alias="Start time" type="SecondsSinceEpoch">
+			<scriptAlias id="auction_list_retrieval_time" />
+		</dword>
+		<dword alias="Page" />
+		<dword alias="Auction count" id="index_0" />
+		<loop id="index_0">
+			<qword alias="Item PK">
+				<scriptAlias id="auction_list_item_pk" />
+			</qword>
+			<qword alias="Price">
+				<scriptAlias id="auction_list_item_price" />
+			</qword>
+			<dword alias="Category" type="commission.ItemCategory">
+				<scriptAlias id="auction_list_item_category" />
+			</dword>
+			<dword alias="Duration" type="AuctionDuration">
+				<scriptAlias id="auction_list_auction_duration" />
+			</dword>
+			<dword alias="End time" type="SecondsSinceEpoch">
+				<scriptAlias id="auction_list_auction_expiry" />
+			</dword>
+			<string alias="Seller">
+				<scriptAlias id="auction_list_item_owner" />
+			</string>
+
+			<!-- NEW -->
+			<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info">
+				<scriptAlias id="auction_list_item_ex" />
+			</byte>
+			<dword alias="0" />
+			<dword alias="Item" type="Item" id="is_ticket">
+				<scriptAlias id="auction_list_item" />
+			</dword>
+			<unsignedByte alias="Slot number" type="MyInventorySlot" />
+			<qword alias="Amount">
+				<scriptAlias id="auction_list_item_amount" />
+			</qword>
+			<byte alias="Main item type" type="ItemType2">
+				<scriptAlias id="auction_list_item_type" />
+			</byte>
+
+			<branch id="is_ticket" condition="GenericItem">
+				<byte alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+			</branch>
+			<branch id="is_ticket" condition="LotteryTicket">
+				<unsignedByte alias="Round of lottery" mod="NewLotteryEvent" />
+			</branch>
+			<branch id="is_ticket" condition="MonsterRaceTicket">
+				<unsignedByte alias="Lane(s)" type="item.MonsterRaceLane" />
+			</branch>
+
+			<word alias="Equipped" type="YesOrNo" />
+			<qword alias="Used paperdoll slot(s)" type="equip.PaperdollMask">
+				<scriptAlias id="auction_list_item_paperdoll" />
+			</qword>
+
+			<branch id="is_ticket" condition="GenericItem">
+				<byte alias="Enchant level">
+					<scriptAlias id="auction_list_item_enchant" />
+				</byte>
+				<byte alias="Name exists" type="YesOrNo">
+					<scriptAlias id="auction_list_pet_named" />
+				</byte>
+			</branch>
+			<branch id="is_ticket" condition="LotteryTicket"> <!-- still written due to private stores & co., no VISUAL effect in client -->
+				<unsignedByte alias="Selected numbers (truncated)" type="LottoNumbers">
+					<scriptAlias id="auction_list_item_enchant" />
+				</unsignedByte>
+				<unsignedByte alias="Selected numbers (upper byte)" mod="ShiftLeft16" type="LottoNumbers">
+					<scriptAlias id="auction_list_pet_named" />
+				</unsignedByte>
+			</branch>
+			<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+				<byte alias="Race number">
+					<scriptAlias id="auction_list_item_enchant" />
+				</byte>
+				<byte alias="Bet" type="MonsterRaceBetMultiplier">
+					<scriptAlias id="auction_list_pet_named" />
+				</byte>
+			</branch>
+
+			<dword alias="Mana left" type="ShadowMana" />
+			<dword alias="Time remaining" type="TimeRemaining" />
+			<byte alias="Usable" type="YesOrNo" />
+
+			<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
+				<dword alias="Augmentation effect (1)" type="Augmentation" />
+				<dword alias="Augmentation effect (2)" type="Augmentation" />
+			</branch>
+			<branch id="extra_info" condition="bitmask.Bit1"> <!-- elemental info -->
+				<word alias="Attack element" type="ElementType">
+					<scriptAlias id="auction_list_item_attr_atk" />
+				</word>
+				<word alias="Attack element power" type="ElementPower">
+					<scriptAlias id="auction_list_item_attr_atk_power" />
+				</word>
+				<word alias="Fire defense" type="ElementPower">
+					<scriptAlias id="auction_list_item_attr_def_fire" />
+				</word>
+				<word alias="Water defense" type="ElementPower">
+					<scriptAlias id="auction_list_item_attr_def_water" />
+				</word>
+				<word alias="Wind defense" type="ElementPower">
+					<scriptAlias id="auction_list_item_attr_def_wind" />
+				</word>
+				<word alias="Earth defense" type="ElementPower">
+					<scriptAlias id="auction_list_item_attr_def_earth" />
+				</word>
+				<word alias="Holy defense" type="ElementPower">
+					<scriptAlias id="auction_list_item_attr_def_holy" />
+				</word>
+				<word alias="Dark defense" type="ElementPower">
+					<scriptAlias id="auction_list_item_attr_def_dark" />
+				</word>
+			</branch>
+			<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
+				<dword alias="Enchant effect (1)" type="Augmentation">
+					<scriptAlias id="auction_list_item_enchant_option_1" />
+				</dword>
+				<dword alias="Enchant effect (2)" type="Augmentation">
+					<scriptAlias id="auction_list_item_enchant_option_2" />
+				</dword>
+				<dword alias="Enchant effect (3)" type="Augmentation">
+					<scriptAlias id="auction_list_item_enchant_option_3" />
+				</dword>
+			</branch>
+			<branch id="extra_info" condition="bitmask.Bit3"> <!-- appearance info -->
+				<branch id="is_ticket" condition="GenericItem">
+					<dword alias="Visible item" type="Item">
+						<scriptAlias id="auction_list_item_appearance" />
+					</dword>
+				</branch>
+				<branch id="is_ticket" condition="LotteryTicket">
+					<dword alias="Selected numbers" type="LottoNumbers">
+						<scriptAlias id="auction_list_item_appearance" />
+					</dword>
+				</branch>
+				<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+					<word alias="Race number">
+						<scriptAlias id="auction_list_item_appearance_1" />
+					</word>
+					<word alias="Bet" type="MonsterRaceBetMultiplier">
+						<scriptAlias id="auction_list_item_appearance_2" />
+					</word>
+				</branch>
+			</branch>
+			<branch id="extra_info" condition="bitmask.Bit4"> <!-- soul crystal (SA) info -->
+				<byte alias="Primary special abilities" id="sa1_cnt">
+					<scriptAlias id="auction_list_item_ensoul_cnt_1" />
+				</byte>
+				<loop id="sa1_cnt">
+					<dword alias="SA effect" type="item.SoulCrystal">
+						<scriptAlias id="auction_list_item_ensoul_option_1" />
+					</dword>
+				</loop>
+				<byte alias="Secondary special abilities" id="sa2_cnt">
+					<scriptAlias id="auction_list_item_ensoul_cnt_2" />
+				</byte>
+				<loop id="sa2_cnt">
+					<dword alias="SA effect" type="item.SoulCrystal">
+						<scriptAlias id="auction_list_item_ensoul_option_2" />
+					</dword>
+				</loop>
+			</branch>
+		</loop>
+	</branch>
+</packet>

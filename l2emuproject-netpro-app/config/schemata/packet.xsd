@@ -372,6 +372,7 @@
 			<xs:enumeration value="product.ProductRepurchaseInterval" />
 			<xs:enumeration value="product.ProductStoreTab" />
 
+			<xs:enumeration value="quest.Faction" />
 			<xs:enumeration value="quest.QuestCompletion" />
 
 			<xs:enumeration value="relation.RelationTypeC1" />

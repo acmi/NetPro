@@ -3208,8 +3208,14 @@
 		<!--
 		UNICODE "TutorialShowQuestionMarkPacket"
 		UNICODE "(Receive)%s"
+		
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ShowTutorialMarkPacket"
+		UNICODE "%s%s"
+		ASCII "cd"
 		-->
-		<packet id="SM_TUTORIAL_SHOW_QUESTION_MARK" name="TutorialShowQuestionMark" />
+		<packet id="SM_TUTORIAL_SHOW_QUESTION_MARK" name="ShowTutorialMark" />
 		<!--
 		UNICODE "TutorialEnableClientEventPacket"
 		UNICODE "(Receive)%s"

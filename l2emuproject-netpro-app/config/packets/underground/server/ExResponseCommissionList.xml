@@ -12,7 +12,7 @@
 			<qword alias="Item PK">
 				<scriptAlias id="auction_list_item_pk" />
 			</qword>
-			<qword alias="Price">
+			<qword alias="Price (per unit)">
 				<scriptAlias id="auction_list_item_price" />
 			</qword>
 			<dword alias="Category" type="commission.ItemCategory">

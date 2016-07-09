@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Augmentation/enchant effect WORDs are now DWORDs -->
-<!-- Underground: Soul Crystal Effect extension -->
-<packet id="SM_WARE_HOUSE_WITHDRAW_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<word alias="Warehouse" type="Warehouse">
-		<scriptAlias id="wh_withdraw_type" />
-	</word>
-	<qword alias="Viewer's adena" />
-	<word alias="Items in warehouse" id="items" />
-	<word alias="Mergeable items" id="mergeables" />
-	<loop id="mergeables">
-		<dword alias="Stackable in inventory and warehouse" type="Item" />
-	</loop>
-	<dword alias="Viewer's item count" />
-	<loop id="items">
+<!-- Item format replaced with extensions -->
+<packet id="SM_TRADE_OWN_ADD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Item count" id="cnt" />
+	<loop id="cnt">
+		<!-- NEW -->
 		<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />
-		<dword alias="0" /> <!-- former OID -->
-		<dword alias="Item" type="Item" id="is_ticket">
-			<scriptAlias id="wh_withdraw_item" />
+		<dword alias="Item OID" type="ObjectID"> <!-- new OID, if not whole -->
+			<scriptAlias id="OIC_ITEM_OID" />
 		</dword>
-		<byte alias="0" /> <!-- former slot number -->
-		<qword alias="Amount">
-			<scriptAlias id="wh_withdraw_item_amount" />
-		</qword>
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<unsignedByte alias="Slot number" type="MyInventorySlot" />
+		<qword alias="Quantity" />
 		<byte alias="Main item type" type="ItemType2" />
 
 		<branch id="is_ticket" condition="GenericItem">
@@ -54,7 +45,6 @@
 		<dword alias="Time remaining" type="TimeRemaining" />
 		<byte alias="Usable" type="YesOrNo" />
 
-		<!-- NEW -->
 		<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
 			<dword alias="Augmentation effect (1)" type="Augmentation" />
 			<dword alias="Augmentation effect (2)" type="Augmentation" />
@@ -69,7 +59,6 @@
 			<word alias="Holy defense" type="ElementPower" />
 			<word alias="Dark defense" type="ElementPower" />
 		</branch>
-		<!-- NEW -->
 		<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
 			<dword alias="Enchant effect (1)" type="Augmentation" />
 			<dword alias="Enchant effect (2)" type="Augmentation" />
@@ -87,7 +76,6 @@
 				<word alias="Bet" type="MonsterRaceBetMultiplier" />
 			</branch>
 		</branch>
-		<!-- NEW (Underground) -->
 		<branch id="extra_info" condition="bitmask.Bit4"> <!-- soul crystal (SA) info -->
 			<byte alias="Primary special abilities" id="sa1_cnt" />
 			<loop id="sa1_cnt">
@@ -98,12 +86,5 @@
 				<dword alias="SA effect" type="item.SoulCrystal" />
 			</loop>
 		</branch>
-		
-		<!-- This injects a fake OID for a better presentation of the associated CM -->
-		<dword alias="Item PK">
-			<scriptAlias id="OIC_ITEM_OID" />
-		</dword>
-		<dword alias="0" />
-		<dword alias="0" />
 	</loop>
 </packet>

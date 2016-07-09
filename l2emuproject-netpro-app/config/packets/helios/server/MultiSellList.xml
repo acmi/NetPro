@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Added soul crystal effect fields -->
+<!-- Added a CHAR (byte) at the start of the packet -->
 <packet id="SM_MULTI_SELL_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<byte alias="0" />
+	<byte alias="0" /> <!-- NEW -->
+
 	<dword alias="List ID">
 		<scriptAlias id="dump_multisell_id" />
 	</dword>
@@ -35,8 +36,6 @@
 			<word alias="Earth defense" type="ElementPower" />
 			<word alias="Holy defense" type="ElementPower" />
 			<word alias="Dark defense" type="ElementPower" />
-
-			<!-- NEW -->
 			<byte alias="Primary special abilities" id="sa1_cnt" />
 			<loop id="sa1_cnt">
 				<dword alias="SA effect" type="item.SoulCrystal" />
@@ -75,8 +74,6 @@
 			<word alias="Earth defense" type="ElementPower" />
 			<word alias="Holy defense" type="ElementPower" />
 			<word alias="Dark defense" type="ElementPower" />
-
-			<!-- NEW -->
 			<byte alias="Primary special abilities" id="sa1_cnt" />
 			<loop id="sa1_cnt">
 				<dword alias="SA effect" type="item.SoulCrystal" />
@@ -105,8 +102,6 @@
 			<word alias="Earth defense" type="ElementPower" />
 			<word alias="Holy defense" type="ElementPower" />
 			<word alias="Dark defense" type="ElementPower" />
-
-			<!-- NEW -->
 			<byte alias="Primary special abilities" id="sa1_cnt" />
 			<loop id="sa1_cnt">
 				<dword alias="SA effect" type="item.SoulCrystal" />

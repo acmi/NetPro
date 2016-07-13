@@ -17,7 +17,10 @@ package net.l2emuproject.proxy.script.analytics;
 
 import java.util.List;
 
+import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
+import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
@@ -33,6 +36,8 @@ import net.l2emuproject.proxy.state.entity.type.PetType;
 import net.l2emuproject.proxy.state.entity.type.PlayerControllable;
 import net.l2emuproject.proxy.state.entity.type.StaticObjectType;
 import net.l2emuproject.proxy.state.entity.type.SummonType;
+import net.l2emuproject.proxy.ui.savormix.io.VersionnedPacketTable;
+import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * Allows OIDs to be interpreted in a packet log file.
@@ -41,6 +46,8 @@ import net.l2emuproject.proxy.state.entity.type.SummonType;
  */
 public class ObjectAnalytics extends PpeAnalyticsScript
 {
+	private static final L2Logger LOG = L2Logger.getLogger(ObjectAnalytics.class);
+	
 	@ScriptFieldAlias
 	private static final String PLAYER_ID = "OIC_PLAYER_OID";
 	@ScriptFieldAlias
@@ -241,18 +248,28 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 	@Override
 	public void handleServerPacket(RandomAccessMMOBuffer buf, ICacheServerID cacheContext) throws RuntimeException
 	{
-		if (handleItemInfo(buf, cacheContext))
+		try
 		{
-			// due to legacy packets
+			if (handleItemInfo(buf, cacheContext))
+			{
+				// due to legacy packets
+				handlePlayerInfo(buf, cacheContext);
+				return;
+			}
+			
+			if (handleStaticObjectInfo(buf, cacheContext))
+				return;
+			
 			handlePlayerInfo(buf, cacheContext);
-			return;
+			handleNpcInfo(buf, cacheContext);
 		}
-		
-		if (handleStaticObjectInfo(buf, cacheContext))
-			return;
-		
-		handlePlayerInfo(buf, cacheContext);
-		handleNpcInfo(buf, cacheContext);
+		catch (IndexOutOfBoundsException e)
+		{
+			final MMOBuffer wrapper = buf.seekFirstOpcode();
+			final byte[] packet = wrapper.readB(wrapper.getAvailableBytes());
+			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(buf.getProtocol(), EndpointType.SERVER, packet);
+			LOG.warn("Invalid packet OIC definition for " + template);
+		}
 	}
 	
 	@Override

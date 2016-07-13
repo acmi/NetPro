@@ -221,7 +221,7 @@ public final class CommonPacketSender extends PacketWriterScript
 			throw new InvalidPacketWriterArgumentsException("Use the designated method for private messages");
 		if (chat == 13)
 			throw new InvalidPacketWriterArgumentsException("Method only accepts talker as string");
-			
+		
 		final int size = 1 + 4 + 4 + stdStringSize(talker) + 4 + stdStringSize(message);
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
@@ -278,7 +278,7 @@ public final class CommonPacketSender extends PacketWriterScript
 		buf.writeS(message);
 		for (int i = 0; i < 4; ++i)
 			buf.writeS("");
-			
+		
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
@@ -556,7 +556,7 @@ public final class CommonPacketSender extends PacketWriterScript
 	{
 		if (capacity > 0xFF_FC)
 			throw new IllegalArgumentException("Invalid packet size: " + capacity);
-			
+		
 		return ByteBuffer.allocate(capacity).order(ByteOrder.LITTLE_ENDIAN);
 	}
 	

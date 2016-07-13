@@ -374,6 +374,8 @@
 
 			<xs:enumeration value="quest.Faction" />
 			<xs:enumeration value="quest.QuestCompletion" />
+			<xs:enumeration value="quest.TutorialMark" />
+			<xs:enumeration value="quest.TutorialMarkType" />
 
 			<xs:enumeration value="relation.RelationTypeC1" />
 			<xs:enumeration value="relation.RelationTypeC4" />

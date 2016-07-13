@@ -4121,7 +4121,7 @@
 4363	When trading, the effects applied to the item might get reset, so keep that in mind. Continue with the trade?
 4364	Not enough $s1 and $s2.
 4365	The expert has been placed successfully.
-4366	The allocation fee will be deducted from the clan's warehouse, and once the duration expires, it will be withdrawn.\nContinue?
+4366	The allocation fee will be deducted from the clan's warehouse, and once the duration expires, it will be withdrawn.\n Continue?
 4367	Clan $s1 currently has the 1 day penalty for kicking out  a member, so it cannot accept new members.
 4368	The Academy/Royal Guard/Order of Knights have been fully filled, so you cannot join the clan.
 4369	Clan $s1 has requested to be dissolved, so you cannot join the clan.
@@ -4139,7 +4139,7 @@
 4381	Experts with the same class within the same forces cannot be placed together.
 4382	Another expert has already been placed there. The expert must be removed first before placing a new one.
 4383	The cost for placing an Emissary Leader for your forces is zero. The Emissary Leader for your forces, once placed, cannot be changed until the term expires, and the Emissary Leader will be removed once the term expires. \nContinue?
-4384	The expert currently in place will be removed. The placement cost will not be refunded.\nContinue?
+4384	The expert currently in place will be removed. The placement cost will not be refunded.\n Continue?
 4385	That expert cannot be removed.
 4386	There's not enough Adena in the clan's warehouse.
 4387	There's not enough $s1 in the clan's warehouse.

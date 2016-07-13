@@ -27857,6 +27857,15 @@
 28386	Race Change Ticket
 28387	Agathion - Unlimited Vitality Pack
 28388	Agathion - Unlimited Vitality
+28389	NoItemName
+28390	NoItemName
+28391	NoItemName
+28392	NoItemName
+28393	NoItemName
+28394	NoItemName
+28395	NoItemName
+28396	NoItemName
+28397	NoItemName
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste

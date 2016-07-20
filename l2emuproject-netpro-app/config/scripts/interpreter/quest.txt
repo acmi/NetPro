@@ -226,6 +226,11 @@
 905	Refined Dragon Blood
 906	The Call of Valakas
 907	Dragon Trophy - Valakas
+910	Red Libra Request - Lv. 1
+911	Red Libra Request - Lv. 2
+912	Red Libra Request - Lv. 3
+913	Red Libra Request - Lv. 4
+914	Red Libra Request - Lv. 5
 922	Hunter Guild Request - Northern Region, Isle of Prayer
 923	Shinedust Extraction
 924	Giant of the Restoration Room

@@ -1011,6 +1011,21 @@
 907	1	Proof of Glory and Courage (Valakas Watchman Klein asks you to defeat the fire dragon Valakas to prove your glory and courage. Challenge Valakas inside Valakas' Lair.)
 907	2	Proof of the Dragon Hunt - Fire Dragon (You defeated fire dragon Valakas! Return to Klein to prove your glory and courage.)
 907	-1	[completed]
+910	1	Defeat Monsters in Bloody Swampland and Altar of Evil (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Bloody Swampland and Altar of Evil. Monsters to Hunt - Monsters in Bloody Swampland and Altar of Evil)
+910	2	Return to Bodyguard Blue (You've defeated all the monsters in Bloody Swampland and Altar of Evil. Return to Bodyguard Blue in the Town of Giran.)
+910	-1	[completed]
+911	1	Defeat Monsters in Fairy Settlement (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Fairy Settlement. Monsters to Hunt - Fairies and monsters in Fairy Settlement)
+911	2	Return to Bodyguard Blue (You've defeated all the monsters in Fairy Settlement. Return to Bodyguard Blue in the Town of Giran.)
+911	-1	[completed]
+912	1	Defeat Monsters in Isle of Souls (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Isle of Souls. Monsters to Hunt - Monsters in Isle of Souls)
+912	2	Return to Bodyguard Blue (You've defeated all the monsters in Isle of Souls. Return to Bodyguard Blue in the Town of Giran.)
+912	-1	[completed]
+913	1	Defeat Monsters in Pagan Temple, Blazing Swamp, and the Cemetery (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Pagan Temple, Blazing Swamp, and the Cemetery. Monsters to Hunt - Monsters in Pagan Temple, Blazing Swamp, and the Cemetery)
+913	2	Return to Bodyguard Blue (You've defeated all the monsters in Pagan Temple, Blazing Swamp, and the Cemetery. Return to Bodyguard Blue in the Town of Giran.)
+913	-1	[completed]
+914	1	Defeat Monsters in Enchanted Valley and the Upper level of the Giant's Cave (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Enchanted Valley and the Upper level of the Giant's Cave. Monsters to Hunt - Monsters in Enchanted Valley and the Upper level of the Giant's Cave)
+914	2	Return to Bodyguard Blue (You've defeated all the monsters in Enchanted Valley and the Upper level of the Giant's Cave. Return to Bodyguard Blue in the Town of Giran.)
+914	-1	[completed]
 922	1	Defeat the monsters in the Northern Region of the Isle of Prayer (The Hunter Guild is looking for explorers to take on the quest of defeating the giant monsters in the Northern Region of the Isle of Prayer. Defeat the giant monsters in the Northern Region of the Isle of Prayer. Monsters to Hunt - Valac, Kurion, Atluum, Lebruum)
 922	2	Return to Arcturus (You have defeated all of the giant monsters in the Northern Region of the Isle of Prayer. Return to Arcturus in the Hunter's Village.)
 922	-1	[completed]

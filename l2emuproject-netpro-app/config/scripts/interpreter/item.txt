@@ -27857,15 +27857,15 @@
 28386	Race Change Ticket
 28387	Agathion - Unlimited Vitality Pack
 28388	Agathion - Unlimited Vitality
-28389	NoItemName
-28390	NoItemName
-28391	NoItemName
-28392	NoItemName
-28393	NoItemName
-28394	NoItemName
-28395	NoItemName
-28396	NoItemName
-28397	NoItemName
+28389	Heine Exclusive Bait (85-89)
+28390	Heine Exclusive Bait (90-94)
+28391	Heine Exclusive Bait (95-98)
+28392	Heine Exclusive Bait (99-)
+28393	Heine Exclusive Bait Coupon
+28394	Heine Exclusive Reward Chest
+28395	Heine Exclusive Fishing Tools - 300 Pack
+28396	Heine Exclusive Fishing Tools - 3,000 Pack
+28397	2016 World Olympiad Hero XXX's Accessory
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -34814,12 +34814,12 @@
 36969	Wind Stone (+ 150)
 36970	Dark Stone (+ 150)
 36971	Holy Stone (+ 150)
-36972	Fire Crystal - Super
-36973	Water Crystal - Super
-36974	Earth Crystal - Super
-36975	Wind Crystal - Super
-36976	Dark Crystal - Super
-36977	Holy Crystal - Super
+36972	Lesser Fire Crystal - Super
+36973	Lesser Water Crystal - Super
+36974	Lesser Earth Crystal - Super
+36975	Lesser Wind Crystal - Super
+36976	Lesser Dark Crystal - Super
+36977	Lesser Holy Crystal - Super
 36978	Scroll: Enchant Hair Accessory
 36979	Life Stone: Hair Accessory
 36980	9th Anniversary Rocket Gun Hat: Chain Fireworks

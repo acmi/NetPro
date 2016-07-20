@@ -4228,10 +4228,10 @@
 535702	Altar of Blood that Awakens Destruction (Lv. 95 and Above) (In Progress)
 535703	Altar of Blood that Awakens Destruction (Lv. 95 and Above) (Done)
 535704	Altar of Blood that Awakens Destruction (Lv. 95 and Above)
-535801	Divided Sakum, Poslof (Lv. 33-40)
-535802	Divided Sakum, Poslof (Lv. 33-40) (In Progress)
-535803	Divided Sakum, Poslof (Lv. 33-40) (In Progress)
-535804	Divided Sakum, Poslof (Lv. 33-40)
+535801	Divided Sakum, Poslof (Lv. 32-40)
+535802	Divided Sakum, Poslof (Lv. 32-40) (In Progress)
+535803	Divided Sakum, Poslof (Lv. 32-40) (In Progress)
+535804	Divided Sakum, Poslof (Lv. 32-40)
 535901	Traces of Evil (Lv. 34-40)
 535902	Traces of Evil (Lv. 34-40) (In Progress)
 535903	Traces of Evil (Lv. 34-40) (Done)
@@ -4953,10 +4953,10 @@
 554303	Shedding Weight (Lv. 1-20) (Done)
 554304	Shedding Weight (Lv. 1-20)
 554305	Speak with Wilford
-554401	Commando Supplies (Lv. 1-20)
-554402	Commando Supplies (Lv. 1-20) (In Progress)
-554403	Commando Supplies (Lv. 1-20) (Done)
-554404	Commando Supplies (Lv. 1-20)
+554401	Seeker Supplies (Lv. 1-20)
+554402	Seeker Supplies (Lv. 1-20) (In Progress)
+554403	Seeker Supplies (Lv. 1-20) (Done)
+554404	Seeker Supplies (Lv. 1-20)
 554405	Speak with Katerina
 554406	Speak with Lector
 554407	Speak with Jackson
@@ -11135,7 +11135,7 @@
 1803282	Successfully discovered the Giant's Relic in the Giants' Room of Relics.
 1803283	Exit the Giants' Room of Relics after 20 seconds.
 1803284	Relic Guardian who has responded to $s1
-1803285	Shaqrima Bathus responds to attacks from party members who carry a Resistance Mark of Stage 4 or higher.
+1803285	Shaqrima Bathus responds to attacks from party members who have a faction level of 4 or higher with the Giant Trackers.
 1803286	The warrior $s1 has obtained an Enchant Scroll from the Dimension Dissolver.
 1803287	The warrior $s1 has obtained an Enchant Scroll and a Lv.5 Dye from the Dimension Dissolver.
 1803288	The warrior $s1 has obtained an Enchant Scroll and Soul Crystal from the Dimension Dissolver.

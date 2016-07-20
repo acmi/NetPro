@@ -18,14 +18,22 @@ package util.packet;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
 
 /**
+ * Implement this to receive {@code NpcHtmlMessage} packets.
+ * 
  * @author _dev_
  */
 public interface NpcHtmlRecipient
 {
+	/** Associated world object ID */
+	@ScriptFieldAlias
+	String HTML_OWNER = "html_owner_oid";
 	/** Identifies a field with standard NPC/item HTML shown to client. */
 	@ScriptFieldAlias
 	String HTML_CONTENT = "html_content";
 	/** Identifies a field with HTML dialog title. */
 	@ScriptFieldAlias
-	String HTML_TITLE = "dump_html_item_title";
+	String HTML_TITLE = "item_html_title";
+	/** Identifies if the html is initial char or a reply */
+	@ScriptFieldAlias
+	String HTML_REPLY = "html_reply_flag";
 }

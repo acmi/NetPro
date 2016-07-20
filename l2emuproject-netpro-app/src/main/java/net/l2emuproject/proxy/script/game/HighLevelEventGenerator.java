@@ -22,8 +22,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import javolution.util.FastMap;
-
 import org.apache.commons.lang3.ArrayUtils;
 
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
@@ -34,6 +32,8 @@ import net.l2emuproject.proxy.script.ScriptFieldAlias;
 import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics;
 import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics.UserInfo;
 import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
+
+import javolution.util.FastMap;
 
 /**
  * @author _dev_
@@ -76,6 +76,8 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 	private static final String CASTER_DONE_OID = "HLE_SUCC_CASTER_OID";
 	@ScriptFieldAlias
 	private static final String WORLD_ITEM_OID = "HLE_WORLD_ITEM_OID";
+	@ScriptFieldAlias
+	private static final String WORLD_ITEM_AMOUNT = "HLE_WORLD_ITEM_AMOUNT";
 	@ScriptFieldAlias
 	private static final String WORLD_ITEM_DROPPER_OID = "HLE_WORLD_ITEM_DROPPER_OID";
 	@ScriptFieldAlias
@@ -235,7 +237,7 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			for (final SimpleEventListener listener : _listeners)
 			{
 				listener.onPhysicalAttack(client, objectID, targetID);
-				for (int addTargetID : ex)
+				for (final int addTargetID : ex)
 					listener.onPhysicalAttack(client, objectID, addTargetID);
 			}
 			
@@ -297,7 +299,7 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			
 			for (final SimpleEventListener listener : _listeners)
 			{
-				for (int targetID : targets)
+				for (final int targetID : targets)
 					listener.onCastSuccess(client, objectID, targetID, skillID, skillLvl);
 			}
 			
@@ -311,8 +313,9 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			
 			final int objectID = buf.readInteger32(oid);
 			final int itemOID = buf.readFirstInteger32(WORLD_ITEM_OID);
+			final long amount = buf.readFirstInteger(WORLD_ITEM_AMOUNT);
 			for (final SimpleEventListener listener : _listeners)
-				listener.onItemDrop(client, objectID, itemOID);
+				listener.onItemDrop(client, objectID, itemOID, amount);
 			
 			return;
 		}
@@ -336,8 +339,9 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 				break onItemInWorld;
 			
 			final int objectID = buf.readInteger32(oid);
+			final long amount = buf.readFirstInteger(WORLD_ITEM_AMOUNT);
 			for (final SimpleEventListener listener : _listeners)
-				listener.onItemSpawn(client, objectID);
+				listener.onItemSpawn(client, objectID, amount);
 			
 			return;
 		}
@@ -353,7 +357,7 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			if (old == null)
 				return;
 			
-			for (Integer skill : old)
+			for (final Integer skill : old)
 			{
 				if (current.contains(skill))
 					continue;
@@ -361,7 +365,7 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 				for (final SimpleEventListener listener : _listeners)
 					listener.onEffectRemoved(client, skill);
 			}
-			for (Integer skill : current)
+			for (final Integer skill : current)
 			{
 				if (old.contains(skill))
 					continue;

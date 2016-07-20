@@ -15,7 +15,11 @@
  */
 package examples.game;
 
+import eu.revengineer.simplejse.init.DisabledScript;
+import eu.revengineer.simplejse.type.UnloadableScript;
+
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
+import net.l2emuproject.proxy.script.PpeEnabledScript;
 import net.l2emuproject.proxy.script.analytics.ObjectAnalytics;
 import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
 import net.l2emuproject.proxy.script.game.HighLevelEventGenerator;
@@ -23,9 +27,6 @@ import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.state.entity.cache.ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.logging.L2Logger;
-
-import eu.revengineer.simplejse.init.DisabledScript;
-import eu.revengineer.simplejse.type.UnloadableScript;
 
 /**
  * Makes use of {@link HighLevelEventGenerator} class. Instead of dealing with individual packets manually, this class handles events.<BR>
@@ -46,7 +47,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onTargetSelected(L2GameClient client, int selectorOID, int targetOID)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(selectorOID, context) + " targeted " + cache.getOrAdd(targetOID, context));
 	}
 	
@@ -54,7 +55,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onPhysicalAttack(L2GameClient client, int attackerOID, int targetOID)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(attackerOID, context) + " attacked " + cache.getOrAdd(targetOID, context));
 	}
 	
@@ -62,7 +63,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onCast(L2GameClient client, int casterOID, int targetOID, int skill, int level, int castTime, int coolTime)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(casterOID, context) + " started " + L2SkillTranslator.getInterpretation(skill, level) + " on " + cache.getOrAdd(targetOID, context));
 		LOG.info("Cast will complete in " + castTime + " ms and skill can be re-cast in " + coolTime + " ms.");
 	}
@@ -71,7 +72,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onCastSuccess(L2GameClient client, int casterOID, int targetOID, int skill, int level)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(casterOID, context) + " executed " + L2SkillTranslator.getInterpretation(skill, level) + " on " + cache.getOrAdd(targetOID, context));
 	}
 	
@@ -79,7 +80,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onCastFailure(L2GameClient client, int casterOID)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(casterOID, context) + " casting failed.");
 	}
 	
@@ -87,7 +88,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onDeath(L2GameClient client, int deceasedOID, boolean sweepable)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(deceasedOID, context) + " died.");
 	}
 	
@@ -95,7 +96,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onRevive(L2GameClient client, int revivedOID)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(revivedOID, context) + " resurrected.");
 	}
 	
@@ -103,31 +104,31 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onDelete(L2GameClient client, int deletedOID)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(deletedOID, context) + " removed.");
 	}
 	
 	@Override
-	public void onItemDrop(L2GameClient client, int dropperOID, int itemOID)
+	public void onItemDrop(L2GameClient client, int dropperOID, int itemOID, long amount)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
-		LOG.info(cache.getOrAdd(dropperOID, context) + " dropped " + cache.getOrAdd(itemOID, context));
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
+		LOG.info(cache.getOrAdd(dropperOID, context) + " dropped " + cache.getOrAdd(itemOID, context) + "(" + amount + ")");
 	}
 	
 	@Override
-	public void onItemSpawn(L2GameClient client, int itemOID)
+	public void onItemSpawn(L2GameClient client, int itemOID, long amount)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
-		LOG.info("On ground: " + cache.getOrAdd(itemOID, context));
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
+		LOG.info("On ground: " + cache.getOrAdd(itemOID, context) + "(" + amount + ")");
 	}
 	
 	@Override
 	public void onItemPickup(L2GameClient client, int finderOID, int itemOID)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(finderOID, context) + " picked up " + cache.getOrAdd(itemOID, context));
 	}
 	
@@ -135,7 +136,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onMovementEnd(L2GameClient client, int stopperOID, int x, int y, int z)
 	{
 		final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-		final ICacheServerID context = ObjectAnalytics.getEntityContext(client);
+		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
 		LOG.info(cache.getOrAdd(stopperOID, context) + " stopped moving");
 	}
 	

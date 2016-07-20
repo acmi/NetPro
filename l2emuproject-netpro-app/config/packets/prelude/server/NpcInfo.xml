@@ -4,16 +4,14 @@
 	<dword alias="NPC OID" type="ObjectID">
 		<scriptAlias id="OIC_NPC_OID" />
 		<scriptAlias id="OIL_OBJECT_ID" />
-		<scriptAlias id="fspawn_gen_npc_oid" />
-		<scriptAlias id="exp_bot_npc_oid" />
+		<scriptAlias id="npc_info_oid" />
 	</dword>
 	<dword alias="NPC" type="Npc">
 		<scriptAlias id="OIC_NPC_TEMPLATE" />
-		<scriptAlias id="exp_bot_npc_id" />
+		<scriptAlias id="npc_info_template" />
 	</dword>
 	<dword alias="Attackable" type="YesOrNo">
-		<scriptAlias id="fspawn_gen_npc_atk" />
-		<scriptAlias id="exp_bot_npc_atk" />
+		<scriptAlias id="npc_info_enemy" />
 	</dword>
 	<dword alias="Location X">
 		<scriptAlias id="OIL_OBJECT_X_SERVER" />

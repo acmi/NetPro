@@ -4,26 +4,26 @@
 	<byte alias="0" /> <!-- NEW -->
 
 	<dword alias="List ID">
-		<scriptAlias id="dump_multisell_id" />
+		<scriptAlias id="multisell_list_id" />
 	</dword>
 	<byte alias="0" />
 	<dword alias="Page" />
 	<dword alias="Last page" type="YesOrNo">
-		<scriptAlias id="dump_multisell_last" />
+		<scriptAlias id="multisell_last_page" />
 	</dword>
 	<dword alias="Exchanges per page" />
 	<dword alias="Exchanges in this page" id="index_0" />
 	<byte alias="Chance-based" type="YesOrNo">
-		<scriptAlias id="dump_multisell_mode" />
+		<scriptAlias id="multisell_mode" />
 	</byte>
 	<dword alias="" />
 	<loop id="index_0">
 		<dword alias="Exchange ID">
-			<scriptAlias id="dump_multisell_slot" />
+			<scriptAlias id="multisell_slot_id" />
 		</dword>
 		<branch description="Displayed on slot itself.">
 			<byte alias="Stackable" type="YesOrNo">
-				<scriptAlias id="dump_multisell_slot_stackable" />
+				<scriptAlias id="multisell_slot_stackable" />
 			</byte>
 			<word alias="Enchant level" />
 			<dword alias="Augmentation effect (1)" type="Augmentation" />
@@ -46,23 +46,23 @@
 			</loop>
 		</branch>
 		<word alias="Receivable count" id="produced">
-			<scriptAlias id="dump_multisell_prod_cnt" />
+			<scriptAlias id="multisell_slot_prod_cnt" />
 		</word>
 		<word alias="Consumable count" id="consumed">
-			<scriptAlias id="dump_multisell_cons_cnt" />
+			<scriptAlias id="multisell_slot_cons_cnt" />
 		</word>
 		<loop id="produced">
 			<dword alias="Receivable" type="Item">
-				<scriptAlias id="dump_multisell_prod_item" />
+				<scriptAlias id="multisell_slot_prod_item" />
 			</dword>
 			<qword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
 			<word alias="Main item type" type="ItemType2" />
-			<qword alias="Quantity">
-				<scriptAlias id="dump_multisell_prod_amount" />
+			<qword alias="Amount">
+				<scriptAlias id="multisell_slot_prod_amount" />
 			</qword>
 			<word alias="Enchant level" />
 			<dword alias="Production chance (%)">
-				<scriptAlias id="dump_multisell_prod_chance" />
+				<scriptAlias id="multisell_slot_prod_chance" />
 			</dword>
 			<dword alias="Augmentation effect (1)" type="Augmentation" />
 			<dword alias="Augmentation effect (2)" type="Augmentation" />
@@ -85,11 +85,11 @@
 		</loop>
 		<loop id="consumed">
 			<dword alias="Consumable" type="Item">
-				<scriptAlias id="dump_multisell_cons_item" />
+				<scriptAlias id="multisell_slot_cons_item" />
 			</dword>
 			<word alias="Main item type" type="ItemType2" />
-			<qword alias="Quantity">
-				<scriptAlias id="dump_multisell_cons_amount" />
+			<qword alias="Amount">
+				<scriptAlias id="multisell_slot_cons_amount" />
 			</qword>
 			<word alias="Enchant level" />
 			<dword alias="Augmentation effect (1)" type="Augmentation" />

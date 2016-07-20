@@ -16,6 +16,7 @@
 		<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />
 		<dword alias="0" /> <!-- former OID -->
 		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 			<scriptAlias id="wh_withdraw_item" />
 		</dword>
 		<byte alias="0" /> <!-- former slot number -->

@@ -18,7 +18,6 @@
 		</dword>
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
-			<scriptAlias id="harvester_personal_store_item" />
 		</dword>
 		<unsignedByte alias="Slot number" type="InventorySlot" />
 		<qword alias="Quantity" />
@@ -83,9 +82,7 @@
 
 		<dword alias="Slot in shop" />
 		<qword alias="Price" />
-		<qword alias="Reference (shop) price">
-			<scriptAlias id="harvester_personal_store_item_price" />
-		</qword>
+		<qword alias="Reference (shop) price" />
 		<qword alias="Quantity bought" />
 	</loop>
 </packet>

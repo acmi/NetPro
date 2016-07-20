@@ -9,9 +9,8 @@
 	<branch id="cond_1" condition="Zero">
 		<!-- Merchant's stock packet -->
 		<qword alias="Viewer's adena" />
-		<dword alias="List ID">
-			<scriptAlias id="SHOPGEN_ADENA_LIST_ID" />
-			<scriptAlias id="harvester_adena_shop_list_id" />
+		<dword alias="Request ID">
+			<scriptAlias id="buy_sell_list_request" />
 		</dword>
 		<word alias="Buyable count" id="item_list" />
 	</branch>
@@ -24,8 +23,7 @@
 			<dword alias="Item (not always)" type="Item" />
 			<dword alias="Item" type="Item" id="is_ticket">
 				<scriptAlias id="OIC_ITEM_TEMPLATE" />
-				<scriptAlias id="SHOPGEN_ADENA_ITEM_ID" />
-				<scriptAlias id="harvester_adena_shop_list_item" />
+				<scriptAlias id="buy_sell_list_item_template" />
 			</dword>
 		</branch>
 		<branch id="cond_1" condition="Positive">
@@ -85,8 +83,7 @@
 
 		<branch id="cond_1" condition="Zero">
 			<qword alias="Price">
-				<scriptAlias id="SHOPGEN_ADENA_ITEM_PRICE_ADJ" />
-				<scriptAlias id="harvester_adena_shop_list_item_price" />
+				<scriptAlias id="buy_sell_list_item_price" />
 			</qword>
 		</branch>
 		<branch id="cond_1" condition="Positive">

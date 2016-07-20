@@ -3,7 +3,6 @@
 <packet id="SM_DROP_ITEM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Dropper OID" type="ObjectID">
 		<scriptAlias id="HLE_WORLD_ITEM_DROPPER_OID" />
-		<scriptAlias id="harvester_droprate_dropper_oid" />
 	</dword>
 	<dword alias="Item OID" type="ObjectID">
 		<scriptAlias id="OIC_ITEM_OID" />
@@ -12,7 +11,6 @@
 	</dword>
 	<dword alias="Item" type="Item">
 		<scriptAlias id="OIC_ITEM_TEMPLATE" />
-		<scriptAlias id="harvester_droprate_dropped_item" />
 	</dword>
 	<dword alias="Destination X">
 		<scriptAlias id="OIL_OBJECT_X_SERVER" />
@@ -24,8 +22,8 @@
 		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
 	</dword>
 	<byte alias="Stackable" type="YesOrNo" />
-	<qword alias="Quantity">
-		<scriptAlias id="harvester_droprate_dropped_item_count" />
+	<qword alias="Amount">
+		<scriptAlias id="HLE_WORLD_ITEM_AMOUNT" />
 	</qword>
 	<byte alias="Unknown" type="YesOrNo" /> <!-- NEW -->
 </packet>

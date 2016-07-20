@@ -23,9 +23,7 @@
 	<unsignedByte alias="1st block size" />
 	<branch description="1st block">
 		<byte alias="Attackable" type="YesOrNo" />
-		<bytes alias="">
-			<length>4</length>
-		</bytes>
+		<dword alias="Relations" />
 		<string alias="Title">
 			<scriptAlias id="OIC_NPC_TITLE" />
 		</string>

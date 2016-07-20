@@ -4,8 +4,8 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="SM_ASK_JOIN_PLEDGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Invitor OID" type="ObjectID" />
-	<string alias="Pledge/Unit name" />
-	<string alias="Invitor name" />
-	<dword alias="Unit" type="PledgeUnit" optional="true" />
+	<string alias="Invitor name" /> <!-- NEW -->
 	<string alias="Pledge name" />
+	<dword alias="Unit" type="PledgeUnit" />
+	<string alias="Unit name" />
 </packet>

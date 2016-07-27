@@ -432,7 +432,7 @@
 		<packet opcodePrefix="D5" id="225" />
 		<packet opcodePrefix="D6" id="SM_SPECIAL_CAMERA" />
 		<packet opcodePrefix="D7" id="227" />
-		<packet opcodePrefix="D8" id="237" />
+		<packet opcodePrefix="D8" id="SM_SKILL_REMAIN_SEC" />
 		<packet opcodePrefix="D9" id="SM_NET_PING" />
 		<packet opcodePrefix="DA" id="SM_DICE" />
 		<packet opcodePrefix="DB" id="SM_SNOOP" />

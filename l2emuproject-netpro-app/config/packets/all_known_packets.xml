@@ -2015,7 +2015,6 @@
 		<packet id="225" name="BlockList" />
 		<packet id="227" name="NormalCamera" />
 		<packet id="234" name="EventTrigger" />
-		<packet id="237" name="SkillRemainSec" />
 		<!-- UNICODE "DummyPacket" -->
 		<packet id="239" name="Dummy ED" />
 		<packet id="241" name="Dummy_70" />
@@ -3456,6 +3455,17 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_SET_SUMMON_REMAIN_TIME" name="SetSummonRemainTime" />
+		<!--
+		ASCII "ddddddd"
+		UNICODE "(Receive)OnSkillRemainSec"
+		
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "SkillRemainSecPacket"
+		UNICODE "%s%s"
+		ASCII "ddddddd"
+		-->
+		<packet id="SM_SKILL_REMAIN_SEC" name="SkillRemainSec" />
 		<!--
 		UNICODE "NetPingPacket"
 		UNICODE "(Receive)%s"

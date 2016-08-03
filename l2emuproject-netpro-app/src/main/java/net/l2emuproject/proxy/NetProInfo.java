@@ -18,7 +18,7 @@ package net.l2emuproject.proxy;
 import eu.revengineer.simplejse.init.IScriptInitializer;
 
 import net.l2emuproject.config.annotation.ConfigField;
-import net.l2emuproject.geometry.IPoint3D;
+import net.l2emuproject.geometry.point.IPoint3D;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.lang.condition.ICondition;
 import net.l2emuproject.network.protocol.IProtocolVersion;

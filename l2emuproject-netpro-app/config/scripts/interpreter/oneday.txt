@@ -47,6 +47,7 @@
 104	Reach Level (Lv. 82 Robe)
 105	Reach Level (Lv. 83 Robe)
 106	Reach Level (Lv. 84)
+107	Reach Level (Lv. 85)
 187	Reach Level (Dual Lv. 84)
 224	Login All Weekend
 225	Login All Month

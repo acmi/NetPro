@@ -22,7 +22,7 @@ import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
  * 
  * @author _dev_
  */
-public class InvalidFieldValueInterpreterException extends Exception
+public class InvalidFieldValueInterpreterException extends InvalidMetaclassException
 {
 	private static final long serialVersionUID = -1270092148489433306L;
 	
@@ -33,9 +33,8 @@ public class InvalidFieldValueInterpreterException extends Exception
 	 * @param alias interpreter type alias
 	 * @param expectedSuperclass expected supertype
 	 */
-	public InvalidFieldValueInterpreterException(FieldValueInterpreter interpreter, String alias,
-			String expectedSuperclass)
+	public InvalidFieldValueInterpreterException(FieldValueInterpreter interpreter, String alias, String expectedSuperclass)
 	{
-		super(interpreter + "(" + alias + ")" + " cannot be cast to " + expectedSuperclass);
+		super("Interpreter", interpreter, alias, expectedSuperclass);
 	}
 }

@@ -22,7 +22,7 @@ import net.l2emuproject.proxy.network.meta.FieldValueCondition;
  * 
  * @author _dev_
  */
-public class InvalidFieldValueConditionException extends Exception
+public class InvalidFieldValueConditionException extends InvalidMetaclassException
 {
 	private static final long serialVersionUID = 1503653373049785003L;
 	
@@ -35,6 +35,6 @@ public class InvalidFieldValueConditionException extends Exception
 	 */
 	public InvalidFieldValueConditionException(FieldValueCondition condition, String alias, String expectedSuperclass)
 	{
-		super(condition + "(" + alias + ")" + " cannot be cast to " + expectedSuperclass);
+		super("Condition", condition, alias, expectedSuperclass);
 	}
 }

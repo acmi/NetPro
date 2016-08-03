@@ -19,6 +19,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.SplashScreen;
 import java.awt.Window;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayDeque;
 import java.util.Locale;
@@ -31,8 +32,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import net.l2emuproject.proxy.L2Proxy;
+import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
+import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.script.PpeEnabledLoaderScriptRegistry;
 import net.l2emuproject.proxy.script.ScriptManager;
 import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics;
@@ -46,9 +49,11 @@ import net.l2emuproject.proxy.setup.SettingsManager;
 import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
 import net.l2emuproject.proxy.ui.savormix.component.SplashFrame;
 import net.l2emuproject.util.L2Utils;
+import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.logging.L2Logger;
 import net.l2emuproject.util.logging.ListeningLog;
 
+import eu.revengineer.simplejse.exception.StaleScriptCacheException;
 import javafx.application.Platform;
 
 /**
@@ -62,7 +67,6 @@ import javafx.application.Platform;
  * 
  * @author savormix
  */
-@SuppressWarnings("restriction")
 public final class Loader
 {
 	static Frontend ACTIVE_FRONTEND;
@@ -120,7 +124,7 @@ public final class Loader
 	 * Launches the proxy with a GUI managed by savormix.
 	 * 
 	 * @param args
-	 *            command line arguments, governed by {@link LoadOption}
+	 *        command line arguments, governed by {@link LoadOption}
 	 */
 	public static void main(String[] args)
 	{
@@ -231,14 +235,40 @@ public final class Loader
 				}
 				new ObjectAnalytics().onLoad();
 				new PledgeAnalytics().onLoad();
-				/*
+				
 				final NetProScriptCache cache = NetProScriptCache.getInstance();
-				if (LoadOption.DISABLE_SCRIPTS.isNotSet() && (ProxyConfig.DISABLE_SCRIPT_CACHE || !cache.restoreFromCache()) && !cache.isCompilerUnavailable())
+				scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet())
 				{
-					cache.compileAllScripts();
-					cache.writeToCache();
+					if (!ProxyConfig.DISABLE_SCRIPT_CACHE)
+					{
+						try
+						{
+							cache.restoreFromCache();
+							break scripts;
+						}
+						catch (StaleScriptCacheException e)
+						{
+							if (cache.isCompilerUnavailable())
+							{
+								cache.setStaleCacheOK();
+								cache.restoreFromCache();
+								break scripts;
+							}
+							// otherwise proceed to compilation
+						}
+						catch (IOException e)
+						{
+							// proceed to compilation
+						}
+					}
+					
+					if (!cache.isCompilerUnavailable())
+					{
+						cache.compileAllScripts();
+						cache.writeToCache();
+					}
+					
 				}
-				*/
 			});
 			L2Proxy.addStartupHook(VersionnedPacketTable::getInstance);
 			L2Proxy.addStartupHook(IPAliasManager::getInstance);
@@ -248,7 +278,7 @@ public final class Loader
 			}
 			catch (Throwable t)
 			{
-				JOptionPane.showMessageDialog(null, t.getMessage(), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, StackTraceUtil.traceToString(t), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
 				System.exit(1);
 			}
 		}

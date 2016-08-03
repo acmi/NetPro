@@ -20,14 +20,14 @@ import java.nio.ByteOrder;
 import java.util.EnumMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
-
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.script.Script.WrapperPool;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
 import net.l2emuproject.util.logging.L2Logger;
+
+import javolution.util.FastMap;
 
 /**
  * Manages scripts that deal with packets originating from historical packet logs.
@@ -57,8 +57,9 @@ public final class LogLoadScriptManager
 	 * @param body packet body
 	 * @param version network protocol version
 	 * @param cacheContext entity existence boundary defining context
+	 * @param receivedOn packet arrival time
 	 */
-	public void onLoadedPacket(boolean login, boolean client, byte[] body, IProtocolVersion version, HistoricalPacketLog cacheContext)
+	public void onLoadedPacket(boolean login, boolean client, byte[] body, IProtocolVersion version, HistoricalPacketLog cacheContext, long receivedOn)
 	{
 		final ByteBuffer bb = ByteBuffer.wrap(body).asReadOnlyBuffer().order(ByteOrder.LITTLE_ENDIAN);
 		final MMOBuffer buf = _wrapperPool.create();
@@ -75,9 +76,9 @@ public final class LogLoadScriptManager
 				try
 				{
 					if (client)
-						script.handleClientPacket(buf, version, cacheContext);
+						script.handleClientPacket(buf, version, cacheContext, receivedOn);
 					else
-						script.handleServerPacket(buf, version, cacheContext);
+						script.handleServerPacket(buf, version, cacheContext, receivedOn);
 				}
 				catch (RuntimeException e)
 				{

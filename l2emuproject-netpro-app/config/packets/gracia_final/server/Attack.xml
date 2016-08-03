@@ -6,7 +6,6 @@
 	<dword alias="Attacker OID" type="ObjectID">
 		<scriptAlias id="OIL_OBJECT_ID" />
 		<scriptAlias id="HLE_ATTACKER_OID" />
-		<scriptAlias id="fspawn_walker_oid" />
 	</dword>
 	<dword alias="Main target OID" type="ObjectID">
 		<scriptAlias id="OIL_OBJECT_ID" />

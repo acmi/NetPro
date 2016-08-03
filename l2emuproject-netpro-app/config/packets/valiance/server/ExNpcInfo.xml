@@ -6,38 +6,97 @@
 	<dword alias="NPC OID" type="ObjectID">
 		<scriptAlias id="OIC_NPC_OID" />
 		<scriptAlias id="OIL_OBJECT_ID" />
-		<scriptAlias id="fspawn_gen_npc_oid" />
-		<scriptAlias id="exp_bot_npc_oid" />
+		<scriptAlias id="npc_info_oid" />
 	</dword>
 
-	<byte alias="unk" />
-	<word alias="Struct type (37)" />
+	<byte alias="Knownlist state" type="KnownlistState" id="object_action" />
+	<word alias="37" />
+	
+	<!--
+	Here's what is know for sure (individual toggles):
+	
+	F1 B5,B6 and F4 B2 do not contribute towards block 2 size - most likely they keep the 1st block as it is
+	I would assume F4 B2 controls the string 'Title' field
+	
+	F1 B0:
+	F1 B1: [unused]
+	F1 B2 + F1 B3: (below F1 B7) 16 bytes [x, y, z, yaw]
+	F1 B4: (below F4 B4) string [name as string]
+	F1 B5: [always on]
+	F1 B6: [always on]
+	F1 B7: (above all others) 4 bytes [npc template]
+	
+	F2 B0: 1 byte [duel team]
+	F2 B1: 1 byte [environment]
+	F2 B2:
+	F2 B3: 1 byte [movement mode]
+	F2 B4: 1 byte [show title]
+	F2 B5:
+	F2 B6: 12 bytes [weapon, chest, shield]
+	F2 B7: 8 bytes (below F1 B2 + F1 B3) [move multi, attack multi]
+	
+	F3 B0: 4 bytes
+	F3 B1: 4 bytes (below F2 B6)
+	F3 B2: 0 bytes [no effect on either block]
+	F3 B3: 1 byte (below F3 B1)
+	F3 B4: 4 bytes [ability level…]
+	F3 B5: 4 bytes [owner]
+	F3 B6: [flying…]
+	F3 B7: [unused]
+	
+	F4 B0: 4 bytes [name as npcstring]
+	F4 B1: [always on]
+	F4 B2: 8 bytes (below F3 B1) [actor to follow, distance]
+	F4 B3: 1 byte
+	F4 B4: 4 bytes (below F4 B5) [max MP]
+	F4 B5: 4 bytes (below F4 B6) [max HP]
+	F4 B6: 4 bytes (below F4 B7) [cur MP]
+	F4 B7: 4 bytes [cur HP]
 
-	<unsignedByte alias="Bitmask byte #1" type="structure.ExNpcInfoFieldMask1" id="exNI_1" /> <!-- always has 32+64 enabled -->
-	<unsignedByte alias="Bitmask byte #2" type="structure.ExNpcInfoFieldMask2" id="exNI_2" />
-	<unsignedByte alias="Bitmask byte #3" type="structure.ExNpcInfoFieldMask3" id="exNI_3" />
-	<unsignedByte alias="Bitmask byte #4" type="structure.ExNpcInfoFieldMask4" id="exNI_4" /> <!-- always has 2 enabled -->
-	<unsignedByte alias="Bitmask byte #5" type="structure.ExNpcInfoFieldMask5" id="exNI_5" />
-	<unsignedByte alias="Block size" />
-	<branch description="The block">
+	F5 B0: [unused]
+	F5 B1: [unused]
+	F5 B2:
+	F5 B3:
+	F5 B4: 20 bytes [pledge ID, crest ID, insignia ID, ally ID, ally crest ID]
+	F5 B5: 4 bytes [reputation]
+	F5 B6: 1 byte (below F4 B4, F4 B6) [PvP mode]
+	F5 B7: 4 bytes (below F4 B0, F4 B5) [title as npcstring]
+	-->
+
+	<!-- Always has bits 5 and 6 enabled; bit 1 is never observed -->
+	<unsignedByte alias="Fields #1" type="structure.ExNpcInfoFieldMask1" id="exNI_1" />
+	<!-- All bits appear to be in use -->
+	<unsignedByte alias="Fields #2" type="structure.ExNpcInfoFieldMask2" id="exNI_2" />
+	<!-- Bit 7 is never observed -->
+	<unsignedByte alias="Fields #3" type="structure.ExNpcInfoFieldMask3" id="exNI_3" />
+	<!-- Always has bit 1 enabled; all bits appear to be in use -->
+	<unsignedByte alias="Fields #4" type="structure.ExNpcInfoFieldMask4" id="exNI_4" />
+	<!-- Bits 0 and 1 are never observed -->
+	<unsignedByte alias="Fields #5" type="structure.ExNpcInfoFieldMask5" id="exNI_5" />
+
+	<unsignedByte alias="1st block size" />
+	<branch description="1st block">
 		<byte alias="Attackable" type="YesOrNo">
-			<scriptAlias id="fspawn_gen_npc_atk" />
-			<scriptAlias id="exp_bot_npc_atk" />
+			<scriptAlias id="npc_info_enemy" />
 		</byte>
-		<unsignedByte alias="???? mask ???" />
-		<byte alias="unk 0/2" />
-		<word alias="unk" />
+		<dword alias="Relations" />
 		<string alias="Title">
 			<scriptAlias id="OIC_NPC_TITLE" />
 		</string>
 	</branch>
-	<word alias="Block size" />
-	<branch description="The block">
-		<branch id="exNI_2" condition="bitmask.Bit7" description="Condition is wrong">
+
+	<word alias="2nd block size" />
+	<branch description="2nd block">
+		<!-- Fields #1 -->
+		<branch id="exNI_1" condition="bitmask.Bit7" description="Template">
 			<dword alias="NPC" type="Npc">
 				<scriptAlias id="OIC_NPC_TEMPLATE" />
-				<scriptAlias id="exp_bot_npc_id" />
+				<scriptAlias id="npc_info_template" />
 			</dword>
+		</branch>
+		<!-- Bit5/Bit6 have no effect in block 2 -->
+		<!-- Bit4 is immediately above npcstring name/title -->
+		<branch id="exNI_1" condition="bitmask.Bit3" description="Location"> <!-- Always with Bit2 -->
 			<dword alias="Location X">
 				<scriptAlias id="OIL_OBJECT_X_SERVER" />
 			</dword>
@@ -47,11 +106,19 @@
 			<dword alias="Location Z">
 				<scriptAlias id="OIL_OBJECT_Z_SERVER" />
 			</dword>
+			<!-- Possibly the real field for Bit2 -->
 			<dword alias="Yaw">
 				<scriptAlias id="OIL_OBJECT_YAW" />
 			</dword>
+		</branch>
+		<!-- Bit1 is NOT USED -->
+		<branch id="exNI_1" condition="bitmask.Bit0" description="Action speeds"> <!-- Pure speculation -->
 			<dword alias="Casting speed" />
 			<dword alias="Attack speed" />
+		</branch>
+
+		<!-- Fields #2 -->
+		<branch id="exNI_2" condition="bitmask.Bit7" description="Multipliers">
 			<single alias="Movement speed multiplier" />
 			<single alias="Attack speed multiplier" />
 		</branch>
@@ -60,52 +127,82 @@
 			<dword alias="Chest armor" type="Item" />
 			<dword alias="Shield/support weapon" type="Item" />
 		</branch>
-		<branch id="exNI_2" condition="bitmask.Bit5" description="Condition is wrong">
-			<byte alias="1" /> <!-- Identified as 'Show title', even though status = 0 deals with that -->
+		<branch id="exNI_2" condition="bitmask.Bit5">
+			<!-- content unknown -->
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit4">
+			<byte alias="1" /> <!-- Identified as 'Show title' -->
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit3" description="Walk/run">
 			<byte alias="Movement mode" type="MoveType" />
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit2">
+			<!-- content unknown -->
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit1" description="Environment">
 			<byte alias="Environment" type="Environment" />
+		</branch>
+		<branch id="exNI_2" condition="bitmask.Bit0" description="Duel">
+			<byte alias="Duel team" type="DuelTeam" />
+		</branch>
+
+		<!-- Fields #3 -->
+		<!-- Bit7 is NOT USED -->
+		<branch id="exNI_3" condition="bitmask.Bit6">
+			<!-- content unknown -->
 			<byte alias="Flying" type="YesOrNo" />
-			<bytes alias="0">
-				<length>1</length>
+			<bytes alias="F3 B6?">
+				<length>2</length>
 			</bytes>
-		</branch>
-		<branch id="exNI_2" condition="bitmask.Bit1" description="Single byte, purpose unknown">
-			<byte alias="0" />
-		</branch>
-		<branch id="exNI_2" condition="bitmask.Bit0" description="Single byte, purpose unknown">
-			<byte alias="" />
-		</branch>
-		<branch id="exNI_3" condition="bitmask.Bit0" description="???">
-			<dword alias="unk 0" />
 		</branch>
 		<branch id="exNI_3" condition="bitmask.Bit5" description="Owner">
 			<dword alias="Owner OID" type="ObjectID" />
 		</branch>
-		<branch id="exNI_3" condition="bitmask.Bit4" description="Is this even correct?">
-			<dword alias="unk 0" />
+		<branch id="exNI_3" condition="bitmask.Bit4">
+			<byte alias="F3 B4 #1" />
+			<byte alias="Ability level" />
+			<byte alias="F3 B4 #3" />
+			<byte alias="F3 B4 #4" />
 		</branch>
-		<branch id="exNI_3" condition="bitmask.Bit1" description="Single dword, found on traps and elsewhere">
-			<dword alias="0/1/2/3/100/101" />
+		<branch id="exNI_3" condition="bitmask.Bit3">
+			<byte alias="F3 B3" />
 		</branch>
-		<branch id="exNI_3" condition="bitmask.Bit3" description="Single byte, purpose unknown">
-			<byte alias="" /> <!-- "4" found on Teredor -->
+		<!-- Bit2 has no effect in block 2 -->
+		<branch id="exNI_3" condition="bitmask.Bit1">
+			<bytes alias="F3 B1">
+				<length>4</length>
+			</bytes>
 		</branch>
+		<branch id="exNI_3" condition="bitmask.Bit0">
+			<dword alias="F3 B0" />
+		</branch>
+		
+		<!-- Fields #4 -->
 		<branch id="exNI_4" condition="bitmask.Bit7" description="Cur HP">
-			<dword alias="Current HP" />
+			<dword alias="Current HP">
+				<scriptAlias id="npc_info_hp_current" />
+			</dword>
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit6" description="Cur MP">
 			<dword alias="Current MP" />
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit5" description="Max HP">
-			<dword alias="Max HP" />
+			<dword alias="Max HP">
+				<scriptAlias id="npc_info_hp_maximum" />
+			</dword>
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit4" description="Max MP">
 			<dword alias="Max MP" />
 		</branch>
-		<branch id="exNI_4" condition="bitmask.Bit3" description="Single byte, purpose unknown">
-			<byte alias="1/2" />
+		<branch id="exNI_4" condition="bitmask.Bit3">
+			<byte alias="F4 B3" />
 		</branch>
-		<branch id="exNI_1" condition="bitmask.Bit4" description="Name"> <!-- Unexpected, but that's where it is -->
+		<branch id="exNI_4" condition="bitmask.Bit2" description="Synchronized movement">
+			<dword alias="Followed actor" type="ObjectID" />
+			<dword alias="Follow distance" /> <!-- Speculation -->
+		</branch>
+		<!-- Bit1 has no effect in block 2 -->
+		<branch id="exNI_1" condition="bitmask.Bit4" description="Name">
 			<string alias="Name">
 				<scriptAlias id="OIC_GIVEN_NAME" />
 			</string>
@@ -113,44 +210,44 @@
 		<branch id="exNI_4" condition="bitmask.Bit0" description="Name (npcstring)">
 			<dword alias="Name" type="ImmutableNpcString" />
 		</branch>
-		<branch id="exNI_5" condition="bitmask.NotAllBits">
-			<branch id="exNI_5" condition="bitmask.Bit7" description="Title (npcstring)">
-				<dword alias="Title" type="ImmutableNpcString" />
-			</branch>
-			<branch id="exNI_5" condition="bitmask.Bit6" description="PvP">
-				<byte alias="In PvP" type="Pvp" />
-			</branch>
-			<branch id="exNI_5" condition="bitmask.Bit5" description="Reputation">
-				<dword alias="Reputation" />
-			</branch>
-			<branch id="exNI_5" condition="bitmask.Bit4" description="Pledge/alliance">
-				<dword alias="Pledge ID" type="Pledge">
-					<scriptAlias id="PIC_PLEDGE_ID" />
-				</dword>
-				<dword alias="Pledge crest ID" type="PledgeCrest">
-					<scriptAlias id="PIC_PLEDGE_CREST_ID" />
-				</dword>
-				<dword alias="Pledge insignia ID" />
-				<dword alias="Alliance ID" type="Alliance">
-					<scriptAlias id="AIC_ALLY_ID" />
-				</dword>
-				<dword alias="Alliance crest ID" type="AllianceCrest">
-					<scriptAlias id="AIC_ALLY_CREST_ID" />
-				</dword>
-			</branch>
-			<branch id="exNI_5" condition="bitmask.Bit3" description="State">
-				<byte alias="State" type="NpcState">
-					<scriptAlias id="exp_bot_npc_state" />
-				</byte>
-			</branch>
+
+		<!-- Fields #5 -->
+		<branch id="exNI_5" condition="bitmask.Bit7" description="Title (npcstring)">
+			<dword alias="Title" type="ImmutableNpcString" />
 		</branch>
+		<branch id="exNI_5" condition="bitmask.Bit6" description="PvP">
+			<byte alias="In PvP" type="Pvp" />
+		</branch>
+		<branch id="exNI_5" condition="bitmask.Bit5" description="Reputation">
+			<dword alias="Reputation" />
+		</branch>
+		<branch id="exNI_5" condition="bitmask.Bit4" description="Pledge/alliance">
+			<dword alias="Pledge ID" type="Pledge">
+				<scriptAlias id="PIC_PLEDGE_ID" />
+			</dword>
+			<dword alias="Pledge crest ID" type="PledgeCrest">
+				<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+			</dword>
+			<dword alias="Pledge insignia ID" />
+			<dword alias="Alliance ID" type="Alliance">
+				<scriptAlias id="AIC_ALLY_ID" />
+			</dword>
+			<dword alias="Alliance crest ID" type="AllianceCrest">
+				<scriptAlias id="AIC_ALLY_CREST_ID" />
+			</dword>
+		</branch>
+		<branch id="exNI_5" condition="bitmask.Bit3" description="State"> <!-- Always with Bit2, so it's either -->
+			<byte alias="State" type="NpcState">
+				<scriptAlias id="npc_info_state" />
+			</byte>
+		</branch>
+		<!-- Bit0/Bit1 are NOT USED -->
 	</branch>
-	<branch id="exNI_5" condition="bitmask.NotAllBits">
-		<branch id="exNI_5" condition="bitmask.Bit2" description="Abnormals">
-			<word alias="Abnormal effect count" id="abn" />
-			<loop id="abn">
-				<word alias="Abnormal effect" />
-			</loop>
-		</branch>
+
+	<branch id="object_action" condition="EngineObjectAdd" description="Visuals">
+		<word alias="Visual effects" id="ave_cnt" />
+		<loop id="ave_cnt">
+			<word alias="Effect" type="ave.AbnormalVisualEffect" />
+		</loop>
 	</branch>
 </packet>

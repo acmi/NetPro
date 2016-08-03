@@ -235,7 +235,7 @@
 		<packet opcodePrefix="CF" id="234" />
 		<packet opcodePrefix="D0" id="SM_MULTI_SELL_LIST" />
 		<packet opcodePrefix="D1" id="SM_SET_SUMMON_REMAIN_TIME" />
-		<packet opcodePrefix="D2" id="237" />
+		<packet opcodePrefix="D2" id="SM_SKILL_REMAIN_SEC" />
 		<packet opcodePrefix="D3" id="SM_NET_PING" />
 		<packet opcodePrefix="D4" id="SM_DICE" />
 		<packet opcodePrefix="D5" id="SM_SNOOP" />

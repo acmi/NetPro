@@ -17,7 +17,6 @@
 		</dword>
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
-			<scriptAlias id="harvester_personal_store_item" />
 		</dword>
 		<dword alias="Slot number" type="InventorySlot" /> <!-- NEW -->
 		<qword alias="Quantity" />
@@ -68,9 +67,7 @@
 		<word alias="Enchant effect (2)" type="Augmentation" />
 		<word alias="Enchant effect (3)" type="Augmentation" />
 
-		<qword alias="Reference (shop) price">
-			<scriptAlias id="harvester_personal_store_item_price" />
-		</qword>
+		<qword alias="Reference (shop) price" />
 	</loop>
 	<dword alias="Offer count" id="index_0" />
 	<loop id="index_0">
@@ -79,7 +76,6 @@
 		</dword>
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
-			<scriptAlias id="harvester_personal_store_item" />
 		</dword>
 		<dword alias="0" /> <!-- Slot number is not specified -->
 		<qword alias="Quantity" />
@@ -131,8 +127,6 @@
 		<word alias="Enchant effect (3)" type="Augmentation" />
 
 		<qword alias="Price" />
-		<qword alias="Reference (shop) price">
-			<scriptAlias id="harvester_personal_store_item_price" />
-		</qword>
+		<qword alias="Reference (shop) price" />
 	</loop>
 </packet>

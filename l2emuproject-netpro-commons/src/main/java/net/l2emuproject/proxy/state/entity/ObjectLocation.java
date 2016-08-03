@@ -16,7 +16,7 @@
 package net.l2emuproject.proxy.state.entity;
 
 import net.l2emuproject.geometry.IRotatable;
-import net.l2emuproject.geometry.Point3D;
+import net.l2emuproject.geometry.point.impl.Point3D;
 
 /**
  * Represents a game world object's location.

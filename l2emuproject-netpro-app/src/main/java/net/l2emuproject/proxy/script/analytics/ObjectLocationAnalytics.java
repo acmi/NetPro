@@ -19,7 +19,7 @@ import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TAR
 
 import java.util.List;
 
-import net.l2emuproject.geometry.PointGeometry;
+import net.l2emuproject.geometry.point.PointGeometry;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
@@ -33,9 +33,10 @@ import net.l2emuproject.proxy.script.packets.InvalidPacketWriterArgumentsExcepti
 import net.l2emuproject.proxy.script.packets.PacketWriterRegistry;
 import net.l2emuproject.proxy.script.packets.UnknownPacketIdentifierException;
 import net.l2emuproject.proxy.script.packets.UnknownPacketStructureException;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
 import net.l2emuproject.proxy.state.entity.ObjectLocation;
-import net.l2emuproject.proxy.state.entity.cache.ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -85,8 +86,7 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 			return;
 		
 		final ICacheServerID context = getEntityContext(server);
-		final ObjectInfoCache oic = ObjectInfoCache.getInstance();
-		final ObjectInfo user = oic.getOrAdd(ui.getUserOID(), context);
+		final L2ObjectInfo user = L2ObjectInfoCache.getOrAdd(ui.getUserOID(), context).getExtraInfo();
 		final ObjectLocation loc = user.getCurrentLocation();
 		final L2TextBuilder tb = new L2TextBuilder("Your OID is ").append(ui.getUserOID());
 		{
@@ -120,8 +120,8 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 		for (final Integer pet : ui.getServitorOIDs())
 		{
 			tb.setLength(0);
-			final ObjectInfo trg = oic.getOrAdd(pet, context);
-			final ObjectLocation loc2 = trg.getCurrentLocation();
+			final ObjectInfo<L2ObjectInfo> trg = L2ObjectInfoCache.getOrAdd(pet, context);
+			final ObjectLocation loc2 = trg.getExtraInfo().getCurrentLocation();
 			tb.append("Your servitor is ").append(trg).append(", location (").append(loc2.getX()).append("; ");
 			tb.append(loc2.getY()).append("; ").append(loc2.getZ()).append("), dist: ");
 			tb.append((int)PointGeometry.getRawSolidDistance(loc, loc2));
@@ -141,8 +141,8 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 		final int targetOID = ui.getTargetOID();
 		if (targetOID != NO_TARGET)
 		{
-			final ObjectInfo trg = oic.getOrAdd(targetOID, context);
-			final ObjectLocation loc2 = trg.getCurrentLocation();
+			final ObjectInfo<L2ObjectInfo> trg = L2ObjectInfoCache.getOrAdd(targetOID, context);
+			final ObjectLocation loc2 = trg.getExtraInfo().getCurrentLocation();
 			tb.append("Your target is ").append(trg).append(", location (").append(loc2.getX()).append("; ");
 			tb.append(loc2.getY()).append("; ").append(loc2.getZ()).append("), dist: ");
 			tb.append((int)PointGeometry.getRawSolidDistance(loc, loc2));
@@ -178,10 +178,9 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 		final List<EnumeratedPayloadField> modes = buf.getFieldIndices(OBJECT_MOVE_MODE);
 		
 		final ICacheServerID cacheContext = getEntityContext(server);
-		final ObjectInfoCache oic = ObjectInfoCache.getInstance();
 		for (int i = 0; i < oids.size(); ++i)
 		{
-			final ObjectInfo oi = oic.getOrAdd(buf.readInteger32(oids.get(i)), cacheContext);
+			final L2ObjectInfo oi = L2ObjectInfoCache.getOrAdd(buf.readInteger32(oids.get(i)), cacheContext).getExtraInfo();
 			if (!xs.isEmpty())
 			{
 				final int x = buf.readInteger32(xs.get(i));

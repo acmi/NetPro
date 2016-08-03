@@ -6,9 +6,7 @@
 	<dword alias="Items bought" id="index_0" />
 	<loop id="index_0">
 		<dword alias="Private store slot" />
-		<dword alias="Item" type="Item" id="is_ticket">
-			<scriptAlias id="harvester_personal_store_item" />
-		</dword>
+		<dword alias="Item" type="Item" id="is_ticket" />
 
 		<branch id="is_ticket" condition="GenericItem">
 			<word alias="Enchant level" />
@@ -22,9 +20,7 @@
 
 		<!-- NEW -->
 		<qword alias="Quantity in viewer's inventory" />
-		<qword alias="Reference (shop) price">
-			<scriptAlias id="harvester_personal_store_item_price" />
-		</qword>
+		<qword alias="Reference (shop) price" />
 
 		<branch id="is_ticket" condition="GenericItem">
 			<word alias="Name exists" type="YesOrNo" />

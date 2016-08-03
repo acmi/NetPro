@@ -41,6 +41,12 @@ import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
 import javafx.scene.web.WebView;
 
+import javafx.application.Platform;
+import javafx.concurrent.Worker;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Scene;
+import javafx.scene.web.WebView;
+
 /**
  * Displays a packet in two text boxes: one for raw hex octets delimited by spaces, another for a
  * field-value list based on the packet's structure definition. <BR>
@@ -118,6 +124,7 @@ public class PacketDisplay extends JSplitPane
 		Platform.runLater(new Runnable()
 		{
 			final JFXPanel _tp, _bp;
+			
 			{
 				setTopComponent(_tp = new JFXPanel());
 				setBottomComponent(_bp = new JFXPanel());
@@ -138,7 +145,7 @@ public class PacketDisplay extends JSplitPane
 					{
 						if (newState != Worker.State.SUCCEEDED)
 							return;
-						
+							
 						final Document doc = _contentDisplay.getEngine().getDocument();
 						final NodeList nodes = doc.getElementsByTagName("a");
 						for (int i = 0; i < nodes.getLength(); i++)
@@ -201,7 +208,7 @@ public class PacketDisplay extends JSplitPane
 		
 		if (_currentlyVisiblePacket.get() == packet)
 			return;
-		
+			
 		_currentlyVisiblePacket = new WeakReference<>(packet);
 		//_displayTask = new PacketDisplayTask(this).execute(packet);
 	}

@@ -22,7 +22,7 @@ import net.l2emuproject.proxy.network.meta.FieldValueModifier;
  * 
  * @author _dev_
  */
-public class InvalidFieldValueModifierException extends Exception
+public class InvalidFieldValueModifierException extends InvalidMetaclassException
 {
 	private static final long serialVersionUID = -6556069888668510588L;
 	
@@ -35,6 +35,6 @@ public class InvalidFieldValueModifierException extends Exception
 	 */
 	public InvalidFieldValueModifierException(FieldValueModifier modifier, String alias, String expectedSuperclass)
 	{
-		super(modifier + "(" + alias + ")" + " cannot be cast to " + expectedSuperclass);
+		super("Modifier", modifier, alias, expectedSuperclass);
 	}
 }

@@ -7,7 +7,7 @@
 7	Apprentice's Rod
 8	Willow Staff
 9	Cedar Staff
-10	Dagger
+10	Squire's Dagger
 11	Bone Dagger
 12	Knife
 13	Short Bow
@@ -133,7 +133,7 @@
 133	Raid Sword
 134	Sword of Nightmare
 135	Samurai Long Sword
-136	(Not in Use)
+136	Zodiac Agathion Pack
 137	(Not in Use)
 138	(Not in Use)
 139	Agathion - Angry Devil Pack (7-day)
@@ -298,7 +298,7 @@
 298	Orcish Glaive
 299	Orcish Poleaxe
 300	Great Axe
-301	Scorpion
+301	scorpion
 302	Body Slasher
 303	Widow Maker
 304	Corroded Orcish Halberd
@@ -2365,9 +2365,9 @@
 2365	Recipe: Scroll of Destruction
 2366	Recipe: Black Dragon Claw
 2367	Recipe: Three Eyed Crow's Feather
-2368	Training Gloves
+2368	Squire's Gloves
 2369	Squire's Sword
-2370	Guild Member's Club
+2370	Sqire's Blunt Weapon
 2371	Fist of Butcher
 2372	Dagger of Adept
 2373	Eldritch Staff
@@ -4678,228 +4678,228 @@
 4678	Scroll: Decrease Hate
 4679	Eva's Blessing
 4680	Potion of Revenge
-4681	Not used Not used
-4682	Not used Not used
-4683	Not used Not used
-4684	Not used Not used
-4685	Not used Not used
-4686	Not used Not used
-4687	Not used Not used
-4688	Not used Not used
-4689	Not used Not used
-4690	Not used Not used
-4691	Not used Not used
-4692	Not used Not used
-4693	Raid Sword Focus
-4694	Raid Sword Critical Drain
-4695	Raid Sword Critical Poison
-4696	Caliburs Guidance
-4697	Caliburs Focus
-4698	Caliburs Critical Damage
-4699	Sword of Delusion Focus
-4700	Sword of Delusion Health
-4701	Sword of Delusion Rsk. Haste
-4702	Tsurugi Focus
-4703	Tsurugi Critical Damage
-4704	Tsurugi Haste
-4705	Sword of Nightmare Health
-4706	Sword of Nightmare Focus
-4707	Sword of Nightmare Light Armor
-4708	Samurai Long Sword Focus
-4709	Samurai Long Sword Critical Damage
-4710	Samurai Long Sword Haste
-4711	Flamberge Critical Damage
-4712	Flamberge Focus
-4713	Flamberge Light Armor
-4714	Keshanberk Guidance
-4715	Keshanberk Focus
-4716	Keshanberk Back Blow
-4717	Damascus Sword Focus
-4718	Damascus Sword Critical Damage
-4719	Damascus Sword Haste
+4681	Not used
+4682	Not used
+4683	Not used
+4684	Not used
+4685	Not used
+4686	Not used
+4687	Not used
+4688	Not used
+4689	Not used
+4690	Not used
+4691	Not used
+4692	Not used
+4693	Not used
+4694	Not used
+4695	Not used
+4696	Not used
+4697	Not used
+4698	Not used
+4699	Not used
+4700	Not used
+4701	Not used
+4702	Not used
+4703	Not used
+4704	Not used
+4705	Not used
+4706	Not used
+4707	Not used
+4708	Not used
+4709	Not used
+4710	Not used
+4711	Not used
+4712	Not used
+4713	Not used
+4714	Not used
+4715	Not used
+4716	Not used
+4717	Not used
+4718	Not used
+4719	Not used
 4720	Tallum Blade - Health
 4721	Tallum Blade - Rsk. Evasion
 4722	Tallum Blade - Rsk. Haste
-4723	Great Sword Health
-4724	Great Sword Critical Damage
-4725	Great Sword Focus
-4726	Big Hammer Health
-4727	Big Hammer Rsk. Focus
-4728	Big Hammer Haste
-4729	Battle Axe Anger
-4730	Battle Axe Rsk. Focus
-4731	Battle Axe Haste
-4732	Silver Axe Anger
-4733	Silver Axe Rsk. Focus
-4734	Silver Axe Haste
-4735	Skull Graver Anger
-4736	Skull Graver Health
-4737	Skull Graver Rsk. Focus
-4738	Dwarven War Hammer Anger
-4739	Dwarven War Hammer Health
-4740	Dwarven War Hammer Haste
-4741	War Axe Anger
-4742	War Axe Health
-4743	War Axe Haste
-4744	Yaksa Mace Anger
-4745	Yaksa Mace Health
-4746	Yaksa Mace Rsk. Focus
-4747	Heavy War Axe Anger
-4748	Heavy War Axe Health
-4749	Heavy War Axe Rsk. Focus
-4750	Deadman's Glory Anger
-4751	Deadman's Glory Health
-4752	Deadman's Glory Haste
-4753	Art of Battle Axe Health
-4754	Art of Battle Axe Rsk. Focus
-4755	Art of Battle Axe Haste
+4723	Not used
+4724	Not used
+4725	Not used
+4726	Not used
+4727	Not used
+4728	Not used
+4729	Not used
+4730	Not used
+4731	Not used
+4732	Not used
+4733	Not used
+4734	Not used
+4735	Not used
+4736	Not used
+4737	Not used
+4738	Not used
+4739	Not used
+4740	Not used
+4741	Not used
+4742	Not used
+4743	Not used
+4744	Not used
+4745	Not used
+4746	Not used
+4747	Not used
+4748	Not used
+4749	Not used
+4750	Not used
+4751	Not used
+4752	Not used
+4753	Not used
+4754	Not used
+4755	Not used
 4756	Meteor Shower - Health
 4757	Meteor Shower - Focus
 4758	Meteor Shower - P. Focus
-4759	Cursed Dagger Critical Bleed
-4760	Cursed Dagger Critical Poison
-4761	Cursed Dagger Rsk. Haste
-4762	Dark Elven Dagger Focus
-4763	Dark Elven Dagger Back Blow
-4764	Dark Elven Dagger Mortal Strike
-4765	Stiletto Critical Bleed
-4766	Stiletto Critical Poison
-4767	Stiletto Mortal Strike
-4768	Grace Dagger Evasion
-4769	Grace Dagger Focus
-4770	Grace Dagger Back Blow
-4771	Dark Screamer Evasion
-4772	Dark Screamer Focus
-4773	Dark Screamer Critical Bleed
-4774	Crystal Dagger Critical Bleed
-4775	Crystal Dagger Critical Poison
-4776	Crystal Dagger Mortal Strike
-4777	Kris Evasion
-4778	Kris Focus
-4779	Kris Back Blow
-4780	Demon's Dagger Critical Bleed
-4781	Demon's Dagger Critical Poison
-4782	Demon's Dagger Mortal Strike
+4759	Not used
+4760	Not used
+4761	Not used
+4762	Not used
+4763	Not used
+4764	Not used
+4765	Not used
+4766	Not used
+4767	Not used
+4768	Not used
+4769	Not used
+4770	Not used
+4771	Not used
+4772	Not used
+4773	Not used
+4774	Not used
+4775	Not used
+4776	Not used
+4777	Not used
+4778	Not used
+4779	Not used
+4780	Not used
+4781	Not used
+4782	Not used
 4783	Bloody Orchid - Evasion
 4784	Bloody Orchid - Focus
 4785	Bloody Orchid - Back Blow
-4786	Twilight Knife Focus
-4787	Twilight Knife Back Blow
-4788	Twilight Knife Mortal Strike
-4789	Chakram Critical Drain
-4790	Chakram Critical Poison
-4791	Chakram Rsk. Haste
-4792	Fisted Blade Rsk. Evasion
-4793	Fisted Blade Rsk. Haste
-4794	Fisted Blade Haste
-4795	Great Pata Critical Drain
-4796	Great Pata Critical Poison
-4797	Great Pata Rsk. Haste
-4798	Knuckle Duster Rsk. Evasion
-4799	Knuckle Duster Rsk. Haste
-4800	Knuckle Duster Haste
-4801	Arthro Nail Critical Poison
-4802	Arthro Nail Rsk. Evasion
-4803	Arthro Nail Rsk. Haste
-4804	Bellion Cestus Critical Drain
-4805	Bellion Cestus Critical Poison
-4806	Bellion Cestus Rsk. Haste
+4786	Not used
+4787	Not used
+4788	Not used
+4789	Not used
+4790	Not used
+4791	Not used
+4792	Not used
+4793	Not used
+4794	Not used
+4795	Not used
+4796	Not used
+4797	Not used
+4798	Not used
+4799	Not used
+4800	Not used
+4801	Not used
+4802	Not used
+4803	Not used
+4804	Not used
+4805	Not used
+4806	Not used
 4807	Blood Tornado - Critical Drain
 4808	Blood Tornado - Rsk. Evasion
 4809	Blood Tornado - Haste
-4810	Crystallized Ice Bow Guidance
-4811	Crystallized Ice Bow Evasion
-4812	Crystallized Ice Bow Quick Recovery
-4813	Elemental Bow Guidance
-4814	Elemental Bow Miser
-4815	Elemental Bow Quick Recovery
-4816	Noble Elven Bow Evasion
-4817	Noble Elven Bow Miser
-4818	Noble Elven Bow Cheap Shot
-4819	Akat Longbow Guidance
-4820	Akat Longbow Evasion
-4821	Akat Longbow Miser
-4822	Eminence Bow Guidance
-4823	Eminence Bow Miser
-4824	Eminence Bow Cheap Shot
-4825	Dark Elven Longbow Evasion
-4826	Dark Elven Longbow Critical Bleed
-4827	Dark Elven Longbow Miser
-4828	Bow of Peril Guidance
-4829	Bow of Peril Quick Recovery
-4830	Bow of Peril Cheap Shot
+4810	Not used
+4811	Not used
+4812	Not used
+4813	Not used
+4814	Not used
+4815	Not used
+4816	Not used
+4817	Not used
+4818	Not used
+4819	Not used
+4820	Not used
+4821	Not used
+4822	Not used
+4823	Not used
+4824	Not used
+4825	Not used
+4826	Not used
+4827	Not used
+4828	Not used
+4829	Not used
+4830	Not used
 4831	Carnage Bow - Critical Bleed
 4832	Carnage Bow - Mana Up
 4833	Carnage Bow - Quick Recovery
-4834	Scythe Anger
-4835	Scythe Critical Stun
-4836	Scythe Light Armor
-4837	Orcish Glaive Anger
-4838	Orcish Glaive Critical Stun
-4839	Orcish Glaive Long Blow
-4840	Body Slasher Critical Stun
-4841	Body Slasher Long Blow
-4842	Body Slasher Wide Blow
-4843	Bec de Corbin Critical Stun
-4844	Bec de Corbin Long Blow
-4845	Bec de Corbin Light Armor
-4846	Scorpion Anger
-4847	Scorpion Critical Stun
-4848	Scorpion Long Blow
-4849	Widow Maker Critical Stun
-4850	Widow Maker Long Blow
-4851	Widow Maker Wide Blow
-4852	Orcish Poleaxe Critical Stun
-4853	Orcish Poleaxe Long Blow
-4854	Orcish Poleaxe Wide Blow
-4855	Great Axe Anger
-4856	Great Axe Critical Stun
-4857	Great Axe Light Armor
-4858	Lance Anger
-4859	Lance Critical Stun
-4860	Lance Long Blow
+4834	Not used
+4835	Not used
+4836	Not used
+4837	Not used
+4838	Not used
+4839	Not used
+4840	Not used
+4841	Not used
+4842	Not used
+4843	Not used
+4844	Not used
+4845	Not used
+4846	Not used
+4847	Not used
+4848	Not used
+4849	Not used
+4850	Not used
+4851	Not used
+4852	Not used
+4853	Not used
+4854	Not used
+4855	Not used
+4856	Not used
+4857	Not used
+4858	Not used
+4859	Not used
+4860	Not used
 4861	Halberd Critical Stun
 4862	Halberd Long Blow
 4863	Halberd Wide Blow
-4864	Heavy Doom Hammer Magic Regeneration
-4865	Heavy Doom Hammer Magic Mental Shield
-4866	Heavy Doom Hammer Magic Hold
-4867	Crystal Staff Rsk. Evasion
-4868	Crystal Staff Mana Up
-4869	Crystal Staff Blessed Body
-4870	Heavy Doom Axe Magic Poison
-4871	Heavy Doom Axe Magic Weakness
-4872	Heavy Doom Axe Magic Chaos
-4873	Cursed Staff Magic Hold
-4874	Cursed Staff Magic Poison
-4875	Cursed Staff Magic Weakness
-4876	Paradia Staff Magic Regeneration
-4877	Paradia Staff Magic Mental Shield
-4878	Paradia Staff Magic Hold
-4879	Pa'agrio Hammer Rsk. Evasion
-4880	Pa'agrio Hammer Magic Poison
-4881	Pa'agrio Hammer Magic Weakness
-4882	Sage's Staff Magic Hold
-4883	Sage's Staff Magic Poison
-4884	Sage's Staff Magic Weakness
-4885	Pa'agrio Axe Mana Up
-4886	Pa'agrio Axe Magic Weakness
-4887	Pa'agrio Axe Magic Chaos
-4888	Deadman's Staff Magic Regeneration
-4889	Deadman's Staff Magic Mental Shield
-4890	Deadman's Staff Magic Hold
-4891	Ghoul's Staff Rsk. Evasion
-4892	Ghoul's Staff Mana Up
-4893	Ghoul's Staff Blessed Body
-4894	Demon's Staff Magic Poison
-4895	Demon's Staff Magic Weakness
-4896	Demon's Staff Magic Chaos
-4897	Spirit's Staff Magic Regeneration
-4898	Spirit's Staff Magic Mental Shield
-4899	Spirit's Staff Magic Hold
-4900	Staff of Evil Spirits Magic Focus
-4901	Staff of Evil Spirits Blessed Body
-4902	Staff of Evil Spirits Magic Poison
+4864	Not used
+4865	Not used
+4866	Not used
+4867	Not used
+4868	Not used
+4869	Not used
+4870	Not used
+4871	Not used
+4872	Not used
+4873	Not used
+4874	Not used
+4875	Not used
+4876	Not used
+4877	Not used
+4878	Not used
+4879	Not used
+4880	Not used
+4881	Not used
+4882	Not used
+4883	Not used
+4884	Not used
+4885	Not used
+4886	Not used
+4887	Not used
+4888	Not used
+4889	Not used
+4890	Not used
+4891	Not used
+4892	Not used
+4893	Not used
+4894	Not used
+4895	Not used
+4896	Not used
+4897	Not used
+4898	Not used
+4899	Not used
+4900	Not used
+4901	Not used
+4902	Not used
 4903	Dasparion's Staff
 4904	Dasparion's Staff
 4905	Dasparion's Staff
@@ -6304,15 +6304,15 @@
 6304	Nephilim Shaman Posting Ticket
 6305	Nephilim Warrior Posting Ticket
 6306	Nephilim Shaman Posting Ticket
-6307	Ultimate Sword Guidance
-6308	Ultimate Sword Critical Drain
-6309	Ultimate Sword Health
-6310	Sword of Whispering Death Empower
-6311	Sword of Whispering Death M. Atk.
-6312	Sword of Whispering Death Magic Silence
-6313	Homunkulus' Sword Acumen
-6314	Homunkulus' Sword Conversion
-6315	Homunkulus' Sword Magic Paralyze
+6307	Not used
+6308	Not used
+6309	Not used
+6310	Not used
+6311	Not used
+6312	Not used
+6313	Not used
+6314	Not used
+6315	Not used
 6316	Wyvern Food
 6317	Mixing Manual
 6318	Blood Fire
@@ -6344,19 +6344,19 @@
 6344	Sealed Majestic Necklace Beads
 6345	Sealed Phoenix Ring Gemstone
 6346	Sealed Majestic Ring Gemstone
-6347	Berserker Blade Focus
-6348	Berserker Blade Critical Damage
-6349	Berserker Blade Haste
+6347	Not used
+6348	Not used
+6349	Not used
 6350	Amulet: Pa'agrio's Honor
 6351	Amulet: Ritual of Life
 6352	Spellbook: Prayer
 6353	Blue Gemstone
 6354	Falchion (Novice)
 6355	Mage Staff (Novice)
-6356	Dark Elven Dagger Rsk. Haste
-6357	Stiletto Rsk. Haste
-6358	Crystal Dagger Critical Damage
-6359	Demon's Dagger Critical Damage
+6356	Not used
+6357	Not used
+6358	Not used
+6359	Not used
 6360	Blue Seal Stone
 6361	Green Seal Stone
 6362	Red Seal Stone
@@ -6578,36 +6578,36 @@
 6578	Blessed Scroll: Enchant Armor (S-grade)
 6579	Arcana Mace
 6580	Tallum Blade*Dark Legion's Edge
-6581	Forgotten Blade Haste
-6582	Forgotten Blade Health
-6583	Forgotten Blade Focus
-6584	Basalt Battlehammer HP Drain
-6585	Basalt Battlehammer Health
-6586	Basalt Battlehammer HP Regeneration
-6587	Imperial Staff Empower
-6588	Imperial Staff MP Regeneration
-6589	Imperial Staff Magic Hold
-6590	Angel Slayer Critical Damage
-6591	Angel Slayer HP Drain
-6592	Angel Slayer Haste
+6581	Not used
+6582	Not used
+6583	Not used
+6584	Not used
+6585	Not used
+6586	Not used
+6587	Not used
+6588	Not used
+6589	Not used
+6590	Not used
+6591	Not used
+6592	Not used
 6593	Bow of Light Cheap Shot
 6594	Bow of Light Focus
 6595	Bow of Light Critical Slow
-6596	Dragon Hunter Axe HP Regeneration
-6597	Dragon Hunter Axe Health
-6598	Dragon Hunter Axe HP Drain
-6599	Saint Spear Health
-6600	Saint Spear Guidance
-6601	Saint Spear Haste
-6602	Demon Splinter Focus
-6603	Demon Splinter Health
-6604	Demon Splinter Critical Stun
-6605	Heaven's Divider Haste
-6606	Heaven's Divider Health
-6607	Heaven's Divider Focus
-6608	Arcana Mace Acumen
-6609	Arcana Mace MP Regeneration
-6610	Arcana Mace Mana Up
+6596	Not used
+6597	Not used
+6598	Not used
+6599	Not used
+6600	Not used
+6601	Not used
+6602	Not used
+6603	Not used
+6604	Not used
+6605	Not used
+6606	Not used
+6607	Not used
+6608	Not used
+6609	Not used
+6610	Not used
 6611	Infinity Blade
 6612	Infinity Cleaver
 6613	Infinity Axe
@@ -7573,9 +7573,9 @@
 7573	Roselyn's Note
 7574	Very Expensive Necklace
 7575	Draconic Bow
-7576	Draconic Bow Cheap Shot
-7577	Draconic Bow Focus
-7578	Draconic Bow Critical Slow
+7576	Not used
+7577	Not used
+7578	Not used
 7579	Draconic Bow Shaft
 7580	Recipe: Draconic Bow (60%)
 7581	Recipe: Draconic Bow
@@ -7698,30 +7698,30 @@
 7698	Piece of Daisy Hairpin
 7699	Recipe: Forget-me-not Hairpin
 7700	Recipe: Daisy Hairpin
-7701	Stick of Faith Mana Up
-7702	Stick of Faith Magic Hold
-7703	Stick of Faith Magic Mental Shield
-7704	Stick of Eternity Empower
-7705	Stick of Eternity Rsk. Evasion
-7706	Stick of Eternity Blessed Body
-7707	Nirvana Axe M. Atk.
-7708	Nirvana Axe Magic Poison
-7709	Nirvana Axe Magic Weakness
-7710	Club of Nature Acumen
-7711	Club of Nature Magic Mental Shield
-7712	Club of Nature Magic Hold
-7713	Mace of Underworld Mana Up
-7714	Mace of Underworld Magic Silence
-7715	Mace of Underworld Conversion
-7716	Inferno Staff Acumen
-7717	Inferno Staff Magic Silence
-7718	Inferno Staff Magic Paralyze
-7719	Poleaxe Critical Stun
-7720	Poleaxe Long Blow
-7721	Poleaxe Wide Blow
-7722	Sword of Valhalla Acumen
-7723	Sword of Valhalla Magic Weakness
-7724	Sword of Valhalla Magic Regeneration
+7701	Not used
+7702	Not used
+7703	Not used
+7704	Not used
+7705	Not used
+7706	Not used
+7707	Not used
+7708	Not used
+7709	Not used
+7710	Not used
+7711	Not used
+7712	Not used
+7713	Not used
+7714	Not used
+7715	Not used
+7716	Not used
+7717	Not used
+7718	Not used
+7719	Not used
+7720	Not used
+7721	Not used
+7722	Not used
+7723	Not used
+7724	Not used
 7725	Booty - Grey Pouch
 7726	Small Green Nimble Fish (Novice)
 7727	Small Green Ugly Fish (Novice)
@@ -7807,12 +7807,12 @@
 7807	Corroded Green Bait (Novice)
 7808	Corroded Purple Bait (Novice)
 7809	Corroded Yellow Bait (Novice)
-7810	Soulfire Dirk Mana Up
-7811	Soulfire Dirk Magic Hold
-7812	Soulfire Dirk Magic Silence
-7813	Twilight Knife Magic Regeneration
-7814	Twilight Knife Magic Mental Shield
-7815	Twilight Knife Magic Weakness
+7810	Not used
+7811	Not used
+7812	Not used
+7813	Not used
+7814	Not used
+7815	Not used
 7816	Apprentice Adventurer's Staff
 7817	Apprentice Adventurer's Bone Club
 7818	Apprentice Adventurer's Knife
@@ -8099,51 +8099,51 @@
 8099	Thief Guild's Mark
 8100	Broken Golem Shard
 8101	Dwarf's Favor
-8102	Pa'agrian Sword Focus
-8103	Pa'agrian Sword Health
-8104	Pa'agrian Sword Critical Drain
-8105	Guardian's Sword Critical Drain
-8106	Guardian's Sword Health
-8107	Guardian's Sword Critical Bleed
+8102	Not used
+8103	Not used
+8104	Not used
+8105	Not used
+8106	Not used
+8107	Not used
 8108	Infernal Master Haste
 8109	Infernal Master Critical Damage
 8110	Infernal Master Focus
-8111	Mysterious Sword Acumen
-8112	Mysterious Sword M. Atk.
-8113	Mysterious Sword Magic Weakness
-8114	Ecliptic Sword Empower
-8115	Ecliptic Sword M. Atk.
-8116	Ecliptic Sword Magic Silence
-8117	Wizard's Tear Acumen
-8118	Wizard's Tear M. Atk.
-8119	Wizard's Tear Conversion
-8120	Dwarven Hammer Health
-8121	Dwarven Hammer Anger
-8122	Dwarven Hammer Critical Bleed
-8123	Karik Horn Focus
-8124	Karik Horn Haste
-8125	Karik Horn Critical Drain
+8111	Not used
+8112	Not used
+8113	Not used
+8114	Not used
+8115	Not used
+8116	Not used
+8117	Not used
+8118	Not used
+8119	Not used
+8120	Not used
+8121	Not used
+8122	Not used
+8123	Not used
+8124	Not used
+8125	Not used
 8126	Destroyer Hammer Health
 8127	Destroyer Hammer Haste
 8128	Destroyer Hammer Critical Drain
-8129	Ice Storm Hammer Focus
-8130	Ice Storm Hammer Anger
-8131	Ice Storm Hammer Critical Bleed
-8132	Star Buster Health
-8133	Star Buster Haste
-8134	Star Buster Rsk. Focus
+8129	Not used
+8130	Not used
+8131	Not used
+8132	Not used
+8133	Not used
+8134	Not used
 8135	Doom Crusher Health
 8136	Doom Crusher Anger
 8137	Doom Crusher Rsk. Haste
-8138	Ecliptic Axe Conversion
-8139	Ecliptic Axe M. Atk.
-8140	Ecliptic Axe Magic Hold
-8141	Spell Breaker Acumen
-8142	Spell Breaker Magic Mental Shield
-8143	Spell Breaker Magic Hold
-8144	Kaim Vanul's Bones Mana Up
-8145	Kaim Vanul's Bones Magic Silence
-8146	Kaim Vanul's Bones Conversion
+8138	Not used
+8139	Not used
+8140	Not used
+8141	Not used
+8142	Not used
+8143	Not used
+8144	Not used
+8145	Not used
+8146	Not used
 8147	Spiritual Eye Mana Up
 8148	Spiritual Eye Magic Poison
 8149	Spiritual Eye Acumen
@@ -9226,105 +9226,105 @@
 9226	General's Katzbalger
 9227	Cranequin
 9228	Soldat Estoc
-9229	Soldat Estoc Critical Anger
-9230	Soldat Estoc Focus
-9231	Soldat Estoc Light Armor
+9229	Not used
+9230	Not used
+9231	Not used
 9232	Schlager
-9233	Schlager Critical Damage
-9234	Schlager Focus
-9235	Schlager Light Armor
+9233	Not used
+9234	Not used
+9235	Not used
 9236	Arbalest
-9237	Arbalest Guidance
-9238	Arbalest Evasion
-9239	Arbalest Quick Recovery
+9237	Not used
+9238	Not used
+9239	Not used
 9240	Chevalier Rapier
-9241	Chevalier Rapier Guidance
-9242	Chevalier Rapier Back Blow
-9243	Chevalier Rapier Rsk. Evasion
+9241	Not used
+9242	Not used
+9243	Not used
 9244	Chevalier Rapier
-9245	Chevalier Rapier Focus
-9246	Chevalier Rapier Critical Damage
-9247	Chevalier Rapier Haste
+9245	Not used
+9246	Not used
+9247	Not used
 9248	Chevalier Rapier
-9249	Chevalier Rapier Critical Damage
-9250	Chevalier Rapier Critical Poison
-9251	Chevalier Rapier Haste
+9249	Not used
+9250	Not used
+9251	Not used
 9252	Chevalier Rapier
-9253	Chevalier Rapier Focus
-9254	Chevalier Rapier Critical Drain
-9255	Chevalier Rapier Critical Poison
+9253	Not used
+9254	Not used
+9255	Not used
 9256	Ballista
-9257	Ballista Guidance
-9258	Ballista Miser
-9259	Ballista Quick Recovery
+9257	Not used
+9258	Not used
+9259	Not used
 9260	Ballista
-9261	Ballista Evasion
-9262	Ballista Miser
-9263	Ballista Cheap Shot
+9261	Not used
+9262	Not used
+9263	Not used
 9264	Blinzlasher
-9265	Blinzlasher Guidance
-9266	Blinzlasher Focus
-9267	Blinzlasher Critical Damage
+9265	Not used
+9266	Not used
+9267	Not used
 9268	Blinzlasher
-9269	Blinzlasher Focus
-9270	Blinzlasher Health
-9271	Blinzlasher Rsk. Haste
+9269	Not used
+9270	Not used
+9271	Not used
 9272	Blinzlasher
-9273	Blinzlasher Focus
-9274	Blinzlasher Critical Damage
-9275	Blinzlasher Haste
+9273	Not used
+9274	Not used
+9275	Not used
 9276	Blinzlasher
-9277	Blinzlasher Health
-9278	Blinzlasher Focus
-9279	Blinzlasher Light Armor
+9277	Not used
+9278	Not used
+9279	Not used
 9280	Blinzlasher
-9281	Blinzlasher Guidance
-9282	Blinzlasher Critical Drain
-9283	Blinzlasher Health
+9281	Not used
+9282	Not used
+9283	Not used
 9284	Immortal Edge
-9285	Immortal Edge Focus
-9286	Immortal Edge Health
-9287	Immortal Edge Critical Drain
+9285	Not used
+9286	Not used
+9287	Not used
 9288	Tathlum
-9289	Tathlum Guidance
-9290	Tathlum Evasion
-9291	Tathlum Miser
+9289	Not used
+9290	Not used
+9291	Not used
 9292	Admiral's Estoc
-9293	Admiral's Estoc Focus
-9294	Admiral's Estoc Critical Damage
-9295	Admiral's Estoc Haste
+9293	Not used
+9294	Not used
+9295	Not used
 9296	Saber Tooth
-9297	Saber Tooth Focus
-9298	Saber Tooth Critical Damage
-9299	Saber Tooth Haste
+9297	Not used
+9298	Not used
+9299	Not used
 9300	Sharpshooter
-9301	Sharpshooter Guidance
-9302	Sharpshooter Miser
-9303	Sharpshooter Cheap Shot
+9301	Not used
+9302	Not used
+9303	Not used
 9304	Military Fleuret
-9305	Military Fleuret Guidance
-9306	Military Fleuret Focus
-9307	Military Fleuret Back Blow
+9305	Not used
+9306	Not used
+9307	Not used
 9308	Innominate Victory
-9309	Innominate Victory Health
-9310	Innominate Victory Critical Damage
-9311	Innominate Victory Focus
+9309	Not used
+9310	Not used
+9311	Not used
 9312	Peacemaker
-9313	Peacemaker Evasion
-9314	Peacemaker Critical Bleed
-9315	Peacemaker Miser
+9313	Not used
+9314	Not used
+9315	Not used
 9316	Colichemarde
-9317	Colichemarde Focus
-9318	Colichemarde Critical Damage
-9319	Colichemarde Haste
+9317	Not used
+9318	Not used
+9319	Not used
 9320	Dismantler
-9321	Dismantler Critical Drain
-9322	Dismantler Health
-9323	Dismantler Critical Bleed
+9321	Not used
+9322	Not used
+9323	Not used
 9324	Hell Hound
-9325	Hell Hound Guidance
-9326	Hell Hound Quick Recovery
-9327	Hell Hound Cheap Shot
+9325	Not used
+9326	Not used
+9327	Not used
 9328	White Lightning
 9329	White Lightning Critical Poison
 9330	White Lightning Haste
@@ -9362,29 +9362,29 @@
 9362	Screaming Vengeance Focus
 9363	Screaming Vengeance Quick Recovery
 9364	Laevateinn
-9365	Laevateinn Haste
-9366	Laevateinn Health
-9367	Laevateinn Focus
+9365	Not used
+9366	Not used
+9367	Not used
 9368	Gram
-9369	Gram Haste
-9370	Gram Health
-9371	Gram Focus
+9369	Not used
+9370	Not used
+9371	Not used
 9372	Sarunga
-9373	Sarunga Cheap Shot
-9374	Sarunga Focus
-9375	Sarunga Critical Slow
+9373	Not used
+9374	Not used
+9375	Not used
 9376	Dynasty Rapier
-9377	Dynasty Rapier Focus
-9378	Dynasty Rapier Health
-9379	Dynasty Rapier Light Armor
+9377	Not used
+9378	Not used
+9379	Not used
 9380	Dynasty Ancient Sword
-9381	Dynasty Ancient Sword Focus
-9382	Dynasty Ancient Sword Health
-9383	Dynasty Ancient Sword Light Armor
+9381	Not used
+9382	Not used
+9383	Not used
 9384	Dynasty Crossbow
-9385	Dynasty Crossbow Cheap Shot
-9386	Dynasty Crossbow Guidance
-9387	Dynasty Crossbow Focus
+9385	Not used
+9386	Not used
+9387	Not used
 9388	Infinity Rapier
 9389	Infinity Sword
 9390	Infinity Shooter
@@ -9851,33 +9851,33 @@
 9851	Standard Caravan Certificate
 9852	Premium Caravan Certificate
 9853	Mark of Friendship and Trust
-9854	Dynasty Sword Focus
-9855	Dynasty Sword Health
-9856	Dynasty Sword Light Armor
-9857	Dynasty Blade Focus
-9858	Dynasty Blade Health
-9859	Dynasty Blade Light Armor
-9860	Dynasty Phantom Acumen
-9861	Dynasty Phantom Mana Up
-9862	Dynasty Phantom Conversion
-9863	Dynasty Bow Cheap Shot
-9864	Dynasty Bow Guidance
-9865	Dynasty Bow Focus
-9866	Dynasty Knife Focus
-9867	Dynasty Knife Evasion
-9868	Dynasty Knife Critical Damage
-9869	Dynasty Halberd Anger
-9870	Dynasty Halberd Critical Stun
-9871	Dynasty Halberd Light Armor
-9872	Dynasty Cudgel Anger
-9873	Dynasty Cudgel Health
-9874	Dynasty Cudgel Rsk. Focus
-9875	Dynasty Mace Mana Up
-9876	Dynasty Mace Conversion
-9877	Dynasty Mace Acumen
-9878	Dynasty Bagh-Nakh Rsk. Evasion
-9879	Dynasty Bagh-Nakh Focus
-9880	Dynasty Bagh-Nakh Haste
+9854	Not used
+9855	Not used
+9856	Not used
+9857	Not used
+9858	Not used
+9859	Not used
+9860	Not used
+9861	Not used
+9862	Not used
+9863	Not used
+9864	Not used
+9865	Not used
+9866	Not used
+9867	Not used
+9868	Not used
+9869	Not used
+9870	Not used
+9871	Not used
+9872	Not used
+9873	Not used
+9874	Not used
+9875	Not used
+9876	Not used
+9877	Not used
+9878	Not used
+9879	Not used
+9880	Not used
 9881	Diploma
 9882	Great Black Wolf Necklace
 9883	Teddy Bear Hat Big Head
@@ -10431,42 +10431,42 @@
 10431	Tully's Copper Medal
 10432	Kertang's Herb of Life
 10433	Kertang's Herb of Mana
-10434	Icarus Sawsword Focus
-10435	Icarus Sawsword Health
-10436	Icarus Sawsword Light Armor
-10437	Icarus Heavy Arms Focus
-10438	Icarus Heavy Arms Health
-10439	Icarus Heavy Arms Light Armor
-10440	Icarus Spirit Acumen
-10441	Icarus Spirit Mana Up
-10442	Icarus Spirit Conversion
-10443	Icarus Spitter Cheap Shot
-10444	Icarus Spitter Guidance
-10445	Icarus Spitter Focus
-10446	Icarus Disperser Focus
-10447	Icarus Disperser Evasion
-10448	Icarus Disperser Critical Damage
-10449	Icarus Trident Anger
-10450	Icarus Trident Critical Stun
-10451	Icarus Trident Light Armor
-10452	Icarus Hammer Anger
-10453	Icarus Hammer Health
-10454	Icarus Hammer Rsk. Focus
-10455	Icarus Hall Mana Up
-10456	Icarus Hall Conversion
-10457	Icarus Hall Acumen
-10458	Icarus Hand Rsk. Evasion
-10459	Icarus Hand Focus
-10460	Icarus Hand Haste
-10461	Icarus Stinger Focus
-10462	Icarus Stinger Health
-10463	Icarus Stinger Light Armor
-10464	Icarus Wingblade Focus
-10465	Icarus Wingblade Health
-10466	Icarus Wingblade Light Armor
-10467	Icarus Shooter Cheap Shot
-10468	Icarus Shooter Guidance
-10469	Icarus Shooter Focus
+10434	Not used
+10435	Not used
+10436	Not used
+10437	Not used
+10438	Not used
+10439	Not used
+10440	Not used
+10441	Not used
+10442	Not used
+10443	Not used
+10444	Not used
+10445	Not used
+10446	Not used
+10447	Not used
+10448	Not used
+10449	Not used
+10450	Not used
+10451	Not used
+10452	Not used
+10453	Not used
+10454	Not used
+10455	Not used
+10456	Not used
+10457	Not used
+10458	Not used
+10459	Not used
+10460	Not used
+10461	Not used
+10462	Not used
+10463	Not used
+10464	Not used
+10465	Not used
+10466	Not used
+10467	Not used
+10468	Not used
+10469	Not used
 10470	Shadow Item: Red Crescent
 10471	Shadow Item: Ring of Devotion
 10472	Shadow Item: Necklace of Devotion
@@ -10524,12 +10524,12 @@
 10524	Rough Wind Stone
 10525	Rough Dark Stone
 10526	Rough Holy Stone
-10527	Dynasty Staff Mana Up
-10528	Dynasty Staff Conversion
-10529	Dynasty Staff Acumen
-10530	Dynasty Crusher Anger
-10531	Dynasty Crusher Health
-10532	Dynasty Crusher Rsk. Focus
+10527	Not used
+10528	Not used
+10529	Not used
+10530	Not used
+10531	Not used
+10532	Not used
 10533	Blue Talisman - P. Atk.
 10534	Blue Talisman - Shield Defense
 10535	Yellow Talisman - P. Def.
@@ -10868,55 +10868,55 @@
 10868	Helvetia's Antidote
 10869	Contaminated Kasha Spider Venom
 10870	Great Sword - Lightning
-10871	Great Sword - Lightning Health
-10872	Great Sword - Lightning Critical Damage
-10873	Great Sword - Lightning Focus
+10871	Not used
+10872	Not used
+10873	Not used
 10874	Great Axe - Thunder
-10875	Great Axe - Thunder Anger
-10876	Great Axe - Thunder Critical Stun
-10877	Great Axe - Thunder Light Armor
+10875	Not used
+10876	Not used
+10877	Not used
 10878	Ultimate Sword*Ultimate Sword - Destruction
 10879	Ultimate Sword*Sword of Delusion - Destruction
 10880	Ultimate Sword*Sword of Nightmare - Destruction
 10881	Ultimate Sword*Tsurugi - Destruction
 10882	Innominate Victory - Lightning
-10883	Innominate Victory - Lightning Health
-10884	Innominate Victory - Lightning Critical Damage
-10885	Innominate Victory - Lightning Focus
+10883	Not used
+10884	Not used
+10885	Not used
 10886	Dark Elven Longbow - Concentration
-10887	Dark Elven Longbow - Concentration Evasion
-10888	Dark Elven Longbow - Concentration Critical Bleed
-10889	Dark Elven Longbow - Concentration Miser
+10887	Not used
+10888	Not used
+10889	Not used
 10890	Sword of Delusion*Sword of Delusion - Destruction
 10891	Sword of Delusion*Sword of Nightmare - Destruction
 10892	Sword of Delusion*Tsurugi - Destruction
 10893	Sword of Valhalla - Nature
-10894	Sword of Valhalla - Nature Acumen
-10895	Sword of Valhalla - Nature Magic Weakness
-10896	Sword of Valhalla - Nature Magic Regeneration
+10894	Not used
+10895	Not used
+10896	Not used
 10897	StormBringer*Samurai Long Sword - Destruction
 10898	Spell Breaker - Tidal Wave
-10899	Spell Breaker - Tidal Wave Acumen
-10900	Spell Breaker - Tidal Wave Magic Mental Shield
-10901	Spell Breaker - Tidal Wave Magic Hold
+10899	Not used
+10900	Not used
+10901	Not used
 10902	Arthro Nail - Destruction
-10903	Arthro Nail - Destruction Critical Poison
-10904	Arthro Nail - Destruction Rsk. Evasion
-10905	Arthro Nail - Destruction Rsk. Haste
+10903	Not used
+10904	Not used
+10905	Not used
 10906	Ice Storm Hammer - Lightning
-10907	Ice Storm Hammer - Lightning Focus
-10908	Ice Storm Hammer - Lightning Anger
-10909	Ice Storm Hammer - Lightning Critical Bleed
+10907	Not used
+10908	Not used
+10909	Not used
 10910	Sword of Nightmare*Sword of Nightmare - Destruction
 10911	Sword of Nightmare*Tsurugi - Destruction
 10912	Military Fleuret - Destruction
-10913	Military Fleuret - Destruction Guidance
-10914	Military Fleuret - Destruction Focus
-10915	Military Fleuret - Destruction Back Blow
+10913	Not used
+10914	Not used
+10915	Not used
 10916	Spirit's Staff - Hail
-10917	Spirit's Staff - Hail Magic Regeneration
-10918	Spirit's Staff - Hail Magic Mental Shield
-10919	Spirit's Staff - Hail Magic Hold
+10917	Not used
+10918	Not used
+10919	Not used
 10920	Tsurugi*Tsurugi - Destruction
 10921	Caliburs*Ultimate Sword - Destruction
 10922	Caliburs*Sword of Delusion - Destruction
@@ -10924,25 +10924,25 @@
 10924	Caliburs*Tsurugi - Destruction
 10925	Caliburs*Caliburs - Destruction
 10926	Kris - Confusion
-10927	Kris - Confusion Evasion
-10928	Kris - Confusion Focus
-10929	Kris - Confusion Back Blow
+10927	Not used
+10928	Not used
+10929	Not used
 10930	Keshanberk - Destruction
-10931	Keshanberk - Destruction Guidance
-10932	Keshanberk - Destruction Focus
-10933	Keshanberk - Destruction Back Blow
+10931	Not used
+10932	Not used
+10933	Not used
 10934	Peacemaker - Concentration
-10935	Peacemaker - Concentration Evasion
-10936	Peacemaker - Concentration Critical Bleed
-10937	Peacemaker - Concentration Miser
+10935	Not used
+10936	Not used
+10937	Not used
 10938	Heavy War Axe - Earth
-10939	Heavy War Axe - Earth Anger
-10940	Heavy War Axe - Earth Health
-10941	Heavy War Axe - Earth Rsk. Focus
+10939	Not used
+10940	Not used
+10941	Not used
 10942	Twilight Knife - Confusion
-10943	Twilight Knife - Confusion Magic Regeneration
-10944	Twilight Knife - Confusion Magic Mental Shield
-10945	Twilight Knife - Confusion Magic Weakness
+10943	Not used
+10944	Not used
+10945	Not used
 10946	Raid Sword*Samurai Long Sword - Destruction
 10947	Shamshir*Samurai Long Sword - Destruction
 10948	Spirit Sword*Samurai Long Sword - Destruction
@@ -10953,67 +10953,67 @@
 10953	Tsurugi*Samurai Long Sword - Destruction
 10954	Caliburs*Samurai Long Sword - Destruction
 10955	Guardian's Sword - Great Gale
-10956	Guardian's Sword - Great Gale Critical Drain
-10957	Guardian's Sword - Great Gale Health
-10958	Guardian's Sword - Great Gale Critical Bleed
+10956	Not used
+10957	Not used
+10958	Not used
 10959	Damascus Sword (Earth)
-10960	Damascus Sword (Earth) Focus
-10961	Damascus Sword (Earth) Critical Damage
-10962	Damascus Sword (Earth) Haste
+10960	Not used
+10961	Not used
+10962	Not used
 10963	Dismantler - Great Gale
-10964	Dismantler - Great Gale Critical Drain
-10965	Dismantler - Great Gale Health
-10966	Dismantler - Great Gale Critical Bleed
+10964	Not used
+10965	Not used
+10966	Not used
 10967	Lance (Earth)
-10968	Lance (Earth) Anger
-10969	Lance (Earth) Critical Stun
-10970	Lance (Earth) Long Blow
+10968	Not used
+10969	Not used
+10970	Not used
 10971	Bellion Cestus - Great Gale
-10972	Bellion Cestus - Great Gale Critical Drain
-10973	Bellion Cestus - Great Gale Critical Poison
-10974	Bellion Cestus - Great Gale Rsk. Haste
+10972	Not used
+10973	Not used
+10974	Not used
 10975	Staff of Evil Spirits - Holy Spirit
-10976	Staff of Evil Spirits - Holy Spirit Magic Focus
-10977	Staff of Evil Spirits - Holy Spirit Blessed Body
-10978	Staff of Evil Spirits - Holy Spirit Magic Poison
+10976	Not used
+10977	Not used
+10978	Not used
 10979	Deadman's Glory - Landslide
-10980	Deadman's Glory - Landslide Anger
-10981	Deadman's Glory - Landslide Health
-10982	Deadman's Glory - Landslide Haste
+10980	Not used
+10981	Not used
+10982	Not used
 10983	Star Buster - Great Gale
-10984	Star Buster - Great Gale Health
-10985	Star Buster - Great Gale Haste
-10986	Star Buster - Great Gale Rsk. Focus
+10984	Not used
+10985	Not used
+10986	Not used
 10987	Samurai Long Sword*Samurai Long Sword - Landslide
 10988	Art of Battle Axe - Landslide
-10989	Art of Battle Axe - Landslide Health
-10990	Art of Battle Axe - Landslide Rsk. Focus
-10991	Art of Battle Axe - Landslide Haste
+10989	Not used
+10990	Not used
+10991	Not used
 10992	Demon's Dagger - Great Gale
-10993	Demon's Dagger - Great Gale Critical Bleed
-10994	Demon's Dagger - Great Gale Critical Poison
-10995	Demon's Dagger - Great Gale Mortal Strike
-10996	Demon's Dagger - Great Gale Critical Damage
+10993	Not used
+10994	Not used
+10995	Not used
+10996	Not used
 10997	Kaim Vanul's Bones - Earth
-10998	Kaim Vanul's Bones - Earth Mana Up
-10999	Kaim Vanul's Bones - Earth Magic Silence
-11000	Kaim Vanul's Bones - Earth Conversion
+10998	Not used
+10999	Not used
+11000	Not used
 11001	Colichemarde - Earth
-11002	Colichemarde - Earth Focus
-11003	Colichemarde - Earth Critical Damage
-11004	Colichemarde - Earth Haste
+11002	Not used
+11003	Not used
+11004	Not used
 11005	Wizard's Tear - Cleverness
-11006	Wizard's Tear - Cleverness Acumen
-11007	Wizard's Tear - Cleverness M. Atk.
-11008	Wizard's Tear - Cleverness Conversion
+11006	Not used
+11007	Not used
+11008	Not used
 11009	Bow of Peril - Earth
-11010	Bow of Peril - Earth Guidance
-11011	Bow of Peril - Earth Quick Recovery
-11012	Bow of Peril - Earth Cheap Shot
+11010	Not used
+11011	Not used
+11012	Not used
 11013	Hell Hound - Earth
-11014	Hell Hound - Earth Guidance
-11015	Hell Hound - Earth Quick Recovery
-11016	Hell Hound - Earth Cheap Shot
+11014	Not used
+11015	Not used
+11016	Not used
 11017	Dasparion's Staff - Hail
 11018	Dasparion's Staff - Hail Mana Up
 11019	Dasparion's Staff - Hail Conversion
@@ -11188,164 +11188,164 @@
 11188	Cabrio's Hand - Cleverness Mana Up
 11189	Cabrio's Hand - Cleverness Magic Silence
 11190	Gram - Thunder
-11191	Gram - Thunder Haste
-11192	Gram - Thunder Health
-11193	Gram - Thunder Focus
+11191	Not used
+11192	Not used
+11193	Not used
 11194	Demon Splinter - Thunder
-11195	Demon Splinter - Thunder Focus
-11196	Demon Splinter - Thunder Health
-11197	Demon Splinter - Thunder Critical Stun
+11195	Not used
+11196	Not used
+11197	Not used
 11198	Draconic Bow - Earth
-11199	Draconic Bow - Earth Cheap Shot
-11200	Draconic Bow - Earth Focus
-11201	Draconic Bow - Earth Critical Slow
+11199	Not used
+11200	Not used
+11201	Not used
 11202	Dragon Hunter Axe - Thunder
-11203	Dragon Hunter Axe - Thunder HP Regeneration
-11204	Dragon Hunter Axe - Thunder Health
-11205	Dragon Hunter Axe - Thunder HP Drain
+11203	Not used
+11204	Not used
+11205	Not used
 11206	Laevateinn - Lightning
-11207	Laevateinn - Lightning Haste
-11208	Laevateinn - Lightning Health
-11209	Laevateinn - Lightning Focus
+11207	Not used
+11208	Not used
+11209	Not used
 11210	Basalt Battlehammer - Concentration
-11211	Basalt Battlehammer - Concentration HP Drain
-11212	Basalt Battlehammer - Concentration Health
-11213	Basalt Battlehammer - Concentration HP Regeneration
+11211	Not used
+11212	Not used
+11213	Not used
 11214	Sarunga - Earth
-11215	Sarunga - Earth Cheap Shot
-11216	Sarunga - Earth Focus
-11217	Sarunga - Earth Critical Slow
+11215	Not used
+11216	Not used
+11217	Not used
 11218	Saint Spear - Destruction
-11219	Saint Spear - Destruction Health
-11220	Saint Spear - Destruction Guidance
-11221	Saint Spear - Destruction Haste
+11219	Not used
+11220	Not used
+11221	Not used
 11222	Arcana Mace - Nature
-11223	Arcana Mace - Nature Acumen
-11224	Arcana Mace - Nature MP Regeneration
-11225	Arcana Mace - Nature Mana Up
+11223	Not used
+11224	Not used
+11225	Not used
 11226	Angel Slayer - Concentration
-11227	Angel Slayer - Concentration Critical Damage
-11228	Angel Slayer - Concentration HP Drain
-11229	Angel Slayer - Concentration Haste
+11227	Not used
+11228	Not used
+11229	Not used
 11230	Imperial Staff - Nature
-11231	Imperial Staff - Nature Empower
-11232	Imperial Staff - Nature MP Regeneration
-11233	Imperial Staff - Nature Magic Hold
+11231	Not used
+11232	Not used
+11233	Not used
 11234	Tallum Blade*Dark Legion's Edge - Lightning
 11235	Forgotten Blade - Lightning
-11236	Forgotten Blade - Lightning Haste
-11237	Forgotten Blade - Lightning Health
-11238	Forgotten Blade - Lightning Focus
+11236	Not used
+11237	Not used
+11238	Not used
 11239	Heaven's Divider - Thunder
-11240	Heaven's Divider - Thunder Haste
-11241	Heaven's Divider - Thunder Health
-11242	Heaven's Divider - Thunder Focus
+11240	Not used
+11241	Not used
+11242	Not used
 11243	Dynasty Ancient Sword - Great Gale
-11244	Dynasty Ancient Sword - Great Gale Focus
-11245	Dynasty Ancient Sword - Great Gale Health
-11246	Dynasty Ancient Sword - Great Gale Light Armor
+11244	Not used
+11245	Not used
+11246	Not used
 11247	Dynasty Knife - Great Gale
-11248	Dynasty Knife - Great Gale Focus
-11249	Dynasty Knife - Great Gale Evasion
-11250	Dynasty Knife - Great Gale Critical Damage
+11248	Not used
+11249	Not used
+11250	Not used
 11251	Dynasty Dualsword - Earth
 11252	Dynasty Rapier - Earth
-11253	Dynasty Rapier - Earth Focus
-11254	Dynasty Rapier - Earth Health
-11255	Dynasty Rapier - Earth Light Armor
+11253	Not used
+11254	Not used
+11255	Not used
 11256	Dynasty Mace - Earth
-11257	Dynasty Mace - Earth Mana Up
-11258	Dynasty Mace - Earth Conversion
-11259	Dynasty Mace - Earth Acumen
+11257	Not used
+11258	Not used
+11259	Not used
 11260	Dynasty Bagh-Nakh - Great Gale
-11261	Dynasty Bagh-Nakh - Great Gale Rsk. Evasion
-11262	Dynasty Bagh-Nakh - Great Gale Focus
-11263	Dynasty Bagh-Nakh - Great Gale Haste
+11261	Not used
+11262	Not used
+11263	Not used
 11264	Dynasty Bow - Great Gale
-11265	Dynasty Bow - Great Gale Cheap Shot
-11266	Dynasty Bow - Great Gale Guidance
-11267	Dynasty Bow - Great Gale Focus
+11265	Not used
+11266	Not used
+11267	Not used
 11268	Dynasty Blade - Great Gale
-11269	Dynasty Blade - Great Gale Focus
-11270	Dynasty Blade - Great Gale Health
-11271	Dynasty Blade - Great Gale Light Armor
+11269	Not used
+11270	Not used
+11271	Not used
 11272	Dynasty Sword - Earth
-11273	Dynasty Sword - Earth Focus
-11274	Dynasty Sword - Earth Health
-11275	Dynasty Sword - Earth Light Armor
+11273	Not used
+11274	Not used
+11275	Not used
 11276	Dynasty Staff - Holy Spirit
-11277	Dynasty Staff - Holy Spirit Mana Up
-11278	Dynasty Staff - Holy Spirit Conversion
-11279	Dynasty Staff - Holy Spirit Acumen
+11277	Not used
+11278	Not used
+11279	Not used
 11280	Dynasty Cudgel - Landslide
-11281	Dynasty Cudgel - Landslide Anger
-11282	Dynasty Cudgel - Landslide Health
-11283	Dynasty Cudgel - Landslide Rsk. Focus
+11281	Not used
+11282	Not used
+11283	Not used
 11284	Dynasty Crusher - Great Gale
-11285	Dynasty Crusher - Great Gale Anger
-11286	Dynasty Crusher - Great Gale Health
-11287	Dynasty Crusher - Great Gale Rsk. Focus
+11285	Not used
+11286	Not used
+11287	Not used
 11288	Dynasty Crossbow - Great Gale
-11289	Dynasty Crossbow - Great Gale Cheap Shot
-11290	Dynasty Crossbow - Great Gale Guidance
-11291	Dynasty Crossbow - Great Gale Focus
+11289	Not used
+11290	Not used
+11291	Not used
 11292	Dynasty Phantom - Nature
-11293	Dynasty Phantom - Nature Acumen
-11294	Dynasty Phantom - Nature Mana Up
-11295	Dynasty Phantom - Nature Conversion
+11293	Not used
+11294	Not used
+11295	Not used
 11296	Dynasty Halberd - Earth
-11297	Dynasty Halberd - Earth Anger
-11298	Dynasty Halberd - Earth Critical Stun
-11299	Dynasty Halberd - Earth Light Armor
+11297	Not used
+11298	Not used
+11299	Not used
 11300	Icarus Dualsword - Destruction
 11301	Icarus Disperser - Confusion
-11302	Icarus Disperser - Confusion Focus
-11303	Icarus Disperser - Confusion Evasion
-11304	Icarus Disperser - Confusion Critical Damage
+11302	Not used
+11303	Not used
+11304	Not used
 11305	Icarus Sawsword - Destruction
-11306	Icarus Sawsword - Destruction Focus
-11307	Icarus Sawsword - Destruction Health
-11308	Icarus Sawsword - Destruction Light Armor
+11306	Not used
+11307	Not used
+11308	Not used
 11309	Icarus Shooter - Concentration
-11310	Icarus Shooter - Concentration Cheap Shot
-11311	Icarus Shooter - Concentration Guidance
-11312	Icarus Shooter - Concentration Focus
+11310	Not used
+11311	Not used
+11312	Not used
 11313	Icarus Stinger - Destruction
-11314	Icarus Stinger - Destruction Focus
-11315	Icarus Stinger - Destruction Health
-11316	Icarus Stinger - Destruction Light Armor
+11314	Not used
+11315	Not used
+11316	Not used
 11317	Icarus Spirit - Nature
-11318	Icarus Spirit - Nature Acumen
-11319	Icarus Spirit - Nature Mana Up
-11320	Icarus Spirit - Nature Conversion
+11318	Not used
+11319	Not used
+11320	Not used
 11321	Icarus Spitter - Concentration
-11322	Icarus Spitter - Concentration Cheap Shot
-11323	Icarus Spitter - Concentration Guidance
-11324	Icarus Spitter - Concentration Focus
+11322	Not used
+11323	Not used
+11324	Not used
 11325	Icarus Wingblade - Lightning
-11326	Icarus Wingblade - Lightning Focus
-11327	Icarus Wingblade - Lightning Health
-11328	Icarus Wingblade - Lightning Light Armor
+11326	Not used
+11327	Not used
+11328	Not used
 11329	Icarus Trident - Thunder
-11330	Icarus Trident - Thunder Anger
-11331	Icarus Trident - Thunder Critical Stun
-11332	Icarus Trident - Thunder Light Armor
+11330	Not used
+11331	Not used
+11332	Not used
 11333	Icarus Hammer - Earth
-11334	Icarus Hammer - Earth Anger
-11335	Icarus Hammer - Earth Health
-11336	Icarus Hammer - Earth Rsk. Focus
+11334	Not used
+11335	Not used
+11336	Not used
 11337	Icarus Hand - Destruction
-11338	Icarus Hand - Destruction Rsk. Evasion
-11339	Icarus Hand - Destruction Focus
-11340	Icarus Hand - Destruction Haste
+11338	Not used
+11339	Not used
+11340	Not used
 11341	Icarus Heavy Arms - Lightning
-11342	Icarus Heavy Arms - Lightning Focus
-11343	Icarus Heavy Arms - Lightning Health
-11344	Icarus Heavy Arms - Lightning Light Armor
+11342	Not used
+11343	Not used
+11344	Not used
 11345	Icarus Hall - Hail
-11346	Icarus Hall - Hail Mana Up
-11347	Icarus Hall - Hail Conversion
-11348	Icarus Hall - Hail Acumen
+11346	Not used
+11347	Not used
+11348	Not used
 11349	Sealed Zubei's Gauntlets
 11350	Sealed Zubei's Boots
 11351	Sealed Avadon Gloves
@@ -14115,48 +14115,48 @@
 14115	Sealed Vesper Stockings
 14116	Sealed Vesper Gloves
 14117	Sealed Vesper Shoes
-14118	Vesper Cutter Haste
-14119	Vesper Cutter Health
-14120	Vesper Cutter Focus
-14121	Vesper Slasher Haste
-14122	Vesper Slasher Health
-14123	Vesper Slasher Focus
-14124	Vesper Buster Mana Up
-14125	Vesper Buster Acumen
-14126	Vesper Buster Magic Hold
-14127	Vesper Shaper Critical Damage
-14128	Vesper Shaper HP Drain
-14129	Vesper Shaper Haste
-14130	Vesper Fighter Focus
-14131	Vesper Fighter Health
-14132	Vesper Fighter Critical Stun
-14133	Vesper Stormer Health
-14134	Vesper Stormer Guidance
-14135	Vesper Stormer Haste
-14136	Vesper Avenger HP Drain
-14137	Vesper Avenger Health
-14138	Vesper Avenger HP Regeneration
-14139	Vesper Retributer HP Regeneration
-14140	Vesper Retributer Health
-14141	Vesper Retributer HP Drain
-14142	Vesper Caster Acumen
-14143	Vesper Caster MP Regeneration
-14144	Vesper Caster Mana Up
-14145	Vesper Singer Empower
-14146	Vesper Singer MP Regeneration
-14147	Vesper Singer Magic Hold
-14148	Vesper Thrower Cheap Shot
-14149	Vesper Thrower Focus
-14150	Vesper Thrower Critical Slow
-14151	Vesper Pincer Haste
-14152	Vesper Pincer Health
-14153	Vesper Pincer Focus
-14154	Vesper Shooter Cheap Shot
-14155	Vesper Shooter Focus
-14156	Vesper Shooter Critical Slow
-14157	Vesper Nagan Haste
-14158	Vesper Nagan Health
-14159	Vesper Nagan Focus
+14118	Not used
+14119	Not used
+14120	Not used
+14121	Not used
+14122	Not used
+14123	Not used
+14124	Not used
+14125	Not used
+14126	Not used
+14127	Not used
+14128	Not used
+14129	Not used
+14130	Not used
+14131	Not used
+14132	Not used
+14133	Not used
+14134	Not used
+14135	Not used
+14136	Not used
+14137	Not used
+14138	Not used
+14139	Not used
+14140	Not used
+14141	Not used
+14142	Not used
+14143	Not used
+14144	Not used
+14145	Not used
+14146	Not used
+14147	Not used
+14148	Not used
+14149	Not used
+14150	Not used
+14151	Not used
+14152	Not used
+14153	Not used
+14154	Not used
+14155	Not used
+14156	Not used
+14157	Not used
+14158	Not used
+14159	Not used
 14160	Sealed Vesper Earring
 14161	Sealed Vesper Necklace
 14162	Sealed Vesper Ring
@@ -14556,7 +14556,7 @@
 14556	Rune Supply Box - Belt S-/A-grade
 14557	Schuttgart Supply Box - Belt S-/A-grade
 14558	Dynasty Dual Dagger {PvP}
-14559	Player Commendation Points
+14559	PC Cafe Points
 14560	Dagger of Val Turner Family
 14561	Slasher of Val Turner Family
 14562	Sword of Ashton Family
@@ -15826,90 +15826,90 @@
 15826	Red Soul Crystal - Stage 18
 15827	Blue Soul Crystal - Stage 18
 15828	Green Soul Crystal - Stage 18
-15829	Periel Sword Health
-15830	Periel Sword Focus
-15831	Periel Sword Haste
-15832	Skull Edge HP Drain
-15833	Skull Edge Haste
-15834	Skull Edge Critical Damage
-15835	Vigwik Axe Health
-15836	Vigwik Axe HP Regeneration
-15837	Vigwik Axe HP Drain
-15838	Devilish Maul Health
-15839	Devilish Maul HP Drain
-15840	Devilish Maul HP Regeneration
-15841	Feather Eye Blade Health
-15842	Feather Eye Blade Focus
-15843	Feather Eye Blade Haste
-15844	Octo Claw Health
-15845	Octo Claw Critical Stun
-15846	Octo Claw Focus
-15847	Doubletop Spear Guidance
-15848	Doubletop Spear Haste
-15849	Doubletop Spear Health
-15850	Rising Star MP Regeneration
-15851	Rising Star Mana Up
-15852	Rising Star Acumen
-15853	Black Visage MP Regeneration
-15854	Black Visage Magic Hold
-15855	Black Visage Empower
-15856	Veniplant Sword Acumen
-15857	Veniplant Sword Magic Hold
-15858	Veniplant Sword Mana Up
-15859	Skull Carnium Bow Focus
-15860	Skull Carnium Bow Critical Slow
-15861	Skull Carnium Bow Cheap Shot
-15862	Gemtail Rapier Health
-15863	Gemtail Rapier Focus
-15864	Gemtail Rapier Haste
-15865	Finale Blade Health
-15866	Finale Blade Focus
-15867	Finale Blade Haste
-15868	Dominion Crossbow Focus
-15869	Dominion Crossbow Critical Slow
-15870	Dominion Crossbow Cheap Shot
-15871	Eternal Core Sword Focus
-15872	Eternal Core Sword Haste
-15873	Eternal Core Sword Health
-15874	Mamba Edge Haste
-15875	Mamba Edge Critical Damage
-15876	Mamba Edge HP Drain
-15877	Eversor Mace HP Regeneration
-15878	Eversor Mace HP Drain
-15879	Eversor Mace Health
-15880	Contristo Hammer HP Drain
-15881	Contristo Hammer HP Regeneration
-15882	Contristo Hammer Health
-15883	Lava Saw Focus
-15884	Lava Saw Haste
-15885	Lava Saw Health
-15886	Jade Claw Critical Stun
-15887	Jade Claw Focus
-15888	Jade Claw Health
-15889	Demitelum Haste
-15890	Demitelum Health
-15891	Demitelum Guidance
-15892	Sacredium Mana Up
-15893	Sacredium Acumen
-15894	Sacredium MP Regeneration
-15895	Cyclic Cane Magic Hold
-15896	Cyclic Cane Empower
-15897	Cyclic Cane MP Regeneration
-15898	Archangel Sword Magic Hold
-15899	Archangel Sword Mana Up
-15900	Archangel Sword Acumen
-15901	Recurve Thorne Bow Critical Slow
-15902	Recurve Thorne Bow Cheap Shot
-15903	Recurve Thorne Bow Focus
-15904	Heavenstare Rapier Focus
-15905	Heavenstare Rapier Haste
-15906	Heavenstare Rapier Health
-15907	Pyseal Blade Focus
-15908	Pyseal Blade Haste
-15909	Pyseal Blade Health
-15910	Thorne Crossbow Critical Slow
-15911	Thorne Crossbow Cheap Shot
-15912	Thorne Crossbow Focus
+15829	Not used
+15830	Not used
+15831	Not used
+15832	Not used
+15833	Not used
+15834	Not used
+15835	Not used
+15836	Not used
+15837	Not used
+15838	Not used
+15839	Not used
+15840	Not used
+15841	Not used
+15842	Not used
+15843	Not used
+15844	Not used
+15845	Not used
+15846	Not used
+15847	Not used
+15848	Not used
+15849	Not used
+15850	Not used
+15851	Not used
+15852	Not used
+15853	Not used
+15854	Not used
+15855	Not used
+15856	Not used
+15857	Not used
+15858	Not used
+15859	Not used
+15860	Not used
+15861	Not used
+15862	Not used
+15863	Not used
+15864	Not used
+15865	Not used
+15866	Not used
+15867	Not used
+15868	Not used
+15869	Not used
+15870	Not used
+15871	Not used
+15872	Not used
+15873	Not used
+15874	Not used
+15875	Not used
+15876	Not used
+15877	Not used
+15878	Not used
+15879	Not used
+15880	Not used
+15881	Not used
+15882	Not used
+15883	Not used
+15884	Not used
+15885	Not used
+15886	Not used
+15887	Not used
+15888	Not used
+15889	Not used
+15890	Not used
+15891	Not used
+15892	Not used
+15893	Not used
+15894	Not used
+15895	Not used
+15896	Not used
+15897	Not used
+15898	Not used
+15899	Not used
+15900	Not used
+15901	Not used
+15902	Not used
+15903	Not used
+15904	Not used
+15905	Not used
+15906	Not used
+15907	Not used
+15908	Not used
+15909	Not used
+15910	Not used
+15911	Not used
+15912	Not used
 15913	Eternal Core Sword {PvP}
 15914	Mamba Edge {PvP}
 15915	Eversor Mace {PvP}
@@ -16053,48 +16053,48 @@
 16053	Vesper Pincer - Thunder
 16054	Vesper Shooter - Clairvoyance
 16055	Vesper Nagan - Great Gale
-16056	Vesper Cutter - Thunder Haste
-16057	Vesper Cutter - Thunder Health
-16058	Vesper Cutter - Thunder Focus
-16059	Vesper Slasher - Great Gale Haste
-16060	Vesper Slasher - Great Gale Health
-16061	Vesper Slasher - Great Gale Focus
-16062	Vesper Buster - Cleverness Mana Up
-16063	Vesper Buster - Cleverness Acumen
-16064	Vesper Buster - Cleverness Magic Hold
-16065	Vesper Shaper - Great Gale Critical Damage
-16066	Vesper Shaper - Great Gale HP Drain
-16067	Vesper Shaper - Great Gale Haste
-16068	Vesper Fighter - Great Gale Focus
-16069	Vesper Fighter - Great Gale Health
-16070	Vesper Fighter - Great Gale Critical Stun
-16071	Vesper Stormer - Thunder Health
-16072	Vesper Stormer - Thunder Guidance
-16073	Vesper Stormer - Thunder Haste
-16074	Vesper Avenger - Landslide HP Drain
-16075	Vesper Avenger - Landslide Health
-16076	Vesper Avenger - Landslide HP Regeneration
-16077	Vesper Retributer - Great Gale HP Regeneration
-16078	Vesper Retributer - Great Gale Health
-16079	Vesper Retributer - Great Gale HP Drain
-16080	Vesper Caster - Cleverness Acumen
-16081	Vesper Caster - Cleverness MP Regeneration
-16082	Vesper Caster - Cleverness Mana Up
-16083	Vesper Singer - Hail Empower
-16084	Vesper Singer - Hail MP Regeneration
-16085	Vesper Singer - Hail Magic Hold
-16086	Vesper Thrower - Clairvoyance Cheap Shot
-16087	Vesper Thrower - Clairvoyance Focus
-16088	Vesper Thrower - Clairvoyance Critical Slow
-16089	Vesper Pincer - Thunder Haste
-16090	Vesper Pincer - Thunder Health
-16091	Vesper Pincer - Thunder Focus
-16092	Vesper Shooter - Clairvoyance Cheap Shot
-16093	Vesper Shooter - Clairvoyance Focus
-16094	Vesper Shooter - Clairvoyance Critical Slow
-16095	Vesper Nagan - Great Gale Haste
-16096	Vesper Nagan - Great Gale Health
-16097	Vesper Nagan - Great Gale Focus
+16056	Not used
+16057	Not used
+16058	Not used
+16059	Not used
+16060	Not used
+16061	Not used
+16062	Not used
+16063	Not used
+16064	Not used
+16065	Not used
+16066	Not used
+16067	Not used
+16068	Not used
+16069	Not used
+16070	Not used
+16071	Not used
+16072	Not used
+16073	Not used
+16074	Not used
+16075	Not used
+16076	Not used
+16077	Not used
+16078	Not used
+16079	Not used
+16080	Not used
+16081	Not used
+16082	Not used
+16083	Not used
+16084	Not used
+16085	Not used
+16086	Not used
+16087	Not used
+16088	Not used
+16089	Not used
+16090	Not used
+16091	Not used
+16092	Not used
+16093	Not used
+16094	Not used
+16095	Not used
+16096	Not used
+16097	Not used
 16098	Refined Black Skeleton Circlet
 16099	Refined Orange Skeleton Circlet
 16100	Refined Green Skeleton Circlet
@@ -20102,7 +20102,7 @@
 20542	Afro Hair Pack (7-day)
 20543	Horn-rimmed Glasses Pack (7-day)
 20544	Assassin's Bamboo Hat Pack (7-day)
-20545	Haste Potion
+20545	Atk. Speed Juice
 20546	Critical Rate Juice
 20547	Wind Walk Juice
 20548	XP Rune III (Lv. 1-100+) 30% Pack (5-hour)
@@ -21464,17 +21464,17 @@
 21917	Super Feline Queen Z Summon Necklace
 21918	Super Mew the Cat Z Summon Necklace
 21919	Hellblade
-21920	Hellblade Haste
-21921	Hellblade Health
-21922	Hellblade Focus
+21920	Not used
+21921	Not used
+21922	Not used
 21923	Hellblade {PvP}
 21924	Hellblade {PvP} - Haste
 21925	Hellblade {PvP} - Health
 21926	Hellblade {PvP} - Focus
 21927	Hellblade - Lightning
-21928	Hellblade - Lightning Haste
-21929	Hellblade - Lightning Health
-21930	Hellblade - Lightning Focus
+21928	Not used
+21929	Not used
+21930	Not used
 21931	Hellblade - Lightning {PvP}
 21932	Hellblade - Lightning {PvP} - Haste
 21933	Hellblade - Lightning {PvP} - Health
@@ -21484,17 +21484,17 @@
 21937	Butcher Blades - Confusion
 21938	Butcher Blades - Confusion {PvP}
 21939	Claw of Destruction
-21940	Claw of Destruction HP Drain
-21941	Claw of Destruction Health
-21942	Claw of Destruction HP Regeneration
+21940	Not used
+21941	Not used
+21942	Not used
 21943	Claw of Destruction {PvP}
 21944	Claw of Destruction {PvP} - HP Drain
 21945	Claw of Destruction {PvP} - Health
 21946	Claw of Destruction {PvP} - HP Regeneration
 21947	Claw of Destruction - Landslide
-21948	Claw of Destruction - Landslide HP Drain
-21949	Claw of Destruction - Landslide Health
-21950	Claw of Destruction - Landslide HP Regeneration
+21948	Not used
+21949	Not used
+21950	Not used
 21951	Claw of Destruction - Landslide {PvP}
 21952	Claw of Destruction - Landslide {PvP} - HP Drain
 21953	Claw of Destruction - Landslide {PvP} - Health
@@ -21504,16 +21504,16 @@
 21957	Blades of Delusion - Earth
 21958	Blades of Delusion - Earth {PvP}
 21959	Blood Brother
-21960	Blood Brother Focus
-21961	Blood Brother Health
-21962	Blood Brother Light Armor
+21960	Not used
+21961	Not used
+21962	Not used
 21963	Blood Brother {PvP} - Focus
 21964	Blood Brother {PvP} - Health
 21965	Blood Brother {PvP} - Light Armor
 21966	Blood Brother - Great Gale
-21967	Blood Brother - Great Gale Focus
-21968	Blood Brother - Great Gale Health
-21969	Blood Brother - Great Gale Light Armor
+21967	Not used
+21968	Not used
+21969	Not used
 21970	Blood Brother - Great Gale {PvP} - Focus
 21971	Blood Brother - Great Gale {PvP} - Health
 21972	Blood Brother - Great Gale {PvP} - Light Armor
@@ -22317,33 +22317,33 @@
 22773	Drop Rate Rune 200% Pack (5-hour)
 22774	Drop Rate Rune 200% Pack (7-day)
 22775	Drake Maul
-22776	Drake Maul HP Drain
-22777	Drake Maul HP Regeneration
-22778	Drake Maul Health
+22776	Not used
+22777	Not used
+22778	Not used
 22779	Drake Maul (PvP)
 22780	Drake Maul (PvP) - HP Drain
 22781	Drake Maul (PvP) - HP Regeneration
 22782	Drake Maul (PvP) - Health
 22783	Drake Maul - Evil Spirit
-22784	Drake Maul - Evil Spirit HP Drain
-22785	Drake Maul - Evil Spirit HP Regeneration
-22786	Drake Maul - Evil Spirit Health
+22784	Not used
+22785	Not used
+22786	Not used
 22787	Drake Maul - Evil Spirit (PvP)
 22788	Drake Maul - Evil Spirit (PvP) - HP Drain
 22789	Drake Maul - Evil Spirit (PvP) - HP Regeneration
 22790	Drake Maul - Evil Spirit (PvP) - Health
 22791	Freya's Staff
-22792	Freya's Staff Magic Hold
-22793	Freya's Staff Empower
-22794	Freya's Staff MP Regeneration
+22792	Not used
+22793	Not used
+22794	Not used
 22795	Freya's Staff (PvP)
 22796	Freya's Staff (PvP) - Magic Hold
 22797	Freya's Staff (PvP) - Empower
 22798	Freya's Staff (PvP) - MP Regeneration
 22799	Freya's Staff - Cleverness
-22800	Freya's Staff - Cleverness Magic Hold
-22801	Freya's Staff - Cleverness Empower
-22802	Freya's Staff - Cleverness MP Regeneration
+22800	Not used
+22801	Not used
+22802	Not used
 22803	Freya's Staff - Cleverness (PvP)
 22804	Freya's Staff - Cleverness (PvP) - Magic Hold
 22805	Freya's Staff - Cleverness (PvP) - Empower
@@ -22796,7 +22796,7 @@
 23299	Blessed Scroll: Enchant Elemental Shirt Pack Sayha
 23300	Enchanted Sayha's Shirt Pack
 23301	Sayha's Shirt
-23302	Blessed Scroll: Enchant Elemental Shirt Pack Eva
+23302	Blessed Scroll: Enchant Elemental Shirt Pack eva
 23303	Enchanted Eva's Shirt Pack
 23304	Eva's Shirt
 23305	Blessed Scroll: Enchant Elemental Shirt Pack Maphr
@@ -23103,7 +23103,7 @@
 23632	Torun Gingerbread 2.5-hour
 23633	Torun Gingerbread 3-hour
 23634	Torun Gingerbread 4-hour
-23635	Flint
+23635	flint
 23636	Cloak (Poland)
 23637	Blessed Antharas' Earring 3-day
 23638	Blessed Antharas' Earring 7-day
@@ -25901,7 +25901,7 @@
 26430	Immortal Scroll
 26431	Immortal Scroll Chapter 1
 26432	Immortal Scroll Chapter 2
-26433	Star Bottle For Testing Test
+26433	Star Bottle For Testing test
 26434	Test Card - Talisman
 26435	Test Card - Bracelet
 26436	Test Card - Rune
@@ -27098,7 +27098,7 @@
 27627	Agathion - Matryoshka (7-day)
 27628	Agathion - Matryoshka (30-day)
 27629	Agathion - Minion Eye (7-day)
-27630	Agathion - Minion Eye (7-day)
+27630	Agathion - Minion Eye (30-day)
 27631	Prestige Rune 100% Pack 1-hour
 27632	Fancy Fishing Rod
 27633	Fancy Fishing Rod 1-day
@@ -27109,6 +27109,763 @@
 27638	Fancy Fishing Rod Pack (30-day)
 27639	Hidden Treasure Chest
 27640	Heine Fishing Coin
+27641	Heine Exclusive Bait (85-89)
+27642	Heine Exclusive Bait (90-94)
+27643	Heine Exclusive Bait (95-98)
+27644	Heine Exclusive Bait (99-)
+27645	Heine Exclusive Bait Coupon
+27646	Exclusive Reward Chest
+27647	Heine Exclusive Reward Chest
+27648	Heine Exclusive Fishing Tools - 300 Pack
+27649	Heine Exclusive Fishing Tools - 3,000 Pack
+27650	Heine Exclusive Bait (85-89)
+27651	Heine Exclusive Bait (90-94)
+27652	Heine Exclusive Bait (95-98)
+27653	Heine Exclusive Bait (99-)
+27654	Heine Exclusive Bait Coupon
+27655	Exclusive Reward Chest
+27656	Heine Exclusive Reward Chest
+27657	Heine Exclusive Fishing Tools - 300 Pack
+27658	Heine Exclusive Fishing Tools - 3,000 Pack
+27659	Anniversary Coin Event
+27660	Shadai's Jewelry Box
+27661	Shadai's Shiny Jewelry Box
+27662	La Vie En Rose's Brilliant Brooch Pack
+27663	Supply Box Top-grade
+27664	Tauti's Ring 7-day
+27665	Earth Wyrm Heart Ring 7-day
+27666	Freya's Ice Crystal
+27667	Freya's Luxury Shopping Bag
+27668	Freya's Gift Box
+27669	Sirra's Gift Box
+27670	Snow Man's Gift Box
+27671	Freya's Fated Support Box
+27672	Black Freya's Kindness
+27673	Freya's Scroll of Storm
+27674	Freya's Wish Stick
+27675	Freya's Wish-filled Gift
+27676	Sirra's Wish-filled Gift
+27677	Snowman's Wish-filled Gift
+27678	Gran Kain's Necklace Stage 1
+27679	Gran Kain's Necklace Stage 2
+27680	Gran Kain's Necklace Stage 3
+27681	Gran Kain's Necklace Stage 4
+27682	Gran Kain's Necklace Stage 5
+27683	Gran Kain's Necklace Stage 6
+27684	Einhasad's Necklace Stage 1
+27685	Einhasad's Necklace Stage 2
+27686	Einhasad's Necklace Stage 3
+27687	Einhasad's Necklace Stage 4
+27688	Einhasad's Necklace Stage 5
+27689	Einhasad's Necklace Stage 6
+27690	Pa'agrio's Earring Stage 1
+27691	Pa'agrio's Earring Stage 2
+27692	Pa'agrio's Earring Stage 3
+27693	Pa'agrio's Earring Stage 4
+27694	Pa'agrio's Earring Stage 5
+27695	Pa'agrio's Earring Stage 6
+27696	Eva's Earring Stage 1
+27697	Eva's Earring Stage 2
+27698	Eva's Earring Stage 3
+27699	Eva's Earring Stage 4
+27700	Eva's Earring Stage 5
+27701	Eva's Earring Stage 6
+27702	Sayha's Ring Stage 1
+27703	Sayha's Ring Stage 2
+27704	Sayha's Ring Stage 3
+27705	Sayha's Ring Stage 4
+27706	Sayha's Ring Stage 5
+27707	Sayha's Ring Stage 6
+27708	Maphr's Ring Stage 1
+27709	Maphr's Ring Stage 2
+27710	Maphr's Ring Stage 3
+27711	Maphr's Ring Stage 4
+27712	Maphr's Ring Stage 5
+27713	Maphr's Ring Stage 6
+27714	Bottle of Luminous God's Soul
+27715	Bottle of Splendid God's Soul
+27716	Bottle of Honorable God's Soul
+27717	Recipe: Gran Kain's Sealed Necklace - Stage 1 (50%)
+27718	Recipe: Gran Kain's Sealed Necklace - Stage 2 (50%)
+27719	Recipe: Gran Kain's Sealed Necklace - Stage 3 (50%)
+27720	Recipe: Gran Kain's Sealed Necklace - Stage 4 (50%)
+27721	Recipe: Gran Kain's Sealed Necklace - Stage 5 (50%)
+27722	Recipe: Gran Kain's Sealed Necklace - Stage 6 (50%)
+27723	Recipe: Einhasad's Sealed Necklace - Stage 1 (50%)
+27724	Recipe: Einhasad's Sealed Necklace - Stage 2 (50%)
+27725	Recipe: Einhasad's Sealed Necklace - Stage 3 (50%)
+27726	Recipe: Einhasad's Sealed Necklace - Stage 4 (50%)
+27727	Recipe: Einhasad's Sealed Necklace - Stage 5 (50%)
+27728	Recipe: Einhasad's Sealed Necklace - Stage 6 (50%)
+27729	Recipe: Pa'agrio's Sealed Earring - Stage 1 (50%)
+27730	Recipe: Pa'agrio's Sealed Earring - Stage 2 (50%)
+27731	Recipe: Pa'agrio's Sealed Earring - Stage 3 (50%)
+27732	Recipe: Pa'agrio's Sealed Earring - Stage 4 (50%)
+27733	Recipe: Pa'agrio's Sealed Earring - Stage 5 (50%)
+27734	Recipe: Pa'agrio's Sealed Earring - Stage 6 (50%)
+27735	Recipe: Eva's Sealed Earring - Stage 1 (50%)
+27736	Recipe: Eva's Sealed Earring - Stage 2 (50%)
+27737	Recipe: Eva's Sealed Earring - Stage 3 (50%)
+27738	Recipe: Eva's Sealed Earring - Stage 4 (50%)
+27739	Recipe: Eva's Sealed Earring - Stage 5 (50%)
+27740	Recipe: Eva's Sealed Earring - Stage 6 (50%)
+27741	Recipe: Sayha's Sealed Ring - Stage 1 (50%)
+27742	Recipe: Sayha's Sealed Ring - Stage 2 (50%)
+27743	Recipe: Sayha's Sealed Ring - Stage 3 (50%)
+27744	Recipe: Sayha's Sealed Ring - Stage 4 (50%)
+27745	Recipe: Sayha's Sealed Ring - Stage 5 (50%)
+27746	Recipe: Sayha's Sealed Ring - Stage 6 (50%)
+27747	Recipe: Maphr's Sealed Ring - Stage 1 (50%)
+27748	Recipe: Maphr's Sealed Ring - Stage 2 (50%)
+27749	Recipe: Maphr's Sealed Ring - Stage 3 (50%)
+27750	Recipe: Maphr's Sealed Ring - Stage 4 (50%)
+27751	Recipe: Maphr's Sealed Ring - Stage 5 (50%)
+27752	Recipe: Maphr's Sealed Ring - Stage 6 (50%)
+27753	Luck Box 1 Underground
+27754	Luck Box 2 Underground
+27755	Luck Box 3 Underground
+27756	+7 Shiny Elemental Shirt Pack
+27757	+7 Physical Reflect Shirt Pack
+27758	+7 Magical Reflect Shirt Pack
+27759	+7 Pa'agrio's Shirt Pack
+27760	+7 Sayha's Shirt Pack
+27761	+7 Eva's Shirt Pack
+27762	+7 Maphr's Shirt Pack
+27763	Shadai's Shiny Jewelry Box
+27764	Ultimate Eternal Helmet Heavy Armor / Lv1
+27765	Ultimate Eternal Breatplate Heavy Armor / Lv1
+27766	Ultimate Eternal Gaiters Heavy Armor / Lv1
+27767	Ultimate Eternal Gauntlets Heavy Armor / Lv1
+27768	Ultimate Eternal Boots Heavy Armor / Lv1
+27769	Ultimate Eternal Leather Helmet Light Armor / Lv1
+27770	Ultimate Eternal Leather Armor Light Armor / Lv1
+27771	Ultimate Eternal Leather Leggings Light Armor / Lv1
+27772	Ultimate Eternal Leather Gloves Light Armor / Lv1
+27773	Ultimate Eternal Leather Boots Light Armor / Lv1
+27774	Ultimate Eternal Circlet Robe / Lv1
+27775	Ultimate Eternal Tunic Robe / Lv1
+27776	Ultimate Eternal Stockings Robe / Lv1
+27777	Ultimate Eternal Gloves Robe / Lv1
+27778	Ultimate Eternal Shoes Robe / Lv1
+27779	Ultimate Eternal Helmet Attack Type / Heavy Armor / Lv1
+27780	Ultimate Eternal Breatplate Attack Type / Heavy Armor / Lv1
+27781	Ultimate Eternal Gaiters Attack Type / Heavy Armor / Lv1
+27782	Ultimate Eternal Gauntlets Attack Type / Heavy Armor / Lv1
+27783	Ultimate Eternal Boots Attack Type / Heavy Armor / Lv1
+27784	Ultimate Eternal Leather Helmet Assassin Type / Light Armor / Lv1
+27785	Ultimate Eternal Leather Armor Assassin Type / Light Armor / Lv1
+27786	Ultimate Eternal Leather Leggings Assassin Type / Light Armor / Lv1
+27787	Ultimate Eternal Leather Gloves Assassin Type / Light Armor / Lv1
+27788	Ultimate Eternal Leather Boots Assassin Type / Light Armor / Lv1
+27789	Ultimate Eternal Circlet Magic Type / Robe / Lv1
+27790	Ultimate Eternal Tunic Magic Type / Robe / Lv1
+27791	Ultimate Eternal Stockings Magic Type / Robe / Lv1
+27792	Ultimate Eternal Gloves Magic Type / Robe / Lv1
+27793	Ultimate Eternal Shoes Magic Type / Robe / Lv1
+27794	Ultimate Eternal Helmet Defense Type / Heavy Armor / Lv1
+27795	Ultimate Eternal Breatplate Defense Type / Heavy Armor / Lv1
+27796	Ultimate Eternal Gaiters Defense Type / Heavy Armor / Lv1
+27797	Ultimate Eternal Gauntlets Defense Type / Heavy Armor / Lv1
+27798	Ultimate Eternal Boots Defense Type / Heavy Armor / Lv1
+27799	Ultimate Eternal Leather Helmet Enchant Type / Light Armor / Lv1
+27800	Ultimate Eternal Leather Armor Enchant Type / Light Armor / Lv1
+27801	Ultimate Eternal Leather Leggings Enchant Type / Light Armor / Lv1
+27802	Ultimate Eternal Leather Gloves Enchant Type / Light Armor / Lv1
+27803	Ultimate Eternal Leather Boots Enchant Type / Light Armor / Lv1
+27804	Ultimate Eternal Circlet Recovery Type / Robe / Lv1
+27805	Ultimate Eternal Tunic Recovery Type / Robe / Lv1
+27806	Ultimate Eternal Stockings Recovery Type / Robe / Lv1
+27807	Ultimate Eternal Gloves Recovery Type / Robe / Lv1
+27808	Ultimate Eternal Shoes Recovery Type / Robe / Lv1
+27809	Ultimate Eternal Helmet Heavy Armor / lv2
+27810	Ultimate Eternal Breatplate Heavy Armor / lv2
+27811	Ultimate Eternal Gaiters Heavy Armor / lv2
+27812	Ultimate Eternal Gauntlets Heavy Armor / lv2
+27813	Ultimate Eternal Boots Heavy Armor / lv2
+27814	Ultimate Eternal Leather Helmet Light Armor / lv2
+27815	Ultimate Eternal Leather Armor Light Armor / lv2
+27816	Ultimate Eternal Leather Leggings Light Armor / lv2
+27817	Ultimate Eternal Leather Gloves Light Armor / lv2
+27818	Ultimate Eternal Leather Boots Light Armor / lv2
+27819	Ultimate Eternal Circlet Robe / lv2
+27820	Ultimate Eternal Tunic Robe / lv2
+27821	Ultimate Eternal Stockings Robe / lv2
+27822	Ultimate Eternal Gloves Robe / lv2
+27823	Ultimate Eternal Shoes Robe / lv2
+27824	Ultimate Eternal Helmet Attack Type / Heavy Armor / lv2
+27825	Ultimate Eternal Breatplate Attack Type / Heavy Armor / lv2
+27826	Ultimate Eternal Gaiters Attack Type / Heavy Armor / lv2
+27827	Ultimate Eternal Gauntlets Attack Type / Heavy Armor / lv2
+27828	Ultimate Eternal Boots Attack Type / Heavy Armor / lv2
+27829	Ultimate Eternal Leather Helmet Assassin Type / Light Armor / lv2
+27830	Ultimate Eternal Leather Armor Assassin Type / Light Armor / lv2
+27831	Ultimate Eternal Leather Leggings Assassin Type / Light Armor / lv2
+27832	Ultimate Eternal Leather Gloves Assassin Type / Light Armor / lv2
+27833	Ultimate Eternal Leather Boots Assassin Type / Light Armor / lv2
+27834	Ultimate Eternal Circlet Magic Type / Robe / lv2
+27835	Ultimate Eternal Tunic Magic Type / Robe / lv2
+27836	Ultimate Eternal Stockings Magic Type / Robe / lv2
+27837	Ultimate Eternal Gloves Magic Type / Robe / lv2
+27838	Ultimate Eternal Shoes Magic Type / Robe / lv2
+27839	Ultimate Eternal Helmet Defense Type / Heavy Armor / lv2
+27840	Ultimate Eternal Breatplate Defense Type / Heavy Armor / lv2
+27841	Ultimate Eternal Gaiters Defense Type / Heavy Armor / lv2
+27842	Ultimate Eternal Gauntlets Defense Type / Heavy Armor / lv2
+27843	Ultimate Eternal Boots Defense Type / Heavy Armor / lv2
+27844	Ultimate Eternal Leather Helmet Enchant Type / Light Armor / lv2
+27845	Ultimate Eternal Leather Armor Enchant Type / Light Armor / lv2
+27846	Ultimate Eternal Leather Leggings Enchant Type / Light Armor / lv2
+27847	Ultimate Eternal Leather Gloves Enchant Type / Light Armor / lv2
+27848	Ultimate Eternal Leather Boots Enchant Type / Light Armor / lv2
+27849	Ultimate Eternal Circlet Recovery Type / Robe / lv2
+27850	Ultimate Eternal Tunic Recovery Type / Robe / lv2
+27851	Ultimate Eternal Stockings Recovery Type / Robe / lv2
+27852	Ultimate Eternal Gloves Recovery Type / Robe / lv2
+27853	Ultimate Eternal Shoes Recovery Type / Robe / lv2
+27854	Ultimate Eternal Helmet Heavy Armor / lv3
+27855	Ultimate Eternal Breatplate Heavy Armor / lv3
+27856	Ultimate Eternal Gaiters Heavy Armor / lv3
+27857	Ultimate Eternal Gauntlets Heavy Armor / lv3
+27858	Ultimate Eternal Boots Heavy Armor / lv3
+27859	Ultimate Eternal Leather Helmet Light Armor / lv3
+27860	Ultimate Eternal Leather Armor Light Armor / lv3
+27861	Ultimate Eternal Leather Leggings Light Armor / lv3
+27862	Ultimate Eternal Leather Gloves Light Armor / lv3
+27863	Ultimate Eternal Leather Boots Light Armor / lv3
+27864	Ultimate Eternal Circlet Robe / lv3
+27865	Ultimate Eternal Tunic Robe / lv3
+27866	Ultimate Eternal Stockings Robe / lv3
+27867	Ultimate Eternal Gloves Robe / lv3
+27868	Ultimate Eternal Shoes Robe / lv3
+27869	Ultimate Eternal Helmet Attack Type / Heavy Armor / lv3
+27870	Ultimate Eternal Breatplate Attack Type / Heavy Armor / lv3
+27871	Ultimate Eternal Gaiters Attack Type / Heavy Armor / lv3
+27872	Ultimate Eternal Gauntlets Attack Type / Heavy Armor / lv3
+27873	Ultimate Eternal Boots Attack Type / Heavy Armor / lv3
+27874	Ultimate Eternal Leather Helmet Assassin Type / Light Armor / lv3
+27875	Ultimate Eternal Leather Armor Assassin Type / Light Armor / lv3
+27876	Ultimate Eternal Leather Leggings Assassin Type / Light Armor / lv3
+27877	Ultimate Eternal Leather Gloves Assassin Type / Light Armor / lv3
+27878	Ultimate Eternal Leather Boots Assassin Type / Light Armor / lv3
+27879	Ultimate Eternal Circlet Magic Type / Robe / lv3
+27880	Ultimate Eternal Tunic Magic Type / Robe / lv3
+27881	Ultimate Eternal Stockings Magic Type / Robe / lv3
+27882	Ultimate Eternal Gloves Magic Type / Robe / lv3
+27883	Ultimate Eternal Shoes Magic Type / Robe / lv3
+27884	Ultimate Eternal Helmet Defense Type / Heavy Armor / lv3
+27885	Ultimate Eternal Breatplate Defense Type / Heavy Armor / lv3
+27886	Ultimate Eternal Gaiters Defense Type / Heavy Armor / lv3
+27887	Ultimate Eternal Gauntlets Defense Type / Heavy Armor / lv3
+27888	Ultimate Eternal Boots Defense Type / Heavy Armor / lv3
+27889	Ultimate Eternal Leather Helmet Enchant Type / Light Armor / lv3
+27890	Ultimate Eternal Leather Armor Enchant Type / Light Armor / lv3
+27891	Ultimate Eternal Leather Leggings Enchant Type / Light Armor / lv3
+27892	Ultimate Eternal Leather Gloves Enchant Type / Light Armor / lv3
+27893	Ultimate Eternal Leather Boots Enchant Type / Light Armor / lv3
+27894	Ultimate Eternal Circlet Recovery Type / Robe / lv3
+27895	Ultimate Eternal Tunic Recovery Type / Robe / lv3
+27896	Ultimate Eternal Stockings Recovery Type / Robe / lv3
+27897	Ultimate Eternal Gloves Recovery Type / Robe / lv3
+27898	Ultimate Eternal Shoes Recovery Type / Robe / lv3
+27899	Ultimate Eternal Helmet Heavy Armor / lv4
+27900	Ultimate Eternal Breatplate Heavy Armor / lv4
+27901	Ultimate Eternal Gaiters Heavy Armor / lv4
+27902	Ultimate Eternal Gauntlets Heavy Armor / lv4
+27903	Ultimate Eternal Boots Heavy Armor / lv4
+27904	Ultimate Eternal Leather Helmet Light Armor / lv4
+27905	Ultimate Eternal Leather Armor Light Armor / lv4
+27906	Ultimate Eternal Leather Leggings Light Armor / lv4
+27907	Ultimate Eternal Leather Gloves Light Armor / lv4
+27908	Ultimate Eternal Leather Boots Light Armor / lv4
+27909	Ultimate Eternal Circlet Robe / lv4
+27910	Ultimate Eternal Tunic Robe / lv4
+27911	Ultimate Eternal Stockings Robe / lv4
+27912	Ultimate Eternal Gloves Robe / lv4
+27913	Ultimate Eternal Shoes Robe / lv4
+27914	Ultimate Eternal Helmet Attack Type / Heavy Armor / lv4
+27915	Ultimate Eternal Breatplate Attack Type / Heavy Armor / lv4
+27916	Ultimate Eternal Gaiters Attack Type / Heavy Armor / lv4
+27917	Ultimate Eternal Gauntlets Attack Type / Heavy Armor / lv4
+27918	Ultimate Eternal Boots Attack Type / Heavy Armor / lv4
+27919	Ultimate Eternal Leather Helmet Assassin Type / Light Armor / lv4
+27920	Ultimate Eternal Leather Armor Assassin Type / Light Armor / lv4
+27921	Ultimate Eternal Leather Leggings Assassin Type / Light Armor / lv4
+27922	Ultimate Eternal Leather Gloves Assassin Type / Light Armor / lv4
+27923	Ultimate Eternal Leather Boots Assassin Type / Light Armor / lv4
+27924	Ultimate Eternal Circlet Magic Type / Robe / lv4
+27925	Ultimate Eternal Tunic Magic Type / Robe / lv4
+27926	Ultimate Eternal Stockings Magic Type / Robe / lv4
+27927	Ultimate Eternal Gloves Magic Type / Robe / lv4
+27928	Ultimate Eternal Shoes Magic Type / Robe / lv4
+27929	Ultimate Eternal Helmet Defense Type / Heavy Armor / lv4
+27930	Ultimate Eternal Breatplate Defense Type / Heavy Armor / lv4
+27931	Ultimate Eternal Gaiters Defense Type / Heavy Armor / lv4
+27932	Ultimate Eternal Gauntlets Defense Type / Heavy Armor / lv4
+27933	Ultimate Eternal Boots Defense Type / Heavy Armor / lv4
+27934	Ultimate Eternal Leather Helmet Enchant Type / Light Armor / lv4
+27935	Ultimate Eternal Leather Armor Enchant Type / Light Armor / lv4
+27936	Ultimate Eternal Leather Leggings Enchant Type / Light Armor / lv4
+27937	Ultimate Eternal Leather Gloves Enchant Type / Light Armor / lv4
+27938	Ultimate Eternal Leather Boots Enchant Type / Light Armor / lv4
+27939	Ultimate Eternal Circlet Recovery Type / Robe / lv4
+27940	Ultimate Eternal Tunic Recovery Type / Robe / lv4
+27941	Ultimate Eternal Stockings Recovery Type / Robe / lv4
+27942	Ultimate Eternal Gloves Recovery Type / Robe / lv4
+27943	Ultimate Eternal Shoes Recovery Type / Robe / lv4
+27944	Ultimate Eternal Helmet Heavy Armor / lv5
+27945	Ultimate Eternal Breatplate Heavy Armor / lv5
+27946	Ultimate Eternal Gaiters Heavy Armor / lv5
+27947	Ultimate Eternal Gauntlets Heavy Armor / lv5
+27948	Ultimate Eternal Boots Heavy Armor / lv5
+27949	Ultimate Eternal Leather Helmet Light Armor / lv5
+27950	Ultimate Eternal Leather Armor Light Armor / lv5
+27951	Ultimate Eternal Leather Leggings Light Armor / lv5
+27952	Ultimate Eternal Leather Gloves Light Armor / lv5
+27953	Ultimate Eternal Leather Boots Light Armor / lv5
+27954	Ultimate Eternal Circlet Robe / lv5
+27955	Ultimate Eternal Tunic Robe / lv5
+27956	Ultimate Eternal Stockings Robe / lv5
+27957	Ultimate Eternal Gloves Robe / lv5
+27958	Ultimate Eternal Shoes Robe / lv5
+27959	Ultimate Eternal Helmet Attack Type / Heavy Armor / lv5
+27960	Ultimate Eternal Breatplate Attack Type / Heavy Armor / lv5
+27961	Ultimate Eternal Gaiters Attack Type / Heavy Armor / lv5
+27962	Ultimate Eternal Gauntlets Attack Type / Heavy Armor / lv5
+27963	Ultimate Eternal Boots Attack Type / Heavy Armor / lv5
+27964	Ultimate Eternal Leather Helmet Assassin Type / Light Armor / lv5
+27965	Ultimate Eternal Leather Armor Assassin Type / Light Armor / lv5
+27966	Ultimate Eternal Leather Leggings Assassin Type / Light Armor / lv5
+27967	Ultimate Eternal Leather Gloves Assassin Type / Light Armor / lv5
+27968	Ultimate Eternal Leather Boots Assassin Type / Light Armor / lv5
+27969	Ultimate Eternal Circlet Magic Type / Robe / lv5
+27970	Ultimate Eternal Tunic Magic Type / Robe / lv5
+27971	Ultimate Eternal Stockings Magic Type / Robe / lv5
+27972	Ultimate Eternal Gloves Magic Type / Robe / lv5
+27973	Ultimate Eternal Shoes Magic Type / Robe / lv5
+27974	Ultimate Eternal Helmet Defense Type / Heavy Armor / lv5
+27975	Ultimate Eternal Breatplate Defense Type / Heavy Armor / lv5
+27976	Ultimate Eternal Gaiters Defense Type / Heavy Armor / lv5
+27977	Ultimate Eternal Gauntlets Defense Type / Heavy Armor / lv5
+27978	Ultimate Eternal Boots Defense Type / Heavy Armor / lv5
+27979	Ultimate Eternal Leather Helmet Enchant Type / Light Armor / lv5
+27980	Ultimate Eternal Leather Armor Enchant Type / Light Armor / lv5
+27981	Ultimate Eternal Leather Leggings Enchant Type / Light Armor / lv5
+27982	Ultimate Eternal Leather Gloves Enchant Type / Light Armor / lv5
+27983	Ultimate Eternal Leather Boots Enchant Type / Light Armor / lv5
+27984	Ultimate Eternal Circlet Recovery Type / Robe / lv5
+27985	Ultimate Eternal Tunic Recovery Type / Robe / lv5
+27986	Ultimate Eternal Stockings Recovery Type / Robe / lv5
+27987	Ultimate Eternal Gloves Recovery Type / Robe / lv5
+27988	Ultimate Eternal Shoes Recovery Type / Robe / lv5
+27989	Ultimate Eternal Helmet Heavy Armor / lv6
+27990	Ultimate Eternal Breatplate Heavy Armor / lv6
+27991	Ultimate Eternal Gaiters Heavy Armor / lv6
+27992	Ultimate Eternal Gauntlets Heavy Armor / lv6
+27993	Ultimate Eternal Boots Heavy Armor / lv6
+27994	Ultimate Eternal Leather Helmet Light Armor / lv6
+27995	Ultimate Eternal Leather Armor Light Armor / lv6
+27996	Ultimate Eternal Leather Leggings Light Armor / lv6
+27997	Ultimate Eternal Leather Gloves Light Armor / lv6
+27998	Ultimate Eternal Leather Boots Light Armor / lv6
+27999	Ultimate Eternal Circlet Robe / lv6
+28000	Ultimate Eternal Tunic Robe / lv6
+28001	Ultimate Eternal Stockings Robe / lv6
+28002	Ultimate Eternal Gloves Robe / lv6
+28003	Ultimate Eternal Shoes Robe / lv6
+28004	Ultimate Eternal Helmet Attack Type / Heavy Armor / lv6
+28005	Ultimate Eternal Breatplate Attack Type / Heavy Armor / lv6
+28006	Ultimate Eternal Gaiters Attack Type / Heavy Armor / lv6
+28007	Ultimate Eternal Gauntlets Attack Type / Heavy Armor / lv6
+28008	Ultimate Eternal Boots Attack Type / Heavy Armor / lv6
+28009	Ultimate Eternal Leather Helmet Assassin Type / Light Armor / lv6
+28010	Ultimate Eternal Leather Armor Assassin Type / Light Armor / lv6
+28011	Ultimate Eternal Leather Leggings Assassin Type / Light Armor / lv6
+28012	Ultimate Eternal Leather Gloves Assassin Type / Light Armor / lv6
+28013	Ultimate Eternal Leather Boots Assassin Type / Light Armor / lv6
+28014	Ultimate Eternal Circlet Magic Type / Robe / lv6
+28015	Ultimate Eternal Tunic Magic Type / Robe / lv6
+28016	Ultimate Eternal Stockings Magic Type / Robe / lv6
+28017	Ultimate Eternal Gloves Magic Type / Robe / lv6
+28018	Ultimate Eternal Shoes Magic Type / Robe / lv6
+28019	Ultimate Eternal Helmet Defense Type / Heavy Armor / lv6
+28020	Ultimate Eternal Breatplate Defense Type / Heavy Armor / lv6
+28021	Ultimate Eternal Gaiters Defense Type / Heavy Armor / lv6
+28022	Ultimate Eternal Gauntlets Defense Type / Heavy Armor / lv6
+28023	Ultimate Eternal Boots Defense Type / Heavy Armor / lv6
+28024	Ultimate Eternal Leather Helmet Enchant Type / Light Armor / lv6
+28025	Ultimate Eternal Leather Armor Enchant Type / Light Armor / lv6
+28026	Ultimate Eternal Leather Leggings Enchant Type / Light Armor / lv6
+28027	Ultimate Eternal Leather Gloves Enchant Type / Light Armor / lv6
+28028	Ultimate Eternal Leather Boots Enchant Type / Light Armor / lv6
+28029	Ultimate Eternal Circlet Recovery Type / Robe / lv6
+28030	Ultimate Eternal Tunic Recovery Type / Robe / lv6
+28031	Ultimate Eternal Stockings Recovery Type / Robe / lv6
+28032	Ultimate Eternal Gloves Recovery Type / Robe / lv6
+28033	Ultimate Eternal Shoes Recovery Type / Robe / lv6
+28034	Transcendent Eternal Helmet Heavy Armor / Lv. 1
+28035	Transcendent Eternal Breatplate Heavy Armor / Lv. 1
+28036	Transcendent Eternal Gaiters Heavy Armor / Lv. 1
+28037	Transcendent Eternal Gauntlets Heavy Armor / Lv. 1
+28038	Transcendent Eternal Boots Heavy Armor / Lv. 1
+28039	Transcendent Eternal Leather Helmet Light Armor / Lv. 1
+28040	Transcendent Eternal Leather Armor Light Armor / Lv. 1
+28041	Transcendent Eternal Leather Leggings Light Armor / Lv. 1
+28042	Transcendent Eternal Leather Gloves Light Armor / Lv. 1
+28043	Transcendent Eternal Leather Boots Light Armor / Lv. 1
+28044	Transcendent Eternal Circlet Robe / Lv. 1
+28045	Transcendent Eternal Tunic Robe / Lv. 1
+28046	Transcendent Eternal Stockings Robe / Lv. 1
+28047	Transcendent Eternal Gloves Robe / Lv. 1
+28048	Transcendent Eternal Shoes Robe / Lv. 1
+28049	Transcendent Eternal Helmet Attack Type / Heavy Armor / Lv. 1
+28050	Transcendent Eternal Breatplate Attack Type / Heavy Armor / Lv. 1
+28051	Transcendent Eternal Gaiters Attack Type / Heavy Armor / Lv. 1
+28052	Transcendent Eternal Gauntlets Attack Type / Heavy Armor / Lv. 1
+28053	Transcendent Eternal Boots Attack Type / Heavy Armor / Lv. 1
+28054	Transcendent Eternal Leather Helmet Assassin Type / Light Armor / Lv. 1
+28055	Transcendent Eternal Leather Armor Assassin Type / Light Armor / Lv. 1
+28056	Transcendent Eternal Leather Leggings Assassin Type / Light Armor / Lv. 1
+28057	Transcendent Eternal Leather Gloves Assassin Type / Light Armor / Lv. 1
+28058	Transcendent Eternal Leather Boots Assassin Type / Light Armor / Lv. 1
+28059	Transcendent Eternal Circlet Magic Type / Robe / Lv. 1
+28060	Transcendent Eternal Tunic Magic Type / Robe / Lv. 1
+28061	Transcendent Eternal Stockings Magic Type / Robe / Lv. 1
+28062	Transcendent Eternal Gloves Magic Type / Robe / Lv. 1
+28063	Transcendent Eternal Shoes Magic Type / Robe / Lv. 1
+28064	Transcendent Eternal Helmet Defense Type / Heavy Armor / Lv. 1
+28065	Transcendent Eternal Breatplate Defense Type / Heavy Armor / Lv. 1
+28066	Transcendent Eternal Gaiters Defense Type / Heavy Armor / Lv. 1
+28067	Transcendent Eternal Gauntlets Defense Type / Heavy Armor / Lv. 1
+28068	Transcendent Eternal Boots Defense Type / Heavy Armor / Lv. 1
+28069	Transcendent Eternal Leather Helmet Enchant Type / Light Armor / Lv. 1
+28070	Transcendent Eternal Leather Armor Enchant Type / Light Armor / Lv. 1
+28071	Transcendent Eternal Leather Leggings Enchant Type / Light Armor / Lv. 1
+28072	Transcendent Eternal Leather Gloves Enchant Type / Light Armor / Lv. 1
+28073	Transcendent Eternal Leather Boots Enchant Type / Light Armor / Lv. 1
+28074	Transcendent Eternal Circlet Recovery Type / Robe / Lv. 1
+28075	Transcendent Eternal Tunic Recovery Type / Robe / Lv. 1
+28076	Transcendent Eternal Stockings Recovery Type / Robe / Lv. 1
+28077	Transcendent Eternal Gloves Recovery Type / Robe / Lv. 1
+28078	Transcendent Eternal Shoes Recovery Type / Robe / Lv. 1
+28079	Transcendent Eternal Helmet Heavy Armor / Lv. 2
+28080	Transcendent Eternal Breatplate Heavy Armor / Lv. 2
+28081	Transcendent Eternal Gaiters Heavy Armor / Lv. 2
+28082	Transcendent Eternal Gauntlets Heavy Armor / Lv. 2
+28083	Transcendent Eternal Boots Heavy Armor / Lv. 2
+28084	Transcendent Eternal Leather Helmet Light Armor / Lv. 2
+28085	Transcendent Eternal Leather Armor Light Armor / Lv. 2
+28086	Transcendent Eternal Leather Leggings Light Armor / Lv. 2
+28087	Transcendent Eternal Leather Gloves Light Armor / Lv. 2
+28088	Transcendent Eternal Leather Boots Light Armor / Lv. 2
+28089	Transcendent Eternal Circlet Robe / Lv. 2
+28090	Transcendent Eternal Tunic Robe / Lv. 2
+28091	Transcendent Eternal Stockings Robe / Lv. 2
+28092	Transcendent Eternal Gloves Robe / Lv. 2
+28093	Transcendent Eternal Shoes Robe / Lv. 2
+28094	Transcendent Eternal Helmet Attack Type / Heavy Armor / Lv. 2
+28095	Transcendent Eternal Breatplate Attack Type / Heavy Armor / Lv. 2
+28096	Transcendent Eternal Gaiters Attack Type / Heavy Armor / Lv. 2
+28097	Transcendent Eternal Gauntlets Attack Type / Heavy Armor / Lv. 2
+28098	Transcendent Eternal Boots Attack Type / Heavy Armor / Lv. 2
+28099	Transcendent Eternal Leather Helmet Assassin Type / Light Armor / Lv. 2
+28100	Transcendent Eternal Leather Armor Assassin Type / Light Armor / Lv. 2
+28101	Transcendent Eternal Leather Leggings Assassin Type / Light Armor / Lv. 2
+28102	Transcendent Eternal Leather Gloves Assassin Type / Light Armor / Lv. 2
+28103	Transcendent Eternal Leather Boots Assassin Type / Light Armor / Lv. 2
+28104	Transcendent Eternal Circlet Magic Type / Robe / Lv. 2
+28105	Transcendent Eternal Tunic Magic Type / Robe / Lv. 2
+28106	Transcendent Eternal Stockings Magic Type / Robe / Lv. 2
+28107	Transcendent Eternal Gloves Magic Type / Robe / Lv. 2
+28108	Transcendent Eternal Shoes Magic Type / Robe / Lv. 2
+28109	Transcendent Eternal Helmet Defense Type / Heavy Armor / Lv. 2
+28110	Transcendent Eternal Breatplate Defense Type / Heavy Armor / Lv. 2
+28111	Transcendent Eternal Gaiters Defense Type / Heavy Armor / Lv. 2
+28112	Transcendent Eternal Gauntlets Defense Type / Heavy Armor / Lv. 2
+28113	Transcendent Eternal Boots Defense Type / Heavy Armor / Lv. 2
+28114	Transcendent Eternal Leather Helmet Enchant Type / Light Armor / Lv. 2
+28115	Transcendent Eternal Leather Armor Enchant Type / Light Armor / Lv. 2
+28116	Transcendent Eternal Leather Leggings Enchant Type / Light Armor / Lv. 2
+28117	Transcendent Eternal Leather Gloves Enchant Type / Light Armor / Lv. 2
+28118	Transcendent Eternal Leather Boots Enchant Type / Light Armor / Lv. 2
+28119	Transcendent Eternal Circlet Recovery Type / Robe / Lv. 2
+28120	Transcendent Eternal Tunic Recovery Type / Robe / Lv. 2
+28121	Transcendent Eternal Stockings Recovery Type / Robe / Lv. 2
+28122	Transcendent Eternal Gloves Recovery Type / Robe / Lv. 2
+28123	Transcendent Eternal Shoes Recovery Type / Robe / Lv. 2
+28124	Transcendent Eternal Helmet Heavy Armor / Lv. 3
+28125	Transcendent Eternal Breatplate Heavy Armor / Lv. 3
+28126	Transcendent Eternal Gaiters Heavy Armor / Lv. 3
+28127	Transcendent Eternal Gauntlets Heavy Armor / Lv. 3
+28128	Transcendent Eternal Boots Heavy Armor / Lv. 3
+28129	Transcendent Eternal Leather Helmet Light Armor / Lv. 3
+28130	Transcendent Eternal Leather Armor Light Armor / Lv. 3
+28131	Transcendent Eternal Leather Leggings Light Armor / Lv. 3
+28132	Transcendent Eternal Leather Gloves Light Armor / Lv. 3
+28133	Transcendent Eternal Leather Boots Light Armor / Lv. 3
+28134	Transcendent Eternal Circlet Robe / Lv. 3
+28135	Transcendent Eternal Tunic Robe / Lv. 3
+28136	Transcendent Eternal Stockings Robe / Lv. 3
+28137	Transcendent Eternal Gloves Robe / Lv. 3
+28138	Transcendent Eternal Shoes Robe / Lv. 3
+28139	Transcendent Eternal Helmet Attack Type / Heavy Armor / Lv. 3
+28140	Transcendent Eternal Breatplate Attack Type / Heavy Armor / Lv. 3
+28141	Transcendent Eternal Gaiters Attack Type / Heavy Armor / Lv. 3
+28142	Transcendent Eternal Gauntlets Attack Type / Heavy Armor / Lv. 3
+28143	Transcendent Eternal Boots Attack Type / Heavy Armor / Lv. 3
+28144	Transcendent Eternal Leather Helmet Assassin Type / Light Armor / Lv. 3
+28145	Transcendent Eternal Leather Armor Assassin Type / Light Armor / Lv. 3
+28146	Transcendent Eternal Leather Leggings Assassin Type / Light Armor / Lv. 3
+28147	Transcendent Eternal Leather Gloves Assassin Type / Light Armor / Lv. 3
+28148	Transcendent Eternal Leather Boots Assassin Type / Light Armor / Lv. 3
+28149	Transcendent Eternal Circlet Magic Type / Robe / Lv. 3
+28150	Transcendent Eternal Tunic Magic Type / Robe / Lv. 3
+28151	Transcendent Eternal Stockings Magic Type / Robe / Lv. 3
+28152	Transcendent Eternal Gloves Magic Type / Robe / Lv. 3
+28153	Transcendent Eternal Shoes Magic Type / Robe / Lv. 3
+28154	Transcendent Eternal Helmet Defense Type / Heavy Armor / Lv. 3
+28155	Transcendent Eternal Breatplate Defense Type / Heavy Armor / Lv. 3
+28156	Transcendent Eternal Gaiters Defense Type / Heavy Armor / Lv. 3
+28157	Transcendent Eternal Gauntlets Defense Type / Heavy Armor / Lv. 3
+28158	Transcendent Eternal Boots Defense Type / Heavy Armor / Lv. 3
+28159	Transcendent Eternal Leather Helmet Enchant Type / Light Armor / Lv. 3
+28160	Transcendent Eternal Leather Armor Enchant Type / Light Armor / Lv. 3
+28161	Transcendent Eternal Leather Leggings Enchant Type / Light Armor / Lv. 3
+28162	Transcendent Eternal Leather Gloves Enchant Type / Light Armor / Lv. 3
+28163	Transcendent Eternal Leather Boots Enchant Type / Light Armor / Lv. 3
+28164	Transcendent Eternal Circlet Recovery Type / Robe / Lv. 3
+28165	Transcendent Eternal Tunic Recovery Type / Robe / Lv. 3
+28166	Transcendent Eternal Stockings Recovery Type / Robe / Lv. 3
+28167	Transcendent Eternal Gloves Recovery Type / Robe / Lv. 3
+28168	Transcendent Eternal Shoes Recovery Type / Robe / Lv. 3
+28169	Transcendent Eternal Helmet Heavy Armor / Lv. 4
+28170	Transcendent Eternal Breatplate Heavy Armor / Lv. 4
+28171	Transcendent Eternal Gaiters Heavy Armor / Lv. 4
+28172	Transcendent Eternal Gauntlets Heavy Armor / Lv. 4
+28173	Transcendent Eternal Boots Heavy Armor / Lv. 4
+28174	Transcendent Eternal Leather Helmet Light Armor / Lv. 4
+28175	Transcendent Eternal Leather Armor Light Armor / Lv. 4
+28176	Transcendent Eternal Leather Leggings Light Armor / Lv. 4
+28177	Transcendent Eternal Leather Gloves Light Armor / Lv. 4
+28178	Transcendent Eternal Leather Boots Light Armor / Lv. 4
+28179	Transcendent Eternal Circlet Robe / Lv. 4
+28180	Transcendent Eternal Tunic Robe / Lv. 4
+28181	Transcendent Eternal Stockings Robe / Lv. 4
+28182	Transcendent Eternal Gloves Robe / Lv. 4
+28183	Transcendent Eternal Shoes Robe / Lv. 4
+28184	Transcendent Eternal Helmet Attack Type / Heavy Armor / Lv. 4
+28185	Transcendent Eternal Breatplate Attack Type / Heavy Armor / Lv. 4
+28186	Transcendent Eternal Gaiters Attack Type / Heavy Armor / Lv. 4
+28187	Transcendent Eternal Gauntlets Attack Type / Heavy Armor / Lv. 4
+28188	Transcendent Eternal Boots Attack Type / Heavy Armor / Lv. 4
+28189	Transcendent Eternal Leather Helmet Assassin Type / Light Armor / Lv. 4
+28190	Transcendent Eternal Leather Armor Assassin Type / Light Armor / Lv. 4
+28191	Transcendent Eternal Leather Leggings Assassin Type / Light Armor / Lv. 4
+28192	Transcendent Eternal Leather Gloves Assassin Type / Light Armor / Lv. 4
+28193	Transcendent Eternal Leather Boots Assassin Type / Light Armor / Lv. 4
+28194	Transcendent Eternal Circlet Magic Type / Robe / Lv. 4
+28195	Transcendent Eternal Tunic Magic Type / Robe / Lv. 4
+28196	Transcendent Eternal Stockings Magic Type / Robe / Lv. 4
+28197	Transcendent Eternal Gloves Magic Type / Robe / Lv. 4
+28198	Transcendent Eternal Shoes Magic Type / Robe / Lv. 4
+28199	Transcendent Eternal Helmet Defense Type / Heavy Armor / Lv. 4
+28200	Transcendent Eternal Breatplate Defense Type / Heavy Armor / Lv. 4
+28201	Transcendent Eternal Gaiters Defense Type / Heavy Armor / Lv. 4
+28202	Transcendent Eternal Gauntlets Defense Type / Heavy Armor / Lv. 4
+28203	Transcendent Eternal Boots Defense Type / Heavy Armor / Lv. 4
+28204	Transcendent Eternal Leather Helmet Enchant Type / Light Armor / Lv. 4
+28205	Transcendent Eternal Leather Armor Enchant Type / Light Armor / Lv. 4
+28206	Transcendent Eternal Leather Leggings Enchant Type / Light Armor / Lv. 4
+28207	Transcendent Eternal Leather Gloves Enchant Type / Light Armor / Lv. 4
+28208	Transcendent Eternal Leather Boots Enchant Type / Light Armor / Lv. 4
+28209	Transcendent Eternal Circlet Recovery Type / Robe / Lv. 4
+28210	Transcendent Eternal Tunic Recovery Type / Robe / Lv. 4
+28211	Transcendent Eternal Stockings Recovery Type / Robe / Lv. 4
+28212	Transcendent Eternal Gloves Recovery Type / Robe / Lv. 4
+28213	Transcendent Eternal Shoes Recovery Type / Robe / Lv. 4
+28214	Transcendent Eternal Helmet Heavy Armor / Lv. 5
+28215	Transcendent Eternal Breatplate Heavy Armor / Lv. 5
+28216	Transcendent Eternal Gaiters Heavy Armor / Lv. 5
+28217	Transcendent Eternal Gauntlets Heavy Armor / Lv. 5
+28218	Transcendent Eternal Boots Heavy Armor / Lv. 5
+28219	Transcendent Eternal Leather Helmet Light Armor / Lv. 5
+28220	Transcendent Eternal Leather Armor Light Armor / Lv. 5
+28221	Transcendent Eternal Leather Leggings Light Armor / Lv. 5
+28222	Transcendent Eternal Leather Gloves Light Armor / Lv. 5
+28223	Transcendent Eternal Leather Boots Light Armor / Lv. 5
+28224	Transcendent Eternal Circlet Robe / Lv. 5
+28225	Transcendent Eternal Tunic Robe / Lv. 5
+28226	Transcendent Eternal Stockings Robe / Lv. 5
+28227	Transcendent Eternal Gloves Robe / Lv. 5
+28228	Transcendent Eternal Shoes Robe / Lv. 5
+28229	Transcendent Eternal Helmet Attack Type / Heavy Armor / Lv. 5
+28230	Transcendent Eternal Breatplate Attack Type / Heavy Armor / Lv. 5
+28231	Transcendent Eternal Gaiters Attack Type / Heavy Armor / Lv. 5
+28232	Transcendent Eternal Gauntlets Attack Type / Heavy Armor / Lv. 5
+28233	Transcendent Eternal Boots Attack Type / Heavy Armor / Lv. 5
+28234	Transcendent Eternal Leather Helmet Assassin Type / Light Armor / Lv. 5
+28235	Transcendent Eternal Leather Armor Assassin Type / Light Armor / Lv. 5
+28236	Transcendent Eternal Leather Leggings Assassin Type / Light Armor / Lv. 5
+28237	Transcendent Eternal Leather Gloves Assassin Type / Light Armor / Lv. 5
+28238	Transcendent Eternal Leather Boots Assassin Type / Light Armor / Lv. 5
+28239	Transcendent Eternal Circlet Magic Type / Robe / Lv. 5
+28240	Transcendent Eternal Tunic Magic Type / Robe / Lv. 5
+28241	Transcendent Eternal Stockings Magic Type / Robe / Lv. 5
+28242	Transcendent Eternal Gloves Magic Type / Robe / Lv. 5
+28243	Transcendent Eternal Shoes Magic Type / Robe / Lv. 5
+28244	Transcendent Eternal Helmet Defense Type / Heavy Armor / Lv. 5
+28245	Transcendent Eternal Breatplate Defense Type / Heavy Armor / Lv. 5
+28246	Transcendent Eternal Gaiters Defense Type / Heavy Armor / Lv. 5
+28247	Transcendent Eternal Gauntlets Defense Type / Heavy Armor / Lv. 5
+28248	Transcendent Eternal Boots Defense Type / Heavy Armor / Lv. 5
+28249	Transcendent Eternal Leather Helmet Enchant Type / Light Armor / Lv. 5
+28250	Transcendent Eternal Leather Armor Enchant Type / Light Armor / Lv. 5
+28251	Transcendent Eternal Leather Leggings Enchant Type / Light Armor / Lv. 5
+28252	Transcendent Eternal Leather Gloves Enchant Type / Light Armor / Lv. 5
+28253	Transcendent Eternal Leather Boots Enchant Type / Light Armor / Lv. 5
+28254	Transcendent Eternal Circlet Recovery Type / Robe / Lv. 5
+28255	Transcendent Eternal Tunic Recovery Type / Robe / Lv. 5
+28256	Transcendent Eternal Stockings Recovery Type / Robe / Lv. 5
+28257	Transcendent Eternal Gloves Recovery Type / Robe / Lv. 5
+28258	Transcendent Eternal Shoes Recovery Type / Robe / Lv. 5
+28259	Transcendent Eternal Helmet Heavy Armor / Lv. 6
+28260	Transcendent Eternal Breatplate Heavy Armor / Lv. 6
+28261	Transcendent Eternal Gaiters Heavy Armor / Lv. 6
+28262	Transcendent Eternal Gauntlets Heavy Armor / Lv. 6
+28263	Transcendent Eternal Boots Heavy Armor / Lv. 6
+28264	Transcendent Eternal Leather Helmet Light Armor / Lv. 6
+28265	Transcendent Eternal Leather Armor Light Armor / Lv. 6
+28266	Transcendent Eternal Leather Leggings Light Armor / Lv. 6
+28267	Transcendent Eternal Leather Gloves Light Armor / Lv. 6
+28268	Transcendent Eternal Leather Boots Light Armor / Lv. 6
+28269	Transcendent Eternal Circlet Robe / Lv. 6
+28270	Transcendent Eternal Tunic Robe / Lv. 6
+28271	Transcendent Eternal Stockings Robe / Lv. 6
+28272	Transcendent Eternal Gloves Robe / Lv. 6
+28273	Transcendent Eternal Shoes Robe / Lv. 6
+28274	Transcendent Eternal Helmet Attack Type / Heavy Armor / Lv. 6
+28275	Transcendent Eternal Breatplate Attack Type / Heavy Armor / Lv. 6
+28276	Transcendent Eternal Gaiters Attack Type / Heavy Armor / Lv. 6
+28277	Transcendent Eternal Gauntlets Attack Type / Heavy Armor / Lv. 6
+28278	Transcendent Eternal Boots Attack Type / Heavy Armor / Lv. 6
+28279	Transcendent Eternal Leather Helmet Assassin Type / Light Armor / Lv. 6
+28280	Transcendent Eternal Leather Armor Assassin Type / Light Armor / Lv. 6
+28281	Transcendent Eternal Leather Leggings Assassin Type / Light Armor / Lv. 6
+28282	Transcendent Eternal Leather Gloves Assassin Type / Light Armor / Lv. 6
+28283	Transcendent Eternal Leather Boots Assassin Type / Light Armor / Lv. 6
+28284	Transcendent Eternal Circlet Magic Type / Robe / Lv. 6
+28285	Transcendent Eternal Tunic Magic Type / Robe / Lv. 6
+28286	Transcendent Eternal Stockings Magic Type / Robe / Lv. 6
+28287	Transcendent Eternal Gloves Magic Type / Robe / Lv. 6
+28288	Transcendent Eternal Shoes Magic Type / Robe / Lv. 6
+28289	Transcendent Eternal Helmet Defense Type / Heavy Armor / Lv. 6
+28290	Transcendent Eternal Breatplate Defense Type / Heavy Armor / Lv. 6
+28291	Transcendent Eternal Gaiters Defense Type / Heavy Armor / Lv. 6
+28292	Transcendent Eternal Gauntlets Defense Type / Heavy Armor / Lv. 6
+28293	Transcendent Eternal Boots Defense Type / Heavy Armor / Lv. 6
+28294	Transcendent Eternal Leather Helmet Enchant Type / Light Armor / Lv. 6
+28295	Transcendent Eternal Leather Armor Enchant Type / Light Armor / Lv. 6
+28296	Transcendent Eternal Leather Leggings Enchant Type / Light Armor / Lv. 6
+28297	Transcendent Eternal Leather Gloves Enchant Type / Light Armor / Lv. 6
+28298	Transcendent Eternal Leather Boots Enchant Type / Light Armor / Lv. 6
+28299	Transcendent Eternal Circlet Recovery Type / Robe / Lv. 6
+28300	Transcendent Eternal Tunic Recovery Type / Robe / Lv. 6
+28301	Transcendent Eternal Stockings Recovery Type / Robe / Lv. 6
+28302	Transcendent Eternal Gloves Recovery Type / Robe / Lv. 6
+28303	Transcendent Eternal Shoes Recovery Type / Robe / Lv. 6
+28304	Shilen's Ring
+28305	Shilen's Ring - Not Used Stage 2
+28306	Shilen's Ring Stage 3
+28307	Shilen's Ring Fragment
+28308	Shilen's Necklace - Not Used
+28309	Shilen's Necklace - Not Used Stage 2
+28310	Shilen's Necklace - Not Used Stage 3
+28311	Shilen's Necklace Fragment
+28312	Shilen's Earring
+28313	Shilen's Earring - Not Used Stage 2
+28314	Shilen's Earring - Not Used Stage 3
+28315	Shilen's Earring Fragment
+28316	Scroll: Shilen's Ring
+28317	Scroll: Shilen's Necklace
+28318	Scroll: Shilen's Earring
+28319	Gran Kain's Necklace Stage 1
+28320	Gran Kain's Necklace Stage 2
+28321	Gran Kain's Necklace Stage 3
+28322	Gran Kain's Necklace Stage 4
+28323	Gran Kain's Necklace Stage 5
+28324	Gran Kain's Necklace Stage 6
+28325	Einhasad's Necklace Stage 1
+28326	Einhasad's Necklace Stage 2
+28327	Einhasad's Necklace Stage 3
+28328	Einhasad's Necklace Stage 4
+28329	Einhasad's Necklace Stage 5
+28330	Einhasad's Necklace Stage 6
+28331	Pa'agrio's Earring Stage 1
+28332	Pa'agrio's Earring Stage 2
+28333	Pa'agrio's Earring Stage 3
+28334	Pa'agrio's Earring Stage 4
+28335	Pa'agrio's Earring Stage 5
+28336	Pa'agrio's Earring Stage 6
+28337	Eva's Earring Stage 1
+28338	Eva's Earring Stage 2
+28339	Eva's Earring Stage 3
+28340	Eva's Earring Stage 4
+28341	Eva's Earring Stage 5
+28342	Eva's Earring Stage 6
+28343	Sayha's Ring Stage 1
+28344	Sayha's Ring Stage 2
+28345	Sayha's Ring Stage 3
+28346	Sayha's Ring Stage 4
+28347	Sayha's Ring Stage 5
+28348	Sayha's Ring Stage 6
+28349	Maphr's Ring Stage 1
+28350	Maphr's Ring Stage 2
+28351	Maphr's Ring Stage 3
+28352	Maphr's Ring Stage 4
+28353	Maphr's Ring Stage 5
+28354	Maphr's Ring Stage 6
+28355	Prestige Cube 7-day
+28356	Prestige Cube Pack 7-day
+28357	Special Treasure Chest
+28358	La Vie En Rose's Elegant Brooch
+28359	La Vie En Rose's Gemstone Powder
+28360	Cat's Eye Lv. 3 Jewelry Box
+28361	Cat's Eye Lv. 4 Jewelry Box
+28362	Amethyst Lv. 3 Jewelry Box
+28363	Amethyst Lv. 4 Jewelry Box
+28364	Jewel Grinder
+28365	Ultimate Jewelry Box
+28366	Vital Stone Lv. 3 Jewelry Box
+28367	Tanzanite Lv. 3 Jewelry Box
+28368	Vital Stone Lv. 4 Jewelry Box
+28369	Tanzanite Lv. 4 Jewelry Box
+28370	Garnet Lv. 3 Jewelry Box
+28371	Garnet Lv. 4 Jewelry Box
+28372	Vital Stone Lv. 3 Jewelry Box
+28373	Tanzanite Lv. 3 Jewelry Box
+28374	Vital Stone Lv. 4 Jewelry Box
+28375	Tanzanite Lv. 4 Jewelry Box
+28376	Greater Cat's Eye
+28377	Greater Amethyst
+28378	Greater Vital Stone
+28379	Greater Garnet
+28380	Greater Tanzanite
+28381	Abundance Box Infinite
+28382	Ultimate Jewelry Box
+28383	Greater Garnet
+28384	Chef Monkey's Belt
+28385	Race Change Ticket Pack
+28386	Race Change Ticket
+28387	Agathion - Unlimited Vitality Pack
+28388	Agathion - Unlimited Vitality
+28389	Heine Exclusive Bait (85-89)
+28390	Heine Exclusive Bait (90-94)
+28391	Heine Exclusive Bait (95-98)
+28392	Heine Exclusive Bait (99-)
+28393	Heine Exclusive Bait Coupon
+28394	Heine Exclusive Reward Chest
+28395	Heine Exclusive Fishing Tools - 300 Pack
+28396	Heine Exclusive Fishing Tools - 3,000 Pack
+28397	2016 World Olympiad Hero XXX's Accessory
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -29851,11 +30608,11 @@
 32739	Elixir Pack (C-grade)
 32740	Elixir Pack (B-grade)
 32741	Elixir Pack (A-grade)
-32742	Rabbit Ears STR
+32742	Rabbit Ears Str
 32743	Rabbit Ears DEX
 32744	Raccoon Ears CON
 32745	Raccoon Ears MEN
-32746	Cat Ears INT
+32746	Cat Ears Int
 32747	Cat Ears WIT
 32748	Romantic Chapeau Critical Rate
 32749	Romantic Chapeau Critical Damage
@@ -31814,11 +32571,11 @@
 34702	Treasure Chest
 34703	Hero's Treasure Chest
 34704	Giant's Treasure Chest
-34705	Pirate's Eyepatch STR
+34705	Pirate's Eyepatch Str
 34706	Pirate's Eyepatch DEX
 34707	Outlaw's Eyepatch CON
 34708	Outlaw's Eyepatch MEN
-34709	Eyepatch INT
+34709	Eyepatch Int
 34710	Eyepatch WIT
 34711	Party Hat Critical Rate
 34712	Party Hat Critical Damage
@@ -31883,10 +32640,10 @@
 34771	Sayha's Shirt Event
 34772	Eva's Shirt Event
 34773	Maphr's Shirt Event
-34774	Scroll of Blessing (R1-grade) Event
-34775	Scroll of Blessing (R2-grade) Event
-34776	Scroll of Blessing (R95-grade) Event
-34777	Scroll of Blessing (R99-grade) Event
+34774	Scroll of Blessing: (R1-grade) Event
+34775	Scroll of Blessing: (R2-grade) Event
+34776	Scroll of Blessing: (R95-grade) Event
+34777	Scroll of Blessing: (R99-grade) Event
 34778	Squash Ring (Warrior) Event
 34779	Squash Earring (Warrior) Event
 34780	Squash Necklace Event
@@ -32774,21 +33531,21 @@
 35675	High-grade Elixir of Life (R-grade)
 35676	High-grade Elixir of Mind (R-grade)
 35677	High-grade Elixir of CP (R-grade)
-35678	Test Shaper Test
-35679	Test Cutter Test
-35680	Test Slasher Test
-35681	Test Avenger Test
-35682	Test Fighter Test
-35683	Test Stormer Test
-35684	Test Thrower Test
-35685	Test Shooter Test
-35686	Test Buster Test
-35687	Test Caster Test
-35688	Test Retributer Test
-35689	Test Dualsword Test
-35690	Test Dual Dagger Test
-35691	Test Dual Blunt Weapon Test
-35692	Monster's Weapon Test
+35678	Test Shaper test
+35679	Test Cutter test
+35680	Test Slasher test
+35681	Test Avenger test
+35682	Test Fighter test
+35683	Test Stormer test
+35684	Test Thrower test
+35685	Test Shooter test
+35686	Test Buster test
+35687	Test Caster test
+35688	Test Retributer test
+35689	Test Dualsword test
+35690	Test Dual Dagger test
+35691	Test Dual Blunt Weapon test
+35692	Monster's Weapon test
 35693	Santa Girl's Cloak 1-day (Event)
 35694	Santa Girl's Cloak 3-day (Event)
 35695	Holiday Tree - Star Ornament Event
@@ -32859,7 +33616,7 @@
 35760	Draco's Blessing (3-hour) Event
 35761	Rabbit Ears CON
 35762	Rabbit Ears MEN
-35763	Rabbit Ears INT
+35763	Rabbit Ears Int
 35764	Rabbit Ears WIT
 35765	Rabbit Ears Critical Rate
 35766	Rabbit Ears Critical Damage
@@ -32869,9 +33626,9 @@
 35770	Rabbit Ears P. Atk.
 35771	Rabbit Ears M. Atk.
 35772	Rabbit Ears Accuracy
-35773	Raccoon Ears STR
+35773	Raccoon Ears Str
 35774	Raccoon Ears DEX
-35775	Raccoon Ears INT
+35775	Raccoon Ears Int
 35776	Raccoon Ears WIT
 35777	Raccoon Ears Critical Rate
 35778	Raccoon Ears Critical Damage
@@ -32881,7 +33638,7 @@
 35782	Raccoon Ears P. Atk.
 35783	Raccoon Ears M. Atk.
 35784	Raccoon Ears Accuracy
-35785	Cat Ears STR
+35785	Cat Ears Str
 35786	Cat Ears DEX
 35787	Cat Ears CON
 35788	Cat Ears MEN
@@ -32893,11 +33650,11 @@
 35794	Cat Ears P. Atk.
 35795	Cat Ears M. Atk.
 35796	Cat Ears Accuracy
-35797	Romantic Chapeau STR
+35797	Romantic Chapeau Str
 35798	Romantic Chapeau DEX
 35799	Romantic Chapeau CON
 35800	Romantic Chapeau MEN
-35801	Romantic Chapeau INT
+35801	Romantic Chapeau Int
 35802	Romantic Chapeau WIT
 35803	Romantic Chapeau P. Def.
 35804	Romantic Chapeau M. Def.
@@ -32905,22 +33662,22 @@
 35806	Romantic Chapeau P. Atk.
 35807	Romantic Chapeau M. Atk.
 35808	Romantic Chapeau Accuracy
-35809	Angel Circlet STR
+35809	Angel Circlet Str
 35810	Angel Circlet DEX
 35811	Angel Circlet CON
 35812	Angel Circlet MEN
-35813	Angel Circlet INT
+35813	Angel Circlet Int
 35814	Angel Circlet WIT
 35815	Angel Circlet Critical Rate
 35816	Angel Circlet Critical Damage
 35817	Angel Circlet P. Atk.
 35818	Angel Circlet M. Atk.
 35819	Angel Circlet Accuracy
-35820	Demon Circlet STR
+35820	Demon Circlet Str
 35821	Demon Circlet DEX
 35822	Demon Circlet CON
 35823	Demon Circlet MEN
-35824	Demon Circlet INT
+35824	Demon Circlet Int
 35825	Demon Circlet WIT
 35826	Demon Circlet Critical Rate
 35827	Demon Circlet Critical Damage
@@ -32929,7 +33686,7 @@
 35830	Demon Circlet Evasion
 35831	Pirate's Eyepatch CON
 35832	Pirate's Eyepatch MEN
-35833	Pirate's Eyepatch INT
+35833	Pirate's Eyepatch Int
 35834	Pirate's Eyepatch WIT
 35835	Pirate's Eyepatch Critical Rate
 35836	Pirate's Eyepatch Critical Damage
@@ -32939,9 +33696,9 @@
 35840	Pirate's Eyepatch P. Atk.
 35841	Pirate's Eyepatch M. Atk.
 35842	Pirate's Eyepatch Accuracy
-35843	Outlaw's Eyepatch STR
+35843	Outlaw's Eyepatch Str
 35844	Outlaw's Eyepatch DEX
-35845	Outlaw's Eyepatch INT
+35845	Outlaw's Eyepatch Int
 35846	Outlaw's Eyepatch WIT
 35847	Outlaw's Eyepatch Critical Rate
 35848	Outlaw's Eyepatch Critical Damage
@@ -32951,7 +33708,7 @@
 35852	Outlaw's Eyepatch P. Atk.
 35853	Outlaw's Eyepatch M. Atk.
 35854	Outlaw's Eyepatch Accuracy
-35855	Eyepatch STR
+35855	Eyepatch Str
 35856	Eyepatch DEX
 35857	Eyepatch CON
 35858	Eyepatch MEN
@@ -32963,11 +33720,11 @@
 35864	Eyepatch P. Atk.
 35865	Eyepatch M. Atk.
 35866	Eyepatch Accuracy
-35867	Party Hat STR
+35867	Party Hat Str
 35868	Party Hat DEX
 35869	Party Hat CON
 35870	Party Hat MEN
-35871	Party Hat INT
+35871	Party Hat Int
 35872	Party Hat WIT
 35873	Party Hat P. Def.
 35874	Party Hat M. Def.
@@ -32975,22 +33732,22 @@
 35876	Party Hat P. Atk.
 35877	Party Hat M. Atk.
 35878	Party Hat Accuracy
-35879	Refined Angel Ring STR
+35879	Refined Angel Ring Str
 35880	Refined Angel Ring DEX
 35881	Refined Angel Ring CON
 35882	Refined Angel Ring MEN
-35883	Refined Angel Ring INT
+35883	Refined Angel Ring Int
 35884	Refined Angel Ring WIT
 35885	Refined Angel Ring Critical Rate
 35886	Refined Angel Ring Critical Damage
 35887	Refined Angel Ring P. Atk.
 35888	Refined Angel Ring M. Atk.
 35889	Refined Angel Ring Accuracy
-35890	Refined Devil Horn STR
+35890	Refined Devil Horn Str
 35891	Refined Devil Horn DEX
 35892	Refined Devil Horn CON
 35893	Refined Devil Horn MEN
-35894	Refined Devil Horn INT
+35894	Refined Devil Horn Int
 35895	Refined Devil Horn WIT
 35896	Refined Devil Horn Critical Rate
 35897	Refined Devil Horn Critical Damage
@@ -33088,7 +33845,7 @@
 35989	Festival's Cloak Ceremony of Chaos
 35990	Circlet of Ice Ceremony of Chaos
 35991	Ceremony of Chaos Attack
-35992	Ceremony of Chaos Magic
+35992	Ceremony of Chaos magic
 35993	Ceremony of Chaos Defense
 35994	Tauti's Treasure Chest Event
 35995	Gemstone Not in Use
@@ -33212,8 +33969,8 @@
 36113	Vulcan's True Gold
 36114	Vulcan's Pure Silver
 36115	Vulcan's Blood Fire
-36116	Scroll of Blessing (R-grade) Campaign
-36117	Scroll of Blessing (R95-grade) Campaign
+36116	Scroll of Blessing: (R-grade) Campaign
+36117	Scroll of Blessing: (R95-grade) Campaign
 36118	Elegia Sigil - Ceremony of Chaos
 36119	Elegia Shield - Ceremony of Chaos
 36120	Clan Cloak - Clan Hall (Contestable)
@@ -33255,10 +34012,10 @@
 36156	Enhanced Kaliel's Attribute Crystal Pack
 36157	Scroll: Enchant Hair Accessory Pack
 36158	Spirit Stone: Hair Accessory Pack
-36159	Scroll of Blessing (R1-grade)
-36160	Scroll of Blessing (R2-grade)
-36161	Scroll of Blessing (R95-grade)
-36162	Scroll of Blessing (R99-grade)
+36159	Scroll of Blessing: (R1-grade)
+36160	Scroll of Blessing: (R2-grade)
+36161	Scroll of Blessing: (R95-grade)
+36162	Scroll of Blessing: (R99-grade)
 36163	Giant's Scroll: Enchant Weapon (R-grade)
 36164	Giant's Scroll: Enchant Armor (R-grade)
 36165	Kaliel's Soul Box
@@ -33266,7 +34023,7 @@
 36167	Nurka's Belt
 36168	Lidia's Belt
 36169	Gustav's Belt
-36170	Scroll of Escape: Fog of Blood Region
+36170	Scroll of Escape: Bloody Swampland
 36171	Scroll of Escape: Isle of Souls Harbor
 36172	Scroll of Escape: Ruins of Ye Sagira
 36173	Scroll of Escape: Guillotine Fortress
@@ -33282,7 +34039,7 @@
 36183	2012 World Olympiad Hero's Accessory Feoh Wizard
 36184	Kaliel's Energy Annihilation
 36185	Kaliel's Energy Hellfire
-36186	Kaliel's Energy Desire
+36186	Kaliel's Energy desire
 36187	Rising Shirt
 36188	Blaze Shirt
 36189	Rising Belt
@@ -33393,7 +34150,7 @@
 36300	Unbind Scroll: Armor (R95-grade) Event
 36302	Scroll of Blessing: Armor (R-grade) Campaign
 36303	Scroll of Blessing: Armor (R95-grade) Campaign
-36308	Beauty Shop Ticket
+36308	Royal Beauty Ticket
 36309	Healing Potion (Battleground)
 36310	Battleground Scroll: Remove Invincibility
 36311	Battleground Scroll: Damage Reflect Resistance
@@ -34057,12 +34814,12 @@
 36969	Wind Stone (+ 150)
 36970	Dark Stone (+ 150)
 36971	Holy Stone (+ 150)
-36972	Fire Crystal - Super
-36973	Water Crystal - Super
-36974	Earth Crystal - Super
-36975	Wind Crystal - Super
-36976	Dark Crystal - Super
-36977	Holy Crystal - Super
+36972	Lesser Fire Crystal - Super
+36973	Lesser Water Crystal - Super
+36974	Lesser Earth Crystal - Super
+36975	Lesser Wind Crystal - Super
+36976	Lesser Dark Crystal - Super
+36977	Lesser Holy Crystal - Super
 36978	Scroll: Enchant Hair Accessory
 36979	Life Stone: Hair Accessory
 36980	9th Anniversary Rocket Gun Hat: Chain Fireworks
@@ -34625,7 +35382,7 @@
 37539	Enchant Scroll Pack
 37540	Giant's Enchant Scroll Pack
 37541	Blessed Enchant Scroll Pack
-37542	Summon Scroll: Bae Kisung Test
+37542	Summon Scroll: Bae Kisung test
 37543	Nectar
 37544	Snowball
 37545	Large Snowball
@@ -35306,16 +36063,16 @@
 38220	Turtle: Shield
 38221	Blue Mackerel: Dualsword
 38222	Fish Stew WIT
-38223	Fish Stew INT
+38223	Fish Stew Int
 38224	Fish Stew MEN
 38225	Fish Stew DEX
-38226	Fish Stew STR
+38226	Fish Stew Str
 38227	Fish Stew CON
-38228	Lady's Hairpin STR
+38228	Lady's Hairpin Str
 38229	Lady's Hairpin DEX
 38230	Lady's Hairpin CON
 38231	Lady's Hairpin MEN
-38232	Lady's Hairpin INT
+38232	Lady's Hairpin Int
 38233	Lady's Hairpin WIT
 38234	Lady's Hairpin Critical Rate
 38235	Lady's Hairpin Critical Damage
@@ -35325,11 +36082,11 @@
 38239	Lady's Hairpin P. Atk.
 38240	Lady's Hairpin M. Atk.
 38241	Lady's Hairpin Accuracy
-38242	Party Mask STR
+38242	Party Mask Str
 38243	Party Mask DEX
 38244	Party Mask CON
 38245	Party Mask MEN
-38246	Party Mask INT
+38246	Party Mask Int
 38247	Party Mask WIT
 38248	Party Mask Critical Rate
 38249	Party Mask Critical Damage
@@ -35339,11 +36096,11 @@
 38253	Party Mask P. Atk.
 38254	Party Mask M. Atk.
 38255	Party Mask Accuracy
-38256	Monocle STR
+38256	Monocle Str
 38257	Monocle DEX
 38258	Monocle CON
 38259	Monocle MEN
-38260	Monocle INT
+38260	Monocle Int
 38261	Monocle WIT
 38262	Monocle Critical Rate
 38263	Monocle Critical Damage
@@ -35353,11 +36110,11 @@
 38267	Monocle P. Atk.
 38268	Monocle M. Atk.
 38269	Monocle Accuracy
-38270	Maiden's Hairpin STR
+38270	Maiden's Hairpin Str
 38271	Maiden's Hairpin DEX
 38272	Maiden's Hairpin CON
 38273	Maiden's Hairpin MEN
-38274	Maiden's Hairpin INT
+38274	Maiden's Hairpin Int
 38275	Maiden's Hairpin WIT
 38276	Maiden's Hairpin Critical Rate
 38277	Maiden's Hairpin Critical Damage
@@ -35367,11 +36124,11 @@
 38281	Maiden's Hairpin P. Atk.
 38282	Maiden's Hairpin M. Atk.
 38283	Maiden's Hairpin Accuracy
-38284	Forget-me-not Hairpin STR
+38284	Forget-me-not Hairpin Str
 38285	Forget-me-not Hairpin DEX
 38286	Forget-me-not Hairpin CON
 38287	Forget-me-not Hairpin MEN
-38288	Forget-me-not Hairpin INT
+38288	Forget-me-not Hairpin Int
 38289	Forget-me-not Hairpin WIT
 38290	Forget-me-not Hairpin Critical Rate
 38291	Forget-me-not Hairpin Critical Damage
@@ -35381,11 +36138,11 @@
 38295	Forget-me-not Hairpin P. Atk.
 38296	Forget-me-not Hairpin M. Atk.
 38297	Forget-me-not Hairpin Accuracy
-38298	Daisy Hairpin STR
+38298	Daisy Hairpin Str
 38299	Daisy Hairpin DEX
 38300	Daisy Hairpin CON
 38301	Daisy Hairpin MEN
-38302	Daisy Hairpin INT
+38302	Daisy Hairpin Int
 38303	Daisy Hairpin WIT
 38304	Daisy Hairpin Critical Rate
 38305	Daisy Hairpin Critical Damage
@@ -35395,11 +36152,11 @@
 38309	Daisy Hairpin P. Atk.
 38310	Daisy Hairpin M. Atk.
 38311	Daisy Hairpin Accuracy
-38312	Little Angel Wings STR
+38312	Little Angel Wings Str
 38313	Little Angel Wings DEX
 38314	Little Angel Wings CON
 38315	Little Angel Wings MEN
-38316	Little Angel Wings INT
+38316	Little Angel Wings Int
 38317	Little Angel Wings WIT
 38318	Little Angel Wings Critical Rate
 38319	Little Angel Wings Critical Damage
@@ -35409,11 +36166,11 @@
 38323	Little Angel Wings P. Atk.
 38324	Little Angel Wings M. Atk.
 38325	Little Angel Wings Accuracy
-38326	Fairy Antennae STR
+38326	Fairy Antennae Str
 38327	Fairy Antennae DEX
 38328	Fairy Antennae CON
 38329	Fairy Antennae MEN
-38330	Fairy Antennae INT
+38330	Fairy Antennae Int
 38331	Fairy Antennae WIT
 38332	Fairy Antennae Critical Rate
 38333	Fairy Antennae Critical Damage
@@ -35423,11 +36180,11 @@
 38337	Fairy Antennae P. Atk.
 38338	Fairy Antennae M. Atk.
 38339	Fairy Antennae Accuracy
-38340	Chapeau STR
+38340	Chapeau Str
 38341	Chapeau DEX
 38342	Chapeau CON
 38343	Chapeau MEN
-38344	Chapeau INT
+38344	Chapeau Int
 38345	Chapeau WIT
 38346	Chapeau Critical Rate
 38347	Chapeau Critical Damage
@@ -35437,11 +36194,11 @@
 38351	Chapeau P. Atk.
 38352	Chapeau M. Atk.
 38353	Chapeau Accuracy
-38354	Artisan's Goggles STR
+38354	Artisan's Goggles Str
 38355	Artisan's Goggles DEX
 38356	Artisan's Goggles CON
 38357	Artisan's Goggles MEN
-38358	Artisan's Goggles INT
+38358	Artisan's Goggles Int
 38359	Artisan's Goggles WIT
 38360	Artisan's Goggles Critical Rate
 38361	Artisan's Goggles Critical Damage
@@ -35451,11 +36208,11 @@
 38365	Artisan's Goggles P. Atk.
 38366	Artisan's Goggles M. Atk.
 38367	Artisan's Goggles Accuracy
-38368	Arrow-pierced Apple STR
+38368	Arrow-pierced Apple Str
 38369	Arrow-pierced Apple DEX
 38370	Arrow-pierced Apple CON
 38371	Arrow-pierced Apple MEN
-38372	Arrow-pierced Apple INT
+38372	Arrow-pierced Apple Int
 38373	Arrow-pierced Apple WIT
 38374	Arrow-pierced Apple Critical Rate
 38375	Arrow-pierced Apple Critical Damage
@@ -36637,7 +37394,7 @@
 39551	White Rose
 39552	Crimson Rose
 39553	Minstrel's Scroll of Escape: Talking Island
-39554	Minstrel's Scroll of Escape: Magmeld
+39554	Bard's Scroll of Escape - Hunter's Village
 39555	Minstrel's Scroll of Escape: Magmeld
 39556	Minstrel's Scroll of Escape: Town of Rune
 39557	Minstrel's Scroll of Escape: Town of Aden
@@ -37121,10 +37878,10 @@
 40038	Dimensional Bracelet Stage 6 - CHA
 40039	Dimensional Bracelet Stage 6 - CHA
 40040	Dimensional Bracelet Stage 6 - CHA
-40041	Dimensional Bracelet Enhancement Stone STR
+40041	Dimensional Bracelet Enhancement Stone Str
 40042	Dimensional Bracelet Enhancement Stone DEX
 40043	Dimensional Bracelet Enhancement Stone CON
-40044	Dimensional Bracelet Enhancement Stone INT
+40044	Dimensional Bracelet Enhancement Stone Int
 40045	Dimensional Bracelet Enhancement Stone MEN
 40046	Dimensional Bracelet Enhancement Stone WIT
 40047	Dimensional Bracelet Enhancement Stone LUC
@@ -37355,11 +38112,11 @@
 40272	Orc's Luxury Old Box
 40273	Ertheia's Boost Scroll
 40274	Buff Helmet
-40275	Buff Helmet STR
+40275	Buff Helmet Str
 40276	Buff Helmet DEX
 40277	Buff Helmet CON
 40278	Buff Helmet MEN
-40279	Buff Helmet INT
+40279	Buff Helmet Int
 40280	Buff Helmet WIT
 40281	Buff Helmet Critical Rate
 40282	Buff Helmet Critical Damage
@@ -37394,11 +38151,11 @@
 40311	Noelle's Gift
 40312	Santa's Cloak
 40313	Santa's Mark
-40314	Santa Hat STR
+40314	Santa Hat Str
 40315	Santa Hat DEX
 40316	Santa Hat CON
 40317	Santa Hat MEN
-40318	Santa Hat INT
+40318	Santa Hat Int
 40319	Santa Hat WIT
 40320	Santa Hat Critical Rate
 40321	Santa Hat Critical Damage
@@ -37466,35 +38223,35 @@
 45383	Maid Hairband 15-day
 45384	Laborer Hat 15-day
 45385	Ruthless Tribe Mask 15-day
-45386	Drop Rate Setting Comparison Purpose Test
-45387	Drop Rate Setting Comparison Purpose Test
-45388	Drop Rate Setting Comparison Purpose Test
-45389	Drop Rate Setting Comparison Purpose Test
-45390	Drop Rate Setting Comparison Purpose Test
-45391	Drop Rate Setting Comparison Purpose Test
-45392	Drop Rate Setting Comparison Purpose Test
-45393	Drop Rate Setting Comparison Purpose Test
-45394	Drop Rate Setting Comparison Purpose Test
-45395	Drop Rate Setting Comparison Purpose Test
-45396	Drop Rate Setting Comparison Purpose Test
-45397	Drop Rate Setting Comparison Purpose Test
-45398	Drop Rate Setting Comparison Purpose Test
-45399	Auto Tooltip Check Test
-45400	Auto Tooltip Check Test
-45401	Auto Tooltip Check Test
-45402	Auto Tooltip Check Test
-45403	Auto Tooltip Check Test
-45404	Auto Tooltip Check Test
-45405	Auto Tooltip Check Test
-45406	Auto Tooltip Check Test
-45407	Auto Tooltip Check Test
-45408	Auto Tooltip Check Test
-45409	Auto Tooltip Check Test
-45410	Auto Tooltip Check Test
-45411	Auto Tooltip Check Test
-45412	Auto Tooltip Check Test
-45413	Auto Tooltip Check Test
-45414	Auto Tooltip Check Test
+45386	Drop Rate Setting Comparison Purpose test
+45387	Drop Rate Setting Comparison Purpose test
+45388	Drop Rate Setting Comparison Purpose test
+45389	Drop Rate Setting Comparison Purpose test
+45390	Drop Rate Setting Comparison Purpose test
+45391	Drop Rate Setting Comparison Purpose test
+45392	Drop Rate Setting Comparison Purpose test
+45393	Drop Rate Setting Comparison Purpose test
+45394	Drop Rate Setting Comparison Purpose test
+45395	Drop Rate Setting Comparison Purpose test
+45396	Drop Rate Setting Comparison Purpose test
+45397	Drop Rate Setting Comparison Purpose test
+45398	Drop Rate Setting Comparison Purpose test
+45399	Auto Tooltip Check test
+45400	Auto Tooltip Check test
+45401	Auto Tooltip Check test
+45402	Auto Tooltip Check test
+45403	Auto Tooltip Check test
+45404	Auto Tooltip Check test
+45405	Auto Tooltip Check test
+45406	Auto Tooltip Check test
+45407	Auto Tooltip Check test
+45408	Auto Tooltip Check test
+45409	Auto Tooltip Check test
+45410	Auto Tooltip Check test
+45411	Auto Tooltip Check test
+45412	Auto Tooltip Check test
+45413	Auto Tooltip Check test
+45414	Auto Tooltip Check test
 45415	Dandy's Home Run Ball
 45416	Blue Save Card (R-grade)
 45417	Blue Save Card (R95-grade)
@@ -37689,7 +38446,7 @@
 45606	Special Magic Ornament Eternal Belt PVE Attack
 45607	Special Magic Ornament Eternal Belt PVE Defense
 45608	Special Magic Ornament Eternal Belt PVP Attack
-45609	Special Magic Ornament Eternal Belt PVP Defense
+45609	Special Magic Ornament Eternal Belt PvP Defense
 45610	Atelia Energy Crystal
 45611	Atelia Energy Crystal
 45612	Atelia Energy Crystal
@@ -38222,7 +38979,7 @@
 46139	Low-grade Honorary Member Certificate
 46140	Low-grade Honorary Member Certificate
 46141	Mid-grade Honorary Member Certificate
-46142	Stronghold Flag Repair Cloth
+46142	Stronghold Flag Repair Supplies
 46143	Stronghold Repair Tools
 46144	Kelbim's Armor Piece
 46145	Black Atelia Powder
@@ -38599,13 +39356,13 @@
 46516	Lionel's Soul Crystal - Stage 13
 46517	Lionel's Soul Crystal - Stage 14
 46518	Lionel's Soul Crystal - Stage 15
-46519	Sealed Soul Crystal Not In Use
-46520	Sealed Soul Crystal Not In Use
-46521	Sealed Soul Crystal Not In Use
-46522	Sealed Soul Crystal Not In Use
-46523	Sealed Soul Crystal Not In Use
-46524	Sealed Soul Crystal Not In Use
-46525	Practice Sealed Soul Crystal Not In Use
+46519	Sealed Soul Crystal Not in Use
+46520	Sealed Soul Crystal Not in Use
+46521	Sealed Soul Crystal Not in Use
+46522	Sealed Soul Crystal Not in Use
+46523	Sealed Soul Crystal Not in Use
+46524	Sealed Soul Crystal Not in Use
+46525	Practice Sealed Soul Crystal Not in Use
 46526	Practice Soul Crystal Stage 1
 46527	Agathion - Shiny
 46528	Server Keeper's Magic Pencil
@@ -38622,12 +39379,12 @@
 46539	Tauti Gaiters - No Ertheia Heavy Armor
 46540	Tauti Gauntlets - No Ertheia Heavy Armor
 46541	Tauti Boots - No Ertheia Heavy Armor
-46542	Kelbim Leather Helmet Not In Use
+46542	Kelbim Leather Helmet Not in Use
 46543	Kelbim Leather Armor Light Armor
 46544	Kelbim Leather Leggings Light Armor
 46545	Kelbim Leather Gloves Light Armor
 46546	Kelbim Leather Boots Light Armor
-46547	Freya Circlet Not In Use
+46547	Freya Circlet Not in Use
 46548	Freya Tunic Robe
 46549	Freya Stockings Robe
 46550	Freya Gloves Robe
@@ -38643,7 +39400,7 @@
 46560	Curtiz's Reward Box
 46561	Blue Dynasty
 46562	Red Zubei
-46563	Epic Tale Pouch Not In Use
+46563	Epic Tale Pouch Not in Use
 46564	Scroll of Escape: Mystic Tavern
 46565	Soul Crystal Coupon Stage 1
 46566	Soul Crystal Coupon Stage 2
@@ -38652,28 +39409,28 @@
 46569	Soul Crystal Coupon Stage 5
 46570	Soul Crystal Coupon Pack Stage 5
 46571	For NPC_Left Hand Meat Plate
-46572	Tauti's Helmet Appearance Stone Not In Use
+46572	Tauti's Helmet Appearance Stone Not in Use
 46573	Tauti's Breastplate Appearance Stone
 46574	Tauti's Gaiters Appearance Stone
 46575	Tauti's Gauntlets Appearance Stone
 46576	Tauti's Boots Appearance Stone
-46577	Kelbim's Leather Helmet Appearance Stone Not In Use
+46577	Kelbim's Leather Helmet Appearance Stone Not in Use
 46578	Kelbim's Leather Armor Appearance Stone
 46579	Kelbim's Leather Leggings Appearance Stone
 46580	Kelbim's Leather Gloves Appearance Stone
 46581	Kelbim's Leather Boots Appearance Stone
-46582	Freya's Circlet Appearance Stone Not In Use
+46582	Freya's Circlet Appearance Stone Not in Use
 46583	Freya's Tunic Appearance Stone
 46584	Freya's Stockings Appearance Stone
 46585	Freya's Gloves Appearance Stone
 46586	Freya's Shoes Appearance Stone
 46587	Mystic Armor Piece
-46588	For UI Test_Special Soul Crystal Not In Use
-46589	Sealed Soul Crystal Not In Use
-46590	Sealed Soul Crystal Not In Use
-46591	Sealed Soul Crystal Not In Use
-46592	Sealed Soul Crystal Not In Use
-46593	Sealed Soul Crystal Not In Use
+46588	For UI Test_Special Soul Crystal Not in Use
+46589	Sealed Soul Crystal Not in Use
+46590	Sealed Soul Crystal Not in Use
+46591	Sealed Soul Crystal Not in Use
+46592	Sealed Soul Crystal Not in Use
+46593	Sealed Soul Crystal Not in Use
 46594	Ice Crystal Shard Mystic Tavern - Freya
 46595	Blue Dynasty
 46596	Blue Dynasty
@@ -38687,11 +39444,11 @@
 46604	Zubei Armor Appearance Stone
 46605	White Assassin Suit Appearance Stone
 46606	Blue Dynasty Circlet
-46607	Blue Dynasty Circlet STR
+46607	Blue Dynasty Circlet Str
 46608	Blue Dynasty Circlet DEX
 46609	Blue Dynasty Circlet CON
 46610	Blue Dynasty Circlet MEN
-46611	Blue Dynasty Circlet INT
+46611	Blue Dynasty Circlet Int
 46612	Blue Dynasty Circlet WIT
 46613	Blue Dynasty Circlet Critical Rate
 46614	Blue Dynasty Circlet Critical Damage
@@ -38773,3 +39530,980 @@
 46690	Shadai's Shiny Jewelry Box
 46691	Function Test Item
 46692	Entrance Pass: Embryo Command Post
+46693	Emperor Shunaiman's Shaper 30-day
+46694	Emperor Shunaiman's Dicing Death 30-day
+46695	Emperor Shunaiman's Slasher 30-day
+46696	Emperor Shunaiman's Avenger 30-day
+46697	Emperor Shunaiman's Fighter 30-day
+46698	Emperor Shunaiman's Stormer 30-day
+46699	Emperor Shunaiman's Thrower 30-day
+46700	Emperor Shunaiman's Shooter 30-day
+46701	Emperor Shunaiman's Buster 30-day
+46702	Emperor Shunaiman's Caster 30-day
+46703	Emperor Shunaiman's Retributer 30-day
+46704	Emperor Shunaiman's Dualsword 30-day
+46705	Emperor Shunaiman's Dual Dagger 30-day
+46706	Emperor Shunaiman's Dual Blunt 30-day
+46707	Stylish Color Title
+46708	Entrance Pass: Nightmare Kamaloka
+46709	Pa'agrio's Blessing
+46710	Lindvior's Earring 30-day
+46711	Lindvior's Earring 30-day pack
+46712	Blessed Antharas' Earring 30-day pack
+46713	Blessed Valakas' Necklace 30-day pack
+46714	Tauti's Ring 30-day pack
+46715	Earth Wyrm Heart Ring 30-day pack
+46716	Refined Black Romantic Chapeau
+46717	Mysterious Talisman - STR 30-day
+46718	Mysterious Talisman - INT 30-day
+46719	Mysterious Talisman - DEX 30-day
+46720	Mysterious Talisman - WIT 30-day
+46721	Mysterious Talisman - CON 30-day
+46722	Mysterious Talisman - MEN 30-day
+46723	Mysterious Talisman - STR 30-day pack
+46724	Mysterious Talisman - INT 30-day pack
+46725	Mysterious Talisman - DEX 30-day pack
+46726	Mysterious Talisman - WIT 30-day pack
+46727	Mysterious Talisman - CON 30-day pack
+46728	Mysterious Talisman - MEN 30-day pack
+46729	Scroll of Escape: Town of Goddard
+46730	Scroll of Escape: Varka Silenos Barracks
+46731	Scroll of Escape: Town of Goddard
+46732	Scroll of Escape: Ketra Orc Outpost
+46733	Scroll of Escape: Town of Giran
+46734	Scroll of Escape: Dragon Valley
+46735	Hatchling Flesh
+46736	Practice Fish
+46737	Practice Bait
+46738	Practice Fishing Rod
+46739	Reward Fishing Rod Pack
+46740	Reward Fishing Rod 7-day
+46741	Monster Only (Lesser Giant A)
+46742	Monster Only (Lesser Giant Wizard's Weapon A)
+46743	Varka's Badge: Soldier
+46744	Varka's Badge: General
+46745	Ketra's Badge: Soldier
+46746	Ketra's Badge: General
+46747	Shinedust
+46748	Minion's Shine Stone
+46749	Resistance Mark
+46750	Resistance Mark Stage 1
+46751	Resistance Mark Stage 2
+46752	Resistance Mark Stage 3
+46753	Resistance Mark Stage 4
+46754	Resistance Mark Stage 5
+46755	Demon's Trace
+46756	Minion's Report
+46757	Giants' Relic Key
+46758	Steel Requiem Weapon Coupon
+46759	Steel Apocalypse Weapon Coupon
+46760	Steel Armor Pack
+46761	Schumadriba's Reward Treasure Chest
+46762	Schumadriba's Advanced Reward Treasure Chest
+46763	Scroll of Escape: Giant's Cave
+46764	Shadai's Good Fortune Jewelry Box
+46765	Ruby Treasure Chest of Good Fortune
+46766	Sapphire Treasure Chest of Good Fortune
+46767	Topaz Treasure Chest of Good Fortune
+46768	Opal Treasure Chest of Good Fortune
+46769	Obsidian Treasure Chest of Good Fortune
+46770	Diamond Treasure Chest of Good Fortune
+46771	Emerald Treasure Chest of Good Fortune
+46772	Aquamarine Treasure Chest of Good Fortune
+46773	Pearl Treasure Chest of Good Fortune
+46774	Vital Stone Treasure Chest of Good Fortune
+46775	Garnet Treasure Chest of Good Fortune
+46776	Tanzanite Treasure Chest of Good Fortune
+46777	Vitality Replenishing Potion of Quest Pride Event
+46778	Special Bait Coupon of Quest Pride Event
+46779	Equipment Enchantment Chest of Quest Pride Event
+46780	Skill Enchantment Chest of Quest Pride Event
+46781	Good Fortune Chest of Quest Pride Event
+46782	Graduation Gift
+46783	Blue Dynasty Transformation Potion
+46784	Red Zubei Transformation Potion
+46785	Spirit Fragment
+46786	Key to the Dimension Dissolver's Prison
+46787	Remnant of the Rift
+46788	Ten-day Log
+46789	Fairy Blood
+46790	Satyr Blood
+46791	Paulina's Sword of Revolution
+46792	Paulina's Claymore
+46793	Paulina's Tarbar
+46794	Paulina's Scallop Jamadhr
+46795	Paulina's Light Crossbow
+46796	Paulina's Mithril Dagger
+46797	Paulina's Ghost Staff
+46798	Paulina's General's Katzbalger
+46799	Paulina's Grand Épée
+46800	Paulina's Cranequin
+46801	Paulina's Samurai Long Sword
+46802	Paulina's Berserker Blade
+46803	Paulina's Yaksa Mace
+46804	Paulina's Great Pata
+46805	Paulina's Orcish Poleaxe
+46806	Paulina's Eminence Bow
+46807	Paulina's Crystal Dagger
+46808	Paulina's Deadman's Staff
+46809	Paulina's Katana*Katana
+46810	Paulina's Saber Tooth
+46811	Paulina's Admiral's Estoc
+46812	Paulina's Sharpshooter
+46813	Paulina's Dark Legion's Edge
+46814	Paulina's Dragon Slayer
+46815	Paulina's Elysian
+46816	Paulina's Dragon Grinder
+46817	Paulina's Halberd
+46818	Paulina's Soul Bow
+46819	Paulina's Bloody Orchid
+46820	Paulina's Branch of the Mother Tree
+46821	Paulina's Damascus*Damascus
+46822	Paulina's Undertaker
+46823	Paulina's Lacerator
+46824	Paulina's Reaper
+46825	Paulina's Dynasty Sword
+46826	Paulina's Dynasty Blade
+46827	Paulina's Dynasty Cudgel
+46828	Paulina's Dynasty Bagh-Nakh
+46829	Paulina's Dynasty Halberd
+46830	Paulina's Dynasty Bow
+46831	Paulina's Dynasty Knife
+46832	Paulina's Dynasty Staff
+46833	Paulina's Dynasty Dualsword
+46834	Paulina's Dynasty Ancient Sword
+46835	Paulina's Dynasty Rapier
+46836	Paulina's Dynasty Crossbow
+46837	Paulina's Heavy Armor Box (D-grade)
+46838	Paulina's Light Armor Box (D-grade)
+46839	Paulina's Robe Box (D-grade)
+46840	Paulina's Heavy Armor Box (C-grade)
+46841	Paulina's Light Armor Box (C-grade)
+46842	Paulina's Robe Box (C-grade)
+46843	Paulina's Heavy Armor Box (A-grade)
+46844	Paulina's Light Armor Box (A-grade)
+46845	Paulina's Robe Box (A-grade)
+46846	Paulina's Heavy Armor Box (S-grade)
+46847	S-grade Paulina Light Armor Treasure Chest
+46848	Paulina's Robe Box (S-grade)
+46849	Paulina's Equipment Set (D-grade)
+46850	Paulina's Equipment Set (C-grade)
+46851	Paulina's Equipment Set (A-grade)
+46852	Paulina's Equipment Set (S-grade)
+46853	Blessed Paulina's Specter Dualsword
+46854	Blessed Paulina's Specter Cutter
+46855	Blessed Paulina's Specter Slasher
+46856	Blessed Paulina's Specter Avenger
+46857	Blessed Paulina's Specter Fighter
+46858	Blessed Paulina's Specter Stormer
+46859	Blessed Paulina's Specter Thrower
+46860	Blessed Paulina's Specter Shooter
+46861	Blessed Paulina's Specter Dual Dagger
+46862	Blessed Paulina's Specter Caster
+46863	Blessed Paulina's Specter Retributer
+46864	Blessed Paulina's Seraph Helmet Heavy Armor
+46865	Blessed Paulina's Seraph Breastplate Heavy Armor
+46866	Blessed Paulina's Seraph Gaiters Heavy Armor
+46867	Blessed Paulina's Seraph Gauntlets Heavy Armor
+46868	Blessed Paulina's Seraph Boots Heavy Armor
+46869	Blessed Paulina's Seraph Shield Heavy Armor
+46870	Blessed Paulina's Seraph Leather Helmet Light Armor
+46871	Blessed Paulina's Seraph Leather Armor Light Armor
+46872	Blessed Paulina's Seraph Leather Leggings Light Armor
+46873	Blessed Paulina's Seraph Leather Gloves Light Armor
+46874	Blessed Paulina's Seraph Leather Boots Light Armor
+46875	Blessed Paulina's Seraph Circlet Robe
+46876	Blessed Paulina's Seraph Tunic Robe
+46877	Blessed Paulina's Seraph Stockings Robe
+46878	Blessed Paulina's Seraph Gloves Robe
+46879	Blessed Paulina's Seraph Shoes Robe
+46880	Blessed Paulina's Seraph Sigil Robe
+46881	Blessed Paulina's Seraph Necklace Skill Cooldown
+46882	Blessed Paulina's Seraph Earring Vampiric Rage
+46883	Blessed Paulina's Seraph Earring MP Consumption
+46884	Blessed Paulina's Seraph Ring Critical Damage
+46885	Blessed Paulina's Seraph Ring Critical Rate
+46886	PC Cafe - Paulina's Specter Dualsword 4-hour
+46887	PC Cafe - Paulina's Specter Cutter 4-hour
+46888	PC Cafe - Paulina's Specter Slasher 4-hour
+46889	PC Cafe - Paulina's Specter Avenger 4-hour
+46890	PC Cafe - Paulina's Specter Fighter 4-hour
+46891	PC Cafe - Paulina's Specter Stormer 4-hour
+46892	PC Cafe - Paulina's Specter Thrower 4-hour
+46893	PC Cafe - Paulina's Specter Shooter 4-hour
+46894	PC Cafe - Paulina's Specter Dual Dagger 4-hour
+46895	PC Cafe - Paulina Specter Caster 4-hour
+46896	PC Cafe - Paulina's Specter Retributer 4-hour
+46897	PC Cafe - Paulina's Seraph Helmet Heavy Armor
+46898	PC Cafe - Paulina's Seraph Breastplate Heavy Armor
+46899	PC Cafe - Paulina's Seraph Gaiters Heavy Armor
+46900	PC Cafe - Paulina's Seraph Gauntlets Heavy Armor
+46901	PC Cafe - Paulina's Seraph Boots Heavy Armor
+46902	PC Cafe - Paulina's Seraph Shield Heavy Armor
+46903	PC Cafe - Paulina's Seraph Leather Helmet Light Armor
+46904	PC Cafe - Paulina's Seraph Leather Armor Light Armor
+46905	PC Cafe - Paulina's Seraph Leather Leggings Light Armor
+46906	PC Cafe - Paulina's Seraph Leather Gloves Light Armor
+46907	PC Cafe - Paulina's Seraph Leather Boots Light Armor
+46908	PC Cafe - Paulina's Seraph Circlet Robe
+46909	PC Cafe - Paulina's Seraph Tunic Robe
+46910	PC Cafe - Paulina's Seraph Stockings Robe
+46911	PC Cafe - Paulina's Seraph Gloves Robe
+46912	PC Cafe - Paulina's Seraph Shoes Robe
+46913	PC Cafe - Paulina's Seraph Sigil Robe
+46914	PC Cafe - Paulina's Seraph Necklace Skill Cooldown
+46915	PC Cafe - Paulina's Seraph Earring Vampiric Rage
+46916	PC Cafe - Paulina's Seraph Earring MP Consumption
+46917	PC Cafe - Paulina's Seraph Ring Critical Damage
+46918	PC Cafe - Paulina's Seraph Ring Critical Rate
+46919	Paulina's Equipment Set (R-grade) 30-day
+46920	Paulina's Brigandine Shield
+46921	Paulina's Chain Shield
+46922	Paulina's Dark Crystal Shield
+46923	Paulina's Dynasty Shield
+46924	Paulina's Heavy Armor Box (R-grade)
+46925	Paulina's Light Armor Box (R-grade)
+46926	Paulina's Robe Box (R-grade)
+46927	Paulina's Brigandine Helmet Heavy Armor
+46928	Paulina's Brigandine Heavy Armor
+46929	Paulina's Brigandine Gaiters Heavy Armor
+46930	Paulina's Brigandine Gauntlets Heavy Armor
+46931	Paulina's Brigandine Boots Heavy Armor
+46932	Paulina's Manticore Skin Helmet Light Armor
+46933	Paulina's Manticore Skin Shirt Light Armor
+46934	Paulina's Manticore Skin Gaiters Light Armor
+46935	Paulina's Manticore Skin Gloves Light Armor
+46936	Paulina's Manticore Skin Boots Light Armor
+46937	Paulina's Mithril Circlet Robe
+46938	Paulina's Mithril Tunic Robe
+46939	Paulina's Mithril Stockings Robe
+46940	Paulina's Elven Mithril Gloves Robe
+46941	Paulina's Elven Mithril Boots Robe
+46942	Paulina's Elven Necklace
+46943	Paulina's Elven Earrings
+46944	Paulina's Elven Ring
+46945	Paulina's Chain Helmet Heavy Armor
+46946	Paulina's Chain Mail Shirt Heavy Armor
+46947	Paulina's Chain Gaiters Heavy Armor
+46948	Paulina's Chain Gloves Heavy Armor
+46949	Paulina's Chain Boots Heavy Armor
+46950	Paulina's Theca Leather Helmet Light Armor
+46951	Paulina's Theca Leather Armor Light Armor
+46952	Paulina's Theca Leather Gaiters Light Armor
+46953	Paulina's Theca Leather Gloves Light Armor
+46954	Paulina's Theca Leather Boots Light Armor
+46955	Paulina's Demon Circlet Robe
+46956	Paulina's Demon Tunic Robe
+46957	Paulina's Demon Stockings Robe
+46958	Paulina's Demon Gloves Robe
+46959	Paulina's Demon Boots Robe
+46960	Paulina's Necklace of Protection Skill Cooldown
+46961	Paulina's Earring of Protection Vampiric Rage
+46962	Paulina's Earring of Protection MP Consumption
+46963	Paulina's Ring of Protection Critical Damage
+46964	Paulina's Ring of Protection Critical Rate
+46965	Paulina's Dark Crystal Helmet Heavy Armor
+46966	Paulina's Dark Crystal Breastplate Heavy Armor
+46967	Paulina's Dark Crystal Gaiters Heavy Armor
+46968	Paulina's Dark Crystal Gloves Heavy Armor
+46969	Paulina's Dark Crystal Boots Heavy Armor
+46970	Paulina's Dark Crystal Leather Helmet Light Armor
+46971	Paulina's Dark Crystal Leather Armor Light Armor
+46972	Paulina's Dark Crystal Leggings Light Armor
+46973	Paulina's Dark Crystal Gloves Light Armor
+46974	Paulina's Dark Crystal Boots Light Armor
+46975	Paulina's Tallum Circlet Robe
+46976	Paulina's Tallum Tunic Robe
+46977	Paulina's Tallum Stockings Robe
+46978	Paulina's Tallum Gloves Robe
+46979	Paulina's Tallum Boots Robe
+46980	Paulina's Majestic Necklace Skill Cooldown
+46981	Paulina's Majestic Earrings Vampiric Rage
+46982	Paulina's Majestic Earrings MP Consumption
+46983	Paulina's Majestic Ring Critical Damage
+46984	Paulina's Majestic Ring Critical Rate
+46985	Paulina's Dynasty Helmet Heavy Armor
+46986	Paulina's Dynasty Breastplate Heavy Armor
+46987	Paulina's Dynasty Gaiters Heavy Armor
+46988	Paulina's Dynasty Gauntlets Heavy Armor
+46989	Paulina's Dynasty Boots Heavy Armor
+46990	Paulina's Dynasty Leather Helmet Light Armor
+46991	Paulina's Dynasty Leather Armor Light Armor
+46992	Paulina's Dynasty Leather Leggints Light Armor
+46993	Paulina's Dynasty Gloves Light Armor
+46994	Paulina's Dynasty Leather Boots Light Armor
+46995	Paulina's Dynasty Circlet Robe
+46996	Paulina's Dynasty Tunic Robe
+46997	Paulina's Dynasty Stockings Robe
+46998	Paulina's Dynasty Gloves Robe
+46999	Paulina's Dynasty Shoes Robe
+47000	Paulina's Dynasty Necklace Skill Cooldown
+47001	Paulina's Dynasty Earring Vampiric Rage
+47002	Paulina's Dynasty Earring MP Consumption
+47003	Paulina's Dynasty Ring Critical Damage
+47004	Paulina's Dynasty Ring Critical Rate
+47005	Old Elemental Shirt
+47006	Supply Items for Adventurer
+47007	Paulina's Apocalypse Shaper Not used
+47008	Paulina's Apocalypse Cutter
+47009	Paulina's Apocalypse Slasher
+47010	Paulina's Apocalypse Avenger
+47011	Paulina's Apocalypse Fighter
+47012	Paulina's Apocalypse Stormer
+47013	Paulina's Apocalypse Thrower
+47014	Paulina's Apocalypse Shooter
+47015	Paulina's Apocalypse Buster Not used
+47016	Paulina's Apocalypse Caster
+47017	Paulina's Apocalypse Retributer
+47018	Paulina's Apocalypse Dualsword
+47019	Paulina's Apocalypse Dual Dagger
+47020	Paulina's Apocalypse Dual Blunt Not used
+47021	Paulina's Twilight Helmet Heavy Armor
+47022	Paulina's Twilight Breastplate Heavy Armor
+47023	Paulina's Twilight Gaiters Heavy Armor
+47024	Paulina's Twilight Gauntlets Heavy Armor
+47025	Paulina's Twilight Boots Heavy Armor
+47026	Paulina's Twilight Shield Heavy Armor
+47027	Paulina's Twilight Leather Helmet Light Armor
+47028	Paulina's Twilight Leather Armor Light Armor
+47029	Paulina's Twilight Leather Leggings Light Armor
+47030	Paulina's Twilight Leather Gloves Light Armor
+47031	Paulina's Twilight Leather Boots Light Armor
+47032	Paulina's Twilight Circlet Robe
+47033	Paulina's Twilight Tunic Robe
+47034	Paulina's Twilight Stockings Robe
+47035	Paulina's Twilight Gloves Robe
+47036	Paulina's Twilight Shoes Robe
+47037	Paulina's Twilight Sigil Robe
+47038	Paulina's Twilight Necklace Skill Cooldown
+47039	Paulina's Twilight Earring Vampiric Rage
+47040	Paulina's Twilight Earring MP Consumption
+47041	Paulina's Twilight Ring Critical Damage
+47042	Paulina's Twilight Ring Critical Rate
+47043	Beloa's Supply Items
+47044	Commando Belt
+47045	Dimensional Force Sustaining Device
+47046	Alligator Leather
+47047	Destroyed Gargoyle Fragment
+47048	Basilisk Scale
+47049	Mahum ID Tag
+47050	Spore Pocket
+47051	Mark of the Plains Monsters
+47052	Mark of the Plateau Monsters
+47053	Slaughterer Mark
+47054	Scroll of Escape: Arms of Timiniel
+47055	Scroll of Escape: Arms of Timiniel
+47056	Scroll of Escape: Harnak Underground Ruins
+47057	Scroll of Escape: Bloody Swampland
+47058	Scroll of Escape: Kartia's Labyrinth
+47059	Scroll of Escape: Isle of Souls
+47060	Scroll of Escape: Seal of Shilen
+47061	Scroll of Escape: Pagan Temple
+47062	Scroll of Escape: Cemetery
+47063	Scroll of Escape: Blazing Swamp
+47064	Blessed Paulina's Seraph Heavy Armor Box 30-day
+47065	Blessed Paulina's Seraph Light Armor Box 30-day
+47066	Blessed Paulina's Seraph Robe Box 30-day
+47067	Blessed Paulina's Seraph Accessory Pack 30-day
+47068	PC Cafe - Paulina's Seraph Heavy Armor Box 4-hour
+47069	PC Cafe - Paulina's Seraph Light Armor Box 4-hour
+47070	PC Cafe - Paulina's Seraph Robe Box 4-hour
+47071	PC Cafe - Paulina's Seraph Accessory Pack 4-hour
+47072	Blessed Paulina's Specter Dualsword Box 30-day
+47073	Blessed Paulina's Specter Cutter Box 30-day
+47074	Blessed Paulina's Specter Slasher Box 30-day
+47075	Blessed Paulina's Specter Avenger Box 30-day
+47076	Blessed Paulina's Specter Fighter Box 30-day
+47077	Blessed Paulina's Specter Stormer Box 30-day
+47078	Blessed Paulina's Specter Thrower Box 30-day
+47079	Blessed Paulina's Specter Shooter Box 30-day
+47080	Blessed Paulina's Specter Dual Dagger Box 30-day
+47081	Blessed Paulina's Specter Caster Box 30-day
+47082	Blessed Paulina's Specter Retributer Box 30-day
+47083	Tulesir's Gift Box
+47084	Beloa's Gift Box
+47085	Superior Giant's Codex Box
+47086	Venir's Talisman Box
+47087	Jewelry Box
+47088	Crystal with Anakim's Energy
+47089	Anakim Soul Crystal Stage 1
+47090	Anakim Soul Crystal Stage 2
+47091	Anakim Soul Crystal Stage 3
+47092	Anakim Soul Crystal Stage 4
+47093	Anakim Soul Crystal Stage 5
+47094	Anakim Soul Crystal Stage 6
+47095	Anakim Soul Crystal Stage 7
+47096	Anakim Soul Crystal Stage 8
+47097	Anakim Soul Crystal Stage 9
+47098	Anakim Soul Crystal Stage 10
+47099	Crystal with Lilith's Energy
+47100	Lilith Soul Crystal Stage 1
+47101	Lilith Soul Crystal Stage 2
+47102	Lilith Soul Crystal Stage 3
+47103	Lilith Soul Crystal Stage 4
+47104	Lilith Soul Crystal Stage 5
+47105	Lilith Soul Crystal Stage 6
+47106	Lilith Soul Crystal Stage 7
+47107	Lilith Soul Crystal Stage 8
+47108	Lilith Soul Crystal Stage 9
+47109	Lilith Soul Crystal Stage 10
+47110	Seven Signs Soul Crystal Stage 4
+47111	Seven Signs Soul Crystal Stage 5
+47112	Seven Signs Soul Crystal Stage 6
+47113	Seven Signs Soul Crystal Stage 7
+47114	Seven Signs Soul Crystal Stage 8
+47115	Seven Signs Soul Crystal Stage 9
+47116	Seven Signs Soul Crystal Stage 10
+47117	Soul Fragment
+47118	Shining Soul of Monster Spirit
+47119	Glittering Soul of the Monster Spirit
+47120	Top-grade Glittering Soul of the Monster Spirit
+47121	Radiant Soul of the Monster Spirit
+47122	Dazzling Soul of the Monster Spirit
+47123	Lilith's Soul Crystal Box
+47124	Anakim's Soul Crystal Box
+47125	Shining Soul of Monster Spirit Box
+47126	Key Card to the Controller Room
+47127	Giants Deterioration Protection Potion
+47128	Giants Lightning Protection Potion
+47129	Particle Dissolver
+47130	Faction Points
+47131	Blackbird Clan Medal
+47132	Giant Trackers Medal
+47133	Mother Tree Guardians Medal
+47134	Unworldly Visitors Medal
+47135	Kingdom's Royal Guard Medal
+47136	Fish Chilli Stew WIT
+47137	Fish Chilli Stew Int
+47138	Fish Chilli Stew MEN
+47139	Fish Chilli Stew DEX
+47140	Fish Chilli Stew Str
+47141	Fish Chilli Stew CON
+47142	Fish Cream Stew WIT
+47143	Fish Cream Stew Int
+47144	Fish Cream Stew MEN
+47145	Fish Cream Stew DEX
+47146	Fish Cream Stew Str
+47147	Fish Cream Stew CON
+47148	Spellbook: Hell Hound
+47149	Spellbook: War Horse
+47150	Spellbook: Pegasus
+47151	Spellbook: Griffin
+47152	Spellbook: Wing Hound
+47153	NPC-only Blackbird Cloak
+47154	NPC-only Royal Guard Cloak
+47155	NPC-only Guardian Cloak
+47156	NPC-only Trackers Cloak
+47157	NPC-only Visitors Cloak
+47158	Commando Talisman
+47159	Fairy Talisman
+47160	Vanguard Talisman
+47161	Spirits Talisman
+47162	Spicula Talisman
+47163	Monsters only_Giant's Fortress Bow
+47164	NPC-only_Faction_Flag
+47165	Blackbird Flag
+47166	Royal Guard Flag
+47167	Guardian Flag
+47168	Trackers Flag
+47169	Visitors Flag
+47170	Purified Water
+47171	Shine Stone of the Trackers
+47172	Basic Supply Box Blackbird Clan
+47173	Intermediate Supply Box Blackbird Clan
+47174	Advanced Supply Box Blackbird Clan
+47175	Basic Supply Box Kingdom's Royal Guard
+47176	Intermediate Supply Box Kingdom's Royal Guard
+47177	Advanced Supply Box Kingdom's Royal Guard
+47178	Basic Supply Box Mother Tree Guardians
+47179	Intermediate Supply Box Mother Tree Guardians
+47180	Advanced Supply Box Mother Tree Guardians
+47181	Basic Supply Box Unworldly Visitors
+47182	Intermediate Supply Box Unworldly Visitors
+47183	Advanced Supply Box Unworldly Visitors
+47184	Basic Supply Box Giant Trackers
+47185	Intermediate Supply Box Giant Trackers
+47186	Advanced Supply Box Giant Trackers
+47187	Proofs of Battle Readiness
+47188	Memories of the Wind
+47189	Energy Laden With the Day's Warmth
+47190	Energy Laden with the Night's Icy Air
+47191	Superion Map Piece
+47192	Crumbled Trace of Giants
+47193	Stronghold Situation Report: Barton
+47194	Stronghold Situation Report: Hayuk
+47195	Stronghold Situation Report: Elise
+47196	Stronghold Situation Report: Eliyah
+47197	Embryo Supplies
+47198	Buoyant Seed Sample
+47199	Fluttering Seed Sample
+47200	Apherus Sample
+47201	Flower Bud Sample
+47202	Material for Giants Deterioration Protection Potion
+47203	Material for Giants Lightning Protection Potion
+47204	Particle Dissolver Component
+47205	Academy Dye of STR <Str+1>
+47206	Academy Dye of CON <Con+1>
+47207	Academy Dye of DEX <Dex+1>
+47208	Academy Dye of INT <Int+1>
+47209	Academy Dye of MEN <Men+1>
+47210	Academy Dye of WIT <Wit+1>
+47211	Academy Circlet Growth - 30-day
+47212	Old Box
+47213	Histie's Reward Box
+47214	Ring of Creation
+47215	Ring of Authority
+47216	Ruler's Ring of Authority
+47217	Ring of the Truth
+47218	Ring of the Truth-Seeker
+47219	Source of the Emperor
+47220	Red Pirate Garment
+47221	Blue Pirate Garment
+47222	Pirate Shipmate Garment
+47223	Archer-Green Garment
+47224	Archer-Red Garment
+47225	Wizard Garment
+47226	Red Noblesse Garment
+47227	White Noblesse Garment
+47228	Wizard-Wine Garment
+47229	Wizard-Red Garment
+47230	Blue Musketeer Garment
+47231	Red Musketeer Garment
+47232	Cowboy-Purple Garment
+47233	Cowboy-Red Garment
+47234	Scroll of Escape: Blackbird Campsite
+47235	Scroll of Escape: Enchanted Valley
+47236	Scroll of Escape: Giant's Cave
+47237	Scroll of Escape: Hellbound
+47238	Scroll of Escape: Blazing Swamp
+47239	Scroll of Escape: Raider's Crossroads
+47240	Scroll of Escape: Land of Chaos
+47241	Scroll of Escape: Gainak
+47242	Scroll of Escape: The Cemetery
+47243	Scroll of Escape: Pagan Temple
+47244	Ramona's Fancy Earrings
+47245	Helios' Majestic Earrings
+47246	Harnak's Deformed Necklace
+47247	Mimir's Worn Ring
+47248	Forgotten Ring of the Core
+47249	Giant Stone
+47250	Giant Crystal
+47251	Supply Box - Blackbird Clan
+47252	Supply Box - Kingdom's Royal Guard
+47253	Supply Box - Mother Tree Guardians
+47254	Supply Box - Unworldly Visitors
+47255	Supply Box - Giant Trackers
+47256	Demon Crystal
+47257	Life Crystal
+47258	Blood Crystal
+47259	Wind Crystal
+47260	Giant Crystal
+47261	Blackbird Clan Talisman Stage 1
+47262	Blackbird Clan Talisman Stage 2
+47263	Blackbird Clan Talisman Stage 3
+47264	Blackbird Clan Talisman Stage 4
+47265	Blackbird Clan Talisman Stage 5
+47266	Blackbird Clan Talisman Stage 6
+47267	Blackbird Clan Talisman Stage 7
+47268	Blackbird Clan Talisman Stage 8
+47269	Blackbird Clan Talisman Stage 9
+47270	Blackbird Clan Talisman Stage 10
+47271	Mother Tree Guardians Talisman Stage 1
+47272	Mother Tree Guardians Talisman Stage 2
+47273	Mother Tree Guardians Talisman Stage 3
+47274	Mother Tree Guardians Talisman Stage 4
+47275	Mother Tree Guardians Talisman Stage 5
+47276	Mother Tree Guardians Talisman Stage 6
+47277	Mother Tree Guardians Talisman Stage 7
+47278	Mother Tree Guardians Talisman Stage 8
+47279	Mother Tree Guardians Talisman Stage 9
+47280	Mother Tree Guardians Talisman Stage 10
+47281	Kingdom's Royal Guard Talisman Stage 1
+47282	Kingdom's Royal Guard Talisman Stage 2
+47283	Kingdom's Royal Guard Talisman Stage 3
+47284	Kingdom's Royal Guard Talisman Stage 4
+47285	Kingdom's Royal Guard Talisman Stage 5
+47286	Kingdom's Royal Guard Talisman Stage 6
+47287	Kingdom's Royal Guard Talisman Stage 7
+47288	Kingdom's Royal Guard Talisman Stage 8
+47289	Kingdom's Royal Guard Talisman Stage 9
+47290	Kingdom's Royal Guard Talisman Stage 10
+47291	Unworldly Visitors Talisman Stage 1
+47292	Unworldly Visitors Talisman Stage 2
+47293	Unworldly Visitors Talisman Stage 3
+47294	Unworldly Visitors Talisman Stage 4
+47295	Unworldly Visitors Talisman Stage 5
+47296	Unworldly Visitors Talisman Stage 6
+47297	Unworldly Visitors Talisman Stage 7
+47298	Unworldly Visitors Talisman Stage 8
+47299	Unworldly Visitors Talisman Stage 9
+47300	Unworldly Visitors Talisman Stage 10
+47301	Giant Trackers Talisman Stage 1
+47302	Giant Trackers Talisman Stage 2
+47303	Giant Trackers Talisman Stage 3
+47304	Giant Trackers Talisman Stage 4
+47305	Giant Trackers Talisman Stage 5
+47306	Giant Trackers Talisman Stage 6
+47307	Giant Trackers Talisman Stage 7
+47308	Giant Trackers Talisman Stage 8
+47309	Giant Trackers Talisman Stage 9
+47310	Giant Trackers Talisman Stage 10
+47311	Aromatic Spice
+47312	Spicy Seasoning
+47313	Bloody Eternal Helmet Attack Type / Heavy Armor
+47314	Bloody Eternal Breastplate Attack Type / Heavy Armor
+47315	Bloody Eternal Gaiters Attack Type / Heavy Armor
+47316	Bloody Eternal Gauntlets Attack Type / Heavy Armor
+47317	Bloody Eternal Boots Attack Type / Heavy Armor
+47318	Blessed Eternal Shield Attack Type / Heavy Armor
+47319	Bloody Eternal Leather Helmet Assassin Type / Light Armor
+47320	Bloody Eternal Leather Armor Assassin Type / Light Armor
+47321	Bloody Eternal Leather Leggings Assassin Type / Light Armor
+47322	Bloody Eternal Leather Gloves Assassin Type / Light Armor
+47323	Bloody Eternal Leather Boots Assassin Type / Light Armor
+47324	Bloody Eternal Circlet Magic Type / Robe
+47325	Bloody Eternal Tunic Magic Type / Robe
+47326	Bloody Eternal Stockings Magic Type / Robe
+47327	Bloody Eternal Gloves Magic Type / Robe
+47328	Bloody Eternal Shoes Magic Type / Robe
+47329	Bloody Eternal Helmet Defense Type / Heavy Armor
+47330	Bloody Eternal Breastplate Defense Type / Heavy Armor
+47331	Bloody Eternal Gaiters Defense Type / Heavy Armor
+47332	Bloody Eternal Gauntlets Defense Type / Heavy Armor
+47333	Bloody Eternal Boots Defense Type / Heavy Armor
+47334	Blessed Eternal Shield Defense Type / Heavy Armor
+47335	Bloody Eternal Leather Helmet Enchant Type / Light Armor
+47336	Bloody Eternal Leather Armor Enchant Type / Light Armor
+47337	Bloody Eternal Leather Leggings Enchant Type / Light Armor
+47338	Bloody Eternal Leather Gloves Enchant Type / Light Armor
+47339	Bloody Eternal Leather Boots Enchant Type / Light Armor
+47340	Bloody Eternal Circlet Recovery Type / Robe
+47341	Bloody Eternal Tunic Recovery Type / Robe
+47342	Bloody Eternal Stockings Recovery Type / Robe
+47343	Bloody Eternal Gloves Recovery Type / Robe
+47344	Bloody Eternal Shoes Recovery Type / Robe
+47345	Blessed Eternal Sigil Robe
+47346	+8 Bloody Eternal Set Pack Attack Type / Heavy Armor
+47347	+8 Bloody Eternal Set Pack Assassin Type / Light Armor
+47348	+8 Bloody Eternal Set Pack Magic Type / Robe
+47349	+8 Bloody Eternal Set Pack Defense Type / Heavy Armor
+47350	+8 Bloody Eternal Set Pack Enchant Type / Light Armor
+47351	+8 Bloody Eternal Set Pack Recovery Type / Robe
+47352	+8 Bloody Eternal Pack
+47353	Rare Accessory Pack
+47354	Emperor Shunaiman's Weapon Set Pack
+47355	Superion Support Box
+47356	Basic Supply Box Blackbird Clan
+47357	Intermediate Supply Box Blackbird Clan
+47358	Advanced Supply Box Blackbird Clan
+47359	Basic Supply Box Giant Trackers
+47360	Intermediate Supply Box Giant Trackers
+47361	Advanced Supply Box Giant Trackers
+47362	Supply Box Kingdom's Royal Guard
+47363	Red Noblesse Appearance Stone
+47364	White Noblesse Appearance Stone
+47365	Blue Musketeer Appearance Stone
+47366	Red Musketeer Appearance Stone
+47367	Royal Save Ticket Box
+47368	Agathion Box
+47369	Superion Dye Pack
+47370	Superion Elcyum Box
+47371	Superion Codex Box
+47372	Mammon's Talisman Skill Power
+47373	Mammon's Talisman Attack Attribute
+47374	Mammon's Talisman Skill Cooldown
+47375	Mammon's Talisman Box - Skill Power 30-day
+47376	Mammon's Talisman Box - Attack Attribute 30-day
+47377	Mammon's Talisman Box - Skill Cooldown 30-day
+47378	Red R99 Coupon Event
+47379	Red Dark/Bloody Coupon Event
+47380	Blessed Lucky Weapon Enchant Stone Chest - R Event
+47381	Blessed Lucky Armor Enchant Stone Chest - R Event
+47382	Freya's Wind Scroll (High-grade) Temporary Name
+47383	Red Libra Supply Items Lv5 Event
+47384	Express Bus Pass Card
+47385	Balthus Knight Mark
+47386	Sibis' Letter Event
+47387	Balthus Knights Supply Items
+47388	12th Anniversary Souvenir
+47389	12th Anniversary Supply Item
+47390	Insanity/Longing/Desire Talisman Supply Items
+47391	Venir Stage 11/12/13 Talisman Supply Items
+47392	Shining Scroll: Enchant Elemental Shirt
+47393	Dark Assassin/White Noblesse Suit Supply Item
+47394	Scroll of Blessing R99/R95/R(2) Supply Item
+47395	Bottle of Antharas/Valakas/Baium's Soul Supply Item
+47396	Nurka/Rydel/Gustav's Belt Supply Item
+47397	Seven Signs/Anakim/Lilith Talisman Supply Item
+47398	Bloody Eternal Enhancement Stone - x2
+47399	Sibis Coin Box
+47400	Veteran Duo Bracelet Event
+47401	Returned Duo Bracelet Event
+47402	Emperor's Dessert Set (Attack Type)
+47403	Emperor's Dessert Set (Magic Type)
+47404	Emperor's Dessert Set (Defense Type)
+47405	Scroll of Experience - Lv1 (Main Class)
+47406	Scroll of Experience - Lv2 (Main Class)
+47407	Scroll of Experience (Dual Class)
+47408	+6 Amaranthine Weapon Capsule Coupon 30-day
+47409	+6 Eternal Armor Set Coupon 30-day
+47410	Duo Growth Rune 30% - 30 days
+47411	Duo Growth Rune 30% - 30 day Box
+47412	Duo Vital Compression Stone
+47413	PC Cafe Points Coupon (200 points)
+47414	Duo's Gift Event
+47415	Duo - Freya's Wind Cube
+47416	Sibis' Suspicious Supply Items
+47417	Dandy's Elemental Shirt 2-hour
+47418	Dandy's Shiny Elemental Shirt 2-hour
+47419	Dandy's Uniform
+47420	Energy of Longing
+47421	Freya's Ice Crystal
+47422	Freya's Luxury Shopping Bag
+47423	Freya's Gift Box
+47424	Sirra's Gift Box
+47425	Snow Man's Gift Box
+47426	Freya's Fated Support Box
+47427	Black Freya's Kindness
+47428	Freya's Scroll of Storm
+47429	Freya's Bloody Rune (2 hours) Box
+47430	Freya's Bloody Rune 2-hour
+47431	Freya's Rune (30-day) Box
+47432	Freya's Rune 30-day
+47433	Freya's Vital Rune (30 minutes) Box
+47434	Freya's Vital Rune 30-min
+47435	Mysterious Talisman - STR 2-hour
+47436	Mysterious Talisman - INT 2-hour
+47437	Mysterious Talisman - DEX 2-hour
+47438	Mysterious Talisman - WIT 2-hour
+47439	Mysterious Talisman - CON 2-hour
+47440	Mysterious Talisman - MEN 2-hour
+47441	Mysterious Talisman - Attack Attribute 2-hour
+47442	Mysterious Talisman - Attribute Defense 2-hour
+47443	Mysterious Talisman - STR 2 Hour Box
+47444	Mysterious Talisman - INT 2 Hour Box
+47445	Mysterious Talisman - DEX 2 Hour Box
+47446	Mysterious Talisman - WIT 2 Hour Box
+47447	Mysterious Talisman - CON 2 Hour Box
+47448	Mysterious Talisman - MEN 2 Hour Box
+47449	Mysterious Talisman - Attack Attribute 2 Hour Box
+47450	Mysterious Talisman - Attribute Defense Attribute 2 Hour Box
+47451	+8 T-shirt Box (Shiny/Attack/Magic)
+47452	+9 T-shirt Box (Shiny/Attack/Magic)
+47453	Seven Signs Soul Crystal Box (Stage 4-8)
+47454	Lilith Soul Crystal Box (Stage 5-8)
+47455	Anakim Soul Crystal Box (Stage 5-8)
+47456	Level 4 Box of Gems
+47457	Level 5 Box of Gems
+47458	Shadow Weapon Pack
+47459	Tauti Weapon Pack
+47460	Kelbim Weapon Pack
+47461	Red Pirate Garment Appearance Stone
+47462	Pirate Shipmate Garment Appearance Stone
+47463	Cowboy-Purple Garment Appearance Stone
+47464	White Assassin Suit Appearance Stone
+47465	Chaos Essence (Dual Class) Treasure Chest (Time limited)
+47466	Baium's Soul Ring Str
+47467	Baium's Soul Ring Int
+47468	Baium's Soul Ring CON
+47469	Frintezza's Soul Necklace Body
+47470	Frintezza's Soul Necklace Mind
+47471	Frintezza's Soul Necklace Barrier
+47472	Queen Ant's Soul Ring Str
+47473	Queen Ant's Soul Ring Int
+47474	Queen Ant's Soul Ring CON
+47475	Orfen's Soul Earring Shield
+47476	Orfen's Soul Earring Earth
+47477	Orfen's Soul Earring Pure
+47478	Ruler's Ring of Authority Str
+47479	Ruler's Ring of Authority Int
+47480	Ruler's Ring of Authority CON
+47481	Ring of the Truth-Seeker Str
+47482	Ring of the Truth-Seeker Int
+47483	Ring of the Truth-Seeker CON
+47484	Blessed Antharas' Earring Shield
+47485	Blessed Antharas' Earring Earth
+47486	Blessed Antharas' Earring Pure
+47487	Blessed Valakas' Necklace Body
+47488	Blessed Valakas' Necklace Mind
+47489	Blessed Valakas' Necklace Barrier
+47490	Lindvior's Earring Shield
+47491	Lindvior's Earring Earth
+47492	Lindvior's Earring Pure
+47493	Accessory Solvent
+47494	Silenite
+47501	Rune Stone Fragment
+47502	Superior Giant's Codex Chapter 1 - Fragment
+47503	High-grade Spirit Stone
+47504	Lias Supply Items
+47505	Bracelet of the Conqueror - CON
+47506	Bracelet of the Conqueror - MEN
+47507	Bracelet of the Conqueror - DEX
+47508	Bracelet of the Conqueror - WIT
+47509	Bracelet of the Conqueror - STR
+47510	Bracelet of the Conqueror - INT
+47511	Dimensional Traces
+47512	Attacker's Soul
+47513	Request - Altar of Evil
+47514	Request - Gludio Territory
+47515	Request - Turek Orc Campsite
+47516	Request - Elven Forest
+47517	Request - Fairy Settlement
+47518	Request - Garden of Beasts
+47519	Request - North of the Town of Giran
+47520	Request - Cruma Marshlands
+47521	Request - The Fields
+47522	Request - The Immortal Plateau
+47523	Request - Isle of Souls
+47524	Request - Cemetery
+47525	Request - Valley of Saints
+47526	Request - Southern Region, Isle of Prayer
+47527	Request - Northern Region, Isle of Prayer
+47528	Request - Garden of Spirits
+47529	Request - Atelia Fortress
+47530	Request - Altar of Evil
+47531	Request - Gludio Territory
+47532	Request - Turek Orc Campsite
+47533	Request - Elven Forest
+47534	Request - Fairy Settlement
+47535	Request - Garden of Beasts
+47536	Request - North of the Town of Giran
+47537	Request - Cruma Marshlands
+47538	Request - The Fields
+47539	Request - The Immortal Plateau
+47540	Request - Isle of Souls
+47541	Request - Cemetery
+47542	Request - Valley of Saints
+47543	Request - Southern Region, Isle of Prayer
+47544	Request - Northern Region, Isle of Prayer
+47545	Request - Garden of Spirits
+47546	Request - Atelia Fortress
+47547	Bait
+47548	Bait R99
+47549	PC Cafe Bait
+47550	Ugly Fish
+47551	Nimble Fish
+47552	Powerful Fish
+47553	Blueish Box
+47554	Reddish Box
+47555	Purplish Box
+47556	Stardust
+47557	Master Fishing Rod Stage 1
+47558	Master Fishing Rod Stage 2
+47559	Master Fishing Rod Stage 3
+47560	Master Fishing Rod Stage 4
+47561	Master Fishing Rod Stage 5
+47562	Santiago's Reel Fragment
+47563	Zodiac Agathion Box
+47564	Reward for Defeating the Giant Monsters
+47565	Reward for Defeating the Giant Monsters
+47566	Reward for Defeating the Giant Monsters
+47567	Reward for Defeating the Giant Monsters
+47568	Reward for Defeating the Giant Monsters
+47569	Reward for Defeating the Giant Monsters
+47570	Reward for Defeating the Giant Monsters
+47571	Basic Supply Box Fishing Guild
+47572	Intermediate Supply Box Fishing Guild
+47573	Magic Spices
+47574	PC Cafe Treasure Chest
+47575	Royal White Save Ticket (R)
+47576	Royal White Save Ticket (R95)
+47577	Royal White Save Ticket (R99)
+47578	Gran Kain's Miraculous Medicine
+47579	Christmas Party Herb
+47580	Practice Fishing Rod 1-hour
+47581	Transformation Scroll: Tow
+47582	Transformation Scroll: Lady Tow
+47583	Transformation Scroll: Angry Tow
+47584	Transformation Scroll: Sleepy Tow
+47585	Transformation Scroll: Pig
+47586	Transformation Scroll: Rabbit
+47587	Transformation Scroll: Queen Ant
+47588	Transformation Scroll: Orfen
+47589	Transformation Scroll: Anakim
+47590	Transformation Scroll: Lilith
+47591	Cat Fighter Appearance Stone - Ertheia Only
+47592	Warm Bear Paws Appearance Stone
+47593	Boxing Glove Appearance Stone - Ertheia Only
+47594	Cupid's Arrow Appearance Stone
+47595	Wedding Bouquet Appearance Stone
+47596	Pig Lollipop Appearance Stone
+47597	Wedding Bouquet
+47598	Cupid's Bow
+47599	Pig Lollipop
+47600	Warm Bear Paws
+47601	Novice Training Log
+47602	Weapon Supply Box
+47603	Armor Supply Box
+47604	Grocery Supply Box
+47605	Accessory Supply Box
+47606	Husk Distribution Report
+47607	King's Tonic
+47608	Monkey Bait R
+47609	Monkey Bait R95
+47610	Monkey Bait R99
+47611	Chef Monkeys' Banana Herb
+47612	Chef Monkey's Treasure Chest
+47626	Ruby Lv. 3 Jewelry Box
+47627	Sapphire Lv. 3 Jewelry Box
+47628	Topaz Lv. 3 Jewelry Box
+47629	Opal Lv. 3 Jewelry Box
+47630	Obsidian Lv. 3 Jewelry Box
+47631	Diamond Lv. 3 Jewelry Box
+47632	Emerald Lv. 3 Jewelry Box
+47633	Aquamarine Lv. 3 Jewelry Box
+47634	Pearl Lv. 3 Jewelry Box
+47635	Vital Stone Lv. 3 Jewelry Box
+47636	Garnet Lv. 3 Jewelry Box
+47637	Tanzanite Lv. 3 Jewelry Box
+47638	Ruby Lv. 4 Jewelry Box
+47639	Sapphire Lv. 4 Jewelry Box
+47640	Topaz Lv. 4 Jewelry Box
+47641	Opal Lv. 4 Jewelry Box
+47642	Obsidian Lv. 4 Jewelry Box
+47643	Diamond Lv. 4 Jewelry Box
+47644	Emerald Lv. 4 Jewelry Box
+47645	Aquamarine Lv. 4 Jewelry Box
+47646	Pearl Lv. 4 Jewelry Box
+47647	Vital Stone Lv. 4 Jewelry Box
+47648	Garnet Lv. 4 Jewelry Box
+47649	Tanzanite Lv. 4 Jewelry Box
+47677	Red Cat's Eye Lv. 1
+47678	Red Cat's Eye Lv. 2
+47679	Red Cat's Eye Lv. 3
+47680	Red Cat's Eye Lv. 4
+47681	Red Cat's Eye Lv. 5
+47682	Blue Cat's Eye Lv. 1
+47683	Blue Cat's Eye Lv. 2
+47684	Blue Cat's Eye Lv. 3
+47685	Blue Cat's Eye Lv. 4
+47686	Blue Cat's Eye Lv. 5
+47687	Greater Topaz
+47688	Greater Ruby
+47689	Greater Sapphire
+47690	Greater Obsidian
+47691	Greater Opal
+47692	Greater Emerald
+47693	Greater Aquamarine
+47694	Greater Diamond
+47695	Greater Pearl
+47696	Greater Vital Stone
+47697	Greater Garnet
+47698	Greater Tanzanite
+47699	Greater Red Cat's Eye
+47700	Greater Blue Cat's Eye
+47701	La Vie En Rose's Red Cat's Eye Chest
+47702	La Vie En Rose's Blue Cat's Eye Chest
+47703	Red Cat's Eye Lv. 3 Jewelry Box
+47704	Red Cat's Eye Lv. 4 Jewelry Box
+47705	Blue Cat's Eye Lv. 3 Jewelry Box
+47706	Blue Cat's Eye Lv. 4 Jewelry Box
+47707	Ultimate Jewelry Box
+47708	Ultimate Fortune Jewelry Box
+47709	Red Cat's Eye Fortune Box
+47710	Blue Cat's Eye Fortune Box
+47711	Ultimate Lv. 3 Jewelry Box
+47712	Ultimate Lv. 4 Jewelry Box
+47713	Jewel Ticket
+49783	Sibis Coin Box
+49798	Cheer Stamen Event

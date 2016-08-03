@@ -3,10 +3,10 @@
 	<client>
 		<packet opcodePrefix="D0 36 00" id="231" />
 		<packet opcodePrefix="D0 5A 00" id="277" />
-		<packet opcodePrefix="D0 7F 00" id="353" />
-		<packet opcodePrefix="D0 80 00" id="354" />
-		<packet opcodePrefix="D0 81 00" id="355" />
-		<packet opcodePrefix="D0 82 00" id="356" />
+		<packet opcodePrefix="D0 7F 00" id="CM_GET_ON_SHUTTLE" />
+		<packet opcodePrefix="D0 80 00" id="CM_GET_OFF_SHUTTLE" />
+		<packet opcodePrefix="D0 81 00" id="CM_MTL_SHUTTLE" />
+		<packet opcodePrefix="D0 82 00" id="CM_CAN_NOT_MOVE_ANYMORE_SHUTTLE" />
 		<packet opcodePrefix="D0 91 00" id="357" />
 		<packet opcodePrefix="D0 92 00" id="358" />
 		<packet opcodePrefix="D0 93 00" id="359" />
@@ -66,7 +66,6 @@
 	<server>
 		<!-- Replaced by SM_FRIEND_ADD_REQUEST_RESULT and SM_FRIEND_REMOVE since GoD -->
 		<removedPacket id="SM_L2_FRIEND" />
-		<packet opcodePrefix="FE 00 00" id="533" />
 		<packet opcodePrefix="FE BD 00" id="492" />
 		<packet opcodePrefix="FE DF 00" id="538" />
 		<packet opcodePrefix="FE E0 00" id="539" />

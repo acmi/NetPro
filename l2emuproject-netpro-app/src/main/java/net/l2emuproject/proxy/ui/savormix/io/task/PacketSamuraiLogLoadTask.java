@@ -259,7 +259,7 @@ public class PacketSamuraiLogLoadTask extends AbstractLogLoadTask<File> implemen
 						ctx._fakeServer.decipher(wrapper);
 					L2GameServerPackets.getInstance().handlePacket(wrapper, ctx._fakeServer, ctx._buf.readUC()).readAndChangeState(ctx._fakeServer, ctx._buf);
 				}
-				sm.onLoadedPacket(false, type.isClient(), body, ctx._protocol, ctx._cacheContext);
+				sm.onLoadedPacket(false, type.isClient(), body, ctx._protocol, ctx._cacheContext, time);
 				publish(new ReceivedPacket(ServiceType.GAME, type, body, time));
 				
 				if (isCancelled())

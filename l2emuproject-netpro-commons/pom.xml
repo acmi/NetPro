@@ -41,6 +41,13 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.versioneye</groupId>
+				<artifactId>versioneye-maven-plugin</artifactId>
+				<configuration>
+					<projectId>5757073059c02a000e913714</projectId>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>

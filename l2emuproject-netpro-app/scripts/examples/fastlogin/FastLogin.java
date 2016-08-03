@@ -46,7 +46,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
-import eu.revengineer.simplejse.HasScriptDependencies;
 import eu.revengineer.simplejse.type.UnloadableScript;
 
 import net.l2emuproject.network.IPv4AddressPrefix;
@@ -67,11 +66,10 @@ import net.l2emuproject.proxy.script.ScriptFieldAlias;
 import net.l2emuproject.proxy.script.game.GameScript;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.login.LoginScript;
+import net.l2emuproject.proxy.script.packets.util.CommonPacketSender;
 import net.l2emuproject.util.L2XMLUtils;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
 import net.l2emuproject.util.logging.L2Logger;
-
-import util.packet.CommonPacketSender;
 
 /**
  * A script that allows users to input fake credentials while logging in. Obscure e-mail addresses and secure passwords may be used without
@@ -87,7 +85,6 @@ import util.packet.CommonPacketSender;
  * 
  * @author _dev_
  */
-@HasScriptDependencies("util.packet.CommonPacketSender")
 public final class FastLogin extends LoginScript implements IOConstants, UnloadableScript
 {
 	private static final L2Logger LOG = L2Logger.getLogger(FastLogin.class);
@@ -137,7 +134,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 			
 			kp = rsa.generateKeyPair();
 		}
-		catch (GeneralSecurityException e)
+		catch (final GeneralSecurityException e)
 		{
 			LOG.error("Fast login will not be available.", e);
 		}
@@ -202,13 +199,13 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 				int sz = 0;
 				if (sc != null)
 				{
-					for (Node key : L2XMLUtils.listNodesByNodeName(sc, "key"))
+					for (final Node key : L2XMLUtils.listNodesByNodeName(sc, "key"))
 					{
 						try
 						{
 							scKeyList[sz] = Integer.parseInt(key.getTextContent());
 						}
-						catch (NumberFormatException e)
+						catch (final NumberFormatException e)
 						{
 							scKeyList[sz] = -1; // emulated client behavior
 						}
@@ -294,7 +291,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 				response.position(BLOCK_OFFSET_SC_KEY);
 				response.put(rsa.doFinal(response.array(), BLOCK_OFFSET_SC_KEY, BLOCK_SIZE_RSA));
 			}
-			catch (GeneralSecurityException e)
+			catch (final GeneralSecurityException e)
 			{
 				LOG.error("Failed to decipher/reencipher a security card key!", e);
 				return;
@@ -357,7 +354,7 @@ public final class FastLogin extends LoginScript implements IOConstants, Unloada
 				
 				packet.setForwardedBody(buf);
 			}
-			catch (GeneralSecurityException e)
+			catch (final GeneralSecurityException e)
 			{
 				LOG.error("Failed to decipher/reencipher a security card key!", e);
 				return;

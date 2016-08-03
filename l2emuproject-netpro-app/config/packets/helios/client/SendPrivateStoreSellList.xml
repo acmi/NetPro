@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added augmentation option DWORDs -->
+<packet id="CM_SEND_PRIVATE_STORE_BUY_BUY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Buyer OID" type="ObjectID" />
+	<dword alias="Items sold to buyer" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Private store slot" />
+		<dword alias="Item" type="Item" id="is_ticket" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<word alias="Enchant level" />
+			<word alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedWord alias="Selected numbers (truncated)" type="LottoNumbers" />
+			<word alias="0" /> <!-- Please. Explain this to me. -->
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<word alias="Race number" />
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<qword alias="Quantity" />
+		<qword alias="Price (per single unit)" />
+
+		<!-- NEW -->
+		<dword alias="Augmentation effect (1)" type="Augmentation" />
+		<dword alias="Augmentation effect (2)" type="Augmentation" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<dword alias="Visible item" type="Item" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<dword alias="Selected numbers" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+			<word alias="Race number" />
+			<word alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+		<byte alias="Primary special abilities" id="sa1_cnt" />
+		<loop id="sa1_cnt">
+			<dword alias="SA effect" type="item.SoulCrystal" />
+		</loop>
+		<byte alias="Secondary special abilities" id="sa2_cnt" />
+		<loop id="sa2_cnt">
+			<dword alias="SA effect" type="item.SoulCrystal" />
+		</loop>
+	</loop>
+</packet>

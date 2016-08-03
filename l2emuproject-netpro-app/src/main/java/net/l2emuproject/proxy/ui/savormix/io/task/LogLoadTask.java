@@ -140,11 +140,11 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 					final boolean client = ioh.readBoolean(); // client/server
 					final byte[] body = new byte[ioh.readChar()];
 					ioh.read(body); // packet
-					ioh.readLong(); // time
+					final long receivedOn = ioh.readLong(); // time
 					if (lfh.getVersion() >= 7)
 						ioh.readByte();
 					
-					sm.onLoadedPacket(lfh.getService().isLogin(), client, body, _list.getProtocol(), cacheContext);
+					sm.onLoadedPacket(lfh.getService().isLogin(), client, body, _list.getProtocol(), cacheContext, receivedOn);
 				}
 				
 				if (isCancelled())
@@ -180,7 +180,7 @@ public class LogLoadTask extends AbstractLogLoadTask<LogLoadOptions> implements 
 					final long time = ioh.readLong();
 					final Set<LoggedPacketFlag> flags = lfh.getVersion() >= 7 ? BitMaskUtils.setOf(ioh.readByte(), LoggedPacketFlag.class) : Collections.emptySet();
 					
-					sm.onLoadedPacket(lfh.getService().isLogin(), type.isClient(), body, protocol, cacheContext);
+					sm.onLoadedPacket(lfh.getService().isLogin(), type.isClient(), body, protocol, cacheContext, time);
 					
 					if (flags.contains(HIDDEN))
 						continue;

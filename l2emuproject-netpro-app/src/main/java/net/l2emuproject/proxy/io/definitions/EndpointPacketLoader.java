@@ -32,9 +32,6 @@ import java.util.TreeSet;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
-
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.FieldValueCondition;
 import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
@@ -64,6 +61,9 @@ import net.l2emuproject.proxy.network.meta.structure.field.string.SizedUTF16Stri
 import net.l2emuproject.util.HexUtil;
 import net.l2emuproject.util.L2XMLUtils;
 import net.l2emuproject.util.logging.L2Logger;
+
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 /**
  * Loads packet definitions contained in a subdirectory that specifies the type of loaded packets.
@@ -205,7 +205,10 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 				}
 				catch (InvalidFieldValueConditionException e)
 				{
-					LOG.error(packetName, e);
+					if (e.isMissing())
+						LOG.info(e.getMessage());
+					else
+						LOG.error(packetName, e);
 					return null;
 				}
 			}
@@ -228,7 +231,10 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 			}
 			catch (InvalidFieldValueModifierException e)
 			{
-				LOG.error(packetName, e);
+				if (e.isMissing())
+					LOG.info(e.getMessage());
+				else
+					LOG.error(packetName, e);
 				// do not re-report this error during runtime
 				valueModifier = null;
 			}
@@ -242,7 +248,10 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 			}
 			catch (InvalidFieldValueInterpreterException e)
 			{
-				LOG.error(packetName, e);
+				if (e.isMissing())
+					LOG.info(e.getMessage());
+				else
+					LOG.error(packetName, e);
 				// do not re-report this error during runtime
 				valueInterpreter = null;
 			}

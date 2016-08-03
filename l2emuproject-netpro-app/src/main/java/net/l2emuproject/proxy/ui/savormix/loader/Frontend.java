@@ -69,6 +69,7 @@ import javax.swing.Timer;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter;
 import eu.revengineer.simplejse.logging.BytesizeInterpreter.BytesizeUnit;
 
+import net.l2emuproject.lang.L2System;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IGameProtocolVersion;
@@ -222,7 +223,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				final L2TextBuilder tb = new L2TextBuilder();
 				if (!"exported".equals(NetProInfo.getRevisionNumber()))
 					tb.append('r').append(NetProInfo.getRevisionNumber()).append(' ');
-				tb.append("executed on ").append(NetProScriptCache.getInstance().isCompilerUnavailable() ? "JRE" : "JDK");
+				tb.append("executed on ").append(L2System.isJREMode() ? "JRE" : "JDK");
 				labRevision.add(new JLabel(tb.moveToString()));
 			}
 			{

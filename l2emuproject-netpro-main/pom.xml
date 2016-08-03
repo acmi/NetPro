@@ -8,19 +8,24 @@
 	<version>2.0-SNAPSHOT</version>
 	<name>${project.artifactId}-${project.version}</name>
 	<description>A proxy-type application to intercept, visualize and manipulate Lineage II network traffic.</description>
+	<organization>
+		<name>L2Emu Unique</name>
+		<url>http://l2emu-unique.net/</url>
+	</organization>
+	<url>https://bitbucket.org/l2emu-unique/netpro/</url>
 	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 	</properties>
 	<scm>
-		<connection>scm:git:ssh://git@bitbucket.org/_dev_/netpro.git</connection>
-		<developerConnection>scm:git:ssh://git@bitbucket.org/_dev_/netpro.git</developerConnection>
-		<url>https://bitbucket.org/_dev_/netpro</url>
+		<connection>scm:git:ssh://git@bitbucket.org/l2emu-unique/netpro.git</connection>
+		<developerConnection>scm:git:ssh://git@bitbucket.org/l2emu-unique/netpro.git</developerConnection>
+		<url>https://bitbucket.org/l2emu-unique/netpro</url>
 	</scm>
 	<inceptionYear>2011</inceptionYear>
 	<build>
-		<defaultGoal>compile</defaultGoal>
+		<defaultGoal>install</defaultGoal>
 		<finalName>${project.artifactId}-${project.version}</finalName>
 		<plugins>
 			<plugin>
@@ -40,7 +45,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.6</version>
+				<version>3.0.2</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -56,7 +61,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19</version>
+				<version>2.19.1</version>
 				<configuration>
 					<skipTests>true</skipTests>
 					<forkMode>pertest</forkMode>
@@ -66,7 +71,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
+				<version>3.5.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -75,7 +80,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.7</version>
+				<version>3.0.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -89,7 +94,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.3</version>
+				<version>2.10.4</version>
 				<configuration>
 					<skip>false</skip>
 					<quiet>false</quiet>
@@ -103,7 +108,7 @@
 					<detectLinks>true</detectLinks> <!-- Not maintained -->
 					<validateLinks>true</validateLinks>
 					<links>
-						<link>http://jse.revengineer.eu/simple/v1.0/apidocs</link>
+						<link>http://jse.revengineer.eu/simple/v2.0.2/apidocs</link>
 					</links>
 
 					<author>true</author>
@@ -111,7 +116,6 @@
 					<linkSource>true</linkSource>
 					<show>protected</show>
 					<nohelp>false</nohelp>
-					<excludePackageNames>net.l2emuproject.proxy.script.interpreter.gen.*</excludePackageNames>
 
 					<doctitle>L2EMU Unique NetPro ${project.version}/r${git.commitsCount} documentation</doctitle>
 					<windowtitle>NetPro r${git.commitsCount} documentation</windowtitle>
@@ -166,7 +170,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
-					<version>2.4</version>
+					<version>3.0.1</version>
 					<executions>
 						<execution>
 							<goals>
@@ -174,6 +178,14 @@
 							</goals>
 						</execution>
 					</executions>
+				</plugin>
+				<plugin>
+					<groupId>com.versioneye</groupId>
+					<artifactId>versioneye-maven-plugin</artifactId>
+					<version>3.10.0</version>
+					<configuration>
+						<projectId>575707f374566f0011ced5e9</projectId>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>

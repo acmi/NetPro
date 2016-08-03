@@ -21,6 +21,8 @@
 		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
 	</dword>
 	<dword alias="Stackable" type="YesOrNo" />
-	<qword alias="Quantity" />
+	<qword alias="Amount">
+		<scriptAlias id="HLE_WORLD_ITEM_AMOUNT" />
+	</qword>
 	<dword alias="0" />
 </packet>

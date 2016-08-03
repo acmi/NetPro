@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Macro icon CHAR (byte) changed to DWORD -->
+<packet id="CM_REQ_MAKE_MACRO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Macro ID" />
+	<string alias="Name" />
+	<string alias="Description" />
+	<string alias="Acronym" />
+	<dword alias="Icon" type="MacroIcon" /> <!-- NEW -->
+	<byte alias="Command count" id="cnt" />
+	<loop id="cnt">
+		<byte alias="Sequence number" />
+		<byte alias="Type" type="MacroCommandType" id="type" />
+		<branch id="type" condition="macro.ActionOrChat">
+			<dword alias="0" />
+			<byte alias="0" />
+			<string alias="Command" />
+		</branch>
+		<branch id="type" condition="macro.Shortcut">
+			<dword alias="Tab" mod="PlusOne" />
+			<byte alias="Slot" mod="PlusOne" />
+			<string alias="" />
+		</branch>
+		<branch id="type" condition="macro.Skill">
+			<dword alias="Skill" type="Skill" />
+			<byte alias="1" />
+			<string alias="" />
+		</branch>
+	</loop>
+</packet>

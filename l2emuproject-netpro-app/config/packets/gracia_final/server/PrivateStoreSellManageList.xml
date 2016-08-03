@@ -13,7 +13,6 @@
 		</dword>
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
-			<scriptAlias id="harvester_personal_store_item" />
 		</dword>
 		<qword alias="Quantity" />
 
@@ -33,9 +32,7 @@
 		</branch>
 
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
-		<qword alias="Reference (shop) price">
-			<scriptAlias id="harvester_personal_store_item_price" />
-		</qword>
+		<qword alias="Reference (shop) price" />
 		<word alias="Attack element" type="ElementType" />
 		<word alias="Attack element power" type="ElementPower" />
 		<word alias="Fire defense" type="ElementPower" />
@@ -54,7 +51,6 @@
 		</dword>
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
-			<scriptAlias id="harvester_personal_store_item" />
 		</dword>
 		<qword alias="Quantity" />
 
@@ -75,9 +71,7 @@
 
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
 		<qword alias="Price" />
-		<qword alias="Reference (shop) price">
-			<scriptAlias id="harvester_personal_store_item_price" />
-		</qword>
+		<qword alias="Reference (shop) price" />
 		<word alias="Attack element" type="ElementType" />
 		<word alias="Attack element power" type="ElementPower" />
 		<word alias="Fire defense" type="ElementPower" />

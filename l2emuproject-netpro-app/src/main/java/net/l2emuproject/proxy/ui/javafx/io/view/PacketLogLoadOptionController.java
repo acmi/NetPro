@@ -136,8 +136,7 @@ public final class PacketLogLoadOptionController
 		final IProtocolVersion protocolVersion = _cbProtocol.getSelectionModel().getSelectedItem();
 		if (protocolVersion == null)
 		{
-			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "open.netpro.err.dialog.header.noprotocol",
-					"open.netpro.err.dialog.content.noprotocol");
+			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "open.netpro.err.dialog.header.noprotocol", "open.netpro.err.dialog.content.noprotocol");
 			alert.initModality(Modality.WINDOW_MODAL);
 			alert.show();
 			return;
@@ -216,7 +215,7 @@ public final class PacketLogLoadOptionController
 					final LogFilePacket packet = it.next();
 					packetsRead.incrementAndGet();
 					// scripts enable analytics on packets that will be visible in the table
-					scriptManager.onLoadedPacket(logFileHeader.getService().isLogin(), packet.getEndpoint().isClient(), packet.getContent(), protocolVersion, cacheContext);
+					scriptManager.onLoadedPacket(logFileHeader.getService().isLogin(), packet.getEndpoint().isClient(), packet.getContent(), protocolVersion, cacheContext, packet.getReceivalTime());
 					if (PacketLogFileUtils.isLoadable(packet, options))
 					{
 						final PacketLogEntry packetEntry = new PacketLogEntry(new ReceivedPacket(logFileHeader.getService(), packet.getEndpoint(), packet.getContent(), packet.getReceivalTime()));
@@ -246,9 +245,7 @@ public final class PacketLogLoadOptionController
 			catch (IOException e) // trying to open
 			{
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
-				Platform.runLater(
-						() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-				{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
+				Platform.runLater(() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
 			}
 			catch (LogFileIterationIOException ew) // during read
 			{
@@ -257,9 +254,7 @@ public final class PacketLogLoadOptionController
 					return;
 				
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
-				Platform.runLater(
-						() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-				{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
+				Platform.runLater(() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
 			}
 			finally
 			{

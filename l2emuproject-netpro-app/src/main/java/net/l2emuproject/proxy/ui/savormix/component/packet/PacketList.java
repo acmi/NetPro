@@ -94,11 +94,11 @@ import net.l2emuproject.util.logging.L2Logger;
  */
 public final class PacketList extends JSplitPane implements ActionListener, RequiredInvasiveOperations
 {
-	private static final L2Logger LOG = L2Logger.getLogger(PacketList.class);
+	static final L2Logger LOG = L2Logger.getLogger(PacketList.class);
 	
 	private static final long serialVersionUID = 5807551928679478786L;
 	
-	private final boolean _login;
+	final boolean _login;
 	
 	final ICacheServerID _cacheContext;
 	
@@ -303,33 +303,6 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	 */
 	public void addPacket(final ReceivedPacket packet)
 	{
-		// special case to allow PPE (custom definition) as well as a client-requested packet structure
-		if (_login && packet.getEndpoint().isClient() && packet.getBody()[0] == RequestServerList.OPCODE)
-		{
-			final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
-			if (ppe != null)
-			{
-				final ByteBuffer bb = ByteBuffer.wrap(packet.getBody()).order(ByteOrder.LITTLE_ENDIAN);
-				final MMOBuffer buf = new MMOBuffer();
-				buf.setByteBuffer(bb);
-				RandomAccessMMOBuffer rab = null;
-				try
-				{
-					rab = ppe.enumeratePacketPayload(_version, buf, () -> EndpointType.CLIENT);
-				}
-				catch (PartialPayloadEnumerationException e)
-				{
-					rab = e.getBuffer();
-				}
-				catch (InvalidPacketOpcodeSchemeException e)
-				{
-					LOG.error("This cannot happen", e);
-				}
-				if (rab != null)
-					_display._serverListType = (int)rab.readFirstInteger(SERVER_LIST_TYPE);
-			}
-		}
-		
 		if (_captureState != ListCaptureState.CAPTURE_DISABLED)
 			_model.addSinglePacket(packet, true);
 	}
@@ -560,6 +533,33 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		
 		public void addSinglePacket(ReceivedPacket packet, boolean fire)
 		{
+			// special case to allow PPE (custom definition) as well as a client-requested packet structure
+			if (_owner._login && packet.getEndpoint().isClient() && packet.getBody()[0] == RequestServerList.OPCODE)
+			{
+				final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
+				if (ppe != null)
+				{
+					final ByteBuffer bb = ByteBuffer.wrap(packet.getBody()).order(ByteOrder.LITTLE_ENDIAN);
+					final MMOBuffer buf = new MMOBuffer();
+					buf.setByteBuffer(bb);
+					RandomAccessMMOBuffer rab = null;
+					try
+					{
+						rab = ppe.enumeratePacketPayload(_owner._version, buf, () -> EndpointType.CLIENT);
+					}
+					catch (PartialPayloadEnumerationException e)
+					{
+						rab = e.getBuffer();
+					}
+					catch (InvalidPacketOpcodeSchemeException e)
+					{
+						LOG.error("This cannot happen", e);
+					}
+					if (rab != null)
+						_owner._display._serverListType = (int)rab.readFirstInteger(SERVER_LIST_TYPE);
+				}
+			}
+			
 			if (_owner._captureState == ListCaptureState.CAPTURE_DISABLED)
 				return;
 				

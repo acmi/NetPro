@@ -5,9 +5,5 @@
 	<dword alias="Destination X" />
 	<dword alias="Destination Y" />
 	<dword alias="Destination Z" />
-	<dword alias="Current X" />
-	
-	<!-- These two are just not sent -->
-	<dword alias="Current Y" optional="true" />
-	<dword alias="Current Z" optional="true" />
+	<dword alias="Yaw" /> <!-- old server used to incorrectly sent current X here -->
 </packet>

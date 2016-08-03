@@ -194,7 +194,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			
 			// Enable object analytics and whatnot
 			if (cacheContext instanceof HistoricalPacketLog)
-				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext);
+				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext, packet.getReceived());
 			
 			if (hidden)
 				return;
@@ -211,8 +211,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			final Map<FieldValueReadOption, Object> options = new EnumMap<>(FieldValueReadOption.class);
 			options.put(FieldValueReadOption.APPLY_MODIFICATIONS, null);
 			options.put(FieldValueReadOption.COMPUTE_INTERPRETATION, ctx);
-			template.visitStructureElements(new PacketStructureElementVisitor()
-			{
+			template.visitStructureElements(new PacketStructureElementVisitor() {
 				private final Map<LoopElement, LoopVisitation> _loops = new HashMap<>();
 				
 				@Override
@@ -451,6 +450,9 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					final String read = String.valueOf(readValue);
 					if (!interp.equals(read))
 						writer.append(" (").append(read).append(')');
+					break;
+				default:
+					break;
 			}
 			writer.append("\r\n");
 		}

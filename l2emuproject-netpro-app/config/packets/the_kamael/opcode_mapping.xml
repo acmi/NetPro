@@ -432,7 +432,7 @@
 		<packet opcodePrefix="D5" id="225" />
 		<packet opcodePrefix="D6" id="SM_SPECIAL_CAMERA" />
 		<packet opcodePrefix="D7" id="227" />
-		<packet opcodePrefix="D8" id="237" />
+		<packet opcodePrefix="D8" id="SM_SKILL_REMAIN_SEC" />
 		<packet opcodePrefix="D9" id="SM_NET_PING" />
 		<packet opcodePrefix="DA" id="SM_DICE" />
 		<packet opcodePrefix="DB" id="SM_SNOOP" />
@@ -458,7 +458,7 @@
 		<packet opcodePrefix="EF" id="SM_SELL_LIST_PROCURE" />
 		<packet opcodePrefix="F0" id="SM_GM_HENNA_INFO" />
 		<packet opcodePrefix="F1" id="SM_RADAR_CONTROL" />
-		<packet opcodePrefix="F2" id="271" />
+		<packet opcodePrefix="F2" id="SM_CLIENT_SET_TIME" />
 		<packet opcodePrefix="F3" id="SM_CONFIRM_DLG" />
 		<packet opcodePrefix="F4" id="SM_PARTY_SPELLED" />
 		<packet opcodePrefix="F5" id="SM_SHOP_PREVIEW_LIST" />
@@ -531,7 +531,7 @@
 		<packet opcodePrefix="FE 3C 00" id="348" />
 		<packet opcodePrefix="FE 3D 00" id="349" />
 		<packet opcodePrefix="FE 3E 00" id="350" />
-		<packet opcodePrefix="FE 3F 00" id="351" />
+		<packet opcodePrefix="FE 3F 00" id="SM_PLEDGE_RECEIVE_WAR_LIST" />
 		<packet opcodePrefix="FE 40 00" id="352" />
 		<packet opcodePrefix="FE 41 00" id="353" />
 		<packet opcodePrefix="FE 42 00" id="354" />

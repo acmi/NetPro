@@ -12,15 +12,15 @@
 	<address ip="112.175.192.65" alias="KR PTS" />
 	<address ip="106.186.45.250" alias="JP" />
 	<address ip="210.68.144.4" alias="TW" />
+	<address ip="109.105.156.10" alias="EU" />
 	
 	<!-- Individual servers -->
 	<!-- NA:7777 -->
 	<address ip="64.25.37.132" alias="Chronos" />
 	<address ip="64.25.37.133" alias="Naia" />
-	<address ip="64.25.37.134" alias="Shilen" />
-	<address ip="64.25.37.135" alias="Magmeld" />
-	<address ip="64.25.37.136" alias="Bartz" />
 	<address ip="64.25.37.137" alias="Event Server" />
+	<address ip="64.25.37.143" alias="Zaken" />
+	<address ip="64.25.37.144" alias="Freya" />
 	
 	<!-- KR:7777 -->
 	<address ip="112.175.192.7" alias="드비안느" />
@@ -57,4 +57,9 @@
 	<address ip="106.186.46.44" alias="キャスティエン" />
 	<address ip="106.186.46.61" alias="アイリーン" />
 	<address ip="106.186.46.47" alias="タルカイ" />
+	
+	<!-- EU:7777 -->
+	<address ip="109.105.156.14" alias="Ken Rauhel" />
+	<address ip="109.105.156.11" alias="Core" />
+	<address ip="109.105.156.21" alias="PTS1" />
 </addresses>

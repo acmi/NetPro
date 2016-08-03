@@ -15,12 +15,7 @@
  */
 package examples.game.helper;
 
-import interpreter.ImmutableSystemMessage;
-
 import java.util.List;
-
-import util.packet.CommonPacketSender;
-import util.packet.SystemMessageRecipient;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
 
@@ -35,13 +30,17 @@ import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
+import net.l2emuproject.proxy.script.packets.util.CommonPacketSender;
+import net.l2emuproject.proxy.script.packets.util.SystemMessageRecipient;
+
+import interpreter.ImmutableSystemMessage;
 
 /**
  * Notifies the user about their skill usage failure ON SCREEN.
  * 
  * @author _dev_
  */
-@HasScriptDependencies({ "interpreter.ImmutableSystemMessage", "util.packet.CommonPacketSender", "util.packet.SystemMessageRecipient" })
+@HasScriptDependencies("interpreter.ImmutableSystemMessage")
 public class SkillFailureNotifier extends PpeEnabledGameScript implements SystemMessageRecipient
 {
 	private static final int SM_CASTING_INTERRUPTED = 27;
@@ -71,7 +70,7 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 		{
 			ism = MetaclassRegistry.getInstance().getInterpreter(ScriptedMetaclass.getAlias(ImmutableSystemMessage.class), ImmutableSystemMessage.class);
 		}
-		catch (InvalidFieldValueInterpreterException e)
+		catch (final InvalidFieldValueInterpreterException e)
 		{
 			// disabled due to some reason
 			return;
@@ -88,41 +87,41 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 				final MMOBuffer buffer = buf.getMMOBuffer();
 				
 				String target,
-				skill;
+						skill;
+			{
+				final int targetType = buf.readInteger32(tokenTypes.get(0));
+				switch (targetType)
 				{
-					final int targetType = buf.readInteger32(tokenTypes.get(0));
-					switch (targetType)
-					{
-						case SYSMSG_TOKEN_NPC:
-							final int npcClassID = SystemMessageRecipient.getSysMsgNPCID(client.getProtocol(), buffer);
-							try
-							{
-								target = String.valueOf(MetaclassRegistry.getInstance().getInterpreter("Npc", IntegerInterpreter.class).getInterpretation(npcClassID, null));
-							}
-							catch (InvalidFieldValueInterpreterException e)
-							{
-								target = String.valueOf(npcClassID);
-							}
-							break;
-						case SYSMSG_TOKEN_STRING:
-						case SYSMSG_TOKEN_PLAYER:
-							target = buffer.readS();
-							break;
-						default:
-							target = "Unknown[" + targetType + "]";
-							break;
-					}
+					case SYSMSG_TOKEN_NPC:
+						final int npcClassID = SystemMessageRecipient.getSysMsgNPCID(client.getProtocol(), buffer);
+						try
+						{
+							target = String.valueOf(MetaclassRegistry.getInstance().getInterpreter("Npc", IntegerInterpreter.class).getInterpretation(npcClassID, null));
+						}
+						catch (final InvalidFieldValueInterpreterException e)
+						{
+							target = String.valueOf(npcClassID);
+						}
+						break;
+					case SYSMSG_TOKEN_STRING:
+					case SYSMSG_TOKEN_PLAYER:
+						target = buffer.readS();
+						break;
+					default:
+						target = "Unknown[" + targetType + "]";
+						break;
 				}
+			}
+			{
+				final int skillType = buf.readInteger32(tokenTypes.get(1));
+				if (skillType == SYSMSG_TOKEN_SKILL)
 				{
-					final int skillType = buf.readInteger32(tokenTypes.get(1));
-					if (skillType == SYSMSG_TOKEN_SKILL)
-					{
-						final long skillNameID = SystemMessageRecipient.getSysMsgSkillNameID(client.getProtocol(), buffer);
-						skill = L2SkillTranslator.getInterpretation(skillNameID, null);
-					}
-					else
-						skill = "Unknown[" + skillType + "]";
+					final long skillNameID = SystemMessageRecipient.getSysMsgSkillNameID(client.getProtocol(), buffer);
+					skill = L2SkillTranslator.getInterpretation(skillNameID, null);
 				}
+				else
+					skill = "Unknown[" + skillType + "]";
+			}
 				CommonPacketSender.sendScreenMessage(client, POS_RESISTED, 0, SMALL_FONT, 0, 1, false, DURATION, FADE, ism.getRepresentation(SM_RESISTED_EFFECT, target, skill));
 				break;
 			default:

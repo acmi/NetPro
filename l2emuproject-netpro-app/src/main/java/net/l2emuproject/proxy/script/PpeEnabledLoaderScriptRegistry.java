@@ -70,7 +70,7 @@ public class PpeEnabledLoaderScriptRegistry extends LogLoadScript
 	}
 	
 	@Override
-	protected void handleClientPacket(MMOBuffer buf, IProtocolVersion version, HistoricalPacketLog cacheContext) throws RuntimeException
+	protected void handleClientPacket(MMOBuffer buf, IProtocolVersion version, HistoricalPacketLog cacheContext, long receivedOn) throws RuntimeException
 	{
 		final RandomAccessMMOBuffer rab;
 		try
@@ -103,7 +103,7 @@ public class PpeEnabledLoaderScriptRegistry extends LogLoadScript
 	}
 	
 	@Override
-	protected void handleServerPacket(MMOBuffer buf, IProtocolVersion version, HistoricalPacketLog cacheContext) throws RuntimeException
+	protected void handleServerPacket(MMOBuffer buf, IProtocolVersion version, HistoricalPacketLog cacheContext, long receivedOn) throws RuntimeException
 	{
 		final RandomAccessMMOBuffer rab;
 		try

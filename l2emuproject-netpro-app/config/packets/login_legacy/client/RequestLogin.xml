@@ -8,9 +8,12 @@
 		<length>16</length>
 	</bytes>
 	
-	<byte alias="8" />
+	<dword alias="Game ID" />
+	<word alias="0" />
+	<byte alias="0" />
+	
 	<bytes alias="Padding[0]">
-		<length>8</length>
+		<length>2</length>
 	</bytes>
 	<bytes alias="Checksum">
 		<length>4</length>

@@ -28,7 +28,7 @@ import net.l2emuproject.util.concurrent.L2ThreadPool;
 public class ContributorAnimator implements Runnable
 {
 	static final String[] CONTRIBUTORS = { "L2JFree", "L2EMU UNIQUE", };
-	static final String[] DESCRIPTORS = { "Initial implementation (High Five)", "http://www.l2emu-unique.tk/", };
+	static final String[] DESCRIPTORS = { "Initial implementation (High Five)", "http://www.l2emu-unique.net/", };
 	int _contributor = 0;
 	int _charIndexC = 0;
 	int _charIndexD = 0;

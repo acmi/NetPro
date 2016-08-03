@@ -112,16 +112,18 @@ public interface SimpleEventListener
 	 * @param client client (that received this event)
 	 * @param dropperOID dropping character
 	 * @param itemOID dropped item
+	 * @param amount item amount
 	 */
-	void onItemDrop(L2GameClient client, int dropperOID, int itemOID);
+	void onItemDrop(L2GameClient client, int dropperOID, int itemOID, long amount);
 	
 	/**
 	 * Called when some item is added to a client's knownlist.
 	 * 
 	 * @param client client (that received this event)
 	 * @param itemOID item on ground
+	 * @param amount item amount
 	 */
-	void onItemSpawn(L2GameClient client, int itemOID);
+	void onItemSpawn(L2GameClient client, int itemOID, long amount);
 	
 	/**
 	 * Called when some item is picked up by a character.

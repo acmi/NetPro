@@ -74,7 +74,7 @@ public final class Packet
 	{
 		if (isImmutable() || isLossForced())
 			throw new IllegalStateException();
-		
+			
 		ByteBuffer src = getForwardedBody();
 		src.clear();
 		ByteBuffer mod = ByteBuffer.allocate(src.capacity()).put(src);
@@ -97,7 +97,7 @@ public final class Packet
 	{
 		if (isLossForced())
 			warnManipulatorConflict(manipulator, getDemandLoss());
-		
+			
 		_demandSend = ArrayUtils.add(getDemandSend(), manipulator);
 	}
 	
@@ -121,7 +121,7 @@ public final class Packet
 			warnManipulatorConflict(manipulator, getDemandLoss());
 		else if (getForwardedBody() != getReceivedBody()) // already modified
 			warnManipulatorConflict(manipulator, manipulator);
-		
+			
 		_demandVanilla = ArrayUtils.add(getDemandVanilla(), manipulator);
 	}
 	
@@ -148,7 +148,7 @@ public final class Packet
 			warnManipulatorConflict(manipulator, getDemandSend());
 		else if (isImmutable())
 			warnManipulatorConflict(manipulator, getDemandVanilla());
-		
+			
 		_demandLoss = ArrayUtils.add(getDemandLoss(), manipulator);
 	}
 	
@@ -213,7 +213,7 @@ public final class Packet
 			throw new IllegalArgumentException("Cannot replace with an empty packet.");
 		else if (forwardedBody.get(0) != getForwardedBody().get(0))
 			throw new IllegalArgumentException("Cannot change the main opcode.");
-		
+			
 		forwardedBody = ByteBufferUtils.asReadOnly(ByteBufferUtils.asBacked(forwardedBody));
 		_forwardedBody = forwardedBody.order(getForwardedBody().order());
 	}
@@ -250,7 +250,7 @@ public final class Packet
 			return;
 		else if (isLossForced() && body == getReceivedBody())
 			throw new IllegalArgumentException("Packet must not reach the target!");
-		
+			
 		body = ByteBufferUtils.asReadOnly(ByteBufferUtils.asBacked(body));
 		_additional = ArrayUtils.add(getAdditional(), body);
 	}
@@ -302,7 +302,7 @@ public final class Packet
 	{
 		if (ArrayUtils.isEmpty(pms))
 			return;
-		
+			
 		final L2TextBuilder sb = new L2TextBuilder("Conflict between ");
 		sb.append(manipulator.getName()).appendNewline("and");
 		for (PacketManipulator pm : pms)

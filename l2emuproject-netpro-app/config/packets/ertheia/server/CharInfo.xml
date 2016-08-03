@@ -44,7 +44,7 @@
 	<word alias="Weapon / Two Handed augmentation effect (1)" type="Augmentation" />
 	<word alias="Weapon / Two Handed augmentation effect (2)" type="Augmentation" />
 
-	<byte alias="Talisman slots" />
+	<byte alias="Armor enchant glow" />
 
 	<dword alias="Visible Weapon" type="Item" />
 	<dword alias="Visible Shield [Sigil]" type="Item" />

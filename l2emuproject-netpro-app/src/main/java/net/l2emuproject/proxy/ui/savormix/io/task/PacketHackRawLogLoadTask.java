@@ -160,7 +160,7 @@ public class PacketHackRawLogLoadTask extends AbstractLogLoadTask<File> implemen
 						fakeServer.decipher(wrapper);
 						L2GameServerPackets.getInstance().handlePacket(wrapper, fakeServer, buf.readUC()).readAndChangeState(fakeServer, buf);
 					}
-					sm.onLoadedPacket(false, type.isClient(), body, protocol, cacheContext);
+					sm.onLoadedPacket(false, type.isClient(), body, protocol, cacheContext, time);
 					
 					publish(new ReceivedPacket(ServiceType.GAME, type, body, time));
 					

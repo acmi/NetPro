@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="LS_CM_AQ_LOGIN__WEB" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="8" />
+	<bytes alias="Auth data">
+		<length>128</length>
+	</bytes>
+	<dword alias="Session ID" />
+	
+	<bytes alias="Unknown">
+		<length>16</length>
+	</bytes>
+	
+	<dword alias="Game ID" />
+	<word alias="0" />
+	<byte alias="0" />
+	
+	<bytes alias="Checksum">
+		<length>4</length>
+	</bytes>
+	<bytes alias="Padding[0]">
+		<length>12</length>
+	</bytes>
+</packet>

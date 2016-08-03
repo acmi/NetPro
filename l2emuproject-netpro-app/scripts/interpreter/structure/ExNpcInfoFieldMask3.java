@@ -27,6 +27,6 @@ public class ExNpcInfoFieldMask3 extends ScriptedBitmaskInterpreter
 	/** Constructs this interpreter. */
 	public ExNpcInfoFieldMask3()
 	{
-		super(null, (Object)null, null, null, null, "Owner", null, null);
+		super("F3 B0", "F3 B1", "F3 B2", "F3 B3", "F3 B4", "Owner", "F3 B6", "F3 B7");
 	}
 }

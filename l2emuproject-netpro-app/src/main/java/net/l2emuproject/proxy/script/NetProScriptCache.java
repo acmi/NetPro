@@ -38,6 +38,7 @@ import eu.revengineer.simplejse.init.ReloadableScriptInitializer;
 import eu.revengineer.simplejse.reporting.AptReportingHandler;
 import eu.revengineer.simplejse.reporting.DiagnosticLogFile;
 import eu.revengineer.simplejse.reporting.JavacReportingHandler;
+import eu.revengineer.simplejse.reporting.DiagnosticLogFile;
 
 import net.l2emuproject.lang.L2System;
 import net.l2emuproject.lang.management.StartupManager;

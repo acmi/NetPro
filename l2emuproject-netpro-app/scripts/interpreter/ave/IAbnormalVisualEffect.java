@@ -85,57 +85,53 @@ public interface IAbnormalVisualEffect
 		"ave_change_ves_d",
 		"ave_time_bomb",
 		"ave_mp_shield",
-		"ave_air_bind",
-		"ave_change_body",
+		"ave_airbind",
+		"ave_changebody",
 		// 50
-		"ave_knock_down",
+		"ave_knockdown",
 		"ave_navit_advent",
-		
-		// for the rest one would need to rely on LineageEffect, which mostly stores different names
-		// well, whatever then
 		null,
-		null,
+		null, // D grade?
 		null,
 		// 55
-		null,
+		"ave_deport",
 		null,
 		null,
 		null,
 		null,
 		// 60
 		null,
+		"ave_hurricane",
 		null,
 		null,
-		null,
-		null,
+		"ave_change_grade_b",
 		// 65
 		null,
 		null,
 		"nochat_ave",
-		"herb_power_ave",
-		"herb_magic_ave",
+		"ave_herb_pa_up",
+		"ave_herb_ma_up",
 		// 70
 		null,
-		"d_hellfire (Destruction)",
-		"d_hellfire (Annihilation)",
-		"d_hellfire (Hellfire)",
-		"d_hellfire (Desire)",
+		"ave_seed_talisman2",
+		"ave_seed_talisman3",
+		"ave_seed_talisman4",
+		"ave_seed_talisman5",
 		// 75
-		"d_hellfire (Longing)",
-		null,
-		null,
-		null,
-		null,
-		null,
+		"ave_seed_talisman6",
+		"ave_curious_house",
+		"ave_ngrade_change",
+		"ave_dgrade_change",
+		"ave_cgrade_change",
 		// 80
-		null,
-		null,
-		null,
-		null,
-		null,
+		"ave_bgrade_change",
+		"ave_agrade_change",
+		null, // red beach swimsuit
+		null, // blue beach swimsuit
+		null, // santa costume
 		// 85
 		"card_pcdeco",
-		null,
+		null, // baseball outfit
 		"wday_event_heart",
 		"wday_event_choco",
 		"wday_event_candy",
@@ -150,7 +146,7 @@ public interface IAbnormalVisualEffect
 		"gam_5star",
 		"ave_dualing_buff",
 		"ave_freezing", // new effect, duplicate name
-		null,
+		null, // metal armor
 		// 100
 		"yogi_event_ave",
 		"hellocat1_event_ave",

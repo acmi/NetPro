@@ -11,7 +11,7 @@
 		<packet opcodePrefix="CE" id="CM_REQ_SEND_MSN_CHAT_LOG" />
 	</client>
 	<server>
-		<packet opcodePrefix="EC" id="271" />
+		<packet opcodePrefix="EC" id="SM_CLIENT_SET_TIME" />
 		<packet opcodePrefix="ED" id="SM_CONFIRM_DLG" />
 		<packet opcodePrefix="EE" id="SM_PARTY_SPELLED" />
 		<packet opcodePrefix="EF" id="SM_SHOP_PREVIEW_LIST" />

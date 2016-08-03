@@ -286,6 +286,16 @@
 			<xs:enumeration value="ave.AbnormalVisualEffect" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask2" />
+			
+			<xs:enumeration value="auth.Billing" />
+			<xs:enumeration value="auth.CustomServerName" />
+
+			<xs:enumeration value="chat.ChatTokenType" />
+			<xs:enumeration value="chat.ChatToken1Value" />
+			<xs:enumeration value="chat.ChatToken2Value" />
+			<xs:enumeration value="chat.ChatToken3Value" />
+			<xs:enumeration value="chat.ChatToken4Value" />
+			<xs:enumeration value="chat.ChatToken5Value" />
 
 			<xs:enumeration value="coc.CuriousHouseArena" />
 			<xs:enumeration value="coc.CuriousHouseResult" />
@@ -326,6 +336,9 @@
 			<xs:enumeration value="item.MonsterRaceLane" />
 			<xs:enumeration value="item.ShotType" />
 			<xs:enumeration value="item.SoulCrystal" />
+			
+			<xs:enumeration value="lucky.FortuneReading" />
+			<xs:enumeration value="lucky.ReadingResult" />
 
 			<xs:enumeration value="olympiad.InfoMode" />
 
@@ -334,6 +347,7 @@
 
 			<xs:enumeration value="pledge.ApplicationMode" />
 			<xs:enumeration value="pledge.ApplicationResponse" />
+			<xs:enumeration value="pledge.ApplicationType" />
 			<xs:enumeration value="pledge.AllyCrestDDS" />
 			<xs:enumeration value="pledge.Attendance" />
 			<xs:enumeration value="pledge.BonusType" />
@@ -345,6 +359,7 @@
 			<xs:enumeration value="pledge.PledgeSearchType" />
 			<xs:enumeration value="pledge.PledgeStatus" />
 			<xs:enumeration value="pledge.PledgeWarReply" />
+			<xs:enumeration value="pledge.PledgeWarStatus" />
 			
 			<xs:enumeration value="primitive.ServerPrimitive" />
 
@@ -357,7 +372,10 @@
 			<xs:enumeration value="product.ProductRepurchaseInterval" />
 			<xs:enumeration value="product.ProductStoreTab" />
 
+			<xs:enumeration value="quest.Faction" />
 			<xs:enumeration value="quest.QuestCompletion" />
+			<xs:enumeration value="quest.TutorialMark" />
+			<xs:enumeration value="quest.TutorialMarkType" />
 
 			<xs:enumeration value="relation.RelationTypeC1" />
 			<xs:enumeration value="relation.RelationTypeC4" />
@@ -395,11 +413,13 @@
 
 	<xs:simpleType name="conditionType">
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="AbnormalSkillType" />
 			<xs:enumeration value="BlockUnblockPlayer" />
 			<xs:enumeration value="DefaultChat" />
+			<xs:enumeration value="EngineObjectAdd" />
+			<xs:enumeration value="EngineObjectUpdate" />
 			<xs:enumeration value="FerryShout" />
 			<xs:enumeration value="GenericItem" />
+			<xs:enumeration value="LongEffect" />
 			<xs:enumeration value="LotteryTicket" />
 			<xs:enumeration value="MonsterRaceTicket" />
 			<xs:enumeration value="MutableSM" />
@@ -472,7 +492,9 @@
 			<xs:enumeration value="param.TinyNumberValue" />
 			<xs:enumeration value="param.Zone" />
 			
+			<xs:enumeration value="pledge.BloodDeclaration" />
 			<xs:enumeration value="pledge.LegacyPledgePowerChange" />
+			<xs:enumeration value="pledge.NonBloodDeclaration" />
 			
 			<xs:enumeration value="primitive.ExtendedPrimitive" />
 			<xs:enumeration value="primitive.LineSegment" />
@@ -486,6 +508,9 @@
 			<xs:enumeration value="serverlist.ServerList5Ex2" />
 			<xs:enumeration value="serverlist.ServerListC1" />
 			<xs:enumeration value="serverlist.ServerListC2" />
+			<xs:enumeration value="serverlist.ServerListFreya" />
+			<xs:enumeration value="serverlist.ServerListNamed" />
+			<xs:enumeration value="serverlist.ServerListPrelude" />
 			
 			<xs:enumeration value="servitor.Pet" />
 			<xs:enumeration value="servitor.Summon" />

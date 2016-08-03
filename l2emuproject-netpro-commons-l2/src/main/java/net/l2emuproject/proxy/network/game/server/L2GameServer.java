@@ -124,6 +124,11 @@ public final class L2GameServer extends AbstractL2ServerProxy
 		return _firstTime;
 	}
 	
+	/**
+	 * A method required for emulated (non-live) connections.
+	 * 
+	 * @param firstTime whether no packet has been deciphered yet
+	 */
 	public void setFirstTime(boolean firstTime)
 	{
 		_firstTime = firstTime;

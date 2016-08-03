@@ -16,6 +16,7 @@
 package net.l2emuproject.proxy.state.entity.cache;
 
 import net.l2emuproject.proxy.state.entity.AllianceCrestInfo;
+import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
  * Stores pledge crests.
@@ -30,9 +31,15 @@ public final class AllianceCrestInfoCache extends EntityInfoCache<AllianceCrestI
 	}
 	
 	@Override
-	protected AllianceCrestInfo create(int id)
+	protected AllianceCrestInfo create(int id, Object extraInfo)
 	{
 		return new AllianceCrestInfo(id);
+	}
+	
+	@Override
+	public AllianceCrestInfo getOrAdd(int id, ICacheServerID context)
+	{
+		return super.getOrAdd(id, context);
 	}
 	
 	/**

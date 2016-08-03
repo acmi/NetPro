@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file was automatically generated when converting from the legacy definition format. -->
-<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
-<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
-<!-- Trigger packet -->
-<packet id="438" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd" />
+<packet id="CM_REQ_ACQUIRE_ABILITY_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Total abilities" />
+
+	<dword alias="Knight abilities" id="cnt_kn" />
+	<loop id="cnt_kn">
+		<dword alias="Ability" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<dword alias="Level" type="skill.SkillLevel">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</dword>
+	</loop>
+
+	<dword alias="Warrior abilities" id="cnt_wa" />
+	<loop id="cnt_wa">
+		<dword alias="Ability" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<dword alias="Level" type="skill.SkillLevel">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</dword>
+	</loop>
+
+	<dword alias="Wizard abilities" id="cnt_wi" />
+	<loop id="cnt_wi">
+		<dword alias="Ability" type="Skill">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+		</dword>
+		<dword alias="Level" type="skill.SkillLevel">
+			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+		</dword>
+	</loop>
+</packet>

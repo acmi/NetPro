@@ -30299,7 +30299,7 @@
 30299	M. Def. + 8
 30300	M. Def. + 9
 30301	M. Def. + 10
-30302	M. Def. + 11 Speed + 7
+30302	M. Def. + 11
 30303	M. Def. + 12 Speed + 7 Max HP + 510\nMax MP + 510\nAttribute Resistance +\n 6\nSTR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, M\nEN + 1
 30304	M. Def. + 13 Speed + 7 Max HP + 520\nMax MP + 520\nSkill MP Consumption -\n 3%\nAttribute Resistance + 12\nSTR + 2, DEX + 2, \nCON + 2, INT + 2, WIT + 2, MEN + 2
 30305	M. Def. + 14 Speed + 7 Max HP + 531\nMax MP + 531\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nAttribute Resi\nstance + 18\nSTR + 3, DEX + 3, CON + 2, INT + 3, W\nIT + 3, MEN + 2
@@ -32846,7 +32846,7 @@
 32846	M. Def. + 15, Speed + 7, Max HP/MP + 536. Attribut\ne Resistance + 24. STR +3, DEX +3, CON +3, INT +3,\n WIT +3, MEN +3. P. Def. + 8%. Received Physical Critical Damage - \n12%, 7% chance of reflecting physical abnormal sta\ntes
 32847	M. Def. + 16, Speed + 7, Max HP/MP + 541. Attribut\ne Resistance + 30. STR +4, DEX +4, CON +3, INT +4,\n WIT +4, MEN +3. P. Def. + 10%. Received Physical Critical Damage -\n 16%, 9% chance of reflecting physical abnormal st\nates
 32848	M. Def. + 17, Speed + 7, Max HP/MP + 547. Attribut\ne Resistance + 36. STR +4, DEX +4, CON +4, INT +4,\n WIT +4, MEN +4. P. Def. + 12%. Received Physical Critical Damage -\n 20%, 12% chance of reflecting physical abnormal s\ntates
-32849	M. Def. + 18, Speed + 7, Max HP/MP + 552. Attribut\ne Resistance + 36. STR +4, DEX +4, CON +4, INT +4,\n WIT +4, MEN +4. P. Def. + 15%. Received Physical Critical Damage -\n 25%, 15% chance of reflecting physical abnormal s\ntates
+32849	M. Def. + 18, Speed + 7, Max HP/MP + 552. Attribut\ne Resistance + 42. STR +4, DEX +4, CON +4, INT +4,\n WIT +4, MEN +4. P. Def. + 15%. Received Physical Critical Damage -\n 25%, 15% chance of reflecting physical abnormal s\ntates
 32850	M. Def. + 8
 32851	M. Def. + 9
 32852	M. Def. + 10
@@ -32857,7 +32857,7 @@
 32857	M. Def. + 15, Speed + 7, Max HP/MP + 536. Attribut\ne Resistance + 24. STR +3, DEX +3, CON +3, INT +3,\n WIT +3, MEN +3. M. Def. + 8%. Received Magic Critical Damage - 12%\n, 7% chance of reflecting magical abnormal states
 32858	M. Def. + 16, Speed + 7, Max HP/MP + 541. Attribut\ne Resistance + 30. STR +4, DEX +4, CON +3, INT +4,\n WIT +4, MEN +3. M. Def. + 10%. Received Magic Critical Damage - 16\n%, 9% chance of reflecting magical abnormal states
 32859	M. Def. + 17, Speed + 7, Max HP/MP + 547. Attribut\ne Resistance + 36. STR +4, DEX +4, CON +4, INT +4,\n WIT +4, MEN +4. M. Def. + 12%. Received Magic Critical Damage - 20\n%, 12% chance of reflecting magical abnormal state\ns
-32860	M. Def. + 18, Speed + 7, Max HP/MP + 552. Attribut\ne Resistance + 36. STR +4, DEX +4, CON +4, INT +4,\n WIT +4, MEN +4. M. Def. + 15%. Received Magic Critical Damage - 25\n%, 15% chance of reflecting magical skills
+32860	M. Def. + 18, Speed + 7, Max HP/MP + 552. Attribut\ne Resistance + 42. STR +4, DEX +4, CON +4, INT +4,\n WIT +4, MEN +4. M. Def. + 15%. Received Magic Critical Damage - 25\n%, 15% chance of reflecting magical abnormal state\ns.
 32861	Atk. Spd. + 5%
 32862	Atk. Spd. + 7%
 32863	Atk. Spd. + 10%
@@ -32987,3 +32987,24 @@
 40007	Active Skill: P./ M. Def. + 3%, P. Atk. + 3%, M. A\ntk. + 5%. Can be used in the Olympiad.
 40008	Active Skill: P./ M. Def. + 5%, P. Atk. + 5%, M. A\ntk. + 10%. Can be used in the Olympiad.
 40009	Active Skill: P./ M. Def. + 10%, P. Atk. + 10%, M.\n Atk. + 20%. Can be used in the Olympiad.
+40010	M. Def. + 30%, Dark Resistance + 100, STR/INT + 5,\n Skill Critical Damage + 18%.
+40011	M. Def. + 32%, Dark Resistance + 110, STR/INT + 6,\n Skill Critical Damage + 20%, Atk. Spd./Casting Sp\nd. + 12%.
+40012	M. Def. + 35%, Dark Resistance + 110, STR/INT + 6,\n Skill Critical Damage + 20%, Atk. Spd./Casting Sp\nd. + 12%. When killing another character, there's a 70% chan\nce that the PK count will not increase.
+40013	M. Def. + 40%, Dark Resistance + 120, STR/INT + 7,\n Skill Critical Damage + 25%, Atk. Spd./Casting Sp\nd. + 15%. When killing another character, there's a 70% chan\nce that the PK count will not increase.
+40014	M. Def. + 45%, Dark Resistance + 120, STR/INT + 7,\n Skill Critical Damage + 25%, Atk. Spd./Casting Sp\nd. + 18%. When killing another character, there's a 70% chan\nce that the PK count will not increase.
+40015	M. Def. + 50%, Dark Resistance + 130, STR/INT + 8,\n Skill Critical Damage + 30%, Atk. Spd./Casting Sp\nd. + 20%. When killing another character, there's a 70% chan\nce that the PK count will not increase.
+40016	Increases P./M. Atk. by 100% for 60 seconds.
+40017	M. Def. + 60%, Dark Resistance + 120, STR/INT + 7,\n Physical/Mind attack success rate + 25.
+40018	M. Def. + 62%, Dark Resistance + 130, STR/INT + 8,\n Physical/Mind attack success rate + 25, Max HP + \n25%.
+40019	M. Def. + 65%, Dark Resistance + 130, STR/INT + 8,\n Physical/Mind attack success rate + 30, Max HP + \n30%. When being attacked, there's a chance that the amo\nunt of PvP damage received will be reduced.
+40020	M. Def. + 70%, Dark Resistance + 140, STR/INT + 9,\n Physical/Mind attack success rate + 35, Max HP + \n34%. When being attacked, there's a chance that the amo\nunt of PvP damage received will be reduced.
+40021	M. Def. + 75%, Dark Resistance + 140, STR/INT + 9,\n Physical/Mind attack success rate + 35, Max HP + \n37%. When being attacked, there's a chance that the amo\nunt of PvP damage received will be reduced.
+40022	M. Def. + 80%, Dark Resistance + 150, STR/INT + 10\n, Physical/Mind attack success rate + 40, Max HP +\n 40%. When being attacked, there's a chance that the amo\nunt of PvP damage received will be reduced.
+40023	Stuns target for 60 seconds.
+40024	M. Def. + 50%, Dark Resistance + 110, STR/INT + 6,\n Physical/Mind Resistance + 30, Speed 10.
+40025	M. Def. + 52%, Dark Resistance + 120, STR/INT + 7,\n Physical/Mind Resistance + 30, Speed 15, Max CP +\n 50%.
+40026	M. Def. + 55%, Dark Resistance + 120, STR/INT + 7,\n Physical/Mind Resistance + 35, Speed 15, Max CP +\n 57%. At night, CHA + 10.
+40027	M. Def. + 60%, Dark Resistance + 130, STR/INT + 8,\n Physical/Mind Resistance + 35, Speed 20, Max CP +\n 68%. At night, CHA + 10.
+40028	M. Def. + 65%, Dark Resistance + 130, STR/INT + 8,\n Physical/Mind Resistance + 40, Speed 20, Max CP +\n 80%. At night, CHA + 10.
+40029	M. Def. + 70%, Dark Resistance + 140, STR/INT + 9,\n Physical/Mind Resistance + 45, Speed 25, Max CP +\n 100%. At night, CHA + 10.
+40030	Creates a space that cancels all ranged attacks an\nd debuffs for 60 seconds.

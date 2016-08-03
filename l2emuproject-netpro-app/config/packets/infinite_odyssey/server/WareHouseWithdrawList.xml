@@ -2,7 +2,9 @@
 <!-- Augmentation/enchant effect WORDs are now DWORDs -->
 <!-- Underground: Soul Crystal Effect extension -->
 <packet id="SM_WARE_HOUSE_WITHDRAW_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<word alias="Warehouse" type="Warehouse" />
+	<word alias="Warehouse" type="Warehouse">
+		<scriptAlias id="wh_withdraw_type" />
+	</word>
 	<qword alias="Viewer's adena" />
 	<word alias="Items in warehouse" id="items" />
 	<word alias="Mergeable items" id="mergeables" />
@@ -13,9 +15,14 @@
 	<loop id="items">
 		<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />
 		<dword alias="0" /> <!-- former OID -->
-		<dword alias="Item" type="Item" id="is_ticket" />
+		<dword alias="Item" type="Item" id="is_ticket">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+			<scriptAlias id="wh_withdraw_item" />
+		</dword>
 		<byte alias="0" /> <!-- former slot number -->
-		<qword alias="Quantity" />
+		<qword alias="Amount">
+			<scriptAlias id="wh_withdraw_item_amount" />
+		</qword>
 		<byte alias="Main item type" type="ItemType2" />
 
 		<branch id="is_ticket" condition="GenericItem">
@@ -93,7 +100,10 @@
 			</loop>
 		</branch>
 		
-		<dword alias="Item PK" />
+		<!-- This injects a fake OID for a better presentation of the associated CM -->
+		<dword alias="Item PK">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
 		<dword alias="0" />
 		<dword alias="0" />
 	</loop>

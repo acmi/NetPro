@@ -3,12 +3,18 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="SM_STATUS_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Updated actor OID" type="ObjectID" />
+	<dword alias="Updated actor OID" type="ObjectID">
+		<scriptAlias id="su_actor_oid" />
+	</dword>
 	<dword alias="Caused by actor OID" type="ObjectID" />
 	<byte alias="Regeneration Type" type="Regeneration" />
-	<byte alias="Update count" id="index_0" />
-	<loop id="index_0">
-		<byte alias="Attribute" type="UpdatableAttribute" id="type" />
-		<dword alias="Value" />
+	<byte alias="Update count" id="cnt" />
+	<loop id="cnt">
+		<byte alias="Attribute" type="UpdatableAttribute">
+			<scriptAlias id="su_update_type" />
+		</byte>
+		<dword alias="Value">
+			<scriptAlias id="su_update_value" />
+		</dword>
 	</loop>
 </packet>

@@ -177,7 +177,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 			
 			// Enable object analytics and whatnot
 			if (cacheContext instanceof HistoricalPacketLog)
-				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext);
+				LogLoadScriptManager.getInstance().onLoadedPacket(ServiceType.valueOf(protocol).isLogin(), client, body.array(), protocol, (HistoricalPacketLog)cacheContext, packet.getReceived());
 			
 			if (hidden)
 				return;
@@ -189,8 +189,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 			final Map<FieldValueReadOption, Object> options = new EnumMap<>(FieldValueReadOption.class);
 			options.put(FieldValueReadOption.APPLY_MODIFICATIONS, null);
 			options.put(FieldValueReadOption.COMPUTE_INTERPRETATION, ctx);
-			template.visitStructureElements(new PacketStructureElementVisitor()
-			{
+			template.visitStructureElements(new PacketStructureElementVisitor() {
 				private final Map<LoopElement, LoopVisitation> _loops = new HashMap<>();
 				
 				@Override

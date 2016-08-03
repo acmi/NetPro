@@ -1265,16 +1265,16 @@
 1011265	10th Anniversary Item (x5000)
 1011266	Dandy's Scroll: Release Seal
 1011267	10th Anniversary Pack
-1011268	11th Anniversary Veteran Pack (1-year)
-1011269	11th Anniversary Veteran Pack (2-year)
-1011270	11th Anniversary Veteran Pack (3-year)
-1011271	11th Anniversary Veteran Pack (4-year)
-1011272	11th Anniversary Veteran Pack (5-year)
-1011273	11th Anniversary Veteran Pack (6-year)
-1011274	11th Anniversary Veteran Pack (7-year)
-1011275	11th Anniversary Veteran Pack (8-year)
-1011276	11th Anniversary Veteran Pack (9-year)
-1011277	11th Anniversary Veteran Pack (10-year)
+1011268	12th Anniversary Veteran Pack (1-year)
+1011269	12th Anniversary Veteran Pack (2-year)
+1011270	12th Anniversary Veteran Pack (3-year)
+1011271	12th Anniversary Veteran Pack (4-year)
+1011272	12th Anniversary Veteran Pack (5-year)
+1011273	12th Anniversary Veteran Pack (6-year)
+1011274	12th Anniversary Veteran Pack (7-year)
+1011275	12th Anniversary Veteran Pack (8-year)
+1011276	12th Anniversary Veteran Pack (9-year)
+1011277	12th Anniversary Veteran Pack (10-year)
 1011278	Mount - Unicorn
 1011279	Mount - Black Bear
 1011280	Mount - Tame Princess Ant
@@ -1485,7 +1485,7 @@
 1011485	Gemstone R-grade (x100)
 1011486	Gemstone A-grade (x1000)
 1011487	Appearance Stone: Transparent Armor
-1011488	11th Anniversary Veteran Pack (11-year)
+1011488	12th Anniversary Veteran Pack (11-year)
 1011489	Festival's Cloak - Pearl White
 1011490	Festival's Cloak - Pitch Black
 1011491	Festival's Cloak - Blood Red
@@ -1619,3 +1619,125 @@
 1011619	Noble Pack
 1011620	Divine Pack
 1011621	Ultimate Pack
+1011622	Girl's Soulstone (x10)
+1011623	Vitality Maintaining Potion Pack (x10)
+1011624	Rose Essence (x1000)
+1011625	Mount - Black Bear
+1011626	Mount - Unicorn
+1011627	Mount - Tame Princess Ant
+1011628	Mount - Jet Bike
+1011629	Mount - Steam Beetle
+1011630	Mount - Gold Maned Lion
+1011631	Mount - Darkmane Pacer
+1011632	Fortune Reading Ticket
+1011633	Luxury Fortune Reading Ticket
+1011634	Holiday Boost Pack
+1011635	Santa Appearance Pack
+1011636	Frozen Weapon Appearance Stone (90-day)
+1011637	MP Recovering Potion
+1011638	Freya's Wish Stick
+1011639	Freya's Wish Stick (x10)
+1011640	Ultimate Freya's Wish Stick Pack
+1011641	Assassin's Bamboo Hat
+1011642	Ribbon Hairband
+1011643	Visor
+1011644	Uniform Hat
+1011645	Horm-rimmed Glasses
+1011646	Coronet
+1011647	Wizard Hat
+1011648	Female Hairpin Pack
+1011649	Goddess Circlet
+1011650	Black Phantom Mask
+1011651	Straw Hat
+1011652	Varka Circlet
+1011653	Ketra Circlet
+1011654	Refined Romantic Chapeau
+1011655	Refined Dapper Cap
+1011656	Chic Gold Horn Cap
+1011657	Chic Silver Horn Cap
+1011658	Ruthless Tribe Mask
+1011659	Napoleon Hat
+1011660	Horn Hairband
+1011661	Gatekeeper Hat
+1011662	Goggles
+1011663	Fox Mask
+1011664	White Uniform Hat
+1011665	Chic Silver Chapeau
+1011666	Fancy Flower Hat
+1011667	Forest Forget-me-not Hat
+1011668	Gemstone R-grade (x100)
+1011669	Gemstone A-grade (x1000)
+1011670	Refined Romantic Chapeau: Blue
+1011671	Refined Romantic Chapeau: Gold
+1011672	Refined Romantic Chapeau: Green
+1011673	Refined Romantic Chapeau: Red
+1011674	Refined Romantic Chapeau: Yellow
+1011675	Valentine's Day Gift Pack
+1011676	Wedding Pack - Groom
+1011677	Wedding Pack - Bride
+1011678	Shadai's Jewelry Box
+1011679	Shadai's Jewelry Box (x25)
+1011680	Ultimate Shadai's Jewelry Box (x100)
+1011681	La Vie En Rose's Noble Brooch
+1011682	La Vie En Rose's Brilliant Brooch
+1011683	La Vie En Rose's Radiant Brooch
+1011684	La Vie En Rose's Brooch
+1011685	Ultimate Shadai's Jewelry Box (x100)
+1011686	Ultimate Shadai's Jewelry Box (x100)
+1011687	White Assassin Appearance Stone
+1011688	Silver Crate
+1011689	Golden Crate
+1011690	Maphr's Luck Potion
+1011691	Tempest Stone
+1011692	Mystic Armor Piece
+1011693	Hero's Treasure Chest (Underground)
+1011694	Heavenly Scroll: Enchant Weapon (R-grade)
+1011695	Heavenly Scroll: Enchant Armor (R-grade)
+1011696	Tauti's Fragment
+1011697	Mystic Soul Crystal Fragment
+1011698	Life Stone Instilled with Giants' Power
+1011699	Sealed Talisman of Longing
+1011700	Dark Amaranthine Enhancement Stone
+1011701	XP Rune I (Lv1-85) 200% 7-day Pack
+1011702	XP Rune II (Lv1-95) 100% 7-day Pack
+1011703	XP Rune III (Lv1-100+) 200% 7-Day Pack
+1011704	XP Rune III (Lv1-100+) 200% 30-Day Pack
+1011705	SP Rune 200% 7-Day Pack
+1011706	SP Rune 200% 30-Day Pack
+1011707	Passion Treasure Chest
+1011708	Rose Essence (x1000)
+1011709	Mount - Darkmane Pacer
+1011710	Mount - Gold Maned Lion
+1011711	Mount - Steam Beetle
+1011712	Mount - Jet Bike
+1011713	Mount - Tame Princess Ant
+1011714	Mount - Black Bear
+1011715	Mount - Unicorn
+1011716	1 NCoin Pass: Kartia's Labyrinth Lv. 85 Solo
+1011717	1 NCoin Pass: Kartia's Labyrinth  Lv. 90 Solo
+1011718	1 NCoin Pass: Kartia's Labyrinth  Lv. 95 Solo
+1011719	1 NCoin Pass: Kartia's Labyrinth Lv. 85 Party
+1011720	1 NCoin Pass: Kartia's Labyrinth Lv. 90 Party
+1011721	1 NCoin Pass: Kartia's Labyrinth Lv. 95 Party
+1011722	1 NCoin Pass: Baylor
+1011723	Mysterious Dark Resistance Dye (7-day)
+1011724	Mysterious Holy Resistance Dye (7-day)
+1011725	Mysterious Fire Resistance Dye (7-day)
+1011726	Mysterious Water Resistance Dye (7-day)
+1011727	Mysterious Wind Resistance Dye (7-day)
+1011728	Mysterious Earth Resistance Dye (7-day)
+1011729	12th Anniversary Veteran Pack (12-year)
+1011730	Blue Dynasty Outfit Bundle
+1011731	My Teleport Scroll
+1011732	Bow of Light
+1011733	Letter Collector's Pouch: RIIS x1
+1011734	Letter Collector's Pouch: RIIS x10
+1011735	Letter Collector's Pouch: RIIS x100
+1011736	Recipe: Talisman - Abundance Lv. 1 (High-grade)
+1011737	Recipe: Talisman - Abundance Lv. 2 (High-grade)
+1011738	Recipe: Talisman - Abundance Lv. 3 (High-grade)
+1011739	Recipe: Talisman - Abundance Lv. 4 (High-grade)
+1011740	Abundance Box
+1011741	Red Noblesse Appearance Stone
+1011742	White Noblesse Appearance Stone
+1011743	Race Change Ticket

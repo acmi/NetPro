@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.l2emuproject</groupId>
 	<artifactId>l2emuproject-netpro-main</artifactId>
-	<version>1.5-SNAPSHOT</version>
+	<version>1.5</version>
 	<name>${project.artifactId}-${project.version}</name>
 	<description>A proxy-type application to intercept, visualize and manipulate Lineage II network traffic.</description>
 	<organization>
@@ -45,7 +45,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.0.1</version>
+				<version>3.0.2</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -170,7 +170,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>3.0.1</version>
 					<executions>
 						<execution>
 							<goals>
@@ -182,7 +182,7 @@
 				<plugin>
 					<groupId>com.versioneye</groupId>
 					<artifactId>versioneye-maven-plugin</artifactId>
-					<version>3.9.2</version>
+					<version>3.10.0</version>
 					<configuration>
 						<projectId>575707f374566f0011ced5e9</projectId>
 					</configuration>

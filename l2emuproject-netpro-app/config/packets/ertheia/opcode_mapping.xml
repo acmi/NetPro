@@ -60,8 +60,8 @@
 		<packet opcodePrefix="D0 E0 00" id="429" />
 		<packet opcodePrefix="D0 E1 00" id="430" />
 		<packet opcodePrefix="D0 E2 00" id="431" />
-		<packet opcodePrefix="D0 E3 00" id="432" />
-		<packet opcodePrefix="D0 E4 00" id="433" />
+		<packet opcodePrefix="D0 E3 00" id="CM_REQ_EX_ADD_ENCHANT_SCROLL_ITEM" />
+		<packet opcodePrefix="D0 E4 00" id="CM_REQ_EX_REMOVE_ENCHANT_SUPPORT_ITEM" />
 		<packet opcodePrefix="D0 E5 00" id="434" />
 		<packet opcodePrefix="D0 E6 00" id="435" />
 		<packet opcodePrefix="D0 E7 00" id="436" />
@@ -84,7 +84,7 @@
 		<packet opcodePrefix="D0 F9 00" id="CM_REQ_NEW_ENCHANT_TRY" />
 		<packet opcodePrefix="D0 FD 00" id="454" />
 		<packet opcodePrefix="D0 FE 00" id="455" />
-		<packet opcodePrefix="D0 FF 00" id="456" />
+		<packet opcodePrefix="D0 FF 00" id="CM_REQ_ALCHEMY_SKILL_LIST" />
 		<packet opcodePrefix="D0 00 01" id="457" />
 		<packet opcodePrefix="D0 01 01" id="458" />
 		<packet opcodePrefix="D0 02 01" id="459" />
@@ -182,8 +182,8 @@
 		<packet opcodePrefix="FE 4F 01" id="639" />
 		<packet opcodePrefix="FE 50 01" id="640" />
 		<packet opcodePrefix="FE 51 01" id="641" />
-		<packet opcodePrefix="FE 52 01" id="642" />
-		<packet opcodePrefix="FE 53 01" id="643" />
+		<packet opcodePrefix="FE 52 01" id="SM_EX_PUT_ENCHANT_SCROLL_ITEM_RESULT" />
+		<packet opcodePrefix="FE 53 01" id="SM_EX_REMOVE_ENCHANT_SUPPORT_ITEM_RESULT" />
 		<packet opcodePrefix="FE 54 01" id="644" />
 		<packet opcodePrefix="FE 55 01" id="645" />
 		<packet opcodePrefix="FE 56 01" id="646" />
@@ -215,7 +215,7 @@
 		<packet opcodePrefix="FE 71 01" id="SM_EX_ENCHANT_FAIL" />
 		<packet opcodePrefix="FE 72 01" id="674" />
 		<packet opcodePrefix="FE 73 01" id="675" />
-		<packet opcodePrefix="FE 74 01" id="676" />
+		<packet opcodePrefix="FE 74 01" id="SM_EX_ALCHEMY_SKILL_LIST" />
 		<packet opcodePrefix="FE 75 01" id="677" />
 		<packet opcodePrefix="FE 76 01" id="678" />
 		<packet opcodePrefix="FE 77 01" id="679" />

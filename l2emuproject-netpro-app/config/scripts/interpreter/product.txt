@@ -1738,3 +1738,6 @@
 1011738	Recipe: Talisman - Abundance Lv. 3 (High-grade)
 1011739	Recipe: Talisman - Abundance Lv. 4 (High-grade)
 1011740	Abundance Box
+1011741	Red Noblesse Appearance Stone
+1011742	White Noblesse Appearance Stone
+1011743	Race Change Ticket

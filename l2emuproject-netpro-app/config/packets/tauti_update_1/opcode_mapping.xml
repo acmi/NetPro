@@ -145,13 +145,13 @@
 		<packet opcodePrefix="FE C8 00" id="501" />
 		<packet opcodePrefix="FE C9 00" id="502" />
 		<packet opcodePrefix="FE CA 00" id="503" />
-		<packet opcodePrefix="FE CB 00" id="504" />
-		<packet opcodePrefix="FE CC 00" id="505" />
-		<packet opcodePrefix="FE CD 00" id="506" />
-		<packet opcodePrefix="FE CE 00" id="507" />
-		<packet opcodePrefix="FE CF 00" id="508" />
-		<packet opcodePrefix="FE D0 00" id="509" />
-		<packet opcodePrefix="FE D1 00" id="510" />
+		<packet opcodePrefix="FE CB 00" id="SM_EX_SHUTTLE_INFO" />
+		<packet opcodePrefix="FE CC 00" id="SM_EX_SUTTLE_GET_ON" />
+		<packet opcodePrefix="FE CD 00" id="SM_EX_SUTTLE_GET_OFF" />
+		<packet opcodePrefix="FE CE 00" id="SM_EX_SUTTLE_MOVE" />
+		<packet opcodePrefix="FE CF 00" id="SM_EX_MTL_IN_SUTTLE" />
+		<packet opcodePrefix="FE D0 00" id="SM_EX_STOP_MOVE_IN_SHUTTLE" />
+		<packet opcodePrefix="FE D1 00" id="SM_EX_VALIDATE_LOCATION_IN_SHUTTLE" />
 		<packet opcodePrefix="FE D2 00" id="511" />
 		<packet opcodePrefix="FE D3 00" id="512" />
 		<packet opcodePrefix="FE D4 00" id="513" />

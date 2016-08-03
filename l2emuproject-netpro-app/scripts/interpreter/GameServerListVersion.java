@@ -15,20 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a game server list version (as requested by the associated client).
  * 
  * @author _dev_
  */
-public class GameServerListVersion extends ScriptedLegacyIntegerIdInterpreter
+public class GameServerListVersion extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public GameServerListVersion()
 	{
-		addInterpretation(1, "Prelude");
-		addInterpretation(3, "C1");
-		addInterpretation(4, "C2");
+		super(new InterpreterMetadata(1), "Prelude", null, "C1", "C2");
 	}
 }

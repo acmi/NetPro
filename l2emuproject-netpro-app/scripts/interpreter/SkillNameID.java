@@ -91,8 +91,8 @@ public class SkillNameID extends ScriptedIntegerIdInterpreter
 		{
 			final Object i = super.getInterpretation(L2SkillTranslator.getSkillNameID(skillID, level, 0), null);
 			if (!(i instanceof String))
-				break;
-			
+				continue; // it is not mandatory for skills to have level 1, and probably levels in between
+				
 			result = level;
 		}
 		return result;

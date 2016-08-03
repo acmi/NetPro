@@ -2,15 +2,19 @@
 <!-- The special ferry announcement channel has been added with two DWORDs instead of two STRINGs -->
 <packet id="SM_SAY_2" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Talker OID" type="ObjectID" />
-	<dword alias="Chat" type="Chat" id="type" />
+	<dword alias="Chat" type="Chat" id="type">
+		<scriptAlias id="say2_chat" />
+	</dword>
 	<branch id="type" condition="FerryShout"> <!-- NEW -->
 		<dword alias="Talker" type="SysString" />
 		<dword alias="Message" type="ImmutableSystemMessage" />
 	</branch>
 	<branch id="type" condition="DefaultChat">
-		<string alias="Talker" />
+		<string alias="Talker">
+			<scriptAlias id="say2_talker" />
+		</string>
 		<string alias="Message">
-			<scriptAlias id="antispam_fulltext_chat_msg" />
+			<scriptAlias id="say2_message" />
 		</string>
 	</branch>
 </packet>

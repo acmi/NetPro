@@ -86,6 +86,11 @@
 115	epic_freya_scene
 116	epic_kelbim_scene
 117	epic_tauti_scene
+118	barler_scene
+119	sc_ramona_trans_a
+120	sc_ramona_trans_b
+121	sc_helios_trans_a
+122	sc_helios_trans_b
 1000	land_kserth_a
 1001	land_kserth_b
 1002	land_undead_a

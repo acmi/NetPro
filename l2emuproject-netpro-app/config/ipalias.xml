@@ -18,10 +18,9 @@
 	<!-- NA:7777 -->
 	<address ip="64.25.37.132" alias="Chronos" />
 	<address ip="64.25.37.133" alias="Naia" />
-	<address ip="64.25.37.134" alias="Shilen" />
-	<address ip="64.25.37.135" alias="Magmeld" />
-	<address ip="64.25.37.136" alias="Bartz" />
 	<address ip="64.25.37.137" alias="Event Server" />
+	<address ip="64.25.37.143" alias="Zaken" />
+	<address ip="64.25.37.144" alias="Freya" />
 	
 	<!-- KR:7777 -->
 	<address ip="112.175.192.7" alias="드비안느" />

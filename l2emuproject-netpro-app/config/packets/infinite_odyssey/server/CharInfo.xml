@@ -14,6 +14,7 @@
 	<dword alias="Player OID" type="ObjectID">
 		<scriptAlias id="OIC_PLAYER_OID" />
 		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="ci_player_oid"/>
 	</dword>
 	<string alias="Name">
 		<scriptAlias id="OIC_PLAYER_NAME" />
@@ -181,8 +182,12 @@
 	<byte alias="Unknown" type="YesOrNo" />
 
 	<dword alias="Current CP" />
-	<dword alias="Current HP" />
-	<dword alias="Maximum HP" />
+	<dword alias="Current HP">
+		<scriptAlias id="ci_player_hp_current" />
+	</dword>
+	<dword alias="Maximum HP">
+		<scriptAlias id="ci_player_hp_maximum" />
+	</dword>
 	<dword alias="Current MP" />
 	<dword alias="Maximum MP" />
 

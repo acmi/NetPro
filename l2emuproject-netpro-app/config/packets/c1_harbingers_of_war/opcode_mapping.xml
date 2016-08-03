@@ -46,7 +46,7 @@
 		<packet opcodePrefix="E8" id="234" />
 		<packet opcodePrefix="E9" id="SM_MULTI_SELL_LIST" />
 		<packet opcodePrefix="EA" id="SM_SET_SUMMON_REMAIN_TIME" />
-		<packet opcodePrefix="EB" id="237" />
+		<packet opcodePrefix="EB" id="SM_SKILL_REMAIN_SEC" />
 		<packet opcodePrefix="EC" id="SM_NET_PING" />
 		<packet opcodePrefix="ED" id="239" />
 	</server>

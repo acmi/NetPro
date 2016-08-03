@@ -15,8 +15,6 @@
  */
 package net.l2emuproject.proxy.ui.savormix.component.packet;
 
-import javafx.scene.web.WebEngine;
-
 import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Element;
 import org.w3c.dom.events.Event;
@@ -24,12 +22,13 @@ import org.w3c.dom.events.EventListener;
 
 import net.l2emuproject.lang.L2TextBuilder;
 
+import javafx.scene.web.WebEngine;
+
 /**
  * Handles hyperlink events, locates requested values in binary form.
  * 
  * @author _dev_
  */
-@SuppressWarnings("restriction")
 final class PacketDisplayRawValueLocatorLinkListener implements EventListener
 {
 	private final WebEngine _engine;

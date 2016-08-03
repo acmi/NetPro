@@ -48,14 +48,7 @@ public class Skill extends ScriptedFieldValueInterpreter implements ContextualFi
 	/** Constructs this interpreter. */
 	public Skill()
 	{
-		_level = new ThreadLocal<Integer>()
-		{
-			@Override
-			protected Integer initialValue()
-			{
-				return 1;
-			}
-		};
+		_level = new ThreadLocal<Integer>();
 	}
 	
 	@Override
@@ -71,18 +64,27 @@ public class Skill extends ScriptedFieldValueInterpreter implements ContextualFi
 			return;
 		}
 		
-		// no level supplied, default to first level (no sublevel)
-		_level.set(1);
+		_level.set(null);
 	}
 	
 	@Override
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
-		final int id = (int)value, lvl = _level.get();
+		final Integer contextLevel = _level.get();
+		
+		final int id = (int)value;
+		// if no level supplied, default to first level (no sublevel)
+		int lvl = contextLevel != null ? contextLevel.intValue() : 1;
 		value = L2SkillTranslator.getSkillNameID(id, lvl, null);
 		try
 		{
 			final SkillNameID interpreter = MetaclassRegistry.getInstance().getInterpreter(ScriptedMetaclass.getAlias(SkillNameID.class), SkillNameID.class);
+			if (contextLevel == null)
+			{
+				final int highestWithoutSublevel = interpreter.getHighestLevel(id);
+				if (highestWithoutSublevel > 0)
+					value = L2SkillTranslator.getSkillNameID(id, lvl = highestWithoutSublevel, null);
+			}
 			final int rawLevel = L2SkillTranslator.getSkillLevel(lvl);
 			if (AUTOFIX_LEGACY_ENCHANT_LEVELS && rawLevel > 99)
 			{
@@ -101,7 +103,7 @@ public class Skill extends ScriptedFieldValueInterpreter implements ContextualFi
 		}
 		finally
 		{
-			_level.set(1);
+			_level.set(null);
 		}
 	}
 }

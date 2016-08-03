@@ -2,15 +2,15 @@
 <!-- A 'response' flag DWORD appended at the end of the packet -->
 <packet id="SM_NPC_HTML_MESSAGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="NPC OID" type="ObjectID">
-		<scriptAlias id="dump_html_object_id" />
+		<scriptAlias id="html_owner_oid" />
 	</dword>
 	<string alias="Message" type="PreformattedHtml">
 		<scriptAlias id="html_content" />
 	</string>
 	<dword alias="Title" type="Item">
-		<scriptAlias id="dump_html_item_title" />
+		<scriptAlias id="item_html_title" />
 	</dword>
 	<dword alias="Response" type="YesOrNo"> <!-- NEW -->
-		<scriptAlias id="dump_html_reply_flag" />
+		<scriptAlias id="html_reply_flag" />
 	</dword>
 </packet>

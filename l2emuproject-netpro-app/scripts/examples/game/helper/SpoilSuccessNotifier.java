@@ -15,21 +15,18 @@
  */
 package examples.game.helper;
 
-import util.packet.CommonPacketSender;
-import util.packet.SystemMessageRecipient;
-import eu.revengineer.simplejse.HasScriptDependencies;
-
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
+import net.l2emuproject.proxy.script.packets.util.CommonPacketSender;
+import net.l2emuproject.proxy.script.packets.util.SystemMessageRecipient;
 
 /**
  * Notifies the user about their spoil skill usage success ON SCREEN.
  * 
  * @author _dev_
  */
-@HasScriptDependencies({ "util.packet.CommonPacketSender", "util.packet.SystemMessageRecipient" })
 public class SpoilSuccessNotifier extends PpeEnabledGameScript implements SystemMessageRecipient
 {
 	private static final int SM_ALREADY_SPOILED = 357;

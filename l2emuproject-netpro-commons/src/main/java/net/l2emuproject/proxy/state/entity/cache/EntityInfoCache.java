@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Supplier;
 
 import org.apache.commons.lang3.mutable.MutableInt;
 
@@ -41,6 +42,7 @@ import javolution.util.FastMap;
 public abstract class EntityInfoCache<E extends EntityInfo>
 {
 	private static final L2Logger LOG = L2Logger.getLogger(EntityInfoCache.class);
+	private static final Supplier<Object> NULL_SUPPLIER = () -> null;
 	private static final Set<EntityInfoCache<?>> CACHES = new L2FastSet<EntityInfoCache<?>>().setShared(true);
 	
 	private final FastMap<ICacheServerID, FastMap<Integer, E>> _entities;
@@ -58,17 +60,30 @@ public abstract class EntityInfoCache<E extends EntityInfo>
 	 * Retrieves an entity with the given ID from this cache, creating it as necessary.
 	 * 
 	 * @param id entity ID
+	 * @param extraInfo game-specific info wrapper supplier
 	 * @param context entity existence boundary defining context
 	 * @return an entity with the given ID
 	 */
-	public final E getOrAdd(int id, ICacheServerID context)
+	public final E getOrAdd(int id, Supplier<Object> extraInfo, ICacheServerID context)
 	{
 		// LOG.info("getOrAdd() with " + context);
 		
 		FastMap<Integer, E> cached = _entities.get(context);
 		if (cached == null)
 			cached = MapUtils.putIfAbsent(_entities, context, new FastMap<Integer, E>().setShared(true));
-		return getOrAdd(cached, id);
+		return getOrAdd(cached, id, extraInfo);
+	}
+	
+	/**
+	 * Retrieves an entity with the given ID from this cache, creating it as necessary.
+	 * 
+	 * @param id entity ID
+	 * @param context entity existence boundary defining context
+	 * @return an entity with the given ID
+	 */
+	protected E getOrAdd(int id, ICacheServerID context)
+	{
+		return getOrAdd(id, NULL_SUPPLIER, context);
 	}
 	
 	/**
@@ -83,12 +98,12 @@ public abstract class EntityInfoCache<E extends EntityInfo>
 		return map != null ? map : Collections.<Integer, E> emptyMap();
 	}
 	
-	private final E getOrAdd(FastMap<Integer, E> cache, Integer id)
+	private final E getOrAdd(FastMap<Integer, E> cache, Integer id, Supplier<Object> extraInfo)
 	{
 		E cached = cache.get(id);
 		if (cached == null)
 		{
-			final E newE = create(id);
+			final E newE = create(id, extraInfo.get());
 			cached = cache.putIfAbsent(id, newE);
 			if (cached == null)
 				cached = newE;
@@ -100,10 +115,10 @@ public abstract class EntityInfoCache<E extends EntityInfo>
 	{
 		// LOG.info("remove() with " + context);
 		
-		FastMap<Integer, E> unused = _entities.remove(context);
+		final FastMap<Integer, E> unused = _entities.remove(context);
 		if (unused == null)
 			return;
-			
+		
 		L2ThreadPool.executeLongRunning(new ContextElementRemover(unused.values()));
 	}
 	
@@ -111,14 +126,15 @@ public abstract class EntityInfoCache<E extends EntityInfo>
 	 * Creates an entity with the given ID, initializing other fields with default values.
 	 * 
 	 * @param id entity ID
+	 * @param extraInfo game-specific info wrapper
 	 * @return new entity with the given ID
 	 */
-	protected abstract E create(int id);
+	protected abstract E create(int id, Object extraInfo);
 	
 	private static void removeAll(ICacheServerID context)
 	{
 		// LOG.info("removeAll() with " + context);
-		for (EntityInfoCache<?> cache : CACHES)
+		for (final EntityInfoCache<?> cache : CACHES)
 			cache.remove(context);
 	}
 	
@@ -158,7 +174,7 @@ public abstract class EntityInfoCache<E extends EntityInfo>
 		final int count;
 		synchronized (EntityInfoCache.class)
 		{
-			MutableInt cnt = SHARED_CONTEXTS.get(cacheContext);
+			final MutableInt cnt = SHARED_CONTEXTS.get(cacheContext);
 			if (cnt != null)
 			{
 				cnt.decrement();
@@ -192,7 +208,7 @@ public abstract class EntityInfoCache<E extends EntityInfo>
 				{
 					e.release();
 				}
-				catch (RuntimeException ex)
+				catch (final RuntimeException ex)
 				{
 					LOG.error(e.describe(), ex);
 				}

@@ -15,26 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a type of flight.
  * 
  * @author savormix
  */
-public class FlyType extends ScriptedLegacyIntegerIdInterpreter
+public class FlyType extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public FlyType()
 	{
-		addInterpretation(0, "Vertical Throw");
-		addInterpretation(1, "Horizontal Throw");
-		addInterpretation(3, "Charge");
-		addInterpretation(4, "Knockback");
-		addInterpretation(5, "Vertical Hold");
-		addInterpretation(6, "Not Used");
-		addInterpretation(7, "Knockdown");
-		addInterpretation(8, "Warp Backward");
-		addInterpretation(9, "Warp Forward");
+		super("Vertical Throw", "Horizontal Throw", null, "Charge", "Knockback", "Vertical Hold", "Not Used", "Knockdown", "Warp Backward", "Warp Forward");
 	}
 }

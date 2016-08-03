@@ -1,4 +1,4 @@
-0	/loc
+0	/none
 1	/GM
 3	/gmlist
 4	/sit
@@ -106,7 +106,7 @@
 106	/petmove
 107	/servitormove
 108	/unsummon
-109	/olympiadstat
+109	/Olympiad Score
 110	/graduatelist
 111	/duel
 112	/withdraw
@@ -151,6 +151,7 @@
 162	/ceremonyofchaos
 163	/showoff
 164	/clansystem
+165	/previoustarget
 1001	/Initial
 1002	/Evangelist
 1003	/Mark

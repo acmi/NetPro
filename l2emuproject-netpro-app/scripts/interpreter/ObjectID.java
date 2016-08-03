@@ -17,7 +17,7 @@ package interpreter;
 
 import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
-import net.l2emuproject.proxy.state.entity.cache.ObjectInfoCache;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -30,6 +30,6 @@ public class ObjectID extends ScriptedFieldValueInterpreter implements IntegerIn
 	@Override
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
-		return ObjectInfoCache.getInstance().getOrAdd((int)value, entityCacheContext).getName();
+		return L2ObjectInfoCache.getOrAdd((int)value, entityCacheContext).getName();
 	}
 }

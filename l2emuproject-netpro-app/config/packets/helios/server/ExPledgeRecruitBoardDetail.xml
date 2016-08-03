@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added application mode and pledge unit (that is recruiting) DWORDs at the end of packet -->
+<packet id="626" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Pledge" type="Pledge" />
+	<dword alias="Karma" type="pledge.PledgeKarma" />
+	<string alias="Introduction" />
+	<string alias="Description" />
+
+	<!-- NEW -->
+	<dword alias="Application" type="pledge.ApplicationType" />
+	<dword alias="Unit" type="PledgeUnit" />
+</packet>

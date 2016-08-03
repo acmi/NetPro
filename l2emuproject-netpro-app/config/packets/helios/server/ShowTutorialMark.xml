@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added a CHAR (byte) to identify mark type at the start of packet -->
+<packet id="SM_TUTORIAL_SHOW_QUESTION_MARK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Type" type="quest.TutorialMarkType"> <!-- NEW -->
+		<scriptAlias id="__INTERP_TUTORIAL_MARK_TYPE" />
+	</byte>
+	<dword alias="Mark" type="quest.TutorialMark">
+		<scriptAlias id="__INTERP_TUTORIAL_MARK" />
+	</dword>
+</packet>

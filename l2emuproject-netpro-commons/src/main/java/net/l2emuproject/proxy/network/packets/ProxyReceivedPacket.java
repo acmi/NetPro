@@ -65,6 +65,12 @@ public abstract class ProxyReceivedPacket extends ReceivablePacket<Proxy, ProxyR
 		// do nothing by default
 	}
 	
+	/**
+	 * A method required for emulated (non-live) connections.
+	 * 
+	 * @param proxy receiving client
+	 * @param buf a buffer to read from
+	 */
 	public final void readAndChangeState(Proxy proxy, MMOBuffer buf)
 	{
 		setClient2(proxy);

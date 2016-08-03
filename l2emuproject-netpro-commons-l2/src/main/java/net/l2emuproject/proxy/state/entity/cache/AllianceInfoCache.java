@@ -16,6 +16,7 @@
 package net.l2emuproject.proxy.state.entity.cache;
 
 import net.l2emuproject.proxy.state.entity.AllianceInfo;
+import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
  * Caches alliance info.
@@ -30,9 +31,15 @@ public final class AllianceInfoCache extends EntityInfoCache<AllianceInfo>
 	}
 	
 	@Override
-	protected AllianceInfo create(int id)
+	protected AllianceInfo create(int id, Object extraInfo)
 	{
 		return new AllianceInfo(id);
+	}
+	
+	@Override
+	public AllianceInfo getOrAdd(int id, ICacheServerID context)
+	{
+		return super.getOrAdd(id, context);
 	}
 	
 	/**

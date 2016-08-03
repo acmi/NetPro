@@ -6,8 +6,7 @@
 	<dword alias="NPC OID" type="ObjectID">
 		<scriptAlias id="OIC_NPC_OID" />
 		<scriptAlias id="OIL_OBJECT_ID" />
-		<scriptAlias id="fspawn_gen_npc_oid" />
-		<scriptAlias id="exp_bot_npc_oid" />
+		<scriptAlias id="npc_info_oid" />
 	</dword>
 
 	<byte alias="Knownlist state" type="KnownlistState" id="object_action" />
@@ -78,12 +77,9 @@
 	<unsignedByte alias="1st block size" />
 	<branch description="1st block">
 		<byte alias="Attackable" type="YesOrNo">
-			<scriptAlias id="fspawn_gen_npc_atk" />
-			<scriptAlias id="exp_bot_npc_atk" />
+			<scriptAlias id="npc_info_enemy" />
 		</byte>
-		<bytes alias="">
-			<length>4</length>
-		</bytes>
+		<dword alias="Relations" />
 		<string alias="Title">
 			<scriptAlias id="OIC_NPC_TITLE" />
 		</string>
@@ -95,7 +91,7 @@
 		<branch id="exNI_1" condition="bitmask.Bit7" description="Template">
 			<dword alias="NPC" type="Npc">
 				<scriptAlias id="OIC_NPC_TEMPLATE" />
-				<scriptAlias id="exp_bot_npc_id" />
+				<scriptAlias id="npc_info_template" />
 			</dword>
 		</branch>
 		<!-- Bit5/Bit6 have no effect in block 2 -->
@@ -183,13 +179,17 @@
 		
 		<!-- Fields #4 -->
 		<branch id="exNI_4" condition="bitmask.Bit7" description="Cur HP">
-			<dword alias="Current HP" />
+			<dword alias="Current HP">
+				<scriptAlias id="npc_info_hp_current" />
+			</dword>
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit6" description="Cur MP">
 			<dword alias="Current MP" />
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit5" description="Max HP">
-			<dword alias="Max HP" />
+			<dword alias="Max HP">
+				<scriptAlias id="npc_info_hp_maximum" />
+			</dword>
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit4" description="Max MP">
 			<dword alias="Max MP" />
@@ -238,7 +238,7 @@
 		</branch>
 		<branch id="exNI_5" condition="bitmask.Bit3" description="State"> <!-- Always with Bit2, so it's either -->
 			<byte alias="State" type="NpcState">
-				<scriptAlias id="exp_bot_npc_state" />
+				<scriptAlias id="npc_info_state" />
 			</byte>
 		</branch>
 		<!-- Bit0/Bit1 are NOT USED -->

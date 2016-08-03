@@ -2,8 +2,12 @@
 <!-- Augmentation/enchant effect WORDs are now DWORDs -->
 <!-- Underground: Soul Crystal Effect extension -->
 <packet id="SM_PRIVATE_STORE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Seller OID" type="ObjectID" />
-	<dword alias="Package sale" type="YesOrNo" />
+	<dword alias="Seller OID" type="ObjectID">
+		<scriptAlias id="private_store_sell_owner" />
+	</dword>
+	<dword alias="Package sale" type="YesOrNo">
+		<scriptAlias id="private_store_sell_package" />
+	</dword>
 	<qword alias="Adena" />
 	<dword alias="Viewer's item count" />
 	<dword alias="Sellable count" id="index_0" />
@@ -14,10 +18,12 @@
 		</dword>
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
-			<scriptAlias id="harvester_personal_store_item" />
+			<scriptAlias id="private_store_sell_item" />
 		</dword>
 		<unsignedByte alias="Slot number" type="InventorySlot" />
-		<qword alias="Quantity" />
+		<qword alias="Quantity">
+			<scriptAlias id="private_store_sell_item_amount" />
+		</qword>
 
 		<byte alias="Main item type" type="ItemType2" />
 
@@ -96,9 +102,11 @@
 			</loop>
 		</branch>
 
-		<qword alias="Price" />
+		<qword alias="Price">
+			<scriptAlias id="private_store_sell_item_price" />
+		</qword>
 		<qword alias="Reference (shop) price">
-			<scriptAlias id="harvester_personal_store_item_price" />
+			<scriptAlias id="private_store_sell_item_default_price" />
 		</qword>
 	</loop>
 </packet>

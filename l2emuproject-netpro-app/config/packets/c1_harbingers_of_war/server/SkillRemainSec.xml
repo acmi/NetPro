@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_SKILL_REMAIN_SEC" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Caster OID" type="ObjectID" />
+	<dword alias="Target OID" type="ObjectID" />
+	<dword alias="Skill" type="Skill">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+	</dword>
+	<dword alias="Level" type="skill.SkillLevel">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+	</dword>
+	<dword alias="Total cast time" type="MillisRemaining" />
+	<dword alias="0" />
+	<dword alias="Remaining cast time" type="TimeRemaining" />
+</packet>

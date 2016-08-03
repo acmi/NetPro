@@ -71,17 +71,17 @@ public class AntiSpam extends GameScript implements IOConstants
 				{
 					_patterns.add(Pattern.compile(line, Pattern.CASE_INSENSITIVE));
 				}
-				catch (PatternSyntaxException e)
+				catch (final PatternSyntaxException e)
 				{
 					LOG.info("Invalid pattern: " + line, e);
 				}
 			}
 		}
-		catch (NoSuchFileException e)
+		catch (final NoSuchFileException e)
 		{
 			LOG.info("Chat pattern list file is missing.");
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			LOG.error("Cannot load chat patterns", e);
 		}
@@ -114,7 +114,7 @@ public class AntiSpam extends GameScript implements IOConstants
 			// do not interfere until definitions are fixed
 			return;
 		}
-		final EnumeratedPayloadField field = buf.getSingleFieldIndex("antispam_fulltext_chat_msg");
+		final EnumeratedPayloadField field = buf.getSingleFieldIndex("say2_message");
 		if (field == null)
 			return;
 		

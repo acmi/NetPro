@@ -213,10 +213,6 @@
 		<packet id="348" name="RequestWebSessionID" />
 		<packet id="349" name="RequestCharacterNameCreatable" />
 		<packet id="351" name="RequestBR_NewIConCashBtnWnd" />
-		<packet id="353" name="RequestGetOnShuttle" />
-		<packet id="354" name="RequestGetOffShuttle" />
-		<packet id="355" name="RequestMoveToLocationInShuttle" />
-		<packet id="356" name="RequestCannotMoveAnymoreInShuttle" />
 		<packet id="357" name="RequestCrystallizeEstimate" />
 		<packet id="358" name="RequestCrystallizeItemCancel" />
 		<packet id="359" name="RequestExEscapeScene" />
@@ -298,8 +294,6 @@
 		<packet id="429" name="RequestResponsePetitionAlarm" />
 		<packet id="430" name="RequestNotifyExitBeautyshop" />
 		<packet id="431" name="RequestRegisterXMasWishCard" />
-		<packet id="432" name="RequestExAddEnchantScrollItem" />
-		<packet id="433" name="RequestExRemoveEnchantSupportItem" />
 		<packet id="434" name="RequestCardReward" />
 		<packet id="435" name="RequestDivideAdenaStart" />
 		<packet id="436" name="RequestDivideAdenaCancel" />
@@ -310,7 +304,6 @@
 		<packet id="447" name="RequestNotifyTrainingRoomEnd" />
 		<packet id="454" name="RequestTargetActionMenu" />
 		<packet id="455" name="RequestExSendSelectedQuestZoneID" />
-		<packet id="456" name="RequestAlchemySkillList" />
 		<packet id="457" name="RequestAlchemyTryMixCube" />
 		<packet id="458" name="RequestAlchemyConversion" />
 		<packet id="459" name="RequestSendExecutedUIEventsCount" />
@@ -1555,6 +1548,39 @@
 		<packet id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" name="RequestExitPartyMatchingWaitingRoom" />
 		
 		<!--
+		ASCII "chdddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "GetOnShuttle"
+		UNICODE "%s%s ShuttleID:%d"
+		-->
+		<packet id="CM_GET_ON_SHUTTLE" name="GetOnShuttle" />
+		<!--
+		ASCII "chdddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "GetOffShuttle"
+		UNICODE "%s%s ShuttleID:%d"
+		-->
+		<packet id="CM_GET_OFF_SHUTTLE" name="GetOffShuttle" />
+		<!--
+		ASCII "chddddddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "MTL"
+		UNICODE "%s%s X:%d Y:%d Z:%d OriginX:%d OriginY:%d OriginZ:%d"
+		-->
+		<packet id="CM_MTL_SHUTTLE" name="MoveToLocationInShuttle" />
+		<!--
+		ASCII "chddddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "CanNotMoveAnymore"
+		UNICODE "%s%s (Shuttle) OriginX:%d OriginY:%d OriginZ:%d OriginYaw:%d"
+		-->
+		<packet id="CM_CAN_NOT_MOVE_ANYMORE_SHUTTLE" name="CanNotMoveAnymoreInShuttle" />
+
+		<!--
 		ASCII "chdb"
 		UNICODE "CGSendDataToServer"
 		
@@ -1571,6 +1597,18 @@
 		-->
 		<packet id="CM_REQ_EX_EVENT_CAMPAIGN_INFO" name="RequestExEventCampaignInfo" />
 
+		<!--
+		ASCII "chdd"
+		UNICODE "RequestExAddEnchantScrollItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EX_ADD_ENCHANT_SCROLL_ITEM" name="RequestExAddEnchantScrollItem" />
+		<!--
+		ASCII "ch"
+		UNICODE "RequestExRemoveEnchantSupportItem"
+		UNICODE "(Send)%s"
+		-->
+		<packet id="CM_REQ_EX_REMOVE_ENCHANT_SUPPORT_ITEM" name="RequestExRemoveEnchantSupportItem" />
 		<!--
 		ASCII "dd"
 		ASCII "chdb"
@@ -1645,6 +1683,13 @@
 		-->
 		<packet id="CM_REQ_NEW_ENCHANT_TRY" name="RequestNewEnchantTry" />
 
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestAlchemySkillList"
+		-->
+		<packet id="CM_REQ_ALCHEMY_SKILL_LIST" name="RequestAlchemySkillList" />
 		<!--
 		UNICODE "ExSendClientINI"
 		UNICODE "(Send)%s INIType : %s"
@@ -1761,6 +1806,114 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_SSO_AUTHN_TOKEN" name="RequestSSOAuthnToken" />
+		<!--
+		ASCII "chc"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestCastleWarSeasonReward"
+		-->
+		<packet id="CM_REQ_CASTLE_WAR_SEASON_REWARD" name="RequestCastleWarSeasonReward" />
+		<!--
+		ASCII "chdd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestPledgeSignInForOpenJoiningMethod"
+		-->
+		<packet id="CM_REQ_PLEDGE_SIGN_IN_FOR_OPEN_JOINING_METHOD" name="RequestPledgeSignInForOpenJoiningMethod" />
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "ExRequestMatchArena"
+		-->
+		<packet id="CM_EX_REQ_MATCH_ARENA" name="ExRequestMatchArena" />
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "ExConfirmMatchArena"
+		-->
+		<packet id="CM_EX_CONFIRM_MATCH_ARENA" name="ExConfirmMatchArena" />
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "ExCancelMatchArena"
+		-->
+		<packet id="CM_EX_CANCEL_MATCH_ARENA" name="ExCancelMatchArena" />
+		<!--
+		ASCII "chd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "ExChangeClassArena"
+		-->
+		<packet id="CM_EX_CHANGE_CLASS_ARENA" name="ExChangeClassArena" />
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "ExConfirmClassArena"
+		-->
+		<packet id="CM_EX_CONFIRM_CLASS_ARENA" name="ExConfirmClassArena" />
+		<!-- UNICODE "UNetworkHandler::RequestOpenDecoNPCUI" -->
+		<packet id="CM_REQ_OPEN_DECO_NPC_UI" name="RequestOpenDecoNPCUI" />
+		<!-- UNICODE "UNetworkHandler::RequestCheckAgitDecoAvailability" -->
+		<packet id="CM_REQ_CHECK_AGIT_DECO_AVAILABILITY" name="RequestCheckAgitDecoAvailability" />
+		<!--
+		ASCII "chdc"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestUserFactionInfo"
+		-->
+		<packet id="CM_REQ_USER_FACTION_INFO" name="RequestUserFactionInfo" />
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "ExExitArena"
+		-->
+		<packet id="CM_EX_EXIT_ARENA" name="ExExitArena" />
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestEventBalthusToken"
+		-->
+		<packet id="CM_REQ_EVENT_BALTHUS_TOKEN" name="RequestEventBalthusToken" />
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestPartyMatchingHistory"
+		-->
+		<packet id="CM_REQ_PARTY_MATCHING_HISTORY" name="RequestPartyMatchingHistory" />
+		<!--
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestQueueTicket"
+		-->
+		<packet id="CM_REQ_QUEUE_TICKET" name="RequestQueueTicket" />
+		<!--
+		ASCII "chddQddddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestQueueTicketLogin"
+		-->
+		<packet id="CM_REQ_QUEUE_TICKET_LOGIN" name="RequestQueueTicketLogin" />
+		<!--
+		ASCII "chS"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestBlockMemoInfo"
+		-->
+		<packet id="CM_REQ_BLOCK_MEMO_INFO" name="RequestBlockMemoInfo" />
+		<!--
+		ASCII "chdcc"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestTryEnSoulExtraction"
+		-->
+		<packet id="CM_REQ_TRY_EN_SOUL_EXTRACTION" name="RequestTryEnSoulExtraction" />
 	</client>
 	<server>
 		<!--
@@ -1908,13 +2061,11 @@
 		<packet id="225" name="BlockList" />
 		<packet id="227" name="NormalCamera" />
 		<packet id="234" name="EventTrigger" />
-		<packet id="237" name="SkillRemainSec" />
 		<!-- UNICODE "DummyPacket" -->
 		<packet id="239" name="Dummy ED" />
 		<packet id="241" name="Dummy_70" />
 		<packet id="267" name="Dummy_EC" />
 		<packet id="270" name="Dummy_EE" />
-		<packet id="271" name="ClientSetTime" />
 		<packet id="338" name="ExPCCafePointInfo" />
 		<packet id="339" name="ExSetCompassZoneCode" />
 		<packet id="340" name="ExGetBossRecord" />
@@ -2074,13 +2225,6 @@
 		<packet id="501" name="ExGMViewQuestItemList" />
 		<packet id="502" name="ExRestartResponse" />
 		<packet id="503" name="ExVoteSystemInfo" />
-		<packet id="504" name="ExShuttuleInfo" />
-		<packet id="505" name="ExSuttleGetOn" />
-		<packet id="506" name="ExSuttleGetOff" />
-		<packet id="507" name="ExSuttleMove" />
-		<packet id="508" name="ExMoveToLocationInSuttle" />
-		<packet id="509" name="ExStopMoveInShuttle" />
-		<packet id="510" name="ExValidateLocationInShuttle" />
 		<packet id="511" name="ExAgitAuctionCmd" />
 		<packet id="512" name="ExConfirmAddingPostFriend" />
 		<packet id="513" name="ExReceiveShowPostFriend" />
@@ -2211,8 +2355,6 @@
 		<packet id="639" name="ExCheckAbusing" />
 		<packet id="640" name="ExGMVitalityEffectInfo" />
 		<packet id="641" name="ExPathToAwakeningAlarm" />
-		<packet id="642" name="ExPutEnchantScrollItemResult" />
-		<packet id="643" name="ExRemoveEnchantSupportItemResult" />
 		<packet id="644" name="ExShowCardRewardList" />
 		<packet id="645" name="ExGmViewCharacterInfo" />
 		<packet id="646" name="ExUserInfoEquipSlot" />
@@ -2232,7 +2374,6 @@
 		<packet id="662" name="ExUserInfoInvenWeight" />
 		<packet id="674" name="ExAccountAttendanceInfo" />
 		<packet id="675" name="ExWorldChatCnt" />
-		<packet id="676" name="ExAlchemySkillList" />
 		<packet id="677" name="ExTryMixCube" />
 		<packet id="678" name="ExAlchemyConversion" />
 		<packet id="679" name="ExBeautyItemList" />
@@ -2260,6 +2401,12 @@
 		ASCII "cQddcd"
 		UNICODE "VersionCheckPacket"
 		UNICODE "(Receive)%s"
+		
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "VersionCheckPacket"
+		UNICODE "%s%s"
+		ASCII "cQddcdcc"
 		-->
 		<packet id="SM_VERSION_CHECK" name="VersionCheck" />
 		<!-- UNICODE "S_MOVE_TO_LOCATION" -->
@@ -3098,8 +3245,14 @@
 		<!--
 		UNICODE "TutorialShowQuestionMarkPacket"
 		UNICODE "(Receive)%s"
+		
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ShowTutorialMarkPacket"
+		UNICODE "%s%s"
+		ASCII "cd"
 		-->
-		<packet id="SM_TUTORIAL_SHOW_QUESTION_MARK" name="TutorialShowQuestionMark" />
+		<packet id="SM_TUTORIAL_SHOW_QUESTION_MARK" name="ShowTutorialMark" />
 		<!--
 		UNICODE "TutorialEnableClientEventPacket"
 		UNICODE "(Receive)%s"
@@ -3341,6 +3494,17 @@
 		-->
 		<packet id="SM_SET_SUMMON_REMAIN_TIME" name="SetSummonRemainTime" />
 		<!--
+		ASCII "ddddddd"
+		UNICODE "(Receive)OnSkillRemainSec"
+		
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "SkillRemainSecPacket"
+		UNICODE "%s%s"
+		ASCII "ddddddd"
+		-->
+		<packet id="SM_SKILL_REMAIN_SEC" name="SkillRemainSec" />
+		<!--
 		UNICODE "NetPingPacket"
 		UNICODE "(Receive)%s"
 		-->
@@ -3523,6 +3687,11 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_GAME_GUARD_QUERY" name="GameGuardQuery" />
+		<!--
+		ASCII "dd"
+		UNICODE "(Receive)ClientSetTimePacket"
+		-->
+		<packet id="SM_CLIENT_SET_TIME" name="ClientSetTime" />
 		<!--
 		ASCII "dd"
 		ASCII "ddd"
@@ -4144,11 +4313,82 @@
 		<packet id="SM_EX_SHOW_SEED_MAP_INFO" name="ExShowSeedMapInfo" />
 		
 		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExShuttleInfoPacket"
+		UNICODE "%s%s"
+		ASCII "dddddd"
+		ASCII "dddddddddd"
+		ASCII "dd"
+		ASCII "q:\perforce\otc_ep30_0127\client\engine\src\ClientReplayPacket.cpp"
+		ASCII "pshuttle"
+		-->
+		<packet id="SM_EX_SHUTTLE_INFO" name="ExShuttleInfo" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExSuttleGetOnPacket"
+		UNICODE "%s%s"
+		ASCII "ddddd"
+		-->
+		<packet id="SM_EX_SUTTLE_GET_ON" name="ExSuttleGetOn" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExSuttleGetOffPacket"
+		UNICODE "%s%s"
+		ASCII "ddddd"
+		-->
+		<packet id="SM_EX_SUTTLE_GET_OFF" name="ExSuttleGetOff" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExSuttleMovePacket"
+		UNICODE "%s%s"
+		ASCII "dddddd"
+		-->
+		<packet id="SM_EX_SUTTLE_MOVE" name="ExSuttleMove" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExMTLInSuttlePacket"
+		UNICODE "%s%s"
+		ASCII "dddddddd"
+		-->
+		<packet id="SM_EX_MTL_IN_SUTTLE" name="ExMoveToLocationInSuttle" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExStopMoveInShuttlePacket"
+		UNICODE "%s%s"
+		ASCII "dddddd"
+		-->
+		<packet id="SM_EX_STOP_MOVE_IN_SHUTTLE" name="ExStopMoveInShuttle" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExValidateLocationInShuttlePacket"
+		UNICODE "%s%s"
+		ASCII "dddddd"
+		-->
+		<packet id="SM_EX_VALIDATE_LOCATION_IN_SHUTTLE" name="ExValidateLocationInShuttle" />
+
+		<!--
 		UNICODE "ExNCGuardReceiveDataFromServer"
 		UNICODE "(Receive)%s DataSize:%d"
 		-->
 		<packet id="SM_EX_NC_GUARD_RECEIVE_DATA_FROM_SERVER" name="ExNCGuardReceiveDataFromServer" />
 
+		<!--
+		UNICODE "ExPutEnchantScrollItemResult"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_PUT_ENCHANT_SCROLL_ITEM_RESULT" name="ExPutEnchantScrollItemResult" />
+		<!--
+		UNICODE "ExRemoveEnchantSupportItemResult"
+		UNICODE "(Receive)%s"
+		-->
+		<packet id="SM_EX_REMOVE_ENCHANT_SUPPORT_ITEM_RESULT" name="ExRemoveEnchantSupportItemResult" />
 		<!--
 		ASCII "dQQdddd"
 		ASCII "dd"
@@ -4218,6 +4458,12 @@
 		-->
 		<packet id="SM_EX_ENCHANT_FAIL" name="ExEnchantFail" />
 
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExAlchemySkillList"
+		-->
+		<packet id="SM_EX_ALCHEMY_SKILL_LIST" name="ExAlchemySkillList" />
 		<!--
 		UNICODE "ExAutoFishAvailable"
 		UNICODE "(Receive)%s %d"
@@ -4359,5 +4605,227 @@
 		UNICODE "ExSSOAuthnToken"
 		-->
 		<packet id="SM_EX_SSO_AUTHN_TOKEN" name="ExSSOAuthnToken" />
+		<!--
+		UNICODE "token"
+		UNICODE "S_LOGIN_RESULT : SUCCESS Token : %s"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "LoginResultPacket"
+		UNICODE "%s%s%s"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "LoginResultPacket"
+		UNICODE "%s%sGP Success"
+		UNICODE "S_LOGIN_RESULT - Fail ErrorCode : %d"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "LoginResultPacket"
+		UNICODE "%s%s%d"
+		-->
+		<packet id="SM_LOGIN_RESULT" name="LoginResult" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExMultiSellResult"
+		ASCII "cdd"
+		-->
+		<packet id="SM_EX_MULTI_SELL_RESULT" name="ExMultiSellResult" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExCastleWarSeasonResult"
+		ASCII "ccdSdcc"
+		ASCII "cdSd"
+		-->
+		<packet id="SM_EX_CASTLE_WAR_SEASON_RESULT" name="ExCastleWarSeasonResult" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExCastleWarSeasonReward"
+		-->
+		<packet id="SM_EX_CASTLE_WAR_SEASON_REWARD" name="ExCastleWarSeasonReward" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExPledgeSigninForOpenJoiningMethod"
+		-->
+		<packet id="SM_EX_PLEDGE_SIGNIN_FOR_OPEN_JOINING_METHOD" name="ExPledgeSigninForOpenJoiningMethod" />
+		<!--
+		ASCII "ch"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExRequestMatchArena"
+		-->
+		<packet id="SM_EX_REQ_MATCH_ARENA" name="ExRequestMatchArena" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExCompleteMatchArena"
+		-->
+		<packet id="SM_EX_COMPLETE_MATCH_ARENA" name="ExCompleteMatchArena" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExConfirmMatchArena"
+		-->
+		<packet id="SM_EX_CONFIRM_MATCH_ARENA" name="ExConfirmMatchArena" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExCancelMatchArena"
+		-->
+		<packet id="SM_EX_CANCEL_MATCH_ARENA" name="ExCancelMatchArena" />
+		<!--
+		ASCII "dSd"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExStartChooseClassArena"
+		-->
+		<packet id="SM_EX_START_CHOOSE_CLASS_ARENA" name="ExStartChooseClassArena" />
+		<!--
+		ASCII "cdd"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExChangeClassArena"
+		-->
+		<packet id="SM_EX_CHANGE_CLASS_ARENA" name="ExChangeClassArena" />
+		<!--
+		ASCII "cd"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExConfirmClassArena"
+		-->
+		<packet id="SM_EX_CONFIRM_CLASS_ARENA" name="ExConfirmClassArena" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExStartBattleReadyArena"
+		-->
+		<packet id="SM_EX_START_BATTLE_READY_ARENA" name="ExStartBattleReadyArena" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExBattleReadyArena"
+		-->
+		<packet id="SM_EX_BATTLE_READY_ARENA" name="ExBattleReadyArena" />
+		<!-- UNICODE "ExDecoNPCInfo" -->
+		<packet id="SM_EX_DECO_NPC_INFO" name="ExDecoNPCInfo" />
+		<!-- UNICODE "ExDecoNPCSet" -->
+		<packet id="SM_EX_DECO_NPC_SET" name="ExDecoNPCSet" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExFactionInfo"
+		-->
+		<packet id="SM_EX_FACTION_INFO" name="ExFactionInfo" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExBattleResultArena"
+		-->
+		<packet id="SM_EX_BATTLE_RESULT_ARENA" name="ExBattleResultArena" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExClosingArena"
+		-->
+		<packet id="SM_EX_CLOSING_ARENA" name="ExClosingArena" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExClosedArena"
+		-->
+		<packet id="SM_EX_CLOSED_ARENA" name="ExClosedArena" />
+		<!--
+		ASCII "ddd"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExDieInArena"
+		UNICODE "%s%sID:%d"
+		-->
+		<packet id="SM_EX_DIE_IN_ARENA" name="ExDieInArena" />
+		<!--
+		ASCII "cd"
+		ASCII "dSddd"
+		ASCII "dSddd"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExArenaDashboard"
+		-->
+		<packet id="SM_EX_ARENA_DASHBOARD" name="ExArenaDashboard" />
+		<!--
+		ASCII "dddd"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExArenaUpdateEquipSlot"
+		UNICODE "%s%sUserSID:%d Weapon:%d Chest:%d Neck:%d"
+		-->
+		<packet id="SM_EX_ARENA_UPDATE_EQUIP_SLOT" name="ExArenaUpdateEquipSlot" />
+		<!--
+		ASCII "dcdd"
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExArenaKillInfo"
+		-->
+		<packet id="SM_EX_ARENA_KILL_INFO" name="ExArenaKillInfo" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExExitArena"
+		-->
+		<packet id="SM_EX_EXIT_ARENA" name="ExExitArena" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExBalthusEvent"
+		UNICODE "%s%s%d currentState:%d progress:%d Item:%d Token:%d Participated:%d Running:%d"
+		-->
+		<packet id="SM_EX_BALTHUS_EVENT" name="ExBalthusEvent" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExBalthusEventJackpotUser"
+		-->
+		<packet id="SM_EX_BALTHUS_EVENT_JACKPOT_USER" name="ExBalthusEventJackpotUser" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExPartyMatchingRoomHistory"
+		ASCII "SS"
+		-->
+		<packet id="SM_EX_PARTY_MATCHING_ROOM_HISTORY" name="ExPartyMatchingRoomHistory" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExAIContentUIEvent"
+		ASCII "dddd"
+		-->
+		<packet id="SM_EX_AI_CONTENT_UI_EVENT" name="ExAIContentUIEvent" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExQueueTicket"
+		ASCII "cd"
+		ASCII "cSdddddQd"
+		-->
+		<packet id="SM_EX_QUEUE_TICKET" name="ExQueueTicket" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExQueueTicketLogin"
+		-->
+		<packet id="SM_EX_QUEUE_TICKET_LOGIN" name="ExQueueTicketLogin" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExEnSoulExtractionShow"
+		-->
+		<packet id="SM_EX_EN_SOUL_EXTRACTION_SHOW" name="ExEnSoulExtractionShow" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExEnSoulExtractionResult"
+		-->
+		<packet id="SM_EX_EN_SOUL_EXTRACTION_RESULT" name="ExEnSoulExtractionResult" />
 	</server>
 </packets>

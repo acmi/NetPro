@@ -19,7 +19,9 @@
 		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
 	</dword>
 	<dword alias="Stackable" type="YesOrNo" />
-	<dword alias="Amount" />
+	<dword alias="Amount">
+		<scriptAlias id="HLE_WORLD_ITEM_AMOUNT" />
+	</dword>
 	
 	<!-- NEW -->
 	<dword alias="0" />

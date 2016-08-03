@@ -631,9 +631,9 @@
 631	Above the Outer Gate of Aden Castle
 632	Center of the Monster Race Track
 633	Monster Race Track Finish Line
-634	Left Side of the Coliseum
+634	Western Coliseum
 635	Center of the Coliseum
-636	Right side of the Coliseum
+636	Eastern Coliseum
 637	Fee
 638	Dye Information
 639	Symbol Information
@@ -2100,6 +2100,7 @@
 2154	Go Right
 2155	Not in Use 1
 2156	Not in Use 2
+2157	Show/hide HP gage
 2201	Received Mail
 2202	Sent Mail
 2203	The currently selected icon represents your skill at present. Please select another icon to modify your current skill enchant.
@@ -2970,10 +2971,10 @@
 3168	P
 3169	Lineage II News
 3170	Lock Screen Size
-3171	Destruction's Shadow
-3172	Evolving Darkness
-3173	Sliver of Truth
-3174	Chaotic Ambush
+3171	Infinite Odyssey
+3172	New Territory Card
+3173	Mystic Tavern
+3174	Embryo
 3175	This person is a friend.
 3176	This person is not a friend.
 3177	This person is in a mentor/mentee relationship with you.
@@ -3006,7 +3007,7 @@
 3204	First Event
 3205	Second Event
 3206	Dandy's Dragon Weapons
-3207	Dandy has come to celebrate the 10th anniversary of Lineage 2!<br>- Speak with Dandy to try powerful Dragon Weapons during the event for 100,000 Adena.<br>- Upgrade Dragon weapons by claiming daily gift of Dandy’s Scroll Release Seal from Dandy. Purchase extra Dandy’s Scrolls on the L2 Store!
+3207	Dandy has come to celebrate the 10th anniversary of Lineage 2!<br>- Speak with Dandy to try powerful Dragon Weapons during the event for 100,000 Adena.<br>- Upgrade Dragon weapons by claiming daily gift of Dandy's Scroll Release Seal from Dandy. Purchase extra Dandy's Scrolls on the L2 Store!
 3208	10th Anniversary Event
 3209	Collect Memory Fragments located throughout the world of Aden.<br>Obtain 10th Anniversary Items through monster hunting and take them to Chaotic Chronicle the NPC for Memory Fragments. While receiving the rewards, you may learn something new about this continent. (Can acquire Secret Fragments 1 and 4)
 3210	Smashing Squashes
@@ -3186,7 +3187,7 @@
 3384	Monsters Killed
 3385	Adena Acquired
 3386	Item Acquired
-3387	Start Soul Crystal Enchantment
+3387	Start
 3388	Soul Crystal Effect
 3389	Current Effect
 3390	Effect After Applying Soul Crystal
@@ -3195,14 +3196,143 @@
 3393	No Soul Crystal Effect
 3394	<Soul Crystal Effect>
 3395	Retry
-3396	Exchangeable
+3396	Exchange
 3397	Change List/Icon View
 3398	Selected Item Info
 3399	Exchange Amount
 3400	View Inventory
+3401	N Shop Buff
+3402	True Gold
+3403	True Orange
+3404	True Pink
+3405	True Red
+3406	This message has been written in Mobile App Assist.
+3407	Castle sieges - Current Month
+3408	Castle sieges - Previous Month
+3409	Current top-ranking clan
+3410	Final winning clan
+3411	Winning clan - 1st week
+3412	Winning clan - 2nd week
+3413	Winning clan - 3rd week
+3414	Winning clan - 4th week
+3415	Winning clan - 5th week
+3416	No winning clan
+3417	A castle siege will soon take place. Become the final winning clan to win special rewards!!
+3418	Recruiting Category
+3419	Application Method
+3420	Recruiting Type
+3421	Allow
+3422	Public
+3423	Decide Later
+3424	Once you click on Confirm, the application to the clan will be completed. Continue?
+3425	Castle mode
 3426	Full Screen Mode
 3427	Full Window Mode
 3428	Window Mode
+3429	Manage experts
+3430	Function
+3431	Placement term
+3432	Envoy of the Forces
+3433	Expert and ornaments 1
+3434	Expert and ornaments 2
+3435	Expert type
+3436	Experts list
+3437	All
+3438	Support Magic
+3439	Item production
+3440	The expert is removed, and no longer used.
+3441	Place
+3442	Placement cost
+3443	Faction
+3444	Benefits by Faction level
+3445	Additional benefits
+3446	Basic benefits
+3447	Expert and ornaments
+3448	Objective
+3449	Active area
+3450	Key missions
+3451	MAX
+3452	Envoy of the Forces
+3453	Enchanter
+3454	Berserker Sculpture
+3455	Guardian Sculpture
+3456	Merchant
+3457	Chef
+3458	Identical
+3459	Party Matching Record
+3460	Active Party
+3461	Active Party Members
+3462	Preset
+3463	Preset List
+3464	Preset Description
+3465	Copy macro
+3466	Copy all
+3467	Paste
+3468	%self
+3469	%target
+3470	%pet
+3471	Lineage II home
+3472	%Cooltime
+3473	%Party1
+3474	%Party2
+3475	%Party3
+3476	%Party4
+3477	%Party5
+3478	%Party6
+3479	%Party7
+3480	%Party8
+3481	Stage score
+3482	Total score
+3483	Stage
+3484	%Summon1
+3485	%Summon2
+3486	Move down
+3487	Move up
+3488	Delete single line
+3489	Delete all
+3490	Extract rune
+3491	Rune effect
+3492	Extract
+3493	Rune to extract
+3494	Extraction fee
+3495	Extraction in progress
+3496	Please register a weapon for rune extraction first, then press the extract button.
+3497	Go ahead with rune extraction?
+3498	Rune extraction successful.
+3533	Equipped
+4001	An envoy dispatched by the Blackbird Clan. Assigns quests associated with the Blackbird Clan.
+4002	An envoy dispatched by the Giant Trackers. Assigns quests associated with the Giant Trackers.
+4003	An envoy dispatched by the Mother Tree Guardians. Assigns quests associated with the Mother Tree Guardians.
+4004	An envoy dispatched by the Unworldly Visitors. Assigns quests associated with the Unworldly Visitors.
+4005	An envoy dispatched by the Kingdom's Royal Guard. Assigns quests associated with the Kingdom's Royal Guard.
+4006	An enchanter dispatched by the Giant Trackers. Gives buffs that help your adventures.
+4007	An enchanter dispatched by the Mother Tree Guardians. Gives buffs that help your adventures.
+4008	An enchanter dispatched by the Unworldly Visitors. Gives buffs that help your adventures.
+4009	An enchanter dispatched by the Kingdom's Royal Guard. Gives buffs that help your adventures.
+4010	A sculpture produced by the Blackbird Clan. Gives buffs that improve P. Atk., M. Atk., and Dark Attribute Def.
+4011	A sculpture produced by the Giant Trackers. Gives buffs that improve P. Atk., M. Atk., and Earth Attribute Def.
+4012	A sculpture produced by the Unworldly Visitors Clan. Gives buffs that improve P. Atk., M. Atk., and Wind Attribute Def.
+4013	A sculpture produced by the Mother Tree Guardian. Gives buffs that improve P. Def., M. Def., and Water Attribute Def.
+4014	A sculpture produced by the Kingdom's Royal Guard. Gives buffs that improve P. Def., M. Def., and Divine Attribute Def.
+4015	Trader dispatched by the Blackbird Clan. Sells special Blackbird Clan goods.
+4016	Trader dispatched by the Giant Trackers. Sells special Giant Trackers goods.
+4017	Trader dispatched by the Mother Tree Guardians. Sells special Mother Tree Guardians goods.
+4018	Chef dispatched by the Unworldly Visitors. Sells dishes made with the special secrets of the Unworldly Visitors.
+4019	Chef dispatched by the Royal Guard of the Kingdom. Sells dishes made with the special secrets of the Royal Guard of the Kingdom.
+4501	Participate in the Arena
+4502	Request to participate
+4503	Matching in progress..
+4504	Matching complete!
+4505	Opponent found. Click the ‘OK' button to finalize your arena participation request.
+4506	Preparation complete!
+4507	Standing by...
+4508	Arena waiting room
+4509	Key characteristics
+4510	Key skills
+4511	Crystal
+4512	Select a skill to enchant!
+4513	Battle status
+4514	Battle results
 5001	L2 Store
 5002	All Items
 5003	Best
@@ -3370,7 +3500,7 @@
 5168	Begin Reading
 5169	Tip: "Available Readings" shows the number of times you can read your fortune. (up to 50)
 5170	Tip: "Tickets Owned" shows the number of tickets you own, which determines the number of readings allowed. (up to 50)
-5171	Tip: You can purchase Fortune Reading Tickets for 1 NCoin, and Luxury Fortune Reading Tickets for 640 NCoin in the L2Store.
+5171	Tip. You can get better items from the Luxury Fortune Reading game than the Rgular Fortune Reading game.
 5172	Not in Use
 5173	Congratulations! Check your obtained items!
 5174	How many readings would you like to do? (up to 50)
@@ -3971,8 +4101,8 @@
 7524	Not Available
 7525	Complete
 7526	Rewards Info
-7527	Conditions to Receive Reward
-7528	Time to Receive Reward
+7527	Mission Summary
+7528	Conditions to Receive Reward
 7529	Receive Reward
 7530	See Today's Must-do List
 7531	Priority

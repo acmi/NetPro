@@ -347,6 +347,7 @@
 
 			<xs:enumeration value="pledge.ApplicationMode" />
 			<xs:enumeration value="pledge.ApplicationResponse" />
+			<xs:enumeration value="pledge.ApplicationType" />
 			<xs:enumeration value="pledge.AllyCrestDDS" />
 			<xs:enumeration value="pledge.Attendance" />
 			<xs:enumeration value="pledge.BonusType" />
@@ -371,7 +372,10 @@
 			<xs:enumeration value="product.ProductRepurchaseInterval" />
 			<xs:enumeration value="product.ProductStoreTab" />
 
+			<xs:enumeration value="quest.Faction" />
 			<xs:enumeration value="quest.QuestCompletion" />
+			<xs:enumeration value="quest.TutorialMark" />
+			<xs:enumeration value="quest.TutorialMarkType" />
 
 			<xs:enumeration value="relation.RelationTypeC1" />
 			<xs:enumeration value="relation.RelationTypeC4" />

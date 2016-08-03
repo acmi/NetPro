@@ -20,10 +20,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.commons.lang3.mutable.MutableInt;
 
-import util.packet.CommonPacketSender;
-
-import eu.revengineer.simplejse.HasScriptDependencies;
-
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
@@ -32,14 +28,14 @@ import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics.UserInfo;
 import net.l2emuproject.proxy.script.game.InteractiveChatCommands;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.packets.InvalidPacketWriterArgumentsException;
-import net.l2emuproject.proxy.state.entity.cache.ObjectInfoCache;
+import net.l2emuproject.proxy.script.packets.util.CommonPacketSender;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 
 /**
  * Helps visualizing polygon points as they are visited.
  * 
  * @author _dev_
  */
-@HasScriptDependencies("util.packet.CommonPacketSender")
 public class LocationMarker extends PpeEnabledGameScript implements InteractiveChatCommands
 {
 	private final Map<L2GameClient, MutableInt> _visibleItems;
@@ -100,11 +96,12 @@ public class LocationMarker extends PpeEnabledGameScript implements InteractiveC
 			synchronized (maxOID)
 			{
 				maxOID.add(1);
-				CommonPacketSender.sendSpawnItem(client, maxOID.intValue(), 3434, ObjectInfoCache.getInstance().getOrAdd(ui.getUserOID(), getEntityContext(server)).getCurrentLocation(), false, 1L, 0);
+				CommonPacketSender.sendSpawnItem(client, maxOID.intValue(), 3434,
+						L2ObjectInfoCache.getOrAdd(ui.getUserOID(), getEntityContext(server)).getExtraInfo().getCurrentLocation(), false, 1L, 0);
 			}
 			CommonPacketSender.sendUserCmd(server, 0);
 		}
-		catch (InvalidPacketWriterArgumentsException e)
+		catch (final InvalidPacketWriterArgumentsException e)
 		{
 			throw new RuntimeException(e);
 		}

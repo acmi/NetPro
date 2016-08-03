@@ -15,19 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a Kratei's Cube match's state.
  * 
  * @author savormix
  */
-public class KrateiState extends ScriptedLegacyIntegerIdInterpreter
+public class KrateiState extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public KrateiState()
 	{
-		addInterpretation(1, "In progress");
-		addInterpretation(2, "Finished");
+		super(new InterpreterMetadata(1), "In progress", "Finished");
 	}
 }

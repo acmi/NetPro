@@ -15,20 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets the given byte/word/dword as a Seven Signs cabal.
+ * Interprets the given byte/word/dword as an Olympiad match type.
  * 
  * @author savormix
  */
-public class OlympiadMatch extends ScriptedLegacyIntegerIdInterpreter
+public class OlympiadMatch extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public OlympiadMatch()
 	{
-		addInterpretation(-1, "Class-irrelevant team");
-		addInterpretation(1, "Class-irrelevant individual");
-		addInterpretation(2, "Class individual");
+		super(new InterpreterMetadata(-1), "Class-irrelevant team", null, "Class-irrelevant individual", "Class individual");
 	}
 }

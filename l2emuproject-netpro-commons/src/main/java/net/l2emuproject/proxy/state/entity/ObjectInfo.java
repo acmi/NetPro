@@ -15,8 +15,6 @@
  */
 package net.l2emuproject.proxy.state.entity;
 
-import net.l2emuproject.geometry.point.IPoint2D;
-import net.l2emuproject.geometry.point.PointGeometry;
 import net.l2emuproject.proxy.state.entity.type.EntityWithTemplateType;
 import net.l2emuproject.proxy.state.entity.type.ObjectType;
 import net.l2emuproject.util.logging.L2Logger;
@@ -25,32 +23,26 @@ import net.l2emuproject.util.logging.L2Logger;
  * Stores info about a game world object.
  * 
  * @author savormix
+ * @param <T> game-specific data wrapper type
  */
-public class ObjectInfo extends EntityInfo
+public class ObjectInfo<T> extends EntityInfo
 {
 	private static final L2Logger LOG = L2Logger.getLogger(ObjectInfo.class);
 	
 	private ObjectType _type;
-	private volatile boolean _running;
-	private volatile int _walkSpeed, _runSpeed;
-	private volatile double _speedMultiplier;
-	private volatile ObjectLocation _location, _destination;
-	private volatile long _movementStart;
+	private final T _extraInfo;
 	
 	/**
 	 * Creates a game world object descriptor.
 	 * 
 	 * @param id unique world object ID
+	 * @param extraInfo game specific data wrapper
 	 */
-	public ObjectInfo(int id)
+	public ObjectInfo(int id, T extraInfo)
 	{
 		super(id);
 		
-		_running = true; // currently, only players are tracked
-		_walkSpeed = _runSpeed = 50;
-		_speedMultiplier = 1D;
-		_location = _destination = ObjectLocation.UNKNOWN_LOCATION;
-		_movementStart = -1;
+		_extraInfo = extraInfo;
 	}
 	
 	@Override
@@ -81,7 +73,7 @@ public class ObjectInfo extends EntityInfo
 	 * @param type world object type
 	 * @return {@code this}
 	 */
-	public ObjectInfo setType(ObjectType type)
+	public ObjectInfo<T> setType(ObjectType type)
 	{
 		if (getID() == 0)
 			LOG.warn("Trying to set type of nonexistent object", new RuntimeException());
@@ -101,180 +93,12 @@ public class ObjectInfo extends EntityInfo
 	}
 	
 	/**
-	 * Sets the object's movement mode.
+	 * Returns game specific data for this object.
 	 * 
-	 * @param running whether this actor is running
-	 * @return {@code this}
+	 * @return extra data wrapper
 	 */
-	public ObjectInfo setRunning(boolean running)
+	public T getExtraInfo()
 	{
-		if (_running == running)
-			return this;
-		
-		updateLocation(getCurrentLocation());
-		_running = running;
-		return this;
-	}
-	
-	/**
-	 * Sets the object's movement speed.
-	 * 
-	 * @param walkSpeed speed while walking
-	 * @param runSpeed speed while running
-	 * @return {@code this}
-	 */
-	public ObjectInfo setMovementSpeed(int walkSpeed, int runSpeed)
-	{
-		if (_running && _runSpeed == runSpeed)
-		{
-			_walkSpeed = walkSpeed;
-			return this;
-		}
-		if (!_running && _walkSpeed == walkSpeed)
-		{
-			_runSpeed = runSpeed;
-			return this;
-		}
-		
-		updateLocation(getCurrentLocation());
-		_walkSpeed = walkSpeed;
-		_runSpeed = runSpeed;
-		return this;
-	}
-	
-	/**
-	 * Sets the object's movement speed multiplier.
-	 * 
-	 * @param speedMultiplier speed multiplier
-	 * @return {@code this}
-	 */
-	public ObjectInfo setSpeedMultiplier(double speedMultiplier)
-	{
-		if (_speedMultiplier == speedMultiplier)
-			return this;
-		
-		updateLocation(getCurrentLocation());
-		_speedMultiplier = speedMultiplier;
-		return this;
-	}
-	
-	/**
-	 * Sets the location of this world object.
-	 * 
-	 * @param location 3D coordinates
-	 * @return {@code this}
-	 */
-	public ObjectInfo updateLocation(ObjectLocation location)
-	{
-		if (getID() == 0)
-			LOG.warn("Trying to set location of nonexistent object", new RuntimeException());
-		
-		_location = location;
-		_movementStart = System.nanoTime();
-		return this;
-	}
-	
-	/**
-	 * Sets the destination of this world object.
-	 * 
-	 * @param location 3D coordinates of the current location
-	 * @param destination 3D coordinates of the destination
-	 * @return {@code this}
-	 */
-	public ObjectInfo setDestination(ObjectLocation location, ObjectLocation destination)
-	{
-		if (getID() == 0)
-			LOG.warn("Trying to set destination of nonexistent object", new RuntimeException());
-		
-		updateLocation(location);
-		_destination = location.equals(destination) ? ObjectLocation.UNKNOWN_LOCATION : destination;
-		
-		//if (_destination != ObjectLocation.UNKNOWN_LOCATION && getName().startsWith("YOUR_NAME_HERE "))
-		//	L2ThreadPool.schedule(new DebugWriter(), 100);
-		
-		return this;
-	}
-	
-	/*
-	final class DebugWriter implements Runnable
-	{
-		@Override
-		public void run()
-		{
-			if (_destination == ObjectLocation.UNKNOWN_LOCATION)
-				return;
-			
-			final double distanceLeftToTravel = PointGeometry.getRawPlanarDistance(_location, _destination);
-			final double distanceTraveled = getMovementSpeed() * ((System.nanoTime() - _movementStart) / 1_000_000_000D);
-			LOG.info("Travelled " + distanceTraveled + " in " + ((System.nanoTime() - _movementStart) / 1_000_000_000D) + " seconds");
-			if (distanceTraveled >= distanceLeftToTravel)
-			{
-				LOG.info("Finally arrived");
-				return;
-			}
-			
-			final IPoint2D loc = PointGeometry.getNextPointInPlanarSegment(_location, _destination, distanceTraveled);
-			LOG.info("Apparently now at " + loc.getX() + " " + loc.getY());
-			
-			L2ThreadPool.schedule(this, 50);
-		}
-	}
-	*/
-	/**
-	 * Returns the current movement destination for this object.
-	 * 
-	 * @return movement destination
-	 */
-	public ObjectLocation getDestination()
-	{
-		return _destination;
-	}
-	
-	/**
-	 * Returns the location of this world object.
-	 * 
-	 * @return 3D coordinates
-	 */
-	public ObjectLocation getCurrentLocation()
-	{
-		if (_destination == ObjectLocation.UNKNOWN_LOCATION)
-			return _location;
-		
-		if (isAtDestination())
-			return _destination;
-		
-		final double distanceTraveled = getMovementSpeed() * (System.nanoTime() - _movementStart) / 1_000_000_000L;
-		final IPoint2D loc = PointGeometry.getNextPointInPlanarSegment(_location, _destination, distanceTraveled);
-		return new ObjectLocation(loc.getX(), loc.getY(), _location.getZ(), _location.getYaw());
-	}
-	
-	/**
-	 * Returns whether this object is currently moving or not.
-	 * 
-	 * @return is object moving
-	 */
-	public boolean isMoving()
-	{
-		return _destination != ObjectLocation.UNKNOWN_LOCATION && !isAtDestination();
-	}
-	
-	private boolean isAtDestination()
-	{
-		final double distanceLeftToTravel = PointGeometry.getRawPlanarDistance(_location, _destination);
-		final double distanceTraveled = getMovementSpeed() * (System.nanoTime() - _movementStart) / 1_000_000_000L;
-		if (distanceTraveled >= distanceLeftToTravel)
-			return true;
-		
-		return _location.getX() == _destination.getX() && _location.getY() == _destination.getY();
-	}
-	
-	/**
-	 * Returns object's movement speed.
-	 * 
-	 * @return movement speed
-	 */
-	public double getMovementSpeed()
-	{
-		return _speedMultiplier * (_running ? _runSpeed : _walkSpeed);
+		return _extraInfo;
 	}
 }

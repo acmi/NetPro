@@ -15,19 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as an event match state.
  * 
  * @author savormix
  */
-public class MatchState extends ScriptedLegacyIntegerIdInterpreter
+public class MatchState extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public MatchState()
 	{
-		addInterpretation(1, "Standby");
-		addInterpretation(2, "Playing");
+		super(new InterpreterMetadata(1), "Standby", "Playing");
 	}
 }

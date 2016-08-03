@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package util.packet;
+package net.l2emuproject.proxy.script.packets.util;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.ClientProtocolVersion;
@@ -36,6 +36,7 @@ public interface SystemMessageRecipient
 	
 	/** Indicates a string token. */
 	int SYSMSG_TOKEN_STRING = 0;
+	
 	/** Indicates a NPC template token. */
 	int SYSMSG_TOKEN_NPC = 2;
 	/** Indicates a skill [level] template token. */

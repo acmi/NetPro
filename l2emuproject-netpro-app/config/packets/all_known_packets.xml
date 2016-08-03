@@ -213,10 +213,6 @@
 		<packet id="348" name="RequestWebSessionID" />
 		<packet id="349" name="RequestCharacterNameCreatable" />
 		<packet id="351" name="RequestBR_NewIConCashBtnWnd" />
-		<packet id="353" name="RequestGetOnShuttle" />
-		<packet id="354" name="RequestGetOffShuttle" />
-		<packet id="355" name="RequestMoveToLocationInShuttle" />
-		<packet id="356" name="RequestCannotMoveAnymoreInShuttle" />
 		<packet id="357" name="RequestCrystallizeEstimate" />
 		<packet id="358" name="RequestCrystallizeItemCancel" />
 		<packet id="359" name="RequestExEscapeScene" />
@@ -308,7 +304,6 @@
 		<packet id="447" name="RequestNotifyTrainingRoomEnd" />
 		<packet id="454" name="RequestTargetActionMenu" />
 		<packet id="455" name="RequestExSendSelectedQuestZoneID" />
-		<packet id="456" name="RequestAlchemySkillList" />
 		<packet id="457" name="RequestAlchemyTryMixCube" />
 		<packet id="458" name="RequestAlchemyConversion" />
 		<packet id="459" name="RequestSendExecutedUIEventsCount" />
@@ -1540,7 +1535,40 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" name="RequestExitPartyMatchingWaitingRoom" />
-		
+
+		<!--
+		ASCII "chdddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "GetOnShuttle"
+		UNICODE "%s%s ShuttleID:%d"
+		-->
+		<packet id="CM_GET_ON_SHUTTLE" name="GetOnShuttle" />
+		<!--
+		ASCII "chdddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "GetOffShuttle"
+		UNICODE "%s%s ShuttleID:%d"
+		-->
+		<packet id="CM_GET_OFF_SHUTTLE" name="GetOffShuttle" />
+		<!--
+		ASCII "chddddddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "MTL"
+		UNICODE "%s%s X:%d Y:%d Z:%d OriginX:%d OriginY:%d OriginZ:%d"
+		-->
+		<packet id="CM_MTL_SHUTTLE" name="MoveToLocationInShuttle" />
+		<!--
+		ASCII "chddddd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "CanNotMoveAnymore"
+		UNICODE "%s%s (Shuttle) OriginX:%d OriginY:%d OriginZ:%d OriginYaw:%d"
+		-->
+		<packet id="CM_CAN_NOT_MOVE_ANYMORE_SHUTTLE" name="CanNotMoveAnymoreInShuttle" />
+
 		<!--
 		ASCII "chdb"
 		UNICODE "CGSendDataToServer"
@@ -1644,6 +1672,13 @@
 		-->
 		<packet id="CM_REQ_NEW_ENCHANT_TRY" name="RequestNewEnchantTry" />
 
+		<!--
+		ASCII "ch"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestAlchemySkillList"
+		-->
+		<packet id="CM_REQ_ALCHEMY_SKILL_LIST" name="RequestAlchemySkillList" />
 		<!--
 		UNICODE "ExSendClientINI"
 		UNICODE "(Send)%s INIType : %s"
@@ -2179,13 +2214,6 @@
 		<packet id="501" name="ExGMViewQuestItemList" />
 		<packet id="502" name="ExRestartResponse" />
 		<packet id="503" name="ExVoteSystemInfo" />
-		<packet id="504" name="ExShuttuleInfo" />
-		<packet id="505" name="ExSuttleGetOn" />
-		<packet id="506" name="ExSuttleGetOff" />
-		<packet id="507" name="ExSuttleMove" />
-		<packet id="508" name="ExMoveToLocationInSuttle" />
-		<packet id="509" name="ExStopMoveInShuttle" />
-		<packet id="510" name="ExValidateLocationInShuttle" />
 		<packet id="511" name="ExAgitAuctionCmd" />
 		<packet id="512" name="ExConfirmAddingPostFriend" />
 		<packet id="513" name="ExReceiveShowPostFriend" />
@@ -2335,7 +2363,6 @@
 		<packet id="662" name="ExUserInfoInvenWeight" />
 		<packet id="674" name="ExAccountAttendanceInfo" />
 		<packet id="675" name="ExWorldChatCnt" />
-		<packet id="676" name="ExAlchemySkillList" />
 		<packet id="677" name="ExTryMixCube" />
 		<packet id="678" name="ExAlchemyConversion" />
 		<packet id="679" name="ExBeautyItemList" />
@@ -4112,6 +4139,67 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_SHOW_SEED_MAP_INFO" name="ExShowSeedMapInfo" />
+		
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExShuttleInfoPacket"
+		UNICODE "%s%s"
+		ASCII "dddddd"
+		ASCII "dddddddddd"
+		ASCII "dd"
+		ASCII "q:\perforce\otc_ep30_0127\client\engine\src\ClientReplayPacket.cpp"
+		ASCII "pshuttle"
+		-->
+		<packet id="SM_EX_SHUTTLE_INFO" name="ExShuttleInfo" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExSuttleGetOnPacket"
+		UNICODE "%s%s"
+		ASCII "ddddd"
+		-->
+		<packet id="SM_EX_SUTTLE_GET_ON" name="ExSuttleGetOn" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExSuttleGetOffPacket"
+		UNICODE "%s%s"
+		ASCII "ddddd"
+		-->
+		<packet id="SM_EX_SUTTLE_GET_OFF" name="ExSuttleGetOff" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExSuttleMovePacket"
+		UNICODE "%s%s"
+		ASCII "dddddd"
+		-->
+		<packet id="SM_EX_SUTTLE_MOVE" name="ExSuttleMove" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExMTLInSuttlePacket"
+		UNICODE "%s%s"
+		ASCII "dddddddd"
+		-->
+		<packet id="SM_EX_MTL_IN_SUTTLE" name="ExMoveToLocationInSuttle" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExStopMoveInShuttlePacket"
+		UNICODE "%s%s"
+		ASCII "dddddd"
+		-->
+		<packet id="SM_EX_STOP_MOVE_IN_SHUTTLE" name="ExStopMoveInShuttle" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExValidateLocationInShuttlePacket"
+		UNICODE "%s%s"
+		ASCII "dddddd"
+		-->
+		<packet id="SM_EX_VALIDATE_LOCATION_IN_SHUTTLE" name="ExValidateLocationInShuttle" />
 
 		<!--
 		UNICODE "ExNCGuardReceiveDataFromServer"
@@ -4198,6 +4286,12 @@
 		-->
 		<packet id="SM_EX_ENCHANT_FAIL" name="ExEnchantFail" />
 
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExAlchemySkillList"
+		-->
+		<packet id="SM_EX_ALCHEMY_SKILL_LIST" name="ExAlchemySkillList" />
 		<!--
 		UNICODE "ExAutoFishAvailable"
 		UNICODE "(Receive)%s %d"

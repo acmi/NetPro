@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_SHUTTLE_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Elevator ID" />
+	<dword alias="Location X" />
+	<dword alias="Location Y" />
+	<dword alias="Location Z" />
+	<dword alias="0" />
+	<dword alias="Elevator type" />
+	<dword alias="Nodes" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Node ID" />
+		<dword alias="Open X" />
+		<dword alias="Open Y" />
+		<dword alias="Open Z" />
+		<dword alias="Close X" />
+		<dword alias="Close Y" />
+		<dword alias="Close Z" />
+		<dword alias="Safe X" />
+		<dword alias="Safe Y" />
+		<dword alias="Safe Z" />
+		<dword alias="Door open" type="YesOrNo" />
+		<dword alias="At this node" type="YesOrNo" />
+	</loop>
+</packet>

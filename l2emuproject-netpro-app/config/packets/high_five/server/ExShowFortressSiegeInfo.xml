@@ -4,8 +4,6 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="387" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Fortress" type="PledgeBase" />
-	<dword alias="Barracks" id="index_0" />
-	<loop id="index_0"> <!-- WTF -->
-		<dword alias="Killed commanders" optional="true" />
-	</loop>
+	<dword alias="Barracks" />
+	<dword alias="Killed commanders" />
 </packet>

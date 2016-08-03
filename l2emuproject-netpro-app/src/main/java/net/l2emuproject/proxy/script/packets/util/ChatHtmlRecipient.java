@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package util.packet;
+package net.l2emuproject.proxy.script.packets.util;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
 

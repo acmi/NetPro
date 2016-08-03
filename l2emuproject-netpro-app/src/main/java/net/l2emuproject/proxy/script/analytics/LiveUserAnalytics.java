@@ -38,9 +38,10 @@ import net.l2emuproject.proxy.script.ScriptFieldAlias;
 import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics.UserInfo.EffectInfo;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
 import net.l2emuproject.proxy.state.entity.ObjectLocation;
-import net.l2emuproject.proxy.state.entity.cache.ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.ImmutableSortedArraySet;
 
@@ -111,7 +112,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	
 	LiveUserAnalytics()
 	{
-		_liveUsers = new ConcurrentHashMap<L2GameClient, UserInfo>();
+		_liveUsers = new ConcurrentHashMap<>();
 	}
 	
 	/**
@@ -156,9 +157,9 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		final UserInfo ui = _liveUsers.get(client);
 		if (ui == null)
 			return;
-			
-		final ObjectInfo oi = ObjectInfoCache.getInstance().getOrAdd(ui._objectID, getEntityContext(server));
-		oi.updateLocation(new ObjectLocation(x, y, z, yaw));
+		
+		final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(ui._objectID, getEntityContext(server));
+		oi.getExtraInfo().updateLocation(new ObjectLocation(x, y, z, yaw));
 	}
 	
 	@Override
@@ -170,34 +171,34 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			final EnumeratedPayloadField userOID = buf.getSingleFieldIndex(USER_OID);
 			if (userOID == null)
 				break user;
-				
+			
 			final int objectID = buf.readInteger32(userOID);
 			UserInfo ui = _liveUsers.get(client);
 			if (ui == null || ui._objectID != objectID)
 				_liveUsers.put(client, ui = new UserInfo(objectID, getEntityContext(server)));
-				
+			
 			final EnumeratedPayloadField level = buf.getSingleFieldIndex(USER_LEVEL);
 			if (level != null)
 				ui._level = buf.readInteger32(level);
-				
+			
 			final EnumeratedPayloadField sp = buf.getSingleFieldIndex(USER_SP);
 			if (sp != null)
 				ui._sp = buf.readInteger(sp);
-				
+			
 			return;
 		}
 		
 		final UserInfo ui = _liveUsers.get(client);
 		if (ui == null)
 			return;
-			
+		
 		target:
 		{
 			// user target OID detection
 			final EnumeratedPayloadField targetOID = buf.getSingleFieldIndex(TARGET_OID);
 			if (targetOID == null)
 				break target;
-				
+			
 			ui._targetOID = buf.readInteger32(targetOID);
 			return;
 		}
@@ -207,11 +208,11 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			final EnumeratedPayloadField userOID = buf.getSingleFieldIndex(TARGET_CANCELER_OID);
 			if (userOID == null)
 				break targetCancel;
-				
+			
 			final int objectID = buf.readInteger32(userOID);
 			if (ui._objectID != objectID)
 				return;
-				
+			
 			ui._targetOID = NO_TARGET;
 			return;
 		}
@@ -221,7 +222,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			final EnumeratedPayloadField petOID = buf.getSingleFieldIndex(PET_OID);
 			if (petOID == null)
 				break pet;
-				
+			
 			final int objectID = buf.readInteger32(petOID);
 			ui.getServitorOIDs().add(objectID);
 			return;
@@ -232,7 +233,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			final EnumeratedPayloadField petOID = buf.getSingleFieldIndex(PET_REMOVE_OID);
 			if (petOID == null)
 				break petRemoved;
-				
+			
 			final int objectID = buf.readInteger32(petOID);
 			ui.getServitorOIDs().remove(objectID);
 			return;
@@ -242,7 +243,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			// user abnormal effect detection
 			if (buf.getSingleFieldIndex(EFFECT_COUNT) == null)
 				break allEffects;
-				
+			
 			final List<EnumeratedPayloadField> skills = buf.getFieldIndices(EFFECT_SKILL);
 			final List<EnumeratedPayloadField> levels = buf.getFieldIndices(EFFECT_LEVEL);
 			final List<EnumeratedPayloadField> times = buf.getFieldIndices(EFFECT_TIME);
@@ -269,7 +270,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		{
 			if (buf.getSingleFieldIndex(OWNED_SKILL_COUNT) == null)
 				break allSkills;
-				
+			
 			final List<EnumeratedPayloadField> skills = buf.getFieldIndices(OWNED_SKILL);
 			final List<EnumeratedPayloadField> states = buf.getFieldIndices(OWNED_SKILL_DISABLED);
 			
@@ -290,7 +291,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			final List<EnumeratedPayloadField> ids = buf.getFieldIndices(LEARN_SKILL_ID);
 			if (ids.isEmpty())
 				break learnableSkills;
-				
+			
 			final List<EnumeratedPayloadField> lvls = buf.getFieldIndices(LEARN_SKILL_LVL), sps = buf.getFieldIndices(LEARN_SKILL_REQ_SP);
 			final List<EnumeratedPayloadField> reqLvls = buf.getFieldIndices(LEARN_SKILL_REQ_LVL), reqDualLvls = buf.getFieldIndices(LEARN_SKILL_REQ_DUAL_LVL);
 			final List<EnumeratedPayloadField> reqItemCnts = buf.getFieldIndices(LEARN_SKILL_REQ_ITEMS), reqSkillCnts = buf.getFieldIndices(LEARN_SKILL_REQ_SKILLS);
@@ -300,7 +301,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			{
 				if (buf.readInteger32(reqDualLvls.get(i)) > 0 || buf.readInteger32(reqItemCnts.get(i)) > 0 || buf.readInteger32(reqSkillCnts.get(i)) > 0)
 					continue;
-					
+				
 				final int id = buf.readInteger32(ids.get(i)), lvl = buf.readInteger32(lvls.get(i));
 				final long sp = buf.readInteger(sps.get(i));
 				final int reqLevel = buf.readInteger32(reqLvls.get(i));
@@ -427,7 +428,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			UserInfo other = (UserInfo)obj;
+			final UserInfo other = (UserInfo)obj;
 			if (_objectID != other._objectID)
 				return false;
 			return true;
@@ -437,12 +438,11 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		public String toString()
 		{
 			final int target = _targetOID;
-			final ObjectInfoCache cache = ObjectInfoCache.getInstance();
-			final ObjectInfo info = cache.getOrAdd(_objectID, _context), targetInfo = target != NO_TARGET ? cache.getOrAdd(target, _context) : null;
+			final ObjectInfo<L2ObjectInfo> info = L2ObjectInfoCache.getOrAdd(_objectID, _context), targetInfo = target != NO_TARGET ? L2ObjectInfoCache.getOrAdd(target, _context) : null;
 			
-			final L2TextBuilder tb = new L2TextBuilder(info.getName()).append(info.getCurrentLocation());
+			final L2TextBuilder tb = new L2TextBuilder(info.getName()).append(info.getExtraInfo().getCurrentLocation());
 			if (targetInfo != null)
-				tb.append("; target: ").append(targetInfo.getName()).append(targetInfo.getCurrentLocation());
+				tb.append("; target: ").append(targetInfo.getName()).append(targetInfo.getExtraInfo().getCurrentLocation());
 			if (!_servitorOIDs.isEmpty())
 				tb.append("; ").append(_servitorOIDs.size()).append(" servitors");
 			if (!_activeEffects._effects.isEmpty())
@@ -536,7 +536,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			final long diff = _expiry - System.currentTimeMillis();
 			if (diff <= 0)
 				return 0;
-				
+			
 			return unit.convert(diff, TimeUnit.MILLISECONDS);
 		}
 		

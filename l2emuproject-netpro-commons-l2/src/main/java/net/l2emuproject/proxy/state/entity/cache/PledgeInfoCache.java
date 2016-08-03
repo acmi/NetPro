@@ -16,6 +16,7 @@
 package net.l2emuproject.proxy.state.entity.cache;
 
 import net.l2emuproject.proxy.state.entity.PledgeInfo;
+import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
  * Caches pledge info.
@@ -30,9 +31,15 @@ public final class PledgeInfoCache extends EntityInfoCache<PledgeInfo>
 	}
 	
 	@Override
-	protected PledgeInfo create(int id)
+	protected PledgeInfo create(int id, Object extraInfo)
 	{
 		return new PledgeInfo(id);
+	}
+	
+	@Override
+	public PledgeInfo getOrAdd(int id, ICacheServerID context)
+	{
+		return super.getOrAdd(id, context);
 	}
 	
 	/**

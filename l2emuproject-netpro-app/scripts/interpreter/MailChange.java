@@ -15,20 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a change of a mail message.
  * 
  * @author savormix
  */
-public class MailChange extends ScriptedLegacyIntegerIdInterpreter
+public class MailChange extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public MailChange()
 	{
-		addInterpretation(0, "Cancelled/Deleted");
-		addInterpretation(1, "Read");
-		addInterpretation(2, "Rejected");
+		super("Cancelled/Deleted", "Read", "Rejected");
 	}
 }

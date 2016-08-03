@@ -15,16 +15,10 @@
  */
 package net.l2emuproject.proxy.state.entity.cache;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map.Entry;
 import java.util.stream.Stream;
 
-import net.l2emuproject.geometry.point.IPoint3D;
-import net.l2emuproject.geometry.point.PointGeometry;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.proxy.state.entity.type.EntityWithTemplateType;
 import net.l2emuproject.proxy.state.entity.type.ObjectType;
 
 /**
@@ -32,11 +26,8 @@ import net.l2emuproject.proxy.state.entity.type.ObjectType;
  * 
  * @author savormix
  */
-public class ObjectInfoCache extends EntityInfoCache<ObjectInfo>
+public class ObjectInfoCache extends EntityInfoCache<ObjectInfo<?>>
 {
-	// just a failsafe
-	private static final int KNOWNLIST_RANGE = 3_500;
-	
 	ObjectInfoCache()
 	{
 		// singleton
@@ -49,37 +40,15 @@ public class ObjectInfoCache extends EntityInfoCache<ObjectInfo>
 	 * @param type object subtype
 	 * @return all objects of the given type
 	 */
-	public Collection<ObjectInfo> getAllObjectsByType(ICacheServerID context, Class<? extends ObjectType> type)
+	public Stream<ObjectInfo<?>> getAllObjectsByType(ICacheServerID context, Class<? extends ObjectType> type)
 	{
-		final Collection<ObjectInfo> objects = new ArrayList<>();
-		for (Entry<Integer, ObjectInfo> e : getEntities(context).entrySet())
-		{
-			final ObjectInfo oi = e.getValue();
-			if (type.isInstance(oi.getType()))
-				objects.add(oi);
-		}
-		return objects;
-	}
-	
-	/**
-	 * Returns known objects of the given type with the given class ID, within the knownlist distance from the given point.
-	 * 
-	 * @param context entity existence boundary defining context
-	 * @param type returned object type
-	 * @param templateID returned object template ID
-	 * @param origin location or {@code null}
-	 * @return known objects that match the given criteria
-	 */
-	public Stream<ObjectInfo> getKnownObjects(ICacheServerID context, Class<? extends EntityWithTemplateType> type, int templateID, IPoint3D origin)
-	{
-		final Stream<ObjectInfo> result = getEntities(context).values().stream().filter(oi -> type.isInstance(oi.getType())).filter(oi -> ((EntityWithTemplateType)oi.getType()).getTemplateID() == templateID);
-		return origin != null ? result.filter(oi -> PointGeometry.isWithinRawSolidDistance(oi.getCurrentLocation(), origin, KNOWNLIST_RANGE)) : result;
+		return getEntities(context).values().stream().filter(oi -> type.isInstance(oi.getType()));
 	}
 	
 	@Override
-	protected ObjectInfo create(int id)
+	protected ObjectInfo<?> create(int id, Object extraInfo)
 	{
-		return new ObjectInfo(id);
+		return new ObjectInfo<>(id, extraInfo);
 	}
 	
 	/**

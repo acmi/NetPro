@@ -15,21 +15,18 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a skill's mana consumption type.
  * 
  * @author savormix
  */
-public class ManaConsumptionType extends ScriptedLegacyIntegerIdInterpreter
+public class ManaConsumptionType extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public ManaConsumptionType()
 	{
-		addInterpretation(0, "Physical");
-		addInterpretation(1, "Magical");
-		addInterpretation(2, "Song/dance"); // not even Rhythm of Start Dark would change this in Ertheia
-		addInterpretation(3, "Enchant");
+		super("Physical", "Magical", "Song/dance", "Enchant");
 	}
 }

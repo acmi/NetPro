@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_MTL_SHUTTLE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Elevator ID" />
+	<dword alias="Destination X" />
+	<dword alias="Destination X" />
+	<dword alias="Destination X" />
+	<dword alias="Current client X" />
+	<dword alias="Current client Y" />
+	<dword alias="Current client Z" />
+</packet>

@@ -15,23 +15,34 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as an event type.
  * 
  * @author savormix
  */
-public class Event extends ScriptedLegacyIntegerIdInterpreter
+public class Event extends ScriptedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public Event()
 	{
-		addInterpretation(20090401, "April fool's 2009");
-		addInterpretation(20090801, "Eva's inferno");
-		addInterpretation(20091031, "Haloween 2009");
-		addInterpretation(20091225, "Raising rudolph");
-		addInterpretation(20100214, "Lover's jubilee");
-		addInterpretation(20100401, "Player commendation");
+		super(build());
+	}
+	
+	private static final Map<Long, String> build()
+	{
+		final Map<Long, String> result = new HashMap<>();
+		result.put(20090401L, "April fool's 2009");
+		result.put(20090801L, "Eva's inferno");
+		result.put(20091031L, "Haloween 2009");
+		result.put(20091225L, "Raising rudolph");
+		result.put(20100214L, "Lover's jubilee");
+		result.put(20100401L, "Player commendation");
+		return Collections.unmodifiableMap(result);
 	}
 }

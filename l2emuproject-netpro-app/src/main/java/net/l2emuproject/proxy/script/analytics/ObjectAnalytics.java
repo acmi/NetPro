@@ -19,6 +19,7 @@ import java.util.List;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
@@ -26,8 +27,10 @@ import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
+import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics.UserInfo;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
-import net.l2emuproject.proxy.state.entity.cache.ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.state.entity.type.ItemType;
 import net.l2emuproject.proxy.state.entity.type.NonPlayerControllable;
@@ -78,6 +81,48 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 	@ScriptFieldAlias
 	private static final String EDITOR_ID = "OIC_SO_TEMPLATE";
 	
+	@ScriptFieldAlias
+	private static final String TARGET_SETTER_OID = "HLE_TARGET_SELECTOR_OID";
+	@ScriptFieldAlias
+	private static final String TARGET_OID = "HLE_TARGET_OID";
+	@ScriptFieldAlias
+	private static final String USER_TARGET_OID = "HLE_SELF_TARGET_OID";
+	@ScriptFieldAlias
+	private static final String TARGET_UNSETTER_OID = "HLE_TARGET_CANCELER_OID";
+	
+	private static boolean handleTargetChange(RandomAccessMMOBuffer rab, ICacheServerID cacheContext)
+	{
+		final EnumeratedPayloadField selfTarget = rab.getSingleFieldIndex(USER_TARGET_OID);
+		if (selfTarget != null)
+		{
+			final L2GameServer server = rab.getInteractivePacketSource(L2GameServer.class);
+			if (server != null)
+			{
+				final UserInfo ui = LiveUserAnalytics.getInstance().getUserInfo(server.getTargetClient());
+				if (ui != null)
+				{
+					final int selector = ui._objectID;
+					L2ObjectInfoCache.getOrAdd(selector, cacheContext).getExtraInfo().setTargetOID(rab.readInteger32(selfTarget));
+				}
+			}
+			return true;
+		}
+		
+		final EnumeratedPayloadField lostTarget = rab.getSingleFieldIndex(TARGET_UNSETTER_OID);
+		if (lostTarget != null)
+		{
+			L2ObjectInfoCache.getOrAdd(rab.readInteger32(lostTarget), cacheContext).getExtraInfo().setTargetOID(SimpleEventListener.NO_TARGET);
+			return true;
+		}
+		
+		final EnumeratedPayloadField setter = rab.getSingleFieldIndex(TARGET_SETTER_OID), target = rab.getSingleFieldIndex(TARGET_OID);
+		if (setter == null || target == null)
+			return false;
+		
+		L2ObjectInfoCache.getOrAdd(rab.readInteger32(setter), cacheContext).getExtraInfo().setTargetOID(rab.readInteger32(target));
+		return true;
+	}
+	
 	private static boolean handlePlayerInfo(RandomAccessMMOBuffer rab, ICacheServerID cacheContext)
 	{
 		final List<EnumeratedPayloadField> oids = rab.getFieldIndices(PLAYER_ID);
@@ -86,13 +131,12 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			return false;
 		
 		// final List<EnumeratedPayloadField> titles = rab.getFieldIndices(PLAYER_TITLE);
-		final ObjectInfoCache oic = ObjectInfoCache.getInstance();
 		for (int i = 0; i < oids.size(); ++i)
 		{
 			final int oid = rab.readInteger32(oids.get(i));
 			final String name = rab.readString(names.get(i));
 			
-			final ObjectInfo oi = oic.getOrAdd(oid, cacheContext).setType(new PlayerControllable());
+			final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(oid, cacheContext).setType(new PlayerControllable());
 			oi.setName(name);
 		}
 		
@@ -120,13 +164,12 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 		final List<EnumeratedPayloadField> givenNames = rab.getFieldIndices(NPC_NAME_STRING);
 		final List<EnumeratedPayloadField> ownerNames = rab.getFieldIndices(NPC_TITLE_STRING);
 		
-		final ObjectInfoCache oic = ObjectInfoCache.getInstance();
 		IntegerInterpreter interp = null;
 		try
 		{
 			interp = MetaclassRegistry.getInstance().getInterpreter("Npc", IntegerInterpreter.class);
 		}
-		catch (InvalidFieldValueInterpreterException e)
+		catch (final InvalidFieldValueInterpreterException e)
 		{
 			// whatever, template ID will suffice
 		}
@@ -152,7 +195,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 					objType = new NonPlayerControllable(id);
 					break;
 			}
-			final ObjectInfo oi = oic.getOrAdd(oid, cacheContext).setType(objType);
+			final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(oid, cacheContext).setType(objType);
 			setRealName:
 			{
 				if (type > 0)
@@ -182,13 +225,12 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			return false;
 		
 		final List<EnumeratedPayloadField> names = rab.getFieldIndices(ITEM_NAME_ID);
-		final ObjectInfoCache oic = ObjectInfoCache.getInstance();
 		IntegerInterpreter interp = null;
 		try
 		{
 			interp = MetaclassRegistry.getInstance().getInterpreter("Item", IntegerInterpreter.class);
 		}
-		catch (InvalidFieldValueInterpreterException e)
+		catch (final InvalidFieldValueInterpreterException e)
 		{
 			// whatever, template ID will suffice
 		}
@@ -200,7 +242,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			
 			final int id = rab.readInteger32(names.get(i));
 			final String name = interp != null ? String.valueOf(interp.getInterpretation(id, cacheContext)) : String.valueOf(id);
-			final ObjectInfo oi = oic.getOrAdd(oid, cacheContext).setType(new ItemType(id));
+			final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(oid, cacheContext).setType(new ItemType(id));
 			oi.setName(name);
 		}
 		
@@ -214,13 +256,12 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			return false;
 		
 		final List<EnumeratedPayloadField> names = rab.getFieldIndices(EDITOR_ID);
-		final ObjectInfoCache oic = ObjectInfoCache.getInstance();
 		IntegerInterpreter interp = null;
 		try
 		{
 			interp = MetaclassRegistry.getInstance().getInterpreter("StaticObject", IntegerInterpreter.class);
 		}
-		catch (InvalidFieldValueInterpreterException e)
+		catch (final InvalidFieldValueInterpreterException e)
 		{
 			// whatever, template ID will suffice
 		}
@@ -232,7 +273,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			
 			final int id = rab.readInteger32(names.get(i));
 			final String name = interp != null ? String.valueOf(interp.getInterpretation(id, cacheContext)) : String.valueOf(id);
-			final ObjectInfo oi = oic.getOrAdd(oid, cacheContext).setType(new StaticObjectType(id));
+			final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(oid, cacheContext).setType(new StaticObjectType(id));
 			oi.setName(name);
 		}
 		
@@ -250,6 +291,9 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 	{
 		try
 		{
+			if (handleTargetChange(buf, cacheContext))
+				return;
+			
 			if (handleItemInfo(buf, cacheContext))
 			{
 				// due to legacy packets
@@ -263,7 +307,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			handlePlayerInfo(buf, cacheContext);
 			handleNpcInfo(buf, cacheContext);
 		}
-		catch (IndexOutOfBoundsException e)
+		catch (final IndexOutOfBoundsException e)
 		{
 			final MMOBuffer wrapper = buf.seekFirstOpcode();
 			final byte[] packet = wrapper.readB(wrapper.getAvailableBytes());

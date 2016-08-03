@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TitledPane fx:id="_tpWrapper" animated="false" text="[01.01.2000 23.59.59].pLog" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController">
+   <content>
+      <VBox>
+         <children>
+            <TitledPane collapsible="false" text="%load.infodlg.details.title">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1">
+                           <children>
+                              <Label fx:id="_labSize" text="1.002 GiB">
+                                 <tooltip>
+                                    <Tooltip fx:id="_ttSize" text="%load.infodlg.details.size.tooltip" />
+                                 </tooltip>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <Label text="%load.infodlg.details.size" />
+                     </children>
+                  </GridPane>
+               </content>
+            </TitledPane>
+            <TitledPane collapsible="false" text="%load.infodlg.options.title">
+               <content>
+                  <VBox spacing="5.0">
+                     <children>
+                        <ComboBox fx:id="_cbProtocol" maxWidth="1.7976931348623157E308">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <Spinner maxWidth="1.7976931348623157E308" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Label" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button defaultButton="true" maxWidth="1.7976931348623157E308" onAction="#loadPacketLog" text="%load.infodlg.start" />
+                  <Button cancelButton="true" maxWidth="1.7976931348623157E308" onAction="#closeTab" text="%generic.button.cancel" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </content>
+</TitledPane>

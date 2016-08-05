@@ -70,6 +70,8 @@ import net.l2emuproject.proxy.io.exception.TruncatedPacketLogFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
 import net.l2emuproject.proxy.io.packetlog.PacketLogFileUtils;
+import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileUtils;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
@@ -82,6 +84,7 @@ import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
 import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.error.view.ExceptionSummaryDialogController;
+import net.l2emuproject.proxy.ui.javafx.io.view.L2PhPacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController;
@@ -149,6 +152,7 @@ public class MainWindowController implements Initializable, IOConstants
 	static final L2Logger LOG = L2Logger.getLogger(MainWindowController.class);
 	
 	private File _lastOpenDirectory = IOConstants.LOG_DIRECTORY.toFile();
+	private File _lastOpenDirectoryL2PH = null;
 	
 	@FXML
 	private TabPane _tpConnections;
@@ -233,8 +237,7 @@ public class MainWindowController implements Initializable, IOConstants
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
-		final Timeline tlHeapUsage = new Timeline(new KeyFrame(Duration.ZERO, e ->
-		{
+		final Timeline tlHeapUsage = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 			final long free = Runtime.getRuntime().freeMemory(), total = Runtime.getRuntime().totalMemory(), used = total - free;
 			final L2TextBuilder tb = new L2TextBuilder(BytesizeInterpreter.consolidate(used, BytesizeUnit.BYTES, BytesizeUnit.BYTES, BytesizeUnit.MEBIBYTES, "0M"));
 			int end = tb.indexOf("m");
@@ -256,8 +259,7 @@ public class MainWindowController implements Initializable, IOConstants
 		if (javaPath != null)
 			_labJvmType.setTooltip(new Tooltip(javaPath));
 		
-		_tpConnections.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) ->
-		{
+		_tpConnections.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) -> {
 			_packetHidingWrapper.setVisible(false);
 			_tbPacketHidingConfig.setSelected(false);
 			
@@ -283,8 +285,7 @@ public class MainWindowController implements Initializable, IOConstants
 			_labProtocol.setVisible(true);
 			_tbPacketHidingConfig.setVisible(true);
 		});
-		_tpConnections.addEventHandler(KeyEvent.KEY_PRESSED, e ->
-		{
+		_tpConnections.addEventHandler(KeyEvent.KEY_PRESSED, e -> {
 			if (e.getCode() != KeyCode.F3 || e.isAltDown())
 				return;
 			
@@ -302,8 +303,7 @@ public class MainWindowController implements Initializable, IOConstants
 		_taConsole.styleProperty().bind(Bindings.concat("-fx-font-size:", _sConsoleFontSize.valueProperty(), "; -fx-font-family: Consolas, monospace"));
 		clearConsole(null);
 		
-		_mScripts.disableProperty().bind(new ObservableValueBase<Boolean>()
-		{
+		_mScripts.disableProperty().bind(new ObservableValueBase<Boolean>(){
 			@Override
 			public Boolean getValue()
 			{
@@ -400,7 +400,7 @@ public class MainWindowController implements Initializable, IOConstants
 			_openPacketHidingConfigWindows.put(protocol, wnd);
 			wnd.show();
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.NONE).show();
@@ -524,8 +524,7 @@ public class MainWindowController implements Initializable, IOConstants
 		final WaitingIndicatorDialogController waitDialog = showWaitDialog(getMainWindow(), "generic.waitdlg.title",
 				selectedFiles.size() > 1 ? "open.netpro.waitdlg.header.multiple" : "open.netpro.waitdlg.header",
 				selectedFiles.size() > 1 ? String.valueOf(selectedFiles.size()) : selectedFiles.iterator().next().getName());
-		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() ->
-		{
+		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() -> {
 			final List<LogFileHeader> validLogFiles = new ArrayList<>(selectedFiles.size());
 			for (final File selectedFile : selectedFiles)
 			{
@@ -535,7 +534,7 @@ public class MainWindowController implements Initializable, IOConstants
 				{
 					validLogFiles.add(PacketLogFileUtils.getMetadata(packetLogFile));
 				}
-				catch (InterruptedException e)
+				catch (final InterruptedException e)
 				{
 					// cancelled by user
 					validLogFiles.clear();
@@ -548,12 +547,12 @@ public class MainWindowController implements Initializable, IOConstants
 							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
 					{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
 				}
-				catch (InsufficientlyLargeFileException e)
+				catch (final InsufficientlyLargeFileException e)
 				{
 					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
 							"open.netpro.err.dialog.header.toosmall", null, "open.netpro.err.dialog.content.toosmall", filename).show());
 				}
-				catch (IncompletePacketLogFileException e)
+				catch (final IncompletePacketLogFileException e)
 				{
 					// TODO: if not currently locked (being written), offer to repair automatically
 					// otherwise inform that it represents a currently active connection
@@ -562,27 +561,27 @@ public class MainWindowController implements Initializable, IOConstants
 					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
 							"open.netpro.err.dialog.header.incomplete", null, "open.netpro.err.dialog.content.incomplete", filename).show());
 				}
-				catch (UnknownFileTypeException e)
+				catch (final UnknownFileTypeException e)
 				{
 					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
 							"open.netpro.err.dialog.header.wrongfile", null, "open.netpro.err.dialog.content.wrongfile", filename, HexUtil.bytesToHexString(e.getMagic8Bytes(), " ")).show());
 				}
-				catch (TruncatedPacketLogFileException e)
+				catch (final TruncatedPacketLogFileException e)
 				{
 					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.truncated",
 							null, "open.netpro.err.dialog.content.truncated", filename).show());
 				}
-				catch (EmptyPacketLogException e)
+				catch (final EmptyPacketLogException e)
 				{
 					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.empty",
 							null, "open.netpro.err.dialog.content.empty", filename).show());
 				}
-				catch (DamagedFileException e)
+				catch (final DamagedFileException e)
 				{
 					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.damaged",
 							null, "open.netpro.err.dialog.content.damaged", filename).show());
 				}
-				catch (RuntimeException e)
+				catch (final RuntimeException e)
 				{
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 					Platform.runLater(
@@ -591,8 +590,7 @@ public class MainWindowController implements Initializable, IOConstants
 				}
 			}
 			
-			Platform.runLater(() ->
-			{
+			Platform.runLater(() -> {
 				waitDialog.onWaitEnd();
 				
 				if (validLogFiles.isEmpty())
@@ -636,7 +634,7 @@ public class MainWindowController implements Initializable, IOConstants
 						tabs[i] = tab;
 					}
 				}
-				catch (IOException e)
+				catch (final IOException e)
 				{
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 					wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.NONE).show();
@@ -672,7 +670,125 @@ public class MainWindowController implements Initializable, IOConstants
 	@FXML
 	private void showOpenLogPH(ActionEvent event)
 	{
+		final FileChooser fc = new FileChooser();
+		fc.setTitle(UIStrings.get("open.l2ph.fileselect.title"));
+		fc.getExtensionFilters().addAll(new ExtensionFilter(UIStrings.get("open.l2ph.fileselect.description"), "*.pLog"),
+				new ExtensionFilter(UIStrings.get("generic.filedlg.allfiles"), "*.*"));
+		fc.setInitialDirectory(_lastOpenDirectoryL2PH);
 		
+		final List<File> selectedFiles = fc.showOpenMultipleDialog(getMainWindow());
+		if (selectedFiles == null || selectedFiles.isEmpty())
+			return;
+		
+		_lastOpenDirectoryL2PH = selectedFiles.iterator().next().getParentFile();
+		
+		final WaitingIndicatorDialogController waitDialog = showWaitDialog(getMainWindow(), "generic.waitdlg.title",
+				selectedFiles.size() > 1 ? "open.netpro.waitdlg.header.multiple" : "open.netpro.waitdlg.header",
+				selectedFiles.size() > 1 ? String.valueOf(selectedFiles.size()) : selectedFiles.iterator().next().getName());
+		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() -> {
+			final List<L2PhLogFileHeader> validLogFiles = new ArrayList<>(selectedFiles.size());
+			for (final File selectedFile : selectedFiles)
+			{
+				final Path packetLogFile = selectedFile.toPath();
+				final String filename = packetLogFile.getFileName().toString();
+				try
+				{
+					validLogFiles.add(L2PhLogFileUtils.getMetadata(packetLogFile));
+				}
+				catch (final IOException e)
+				{
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					Platform.runLater(
+							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+					{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
+				}
+				catch (final InsufficientlyLargeFileException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
+							"open.netpro.err.dialog.header.toosmall", null, "open.netpro.err.dialog.content.toosmall", filename).show());
+				}
+				catch (final UnknownFileTypeException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
+							"open.netpro.err.dialog.header.wrongfile", null, "open.netpro.err.dialog.content.wrongfile", filename, HexUtil.bytesToHexString(e.getMagic8Bytes(), " ")).show());
+				}
+				catch (final DamagedFileException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.damaged",
+							null, "open.netpro.err.dialog.content.damaged", filename).show());
+				}
+				catch (final RuntimeException e)
+				{
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					Platform.runLater(
+							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+					{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
+				}
+			}
+			
+			Platform.runLater(() -> {
+				waitDialog.onWaitEnd();
+				
+				if (validLogFiles.isEmpty())
+					return;
+				
+				// make the tabbed window here
+				final Stage confirmStage = new Stage(StageStyle.DECORATED);
+				
+				final TitledPane[] tabs = new TitledPane[validLogFiles.size()];
+				try
+				{
+					for (int i = 0; i < tabs.length; ++i)
+					{
+						final L2PhLogFileHeader validLogFile = validLogFiles.get(i);
+						
+						final String approxSize, exactSize;
+						final NumberFormat integerFormat = NumberFormat.getIntegerInstance(UIStrings.CURRENT_LOCALE);
+						final long filesize = validLogFile.getLogFileSize();
+						if (filesize != -1)
+						{
+							approxSize = BytesizeFormat.formatAsDecimal(filesize);
+							exactSize = UIStrings.get("load.infodlg.details.size.tooltip", integerFormat.format(filesize));
+						}
+						else
+						{
+							approxSize = UIStrings.get("generic.unavailable");
+							exactSize = UIStrings.get("load.infodlg.details.size.unavailable.tooltip");
+						}
+						
+						final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(L2PhPacketLogLoadOptionController.class), UIStrings.getBundle());
+						final TitledPane tab = loader.load();
+						final L2PhPacketLogLoadOptionController controller = loader.getController();
+						controller.setMainWindow(this);
+						
+						final ServiceType service = validLogFile.getFirstPacketServiceType();
+						final String filename = validLogFile.getLogFile().getFileName().toString();
+						controller.setPacketLog(filename, approxSize, exactSize, FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
+								ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin()), validLogFile.getFirstPacketArrivalTime());
+						tab.setUserData(validLogFile);
+						tabs[i] = tab;
+					}
+				}
+				catch (final IOException e)
+				{
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.NONE).show();
+					return;
+				}
+				
+				final Accordion tabPane = new Accordion(tabs);
+				tabPane.setExpandedPane(tabs[0]);
+				
+				// no owner here - any invalid load options should only block the confirm window, but not the main window
+				confirmStage.setTitle(UIStrings.get("load.infodlg.title"));
+				confirmStage.setScene(new Scene(tabPane));
+				confirmStage.getIcons().addAll(FXUtils.getIconListFX());
+				confirmStage.setAlwaysOnTop(true);
+				WindowTracker.getInstance().add(confirmStage);
+				confirmStage.show();
+			});
+		});
+		waitDialog.setCancelAction(() -> preprocessTask.cancel(true));
 	}
 	
 	@FXML
@@ -830,14 +946,12 @@ public class MainWindowController implements Initializable, IOConstants
 		final Window waitDialogWindow = waitDialogController.getWindow();
 		final String pattern = String.valueOf(waitDialogWindow.getUserData());
 		
-		final Future<?> task = L2ThreadPool.submitLongRunning(() ->
-		{
+		final Future<?> task = L2ThreadPool.submitLongRunning(() -> {
 			try
 			{
 				final Set<String> matchingScripts = new TreeSet<>(NetProScriptCache.getInstance().findIndexedScripts(pattern, Integer.MAX_VALUE, 0));
 				
-				Platform.runLater(() ->
-				{
+				Platform.runLater(() -> {
 					waitDialogController.onWaitEnd();
 					
 					if (matchingScripts.isEmpty())
@@ -860,14 +974,13 @@ public class MainWindowController implements Initializable, IOConstants
 						result = matchingScripts.iterator().next();
 					
 					final WaitingIndicatorDialogController nextWaitDialogController = showWaitDialog(getMainWindow(), "generic.waitdlg.title", "scripts.load.waitdlg.content.compile", result);
-					final Future<?> nextTask = L2ThreadPool.submitLongRunning(() ->
-					{
+					final Future<?> nextTask = L2ThreadPool.submitLongRunning(() -> {
 						final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
 						try
 						{
 							NetProScriptCache.getInstance().compileSingleScript(result, fqcn2Exception);
 						}
-						catch (MutableOperationInProgressException e)
+						catch (final MutableOperationInProgressException e)
 						{
 							nextWaitDialogController.onWaitEnd();
 							
@@ -875,7 +988,7 @@ public class MainWindowController implements Initializable, IOConstants
 									result).show();
 							return;
 						}
-						catch (DependencyResolutionException e)
+						catch (final DependencyResolutionException e)
 						{
 							nextWaitDialogController.onWaitEnd();
 							
@@ -883,14 +996,14 @@ public class MainWindowController implements Initializable, IOConstants
 									System.getProperty("java.home"));
 							return;
 						}
-						catch (IOException e)
+						catch (final IOException e)
 						{
 							nextWaitDialogController.onWaitEnd();
 							
 							initNonModalUtilityDialog(new ExceptionAlert(e), getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.runtime", null).show();
 							return;
 						}
-						catch (IllegalArgumentException e)
+						catch (final IllegalArgumentException e)
 						{
 							nextWaitDialogController.onWaitEnd();
 							
@@ -899,8 +1012,7 @@ public class MainWindowController implements Initializable, IOConstants
 							return;
 						}
 						
-						Platform.runLater(() ->
-						{
+						Platform.runLater(() -> {
 							nextWaitDialogController.onWaitEnd();
 							
 							if (fqcn2Exception.isEmpty())
@@ -919,19 +1031,19 @@ public class MainWindowController implements Initializable, IOConstants
 					nextWaitDialogController.setCancelAction(() -> nextTask.cancel(true));
 				});
 			}
-			catch (MutableOperationInProgressException e)
+			catch (final MutableOperationInProgressException e)
 			{
 				waitDialogController.onWaitEnd();
 				
 				makeNonModalUtilityAlert(ERROR, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.singleop", "scripts.load.err.dialog.content.singleop", pattern)
 						.show();
 			}
-			catch (InterruptedException e)
+			catch (final InterruptedException e)
 			{
 				// application shutting down
 				waitDialogController.onWaitEnd();
 			}
-			catch (IOException ex)
+			catch (final IOException ex)
 			{
 				wrapException(ex, "scripts.load.err.dialog.title", null, "scripts.load.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show();
 			}
@@ -951,7 +1063,7 @@ public class MainWindowController implements Initializable, IOConstants
 			for (final Iterator<String> it = matchingScripts.iterator(); it.hasNext();)
 				if (NetProScriptCache.getInitializer().getManagedScript(it.next()) == null)
 					it.remove();
-			
+				
 			waitDialogController.onWaitEnd();
 			
 			if (matchingScripts.isEmpty())
@@ -974,14 +1086,13 @@ public class MainWindowController implements Initializable, IOConstants
 				result = matchingScripts.iterator().next();
 			
 			final WaitingIndicatorDialogController nextWaitDialogController = showWaitDialog(getMainWindow(), "generic.waitdlg.title", "scripts.unload.waitdlg.content", result);
-			final Future<?> task = L2ThreadPool.submitLongRunning(() ->
-			{
+			final Future<?> task = L2ThreadPool.submitLongRunning(() -> {
 				final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
 				try
 				{
 					NetProScriptCache.getInitializer().unloadScript(result, fqcn2Exception);
 				}
-				catch (IllegalArgumentException e)
+				catch (final IllegalArgumentException e)
 				{
 					nextWaitDialogController.onWaitEnd();
 					
@@ -990,8 +1101,7 @@ public class MainWindowController implements Initializable, IOConstants
 					return;
 				}
 				
-				Platform.runLater(() ->
-				{
+				Platform.runLater(() -> {
 					nextWaitDialogController.onWaitEnd();
 					
 					if (fqcn2Exception.isEmpty())
@@ -1009,14 +1119,14 @@ public class MainWindowController implements Initializable, IOConstants
 			});
 			nextWaitDialogController.setCancelAction(() -> task.cancel(true));
 		}
-		catch (MutableOperationInProgressException e)
+		catch (final MutableOperationInProgressException e)
 		{
 			waitDialogController.onWaitEnd();
 			
 			makeNonModalUtilityAlert(ERROR, getMainWindow(), "scripts.unload.err.dialog.title", "scripts.unload.err.dialog.header.singleop", "scripts.unload.err.dialog.content.singleop", pattern)
 					.show();
 		}
-		catch (InterruptedException e)
+		catch (final InterruptedException e)
 		{
 			// application shutting down
 			waitDialogController.onWaitEnd();
@@ -1043,7 +1153,7 @@ public class MainWindowController implements Initializable, IOConstants
 					UnloadableScript.class, Collections.emptySet(), "onFirstLoad", "onReload", "onLoad", "onStateSave", "onUnload")));
 			return result;
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
 			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, null, Modality.WINDOW_MODAL).showAndWait();
@@ -1074,7 +1184,7 @@ public class MainWindowController implements Initializable, IOConstants
 			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(AboutDialogController.class), UIStrings.getBundle());
 			aboutDialog = new Scene(loader.load());
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			LOG.error("", e);
 			return;
@@ -1155,8 +1265,7 @@ public class MainWindowController implements Initializable, IOConstants
 	public void addConnectionTab(Tab tab)
 	{
 		final ObservableList<Tab> tabs = _tpConnections.getTabs();
-		tab.setOnClosed(e ->
-		{
+		tab.setOnClosed(e -> {
 			final int threshold = tabs.contains(_tabConsole) ? 1 : 0;
 			if (tabs.size() <= threshold)
 				tabs.add(_tabIdle);

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<TitledPane fx:id="_tpWrapper" animated="false" text="[01.01.2000 23.59.59].pLog" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController">
+<TitledPane fx:id="_tpWrapper" animated="false" text="[01.01.2000 23.59.59].pLog" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.io.view.L2PhPacketLogLoadOptionController">
    <content>
       <VBox>
          <children>
@@ -51,8 +51,8 @@
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </ComboBox>
-                        <Spinner maxWidth="1.7976931348623157E308" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Label" textAlignment="CENTER" wrapText="true" />
+                        <Spinner fx:id="_spTzOffset" editable="true" maxWidth="1.7976931348623157E308" />
+                        <Label fx:id="_labTzOffset" alignment="CENTER" maxWidth="1.7976931348623157E308" text="%load.infodlg.phx.options.tzoffset.explain" textAlignment="CENTER" wrapText="true" />
                      </children>
                   </VBox>
                </content>

@@ -20,6 +20,7 @@ public class L2PhLogFileHeader
 {
 	private final Path _logFile;
 	private final long _logFileSize;
+	private final boolean _raw;
 	private final ServiceType _firstPacketServiceType;
 	private final long _firstPacketArrivalTime;
 	private final int _protocol;
@@ -29,14 +30,16 @@ public class L2PhLogFileHeader
 	 * 
 	 * @param logFile path to the associated log file
 	 * @param logFileSize size of the log file or {@code -1}
+	 * @param raw {@code true} if raw, {@code false} if standard log
 	 * @param firstPacketServiceType service type of the first packet in log file
 	 * @param firstPacketArrivalTime timestamp of the first packet in log file
 	 * @param protocol network protocol version (-1 if first packet is not {@code SendProtocolVersion})
 	 */
-	L2PhLogFileHeader(Path logFile, long logFileSize, ServiceType firstPacketServiceType, long firstPacketArrivalTime, int protocol)
+	L2PhLogFileHeader(Path logFile, long logFileSize, boolean raw, ServiceType firstPacketServiceType, long firstPacketArrivalTime, int protocol)
 	{
 		_logFile = logFile;
 		_logFileSize = logFileSize;
+		_raw = raw;
 		_firstPacketServiceType = firstPacketServiceType;
 		_firstPacketArrivalTime = firstPacketArrivalTime;
 		_protocol = protocol;
@@ -60,6 +63,16 @@ public class L2PhLogFileHeader
 	public long getLogFileSize()
 	{
 		return _logFileSize;
+	}
+	
+	/**
+	 * Returns whether the associated log file is a raw log file.
+	 * 
+	 * @return {@code true} if raw, {@code false} if standard log
+	 */
+	public boolean isRaw()
+	{
+		return _raw;
 	}
 	
 	/**

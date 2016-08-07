@@ -90,7 +90,7 @@ public final class Packet2Html implements ISODateTime
 		_packetBodyBuilder = new L2TextBuilder();
 		_packetBuilder = new L2TextBuilder();
 		_currentHyperlinkID = new HashMap<>();
-		for (DataType dt : DataType.values())
+		for (final DataType dt : DataType.values())
 			_currentHyperlinkID.put(dt, new MutableInt());
 		
 		_packet = packet;
@@ -137,14 +137,14 @@ public final class Packet2Html implements ISODateTime
 				final ByteBuffer independentWrapper = body.duplicate().order(body.order());
 				wireframe = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(_protocol, new MMOBuffer().setByteBuffer(independentWrapper), _packet::getEndpoint);
 			}
-			catch (InvalidPacketOpcodeSchemeException e)
+			catch (final InvalidPacketOpcodeSchemeException e)
 			{
 				// 2ez4me
 				_packetBuilder.append("<center><strong>Invalid packet</strong></center><br />");
 				_packetBodyBuilder.append(HexUtil.bytesToHexString(_packet.getBody(), " ")); // incomplete opcode(s)
 				return result();
 			}
-			catch (PartialPayloadEnumerationException e)
+			catch (final PartialPayloadEnumerationException e)
 			{
 				wireframe = e.getBuffer();
 				
@@ -163,7 +163,10 @@ public final class Packet2Html implements ISODateTime
 		
 		final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(_protocol, _packet.getEndpoint(), _packet.getBody());
 		final String opcodes = HexUtil.bytesToHexString(template.getPrefix(), " ");
-		_packetBodyBuilder.append("<div title=\"").append(opcodes).append(": ").append(template.getName()).append("\">").append(opcodes).append("</div>"); // opcodes
+		if (template.getName() != null)
+			_packetBodyBuilder.append("<div title=\"").append(opcodes).append(": ").append(template.getName()).append("\">").append(opcodes).append("</div>"); // opcodes
+		else
+			_packetBodyBuilder.append(opcodes); // opcodes
 		body.position(template.getPrefix().length);
 		
 		if (unsent)
@@ -179,8 +182,7 @@ public final class Packet2Html implements ISODateTime
 		final Map<FieldValueReadOption, Object> options = new EnumMap<>(FieldValueReadOption.class);
 		options.put(FieldValueReadOption.APPLY_MODIFICATIONS, null);
 		options.put(FieldValueReadOption.COMPUTE_INTERPRETATION, ctx);
-		template.visitStructureElements(new PacketStructureElementVisitor()
-		{
+		template.visitStructureElements(new PacketStructureElementVisitor(){
 			private final Map<LoopElement, LoopVisitation> _loops = new HashMap<>();
 			
 			@Override
@@ -274,7 +276,7 @@ public final class Packet2Html implements ISODateTime
 						element.readValue(new MMOBuffer().setByteBuffer(fallback), Collections.emptyMap());
 						fieldWidth = fallback.position();
 					}
-					catch (BufferUnderflowException e)
+					catch (final BufferUnderflowException e)
 					{
 						// what
 					}
@@ -363,7 +365,7 @@ public final class Packet2Html implements ISODateTime
 				{
 					imgSrc = FXUtils.getImageSrcForWebEngine((RenderedImage)interpretation);
 				}
-				catch (IOException e)
+				catch (final IOException e)
 				{
 					LOG.error("Unexpected error", e);
 				}

@@ -141,7 +141,6 @@
                   <Menu text="%menu.file.import.title">
                     <items>
                       <MenuItem onAction="#showOpenLogPH" text="%menu.file.3rdpt.phx" />
-                        <MenuItem onAction="#showOpenLogRawPH" text="%menu.file.3rdpt.phx_raw" />
                         <MenuItem onAction="#showOpenLogPS" text="%menu.file.3rdpt.ps" />
                     </items>
                   </Menu>

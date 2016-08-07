@@ -672,7 +672,9 @@ public class MainWindowController implements Initializable, IOConstants
 	{
 		final FileChooser fc = new FileChooser();
 		fc.setTitle(UIStrings.get("open.l2ph.fileselect.title"));
-		fc.getExtensionFilters().addAll(new ExtensionFilter(UIStrings.get("open.l2ph.fileselect.description"), "*.pLog"),
+		fc.getExtensionFilters().addAll(new ExtensionFilter(UIStrings.get("open.l2ph.fileselect.description"), "*.pLog", "*.rawLog"),
+				new ExtensionFilter(UIStrings.get("open.l2ph.fileselect.description.std"), "*.pLog"),
+				new ExtensionFilter(UIStrings.get("open.l2ph.fileselect.description.raw"), "*.rawLog"),
 				new ExtensionFilter(UIStrings.get("generic.filedlg.allfiles"), "*.*"));
 		fc.setInitialDirectory(_lastOpenDirectoryL2PH);
 		
@@ -693,7 +695,14 @@ public class MainWindowController implements Initializable, IOConstants
 				final String filename = packetLogFile.getFileName().toString();
 				try
 				{
-					validLogFiles.add(L2PhLogFileUtils.getMetadata(packetLogFile));
+					try
+					{
+						validLogFiles.add(L2PhLogFileUtils.getRawMetadata(packetLogFile));
+					}
+					catch (final UnknownFileTypeException e)
+					{
+						validLogFiles.add(L2PhLogFileUtils.getMetadata(packetLogFile));
+					}
 				}
 				catch (final IOException e)
 				{
@@ -763,7 +772,8 @@ public class MainWindowController implements Initializable, IOConstants
 						
 						final ServiceType service = validLogFile.getFirstPacketServiceType();
 						final String filename = validLogFile.getLogFile().getFileName().toString();
-						controller.setPacketLog(filename, approxSize, exactSize, FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
+						controller.setPacketLog(filename, approxSize, exactSize, UIStrings.get(validLogFile.isRaw() ? "load.infodlg.phx.details.type.raw" : "load.infodlg.phx.details.type.std"),
+								FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
 								ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin()), validLogFile.getFirstPacketArrivalTime());
 						tab.setUserData(validLogFile);
 						tabs[i] = tab;
@@ -793,12 +803,6 @@ public class MainWindowController implements Initializable, IOConstants
 	
 	@FXML
 	private void showOpenLogPS(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showOpenLogRawPH(ActionEvent event)
 	{
 		
 	}

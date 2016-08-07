@@ -16,14 +16,12 @@
 package net.l2emuproject.proxy.io.packetlog.l2ph;
 
 import java.io.BufferedReader;
-import java.io.Closeable;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Arrays;
-import java.util.Iterator;
 
 import net.l2emuproject.proxy.io.exception.LogFileIterationIOException;
 import net.l2emuproject.proxy.network.EndpointType;
@@ -31,11 +29,11 @@ import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.util.HexUtil;
 
 /**
- * Allows convenient NetPro packet log reading.
+ * Allows convenient L2PacketHack standard packet log reading.
  * 
  * @author _dev_
  */
-public class L2PhLogFileIterator implements Iterator<L2PhLogFilePacket>, AutoCloseable, Closeable
+public class L2PhLogFileIterator implements IL2PhLogFileIterator
 {
 	//private final L2PhLogFileHeader _logFileMetadata;
 	private final BufferedReader _input;

@@ -26,6 +26,7 @@
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1">
@@ -38,6 +39,16 @@
                            </children>
                         </FlowPane>
                         <Label text="%load.infodlg.details.size" />
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="_labType" text="%load.infodlg.phx.details.type.std">
+                                 <tooltip>
+                                    <Tooltip fx:id="_ttSize2" text="%load.infodlg.details.size.tooltip" />
+                                 </tooltip>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <Label text="%load.infodlg.phx.details.type" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </content>

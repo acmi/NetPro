@@ -34,8 +34,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.io.exception.LogFileIterationIOException;
+import net.l2emuproject.proxy.io.packetlog.l2ph.IL2PhLogFileIterator;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileHeader;
-import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileIterator;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFilePacket;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileUtils;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogLoadOptions;
@@ -94,6 +94,9 @@ public final class L2PhPacketLogLoadOptionController implements Initializable
 	
 	@FXML
 	private Tooltip _ttSize;
+	
+	@FXML
+	private Label _labType;
 	
 	@FXML
 	private ComboBox<IProtocolVersion> _cbProtocol;
@@ -211,7 +214,7 @@ public final class L2PhPacketLogLoadOptionController implements Initializable
 		final AtomicInteger packetsRead = new AtomicInteger(0);
 		final List<PacketLogEntry> packets = new ArrayList<>();
 		final Future<?> loadTask = L2ThreadPool.submitLongRunning(() -> {
-			try (final L2PhLogFileIterator it = L2PhLogFileUtils.getPacketIterator(logFileHeader))
+			try (final IL2PhLogFileIterator it = L2PhLogFileUtils.getPacketIterator(logFileHeader))
 			{
 				while (it.hasNext())
 				{
@@ -312,16 +315,18 @@ public final class L2PhPacketLogLoadOptionController implements Initializable
 	 * @param filename filename of the packet log
 	 * @param approxSize approximate filesize representation
 	 * @param exactSize exact filesize declaration
+	 * @param type type of log file (standard/raw)
 	 * @param applicableProtocols all protocol versions applicable to this type of log
 	 * @param detectedProtocol log protocol version
 	 * @param firstPacketArrivalTime time at which the first packet arrived
 	 */
-	public void setPacketLog(String filename, String approxSize, String exactSize, ObservableList<IProtocolVersion> applicableProtocols,
+	public void setPacketLog(String filename, String approxSize, String exactSize, String type, ObservableList<IProtocolVersion> applicableProtocols,
 			IProtocolVersion detectedProtocol, long firstPacketArrivalTime)
 	{
 		_tpWrapper.setText(filename);
 		_labSize.setText(approxSize);
 		_ttSize.setText(exactSize);
+		_labType.setText(type);
 		_cbProtocol.setItems(applicableProtocols);
 		_cbProtocol.getSelectionModel().select(detectedProtocol);
 		_firstPacketArrivalTimeProperty.set(firstPacketArrivalTime);

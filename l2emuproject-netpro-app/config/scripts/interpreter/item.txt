@@ -27866,6 +27866,20 @@
 28395	Heine Exclusive Fishing Tools - 300 Pack
 28396	Heine Exclusive Fishing Tools - 3,000 Pack
 28397	2016 World Olympiad Hero XXX's Accessory
+28398	Today''s To-do Soulshot Box
+28399	Today's To-do Blessed Spiritshot Box
+28400	Entrance Pass: Embryo Command Post
+28401	XP Rune III 100% Pack (1-hr)
+28402	XP Rune III 100% Pack (7-day)
+28403	SP Rune 100% Pack (1-hr)
+28404	SP Rune 100% Pack (7-day)
+28405	Maphr's Rune 100% Pack (1-hr)
+28406	Maphr's Rune 100% Pack (7-day)
+28407	Eva's Rune 7-day
+28408	Eva's Rune 30-day
+28409	Eva's Rune Pack (7-day)
+28410	Eva's Rune Pack (30-day)
+28411	XP Rune II Pack (7-day)
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -34814,12 +34828,12 @@
 36969	Wind Stone (+ 150)
 36970	Dark Stone (+ 150)
 36971	Holy Stone (+ 150)
-36972	Lesser Fire Crystal - Super
-36973	Lesser Water Crystal - Super
-36974	Lesser Earth Crystal - Super
-36975	Lesser Wind Crystal - Super
-36976	Lesser Dark Crystal - Super
-36977	Lesser Holy Crystal - Super
+36972	Fire Crystal - Super
+36973	Water Crystal - Super
+36974	Earth Crystal - Super
+36975	Wind Crystal - Super
+36976	Dark Crystal - Super
+36977	Holy Crystal - Super
 36978	Scroll: Enchant Hair Accessory
 36979	Life Stone: Hair Accessory
 36980	9th Anniversary Rocket Gun Hat: Chain Fireworks

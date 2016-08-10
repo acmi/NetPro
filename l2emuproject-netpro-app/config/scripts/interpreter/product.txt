@@ -1741,3 +1741,11 @@
 1011741	Red Noblesse Appearance Stone
 1011742	White Noblesse Appearance Stone
 1011743	Race Change Ticket
+1011744	XP Rune I (Lv1-85) 200% Pack (7-day)
+1011745	XP Rune II (Lv1-95) 100% Pack (1-hour)
+1011746	XP Rune II (Lv1-95) 100% Pack (7-day)
+1011747	SP Rune 200% Pack (1-hour)
+1011748	SP Rune 200% Pack (7-day)
+1011749	Fantasy Special Cookie
+1011750	Energy of Destruction (x600)
+1011751	Giant's Energy (x120)

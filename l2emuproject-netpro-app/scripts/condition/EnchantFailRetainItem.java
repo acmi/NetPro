@@ -13,29 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package condition;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
 
 /**
- * Interprets the given byte/word/dword as a result of an enchantment attempt.
+ * Tests whether the value of a byte/word/dword is equal to 3.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class EnchantResult extends ScriptedZeroBasedIntegerIdInterpreter
+public class EnchantFailRetainItem extends ScriptedIntegerEqualityCondition
 {
-	/** Constructs this interpreter. */
-	public EnchantResult()
+	/** Constructs this condition. */
+	public EnchantFailRetainItem()
 	{
-		// @formatter:off
-		super(
-				"Successful enchant",
-				"Failed enchant: lost item, received crystals",
-				"Inappriopriate conditions",
-				"Failed enchant: retained item",
-				"Failed enchant: lost item",
-				"Failed enchant: retained enchant level"
-				);
-		// @formatter:on
+		super(3);
 	}
 }

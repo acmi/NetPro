@@ -1749,3 +1749,5 @@
 1011749	Fantasy Special Cookie
 1011750	Energy of Destruction (x600)
 1011751	Giant's Energy (x120)
+1011752	Carrot (x4000)
+1011753	Ultimate Carrot Pack (x40000)

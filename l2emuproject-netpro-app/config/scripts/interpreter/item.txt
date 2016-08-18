@@ -27880,6 +27880,26 @@
 28409	Eva's Rune Pack (7-day)
 28410	Eva's Rune Pack (30-day)
 28411	XP Rune II Pack (7-day)
+28412	+10 Shiny Elemental Shirt Pack
+28413	+10 Reflect Attack T-shirt Pack
+28414	+10 Reflect Magic T-shirt Pack
+28415	+10 Pa'agrio's Shirt Pack
+28416	+10 Sayha's Shirt Pack
+28417	+10 Eva's Shirt Pack
+28418	+10 Maphr's Shirt Pack
+28419	Shiny Elemental Shirt Pack
+28420	Reflect Attack T-shirt Pack
+28421	Reflect Magic T-shirt Pack
+28422	Shiny Elemental Shirt Special Pack
+28423	Reflect Attack T-shirt Special Pack
+28424	Reflect Magic T-shirt Special Pack
+28425	NoItemName
+28426	NoItemName
+28427	NoItemName
+28428	NoItemName
+28429	NoItemName
+28430	NoItemName
+28431	NoItemName
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -40482,6 +40502,10 @@
 47647	Vital Stone Lv. 4 Jewelry Box
 47648	Garnet Lv. 4 Jewelry Box
 47649	Tanzanite Lv. 4 Jewelry Box
+47663	NoItemName
+47664	NoItemName
+47665	NoItemName
+47666	NoItemName
 47677	Red Cat's Eye Lv. 1
 47678	Red Cat's Eye Lv. 2
 47679	Red Cat's Eye Lv. 3

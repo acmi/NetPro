@@ -351,6 +351,8 @@
 			<xs:enumeration value="pledge.AllyCrestDDS" />
 			<xs:enumeration value="pledge.Attendance" />
 			<xs:enumeration value="pledge.BonusType" />
+			<xs:enumeration value="pledge.Expert" />
+			<xs:enumeration value="pledge.ExpertType" />
 			<xs:enumeration value="pledge.LegacyPledgeAuthority" />
 			<xs:enumeration value="pledge.LegacyPledgePowerAction" />
 			<xs:enumeration value="pledge.PledgeAdvertisement" />

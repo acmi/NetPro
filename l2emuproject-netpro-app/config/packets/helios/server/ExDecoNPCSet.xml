@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_DECO_NPC_SET" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="0" />
+	<dword alias="4" />
+	<byte alias="Slot type" type="pledge.ExpertType" />
+	<dword alias="NPC" type="pledge.Expert" />
+	<dword alias="Expiry" type="TimeRemaining" />
+</packet>

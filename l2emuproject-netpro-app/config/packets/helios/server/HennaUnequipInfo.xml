@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Modifier DWORDs changed to WORDs -->
+<packet id="SM_HENNA_UNEQUIP_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Henna" type="Henna" />
+	<dword alias="Recovered item" type="Item" />
+	<qword alias="Recovered amount" />
+	<qword alias="Price of removal" />
+	<dword alias="0" />
+	<qword alias="Viewer's adena" />
+	<dword alias="Current INT" />
+	<word alias="INT without henna" /> <!-- NEW -->
+	<dword alias="Current STR" />
+	<word alias="STR without henna" /> <!-- NEW -->
+	<dword alias="Current CON" />
+	<word alias="CON without henna" /> <!-- NEW -->
+	<dword alias="Current MEN" />
+	<word alias="MEN without henna" /> <!-- NEW -->
+	<dword alias="Current DEX" />
+	<word alias="DEX without henna" /> <!-- NEW -->
+	<dword alias="Current WIT" />
+	<word alias="WIT without henna" /> <!-- NEW -->
+	<dword alias="Current LUC" />
+	<word alias="LUC without henna" /> <!-- NEW -->
+	<dword alias="Current CHA" />
+	<word alias="CHA without henna" /> <!-- NEW -->
+	<dword alias="Periodic" type="YesOrNo" />
+</packet>

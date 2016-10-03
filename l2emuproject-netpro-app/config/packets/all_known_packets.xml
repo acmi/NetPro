@@ -1903,6 +1903,12 @@
 		UNICODE "RequestTryEnSoulExtraction"
 		-->
 		<packet id="CM_REQ_TRY_EN_SOUL_EXTRACTION" name="RequestTryEnSoulExtraction" />
+		<!--
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestNewEnchantRetryToPutItems"
+		-->
+		<packet id="CM_REQ_NEW_ENCHANT_RETRY_TO_PUT_ITEMS" name="RequestNewEnchantRetryToPutItems" />
 	</client>
 	<server>
 		<!--
@@ -4655,5 +4661,23 @@
 		UNICODE "ExEnSoulExtractionResult"
 		-->
 		<packet id="SM_EX_EN_SOUL_EXTRACTION_RESULT" name="ExEnSoulExtractionResult" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExEnchantRetryToPutItemOk"
+		-->
+		<packet id="SM_EX_ENCHANT_RETRY_TO_PUT_ITEM_OK" name="ExEnchantRetryToPutItemOk" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExEnchantRetryToPutItemFail"
+		-->
+		<packet id="SM_EX_ENCHANT_RETRY_TO_PUT_ITEM_FAIL" name="ExEnchantRetryToPutItemFail" />
+		<!--
+		UNICODE "(Receive2nd)"
+		UNICODE "(Receive)"
+		UNICODE "ExBlockListForAD"
+		-->
+		<packet id="SM_EX_BLOCK_LIST_FOR_AD" name="ExBlockListForAD" />
 	</server>
 </packets>

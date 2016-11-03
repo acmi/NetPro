@@ -574,7 +574,8 @@
 			<constant>0x11</constant>
 			<constant>0xD0</constant>
 		</primary>
-		<secondary count="294">
+		<!-- secondary count="294" --> <!-- Before 09-21 -->
+		<secondary count="295">
 			<constant>0x70</constant>
 			<constant>0x71</constant>
 		</secondary>

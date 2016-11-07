@@ -25,13 +25,18 @@ import net.l2emuproject.geometry.point.PointGeometry;
  */
 public class L2ObjectInfo
 {
+	private static final long STOP_MOVE_GRACE_PERIOD = 500_000_000;
+	
 	private volatile int _targetOID;
 	
 	private volatile boolean _running;
 	private volatile int _walkSpeed, _runSpeed;
 	private volatile double _speedMultiplier;
 	private volatile ObjectLocation _location, _destination;
-	private volatile long _movementStart;
+	private volatile Long _movementStart;
+	
+	private volatile Long _stopMoveReceivalTime;
+	private volatile boolean _teleporting, _lastMovementInterruptedByTeleport;
 	
 	/** Constructs this object. */
 	public L2ObjectInfo()
@@ -41,7 +46,10 @@ public class L2ObjectInfo
 		_walkSpeed = _runSpeed = 50;
 		_speedMultiplier = 1D;
 		_location = _destination = ObjectLocation.UNKNOWN_LOCATION;
-		_movementStart = -1;
+		_movementStart = null;
+		_stopMoveReceivalTime = null;
+		_teleporting = false;
+		_lastMovementInterruptedByTeleport = false;
 	}
 	
 	/**
@@ -140,10 +148,27 @@ public class L2ObjectInfo
 	 * 
 	 * @param location 3D coordinates of the current location
 	 * @param destination 3D coordinates of the destination
+	 * @param type the particular way the new destination was set
 	 * @return {@code this}
 	 */
-	public L2ObjectInfo setDestination(ObjectLocation location, ObjectLocation destination)
+	public L2ObjectInfo setDestination(ObjectLocation location, ObjectLocation destination, DestinationType type)
 	{
+		switch (type)
+		{
+			case STOP_MOVE:
+				_stopMoveReceivalTime = System.nanoTime();
+				break;
+			case TELEPORT:
+				_teleporting = true;
+				_lastMovementInterruptedByTeleport = true;
+				break;
+			case STANDARD:
+				_stopMoveReceivalTime = null;
+				_teleporting = false;
+				_lastMovementInterruptedByTeleport = false;
+				break;
+		}
+		
 		updateLocation(location);
 		_destination = location.equals(destination) ? ObjectLocation.UNKNOWN_LOCATION : destination;
 		
@@ -195,7 +220,7 @@ public class L2ObjectInfo
 	 */
 	public ObjectLocation getCurrentLocation()
 	{
-		if (_destination == ObjectLocation.UNKNOWN_LOCATION)
+		if (_destination == ObjectLocation.UNKNOWN_LOCATION || _movementStart == null)
 			return _location;
 		
 		if (isAtDestination())
@@ -213,11 +238,25 @@ public class L2ObjectInfo
 	 */
 	public boolean isMoving()
 	{
-		return _destination != ObjectLocation.UNKNOWN_LOCATION && !isAtDestination();
+		return _teleporting || (_stopMoveReceivalTime != null && (System.nanoTime() - _stopMoveReceivalTime) < STOP_MOVE_GRACE_PERIOD)
+				|| (_destination != ObjectLocation.UNKNOWN_LOCATION && !isAtDestination());
+	}
+	
+	/**
+	 * Returns whether the last movement was abruptly terminated by setting an entirely different position.
+	 * 
+	 * @return whether last movement was terminated by a teleportation
+	 */
+	public boolean isLastMoveInterrupted()
+	{
+		return _lastMovementInterruptedByTeleport;
 	}
 	
 	private boolean isAtDestination()
 	{
+		if (_movementStart == null)
+			return false;
+		
 		final double distanceLeftToTravel = PointGeometry.getRawPlanarDistance(_location, _destination);
 		final double distanceTraveled = getMovementSpeed() * (System.nanoTime() - _movementStart) / 1_000_000_000L;
 		if (distanceTraveled >= distanceLeftToTravel)
@@ -234,5 +273,20 @@ public class L2ObjectInfo
 	public double getMovementSpeed()
 	{
 		return _speedMultiplier * (_running ? _runSpeed : _walkSpeed);
+	}
+	
+	/**
+	 * An enumeration of different methods that may set the object's movement destination.
+	 * 
+	 * @author _dev_
+	 */
+	public enum DestinationType
+	{
+		/** Destination is essentially retained, subject to minor alterations due to geo layers. */
+		STANDARD,
+		/** Destination is manually set to current position and movement is terminated. */
+		STOP_MOVE,
+		/** Destination is manually set to an entirely different position and movement is terminated. */
+		TELEPORT;
 	}
 }

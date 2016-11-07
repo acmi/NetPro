@@ -41,7 +41,6 @@ import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
-import net.l2emuproject.proxy.state.entity.ObjectLocation;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.ImmutableSortedArraySet;
 
@@ -71,6 +70,10 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	private static final String USER_Z = "LUA_CLIENT_Z";
 	@ScriptFieldAlias
 	private static final String USER_HEADING = "LUA_CLIENT_HEADING";
+	@ScriptFieldAlias
+	private static final String USER_WIDTH = "LUA_USER_W";
+	@ScriptFieldAlias
+	private static final String USER_HEIGHT = "LUA_USER_H";
 	
 	@ScriptFieldAlias
 	private static final String USER_LEVEL = "LUA_USER_LEVEL";
@@ -149,6 +152,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	@Override
 	public void handleClientPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
+		/*
 		final int x = (int)buf.readFirstInteger(USER_X);
 		final int y = (int)buf.readFirstInteger(USER_Y);
 		final int z = (int)buf.readFirstInteger(USER_Z);
@@ -160,6 +164,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		
 		final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(ui._objectID, getEntityContext(server));
 		oi.getExtraInfo().updateLocation(new ObjectLocation(x, y, z, yaw));
+		*/
 	}
 	
 	@Override
@@ -184,6 +189,12 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			final EnumeratedPayloadField sp = buf.getSingleFieldIndex(USER_SP);
 			if (sp != null)
 				ui._sp = buf.readInteger(sp);
+			
+			final EnumeratedPayloadField width = buf.getSingleFieldIndex(USER_WIDTH), height = buf.getSingleFieldIndex(USER_HEIGHT);
+			if (width != null)
+				ui._width = buf.readDecimal(width);
+			if (height != null)
+				ui._height = buf.readDecimal(height);
 			
 			return;
 		}
@@ -324,6 +335,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		final Set<Integer> _servitorOIDs;
 		volatile int _level;
 		volatile long _sp;
+		volatile double _width, _height;
 		volatile LearnableSkills _learnableSkills;
 		/** Non-disabled active & passive skills */
 		volatile Set<Integer> _availableSkills;
@@ -337,6 +349,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			_servitorOIDs = new CopyOnWriteArraySet<>();
 			_level = 1;
 			_sp = 0;
+			_width = _height = 8;
 			_learnableSkills = new LearnableSkills(Collections.emptyMap());
 			_availableSkills = Collections.emptySet();
 			_activeEffects = new EffectInfo(Collections.emptyList(), Collections.emptySet(), Collections.emptyMap());
@@ -360,6 +373,16 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		public int getTargetOID()
 		{
 			return _targetOID;
+		}
+		
+		public double getWidth()
+		{
+			return _width;
+		}
+		
+		public double getHeight()
+		{
+			return _height;
 		}
 		
 		/**

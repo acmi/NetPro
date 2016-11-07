@@ -135,8 +135,12 @@
 	</branch>
 	<branch id="exUI_2" condition="bitmask.Bit2" description="Object boundaries">
 		<word alias="Block size (18)" />
-		<double alias="Collision radius (width)" />
-		<double alias="Collision height (height)" />
+		<double alias="Collision radius (width)">
+			<scriptAlias id="LUA_USER_W" />
+		</double>
+		<double alias="Collision height (height)">
+			<scriptAlias id="LUA_USER_H" />
+		</double>
 	</branch>
 	<branch id="exUI_2" condition="bitmask.Bit1" description="Stats screen/elemental offense">
 		<word alias="Block size (5)" />

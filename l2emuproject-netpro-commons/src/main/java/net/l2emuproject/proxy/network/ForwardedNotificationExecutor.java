@@ -15,10 +15,22 @@
  */
 package net.l2emuproject.proxy.network;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.IdentityHashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
+import net.l2emuproject.proxy.network.Proxy.AsyncDisconnectionNotifier;
 import net.l2emuproject.proxy.network.listener.PacketManipulator;
 import net.l2emuproject.util.concurrent.RunnableStatsManager;
 import net.l2emuproject.util.logging.L2Logger;
@@ -29,28 +41,145 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor
+public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor implements SessionStateManagingExecutor
 {
 	private static final L2Logger LOG = L2Logger.getLogger(ForwardedNotificationExecutor.class);
-	private static final AtomicInteger THREAD_COUNTER = new AtomicInteger();
 	
 	private static final int SINGLE_SEQUENTIAL_LISTENER_WARNING_THRESHOLD = 5;
 	
+	private final Map<Proxy, Map<Object, Object>> _sessionStateMap;
+	
+	private Thread _activeThread;
 	// perfectly possible due to 1 thread
 	private long _start;
 	
-	/** Creates a single-threaded executor for packet notifications. */
-	ForwardedNotificationExecutor()
+	/**
+	 * Creates a single-threaded executor for packet notifications.
+	 * 
+	 * @param id an individual identifier
+	 */
+	ForwardedNotificationExecutor(int id)
 	{
-		super(1, r ->
-		{
-			final Thread t = new Thread(r, "PacketNotifier-" + THREAD_COUNTER.getAndIncrement());
-			t.setPriority(Thread.NORM_PRIORITY - 1);
-			return t;
-		});
+		super(1);
 		
+		setThreadFactory(r -> {
+			_activeThread = new Thread(r, "AsyncPacketHandlerHub-" + id);
+			_activeThread.setPriority(Thread.NORM_PRIORITY - 1);
+			return _activeThread;
+		});
 		setMaximumPoolSize(1);
 		setKeepAliveTime(5, TimeUnit.MINUTES);
+		
+		_sessionStateMap = new IdentityHashMap<>();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T> T getSessionStateFor(Proxy client, Object key)
+	{
+		validateCall(client, false);
+		return (T)_sessionStateMap.getOrDefault(client, Collections.emptyMap()).get(key);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public <K, V> V computeSessionStateIfAbsentFor(Proxy client, K key, Function<K, V> mappingFunction)
+	{
+		validateCall(client, true);
+		return (V)_sessionStateMap.computeIfAbsent(client, k -> new HashMap<>()).computeIfAbsent(key, (Function<? super Object, ? extends Object>)mappingFunction);
+	}
+	
+	@Override
+	public Object setSessionStateFor(Proxy client, Object key, Object value)
+	{
+		validateCall(client, true);
+		return _sessionStateMap.computeIfAbsent(client, k -> new HashMap<>()).put(key, value);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T> T removeSessionStateFor(Proxy client, Object key)
+	{
+		validateCall(client, true);
+		return (T)_sessionStateMap.getOrDefault(client, Collections.emptyMap()).remove(key);
+	}
+	
+	@Override
+	public void discardSessionStateByKey(Predicate<Object> keyMatcher)
+	{
+		final SortedSet<String> discarded = new TreeSet<>(), cancelled = new TreeSet<>();
+		for (final Map<Object, Object> stateMap : _sessionStateMap.values())
+		{
+			final Iterator<Entry<Object, Object>> it = stateMap.entrySet().iterator();
+			while (it.hasNext())
+			{
+				final Entry<Object, Object> e = it.next();
+				if (keyMatcher.test(e.getKey()))
+				{
+					final Object value = e.getValue();
+					if (value instanceof Future<?>)
+					{
+						((Future<?>)value).cancel(true);
+						cancelled.add(String.valueOf(e.getKey()));
+					}
+					else
+						discarded.add(String.valueOf(e.getKey()));
+					it.remove();
+				}
+			}
+		}
+		LOG.info("\r\nDiscarded: " + discarded + "\r\nCancelled: " + cancelled);
+	}
+	
+	@Override
+	public ScheduledFuture<?> scheduleSessionBound(Proxy client, Object key, Runnable r, long delay, TimeUnit unit)
+	{
+		final Object oldValue = removeSessionStateFor(client, key);
+		if (oldValue instanceof Future<?>)
+			((Future<?>)oldValue).cancel(true);
+		final ScheduledFuture<?> newValue = schedule(r, delay, unit);
+		setSessionStateFor(client, key, newValue);
+		return newValue;
+	}
+	
+	@Override
+	public ScheduledFuture<?> scheduleSessionBoundWithFixedDelay(Proxy client, Object key, Runnable r, long initialDelay, long delay, TimeUnit unit)
+	{
+		final Object oldValue = removeSessionStateFor(client, key);
+		if (oldValue instanceof Future<?>)
+			((Future<?>)oldValue).cancel(true);
+		final ScheduledFuture<?> newValue = scheduleWithFixedDelay(r, initialDelay, delay, unit);
+		setSessionStateFor(client, key, newValue);
+		return newValue;
+	}
+	
+	private void validateCall(Proxy client, boolean denyOpIfDisconnected)
+	{
+		if (client != client.getClient())
+			throw new IllegalArgumentException("Session state must be assigned to client");
+		if (Thread.currentThread() != _activeThread)
+			throw new IllegalMonitorStateException("Thread unsafe call");
+		if (denyOpIfDisconnected && (client.isDced() || client.isFailed()))
+			throw new IllegalStateException("State mutation while discard pending");
+	}
+	
+	private void discardSessionState(Proxy client)
+	{
+		final Map<Object, Object> sessionState = _sessionStateMap.remove(client);
+		if (sessionState == null)
+			return;
+		
+		int total = 0;
+		for (final Object value : sessionState.values())
+		{
+			if (value instanceof Future<?>)
+			{
+				((Future<?>)value).cancel(true);
+				++total;
+			}
+		}
+		if (total > 0)
+			LOG.info("[DC] Terminated " + total + " pending script-related tasks.");
 	}
 	
 	@Override
@@ -79,6 +208,8 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor
 			final ListenerForwardNotifier fn = (ListenerForwardNotifier)r;
 			RunnableStatsManager.handleStats(fn.getListener().getClass(), "onPacket(Proxy, Proxy, ByteBuffer, long)", end - _start, SINGLE_SEQUENTIAL_LISTENER_WARNING_THRESHOLD);
 		}
+		else if (r instanceof AsyncDisconnectionNotifier)
+			discardSessionState(((AsyncDisconnectionNotifier)r).getClient());
 	}
 	
 	@Override

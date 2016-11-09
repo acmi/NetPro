@@ -33,7 +33,7 @@ public interface SessionStateManagingExecutor
 	 * @param key State identifier
 	 * @return state value assigned to the given identifier within a session
 	 */
-	public <T> T getSessionStateFor(Proxy client, Object key);
+	<T> T getSessionStateFor(Proxy client, Object key);
 	
 	/**
 	 * Returns a session-bound state value, setting a new value if none is present..
@@ -43,7 +43,7 @@ public interface SessionStateManagingExecutor
 	 * @param mappingFunction Default value function
 	 * @return previous state value assigned to the given identifier (possibly {@code null})
 	 */
-	public <K, V> V computeSessionStateIfAbsentFor(Proxy client, K key, Function<K, V> mappingFunction);
+	<K, V> V computeSessionStateIfAbsentFor(Proxy client, K key, Function<K, V> mappingFunction);
 	
 	/**
 	 * Sets a session-bound state value.
@@ -53,7 +53,7 @@ public interface SessionStateManagingExecutor
 	 * @param value State value
 	 * @return previous state value assigned to the given identifier (possibly {@code null})
 	 */
-	public Object setSessionStateFor(Proxy client, Object key, Object value);
+	Object setSessionStateFor(Proxy client, Object key, Object value);
 	
 	/**
 	 * Removes a session-bound state value.
@@ -62,14 +62,24 @@ public interface SessionStateManagingExecutor
 	 * @param key State identifier
 	 * @return state value that was assigned to the given identifier (possibly {@code null})
 	 */
-	public <T> T removeSessionStateFor(Proxy client, Object key);
+	<T> T removeSessionStateFor(Proxy client, Object key);
+	
+	/**
+	 * Removes a session-bound state value only if it matches the given value.
+	 * 
+	 * @param client Session key
+	 * @param key State identifier
+	 * @param expectedValue Value to remove
+	 * @return {@code expectedValue}, if it was removed, otherwise {@code null}
+	 */
+	<T> T removeSessionStateFor(Proxy client, Object key, T expectedValue);
 	
 	/**
 	 * Discards all keys that match the predicate {@code keyMatcher}. If any key maps to a {@link Future} object, the associated task will be interrupted.
 	 * 
 	 * @param keyMatcher State key matcher
 	 */
-	public void discardSessionStateByKey(Predicate<Object> keyMatcher);
+	void discardSessionStateByKey(Predicate<Object> keyMatcher);
 	
 	/**
 	 * Schedules a task to be executed after (at least) the given delay. If the session is terminated before or during execution, it will be interrupted and/or terminated.
@@ -81,7 +91,7 @@ public interface SessionStateManagingExecutor
 	 * @param unit Delay unit
 	 * @return a scheduled task
 	 */
-	public ScheduledFuture<?> scheduleSessionBound(Proxy client, Object key, Runnable r, long delay, TimeUnit unit);
+	ScheduledFuture<?> scheduleSessionBound(Proxy client, Object key, Runnable r, long delay, TimeUnit unit);
 	
 	/**
 	 * Schedules a task to be executed after (at least) the given delay. If the session is terminated before or during execution, it will be interrupted and/or terminated.
@@ -94,5 +104,5 @@ public interface SessionStateManagingExecutor
 	 * @param unit Delay unit
 	 * @return a scheduled task
 	 */
-	public ScheduledFuture<?> scheduleSessionBoundWithFixedDelay(Proxy client, Object key, Runnable r, long initialDelay, long delay, TimeUnit unit);
+	ScheduledFuture<?> scheduleSessionBoundWithFixedDelay(Proxy client, Object key, Runnable r, long initialDelay, long delay, TimeUnit unit);
 }

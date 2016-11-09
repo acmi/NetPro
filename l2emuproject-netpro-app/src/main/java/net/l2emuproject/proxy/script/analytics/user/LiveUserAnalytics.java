@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.l2emuproject.proxy.script.analytics;
+package net.l2emuproject.proxy.script.analytics.user;
 
 import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TARGET;
 
@@ -25,7 +25,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.TimeUnit;
 
@@ -35,7 +34,8 @@ import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
-import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics.UserInfo.EffectInfo;
+import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics.UserInfo.EffectInfo;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
@@ -111,11 +111,10 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	@ScriptFieldAlias
 	private static final String LEARN_SKILL_REQ_SKILLS = "LUA_LEARNABLE_SKILL_REQ_SKILL_COUNT";
 	
-	private final Map<L2GameClient, UserInfo> _liveUsers;
+	private static final String USER_INFO_KEY = "user_info";
 	
 	LiveUserAnalytics()
 	{
-		_liveUsers = new ConcurrentHashMap<>();
 	}
 	
 	/**
@@ -128,7 +127,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	 */
 	public UserInfo getUserInfo(L2GameClient client)
 	{
-		return _liveUsers.get(client);
+		return get(client, USER_INFO_KEY);
 	}
 	
 	@Override
@@ -144,27 +143,9 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	}
 	
 	@Override
-	public void handleDisconnection(L2GameClient client)
-	{
-		_liveUsers.remove(client);
-	}
-	
-	@Override
 	public void handleClientPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
-		/*
-		final int x = (int)buf.readFirstInteger(USER_X);
-		final int y = (int)buf.readFirstInteger(USER_Y);
-		final int z = (int)buf.readFirstInteger(USER_Z);
-		final int yaw = (int)buf.readFirstInteger(USER_HEADING);
-		
-		final UserInfo ui = _liveUsers.get(client);
-		if (ui == null)
-			return;
-		
-		final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(ui._objectID, getEntityContext(server));
-		oi.getExtraInfo().updateLocation(new ObjectLocation(x, y, z, yaw));
-		*/
+		// nothing expected from client
 	}
 	
 	@Override
@@ -178,9 +159,21 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 				break user;
 			
 			final int objectID = buf.readInteger32(userOID);
-			UserInfo ui = _liveUsers.get(client);
-			if (ui == null || ui._objectID != objectID)
-				_liveUsers.put(client, ui = new UserInfo(objectID, getEntityContext(server)));
+			UserInfo ui;
+			try
+			{
+				ui = computeIfAbsent(client, USER_INFO_KEY, k -> new UserInfo(objectID, getEntityContext(server)));
+				if (objectID != ui.getUserOID())
+				{
+					ui = new UserInfo(objectID, getEntityContext(server));
+					set(client, USER_INFO_KEY, ui);
+				}
+			}
+			catch (final IllegalStateException e)
+			{
+				// client already disconnected in the meantime
+				return;
+			}
 			
 			final EnumeratedPayloadField level = buf.getSingleFieldIndex(USER_LEVEL);
 			if (level != null)
@@ -199,7 +192,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			return;
 		}
 		
-		final UserInfo ui = _liveUsers.get(client);
+		final UserInfo ui = get(client, USER_INFO_KEY);
 		if (ui == null)
 			return;
 		

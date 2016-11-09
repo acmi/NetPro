@@ -29,9 +29,9 @@ import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
-import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics;
-import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics.UserInfo;
 import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics.UserInfo;
 
 import javolution.util.FastMap;
 

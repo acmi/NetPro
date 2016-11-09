@@ -23,6 +23,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.SortedSet;
 import java.util.TreeSet;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -101,7 +103,16 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	public <T> T removeSessionStateFor(Proxy client, Object key)
 	{
 		validateCall(client, true);
-		return (T)_sessionStateMap.getOrDefault(client, Collections.emptyMap()).remove(key);
+		final Map<Object, Object> stateMap = _sessionStateMap.get(client);
+		return stateMap != null ? (T)stateMap.remove(key) : null;
+	}
+	
+	@Override
+	public <T> T removeSessionStateFor(Proxy client, Object key, T expectedValue)
+	{
+		validateCall(client, true);
+		final Map<Object, Object> stateMap = _sessionStateMap.get(client);
+		return stateMap != null ? (stateMap.remove(key, expectedValue) ? expectedValue : null) : null;
 	}
 	
 	@Override
@@ -114,18 +125,28 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 			while (it.hasNext())
 			{
 				final Entry<Object, Object> e = it.next();
-				if (keyMatcher.test(e.getKey()))
+				if (!keyMatcher.test(e.getKey()))
+					continue;
+				
+				final String reportedKey = String.valueOf(e.getKey());
+				final Object value = e.getValue();
+				
+				if (!(value instanceof Future))
 				{
-					final Object value = e.getValue();
-					if (value instanceof Future<?>)
-					{
-						((Future<?>)value).cancel(true);
-						cancelled.add(String.valueOf(e.getKey()));
-					}
-					else
-						discarded.add(String.valueOf(e.getKey()));
+					discarded.add(reportedKey);
 					it.remove();
+					continue;
 				}
+				
+				final Future<?> task = (Future<?>)value;
+				if (!task.isDone())
+				{
+					task.cancel(true);
+					cancelled.add(reportedKey);
+				}
+				else
+					discarded.add(reportedKey);
+				it.remove();
 			}
 		}
 		LOG.info("\r\nDiscarded: " + discarded + "\r\nCancelled: " + cancelled);
@@ -137,8 +158,26 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 		final Object oldValue = removeSessionStateFor(client, key);
 		if (oldValue instanceof Future<?>)
 			((Future<?>)oldValue).cancel(true);
-		final ScheduledFuture<?> newValue = schedule(r, delay, unit);
+		final BlockingQueue<ScheduledFuture<?>> expectedValue = new ArrayBlockingQueue<>(1);
+		final ScheduledFuture<?> newValue = schedule(() -> {
+			try
+			{
+				r.run();
+			}
+			finally
+			{
+				try
+				{
+					removeSessionStateFor(client, key, expectedValue.take());
+				}
+				catch (final InterruptedException e)
+				{
+					// application is shutting down, so whatever, really
+				}
+			}
+		}, delay, unit);
 		setSessionStateFor(client, key, newValue);
+		expectedValue.add(newValue);
 		return newValue;
 	}
 	

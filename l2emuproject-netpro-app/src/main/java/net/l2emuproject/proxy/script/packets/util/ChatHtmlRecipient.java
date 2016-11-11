@@ -15,19 +15,19 @@
  */
 package net.l2emuproject.proxy.script.packets.util;
 
-import eu.revengineer.simplejse.HasScriptDependencies;
-
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
 
 /**
  * @author _dev_
  */
-@HasScriptDependencies("util.packet.NpcHtmlRecipient")
 public interface ChatHtmlRecipient extends NpcHtmlRecipient
 {
 	/** Identifies a field that contains quest HTML shown to client. */
 	@ScriptFieldAlias
 	String QUEST_HTML_CONTENT = "quest_html_content";
+	/** Identifies a field that contains quest ID when a quest HTML is shown to client. */
+	@ScriptFieldAlias
+	String QUEST_HTML_QUEST_ID = "quest_html_quest";
 	/** Identifies a field that contains tutorial HTML (or a file name) shown to client. */
 	@ScriptFieldAlias
 	String TUTORIAL_HTML_CONTENT = "tutorial_html_content";

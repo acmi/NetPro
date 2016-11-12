@@ -399,7 +399,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 					sa1cnts = buf.getFieldIndices(INVENTORY_ITEM_SA1_CNT), sa1s = buf.getFieldIndices(INVENTORY_ITEM_SA1),
 					sa2cnts = buf.getFieldIndices(INVENTORY_ITEM_SA2_CNT), sa2s = buf.getFieldIndices(INVENTORY_ITEM_SA2);
 			
-			int enchantIndex = 0, augIndex = -1, encEffectIndex = -1, appIndex = -1, saCntIndex = -1, sa1Index = -1, sa2Index = -1;
+			int enchantIndex = 0, augIndex = -1, encEffectIndex = -1, appIndex = 0, saCntIndex = -1, sa1Index = -1, sa2Index = -1;
 			final List<InventoryItem> inventoryItems = new ArrayList<>(exts.size());
 			for (int i = 0; i < exts.size(); ++i)
 			{
@@ -426,7 +426,19 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
 						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
 						: ItemEnchantEffects.NO_EFFECTS;
-				final int appearance = ex.contains(ItemExtension.APPEARANCE) ? buf.readInteger32(apps.get(++appIndex)) : 0;
+				final int appearance;
+				if (ex.contains(ItemExtension.APPEARANCE) && appIndex < apps.size())
+				{
+					int nextItemOffsetFromEnd = 0;
+					if (i + 1 < exts.size())
+						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
+					if (buf.seekField(apps.get(appIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
+						appearance = buf.readInteger32(apps.get(appIndex++));
+					else
+						appearance = 0;
+				}
+				else
+					appearance = 0;
 				final ItemSpecialAbilities sa;
 				if (ex.contains(ItemExtension.SPECIAL_ABILITIES))
 				{
@@ -484,7 +496,19 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
 						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
 						: ItemEnchantEffects.NO_EFFECTS;
-				final int appearance = ex.contains(ItemExtension.APPEARANCE) ? buf.readInteger32(apps.get(++appIndex)) : 0;
+				final int appearance;
+				if (ex.contains(ItemExtension.APPEARANCE) && appIndex < apps.size())
+				{
+					int nextItemOffsetFromEnd = 0;
+					if (i + 1 < exts.size())
+						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
+					if (buf.seekField(apps.get(appIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
+						appearance = buf.readInteger32(apps.get(appIndex++));
+					else
+						appearance = 0;
+				}
+				else
+					appearance = 0;
 				final ItemSpecialAbilities sa;
 				if (ex.contains(ItemExtension.SPECIAL_ABILITIES))
 				{

@@ -68,41 +68,81 @@ public final class InventoryItem
 		_specialAbilities = specialAbilities;
 	}
 	
+	/**
+	 * Returns the runtime object ID assigned to this item.
+	 * 
+	 * @return object ID
+	 */
 	public int getObjectID()
 	{
 		return _objectID;
 	}
 	
+	/**
+	 * Returns the template ID for this item.
+	 * 
+	 * @return template ID
+	 */
 	public int getTemplateID()
 	{
 		return _templateID;
 	}
 	
+	/**
+	 * Returns the amount of items in this stack.
+	 * 
+	 * @return item amount
+	 */
 	public long getAmount()
 	{
 		return _amount;
 	}
 	
+	/**
+	 * Returns the enchant level / pet level for this item.
+	 * 
+	 * @return enchant level
+	 */
 	public int getEnchantLevel()
 	{
 		return _enchantLevel;
 	}
 	
+	/**
+	 * Returns the variation effects for this item's augmentation.
+	 * 
+	 * @return augmentation
+	 */
 	public ItemAugmentation getAugmentation()
 	{
 		return _augmentation;
 	}
 	
+	/**
+	 * Returns the variation effects for this item's enchant level.
+	 * 
+	 * @return enchant effects
+	 */
 	public ItemEnchantEffects getEnchantEffect()
 	{
 		return _enchantEffect;
 	}
 	
+	/**
+	 * Returns the appearance of this item.
+	 * 
+	 * @return appearance
+	 */
 	public int getAppearance()
 	{
 		return _appearance;
 	}
 	
+	/**
+	 * Returns the special abilities on this item.
+	 * 
+	 * @return special abilities
+	 */
 	public ItemSpecialAbilities getSpecialAbilities()
 	{
 		return _specialAbilities;

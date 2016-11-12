@@ -46,6 +46,12 @@ public interface ItemSpecialAbilities
 	 */
 	int[] getSpecials();
 	
+	/**
+	 * Returns complete descriptions of all special abilties assigned to the given item.
+	 * 
+	 * @param specialAbilities item special abilities
+	 * @return descriptions of all SAs, in order
+	 */
 	static List<String> toString(ItemSpecialAbilities specialAbilities)
 	{
 		final List<String> result = new ArrayList<>(specialAbilities.getPrimaries().length + specialAbilities.getSpecials().length);

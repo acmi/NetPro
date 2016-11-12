@@ -16,6 +16,7 @@
 package net.l2emuproject.proxy.script.analytics.user.impl;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
@@ -25,46 +26,85 @@ import java.util.stream.Stream;
  * 
  * @author _dev_
  */
-public final class UserInventory
+public final class UserInventory implements Iterable<InventoryItem>
 {
 	private volatile Map<Integer, InventoryItem> _items;
 	
+	/** Creates an empty inventory which must be pre-initialized before use. */
 	public UserInventory()
 	{
 		_items = Collections.emptyMap();
 	}
 	
+	/**
+	 * Adds an item to this inventory.
+	 * 
+	 * @param item an item
+	 */
 	public void add(InventoryItem item)
 	{
 		_items.put(item.getObjectID(), item);
 	}
 	
+	/**
+	 * Removes an item from this inventory.
+	 * 
+	 * @param item an item
+	 */
 	public void remove(InventoryItem item)
 	{
 		_items.remove(item.getObjectID());
 	}
 	
+	/**
+	 * Replaces an item in this inventory.
+	 * 
+	 * @param item an item
+	 */
 	public void update(InventoryItem item)
 	{
 		add(item);
 	}
 	
+	/**
+	 * Retrieves an item from this inventory based on it's runtime (object) ID.
+	 * 
+	 * @param objectID runtime ID
+	 * @return a single item [stack]
+	 */
 	public InventoryItem get(int objectID)
 	{
 		return _items.get(objectID);
 	}
 	
+	/**
+	 * Retrieves all items/item stacks that share the given template ID.
+	 * 
+	 * @param templateID template ID
+	 * @return items based on the specified template
+	 */
 	public Stream<InventoryItem> getByTemplate(int templateID)
 	{
 		return _items.values().stream().filter(item -> item.getTemplateID() == templateID);
 	}
 	
+	/**
+	 * Overrides inventory contents with the given items.
+	 * 
+	 * @param inventoryItems items to be newly contained
+	 */
 	public void setInventory(Iterable<InventoryItem> inventoryItems)
 	{
 		final Map<Integer, InventoryItem> items = new ConcurrentHashMap<>();
 		for (final InventoryItem item : inventoryItems)
 			items.put(item.getObjectID(), item);
 		_items = items;
+	}
+	
+	@Override
+	public Iterator<InventoryItem> iterator()
+	{
+		return _items.values().iterator();
 	}
 	
 	@Override

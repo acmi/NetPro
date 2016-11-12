@@ -149,7 +149,8 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 				it.remove();
 			}
 		}
-		LOG.info("\r\nDiscarded: " + discarded + "\r\nCancelled: " + cancelled);
+		if (!discarded.isEmpty() || !cancelled.isEmpty())
+			LOG.info("\r\nDiscarded: " + discarded + "\r\nCancelled: " + cancelled);
 	}
 	
 	@Override

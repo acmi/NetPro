@@ -26,6 +26,13 @@ public final class ItemEnchantEffectsImpl implements ItemEnchantEffects
 {
 	private final int _effect1, _effect2, _effect3;
 	
+	/**
+	 * Wraps up to three variation effects related to item's enchant level.
+	 * 
+	 * @param effect1 first effect
+	 * @param effect2 second effect
+	 * @param effect3 third effect
+	 */
 	public ItemEnchantEffectsImpl(int effect1, int effect2, int effect3)
 	{
 		_effect1 = effect1;

@@ -22,14 +22,32 @@ import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterprete
 import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 
 /**
+ * An interface representing an item augmentation.
+ * 
  * @author _dev_
  */
 public interface ItemAugmentation
 {
+	/**
+	 * Returns the ID of the first variation effect.
+	 * 
+	 * @return first effect
+	 */
 	int getEffect1();
 	
+	/**
+	 * Returns the ID of the second variation effect.
+	 * 
+	 * @return second effect
+	 */
 	int getEffect2();
 	
+	/**
+	 * Returns the complete descriptions of both variation effects assigned to the given augmentation.
+	 * 
+	 * @param augmentation an item augmentation
+	 * @return variation effect descriptions
+	 */
 	static Pair<String, String> toString(ItemAugmentation augmentation)
 	{
 		try
@@ -43,11 +61,18 @@ public interface ItemAugmentation
 		}
 	}
 	
+	/**
+	 * Tests whether the given augmentation actually contains any variation effects.
+	 * 
+	 * @param augmentation an item augmentation
+	 * @return {@code true} if there is at least one variation effect, {@code false} otherwise
+	 */
 	static boolean isAugmented(ItemAugmentation augmentation)
 	{
 		return augmentation.getEffect1() != NO_AUGMENTATION.getEffect1() || augmentation.getEffect2() != NO_AUGMENTATION.getEffect2();
 	}
 	
+	/** A pre-allocated wrapper for an effectless augmentation. */
 	ItemAugmentation NO_AUGMENTATION = new ItemAugmentation(){
 		@Override
 		public int getEffect1()

@@ -26,6 +26,12 @@ public final class ItemSpecialAbilitiesImpl implements ItemSpecialAbilities
 {
 	private final int[] _primaries, _specials;
 	
+	/**
+	 * Wraps item's soecial abilities.
+	 * 
+	 * @param primaries set of general SAs
+	 * @param specials set of special SAs
+	 */
 	public ItemSpecialAbilitiesImpl(int[] primaries, int[] specials)
 	{
 		_primaries = primaries;

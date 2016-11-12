@@ -60,14 +60,14 @@ public interface ItemSpecialAbilities
 			final IntegerInterpreter mapper = MetaclassRegistry.getInstance().getInterpreter("item.SoulCrystal", IntegerInterpreter.class);
 			for (final int specialAbility : specialAbilities.getPrimaries())
 				result.add(String.valueOf(mapper.getInterpretation(specialAbility)));
-			for (final int specialAbility : specialAbilities.getPrimaries())
+			for (final int specialAbility : specialAbilities.getSpecials())
 				result.add(String.valueOf(mapper.getInterpretation(specialAbility)));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
 			for (final int specialAbility : specialAbilities.getPrimaries())
 				result.add("{" + specialAbility + "}");
-			for (final int specialAbility : specialAbilities.getPrimaries())
+			for (final int specialAbility : specialAbilities.getSpecials())
 				result.add("{" + specialAbility + "}");
 		}
 		return result;
@@ -84,7 +84,7 @@ public interface ItemSpecialAbilities
 		final List<String> result = new ArrayList<>(specialAbilities.getPrimaries().length + specialAbilities.getSpecials().length);
 		for (final int specialAbility : specialAbilities.getPrimaries())
 			result.add(toTitleString(specialAbility));
-		for (final int specialAbility : specialAbilities.getPrimaries())
+		for (final int specialAbility : specialAbilities.getSpecials())
 			result.add(toTitleString(specialAbility));
 		return result;
 	}

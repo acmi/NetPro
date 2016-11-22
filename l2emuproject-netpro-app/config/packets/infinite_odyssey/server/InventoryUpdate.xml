@@ -59,10 +59,10 @@
 		<!-- NEW -->
 		<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
 			<dword alias="Augmentation effect (1)" type="Augmentation">
-				<scriptAlias id="LUA_IL_AUG1"/>
+				<scriptAlias id="LUA_IU_AUG1"/>
 			</dword>
 			<dword alias="Augmentation effect (2)" type="Augmentation">
-				<scriptAlias id="LUA_IL_AUG2"/>
+				<scriptAlias id="LUA_IU_AUG2"/>
 			</dword>
 		</branch>
 		<branch id="extra_info" condition="bitmask.Bit1"> <!-- elemental info -->
@@ -78,19 +78,19 @@
 		<!-- NEW -->
 		<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
 			<dword alias="Enchant effect (1)" type="Augmentation">
-				<scriptAlias id="LUA_IL_ENC1"/>
+				<scriptAlias id="LUA_IU_ENC1"/>
 			</dword>
 			<dword alias="Enchant effect (2)" type="Augmentation">
-				<scriptAlias id="LUA_IL_ENC2"/>
+				<scriptAlias id="LUA_IU_ENC2"/>
 			</dword>
 			<dword alias="Enchant effect (3)" type="Augmentation">
-				<scriptAlias id="LUA_IL_ENC3"/>
+				<scriptAlias id="LUA_IU_ENC3"/>
 			</dword>
 		</branch>
 		<branch id="extra_info" condition="bitmask.Bit3"> <!-- appearance info -->
 			<branch id="is_ticket" condition="GenericItem">
 				<dword alias="Visible item" type="Item">
-					<scriptAlias id="LUA_IL_APPEARANCE"/>
+					<scriptAlias id="LUA_IU_APPEARANCE"/>
 				</dword>
 			</branch>
 			<branch id="is_ticket" condition="LotteryTicket">
@@ -104,19 +104,19 @@
 		<!-- NEW (Underground) -->
 		<branch id="extra_info" condition="bitmask.Bit4"> <!-- soul crystal (SA) info -->
 			<byte alias="Primary special abilities" id="sa1_cnt">
-				<scriptAlias id="LUA_IL_SA1_COUNT" />
+				<scriptAlias id="LUA_IU_SA1_COUNT" />
 			</byte>
 			<loop id="sa1_cnt">
 				<dword alias="SA effect" type="item.SoulCrystal">
-					<scriptAlias id="LUA_IL_SA1" />
+					<scriptAlias id="LUA_IU_SA1" />
 				</dword>
 			</loop>
 			<byte alias="Secondary special abilities" id="sa2_cnt">
-				<scriptAlias id="LUA_IL_SA2_COUNT" />
+				<scriptAlias id="LUA_IU_SA2_COUNT" />
 			</byte>
 			<loop id="sa2_cnt">
 				<dword alias="SA effect" type="item.SoulCrystal">
-					<scriptAlias id="LUA_IL_SA2" />
+					<scriptAlias id="LUA_IU_SA2" />
 				</dword>
 			</loop>
 		</branch>

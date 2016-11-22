@@ -30,10 +30,10 @@ public final class UserInventory implements Iterable<InventoryItem>
 {
 	private volatile Map<Integer, InventoryItem> _items;
 	
-	/** Creates an empty inventory which must be pre-initialized before use. */
+	/** Creates an empty inventory. */
 	public UserInventory()
 	{
-		_items = Collections.emptyMap();
+		setInventory(Collections.emptyList());
 	}
 	
 	/**

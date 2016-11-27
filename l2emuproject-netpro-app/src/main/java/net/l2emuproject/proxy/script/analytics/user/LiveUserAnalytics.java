@@ -470,7 +470,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 					sa1cnts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA1_CNT), sa1s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA1),
 					sa2cnts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA2_CNT), sa2s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA2);
 			
-			int enchantIndex = 0, augIndex = -1, encEffectIndex = -1, appIndex = -1, saCntIndex = -1, sa1Index = -1, sa2Index = -1;
+			int enchantIndex = 0, augIndex = -1, encEffectIndex = -1, appIndex = 0, saCntIndex = -1, sa1Index = -1, sa2Index = -1;
 			for (int i = 0; i < exts.size(); ++i)
 			{
 				final Set<ItemExtension> ex = BitMaskUtils.setOf(buf.readInteger32(exts.get(i)), ItemExtension.class);

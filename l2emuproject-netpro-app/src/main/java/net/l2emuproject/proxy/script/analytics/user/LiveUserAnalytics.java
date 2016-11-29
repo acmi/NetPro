@@ -20,7 +20,6 @@ import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TAR
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +42,8 @@ import net.l2emuproject.proxy.script.analytics.user.impl.ItemAugmentationImpl;
 import net.l2emuproject.proxy.script.analytics.user.impl.ItemEnchantEffectsImpl;
 import net.l2emuproject.proxy.script.analytics.user.impl.ItemSpecialAbilitiesImpl;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserInventory;
+import net.l2emuproject.proxy.script.analytics.user.impl.UserSkill;
+import net.l2emuproject.proxy.script.analytics.user.impl.UserSkillList;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
@@ -100,9 +101,15 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	@ScriptFieldAlias
 	private static final String OWNED_SKILL_COUNT = "LUA_OWNED_SKILL_COUNT";
 	@ScriptFieldAlias
+	private static final String OWNED_SKILL_PASSIVE = "LUA_OWNED_SKILL_PASSIVE";
+	@ScriptFieldAlias
+	private static final String OWNED_SKILL_LEVEL_SUBLEVEL = "LUA_OWNED_SKILL_LEVEL";
+	@ScriptFieldAlias
 	private static final String OWNED_SKILL = "LUA_OWNED_SKILL_ID";
 	@ScriptFieldAlias
 	private static final String OWNED_SKILL_DISABLED = "LUA_OWNED_SKILL_DISABLED";
+	@ScriptFieldAlias
+	private static final String OWNED_SKILL_ENCHANTABLE = "LUA_OWNED_SKILL_ENCHANTABLE";
 	
 	@ScriptFieldAlias
 	private static final String LEARN_SKILL_ID = "LUA_LEARNABLE_SKILL_ID";
@@ -185,6 +192,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	
 	private static final String USER_INFO_KEY = "user_info";
 	private static final String USER_INVENTORY_KEY = "user_inv";
+	private static final String USER_SKILL_KEY = "user_sl";
 	
 	LiveUserAnalytics()
 	{
@@ -209,11 +217,24 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	 * If a player has not yet logged to the game world, or has already disconnected, returns {@code null}.
 	 * 
 	 * @param client game client connection endpoint
-	 * @return user information or {@code null}
+	 * @return user inventory or {@code null}
 	 */
 	public UserInventory getUserInventory(L2GameClient client)
 	{
 		return get(client, USER_INVENTORY_KEY);
+	}
+	
+	/**
+	 * Retrieves skill list of a connected player.<BR>
+	 * <BR>
+	 * If a player has not yet logged to the game world, or has already disconnected, returns {@code null}.
+	 * 
+	 * @param client game client connection endpoint
+	 * @return user skills or {@code null}
+	 */
+	public UserSkillList getUserSkillList(L2GameClient client)
+	{
+		return get(client, USER_SKILL_KEY);
 	}
 	
 	@Override
@@ -434,6 +455,35 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			
 			return;
 		}
+		allSkills:
+		{
+			final EnumeratedPayloadField skillCount = buf.getSingleFieldIndex(OWNED_SKILL_COUNT);
+			if (skillCount == null)
+				break allSkills;
+			
+			final int totalSkills = buf.readInteger32(skillCount);
+			if (totalSkills < 1)
+			{
+				computeIfAbsent(client, USER_SKILL_KEY, k -> new UserSkillList()).setSkills(Collections.emptyList());
+				return;
+			}
+			
+			final List<EnumeratedPayloadField> passives = buf.getFieldIndices(OWNED_SKILL_PASSIVE), levels = buf.getFieldIndices(OWNED_SKILL_LEVEL_SUBLEVEL), skills = buf.getFieldIndices(OWNED_SKILL),
+					disabled = buf.getFieldIndices(OWNED_SKILL_DISABLED), enchantable = buf.getFieldIndices(OWNED_SKILL_ENCHANTABLE);
+			
+			final List<SkillListSkill> skillList = new ArrayList<>(totalSkills);
+			for (int i = 0; i < skills.size(); ++i)
+			{
+				final boolean passive = buf.readInteger32(passives.get(i)) != 0;
+				final int levelAndSublevel = buf.readInteger32(levels.get(i));
+				final int skillID = buf.readInteger32(skills.get(i));
+				final boolean disabled_ = buf.readInteger32(disabled.get(i)) != 0;
+				final boolean enchantable_ = buf.readInteger32(enchantable.get(i)) != 0;
+				skillList.add(new UserSkill(passive, levelAndSublevel, skillID, disabled_, enchantable_));
+			}
+			computeIfAbsent(client, USER_SKILL_KEY, k -> new UserSkillList()).setSkills(skillList);
+			return;
+		}
 		
 		final UserInfo ui = get(client, USER_INFO_KEY);
 		if (ui == null)
@@ -513,26 +563,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			
 			ui._activeEffects = new EffectInfo(/*L2Collections.compactImmutableList*/(effects), ImmutableSortedArraySet.of(effectSkills), Collections.unmodifiableMap(effectsBySkillID));
 		}
-		allSkills:
-		{
-			if (buf.getSingleFieldIndex(OWNED_SKILL_COUNT) == null)
-				break allSkills;
-			
-			final List<EnumeratedPayloadField> skills = buf.getFieldIndices(OWNED_SKILL);
-			final List<EnumeratedPayloadField> states = buf.getFieldIndices(OWNED_SKILL_DISABLED);
-			
-			final Set<Integer> availableSkills = new HashSet<>();
-			for (int i = 0; i < skills.size(); ++i)
-			{
-				final int skill = buf.readInteger32(skills.get(i));
-				final boolean disabled = states.isEmpty() ? false : buf.readInteger32(states.get(i)) != 0;
-				
-				if (!disabled)
-					availableSkills.add(skill);
-			}
-			
-			ui._availableSkills = availableSkills;
-		}
 		learnableSkills:
 		{
 			final List<EnumeratedPayloadField> ids = buf.getFieldIndices(LEARN_SKILL_ID);
@@ -573,8 +603,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		volatile long _sp;
 		volatile double _width, _height;
 		volatile LearnableSkills _learnableSkills;
-		/** Non-disabled active & passive skills */
-		volatile Set<Integer> _availableSkills;
 		volatile EffectInfo _activeEffects;
 		
 		UserInfo(int objectID, ICacheServerID context)
@@ -587,7 +615,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			_sp = 0;
 			_width = _height = 8;
 			_learnableSkills = new LearnableSkills(Collections.emptyMap());
-			_availableSkills = Collections.emptySet();
 			_activeEffects = new EffectInfo(Collections.emptyList(), Collections.emptySet(), Collections.emptyMap());
 		}
 		
@@ -629,17 +656,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		public Set<Integer> getServitorOIDs()
 		{
 			return _servitorOIDs;
-		}
-		
-		/**
-		 * Returns IDs of skills that can be used by the associated PC in the current context.
-		 * This will include skills currently on cooldown.
-		 * 
-		 * @return available skills
-		 */
-		public Set<Integer> getEnabledSkills()
-		{
-			return _availableSkills;
 		}
 		
 		/**
@@ -706,8 +722,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 				tb.append("; ").append(_servitorOIDs.size()).append(" servitors");
 			if (!_activeEffects._effects.isEmpty())
 				tb.append("; ").append(_activeEffects._effects.size()).append(" effects");
-			if (!_availableSkills.isEmpty())
-				tb.append("; ").append(_availableSkills.size()).append(" enabled skills");
 			return tb.moveToString();
 		}
 		

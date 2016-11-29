@@ -184,6 +184,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	private static final String INVENTORY_UPDATE_ITEM_SA2 = "LUA_IU_SA2";
 	
 	private static final String USER_INFO_KEY = "user_info";
+	private static final String USER_INVENTORY_KEY = "user_inv";
 	
 	LiveUserAnalytics()
 	{
@@ -200,6 +201,19 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	public UserInfo getUserInfo(L2GameClient client)
 	{
 		return get(client, USER_INFO_KEY);
+	}
+	
+	/**
+	 * Retrieves item list of a connected player.<BR>
+	 * <BR>
+	 * If a player has not yet logged to the game world, or has already disconnected, returns {@code null}.
+	 * 
+	 * @param client game client connection endpoint
+	 * @return user information or {@code null}
+	 */
+	public UserInventory getUserInventory(L2GameClient client)
+	{
+		return get(client, USER_INVENTORY_KEY);
 	}
 	
 	@Override
@@ -223,6 +237,163 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	@Override
 	public void handleServerPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
+		inventory:
+		{
+			final List<EnumeratedPayloadField> exts = buf.getFieldIndices(INVENTORY_ITEM_EXTENSIONS);
+			if (exts.isEmpty())
+				break inventory;
+			
+			final List<EnumeratedPayloadField> oids = buf.getFieldIndices(INVENTORY_ITEM_OID), templates = buf.getFieldIndices(INVENTORY_ITEM_TEMPLATE),
+					amounts = buf.getFieldIndices(INVENTORY_ITEM_AMOUNT), enchants = buf.getFieldIndices(INVENTORY_ITEM_ENCHANT),
+					aug1s = buf.getFieldIndices(INVENTORY_ITEM_AUG_EFFECT_1), aug2s = buf.getFieldIndices(INVENTORY_ITEM_AUG_EFFECT_2),
+					enc1s = buf.getFieldIndices(INVENTORY_ITEM_ENC_EFFECT_1), enc2s = buf.getFieldIndices(INVENTORY_ITEM_ENC_EFFECT_2),
+					enc3s = buf.getFieldIndices(INVENTORY_ITEM_ENC_EFFECT_3), apps = buf.getFieldIndices(INVENTORY_ITEM_APPEARANCE),
+					sa1cnts = buf.getFieldIndices(INVENTORY_ITEM_SA1_CNT), sa1s = buf.getFieldIndices(INVENTORY_ITEM_SA1),
+					sa2cnts = buf.getFieldIndices(INVENTORY_ITEM_SA2_CNT), sa2s = buf.getFieldIndices(INVENTORY_ITEM_SA2);
+			
+			int enchantIndex = 0, augIndex = -1, encEffectIndex = -1, appIndex = 0, saCntIndex = -1, sa1Index = -1, sa2Index = -1;
+			final List<InventoryItem> inventoryItems = new ArrayList<>(exts.size());
+			for (int i = 0; i < exts.size(); ++i)
+			{
+				final Set<ItemExtension> ex = BitMaskUtils.setOf(buf.readInteger32(exts.get(i)), ItemExtension.class);
+				final int objectID = buf.readInteger32(oids.get(i));
+				final int templateID = buf.readInteger32(templates.get(i));
+				final long amount = buf.readInteger(amounts.get(i));
+				// extract enchant level here
+				final int encLvl;
+				if (enchantIndex < enchants.size())
+				{
+					int nextItemOffsetFromEnd = 0;
+					if (i + 1 < exts.size())
+						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
+					if (buf.seekField(enchants.get(enchantIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
+						encLvl = buf.readInteger32(enchants.get(enchantIndex++));
+					else
+						encLvl = 0;
+				}
+				else
+					encLvl = 0;
+				final ItemAugmentation augmentation = ex.contains(ItemExtension.AUGMENTATION)
+						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex))) : ItemAugmentation.NO_AUGMENTATION;
+				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
+						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
+						: ItemEnchantEffects.NO_EFFECTS;
+				final int appearance;
+				if (ex.contains(ItemExtension.APPEARANCE) && appIndex < apps.size())
+				{
+					int nextItemOffsetFromEnd = 0;
+					if (i + 1 < exts.size())
+						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
+					if (buf.seekField(apps.get(appIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
+						appearance = buf.readInteger32(apps.get(appIndex++));
+					else
+						appearance = 0;
+				}
+				else
+					appearance = 0;
+				final ItemSpecialAbilities sa;
+				if (ex.contains(ItemExtension.SPECIAL_ABILITIES))
+				{
+					final int sa1Count = buf.readInteger32(sa1cnts.get(++saCntIndex)), sa2Count = buf.readInteger32(sa2cnts.get(saCntIndex));
+					final int[] sa1 = sa1Count > 0 ? new int[sa1Count] : ArrayUtils.EMPTY_INT_ARRAY, sa2 = sa2Count > 0 ? new int[sa2Count] : ArrayUtils.EMPTY_INT_ARRAY;
+					for (int j = 0; j < sa1.length; ++j)
+						sa1[j] = buf.readInteger32(sa1s.get(++sa1Index));
+					for (int j = 0; j < sa2.length; ++j)
+						sa2[j] = buf.readInteger32(sa2s.get(++sa2Index));
+					sa = new ItemSpecialAbilitiesImpl(sa1, sa2);
+				}
+				else
+					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
+				inventoryItems.add(new InventoryItem(objectID, templateID, amount, encLvl, augmentation, encEff, appearance, sa));
+			}
+			computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory()).setInventory(inventoryItems);
+		}
+		inventoryUpdate:
+		{
+			final List<EnumeratedPayloadField> changes = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_CHANGE_TYPE), exts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_EXTENSIONS);
+			if (exts.isEmpty())
+				break inventoryUpdate;
+			
+			final List<EnumeratedPayloadField> oids = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_OID), templates = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_TEMPLATE),
+					amounts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_AMOUNT), enchants = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_ENCHANT),
+					aug1s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_AUG_EFFECT_1), aug2s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_AUG_EFFECT_2),
+					enc1s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_ENC_EFFECT_1), enc2s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_ENC_EFFECT_2),
+					enc3s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_ENC_EFFECT_3), apps = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_APPEARANCE),
+					sa1cnts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA1_CNT), sa1s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA1),
+					sa2cnts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA2_CNT), sa2s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA2);
+			
+			int enchantIndex = 0, augIndex = -1, encEffectIndex = -1, appIndex = 0, saCntIndex = -1, sa1Index = -1, sa2Index = -1;
+			for (int i = 0; i < exts.size(); ++i)
+			{
+				final Set<ItemExtension> ex = BitMaskUtils.setOf(buf.readInteger32(exts.get(i)), ItemExtension.class);
+				final int objectID = buf.readInteger32(oids.get(i));
+				final int templateID = buf.readInteger32(templates.get(i));
+				final long amount = buf.readInteger(amounts.get(i));
+				// extract enchant level here
+				final int encLvl;
+				if (enchantIndex < enchants.size())
+				{
+					int nextItemOffsetFromEnd = 0;
+					if (i + 1 < exts.size())
+						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
+					if (buf.seekField(enchants.get(enchantIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
+						encLvl = buf.readInteger32(enchants.get(enchantIndex++));
+					else
+						encLvl = 0;
+				}
+				else
+					encLvl = 0;
+				final ItemAugmentation augmentation = ex.contains(ItemExtension.AUGMENTATION)
+						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex))) : ItemAugmentation.NO_AUGMENTATION;
+				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
+						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
+						: ItemEnchantEffects.NO_EFFECTS;
+				final int appearance;
+				if (ex.contains(ItemExtension.APPEARANCE) && appIndex < apps.size())
+				{
+					int nextItemOffsetFromEnd = 0;
+					if (i + 1 < exts.size())
+						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
+					if (buf.seekField(apps.get(appIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
+						appearance = buf.readInteger32(apps.get(appIndex++));
+					else
+						appearance = 0;
+				}
+				else
+					appearance = 0;
+				final ItemSpecialAbilities sa;
+				if (ex.contains(ItemExtension.SPECIAL_ABILITIES))
+				{
+					final int sa1Count = buf.readInteger32(sa1cnts.get(++saCntIndex)), sa2Count = buf.readInteger32(sa2cnts.get(saCntIndex));
+					final int[] sa1 = sa1Count > 0 ? new int[sa1Count] : ArrayUtils.EMPTY_INT_ARRAY, sa2 = sa2Count > 0 ? new int[sa2Count] : ArrayUtils.EMPTY_INT_ARRAY;
+					for (int j = 0; j < sa1.length; ++j)
+						sa1[j] = buf.readInteger32(sa1s.get(++sa1Index));
+					for (int j = 0; j < sa2.length; ++j)
+						sa2[j] = buf.readInteger32(sa2s.get(++sa2Index));
+					sa = new ItemSpecialAbilitiesImpl(sa1, sa2);
+				}
+				else
+					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
+				
+				final InventoryItem item = new InventoryItem(objectID, templateID, amount, encLvl, augmentation, encEff, appearance, sa);
+				final int change = buf.readInteger32(changes.get(i));
+				final UserInventory inv = computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory());
+				switch (change)
+				{
+					case 1: // add
+						inv.add(item);
+						break;
+					case 2: // update
+						inv.update(item);
+						break;
+					case 3: // remove
+						inv.remove(item);
+						break;
+					default:
+						throw new IllegalArgumentException("IU: " + change);
+				}
+			}
+		}
 		user:
 		{
 			// user playable character OID detection
@@ -385,162 +556,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			}
 			ui._learnableSkills = new LearnableSkills(skills);
 		}
-		inventory:
-		{
-			final List<EnumeratedPayloadField> exts = buf.getFieldIndices(INVENTORY_ITEM_EXTENSIONS);
-			if (exts.isEmpty())
-				break inventory;
-			
-			final List<EnumeratedPayloadField> oids = buf.getFieldIndices(INVENTORY_ITEM_OID), templates = buf.getFieldIndices(INVENTORY_ITEM_TEMPLATE),
-					amounts = buf.getFieldIndices(INVENTORY_ITEM_AMOUNT), enchants = buf.getFieldIndices(INVENTORY_ITEM_ENCHANT),
-					aug1s = buf.getFieldIndices(INVENTORY_ITEM_AUG_EFFECT_1), aug2s = buf.getFieldIndices(INVENTORY_ITEM_AUG_EFFECT_2),
-					enc1s = buf.getFieldIndices(INVENTORY_ITEM_ENC_EFFECT_1), enc2s = buf.getFieldIndices(INVENTORY_ITEM_ENC_EFFECT_2),
-					enc3s = buf.getFieldIndices(INVENTORY_ITEM_ENC_EFFECT_3), apps = buf.getFieldIndices(INVENTORY_ITEM_APPEARANCE),
-					sa1cnts = buf.getFieldIndices(INVENTORY_ITEM_SA1_CNT), sa1s = buf.getFieldIndices(INVENTORY_ITEM_SA1),
-					sa2cnts = buf.getFieldIndices(INVENTORY_ITEM_SA2_CNT), sa2s = buf.getFieldIndices(INVENTORY_ITEM_SA2);
-			
-			int enchantIndex = 0, augIndex = -1, encEffectIndex = -1, appIndex = 0, saCntIndex = -1, sa1Index = -1, sa2Index = -1;
-			final List<InventoryItem> inventoryItems = new ArrayList<>(exts.size());
-			for (int i = 0; i < exts.size(); ++i)
-			{
-				final Set<ItemExtension> ex = BitMaskUtils.setOf(buf.readInteger32(exts.get(i)), ItemExtension.class);
-				final int objectID = buf.readInteger32(oids.get(i));
-				final int templateID = buf.readInteger32(templates.get(i));
-				final long amount = buf.readInteger(amounts.get(i));
-				// extract enchant level here
-				final int encLvl;
-				if (enchantIndex < enchants.size())
-				{
-					int nextItemOffsetFromEnd = 0;
-					if (i + 1 < exts.size())
-						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
-					if (buf.seekField(enchants.get(enchantIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
-						encLvl = buf.readInteger32(enchants.get(enchantIndex++));
-					else
-						encLvl = 0;
-				}
-				else
-					encLvl = 0;
-				final ItemAugmentation augmentation = ex.contains(ItemExtension.AUGMENTATION)
-						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex))) : ItemAugmentation.NO_AUGMENTATION;
-				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
-						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
-						: ItemEnchantEffects.NO_EFFECTS;
-				final int appearance;
-				if (ex.contains(ItemExtension.APPEARANCE) && appIndex < apps.size())
-				{
-					int nextItemOffsetFromEnd = 0;
-					if (i + 1 < exts.size())
-						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
-					if (buf.seekField(apps.get(appIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
-						appearance = buf.readInteger32(apps.get(appIndex++));
-					else
-						appearance = 0;
-				}
-				else
-					appearance = 0;
-				final ItemSpecialAbilities sa;
-				if (ex.contains(ItemExtension.SPECIAL_ABILITIES))
-				{
-					final int sa1Count = buf.readInteger32(sa1cnts.get(++saCntIndex)), sa2Count = buf.readInteger32(sa2cnts.get(saCntIndex));
-					final int[] sa1 = sa1Count > 0 ? new int[sa1Count] : ArrayUtils.EMPTY_INT_ARRAY, sa2 = sa2Count > 0 ? new int[sa2Count] : ArrayUtils.EMPTY_INT_ARRAY;
-					for (int j = 0; j < sa1.length; ++j)
-						sa1[j] = buf.readInteger32(sa1s.get(++sa1Index));
-					for (int j = 0; j < sa2.length; ++j)
-						sa2[j] = buf.readInteger32(sa2s.get(++sa2Index));
-					sa = new ItemSpecialAbilitiesImpl(sa1, sa2);
-				}
-				else
-					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
-				inventoryItems.add(new InventoryItem(objectID, templateID, amount, encLvl, augmentation, encEff, appearance, sa));
-			}
-			ui._inventory.setInventory(inventoryItems);
-		}
-		inventoryUpdate:
-		{
-			final List<EnumeratedPayloadField> changes = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_CHANGE_TYPE), exts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_EXTENSIONS);
-			if (exts.isEmpty())
-				break inventoryUpdate;
-			
-			final List<EnumeratedPayloadField> oids = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_OID), templates = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_TEMPLATE),
-					amounts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_AMOUNT), enchants = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_ENCHANT),
-					aug1s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_AUG_EFFECT_1), aug2s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_AUG_EFFECT_2),
-					enc1s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_ENC_EFFECT_1), enc2s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_ENC_EFFECT_2),
-					enc3s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_ENC_EFFECT_3), apps = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_APPEARANCE),
-					sa1cnts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA1_CNT), sa1s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA1),
-					sa2cnts = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA2_CNT), sa2s = buf.getFieldIndices(INVENTORY_UPDATE_ITEM_SA2);
-			
-			int enchantIndex = 0, augIndex = -1, encEffectIndex = -1, appIndex = 0, saCntIndex = -1, sa1Index = -1, sa2Index = -1;
-			for (int i = 0; i < exts.size(); ++i)
-			{
-				final Set<ItemExtension> ex = BitMaskUtils.setOf(buf.readInteger32(exts.get(i)), ItemExtension.class);
-				final int objectID = buf.readInteger32(oids.get(i));
-				final int templateID = buf.readInteger32(templates.get(i));
-				final long amount = buf.readInteger(amounts.get(i));
-				// extract enchant level here
-				final int encLvl;
-				if (enchantIndex < enchants.size())
-				{
-					int nextItemOffsetFromEnd = 0;
-					if (i + 1 < exts.size())
-						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
-					if (buf.seekField(enchants.get(enchantIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
-						encLvl = buf.readInteger32(enchants.get(enchantIndex++));
-					else
-						encLvl = 0;
-				}
-				else
-					encLvl = 0;
-				final ItemAugmentation augmentation = ex.contains(ItemExtension.AUGMENTATION)
-						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex))) : ItemAugmentation.NO_AUGMENTATION;
-				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
-						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
-						: ItemEnchantEffects.NO_EFFECTS;
-				final int appearance;
-				if (ex.contains(ItemExtension.APPEARANCE) && appIndex < apps.size())
-				{
-					int nextItemOffsetFromEnd = 0;
-					if (i + 1 < exts.size())
-						nextItemOffsetFromEnd = buf.seekField(exts.get(i + 1)).getAvailableBytes();
-					if (buf.seekField(apps.get(appIndex)).getAvailableBytes() > nextItemOffsetFromEnd)
-						appearance = buf.readInteger32(apps.get(appIndex++));
-					else
-						appearance = 0;
-				}
-				else
-					appearance = 0;
-				final ItemSpecialAbilities sa;
-				if (ex.contains(ItemExtension.SPECIAL_ABILITIES))
-				{
-					final int sa1Count = buf.readInteger32(sa1cnts.get(++saCntIndex)), sa2Count = buf.readInteger32(sa2cnts.get(saCntIndex));
-					final int[] sa1 = sa1Count > 0 ? new int[sa1Count] : ArrayUtils.EMPTY_INT_ARRAY, sa2 = sa2Count > 0 ? new int[sa2Count] : ArrayUtils.EMPTY_INT_ARRAY;
-					for (int j = 0; j < sa1.length; ++j)
-						sa1[j] = buf.readInteger32(sa1s.get(++sa1Index));
-					for (int j = 0; j < sa2.length; ++j)
-						sa2[j] = buf.readInteger32(sa2s.get(++sa2Index));
-					sa = new ItemSpecialAbilitiesImpl(sa1, sa2);
-				}
-				else
-					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
-				
-				final InventoryItem item = new InventoryItem(objectID, templateID, amount, encLvl, augmentation, encEff, appearance, sa);
-				final int change = buf.readInteger32(changes.get(i));
-				switch (change)
-				{
-					case 1: // add
-						ui._inventory.add(item);
-						break;
-					case 2: // update
-						ui._inventory.update(item);
-						break;
-					case 3: // remove
-						ui._inventory.remove(item);
-						break;
-					default:
-						throw new IllegalArgumentException("IU: " + change);
-				}
-			}
-		}
 	}
 	
 	/**
@@ -561,7 +576,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		/** Non-disabled active & passive skills */
 		volatile Set<Integer> _availableSkills;
 		volatile EffectInfo _activeEffects;
-		final UserInventory _inventory;
 		
 		UserInfo(int objectID, ICacheServerID context)
 		{
@@ -575,7 +589,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			_learnableSkills = new LearnableSkills(Collections.emptyMap());
 			_availableSkills = Collections.emptySet();
 			_activeEffects = new EffectInfo(Collections.emptyList(), Collections.emptySet(), Collections.emptyMap());
-			_inventory = new UserInventory();
 		}
 		
 		/**
@@ -657,11 +670,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		public Map<Integer, Effect> getEffectsBySkillID()
 		{
 			return _activeEffects._effectsBySkillID;
-		}
-		
-		public UserInventory getInventory()
-		{
-			return _inventory;
 		}
 		
 		@Override

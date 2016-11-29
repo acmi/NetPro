@@ -27936,6 +27936,9 @@
 28465	Heine Exclusive Reward Chest
 28466	Heine Exclusive Fishing Tools - 300 Pack
 28467	Heine Exclusive Fishing Tools - 3,000 Pack
+28468	NoItemName
+28469	NoItemName
+28470	NoItemName
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste

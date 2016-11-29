@@ -1775,3 +1775,7 @@
 1011775	Heine Exclusive Bait Coupon x2500
 1011776	Heine Exclusive Bait Coupon x10000
 1011777	Heine Exclusive Bait Coupon x100
+1011778	Monster Research x100
+1011779	Monster Research x50,000
+1011780	Monster Research x200,000
+1011781	Monster Research x300,000

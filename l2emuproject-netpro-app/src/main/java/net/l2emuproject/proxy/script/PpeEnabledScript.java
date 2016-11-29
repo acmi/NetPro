@@ -197,6 +197,19 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	}
 	
 	/**
+	 * Removes a value from a session-bound mapping. If this value was an executable task, it will be interrupted and/or cancelled.
+	 * 
+	 * @param client session key
+	 * @param key mapping key
+	 */
+	protected void discard(C client, String key)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		if (exec != null)
+			exec.discardSessionStateByKey(k -> getSessionStateKey(key).equals(k));
+	}
+	
+	/**
 	 * Removes all values from a session-bound mapping. If any of those values were executable tasks, they will be interrupted and/or cancelled.
 	 * 
 	 * @param client session key

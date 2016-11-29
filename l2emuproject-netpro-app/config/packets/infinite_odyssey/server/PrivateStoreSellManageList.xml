@@ -2,7 +2,9 @@
 <!-- Augmentation/enchant effect WORDs are now DWORDs -->
 <!-- Underground: Soul Crystal Effect extension -->
 <packet id="SM_PRIVATE_STORE_MANAGE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Seller OID" type="ObjectID" />
+	<dword alias="Seller OID" type="ObjectID">
+		<scriptAlias id="private_store_sell_manage_owner" />
+	</dword>
 	<dword alias="Package sale" type="YesOrNo" />
 	<qword alias="Adena" />
 	<dword alias="Sellable count" id="index_0" />

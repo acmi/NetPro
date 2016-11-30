@@ -206,7 +206,7 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	{
 		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
 		if (exec != null)
-			exec.discardSessionStateByKey(k -> getSessionStateKey(key).equals(k));
+			exec.discardSessionStateFor(client, key);
 	}
 	
 	/**
@@ -217,7 +217,8 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	protected void clear(C client)
 	{
 		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
-		exec.discardSessionStateByKey(k -> String.valueOf(k).startsWith(getSessionStateKey("")));
+		if (exec != null)
+			exec.discardSessionStateByKey(k -> String.valueOf(k).startsWith(getSessionStateKey("")));
 	}
 	
 	/**

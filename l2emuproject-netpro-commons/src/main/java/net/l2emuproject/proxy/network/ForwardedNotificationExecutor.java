@@ -118,6 +118,12 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	@Override
 	public void discardSessionStateByKey(Predicate<Object> keyMatcher)
 	{
+		if (Thread.currentThread() != _activeThread)
+		{
+			execute(() -> discardSessionStateByKey(keyMatcher));
+			return;
+		}
+		
 		final SortedSet<String> discarded = new TreeSet<>(), cancelled = new TreeSet<>();
 		for (final Map<Object, Object> stateMap : _sessionStateMap.values())
 		{

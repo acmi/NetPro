@@ -75,6 +75,23 @@ public interface SessionStateManagingExecutor
 	<T> T removeSessionStateFor(Proxy client, Object key, T expectedValue);
 	
 	/**
+	 * Removes a session-bound state value, interrupting/cancelling execution if applicable.
+	 * 
+	 * @param client Session key
+	 * @param key State identifier
+	 * @return {@code true} if something was removed, {@code false} if no action was taken
+	 */
+	default boolean discardSessionStateFor(Proxy client, Object key)
+	{
+		final Object removed = removeSessionStateFor(client, key);
+		if (removed == null)
+			return false;
+		if (removed instanceof Future)
+			((Future<?>)removed).cancel(true);
+		return true;
+	}
+	
+	/**
 	 * Discards all keys that match the predicate {@code keyMatcher}. If any key maps to a {@link Future} object, the associated task will be interrupted.
 	 * 
 	 * @param keyMatcher State key matcher

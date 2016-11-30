@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -351,8 +352,7 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			if (cnt == null)
 				break onEffectList;
 			
-			final UserInfo ui = LiveUserAnalytics.getInstance().getUserInfo(client);
-			final Set<Integer> current = ui.getEffectSkillIDs();
+			final Set<Integer> current = LiveUserAnalytics.getInstance().getUserAbnormals(client).getActiveModifiers().map(m -> m.getSkillID()).collect(Collectors.toSet());
 			final Set<Integer> old = _effects.put(client, current);
 			if (old == null)
 				return;

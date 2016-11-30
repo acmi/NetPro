@@ -17,8 +17,8 @@ package net.l2emuproject.proxy.script.analytics.user.impl;
 
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 
 /**
@@ -95,7 +95,7 @@ public final class UserInventory implements Iterable<InventoryItem>
 	 */
 	public void setInventory(Iterable<InventoryItem> inventoryItems)
 	{
-		final Map<Integer, InventoryItem> items = new ConcurrentHashMap<>();
+		final Map<Integer, InventoryItem> items = new LinkedHashMap<>();
 		for (final InventoryItem item : inventoryItems)
 			items.put(item.getObjectID(), item);
 		_items = items;

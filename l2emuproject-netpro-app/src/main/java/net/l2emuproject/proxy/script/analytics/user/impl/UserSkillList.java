@@ -16,8 +16,8 @@
 package net.l2emuproject.proxy.script.analytics.user.impl;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -45,7 +45,7 @@ public final class UserSkillList implements Iterable<SkillListSkill>
 	 */
 	public void setSkills(Iterable<SkillListSkill> skills)
 	{
-		final Map<Integer, SkillListSkill> skillMap = new HashMap<>();
+		final Map<Integer, SkillListSkill> skillMap = new LinkedHashMap<>();
 		for (final SkillListSkill skill : skills)
 			skillMap.put(skill.getID(), skill);
 		_skills = Collections.unmodifiableMap(skillMap);

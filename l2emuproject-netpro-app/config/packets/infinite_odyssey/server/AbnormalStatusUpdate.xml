@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Skill level WORD changed to DWORD -->
 <packet id="SM_ABNORMAL_STATUS_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<word alias="Effect count" id="index_0">
+	<word alias="Effect count" id="cnt">
 		<scriptAlias id="LUA_SELF_EFFECT_COUNT" />
 		<scriptAlias id="HLE_SELF_EFFECT_COUNT" />
 	</word>
-	<loop id="index_0">
+	<loop id="cnt">
 		<dword alias="Skill" type="Skill">
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
 			<scriptAlias id="LUA_SELF_EFFECT_SKILL_ID" />

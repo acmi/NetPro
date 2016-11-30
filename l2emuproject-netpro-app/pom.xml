@@ -36,7 +36,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<defaultGoal>package</defaultGoal>
+		<defaultGoal>clean package</defaultGoal>
 		<plugins>
 			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>

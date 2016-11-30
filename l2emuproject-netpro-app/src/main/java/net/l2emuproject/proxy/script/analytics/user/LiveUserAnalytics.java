@@ -20,45 +20,45 @@ import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TAR
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.ArrayUtils;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.proxy.network.ForwardedNotificationManager;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
 import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
-import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics.UserInfo.EffectInfo;
 import net.l2emuproject.proxy.script.analytics.user.impl.InventoryItem;
 import net.l2emuproject.proxy.script.analytics.user.impl.ItemAugmentationImpl;
 import net.l2emuproject.proxy.script.analytics.user.impl.ItemEnchantEffectsImpl;
 import net.l2emuproject.proxy.script.analytics.user.impl.ItemSpecialAbilitiesImpl;
+import net.l2emuproject.proxy.script.analytics.user.impl.UserAbnormalStatusModifier;
+import net.l2emuproject.proxy.script.analytics.user.impl.UserAbnormals;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserInventory;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserSkill;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserSkillList;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
+import net.l2emuproject.proxy.script.packets.util.RestartResponseRecipient;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.BitMaskUtils;
-import net.l2emuproject.util.ImmutableSortedArraySet;
 
 /**
  * Manages a set of basic information about each connected player's currently active character.
  * 
  * @author _dev_
  */
-public final class LiveUserAnalytics extends PpeEnabledGameScript
+public final class LiveUserAnalytics extends PpeEnabledGameScript implements RestartResponseRecipient
 {
 	@ScriptFieldAlias
 	private static final String USER_OID = "LUA_USER_OID";
@@ -97,6 +97,8 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	private static final String EFFECT_LEVEL = "LUA_SELF_EFFECT_SKILL_LVL";
 	@ScriptFieldAlias
 	private static final String EFFECT_TIME = "LUA_SELF_EFFECT_SECONDS_LEFT";
+	@ScriptFieldAlias
+	private static final String EFFECT_TIME_EX = "LUA_SELF_EFFECT_SECONDS_LEFT_EX";
 	
 	@ScriptFieldAlias
 	private static final String OWNED_SKILL_COUNT = "LUA_OWNED_SKILL_COUNT";
@@ -190,9 +192,11 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	@ScriptFieldAlias
 	private static final String INVENTORY_UPDATE_ITEM_SA2 = "LUA_IU_SA2";
 	
-	private static final String USER_INFO_KEY = "user_info";
-	private static final String USER_INVENTORY_KEY = "user_inv";
-	private static final String USER_SKILL_KEY = "user_sl";
+	private static final String RESTART_DISCARDABLE_PREFIX = "user_bound_";
+	private static final String USER_INFO_KEY = RESTART_DISCARDABLE_PREFIX + "user_info";
+	private static final String USER_INVENTORY_KEY = RESTART_DISCARDABLE_PREFIX + "user_inv";
+	private static final String USER_SKILL_KEY = RESTART_DISCARDABLE_PREFIX + "user_sl";
+	private static final String USER_ABNORMAL_MODIFIER_KEY = RESTART_DISCARDABLE_PREFIX + "user_asm";
 	
 	LiveUserAnalytics()
 	{
@@ -237,6 +241,19 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		return get(client, USER_SKILL_KEY);
 	}
 	
+	/**
+	 * Retrieves skill list of a connected player.<BR>
+	 * <BR>
+	 * If a player has not yet logged to the game world, or has already disconnected, returns {@code null}.
+	 * 
+	 * @param client game client connection endpoint
+	 * @return user skills or {@code null}
+	 */
+	public UserAbnormals getUserAbnormals(L2GameClient client)
+	{
+		return get(client, USER_ABNORMAL_MODIFIER_KEY);
+	}
+	
 	@Override
 	public String getName()
 	{
@@ -258,6 +275,12 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 	@Override
 	public void handleServerPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
+		if (isReturningToLobby(buf))
+		{
+			ForwardedNotificationManager.getInstance().discardSessionStateByKey(k -> String.valueOf(k).startsWith(RESTART_DISCARDABLE_PREFIX));
+			return;
+		}
+		
 		inventory:
 		{
 			final List<EnumeratedPayloadField> exts = buf.getFieldIndices(INVENTORY_ITEM_EXTENSIONS);
@@ -484,6 +507,38 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			computeIfAbsent(client, USER_SKILL_KEY, k -> new UserSkillList()).setSkills(skillList);
 			return;
 		}
+		allEffects:
+		{
+			// user abnormal effect detection
+			final EnumeratedPayloadField effectCount = buf.getSingleFieldIndex(EFFECT_COUNT);
+			if (effectCount == null)
+				break allEffects;
+			
+			final int totalEffects = buf.readInteger32(effectCount);
+			if (totalEffects < 1)
+			{
+				computeIfAbsent(client, USER_ABNORMAL_MODIFIER_KEY, k -> new UserAbnormals()).setAbnormalModifiers(Collections.emptyList());
+				return;
+			}
+			
+			final List<EnumeratedPayloadField> skills = buf.getFieldIndices(EFFECT_SKILL), levels = buf.getFieldIndices(EFFECT_LEVEL);
+			final List<EnumeratedPayloadField> times = buf.getFieldIndices(EFFECT_TIME), longTimes = buf.getFieldIndices(EFFECT_TIME_EX);
+			int longTimeIndex = -1;
+			
+			final long now = System.nanoTime();
+			final List<AbnormalStatusModifier> abnormals = new ArrayList<>(totalEffects);
+			for (int i = 0; i < skills.size(); ++i)
+			{
+				final int skillID = buf.readInteger32(skills.get(i));
+				final int skillLevelAndSublevel = buf.readInteger32(levels.get(i));
+				int secondsRemaining = buf.readInteger32(times.get(i));
+				if (secondsRemaining == Short.MAX_VALUE)
+					secondsRemaining = buf.readInteger32(longTimes.get(++longTimeIndex));
+				abnormals.add(new UserAbnormalStatusModifier(skillID, skillLevelAndSublevel, secondsRemaining, now));
+			}
+			computeIfAbsent(client, USER_ABNORMAL_MODIFIER_KEY, k -> new UserAbnormals()).setAbnormalModifiers(abnormals);
+			return;
+		}
 		
 		final UserInfo ui = get(client, USER_INFO_KEY);
 		if (ui == null)
@@ -535,34 +590,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			ui.getServitorOIDs().remove(objectID);
 			return;
 		}
-		allEffects:
-		{
-			// user abnormal effect detection
-			if (buf.getSingleFieldIndex(EFFECT_COUNT) == null)
-				break allEffects;
-			
-			final List<EnumeratedPayloadField> skills = buf.getFieldIndices(EFFECT_SKILL);
-			final List<EnumeratedPayloadField> levels = buf.getFieldIndices(EFFECT_LEVEL);
-			final List<EnumeratedPayloadField> times = buf.getFieldIndices(EFFECT_TIME);
-			
-			final long now = System.currentTimeMillis();
-			final List<Effect> effects = new ArrayList<>(skills.size());
-			final Integer[] effectSkills = new Integer[skills.size()];
-			final Map<Integer, Effect> effectsBySkillID = new LinkedHashMap<>();
-			for (int i = 0; i < skills.size(); ++i)
-			{
-				final int skill = buf.readInteger32(skills.get(i));
-				effectSkills[i] = skill;
-				final int level = buf.readInteger32(levels.get(i));
-				final int time = buf.readInteger32(times.get(i));
-				
-				final Effect e = new Effect(skill, level, time != -1 ? now + time * 1_000 : Long.MAX_VALUE);
-				effects.add(e);
-				effectsBySkillID.putIfAbsent(skill, e);
-			}
-			
-			ui._activeEffects = new EffectInfo(/*L2Collections.compactImmutableList*/(effects), ImmutableSortedArraySet.of(effectSkills), Collections.unmodifiableMap(effectsBySkillID));
-		}
 		learnableSkills:
 		{
 			final List<EnumeratedPayloadField> ids = buf.getFieldIndices(LEARN_SKILL_ID);
@@ -585,6 +612,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 				skills.put(id, new LearnableSkill(id, lvl, sp, reqLevel));
 			}
 			ui._learnableSkills = new LearnableSkills(skills);
+			return;
 		}
 	}
 	
@@ -603,7 +631,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 		volatile long _sp;
 		volatile double _width, _height;
 		volatile LearnableSkills _learnableSkills;
-		volatile EffectInfo _activeEffects;
 		
 		UserInfo(int objectID, ICacheServerID context)
 		{
@@ -615,7 +642,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			_sp = 0;
 			_width = _height = 8;
 			_learnableSkills = new LearnableSkills(Collections.emptyMap());
-			_activeEffects = new EffectInfo(Collections.emptyList(), Collections.emptySet(), Collections.emptyMap());
 		}
 		
 		/**
@@ -658,36 +684,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 			return _servitorOIDs;
 		}
 		
-		/**
-		 * Returns effects, currently active on the associated PC.
-		 * 
-		 * @return active effects
-		 */
-		public List<Effect> getEffects()
-		{
-			return _activeEffects._effects;
-		}
-		
-		/**
-		 * Returns skill IDs associated with effects, currently active on the associated PC.
-		 * 
-		 * @return active effect skill IDs
-		 */
-		public Set<Integer> getEffectSkillIDs()
-		{
-			return _activeEffects._effectSkillIDs;
-		}
-		
-		/**
-		 * Returns effects, currently active on the associated PC, mapped to skill IDs.
-		 * 
-		 * @return active effect to skill mapping
-		 */
-		public Map<Integer, Effect> getEffectsBySkillID()
-		{
-			return _activeEffects._effectsBySkillID;
-		}
-		
 		@Override
 		public int hashCode()
 		{
@@ -720,104 +716,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript
 				tb.append("; target: ").append(targetInfo.getName()).append(targetInfo.getExtraInfo().getCurrentLocation());
 			if (!_servitorOIDs.isEmpty())
 				tb.append("; ").append(_servitorOIDs.size()).append(" servitors");
-			if (!_activeEffects._effects.isEmpty())
-				tb.append("; ").append(_activeEffects._effects.size()).append(" effects");
 			return tb.moveToString();
-		}
-		
-		static final class EffectInfo
-		{
-			/** All effects as last sent by server (may be out of date due to latency) */
-			final List<Effect> _effects;
-			/**
-			 * All unique effects as last sent by server (may be out of date due to latency).
-			 * Used for improved performance due to client limitations preventing abuse.
-			 */
-			final Set<Integer> _effectSkillIDs;
-			final Map<Integer, Effect> _effectsBySkillID;
-			
-			EffectInfo(List<Effect> effects, Set<Integer> effectSkillIDs, Map<Integer, Effect> effectsBySkillID)
-			{
-				_effects = effects;
-				_effectSkillIDs = effectSkillIDs;
-				_effectsBySkillID = effectsBySkillID;
-			}
-			
-			@Override
-			public String toString()
-			{
-				return _effects.toString();
-			}
-		}
-	}
-	
-	/**
-	 * Stores basic information about an active effect.
-	 * 
-	 * @author _dev_
-	 */
-	public static final class Effect
-	{
-		private final int _skill, _level;
-		private final long _expiry;
-		
-		Effect(int skill, int level, long expiry)
-		{
-			_skill = skill;
-			_level = level;
-			_expiry = expiry;
-		}
-		
-		/**
-		 * Returns the associated skill's ID.
-		 * 
-		 * @return skill ID
-		 */
-		public int getSkill()
-		{
-			return _skill;
-		}
-		
-		/**
-		 * Returns the associated skill's level.
-		 * 
-		 * @return skill level
-		 */
-		public int getLevel()
-		{
-			return _level;
-		}
-		
-		/**
-		 * Returns this effect's automatic expiration timestamp.
-		 * 
-		 * @return expiration time
-		 */
-		public long getExpiry()
-		{
-			return _expiry;
-		}
-		
-		/**
-		 * Returns the amount of time left until this effect will automatically expire.
-		 * 
-		 * @param unit returned amount time unit
-		 * @return time left to expiration
-		 */
-		public long getTimeLeft(TimeUnit unit)
-		{
-			final long diff = _expiry - System.currentTimeMillis();
-			if (diff <= 0)
-				return 0;
-			
-			return unit.convert(diff, TimeUnit.MILLISECONDS);
-		}
-		
-		@Override
-		public String toString()
-		{
-			final long seconds = getTimeLeft(TimeUnit.SECONDS);
-			return "[" + (seconds / 60) + ":" + (seconds % 60) + "]" + L2SkillTranslator.getInterpretation(_skill, _level);
 		}
 	}
 	

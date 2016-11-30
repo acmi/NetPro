@@ -24,24 +24,59 @@ import java.util.Set;
  */
 public interface SkillListSkill
 {
+	/**
+	 * Extra information about this skill
+	 * 
+	 * @return a set of extras
+	 */
 	Set<SkillFlags> getFlags();
 	
+	/**
+	 * Returns the level of this skill.
+	 * 
+	 * @return skill level
+	 */
 	int getLevel();
 	
+	/**
+	 * Returns the sublevel (enchant route + level) of this skill.
+	 * 
+	 * @return sublevel (enchant route + level)
+	 */
 	int getSublevel();
 	
+	/**
+	 * Returns the ID of this skill.
+	 * 
+	 * @return skill ID
+	 */
 	int getID();
 	
+	/**
+	 * Returns whether this skill is passive.
+	 * 
+	 * @return {@code true} for a passive skill, {@code false} otherwise
+	 */
 	default boolean isPassive()
 	{
 		return getFlags().contains(SkillFlags.PASSIVE);
 	}
 	
+	/**
+	 * Returns whether this skill is disabled (unavailable).
+	 * 
+	 * @return {@code true} for a currently disabled skill, {@code false} otherwise
+	 */
 	default boolean isDisabled()
 	{
 		return getFlags().contains(SkillFlags.DISABLED);
 	}
 	
+	/**
+	 * Returns whether this skill is enchantable.
+	 * 
+	 * @return {@code true} for an enchantable skill, {@code false} otherwise
+	 */
 	default boolean isEnchantable()
 	{
 		return getFlags().contains(SkillFlags.ENCHANTABLE);

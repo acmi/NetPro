@@ -35,6 +35,15 @@ public final class UserSkill implements SkillListSkill
 	private final Set<SkillFlags> _flags;
 	private final int _level, _sublevel, _id;
 	
+	/**
+	 * Creates an object representing a skill listed in user skill list.
+	 * 
+	 * @param passive whether this is a passive skill
+	 * @param levelAndSublevel skill level and sublevel
+	 * @param id skill ID
+	 * @param disabled whether this skill is not available currently
+	 * @param enchantable whether this skill is enchantable
+	 */
 	public UserSkill(boolean passive, int levelAndSublevel, int id, boolean disabled, boolean enchantable)
 	{
 		final Set<SkillFlags> flags = EnumSet.noneOf(SkillFlags.class);

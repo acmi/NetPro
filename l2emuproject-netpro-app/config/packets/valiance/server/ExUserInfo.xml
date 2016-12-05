@@ -15,7 +15,7 @@
 	<unsignedByte alias="Bitmask byte #3" id="exUI_3" />
 
 	<branch id="exUI_1" condition="bitmask.Bit7">
-		<dword alias="Roles" /> <!-- Clan member/leader, ... -->
+		<dword alias="Roles" type="UserRoles" />
 	</branch>
 	<branch id="exUI_1" condition="bitmask.Bit6" description="Name/base appearance">
 		<word alias="Block size" />

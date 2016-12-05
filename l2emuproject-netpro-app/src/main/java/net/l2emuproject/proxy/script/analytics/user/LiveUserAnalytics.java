@@ -19,9 +19,7 @@ import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TAR
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
@@ -45,7 +43,6 @@ import net.l2emuproject.proxy.script.analytics.user.impl.UserInventory;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserSkill;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserSkillList;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
-import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.script.packets.util.RestartResponseRecipient;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
@@ -590,6 +587,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			ui.getServitorOIDs().remove(objectID);
 			return;
 		}
+		/*
 		learnableSkills:
 		{
 			final List<EnumeratedPayloadField> ids = buf.getFieldIndices(LEARN_SKILL_ID);
@@ -614,6 +612,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			ui._learnableSkills = new LearnableSkills(skills);
 			return;
 		}
+		*/
 	}
 	
 	/**
@@ -630,7 +629,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 		volatile int _level;
 		volatile long _sp;
 		volatile double _width, _height;
-		volatile LearnableSkills _learnableSkills;
 		
 		UserInfo(int objectID, ICacheServerID context)
 		{
@@ -641,7 +639,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			_level = 1;
 			_sp = 0;
 			_width = _height = 8;
-			_learnableSkills = new LearnableSkills(Collections.emptyMap());
 		}
 		
 		/**
@@ -717,67 +714,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			if (!_servitorOIDs.isEmpty())
 				tb.append("; ").append(_servitorOIDs.size()).append(" servitors");
 			return tb.moveToString();
-		}
-	}
-	
-	public static final class LearnableSkill
-	{
-		final int _skill, _level, _requiredCharacterLevel;
-		final long _sp;
-		
-		LearnableSkill(int skill, int level, long sp, int requiredCharacterLevel)
-		{
-			_skill = skill;
-			_level = level;
-			_sp = sp;
-			_requiredCharacterLevel = requiredCharacterLevel;
-		}
-		
-		public int getSkill()
-		{
-			return _skill;
-		}
-		
-		public int getLevel()
-		{
-			return _level;
-		}
-		
-		public long getSp()
-		{
-			return _sp;
-		}
-		
-		public int getRequiredCharacterLevel()
-		{
-			return _requiredCharacterLevel;
-		}
-		
-		@Override
-		public String toString()
-		{
-			return "[" + _requiredCharacterLevel + "]" + L2SkillTranslator.getInterpretation(_skill, _level) + " " + _sp + "SP";
-		}
-	}
-	
-	public static final class LearnableSkills
-	{
-		private final Map<Integer, LearnableSkill> _skills;
-		
-		LearnableSkills(Map<Integer, LearnableSkill> skills)
-		{
-			_skills = skills;
-		}
-		
-		public LearnableSkill getLearnInfo(int skillID)
-		{
-			return _skills.get(skillID);
-		}
-		
-		@Override
-		public String toString()
-		{
-			return _skills.values().toString();
 		}
 	}
 	

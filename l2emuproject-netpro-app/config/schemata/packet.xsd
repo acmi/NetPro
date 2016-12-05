@@ -381,6 +381,7 @@
 
 			<xs:enumeration value="relation.RelationTypeC1" />
 			<xs:enumeration value="relation.RelationTypeC4" />
+			<xs:enumeration value="relation.RelationTypeHelios" />
 
 			<xs:enumeration value="shortcut.ShortcutActor" />
 			<xs:enumeration value="shortcut.ShortcutSlotBase10" />

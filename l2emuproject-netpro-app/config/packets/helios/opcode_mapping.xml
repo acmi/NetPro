@@ -3,6 +3,7 @@
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
 		<packet opcodePrefix="D0 FA 00" id="CM_REQ_NEW_ENCHANT_RETRY_TO_PUT_ITEMS" />
+		<packet opcodePrefix="D0 FE 00" id="454" /> <!-- 2016-12-07 ?! -->
 		<packet opcodePrefix="D0 FF 00" id="455" />
 		<packet opcodePrefix="D0 00 01" id="CM_REQ_ALCHEMY_SKILL_LIST" />
 		<packet opcodePrefix="D0 01 01" id="457" />

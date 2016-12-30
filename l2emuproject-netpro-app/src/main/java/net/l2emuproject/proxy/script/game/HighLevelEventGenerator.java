@@ -17,6 +17,8 @@ package net.l2emuproject.proxy.script.game;
 
 import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TARGET;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -279,17 +281,18 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			if (oid == null)
 				break onCastFinished;
 			
-			final int[] targets;
+			final List<Integer> targets;
 			{
 				final List<EnumeratedPayloadField> list = buf.getFieldIndices(MULTI_TARGET_OID);
-				targets = list.isEmpty() ? ArrayUtils.EMPTY_INT_ARRAY : new int[list.size()];
-				for (int i = 0; i < targets.length; ++i)
-					targets[i] = buf.readInteger32(list.get(i));
+				targets = list.isEmpty() ? Collections.emptyList() : new ArrayList<>(list.size());
+				for (int i = 0; i < list.size(); ++i)
+					targets.add(buf.readInteger32(list.get(i)));
 			}
 			
 			final int objectID = buf.readInteger32(oid);
 			final int skillID = buf.readFirstInteger32(SKILL_ID);
 			final int skillLvl = buf.readFirstInteger32(SKILL_LVL);
+			/*
 			if (targets.length == 0)
 			{
 				for (final SimpleEventListener listener : _listeners)
@@ -303,6 +306,9 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 				for (final int targetID : targets)
 					listener.onCastSuccess(client, objectID, targetID, skillID, skillLvl);
 			}
+			*/
+			for (final SimpleEventListener listener : _listeners)
+				listener.onCastSuccess(client, objectID, targets, skillID, skillLvl);
 			
 			return;
 		}

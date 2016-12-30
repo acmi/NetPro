@@ -18,6 +18,7 @@ package net.l2emuproject.proxy.network.game.client;
 import java.nio.ByteBuffer;
 
 import net.l2emuproject.network.mmocore.MMOLogger;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ProxyPacketHandler;
 import net.l2emuproject.proxy.network.game.client.packets.SendProtocolVersion;
@@ -41,14 +42,19 @@ public final class L2GameClientPackets extends ProxyPacketHandler
 		if (((L2GameClient)client).isHandshakeDone())
 			return null;
 		
+		// FIXME: primary option should be enumerate and deal with it?
+		// alternatively, since SPV has undergone various changes and opcodes seem to be static for now
+		// we handle those two ops, and enumerate by default, expecting event server
+		
 		switch (opcode)
 		{
 			case SendProtocolVersion.OPCODE:
 			case SendProtocolVersion.OPCODE_LEGACY:
 				return new SendProtocolVersion(opcode);
 			default:
-				// oh NO. WE HAVE FAILED!
-				LOG.info("Possible ProtocolVersion opcode: 0x" + HexUtil.fillHex(opcode, 2));
+				// dimensional server inherits protocol version from origin session
+				if (client.getProtocol() == ProtocolVersionManager.getInstance().getFallbackProtocolGame())
+					LOG.info("Possible ProtocolVersion opcode: 0x" + HexUtil.fillHex(opcode, 2));
 				return null;
 		}
 	}

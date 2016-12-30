@@ -68,7 +68,9 @@
 	<branch id="exUI_1" condition="bitmask.Bit0" description="Personal store">
 		<word alias="Block size (5)" />
 		<byte alias="Mount type" type="MountType" />
-		<byte alias="Private store" type="PersonalStoreType" />
+		<byte alias="Private store" type="PersonalStoreType">
+			<scriptAlias id="LUA_USER_STORE_TYPE" />
+		</byte>
 		<byte alias="Can crystallize" type="YesOrNo" />
 	</branch>
 

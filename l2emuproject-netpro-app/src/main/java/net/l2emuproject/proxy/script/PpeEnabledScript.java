@@ -156,6 +156,20 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	}
 	
 	/**
+	 * Retrieves a value from a session-bound mapping.
+	 * 
+	 * @param client session key
+	 * @param key mapping key
+	 * @param defaultValue value if there was no mapping
+	 * @return value or {@code null}
+	 */
+	protected <T> T getOrDefault(C client, String key, T defaultValue)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.getSessionStateOrDefaultFor(client, getSessionStateKey(key), defaultValue) : null;
+	}
+	
+	/**
 	 * Retrieves a value from a session-bound mapping, setting a new value if none exists.
 	 * 
 	 * @param client session key
@@ -206,7 +220,7 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	{
 		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
 		if (exec != null)
-			exec.discardSessionStateFor(client, key);
+			exec.discardSessionStateFor(client, getSessionStateKey(key));
 	}
 	
 	/**
@@ -218,7 +232,7 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	{
 		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
 		if (exec != null)
-			exec.discardSessionStateByKey(k -> String.valueOf(k).startsWith(getSessionStateKey("")));
+			exec.discardSessionStateByKey(client, k -> String.valueOf(k).startsWith(getSessionStateKey("")));
 	}
 	
 	/**

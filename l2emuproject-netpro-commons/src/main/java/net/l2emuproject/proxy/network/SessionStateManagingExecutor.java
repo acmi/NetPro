@@ -36,6 +36,16 @@ public interface SessionStateManagingExecutor
 	<T> T getSessionStateFor(Proxy client, Object key);
 	
 	/**
+	 * Returns a session-bound state value.
+	 * 
+	 * @param client Session key
+	 * @param key State identifier
+	 * @param defaultValue value to be returned if no value is assigned
+	 * @return state value assigned to the given identifier within a session
+	 */
+	<T> T getSessionStateOrDefaultFor(Proxy client, Object key, T defaultValue);
+	
+	/**
 	 * Returns a session-bound state value, setting a new value if none is present..
 	 * 
 	 * @param client Session key
@@ -97,6 +107,14 @@ public interface SessionStateManagingExecutor
 	 * @param keyMatcher State key matcher
 	 */
 	void discardSessionStateByKey(Predicate<Object> keyMatcher);
+	
+	/**
+	 * Discards all keys for the given {@code client} that match the predicate {@code keyMatcher}. If any key maps to a {@link Future} object, the associated task will be interrupted.
+	 * 
+	 * @param client Session key
+	 * @param keyMatcher State key matcher
+	 */
+	void discardSessionStateByKey(Proxy client, Predicate<Object> keyMatcher);
 	
 	/**
 	 * Schedules a task to be executed after (at least) the given delay. If the session is terminated before or during execution, it will be interrupted and/or terminated.

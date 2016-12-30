@@ -25,14 +25,19 @@ import static net.l2emuproject.proxy.network.login.client.packets.RequestServerL
 import static net.l2emuproject.proxy.network.login.client.packets.RequestServerList.TYPE_C2;
 import static net.l2emuproject.proxy.network.login.client.packets.RequestServerList.TYPE_NAMED;
 
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.L2GameServerInfo;
+import net.l2emuproject.proxy.network.game.NewGameServerConnection;
 import net.l2emuproject.proxy.network.login.client.L2LoginClient;
 import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
@@ -69,10 +74,11 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 		if (gameWorldSocket == null)
 			return;
 		
-		final byte[] fakeIp = gameWorldSocket.getBindAddress().getAddress();
-		final int fakePort = gameWorldSocket.getListenPort();
+		final InetSocketAddress socketAddress = gameWorldSocket.getListenAddress();
+		final byte[] fakeIp = socketAddress.getAddress().getAddress();
+		final int fakePort = socketAddress.getPort();
 		
-		ByteBuffer newBody = packet.getDefaultBufferForModifications();
+		final ByteBuffer newBody = packet.getDefaultBufferForModifications();
 		buf.setByteBuffer(newBody);
 		buf.readUC(); // opcode
 		
@@ -90,12 +96,12 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 				LIST_TYPE.set(c2 ? TYPE_C2 : c1 ? TYPE_C1 : named ? TYPE_NAMED : c0 ? TYPE_C0 : TYPE_BARE);
 				enumerator = ppe.enumeratePacketPayload(getClient().getProtocol(), buf, getClient());
 			}
-			catch (InvalidPacketOpcodeSchemeException e)
+			catch (final InvalidPacketOpcodeSchemeException e)
 			{
 				LOG.error("This cannot happen", e);
 				break usePPE;
 			}
-			catch (PartialPayloadEnumerationException e)
+			catch (final PartialPayloadEnumerationException e)
 			{
 				// ignore this until a 'consume all' element is introduced
 				enumerator = e.getBuffer();
@@ -105,6 +111,8 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 			final List<EnumeratedPayloadField> ips = enumerator.getFieldIndices(GAME_SERVER_IP);
 			final List<EnumeratedPayloadField> ports = enumerator.getFieldIndices(GAME_SERVER_PORT);
 			
+			final InetAddress authorizedAddress = client.getInetAddress();
+			final Map<Integer, NewGameServerConnection> serverList = new HashMap<>();
 			for (int i = 0; i < ids.size(); ++i)
 			{
 				final EnumeratedPayloadField ip = ips.get(i);
@@ -123,9 +131,10 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 					buf.writeD(fakePort);
 				}
 				
-				final L2GameServerInfo gsi = new L2GameServerInfo(realIPv4, realPort);
-				getRecipient().getServers().put(enumerator.readInteger32(ids.get(i)), gsi);
+				final NewGameServerConnection gsi = new L2GameServerInfo(realIPv4, realPort, authorizedAddress);
+				serverList.put(enumerator.readInteger32(ids.get(i)), gsi);
 			}
+			getRecipient().setServerList(serverList);
 			
 			packet.setForwardedBody(newBody);
 			return;
@@ -135,18 +144,20 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 		
 		final int size = buf.readC();
 		buf.readC(); // last server ID
+		final InetAddress authorizedAddress = client.getInetAddress();
+		final Map<Integer, NewGameServerConnection> serverList = new HashMap<>();
 		for (int i = 0; i < size; i++)
 		{
-			int id = buf.readC(); // server ID
+			final int id = buf.readC(); // server ID
 			
 			if (named)
 				buf.skip(40);
 			
 			final int pos = newBody.position();
-			byte[] realIPv4 = buf.readB(4);
-			int port = buf.readD();
-			L2GameServerInfo gsi = new L2GameServerInfo(realIPv4, port);
-			getRecipient().getServers().put(id, gsi);
+			final byte[] realIPv4 = buf.readB(4);
+			final int port = buf.readD();
+			final NewGameServerConnection gsi = new L2GameServerInfo(realIPv4, port, authorizedAddress);
+			serverList.put(id, gsi);
 			
 			newBody.position(pos); // back to IP
 			for (int j = 0; j < 4; j++)
@@ -164,6 +175,7 @@ public final class ServerList extends L2LoginServerPacket implements RequiredInv
 				}
 			}
 		}
+		getRecipient().setServerList(serverList);
 		
 		packet.setForwardedBody(newBody);
 	}

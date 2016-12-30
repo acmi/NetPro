@@ -85,6 +85,14 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	
 	@SuppressWarnings("unchecked")
 	@Override
+	public <T> T getSessionStateOrDefaultFor(Proxy client, Object key, T defaultValue)
+	{
+		validateCall(client, false);
+		return (T)_sessionStateMap.getOrDefault(client, Collections.emptyMap()).getOrDefault(key, defaultValue);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
 	public <K, V> V computeSessionStateIfAbsentFor(Proxy client, K key, Function<K, V> mappingFunction)
 	{
 		validateCall(client, true);
@@ -154,6 +162,42 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 					discarded.add(reportedKey);
 				it.remove();
 			}
+		}
+		if (!discarded.isEmpty() || !cancelled.isEmpty())
+			LOG.info("\r\nDiscarded: " + discarded + "\r\nCancelled: " + cancelled);
+	}
+	
+	@Override
+	public void discardSessionStateByKey(Proxy client, Predicate<Object> keyMatcher)
+	{
+		final SortedSet<String> discarded = new TreeSet<>(), cancelled = new TreeSet<>();
+		final Map<Object, Object> stateMap = _sessionStateMap.getOrDefault(client, Collections.emptyMap());
+		final Iterator<Entry<Object, Object>> it = stateMap.entrySet().iterator();
+		while (it.hasNext())
+		{
+			final Entry<Object, Object> e = it.next();
+			if (!keyMatcher.test(e.getKey()))
+				continue;
+			
+			final String reportedKey = String.valueOf(e.getKey());
+			final Object value = e.getValue();
+			
+			if (!(value instanceof Future))
+			{
+				discarded.add(reportedKey);
+				it.remove();
+				continue;
+			}
+			
+			final Future<?> task = (Future<?>)value;
+			if (!task.isDone())
+			{
+				task.cancel(true);
+				cancelled.add(reportedKey);
+			}
+			else
+				discarded.add(reportedKey);
+			it.remove();
 		}
 		if (!discarded.isEmpty() || !cancelled.isEmpty())
 			LOG.info("\r\nDiscarded: " + discarded + "\r\nCancelled: " + cancelled);

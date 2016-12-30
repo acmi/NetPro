@@ -80,11 +80,18 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 	private static final String USER_WIDTH = "LUA_USER_W";
 	@ScriptFieldAlias
 	private static final String USER_HEIGHT = "LUA_USER_H";
+	@ScriptFieldAlias
+	private static final String USER_PERSONAL_STORE = "LUA_USER_STORE_TYPE";
 	
 	@ScriptFieldAlias
 	private static final String USER_LEVEL = "LUA_USER_LEVEL";
 	@ScriptFieldAlias
 	private static final String USER_SP = "LUA_USER_SP";
+	
+	@ScriptFieldAlias
+	private static final String WAIT_TYPE_ACTOR = "cwt_actor_oid";
+	@ScriptFieldAlias
+	private static final String WAIT_TYPE_SETTING = "cwt_new_wait_type";
 	
 	@ScriptFieldAlias
 	private static final String EFFECT_COUNT = "LUA_SELF_EFFECT_COUNT";
@@ -473,6 +480,10 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			if (height != null)
 				ui._height = buf.readDecimal(height);
 			
+			final EnumeratedPayloadField store = buf.getSingleFieldIndex(USER_PERSONAL_STORE);
+			if (store != null)
+				ui._personalStore = buf.readInteger32(store);
+			
 			return;
 		}
 		allSkills:
@@ -587,6 +598,19 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			ui.getServitorOIDs().remove(objectID);
 			return;
 		}
+		waitType:
+		{
+			final EnumeratedPayloadField actorOID = buf.getSingleFieldIndex(WAIT_TYPE_ACTOR);
+			if (actorOID == null)
+				break waitType;
+			
+			final int objectID = buf.readInteger32(actorOID);
+			if (objectID != ui._objectID)
+				return;
+			
+			ui._waitType = buf.readFirstInteger32(WAIT_TYPE_SETTING);
+			return;
+		}
 		/*
 		learnableSkills:
 		{
@@ -629,6 +653,8 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 		volatile int _level;
 		volatile long _sp;
 		volatile double _width, _height;
+		volatile int _personalStore;
+		volatile int _waitType;
 		
 		UserInfo(int objectID, ICacheServerID context)
 		{
@@ -639,6 +665,8 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			_level = 1;
 			_sp = 0;
 			_width = _height = 8;
+			_personalStore = 0;
+			_waitType = 1;
 		}
 		
 		/**
@@ -669,6 +697,16 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 		public double getHeight()
 		{
 			return _height;
+		}
+		
+		public int getPersonalStore()
+		{
+			return _personalStore;
+		}
+		
+		public int getWaitType()
+		{
+			return _waitType;
 		}
 		
 		/**

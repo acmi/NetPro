@@ -16,15 +16,13 @@
 package net.l2emuproject.proxy.network.game.server;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
-import java.util.Arrays;
 
 import net.l2emuproject.network.mmocore.MMOConfig;
 import net.l2emuproject.proxy.network.AbstractL2ServerConnections;
-import net.l2emuproject.proxy.network.game.L2GameServerInfo;
 import net.l2emuproject.proxy.network.game.L2SessionManager;
+import net.l2emuproject.proxy.network.game.NewGameServerConnection;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 
 /**
@@ -49,7 +47,7 @@ public final class L2GameServerConnections extends AbstractL2ServerConnections
 			{
 				INSTANCE = new L2GameServerConnections(cfg);
 			}
-			catch (IOException e)
+			catch (final IOException e)
 			{
 				throw new Error(e);
 			}
@@ -74,7 +72,7 @@ public final class L2GameServerConnections extends AbstractL2ServerConnections
 	}
 	
 	/**
-	 * Connects to a game server on behalf of <TT>client</TT>.
+	 * Connects to a game server on behalf of {@code client}.
 	 * 
 	 * @param client connection initiator
 	 */
@@ -83,28 +81,25 @@ public final class L2GameServerConnections extends AbstractL2ServerConnections
 		if (client == null)
 			return;
 		
-		final L2GameServerInfo gsi = L2SessionManager.getInstance().getRoute(client);
-		if (gsi == null)
+		final NewGameServerConnection authorizedSession = L2SessionManager.getInstance().getAuthorizedSession(client.getInetAddress());
+		if (authorizedSession == null)
 		{
-			LOG.warn("Can't find target game server for " + client.getHostAddress());
-			L2SessionManager.getInstance().describeExistingRoutes();
+			LOG.info("Unsolicited connection from " + client.getHostAddress());
 			client.notifyFailure();
 			return;
 		}
 		
-		//LOG.info("Found target GS on port " + gsi.getPort());
-		
-		final InetAddress address;
+		LOG.info("Session " + authorizedSession + " handed over to client");
 		try
 		{
-			address = InetAddress.getByAddress(gsi.getIPv4());
-			//LOG.info("Found target GS, connecting to: " + address);
-			
-			connectProxy(client, address, gsi.getPort());
+			final L2GameClient originSession = authorizedSession.getUnderlyingConnection();
+			if (originSession != null)
+				client.setVersion(originSession.getProtocol());
+			connectProxy(client, authorizedSession.getAddress());
 		}
-		catch (Exception e) // UnknownHostException, RuntimeException
+		catch (final Exception e) // RuntimeException
 		{
-			LOG.error("Cannot connect to " + Arrays.toString(gsi.getIPv4()), e);
+			LOG.error("Cannot connect to " + authorizedSession.getAddress(), e);
 			client.closeNow();
 		}
 	}

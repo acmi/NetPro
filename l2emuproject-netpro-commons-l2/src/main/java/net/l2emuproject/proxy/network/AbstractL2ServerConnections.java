@@ -16,16 +16,15 @@
 package net.l2emuproject.proxy.network;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
-
-import javolution.util.FastMap;
 
 import net.l2emuproject.network.mmocore.MMOConfig;
 import net.l2emuproject.network.mmocore.ThreadWrapper;
 import net.l2emuproject.proxy.network.exception.TooManyPendingConnectionsException;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;
 import net.l2emuproject.proxy.network.packets.ProxyRepeatedPacket;
+
+import javolution.util.FastMap;
 
 /**
  * This class manages connections between the underlying proxy server and an existing Lineage II service.
@@ -75,19 +74,16 @@ public abstract class AbstractL2ServerConnections extends ProxyConnections
 	 * 
 	 * @param <T> type of client
 	 * @param client connection initiator
-	 * @param address server's address
-	 * @param port server's port
+	 * @param address server's IP and port
 	 * @throws TooManyPendingConnectionsException if a new connection must be dropped as there are plenty of unfinished ones
 	 */
-	protected final <T extends AbstractL2ClientProxy> void connectProxy(final T client, InetAddress address, int port) throws TooManyPendingConnectionsException
+	protected final <T extends AbstractL2ClientProxy> void connectProxy(final T client, InetSocketAddress address) throws TooManyPendingConnectionsException
 	{
-		final InetSocketAddress destination = new InetSocketAddress(address, port);
 		if (getClients().size() > 9)
 			throw new TooManyPendingConnectionsException(client);
 		
 		// five seconds, otherwise the server will most likely be unplayable anyway
-		final ThreadWrapper connector = connect(destination, 5_000, () ->
-		{
+		final ThreadWrapper connector = connect(address, 5_000, () -> {
 			// force to throw exception to detect defects early
 			getClients().remove(client);
 			client.close(new ProxyRepeatedPacket(SILENT_FAIL));

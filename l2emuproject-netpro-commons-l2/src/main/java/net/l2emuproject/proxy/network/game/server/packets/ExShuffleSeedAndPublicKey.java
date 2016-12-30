@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.l2emuproject.proxy.network.login.client.packets;
+package net.l2emuproject.proxy.network.game.server.packets;
 
 import java.nio.BufferUnderflowException;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.Packet;
+import net.l2emuproject.proxy.network.game.client.L2GameClient;
+import net.l2emuproject.proxy.network.game.server.L2GameServerPackets;
 import net.l2emuproject.proxy.network.meta.PacketPayloadEnumerator;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.RequiredInvasiveOperations;
@@ -27,67 +29,59 @@ import net.l2emuproject.proxy.network.meta.exception.InvalidPacketOpcodeSchemeEx
 import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationException;
 
 /**
- * This packet contains the selected game server ID.
+ * This packet contains the cipher key part sent to a L2 client and the character management
+ * obfuscation key.
  * 
  * @author savormix
  */
-public final class RequestServerLogin extends L2LoginClientPacket implements RequiredInvasiveOperations
+public final class ExShuffleSeedAndPublicKey extends L2GameServerPacket implements RequiredInvasiveOperations
 {
-	/** Packet's identifier */
-	public static final int OPCODE = 0x02;
+	/** Packet's extended identifier */
+	public static final int OPCODE2 = 0x01_38;
 	
-	/** Constructs a packet to extract the ID of the game server to be connected to. */
-	public RequestServerLogin()
+	/**
+	 * Constructs a packet to extract cipher and obfuscation keys.
+	 */
+	public ExShuffleSeedAndPublicKey()
 	{
-		super(OPCODE);
+		super(L2GameServerPackets.OPCODE_FOR_OP2);
 	}
 	
 	@Override
 	protected void readAndModify(MMOBuffer buf, Packet packet) throws BufferUnderflowException, RuntimeException
 	{
-		int id;
+		final L2GameClient client = getRecipient();
 		
-		findID:
+		final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
+		if (ppe == null)
+			return;
+		
+		RandomAccessMMOBuffer enumerator = null;
+		try
 		{
-			usePPE:
-			{
-				final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
-				if (ppe == null)
-					break usePPE;
-				
-				RandomAccessMMOBuffer enumerator = null;
-				try
-				{
-					enumerator = ppe.enumeratePacketPayload(getClient().getProtocol(), buf, getClient());
-				}
-				catch (final InvalidPacketOpcodeSchemeException e)
-				{
-					LOG.error("This cannot happen", e);
-					break usePPE;
-				}
-				catch (final PartialPayloadEnumerationException e)
-				{
-					// ignore this due to reasons
-					enumerator = e.getBuffer();
-				}
-				
-				id = enumerator.readFirstInteger32(GAME_SERVER_ID);
-				break findID;
-			}
-			
-			LOG.warn("Using precompiled logic");
-			
-			buf.readQ(); // session key
-			id = buf.readC();
+			enumerator = ppe.enumeratePacketPayload(client.getProtocol(), buf, client);
+		}
+		catch (final InvalidPacketOpcodeSchemeException e)
+		{
+			LOG.error("This cannot happen", e);
+			return;
+		}
+		catch (final PartialPayloadEnumerationException e)
+		{
+			// ignore this due to reasons
+			enumerator = e.getBuffer();
 		}
 		
-		getReceiver().setSelectedServer(id);
+		final long shuffleSeed = enumerator.readFirstInteger(OBFUSCATION_KEY), cipherKeyPart = enumerator.readFirstInteger(CIPHER_KEY_PART);
+		getReceiver().initCipher(cipherKeyPart);
+		client.initCipher(cipherKeyPart);
+		if (shuffleSeed != 0)
+			client.getDeobfuscator().init(shuffleSeed);
 	}
 	
 	@Override
 	protected int getMinimumLength()
 	{
-		// return READ_Q + READ_C;
 		return 0; // due to PPE
 	}
 }

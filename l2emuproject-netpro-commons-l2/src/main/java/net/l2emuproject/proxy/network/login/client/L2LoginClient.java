@@ -22,8 +22,8 @@ import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_MODERN_KEY
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
+import java.util.Collections;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 import net.l2emuproject.network.protocol.LoginProtocolVersion;
@@ -31,7 +31,7 @@ import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.network.security.ICipher;
 import net.l2emuproject.network.security.LoginCipher;
 import net.l2emuproject.proxy.network.AbstractL2ClientProxy;
-import net.l2emuproject.proxy.network.game.L2GameServerInfo;
+import net.l2emuproject.proxy.network.game.NewGameServerConnection;
 import net.l2emuproject.proxy.network.login.server.L2LoginServer;
 import net.l2emuproject.proxy.network.packets.ProxyRepeatedPacket;
 
@@ -59,8 +59,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	/** Prelude protocol where packets are enciphered with C3/C4 transfer key */
 	public static final int FLAG_CUSTOM_PROTOCOL_PRELUDE_WITH_TRANSFER_KEY = 1 << 30;
 	
-	private final Map<Integer, L2GameServerInfo> _servers;
-	private Integer _targetServer;
+	private Map<Integer, NewGameServerConnection> _serverList;
 	
 	private ICipher _cipher;
 	private boolean _firstTime;
@@ -78,8 +77,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	{
 		super(mmoController, socketChannel);
 		
-		_servers = new ConcurrentHashMap<>();
-		_targetServer = null;
+		_serverList = Collections.emptyMap();
 		
 		_cipher = null;
 		_firstTime = true;
@@ -91,15 +89,12 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	@Override
 	protected void onDisconnectionImpl()
 	{
-		// TODO Auto-generated method stub
-		getServers().clear();
+		_serverList = Collections.emptyMap();
 	}
 	
 	@Override
 	protected void onForcedDisconnection()
 	{
-		// TODO Auto-generated method stub
-		
 	}
 	
 	@Override
@@ -108,7 +103,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 		final int size = buf.remaining();
 		
 		// This forces proxy to work transparently with all possible login protocols
-		boolean legacyProtocol = getProtocol().isOlderThan(MODERN);
+		final boolean legacyProtocol = getProtocol().isOlderThan(MODERN);
 		legacy: if (legacyProtocol)
 		{
 			if (isProtocolFlagSet(FLAG_CUSTOM_PROTOCOL_PRELUDE_WITH_TRANSFER_KEY))
@@ -198,33 +193,33 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	}
 	
 	/**
-	 * Returns real game server addresses from the server list.
+	 * Stores the {@code ServerList} sent to this client.
 	 * 
-	 * @return game server addresses
+	 * @param serverList game server list
 	 */
-	public Map<Integer, L2GameServerInfo> getServers()
+	public void setServerList(Map<Integer, NewGameServerConnection> serverList)
 	{
-		return _servers;
+		_serverList = serverList;
 	}
 	
 	/**
-	 * Returns the ID of a game server into which client requested to log in.
+	 * Selects a server from the server list.
 	 * 
-	 * @return game server ID
+	 * @param serverID ID of the server to select
 	 */
-	public Integer getTargetServer()
+	public void setSelectedServer(int serverID)
 	{
-		return _targetServer;
+		_serverList = Collections.singletonMap(serverID, _serverList.get(serverID));
 	}
 	
 	/**
-	 * Specifies the ID of a game server into which client requested to log in.
+	 * Returns the selected server.
 	 * 
-	 * @param targetServer game server ID
+	 * @return selected server
 	 */
-	public void setTargetServer(int targetServer)
+	public NewGameServerConnection getSelectedServer()
 	{
-		_targetServer = targetServer;
+		return _serverList.values().iterator().next();
 	}
 	
 	/**
@@ -281,7 +276,7 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	
 	private boolean isFirstTime()
 	{
-		boolean ft = _firstTime;
+		final boolean ft = _firstTime;
 		_firstTime = false;
 		return ft;
 	}

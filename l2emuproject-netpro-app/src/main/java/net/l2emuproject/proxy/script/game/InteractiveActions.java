@@ -24,12 +24,16 @@ import net.l2emuproject.proxy.script.ScriptFieldAlias;
  */
 public interface InteractiveActions
 {
+	/** Clicked object OID */
 	@ScriptFieldAlias
 	String TARGET_OID_ACTION = "action_target_oid";
+	/** Whether it was a SHIFT+click */
 	@ScriptFieldAlias
 	String MOVEMENT_PROHIBITED_FOR_ACTION = "action_without_moving";
+	/** CTRL+clicked object OID */
 	@ScriptFieldAlias
 	String TARGET_OID_ATTACK = "attack_target_oid";
+	/** Whether it was a CTRL+SHIFT+click */
 	@ScriptFieldAlias
 	String MOVEMENT_PROHIBITED_FOR_ATTACK = "attack_without_moving";
 }

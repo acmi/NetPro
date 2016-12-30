@@ -193,7 +193,6 @@
 			<xs:enumeration value="MonsterRaceBetMultiplier" />
 			<xs:enumeration value="MountType" />
 			<xs:enumeration value="MoveType" />
-			<xs:enumeration value="MuseumStat" />
 			<xs:enumeration value="MyInventorySlot" />
 			<xs:enumeration value="NevitHuntingProgress" />
 			<xs:enumeration value="Npc" />

@@ -92,7 +92,7 @@ public class L2SessionManager
 					_authorizedSessionLock.lockInterruptibly();
 					try
 					{
-						L2Logger.getLogger(getClass()).info("Active session expired: " + _authorizedSession);
+						L2Logger.getLogger(getClass()).info("Expired session: " + _authorizedSession);
 						_authorizedSession = null;
 						_sessionExpiryTask = null;
 					}

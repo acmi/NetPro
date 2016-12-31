@@ -89,7 +89,7 @@ public final class L2GameServerConnections extends AbstractL2ServerConnections
 			return;
 		}
 		
-		LOG.info("Session " + authorizedSession + " handed over to client");
+		LOG.info("Handed over session: " + authorizedSession);
 		try
 		{
 			final L2GameClient originSession = authorizedSession.getUnderlyingConnection();

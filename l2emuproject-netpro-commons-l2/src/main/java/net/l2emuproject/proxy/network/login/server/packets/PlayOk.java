@@ -16,14 +16,15 @@
 package net.l2emuproject.proxy.network.login.server.packets;
 
 import java.nio.BufferUnderflowException;
+import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.L2SessionManager;
+import net.l2emuproject.proxy.network.game.L2SessionSetterAsync;
 import net.l2emuproject.proxy.network.game.NewGameServerConnection;
 import net.l2emuproject.proxy.network.login.client.L2LoginClient;
-import net.l2emuproject.proxy.network.packets.ProxyRepeatedPacket;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
 
 /**
@@ -51,23 +52,14 @@ public final class PlayOk extends L2LoginServerPacket
 		final NewGameServerConnection authorizedSession = client.getSelectedServer();
 		if (L2SessionManager.getInstance().setAuthorizedSession(authorizedSession))
 		{
-			LOG.info("Active AuthD session: " + authorizedSession);
+			LOG.info("Active session: " + authorizedSession);
 			return;
 		}
 		
-		final byte[] thisPacket = packet.getDefaultBufferForModifications().array();
+		LOG.info("Delayed session: " + authorizedSession);
+		final ByteBuffer thisPacket = packet.getDefaultBufferForModifications();
 		packet.demandLoss(null);
-		L2ThreadPool.schedule(() -> {
-			if (client.isDced())
-				return;
-			if (L2SessionManager.getInstance().setAuthorizedSession(authorizedSession))
-			{
-				client.sendPacket(new ProxyRepeatedPacket(thisPacket));
-				LOG.info("Active AuthD session: " + authorizedSession + " (async)");
-				return;
-			}
-			L2ThreadPool.schedule(this, 10, TimeUnit.MILLISECONDS);
-		}, 10, TimeUnit.MILLISECONDS);
+		L2ThreadPool.schedule(new L2SessionSetterAsync(client, authorizedSession, thisPacket, thisPacket), 10, TimeUnit.MILLISECONDS);
 	}
 	
 	@Override

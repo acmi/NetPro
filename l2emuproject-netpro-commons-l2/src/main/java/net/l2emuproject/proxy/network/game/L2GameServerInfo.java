@@ -90,6 +90,6 @@ public final class L2GameServerInfo implements NewGameServerConnection
 	@Override
 	public String toString()
 	{
-		return getAuthorizedClientAddress() + " -> " + getAddress();
+		return (_underlyingConnection != null ? "[Raid] " : "[Auth] ") + getAuthorizedClientAddress() + " -> " + getAddress();
 	}
 }

@@ -17,6 +17,7 @@ package net.l2emuproject.proxy.ui.savormix.io.base;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -100,5 +101,17 @@ public interface IOConstants
 	static BufferedReader openScriptResource(String... relativePath) throws IOException
 	{
 		return Files.newBufferedReader(SCRIPT_CONFIG_DIRECTORY.resolve(Paths.get(".", relativePath)));
+	}
+	
+	/**
+	 * Opens a resource file.
+	 * 
+	 * @param relativePath relative path to resource
+	 * @return resource as stream
+	 * @throws IOException if the specified resource cannot be read
+	 */
+	static InputStream openBinaryScriptResource(String... relativePath) throws IOException
+	{
+		return Files.newInputStream(SCRIPT_CONFIG_DIRECTORY.resolve(Paths.get(".", relativePath)));
 	}
 }

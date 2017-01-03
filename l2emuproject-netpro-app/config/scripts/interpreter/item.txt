@@ -27019,7 +27019,7 @@
 27548	Lv. 80 Equipment Pack
 27549	Lv. 81 Equipment Pack
 27550	Lv. 83 Equipment Pack
-27551	Rare Accessory Pack
+27551	Rare Accessory Pack 30-day
 27552	Ruler's Authority 30-day
 27553	Agathion - Griffin Premium
 27554	Blessed Griffin Egg 1-day
@@ -27052,7 +27052,7 @@
 27581	XP Rune III (Lv. 1-100+) 100% Pack (30-day) 1-hour
 27582	SP Rune 100% 1-hour
 27583	Prestige Rune 100% 1-hour
-27584	Top-grade Spirt Stone
+27584	Top-grade Spirit Stone
 27585	Special Supply Box Standard
 27586	Special Supply Box Mid-grade
 27587	Special Supply Box High-grade
@@ -27866,6 +27866,79 @@
 28395	Heine Exclusive Fishing Tools - 300 Pack
 28396	Heine Exclusive Fishing Tools - 3,000 Pack
 28397	2016 World Olympiad Hero XXX's Accessory
+28398	Today''s To-do Soulshot Box
+28399	Today's To-do Blessed Spiritshot Box
+28400	Entrance Pass: Embryo Command Post
+28401	XP Rune III 100% Pack (1-hr)
+28402	XP Rune III 100% Pack (7-day)
+28403	SP Rune 100% Pack (1-hr)
+28404	SP Rune 100% Pack (7-day)
+28405	Maphr's Rune 100% Pack (1-hr)
+28406	Maphr's Rune 100% Pack (7-day)
+28407	Eva's Rune 7-day
+28408	Eva's Rune 30-day
+28409	Eva's Rune Pack (7-day)
+28410	Eva's Rune Pack (30-day)
+28411	XP Rune II Pack (7-day)
+28412	+10 Shiny Elemental Shirt Pack
+28413	+10 Reflect Attack T-shirt Pack
+28414	+10 Reflect Magic T-shirt Pack
+28415	+10 Pa'agrio's Shirt Pack
+28416	+10 Sayha's Shirt Pack
+28417	+10 Eva's Shirt Pack
+28418	+10 Maphr's Shirt Pack
+28419	Shiny Elemental Shirt Pack
+28420	Reflect Attack T-shirt Pack
+28421	Reflect Magic T-shirt Pack
+28422	Shiny Elemental Shirt Special Pack
+28423	Reflect Attack T-shirt Special Pack
+28424	Reflect Magic T-shirt Special Pack
+28425	Royal White Save Ticket (R)
+28426	Royal White Save Ticket (R95)
+28427	Royal White Save Ticket (R99)
+28428	Royal Purple Save Ticket (R)
+28429	Royal Purple Save Ticket (R95)
+28430	Royal Purple Save Ticket (R99)
+28431	Entrance Pass: Embryo Command Post
+28432	Abundant Seven Signs Box
+28433	Agathion - Babayaga Premium
+28434	Mount - Elk
+28435	Draco's Hat: Warrior Event
+28436	Draco's Hat: Wizard Event
+28437	Sayha's Talisman Stage 1
+28438	Sayha's Talisman Stage 2
+28439	Sayha's Talisman Stage 3
+28440	Sayha's Talisman Stage 4
+28441	Sayha's Talisman Stage 5
+28442	Sayha's Talisman Stage 6
+28443	Sayha's Talisman Stage 7
+28444	Sayha's Talisman Stage 8
+28445	Sayha's Talisman Stage 9
+28446	Sayha's Talisman Stage 10
+28447	Sayha's Talisman Pack
+28448	Sayha's Talisman Stage 7 Pack
+28449	Sayha's Talisman Stage 8 Pack
+28450	Sayha's Talisman Stage 9 Pack
+28451	Sayha's Talisman Stage 10 Pack
+28452	Fortune Talisman Pack
+28453	Sayha's Energy
+28454	Sayha's Blessing
+28455	Dimensional Bracelet Stage 6 Pack
+28456	Dimensional Bracelet Stage 6 CHA+5
+28457	Seed Talisman Enhancement Pack
+28458	Fortune Hair Accessory Box
+28459	Heine Exclusive Bait (85-89)
+28460	Heine Exclusive Bait (90-94)
+28461	Heine Exclusive Bait (95-98)
+28462	Heine Exclusive Bait (99+)
+28463	Heine Exclusive Bait Coupon
+28464	Exclusive Reward Chest
+28465	Heine Exclusive Reward Chest
+28466	Heine Exclusive Fishing Tools - 300 Pack
+28467	Heine Exclusive Fishing Tools - 3,000 Pack
+28468	NoItemName
+28469	NoItemName
+28470	NoItemName
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -34814,12 +34887,12 @@
 36969	Wind Stone (+ 150)
 36970	Dark Stone (+ 150)
 36971	Holy Stone (+ 150)
-36972	Lesser Fire Crystal - Super
-36973	Lesser Water Crystal - Super
-36974	Lesser Earth Crystal - Super
-36975	Lesser Wind Crystal - Super
-36976	Lesser Dark Crystal - Super
-36977	Lesser Holy Crystal - Super
+36972	Fire Crystal - Super
+36973	Water Crystal - Super
+36974	Earth Crystal - Super
+36975	Wind Crystal - Super
+36976	Dark Crystal - Super
+36977	Holy Crystal - Super
 36978	Scroll: Enchant Hair Accessory
 36979	Life Stone: Hair Accessory
 36980	9th Anniversary Rocket Gun Hat: Chain Fireworks
@@ -35506,7 +35579,7 @@
 37663	Refined Romantic Chapeau: Green
 37664	Refined Romantic Chapeau: Red
 37665	Refined Romantic Chapeau: Yellow
-37666	Rare Accessory Pack
+37666	Rare Accessory Pack 30-day
 37667	Blessed Antharas' Earring 30-day
 37668	Blessed Valakas' Necklace 30-day
 37669	Tauti's Ring 30-day
@@ -40220,7 +40293,7 @@
 47380	Blessed Lucky Weapon Enchant Stone Chest - R Event
 47381	Blessed Lucky Armor Enchant Stone Chest - R Event
 47382	Freya's Wind Scroll (High-grade) Temporary Name
-47383	Red Libra Supply Items Lv5 Event
+47383	Red Libra Supplies Lv. 5 Event
 47384	Express Bus Pass Card
 47385	Balthus Knight Mark
 47386	Sibis' Letter Event
@@ -40468,6 +40541,10 @@
 47647	Vital Stone Lv. 4 Jewelry Box
 47648	Garnet Lv. 4 Jewelry Box
 47649	Tanzanite Lv. 4 Jewelry Box
+47663	Freya's Art of Seduction Barrier
+47664	Freya's Art of Seduction Exp
+47665	Pa'agrio's Blessing Might
+47666	Pa'agrio's Blessing Exp
 47677	Red Cat's Eye Lv. 1
 47678	Red Cat's Eye Lv. 2
 47679	Red Cat's Eye Lv. 3

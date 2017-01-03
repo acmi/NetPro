@@ -13,21 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.pledge;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedLegacyIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets the given byte/word/dword as an ID of a cinematic sequence.
+ * Interprets an integer as decorative NPC type.
  * 
- * @author savormix
+ * @author _dev_
  */
-@Deprecated
-public class Cinematic extends ScriptedLegacyIntegerIdInterpreter
+public class ExpertType extends ScriptedZeroBasedIntegerIdInterpreter
 {
-	@Override
-	protected void loadImpl()
+	/** Constructs this interpreter. */
+	public ExpertType()
 	{
-		addInterpretation(102, "Talking island tutorial #1");
+		super("Envoy of the Forces", "Expert and ornaments 1", "Expert and ornaments 2");
 	}
 }

@@ -39,10 +39,10 @@ import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.script.PpeEnabledLoaderScriptRegistry;
 import net.l2emuproject.proxy.script.ScriptManager;
-import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics;
 import net.l2emuproject.proxy.script.analytics.ObjectAnalytics;
 import net.l2emuproject.proxy.script.analytics.ObjectLocationAnalytics;
 import net.l2emuproject.proxy.script.analytics.PledgeAnalytics;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
 import net.l2emuproject.proxy.script.game.HighLevelEventGenerator;
 import net.l2emuproject.proxy.script.game.PpeGameScriptRegistry;
 import net.l2emuproject.proxy.setup.IPAliasManager;
@@ -167,6 +167,10 @@ public final class Loader
 			}
 		}
 		
+		// no point in having these any longer
+		LoadOption.HIDE_CONTRIBUTORS.setSystemProperty();
+		LoadOption.HIDE_OVERLAY.setSystemProperty();
+		
 		if (GraphicsEnvironment.isHeadless()) // a fool's hope
 			LoadOption.DISABLE_UI.setSystemProperty();
 		
@@ -181,8 +185,7 @@ public final class Loader
 		{
 			try
 			{
-				SwingUtilities.invokeAndWait(() ->
-				{
+				SwingUtilities.invokeAndWait(() -> {
 					final SplashScreen bareImage = SplashScreen.getSplashScreen();
 					final Window splash;
 					surrogateCallable.set(splash = new SplashFrame());
@@ -207,8 +210,7 @@ public final class Loader
 		{
 			LOG_MESSAGES = new ArrayDeque<>(UNPROCESSED_LOG_MESSAGE_LIMIT);
 			// TODO: this does not work with MMOLogger
-			ListeningLog.addListener(message ->
-			{
+			ListeningLog.addListener(message -> {
 				final boolean added = LOG_MESSAGES.offer(message);
 				if (!added || LOG_MESSAGES.size() > UNPROCESSED_LOG_MESSAGE_LIMIT)
 				{
@@ -222,8 +224,7 @@ public final class Loader
 			LOG_MESSAGES = new ArrayDeque<>(0);
 		
 		{
-			L2Proxy.addStartupHook(() ->
-			{
+			L2Proxy.addStartupHook(() -> {
 				if (LoadOption.DISABLE_UI.isNotSet())
 					LogLoadScriptManager.getInstance().addScript(PpeEnabledLoaderScriptRegistry.getInstance());
 				if (LoadOption.DISABLE_PROXY.isNotSet())
@@ -246,7 +247,7 @@ public final class Loader
 							cache.restoreFromCache();
 							break scripts;
 						}
-						catch (StaleScriptCacheException e)
+						catch (final StaleScriptCacheException e)
 						{
 							if (cache.isCompilerUnavailable())
 							{
@@ -256,7 +257,7 @@ public final class Loader
 							}
 							// otherwise proceed to compilation
 						}
-						catch (IOException e)
+						catch (final IOException e)
 						{
 							// proceed to compilation
 						}
@@ -275,7 +276,7 @@ public final class Loader
 			{
 				L2Proxy.main(); // launches the backend
 			}
-			catch (Throwable t)
+			catch (final Throwable t)
 			{
 				JOptionPane.showMessageDialog(null, StackTraceUtil.traceToString(t), t.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
 				System.exit(1);
@@ -293,7 +294,7 @@ public final class Loader
 			{
 				SwingUtilities.invokeAndWait(new UILoader(surrogateCallable.get()));
 			}
-			catch (Exception e)
+			catch (final Exception e)
 			{
 				log.error("Unable to start UI.", e);
 				return;
@@ -321,14 +322,14 @@ public final class Loader
 					// Launch with user preferred
 					UIManager.setLookAndFeel(SettingsManager.getInstance().getLookAndFeelName());
 				}
-				catch (Exception e)
+				catch (final Exception e)
 				{
 					try
 					{
 						// Default to native
 						UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					}
-					catch (Exception e2)
+					catch (final Exception e2)
 					{
 						// whatever
 					}

@@ -20,17 +20,18 @@ import java.lang.reflect.Modifier;
 import java.util.Collection;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import eu.revengineer.simplejse.type.UnloadableScript;
 
 import net.l2emuproject.proxy.network.AbstractL2ClientProxy;
 import net.l2emuproject.proxy.network.AbstractL2ServerProxy;
-import net.l2emuproject.proxy.network.ForwardedNotificationExecutor;
 import net.l2emuproject.proxy.network.ForwardedNotificationManager;
 import net.l2emuproject.proxy.network.Proxy;
-import net.l2emuproject.proxy.network.game.client.L2GameClient;
+import net.l2emuproject.proxy.network.SessionStateManagingExecutor;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
@@ -85,7 +86,7 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 				aliases.add(String.valueOf(f.get(null)));
 				f.setAccessible(false);
 			}
-			catch (Exception e)
+			catch (final Exception e)
 			{
 				LOG.error("Cannot handle field alias " + f.getName(), e);
 			}
@@ -137,42 +138,102 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	 * 
 	 * @param client disconnected client endpoint
 	 */
-	public void handleDisconnection(L2GameClient client)
+	public void handleDisconnection(C client)
 	{
 		// do nothing by default
 	}
 	
 	/**
-	 * Calls {@link #scheduleOnPacketHandlingThread(Proxy, Runnable, long, TimeUnit)}.
+	 * Retrieves a value from a session-bound mapping.
 	 * 
-	 * @param clientOrServer a connection endpoint
-	 * @param r a task
-	 * @param delay amount of time to wait
-	 * @param unit time unit used to specify the amount
-	 * @return a scheduled task wrapper
+	 * @param client session key
+	 * @param key mapping key
+	 * @return value or {@code null}
 	 */
-	public static final ScheduledFuture<?> schedule(Proxy clientOrServer, Runnable r, long delay, TimeUnit unit)
+	protected <T> T get(C client, String key)
 	{
-		return scheduleOnPacketHandlingThread(clientOrServer, r, delay, unit);
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.getSessionStateFor(client, getSessionStateKey(key)) : null;
 	}
 	
 	/**
-	 * Schedules an action to be repeatedly executed synchronously on the packet notification handling thread.
+	 * Retrieves a value from a session-bound mapping.
 	 * 
-	 * @param clientOrServer a connection endpoint
-	 * @param r a task
-	 * @param initialDelay amount of time to wait initially
-	 * @param delay amount of time to wait
-	 * @param unit time unit used to specify the amount
-	 * @return a scheduled task wrapper
+	 * @param client session key
+	 * @param key mapping key
+	 * @param defaultValue value if there was no mapping
+	 * @return value or {@code null}
 	 */
-	public static final ScheduledFuture<?> scheduleWithFixedDelay(Proxy clientOrServer, Runnable r, long initialDelay, long delay, TimeUnit unit)
+	protected <T> T getOrDefault(C client, String key, T defaultValue)
 	{
-		final ForwardedNotificationExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(clientOrServer);
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.getSessionStateOrDefaultFor(client, getSessionStateKey(key), defaultValue) : null;
+	}
+	
+	/**
+	 * Retrieves a value from a session-bound mapping, setting a new value if none exists.
+	 * 
+	 * @param client session key
+	 * @param key mapping key
+	 * @param mappingFunction default value function
+	 * @return value or {@code null}
+	 */
+	protected <T> T computeIfAbsent(C client, String key, Function<String, T> mappingFunction)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.computeSessionStateIfAbsentFor(client, getSessionStateKey(key), mappingFunction) : null;
+	}
+	
+	/**
+	 * Sets a value in the session-bound mapping, returning the previously set value.
+	 * 
+	 * @param client session key
+	 * @param key mapping key
+	 * @param value value to set
+	 * @return value or {@code null}
+	 */
+	protected Object set(C client, String key, Object value)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.setSessionStateFor(client, getSessionStateKey(key), value) : null;
+	}
+	
+	/**
+	 * Removes a value from a session-bound mapping.
+	 * 
+	 * @param client session key
+	 * @param key mapping key
+	 * @return value or {@code null}
+	 */
+	protected <T> T remove(C client, String key)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.removeSessionStateFor(client, getSessionStateKey(key)) : null;
+	}
+	
+	/**
+	 * Removes a value from a session-bound mapping. If this value was an executable task, it will be interrupted and/or cancelled.
+	 * 
+	 * @param client session key
+	 * @param key mapping key
+	 */
+	protected void discard(C client, String key)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
 		if (exec != null)
-			return exec.scheduleWithFixedDelay(r, initialDelay, delay, unit);
-		
-		return null;
+			exec.discardSessionStateFor(client, getSessionStateKey(key));
+	}
+	
+	/**
+	 * Removes all values from a session-bound mapping. If any of those values were executable tasks, they will be interrupted and/or cancelled.
+	 * 
+	 * @param client session key
+	 */
+	protected void clear(C client)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		if (exec != null)
+			exec.discardSessionStateByKey(client, k -> String.valueOf(k).startsWith(getSessionStateKey("")));
 	}
 	
 	/**
@@ -182,19 +243,63 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	 * excessive heap allocations, or heavy multi-dimensional analysis.<BR>
 	 * Typical use of this method is to update script's internal state (data structures in the heap) without needing to use locking/synchronization.
 	 * 
-	 * @param clientOrServer a connection endpoint
+	 * @param client a connection endpoint
+	 * @param taskName task identifier
+	 * @param r a task
+	 * @return a scheduled task wrapper
+	 */
+	protected Future<?> execute(C client, String taskName, Runnable r)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.executeSessionBound(client, getSessionStateKey(taskName), r) : null;
+	}
+	
+	/**
+	 * Schedules an action to be executed synchronously on the packet notification handling thread.<BR>
+	 * <BR>
+	 * This allows you to evade real concurrency as long as your scheduled actions take little time to complete, that is they do not involve I/O or
+	 * excessive heap allocations, or heavy multi-dimensional analysis.<BR>
+	 * Typical use of this method is to update script's internal state (data structures in the heap) without needing to use locking/synchronization.
+	 * 
+	 * @param client a connection endpoint
+	 * @param taskName task identifier
 	 * @param r a task
 	 * @param delay amount of time to wait
 	 * @param unit time unit used to specify the amount
 	 * @return a scheduled task wrapper
 	 */
-	public static final ScheduledFuture<?> scheduleOnPacketHandlingThread(Proxy clientOrServer, Runnable r, long delay, TimeUnit unit)
+	protected ScheduledFuture<?> schedule(C client, String taskName, Runnable r, long delay, TimeUnit unit)
 	{
-		final ForwardedNotificationExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(clientOrServer);
-		if (exec != null)
-			return exec.schedule(r, delay, unit);
-		
-		return null;
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.scheduleSessionBound(client, getSessionStateKey(taskName), r, delay, unit) : null;
+	}
+	
+	/**
+	 * Schedules an action to be repeatedly executed synchronously on the packet notification handling thread.
+	 * 
+	 * @param client a connection endpoint
+	 * @param taskName task identifier
+	 * @param r a task
+	 * @param initialDelay amount of time to wait initially
+	 * @param delay amount of time to wait
+	 * @param unit time unit used to specify the amount
+	 * @return a scheduled task wrapper
+	 */
+	protected ScheduledFuture<?> scheduleWithFixedDelay(C client, String taskName, Runnable r, long initialDelay, long delay, TimeUnit unit)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.scheduleSessionBoundWithFixedDelay(client, getSessionStateKey(taskName), r, initialDelay, delay, unit) : null;
+	}
+	
+	@Override
+	public void onUnload() throws RuntimeException
+	{
+		ForwardedNotificationManager.getInstance().discardSessionStateByKey(k -> String.valueOf(k).startsWith(getSessionStateKey("")));
+	}
+	
+	private String getSessionStateKey(String key)
+	{
+		return getClass().getName() + "#" + key;
 	}
 	
 	/**

@@ -18,8 +18,8 @@ package net.l2emuproject.proxy.network;
 import java.nio.ByteBuffer;
 import java.util.Map;
 import java.util.Set;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Predicate;
 
 import net.l2emuproject.proxy.network.Proxy.AsyncDisconnectionNotifier;
 import net.l2emuproject.proxy.network.ProxyConnections.AsyncConnectionNotifier;
@@ -45,12 +45,11 @@ public class ForwardedNotificationManager
 		// being deep down in a library, nothing better to do
 		_executors = new ForwardedNotificationExecutor[Runtime.getRuntime().availableProcessors()];
 		for (int i = 0; i < _executors.length; ++i)
-			_executors[i] = new ForwardedNotificationExecutor();
+			_executors[i] = new ForwardedNotificationExecutor(i + 1);
 		
-		_client2Executor = new FastMap<Proxy, ForwardedNotificationExecutor>().setShared(true);
+		_client2Executor = new ConcurrentHashMap<>();
 		
-		net.l2emuproject.lang.management.ShutdownManager.addShutdownHook(() ->
-		{
+		net.l2emuproject.lang.management.ShutdownManager.addShutdownHook(() -> {
 			LOG.info("Shutting down...");
 			
 			int unfinished = 0;
@@ -85,14 +84,12 @@ public class ForwardedNotificationManager
 	 */
 	public void addDisconnectionNotification(AsyncDisconnectionNotifier notification)
 	{
-		final ForwardedNotificationExecutor exec = _client2Executor.get(notification.getClient());
+		final ForwardedNotificationExecutor exec = _client2Executor.remove(notification.getClient());
 		if (exec == null)
 		{
 			LOG.warn("Disconnection notification on an inactive connection?!");
 			return;
 		}
-		
-		_client2Executor.remove(notification.getClient());
 		exec.execute(notification);
 	}
 	
@@ -129,9 +126,20 @@ public class ForwardedNotificationManager
 	 * @param proxy a socket
 	 * @return notification executor
 	 */
-	public ForwardedNotificationExecutor getPacketExecutor(Proxy proxy)
+	public SessionStateManagingExecutor getPacketExecutor(Proxy proxy)
 	{
 		return _client2Executor.get(proxy.getClient());
+	}
+	
+	/**
+	 * Discards session state values assigned to all keys that match the given predicate.
+	 * 
+	 * @param keyMatcher key matcher predicate
+	 */
+	public void discardSessionStateByKey(Predicate<Object> keyMatcher)
+	{
+		for (final SessionStateManagingExecutor exec : _client2Executor.values())
+			exec.discardSessionStateByKey(keyMatcher);
 	}
 	
 	/**

@@ -26,7 +26,9 @@
 	<byte alias="Sex" type="Sex">
 		<scriptAlias id="ci_player_sex"/>
 	</byte>
-	<dword alias="Visible class" type="CharacterClass" />
+	<dword alias="Visible class" type="CharacterClass">
+		<scriptAlias id="ci_player_class_model"/>
+	</dword>
 
 	<dword alias="Underwear" type="Item">
 		<scriptAlias id="ci_player_armor_under"/>
@@ -75,18 +77,36 @@
 	<dword alias="Weapon / Two Handed augmentation effect (1)" type="Augmentation" />
 	<dword alias="Weapon / Two Handed augmentation effect (2)" type="Augmentation" />
 
-	<byte alias="Armor enchant glow" />
+	<byte alias="Armor enchant glow">
+		<scriptAlias id="ci_player_armorset_ench"/>
+	</byte>
 
-	<dword alias="Visible Weapon" type="Item" />
-	<dword alias="Visible Shield [Sigil]" type="Item" />
+	<dword alias="Visible Weapon" type="Item">
+		<scriptAlias id="ci_player_weapon_app"/>
+	</dword>
+	<dword alias="Visible Shield [Sigil]" type="Item">
+		<scriptAlias id="ci_player_shield_app"/>
+	</dword>
 	<dword alias="Visible Weapon / Two Handed" type="Item" />
 
-	<dword alias="Visible Gloves" type="Item" />
-	<dword alias="Visible Upper Body" type="Item" />
-	<dword alias="Visible Lower Body" type="Item" />
-	<dword alias="Visible Boots" type="Item" />
-	<dword alias="Visible Hair Accessory (top)" type="Item" />
-	<dword alias="Visible Hair Accessory (bottom)" type="Item" />
+	<dword alias="Visible Gloves" type="Item">
+		<scriptAlias id="ci_player_armor_gloves_app"/>
+	</dword>
+	<dword alias="Visible Upper Body" type="Item">
+		<scriptAlias id="ci_player_armor_chest_app"/>
+	</dword>
+	<dword alias="Visible Lower Body" type="Item">
+		<scriptAlias id="ci_player_armor_pants_app"/>
+	</dword>
+	<dword alias="Visible Boots" type="Item">
+		<scriptAlias id="ci_player_armor_boots_app"/>
+	</dword>
+	<dword alias="Visible Hair Accessory (top)" type="Item">
+		<scriptAlias id="ci_player_hair1_app"/>
+	</dword>
+	<dword alias="Visible Hair Accessory (bottom)" type="Item">
+		<scriptAlias id="ci_player_hair2_app"/>
+	</dword>
 
 	<byte alias="In PvP" type="YesOrNo" />
 	<dword alias="Reputation" />
@@ -129,6 +149,7 @@
 	</dword>
 	<dword alias="Alliance ID" type="Alliance">
 		<scriptAlias id="AIC_ALLY_ID" />
+		<scriptAlias id="ci_player_alliance"/>
 	</dword>
 	<dword alias="Alliance crest ID" type="AllianceCrest">
 		<scriptAlias id="AIC_ALLY_CREST_ID" />
@@ -181,15 +202,21 @@
 	<dword alias="Agathion" type="Npc" />
 	<byte alias="Unknown" type="YesOrNo" />
 
-	<dword alias="Current CP" />
+	<dword alias="Current CP">
+		<scriptAlias id="ci_player_cp_current" />
+	</dword>
 	<dword alias="Current HP">
 		<scriptAlias id="ci_player_hp_current" />
 	</dword>
 	<dword alias="Maximum HP">
 		<scriptAlias id="ci_player_hp_maximum" />
 	</dword>
-	<dword alias="Current MP" />
-	<dword alias="Maximum MP" />
+	<dword alias="Current MP">
+		<scriptAlias id="ci_player_mp_current" />
+	</dword>
+	<dword alias="Maximum MP">
+		<scriptAlias id="ci_player_mp_maximum" />
+	</dword>
 
 	<byte alias="Special effect" type="ave.AbnormalVisualEffectMask2" />
 	<dword alias="Visual effects" id="ave_cnt" />

@@ -1741,3 +1741,41 @@
 1011741	Red Noblesse Appearance Stone
 1011742	White Noblesse Appearance Stone
 1011743	Race Change Ticket
+1011744	XP Rune I (Lv1-85) 200% Pack (7-day)
+1011745	XP Rune II (Lv1-95) 100% Pack (1-hour)
+1011746	XP Rune II (Lv1-95) 100% Pack (7-day)
+1011747	SP Rune 200% Pack (1-hour)
+1011748	SP Rune 200% Pack (7-day)
+1011749	Fantasy Special Cookie
+1011750	Energy of Destruction (x600)
+1011751	Giant's Energy (x120)
+1011752	Carrot (x4000)
+1011753	Ultimate Carrot Pack (x40000)
+1011754	Shiny Elemental Shirt
+1011755	Blessed Scroll: Enchant Elemental Shirt
+1011756	Blessed Scroll: Enchant Elemental Shirt (x50)
+1011757	Ultimate Enchant Elemental Shirt Scroll Pack
+1011758	Red R99 Coupon
+1011759	Red Dark/Bloody Coupon
+1011760	Mysterious Soulshot (R-grade) x100,000
+1011761	Mysterious Blessed Spiritshot (R-grade) x100,000
+1011762	Entrance Pass: Baylor
+1011763	Entrance Pass: Embryo Command Post
+1011764	Ancient Kartia Bundle
+1011765	Emperor's Dessert Set (Wizard) x10
+1011766	Emperor's Dessert Set (Warrior) x10
+1011767	Emperor's Dessert Set (Knight) x10
+1011768	Heavenly CP Cookie x10
+1011769	Halloween Cloak
+1011770	Halloween Broomstick Mount
+1011771	Halloween Outfit Appearance Stone
+1011772	Halloween Weapon Appearance Stone
+1011773	Vampire Outfit Pack
+1011774	Heine Exclusive Bait Coupon
+1011775	Heine Exclusive Bait Coupon x2500
+1011776	Heine Exclusive Bait Coupon x10000
+1011777	Heine Exclusive Bait Coupon x100
+1011778	Monster Research x100
+1011779	Monster Research x50,000
+1011780	Monster Research x200,000
+1011781	Monster Research x300,000

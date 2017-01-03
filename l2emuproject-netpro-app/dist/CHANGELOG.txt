@@ -1,3 +1,11 @@
+VERSION [1.6]
+-------------
+Dimensional server support.
+LATEST Helios support and packet definitions.
+More analytics.
+More scripting under a managed environment capabilities.
+Interpreter updates.
+
 VERSION [1.5]
 -------------
 Helios support and packet definitions.

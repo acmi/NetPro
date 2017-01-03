@@ -32,9 +32,9 @@ public class EnchantResult extends ScriptedZeroBasedIntegerIdInterpreter
 				"Successful enchant",
 				"Failed enchant: lost item, received crystals",
 				"Inappriopriate conditions",
-				"Failed blessed enchant: retained item",
+				"Failed enchant: retained item",
 				"Failed enchant: lost item",
-				"Failed safe enchant: retained enchant level"
+				"Failed enchant: retained enchant level"
 				);
 		// @formatter:on
 	}

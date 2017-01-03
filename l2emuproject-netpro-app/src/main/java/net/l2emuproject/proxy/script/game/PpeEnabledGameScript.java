@@ -34,5 +34,7 @@ public abstract class PpeEnabledGameScript extends PpeEnabledScript<L2GameClient
 	public void onUnload() throws RuntimeException
 	{
 		PpeGameScriptRegistry.getInstance().remove(this);
+		
+		super.onUnload();
 	}
 }

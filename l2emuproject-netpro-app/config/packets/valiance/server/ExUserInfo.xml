@@ -15,7 +15,7 @@
 	<unsignedByte alias="Bitmask byte #3" id="exUI_3" />
 
 	<branch id="exUI_1" condition="bitmask.Bit7">
-		<dword alias="Roles" /> <!-- Clan member/leader, ... -->
+		<dword alias="Roles" type="UserRoles" />
 	</branch>
 	<branch id="exUI_1" condition="bitmask.Bit6" description="Name/base appearance">
 		<word alias="Block size" />
@@ -68,7 +68,9 @@
 	<branch id="exUI_1" condition="bitmask.Bit0" description="Personal store">
 		<word alias="Block size (5)" />
 		<byte alias="Mount type" type="MountType" />
-		<byte alias="Private store" type="PersonalStoreType" />
+		<byte alias="Private store" type="PersonalStoreType">
+			<scriptAlias id="LUA_USER_STORE_TYPE" />
+		</byte>
 		<byte alias="Can crystallize" type="YesOrNo" />
 	</branch>
 
@@ -135,8 +137,12 @@
 	</branch>
 	<branch id="exUI_2" condition="bitmask.Bit2" description="Object boundaries">
 		<word alias="Block size (18)" />
-		<double alias="Collision radius (width)" />
-		<double alias="Collision height (height)" />
+		<double alias="Collision radius (width)">
+			<scriptAlias id="LUA_USER_W" />
+		</double>
+		<double alias="Collision height (height)">
+			<scriptAlias id="LUA_USER_H" />
+		</double>
 	</branch>
 	<branch id="exUI_2" condition="bitmask.Bit1" description="Stats screen/elemental offense">
 		<word alias="Block size (5)" />

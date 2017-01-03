@@ -108,7 +108,7 @@ public class NetProScriptCache extends JavaClassScriptCache
 					{
 						ecjCP = ClasspathExtractor.getClasspathOf(classpath);
 					}
-					catch (IOException e)
+					catch (final IOException e)
 					{
 						throw new AssertionError("classpath", e);
 					}

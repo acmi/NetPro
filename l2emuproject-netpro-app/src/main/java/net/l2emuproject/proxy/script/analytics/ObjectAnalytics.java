@@ -27,7 +27,8 @@ import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
-import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics.UserInfo;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics.UserInfo;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
@@ -101,7 +102,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 				final UserInfo ui = LiveUserAnalytics.getInstance().getUserInfo(server.getTargetClient());
 				if (ui != null)
 				{
-					final int selector = ui._objectID;
+					final int selector = ui.getUserOID();
 					L2ObjectInfoCache.getOrAdd(selector, cacheContext).getExtraInfo().setTargetOID(rab.readInteger32(selfTarget));
 				}
 			}

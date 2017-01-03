@@ -3,13 +3,13 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="CM_REQ_SHORT_CUT_REG" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Type" type="shortcut.ShortcutType" id="cond_1" />
+	<dword alias="Type" type="shortcut.ShortcutType" id="type" />
 	<dword alias="Slot" type="shortcut.ShortcutSlotBase12" />
-	<branch id="cond_1" condition="shortcut.ItemShortcut">
+	<branch id="type" condition="shortcut.ItemShortcut">
 		<dword alias="Item OID" type="ObjectID" />
-		<dword alias="-1" />
+		<dword alias="0" />
 	</branch>
-	<branch id="cond_1" condition="shortcut.SkillShortcut">
+	<branch id="type" condition="shortcut.SkillShortcut">
 		<dword alias="Skill" type="Skill">
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
 		</dword>
@@ -17,13 +17,17 @@
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
 		</dword>
 	</branch>
-	<branch id="cond_1" condition="shortcut.ActionShortcut">
+	<branch id="type" condition="shortcut.ActionShortcut">
 		<dword alias="Action" type="PlayerAction" />
-		<dword alias="-1" />
+		<dword alias="0" />
 	</branch>
-	<branch id="cond_1" condition="shortcut.MacroShortcut">
+	<branch id="type" condition="shortcut.MacroShortcut">
 		<dword alias="Macro ID" />
-		<dword alias="-1" />
+		<dword alias="0" />
+	</branch>
+	<branch id="type" condition="shortcut.RecipeShortcut">
+		<dword alias="Recipe" type="Recipe" />
+		<dword alias="CI level" />
 	</branch>
 	<dword alias="Executor" type="shortcut.ShortcutActor" />
 	<dword alias="0" />

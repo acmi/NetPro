@@ -7,6 +7,7 @@
 <packet id="SM_TELEPORT_TO_LOCATION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Actor OID" type="ObjectID">
 		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="teleport_to_location_OID" />
 	</dword>
 	<dword alias="Destination X">
 		<scriptAlias id="OIL_OBJECT_X_SERVER" />

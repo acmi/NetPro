@@ -193,7 +193,6 @@
 			<xs:enumeration value="MonsterRaceBetMultiplier" />
 			<xs:enumeration value="MountType" />
 			<xs:enumeration value="MoveType" />
-			<xs:enumeration value="MuseumStat" />
 			<xs:enumeration value="MyInventorySlot" />
 			<xs:enumeration value="NevitHuntingProgress" />
 			<xs:enumeration value="Npc" />
@@ -351,6 +350,8 @@
 			<xs:enumeration value="pledge.AllyCrestDDS" />
 			<xs:enumeration value="pledge.Attendance" />
 			<xs:enumeration value="pledge.BonusType" />
+			<xs:enumeration value="pledge.Expert" />
+			<xs:enumeration value="pledge.ExpertType" />
 			<xs:enumeration value="pledge.LegacyPledgeAuthority" />
 			<xs:enumeration value="pledge.LegacyPledgePowerAction" />
 			<xs:enumeration value="pledge.PledgeAdvertisement" />
@@ -379,6 +380,7 @@
 
 			<xs:enumeration value="relation.RelationTypeC1" />
 			<xs:enumeration value="relation.RelationTypeC4" />
+			<xs:enumeration value="relation.RelationTypeHelios" />
 
 			<xs:enumeration value="shortcut.ShortcutActor" />
 			<xs:enumeration value="shortcut.ShortcutSlotBase10" />
@@ -415,6 +417,7 @@
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="BlockUnblockPlayer" />
 			<xs:enumeration value="DefaultChat" />
+			<xs:enumeration value="EnchantFailRetainItem" />
 			<xs:enumeration value="EngineObjectAdd" />
 			<xs:enumeration value="EngineObjectUpdate" />
 			<xs:enumeration value="FerryShout" />

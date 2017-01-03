@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="CM_ACTION" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Target OID" type="ObjectID" />
+	<dword alias="Target OID" type="ObjectID">
+		<scriptAlias id="action_target_oid" />
+	</dword>
 	<dword alias="Current client X" />
 	<dword alias="Current client Y" />
 	<dword alias="Current client Z" />
-	<byte alias="Shift (do not move)" type="YesOrNo" />
+	<byte alias="Shift (do not move)" type="YesOrNo">
+		<scriptAlias id="action_without_moving" />
+	</byte>
 </packet>

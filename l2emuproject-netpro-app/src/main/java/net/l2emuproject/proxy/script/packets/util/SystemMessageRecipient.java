@@ -134,6 +134,8 @@ public interface SystemMessageRecipient
 				return (T)Integer.valueOf(readIntegerToken(buf));
 			case SYSMSG_TOKEN_SKILL:
 				return (T)Long.valueOf(readSkillToken(buf));
+			case SYSMSG_TOKEN_AMOUNT:
+				return (T)Long.valueOf(readAmountToken(buf));
 			case SYSMSG_TOKEN_REGION:
 				return (T)readRegionToken(buf);
 			case SYSMSG_TOKEN_AUGMENTABLE_ITEM:

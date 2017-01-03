@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>net.l2emuproject</groupId>
 		<artifactId>l2emuproject-netpro-main</artifactId>
-		<version>1.6</version>
+		<version>1.7-SNAPSHOT</version>
 		<relativePath>../l2emuproject-netpro-main</relativePath>
 	</parent>
 	<artifactId>l2emuproject-netpro-app</artifactId>

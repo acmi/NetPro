@@ -25,6 +25,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -206,6 +207,19 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	@Override
 	public ScheduledFuture<?> scheduleSessionBound(Proxy client, Object key, Runnable r, long delay, TimeUnit unit)
 	{
+		if (Thread.currentThread() != _activeThread)
+		{
+			// auto-assume call from a long-running task thread
+			try
+			{
+				return submit(() -> scheduleSessionBound(client, key, r, delay, unit)).get();
+			}
+			catch (InterruptedException | ExecutionException e)
+			{
+				throw new RuntimeException(e);
+			}
+		}
+		
 		final Object oldValue = removeSessionStateFor(client, key);
 		if (oldValue instanceof Future<?>)
 			((Future<?>)oldValue).cancel(true);
@@ -235,6 +249,19 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	@Override
 	public ScheduledFuture<?> scheduleSessionBoundWithFixedDelay(Proxy client, Object key, Runnable r, long initialDelay, long delay, TimeUnit unit)
 	{
+		if (Thread.currentThread() != _activeThread)
+		{
+			// auto-assume call from a long-running task thread
+			try
+			{
+				return submit(() -> scheduleSessionBoundWithFixedDelay(client, key, r, initialDelay, delay, unit)).get();
+			}
+			catch (InterruptedException | ExecutionException e)
+			{
+				throw new RuntimeException(e);
+			}
+		}
+		
 		final Object oldValue = removeSessionStateFor(client, key);
 		if (oldValue instanceof Future<?>)
 			((Future<?>)oldValue).cancel(true);

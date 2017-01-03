@@ -205,6 +205,52 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	}
 	
 	@Override
+	public Future<?> executeSessionBound(Proxy client, Object key, Runnable r)
+	{
+		if (Thread.currentThread() != _activeThread)
+		{
+			// auto-assume call from a long-running task thread
+			try
+			{
+				return submit(() -> executeSessionBound(client, key, r)).get();
+			}
+			catch (InterruptedException | ExecutionException e)
+			{
+				throw new RuntimeException(e);
+			}
+		}
+		
+		final Object oldValue = removeSessionStateFor(client, key);
+		if (oldValue instanceof Future<?>)
+			((Future<?>)oldValue).cancel(true);
+		final BlockingQueue<Future<?>> expectedValue = new ArrayBlockingQueue<>(1);
+		final Future<?> newValue = submit(() -> {
+			try
+			{
+				r.run();
+			}
+			catch (final RuntimeException e)
+			{
+				LOG.error(key, e);
+			}
+			finally
+			{
+				try
+				{
+					removeSessionStateFor(client, key, expectedValue.take());
+				}
+				catch (final InterruptedException e)
+				{
+					// application is shutting down, so whatever, really
+				}
+			}
+		});
+		setSessionStateFor(client, key, newValue);
+		expectedValue.add(newValue);
+		return newValue;
+	}
+	
+	@Override
 	public ScheduledFuture<?> scheduleSessionBound(Proxy client, Object key, Runnable r, long delay, TimeUnit unit)
 	{
 		if (Thread.currentThread() != _activeThread)
@@ -228,6 +274,10 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 			try
 			{
 				r.run();
+			}
+			catch (final RuntimeException e)
+			{
+				LOG.error(key, e);
 			}
 			finally
 			{

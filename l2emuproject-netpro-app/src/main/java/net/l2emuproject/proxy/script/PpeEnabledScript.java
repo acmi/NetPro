@@ -20,6 +20,7 @@ import java.lang.reflect.Modifier;
 import java.util.Collection;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -233,6 +234,24 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
 		if (exec != null)
 			exec.discardSessionStateByKey(client, k -> String.valueOf(k).startsWith(getSessionStateKey("")));
+	}
+	
+	/**
+	 * Schedules an action to be executed synchronously on the packet notification handling thread.<BR>
+	 * <BR>
+	 * This allows you to evade real concurrency as long as your scheduled actions take little time to complete, that is they do not involve I/O or
+	 * excessive heap allocations, or heavy multi-dimensional analysis.<BR>
+	 * Typical use of this method is to update script's internal state (data structures in the heap) without needing to use locking/synchronization.
+	 * 
+	 * @param client a connection endpoint
+	 * @param taskName task identifier
+	 * @param r a task
+	 * @return a scheduled task wrapper
+	 */
+	protected Future<?> execute(C client, String taskName, Runnable r)
+	{
+		final SessionStateManagingExecutor exec = ForwardedNotificationManager.getInstance().getPacketExecutor(client);
+		return exec != null ? exec.executeSessionBound(client, getSessionStateKey(taskName), r) : null;
 	}
 	
 	/**

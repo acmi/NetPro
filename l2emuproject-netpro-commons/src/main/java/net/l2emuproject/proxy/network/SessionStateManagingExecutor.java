@@ -117,6 +117,16 @@ public interface SessionStateManagingExecutor
 	void discardSessionStateByKey(Proxy client, Predicate<Object> keyMatcher);
 	
 	/**
+	 * Submits a task to be executed on the session's packet handling thread. If the session is terminated before or during execution, it will be interrupted and/or terminated.
+	 * 
+	 * @param client Session key
+	 * @param key Task identifier
+	 * @param r Executable object
+	 * @return a task
+	 */
+	Future<?> executeSessionBound(Proxy client, Object key, Runnable r);
+	
+	/**
 	 * Schedules a task to be executed after (at least) the given delay. If the session is terminated before or during execution, it will be interrupted and/or terminated.
 	 * 
 	 * @param client Session key

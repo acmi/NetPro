@@ -68,7 +68,7 @@ public final class ExRaidReserveResult extends L2GameServerPacket implements Req
 		RandomAccessMMOBuffer enumerator = null;
 		try
 		{
-			enumerator = ppe.enumeratePacketPayload(client.getProtocol(), buf, client);
+			enumerator = ppe.enumeratePacketPayload(client.getProtocol(), buf, getReceiver());
 		}
 		catch (final InvalidPacketOpcodeSchemeException e)
 		{

@@ -7,8 +7,10 @@
 	<dword alias="Location X" />
 	<dword alias="Location Y" />
 	<dword alias="Location Z" />
-	<dword alias="1" />
-	<bytes alias="Zeroes">
-		<length>84</length>
-	</bytes>
+	<dword alias="Raid server" type="YesOrNo" id="raid" />
+	<branch id="raid" condition="Positive">
+		<bytes alias="Zeroes">
+			<length>84</length>
+		</bytes>
+	</branch>
 </packet>

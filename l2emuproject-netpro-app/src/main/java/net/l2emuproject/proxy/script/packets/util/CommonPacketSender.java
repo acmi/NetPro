@@ -379,6 +379,8 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendHTML(L2GameClient client, String html)
 	{
 		final int size = 1 + 4 + stdStringSize(html) + 4 + 4;
+		if (size > 0xFF_FF - 2)
+			throw new IllegalArgumentException("Packet requires fragmentation");
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
 		
@@ -400,6 +402,8 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendTutorialHTML(L2GameClient client, String html)
 	{
 		final int size = 1 + 4 + stdStringSize(html);
+		if (size > 0xFF_FF - 2)
+			throw new IllegalArgumentException("Packet requires fragmentation");
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
 		
@@ -666,7 +670,9 @@ public final class CommonPacketSender extends PacketWriterScript
 	
 	public static final void sendRequestAutoFish(L2GameServer server, boolean enable)
 	{
-		server.sendPacket(new ProxyRepeatedPacket((byte)0xD0, (byte)0x05, (byte)0x01, (byte)(enable ? 0x01 : 0x00)));
+		final byte[] content = new byte[] { (byte)0xD0, (byte)0x05, (byte)0x01, (byte)(enable ? 0x01 : 0x00) };
+		server.sendPacket(new ProxyRepeatedPacket(content));
+		//server.getTargetClient().notifyPacketForwarded(null, ByteBuffer.wrap(content).order(ByteOrder.LITTLE_ENDIAN), System.currentTimeMillis());
 	}
 	
 	public static final void sendRequestSkillList(L2GameServer server)

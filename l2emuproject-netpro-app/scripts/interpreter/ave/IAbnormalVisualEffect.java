@@ -89,30 +89,30 @@ public interface IAbnormalVisualEffect
 		"ave_changebody",
 		// 50
 		"ave_knockdown",
-		"ave_navit_advent",
-		null,
-		null, // D grade?
-		null,
+		"ave_navit_advent", // unlisted
+		"ave_knockback",
+		"ave_change_7anniversary",
+		"ave_pain_root",
 		// 55
 		"ave_deport",
-		null,
-		null,
-		null,
-		null,
+		"ave_aura_buff",
+		"ave_aura_buff_self",
+		"ave_aura_debuff",
+		"ave_aura_debuff_self",
 		// 60
-		null,
 		"ave_hurricane",
-		null,
-		null,
+		"ave_hurricane_self",
+		"ave_black_mark",
+		"br_ave_soul_avatar",
 		"ave_change_grade_b",
 		// 65
-		null,
-		null,
+		"br_ave_beam_sword_onehand",
+		"br_ave_beam_sword_dual",
 		"nochat_ave",
 		"ave_herb_pa_up",
 		"ave_herb_ma_up",
 		// 70
-		null,
+		"ave_seed_talisman1", // ave_seed_talisman1 is not used
 		"ave_seed_talisman2",
 		"ave_seed_talisman3",
 		"ave_seed_talisman4",

@@ -13,43 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.l2emuproject.proxy.io.packetlog;
+package net.l2emuproject.proxy.io.packetlog.ps;
 
-import java.util.Set;
-
+import net.l2emuproject.proxy.io.packetlog.AbstractLogFilePacket;
 import net.l2emuproject.proxy.network.EndpointType;
 
 /**
- * Represents a packet loaded from a NetPro historical packet log file.
+ * Represents a packet loaded from a PacketSamurai/YAL historical packet log file.
  * 
  * @author _dev_
  */
-public class LogFilePacket extends AbstractLogFilePacket
+public class PSLogFilePacket extends AbstractLogFilePacket
 {
-	private final Set<LoggedPacketFlag> _flags;
-	
 	/**
 	 * Constructs a historical packet wrapper.
 	 * 
 	 * @param endpoint packet type
 	 * @param content packet body
 	 * @param receivalTime time of reception
-	 * @param flags additional info
 	 */
-	public LogFilePacket(EndpointType endpoint, byte[] content, long receivalTime, Set<LoggedPacketFlag> flags)
+	public PSLogFilePacket(EndpointType endpoint, byte[] content, long receivalTime)
 	{
 		super(endpoint, content, receivalTime);
-		
-		_flags = flags;
-	}
-	
-	/**
-	 * Returns additional info about this packet.
-	 * 
-	 * @return additional info flags
-	 */
-	public Set<LoggedPacketFlag> getFlags()
-	{
-		return _flags;
 	}
 }

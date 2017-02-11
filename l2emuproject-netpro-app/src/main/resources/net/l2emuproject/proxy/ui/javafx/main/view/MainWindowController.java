@@ -375,7 +375,7 @@ public class MainWindowController implements Initializable, IOConstants
 		}
 		
 		final PacketLogTabController currentTabController = getCurrentPacketTabController();
-		if (protocol.equals(currentTabController.protocolProperty().get()))
+		if (currentTabController != null && protocol.equals(currentTabController.protocolProperty().get()))
 		{
 			if (_tbPacketHidingConfig.isSelected())
 				return; // an UI control is already open

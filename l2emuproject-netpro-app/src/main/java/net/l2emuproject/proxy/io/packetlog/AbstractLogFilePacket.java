@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 L2EMU UNIQUE
+ * Copyright 2011-2016 L2EMU UNIQUE
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,18 @@
  */
 package net.l2emuproject.proxy.io.packetlog;
 
-import java.util.Set;
-
 import net.l2emuproject.proxy.network.EndpointType;
 
 /**
- * Represents a packet loaded from a NetPro historical packet log file.
+ * Basic information about a packet.
  * 
  * @author _dev_
  */
-public class LogFilePacket extends AbstractLogFilePacket
+public abstract class AbstractLogFilePacket
 {
-	private final Set<LoggedPacketFlag> _flags;
+	private final EndpointType _endpoint;
+	private final byte[] _content;
+	private final long _receivalTime;
 	
 	/**
 	 * Constructs a historical packet wrapper.
@@ -34,22 +34,41 @@ public class LogFilePacket extends AbstractLogFilePacket
 	 * @param endpoint packet type
 	 * @param content packet body
 	 * @param receivalTime time of reception
-	 * @param flags additional info
 	 */
-	public LogFilePacket(EndpointType endpoint, byte[] content, long receivalTime, Set<LoggedPacketFlag> flags)
+	public AbstractLogFilePacket(EndpointType endpoint, byte[] content, long receivalTime)
 	{
-		super(endpoint, content, receivalTime);
-		
-		_flags = flags;
+		_endpoint = endpoint;
+		_content = content;
+		_receivalTime = receivalTime;
 	}
 	
 	/**
-	 * Returns additional info about this packet.
+	 * Returns the type of this packet.
 	 * 
-	 * @return additional info flags
+	 * @return packet type
 	 */
-	public Set<LoggedPacketFlag> getFlags()
+	public EndpointType getEndpoint()
 	{
-		return _flags;
+		return _endpoint;
+	}
+	
+	/**
+	 * Returns the content of this packet.
+	 * 
+	 * @return packet body
+	 */
+	public byte[] getContent()
+	{
+		return _content;
+	}
+	
+	/**
+	 * Returns the time of arrival of this packet.
+	 * 
+	 * @return receival time
+	 */
+	public long getReceivalTime()
+	{
+		return _receivalTime;
 	}
 }

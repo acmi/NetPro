@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.io.packetlog.l2ph;
 
+import net.l2emuproject.proxy.io.packetlog.AbstractLogFilePacket;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
 
@@ -23,12 +24,9 @@ import net.l2emuproject.proxy.network.ServiceType;
  * 
  * @author _dev_
  */
-public class L2PhLogFilePacket
+public class L2PhLogFilePacket extends AbstractLogFilePacket
 {
 	private final ServiceType _service;
-	private final EndpointType _endpoint;
-	private final long _receivalTime;
-	private final byte[] _content;
 	
 	/**
 	 * Constructs a historical packet wrapper.
@@ -40,10 +38,9 @@ public class L2PhLogFilePacket
 	 */
 	public L2PhLogFilePacket(ServiceType service, EndpointType endpoint, long receivalTime, byte[] content)
 	{
+		super(endpoint, content, receivalTime);
+		
 		_service = service;
-		_endpoint = endpoint;
-		_content = content;
-		_receivalTime = receivalTime;
 	}
 	
 	/**
@@ -54,35 +51,5 @@ public class L2PhLogFilePacket
 	public ServiceType getService()
 	{
 		return _service;
-	}
-	
-	/**
-	 * Returns the type of this packet.
-	 * 
-	 * @return packet type
-	 */
-	public EndpointType getEndpoint()
-	{
-		return _endpoint;
-	}
-	
-	/**
-	 * Returns the time of arrival of this packet.
-	 * 
-	 * @return receival time
-	 */
-	public long getReceivalTime()
-	{
-		return _receivalTime;
-	}
-	
-	/**
-	 * Returns the content of this packet.
-	 * 
-	 * @return packet body
-	 */
-	public byte[] getContent()
-	{
-		return _content;
 	}
 }

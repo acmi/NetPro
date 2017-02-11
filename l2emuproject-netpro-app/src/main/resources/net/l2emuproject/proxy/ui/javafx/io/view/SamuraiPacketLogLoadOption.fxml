@@ -2,9 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<TitledPane fx:id="_tpWrapper" animated="false" text="[01.01.2000 23.59.59].pLog" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.io.view.L2PhPacketLogLoadOptionController">
+<TitledPane fx:id="_tpWrapper" animated="false" text="NetPro_packet_log.plog" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController">
    <content>
       <VBox>
          <children>
@@ -26,7 +26,8 @@
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1">
@@ -38,13 +39,19 @@
                               </Label>
                            </children>
                         </FlowPane>
-                        <Label text="%load.infodlg.details.size" />
                         <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <Label fx:id="_labType" text="%load.infodlg.phx.details.type.std" />
+                              <Label fx:id="_labVersion" text="7F" />
                            </children>
                         </FlowPane>
-                        <Label text="%load.infodlg.phx.details.type" GridPane.rowIndex="1" />
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="_labPacketCount" text="123,456,789" />
+                           </children>
+                        </FlowPane>
+                        <Label text="%load.infodlg.details.size" />
+                        <Label text="%load.infodlg.details.version" GridPane.rowIndex="1" />
+                        <Label text="%load.infodlg.details.packetcount" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </content>
@@ -58,8 +65,11 @@
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </ComboBox>
-                        <Spinner fx:id="_spTzOffset" editable="true" maxWidth="1.7976931348623157E308" />
-                        <Label fx:id="_labTzOffset" alignment="CENTER" maxWidth="1.7976931348623157E308" text="%load.infodlg.phx.options.tzoffset.explain" textAlignment="CENTER" wrapText="true" />
+                        <CheckBox fx:id="_cbInvisible" mnemonicParsing="false" selected="true" text="%load.infodlg.options.include.invisible">
+                           <tooltip>
+                              <Tooltip text="%load.infodlg.options.include.invisible.tooltip" />
+                           </tooltip>
+                        </CheckBox>
                      </children>
                   </VBox>
                </content>

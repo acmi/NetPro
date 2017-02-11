@@ -40,7 +40,7 @@ import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
 import net.l2emuproject.util.HexUtil;
 
 /**
- * Various methods related to NetPro historical packet log file handling.
+ * Various methods related to L2PacketHack historical packet log file handling.
  * 
  * @author _dev_
  */

@@ -22,38 +22,44 @@ import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
  * 
  * @author savormix
  */
-public class TutorialEvents extends ScriptedBitmaskInterpreter
+public class TutorialEvent extends ScriptedBitmaskInterpreter
 {
 	/** Constructs this interpreter. */
-	public TutorialEvents()
+	public TutorialEvent()
 	{
-		// missing: level79 level39 level75 level35 level20 level15 level7 level5
 		// @formatter:off
 		super("All notifications disabled", null,
-				"move", // 0 | LMB click; moving with WASD will not cause client to send anything
-				"view_change", // RMB + motion
-				"wheel_scroll", // MW scroll
-				"right_click", // RMB click
-				"wheel_click", // MW/MMB click
-				null, // 5
+				"MOVE_CLICK", // 0 | LMB click; moving with WASD will not cause client to send anything
+				"VIEW_CHANGE", // RMB + motion
+				"WHEELING", // MW scroll
+				"RIGHT_CLICK", // RMB click
+				"WHEEL_CLICK", // MW/MMB click
+				"LEVEL_UP_49", // 5
+				"LEVEL_UP_61",
+				"LEVEL_UP_73",
+				"HP_UNDER_1over3", // Aside from the oldest clients, this is indicated by a flashing HP bar
+				"DIE_1_9",
+				"LEVEL_UP_5", // 10
+				"LEVEL_UP_7",
+				"LEVEL_UP_20",
+				"OPEN_QUEST_WINDOW", // ALT+U, then 'Item' tab
+				"LEVEL_UP_39",
+				"LEVEL_UP_76", // 15
 				null,
 				null,
-				"hp1_3", // Aside from the oldest clients, this is indicated by a flashing HP bar
-				"die1_9 (1_4)",
-				null, // 10
 				null,
 				null,
-				"questtab", // ALT+U, then 'Item' tab
-				null,
-				null, // 15
-				null,
-				null,
-				null,
-				null,
-				null, // 20
-				null,
-				null,
-				"HP recovery" // Sitting/idling
+				"PICK_BLUE_GEM", // 20
+				"PICK_ADENA",
+				"LEVEL_UP_4",
+				"SIT_DOWN", // Sitting/idling for HP regen
+				"LEVEL_UP_35",
+				"LEVEL_UP_75", // 25
+				"LEVEL_UP_15",
+				"LEVEL_UP_6",
+				"LEVEL_UP_9",
+				"LEVEL_UP_10",
+				"LEVEL_UP_12" // 30
 		);
 		// @formatter:on
 	}

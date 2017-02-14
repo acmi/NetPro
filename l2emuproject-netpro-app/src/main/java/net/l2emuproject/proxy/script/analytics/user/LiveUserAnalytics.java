@@ -352,7 +352,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 				}
 				else
 					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
-				inventoryItems.add(new InventoryItem(objectID, templateID, amount, encLvl, augmentation, encEff, appearance, sa));
+				inventoryItems.add(new InventoryItem(objectID, templateID, amount, encLvl, augmentation, ItemElementalAttributes.NO_ATTRIBUTES, encEff, appearance, sa));
 			}
 			computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory()).setInventory(inventoryItems);
 		}
@@ -423,22 +423,29 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 				else
 					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
 				
-				final InventoryItem item = new InventoryItem(objectID, templateID, amount, encLvl, augmentation, encEff, appearance, sa);
+				final InventoryItem item = new InventoryItem(objectID, templateID, amount, encLvl, augmentation, ItemElementalAttributes.NO_ATTRIBUTES, encEff, appearance, sa);
 				final int change = buf.readInteger32(changes.get(i));
-				final UserInventory inv = computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory());
-				switch (change)
+				try
 				{
-					case 1: // add
-						inv.add(item);
-						break;
-					case 2: // update
-						inv.update(item);
-						break;
-					case 3: // remove
-						inv.remove(item);
-						break;
-					default:
-						throw new IllegalArgumentException("IU: " + change);
+					final UserInventory inv = computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory());
+					switch (change)
+					{
+						case 1: // add
+							inv.add(item);
+							break;
+						case 2: // update
+							inv.update(item);
+							break;
+						case 3: // remove
+							inv.remove(item);
+							break;
+						default:
+							throw new IllegalArgumentException("IU: " + change);
+					}
+				}
+				catch (final IllegalStateException e)
+				{
+					// whatever
 				}
 			}
 		}

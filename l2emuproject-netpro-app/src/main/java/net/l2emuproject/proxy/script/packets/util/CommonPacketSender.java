@@ -690,6 +690,19 @@ public final class CommonPacketSender extends PacketWriterScript
 		sendLearnableSkillRequest(server, 0x7C, skillID, skillLevel, learnType);
 	}
 	
+	public static final void sendRequestExRqItemLink(L2GameServer server, int objectID)
+	{
+		final int size = 1 + 2 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x1E);
+		buf.writeD(objectID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
 	private static final void sendLearnableSkillRequest(L2GameServer server, int opcode, int skillID, int skillLevel, int learnType)
 	{
 		final int size = 1 + 4 + 4 + 4;

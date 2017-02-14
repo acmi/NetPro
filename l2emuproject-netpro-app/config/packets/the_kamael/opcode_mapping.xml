@@ -215,7 +215,7 @@
 		<packet opcodePrefix="D0 1B 00" id="220" />
 		<packet opcodePrefix="D0 1C 00" id="221" />
 		<packet opcodePrefix="D0 1D 00" id="235" />
-		<packet opcodePrefix="D0 1E 00" id="236" />
+		<packet opcodePrefix="D0 1E 00" id="CM_REQ_EX_RQ_ITEM_LINK" />
 		<packet opcodePrefix="D0 1F 00" id="237" />
 		<packet opcodePrefix="D0 20 00" id="238" />
 		<packet opcodePrefix="D0 21 00" id="232" />

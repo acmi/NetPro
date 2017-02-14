@@ -93,7 +93,6 @@
 		<packet id="233" name="RequestAllFortressInfo" />
 		<packet id="234" name="RequestExOrcMove" />
 		<packet id="235" name="RequestExSetTutorial" />
-		<packet id="236" name="RequestExRqItemLink" />
 		<packet id="237" name="RequestCannotMoveAnymoreAirShip" />
 		<packet id="238" name="RequestMoveToLocationInAirShip" /> <!-- within airship -->
 		<packet id="239" name="RequestSaveKeyMapping" />
@@ -1535,6 +1534,14 @@
 		UNICODE "(Send)%s"
 		-->
 		<packet id="CM_REQ_EXIT_PARTY_MATCHING_WAITING_ROOM" name="RequestExitPartyMatchingWaitingRoom" />
+
+		<!--
+		ASCII "chd"
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestExRqItemLink"
+		-->
+		<packet id="CM_REQ_EX_RQ_ITEM_LINK" name="RequestExRqItemLink" />
 
 		<!--
 		ASCII "chdddd"

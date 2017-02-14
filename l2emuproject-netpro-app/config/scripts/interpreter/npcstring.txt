@@ -3683,14 +3683,14 @@
 91104	Special Requests from the Adventure Guild - Lv2 (Lv. 90-93)
 91105	Defeat Monsters in the Guillotine Fortress
 91111	90
-91112	Guillotine Fortress
+91112	Fairy Settlement
 91201	Special Requests from the Adventure Guild - Lv3 (Lv. 94-96)
 91202	Special Requests from the Adventure Guild - Lv3 (Lv. 94-96) (In Progress)
 91203	Special Requests from the Adventure Guild - Lv3 (Lv. 94-96) (Done)
 91204	Special Requests from the Adventure Guild - Lv3 (Lv. 94-96)
 91205	Defeat Monsters in the Seed of Hellfire
 91211	94
-91212	Seed of Hellfire
+91212	Isle of Souls
 91301	Special Requests from the Adventure Guild - Lv4 (Lv. 97-99)
 91302	Special Requests from the Adventure Guild - Lv4 (Lv. 97-99) (In Progress)
 91303	Special Requests from the Adventure Guild - Lv4 (Lv. 97-99) (Done)

@@ -27146,42 +27146,42 @@
 27675	Freya's Wish-filled Gift
 27676	Sirra's Wish-filled Gift
 27677	Snowman's Wish-filled Gift
-27678	Gran Kain's Necklace Stage 1
-27679	Gran Kain's Necklace Stage 2
-27680	Gran Kain's Necklace Stage 3
-27681	Gran Kain's Necklace Stage 4
-27682	Gran Kain's Necklace Stage 5
-27683	Gran Kain's Necklace Stage 6
-27684	Einhasad's Necklace Stage 1
-27685	Einhasad's Necklace Stage 2
-27686	Einhasad's Necklace Stage 3
-27687	Einhasad's Necklace Stage 4
-27688	Einhasad's Necklace Stage 5
-27689	Einhasad's Necklace Stage 6
-27690	Pa'agrio's Earring Stage 1
-27691	Pa'agrio's Earring Stage 2
-27692	Pa'agrio's Earring Stage 3
-27693	Pa'agrio's Earring Stage 4
-27694	Pa'agrio's Earring Stage 5
-27695	Pa'agrio's Earring Stage 6
-27696	Eva's Earring Stage 1
-27697	Eva's Earring Stage 2
-27698	Eva's Earring Stage 3
-27699	Eva's Earring Stage 4
-27700	Eva's Earring Stage 5
-27701	Eva's Earring Stage 6
-27702	Sayha's Ring Stage 1
-27703	Sayha's Ring Stage 2
-27704	Sayha's Ring Stage 3
-27705	Sayha's Ring Stage 4
-27706	Sayha's Ring Stage 5
-27707	Sayha's Ring Stage 6
-27708	Maphr's Ring Stage 1
-27709	Maphr's Ring Stage 2
-27710	Maphr's Ring Stage 3
-27711	Maphr's Ring Stage 4
-27712	Maphr's Ring Stage 5
-27713	Maphr's Ring Stage 6
+27678	Gran Kain's Necklace - Stage 1
+27679	Gran Kain's Necklace - Stage 2
+27680	Gran Kain's Necklace - Stage 3
+27681	Gran Kain's Necklace - Stage 4
+27682	Gran Kain's Necklace - Stage 5
+27683	Gran Kain's Necklace - Stage 6
+27684	Einhasad's Necklace - Stage 1
+27685	Einhasad's Necklace - Stage 2
+27686	Einhasad's Necklace - Stage 3
+27687	Einhasad's Necklace - Stage 4
+27688	Einhasad's Necklace - Stage 5
+27689	Einhasad's Necklace - Stage 6
+27690	Pa'agrio's Earring - Stage 1
+27691	Pa'agrio's Earring - Stage 2
+27692	Pa'agrio's Earring - Stage 3
+27693	Pa'agrio's Earring - Stage 4
+27694	Pa'agrio's Earring - Stage 5
+27695	Pa'agrio's Earring - Stage 6
+27696	Eva's Earring - Stage 1
+27697	Eva's Earring - Stage 2
+27698	Eva's Earring - Stage 3
+27699	Eva's Earring - Stage 4
+27700	Eva's Earring - Stage 5
+27701	Eva's Earring - Stage 6
+27702	Sayha's Ring - Stage 1
+27703	Sayha's Ring - Stage 2
+27704	Sayha's Ring - Stage 3
+27705	Sayha's Ring - Stage 4
+27706	Sayha's Ring - Stage 5
+27707	Sayha's Ring - Stage 6
+27708	Maphr's Ring - Stage 1
+27709	Maphr's Ring - Stage 2
+27710	Maphr's Ring - Stage 3
+27711	Maphr's Ring - Stage 4
+27712	Maphr's Ring - Stage 5
+27713	Maphr's Ring - Stage 6
 27714	Bottle of Luminous God's Soul
 27715	Bottle of Splendid God's Soul
 27716	Bottle of Honorable God's Soul
@@ -27773,61 +27773,61 @@
 28302	Transcendent Eternal Gloves Recovery Type / Robe / Lv. 6
 28303	Transcendent Eternal Shoes Recovery Type / Robe / Lv. 6
 28304	Shilen's Ring
-28305	Shilen's Ring - Not Used Stage 2
-28306	Shilen's Ring Stage 3
+28305	Shilen's Ring - Not Used
+28306	Shilen's Ring
 28307	Shilen's Ring Fragment
 28308	Shilen's Necklace - Not Used
-28309	Shilen's Necklace - Not Used Stage 2
-28310	Shilen's Necklace - Not Used Stage 3
+28309	Shilen's Necklace - Not Used
+28310	Shilen's Necklace - Not Used
 28311	Shilen's Necklace Fragment
 28312	Shilen's Earring
-28313	Shilen's Earring - Not Used Stage 2
-28314	Shilen's Earring - Not Used Stage 3
+28313	Shilen's Earring - Not Used
+28314	Shilen's Earring - Not Used
 28315	Shilen's Earring Fragment
 28316	Scroll: Shilen's Ring
 28317	Scroll: Shilen's Necklace
 28318	Scroll: Shilen's Earring
-28319	Gran Kain's Necklace Stage 1
-28320	Gran Kain's Necklace Stage 2
-28321	Gran Kain's Necklace Stage 3
-28322	Gran Kain's Necklace Stage 4
-28323	Gran Kain's Necklace Stage 5
-28324	Gran Kain's Necklace Stage 6
-28325	Einhasad's Necklace Stage 1
-28326	Einhasad's Necklace Stage 2
-28327	Einhasad's Necklace Stage 3
-28328	Einhasad's Necklace Stage 4
-28329	Einhasad's Necklace Stage 5
-28330	Einhasad's Necklace Stage 6
-28331	Pa'agrio's Earring Stage 1
-28332	Pa'agrio's Earring Stage 2
-28333	Pa'agrio's Earring Stage 3
-28334	Pa'agrio's Earring Stage 4
-28335	Pa'agrio's Earring Stage 5
-28336	Pa'agrio's Earring Stage 6
-28337	Eva's Earring Stage 1
-28338	Eva's Earring Stage 2
-28339	Eva's Earring Stage 3
-28340	Eva's Earring Stage 4
-28341	Eva's Earring Stage 5
-28342	Eva's Earring Stage 6
-28343	Sayha's Ring Stage 1
-28344	Sayha's Ring Stage 2
-28345	Sayha's Ring Stage 3
-28346	Sayha's Ring Stage 4
-28347	Sayha's Ring Stage 5
-28348	Sayha's Ring Stage 6
-28349	Maphr's Ring Stage 1
-28350	Maphr's Ring Stage 2
-28351	Maphr's Ring Stage 3
-28352	Maphr's Ring Stage 4
-28353	Maphr's Ring Stage 5
-28354	Maphr's Ring Stage 6
+28319	Gran Kain's Necklace - Stage 1
+28320	Gran Kain's Necklace - Stage 2
+28321	Gran Kain's Necklace - Stage 3
+28322	Gran Kain's Necklace - Stage 4
+28323	Gran Kain's Necklace - Stage 5
+28324	Gran Kain's Necklace - Stage 6
+28325	Einhasad's Necklace - Stage 1
+28326	Einhasad's Necklace - Stage 2
+28327	Einhasad's Necklace - Stage 3
+28328	Einhasad's Necklace - Stage 4
+28329	Einhasad's Necklace - Stage 5
+28330	Einhasad's Necklace - Stage 6
+28331	Pa'agrio's Earring - Stage 1
+28332	Pa'agrio's Earring - Stage 2
+28333	Pa'agrio's Earring - Stage 3
+28334	Pa'agrio's Earring - Stage 4
+28335	Pa'agrio's Earring - Stage 5
+28336	Pa'agrio's Earring - Stage 6
+28337	Eva's Earring - Stage 1
+28338	Eva's Earring - Stage 2
+28339	Eva's Earring - Stage 3
+28340	Eva's Earring - Stage 4
+28341	Eva's Earring - Stage 5
+28342	Eva's Earring - Stage 6
+28343	Sayha's Ring - Stage 1
+28344	Sayha's Ring - Stage 2
+28345	Sayha's Ring - Stage 3
+28346	Sayha's Ring - Stage 4
+28347	Sayha's Ring - Stage 5
+28348	Sayha's Ring - Stage 6
+28349	Maphr's Ring - Stage 1
+28350	Maphr's Ring - Stage 2
+28351	Maphr's Ring - Stage 3
+28352	Maphr's Ring - Stage 4
+28353	Maphr's Ring - Stage 5
+28354	Maphr's Ring - Stage 6
 28355	Prestige Cube 7-day
 28356	Prestige Cube Pack 7-day
 28357	Special Treasure Chest
 28358	La Vie En Rose's Elegant Brooch
-28359	La Vie En Rose's Gemstone Powder
+28359	Jewel Powder
 28360	Cat's Eye Lv. 3 Jewelry Box
 28361	Cat's Eye Lv. 4 Jewelry Box
 28362	Amethyst Lv. 3 Jewelry Box
@@ -27936,9 +27936,36 @@
 28465	Heine Exclusive Reward Chest
 28466	Heine Exclusive Fishing Tools - 300 Pack
 28467	Heine Exclusive Fishing Tools - 3,000 Pack
-28468	NoItemName
-28469	NoItemName
-28470	NoItemName
+28468	Topaz (7-day) Lv. 5
+28469	La Vie En Rose's Topaz Chest 7-day
+28470	Ultimate Jewelry Box
+28471	Mount - Elk 7-day
+28472	Mount - Elk 30-day
+28473	Mount - Elk (Event) 7-day
+28474	Mount - Elk (7-day)
+28475	Mount - Elk (30-day)
+28476	Mount - Elk (Event 7-day)
+28477	Freya's Shopping Bag
+28478	Freya's Gift Box
+28479	Sirra's Gift Box
+28480	Snow Man's Gift Box
+28481	Forbidden Spellbook - Beginner
+28482	Forbidden Spellbook - Intermediate
+28483	Forbidden Spellbook - Advanced
+28484	Brooch's Spirit Stone
+28485	Brooch's Spirit Stone Rare Type
+28486	La Vie En Rose's Radiant Brooch
+28487	La Vie En Rose's Radiant Brooch Enchant Type
+28488	La Vie En Rose's Radiant Brooch Rare Type
+28489	Radiant Brooch Gem
+28492	Freya's Shopping Bag
+28493	Freya's Gift Box
+28494	Sirra's Gift Box
+28495	Snow Man's Gift Box
+28496	Prestige Rune 100% (7-day) Pack Event
+28497	Windy Lucky Enchant Stone: Weapon (R-grade) Event
+28498	Royal Red Save Card (R99-grade) Event
+28499	God's Soul Treasure Chest
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -39154,7 +39181,7 @@
 46241	+4 Eternal Heavy Armor Capsule Event
 46242	+4 Eternal Light Armor Capsule Event
 46243	+4 Eternal Robe Armor Capsule Event
-46244	11th Anniversary Coin Event
+46244	L2 Anniversary Coin Event
 46245	Piero's Victory Box Event
 46246	Piero's Jackpot Box Event
 46247	Halloween Shield
@@ -40584,3 +40611,4 @@
 47713	Jewel Ticket
 49783	Sibis Coin Box
 49798	Cheer Stamen Event
+53170	Broken Soul Piece

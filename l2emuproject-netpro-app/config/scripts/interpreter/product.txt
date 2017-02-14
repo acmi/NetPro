@@ -1680,7 +1680,7 @@
 1011680	Ultimate Shadai's Jewelry Box (x100)
 1011681	La Vie En Rose's Noble Brooch
 1011682	La Vie En Rose's Brilliant Brooch
-1011683	La Vie En Rose's Radiant Brooch
+1011683	La Vie En Rose's Radiant Brooch(don't use this one)
 1011684	La Vie En Rose's Brooch
 1011685	Ultimate Shadai's Jewelry Box (x100)
 1011686	Ultimate Shadai's Jewelry Box (x100)
@@ -1779,3 +1779,11 @@
 1011779	Monster Research x50,000
 1011780	Monster Research x200,000
 1011781	Monster Research x300,000
+1011782	Freya's Shopping Bag
+1011783	Freya's Shopping Bag x20
+1011784	Ultimate Freya's Shopping Bag x250
+1011785	Ultimate Jewelry Box(don't use this one)
+1011786	Ultimate Jewelry Box x20
+1011787	Ultimate Jewelry Box x75
+1011788	Ultimate Jewelry Box x1
+1011789	La Vie En Rose's Radiant Brooch

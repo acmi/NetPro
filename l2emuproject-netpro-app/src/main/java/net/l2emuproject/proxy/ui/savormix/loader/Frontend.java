@@ -126,7 +126,6 @@ import net.l2emuproject.proxy.ui.savormix.io.task.PacketSamuraiLogLoadTask;
 import net.l2emuproject.ui.AsyncTask;
 import net.l2emuproject.ui.file.BetterExtensionFilter;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
-import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * This class is a part of a reference GUI provided for education purposes only. These classes
@@ -139,7 +138,7 @@ import net.l2emuproject.util.logging.L2Logger;
 public final class Frontend extends JFrame implements IOConstants, EventSink
 {
 	private static final long serialVersionUID = 508940951025465462L;
-	private static final L2Logger LOG = L2Logger.getLogger(Frontend.class);
+	// private static final L2Logger LOG = L2Logger.getLogger(Frontend.class);
 	private static final int MAX_PACKETS_TO_CLIPBOARD = 1000;
 	
 	/** Whether ignore new packets as they arrive. */
@@ -1030,7 +1029,8 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				about.setMnemonic(KeyEvent.VK_A);
 				about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
 				about.setToolTipText("Shows information about this application.");
-				
+
+				/*
 				final String suffix;
 				if (NetProInfo.isUnreleased())
 					suffix = "norelease";
@@ -1053,6 +1053,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				{
 					// whatever
 				}
+				*/
 			}
 			mb.add(help);
 		}

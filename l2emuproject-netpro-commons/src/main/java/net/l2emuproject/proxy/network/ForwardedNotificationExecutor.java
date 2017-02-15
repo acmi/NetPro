@@ -73,7 +73,7 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 			return _activeThread;
 		});
 		setMaximumPoolSize(1);
-		setKeepAliveTime(5, TimeUnit.MINUTES);
+		setKeepAliveTime(1, TimeUnit.MINUTES);
 		
 		_sessionStateMap = new IdentityHashMap<>();
 	}

@@ -20,6 +20,7 @@ import static net.l2emuproject.proxy.network.ProxyConnections.PROPERTY_RW_INTERV
 
 import java.io.IOException;
 import java.net.BindException;
+import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -102,7 +103,7 @@ public class L2Proxy
 		{
 			CurrentConfigManager.getInstance().registerAll(ConfigMarker.class.getPackage()).load();
 		}
-		catch (Exception e)
+		catch (final Exception e)
 		{
 			logger.fatal("Could not load configurable properties!", e);
 			ShutdownManager.exit(TerminationStatus.RUNTIME_INVALID_CONFIGURATION);
@@ -116,7 +117,7 @@ public class L2Proxy
 		{
 			L2ThreadPool.initThreadPools(new NetProThreadPools());
 		}
-		catch (Exception e)
+		catch (final Exception e)
 		{
 			logger.fatal("Could not setup thread pools!", e);
 			ShutdownManager.exit(TerminationStatus.RUNTIME_INITIALIZATION_FAILURE);
@@ -147,7 +148,7 @@ public class L2Proxy
 				{
 					hook.onStartup();
 				}
-				catch (Exception e)
+				catch (final Exception e)
 				{
 					logger.fatal("Initialization failure", e);
 					ShutdownManager.exit(TerminationStatus.RUNTIME_INITIALIZATION_FAILURE);
@@ -184,10 +185,10 @@ public class L2Proxy
 					{
 						if (logger.isTraceEnabled())
 							logger.trace("Opening listen socket " + socket + "…");
-						lcc.openServerSocket(socket.getBindAddress(), socket.getListenPort());
+						lcc.openServerSocket(socket.getListenAddress());
 						logger.trace("…SUCCESS");
 					}
-					catch (IOException e)
+					catch (final IOException e)
 					{
 						it.remove();
 						logger.error("Could not start listening on " + socket, e);
@@ -202,10 +203,10 @@ public class L2Proxy
 					{
 						if (logger.isTraceEnabled())
 							logger.trace("Opening listen socket " + socket + "…");
-						gcc.openServerSocket(socket.getBindAddress(), socket.getListenPort());
+						gcc.openServerSocket(socket.getListenAddress());
 						logger.trace("…SUCCESS");
 					}
-					catch (BindException e)
+					catch (final BindException e)
 					{
 						if (!e.getMessage().startsWith("Cannot assign requested address"))
 							//	LOG.info("Not a local adapter address: " + socket.getBindAddress());
@@ -217,7 +218,7 @@ public class L2Proxy
 				gcc.start();
 				logger.spam("…SUCCESS");
 			}
-			catch (Throwable e)
+			catch (final Throwable e)
 			{
 				logger.fatal("Could not start proxy!", e);
 				ShutdownManager.exit(TerminationStatus.RUNTIME_INITIALIZATION_FAILURE);
@@ -248,18 +249,22 @@ public class L2Proxy
 		{
 			// 8. LOG SOCKET INFO
 			L2Utils.printSection("Proxy");
-			L2TextBuilder tb = new L2TextBuilder();
+			final L2TextBuilder tb = new L2TextBuilder();
 			tb.appendNewline("Configuration:");
 			
 			for (final ProxySocket ps : SocketManager.getInstance().getAuthSockets())
 			{
-				tb.append("Listening on ").append(ps.getBindAddress()).append(':').append(ps.getListenPort());
+				final InetSocketAddress listenAddress = ps.getListenAddress();
+				tb.append("Listening on ").append(listenAddress.getHostString()).append(':').append(listenAddress.getPort());
 				tb.append(", proxied to ").append(ps.getServiceAddress()).append(':').appendNewline(ps.getServicePort());
 			}
 			
 			tb.append("Listed game servers will be changed to (either or):");
 			for (final ListenSocket socket : SocketManager.getInstance().getGameWorldSockets().values())
-				tb.appendNewline().append(socket.getBindAddress()).append(':').append(socket.getListenPort());
+			{
+				final InetSocketAddress listenAddress = socket.getListenAddress();
+				tb.appendNewline().append(listenAddress.getHostString()).append(':').append(listenAddress.getPort());
+			}
 			logger.info(tb.moveToString());
 			
 			logger.spam("Installing multiplexer shutdown hook…");
@@ -290,7 +295,7 @@ public class L2Proxy
 				
 				LOG.info("Proxy server has been shut down.");
 			}
-			catch (Throwable t)
+			catch (final Throwable t)
 			{
 				LOG.warn("Orderly shutdown sequence interrupted", t);
 			}

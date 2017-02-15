@@ -26,7 +26,8 @@ import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
-import net.l2emuproject.proxy.script.analytics.LiveUserAnalytics.UserInfo;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics.UserInfo;
 import net.l2emuproject.proxy.script.game.InteractiveChatCommands;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.packets.InvalidPacketWriterArgumentsException;
@@ -34,6 +35,7 @@ import net.l2emuproject.proxy.script.packets.PacketWriterRegistry;
 import net.l2emuproject.proxy.script.packets.UnknownPacketIdentifierException;
 import net.l2emuproject.proxy.script.packets.UnknownPacketStructureException;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfo.DestinationType;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
 import net.l2emuproject.proxy.state.entity.ObjectInfo;
 import net.l2emuproject.proxy.state.entity.ObjectLocation;
@@ -74,9 +76,15 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 	@ScriptFieldAlias
 	private static final String OBJECT_SPEED_MULTIPLIER = "OIL_OBJECT_SPEED_MULTI";
 	
+	private static final int CM_SEND_APPERING = 0x3A;
+	
 	@Override
 	public void handleClientPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
+		if (buf.seekFirstOpcode().readUC() == CM_SEND_APPERING) {
+			// if currently teleporting, mark as not moving and last move interrupted by teleporting
+		}
+		
 		final String msg = buf.readFirstString(CHAT_COMMAND);
 		if (!"\\\\oil".equals(msg))
 			return;
@@ -196,7 +204,7 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 					final int yd = buf.readInteger32(yds.get(i));
 					final int zd = buf.readInteger32(zds.get(i));
 					
-					oi.setDestination(currentLocation, new ObjectLocation(xd, yd, zd, yaw));
+					oi.setDestination(currentLocation, new ObjectLocation(xd, yd, zd, yaw), DestinationType.STANDARD);
 				}
 				else
 					oi.updateLocation(currentLocation);

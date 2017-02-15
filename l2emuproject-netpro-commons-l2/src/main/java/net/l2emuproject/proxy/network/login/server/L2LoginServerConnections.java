@@ -27,6 +27,7 @@ import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.network.IPv4AddressPrefix;
 import net.l2emuproject.network.IPv4AddressTrie;
 import net.l2emuproject.network.mmocore.MMOConfig;
+import net.l2emuproject.proxy.network.AbstractL2ClientProxy;
 import net.l2emuproject.proxy.network.AbstractL2ServerConnections;
 import net.l2emuproject.proxy.network.BindableSocketSet;
 import net.l2emuproject.proxy.network.ListenSocket;
@@ -55,7 +56,7 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections 
 			{
 				INSTANCE = new L2LoginServerConnections(cfg);
 			}
-			catch (IOException e)
+			catch (final IOException e)
 			{
 				throw new Error(e);
 			}
@@ -101,7 +102,7 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections 
 		{
 			receiverAddress = (InetSocketAddress)socketChannel.getLocalAddress();
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			client.closeNow();
 			return;
@@ -127,9 +128,9 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections 
 		
 		try
 		{
-			connectProxy(client, InetAddress.getByName(socket.getServiceAddress()), socket.getServicePort());
+			connectProxy(client, new InetSocketAddress(socket.getServiceAddress(), socket.getServicePort()));
 		}
-		catch (Exception e) // UnknownHostException, RuntimeException, TooManyPendingConnectionsException
+		catch (final Exception e) // UnknownHostException, RuntimeException, TooManyPendingConnectionsException
 		{
 			LOG.error("Cannot connect to " + socket.getServiceAddress() + ":" + socket.getServicePort(), e);
 			client.closeNow();
@@ -160,7 +161,7 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections 
 	 * @param client client endpoint
 	 * @return advertised socket
 	 */
-	public ListenSocket getAdvertisedSocket(L2LoginClient client)
+	public ListenSocket getAdvertisedSocket(AbstractL2ClientProxy client)
 	{
 		return _advertisedSockets.get(client.getInetAddress());
 	}

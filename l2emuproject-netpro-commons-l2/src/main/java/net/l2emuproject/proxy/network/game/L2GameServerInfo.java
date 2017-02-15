@@ -15,45 +15,81 @@
  */
 package net.l2emuproject.proxy.network.game;
 
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
+
+import net.l2emuproject.proxy.network.game.client.L2GameClient;
+
 /**
  * Game server connection info wrapper.
  * 
  * @author savormix
  */
-public final class L2GameServerInfo
+public final class L2GameServerInfo implements NewGameServerConnection
 {
 	private final byte[] _ipv4;
 	private final int _port;
+	private final InetAddress _authorizedClientAddress;
+	private final L2GameClient _underlyingConnection;
 	
 	/**
 	 * Constructs a game server info object.
 	 * 
 	 * @param ipv4 IP address
 	 * @param port port
+	 * @param authorizedClientAddress IP of a client that is cleared to be merged with this connection
 	 */
-	public L2GameServerInfo(byte[] ipv4, int port)
+	public L2GameServerInfo(byte[] ipv4, int port, InetAddress authorizedClientAddress)
 	{
 		_ipv4 = ipv4;
 		_port = port;
+		_authorizedClientAddress = authorizedClientAddress;
+		_underlyingConnection = null;
 	}
 	
 	/**
-	 * Returns game server's IP address.
+	 * Constructs a game server info object.
 	 * 
-	 * @return IP address
+	 * @param ipv4 IP address
+	 * @param underlyingConnection origin session
 	 */
-	public byte[] getIPv4()
+	public L2GameServerInfo(byte[] ipv4, L2GameClient underlyingConnection)
 	{
-		return _ipv4;
+		_ipv4 = ipv4;
+		_port = underlyingConnection.getServer().getInetSocketAddress().getPort();
+		_authorizedClientAddress = underlyingConnection.getInetAddress();
+		_underlyingConnection = underlyingConnection;
 	}
 	
-	/**
-	 * Returns game server's port.
-	 * 
-	 * @return port
-	 */
-	public int getPort()
+	@Override
+	public InetSocketAddress getAddress()
 	{
-		return _port;
+		try
+		{
+			return new InetSocketAddress(InetAddress.getByAddress(_ipv4), _port);
+		}
+		catch (final UnknownHostException e)
+		{
+			throw new InternalError("Invalid IPv4", e); // incorrect array length
+		}
+	}
+	
+	@Override
+	public InetAddress getAuthorizedClientAddress()
+	{
+		return _authorizedClientAddress;
+	}
+	
+	@Override
+	public L2GameClient getUnderlyingConnection()
+	{
+		return _underlyingConnection;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return (_underlyingConnection != null ? "[Raid] " : "[Auth] ") + getAuthorizedClientAddress() + " -> " + getAddress();
 	}
 }

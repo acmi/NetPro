@@ -63,19 +63,9 @@ public class ListenSocket
 	 * 
 	 * @return listening address
 	 */
-	public InetAddress getBindAddress()
+	public InetSocketAddress getListenAddress()
 	{
-		return _bindAddress;
-	}
-	
-	/**
-	 * Returns the port of this socket.
-	 * 
-	 * @return listening port
-	 */
-	public int getListenPort()
-	{
-		return _listenPort;
+		return new InetSocketAddress(_bindAddress, _listenPort);
 	}
 	
 	@Override

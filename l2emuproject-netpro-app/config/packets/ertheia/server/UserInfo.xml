@@ -17,7 +17,7 @@
 	<unsignedByte alias="Bitmask byte #3" id="exUI_3" />
 
 	<branch id="exUI_1" condition="bitmask.Bit7">
-		<dword alias="Roles" /> <!-- Clan member/leader, ... -->
+		<dword alias="Roles" type="UserRoles" />
 	</branch>
 	<branch id="exUI_1" condition="bitmask.Bit6" description="Name/base appearance">
 		<word alias="Block size" />
@@ -76,7 +76,9 @@
 	<branch id="exUI_1" condition="bitmask.Bit0" description="Personal store">
 		<word alias="Block size (6)" />
 		<byte alias="Mount type" type="MountType" />
-		<byte alias="Private store" type="PersonalStoreType" />
+		<byte alias="Private store" type="PersonalStoreType">
+			<scriptAlias id="LUA_USER_STORE_TYPE" />
+		</byte>
 		<byte alias="Can crystallize" type="YesOrNo" />
 		<byte alias="Can use Alchemy" type="YesOrNo" /> <!-- NEW --> <!-- Ertheia's Only -->
 	</branch>

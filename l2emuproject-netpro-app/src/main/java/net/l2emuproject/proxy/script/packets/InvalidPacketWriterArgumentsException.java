@@ -22,7 +22,7 @@ import java.util.Arrays;
  *
  * @author _dev_
  */
-public class InvalidPacketWriterArgumentsException extends Exception
+public class InvalidPacketWriterArgumentsException extends RuntimeException
 {
 	private static final long serialVersionUID = 7512960027104743176L;
 	

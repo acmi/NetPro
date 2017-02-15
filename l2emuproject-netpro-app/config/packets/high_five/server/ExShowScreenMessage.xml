@@ -15,7 +15,7 @@
 	<dword alias="Fade" type="YesOrNo" />
 	<dword alias="Message" type="ImmutableNpcString" />
 	<string alias="1st token" />
-	<string alias="2nd token" />
+	<string alias="2nd token" optional="true" /> <!-- certain use cases send malformed, e.g. 3565 -->
 	<string alias="3rd token" />
 	<string alias="4th token" />
 	<string alias="5th token" />

@@ -20,9 +20,16 @@ import static net.l2emuproject.proxy.network.EndpointType.SERVER;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.commons.lang3.tuple.Triple;
+
+import net.l2emuproject.geometry.point.IPoint2D;
 import net.l2emuproject.geometry.point.IPoint3D;
+import net.l2emuproject.geometry.point.impl.Point3D;
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.mmocore.MMOBuffer.ReservedFieldType;
 import net.l2emuproject.network.protocol.ClientProtocolVersion;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.Proxy;
@@ -56,6 +63,8 @@ public final class CommonPacketSender extends PacketWriterScript
 	private static final String TUTORIAL_CLOSE_HTML = "SM_TUTORIAL_CLOSE_HTML";
 	@PacketIdentifier(SERVER)
 	private static final String SCREEN_MSG = "SM_EX_SHOW_SCREEN_MESSAGE";
+	@PacketIdentifier(SERVER)
+	private static final String SERVER_PRIMITIVE = "SM_EX_SERVER_PRIMITIVE";
 	
 	@PacketIdentifier(CLIENT)
 	private static final String REQ_MSU = "CM_REQ_MAGIC_SKILL_USE";
@@ -79,6 +88,8 @@ public final class CommonPacketSender extends PacketWriterScript
 	private static final String REQ_USE_ITEM = "CM_REQ_USE_ITEM";
 	@PacketIdentifier(CLIENT)
 	private static final String MOVE_WITH_DELTA = "CM_MOVE_WITH_DELTA";
+	@PacketIdentifier(CLIENT)
+	private static final String REQ_EX_AUTO_FISH = "CM_REQ_EX_AUTO_FISH";
 	
 	private static final int CHAT_PM = 2;
 	private static final WriterPool POOL = new WriterPool();
@@ -98,7 +109,7 @@ public final class CommonPacketSender extends PacketWriterScript
 	@Override
 	public IProtocolVersion newestSupportedProtocolVersion()
 	{
-		return ClientProtocolVersion.UNDERGROUND;
+		return ClientProtocolVersion.HELIOS;
 	}
 	
 	@Override
@@ -173,16 +184,30 @@ public final class CommonPacketSender extends PacketWriterScript
 				case MOVE_WITH_DELTA:
 					sendMoveWithDelta((L2GameServer)recipient, (IPoint3D)args[0]);
 					break;
+				case REQ_EX_AUTO_FISH:
+					sendRequestAutoFish((L2GameServer)recipient, (Boolean)args[0]);
+					break;
 				default:
 					throw new UnknownPacketIdentifierException(packet);
 			}
 		}
-		catch (RuntimeException e)
+		catch (final RuntimeException e)
 		{
 			throw new InvalidPacketWriterArgumentsException(args, e);
 		}
 	}
 	
+	/**
+	 * Make an item appear in the game world.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param oid Item runtime ID
+	 * @param item Item template ID
+	 * @param location A location within the game world
+	 * @param stackable Whether multiple items take a single slot
+	 * @param amount Item amount
+	 * @param unk 0 by default
+	 */
 	public static final void sendSpawnItem(L2GameClient client, int oid, int item, IPoint3D location, boolean stackable, long amount, int unk)
 	{
 		final int size = 1 + 7 * 4 + 8;
@@ -202,6 +227,13 @@ public final class CommonPacketSender extends PacketWriterScript
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	/**
+	 * Make an object disappear from the game world.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param oid Object runtime ID
+	 * @param unk 0 by default
+	 */
 	public static final void sendDeleteObject(L2GameClient client, int oid, int unk)
 	{
 		final int size = 1 + 4 + 1;
@@ -215,6 +247,15 @@ public final class CommonPacketSender extends PacketWriterScript
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	/**
+	 * Display a generic chat message. Cannot be used to send private messages or ferry announcements.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param chat Chat channel (type)
+	 * @param talker Message author
+	 * @param message Message
+	 * @throws InvalidPacketWriterArgumentsException if a private message or a ferry announcement is being sent
+	 */
 	public static final void sendChatMessage(L2GameClient client, int chat, String talker, String message) throws InvalidPacketWriterArgumentsException
 	{
 		if (chat == CHAT_PM)
@@ -236,6 +277,15 @@ public final class CommonPacketSender extends PacketWriterScript
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	/**
+	 * Display a private chat message.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param talker Message author
+	 * @param message Message
+	 * @param talkerLevel Author character's level
+	 * @param talkerFlags Relations to the author's character
+	 */
 	public static final void sendPrivateMessage(L2GameClient client, String talker, String message, int talkerLevel, int talkerFlags)
 	{
 		final int size = 1 + 4 + 4 + stdStringSize(talker) + 4 + stdStringSize(message) + 1 + 1;
@@ -282,19 +332,55 @@ public final class CommonPacketSender extends PacketWriterScript
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	/**
+	 * Display a message on screen.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param position Message position
+	 * @param unk1 0 by default
+	 * @param small Whether this is a primary ({@code false}) or a secondary ({@code true}) message
+	 * @param unk2 0 by default
+	 * @param unk3 1 by default
+	 * @param deco Whether a decorative texture should be shown above the message
+	 * @param duration Message display duration, in milliseconds
+	 * @param fade Whether this message should fade out when it expires
+	 * @param message Message
+	 */
 	public static final void sendScreenMessage(L2GameClient client, int position, int unk1, boolean small, int unk2, int unk3, boolean deco, int duration, boolean fade, String message)
 	{
 		sendScreenMessage(client, -1, position, unk1, small, unk2, unk3, deco, duration, fade, message);
 	}
 	
+	/**
+	 * Display a predefined message on screen.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param sm Predefined system message ID
+	 * @param position Message position
+	 * @param unk1 0 by default
+	 * @param small Whether this is a primary ({@code false}) or a secondary ({@code true}) message
+	 * @param unk2 0 by default
+	 * @param unk3 1 by default
+	 * @param deco Whether a decorative texture should be shown above the message
+	 * @param duration Message display duration, in milliseconds
+	 * @param fade Whether this message should fade out when it expires
+	 */
 	public static final void sendImmutableScreenSystemMessage(L2GameClient client, int sm, int position, int unk1, boolean small, int unk2, int unk3, boolean deco, int duration, boolean fade)
 	{
 		sendScreenMessage(client, sm, position, unk1, small, unk2, unk3, deco, duration, fade, "");
 	}
 	
+	/**
+	 * Sends a HTML message to be displayed in the NPC chat window.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param html HTML message
+	 */
 	public static final void sendHTML(L2GameClient client, String html)
 	{
 		final int size = 1 + 4 + stdStringSize(html) + 4 + 4;
+		if (size > 0xFF_FF - 2)
+			throw new IllegalArgumentException("Packet requires fragmentation");
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
 		
@@ -307,9 +393,17 @@ public final class CommonPacketSender extends PacketWriterScript
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	/**
+	 * Sends a HTML message to be displayed in the tutorial chat window.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param html A client connected to the game world
+	 */
 	public static final void sendTutorialHTML(L2GameClient client, String html)
 	{
 		final int size = 1 + 4 + stdStringSize(html);
+		if (size > 0xFF_FF - 2)
+			throw new IllegalArgumentException("Packet requires fragmentation");
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
 		
@@ -320,11 +414,22 @@ public final class CommonPacketSender extends PacketWriterScript
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	/**
+	 * Closes the tutorial chat window (if it is open).
+	 * 
+	 * @param client A client connected to the game world
+	 */
 	public static final void sendTutorialCloseHTML(L2GameClient client)
 	{
 		client.sendPacket(new ProxyRepeatedPacket((byte)0xA9));
 	}
 	
+	/**
+	 * Displays a waypoint on the radar, map and shows an overhead indicator.
+	 * 
+	 * @param client A client connected to the game world
+	 * @param location Destination
+	 */
 	public static final void sendWaypoint(L2GameClient client, IPoint3D location)
 	{
 		sendRadarControl(client, 2, 2, location);
@@ -345,6 +450,58 @@ public final class CommonPacketSender extends PacketWriterScript
 		buf.writeD(location.getZ());
 		
 		client.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	// the most convenient one, plus it can be reused to actually show real territories
+	public static final void sendTerritoryServerPrimitive(L2GameClient client, String alias, IPoint3D centroid, int clipX, int clipY, int minZ, int maxZ, IPoint2D... vertices)
+	{
+		int dynamicPartSize = 0;
+		
+		final int nvert = vertices.length;
+		final List<Triple<PrimitiveExtras, IPoint3D, IPoint3D>> segments = new ArrayList<>(nvert * 3);
+		for (int i = 0; i < nvert; ++i)
+		{
+			final int v1 = i, v2 = (i + 1) % nvert;
+			final String labelEx = alias + "(" + v1 + "->" + v2 + ")";
+			final PrimitiveExtras ex = new PrimitiveExtras(labelEx, 0, 255, 0, 255);
+			segments.add(Triple.of(ex, new Point3D(vertices[v1], maxZ), new Point3D(vertices[v2], maxZ)));
+			segments.add(Triple.of(ex, new Point3D(vertices[v1], minZ), new Point3D(vertices[v2], minZ)));
+			segments.add(Triple.of(new PrimitiveExtras("", 0, 255, 0, 255), new Point3D(vertices[v1], minZ), new Point3D(vertices[v1], maxZ)));
+			dynamicPartSize += 3; // type
+			dynamicPartSize += 2 * stdStringSize(labelEx) + stdStringSize(""); // alias
+			dynamicPartSize += 3 * (4 * 4); // extras
+			dynamicPartSize += 3 * (6 * 4); // line segment
+		}
+		final int size = 1 + 2 + stdStringSize(alias) + (3 * 4) + 4 + 4 + 4 + dynamicPartSize;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xFE);
+		buf.writeH(0x11);
+		buf.writeS(alias);
+		buf.writeD(centroid.getX());
+		buf.writeD(centroid.getY());
+		buf.writeD(centroid.getZ());
+		buf.writeD(clipX);
+		buf.writeD(clipY);
+		buf.startLoop(ReservedFieldType.DWORD);
+		for (final Triple<PrimitiveExtras, IPoint3D, IPoint3D> segment : segments)
+		{
+			buf.writeC(2); // line segment
+			segment.getLeft().write(buf);
+			final IPoint3D start = segment.getMiddle(), end = segment.getRight();
+			buf.writeD(start.getX());
+			buf.writeD(start.getY());
+			buf.writeD(start.getZ());
+			buf.writeD(end.getX());
+			buf.writeD(end.getY());
+			buf.writeD(end.getZ());
+			
+			buf.countLoopElement();
+		}
+		buf.endLoop();
+		client.sendPacket(new ProxyRepeatedPacket(bb));
+		//client.notifyPacketForwarded(null, allocate(size).put(bb.array()), System.currentTimeMillis());
 	}
 	
 	private static final void sendShortRequest(L2GameServer server, int opcode, int entityID, boolean forceAttack, boolean prohibitMovement)
@@ -511,6 +668,13 @@ public final class CommonPacketSender extends PacketWriterScript
 		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	public static final void sendRequestAutoFish(L2GameServer server, boolean enable)
+	{
+		final byte[] content = new byte[] { (byte)0xD0, (byte)0x05, (byte)0x01, (byte)(enable ? 0x01 : 0x00) };
+		server.sendPacket(new ProxyRepeatedPacket(content));
+		//server.getTargetClient().notifyPacketForwarded(null, ByteBuffer.wrap(content).order(ByteOrder.LITTLE_ENDIAN), System.currentTimeMillis());
+	}
+	
 	public static final void sendRequestSkillList(L2GameServer server)
 	{
 		server.sendPacket(new ProxyRepeatedPacket((byte)0x50));
@@ -524,6 +688,19 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendRequestAcquireSkill(L2GameServer server, int skillID, int skillLevel, int learnType)
 	{
 		sendLearnableSkillRequest(server, 0x7C, skillID, skillLevel, learnType);
+	}
+	
+	public static final void sendRequestExRqItemLink(L2GameServer server, int objectID)
+	{
+		final int size = 1 + 2 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x1E);
+		buf.writeD(objectID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
 	private static final void sendLearnableSkillRequest(L2GameServer server, int opcode, int skillID, int skillLevel, int learnType)
@@ -580,6 +757,30 @@ public final class CommonPacketSender extends PacketWriterScript
 				// discard internal data
 			}
 			e.setByteBuffer(null);
+		}
+	}
+	
+	private static final class PrimitiveExtras
+	{
+		private final String _label;
+		private final int _red, _green, _blue, _alpha;
+		
+		PrimitiveExtras(String label, int red, int green, int blue, int alpha)
+		{
+			_label = label;
+			_red = red;
+			_green = green;
+			_blue = blue;
+			_alpha = alpha;
+		}
+		
+		void write(MMOBuffer buf)
+		{
+			buf.writeS(_label);
+			buf.writeD(_red);
+			buf.writeD(_green);
+			buf.writeD(_blue);
+			buf.writeD(_alpha);
 		}
 	}
 }

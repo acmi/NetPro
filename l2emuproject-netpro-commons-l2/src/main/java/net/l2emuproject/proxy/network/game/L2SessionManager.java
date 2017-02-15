@@ -15,10 +15,13 @@
  */
 package net.l2emuproject.proxy.network.game;
 
-import javolution.util.FastMap;
+import java.net.InetAddress;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-import net.l2emuproject.proxy.network.game.client.L2GameClient;
-import net.l2emuproject.proxy.network.login.client.L2LoginClient;
+import net.l2emuproject.util.concurrent.L2ThreadPool;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -28,73 +31,87 @@ import net.l2emuproject.util.logging.L2Logger;
  */
 public class L2SessionManager
 {
-	// private static final MMOLogger LOG = new MMOLogger(L2Redirector.class, 5000);
-	
-	private final FastMap<String, L2GameServerInfo> _routes;
+	private final Lock _authorizedSessionLock;
+	private NewGameServerConnection _authorizedSession;
+	private ScheduledFuture<?> _sessionExpiryTask;
 	
 	L2SessionManager()
 	{
-		_routes = FastMap.<String, L2GameServerInfo> newInstance().setShared(true);
+		_authorizedSessionLock = new ReentrantLock();
+		_authorizedSession = null;
+		_sessionExpiryTask = null;
 	}
 	
 	/**
-	 * Assigns a client requested game server ID to client's IP.
+	 * Takes an authorized session details for the given client IP address.
 	 * 
-	 * @param client a client
-	 * @return whether a route has been created
+	 * @param clientAddress client IP
+	 * @return authorized session details or {@code null}
 	 */
-	public boolean addRoute(L2LoginClient client)
+	public NewGameServerConnection getAuthorizedSession(InetAddress clientAddress)
 	{
-		if (client == null)
-			return false;
-		
-		Integer id = client.getTargetServer();
-		if (id == null)
-			return false;
-		
-		L2GameServerInfo gsi = client.getServers().get(id);
-		if (gsi == null)
-			return false;
-		
-		getRoutes().put(client.getHostAddress(), gsi);
-		return true;
-	}
-	
-	/**
-	 * Returns the assigned game server info.
-	 * 
-	 * @param client a client
-	 * @return game server info
-	 */
-	public L2GameServerInfo getRoute(L2GameClient client)
-	{
-		if (client == null)
-			return null;
-		
-		final L2GameServerInfo gsi = getRoutes().remove(client.getHostAddress());
-		/*
-		if (gsi == null)
+		_authorizedSessionLock.lock();
+		try
 		{
-			final byte[] b = client.getInetAddress().getAddress();
-			if (b[0] == 10 || (b[0] == (byte)192 && b[1] == (byte)168) || (b[0] == (byte)172 && b[1] >= 16 && b[1] <= 31))
-				return getRoutes().remove("127.0.0.1");
+			if (_authorizedSession == null)
+				return null;
 			
-			// FIXME: do something when imposing the target login server
-			// but do not allow anyone to intercept sessions
+			if (!_authorizedSession.getAuthorizedClientAddress().equals(clientAddress))
+				return null;
+			
+			final NewGameServerConnection result = _authorizedSession;
+			_authorizedSession = null;
+			_sessionExpiryTask.cancel(true);
+			_sessionExpiryTask = null;
+			return result;
 		}
-		*/
-		return gsi;
+		finally
+		{
+			_authorizedSessionLock.unlock();
+		}
 	}
 	
-	/** Writes debug information to console */
-	public void describeExistingRoutes()
+	/**
+	 * Registers an authorized session for the taking.
+	 * 
+	 * @param authorizedSession authorized session details
+	 * @return {@code true} if registered, {@code false} if there is a pending authorized session
+	 */
+	public boolean setAuthorizedSession(NewGameServerConnection authorizedSession)
 	{
-		L2Logger.getLogger(getClass()).info(getClass(), getRoutes().keySet().toString());
-	}
-	
-	private FastMap<String, L2GameServerInfo> getRoutes()
-	{
-		return _routes;
+		_authorizedSessionLock.lock();
+		try
+		{
+			if (_authorizedSession != null)
+				return false;
+			
+			_authorizedSession = authorizedSession;
+			_sessionExpiryTask = L2ThreadPool.schedule(() -> {
+				try
+				{
+					_authorizedSessionLock.lockInterruptibly();
+					try
+					{
+						L2Logger.getLogger(getClass()).info("Expired session: " + _authorizedSession);
+						_authorizedSession = null;
+						_sessionExpiryTask = null;
+					}
+					finally
+					{
+						_authorizedSessionLock.unlock();
+					}
+				}
+				catch (final InterruptedException e)
+				{
+					// cancelled while waiting to discard active session
+				}
+			}, 6, TimeUnit.SECONDS);
+			return true;
+		}
+		finally
+		{
+			_authorizedSessionLock.unlock();
+		}
 	}
 	
 	/**

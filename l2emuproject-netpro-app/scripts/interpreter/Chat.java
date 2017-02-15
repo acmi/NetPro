@@ -54,7 +54,9 @@ public class Chat extends ScriptedZeroBasedIntegerIdInterpreter
 				"NPC local",
 				"NPC shout",
 				"GM Chat",
-				"World" // 25
+				"World", // 25
+				"Clan (dimensional)",
+				"Alliance (dimensional)"
 				);
 		// @formatter:on
 	}

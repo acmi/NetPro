@@ -60,6 +60,12 @@ public abstract class IntegerIdInterpreter implements IntegerInterpreter
 	}
 	
 	@Override
+	public Boolean isKnown(long value, ICacheServerID entityCacheContext)
+	{
+		return _id2Interpretation.containsKey(value);
+	}
+	
+	@Override
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
 		Object result = _id2Interpretation.get(value);
@@ -94,7 +100,7 @@ public abstract class IntegerIdInterpreter implements IntegerInterpreter
 			}
 			return mapping;
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			L2Logger.getLogger(clazz).error("Could not load integer ID interpretations from " + resourceName, e);
 			return Collections.emptyMap();

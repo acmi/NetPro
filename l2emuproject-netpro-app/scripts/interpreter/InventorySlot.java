@@ -21,11 +21,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
  * Interprets the given byte/word/dword value as an inventory slot number.
+ * FIXME: This was done for HF, so after ExQuestItemList separation in Freya. Needs to be completely redesigned.
  * 
  * @author savormix
- * @deprecated This was done for HF, so after ExQuestItemList separation in Freya. Needs to be completely redesigned.
  */
-@Deprecated
 public class InventorySlot extends ScriptedFieldValueInterpreter implements IntegerInterpreter
 {
 	/**
@@ -43,7 +42,7 @@ public class InventorySlot extends ScriptedFieldValueInterpreter implements Inte
 	{
 		if (value == -1 || value == 255)
 			return getSpecialInterpretation();
-			
+		
 		return value;
 	}
 }

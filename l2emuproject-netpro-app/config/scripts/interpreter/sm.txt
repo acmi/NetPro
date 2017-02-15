@@ -1153,8 +1153,8 @@
 1152	$s3 $s2(s) have been sold to $c1 for $s4 Adena.
 1153	$s2 has been purchased from $c1 at the price of $s3 Adena.
 1154	$s3 $s2(s) have been purchased from $c1 for $s4 Adena.
-1155	+$s2 $s3 has been sold to $C1 at the price of $s4 Adena.
-1156	+$s2 $s3 has been purchased from $C1 at the price of $s4 Adena.
+1155	+$s2 $s3 has been sold to $c1 at the price of $s4 Adena.
+1156	+$s2 $s3 has been purchased from $c1 at the price of $s4 Adena.
 1157	The preview state only lasts for 10 seconds. If you wish to continue, click OK.
 1158	You cannot dismount from this elevation.
 1159	The ferry from Talking Island will arrive at Gludin Harbor in approximately 10 minutes.
@@ -1903,7 +1903,7 @@
 1902	Incompatible item grade.  This item cannot be used.
 1903	To request an NC OTP service,\nrun the cell phone NC OTP service,\nand enter the displayed NC OTP number within 1 minute.\nIf you did not make the request,\nleave this part blank,\nand press the login button.
 1904	A subclass may not be created or changed while a servitor or pet is summoned.
-1905	$s2 from $s1 will be replaced with $c4 from $s3.
+1905	$c2 from $s1 will be replaced with $c4 from $s3.
 1906	Select the combat unit to transfer to.
 1907	Select the  character who will\n replace the current character.
 1908	$c1 is in an area which blocks summoning or teleporting.
@@ -3862,7 +3862,7 @@
 4104	Players can Shout after Lv. $s1.
 4105	Players can use Trade chat after Lv. $s1.
 4106	Players can use general chat after Lv. $s1.
-4107	Players can respond to a whisper, but cannot initiate a whisper until Lv. $s1.
+4107	Players can respond to a whisper, but cannot initiate a whisper until after Lv. $s1.
 4108	Pet summon/ seal or riding in progress. Please try again later.
 4109	Cannot ride while summoning / sealing pet. Please try again later.
 4110	Dormant accounts will receive support through in-game mail containing equipment and supplies.<br>(only for characters that have completed the 2nd Class Transfer)
@@ -3977,7 +3977,7 @@
 4219	Please finish your ongoing task and try again.
 4220	Please select the item to send.
 4221	This is not a valid combination.
-4222	This item this not exist.
+4222	This item does not exist.
 4223	You cannot do that while trading.
 4224	You cannot do that while auctioning.
 4225	You cannot do that while crystallizing.
@@ -4167,6 +4167,12 @@
 4409	You may only use arenas with the same mode as the first monster arena you have used this week.
 4410	Chat ban will be lifted in $s1 seconds.
 4411	Macros consisting of chat messages only cannot be used automatically.
+4413	Congratulations. Compounding was successful and you obtained $s2 of $s1.
+4414	Compounding failed and you obtained $s2 of $s1.
+4416	You have to register the items in order.
+4417	You obtained $s2 of $s1 after compounding.
+4418	You don't have enough space in your inventory to continue with compounding. You need more than 2 empty slots.
+4424	When you compound, you may lose some or all of the ingredients. Continue?
 4601	- Great P. Def. and skillful Shield Defense<br>- Increased P. Def. for the whole party<br>- Protect party members
 4602	By the will of the Chaos, the power of Abelius, the Golden Commander of the ancient giants, has been combined with the ancient power of light. The blessing of the giants and the light upon him gave him the courage to be the fearless shield of the continent.
 4603	- Great P. Def.<br>- Increased P. Atk. For the whole party<br>Vampiric Rage and Reinforced Dark Panther
@@ -4793,6 +4799,7 @@
 6830	There are $s1 players in the qeue. Click on cancel to end the server connection.
 6831	Cannot request duels when participating in the Olympiad/Ceremony of Chaos.
 6832	You cannot drop any more items in this zone. Please try again after picking up the item on the ground.
+6833	The character has already been blocked.
 7001	Cannot proceed until the current dice roll is over.
 7002	Your inventory's weight/limit has been exceeded, so you can't participate in the dice roll.
 7003	You are outside the range to participate in the dice roll.

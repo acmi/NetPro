@@ -153,8 +153,45 @@ public class NetProScriptCache extends JavaClassScriptCache
 			JavaClassScriptCache.installLoggers(c -> new NetProScriptLogger(L2Logger.getLogger(c)));
 			
 			INITIALIZER = new ReloadableScriptInitializer();
-			final ScriptEngineConfig config = JCSCConfig.create(Paths.get("scripts"), Paths.get(getScriptCacheName()), JCSCConfig.DEFAULT_ENCODING, getCompilerOptions(), INITIALIZER_APT_HANDLER,
-					INITIALIZER_JAVAC_HANDLER, INITIALIZER, JCSCConfig.DEFAULT_BUFFER_SIZE, JCSCConfig.DEFAULT_WRITER_SUPPLIER, DEFLATE_CACHE, DO_NOT_LOAD_STALE_CACHE);
+			
+			final String ver = NetProInfo.isUnreleased() ? "" : "_" + (NetProInfo.isSnapshot() ? NetProInfo.getRevisionNumber() : NetProInfo.getVersion());
+			Map<SupportedCompilerType, CompilerOptions> compilerOptions = CompilerOptionsImpl.DEFAULTS;
+			{
+				final String separator = System.getProperty("path.separator", ";"), classpath = System.getProperty("java.class.path", "no" + separator + "classpath");
+				if (!L2System.isIDEMode() && classpath.split(separator).length == 1 && classpath.endsWith(".jar"))
+				{
+					// java -jar somename.jar
+					final String ecjCP;
+					try
+					{
+						ecjCP = ClasspathExtractor.getClasspathOf(classpath);
+					}
+					catch (final IOException e)
+					{
+						throw new AssertionError("classpath", e);
+					}
+					compilerOptions = new EnumMap<>(SupportedCompilerType.class);
+					// JDK compiler will correctly interpret jar files on classpath
+					compilerOptions.put(SupportedCompilerType.JDK, CompilerOptionsImpl.DEFAULTS.get(SupportedCompilerType.JDK));
+					// JDT batch compiler will take literal values from classpath; we know for NP that NP jar has ALL library jars
+					// so we do not need to recurse further; we can just use it as the classpath for ECJ
+					final CompilerOptions oldECJ = CompilerOptionsImpl.DEFAULTS.get(SupportedCompilerType.ECJ);
+					final List<String> proc = new ArrayList<>();
+					for (final String old : oldECJ.getProcessorOptions())
+						proc.add(old);
+					proc.add("-classpath");
+					proc.add(ecjCP);
+					final List<String> comp = new ArrayList<>();
+					for (final String old : oldECJ.getCompilerOptions())
+						comp.add(old);
+					comp.add("-classpath");
+					comp.add(ecjCP);
+					compilerOptions.put(SupportedCompilerType.ECJ, new CompilerOptionsImpl(proc, comp));
+				}
+			}
+			final ScriptEngineConfig config = JCSCConfig.create(Paths.get("scripts"), Paths.get("script" + ver + ".cache"), JCSCConfig.DEFAULT_ENCODING, compilerOptions,
+					new DiagnosticLogFile(Paths.get("script_apt.log")), new DiagnosticLogFile(Paths.get("script.log")), INITIALIZER, JCSCConfig.DEFAULT_BUFFER_SIZE, JCSCConfig.DEFAULT_WRITER_SUPPLIER,
+					DEFLATE_CACHE, DO_NOT_LOAD_STALE_CACHE);
 			INSTANCE = new NetProScriptCache(config);
 			FLAGS = config.getFlags();
 			

@@ -3,6 +3,7 @@
 	<dword alias="Actor OID" type="ObjectID">
 		<scriptAlias id="OIL_OBJECT_ID" />
 		<scriptAlias id="HLE_STOPPED_OID" />
+		<scriptAlias id="stop_move_OID" />
 	</dword>
 	<dword alias="Location X">
 		<scriptAlias id="OIL_OBJECT_X_SERVER" />

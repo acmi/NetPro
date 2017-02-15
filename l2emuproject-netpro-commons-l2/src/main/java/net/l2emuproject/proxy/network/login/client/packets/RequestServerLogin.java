@@ -60,12 +60,12 @@ public final class RequestServerLogin extends L2LoginClientPacket implements Req
 				{
 					enumerator = ppe.enumeratePacketPayload(getClient().getProtocol(), buf, getClient());
 				}
-				catch (InvalidPacketOpcodeSchemeException e)
+				catch (final InvalidPacketOpcodeSchemeException e)
 				{
 					LOG.error("This cannot happen", e);
 					break usePPE;
 				}
-				catch (PartialPayloadEnumerationException e)
+				catch (final PartialPayloadEnumerationException e)
 				{
 					// ignore this due to reasons
 					enumerator = e.getBuffer();
@@ -81,7 +81,7 @@ public final class RequestServerLogin extends L2LoginClientPacket implements Req
 			id = buf.readC();
 		}
 		
-		getReceiver().setTargetServer(id);
+		getReceiver().setSelectedServer(id);
 	}
 	
 	@Override

@@ -19,7 +19,6 @@ import java.util.List;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
 
-import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
@@ -83,8 +82,7 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 				CommonPacketSender.sendImmutableScreenSystemMessage(client, SM_CASTING_INTERRUPTED, POS_INTERRUPTED, 0, SMALL_FONT, 0, 1, false, DURATION, FADE);
 				break;
 			case SM_RESISTED_EFFECT:
-				final List<EnumeratedPayloadField> tokenTypes = buf.getFieldIndices(SYSMSG_TOKENS);
-				final MMOBuffer buffer = buf.getMMOBuffer();
+				final List<EnumeratedPayloadField> tokenTypes = buf.getFieldIndices(SYSMSG_TOKEN_TYPE);
 				
 				String target,
 						skill;
@@ -93,7 +91,7 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 				switch (targetType)
 				{
 					case SYSMSG_TOKEN_NPC:
-						final int npcClassID = SystemMessageRecipient.getSysMsgNPCID(client.getProtocol(), buffer);
+						final int npcClassID = SystemMessageRecipient.readIntegerToken(buf);
 						try
 						{
 							target = String.valueOf(MetaclassRegistry.getInstance().getInterpreter("Npc", IntegerInterpreter.class).getInterpretation(npcClassID, null));
@@ -105,7 +103,7 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 						break;
 					case SYSMSG_TOKEN_STRING:
 					case SYSMSG_TOKEN_PLAYER:
-						target = buffer.readS();
+						target = SystemMessageRecipient.readStringToken(buf);
 						break;
 					default:
 						target = "Unknown[" + targetType + "]";
@@ -116,7 +114,7 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 				final int skillType = buf.readInteger32(tokenTypes.get(1));
 				if (skillType == SYSMSG_TOKEN_SKILL)
 				{
-					final long skillNameID = SystemMessageRecipient.getSysMsgSkillNameID(client.getProtocol(), buffer);
+					final long skillNameID = SystemMessageRecipient.readSkillToken(buf);
 					skill = L2SkillTranslator.getInterpretation(skillNameID, null);
 				}
 				else

@@ -3299,6 +3299,8 @@
 3496	Please register a weapon for rune extraction first, then press the extract button.
 3497	Go ahead with rune extraction?
 3498	Rune extraction successful.
+3499	Compound Ingredients
+3501	Items must be registered one by one.
 3533	Equipped
 4001	An envoy dispatched by the Blackbird Clan. Assigns quests associated with the Blackbird Clan.
 4002	An envoy dispatched by the Giant Trackers. Assigns quests associated with the Giant Trackers.
@@ -3575,6 +3577,8 @@
 5850	Activity
 5851	Yesterday's Reward
 5852	No Rewards Available
+5853	Block Impolite Characters
+5854	Block Adena Sale Ads
 7001	Roll Dice to Distribute Items
 7002	Manual Distribution by Party Leader
 7003	Roll Dice

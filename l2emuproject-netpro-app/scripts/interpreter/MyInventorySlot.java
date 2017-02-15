@@ -19,11 +19,10 @@ import eu.revengineer.simplejse.HasScriptDependencies;
 
 /**
  * Interprets the given byte/word/dword value as an inventory slot number.
+ * FIXME: This was done for HF, so after ExQuestItemList separation in Freya. Needs to be completely redesigned.
  * 
  * @author savormix
- * @deprecated This was done for HF, so after ExQuestItemList separation in Freya. Needs to be completely redesigned.
  */
-@Deprecated
 @HasScriptDependencies("interpreter.InventorySlot")
 public class MyInventorySlot extends InventorySlot
 {

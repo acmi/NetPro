@@ -32,6 +32,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.nio.file.Path;
 import java.text.DateFormat;
@@ -228,8 +229,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 			}
 			{
 				(_pbHeapState = new JProgressBar(0, 1_000)).setStringPainted(true);
-				final Timer updater = new Timer(1_000, e ->
-				{
+				final Timer updater = new Timer(1_000, e -> {
 					final long free = Runtime.getRuntime().freeMemory(), total = Runtime.getRuntime().totalMemory(), used = total - free;
 					final L2TextBuilder tb = new L2TextBuilder(BytesizeInterpreter.consolidate(used, BytesizeUnit.BYTES, BytesizeUnit.BYTES, BytesizeUnit.MEBIBYTES, "0M"));
 					int end = tb.indexOf("m");
@@ -310,9 +310,9 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 		
 		_explainDialog = new PacketExplainDialog(this);
 		
-		JMenuBar mb = new JMenuBar();
+		final JMenuBar mb = new JMenuBar();
 		{
-			JMenu file = new JMenu("File");
+			final JMenu file = new JMenu("File");
 			file.setMnemonic(KeyEvent.VK_F);
 			// file.setToolTipText("Save/open packet logs.");
 			{
@@ -322,9 +322,8 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				load.setToolTipText("Opens a packet log file.");
 				load.setMnemonic(KeyEvent.VK_O);
 				load.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_DOWN_MASK));
-				load.addActionListener(e ->
-				{
-					int result = _logChooser.showOpenDialog(Frontend.this);
+				load.addActionListener(e -> {
+					final int result = _logChooser.showOpenDialog(Frontend.this);
 					if (result != JFileChooser.APPROVE_OPTION)
 						return;
 					
@@ -345,11 +344,10 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				{
 					final JMenuItem item = new JMenuItem("L2PacketHack log…");
 					item.setToolTipText("Opens a L2PacketHack (l2phx) packet log file.");
-					item.addActionListener(e ->
-					{
+					item.addActionListener(e -> {
 						_importChooser.setFileFilter(BetterExtensionFilter.create("L2PacketHack packet log", "pLog"));
 						
-						int result = _importChooser.showOpenDialog(Frontend.this);
+						final int result = _importChooser.showOpenDialog(Frontend.this);
 						if (result != JFileChooser.APPROVE_OPTION)
 							return;
 						
@@ -361,11 +359,10 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				{
 					final JMenuItem item = new JMenuItem("L2PacketHack raw log…");
 					item.setToolTipText("Opens a L2PacketHack (l2phx) raw packet log file.");
-					item.addActionListener(e ->
-					{
+					item.addActionListener(e -> {
 						_importChooser.setFileFilter(BetterExtensionFilter.create("L2PacketHack raw packet log", "rawLog"));
 						
-						int result = _importChooser.showOpenDialog(Frontend.this);
+						final int result = _importChooser.showOpenDialog(Frontend.this);
 						if (result != JFileChooser.APPROVE_OPTION)
 							return;
 						
@@ -377,11 +374,10 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				{
 					final JMenuItem item = new JMenuItem("Packet Samurai log…");
 					item.setToolTipText("Opens a Packet Samurai packet log file.");
-					item.addActionListener(e ->
-					{
+					item.addActionListener(e -> {
 						_importChooser.setFileFilter(BetterExtensionFilter.create("Packet Samurai packet log", "psl"));
 						
-						int result = _importChooser.showOpenDialog(Frontend.this);
+						final int result = _importChooser.showOpenDialog(Frontend.this);
 						if (result != JFileChooser.APPROVE_OPTION)
 							return;
 						
@@ -401,8 +397,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					submenu.setMnemonic(KeyEvent.VK_S);
 					{
 						final JMenuItem item = new JMenuItem("Text (clipboard)");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null || pta.getSelectedPacket() == null)
 							{
@@ -417,7 +412,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 										sb);
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
-							catch (IOException ex)
+							catch (final IOException ex)
 							{
 								// L2TB doesn't throw
 							}
@@ -426,8 +421,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("XML (clipboard)");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null || pta.getSelectedPacket() == null)
 							{
@@ -441,7 +435,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 								ToXMLVisitor.writePacket(pta.getSelectedPacket(), pta.getProtocolVersion(), new MMOBuffer(), pta.getCacheContext(), new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
-							catch (IOException ex)
+							catch (final IOException ex)
 							{
 								// L2TB doesn't throw
 							}
@@ -455,8 +449,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					submenu.setMnemonic(KeyEvent.VK_V);
 					{
 						final JMenuItem item = new JMenuItem("Text (clipboard)");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -477,7 +470,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
-							catch (IOException ex)
+							catch (final IOException ex)
 							{
 								// L2TB doesn't throw
 							}
@@ -486,8 +479,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("Text (file)…");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -505,8 +497,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("XML (clipboard)");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -527,7 +518,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
-							catch (IOException ex)
+							catch (final IOException ex)
 							{
 								// L2TB doesn't throw
 							}
@@ -536,8 +527,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("XML (file)…");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -561,8 +551,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					submenu.setMnemonic(KeyEvent.VK_T);
 					{
 						final JMenuItem item = new JMenuItem("Text (clipboard)");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -583,7 +572,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
-							catch (IOException ex)
+							catch (final IOException ex)
 							{
 								// L2TB doesn't throw
 							}
@@ -592,8 +581,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("Text (file)…");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -611,8 +599,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("XML (clipboard)");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -633,7 +620,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
-							catch (IOException ex)
+							catch (final IOException ex)
 							{
 								// L2TB doesn't throw
 							}
@@ -642,8 +629,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("XML (file)…");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -667,8 +653,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					submenu.setMnemonic(KeyEvent.VK_M);
 					{
 						final JMenuItem item = new JMenuItem("Text (clipboard)");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -689,7 +674,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
-							catch (IOException ex)
+							catch (final IOException ex)
 							{
 								// L2TB doesn't throw
 							}
@@ -698,8 +683,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("Text (file)…");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -717,8 +701,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("XML (clipboard)");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -739,7 +722,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
-							catch (IOException ex)
+							catch (final IOException ex)
 							{
 								// L2TB doesn't throw
 							}
@@ -748,8 +731,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					{
 						final JMenuItem item = new JMenuItem("XML (file)…");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final PacketTableAccessor pta = cp.getCurrentTable();
 							if (pta == null)
 								return;
@@ -839,14 +821,12 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				gc.setMnemonic(KeyEvent.VK_G);
 				gc.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F12, 0));
 				gc.setToolTipText("Runs finalization on pending objects and performs garbage collection.");
-				gc.addActionListener(e ->
-				{
+				gc.addActionListener(e -> {
 					if (_gcTask != null)
 						return;
 					
 					gc.setEnabled(false);
-					_gcTask = new AsyncTask<Void, Void, Void>()
-					{
+					_gcTask = new AsyncTask<Void, Void, Void>(){
 						private GcInfoDialog _dialog;
 						
 						@Override
@@ -900,7 +880,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 			}
 			mb.add(file);
 			
-			JMenu packets = new JMenu("Packets");
+			final JMenu packets = new JMenu("Packets");
 			packets.setMnemonic(KeyEvent.VK_P);
 			packets.setToolTipText("Displays a list of packet manipulation options.");
 			
@@ -917,8 +897,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				final JMenuItem reload = new JMenuItem("Reload");
 				reload.setMnemonic(KeyEvent.VK_R);
 				reload.setToolTipText("Reload protocol & packet definitions.");
-				reload.addActionListener(e ->
-				{
+				reload.addActionListener(e -> {
 					final int answer = JOptionPane.showConfirmDialog(Frontend.this, "This will undo changes in any display configurations that are not saved.", "Chain reaction warning",
 							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 					if (answer != JOptionPane.YES_OPTION)
@@ -959,17 +938,16 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 			
 			if (LoadOption.DISABLE_SCRIPTS.isNotSet())
 			{
-				JMenu scripts = new JMenu("Scripts");
+				final JMenu scripts = new JMenu("Scripts");
 				scripts.setMnemonic(KeyEvent.VK_S);
 				scripts.setEnabled(!NetProScriptCache.getInstance().isCompilerUnavailable());
 				scripts.setToolTipText(scripts.isEnabled() ? "Allows script management." : "Runtime script management requires NetPro to be run via a JDK executable.");
 				{
 					{
-						JMenuItem item = new JMenuItem("Reload all");
+						final JMenuItem item = new JMenuItem("Reload all");
 						item.setMnemonic(KeyEvent.VK_R);
 						item.setToolTipText("Loads all scripts in the script directory.");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							if (JOptionPane.showConfirmDialog(Frontend.this,
 									"This will attempt to load all scripts from the script directory. Managed scripts will be unloaded/reloaded, unmanaged scripts will be loaded a second time. Continue?",
 									"Confirm action", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE) != JOptionPane.YES_OPTION)
@@ -981,11 +959,10 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 					}
 					scripts.addSeparator();
 					{
-						JMenuItem item = new JMenuItem("Load/reload…");
+						final JMenuItem item = new JMenuItem("Load/reload…");
 						item.setMnemonic(KeyEvent.VK_L);
 						item.setToolTipText("Loads a specific script.");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final String part = JOptionPane.showInputDialog(Frontend.this, "Input [a part of] the script's FQCN (class name, including all packages):", "Script load",
 									JOptionPane.QUESTION_MESSAGE);
 							if (part != null)
@@ -994,11 +971,10 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 						scripts.add(item);
 					}
 					{
-						JMenuItem item = new JMenuItem("Unload…");
+						final JMenuItem item = new JMenuItem("Unload…");
 						item.setMnemonic(KeyEvent.VK_U);
 						item.setToolTipText("Unloads a specific script.");
-						item.addActionListener(e ->
-						{
+						item.addActionListener(e -> {
 							final String part = JOptionPane.showInputDialog(Frontend.this, "Input [a part of] the script's FQCN (class name, including all packages):", "Script unload",
 									JOptionPane.QUESTION_MESSAGE);
 							if (part != null)
@@ -1010,26 +986,27 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				mb.add(scripts);
 			}
 			
-			JMenu help = new JMenu("Help");
+			final JMenu help = new JMenu("Help");
 			help.setMnemonic(KeyEvent.VK_H);
 			help.setToolTipText("Displays a list of help options.");
 			{
-				JMenuItem explain = new JMenuItem("Explain configuration");
+				final JMenuItem explain = new JMenuItem("Explain configuration");
 				explain.setMnemonic(KeyEvent.VK_E);
 				explain.setToolTipText("Explains current proxy server configuration.");
 				
-				L2TextBuilder tb = new L2TextBuilder("<html><body><table border=\"1\">");
+				final L2TextBuilder tb = new L2TextBuilder("<html><body><table border=\"1\">");
 				tb.append("<th><td>NetPro interception</td><td>NetPro destination</td></th>");
 				for (final ProxySocket socket : SocketManager.getInstance().getAuthSockets())
 				{
-					tb.append("<tr><td>Login server</td><td>").append(IPAliasManager.toUserFriendlyString(socket.getBindAddress().getHostAddress()));
-					tb.append(':').append(socket.getListenPort()).append("</td><td>");
+					final InetSocketAddress listenAddress = socket.getListenAddress();
+					tb.append("<tr><td>Login server</td><td>").append(IPAliasManager.toUserFriendlyString(listenAddress.getHostString()));
+					tb.append(':').append(listenAddress.getPort()).append("</td><td>");
 					String serviceIP = socket.getServiceAddress(); // hostname
 					try
 					{
 						serviceIP = IPAliasManager.toUserFriendlyString(InetAddress.getByName(socket.getServiceAddress()).getHostAddress());
 					}
-					catch (UnknownHostException e)
+					catch (final UnknownHostException e)
 					{
 						// ignore
 					}
@@ -1037,14 +1014,45 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				}
 				for (final ListenSocket socket : SocketManager.getInstance().getGameWorldSockets().values())
 				{
-					tb.append("<tr><td>Game server</td><td>").append(IPAliasManager.toUserFriendlyString(socket.getBindAddress().getHostAddress()));
-					tb.append(':').append(socket.getListenPort()).append("</td><td>").append("[selected game server address]").append("</td></tr>");
+					final InetSocketAddress listenAddress = socket.getListenAddress();
+					tb.append("<tr><td>Game server</td><td>").append(IPAliasManager.toUserFriendlyString(listenAddress.getHostString()));
+					tb.append(':').append(listenAddress.getPort()).append("</td><td>").append("[selected game server address]").append("</td></tr>");
 				}
 				tb.append("</table></body></html>");
 				final String info = tb.moveToString();
 				
 				explain.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, info, "Current configuration", JOptionPane.INFORMATION_MESSAGE));
 				help.add(explain);
+			}
+			help.addSeparator();
+			{
+				final JMenuItem about = new JMenuItem("About");
+				about.setMnemonic(KeyEvent.VK_A);
+				about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
+				about.setToolTipText("Shows information about this application.");
+				
+				final String suffix;
+				if (NetProInfo.isUnreleased())
+					suffix = "norelease";
+				else if (NetProInfo.isSnapshot())
+					suffix = "snapshot";
+				else
+					suffix = "stable";
+				
+				try (final InputStream is = IMage.class.getResourceAsStream("about_" + suffix + ".htm"); final BufferedInputStream in = new BufferedInputStream(is))
+				{
+					final ByteArrayOutputStream out = new ByteArrayOutputStream(in.available());
+					for (int b; (b = in.read()) != -1;)
+						out.write(b);
+					final String text = out.toString("UTF-8");
+					about.addActionListener(e -> JOptionPane.showMessageDialog(Frontend.this, text.replace("\r\n", "").replace("<revision_number>", NetProInfo.getRevisionNumber()), "About",
+							JOptionPane.INFORMATION_MESSAGE, new ImageIcon(IMage.class.getResource("icon-256.png"))));
+					help.add(about);
+				}
+				catch (final IOException e)
+				{
+					// whatever
+				}
 			}
 			mb.add(help);
 		}
@@ -1101,7 +1109,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 	 */
 	public void initReload(IProtocolVersion toBeShownAfterReload)
 	{
-		for (PacketDisplayConfig dlg : _configDialogs.values())
+		for (final PacketDisplayConfig dlg : _configDialogs.values())
 		{
 			dlg.setVisible(false);
 			dlg.dispose();

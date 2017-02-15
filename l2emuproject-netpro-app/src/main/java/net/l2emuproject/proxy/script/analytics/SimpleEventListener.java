@@ -15,6 +15,8 @@
  */
 package net.l2emuproject.proxy.script.analytics;
 
+import java.util.List;
+
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 
 /**
@@ -34,7 +36,9 @@ public interface SimpleEventListener
 	 * @param selectorOID character
 	 * @param targetOID target or {@value #NO_TARGET}
 	 */
-	void onTargetSelected(L2GameClient client, int selectorOID, int targetOID);
+	default void onTargetSelected(L2GameClient client, int selectorOID, int targetOID)
+	{
+	}
 	
 	/**
 	 * Called when some character is hit by a physical attack (not a skill).
@@ -43,7 +47,9 @@ public interface SimpleEventListener
 	 * @param attackerOID attacking character
 	 * @param targetOID target character
 	 */
-	void onPhysicalAttack(L2GameClient client, int attackerOID, int targetOID);
+	default void onPhysicalAttack(L2GameClient client, int attackerOID, int targetOID)
+	{
+	}
 	
 	/**
 	 * Called when some character starts casting a skill.
@@ -56,7 +62,9 @@ public interface SimpleEventListener
 	 * @param castTime milliseconds to skill use
 	 * @param coolTime milliseconds to next cast
 	 */
-	void onCast(L2GameClient client, int casterOID, int targetOID, int skill, int level, int castTime, int coolTime);
+	default void onCast(L2GameClient client, int casterOID, int targetOID, int skill, int level, int castTime, int coolTime)
+	{
+	}
 	
 	/**
 	 * Called when some character finishes casting a skill. This will only be called for skills that have to be targeted manually, so do not expect to receive this for
@@ -71,7 +79,33 @@ public interface SimpleEventListener
 	 * @param skill skill ID
 	 * @param level skill level
 	 */
-	void onCastSuccess(L2GameClient client, int casterOID, int targetOID, int skill, int level);
+	default void onCastSuccess(L2GameClient client, int casterOID, int targetOID, int skill, int level)
+	{
+	}
+	
+	/**
+	 * Called when some character finishes casting a skill. This will only be called for skills that have to be targeted manually, so do not expect to receive this for
+	 * toggles, soul/spiritshots, certain buffs and some other skills.<BR>
+	 * <BR>
+	 * This call is generated from a {@code MagicSkillLaunched} packet; one call for each affected target.<BR>
+	 * It is possible that the amount of affected targets is 0; then a single call is issued with {@code targetOID} = {@value #NO_TARGET}.
+	 * 
+	 * @param client client (that received this event)
+	 * @param casterOID casting character
+	 * @param targetOIDs target characters or an empty list
+	 * @param skill skill ID
+	 * @param level skill level
+	 */
+	default void onCastSuccess(L2GameClient client, int casterOID, List<Integer> targetOIDs, int skill, int level)
+	{
+		if (targetOIDs.isEmpty())
+		{
+			onCastSuccess(client, casterOID, NO_TARGET, skill, level);
+			return;
+		}
+		for (final Integer targetOID : targetOIDs)
+			onCastSuccess(client, casterOID, targetOID, skill, level);
+	}
 	
 	/**
 	 * Called when a skill cast is interrupted, either manually or due to excessive damage to the caster.
@@ -79,7 +113,9 @@ public interface SimpleEventListener
 	 * @param client client (that received this event)
 	 * @param casterOID previously casting character
 	 */
-	void onCastFailure(L2GameClient client, int casterOID);
+	default void onCastFailure(L2GameClient client, int casterOID)
+	{
+	}
 	
 	/**
 	 * Called when some character dies.
@@ -88,7 +124,9 @@ public interface SimpleEventListener
 	 * @param deceasedOID dead character
 	 * @param sweepable whether spoil is enabled
 	 */
-	void onDeath(L2GameClient client, int deceasedOID, boolean sweepable);
+	default void onDeath(L2GameClient client, int deceasedOID, boolean sweepable)
+	{
+	}
 	
 	/**
 	 * Called when some character is successfully resurrected.
@@ -96,7 +134,9 @@ public interface SimpleEventListener
 	 * @param client client (that received this event)
 	 * @param revivedOID resurrected (alive) character
 	 */
-	void onRevive(L2GameClient client, int revivedOID);
+	default void onRevive(L2GameClient client, int revivedOID)
+	{
+	}
 	
 	/**
 	 * Called when some object is removed from a client's knownlist.
@@ -104,7 +144,9 @@ public interface SimpleEventListener
 	 * @param client client (that received this event)
 	 * @param deletedOID removed object
 	 */
-	void onDelete(L2GameClient client, int deletedOID);
+	default void onDelete(L2GameClient client, int deletedOID)
+	{
+	}
 	
 	/**
 	 * Called when some character (either monster or player/pet) drops an item.
@@ -114,7 +156,9 @@ public interface SimpleEventListener
 	 * @param itemOID dropped item
 	 * @param amount item amount
 	 */
-	void onItemDrop(L2GameClient client, int dropperOID, int itemOID, long amount);
+	default void onItemDrop(L2GameClient client, int dropperOID, int itemOID, long amount)
+	{
+	}
 	
 	/**
 	 * Called when some item is added to a client's knownlist.
@@ -123,7 +167,9 @@ public interface SimpleEventListener
 	 * @param itemOID item on ground
 	 * @param amount item amount
 	 */
-	void onItemSpawn(L2GameClient client, int itemOID, long amount);
+	default void onItemSpawn(L2GameClient client, int itemOID, long amount)
+	{
+	}
 	
 	/**
 	 * Called when some item is picked up by a character.
@@ -132,7 +178,9 @@ public interface SimpleEventListener
 	 * @param finderOID looting character
 	 * @param itemOID looted item
 	 */
-	void onItemPickup(L2GameClient client, int finderOID, int itemOID);
+	default void onItemPickup(L2GameClient client, int finderOID, int itemOID)
+	{
+	}
 	
 	/**
 	 * Called when a new effect is added to the buff/debuff list.
@@ -140,7 +188,9 @@ public interface SimpleEventListener
 	 * @param client client (that received this event)
 	 * @param skillID skill ID
 	 */
-	void onEffectAdded(L2GameClient client, int skillID);
+	default void onEffectAdded(L2GameClient client, int skillID)
+	{
+	}
 	
 	/**
 	 * Called when an existing effect is removed from the buff/debuff list.
@@ -148,7 +198,9 @@ public interface SimpleEventListener
 	 * @param client client (that received this event)
 	 * @param skillID skill ID
 	 */
-	void onEffectRemoved(L2GameClient client, int skillID);
+	default void onEffectRemoved(L2GameClient client, int skillID)
+	{
+	}
 	
 	/**
 	 * Called when some character finishes moving and stands still.
@@ -159,5 +211,7 @@ public interface SimpleEventListener
 	 * @param y character's current Y coordinate
 	 * @param z character's current Z coordinate
 	 */
-	void onMovementEnd(L2GameClient client, int stopperOID, int x, int y, int z);
+	default void onMovementEnd(L2GameClient client, int stopperOID, int x, int y, int z)
+	{
+	}
 }

@@ -4,5 +4,7 @@
 	<string alias="Message" type="PreformattedHtml">
 		<scriptAlias id="quest_html_content" />
 	</string>
-	<dword alias="Quest" type="Quest" />
+	<dword alias="Quest" type="Quest">
+		<scriptAlias id="quest_html_quest" />
+	</dword>
 </packet>

@@ -24,14 +24,15 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * level.
  * 
  * @author savormix
- * @deprecated Should only be used for weapon elemental power.
  */
-@Deprecated
 public class ElementPower extends ScriptedFieldValueInterpreter implements IntegerInterpreter
 {
 	@Override
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
+		// FIXME: differentiate by item type (weapon/armor)
+		return value;
+		/*
 		if (value < 1)
 			return "None";
 		else if (value < 25)
@@ -60,5 +61,6 @@ public class ElementPower extends ScriptedFieldValueInterpreter implements Integ
 			return "Level 12";
 		else
 			return "Level 13";
+		*/
 	}
 }

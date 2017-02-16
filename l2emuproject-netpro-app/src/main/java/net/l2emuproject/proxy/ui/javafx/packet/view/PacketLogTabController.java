@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -481,14 +483,19 @@ public class PacketLogTabController implements Initializable
 	 * 
 	 * @param packet a packet
 	 */
-	public void addPacket(PacketLogEntry packet)
+	public void addPackets(Collection<PacketLogEntry> packets)
 	{
-		_memoryPackets.add(packet);
+		_memoryPackets.addAll(packets);
 		
-		if (isHiddenByDisplayConfig(packet) || isHiddenByName(packet))
+		final List<PacketLogEntry> tablePackets = new ArrayList<>(packets.size());
+		for (final PacketLogEntry packet : packets)
+			if (!isHiddenByDisplayConfig(packet) && !isHiddenByName(packet))
+				tablePackets.add(packet);
+		
+		if (tablePackets.isEmpty())
 			return;
-		
-		_tablePackets.add(packet);
+
+		_tablePackets.addAll(tablePackets);
 		_autoScrollPending = !_scrollLockProperty.get();
 	}
 }

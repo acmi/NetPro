@@ -238,8 +238,7 @@ public final class L2PhPacketLogLoadOptionController implements Initializable
 								Platform.runLater(() -> {
 									synchronized (packets)
 									{
-										for (final PacketLogEntry packetOnUI : packets)
-											controller.addPacket(packetOnUI);
+										controller.addPackets(packets);
 										packets.clear();
 										progressDialog.setLoadedAmount(packetsRead.get(), totalPackets);
 										canUpdateUI.set(true);

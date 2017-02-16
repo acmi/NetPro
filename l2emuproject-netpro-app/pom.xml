@@ -50,7 +50,6 @@
 						<manifestEntries>
 							<Main-Class>net.l2emuproject.proxy.ui.savormix.loader.Loader</Main-Class>
 							<SplashScreen-Image>net/l2emuproject/proxy/ui/savormix/l2emu_logo.png</SplashScreen-Image>
-							<Class-Path>lib/edf2np-commons.jar</Class-Path>
 						</manifestEntries>
 					</archive>
 				</configuration>

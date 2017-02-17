@@ -27,6 +27,7 @@ import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.wrapException;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -45,6 +46,8 @@ import java.util.TreeSet;
 import java.util.concurrent.Future;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.mutable.MutableInt;
 
 import eu.revengineer.simplejse.exception.DependencyResolutionException;
 import eu.revengineer.simplejse.exception.MutableOperationInProgressException;
@@ -73,11 +76,17 @@ import net.l2emuproject.proxy.io.packetlog.PacketLogFileUtils;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileHeader;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileUtils;
 import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ServiceType;
+import net.l2emuproject.proxy.network.listener.ConnectionListener;
+import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.UserDefinedProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.script.NetProScriptCache;
+import net.l2emuproject.proxy.setup.IPAliasManager;
+import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
+import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.BytesizeFormat;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.ExceptionAlert;
@@ -87,8 +96,10 @@ import net.l2emuproject.proxy.ui.javafx.error.view.ExceptionSummaryDialogControl
 import net.l2emuproject.proxy.ui.javafx.io.view.L2PhPacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
+import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
+import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabUserData;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.HexUtil;
 import net.l2emuproject.util.StackTraceUtil;
@@ -111,6 +122,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -133,6 +146,10 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.RadialGradient;
+import javafx.scene.paint.Stop;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -147,7 +164,7 @@ import javafx.util.Duration;
  * 
  * @author _dev_
  */
-public class MainWindowController implements Initializable, IOConstants
+public class MainWindowController implements Initializable, IOConstants, ConnectionListener, PacketListener
 {
 	static final L2Logger LOG = L2Logger.getLogger(MainWindowController.class);
 	
@@ -228,10 +245,13 @@ public class MainWindowController implements Initializable, IOConstants
 	
 	private final Map<IProtocolVersion, Stage> _openPacketHidingConfigWindows;
 	
+	private final MutableInt _connectionIdentifier;
+	
 	/** Constructs this controller. */
 	public MainWindowController()
 	{
 		_openPacketHidingConfigWindows = new HashMap<>();
+		_connectionIdentifier = new MutableInt(0);
 	}
 	
 	@Override
@@ -264,7 +284,7 @@ public class MainWindowController implements Initializable, IOConstants
 			_tbPacketHidingConfig.setSelected(false);
 			
 			final Object ctrl = neu != null ? neu.getUserData() : null;
-			if (ctrl == null || !(ctrl instanceof PacketLogTabController))
+			if (ctrl == null || !(ctrl instanceof PacketLogTabUserData))
 			{
 				_mExport.setDisable(true);
 				
@@ -274,7 +294,7 @@ public class MainWindowController implements Initializable, IOConstants
 				return;
 			}
 			
-			final PacketLogTabController controller = (PacketLogTabController)ctrl;
+			final PacketLogTabController controller = ((PacketLogTabUserData)ctrl).getController();
 			
 			_mSelectedPacketExport.disableProperty().bind(Bindings.not(controller.anyPacketSelected()));
 			_mVisiblePacketExport.disableProperty().bind(Bindings.not(controller.hasVisiblePackets()));
@@ -425,7 +445,7 @@ public class MainWindowController implements Initializable, IOConstants
 			return null;
 		
 		final Object controller = packetTab.getUserData();
-		return controller instanceof PacketLogTabController ? (PacketLogTabController)controller : null;
+		return controller instanceof PacketLogTabUserData ? ((PacketLogTabUserData)controller).getController() : null;
 	}
 	
 	@FXML
@@ -1252,10 +1272,10 @@ public class MainWindowController implements Initializable, IOConstants
 		for (final Tab tab : _tpConnections.getTabs())
 		{
 			final Object userData = tab.getUserData();
-			if (!(userData instanceof PacketLogTabController))
+			if (!(userData instanceof PacketLogTabUserData))
 				continue;
 			
-			final PacketLogTabController controller = (PacketLogTabController)userData;
+			final PacketLogTabController controller = ((PacketLogTabUserData)userData).getController();
 			if (protocolVersion == null || protocolVersion.equals(controller.protocolProperty().get()))
 				controller.applyFilters();
 		}
@@ -1277,5 +1297,145 @@ public class MainWindowController implements Initializable, IOConstants
 		tabs.remove(_tabIdle);
 		tabs.add(tab);
 		_tpConnections.getSelectionModel().select(tab);
+	}
+	
+	@Override
+	public void onClientPacket(Proxy sender, Proxy recipient, ByteBuffer packet, long time) throws RuntimeException
+	{
+		findTabAndAddPacket(sender, recipient, packet, time);
+		
+	}
+	
+	@Override
+	public void onServerPacket(Proxy sender, Proxy recipient, ByteBuffer packet, long time) throws RuntimeException
+	{
+		findTabAndAddPacket(sender, recipient, packet, time);
+	}
+	
+	private void findTabAndAddPacket(Proxy sender, Proxy recipient, ByteBuffer packet, long time)
+	{
+		final byte[] body = new byte[packet.clear().remaining()];
+		packet.get(body);
+		
+		final ReceivedPacket result = new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time);
+		final PacketLogEntry ple = new PacketLogEntry(result);
+		
+		Platform.runLater(() -> {
+			if (_cbCaptureGlobal.isSelected())
+				return;
+			
+			final ObservableList<Tab> tabs = _tpConnections.getTabs();
+			for (final Tab tab : tabs)
+			{
+				final Object ud = tab.getUserData();
+				if (!(ud instanceof PacketLogTabUserData))
+					continue;
+				
+				final PacketLogTabUserData userData = (PacketLogTabUserData)ud;
+				if (userData.getClient() != sender && userData.getServer() != sender && userData.getClient() != recipient && userData.getServer() != recipient)
+					continue;
+				
+				if (_cbCaptureSession.isSelected() && tab == _tpConnections.getSelectionModel().getSelectedItem())
+					return;
+				
+				ple.updateView(sender.getProtocol());
+				userData.getController().addPackets(Collections.singleton(ple));
+				break;
+			}
+		});
+	}
+	
+	@Override
+	public void onProtocolVersion(Proxy affected, IProtocolVersion version) throws RuntimeException
+	{
+		Platform.runLater(() -> {
+			final ObservableList<Tab> tabs = _tpConnections.getTabs();
+			for (final Tab tab : tabs)
+			{
+				final Object ud = tab.getUserData();
+				if (!(ud instanceof PacketLogTabUserData))
+					continue;
+				
+				final PacketLogTabUserData userData = (PacketLogTabUserData)ud;
+				if (affected != userData.getClient() && affected != userData.getServer())
+					continue;
+				
+				userData.getController().protocolProperty().set(version);
+				break;
+			}
+		});
+	}
+	
+	@Override
+	public void onClientConnection(Proxy client)
+	{
+		// ignore
+	}
+	
+	@Override
+	public void onServerConnection(Proxy server)
+	{
+		Platform.runLater(() -> {
+			final Tab tab;
+			final PacketLogTabController controller;
+			
+			try
+			{
+				final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(PacketLogTabController.class), UIStrings.getBundle());
+				tab = new Tab(
+						UIStrings.get("packettab.title", _connectionIdentifier.incrementAndGet(), IPAliasManager.toUserFriendlyString(server.getClient().getHostAddress()),
+								IPAliasManager.toUserFriendlyString(server.getHostAddress())),
+						loader.load());
+				controller = loader.getController();
+			}
+			catch (final IOException e)
+			{
+				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
+				wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.WINDOW_MODAL).show();
+				return;
+			}
+			
+			//controller.protocolProperty().set(protocolVersion);
+			controller.setEntityCacheContext(new ServerSocketID(server.getInetSocketAddress()));
+			controller.installScrollLock(scrollLockProperty());
+			controller.setOnProtocolPacketHidingConfigurationChange(this::refreshFilters);
+			
+			final Canvas icon = new Canvas(10, 10);
+			final GraphicsContext gc = icon.getGraphicsContext2D();
+			gc.setFill(new RadialGradient(0, 0, 0.5, 0.5, 0.7, true, CycleMethod.NO_CYCLE, new Stop(0, Color.GREEN), new Stop(1, Color.TRANSPARENT)));
+			gc.fillOval(0, 0, 10, 10);
+			tab.setGraphic(icon);
+			
+			final PacketLogTabUserData userData = new PacketLogTabUserData(controller);
+			userData.setServer(server);
+			userData.setClient(server.getClient());
+			tab.setUserData(userData);
+			addConnectionTab(tab);
+		});
+	}
+	
+	@Override
+	public void onDisconnection(Proxy client, Proxy server)
+	{
+		Platform.runLater(() -> {
+			final ObservableList<Tab> tabs = _tpConnections.getTabs();
+			for (final Tab tab : tabs)
+			{
+				final Object ud = tab.getUserData();
+				if (!(ud instanceof PacketLogTabUserData))
+					continue;
+				
+				final PacketLogTabUserData userData = (PacketLogTabUserData)ud;
+				if (client != userData.getClient() && server != userData.getServer())
+					continue;
+				
+				final Canvas icon = new Canvas(10, 10);
+				final GraphicsContext gc = icon.getGraphicsContext2D();
+				gc.setFill(new RadialGradient(0, 0, 0.5, 0.5, 0.7, true, CycleMethod.NO_CYCLE, new Stop(0, Color.BLACK), new Stop(1, Color.TRANSPARENT)));
+				gc.fillOval(0, 0, 10, 10);
+				tab.setGraphic(icon);
+				break;
+			}
+		});
 	}
 }

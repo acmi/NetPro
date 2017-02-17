@@ -50,7 +50,7 @@ public final class SocketManager implements IOConstants
 	
 	private static final Pattern IPV4_ADDRESS_PREFIX = Pattern.compile(
 			"((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))/((?:[1-2]?[0-9])|(?:3[0-2]))");
-			
+	
 	private final IPv4AddressTrie<ListenSocket> _gameWorldHubSockets;
 	private final BindableSocketSet<ProxySocket> _authSockets;
 	
@@ -59,13 +59,13 @@ public final class SocketManager implements IOConstants
 		Pair<IPv4AddressTrie<ListenSocket>, BindableSocketSet<ProxySocket>> cfg = null;
 		try
 		{
-			cfg = load(APPLICATION_DIRECTORY.resolve("serviceconfig.xml"));
+			cfg = load(APPLICATION_DIRECTORY.resolve("fx-serviceconfig.xml"));
 		}
 		catch (NoSuchFileException | FileNotFoundException e)
 		{
 			// ignore and load predefined
 		}
-		catch (Exception e)
+		catch (final Exception e)
 		{
 			LOG.error("User's service config", e);
 		}
@@ -76,7 +76,7 @@ public final class SocketManager implements IOConstants
 			{
 				cfg = load(CONFIG_DIRECTORY.resolve("serviceconfig.xml"));
 			}
-			catch (Exception e)
+			catch (final Exception e)
 			{
 				throw new InternalError(e);
 			}
@@ -104,7 +104,7 @@ public final class SocketManager implements IOConstants
 			final Matcher cap = IPV4_ADDRESS_PREFIX.matcher(tmp);
 			if (!cap.matches())
 				throw new IllegalArgumentException(tmp);
-				
+			
 			final byte[] addr = new byte[4];
 			for (int i = 0; i < 4; ++i)
 				addr[i] = (byte)Integer.parseInt(cap.group(i + 1));
@@ -116,7 +116,7 @@ public final class SocketManager implements IOConstants
 		{
 			if (L2XMLUtils.getNodeAttributeBooleanValue(sock, "disabled", false))
 				continue;
-				
+			
 			final Node listen = L2XMLUtils.firstChildNamed(sock, "listen");
 			final Node svc = L2XMLUtils.firstChildNamed(sock, "service");
 			authSockets.add(new ProxySocket(InetAddress.getByName(L2XMLUtils.getString(listen, "ip")), L2XMLUtils.getInteger(listen, "port"), L2XMLUtils.getString(svc, "host"),

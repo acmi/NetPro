@@ -21,6 +21,8 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -45,8 +47,16 @@ import net.l2emuproject.proxy.io.conversion.ToPlaintextVisitor;
 import net.l2emuproject.proxy.io.conversion.ToXMLVisitor;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.network.login.client.packets.RequestServerList;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
+import net.l2emuproject.proxy.network.meta.PacketPayloadEnumerator;
+import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
+import net.l2emuproject.proxy.network.meta.RequiredInvasiveOperations;
+import net.l2emuproject.proxy.network.meta.ServerListTypePublisher;
+import net.l2emuproject.proxy.network.meta.SimplePpeProvider;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
+import net.l2emuproject.proxy.network.meta.exception.InvalidPacketOpcodeSchemeException;
+import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationException;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
@@ -58,6 +68,7 @@ import net.l2emuproject.proxy.ui.javafx.packet.PacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.binding.Bindings;
@@ -140,6 +151,8 @@ public class PacketLogTabController implements Initializable
 	private final ObjectProperty<IPacketHidingConfig> _packetHidingConfigProperty;
 	private Consumer<IProtocolVersion> _onProtocolHidingConfigChange;
 	
+	private Integer _serverListType;
+	
 	/** Creates this controller. */
 	public PacketLogTabController()
 	{
@@ -147,8 +160,7 @@ public class PacketLogTabController implements Initializable
 		_tablePackets = FXCollections.observableArrayList();
 		
 		_protocolProperty = new SimpleObjectProperty<>(ProtocolVersionManager.getInstance().getFallbackProtocolGame());
-		_protocolProperty.addListener((obs, old, neu) ->
-		{
+		_protocolProperty.addListener((obs, old, neu) -> {
 			if (neu == null)
 				return;
 			
@@ -158,10 +170,9 @@ public class PacketLogTabController implements Initializable
 		});
 		_scrollLockProperty = new SimpleBooleanProperty(false);
 		// will only be modified on the UI thread
-		_packetHidingConfigProperty = new SimpleObjectProperty<IPacketHidingConfig>(
+		_packetHidingConfigProperty = new SimpleObjectProperty<>(
 				new PacketHidingConfig(new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes), new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes)));
-		_onProtocolHidingConfigChange = p ->
-		{
+		_onProtocolHidingConfigChange = p -> {
 			// Do nothing
 		};
 	}
@@ -174,8 +185,7 @@ public class PacketLogTabController implements Initializable
 		_labMemoryPacketCount.textProperty().bind(UIStrings.getEx("packettab.footer.count.memory", Bindings.createStringBinding(() -> format.format(_memoryPackets.size()), _memoryPackets)));
 		
 		final PseudoClass clientPacketRowClass = PseudoClass.getPseudoClass("client");
-		_tvPackets.setRowFactory(tv ->
-		{
+		_tvPackets.setRowFactory(tv -> {
 			final TableRow<PacketLogEntry> row = new TableRow<>();
 			row.itemProperty().addListener((obs, old, neu) -> row.pseudoClassStateChanged(clientPacketRowClass, neu != null ? neu.getPacket().getEndpoint().isClient() : false));
 			return row;
@@ -183,8 +193,7 @@ public class PacketLogTabController implements Initializable
 		
 		final ContextMenu contextMenu = _tvPackets.getContextMenu();
 		_tvPackets.setContextMenu(null);
-		_tvPackets.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) ->
-		{
+		_tvPackets.getSelectionModel().selectedItemProperty().addListener((obs, old, neu) -> {
 			if (neu == null)
 			{
 				_tvPackets.setContextMenu(null);
@@ -195,7 +204,7 @@ public class PacketLogTabController implements Initializable
 			_miHidePacketInProtocol.textProperty().bind(UIStrings.getEx("packettab.cmenu.hiding.protocol", Bindings.convert(_protocolProperty)));
 			_tvPackets.setContextMenu(contextMenu);
 			
-			//ServerListTypePublisher.LIST_TYPE.set(_owner.getServerListType());
+			ServerListTypePublisher.LIST_TYPE.set(_serverListType);
 			final Pair<String, String> html = Packet2Html.getHTML(neu.getPacket(), _protocolProperty.get(), _entityCacheContext);
 			_packetDisplayController.setContent(html.getLeft(), html.getRight());
 		});
@@ -209,8 +218,7 @@ public class PacketLogTabController implements Initializable
 		_colOpcode.setCellValueFactory(new PropertyValueFactory<>("opcode"));
 		_colName.setCellValueFactory(new PropertyValueFactory<>("name"));
 		
-		final Timeline tlAutoScroll = new Timeline(new KeyFrame(Duration.ZERO), new KeyFrame(Duration.millis(AUTO_SCROLL_THRESHOLD), e ->
-		{
+		final Timeline tlAutoScroll = new Timeline(new KeyFrame(Duration.ZERO), new KeyFrame(Duration.millis(AUTO_SCROLL_THRESHOLD), e -> {
 			if (!_autoScrollPending)
 				return;
 			
@@ -219,7 +227,7 @@ public class PacketLogTabController implements Initializable
 			if (idx >= 0)
 				_tvPackets.scrollTo(idx);
 		}));
-		tlAutoScroll.setCycleCount(Timeline.INDEFINITE);
+		tlAutoScroll.setCycleCount(Animation.INDEFINITE);
 		tlAutoScroll.play();
 		
 		_cmiIgnoreFilters.selectedProperty().addListener((obs, old, neu) -> applyFilters());
@@ -328,7 +336,7 @@ public class PacketLogTabController implements Initializable
 		for (final StringOperator filter : _colName.getFilters())
 			if (FXUtils.isHidden(packetEntry.getName(), filter))
 				return true;
-		
+			
 		return false;
 	}
 	
@@ -351,7 +359,7 @@ public class PacketLogTabController implements Initializable
 				ToPlaintextVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), buf, _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
 			return sb.moveToString();
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			// L2TB doesn't throw
 			throw new AssertionError("L2TextBuilder", e);
@@ -368,7 +376,7 @@ public class PacketLogTabController implements Initializable
 				ToXMLVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), buf, _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
 			return sb.moveToString();
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			// L2TB doesn't throw
 			throw new AssertionError("L2TextBuilder", e);
@@ -481,7 +489,7 @@ public class PacketLogTabController implements Initializable
 	/**
 	 * Adds a new packet to the underlying table view.
 	 * 
-	 * @param packet a packet
+	 * @param packets packets to add
 	 */
 	public void addPackets(Collection<PacketLogEntry> packets)
 	{
@@ -489,12 +497,42 @@ public class PacketLogTabController implements Initializable
 		
 		final List<PacketLogEntry> tablePackets = new ArrayList<>(packets.size());
 		for (final PacketLogEntry packet : packets)
+		{
+			// special case to allow PPE (custom definition) as well as a client-requested packet structure
+			final ReceivedPacket rp = packet.getPacket();
+			if (rp.getService().isLogin() && rp.getEndpoint().isClient() && rp.getBody()[0] == RequestServerList.OPCODE)
+			{
+				final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
+				if (ppe != null)
+				{
+					final ByteBuffer bb = ByteBuffer.wrap(rp.getBody()).order(ByteOrder.LITTLE_ENDIAN);
+					final MMOBuffer buf = new MMOBuffer();
+					buf.setByteBuffer(bb);
+					RandomAccessMMOBuffer rab = null;
+					try
+					{
+						rab = ppe.enumeratePacketPayload(protocolProperty().get(), buf, () -> EndpointType.CLIENT);
+					}
+					catch (final PartialPayloadEnumerationException e)
+					{
+						rab = e.getBuffer();
+					}
+					catch (final InvalidPacketOpcodeSchemeException e)
+					{
+						//LOG.error("This cannot happen", e);
+					}
+					if (rab != null)
+						_serverListType = (int)rab.readFirstInteger(RequiredInvasiveOperations.SERVER_LIST_TYPE);
+				}
+			}
+			
 			if (!isHiddenByDisplayConfig(packet) && !isHiddenByName(packet))
 				tablePackets.add(packet);
+		}
 		
 		if (tablePackets.isEmpty())
 			return;
-
+		
 		_tablePackets.addAll(tablePackets);
 		_autoScrollPending = !_scrollLockProperty.get();
 	}

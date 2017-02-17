@@ -55,6 +55,10 @@ import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
+import net.l2emuproject.proxy.network.game.client.L2GameClientConnections;
+import net.l2emuproject.proxy.network.game.server.L2GameServerConnections;
+import net.l2emuproject.proxy.network.login.client.L2LoginClientConnections;
+import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.script.PpeEnabledLoaderScriptRegistry;
@@ -141,7 +145,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			SPLASH_STAGE.setScene(new Scene(loader.load(), null));
 			loader.<SplashScreenController> getController().bindDescription(LOADING_STAGE_DESCRIPTION);
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			// 1.2 STATIC SPLASH SCREEN
 			final int altSize = 256;
@@ -160,8 +164,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			SPLASH_STAGE.setScene(new Scene(new Group(canvas), null));
 		}
 		SPLASH_STAGE.getIcons().addAll(FXUtils.getIconListFX());
-		SPLASH_STAGE.setOnHidden(e ->
-		{
+		SPLASH_STAGE.setOnHidden(e -> {
 			if (ShutdownManager.isRunningHooks())
 				return;
 			
@@ -205,7 +208,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			}
 			
 			// 2.1.3 QUERY USER FOR LANGUAGE
-			final ChoiceDialog<String> dlgSelectLanguage = new ChoiceDialog<String>(defaultChoice, languages);
+			final ChoiceDialog<String> dlgSelectLanguage = new ChoiceDialog<>(defaultChoice, languages);
 			dlgSelectLanguage.setHeaderText("Select preferred language:");
 			dlgSelectLanguage.setTitle("Language selection");
 			dlgSelectLanguage.initModality(Modality.APPLICATION_MODAL);
@@ -242,8 +245,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			// 1.1 GET ACCESS TO SPLASH SCREEN
 			reporter = desc -> Platform.runLater(() -> LOADING_STAGE_DESCRIPTION.setValue(desc));
 			// 1.2 SETUP UI LOGGING FORWARDER
-			ListeningLog.addListener(message ->
-			{
+			ListeningLog.addListener(message -> {
 				final boolean added = PENDING_LOG_ENTRIES.offer(message);
 				if (!added)
 				{
@@ -255,8 +257,7 @@ public class NetPro extends Application implements NetProThreadPriority
 		else
 			reporter = null;
 		
-		L2Proxy.addStartupHook(() ->
-		{
+		L2Proxy.addStartupHook(() -> {
 			// 2.1 INSTALL ANALYTICS
 			if (reporter != null)
 				reporter.onState(UIStrings.get("startup.analytics"));
@@ -295,7 +296,7 @@ public class NetPro extends Application implements NetProThreadPriority
 							cache.restoreFromCache(fqcn2Exception);
 							break scripts;
 						}
-						catch (StaleScriptCacheException e)
+						catch (final StaleScriptCacheException e)
 						{
 							if (reporter == null)
 								break loadCache; // proceed to compilation
@@ -304,8 +305,7 @@ public class NetPro extends Application implements NetProThreadPriority
 							synchronized (reporter)
 							{
 								final MutableBoolean recompile = new MutableBoolean(false);
-								Platform.runLater(() ->
-								{
+								Platform.runLater(() -> {
 									final Alert confirmDlg = new Alert(AlertType.WARNING);
 									confirmDlg.setTitle(UIStrings.get("startup.scripts.stalecache.dialog.title"));
 									confirmDlg.setHeaderText(UIStrings.get("startup.scripts.stalecache.dialog.header"));
@@ -359,8 +359,7 @@ public class NetPro extends Application implements NetProThreadPriority
 				// 2.2.4 ASK TO CONTINUE WITH NO SCRIPTS LOADED
 				synchronized (reporter)
 				{
-					Platform.runLater(() ->
-					{
+					Platform.runLater(() -> {
 						final Alert confirmDlg = new Alert(AlertType.WARNING);
 						confirmDlg.setTitle(UIStrings.get("startup.scripts.jre.nocache.dialog.title"));
 						confirmDlg.setHeaderText(UIStrings.get("startup.scripts.jre.nocache.dialog.header"));
@@ -393,8 +392,7 @@ public class NetPro extends Application implements NetProThreadPriority
 					// 2.2.5 REPORT SCRIPT INITIALIZATION ERRORS
 					synchronized (reporter)
 					{
-						Platform.runLater(() ->
-						{
+						Platform.runLater(() -> {
 							final Alert alert = new Alert(AlertType.WARNING);
 							alert.initModality(Modality.APPLICATION_MODAL);
 							alert.initOwner(SPLASH_STAGE);
@@ -425,12 +423,10 @@ public class NetPro extends Application implements NetProThreadPriority
 			{
 				// 2.3.1 LOAD PROTOCOL BASED PACKET HIDING CONFIG
 				final Semaphore semaphore = new Semaphore(0);
-				ProtocolPacketHidingManager.AUTOMATIC_LOADING_EXCEPTION_HANDLER = exceptions ->
-				{
+				ProtocolPacketHidingManager.AUTOMATIC_LOADING_EXCEPTION_HANDLER = exceptions -> {
 					if (!exceptions.isEmpty())
 					{
-						Platform.runLater(() ->
-						{
+						Platform.runLater(() -> {
 							final Alert alert = new Alert(AlertType.WARNING);
 							alert.initModality(Modality.APPLICATION_MODAL);
 							alert.initOwner(SPLASH_STAGE);
@@ -464,7 +460,7 @@ public class NetPro extends Application implements NetProThreadPriority
 		{
 			L2Proxy.main(); // launches the backend
 		}
-		catch (Throwable t)
+		catch (final Throwable t)
 		{
 			// 2.F HANDLE FAILURE
 			
@@ -473,7 +469,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			{
 				t.printStackTrace(out);
 			}
-			catch (Throwable th)
+			catch (final Throwable th)
 			{
 				// too bad, really
 			}
@@ -481,8 +477,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			if (SPLASH_STAGE != null)
 			{
 				// 2.F.2.1 SHOW GUI DIALOG
-				Platform.runLater(() ->
-				{
+				Platform.runLater(() -> {
 					final Alert dlgFail = new ExceptionAlert(t, SPLASH_STAGE);
 					WindowTracker.getInstance().add(dlgFail);
 					dlgFail.showAndWait();
@@ -499,8 +494,7 @@ public class NetPro extends Application implements NetProThreadPriority
 		
 		// 3. OPEN GUI
 		reporter.onState(UIStrings.get("startup.ui"));
-		Platform.runLater(() ->
-		{
+		Platform.runLater(() -> {
 			// 3.1 OPEN MAIN WINDOW
 			try
 			{
@@ -508,8 +502,7 @@ public class NetPro extends Application implements NetProThreadPriority
 				final Scene scene = new Scene(loader.load());
 				final MainWindowController controller = loader.getController();
 				// 3.2 LINK LOGGING WITH UI CONSOLE
-				final Timeline tlLogging = new Timeline(new KeyFrame(Duration.ZERO, evt ->
-				{
+				final Timeline tlLogging = new Timeline(new KeyFrame(Duration.ZERO, evt -> {
 					for (String msg; (msg = PENDING_LOG_ENTRIES.poll()) != null;)
 						controller.appendToConsole(msg);
 				}), new KeyFrame(Duration.seconds(0.2)));
@@ -518,10 +511,20 @@ public class NetPro extends Application implements NetProThreadPriority
 				PRIMARY_STAGE.setScene(scene);
 				PRIMARY_STAGE.setTitle("NetPro" + (NetProInfo.isUnreleased() ? "" : " " + (NetProInfo.isSnapshot() ? "r" + NetProInfo.getRevisionNumber() : NetProInfo.getVersion())));
 				PRIMARY_STAGE.getIcons().addAll(FXUtils.getIconListFX());
+				
 				WindowTracker.getInstance().add(PRIMARY_STAGE, false);
 				PRIMARY_STAGE.show();
+				
+				L2LoginClientConnections.getInstance().addConnectionListener(controller);
+				L2LoginClientConnections.getInstance().addPacketListener(controller);
+				L2LoginServerConnections.getInstance().addConnectionListener(controller);
+				L2LoginServerConnections.getInstance().addPacketListener(controller);
+				L2GameClientConnections.getInstance().addConnectionListener(controller);
+				L2GameServerConnections.getInstance().addConnectionListener(controller);
+				L2GameClientConnections.getInstance().addPacketListener(controller);
+				L2GameServerConnections.getInstance().addPacketListener(controller);
 			}
-			catch (IOException e)
+			catch (final IOException e)
 			{
 				// 3.F MAIN WINDOW MISSING, WARN AND EXIT
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
@@ -554,7 +557,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			controller.setAllExceptions(path2Exception, p -> p.getFileName().toString(), t -> StackTraceUtil.traceToString(StackTraceUtil.stripUntilClassContext(t, true, NetPro.class.getName())));
 			return result;
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, NetPro.class.getName());
 			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, SPLASH_STAGE, Modality.WINDOW_MODAL).showAndWait();
@@ -685,8 +688,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			{
 				synchronized (_lock)
 				{
-					Platform.runLater(() ->
-					{
+					Platform.runLater(() -> {
 						final Alert confirmDlg = new Alert(init ? AlertType.WARNING : AlertType.ERROR);
 						confirmDlg.setTitle(UIStrings.get("startup.scripts.err.dialog.title"));
 						if (init)
@@ -723,7 +725,7 @@ public class NetPro extends Application implements NetProThreadPriority
 							}
 							controller.setErroneousScripts(sbScripts.toString(), sbErrors.toString());
 						}
-						catch (IOException e)
+						catch (final IOException e)
 						{
 							throw new AssertionError("Compilation error view is missing", e);
 						}
@@ -745,7 +747,7 @@ public class NetPro extends Application implements NetProThreadPriority
 					_lock.wait();
 				}
 			}
-			catch (InterruptedException e)
+			catch (final InterruptedException e)
 			{
 				throw new RuntimeException(e);
 			}
@@ -758,8 +760,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			{
 				synchronized (_lock)
 				{
-					Platform.runLater(() ->
-					{
+					Platform.runLater(() -> {
 						final Alert confirmDlg = new Alert(AlertType.ERROR);
 						confirmDlg.setTitle(UIStrings.get("startup.scripts.err.apt.fail.dialog.title"));
 						confirmDlg.setHeaderText(UIStrings.get("startup.scripts.err.apt.fail.dialog.header"));
@@ -784,7 +785,7 @@ public class NetPro extends Application implements NetProThreadPriority
 					_lock.wait();
 				}
 			}
-			catch (InterruptedException e)
+			catch (final InterruptedException e)
 			{
 				throw new RuntimeException(e);
 			}

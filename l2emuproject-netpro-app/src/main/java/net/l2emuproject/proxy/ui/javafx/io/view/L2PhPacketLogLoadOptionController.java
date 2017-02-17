@@ -47,6 +47,7 @@ import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
+import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabUserData;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
 import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
@@ -190,7 +191,7 @@ public final class L2PhPacketLogLoadOptionController implements Initializable
 		controller.setOnProtocolPacketHidingConfigurationChange(_mainWindow::refreshFilters);
 		
 		closeTab(event);
-		tab.setUserData(controller);
+		tab.setUserData(new PacketLogTabUserData(controller));
 		_mainWindow.addConnectionTab(tab);
 		final int totalPackets = -1;
 		progressDialog.setFilename(filename);

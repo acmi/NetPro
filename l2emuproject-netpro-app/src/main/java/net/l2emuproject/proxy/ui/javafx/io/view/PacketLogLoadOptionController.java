@@ -44,6 +44,7 @@ import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
+import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabUserData;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
 import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
@@ -136,7 +137,8 @@ public final class PacketLogLoadOptionController
 		final IProtocolVersion protocolVersion = _cbProtocol.getSelectionModel().getSelectedItem();
 		if (protocolVersion == null)
 		{
-			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "open.netpro.err.dialog.header.noprotocol", "open.netpro.err.dialog.content.noprotocol");
+			final Alert alert = makeNonModalUtilityAlert(AlertType.ERROR, getDialogWindow(), "open.netpro.err.dialog.title", "open.netpro.err.dialog.header.noprotocol",
+					"open.netpro.err.dialog.content.noprotocol");
 			alert.initModality(Modality.WINDOW_MODAL);
 			alert.show();
 			return;
@@ -159,7 +161,7 @@ public final class PacketLogLoadOptionController
 			progressDialogScene = new Scene(loader.load(), null);
 			progressDialog = loader.getController();
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
 			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getDialogWindow(), Modality.WINDOW_MODAL).show();
@@ -173,7 +175,7 @@ public final class PacketLogLoadOptionController
 		controller.setOnProtocolPacketHidingConfigurationChange(_mainWindow::refreshFilters);
 		
 		closeTab(event);
-		tab.setUserData(controller);
+		tab.setUserData(new PacketLogTabUserData(controller));
 		_mainWindow.addConnectionTab(tab);
 		final int totalPackets = logFileHeader.getPackets();
 		progressDialog.setFilename(filename);
@@ -203,8 +205,7 @@ public final class PacketLogLoadOptionController
 		final AtomicBoolean canUpdateUI = new AtomicBoolean(true);
 		final AtomicInteger packetsRead = new AtomicInteger(0);
 		final List<PacketLogEntry> packets = new ArrayList<>();
-		final Future<?> loadTask = L2ThreadPool.submitLongRunning(() ->
-		{
+		final Future<?> loadTask = L2ThreadPool.submitLongRunning(() -> {
 			try (final NetProPacketLogFileIterator it = PacketLogFileUtils.getPacketIterator(logFileHeader))
 			{
 				while (it.hasNext())
@@ -226,8 +227,7 @@ public final class PacketLogLoadOptionController
 							packets.add(packetEntry);
 							if (canUpdateUI.getAndSet(false))
 							{
-								Platform.runLater(() ->
-								{
+								Platform.runLater(() -> {
 									synchronized (packets)
 									{
 										controller.addPackets(packets);
@@ -241,19 +241,23 @@ public final class PacketLogLoadOptionController
 					}
 				}
 			}
-			catch (IOException e) // trying to open
+			catch (final IOException e) // trying to open
 			{
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
-				Platform.runLater(() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
+				Platform.runLater(
+						() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+				{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
 			}
-			catch (LogFileIterationIOException ew) // during read
+			catch (final LogFileIterationIOException ew) // during read
 			{
 				final Throwable e = ew.getCause();
 				if (e instanceof ClosedByInterruptException) // user cancelled operation
 					return;
 				
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketLogLoadOptionController.class.getName());
-				Platform.runLater(() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
+				Platform.runLater(
+						() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+				{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
 			}
 			finally
 			{

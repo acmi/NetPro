@@ -27966,6 +27966,17 @@
 28497	Windy Lucky Enchant Stone: Weapon (R-grade) Event
 28498	Royal Red Save Card (R99-grade) Event
 28499	God's Soul Treasure Chest
+28500	Noble Tears
+28501	Noble Compassion Chocolate
+28502	Noble Devotion Candy
+28503	Noble Longing Cookie
+28504	Frintezza's Transformation Chocolate
+28505	Frintezza's Transformation Candy
+28506	Frintezza's Transformation Cookie
+28507	Frintezza's Friend Summon Chocolate
+28508	Frintezza's Friend Summon Candy
+28509	Frintezza's Friend Summon Cookie
+28528	Passion Treasure Chest Reloaded
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste

@@ -622,6 +622,7 @@
 8625	Diana, Contest Participant
 8626	Babayaga
 8627	Elk
+8628	Frintezza, Enamored
 12077	Wolf
 12311	Hatchling of the Wind
 12312	Hatchling of the Stars

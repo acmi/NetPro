@@ -80,7 +80,7 @@
 			<scriptAlias id="LUA_USER_STORE_TYPE" />
 		</byte>
 		<byte alias="Can crystallize" type="YesOrNo" />
-		<byte alias="Can use Alchemy" type="YesOrNo" /> <!-- NEW --> <!-- Ertheia's Only -->
+		<byte alias="Ability points"  type="AbilityWingIcon" /> <!-- NEW -->
 	</branch>
 
 	<branch id="exUI_2" condition="bitmask.Bit7" description="Stats screen/base values">

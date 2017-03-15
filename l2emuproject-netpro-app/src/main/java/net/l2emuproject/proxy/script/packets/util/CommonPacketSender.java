@@ -703,6 +703,83 @@ public final class CommonPacketSender extends PacketWriterScript
 		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	public static final void sendAnswerJoinPartyRoom(L2GameServer server, boolean accepted)
+	{
+		final int size = 1 + 2 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x30);
+		buf.writeD(accepted);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestExAcceptJoinMPCC(L2GameServer server, boolean accepted, int unknown)
+	{
+		final int size = 1 + 2 + 4 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x07);
+		buf.writeD(accepted);
+		buf.writeD(unknown);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestAnswerCoupleAction(L2GameServer server, int action, boolean accepted, int requestorID)
+	{
+		final int size = 1 + 2 + 4 + 4 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x77);
+		buf.writeD(action);
+		buf.writeD(accepted);
+		buf.writeD(requestorID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestFriendAddReply(L2GameServer server, int unknown, boolean accepted)
+	{
+		final int size = 1 + 1 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0x78);
+		buf.writeC(unknown);
+		buf.writeD(accepted);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestAnswerJoinParty(L2GameServer server, boolean accepted)
+	{
+		sendRequestAnswer(server, 0x43, accepted);
+	}
+	
+	public static final void sendAnswerTradeRequest(L2GameServer server, boolean accepted)
+	{
+		sendRequestAnswer(server, 0x55, accepted);
+	}
+	
+	private static final void sendRequestAnswer(L2GameServer server, int opcode, boolean accepted)
+	{
+		final int size = 1 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(opcode);
+		buf.writeD(accepted);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
 	private static final void sendLearnableSkillRequest(L2GameServer server, int opcode, int skillID, int skillLevel, int learnType)
 	{
 		final int size = 1 + 4 + 4 + 4;

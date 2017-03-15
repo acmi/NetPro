@@ -25,6 +25,8 @@ import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+import eu.revengineer.simplejse.init.DisabledScript;
+
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.ClientProtocolVersion;
 import net.l2emuproject.network.protocol.IGameProtocolVersion;
@@ -45,6 +47,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author _dev_
  */
+@DisabledScript
 public class AntiSpam extends GameScript implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(AntiSpam.class);

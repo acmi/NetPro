@@ -20,9 +20,9 @@ import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TAR
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.ArrayUtils;
@@ -33,15 +33,15 @@ import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
 import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
+import net.l2emuproject.proxy.script.analytics.user.AbnormalStatusModifier;
 import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
 import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics.UserInfo;
-
-import javolution.util.FastMap;
+import net.l2emuproject.proxy.script.packets.util.RestartResponseRecipient;
 
 /**
  * @author _dev_
  */
-public class HighLevelEventGenerator extends PpeEnabledGameScript
+public class HighLevelEventGenerator extends PpeEnabledGameScript implements RestartResponseRecipient
 {
 	@ScriptFieldAlias
 	private static final String DECEASED_OID = "HLE_DECEASED_OID";
@@ -86,10 +86,6 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 	@ScriptFieldAlias
 	private static final String WORLD_ITEM_FINDER_OID = "HLE_WORLD_ITEM_OWNER_OID";
 	@ScriptFieldAlias
-	private static final String EFFECT_SKILL_COUNT = "HLE_SELF_EFFECT_COUNT";
-	@ScriptFieldAlias
-	private static final String EFFECT_SKILL_ID = "HLE_SELF_EFFECT_SKILL";
-	@ScriptFieldAlias
 	private static final String STOPPED_OID = "HLE_STOPPED_OID";
 	@ScriptFieldAlias
 	private static final String STOPPED_X = "HLE_STOPPED_X";
@@ -97,15 +93,17 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 	private static final String STOPPED_Y = "HLE_STOPPED_Y";
 	@ScriptFieldAlias
 	private static final String STOPPED_Z = "HLE_STOPPED_Z";
+	@ScriptFieldAlias
+	private static final String EFFECT_LIST_CNT = "HLE_SELF_EFFECT_COUNT";
+	
+	private static final String KEY_EFFECTIVE_ABNORMAL_LIST = "abnormalsInEffect";
+	private static final String KEY_ABNORMAL_LIST_DIFF_TASK = "abnormalUpdateTask";
 	
 	private final Set<SimpleEventListener> _listeners;
-	
-	private final Map<L2GameClient, Set<Integer>> _effects;
 	
 	HighLevelEventGenerator()
 	{
 		_listeners = new CopyOnWriteArraySet<>();
-		_effects = new FastMap<L2GameClient, Set<Integer>>().setShared(true);
 	}
 	
 	/**
@@ -143,6 +141,24 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 	@Override
 	public void handleServerPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
+		if (isReturningToLobby(buf))
+		{
+			clear(client);
+			return;
+		}
+		
+		effectList:
+		{
+			final EnumeratedPayloadField cnt = buf.getSingleFieldIndex(EFFECT_LIST_CNT);
+			if (cnt == null)
+				break effectList;
+			
+			if (getOrDefault(client, KEY_EFFECTIVE_ABNORMAL_LIST, null) != null)
+				return;
+			
+			set(client, KEY_EFFECTIVE_ABNORMAL_LIST, LiveUserAnalytics.getInstance().getUserAbnormals(client).getActiveModifiers().collect(Collectors.toList()));
+			scheduleWithFixedDelay(client, KEY_ABNORMAL_LIST_DIFF_TASK, () -> onAbnormalUpdate(client), 1, 1, TimeUnit.SECONDS);
+		}
 		onDeath:
 		{
 			final EnumeratedPayloadField oid = buf.getSingleFieldIndex(DECEASED_OID);
@@ -292,21 +308,6 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			final int objectID = buf.readInteger32(oid);
 			final int skillID = buf.readFirstInteger32(SKILL_ID);
 			final int skillLvl = buf.readFirstInteger32(SKILL_LVL);
-			/*
-			if (targets.length == 0)
-			{
-				for (final SimpleEventListener listener : _listeners)
-					listener.onCastSuccess(client, objectID, NO_TARGET, skillID, skillLvl);
-				
-				return;
-			}
-			
-			for (final SimpleEventListener listener : _listeners)
-			{
-				for (final int targetID : targets)
-					listener.onCastSuccess(client, objectID, targetID, skillID, skillLvl);
-			}
-			*/
 			for (final SimpleEventListener listener : _listeners)
 				listener.onCastSuccess(client, objectID, targets, skillID, skillLvl);
 			
@@ -352,34 +353,6 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			
 			return;
 		}
-		onEffectList:
-		{
-			final EnumeratedPayloadField cnt = buf.getSingleFieldIndex(EFFECT_SKILL_COUNT);
-			if (cnt == null)
-				break onEffectList;
-			
-			final Set<Integer> current = LiveUserAnalytics.getInstance().getUserAbnormals(client).getActiveModifiers().map(m -> m.getSkillID()).collect(Collectors.toSet());
-			final Set<Integer> old = _effects.put(client, current);
-			if (old == null)
-				return;
-			
-			for (final Integer skill : old)
-			{
-				if (current.contains(skill))
-					continue;
-				
-				for (final SimpleEventListener listener : _listeners)
-					listener.onEffectRemoved(client, skill);
-			}
-			for (final Integer skill : current)
-			{
-				if (old.contains(skill))
-					continue;
-				
-				for (final SimpleEventListener listener : _listeners)
-					listener.onEffectAdded(client, skill);
-			}
-		}
 		onStopMove:
 		{
 			final EnumeratedPayloadField oid = buf.getSingleFieldIndex(STOPPED_OID);
@@ -395,6 +368,47 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript
 			
 			return;
 		}
+	}
+	
+	private void onAbnormalUpdate(L2GameClient client)
+	{
+		final List<AbnormalStatusModifier> newList = LiveUserAnalytics.getInstance().getUserAbnormals(client).getActiveModifiers().collect(Collectors.toList());
+		@SuppressWarnings("unchecked")
+		final List<AbnormalStatusModifier> oldList = (List<AbnormalStatusModifier>)set(client, KEY_EFFECTIVE_ABNORMAL_LIST, newList);
+		
+		final List<AbnormalStatusModifier> removed = new ArrayList<>(), added = new ArrayList<>();
+		for (final AbnormalStatusModifier oldEffect : oldList)
+		{
+			AbnormalStatusModifier equivalent = null;
+			for (final AbnormalStatusModifier newEffect : newList)
+			{
+				if (newEffect.getSkillID() == oldEffect.getSkillID() && newEffect.getSkillLevel() == oldEffect.getSkillLevel() && newEffect.getSkillSublevel() == oldEffect.getSkillSublevel())
+				{
+					equivalent = newEffect;
+					break;
+				}
+			}
+			if (equivalent == null)
+				removed.add(oldEffect);
+		}
+		for (final AbnormalStatusModifier newEffect : newList)
+		{
+			AbnormalStatusModifier equivalent = null;
+			for (final AbnormalStatusModifier oldEffect : oldList)
+			{
+				if (newEffect.getSkillID() == oldEffect.getSkillID() && newEffect.getSkillLevel() == oldEffect.getSkillLevel() && newEffect.getSkillSublevel() == oldEffect.getSkillSublevel())
+				{
+					equivalent = newEffect;
+					break;
+				}
+			}
+			if (equivalent == null)
+				added.add(newEffect);
+		}
+		
+		final List<AbnormalStatusModifier> iRemoved = Collections.unmodifiableList(removed), iAdded = Collections.unmodifiableList(added);
+		for (final SimpleEventListener listener : _listeners)
+			listener.onAbnormalListTick(client, iRemoved, iAdded);
 	}
 	
 	@Override

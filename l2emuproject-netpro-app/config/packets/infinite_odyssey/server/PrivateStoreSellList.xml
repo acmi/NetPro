@@ -21,7 +21,8 @@
 			<scriptAlias id="private_store_sell_item" />
 		</dword>
 		<unsignedByte alias="Slot number" type="InventorySlot" />
-		<qword alias="Quantity">
+		<qword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
 			<scriptAlias id="private_store_sell_item_amount" />
 		</qword>
 

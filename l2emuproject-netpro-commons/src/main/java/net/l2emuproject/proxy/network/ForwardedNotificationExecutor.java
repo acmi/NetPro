@@ -96,14 +96,28 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	@Override
 	public <K, V> V computeSessionStateIfAbsentFor(Proxy client, K key, Function<K, V> mappingFunction)
 	{
-		validateCall(client, true);
+		validateCall(client, false);
+		if (isDisconnected(client))
+		{
+			final Map<K, V> present = (Map<K, V>)_sessionStateMap.get(client);
+			if (present == null)
+				throw new IllegalStateException("State mutation while discard pending");
+			return present.computeIfAbsent(key, mappingFunction);
+		}
 		return (V)_sessionStateMap.computeIfAbsent(client, k -> new HashMap<>()).computeIfAbsent(key, (Function<? super Object, ? extends Object>)mappingFunction);
 	}
 	
 	@Override
 	public Object setSessionStateFor(Proxy client, Object key, Object value)
 	{
-		validateCall(client, true);
+		validateCall(client, false);
+		if (isDisconnected(client))
+		{
+			final Map<Object, Object> present = _sessionStateMap.get(client);
+			if (present == null)
+				throw new IllegalStateException("State mutation while discard pending");
+			return present.put(key, value);
+		}
 		return _sessionStateMap.computeIfAbsent(client, k -> new HashMap<>()).put(key, value);
 	}
 	
@@ -111,7 +125,7 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	@Override
 	public <T> T removeSessionStateFor(Proxy client, Object key)
 	{
-		validateCall(client, true);
+		validateCall(client, false);
 		final Map<Object, Object> stateMap = _sessionStateMap.get(client);
 		return stateMap != null ? (T)stateMap.remove(key) : null;
 	}
@@ -119,7 +133,7 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 	@Override
 	public <T> T removeSessionStateFor(Proxy client, Object key, T expectedValue)
 	{
-		validateCall(client, true);
+		validateCall(client, false);
 		final Map<Object, Object> stateMap = _sessionStateMap.get(client);
 		return stateMap != null ? (stateMap.remove(key, expectedValue) ? expectedValue : null) : null;
 	}
@@ -224,27 +238,17 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 		if (oldValue instanceof Future<?>)
 			((Future<?>)oldValue).cancel(true);
 		final BlockingQueue<Future<?>> expectedValue = new ArrayBlockingQueue<>(1);
-		final Future<?> newValue = submit(() -> {
+		final Future<?> newValue = submit(new SessionBoundTask(r, client, key, () -> {
 			try
 			{
-				r.run();
+				return expectedValue.take();
 			}
-			catch (final RuntimeException e)
+			catch (final InterruptedException e)
 			{
-				LOG.error(key, e);
+				// application is shutting down, so whatever, really
+				return null;
 			}
-			finally
-			{
-				try
-				{
-					removeSessionStateFor(client, key, expectedValue.take());
-				}
-				catch (final InterruptedException e)
-				{
-					// application is shutting down, so whatever, really
-				}
-			}
-		});
+		}));
 		setSessionStateFor(client, key, newValue);
 		expectedValue.add(newValue);
 		return newValue;
@@ -270,27 +274,17 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 		if (oldValue instanceof Future<?>)
 			((Future<?>)oldValue).cancel(true);
 		final BlockingQueue<ScheduledFuture<?>> expectedValue = new ArrayBlockingQueue<>(1);
-		final ScheduledFuture<?> newValue = schedule(() -> {
+		final ScheduledFuture<?> newValue = schedule(new SessionBoundTask(r, client, key, () -> {
 			try
 			{
-				r.run();
+				return expectedValue.take();
 			}
-			catch (final RuntimeException e)
+			catch (final InterruptedException e)
 			{
-				LOG.error(key, e);
+				// application is shutting down, so whatever, really
+				return null;
 			}
-			finally
-			{
-				try
-				{
-					removeSessionStateFor(client, key, expectedValue.take());
-				}
-				catch (final InterruptedException e)
-				{
-					// application is shutting down, so whatever, really
-				}
-			}
-		}, delay, unit);
+		}), delay, unit);
 		setSessionStateFor(client, key, newValue);
 		expectedValue.add(newValue);
 		return newValue;
@@ -326,8 +320,13 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 			throw new IllegalArgumentException("Session state must be assigned to client");
 		if (Thread.currentThread() != _activeThread)
 			throw new IllegalMonitorStateException("Thread unsafe call");
-		if (denyOpIfDisconnected && (client.isDced() || client.isFailed()))
+		if (denyOpIfDisconnected && isDisconnected(client))
 			throw new IllegalStateException("State mutation while discard pending");
+	}
+	
+	private boolean isDisconnected(Proxy client)
+	{
+		return client.isDced() || client.isFailed();
 	}
 	
 	private void discardSessionState(Proxy client)
@@ -373,10 +372,26 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 		else if (r instanceof ListenerForwardNotifier)
 		{
 			final ListenerForwardNotifier fn = (ListenerForwardNotifier)r;
+			if (t != null)
+			{
+				LOG.error("", t);
+				return;
+			}
+			
 			RunnableStatsManager.handleStats(fn.getListener().getClass(), "onPacket(Proxy, Proxy, ByteBuffer, long)", end - _start, SINGLE_SEQUENTIAL_LISTENER_WARNING_THRESHOLD);
 		}
 		else if (r instanceof AsyncDisconnectionNotifier)
 			discardSessionState(((AsyncDisconnectionNotifier)r).getClient());
+		else if (r instanceof SessionBoundTask)
+		{
+			final SessionBoundTask scriptTask = (SessionBoundTask)r;
+			removeSessionStateFor(scriptTask.getClient(), scriptTask.getKey(), scriptTask.asFuture());
+			if (t != null)
+				LOG.error(scriptTask, t);
+		}
+		
+		if (t != null)
+			LOG.error("Uncaught", t);
 	}
 	
 	@Override

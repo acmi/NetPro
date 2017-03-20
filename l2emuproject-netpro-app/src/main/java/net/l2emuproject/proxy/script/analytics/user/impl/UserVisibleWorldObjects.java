@@ -17,21 +17,35 @@ package net.l2emuproject.proxy.script.analytics.user.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import net.l2emuproject.proxy.script.analytics.user.PlayerToPlayerRelation;
 import net.l2emuproject.proxy.script.analytics.user.VisibleWorldObjects;
+import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
  * @author _dev_
  */
 public final class UserVisibleWorldObjects implements VisibleWorldObjects
 {
+	private final ICacheServerID _entityCacheContext;
 	private final Map<Integer, PlayerToPlayerRelation> _visibleObjects;
 	
-	/** Constructs this world object visibility tracker. */
-	public UserVisibleWorldObjects()
+	/**
+	 * Constructs this world object visibility tracker.
+	 * 
+	 * @param entityCacheContext cache context
+	 */
+	public UserVisibleWorldObjects(ICacheServerID entityCacheContext)
 	{
+		_entityCacheContext = entityCacheContext;
 		_visibleObjects = new HashMap<>();
+	}
+	
+	@Override
+	public ICacheServerID getEntityCacheContext()
+	{
+		return _entityCacheContext;
 	}
 	
 	@Override
@@ -62,5 +76,11 @@ public final class UserVisibleWorldObjects implements VisibleWorldObjects
 	public void setCurrentRelation(int worldObjectID, PlayerToPlayerRelation relation)
 	{
 		_visibleObjects.replace(worldObjectID, relation);
+	}
+	
+	@Override
+	public Stream<Integer> visibleObjectIDs()
+	{
+		return _visibleObjects.keySet().stream();
 	}
 }

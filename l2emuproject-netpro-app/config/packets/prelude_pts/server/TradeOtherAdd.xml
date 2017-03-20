@@ -12,7 +12,9 @@
 		<dword alias="Item" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Amount" />
+		<dword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</dword>
 		<word alias="Main item type" type="ItemType2" />
 		<word alias="Blessed" type="YesOrNo" />
 		<branch id="type" condition="equip.EquipableItemType">

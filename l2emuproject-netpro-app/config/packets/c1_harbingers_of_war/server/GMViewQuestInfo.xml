@@ -22,7 +22,9 @@
 		<dword alias="Item" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Amount" />
+		<dword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</dword>
 		<dword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" /> <!-- NEW -->
 	</loop>
 </packet>

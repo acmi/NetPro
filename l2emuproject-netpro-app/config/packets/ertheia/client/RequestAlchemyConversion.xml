@@ -4,4 +4,17 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="458" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<!-- structure for this packet are magicaly hide in engine.dll -->
+	<dword alias="" />
+	<word alias="" />
+	<dword alias="Skill" type="Skill">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+	</dword>
+	<dword alias="Skill level" type="skill.SkillLevel">
+		<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+	</dword>
+	<dword alias="Ingredients" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Item" type="Item" />
+		<qword alias="Amount" />
+	</loop>
 </packet>

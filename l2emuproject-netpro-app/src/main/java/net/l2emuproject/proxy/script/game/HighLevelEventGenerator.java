@@ -37,6 +37,7 @@ import net.l2emuproject.proxy.script.analytics.user.AbnormalStatusModifier;
 import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
 import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics.UserInfo;
 import net.l2emuproject.proxy.script.packets.util.RestartResponseRecipient;
+import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * @author _dev_
@@ -96,6 +97,8 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript implements Res
 	@ScriptFieldAlias
 	private static final String EFFECT_LIST_CNT = "HLE_SELF_EFFECT_COUNT";
 	
+	private static final L2Logger LOG = L2Logger.getLogger(HighLevelEventGenerator.class);
+	
 	private static final String KEY_EFFECTIVE_ABNORMAL_LIST = "abnormalsInEffect";
 	private static final String KEY_ABNORMAL_LIST_DIFF_TASK = "abnormalUpdateTask";
 	
@@ -153,7 +156,7 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript implements Res
 			if (cnt == null)
 				break effectList;
 			
-			if (getOrDefault(client, KEY_EFFECTIVE_ABNORMAL_LIST, null) != null)
+			if (_listeners.isEmpty() || getOrDefault(client, KEY_EFFECTIVE_ABNORMAL_LIST, null) != null)
 				return;
 			
 			set(client, KEY_EFFECTIVE_ABNORMAL_LIST, LiveUserAnalytics.getInstance().getUserAbnormals(client).getActiveModifiers().collect(Collectors.toList()));
@@ -336,7 +339,16 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript implements Res
 			final int objectID = buf.readInteger32(oid);
 			final int itemOID = buf.readFirstInteger32(WORLD_ITEM_OID);
 			for (final SimpleEventListener listener : _listeners)
-				listener.onItemPickup(client, objectID, itemOID);
+			{
+				try
+				{
+					listener.onItemPickup(client, objectID, itemOID);
+				}
+				catch (final RuntimeException e)
+				{
+					LOG.error("onItemPickup", e);
+				}
+			}
 			
 			return;
 		}
@@ -349,7 +361,16 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript implements Res
 			final int objectID = buf.readInteger32(oid);
 			final long amount = buf.readFirstInteger(WORLD_ITEM_AMOUNT);
 			for (final SimpleEventListener listener : _listeners)
-				listener.onItemSpawn(client, objectID, amount);
+			{
+				try
+				{
+					listener.onItemSpawn(client, objectID, amount);
+				}
+				catch (final RuntimeException e)
+				{
+					LOG.error("onItemSpawn", e);
+				}
+			}
 			
 			return;
 		}
@@ -364,7 +385,16 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript implements Res
 			final int y = buf.readFirstInteger32(STOPPED_Y);
 			final int z = buf.readFirstInteger32(STOPPED_Z);
 			for (final SimpleEventListener listener : _listeners)
-				listener.onMovementEnd(client, objectID, x, y, z);
+			{
+				try
+				{
+					listener.onMovementEnd(client, objectID, x, y, z);
+				}
+				catch (final RuntimeException e)
+				{
+					LOG.error("onMovementEnd", e);
+				}
+			}
 			
 			return;
 		}
@@ -408,7 +438,16 @@ public class HighLevelEventGenerator extends PpeEnabledGameScript implements Res
 		
 		final List<AbnormalStatusModifier> iRemoved = Collections.unmodifiableList(removed), iAdded = Collections.unmodifiableList(added);
 		for (final SimpleEventListener listener : _listeners)
-			listener.onAbnormalListTick(client, iRemoved, iAdded);
+		{
+			try
+			{
+				listener.onAbnormalListTick(client, iRemoved, iAdded);
+			}
+			catch (final RuntimeException e)
+			{
+				LOG.error("onAbnormalListTick", e);
+			}
+		}
 	}
 	
 	@Override

@@ -15,6 +15,18 @@
  */
 package net.l2emuproject.proxy.script.analytics.user;
 
+import java.util.stream.Stream;
+
+import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
+import net.l2emuproject.proxy.state.entity.ObjectInfo;
+import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
+import net.l2emuproject.proxy.state.entity.type.ItemType;
+import net.l2emuproject.proxy.state.entity.type.NonPlayerControllable;
+import net.l2emuproject.proxy.state.entity.type.PetType;
+import net.l2emuproject.proxy.state.entity.type.PlayerControllable;
+import net.l2emuproject.proxy.state.entity.type.SummonType;
+
 /**
  * @author _dev_
  */
@@ -57,4 +69,38 @@ public interface VisibleWorldObjects
 	 * @param relation relation
 	 */
 	void setCurrentRelation(int worldObjectID, PlayerToPlayerRelation relation);
+	
+	ICacheServerID getEntityCacheContext();
+	
+	Stream<Integer> visibleObjectIDs();
+	
+	default Stream<ObjectInfo<L2ObjectInfo>> visibleObjects()
+	{
+		return visibleObjectIDs().map(id -> L2ObjectInfoCache.getOrAdd(id, getEntityCacheContext()));
+	}
+	
+	default Stream<ObjectInfo<L2ObjectInfo>> visibleItems()
+	{
+		return visibleObjects().filter(o -> o.getType() instanceof ItemType);
+	}
+	
+	default Stream<ObjectInfo<L2ObjectInfo>> visiblePlayers()
+	{
+		return visibleObjects().filter(o -> o.getType() instanceof PlayerControllable);
+	}
+	
+	default Stream<ObjectInfo<L2ObjectInfo>> visibleNPCs()
+	{
+		return visibleObjects().filter(o -> o.getType() instanceof NonPlayerControllable);
+	}
+	
+	default Stream<ObjectInfo<L2ObjectInfo>> visiblePets()
+	{
+		return visibleObjects().filter(o -> o.getType() instanceof PetType);
+	}
+	
+	default Stream<ObjectInfo<L2ObjectInfo>> visibleSummons()
+	{
+		return visibleObjects().filter(o -> o.getType() instanceof SummonType);
+	}
 }

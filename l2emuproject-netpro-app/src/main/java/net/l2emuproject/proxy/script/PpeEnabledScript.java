@@ -140,7 +140,6 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	 */
 	public void handleDisconnection(C client)
 	{
-		// do nothing by default
 	}
 	
 	/**

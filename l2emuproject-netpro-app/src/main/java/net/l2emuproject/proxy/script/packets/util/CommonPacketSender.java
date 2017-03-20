@@ -554,6 +554,29 @@ public final class CommonPacketSender extends PacketWriterScript
 		sendSimpleRequest(server, 0x1F, targetOID, origin, prohibitMovement);
 	}
 	
+	public static final void sendSay2(L2GameServer server, String message, int chat)
+	{
+		sendSay2(server, message, chat, null);
+	}
+	
+	public static final void sendSay2(L2GameServer server, String message, int chat, String recipient)
+	{
+		if ((chat == CHAT_PM) != (recipient != null))
+			throw new IllegalArgumentException(chat + " " + recipient);
+		
+		final int size = 1 + stdStringSize(message) + 4 + (recipient != null ? stdStringSize(recipient) : 0);
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0x49);
+		buf.writeS(message);
+		buf.writeD(chat);
+		if (recipient != null)
+			buf.writeS(recipient);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
 	public static final void sendUserCmd(L2GameServer server, int command)
 	{
 		final int size = 1 + 4;

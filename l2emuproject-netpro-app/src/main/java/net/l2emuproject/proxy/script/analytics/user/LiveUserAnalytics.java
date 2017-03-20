@@ -350,7 +350,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 		{
 			final EnumeratedPayloadField field = buf.getSingleFieldIndex(visibleOID);
 			if (field != null)
-				computeIfAbsent(client, USER_VISIBLE_OBJECTS_KEY, k -> new UserVisibleWorldObjects()).add(buf.readInteger32(field));
+				computeIfAbsent(client, USER_VISIBLE_OBJECTS_KEY, k -> new UserVisibleWorldObjects(getEntityContext(client))).add(buf.readInteger32(field));
 		}
 		
 		relation:
@@ -359,7 +359,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			if (relations.isEmpty())
 				break relation;
 			
-			final UserVisibleWorldObjects visibles = computeIfAbsent(client, USER_VISIBLE_OBJECTS_KEY, k -> new UserVisibleWorldObjects());
+			final UserVisibleWorldObjects visibles = computeIfAbsent(client, USER_VISIBLE_OBJECTS_KEY, k -> new UserVisibleWorldObjects(getEntityContext(client)));
 			final List<EnumeratedPayloadField> actors = buf.getFieldIndices(RC_OID), atks = buf.getFieldIndices(RC_ATTACKABLE);
 			final List<EnumeratedPayloadField> reputations = buf.getFieldIndices(RC_REPUTATION), pvps = buf.getFieldIndices(RC_PVP);
 			for (int i = 0; i < relations.size(); ++i)
@@ -722,10 +722,6 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			ui._lastSkillCast = new ActorSkillCast(skillID, skillLevel, skillSublevel, start, buf.readFirstInteger32(MSU_SKILL_TIME), TimeUnit.MILLISECONDS);
 			final int coolTime = buf.readFirstInteger32(MSU_SKILL_COOL_TIME);
 			ui._skillCoolTime.setCoolTime(skillID, skillLevel, skillSublevel, start, coolTime, TimeUnit.MILLISECONDS);
-		}
-		charInfo:
-		{
-			
 		}
 		/*
 		learnableSkills:

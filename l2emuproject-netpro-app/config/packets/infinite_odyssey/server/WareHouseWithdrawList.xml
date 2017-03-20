@@ -21,6 +21,7 @@
 		</dword>
 		<byte alias="0" /> <!-- former slot number -->
 		<qword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
 			<scriptAlias id="wh_withdraw_item_amount" />
 		</qword>
 		<byte alias="Main item type" type="ItemType2" />

@@ -145,6 +145,7 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	/**
 	 * Retrieves a value from a session-bound mapping.
 	 * 
+	 * @param <T> type of returned value
 	 * @param client session key
 	 * @param key mapping key
 	 * @return value or {@code null}
@@ -158,6 +159,7 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	/**
 	 * Retrieves a value from a session-bound mapping.
 	 * 
+	 * @param <T> type of returned value
 	 * @param client session key
 	 * @param key mapping key
 	 * @param defaultValue value if there was no mapping
@@ -172,6 +174,7 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	/**
 	 * Retrieves a value from a session-bound mapping, setting a new value if none exists.
 	 * 
+	 * @param <T> type of returned value
 	 * @param client session key
 	 * @param key mapping key
 	 * @param mappingFunction default value function
@@ -200,6 +203,7 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	/**
 	 * Removes a value from a session-bound mapping.
 	 * 
+	 * @param <T> type of returned value
 	 * @param client session key
 	 * @param key mapping key
 	 * @return value or {@code null}

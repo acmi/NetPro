@@ -25,7 +25,7 @@ import net.l2emuproject.proxy.network.game.client.L2GameClient;
 public interface CnCAction
 {
 	/**
-	 * Returns a name or an identifier to be used in a C&C menu.
+	 * Returns a name or an identifier to be used in a C&amp;C menu.
 	 * 
 	 * @return name/identifier
 	 */

@@ -304,6 +304,11 @@
 		<packet id="454" name="RequestTargetActionMenu" />
 		<packet id="455" name="RequestExSendSelectedQuestZoneID" />
 		<packet id="457" name="RequestAlchemyTryMixCube" />
+		<!--
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestAlchemyConversion"
+		-->
 		<packet id="458" name="RequestAlchemyConversion" />
 		<packet id="459" name="RequestSendExecutedUIEventsCount" />
 		<packet id="462" name="RequestRegistPartySubstitute" />
@@ -2331,6 +2336,7 @@
 		<packet id="613" name="ExResponseBeautyList" />
 		<packet id="614" name="ExResponseBeautyRegistReset" />
 		<packet id="615" name="ExResponseResetList" />
+		<!-- dQ -->
 		<packet id="616" name="ExShuffleSeedAndPublicKey" />
 		<packet id="617" name="ExCheck_SpeedHack" />
 		<packet id="618" name="ExBR_NewIConCashBtnWnd" />

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Unknown byte (CHAR) added at the start of the packet -->
+<packet id="SM_CHAR_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="" type="YesOrNo" /> <!-- NEW -->
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<dword alias="Vehicle OID" />
+	<dword alias="Player OID" type="ObjectID">
+		<scriptAlias id="OIC_PLAYER_OID" />
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="ci_player_oid"/>
+	</dword>
+	<string alias="Name">
+		<scriptAlias id="OIC_PLAYER_NAME" />
+		<scriptAlias id="ci_player_name"/>
+	</string>
+	<word alias="Race" type="Race">
+		<scriptAlias id="ci_player_race"/>
+	</word>
+	<byte alias="Sex" type="Sex">
+		<scriptAlias id="ci_player_sex"/>
+	</byte>
+	<dword alias="Visible class" type="CharacterClass">
+		<scriptAlias id="ci_player_class_model"/>
+	</dword>
+
+	<dword alias="Underwear" type="Item">
+		<scriptAlias id="ci_player_armor_under"/>
+	</dword>
+	<dword alias="Headgear" type="Item">
+		<scriptAlias id="ci_player_armor_head"/>
+	</dword>
+	<dword alias="Weapon" type="Item">
+		<scriptAlias id="ci_player_weapon"/>
+	</dword>
+	<dword alias="Shield [Sigil]" type="Item">
+		<scriptAlias id="ci_player_shield"/>
+	</dword>
+	<dword alias="Gloves" type="Item">
+		<scriptAlias id="ci_player_armor_gloves"/>
+	</dword>
+	<dword alias="Upper Body" type="Item">
+		<scriptAlias id="ci_player_armor_chest"/>
+	</dword>
+	<dword alias="Lower Body" type="Item">
+		<scriptAlias id="ci_player_armor_pants"/>
+	</dword>
+	<dword alias="Boots" type="Item">
+		<scriptAlias id="ci_player_armor_boots"/>
+	</dword>
+	<dword alias="Cloak" type="Item">
+		<scriptAlias id="ci_player_armor_cloak"/>
+	</dword>
+	<dword alias="Weapon / Two Handed" type="Item" />
+	<dword alias="Hair Accessory (top)" type="Item">
+		<scriptAlias id="ci_player_hair1"/>
+	</dword>
+	<dword alias="Hair Accessory (bottom)" type="Item">
+		<scriptAlias id="ci_player_hair2"/>
+	</dword>
+
+	<dword alias="Weapon augmentation effect (1)" type="Augmentation">
+		<scriptAlias id="ci_player_weapon_op1"/>
+	</dword>
+	<dword alias="Weapon augmentation effect (2)" type="Augmentation">
+		<scriptAlias id="ci_player_weapon_op2"/>
+	</dword>
+	<dword alias="Shield [Sigil] augmentation effect (1)" type="Augmentation" />
+	<dword alias="Shield [Sigil] augmentation effect (2)" type="Augmentation" />
+	<dword alias="Weapon / Two Handed augmentation effect (1)" type="Augmentation" />
+	<dword alias="Weapon / Two Handed augmentation effect (2)" type="Augmentation" />
+
+	<byte alias="Armor enchant glow">
+		<scriptAlias id="ci_player_armorset_ench"/>
+	</byte>
+
+	<dword alias="Visible Weapon" type="Item">
+		<scriptAlias id="ci_player_weapon_app"/>
+	</dword>
+	<dword alias="Visible Shield [Sigil]" type="Item">
+		<scriptAlias id="ci_player_shield_app"/>
+	</dword>
+	<dword alias="Visible Weapon / Two Handed" type="Item" />
+
+	<dword alias="Visible Gloves" type="Item">
+		<scriptAlias id="ci_player_armor_gloves_app"/>
+	</dword>
+	<dword alias="Visible Upper Body" type="Item">
+		<scriptAlias id="ci_player_armor_chest_app"/>
+	</dword>
+	<dword alias="Visible Lower Body" type="Item">
+		<scriptAlias id="ci_player_armor_pants_app"/>
+	</dword>
+	<dword alias="Visible Boots" type="Item">
+		<scriptAlias id="ci_player_armor_boots_app"/>
+	</dword>
+	<dword alias="Visible Hair Accessory (top)" type="Item">
+		<scriptAlias id="ci_player_hair1_app"/>
+	</dword>
+	<dword alias="Visible Hair Accessory (bottom)" type="Item">
+		<scriptAlias id="ci_player_hair2_app"/>
+	</dword>
+
+	<byte alias="In PvP" type="YesOrNo" />
+	<dword alias="Reputation" />
+
+	<dword alias="Casting speed" />
+	<dword alias="Attack speed" />
+
+	<word alias="Running speed (on ground)">
+		<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+	</word>
+	<word alias="Walking speed (on ground)">
+		<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+	</word>
+	<word alias="Running speed (in water)">
+		<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+	</word>
+	<word alias="Walking speed (in water)">
+		<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+	</word>
+	<word alias="Running speed (mounted)" />
+	<word alias="Walking speed (mounted)" />
+	<word alias="Running speed (flying mounted)">
+		<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+	</word>
+	<word alias="Walking speed (flying mounted)">
+		<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+	</word>
+	<double alias="Movement speed multiplier">
+		<scriptAlias id="OIL_OBJECT_SPEED_MULTI" />
+	</double>
+	<double alias="Attack speed multiplier" />
+	<double alias="Collision radius" />
+	<double alias="Collision height" />
+	<dword alias="Hair style" type="Alphabet" />
+	<dword alias="Hair color" type="Alphabet" />
+	<dword alias="Face" type="Alphabet" />
+	<string alias="Title">
+		<scriptAlias id="OIC_PLAYER_TITLE" />
+		<scriptAlias id="ci_player_title"/>
+	</string>
+
+	<dword alias="Pledge ID" type="Pledge">
+		<scriptAlias id="PIC_PLEDGE_ID" />
+		<scriptAlias id="ci_player_pledge"/>
+	</dword>
+	<dword alias="Pledge crest ID" type="PledgeCrest">
+		<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+	</dword>
+	<dword alias="Alliance ID" type="Alliance">
+		<scriptAlias id="AIC_ALLY_ID" />
+		<scriptAlias id="ci_player_alliance"/>
+	</dword>
+	<dword alias="Alliance crest ID" type="AllianceCrest">
+		<scriptAlias id="AIC_ALLY_CREST_ID" />
+	</dword>
+
+	<byte alias="Waiting mode" type="WaitType" />
+	<byte alias="Movement mode" type="MoveType" />
+	<byte alias="In combat" type="YesOrNo" />
+	<byte alias="Lying dead" type="YesOrNo" />
+	<byte alias="Knownlist state" type="KnownlistState" />
+	<byte alias="Mount type" type="MountType" />
+	<byte alias="Private store" type="PersonalStoreType" />
+	<word alias="Cubic count" id="index_0" />
+	<loop id="index_0">
+		<word alias="Cubic" type="Cubic" />
+	</loop>
+	<byte alias="Looking for party" type="YesOrNo" />
+	<byte alias="Environment" type="Environment" />
+	<word alias="Evaluation score" />
+	<dword alias="Mount" type="Npc" />
+	<dword alias="Class" type="CharacterClass">
+		<scriptAlias id="ci_player_subjob"/>
+	</dword>
+	<dword alias="0" />
+	<byte alias="Weapon enchant glow" type="EnchantEffect">
+		<scriptAlias id="ci_player_weapon_enchant"/>
+	</byte>
+	<byte alias="Duel team" type="DuelTeam" />
+	<dword alias="Pledge insignia ID" />
+	<byte alias="Noble" type="YesOrNo">
+		<scriptAlias id="ci_player_noble"/>
+	</byte>
+	<byte alias="Hero" type="YesOrNo" />
+
+	<byte alias="Fishing" type="YesOrNo" />
+	<dword alias="Fishing lure X" />
+	<dword alias="Fishing lure Y" />
+	<dword alias="Fishing lure Z" />
+
+	<dword alias="Name color" type="BGR" />
+	<dword alias="Heading">
+		<scriptAlias id="OIL_OBJECT_YAW" />
+	</dword>
+	<byte alias="Social class" type="PledgeRank" />
+	<word alias="Pledge unit" type="PledgeUnit" />
+	<dword alias="Title color" type="BGR" />
+	<byte alias="Cursed weapon level" />
+	<dword alias="Pledge reputation" />
+	<dword alias="Transformation" type="Transformation" />
+	<dword alias="Agathion" type="Npc" />
+	<byte alias="Unknown" type="YesOrNo" />
+
+	<dword alias="Current CP">
+		<scriptAlias id="ci_player_cp_current" />
+	</dword>
+	<dword alias="Current HP">
+		<scriptAlias id="ci_player_hp_current" />
+	</dword>
+	<dword alias="Maximum HP">
+		<scriptAlias id="ci_player_hp_maximum" />
+	</dword>
+	<dword alias="Current MP">
+		<scriptAlias id="ci_player_mp_current" />
+	</dword>
+	<dword alias="Maximum MP">
+		<scriptAlias id="ci_player_mp_maximum" />
+	</dword>
+
+	<byte alias="Special effect" type="ave.AbnormalVisualEffectMask2" />
+	<dword alias="Visual effects" id="ave_cnt" />
+	<loop id="ave_cnt">
+		<word alias="Effect" type="ave.AbnormalVisualEffect" />
+	</loop>
+	<byte alias="0" />
+	<byte alias="Show Hair Accessory" type="YesOrNo" />
+	<byte alias="Ability points" type="AbilityWingIcon" optional="true">
+		<scriptAlias id="ci_player_ap"/>
+	</byte>
+</packet>

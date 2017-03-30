@@ -20,6 +20,8 @@ import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.network.protocol.UnknownProtocolVersion;
+import net.l2emuproject.network.security.OpcodeTableShuffleConfig;
+import net.l2emuproject.network.security.OpcodeTableShuffleType;
 
 /**
  * A game protocol version constructed from user-supplied details.
@@ -28,9 +30,7 @@ import net.l2emuproject.network.protocol.UnknownProtocolVersion;
  */
 public class UserDefinedGameProtocolVersion extends UserDefinedProtocolVersion implements IGameProtocolVersion
 {
-	private final int[] _const1;
-	private final int _total2;
-	private final int[] _const2;
+	private final OpcodeTableShuffleConfig _shuffleConfig;
 	
 	/**
 	 * Constructs a game protocol version definition.
@@ -39,17 +39,16 @@ public class UserDefinedGameProtocolVersion extends UserDefinedProtocolVersion i
 	 * @param category protocol group
 	 * @param version protocol revision number
 	 * @param date protocol version introduction to NA data
+	 * @param shuffleMode opcode shuffle implementation to be used
 	 * @param const1 primary opcodes exempt from CM opcode shuffling
 	 * @param total2 total amount of secondary (extended) opcodes
 	 * @param const2 secondary (extended) opcodes exempt from CM opcode shuffling
 	 */
-	public UserDefinedGameProtocolVersion(String alias, String category, int version, long date, int[] const1, int total2, int[] const2)
+	public UserDefinedGameProtocolVersion(String alias, String category, int version, long date, OpcodeTableShuffleType shuffleMode, int[] const1, int total2, int[] const2)
 	{
 		super(alias, category, version, date);
 		
-		_const1 = const1;
-		_total2 = total2;
-		_const2 = const2;
+		_shuffleConfig = new UserDefinedOpcodeTableShuffleConfig(shuffleMode, const1, total2, const2);
 	}
 	
 	private static IProtocolVersion getActual(IProtocolVersion version)
@@ -62,6 +61,12 @@ public class UserDefinedGameProtocolVersion extends UserDefinedProtocolVersion i
 		}
 		
 		return version;
+	}
+	
+	@Override
+	public OpcodeTableShuffleConfig getOpcodeTableShuffleConfig()
+	{
+		return _shuffleConfig;
 	}
 	
 	@Override
@@ -86,23 +91,5 @@ public class UserDefinedGameProtocolVersion extends UserDefinedProtocolVersion i
 	public boolean isNewerThanOrEqualTo(IProtocolVersion version)
 	{
 		return super.isNewerThanOrEqualTo(getActual(version));
-	}
-	
-	@Override
-	public int getOp2TableSize()
-	{
-		return _total2;
-	}
-	
-	@Override
-	public int[] getIgnoredOp1s()
-	{
-		return _const1;
-	}
-	
-	@Override
-	public int[] getIgnoredOp2s()
-	{
-		return _const2;
 	}
 }

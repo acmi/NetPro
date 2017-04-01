@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file was automatically generated when converting from the legacy definition format. -->
-<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
-<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<!-- Amount changed to QWORD -->
 <packet id="SM_SPAWN_ITEM" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Item OID" type="ObjectID">
 		<scriptAlias id="OIC_ITEM_OID" />
@@ -22,7 +20,7 @@
 		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
 	</dword>
 	<dword alias="Stackable" type="YesOrNo" />
-	<qword alias="Amount">
+	<qword alias="Amount"> <!-- NEW -->
 		<scriptAlias id="OIC_ITEM_AMOUNT" />
 		<scriptAlias id="HLE_WORLD_ITEM_AMOUNT" />
 	</qword>

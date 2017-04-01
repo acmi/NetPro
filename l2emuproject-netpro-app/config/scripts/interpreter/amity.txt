@@ -2,5 +2,6 @@
 2	Mother Tree Guardians
 3	Giant Trackers
 4	Unworldly Visitors
-5	Kingdom's Royal Guard
+5	Kingdom's Royal Guards
 6	Fishing Guild
+7	Hunters Guild

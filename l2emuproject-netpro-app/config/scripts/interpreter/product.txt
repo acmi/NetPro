@@ -1788,3 +1788,20 @@
 1011788	Ultimate Jewelry Box x1
 1011789	La Vie En Rose's Radiant Brooch
 1011790	Passion Treasure Chest Reloaded
+1011791	Paulina's Equipment Set (C-grade)
+1011792	Paulina's Equipment Set (A-grade)
+1011793	Paulina's Equipment Set (S-grade)
+1011794	Paulina's Equipment Set (R-Grade)(30-Day)
+1011795	Energy of Destruction 100-unit Pack
+1011796	Freya's Bloody Rune Box (2-Hours)
+1011797	Freya's Vital Rune Box (30-Minutes)
+1011798	Clan Name Change Ticket
+1011799	Hunter's Amulet
+1011800	Heavenly Scroll: Enchant Armor (R-grade)
+1011801	Heavenly Scroll: Enchant Weapon (R-grade)
+1011802	Mystic Soul Crystal
+1011803	Life Stone Instilled with Giants' Power
+1011804	Soul Bottle Pack (Antharas/Valakas)
+1011805	Bloody Amaranthine Enhancement Stone
+1011806	Sealed Talisman - Longing
+1011807	Dark Amaranthine Enhancement Stone

@@ -559,7 +559,7 @@
 495	1	Pelline (Defeat the demon "Pelline" in Kartia's Labyrinth. (Lv. 90 party) To hunt - Pelline)
 495	2	Status Report (Report to the Kartia Researcher in the Town of Aden.)
 495	-1	[completed]
-496	1	Kalios (Defeat the demon Kalios in Kartia's Labyrinth (characters Lv. 99 or above can earn additional SP). (Lv. 95 party) Monsters to hunt: Kalios)
+496	1	Kalios (Defeat Kalios, the demon in Kartia's Labyrinth. (Lv 95 Party) Monsters to Hunt - Kalios)
 496	2	Status Report (Report to the Kartia Researcher in the Town of Aden.)
 496	-1	[completed]
 497	1	Incarnation of Greed, Zellaka (Defeat Zellaka in Kartia's Labyrinth. (Lv. 85 solo) To hunt - Zellaka)
@@ -568,7 +568,7 @@
 498	1	Incarnation of Jealousy, Pelline (Defeat Pelline in Kartia's Labyrinth. (Lv. 90 solo) To hunt - Pelline)
 498	2	To the Kartia Researcher (Report back to the Kartia Researcher in the Town of Aden.)
 498	-1	[completed]
-499	1	Incarnation of Gluttony, Kalios (Defeat Kalios in Kartia's Labyrinth (characters Lv. 99 or above can earn additional SP). (Lv. 95 solo) Monsters to hunt: Kalios)
+499	1	Incarnation of Gluttony, Kalios (Defeat Kalios in Kartia's Labyrinth (Lv. 95 Solo). Monsters to Hunt - Kalios)
 499	2	To the Kartia Researcher (Report back to the Kartia Researcher in the Town of Aden.)
 499	-1	[completed]
 500	1	Crumbs of Penitence (Summon a Sin Eater and hunt monsters to collect 10 Crumbs of Penitence.)
@@ -670,13 +670,138 @@
 662	-1	[completed]
 663	1	Collect Spirit Beads (Wilbert is willing to play the trendy new game with you, but he tells you that you need Spirit Beads in order to play. Spirit Beads can be obtained the Ancient Battleground and the Fields of Massacre.   Monsters to Hunt: Past Knight, Ghost War, Hungered Corpse, Dark Guard, Death Agent, Nihil Invader, Bloody Lord, Bloody Priest, Bloody Knight, Bloody Ghost, Doom Scout, Doom Servant, Doom Guard, Doom Archer, Doom Trooper, Doom Warrior, Doom Knight, Archer of Destruction, Spiteful Soul Leader, Spiteful Soul Wizard, Spiteful Soul Fighter.)
 663	-1	[completed]
+665	1	Mission Stage Selection (The Hunter Guild told you to choose the mission stage to perform before you get to begin.)
+665	2	Beginner-grade Mission (As part of the Hunter Guild Member's basic training, the Hunter Guild has asked you to defeat the strongest monster of Kartia's Labyrinth, Nightmare Kamaloka, the Command Post, or the Altar of Shilen. Monsters to Hunt - Zellaka, Pelline, Kalios, Dark Rider, Burnstein, Melisa, Isadora)
+665	3	Mid-grade Mission (As part of the Hunter Guild Member's basic training, the Hunter Guild has asked you to defeat the strongest monster of Kartia's Labyrinth, Nightmare Kamaloka, the Command Post, or the Altar of Shilen. Monsters to Hunt - Zellaka, Pelline, Kalios, Dark Rider, Burnstein, Melisa, Isadora)
+665	4	Return to Hunter Guild Member (You finished all the basic training required for any Hunter Guild Member. Report this to Hunter Guild President Arcturus in Hunter's Village or Guild Member dispatched to Town of Aden.)
+665	5	Return to Hunter Guild Member (You finished all the basic training required for any Hunter Guild Member. Report this to Hunter Guild President Arcturus in Hunter's Village or Guild Member dispatched to Town of Aden.)
+665	-1	[completed]
+666	1	Defeat Giant Monster (The Hunter Guild says the Guild Members should be able to defeat the Giant Monsters as they menace the continent. Defeat the Giant Monsters scattered across the Aden Continent. Monsters to Hunt - Field Raid Bosses Lv. 85 and higher)
+666	2	Return to Hunter Guild Member (You defeated all the Giant Monsters. Report this to Hunter Guild President Arcturus in Hunter's Village or Guild Member dispatched to Town of Aden.)
+666	-1	[completed]
+667	1	Defeat Anakim and Lilith (The Hunter Guild says Shilen's eyes should be covered so that she can never put her hands on Aden again. To cover Shilen's eyes, you should defeat her most loyal underlings - Anakim and Lilith. Monsters to Hunt - Anakim, Lilith)
+667	2	Return to Hunter Guild Member (You have taken all measures to cover Shilen's eyes. Report to Hunters Guild President Arcturus in Hunter's Village, or a guild member in the Town of Aden.)
+667	-1	[completed]
+668	1	Defeat Giant Chieftain (The Hunter Guild was seriously worried to see the Giants growing in numbers and said their force should be dissipated to prevent them from forming a group. Monsters to Hunt - Amaranthine, Ramona, Enchant Type Mimir, Enchant Type Harnak, Enchant Type Core)
+668	2	Return to Hunter Guild Member (You have successfully eliminated the one who could rally the Giants again. Report to Hunters Guild President Arcturus in Hunter's Village, or a guild member in the Town of Aden.)
+668	-1	[completed]
+669	1	Defeat Earth Dragon, Fire Dragon, and Wind Dragon (The Hunter Guild says the most important mission for the Guildsman to perform is to battle against the dragon, the archenemy of the continent. Defeat the dragons, Shilen's offspring. Monsters to Hunt - Antharas, Valakas, Lindvior)
+669	2	Return to Hunter Guild Member (You have defeated the dragon. Report to the Hunters Guild President Arcturus in Hunter's Village, or a guild member in the Town of Aden.)
+669	-1	[completed]
+670	1	Defeat Seed Lords (The Hunter Guild says that the Lords of Seed appointed by Shilen should be defeated to make Shilen powerless. They specifically told that Tauti and Istina who gathered all their might to the fullest should be eliminated. Monsters to Hunt - Tiat, Ultimate Tauti, Ultimate Istina, Ekimus)
+670	2	Return to Hunter Guild Member (You defeated the Lord of Seed. Report this to Hunter Guild President Arcturus in Hunter's Village or Guild Member dispatched to Town of Aden.)
+670	-1	[completed]
+671	1	Experience the tavern or the Ashen Shadow Revolutionaries (The Hunter Guild says it is integral to identify why the Giant Monsters in the Aden Continent exist and asks you to find out about the Giant Monsters' past. Check Mystic Tavern or Ashen Shadow Revolutionaries.)
+671	2	Return to Hunter Guild Member (You have investigated the Giant Monster's past. Report to Hunters Guild President Arcturus in Hunter's Village, or a guild member in the Town of Aden.)
+671	-1	[completed]
+672	1	Defeat Embryo Apostle. (The Hunter Guild says that currently the most daunting threat should be Embryo if Shilen's power can be effectively controlled and the Embryo disciples and captain should be defeated. Monsters to Hunt - Kelbim, Camille)
+672	2	Return to Hunter Guild Member (You defeated the Embryo Apostles Report this to Hunter Guild President Arcturus in Hunter's Village or Guild Member dispatched to Town of Aden.)
+672	-1	[completed]
+673	1	Repel Beleth' Ambition (The Hunter Guild said that Beleth, the most serious threat to the continent in the past, is still looming, so his plan must be disrupted. Monsters to Hunt - Balok, Beleth, Darion)
+673	2	Return to Hunter Guild Member (You have successfully foiled Beleth's plans. Report to Hunters Guild President Arcturus in Hunter's Village, or a guild member in the Town of Aden.)
+673	-1	[completed]
 688	1	Collect Necklaces (Trader Dinn of the Primeval Isle Wharf is anxious because Elrokian raiders are stealing items from the merchants. He promises to give you a reward if you capture the raiders and bring back their necklaces as proof.  Monster to Hunt: Elroki)
 688	2	Return to Dinn (You've defeated the Elrokian Raiders and collected the Dinosaur Fang Necklaces as proof. Now return to Dinn in the Primeval Isle and report.)
 688	-1	[completed]
+690	1	Defeat the Embryo Forces (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier)
+690	-1	[completed]
+691	1	Defeat the Embryo Forces (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Guardian Captain, Embryo Elite Captain)
+691	-1	[completed]
+692	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+692	-1	[completed]
+693	1	Obtain Relief Supplies for the Wounded Soldier (Defeat Embryo soldiers invading the Keucereus Alliance Base and obtain relief supplies for the wounded. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Guardian Captain, Embryo Elite Captain)
+693	-1	[completed]
+694	1	Support Gracian Wounded Soldier's Recovery (Take the Provisional Bandage from the Embryo soldiers invading the Keucereus Alliance Base and use it on the Gracian Wounded Soldiers to recover. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Guardian Captain, Embryo Elite Captain)
+694	-1	[completed]
+695	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+695	-1	[completed]
+696	1	Defeat the Embryo Forces (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Spy, Embryo Aide)
+696	-1	[completed]
+697	1	Assist Ishuma's crafting. (Protect Ishuma to craft the Keucereus Defense Battery. Defeat the enemies stomping to prevent Ishuma from crafting to obtain the Assassin's Trace.)
+697	2	Talk with Ishuma (You obtained the Assassin's Trace. After Ishuma finishes crafting, talk to Ishuma to report the result and receive the Defense Battery-exclusive Bolt.)
+697	-1	[completed]
+698	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+698	-1	[completed]
+699	1	Defeat the Embryo Forces (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Dark Wizard, Embryo Flame Master)
+699	-1	[completed]
+700	1	Defeat the Embryo Forces (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Guardian Captain, Embryo Elite Captain, Embryo High Priest, Embryo Archon)
+700	-1	[completed]
+701	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+701	-1	[completed]
+702	1	Obtain the Proof of Battle. (Defeat the Embryo soldiers invading the Keucereus Alliance Base and obtain the Proof of Battle. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Guardian Captain, Embryo Elite Captain, Embryo Dark Wizard, Embryo Flame Master, Embryo High Priest, Embryo Archon)
+702	-1	[completed]
+703	1	Obtain Mark of Victory. (Defeat the Embryo soldiers invading the Keucereus Alliance Base and obtain the Mark of Victory. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Guardian Captain, Embryo Elite Captain, Embryo Dark Wizard, Embryo Flame Master, Embryo High Priest, Embryo Archon)
+703	-1	[completed]
+704	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+704	-1	[completed]
+705	1	Defeat the Embryo Forces (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Spy, Embryo Aide, Embryo Spy Soldier)
+705	-1	[completed]
+706	1	Obtain Powder for Defense Cannonball. (Defeat the Embryo soldiers invading the Keucereus Alliance Base and obtain the Powder for Defense Cannonball. Monsters to Hunt - Embryo Spy, Embryo Aide, Embryo Spy Soldier, Embryo Special Agent)
+706	-1	[completed]
+707	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+707	-1	[completed]
+708	1	Defeat the Embryo Forces (Defeat Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Dark Magician, Embryo Flame Master, Embryo Soul Harvester, Embryo Butcher, Embryo Soul Guide)
+708	-1	[completed]
+709	1	Defeat the Embryo Forces (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo High Priest, Embryo Archon, Embryo Soul Reaper, Embryo Slaughterer, Embryo Soul Pathfinder)
+709	-1	[completed]
+710	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+710	-1	[completed]
+711	1	Obtain Mark of Embryo. (Defeat the Embryo soldiers invading the Keucereus Alliance Base and obtain the Mark of Embryo. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Guardian Captain, Embryo Elite Captain, Embryo Dark Wizard, Embryo Flame Master, Embryo High Priest, Embryo Archon, Embryo Soul Reaper, Embryo Slaughterer, Embryo Soul Pathfinder)
+711	-1	[completed]
+712	1	Obtain the Boss' Symbol (Defeat the Embryo soldiers invading the Keucereus Alliance Base and obtain the Proof of Ringleader. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Guardian Captain, Embryo Elite Captain, Embryo Dark Wizard, Embryo Flame Master, Embryo High Priest, Embryo Archon, Embryo Soul Reaper, Embryo Slaughterer, Embryo Soul Pathfinder)
+712	-1	[completed]
+713	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+713	-1	[completed]
+714	1	Take the Cannon Activator (Receive the device to activate the Keucereus Defense Battery. Talk to Apprentice Blacksmith Lai or Head Blacksmith Gerdt to get this activator.)
+714	2	Install Keucereus Defense Battery. (Go up to the 2nd floor of the Keucereus Alliance Base and you can find the Keucereus Defense Battery. First, you should choose the Defense Battery to install and complete the installation by using the activator. The enemies will always lay their eyes on the Defense Battery while it is in operation, so everyone should protect the one who started activating the battery.)
+714	-1	[completed]
+715	1	Defeat the Embryo Forces (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Spy, Embryo Aide, Embryo Spy Soldier)
+715	-1	[completed]
+716	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+716	-1	[completed]
+717	1	Defeat the Embryo Leader. (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Dark Wizard, Embryo Flame Master, Embryo Squad Leader, Embryo Dark Judge)
+717	-1	[completed]
+718	1	Defeat the Embryo Leader. (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Soul Reaper, Embryo Slaughterer, Embryo Soul Pathfinder, Embryo Squad Leader, Embryo Dark Judge)
+718	-1	[completed]
+719	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+719	-1	[completed]
+720	1	Defeat the Embryo Leader. (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Raider, Embryo Passionate Soldier, Embryo Soul Reaper, Embryo Slaughterer, Embryo Soul Pathfinder)
+720	-1	[completed]
+721	1	Defeat the Embryo Leader. (Defeat the Embryo soldiers invading the Keucereus Alliance Base. Monsters to Hunt - Embryo Soul Reaper, Embryo Slaughterer, Embryo Soul Pathfinder, Embryo Squad Leader, Embryo Dark Judge)
+721	-1	[completed]
+722	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+722	-1	[completed]
+723	1	Obtain Defense Battery-exclusive Cannonball (The Embryo goods took the cannonballs necessary to use the Keucereus Defense Battery. Defeat the Embryo goods and take back the Defense Battery-exclusive Cannonballs. Monsters to Hunt - Embryo Spy, Embryo Aide, Embryo Spy Soldier, Embryo Special Agent)
+723	-1	[completed]
+724	1	Use the Defense Battery to defeat the Embryo (Use the Keucereus Defense Battery installed in the 2nd floor of the Keucereus Alliance Base and defeat the enemies. First, you should choose the Defense Battery to use and fire the cannon by using 1 cannonball or 3 cannonballs.)
+724	-1	[completed]
+725	1	Clear the next stage (Clear the next stage to protect the Keucereus Alliance Base.)
+725	-1	[completed]
 726	1	Investigators Rescue Mission (We must rescue all 4 investigators from the Rim Pailaka at Rune Castle.  We look forward to seeing you in action.)
 726	-1	[completed]
 727	1	Investigators Rescue Mission (We must rescue all 4 investigators from the Rim Pailaka at Rune Castle.  We look forward to seeing you in action.)
 727	-1	[completed]
+729	1	Defeat Kain the Commander-in-chief. (Defeat Kain the Embryo Commander-in-chief stomping in the Keucereus Alliance Base. Monster to Hunt - Kain Van Halter)
+729	-1	[completed]
+730	1	Defeat Kain the Commander-in-chief. (Defeat Kain the Embryo Commander-in-chief stomping in the Keucereus Alliance Base. Monster to Hunt - Kain Van Halter)
+730	-1	[completed]
+731	1	Defeat Kain the Commander-in-chief. (Defeat Kain the Embryo Commander-in-chief stomping in the Keucereus Alliance Base. Use the Defense Battery-exclusive Cannonalls supplied to the Defense Battery in the 2nd floor of the Keucereus Alliance Base to inflict a lot more impact when attacking Kain. Monster to Hunt - Kain Van Halter)
+731	-1	[completed]
+732	1	Defeat Incarnation of Gluttony Kalios (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Kartia Labyrinth (Lv. 95 party). Monsters to Hunt - Incarnation of Gluttony Kalios)
+732	2	Return to Bodyguard Blue. (You have defeated Incarnation of Gluttony Kalios in Kartia's Labyrinth. Return to Bodyguard Blue in the Town of Giran.)
+732	-1	[completed]
+733	1	Defeat Warden Baylor (Bodyguard Blue in the Town of Giran requested you to defeat Warden Baylor in the Crystal Prison (Baylor). Monsters to Hunt - Warden Baylor)
+733	2	Return to Bodyguard Blue. (You have defeated Warden Baylor in the Crystal Prison. Return to Bodyguard Blue in the Town of Giran.)
+733	-1	[completed]
+734	1	Defeat Dragon Captain Dark Rider. (Bodyguard Blue in the Town of Giran requested you to defeat Dragon Captain Dark Rider in the Nightmare Kamaloka. Monsters to Hunt - Dragon Captain Dark Rider)
+734	2	Return to Bodyguard Blue. (You defeated Dragon Captain Dark Rider in the Nightmare Kamaloka. Return to Bodyguard Blue in Town of Giran.)
+734	-1	[completed]
+735	1	Defeat Commander Burnstein (Bodyguard Blue in the Town of Giran requested you to defeat Commander Burnstein in the Embryo Command Post. Monsters to Hunt - Commander Burnstein)
+735	2	Return to Bodyguard Blue. (You defeated Commander Burnstein in the Embryo Command Post. Return to Bodyguard Blue in the Town of Giran.)
+735	-1	[completed]
+736	1	Defeat Isadora and Melisa (Bodyguard Blue in the Town of Giran requested you to defeat Isadora and Maliss in the Altar of Shilen. Monsters to Hunt - Isadora, Maliss)
+736	2	Return to Bodyguard Blue. (You defeated Isadora and Maliss in the Seal of Shilen. Return to Bodyguard Blue in Town of Giran.)
+736	-1	[completed]
 744	1	Teleport to the Alligator Island (Captain Bathis in the Town of Gludio has promised that you will receive assistance to help with your growth. In order to receive this help, you must teleport to Alligator Island via Heine, and meet with Enron.)
 744	2	Alligator Hunt (You have been asked by Captain Bathis in the Town of Gludio to defeat the monsters that have appeared on Alligator Island and collect Alligator Leather as proof. When you are done collecting Alligator Leather, go to Head Blacksmith Flutter in the Town of Oren. Monsters to Hunt - Alligator, Crokian Lad, Dailaon Lad, Crokian Lad Warrior, Farhite Lad, Nos Lad, Swamp Tribe, Swamp Alligator, Swamp Warrior)
 744	3	Teleport to Flutter (You have successfully hunted the alligators on Alligator Island and obtained all of the articles that you wanted. Teleport to the Town of Oren to meet Head Blacksmith Flutter and report that you have completed the quest.)
@@ -768,9 +893,9 @@
 774	3	Challenge complete! (You have defeated the Violent Fairies and Satyrs in the Kimerian Forest. Return to Nerupa in the Arms of Timiniel.)
 774	-1	[completed]
 775	1	Select quest stage (Leona Blackbird, who you met in the Hellbound Refugee Camp, has told you to select the stage of the quest you will carry out.)
-775	2	Basic Quest (You have selected the beginner quest. You must defeat the monsters in Beleth's Magic Circle and the Desert Quarry, and collect Chaos Fragments. Monsters to Hunt - Decay Hannibal, Armor Beast, Klein Soldier, Disorder Warrior, Blow Archer, Bizuard, Mutated Fly, Amos Soldier, Amos Officer, Amos Master, Blind Huntsman, Cantera Tanya, Cantera Deathmoz, Cantera Floxis, Cantera Belika, Cantera Bridget)
-775	3	Intermediate Quest (You have selected the intermediate quest. You must defeat the monsters in Beleth's Magic Circle and the Desert Quarry, and collect Chaos Fragments. Monsters to Hunt - Decay Hannibal, Armor Beast, Klein Soldier, Disorder Warrior, Blow Archer, Bizuard, Mutated Fly, Amos Soldier, Amos Officer, Amos Master, Blind Huntsman, Cantera Tanya, Cantera Deathmoz, Cantera Floxis, Cantera Belika, Cantera Bridget)
-775	4	Advanced Quest (You have selected the advanced quest. You must defeat the monsters in Beleth's Magic Circle and the Desert Quarry, and collect Chaos Fragments. Monsters to Hunt - Decay Hannibal, Armor Beast, Klein Soldier, Disorder Warrior, Blow Archer, Bizuard, Mutated Fly, Amos Soldier, Amos Officer, Amos Master, Blind Huntsman, Cantera Tanya, Cantera Deathmoz, Cantera Floxis, Cantera Belika, Cantera Bridget)
+775	2	Basic Quest (You have selected the beginner quest. You must defeat the monsters in Beleth's Magic Circle and the Desert Quarry, and collect Chaos Fragments. Monsters to Hunt - Decay Hannibal, Armor Beast, Klein Soldier, Disorder Warrior, Blow Archer, Bizuard, Mutated Fly, Amos Soldier, Amos Officer, Amos Master, Ailith Hunter, Cantera Tanya, Cantera Deathmoz, Cantera Floxis, Cantera Belika, Cantera Bridget)
+775	3	Intermediate Quest (You have selected the intermediate quest. You must defeat the monsters in Beleth's Magic Circle and the Desert Quarry, and collect Chaos Fragments. Monsters to Hunt - Decay Hannibal, Armor Beast, Klein Soldier, Disorder Warrior, Blow Archer, Bizuard, Mutated Fly, Amos Soldier, Amos Officer, Amos Master, Ailith Hunter, Cantera Tanya, Cantera Deathmoz, Cantera Floxis, Cantera Belika, Cantera Bridget)
+775	4	Advanced Quest (You have selected the advanced quest. You must defeat the monsters in Beleth's Magic Circle and the Desert Quarry, and collect Chaos Fragments. Monsters to Hunt - Decay Hannibal, Armor Beast, Klein Soldier, Disorder Warrior, Blow Archer, Bizuard, Mutated Fly, Amos Soldier, Amos Officer, Amos Master, Ailith Hunter, Cantera Tanya, Cantera Deathmoz, Cantera Floxis, Cantera Belika, Cantera Bridget)
 775	5	Return to Leona (You have defeated the monsters in Beleth's Magic Circle and the Desert Quarry, and collected all of the Chaos Fragments. Return to Leona Blackbird at the Hellbound Refugee Camp and report that you have completed the mission.)
 775	6	Return to Leona (You have defeated the monsters in Beleth's Magic Circle and the Desert Quarry, and collected all of the Chaos Fragments. Return to Leona Blackbird at the Hellbound Refugee Camp and report that you have completed the mission.)
 775	7	Return to Leona (You have defeated the monsters in Beleth's Magic Circle, and collected all of the Chaos Fragments. Return to Leona Blackbird at the Hellbound Refugee Camp and report that you have completed the mission.)
@@ -812,6 +937,9 @@
 787	2	Take on the Dragons (You have been asked by the High Priest Maximilian in the Town of Giran to defeat the monsters that have appeared in Dragon Valley and collect Dragon Bone Fragments as proof. Monsters to Hunt - Mesmer Dragon, Gargoyle Dragon, Black Dragon, Emerald Dragon, Sand Dragon, Dragonblood Captain, Dragonblood Minion, Prey Drake, Beast Drake, Dust Drake, Vampiric Drake, Cave Servant Archer, Cave Servant Warrior, Metallic Cave Servant, Iron Cave Servant, Headless Knight, Bloody Grave Warrior, Dark Grave Warrior, Dark Grave Wizard, Dark Grave Knight, Gust Spiral)
 787	3	To the High Priest Maximilian (You have successfully hunted the monsters in Dragon Valley and obtained all of the articles that you wanted. Teleport to the Town of Giran to meet High Priest Maximilian and report that you have completed the quest.)
 787	-1	[completed]
+788	1	Defeat monsters in the Bloody Swampland and the Altar of Evil. (Bodyguard Blue in the Town of Giran has asked you to defeat monsters in the Bloody Swampland and the Altar of Evil. Monsters to Hunt - Monsters in the Bloody Swampland and the Altar of Evil)
+788	2	Return to Bodyguard Blue. (You defeated all the monsters in the Bloody Swampland and the Altar of Evil. Return to Bodyguard Blue in Town of Giran.)
+788	-1	[completed]
 789	1	Collect Magma Crystals (You have been asked by Harp Zu Hestui in the Blazing Swamp to defeat the monsters that appear in the Blazing Swamp and collect Magma Ore. Monsters to Hunt - Magma Ailith, Magma Apophis, Lava Wyrm, Lava Drake, Lava Wendigo, Lava Stone Golem, Lava Leviah, Magma Salamander, Magma Dre Vanul, Magma Ifrit, Blazing Saurus, Blazing Wizard, Flame Preta, Flame Crow, Flame Rael, Flame Salamander, Flame Drake, Flame Votis)
 789	2	Almost Done? (You have collected 100 Magma Ores. You can take them to Harp Zu Hestui right now, but you can collect more if you want. You can collect up to 400.)
 789	3	Completed! (You have collected all the Magma Ores. Report to Harp Zu Hestui.)
@@ -824,6 +952,9 @@
 790	6	Return to Cyphona (You have defeated the monsters in the Garden of Spirits and collected all of the Mutated Spirit's Souls. Return to Master Cyphona at the Garden of Spirits and report that you have completed the mission.)
 790	7	Return to Cyphona (You have defeated the monsters in the Garden of Spirits and collected all of the Mutated Spirit's Souls. Return to Master Cyphona at the Garden of Spirits and report that you have completed the mission.)
 790	-1	[completed]
+791	1	Defeat monsters in the Fairy Settlement. (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Fairy Settlement. Monsters to Hunt - All fairies and Satyrs in the Fairy Settlement)
+791	2	Return to Bodyguard Blue. (You defeated all the monsters in the Garden of Spirits. Return to Bodyguard Blue in Town of Giran.)
+791	-1	[completed]
 792	1	Collect Traces of Giants (Histie, at the entrance to Superion, has asked you to defeat the giants that have appeared at Superion, and collect Crumbled Traces of Giants as proof. Monsters to Hunt - Delta Bathus, Delta Carcass, Delta Kshana, Royal Templar, Royal Shooter, Royal Wizard, Royal Templar Colonel, Royal Sharpshooter, Royal Archmage, Royal Gatekeeper)
 792	2	Return to Histie (You have collected enough Crumbled Traces of Giants from the giants at Superion. Return and report to Histie at Superion.)
 792	-1	[completed]
@@ -877,9 +1008,9 @@
 817	2	Return to Kaysia (You've acquired the Atelia Fragment from the Embryo in the Atelia Fortress. Go report back to Shadai's Disciple Kaysia in the Town of Oren.)
 817	-1	[completed]
 823	1	Select the Mission Stage (The Fairy Mimyu, who you met at the Forest of Fairies, has told you to select the stage of the quest you are about to carry out.)
-823	2	Basic Quest (You have selected the basic quest. Defeat the Nymphs in the Enchanted Valley, and collect 300 Nymph Stamens. Monsters to Hunt - Nymph Rose, Nymph Lily, Nymph Tulip, Nymph Cosmos, Nymph Guardian)
-823	3	Intermediate Quest (You have selected the intermediate quest. Defeat the Nymphs in the Enchanted Valley, and collect 600 Nymph Stamens. Monsters to Hunt - Nymph Rose, Nymph Lily, Nymph Tulip, Nymph Cosmos, Nymph Guardian)
-823	4	Advanced Quest (You have selected the advanced quest. Defeat the Nymphs in the Enchanted Valley, and collect 900 Nymph Stamens. Monsters to Hunt - Nymph Rose, Nymph Lily, Nymph Tulip, Nymph Cosmos, Nymph Guardian)
+823	2	Basic Quest (You selected the basic mission. Defeat nymphs in the Enchanted Valley and gather 100 Nymph Stamens. Monsters to Hunt - Nymph Rose, Nymph Lily, Nymph Tulip, Nymph Cosmos, Nymph Guardian, Contaminated Nymph Rose, Contaminated Nymph Lily, Contaminated Nymph Tulip, Contaminated Nymph Cosmos)
+823	3	Intermediate Quest (You chose the intermediate mission; you should defeat the nymphs in the Enchanted Valley and collect 200 Nymph Stamens. Monsters to Hunt - Nymph Rose, Nymph Lily, Nymph Tulip, Nymph Cosmos, Nymph Guardian, Contaminated Nymph Rose, Contaminated Nymph Lily, Contaminated Nymph Tulip, Contaminated Nymph Cosmos)
+823	4	Advanced Quest (You chose the advanced mission; you should defeat the nymphs in the Enchanted Valley and collect 300 Nymph Stamens. Monsters to Hunt - Nymph Rose, Nymph Lily, Nymph Tulip, Nymph Cosmos, Nymph Guardian, Contaminated Nymph Rose, Contaminated Nymph Lily, Contaminated Nymph Tulip, Contaminated Nymph Cosmos)
 823	5	Return to Fairy Mimyu (You have defeated the Nymphs in the Enchanted Valley and collected the Nymph Stamen. Return and report to Fairy Mimyu in the Enchanted Valley.)
 823	6	Return to Fairy Mimyu (You have defeated the Nymphs in the Enchanted Valley and collected the Nymph Stamen. Return and report to Fairy Mimyu in the Enchanted Valley.)
 823	7	Return to Fairy Mimyu (You have defeated the Nymphs in the Enchanted Valley and collected the Nymph Stamen. Return and report to Fairy Mimyu in the Enchanted Valley.)
@@ -946,9 +1077,9 @@
 840	2	To James (You have helped the Kingdom's Royal Guard. Return to Kingdom's Royal Guard Envoy James, at the dwelling.)
 840	-1	[completed]
 841	1	Select quest stage (The Guardian Irene, who you met in the Enchanted Valley, has instructed you to select the stage of the quest you will carry out.)
-841	2	Basic Quest (You have selected the basic quest. You must defeat 100 of the Violent Nymphs that have appeared after it was attempted to purify the Flower Buds in the Enchanted Valley with Purified Water. Monsters to Hunt - Enraged Nymph Rose, Enraged Nymph Lily, Enraged Nymph Tulip, Enraged Nymph Cosmos)
-841	3	Intermediate Quest (You have selected the intermediate quest. You must defeat 200 of the Violent Nymphs that have appeared after it was attempted to purify the Flower Buds in the Enchanted Valley with Purified Water. Monsters to Hunt - Enraged Nymph Rose, Enraged Nymph Lily, Enraged Nymph Tulip, Enraged Nymph Cosmos)
-841	4	Advanced Quest (You have selected the advanced quest. You must defeat 300 of the Violent Nymphs that have appeared after it was attempted to purify the Flower Buds in the Enchanted Valley with Purified Water. Monsters to Hunt - Enraged Nymph Rose, Enraged Nymph Lily, Enraged Nymph Tulip, Enraged Nymph Cosmos)
+841	2	Basic Quest (You chose the basic mission; you should use Purified Water to purify the Flower Buds in the Enchanted Valley and defeat 30 Enraged Nymphs stomping around. Monsters to Hunt - Enraged Nymph Rose, Enraged Nymph Lilly, Enraged Nymph Tulip, Enraged Nymph Cosmos)
+841	3	Intermediate Quest (You chose the intermediate mission; you should use Purified Water to purify the Flower Buds in the Enchanted Valley and defeat 60 Enraged Nymphs stomping around. Monsters to Hunt - Enraged Nymph Rose, Enraged Nymph Lilly, Enraged Nymph Tulip, Enraged Nymph Cosmos)
+841	4	Advanced Quest (You chose the advanced mission; you should use Purified Water to purify the Flower Buds in the Enchanted Valley and defeat 90 Enraged Nymphs stomping around. Monsters to Hunt - Enraged Nymph Rose, Enraged Nymph Lilly, Enraged Nymph Tulip, Enraged Nymph Cosmos)
 841	5	Return to Irene (You have defeated all of the Violent Nymphs in the Enchanted Valley. Return and report to the Guardian Irene.)
 841	6	Return to Irene (You have defeated all of the Violent Nymphs in the Enchanted Valley. Return and report to the Guardian Irene.)
 841	7	Return to Irene (You have defeated all of the Violent Nymphs in the Enchanted Valley. Return and report to the Guardian Irene.)
@@ -987,6 +1118,15 @@
 846	6	Return to Dinford (You have rescued the hostages. Return and report to Logistics Officer Dinford of the Royal Guard of the Kingdom at the Blackbird Campsite.)
 846	7	Return to Dinford (You have rescued the hostages. Return and report to Logistics Officer Dinford of the Royal Guard of the Kingdom at the Blackbird Campsite.)
 846	-1	[completed]
+861	1	Talk with Giselle. (Talk to Giselle von Hellmann to be recognized as the Hellmann family's mercenary.)
+861	2	Combat with the Rune Castle Knights (All members of the von Hellmanns are waging war against the Rune Castle Knights. Fight the Rune Castle Knights as the mercenary for the von Hellmanns. Monsters to Hunt - Rune Castle Knights)
+861	3	Return To Reception Room (You finished the battle against the Rune Castle Knights. Get rid of the cannon blocking the front of the reception room to go back there.)
+861	4	Sneak in with Erdo. (You must go into Messiah Castle to rescue Giselle von Hellmann. Sneak into the castle following Erdo.)
+861	5	Advance inside Messiah Castle (Defeat weak Vampires in Messiah Castle and advance into the castle.)
+861	6	Help Kain (Fight alongside Kain.)
+861	7	Defeat Kain with change-of-heart. (Kain caved in by Etis van Etina and changed his mind. Defeat Kain who turned his back.)
+861	8	To Pub Owner Settlen (Settlen is looking for you. If you've already heard, go to find Settlen.)
+861	-1	[completed]
 901	1	Lavasaurus Research (In the Forge of the Gods, hunt Newborn, Fledgling, Adult, and Elderly Lavasauruses and obtain from them Lavasaurus Stone, Head, Body fragment, and Horn fragments.)
 901	2	Lavasaurus Fragments (Take the Lavasaurus fragments back to Blacksmith of Wind Rooney.)
 901	-1	[completed]
@@ -999,33 +1139,42 @@
 903	1	Antharas Minions (Obtain leather pieces from the Tarask Dragon and the Behemoth Dragon in Antharas' Lair.)
 903	2	No more Minions (Bring the Tarask & Behemoth Dragon's leather pieces back to Antharas Watchman Theodric.)
 903	-1	[completed]
-904	1	Proof of Glory and Courage (Watcher of Antharas Theodric asks you to defeat the land dragon Antharas to prove your glory and courage. Challenge Antharas inside Antharas' Lair.)
-904	2	Proof of the Dragon Hunt - Land Dragon (You defeated Land dragon Antharas! Return to Theodric to prove your glory and courage.)
-904	-1	[completed]
 905	1	Red Blood, Blue Blood (Go to Antharas' Lair. Obtain blue liquid from the Dragon Guard, Dragon Mage, Dragon Knight, Dragon Knight Warrior, and Elite Dragon Knight. Obtain red liquid from the Drake Leader, Drake Warrior, Drake Scout, and Drake Mage.)
 905	2	Refined Dragon Blood (Bring the red and blue liquid back to the Separated Soul.)
 905	-1	[completed]
 906	1	Valakas Underlings (Obtain a Lavasaurus Alpha fragment inside Valakas' Lair.)
 906	2	Lavasaurus Alpha Fragment (Bring the Lavasaurus Alpha fragment back to Valakas Watchman Klein.)
 906	-1	[completed]
-907	1	Proof of Glory and Courage (Valakas Watchman Klein asks you to defeat the fire dragon Valakas to prove your glory and courage. Challenge Valakas inside Valakas' Lair.)
-907	2	Proof of the Dragon Hunt - Fire Dragon (You defeated fire dragon Valakas! Return to Klein to prove your glory and courage.)
-907	-1	[completed]
-910	1	Defeat Monsters in Bloody Swampland and Altar of Evil (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Bloody Swampland and Altar of Evil. Monsters to Hunt - Monsters in Bloody Swampland and Altar of Evil)
-910	2	Return to Bodyguard Blue (You've defeated all the monsters in Bloody Swampland and Altar of Evil. Return to Bodyguard Blue in the Town of Giran.)
+910	1	Defeat monsters in the Isle of Souls. (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Isle of Souls. Monsters to Hunt - Monsters in the Isle of Souls)
+910	2	Return to Bodyguard Blue (You have defeated all monsters in the Isle of Souls. Return to Bodyguard Blue in the Town of Giran.)
 910	-1	[completed]
-911	1	Defeat Monsters in Fairy Settlement (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Fairy Settlement. Monsters to Hunt - Fairies and monsters in Fairy Settlement)
-911	2	Return to Bodyguard Blue (You've defeated all the monsters in Fairy Settlement. Return to Bodyguard Blue in the Town of Giran.)
+911	1	Defeat monsters in the Seal of Shilen. (Bodyguard Blue in the Town of Giran has asked you to defeat monsters in the the Seal of Shilen. Monsters to Hunt - Monsters in the Seal of Shilen)
+911	2	Return to Bodyguard Blue (You defeated all the monsters in the Seal of Shilen. Return to Bodyguard Blue in Town of Giran.)
 911	-1	[completed]
-912	1	Defeat Monsters in Isle of Souls (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Isle of Souls. Monsters to Hunt - Monsters in Isle of Souls)
-912	2	Return to Bodyguard Blue (You've defeated all the monsters in Isle of Souls. Return to Bodyguard Blue in the Town of Giran.)
+912	1	Defeat monsters in the Pagan Temple, the Blazing Swamp, and the Cemetery (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Pagan Temple, Blazing Swamp and the Cemetery. Monsters to Hunt - Monsters in the Pagan Temple, Blazing Swamp and The Cemetery)
+912	2	Return to Bodyguard Blue (You have defeated all monsters in the Pagan Temple, the Blazing Swamp, and the Cemetery. Return to Bodyguard Blue in the Town of Giran.)
 912	-1	[completed]
-913	1	Defeat Monsters in Pagan Temple, Blazing Swamp, and the Cemetery (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Pagan Temple, Blazing Swamp, and the Cemetery. Monsters to Hunt - Monsters in Pagan Temple, Blazing Swamp, and the Cemetery)
-913	2	Return to Bodyguard Blue (You've defeated all the monsters in Pagan Temple, Blazing Swamp, and the Cemetery. Return to Bodyguard Blue in the Town of Giran.)
+913	1	Defeat monsters in Raider's Crossroads (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Raider's Crossroad. Monsters to Hunt - Monsters in the Raider's Crossroad)
+913	2	Return to Bodyguard Blue (You have defeated all monsters in Raider's Crossroads. Return to Bodyguard Blue in the Town of Giran.)
 913	-1	[completed]
-914	1	Defeat Monsters in Enchanted Valley and the Upper level of the Giant's Cave (Bodyguard Blue from the Town of Giran has asked you to defeat the monsters in Enchanted Valley and the Upper level of the Giant's Cave. Monsters to Hunt - Monsters in Enchanted Valley and the Upper level of the Giant's Cave)
-914	2	Return to Bodyguard Blue (You've defeated all the monsters in Enchanted Valley and the Upper level of the Giant's Cave. Return to Bodyguard Blue in the Town of Giran.)
+914	1	Defeat monsters in Hellbound. (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in Hellbound. Monsters to Hunt - Monsters in Hellbound)
+914	2	Return to Bodyguard Blue (You have defeated all monsters in Hellbound. Return to Bodyguard Blue in the Town of Giran.)
 914	-1	[completed]
+915	1	Defeat monsters in the Enchanted Valley (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Enchanted Valley. Monsters to Hunt - Monsters in the Enchanted Valley)
+915	2	Return to Bodyguard Blue. (You defeated all the monsters in the Enchanted Valley. Return to Bodyguard Blue in Town of Giran.)
+915	-1	[completed]
+916	1	Defeat Giant's Cave Monster (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Giant's Cave. Monsters to Hunt - Monsters in the Giant's Cave)
+916	2	Return to Bodyguard Blue. (You defeated all the monsters in Giant's Cave. Return to Bodyguard Blue in Town of Giran.)
+916	-1	[completed]
+917	1	Defeat monsters in the Garden of Spirits. (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Garden of Spirits. Monsters to Hunt - Monsters in the Garden of Spirits)
+917	2	Return to Bodyguard Blue. (You defeated all the monsters in the Garden of Spirits. Return to Bodyguard Blue in Town of Giran.)
+917	-1	[completed]
+918	1	Defeat monsters in the Atelia Fortress. (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Atelia Fortress. Monsters to Hunt - Monsters in the Atelia Fortress)
+918	2	Return to Bodyguard Blue. (You have defeated all monsters in Atelia Fortress. Return to Bodyguard Blue in the Town of Giran.)
+918	-1	[completed]
+919	1	Defeat Superion Monsters. (Bodyguard Blue in the Town of Giran requested you to defeat the monsters stomping in the Superion. Monsters to Hunt - Monsters in the Superion)
+919	2	Return to Bodyguard Blue. (You have defeated all monsters in Superion. Return to Bodyguard Blue in the Town of Giran.)
+919	-1	[completed]
 922	1	Defeat the monsters in the Northern Region of the Isle of Prayer (The Hunter Guild is looking for explorers to take on the quest of defeating the giant monsters in the Northern Region of the Isle of Prayer. Defeat the giant monsters in the Northern Region of the Isle of Prayer. Monsters to Hunt - Valac, Kurion, Atluum, Lebruum)
 922	2	Return to Arcturus (You have defeated all of the giant monsters in the Northern Region of the Isle of Prayer. Return to Arcturus in the Hunter's Village.)
 922	-1	[completed]
@@ -1059,14 +1208,14 @@
 929	3	Seeker Rescue (Basic) (You have selected the basic stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Decay Hannibal, Amos Officer, Armor Beast)
 929	4	Seeker Rescue (Basic) (You have selected the beginner stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Amos Master, Amos Soldier, Mutated Fly)
 929	5	Seeker Rescue (Basic) (You have selected the basic stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Decay Hannibal, Amos Soldier, Bizuard)
-929	6	Seeker Rescue (Basic) (You have selected the basic stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Klein Soldier, Blind Huntsman, Disorder Warrior)
-929	7	Seeker Rescue (Basic) (You have selected the basic stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Blind Huntsman, Blow Archer, Decay Hannibal)
+929	6	Seeker Rescue (Basic) (You have selected the basic stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Klein Soldier, Ailith Hunter, Disorder Warrior)
+929	7	Seeker Rescue (Basic) (You have selected the basic stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Ailith Hunter, Blow Archer, Decay Hannibal)
 929	8	Seeker Rescue (Intermediate) (You have selected the intermediate stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Amos Master, Amos Officer, Mutated Fly)
 929	9	Seeker Rescue (Intermediate) (You have selected the intermediate stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Decay Hannibal, Amos Officer, Armor Beast)
 929	10	Seeker Rescue (Intermediate) (You have selected the intermediate stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Amos Master, Amos Soldier, Mutated Fly)
 929	11	Seeker Rescue (Intermediate) (You have selected the intermediate stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Decay Hannibal, Amos Soldier, Bizuard)
-929	12	Seeker Rescue (Intermediate) (You have selected the intermediate stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Klein Soldier, Blind Huntsman, Disorder Warrior)
-929	13	Seeker Rescue (Intermediate) (You have selected the intermediate stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Blind Huntsman, Blow Archer, Decay Hannibal)
+929	12	Seeker Rescue (Intermediate) (You have selected the intermediate stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Klein Soldier, Ailith Hunter, Disorder Warrior)
+929	13	Seeker Rescue (Intermediate) (You have selected the intermediate stage of the Seeker Rescue quest. Defeat the monsters that Masa has told you about around Beleth's Magic Circle until you rescue the Seekers. Monsters to Hunt - Ailith Hunter, Blow Archer, Decay Hannibal)
 929	14	Return to Sporcha (You have defeated the monsters in Beleth's Magic Circle, and rescued all of the Seekers. Return to Seeker Captain Sporcha at the Hellbound Refugee Camp and report that you have completed the mission.)
 929	15	Return to Sporcha (You have defeated the monsters in Beleth's Magic Circle, and rescued all of the Seekers. Return to Seeker Captain Sporcha at the Hellbound Refugee Camp and report that you have completed the mission.)
 929	-1	[completed]
@@ -1091,11 +1240,26 @@
 937	1	Let's Go Fishing (The Fishing Guild has invited you to fish at a fishing dock of your choosing, in order to tell the world of the benefits of fishing.)
 937	2	Let's Go Fishing (You have fished enough. Go and report to a nearby Fishing Guild Member.)
 937	-1	[completed]
-938	1	Today's Chef (You have been asked by the Fishing Guild Chief Santiago at Heine to catch and bring back some agile fish.)
+938	1	Today's Chef (The Fishing Guild asks you to gather Nimble Fish, promising to tell you about a salutary dish in return.)
 938	-1	[completed]
 940	1	Defeat the monsters at the Atelia Fortress (The Hunter Guild is looking for explorers to take on the quest of defeating the giant monsters around Atelia Fortress. Defeat the giant monsters around Atelia Fortress. Monsters to Hunt - Berserker Hard, Patrol Commander Pho, Guardian Gastra, Dark Wizard Ruby)
 940	2	Return to Arcturus (You have defeated all of the giant monsters around the Atelia Fortress. Return to Arcturus in the Hunter's Village.)
 940	-1	[completed]
+985	1	Defeat monsters in the Bloody Swampland and the Altar of Evil. (An Adventure Guild member has asked you to defeat monsters in the Bloody Swampland and the Altar of Evil. Monsters to Hunt - Monsters in the Bloody Swampland and the Altar of Evil)
+985	2	Return to the Adventure Guild Member. (You have defeated all monsters in the Bloody Swampland and the Altar of Evil. Report to the Adventure Guild member in any village.)
+985	-1	[completed]
+986	1	Defeat monsters in the Fairy Settlement. (Adventure Guildsman from the Hunter Guild requested you to defeat the monsters stomping in the Fairy Settlement. Monsters to Hunt - All fairies and Satyrs in the Fairy Settlement)
+986	2	Return to the Adventure Guild Member. (You defeated all the monsters in the Fairy Settlement. Return to the Adventure Guildsman in each of the town.)
+986	-1	[completed]
+987	1	Defeat monsters in the Isle of Souls. (Adventure Guildsman from the Hunter Guild requested you to defeat the monsters stomping in the Isle of Souls. Monsters to Hunt - All monsters in the Isle of Souls)
+987	2	Return to the Adventure Guild Member. (You defeated all the monsters in the Isle of Souls. Return to the Adventure Guildsman in each of the town.)
+987	-1	[completed]
+988	1	Defeat monsters in the Pagan Temple, the Blazing Swamp, and the Cemetery (Adventure Guildsman from the Hunter Guild requested you to defeat the monsters stomping in the Pagan Temple, Blazing Swamp and the Cemetery. Monsters to Hunt - Monsters in the Pagan Temple, Blazing Swamp and The Cemetery)
+988	2	Return to the Adventure Guild Member. (You defeated all the monsters in the Pagan Temple, Blazing Swamp and The Cemetery. Return to the Adventure Guildsman in each of the town.)
+988	-1	[completed]
+989	1	Defeat monsters in the Enchanted Valley and Giant's Cave. (Adventure Guildsman from the Hunter Guild requested you to defeat the monsters stomping in the Enchanted Valley and the upper level of the Giant's Cave. Monsters to Hunt - Monsters in the Enchanted Valley and the upper level of the Giant's Cave)
+989	2	Return to the Adventure Guild Member. (You defeated all the monsters in the Enchanted Valley and Giant's Cave. Return to the Adventure Guildsman in each of the town.)
+989	-1	[completed]
 10273	1	Qualifications to fly (Engineer Lekon of the Keucereus Alliance Base says that today is a good day to fly since the sky is clear. But he says that a certificate that proves you are qualified to fly is required. In order to gain this certificate hunt Vulture riders or Elite Riders that fly over the skies of Keucereus Alliance Base and bring back Rider Marks. Monsters to be hunted - Vulture riders and Elite Riders)
 10273	2	Return to Lekon (You have collected all Rider's Marks necessary to prove you are qualified to fly. Return to Engineer Lekon of the Keucereus Alliance Base!)
 10273	-1	[completed]
@@ -1404,10 +1568,22 @@
 10354	1	Defeating Betrayer Octavis Again (Defeat Octavis again in the epic mode as requested by the Divine Messenger Lydia.)
 10354	2	Let's Return to Lydia (You have succeeded in defeating Octavis once more. Return to Divine Messenger Lydia!)
 10354	-1	[completed]
-10357	1	To the Altar of Shilen (After completing the extermination mission of the multitude of evil spirits arising from the Seal of Shilen, enter the Altar of Shilen through the swirling dimensional door and speak with Elcadia.)
-10357	2	Stop the Altar (Enter the Altar of Shilen through the swirling dimensional door. In the lowest level, defeat the two high disciples of Embryo, Grand Priest of Blood Melisse and Grand Magus of Greed Isadora. Monsters to hunt: Grand Priest of Blood Melisse, Grand Magus of Greed Isadora)
-10357	3	To the Town of Aden (Return to Agent Georgio in the Town of Aden.)
-10357	-1	[completed]
+10355	1	Talk with Tapoy. (Refugee Neti in the Town of Gludio told you to visit Head Blacksmith Tapoy in Gludin Village.)
+10355	2	Talk with Shadai. (Head Blacksmith Tapoy in Gludin Village told you to visit Legendary Blacksmith Shadai.)
+10355	3	Talk with Ishuma. (Legendary Blacksmith Shadai told you to meet up with Maestro Ishuma.)
+10355	4	Talk with Blacksmith of Mammon. (Maestro Ishuma told you to find the Blacksmith of Mammon.)
+10355	5	Get the Acknowledgment (Blacksmith of Mammon asked you to visit both Nightmare Kamaloka and Atelia Command Post 5 times each in order to prove yourself.)
+10355	6	Talk with Blacksmith of Mammon (You cleared the Nightmare Kamaloka and the Command Post 5 times each. Return to Blacksmith of Mammon.)
+10355	7	Defeat monsters in the Enchanted Valley. (Blacksmith of Mammon told you to defeat 3,000 monsters in the Enchanted Valley while he studies the ingot.)
+10355	8	Talk with Blacksmith of Mammon (You have defeated all monsters in the Enchanted Valley. Return to Blacksmith of Mammon.)
+10355	-1	[completed]
+10356	1	Combine Shadow Ingot Pieces. (Blacksmith of Mammon requested you to combine the Shadow Ingot Pieces.)
+10356	2	Bring Shadow Weapon. (Blacksmith of Mammon needs a Shadow weapon sample in order to study them. He wants an untradable Shadow weapon, not a tradable, expensive one. Obtain such a Shadow weapon and take it to Blacksmith of Mammon.)
+10356	3	Talk with Blacksmith of Mammon (The Blacksmith of Mammon said more time is needed to take a look at the shadow weapon. Talk to the Blacksmith of Mammon again.)
+10356	4	Enchant Research Shadow Weapon (Fight alongside Kain.)
+10356	5	Persuade Blacksmiths (The Blacksmith of Mammon told you to take the shadow crystal to Ishuma and Shadai to persuade them.)
+10356	6	Talk with Blacksmith of Mammon (Ishuma and Shadai confirmed their participation in the study to you. Return to Blacksmith of Mammon.)
+10356	-1	[completed]
 10358	1	Enraged Monsters (Guard Lef needs you to defeat Aggressive Zombie Warriors and Veelan Bugbear Warriors until the location of Poslof can be found. Monsters to hunt: Zombie Warrior and Veelan Bugbear Warrior.)
 10358	2	Monsters De-Raged (You have defeated all Aggressive Zombie Warriors and Veelan Bugbear Warriors. Return to Guard Lef.)
 10358	3	Defeat Poslof (It says that Poslof only appears in a certain location. Find Poslof in the ruined house lot and defeat him. You can find his location on the map. Monsters to hunt: Poslof)
@@ -1705,6 +1881,9 @@
 10422	1	Eliminating Horus the Varka's Chief (Hansen, the undercover Giant's minion at Varka Silenos Barracks, says Sakum's Clone Kampf is missing. He suggests that you assassinate Varka's Chief Horus to provoke the Varka Silenos and the Embryo. Monsters to hunt: Varka's Chief Horus)
 10422	2	To Hansen the Giant's Minion (Sakum's Clone Kampf appeared when you attacked Varka's Chief Horus. Report back to Hansen.)
 10422	-1	[completed]
+10423	1	Defeat Embryo Commander. (Erda from the Keucereus Alliance Base has asked you to go to Messiah Castle, the newly discovered Embryo Headquarters, and defeat its commanders. Monsters to Hunt - Sampson, Hanson, Grom, Medvezhy, Zigatan, Hunchback Kwai, Cornix, Caranix, Jonadan, Demien, Berg, Tarku, Tarpin, Embryo Safe Vault, Embryo Secret Vault, Sakum, Crazy Typhoon, Cursed Haren, Flynt, Harp, Melisa, Isadora, Whitra, Bletra, Advanced Siege Tank, Vegima, Varonia, Aronia, Odd, Even, Nemertess)
+10423	2	Report to Erda. (You defeated all the commanders stomping in the Messiah Castle. Report this to Erda in the Keucereus Alliance Base.)
+10423	-1	[completed]
 10424	1	Achieve Level 76 (Achieve Level 76 to deliver Kekropus' Letter.)
 10424	2	Kekropus' Letter (Kekropus' Letter has been delivered. According to the letter, a monster similar to Sakum with whom you battled in the Wasteland in the days of old has been seen at the Orc base. Go to Captain Andrei in the Town of Goddard to hear more details.)
 10424	3	To Giant's Minion Lugonnes (Captain Andrei of the Town of Goddard says that the Giant's Minion Lugonnes has headed to the base of the Ketra Orcs in search of the monster that is Sakum's Clone. Find the Giant's Minion Lugonnes at the base of the Ketra Orcs to hear a more detailed account and offer your help.)
@@ -1743,6 +1922,9 @@
 10453	1	Stop Lindvior the Wind Dragon (Stop Lindvior the Wind Dragon. You must create or belong to a command channel to fight him.)
 10453	2	The Wind Dragon's Enemy (You have stopped Lindvior the Wind Dragon. Report back to Aden's Wizard Jenna.)
 10453	-1	[completed]
+10454	1	Defeat the Last Apostle (Keucereus Spy Erda in the Keucereus Alliance Base says the Final Apostle in Messiah, the Embryo's Stronghold, should be defeated. Monsters to Hunt - Camille)
+10454	2	Talk with Erda the Keucereus Spy. (You defeated Embryo's Last Apostle Camille in the Citadel of Messiah Castle. Return to Erda in the Keucereus Alliance Base.)
+10454	-1	[completed]
 10455	1	Go To Hellbound (The Verdure Elder Elikia in Heine ended up in Hellbound while tracking the slave trade with his allies on the continent of Aden. He is staying in Heine for awhile to recruit adventurers who will help Leona Blackbird. He told you to go speak with the Truth Seeker Devianne in Hellbound if you wanted to help.)
 10455	2	The Black Bird (The Truth Seeker Devianne said you could hear more details from Leona Blackbird.)
 10455	-1	[completed]
@@ -1760,8 +1942,6 @@
 10460	1	Alligator Hunt (Enron of Alligator Island has suggested that you eliminate the alligators and bring back their hide. The better the leather quality, the better the rewards. Monsters to hunt: Alligator, Crokian Lad,  Dailaon Lad, Crokian Lad Warrior, Farhite Lad, Nos Lad)
 10460	2	Return to Enron (You have collected all the leather you wanted from the monsters on Alligator Island. Return to Enron.)
 10460	-1	[completed]
-10461	1	The Power Within (In Heine, Eva's Knight Lionel Hunter is said to be seeking those who can shoulder a destiny as great as his own. Answer his call if you are willing.)
-10461	-1	[completed]
 10462	1	A Hand at Augmentation (Flutter, the Head Blacksmith of the Town of Oren, has provided you with the tools to practice augmenting and suggested that you try it.)
 10462	-1	[completed]
 10465	1	Try the Soul Crystal System (You've collected the items needed to use the Soul Crystal System. Now is time to try it out.)
@@ -1845,6 +2025,16 @@
 10534	1	Bizarre Research (You have been asked by the Researcher Stena who you met at the entrance to Dragon Valley to defeat the hatchlings that appear in Dragon Valley and collect the flesh of the hatchlings. Monsters to Hunt - Dragon Hatchling, Leopard Dragon)
 10534	2	Return to Stena (You have defeated the hatchlings in Dragon Valley and collected their flesh. Return to the Researcher Stena at the entrance to Dragon Valley..)
 10534	-1	[completed]
+10535	1	Prepare the Basic Materials (Blacksmith of Mammon asked you to gather basic materials to help the research of Shadai and Ishuma. You need to gather 500 Magical Energy Crystals from the monsters in Hellbound for Shadai's research and 500 Giant Energy Ores in the Giant's Cave for Ishuma's research.)
+10535	2	Still Preparing for Basic Materials (You collected all 500 Magical Crystals in Hellbound. Bring them to Shadai. You still need to collect 500 Giant's Energy Ores in the Giant's Cave.)
+10535	3	Still Preparing for Basic Materials (You have gathered 500 Giant Energy Ores in the Giant's Cave. Take them to Ishuma. You still need to gather 500 Magical Energy Crystals.)
+10535	4	Talk with Shadai and Ishuma (You collected all the Magical Crystals and the Giant's Energy Ore. Bring them to Shadai and Ishua.)
+10535	5	Need More Basic Materials (You collected all 500 Magical Crystals in Hellbound. Bring them to Shadai. You still need to collect 500 Giant's Energy Ores in the Giant's Cave.)
+10535	6	Need More Basic Materials (You have gathered 500 Giant Energy Ore in the Giant's Cave. Take them to Ishuma. You still need to gather 500 Magical Energy Crystals.)
+10535	7	Talk with Shadai. (You collected all 500 Magical Crystals in Hellbound. Bring them to Shadai. You still need to collect 500 Giant's Energy Ores in the Giant's Cave.)
+10535	8	Talk with Ishuma. (You have gathered 500 Giant Energy Ore in the Giant's Cave. Take them to Ishuma. You still need to gather 500 Magical Energy Crystals.)
+10535	9	Talk with Blacksmith of Mammon (You have received Shadai's Solution from Shadai and Ishuma's Mineral from Ishuma. Take them to Blacksmith of Mammon.)
+10535	-1	[completed]
 10537	1	To Retbach (Krenaht at the Giant's Cave has asked you to find out what the Giant's Minion near the fourth area of the Entrance to the Giant's Cave is up to.)
 10537	2	Helping the evolution of the Root of the Lesser Giant (You have been asked by the Giant's Minion Retbach to help the evolution of the Root of the Lesser Giant in the Giant's Cave.)
 10537	3	To Retbach (You have helped the evolution of the Root of the Lesser Giant, as requested by the Giant's Minion Retbach. Return and return to the Giant's Minion Retbach at the entrance to the Giant's Cave.)
@@ -2110,7 +2300,7 @@
 10774	2	Queen Navari's Letter (Queen Navari's Letter has been delivered. As Queen Navari has instructed, find High Priest Sylvain at the Temple of Einhasad in the Town of Dion.)
 10774	3	To Ivory Tower Wizard Rombel (High Priest Sylvain at the Temple of Einhasad in the Town of Dion tells you to find the giants yourself and attempt co communicate with them. For now, find the Ivory Tower Wizard Rombel in Underground Lv. 3 of Cruma Tower.)
 10774	-1	[completed]
-10775	1	The Path to Regeneration (When ready, get rid of the magic creatures and the followers of the Dark Lord, and the Dark Lord himself, in the Underground Lv. 2 of Cruma Tower.Try getting about 20 Energy of Regeneration from them! Monsters to Hunt: Dark Lord, Soldier of Darkness, Dark Knight, Ossiud, Perum, Liangma, Achelando, Styrindo, Ashende)
+10775	1	The Path to Regeneration (Head to Cruma Tower: Underground Lv. 2 and slay the magic creatures, the Dark Lord and his followers. Then try collecting about 40 Energy of Regeneration! Monsters to Hunt: Dark Lord, Dark Knight, Soldier of Darkness, Ossiud, Perum, Liangma, Achelando, Styrindo, Ashende)
 10775	2	Find Belkadhi (You have gathered enough things from the creatures in Cruma Tower. Return to Belkadhi.)
 10775	-1	[completed]
 10776	1	The Giant Encounter (When ready, take the Regeneration Device Core and look for a destroyed device in Underground Lv. 2 of Cruma Tower. When found, try putting the Regeneration Device Core inside.)
@@ -2197,7 +2387,7 @@
 10800	2	Return to Namo (You have done as asked. Report back to Namo.)
 10800	-1	[completed]
 10801	1	Into the Warp (Resed has asked you to get rid of monsters in the Dimensional Warp. Let's do it. Monsters to Hunt: Dimensional Bugbear)
-10801	2	Return to Resed (You have done as Resed asked. Report back to him.)
+10801	2	Return to Resed (Defeated all monsters in the Dimensional Barrier. Return to Resed in Faeron Village.)
 10801	-1	[completed]
 10802	1	Into the Warp (Resed has asked you to get rid of monsters in the Dimensional Warp. Let's do it. Monsters to Hunt: Dimensional Binder)
 10802	2	Return to Resed (You have done as Resed asked. Report back to him.)
@@ -2218,10 +2408,10 @@
 10807	2	Return to Resed (You have done as Resed asked. Report back to him.)
 10807	-1	[completed]
 10811	1	The Weight of Power (When you are ready, talk to Lionel Hunter again.)
-10811	2	A Test to Obtain Power (Lionel Hunter tells you that in order to obtain a new power you must pass some tests. First, you need to have 16 Ability Points, and pass the test of Verdure Elder Elikia, the Mysterious Butler, Weapon Merchant Galladucci, and Sir Eric Rodemai, and bring back certificates from them.)
+10811	2	A Test to Obtain Power (Lionel Hunter, Eva's Guardian Knight in Heine, said that you must pass several tests to obtain new power. Go to Verdure Elder Elikia, Mysterious Butler, Weapon Merchant Galladucci in Town of Giran, and Sir Eric Rodemai in Town of Aden, pass each of their test, and bring the certificate.)
 10811	3	Return to Lionel (You've passed all the tests that Lionel and the 4 people he appointed gave you. Go report to Lionel Hunter.)
 10811	-1	[completed]
-10812	1	Confronting Monsters (Defeat the monsters in Raider's Crossroads or Hellbound and find evidence to get the certificate from Verdure Elder Elikia. Monsters to hunt - All monsters in Raider's Crossroads and Hellbound)
+10812	1	Confronting Monsters (Defeat monsters in Hellbound and collect the Proof of Disposal in order to get a certificate from Verdure Elder Elikia in Heine. Monsters to Hunt - Any monster in Hellbound)
 10812	2	Return to Elikia (You've collected all the evidence that Verdure Elder Elikia asked you for. Go report to Verdure Elder Elikia.)
 10812	-1	[completed]
 10813	1	Participate in the Ceremony of Chaos or the Olympiad (The Mysterious Butler said he will give a certificate to courageous warriors who will face the dangers of the continent as part of a group. Participate in the Ceremony of Chaos/Olympiad and collect the Proof of Battle.)
@@ -2327,11 +2517,11 @@
 10849	7	Return to Ferin - 2 (You have said your farewells to everyone, including Magister Belas. Now return to Ferin.)
 10849	-1	[completed]
 10851	1	To Irene (Celestiel in the Enchanted Valley has instructed you to go to the Guardian Irene and ask what samples are required.)
-10851	2	Sample Collection (You have been sked by the Guardian Irene in the Enchanted Valley to defeat the monsters that have appeared in the Enchanted Valley and collect samples as proof. Monsters to Hunt - Buoyant Seed, Fluttering Seed, Apherus, Flower Bud)
+10851	2	Sample Collection (Guardian Irene in the Enchanted Valley asked you to defeat monsters in the valley and gather their Samples as proof. Monsters to Hunt - Apherus, Flower Bud)
 10851	3	Return to the Guardian Irene (You have collected the necessary Quest Items from the monsters in the Enchanted Valley. Return and report to the Guardian Irene in the Enchanted Valley.)
 10851	-1	[completed]
-10852	1	Defeat the Contaminated Nymphs (You have been asked by the Guardian Irene in the Enchanted Valley to defeat the Contaminated Nymphs that have appeared in the Enchanted Valley. Monsters to Hunt - Contaminated Nymph Rose, Contaminated Nymph Lily, Contaminated Nymph Tulip, Contaminated Nymph Kosmos, Kimerian)
-10852	2	Return to the Guardian Irene (You have defeated Kimerian and the Contaminated Nymphs in the Enchanted Valley. Return to the Guardian Irene in the Enchanted Valley.)
+10852	1	Defeat the Contaminated Nymphs (Guardian Irene in the Enchanted Valley requested you to defeat the Contaminated Nymphs stomping in the valley. Monsters to Hunt - Contaminated Nymph Rose, Contaminated Nymph Lily, Contaminated Nymph Tulip, Contaminated Nymph Cosmos, Fairy Leader Kimerian's Shadows)
+10852	2	Return to the Guardian Irene (You defeated both the Contaminated Nymphs and Fairy Leader Kimerian's Shadows in the Enchanted Valley. Return to Guardian Irene in the Enchanted Valley.)
 10852	-1	[completed]
 10853	1	Defeat Mimir's Minion (Krenaht at Kamael's Stronghold has said that in order to weaken the giants, Mimir's minions on the lower level of the Giant's Cave must be defeated to weaken Mimir. Monsters to Hunt - Mimillion Bathus, Mimillion Carcass, Mimillion Kshana)
 10853	2	Return to Krenaht (You have successfully defeated Mimir's Minions on the lower level of the Giant's Cave. Return to Krenaht at Kamael's Stronghold.)
@@ -2360,3 +2550,34 @@
 10859	1	Emperor Helios (You have been asked by the Hierarch Kekropus at the Town of Giran to defeat Emperor Helios of the Empire of Giants in Superion. Monsters to Hunt - Helios)
 10859	2	Return to the Hierarch Kekropus (You have defeated Emperor Helios in Superion. Return to the Hierarch Kekropus in the Town of Giran.)
 10859	-1	[completed]
+10873	1	Test for a Whole New Level (Eva's Knight, Lionel Hunter, in Heine said that to reach a new stage, you must pass a few tests. You must first reach level 104, then, you must obtain certificates from Commando Captain Sporcha in Hellbound Refugee Camp, Giant Pursuer Captain Krenaht in the Giant's Cave, Fishing Guild Leader Santiago in Heine, and Hunters Guild President Arcturus in Hunter's Village, stating you have passed their tests.)
+10873	2	Return to Lionel (You passed all the tests by Lionel Hunter, Eva's Guardian Knight in Heine, and four persons that he appointed. Return to Lionel Hunter, Eva's Guardian Knight in Heine, and report to him.)
+10873	-1	[completed]
+10874	1	Force Activities (Commando Captain Sporcha in Hellbound Refugee Camp told you to defeat the monsters swarming in Beleth's Enchanted Megaliths, Desert Quarry, and Upper Level of the Giant's Cave and collect the Proof of Qualification. Monsters to Hunt - All monsters in Beleth's Enchanted Megaliths, Desert Quarry, and Upper Level of the Giant's Cave)
+10874	2	To Leona Blackbird (You collected all the Proofs of Qualification from the monsters that Commando Captain Sporcha talked about. Now return to Leona Blackbird, the Fire Dragon's bride in the Hellbound Refugee Camp, and report the result.)
+10874	-1	[completed]
+10875	1	Stage of Power (Giant Pursuer Captain Krenaht argued that to prove your reputation, you must obtain Faction Level of 6 or higher with the Blackbird Clan and the Giant Pursuers, receive the Blackbird Clan Certificate from Leona Blackbird, and receive the Giant Pursuers Certificate from Kekropus.)
+10875	2	Return to Kekropus. (You succeeded in achieving Faction Level 6 and higher of the Blackbird Clan and Giant Trackers and obtaining the Blackbird Clan Certificate and Giant Trackers Certificate. Return to Hierarch Kekropus in Giran Castle and report the completion of the mission.)
+10875	-1	[completed]
+10876	1	Donate Special Stew. (Santiago argued that one in high position, like the Exalted, must contribute to society in order to prove their dignity. He has asked you to donate 50 Special Fish Stew and 80 Gemstones of R grade.)
+10876	-1	[completed]
+10877	1	Complete the Diagram (Hunter Guild President Arcturus in Hunter's Village told you to unlock 10 items in the Monster Collection of the Hunter Guild to prove the new power of the Exalted.)
+10877	2	Return to Arcturus. (You succeeded in unlocking 10 items in the Monster Collection of the Hunter Guild as requested by Hunter Guild President Arcturus in Hunter's Village. Return to him and report the completion of the mission.)
+10877	-1	[completed]
+10879	1	Test for the Guide to Power (Lionel Hunter, Eva's Guardian Knight in Heine, said you should pass another new test that he prepared as the guide to power. First, you should reach level 105, and pass each test by Master Cyphona and Quartermaster Dinford in the Blackbird Campsite, Settlen, the owner of the Underground Gainak Pub, and Admiral Keucereus in the Keucereus Alliance Base and bring the certificates.)
+10879	2	Return to Lionel (You passed all the tests again by Lionel Hunter, Eva's Guardian Knight in Heine, and four persons that he appointed. Return to Lionel Hunter, Eva's Guardian Knight in Heine, and report to him.)
+10879	-1	[completed]
+10880	1	Force Activities (Master Cyphona in the Blackbird Campsite has asked you to defeat monsters in the Enchanted Valley, the Garden of Spirits, and Atelia Fortress to gather items called Proof of Strength in order to gain the new Power of the Exalted. Monsters to Hunt - Monsters in the Enchanted Valley, the Garden of Spirits, and Atelia Fortress)
+10880	2	To Ferin (You have gathered all Proof of Strength from the monsters that Master Cyphona in the Blackbird Campsite specified. Return the Blackbird Campsite to report to Ferin.)
+10880	-1	[completed]
+10881	1	Raise the Pride (Dinford argued that to prove your pride, you must obtain the Faction Level of 6 or higher with at least two of the Mother Tree Guardians, Unworldly Visitors, and Kingdom's Royal Guard. After reaching Faction Level 6 or higher, you must receive a certificate from the leader of each faction: Mother Tree Guardian Certificate from Guardian Irene, Unworldly Visitors Certificate from Ferin, and Kingdom's Royal Guard Certificate from Guard Captain Logart Van Dyke. After receiving the certificates, return to the Blackbird Campsite and report to Guard Captain Logart Van Dyke.)
+10881	2	To Logart Van Dyke (You achieved Faction Level 6 or higher of the Mother Tree Guardian and Dimensional Stranger Force and succeeded in obtaining the Mother Tree Guardian Certificate and Stranger Certificate. Return to Royal Guard Captain Logart Van Dyke in the Blackbird Campsite and report the results.)
+10881	3	To Logart Van Dyke (You achieved Faction Level 6 or higher of the Mother Tree Guardian and Dimensional Stranger Force and succeeded in obtaining the Mother Tree Guardian Certificate and Stranger Certificate. Return to Royal Guard Captain Logart Van Dyke in the Blackbird Campsite and report the results.)
+10881	-1	[completed]
+10882	1	Story Collection (Settlen, the owner of Underground Gainak Tavern, argued that there are many hidden stories in this world that you need to know in order to rise to an eminent position. Use the tavern dungeon to gather information about the main figures of this dungeon.)
+10882	2	Return to Settlen. (You succeeded in obtaining all the storybooks. Return to Settlen, the owner of the Underground Gainak Pub, and report this.)
+10882	-1	[completed]
+10883	1	Defeat Camille (Admiral Keucereus of the Keucereus Alliance Base argued that you should protect the world against crisis if you seek immortal honor and asked you to perform a worthy mission. Monsters to Hunt - Camille)
+10883	2	Defeat Kain (You have defeated Camille. It's time to deal with Kain.  Monsters to Hunt - Kain)
+10883	3	Return to Keucereus. (You finished all the missions that Admiral Keucereus in the Keucereus Alliance Base told you to do. Now return to him and report that the mission has been completed.)
+10883	-1	[completed]

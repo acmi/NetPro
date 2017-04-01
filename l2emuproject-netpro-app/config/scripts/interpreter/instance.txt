@@ -156,19 +156,19 @@
 156	Library of Sages
 157	Underground Library of Sages
 158	Elcadia's Cabin
-159	Prison of Darkness
-160	Teredor Warzone
-161	Kimerian
-162	Kimerian (Epic)
-163	Crystal Caverns
-164	Crystal Caverns
-165	Crystal Caverns
-166	Baylor Warzone
-167	Balok Warzone
+159	Spezion's Cavern
+160	Teredor's Cavern
+161	Kimerian's Cavern
+162	Epic Kimerian's Cavern
+163	Emerald Square
+164	Steam Corridor
+165	Coral Garden
+166	Crystal Prison (Baylor)
+167	Crystal Prison (Balok)
 168	Coral Garden Hall
 169	Istina's Cavern
-170	Istina's Cavern (Epic)
-171	Nursery
+170	Epic Istina's Cavern
+171	Seed of Annihilation (Nursery)
 172	Lachik Dwelling Warzone
 173	Lachik Dwelling Warzone
 174	Lachik Dwelling Warzone (Epic)
@@ -177,10 +177,10 @@
 177	Closed Underground Compound
 178	Labyrinth of Belis
 179	Fortuna
-180	Octavis Warzone
-181	Octavis Warzone (Epic)
+180	Octavis's Cavern
+181	Epic Octavis's Cavern
 182	Museum Dungeon
-183	Balthus Knights - Antharas Expedition
+183	Antharas' Nest (Balthus Knights)
 184	Valakas Warzone
 185	Evil Incubator
 186	Orchid Hall
@@ -193,7 +193,7 @@
 193	Altar of Shilen
 194	Altar of Shilen
 195	Harnak Underground Ruins
-196	Prison of Darkness (Epic)
+196	Epic Spezion's Cavern
 197	Elcadia's Cabin
 198	Legacy of Cruma Tower
 199	Rim Kamaloka
@@ -202,9 +202,9 @@
 202	Kimerian
 203	Kimerian (Epic)
 204	Evolved Agathion's Place
-205	Kartia's Labyrinth - Tainted Dimension Attacker
-206	Kartia's Labyrinth - Tainted Dimension Attacker
-207	Kartia's Labyrinth - Tainted Dimension Attacker
+205	Kartia's Labyrinth (Dimension Attacker)
+206	Kartia's Labyrinth (Dimension Attacker)
+207	Kartia's Labyrinth (Dimension Attacker)
 208	Kartia's Labyrinth
 209	Kartia's Labyrinth
 210	Kartia's Labyrinth
@@ -215,8 +215,8 @@
 215	Verdof's Room (Devil's Island)
 216	Verdof's Room (Devil's Island)
 217	Eva's Hidden Space
-218	Tauti Warzone
-219	Tauti Warzone (Epic)
+218	Tauti's Cavern
+219	Epic Tauti's Cavern
 220	Arena 1
 221	Arena 2
 222	Arena 3
@@ -228,7 +228,7 @@
 228	Ancient Kartia's Labyrinth - A Secret of Two Races
 229	Ancient Kartia's Labyrinth - A Secret of Two Races
 230	Ancient Kartia's Labyrinth - A Secret of Two Races
-231	Nornil's Garden - Spicula Raid
+231	Nornil's Garden
 232	Fortress of the Dead
 233	Fortress of the Dead
 234	Devastated Castle
@@ -256,9 +256,12 @@
 256	Infernal Kamaloka
 257	Lunatic Kamaloka
 258	Nightmare Kamaloka
-259	Embryo Command Post
+259	Command Post
 260	Ashen Shadow Revolutionaries
 261	Mystic Tavern
 262	Mystic Tavern
 263	Mystic Tavern
-264	Dimensional Marshall
+264	Dimensional Rift
+265	Outer Messiah's Castle
+266	Inner Messiah's Castle
+267	Mystic Tavern

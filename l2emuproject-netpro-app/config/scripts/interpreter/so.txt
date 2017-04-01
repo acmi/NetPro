@@ -1,3 +1,5 @@
+12220001	Inner Castle Gate
+12220002	Inner Castle Gate
 12240001	Entrance of Destruction
 12240002	Entrance of Destruction
 12240003	Gate
@@ -237,6 +239,8 @@
 17100202	Olympiad Gate
 17100301	Olympiad Gate
 17100302	Olympiad Gate
+17100401	Olympiad Gate
+17100402	Olympiad Gate
 17100601	Olympiad Gate
 17100602	Olympiad Gate
 17110001	Gate
@@ -1381,8 +1385,8 @@
 24190008	Command Gate
 24190009	Command Gate
 24190010	Fort Gate
-24190011	Fort Gate
-24190012	Fort Gate
+24190011	Barracks Gate
+24190012	Barracks Gate
 24190500	Flagpole
 24210004	Door
 24210005	Door
@@ -1535,6 +1539,12 @@
 25190026	Relic Door
 25190027	Relic Door
 25190500	Flagpole
+26130001	Gate
+26130002	Gate
+26130003	Gate
+26130004	Gate
+26130005	Gate
+26130006	Gate
 26150104	Gate
 26150106	Gate
 26150108	Gate

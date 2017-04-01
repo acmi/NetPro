@@ -1500,7 +1500,7 @@
 1499	You will be moved back to town in $s1 second(s).
 1500	$c1 does not meet the participation requirements. Subclasses and Duel Classes cannot participate in the Olympiad.
 1501	$c1 does not meet the participation requirements. Only Noblesse/Exalted characters can participate in the Olympiad.
-1502	$c1 is already registered on the match waiting list.
+1502	The match $c1 previously participated in should end before you apply. Please try again later.
 1503	You have been registered for the Olympiad waiting list for a class battle.
 1504	You are currently registered for a 1v1 class irrelevant match.
 1505	You have been removed from the Olympiad waiting list.
@@ -2018,7 +2018,7 @@
 2017	$c1 cannot duel because $c1 is currently engaged in a private store or manufacture.
 2018	$c1 cannot duel because $c1 is currently fishing.
 2019	$c1 cannot duel because $c1's HP or MP is below 50%%.
-2020	$c1 cannot make a challenge to a duel because $c1 is currently in a duel-prohibited area (Peaceful Zone / Battle Zone / Near Water / Restart Prohibited Area).
+2020	$c1 is in an area where duel is not allowed and you cannot apply for a duel.
 2021	$c1 cannot duel because $c1 is currently engaged in battle.
 2022	$c1 cannot duel because $c1 is already engaged in a duel.
 2023	$c1 cannot duel because $c1 is in a chaotic or purple state.
@@ -2074,14 +2074,14 @@
 2073	Enchant skill route change was successful. Lv of enchant skill $s1 will remain.
 2074	Skill enchant failed. Current level of enchant skill $s1 will remain unchanged.
 2075	It is not an auction period.
-2076	Bidding is not allowed because the maximum bidding price exceeds 100 billion.
+2076	The highest bid is over 999.9 billion, therefore you cannot place a bid.
 2077	Your bid must be higher than the current highest bid.
 2078	You do not have enough Adena for this bid.
 2079	You currently have the highest bid, but the reserve has not been met.
-2080	You have been outbid.
+2080	You were outbid. The new highest bid is $s1 Adena.
 2081	There are no funds presently due to you.
-2082	You have exceeded the total amount of Adena allowed in inventory.
-2083	The auction has begun.
+2082	You cannot have more than 999.9 billion Adena.
+2083	The auction for ‘$s1' will begin now.
 2084	Enemy Blood Pledges have intruded into the fortress.
 2085	Shout and trade chatting cannot be used while possessing a cursed weapon.
 2086	Search on user $c2 for third-party program use will be completed in $s1 minute(s).
@@ -2165,10 +2165,10 @@
 2164	The barracks have been seized.
 2165	The barracks function has been restored.
 2166	All barracks are occupied.
-2167	A malicious skill cannot be used in a peace zone.
+2167	You cannot use skills that may harm other players in here.
 2168	$c1 has acquired the flag.
 2169	Your clan has been registered to $s1's fortress battle.
-2170	A malicious skill cannot be used when an opponent is in the peace zone.
+2170	You cannot use skills that may harm other players in this area.
 2171	This item cannot be crystallized.
 2172	+$s1$s2's auction has ended.
 2173	$s1's auction has ended.
@@ -2375,7 +2375,7 @@
 2374	End match!
 2375	The minion pet cannot be returned because there is not much time remaining until it leaves.
 2376	You cannot receive a dimensional item during an exchange.
-2377	You cannot report a character who is in a peace zone or a battleground.
+2377	You cannot report a character in this area.
 2378	You cannot report when a clan war has been declared.
 2379	You cannot report a character who has not acquired any XP after connecting.
 2380	You cannot report this person again at this time.
@@ -2467,7 +2467,7 @@
 2466	A pet on auxiliary mode cannot use skills.
 2467	Do you wish to begin the game now?
 2468	You have used a report point on $c1. You have $s2 points remaining on this account.
-2469	You have used all available points. Points are reset everyday at noon.
+2469	You spent all available points. They will become available when they are reset at 06:30 AM every day.
 2470	This character cannot make a report. You cannot make a report while located inside a peace zone or a battleground, while you are an opposing clan member during a clan war, or while participating in the Olympiad.
 2471	This character cannot make a report. The target has already been reported by either your clan or alliance, or has already been reported from your current IP.
 2472	This character cannot make a report because another character from this account has already done so.
@@ -2795,7 +2795,7 @@
 2937	A territory owning clan member cannot use a disguise scroll.
 2938	The disguise scroll cannot be used while you are engaged in a private store or manufacture workshop.
 2939	A disguise cannot be used when you are in a chaotic state.
-2940	You can use enchant success supplements for items enchanted between + 3 and + 15.
+2940	Items with the enchantment level of +3 or higher can benefit from enchanting chance boosting items.
 2941	The request cannot be completed because the requirements are not met. In order to participate in a team match, all team members must have an Olympiad score of 10 or more.
 2942	The first gift's remaining resupply time is $s1 hour(s) $s2 minute(s) $s3 second(s).  (If you resummon the Agathion at the gift supply time, the supply time can take an additional 10 minutes.)
 2943	The first gift's remaining resupply time is $s1 minute(s) $s2 second(s). (If you resummon the Agathion at the gift supply time, the supply time can take an additional 10 minutes.)
@@ -3073,7 +3073,7 @@
 3222	The maximum number of names (100) has been reached. You cannot register any more.
 3223	The previous name is being registered. Please try again later.
 3224	The maximum matches you can participate in 1 week is 30.
-3225	You can enter up to 30 free-for-all battles and 30 class-specific battles per week.
+3225	You may participate in up to 30 matches per week.
 3226	You cannot move while speaking to an NPC. One moment please.
 3227	The large army of Elmoreden is advancing upon the Monastery of Silence.
 3228	Anais fought back bravely with a legion of loyal followers.
@@ -3109,7 +3109,7 @@
 3258	
 3259	You have acquired $s1 XP (Bonus: $s2) and $s3 SP (Bonus: $s4).
 3260	You cannot use the skill because the servitor has not been summoned.
-3261	The matches this week are All-Class Battles, the number of matches that are allowed to participate is $s1.
+3261	This week, you can participate in a total of $s1 matches.
 3262	You can proceed only when the inventory weight is below 80 percent and the quantity is below 90 percent.
 3263	There are $s2 second(s) remaining for $s1's re-use time. It is reset every day at 6:30 AM.
 3264	There are $s2 minute(s) $s3 second(s) remaining for $s1's re-use time. It is reset every day at 6:30 AM.
@@ -3696,9 +3696,9 @@
 3845	You came out of the clan request area.
 3846	You cannot use $s1.
 3847	Use $s1.
-3848	$s1 has received Kaliel's Blessing and obtained $s2.
-3849	You obtained $s1 Kaliel's Token(s).
-3850	There is no Kaliel's Token to obtain.
+3848	$s1 obtained $s2, the Balthus Knights Secret Supply Items.
+3849	You obtained $s1 Sibis Coins.
+3850	There are no Sibis Coins available to obtain.
 3851	You've obtained $s1. You can obtain up to 2 of these items a day. You can get more after 06:30 AM every day.
 3852	Click the Apply button to apply the changes.
 3853	You cannot participate in the Ceremony of Chaos as a flying transformed object.
@@ -3735,17 +3735,17 @@
 3884	Can be used only when HP is less than 100%%.
 3885	Can be used only when MP is less than 100%%.
 3886	Can be used only when CP is less than 100%%.
-3887	Waiting for the event Kaliel's Blessing to start. Until the event starts, you cannot use the item 'Kaliel's Wish'.
-3888	The event Kaliel's Blessing is in progress.
-3889	The event Kaliel's Blessing has started. For 1 hour from now, all characters of level 40 or higher who have done the 2nd class transfer will be automatically joined in the event. During this time, you cannot use the item 'Kaliel's Wish'.
+3887	The Balthus Knights event is ready to begin. Marks of the Balthus Knights cannot be used before the event begins.
+3888	The Balthus Knights event is in progress.
+3889	The Balthus Knights event has begun. Characters of level 85 or higher and who are Awakened may participate in this event.
 3890	Except the vitality buff, all buffs including Art of Seduction will be deleted.
 3891	You've obtained individual request points ($s1/100).
-3892	You are currently not participating in any event. Use a 'Kaliel's Wish' to join an event.<br>You can get 'Kaliel's Wishes' through Event NPC Jolie. You can also get up to two of them a day from hunting.
+3892	You are not participating in the event. Use the Mark of the Balthus Knights to participate.<br>You can obtain the Mark of the Balthus Knights from the Balthus Knight Supply Item or Sibis' Suspicious Supply Items.
 3893	You cannot receive the item $s1 because you've exceeded the limit on the quantity and weight of the inventory.
-3894	Level $s1 of the event Kaliel's Blessing is $s2%% completed.<br>(You will be automatically joined in the event for 1 hour, 30 minutes after the server opens.)
+3894	You are currently in Stage $s1, Round $s2 of the Balthus Knights event.
 3895	You cannot go because the maximum number of participants in the clan request has been exceeded.
 3896	There's a new clan request! Get it from the Clan Request Manager.
-3897	You will be automatically joined in the event for 1 hour, 30 minutes after the server opens. So you cannot use the item Kaliel's Wish.
+3897	You can now participate in the Balthus Knights event as the server is open.
 3898	You cannot use the item because the effect is already applied.
 3899	You can purchase rewards through the Clan Request Manager.
 3900	Change Rank.
@@ -3904,7 +3904,7 @@
 4146	Please register the Enchant Scroll.
 4147	You cannot delete items while enchanting attributes.
 4148	You cannot destroy or crystallize items while enchanting attributes.
-4149	Warning:\n\nUpon enchant failure, the item will be crystallized.\nDo you wish to proceed?
+4149	Warning!\n\nIf the enchanting attempt fails, the item will be destroyed or crystallized.\nContinue anyway?
 4150	Adena distribution has started.
 4151	Adena distribution has been cancelled.
 4152	The adena in possession has been decreased. Adena distribution has been cancelled.
@@ -3929,7 +3929,7 @@
 4171	A member has excessive Adena. Distribution has been cancelled.
 4172	You cannot chat while participating in the Olympiad.
 4173	You cannot send a whisper to a user who is participating in the Olympiad.
-4174	After about 1 minute, you will move to the Olympiad arena.
+4174	You'll be taken to the Olympiad Stadium in about 1 minute. Canceling a match will cost Olympiad Points from now on.
 4175	You will shortly move to the Olympiad arena.
 4176	It seemed as if everything had returned to normal.
 4177	But had it?
@@ -3946,11 +3946,11 @@
 4188	Please select the Ability to be acquired.
 4189	The selected Ability will be acquired. Do you wish to continue?
 4190	Failed to acquire Ability. Please try again.
-4191	$s1 Adena will be consumed and special points will be reset.
-4192	$s1 will be consumed to return all Abilities and points. Do you wish to continue?
+4191	Use $s1 SP to reset your stat points.
+4192	Use $s1 SP to reset abilities and refund points. Are you sure you want to continue?
 4193	Point reset has failed. Please try again.
-4194	Ability Points: $s1
-4195	Abilities can be used by Noblesse/Exalted Lv. 99 or above.
+4194	Available points: $s1
+4195	Reach level 85 to use the ability.
 4196	The requested operation has failed. Please try again.
 4197	$s1's amount of Adena in possession has exceeded the maximum. Distribution cannot proceed.
 4198	When there is mail with an attached item, the character cannot be deleted.<br>Please organize the mailbox and try again.
@@ -4167,12 +4167,65 @@
 4409	You may only use arenas with the same mode as the first monster arena you have used this week.
 4410	Chat ban will be lifted in $s1 seconds.
 4411	Macros consisting of chat messages only cannot be used automatically.
+4412	Send $s1
 4413	Congratulations. Compounding was successful and you obtained $s2 of $s1.
 4414	Compounding failed and you obtained $s2 of $s1.
+4415	A remote control program has been detected. Please keep in mind that your game data may be compromised while using the program.
 4416	You have to register the items in order.
 4417	You obtained $s2 of $s1 after compounding.
 4418	You don't have enough space in your inventory to continue with compounding. You need more than 2 empty slots.
+4419	The auction for $s1 will begin in 24 hours.
+4420	The auction for $s1 is in progress.
+4421	$s1 is sold for $s2 Adena.
+4422	Processing failed due to death of a character. Resurrect first and try again.
+4423	The Faction Level of $s1 has increased. Open the Factions window to check.
 4424	When you compound, you may lose some or all of the ingredients. Continue?
+4425	$s1 Raid Monster
+4426	Completed all objectives of the $s2 Monster Collection level $s1.
+4427	Completed all levels of the $s1 Monster Collection.
+4428	Only characters of level $s1 or higher are eligible for rewards.
+4429	No rewards can be obtained while changing class.
+4430	You cannot abandon missions in the area while defending the Keucereus Alliance Base.
+4431	Location information is needed to show this.
+4432	Keucereus Defense - In progress
+4433	Keucereus Defense - Won
+4434	Keucereus Defense - Lost
+4435	Keucereus Defense - Invasion declared
+4436	$s1 Territory
+4437	$s1 appeared - Click it to track down.
+4438	Nothing has been recorded in the Monster Collection.
+4439	Ka...Kain?
+4440	We could defeat Kain van Halter...\ntogether.
+4441	Now it's time to show our strength.\nLet's go to the Messiah Castle.
+4442	We had to retreat... to live to fight another day.
+4443	Let's sharpen our blades until we return to Gracia.
+4444	The mission is a success. Fall back!
+4445	Where in the world was the castle-guarding apostle?
+4446	Leona Blackbird...Your days are numbered...
+4447	Now is the time! Charge into the courtyard!
+4448	Why is there no one here?
+4449	Gis...Giselle?
+4450	All stages are completed.
+4451	You obtained $s1 Faction Points for $s2
+4452	Current location: $s1/$s2/$s3 (Messiah Castle)
+4453	$c1 cannot perform the Couple Action as the person is using a skill.
+4454	$c1 cannot perform the Couple Action as the person is using Sayunes.
+4455	You cannot attack other players in this area.
+4456	You cannot attack players who are in a non-combat area.
+4457	The items sent can be retrieved only through an Alchemist or Dimensional Merchant on the same server. Are you sure you want to continue?
+4458	Pull yourself together, Kain! Are you trying to get us killed?
+4459	You have reputations to keep, Karla. What a shame.
+4460	This man is no longer our ally.
+4461	Get back, everyone! You might all get killed the next time!
+4462	You exceeded the limit and cannot complete the task.
+4463	Before the scheduled maintenance on $s1.$s2.$s3
+4464	After the scheduled maintenance on $s1.$s2.$s3
+4465	From $s1 $s2 to $s3
+4466	$s1 day(s) $s2 hour(s) $s3 minute(s)
+4467	$s1.$s2.$s3
+4468	Task cannot be completed: Your selling price exceeds the Adena limit.
+4469	Task cannot be completed: Your balance exceeds the Adena limit.
+4470	Task cannot be completed: Your balance after the transaction exceeds the Adena limit.
 4601	- Great P. Def. and skillful Shield Defense<br>- Increased P. Def. for the whole party<br>- Protect party members
 4602	By the will of the Chaos, the power of Abelius, the Golden Commander of the ancient giants, has been combined with the ancient power of light. The blessing of the giants and the light upon him gave him the courage to be the fearless shield of the continent.
 4603	- Great P. Def.<br>- Increased P. Atk. For the whole party<br>Vampiric Rage and Reinforced Dark Panther
@@ -4247,32 +4300,32 @@
 4672	Magic Damage Dealer
 4673	- Specializes in magical two-handed weapons<br> - Close-range Damage Spells<br> - Uses Wind for Defense
 4674	Able to tap into the power of the wind god, Sayha's Seers can diffuse themselves into the wind for transport or defenses. Their talents account for their extraordinary survivability.
-4701	You can easily adjust performance to the factory setting.
-4702	Lower the performance of the game you are not playing, to decrease load on the computer.
-4703	Hide items dropped on the field.
+4701	You can easily configure the graphic quality with presets. A higher value means more visual effects. Note that a high value may reduce game performance.
+4702	Reduces the resources allocated to the programs running in the background. Use this option to increase performance.
+4703	Hides the tags for items on the ground. Use this option to increase performance.
 4704	Select among full screen mode, full window mode, and window mode.
-4705	Adjust game resolution.
-4706	Adjust game refresh rate.
-4707	Adjust game screen brightness.
-4708	Adjust texture quality. If this is set too high, performance might decrease.
-4709	Adjust modeling quality. If this is set too high, performance might decrease.
-4710	Adjust motion quality. If this is set too high, performance might decrease.
-4711	Adjust effect quality. If this is set too high, performance might decrease.
-4712	Adjust terrain expression range. If this is set too high, performance might decrease.
-4713	Adjust character expression range. If this is set too high, performance might decrease.
-4714	Adjust weather effect. If this is set too high, performance might decrease.
-4715	Adjust the number of characters displayed at the same time. If this is set too high, performance might decrease.
+4705	Adjusts the screen resolution.
+4706	Adjusts the refresh rate.
+4707	Adjusts the brightness.
+4708	A higher value means more texture used. Note that a high value may reduce game performance.
+4709	A higher setting value further softens the modeling target expression. This may downgrade system performance.
+4710	A higher setting value further softens the motion expression. This may downgrade system performance.
+4711	A higher setting value makes effect expression more realistic. This may downgrade system performance.
+4712	A higher setting value shows the farther areas of terrains. This may downgrade system performance.
+4713	A higher setting value shows characters in the farther areas. This may downgrade system performance.
+4714	A higher setting value makes weather effects more realistic. This may downgrade system performance.
+4715	A higher setting value shows a lot more characters at the same time. This may downgrade system performance.
 4716	Improve the aliasing of characters and objects. If this is set too high, performance might decrease.
-4717	Adjust reflection effect. If you use this function, performance might decrease.
+4717	A higher setting value further sophisticates water reflection effects. This may downgrade system performance.
 4718	Adjust glow effect and HDR rendering. If you use this function, performance might decrease.
 4719	Use improved shader effect.
-4720	Display shadows of characters and objects. If you check this setting, performance might decrease.
-4721	Display all background objects. If you check this setting, performance might decrease.
+4720	Displays the shadow of characters and objects. Using this option may reduce game performance.
+4721	This shows every background object. Using this function may downgrade performance.
 4722	Use GPU for improved performance.
-4723	Lower texture and modeling quality to maintain the minimum frame rate.
+4723	Reduces the texture and modeling quality to maintain the minimum frame rate.
 4724	Apply out-focus effect to the background. If you check this setting, performance might decrease.
-4725	Express objects realistically. If you check this setting, performance might decrease.
-4726	Express detailed shadows of characters. If you check this setting, performance might decrease.
+4725	Water expression becomes more realistic. Using this function may downgrade performance.
+4726	Shadow expressions of characters become more detailed. Using this setting may downgrade performance.
 4727	Select a language to use in the game.
 4728	Use keyboard security.
 4729	Game pad control is supported.
@@ -4280,14 +4333,14 @@
 4731	Right-click not to use the function for reverting to default view point.
 4732	Reverse zoom-in/out of the mouse wheel.
 4733	Right-click to open a simple menu.
-4734	Mute all.
-4735	Adjust volume of all sounds.
+4734	Mutes all sounds.
+4735	Adjusts the master volume.
 4736	Adjust volume of the background music.
 4737	Adjust volume of sound effects.
 4738	Adjust volume of environment sounds.
 4739	Adjust volume of the system voice.
 4740	Adjust volume of NPC voices.
-4741	Listen to the tutorial voice.
+4741	Enables the tutorial speech.
 4742	Display symbols appropriate for the specific chatting type in the window.
 4743	Press the Enter key to start chatting.
 4744	Show standard chat.
@@ -4320,18 +4373,18 @@
 4771	Display monsters on the radar map.
 4772	Display my current location on the radar map.
 4773	Lock the radar map so it doesn't rotate according to the character's direction.
-4774	Display the name of a new location you move into.
+4774	Show the name of the region whenever it changes.
 4775	Show information useful for game play on the loading screen.
 4776	Show the tutorial that teaches basic game play.
 4777	Use the cursor made specifically for the game.
 4778	Hide PC points.
 4779	Display effects that show quest destinations.
-4780	Select screenshot quality.
+4780	Sets the quality of the screenshot images.
 4781	Make inactive windows translucent.
-4782	Hide all speech balloons.
-4783	Hide all speech balloons of NPCs.
-4784	Hide all private stores.
-4785	Hide all private workshops.
+4782	Hides PC speech bubbles.
+4783	Hides PC speech bubbles.
+4784	Do not show private stores.
+4785	Do not show private workshops.
 4786	Turn on or off all name information.
 4787	Display my name.
 4788	Display names of monsters.
@@ -4423,7 +4476,7 @@
 4874	Right/ left click the mouse simultaneously to move.
 4875	Display the names of yourself, your pet, and your servitor.
 4876	Display the names of another player's character, their pet, and their servitor.
-4877	Not in Use - New Field for Addition
+4877	Reset the detailed settings of the activated Chat tab.
 4878	Use the 1:1 inquiry service.
 4879	View the guide.
 4880	View the forums.
@@ -4433,65 +4486,73 @@
 4884	Re-edit the main menu. The edits made until now will not be saved.
 4885	Finish editing and save changes.
 4886	Finish editing without saving changes.
-5000	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5001	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5002	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5003	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5004	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5005	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5006	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5007	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5008	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5009	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5010	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5011	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5012	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5013	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5014	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5015	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5016	For more details, please visit the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>).
+4887	Show or hide the detailed settings of the graphic quality.
+4888	Change the quality of the performance setting quickly according to the pre-configured setting value.
+4889	Change the quality of the environment expression setting quickly according to the pre-configured setting value.
+4890	Change every interactivity togglable between Accept and Reject.
+4891	Enable or disable the damage texts of every object.
+4892	Using this function will show the system messages only in the dedicated window and other messages in the rest of the channels will become deactivated.
+4893	Choose the channel of the activated Chat tab. No channels of the standard tabs can be changed.
+4894	Change the quality of the visual effect settings quickly according to the pre-configured setting value.
+5000	Your account has been suspended due to account theft. If you registered your e-mail in your personal information, a notification mail will have been sent, so please check. If you have nothing to do with the account theft, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Account theft report center</font> and submit your letter of objection. For more information, <font color="FFDF4C">contact us via 1-to-1 inquiry through the Support Center</font>.
+5001	Your account has been suspended as per our management policy because it is confirmed that you submitted a false report. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5002	Your account has been suspended as per our management policy for failing to verify your account during the specified period after submitting the report of account theft. To unblock your account, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Report center</font> and go through the user verification process in the account theft report. For more information, go to <font color="FFDF4C">plaync (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5003	Your account has been suspended for manipulating the game system to disrupt other users' normal gameplay. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5004	You have traded or attempted to trade an item or character (i.e., account), which holds value in the game system, for cash, cashable goods or item of other games, etc. Pursuant to Article 14 of Chapter 3 of our Terms of Service and management policy, your account has been suspended for 7 days from the date when the act was found. Your account will become unblocked after 7 days of suspension. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center (Lineage II)</font>.
+5005	You have traded or attempted to trade an item or character (i.e., account), which holds value in the game system, for cash, cashable goods or item of other games, etc. Pursuant to Article 14 of Chapter 3 of our Terms of Service and management policy, your account has been suspended. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center (Lineage II)</font>.
+5006	Your account has been suspended as per our management policy for disrupting public well-being, order, public morals, etc. or committing a fraudulent act. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5007	Your account has been suspended for disrupting public well-being, order, public morals, etc. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5008	Your account has been suspended for manipulating the vulnerability of the in-game system, system bug, etc. and/or associating with any of these. Manipulating the bug may result in serious failure in the service or collapse of game balance. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5009	Your account has been suspended for using an illegal program. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5010	Your account has been suspended as per our management policy for manipulating the in-game system for abnormal gameplay. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5011	Your account has been suspended as per our Terms of Service and management policy upon your request. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea)</font>.
+5012	Your account has been suspended as per our management policy for disrupting public well-being, order, public morals, etc. or attempting a fraudulent act. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5013	Your account has been suspended as per our Terms of Service for your unauthorized use of other's identification. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea)</font>.
+5014	Your account has been suspended as per our Terms of Service for your unauthorized use of other's payment method. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea)</font>.
+5015	Your account has been suspended as per our management policy for engaging in an in-game gambling act. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5016	For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea)</font>.
 5017	Please inquire through the <font color="FFDF4C">Lineage II Customer Service Center</font> or the <font color="FFDF4C">1:1 support</font> in the official website.
 5018	In order to play Lineage II, you must be <font color="FFDF4C">Ages 15 or above</font>. You must be <font color="FFDF4C">18 or above</font> in order to use the PvP servers.
-5019	To create a new account, please visit the <font color="FFDF4C">Lineage II Website </font><font color="6699FF">(<a href="asfunction:homePage">https://account.ncsoft.com/signup/index</a>)</font> and click on the New Account Creation link.
-5020	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5019	Go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font>, join our web membership and create a new account.
+5020	If you have lost your account information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea)</font>.
 5021	Users who did not complete the <font color="FFDF4C">Age 18 Verification</font> may not login between <font color="FFDF4C">10PM</font> and <font color="FFDF4C">6AM</font> the next day.
-5022	If you have lost your account, please visit the <font color="FFDF4C">Lineage II Website </font><font color="6699FF">(<a href="asfunction:homePage">https://login.lineage2.com/login</a>)</font> and click on the Support link at the bottom of the page.
-5023	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5024	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5025	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5026	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5027	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5028	You cannot use the game services as your identity has not been verified. Please the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>) and go to <font color="FFDF4C">)</font> to verify your identity. For more details, please visit the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>).
-5029	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5022	Please complete the user verification process for your identification. For user verification process, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font>. For more information, <font color="FFDF4C">contact us via 1-to-1 inquiry through the Support Center</font>.
+5023	Your account has been suspended for attempting to trade for cash, server, or other games. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5024	Your account has been suspended as requested by the investigation (judicial) authority. Note that any request officially issued by the corresponding authorities has legal force. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea</font>.
+5025	Your account has been suspended for picking up an item from an account reported for theft. Proceed to your user verification process from our Homepage to retrieve your account. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5026	Your account has been suspended for trading cash, server or other games. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5027	Your account has been suspended for trading cash, or account. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5028	You haven't completed the user verification process and are not allowed to our game service. Go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font> and complete the verification process to use our service. If you have any questions in regard to the user verification process, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5029	You have an inactive account. Your account becomes inactive after a certain period of inactivity. To reactivate an inactive account, visit the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font>.
 5030	<font color="FFDF4C">Logging in.</font>Please wait.
 5031	The account has been temporarily restricted due to an incomplete cell phone (ARS) transaction. For more information, please visit http://us.ncsoft.com/en/.
-5032	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5032	Your account needs verification.<br>Visit the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font>, verify your account and try again.
 5033	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 5034	This account has declined the User Agreement or has requested for membership withdrawal.  Please try again after <br><font color="FFDF4C">cancelling the Game Agreement declination</font> or <font color="FFDF4C">cancelling the membership withdrawal request</font>.
 5035	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5036	Please inquire through the <font color="FFDF4C">Lineage II Support Website(</font><font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font><font color="FFDF4C">) 1:1 Customer Service Center<font color="FFDF4C">) Customer Service Center</font>.
+5036	Your account has been suspended.<br>For more information, visit <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
 5037	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5038	You must change your password and secret question in order to log in. Please the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>) and <font color="FFDF4C">change the password and secret question</font>.
-5039	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5038	You may access your account after updating your password and password quiz.<br>Go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font> and <font color="FFDF4C">update your password and password quiz</font> to retrieve your account.
+5039	Your account has been suspended for using illegal programs. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
 5040	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 5041	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5042	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5043	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5044	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5045	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5046	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5047	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5042	Your account has been suspended due to fraudulent information. If you are not involved with this fraud, please verify your account information. For more information, visit the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5043	Your account has been completely blocked for making a fraudulent payment. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5044	Your account has been completely blocked for trading accounts.<br>For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5045	Your account has been completely blocked for 10 days for using illegal programs. Note that your account will be permanently blocked if it happens again. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5046	Your account has been completely blocked for using illegal programs. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5047	Your account has been completely blocked for using illegal programs. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
 5048	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5049	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5050	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5051	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5052	You have entered <font color="FFDF4C">Regular Server</font>.
+5049	Your account has been suspended for repeated uploading abusive posts. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5050	Your account has been suspended for uploading a post in violation of the current law. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5051	Your account has been completely blocked for using our game service for commercial purposes. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5052	You have entered the <font color="FFDF4C">Live Server</font>.
 5053	You have entered <font color="FFDF4C">Adult Server</font>.
 5054	You have entered <font color="FFDF4C">Teenage Server</font>.
 5055	You cannot do that because of <font color="FFDF4C">Fatigue</font>.
-5056	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5057	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5058	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5056	Your account is now in user verification standby mode as there is a suspected case of identity theft. If you have nothing to do with this, click the ‘Unblock' button found on the login page of our Homepage, verify your account and retrieve it for normal game service. For more information, go to the <font color="FFDF4C">plaync Homepage(</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5057	Your account has been completely blocked for creating an account under another person's name. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5058	Your account has been suspended due to suspected abusive gameplay. If this is not the case, verify your account on our website. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
 5059	Please enter more than <font color="FFDF4C">1 letter</font> and less than <font color="FFDF4C">16 letters</font>.
 5060	Welcome to <font color="FFDF4C">Lineage II</font>. Please click on the <font color="FFDF4C">Create Character</font> tab to go to the Character Creation screen.
 5061	A character belonging to a <font color="FFDF4C">clan</font> may not be deleted.
@@ -4503,42 +4564,43 @@
 5067	If you fail authentication <font color="FFDF4C">3 times</font> in a row,  game access will be restricted for <font color="FFDF4C">30 minutes</font>. Please try again later.
 5068	To request an NC OTP service,<br>run the cell phone NC OTP service<br>and enter the displayed NC OTP number within 1 minute.<br>If you did not make the request,<br>leave this part blank,<br>and click on the login tab.
 5069	Please enter card number <font color="FFDF4C">$s1</font>.
-5070	<font size='15' color='#FFDF5F'>The Lineage II server has been restructured as of 06/11/14.</font><br><font size='13' color='#ABABAB'>Bartz, Fehyshar</font> → Bartz(New)<br><font size='13' color='#ABABAB'>Erica, Gustin, Teon</font> → Sieghardt(New)<br><font size='13' color='#ABABAB'>Franz, Irene, Aria</font> → Kain(New)
-5071	<font color="FFDF4C">We give various benefits to warriors who return after a long time.</font>
-5072	You can receive the benefits provided to dormant customers on <font color="FFDF4C">Lineage II Homepage > Dormant Membership Page</font>(<font color="6699FF"><a href="asfunction:homePage">lineage2.plaync.co.kr/service/freecoupon/dormancy</a></font>).<br>Receive benefits for dormant customers and log into the game again!
-5300	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5301	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5302	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5303	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5304	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5305	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5306	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5307	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5308	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5309	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5310	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5311	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5312	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5313	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5314	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5315	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5316	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5317	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5318	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5319	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5320	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5321	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5322	You cannot use the game services as your identity has not been verified. Please the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>) and go to <font color="FFDF4C">)</font> to verify your identity. For more details, please visit the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>).
-5323	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5324	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5325	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5070	<font size='15' color='#FFDF5F'>As of April 22nd 2015, Lineage II launched the updated Classic Server.</font><br><font size='13' color='#ABABAB'>Giran, Elf, Dark Elf</font> → Giran (NEW)
+5071	<font color='#FFDF4C'>Generous benefits await the returning heroes!</font>
+5072	To get the dormant user benefits, go to <font color='#FFDF4C'>Lineage II Homepage > Dormant user coupon page</font>(<font color='#6699FF'><a href='asfunction:homePage'>lineage2.plaync.com/service/freecoupon/dormancy</a></font>).<br>Get the dormant user benefits and access our game!
+5300	Your account has been suspended due to account theft. If you registered your e-mail in your personal information, a notification mail will have been sent, so please check. If you have nothing to do with the account theft, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Account theft report center</font> and submit your letter of objection. For more information, <font color="FFDF4C">contact us via 1-to-1 inquiry through the Support Center</font>.
+5301	Your account has been suspended as per our management policy for manipulating our GM service or customer support service to disrupt other users' normal gameplay or the company's game operation. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5302	Your account has been suspended as per our management policy for failing to verify your account during the specified period after submitting the report of account theft. To unblock your account, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Report center</font> and go through the user verification process in the account theft report. For more information, go to <font color="FFDF4C">plaync (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5303	Your account has been suspended for manipulating the game system to disrupt other users' normal gameplay. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5304	Your account has been suspended for attempting promotional activities for commercial purpose or to trade for cash or other games. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5305	Your account has been suspended for trading cash, or account. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5306	Your account has been suspended as per our management policy for disrupting public well-being, order, public morals, etc. or committing a fraudulent act. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5307	Your account has been suspended for using vulgar language during gameplay. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5308	Your account has been suspended for manipulating the vulnerability of the in-game system, system bug, etc. and/or associating with any of these actions. Manipulating the bug may result in serious failure in the service or collapse of game balance. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5309	Your account has been suspended as per our management policy for manufacturing/distributing illegal programs, modifying or altering the client or server program. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5310	Your account has been suspended as per our management policy for manipulating the in-game system for abnormal gameplay. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5311	Your account has been suspended as per our Terms of Service and management policy upon your request. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea)</font>.
+5312	Your account has been suspended as per our management policy for disrupting public well-being, order, public morals, etc. or attempting a fraudulent act. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5313	Your account has been suspended as per our Terms of Service for your unauthorized use of another person's identification. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or, <font color="FFDF4C">call our hotline (1600-0020 for users in Korea)</font>.
+5314	Your account has been suspended as per our Terms of Service for your unauthorized use of other's payment method. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea)</font>.
+5315	Your account has been suspended as per our management policy for engaging in an in-game gambling act. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5316	Your account has been suspended for using an illegal program. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5317	Your account has been suspended temporarily for an objection raised to your real name verification process. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5318	Please complete user verification process for your identification. For user verification process, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font>. For more information, <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5319	Your account has been suspended as requested by the investigation (judicial) authority. Note that any request officially issued by the corresponding authorities has legal force. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>, or <font color="FFDF4C">call our hotline (1600-0020 for users in Korea</font>.
+5320	Your account has been suspended for picking up an item from an account reported for theft. Proceed to your user verification process from our Homepage to retrieve your account. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5321	Your account has been suspended for trading cash or other games. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5322	You haven't completed the user verification process and are not allowed to our game service. Go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font> and complete the verification process to use our service. If you have any questions in regard to the user verification process, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5323	Your account has been suspended for using an illegal program. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5324	Your account has been suspended for failing to comply with the previous agreement over item distribution for party/group play to unjustly gain items. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5325	Your account has been completely blocked for using our game service for commercial purposes. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
 5326	The account has been temporarily restricted due to an incomplete cell phone (ARS) transaction. For more information, please visit http://us.ncsoft.com/en/.
-5327	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5328	Your identity verification has been temporarily suspended due to suspected account theft. If you are not involved in account theft, please verify your identity by clicking the 'Release' button in the login page. For more details, please visit the <font color="FFDF4C">Lineage II Support Website</font>(<font color="6699FF"><a href="asfunction:homePage">https://support.lineage2.com</a></font>).
-5329	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5330	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5331	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+5327	Your account has been suspended for engaging in the promotional activities for commercial purpose. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5328	Your account is now in user verification standby mode as there is a suspected case of identity theft. If you have nothing to do with this, click the ‘Unblock' button found on the login page of our Homepage, verify your account and retrieve it for normal game service. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5329	Your account has been suspended temporarily for your gameplay resorting to abnormal methods. If this is not the case, verify your account on our Homepage for normal game service. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5330	Your account has been suspended for manipulating the vulnerability of the in-game system, system bug, etc. and/or associating with any of these actions. Manipulating the bug may result in serious failure in the service or collapse of game balance. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
+5331	Your account has been suspended temporarily for an objection raised to your real name verification process. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
 5332	Your account has been idle for a long time. If you do not play the game for a certain period, your account will become idle. You can reactivate your account at the <font color="FFDF4C">plaync webpage (</font><font color="6699FF"><a action="url https://id.plaync.com/account/dormant/index">id.plaync.com/account/dormant/index</a></font><font color="FFDF4C">)</font>.
+5333	Your account has been completely blocked due to account theft. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
 5501	$s1 has been killed by $s2.
 5502	$s1 has been killed by a monster.
 5503	$s1 has died.
@@ -4553,6 +4615,30 @@
 5512	$s1 has chosen a class.
 5513	The battle will soon begin.
 5514	Skill enhancement complete.
+5515	The selected player is in the Arena lobby and cannot be invited to the party.
+5516	Users participating in Arena cannot be invited to a party.
+5517	This function is unavailable to use in Arena.
+5518	User preparing for Arena battle cannot join a party.
+5519	The user invited to the party is preparing for Arena battle, and the invitation failed.
+5520	You can no longer queue with that class.
+5521	Begin matchmaking.
+5522	Matchmaking has been canceled.
+5523	A match was found.
+5524	You are already in the queue.
+5525	Up to 2 players per class can queue.
+5526	Matching will be canceled unless all the classes are confirmed within the set time.
+5527	$s1 has confirmed the class.
+5528	Click here to enchant your skill!
+5529	Enhanced the $s1 skill.
+5530	Reached the consecutive notifications limit.
+5531	$s1 is under attack.
+5532	$s1: Attacking $s2.
+5533	$s1: Watch out for $s2!
+5534	$s1: Protecting $s2.
+5535	$s1: Abandoning $s2.
+5536	$s1: Moving.
+5537	$s1: Be careful!
+5538	You must be in a group to access the Group channel.
 6001	The item has been successfully purchased.
 6002	The item has failed to be purchased.
 6003	The item you selected cannot be purchased. Unfortunately, the sale period ended.
@@ -4756,7 +4842,7 @@
 6201	No more offerings can be registered.
 6202	How many $s1 would you like to register as offerings?
 6203	How many $s1 would you like to remove from the offerings?
-6204	$c1 has succeeded in crafting $s2.
+6204	%c1 has successfully crafted %s2.
 6205	We're upgrading our systems, and you must migrate your account to continue playing. Click <BLUE02><u><a href='event:here'>here</a></u></BLUE02> to log into your NC Account
 6206	Your current success rate is $s1%%. Adding offerings can increase the success rate to 100%% for certain recipes. Continue?
 6501	You cannot bookmark this location because you do not have a My Teleport Flag.

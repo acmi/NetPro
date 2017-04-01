@@ -32978,48 +32978,6 @@
 32978	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 10%
 32979	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 15%
 32980	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 15%, M. Atk. + 7 NPC Damage + 10%
-32981	PvP Damage + 1% when equipping Topaz Lv. 4 or abov\ne
-32982	PvP Damage + 2% when equipping Topaz Lv. 4 or abov\ne
-32983	PvP Damage + 5% when equipping Topaz Lv. 4 or abov\ne
-32984	P. Atk. + 1% when equipping Ruby Lv. 4 or above
-32985	P. Atk. + 2% when equipping Ruby Lv. 4 or above
-32986	P. Atk. + 5% when equipping Ruby Lv. 4 or above
-32987	M. Atk. + 2% when equipping Sapphire Lv. 4 or abov\ne
-32988	M. Atk. + 4% when equipping Sapphire Lv. 4 or abov\ne
-32989	M. Atk. + 7% when equipping Sapphire Lv. 4 or abov\ne
-32990	Additional PvP Received Damage - 1% when equipping\n Obsidian Lv. 4 or above
-32991	Additional PvP Received Damage - 2% when equipping\n Obsidian Lv. 4 or above
-32992	Additional PvP Received Damage - 5% when equipping\n Obsidian Lv. 4 or above
-32993	Atk. Attribute Bonus + 10 when equipping Opal Lv. \n4 or above
-32994	Atk. Attribute Bonus + 20 when equipping Opal Lv. \n4 or above
-32995	Atk. Attribute Bonus + 50 when equipping Opal Lv. \n4 or above
-32996	MEN + 1 when equipping Emerald Lv. 4 or above
-32997	CON + 1, MEN + 1 when equipping Emerald Lv. 4 or a\nbove
-32998	CON + 1, MEN + 1, LUC + 1, CHA + 1 when equipping \nEmerald Lv. 4 or above
-32999	Max MP + 5% when equipping Aquamarine Lv. 4 or abo\nve
-33000	Max MP + 10% when equipping Aquamarine Lv. 4 or ab\nove
-33001	Max MP + 20% when equipping Aquamarine Lv. 4 or ab\nove
-33002	P. Def. + 283 when equipping Diamond Lv. 4 or abov\ne
-33003	P. Def. + 567 when equipping Diamond Lv. 4 or abov\ne
-33004	P. Def. + 945 when equipping Diamond Lv. 4 or abov\ne
-33005	M. Def. + 283 when equipping Pearl Lv. 4 or above
-33006	M. Def. + 328 when equipping Pearl Lv. 4 or above
-33007	M. Def. + 548 when equipping Pearl Lv. 4 or above
-33008	Additional Received Damage - 1% when equipping Tan\nzanite Lv. 4 or above
-33009	Additional Received Damage - 2% when equipping Tan\nzanite Lv. 4 or above
-33010	Additional Received Damage - 3% when equipping Tan\nzanite Lv. 4 or above
-33011	Max HP + 2% when equipping Garnet Lv. 4 or above
-33012	Max HP + 5% when equipping Garnet Lv. 4 or above
-33013	Max HP + 10% when equipping Garnet Lv. 4 or above
-33014	Vitality Bonus XP + 1% when equipping Vital Stone \nLv. 4 or above
-33015	Vitality Bonus XP + 2% when equipping Vital Stone \nLv. 4 or above
-33016	Vitality Bonus XP + 5% when equipping Vital Stone \nLv. 4 or above
-33017	P. Skill Power + 1% when equipping Red Cat's Eye L\nv. 4 or above
-33018	P. Skill Power + 2% when equipping Red Cat's Eye L\nv. 4 or above
-33019	P. Skill Power + 5% when equipping Red Cat's Eye L\nv. 4 or above
-33020	M. Skill Power + 1% when equipping Blue Cat's Eye \nLv. 4 or above
-33021	M. Skill Power + 2% when equipping Blue Cat's Eye \nLv. 4 or above
-33022	M. Skill Power + 5% when equipping Blue Cat's Eye \nLv. 4 or above
 40001	Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. C\nan be used in the Olympiad.
 40002	Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. \nCan be used in the Olympiad.
 40003	Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, \nAttribute Def. + 5. Can be used in the Olympiad.

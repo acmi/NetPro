@@ -1,3 +1,9 @@
+VERSION [1.7]
+-------------
+Grand Crusade support.
+Further scripting improvements.
+Interpreter updates.
+
 VERSION [1.6]
 -------------
 Dimensional server support.

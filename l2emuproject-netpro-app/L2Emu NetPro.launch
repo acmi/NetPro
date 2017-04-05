@@ -14,8 +14,8 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.l2emuproject.proxy.ui.savormix.loader.Loader"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-iu --disable-ui- --disable-proxy- -hs -ho -hc -hl"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-iu --disable-ui- --disable-proxy- -hs -ho -hc -hl -du-"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="l2emuproject-netpro-app"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-server -Djava.net.preferIPv4Stack=true -Xmn256m -Xms2g -Xmx2g -XX:-UseLargePages -Dnet.l2emuproject/allow_elevation -XX:+UseConcMarkSweepGC -XX:+AggressiveOpts -splash:src/main/resources/net/l2emuproject/proxy/ui/savormix/icon-256.png -XX:+PrintFlagsFinal"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-server -Djava.net.preferIPv4Stack=true -Xmn256m -Xms2g -Xmx2g -Dnet.l2emuproject/allow_elevation -XX:+UseConcMarkSweepGC -XX:+AggressiveOpts -splash:src/main/resources/net/l2emuproject/proxy/ui/savormix/icon-256.png -XX:+PrintFlagsFinal&#13;&#10;-Dsun.java2d.d3d=false&#13;&#10;-Dnet.l2emuproject/allow_indeterminate_classpath"/>
 </launchConfiguration>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Effective since the 2016-09-21 update -->
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="D0 1B 01" id="CM_EX_ARENA_CUSTOM_NOTIFICATION" />
+		<packet opcodePrefix="D0 1C 01" id="CM_REQ_EVENT_BALTHUS_TOKEN" />
+		<packet opcodePrefix="D0 1D 01" id="CM_REQ_PARTY_MATCHING_HISTORY" />
+		<packet opcodePrefix="D0 1E 01" id="CM_REQ_TODO_LIST" />
+		<packet opcodePrefix="D0 1F 01" id="CM_REQ_TODO_LIST_HTML" />
+		<packet opcodePrefix="D0 20 01" id="CM_REQ_ONE_DAY_REWARD_RECEIVE" />
+		<packet opcodePrefix="D0 21 01" id="CM_REQ_QUEUE_TICKET" /> <!-- ?! -->
+		<packet opcodePrefix="D0 22 01" id="CM_REQ_PLEDGE_BONUS_OPEN" />
+		<packet opcodePrefix="D0 23 01" id="CM_REQ_PLEDGE_BONUS_REWARD_LIST" />
+		<packet opcodePrefix="D0 24 01" id="CM_REQ_PLEDGE_BONUS_REWARD" />
+		<packet opcodePrefix="D0 25 01" id="CM_REQ_SSO_AUTHN_TOKEN" />
+		<packet opcodePrefix="D0 26 01" id="CM_REQ_QUEUE_TICKET_LOGIN" />
+		<packet opcodePrefix="D0 27 01" id="CM_REQ_BLOCK_MEMO_INFO" />
+		<packet opcodePrefix="D0 28 01" id="CM_REQ_TRY_EN_SOUL_EXTRACTION" />
+		<packet opcodePrefix="D0 29 01" id="CM_REQ_RAID_BOSS_SPAWN_INFO" />
+		<packet opcodePrefix="D0 2A 01" id="CM_REQ_RAID_SERVER_INFO" />
+		<packet opcodePrefix="D0 2B 01" id="CM_REQ_SHOW_AGIT_SIEGE_INFO" />
+		<packet opcodePrefix="D0 2C 01" id="CM_REQ_ITEM_AUCTION_STATUS" />
+		<packet opcodePrefix="D0 2D 01" id="CM_REQ_MONSTER_BOOK_OPEN" />
+		<packet opcodePrefix="D0 2E 01" id="CM_REQ_MONSTER_BOOK_CLOSE" />
+		<packet opcodePrefix="D0 2F 01" id="CM_REQ_MONSTER_BOOK_REWARD" />
+		<packet opcodePrefix="D0 30 01" id="CM_EX_REQ_MATCH_GROUP" />
+		<packet opcodePrefix="D0 31 01" id="CM_EX_REQ_MATCH_GROUP_ASK" />
+		<packet opcodePrefix="D0 32 01" id="CM_EX_REQ_MATCH_GROUP_ANSWER" />
+		<packet opcodePrefix="D0 33 01" id="CM_EX_REQ_MATCH_GROUP_WITHDRAW" />
+		<packet opcodePrefix="D0 34 01" id="CM_EX_REQ_MATCH_GROUP_OUST" />
+		<packet opcodePrefix="D0 35 01" id="CM_EX_REQ_MATCH_GROUP_CHANGE_MASTER" />
+		<packet opcodePrefix="D0 36 01" id="CM_REQ_BLOCK_LIST_FOR_AD" />
+	</client>
+	<server>
+		<packet opcodePrefix="FE A7 01" id="SM_EX_ARENA_CUSTOM_NOTIFICATION" />
+		<packet opcodePrefix="FE A8 01" id="SM_EX_ONE_DAY_RECEIVE_REWARD_LIST" />
+		<packet opcodePrefix="FE A9 01" id="SM_EX_CONNECTED_TIME_AND_GETTABLE_REWARD" />
+		<packet opcodePrefix="FE AA 01" id="SM_EX_TODO_LIST_RECOMMAND" />
+		<packet opcodePrefix="FE AB 01" id="SM_EX_TODO_LIST_INZONE" />
+		<packet opcodePrefix="FE AC 01" id="SM_EX_TODO_LIST_HTML" />
+		<packet opcodePrefix="FE AD 01" id="SM_EX_QUEUE_TICKET" />
+		<packet opcodePrefix="FE AE 01" id="SM_EX_PLEDGE_BONUS_OPEN" />
+		<packet opcodePrefix="FE AF 01" id="SM_EX_PLEDGE_BONUS_LIST" />
+		<packet opcodePrefix="FE B0 01" id="SM_EX_PLEDGE_BONUS_MARK_RESET" />
+		<packet opcodePrefix="FE B1 01" id="SM_EX_PLEDGE_BONUS_UPDATE" />
+		<packet opcodePrefix="FE B2 01" id="SM_EX_SSO_AUTHN_TOKEN" />
+		<packet opcodePrefix="FE B3 01" id="SM_EX_QUEUE_TICKET_LOGIN" />
+		<packet opcodePrefix="FE B4 01" id="SM_EX_EN_SOUL_EXTRACTION_SHOW" />
+		<packet opcodePrefix="FE B5 01" id="SM_EX_EN_SOUL_EXTRACTION_RESULT" />
+		<packet opcodePrefix="FE B6 01" id="SM_EX_FIELD_EVENT_STEP" />
+		<packet opcodePrefix="FE B7 01" id="SM_EX_FIELD_EVENT_POINT" />
+		<packet opcodePrefix="FE B8 01" id="SM_EX_FIELD_EVENT_EFFECT" />
+		<packet opcodePrefix="FE B9 01" id="SM_EX_RAID_BOSS_SPAWN_INFO" />
+		<packet opcodePrefix="FE BA 01" id="SM_EX_RAID_SERVER_INFO" />
+		<packet opcodePrefix="FE BB 01" id="SM_EX_SHOW_AGIT_SIEGE_INFO" />
+		<packet opcodePrefix="FE BC 01" id="SM_EX_ITEM_AUCTION_STATUS" />
+		<packet opcodePrefix="FE BD 01" id="SM_EX_MONSTER_BOOK" />
+		<packet opcodePrefix="FE BE 01" id="SM_EX_MONSTER_BOOK_REWARD_ICON" />
+		<packet opcodePrefix="FE BF 01" id="SM_EX_MONSTER_BOOK_ON_FACTION_UI" />
+		<packet opcodePrefix="FE C0 01" id="SM_EX_MONSTER_BOOK_OPEN_RESULT" />
+		<packet opcodePrefix="FE C1 01" id="SM_EX_MONSTER_BOOK_CLOSE_FORCE" />
+		<packet opcodePrefix="FE C2 01" id="SM_EX_FACTION_LEVEL_UP_NOTIFY" />
+		<packet opcodePrefix="FE C3 01" id="SM_EX_ITEM_AUCTION_NEXT_INFO" />
+		<packet opcodePrefix="FE C4 01" id="SM_EX_ITEM_AUCTION_UPDATED_BIDDING_INFO" />
+		<packet opcodePrefix="FE C5 01" id="SM_EX_PRIVATE_STORE_BUYING_RESULT" />
+		<packet opcodePrefix="FE C6 01" id="SM_EX_PRIVATE_STORE_SELLING_RESULT" />
+		<packet opcodePrefix="FE C7 01" id="SM_EX_ENTER_WORLD" />
+		<packet opcodePrefix="FE C8 01" id="SM_EX_MATCH_GROUP" />
+		<packet opcodePrefix="FE C9 01" id="SM_EX_MATCH_GROUP_ASK" />
+		<packet opcodePrefix="FE CA 01" id="SM_EX_MATCH_GROUP_WITHDRAW" />
+		<packet opcodePrefix="FE CB 01" id="SM_EX_MATCH_GROUP_OUST" />
+	</server>
+</mapping>

@@ -2,7 +2,7 @@
 <!-- Added server DWORD field -->
 <packet id="SM_PLEDGE_STATUS_CHANGED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Server" type="GameServerName" /> <!-- NEW -->
-	<dword alias="Leader OID" type="ObjectID" />
+	<dword alias="Player OID" type="ObjectID" />
 	<dword alias="Pledge ID" type="Pledge">
 		<scriptAlias id="PIC_PLEDGE_ID" />
 	</dword>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 L2EMU UNIQUE
+ * Copyright 2011-2017 L2EMU UNIQUE
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package condition.beauty;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
 
 /**
- * Interprets the given byte/word/dword as a Castle Residence real estate.
- * 
- * @author Kamui
+ * @author _dev_
  */
-public class CastleResidenceInfo extends ScriptedZeroBasedIntegerIdInterpreter
+public class Hair extends ScriptedIntegerEqualityCondition
 {
-	/** Constructs this interpreter. */
-	public CastleResidenceInfo()
+	/** */
+	public Hair()
 	{
-		super("Neutral", "Light", "Darkness");
+		super(0);
 	}
 }

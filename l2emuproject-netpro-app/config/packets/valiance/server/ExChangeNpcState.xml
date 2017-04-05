@@ -4,5 +4,5 @@
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="492" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="NPC OID" type="ObjectID" />
-	<dword alias="State Id" />
+	<dword alias="State" type="ExNpcInfoState" />
 </packet>

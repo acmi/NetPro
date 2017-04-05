@@ -1,0 +1,102 @@
+0	20001	Lobby Style A
+0	20002	Lobby Style B
+0	20003	Lobby Style C
+0	20004	Oren Style
+0	20005	Goddard Style
+0	20006	Mischievous Kid Style
+1	20001	Lobby Style A
+1	20002	Lobby Style B
+1	20003	Lobby Style C
+1	20004	Oren Style
+1	20005	Goddard Style
+1	20006	Windmill Hill Style
+2	20001	Lobby Style A
+2	20002	Lobby Style B
+2	20003	Lobby Style C
+2	20004	Oren Style
+2	20005	Goddard Style
+2	20006	Mischievous Kid Style
+3	20001	Lobby Style A
+3	20002	Lobby Style B
+3	20003	Lobby Style C
+3	20004	Oren Style
+3	20005	Goddard Style
+3	20006	Windmill Hill Style
+4	20001	Lobby Style A
+4	20002	Lobby Style B
+4	20003	Lobby Style C
+4	20004	Oren Style
+4	20005	Goddard Style
+4	20006	Mischievous Kid Style
+5	20001	Lobby Style A
+5	20002	Lobby Style B
+5	20003	Lobby Style C
+5	20004	Oren Style
+5	20005	Goddard Style
+5	20006	Windmill Hill Style
+6	20001	Lobby Style A
+6	20002	Lobby Style B
+6	20003	Lobby Style C
+6	20004	Oren Style
+6	20005	Goddard Style
+6	20006	Mischievous Kid Style
+7	20001	Lobby Style A
+7	20002	Lobby Style B
+7	20003	Lobby Style C
+7	20004	Oren Style
+7	20005	Goddard Style
+7	20006	Windmill Hill Style
+8	20001	Lobby Style A
+8	20002	Lobby Style B
+8	20003	Lobby Style C
+8	20004	Oren Style
+8	20005	Goddard Style
+8	20006	Mischievous Kid Style
+9	20001	Lobby Style A
+9	20002	Lobby Style B
+9	20003	Lobby Style C
+9	20004	Oren Style
+9	20005	Goddard Style
+9	20006	Windmill Hill Style
+10	20001	Lobby Style A
+10	20002	Lobby Style B
+10	20003	Lobby Style C
+10	20004	Oren Style
+10	20005	Goddard Style
+10	20006	Mischievous Kid Style
+11	20001	Lobby Style A
+11	20002	Lobby Style B
+11	20003	Lobby Style C
+11	20004	Oren Style
+11	20005	Goddard Style
+11	20006	Windmill Hill Style
+12	20001	Lobby Style A
+12	20002	Lobby Style B
+12	20003	Lobby Style C
+12	20004	Oren Style
+12	20005	Goddard Style
+12	20006	Mischievous Kid Style
+13	20001	Lobby Style A
+13	20002	Lobby Style B
+13	20003	Lobby Style C
+13	20004	Oren Style
+13	20005	Goddard Style
+13	20006	Windmill Hill Style
+14	20001	Lobby Style A
+14	20002	Lobby Style B
+14	20003	Lobby Style C
+14	20004	Oren Style
+14	20005	Goddard Style
+14	20006	Mischievous Kid Style
+15	20001	Lobby Style A
+15	20002	Lobby Style B
+15	20003	Lobby Style C
+15	20004	Oren Style
+15	20005	Goddard Style
+15	20006	Windmill Hill Style
+17	20001	Lobby Style A
+17	20002	Lobby Style B
+17	20003	Lobby Style C
+17	20004	Oren Style
+17	20005	Goddard Style
+17	20006	Windmill Hill Style

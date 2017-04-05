@@ -255,6 +255,7 @@
 			<xs:enumeration value="SkillEnchant" />
 			<xs:enumeration value="SkillListType" />
 			<xs:enumeration value="SkyColor" />
+			<xs:enumeration value="SocialActionType" />
 			<xs:enumeration value="SoulshotGrade" />
 			<xs:enumeration value="SoundType" />
 			<xs:enumeration value="StaticObject" />
@@ -269,7 +270,7 @@
 			<xs:enumeration value="TradeResult" />
 			<xs:enumeration value="TradeUpdate" />
 			<xs:enumeration value="Transformation" />
-			<xs:enumeration value="TutorialEvents" />
+			<xs:enumeration value="TutorialEvent" />
 			<xs:enumeration value="TutorialHtmlWindowType" />
 			<xs:enumeration value="UnknownTeam" />
 			<xs:enumeration value="UserRoles" />
@@ -281,6 +282,11 @@
 			<xs:enumeration value="WarehouseUsageResult" />
 			<xs:enumeration value="WeaponStatus" />
 			<xs:enumeration value="YesOrNo" />
+			
+			<xs:enumeration value="appearance.BeautyColor" />
+			<xs:enumeration value="appearance.BeautyFace" />
+			<xs:enumeration value="appearance.BeautyHair" />
+			<xs:enumeration value="appearance.BeautyType" />
 
 			<xs:enumeration value="ave.AbnormalVisualEffect" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask" />
@@ -439,6 +445,10 @@
 			<xs:enumeration value="airship.DefaultAction" />
 			<xs:enumeration value="airship.Movement" />
 			<xs:enumeration value="airship.Teleport" />
+			
+			<xs:enumeration value="beauty.Color" />
+			<xs:enumeration value="beauty.Face" />
+			<xs:enumeration value="beauty.Hair" />
 			
 			<xs:enumeration value="bitmask.Bit0" />
 			<xs:enumeration value="bitmask.Bit1" />

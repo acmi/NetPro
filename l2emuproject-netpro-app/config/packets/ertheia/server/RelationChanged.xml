@@ -7,20 +7,40 @@
 		<dword alias="Actor OID" type="ObjectID" /> <!-- and what does the client learn from this? -->
 	</branch>
 	<branch id="type" condition="relation.Single">
-		<dword alias="Actor OID" type="ObjectID" />
-		<dword alias="Relationship" type="relation.RelationTypeHelios" />
-		<byte alias="Attackable" type="YesOrNo" />
-		<dword alias="Reputation" />
-		<byte alias="In PvP" type="YesOrNo" />
+		<dword alias="Actor OID" type="ObjectID">
+			<scriptAlias id="rc_actor_oid" />
+		</dword>
+		<dword alias="Relationship" type="relation.RelationTypeHelios">
+			<scriptAlias id="rc_relation" />
+		</dword>
+		<byte alias="Attackable" type="YesOrNo">
+			<scriptAlias id="rc_attackable" />
+		</byte>
+		<dword alias="Reputation">
+			<scriptAlias id="rc_reputation" />
+		</dword>
+		<byte alias="In PvP" type="YesOrNo">
+			<scriptAlias id="rc_pvp" />
+		</byte>
 	</branch>
 	<branch id="type" condition="relation.Multiple">
 		<word alias="Relationship count" id="relations" />
 		<loop id="relations">
-			<dword alias="Actor OID" type="ObjectID" />
-			<dword alias="Relationship" type="relation.RelationTypeHelios" />
-			<byte alias="Attackable" type="YesOrNo" />
-			<dword alias="Reputation" />
-			<byte alias="In PvP" type="YesOrNo" />
+			<dword alias="Actor OID" type="ObjectID">
+				<scriptAlias id="rc_actor_oid" />
+			</dword>
+			<dword alias="Relationship" type="relation.RelationTypeHelios">
+				<scriptAlias id="rc_relation" />
+			</dword>
+			<byte alias="Attackable" type="YesOrNo">
+				<scriptAlias id="rc_attackable" />
+			</byte>
+			<dword alias="Reputation">
+				<scriptAlias id="rc_reputation" />
+			</dword>
+			<byte alias="In PvP" type="YesOrNo">
+				<scriptAlias id="rc_pvp" />
+			</byte>
 		</loop>
 	</branch>
 </packet>

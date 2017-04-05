@@ -1,0 +1,287 @@
+0	10001	Devoted Macho A
+0	10002	Teen Heartthrob A
+0	10003	Pirate
+0	10004	Guts and Galls 
+0	10005	Young Lover A
+0	10006	Aristocrat A
+0	10007	Devoted Macho B
+0	10008	Teen Heartthrob B
+0	10009	Young Lover B
+0	10010	Aristocrat B
+0	10011	Heroic Dignity
+0	10013	Mohawk Warrior
+0	10014	Aristocrat Style
+0	10015	Soft Mohican
+0	15001	Chonmage
+0	15002	Ushanka Hairdo
+0	15003	Relentless Backbone
+1	10001	Modern Woman A
+1	10002	Mushroom Head A
+1	10003	Pirate
+1	10004	Ponytail
+1	10005	Feral Tigress A
+1	10006	Gone with the Wind A
+1	10007	Modern Woman B
+1	10008	Mushroom Head B
+1	10009	Feral Tigress B
+1	10010	Gone with the Wind B
+1	10011	Heroic Dignity
+1	10013	Tropical Shade
+1	10014	Noblewoman Style
+1	10015	Milkmaid Style
+1	15001	Traditional Japanese Hairdo
+1	15002	Ushanka Hairdo
+1	15003	Relentless Backbone
+2	10001	Dark Horse A
+2	10002	Dark Assassin A
+2	10003	Pirate
+2	10004	Guts and Galls 
+2	10005	Mad Rage A
+2	10006	Unshakable A
+2	10007	Dark Horse B
+2	10008	Dark Assassin B
+2	10009	Mad Rage B
+2	10010	Unshakable B
+2	10011	Heroic Dignity
+2	10013	Mohawk Warrior
+2	10014	Aristocrat Style
+2	10015	Soft Mohican
+2	15001	Chonmage
+2	15002	Ushanka Hairdo
+2	15003	Relentless Backbone
+3	10001	Siren's Call A
+3	10002	Dances with Wolves A
+3	10003	Pirate
+3	10004	Ponytail
+3	10005	Goddess Cometh A
+3	10006	Bangs A
+3	10007	Siren's Call B
+3	10008	Dances with Wolves B
+3	10009	Goddess Cometh B
+3	10010	Bangs B
+3	10011	Heroic Dignity
+3	10013	Tropical Shade
+3	10014	Noblewoman Style
+3	10015	Milkmaid Style
+3	15001	Traditional Japanese Hairdo
+3	15002	Ushanka Hairdo
+3	15003	Relentless Backbone
+4	10001	Rice Balls A
+4	10002	Smarts A
+4	10003	Pirate
+4	10004	Guts and Galls 
+4	10005	Nose Hairs A
+4	10006	Fermented Geek A
+4	10007	Rice Balls B
+4	10008	Smarts B
+4	10009	Nose Hairs B
+4	10010	Fermented Geek B
+4	10011	Heroic Dignity
+4	10013	Mohawk Warrior
+4	10014	Aristocrat Style
+4	10015	Soft Mohican
+4	15001	Chonmage
+4	15002	Ushanka Hairdo
+4	15003	Relentless Backbone
+5	10001	Forever Young A
+5	10002	Bling Bling A
+5	10003	Pirate
+5	10004	Ponytail
+5	10005	Blooming Youth A
+5	10006	Little Tiger A
+5	10007	Forever Young B
+5	10008	Bling Bling B
+5	10009	Blooming Youth B
+5	10010	Little Tiger B
+5	10011	Heroic Dignity
+5	10013	Tropical Shade
+5	10014	Noblewoman Style
+5	10015	Milkmaid Style
+5	15001	Traditional Japanese Hairdo
+5	15002	Ushanka Hairdo
+5	15003	Relentless Backbone
+6	10001	Piercing Accuracy A
+6	10002	Tragic Beauty A
+6	10003	Pirate
+6	10004	Guts and Galls 
+6	10005	Hawk Eye A
+6	10006	Fashion Designer A
+6	10007	Piercing Accuracy B
+6	10008	Tragic Beauty B
+6	10009	Hawk Eye B
+6	10010	Fashion Designer B
+6	10011	Heroic Dignity
+6	10013	Mohawk Warrior
+6	10014	Aristocrat Style
+6	10015	Soft Mohican
+6	15001	Chonmage
+6	15002	Ushanka Hairdo
+6	15003	Relentless Backbone
+7	10001	Wet Leaf A
+7	10002	Smart Beauty A
+7	10003	Pirate
+7	10004	Ponytail
+7	10005	Sweet Darling A
+7	10006	Nature Whisperer  A
+7	10007	Wet Leaf B
+7	10008	Smart Beauty B
+7	10009	Sweet Darling B
+7	10010	Nature Whisperer  B
+7	10011	Heroic Dignity
+7	10013	Tropical Shade
+7	10014	Noblewoman Style
+7	10015	Milkmaid Style
+7	15001	Traditional Japanese Hairdo
+7	15002	Ushanka Hairdo
+7	15003	Relentless Backbone
+8	10001	Impulsive Prince A
+8	10002	Knowing Wizard A
+8	10003	Pirate
+8	10004	Guts and Galls 
+8	10005	Don't Look Under the Hair A
+8	10006	Pious Paragon A
+8	10007	Impulsive Prince B
+8	10008	Knowing Wizard B
+8	10009	Don't Look Under the Hair B
+8	10010	Pious Paragon B
+8	10011	Heroic Dignity
+8	10013	Mohawk Warrior
+8	10014	Aristocrat Style
+8	10015	Soft Mohican
+8	15001	Chonmage
+8	15002	Ushanka Hairdo
+8	15003	Relentless Backbone
+9	10001	Heroic Dignity
+9	10002	Tropical Shade
+9	10003	Pirate
+9	10004	Ponytail
+9	10005	Tomboy A
+9	10006	Lady of the Mansion A
+9	10007	Tutor B
+9	10008	Special Strand B
+9	10009	Tomboy B
+9	10010	Lady of the Mansion B
+9	10011	Heroic Dignity
+9	10013	Tropical Shade
+9	10014	Noblewoman Style
+9	10015	Milkmaid Style
+9	15001	Traditional Japanese Hairdo
+9	15002	Ushanka Hairdo
+9	15003	Relentless Backbone
+10	10001	Looks Are Everything A
+10	10002	True Bro A
+10	10003	Pirate
+10	10004	Guts and Galls 
+10	10005	Reggae Warrior A
+10	10006	Broomhead A
+10	10007	Looks Are Everything B
+10	10008	True Bro B
+10	10009	Reggae Warrior B
+10	10010	Broomhead B
+10	10011	Heroic Dignity
+10	10013	Mohawk Warrior
+10	10014	Aristocrat Style
+10	10015	Soft Mohican
+10	15001	Chonmage
+10	15002	Ushanka Hairdo
+10	15003	Relentless Backbone
+11	10001	Born Fighter A
+11	10002	Dark Assassin A
+11	10003	Pirate
+11	10004	Ponytail
+11	10005	Poison Sting A
+11	10006	Habitual Victor A
+11	10007	Born Fighter B
+11	10008	Dark Assassin B
+11	10009	Poison Sting B
+11	10010	Habitual Victor B
+11	10011	Heroic Dignity
+11	10013	Tropical Shade
+11	10014	Noblewoman Style
+11	10015	Milkmaid Style
+11	15001	Traditional Japanese Hairdo
+11	15002	Ushanka Hairdo
+11	15003	Relentless Backbone
+12	10001	Hell Guide A
+12	10002	Death's Disciple A
+12	10003	Pirate
+12	10004	Guts and Galls 
+12	10005	Foreshadowed Death A
+12	10006	Tragic Fate A
+12	10007	Hell Guide B
+12	10008	Death's Disciple B
+12	10009	Foreshadowed Death B
+12	10010	Tragic Fate B
+12	10011	Heroic Dignity
+12	10013	Mohawk Warrior
+12	10014	Aristocrat Style
+12	10015	Soft Mohican
+12	15001	Chonmage
+12	15002	Ushanka Hairdo
+12	15003	Relentless Backbone
+13	10001	Older and Wiser A
+13	10002	Charisma A
+13	10003	Pirate
+13	10004	Ponytail
+13	10005	Immortal Aura A
+13	10006	Written in Stars A
+13	10007	Older and Wiser B
+13	10008	Charisma B
+13	10009	Immortal Aura B
+13	10010	Written in Stars B
+13	10011	Heroic Dignity
+13	10013	Tropical Shade
+13	10014	Noblewoman Style
+13	10015	Milkmaid Style
+13	15001	Traditional Japanese Hairdo
+13	15002	Ushanka Hairdo
+13	15003	Relentless Backbone
+14	10001	Tortured Artist A
+14	10002	Casanova A
+14	10003	Pirate
+14	10004	Guts and Galls 
+14	10005	Ultimate Grace A
+14	10006	Give Me Looks or Give Me Death A
+14	10007	Tortured Artist B
+14	10008	Casanova B
+14	10009	Ultimate Grace B
+14	10010	Give Me Looks or Give Me Death B
+14	10011	Heroic Dignity
+14	10013	Mohawk Warrior
+14	10014	Aristocrat Style
+14	10015	Soft Mohican
+14	15001	Chonmage
+14	15002	Ushanka Hairdo
+14	15003	Relentless Backbone
+15	10001	Stiff Necks A
+15	10002	Push-up Size A
+15	10003	Pirate
+15	10004	Ponytail
+15	10005	Dance in the Rain A
+15	10006	Seductress A
+15	10007	Stiff Necks B
+15	10008	Push-up Size B
+15	10009	Dance in the Rain B
+15	10010	Seductress B
+15	10011	Heroic Dignity
+15	10013	Tropical Shade
+15	10014	Noblewoman Style
+15	10015	Milkmaid Style
+15	15001	Traditional Japanese Hairdo
+15	15002	Ushanka Hairdo
+15	15003	Relentless Backbone
+17	10001	Give Me Looks or Give Me Death A
+17	10002	Blooming Youth A
+17	10003	Pirate
+17	10004	Ponytail
+17	10005	Ultimate Grace A
+17	10006	Tomboy A
+17	10007	Give Me Looks or Give Me Death B
+17	10008	Blooming Youth B
+17	10009	Ultimate Grace B
+17	10010	Tomboy B
+17	10011	Heroic Dignity
+17	10013	Tropical Shade
+17	10014	Noblewoman Style
+17	10015	Milkmaid Style
+17	15003	Relentless Backbone

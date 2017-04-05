@@ -1,62 +1,63 @@
-0	1	Talk
+0	1	Chat
 0	2	no_name
-0	5	Blue Stone Acquisition
-0	8	Dead
+0	5	Acquire Blue Gemstones
+0	8	Death
 0	10	Rest
 0	12	View Map
 0	17	Pet Guide
-0	23	Looting Items
+0	23	Pick Up Items
 0	27	Death Penalty
 0	60	Death Penalty
 0	100	Mentoring System Guide
-0	8312	Academy Helper’s Message
+0	8312	Academy Guide's Message
+0	10400	Faction System Guide
 1	30	Pailaka - Song of Ice and Fire
 1	31	Pailaka - Devil's Legacy
 1	32	Pailaka - Injured Dragon
-1	34	Seven Sign Epic Quest - 1
-1	35	Seven Sign Epic Quest - 2
+1	34	Seven Signs Epic Quest - 1
+1	35	Seven Signs Epic Quest - 2
 1	101	Day of Destiny
 1	177	Split Destiny
-1	2015	Sibis’ Letter
+1	2015	Sibis' Letter
 1	10301	Lada's Letter
 1	10304	Old Roll of Paper
 1	10331	Beginning of Destiny
-1	10336	Guard Zenath’s Message
-1	10358	Guard Lef’s Message
+1	10336	Guard Jenath's Message
+1	10358	Guard Fred's Message
 1	10360	Certification of Fate
-1	10393	Kekropus’ Letter
-1	10397	Kekropus’ Letter
-1	10401	Kekropus’ Letter
-1	10404	Kekropus’ Letter
-1	10408	Kekropus’ Letter
-1	10411	Kekropus’ Letter
-1	10414	Kekropus’ Letter
-1	10415	Kekropus’ Letter
-1	10419	Kekropus’ Letter
-1	10424	Kekropus’ Letter
-1	10472	Wind of Destiny, Shadow
-1	10521	Letters from the Queen
-1	10525	Letters from the Queen
-1	10530	Kekropus’ Letter
-1	10536	Kekropus’ Message
-1	10712	The Minstrel’s Song, Part 1
-1	10717	The Minstrel’s Song, Part 2
-1	10720	The Minstrel’s Song, Part 3
-1	10723	The Minstrel’s Song, Part 4
-1	10726	The Minstrel’s Song, Part 5
-1	10731	The Minstrel’s Song, Part 6
-1	10751	Wind of Destiny, Encounter
-1	10752	Wind of Destiny, Promise
-1	10753	Wind of Destiny, Selection
-1	10755	Letters from the Queen
-1	10760	Letters from the Queen
-1	10769	Letters from the Queen
-1	10774	Letters from the Queen
-1	10779	Letters from the Queen
-1	10782	Letters from the Queen
-1	10785	Letters from the Queen
-1	10789	Letters from the Queen
-1	10792	Letters from the Queen
-1	10795	Letters from the Queen
-1	10798	Letters from the Queen
-1	10811	Lionel’s Letter
+1	10393	Kekropus' Letter
+1	10397	Kekropus' Letter
+1	10401	Kekropus' Letter
+1	10404	Kekropus' Letter
+1	10408	Kekropus' Letter
+1	10411	Kekropus' Letter
+1	10414	Kekropus' Letter
+1	10415	Kekropus' Letter
+1	10419	Kekropus' Letter
+1	10424	Kekropus' Letter
+1	10472	Winds of Fate: Encroaching Shadows
+1	10521	Queen Navari's Letter
+1	10525	Queen Navari's Letter
+1	10530	Kekropus' Letter
+1	10536	Kekropus' Message
+1	10712	The Minstrel's Song - 1
+1	10717	The Minstrel's Song - 2
+1	10720	The Minstrel's Song - 3
+1	10723	The Minstrel's Song - 4
+1	10726	The Minstrel's Song - 5
+1	10731	The Minstrel's Song - 6
+1	10751	Winds of Fate: Encounters
+1	10752	Winds of Fate: A Promise
+1	10753	Winds of Fate: Choices
+1	10755	Queen Navari's Letter
+1	10760	Queen Navari's Letter
+1	10769	Queen Navari's Letter
+1	10774	Queen Navari's Letter
+1	10779	Queen Navari's Letter
+1	10782	Queen Navari's Letter
+1	10785	Queen Navari's Letter
+1	10789	Queen Navari's Letter
+1	10792	Queen Navari's Letter
+1	10795	Queen Navari's Letter
+1	10798	Queen Navari's Letter
+1	10811	Lionel's Letter

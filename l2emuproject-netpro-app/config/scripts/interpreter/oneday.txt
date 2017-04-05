@@ -49,11 +49,11 @@
 106	Reach Level (Lv. 84)
 107	Reach Level (Lv. 85)
 187	Reach Level (Dual Lv. 84)
-224	Login All Weekend
-225	Login All Month
-226	Quest Mania
-227	Olympiad Warrior
-228	Siege Ruler
+224	Login Once During the Weekend
+225	Login Once During the Month
+226	Complete Quests
+227	Participate in the Olympiad
+228	Sieges
 229	Ceremony of Chaos
 230	Boss Master
-231	Fisher
+231	Catch Fish

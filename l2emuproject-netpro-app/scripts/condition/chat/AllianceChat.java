@@ -15,7 +15,8 @@
  */
 package condition.chat;
 
-import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
+import net.l2emuproject.proxy.network.meta.condition.IntegerCondition;
+import net.l2emuproject.proxy.script.condition.ScriptedFieldValueCondition;
 
 /**
  * Tests whether the value of a byte/word/dword is equal to 9.<BR>
@@ -24,11 +25,11 @@ import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
  * 
  * @author _dev_
  */
-public class AllianceChat extends ScriptedIntegerEqualityCondition
+public class AllianceChat extends ScriptedFieldValueCondition implements IntegerCondition
 {
-	/** Constructs this condition. */
-	public AllianceChat()
+	@Override
+	public boolean test(long value)
 	{
-		super(9);
+		return value == 9 || value == 27;
 	}
 }

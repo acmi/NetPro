@@ -69,12 +69,20 @@
 	<word alias="Walking speed (on ground)">
 		<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
 	</word>
-	<word alias="Running speed (in water)" />
-	<word alias="Walking speed (in water)" />
+	<word alias="Running speed (in water)">
+		<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+	</word>
+	<word alias="Walking speed (in water)">
+		<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+	</word>
 	<word alias="Running speed (mounted)" />
 	<word alias="Walking speed (mounted)" />
-	<word alias="Running speed (flying mounted)" />
-	<word alias="Walking speed (flying mounted)" />
+	<word alias="Running speed (flying mounted)">
+		<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+	</word>
+	<word alias="Walking speed (flying mounted)">
+		<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+	</word>
 	<double alias="Movement speed multiplier">
 		<scriptAlias id="OIL_OBJECT_SPEED_MULTI" />
 	</double>

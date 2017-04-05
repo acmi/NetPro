@@ -15,37 +15,38 @@
  */
 package interpreter;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
  * Interprets the given byte/word/dword as a type of a skill list.
  * 
  * @author savormix
  */
-public final class SkillListType extends ScriptedIntegerIdInterpreter
+public final class SkillListType extends ScriptedZeroBasedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
 	public SkillListType()
 	{
-		super(makeMap());
-	}
-	
-	private static final Map<Long, ?> makeMap()
-	{
-		final Map<Long, String> result = new HashMap<>();
-		result.put(0L, "Class");
-		result.put(1L, "Fishing");
-		result.put(2L, "Pledge");
-		result.put(3L, "Pledge unit");
-		result.put(5L, "Subclass certification");
-		result.put(6L, "Collection");
-		result.put(9L, "Linking");
-		result.put(47L, "Dualclass certification");
-		result.put(57L, "Revelation of Chaos (Main)");
-		result.put(59L, "Revelation of Chaos (Dual Class)");
-		return result;
+		// @formatter:off
+		super("skill_acquire", "fishing_skill_acquire", "pledge_skill_acquire", "sub_pledge_skill_acquire", "transform_skill_acquire", "subjob_skill_acquire",
+				"collect_skill_acquire", "skill_bishop_sharing_acquire", "skill_elder_sharing_acquire", "skill_silen_elder_sharing_acquire", "fishing_nondwarf_skill_acquire",
+				"reward_duelist", "reward_dreadnought", "reward_phoenix_knight", "reward_hell_knight", "reward_sagittarius", "reward_adventurer", "reward_archmage",
+				"reward_soultaker", "reward_arcana_lord", "reward_cardinal", "reward_hierophant", "reward_evas_templar", "reward_sword_muse", "reward_wind_rider",
+				"reward_moonlight_sentinel", "reward_mystic_muse", "reward_elemental_master", "reward_evas_saint", "reward_shillien_templar", "reward_spectral_dancer",
+				"reward_ghost_hunter", "reward_ghost_sentinel", "reward_storm_screamer", "reward_spectral_master", "reward_shillien_saint", "reward_titan",
+				"reward_grand_khavatari", "reward_dominator", "reward_doomcryer", "reward_fortune_seeker", "reward_maestro", "reward_doombringer", "reward_m_soul_hound",
+				"reward_f_soul_hound", "reward_trickster", "reward_judicator", "dualjob_skill_acquire", "dualjob_sharing_acquire",
+				null,
+				null, // 50
+				null,
+				null,
+				null,
+				null,
+				null, // 55
+				null,
+				"Revelation of Chaos (Main)",
+				null,
+				"Revelation of Chaos (Dual Class)");
+		// @formatter:on
 	}
 }

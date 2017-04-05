@@ -23,6 +23,7 @@ import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 import net.l2emuproject.proxy.script.analytics.user.ItemAugmentation;
+import net.l2emuproject.proxy.script.analytics.user.ItemElementalAttributes;
 import net.l2emuproject.proxy.script.analytics.user.ItemEnchantEffects;
 import net.l2emuproject.proxy.script.analytics.user.ItemSpecialAbilities;
 import net.l2emuproject.util.HexUtil;
@@ -39,6 +40,7 @@ public final class InventoryItem
 	private final long _amount;
 	private final int _enchantLevel;
 	private final ItemAugmentation _augmentation;
+	private final ItemElementalAttributes _elementalAttributes;
 	private final ItemEnchantEffects _enchantEffect;
 	private final int _appearance;
 	private final ItemSpecialAbilities _specialAbilities;
@@ -51,11 +53,13 @@ public final class InventoryItem
 	 * @param amount amount
 	 * @param enchantLevel enchant level
 	 * @param augmentation augmentation effects
+	 * @param elementalAttributes elemental attribute values
 	 * @param enchantEffect enchant effects
 	 * @param appearance appearance
 	 * @param specialAbilities special abilities
 	 */
-	public InventoryItem(int objectID, int templateID, long amount, int enchantLevel, ItemAugmentation augmentation, ItemEnchantEffects enchantEffect, int appearance,
+	public InventoryItem(int objectID, int templateID, long amount, int enchantLevel, ItemAugmentation augmentation, ItemElementalAttributes elementalAttributes, ItemEnchantEffects enchantEffect,
+			int appearance,
 			ItemSpecialAbilities specialAbilities)
 	{
 		_objectID = objectID;
@@ -63,6 +67,7 @@ public final class InventoryItem
 		_amount = amount;
 		_enchantLevel = enchantLevel;
 		_augmentation = augmentation;
+		_elementalAttributes = elementalAttributes;
 		_enchantEffect = enchantEffect;
 		_appearance = appearance;
 		_specialAbilities = specialAbilities;
@@ -116,6 +121,16 @@ public final class InventoryItem
 	public ItemAugmentation getAugmentation()
 	{
 		return _augmentation;
+	}
+	
+	/**
+	 * Returns the elemental attribute values assigned to this item.
+	 * 
+	 * @return elemental attributes
+	 */
+	public ItemElementalAttributes getElementalAttributes()
+	{
+		return _elementalAttributes;
 	}
 	
 	/**
@@ -196,6 +211,8 @@ public final class InventoryItem
 			while (it.hasNext())
 				sb.append('/').append(it.next());
 		}
+		for (final String elementalAttribute : ItemElementalAttributes.toString(_elementalAttributes))
+			sb.append(' ').append(elementalAttribute);
 		if (_amount > 1)
 			sb.append('(').append(NumberFormat.getIntegerInstance(Locale.ENGLISH).format(_amount)).append(')');
 		return sb.toString();

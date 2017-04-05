@@ -33008,3 +33008,201 @@
 40028	M. Def. + 65%, Dark Resistance + 130, STR/INT + 8,\n Physical/Mind Resistance + 40, Speed 20, Max CP +\n 80%. At night, CHA + 10.
 40029	M. Def. + 70%, Dark Resistance + 140, STR/INT + 9,\n Physical/Mind Resistance + 45, Speed 25, Max CP +\n 100%. At night, CHA + 10.
 40030	Creates a space that cancels all ranged attacks an\nd debuffs for 60 seconds.
+40031	PvP Damage + 1% when equipping Topaz Lv. 4 or abov\ne
+40032	PvP Damage + 2% when equipping Topaz Lv. 4 or abov\ne
+40033	PvP Damage + 5% when equipping Topaz Lv. 4 or abov\ne
+40034	P. Atk. + 1% when equipping Ruby Lv. 4 or above
+40035	P. Atk. + 2% when equipping Ruby Lv. 4 or above
+40036	P. Atk. + 5% when equipping Ruby Lv. 4 or above
+40037	M. Atk. + 2% when equipping Sapphire Lv. 4 or abov\ne
+40038	M. Atk. + 4% when equipping Sapphire Lv. 4 or abov\ne
+40039	M. Atk. + 7% when equipping Sapphire Lv. 4 or abov\ne
+40040	Additional PvP Received Damage - 1% when equipping\n Obsidian Lv. 4 or above
+40041	Additional PvP Received Damage - 2% when equipping\n Obsidian Lv. 4 or above
+40042	Additional PvP Received Damage - 5% when equipping\n Obsidian Lv. 4 or above
+40043	Atk. Attribute Bonus + 10 when equipping Opal Lv. \n4 or above
+40044	Atk. Attribute Bonus + 20 when equipping Opal Lv. \n4 or above
+40045	Atk. Attribute Bonus + 50 when equipping Opal Lv. \n4 or above
+40046	MEN + 1 when equipping Emerald Lv. 4 or above
+40047	CON + 1, MEN + 1 when equipping Emerald Lv. 4 or a\nbove
+40048	CON + 1, MEN + 1, LUC + 1, CHA + 1 when equipping \nEmerald Lv. 4 or above
+40049	Max MP + 5% when equipping Aquamarine Lv. 4 or abo\nve
+40050	Max MP + 10% when equipping Aquamarine Lv. 4 or ab\nove
+40051	Max MP + 20% when equipping Aquamarine Lv. 4 or ab\nove
+40052	P. Def. + 283 when equipping Diamond Lv. 4 or abov\ne
+40053	P. Def. + 567 when equipping Diamond Lv. 4 or abov\ne
+40054	P. Def. + 945 when equipping Diamond Lv. 4 or abov\ne
+40055	M. Def. + 283 when equipping Pearl Lv. 4 or above
+40056	M. Def. + 328 when equipping Pearl Lv. 4 or above
+40057	M. Def. + 548 when equipping Pearl Lv. 4 or above
+40058	Additional Received Damage - 1% when equipping Tan\nzanite Lv. 4 or above
+40059	Additional Received Damage - 2% when equipping Tan\nzanite Lv. 4 or above
+40060	Additional Received Damage - 3% when equipping Tan\nzanite Lv. 4 or above
+40061	Max HP + 2% when equipping Garnet Lv. 4 or above
+40062	Max HP + 5% when equipping Garnet Lv. 4 or above
+40063	Max HP + 10% when equipping Garnet Lv. 4 or above
+40064	Vitality Bonus XP + 1% when equipping Vital Stone \nLv. 4 or above
+40065	Vitality Bonus XP + 2% when equipping Vital Stone \nLv. 4 or above
+40066	Vitality Bonus XP + 5% when equipping Vital Stone \nLv. 4 or above
+40067	P. Skill Power + 1% when equipping Red Cat's Eye L\nv. 4 or above
+40068	P. Skill Power + 2% when equipping Red Cat's Eye L\nv. 4 or above
+40069	P. Skill Power + 5% when equipping Red Cat's Eye L\nv. 4 or above
+40070	M. Skill Power + 1% when equipping Blue Cat's Eye \nLv. 4 or above
+40071	M. Skill Power + 2% when equipping Blue Cat's Eye \nLv. 4 or above
+40072	M. Skill Power + 5% when equipping Blue Cat's Eye \nLv. 4 or above
+40073	P. Def. + 22
+40074	P. Def. + 26
+40075	P. Def. + 34
+40076	P. Def. + 42
+40077	P. Def. + 50
+40078	P. Def. + 61
+40079	P. Def. + 71
+40080	P. Def. + 81
+40081	P. Def. + 101
+40082	P. Def. + 203
+40083	M. Def. + 22
+40084	M. Def. + 26
+40085	M. Def. + 34
+40086	M. Def. + 42
+40087	M. Def. + 50
+40088	M. Def. + 61
+40089	M. Def. + 71
+40090	M. Def. + 81
+40091	M. Def. + 101
+40092	M. Def. + 203
+40093	Speed + 3
+40094	Speed + 4
+40095	Speed + 5
+40096	Speed + 10
+40097	Max HP + 198
+40098	Max HP + 234
+40099	Max HP + 306
+40100	Max HP + 378
+40101	Max HP + 450
+40102	Max HP + 540
+40103	Max HP + 630
+40104	Max HP + 720
+40105	Max HP + 900
+40106	Max HP + 1800
+40107	Max MP + 198
+40108	Max MP + 234
+40109	Max MP + 306
+40110	Max MP + 378
+40111	Max MP + 450
+40112	Max MP + 540
+40113	Max MP + 630
+40114	Max MP + 720
+40115	Max MP + 900
+40116	Max MP + 1800
+40117	STR + 2
+40118	DEX + 2
+40119	CON + 2
+40120	INT + 2
+40121	WIT + 2
+40122	MEN + 2
+40123	P. Def. + 11
+40124	P. Def. + 13
+40125	P. Def. + 17
+40126	P. Def. + 21
+40127	P. Def. + 25
+40128	P. Def. + 30
+40129	P. Def. + 35
+40130	P. Def. + 40
+40131	P. Def. + 50
+40132	P. Def. + 101
+40133	M. Def. + 11
+40134	M. Def. + 13
+40135	M. Def. + 17
+40136	M. Def. + 21
+40137	M. Def. + 25
+40138	M. Def. + 30
+40139	M. Def. + 35
+40140	M. Def. + 40
+40141	M. Def. + 50
+40142	M. Def. + 101
+40143	Speed + 1
+40144	Speed + 2
+40145	Speed + 3
+40146	Speed + 5
+40147	Max HP + 99
+40148	Max HP + 117
+40149	Max HP + 153
+40150	Max HP + 189
+40151	Max HP + 225
+40152	Max HP + 270
+40153	Max HP + 315
+40154	Max HP + 360
+40155	Max HP + 450
+40156	Max HP + 900
+40157	Max MP + 99
+40158	Max MP + 117
+40159	Max MP + 153
+40160	Max MP + 189
+40161	Max MP + 225
+40162	Max MP + 270
+40163	Max MP + 315
+40164	Max MP + 360
+40165	Max MP + 450
+40166	Max MP + 900
+40167	STR + 1
+40168	DEX + 1
+40169	CON + 1
+40170	INT + 1
+40171	WIT + 1
+40172	MEN + 1
+40173	P. Def. + 11
+40174	P. Def. + 13
+40175	P. Def. + 17
+40176	P. Def. + 21
+40177	P. Def. + 25
+40178	P. Def. + 30
+40179	P. Def. + 35
+40180	P. Def. + 40
+40181	P. Def. + 50
+40182	P. Def. + 101
+40183	M. Def. + 11
+40184	M. Def. + 13
+40185	M. Def. + 17
+40186	M. Def. + 21
+40187	M. Def. + 25
+40188	M. Def. + 30
+40189	M. Def. + 35
+40190	M. Def. + 40
+40191	M. Def. + 50
+40192	M. Def. + 101
+40193	Speed + 1
+40194	Speed + 2
+40195	Speed + 3
+40196	Speed + 5
+40197	Max HP + 99
+40198	Max HP + 117
+40199	Max HP + 153
+40200	Max HP + 189
+40201	Max HP + 225
+40202	Max HP + 270
+40203	Max HP + 315
+40204	Max HP + 360
+40205	Max HP + 450
+40206	Max HP + 900
+40207	Max MP + 99
+40208	Max MP + 117
+40209	Max MP + 153
+40210	Max MP + 189
+40211	Max MP + 225
+40212	Max MP + 270
+40213	Max MP + 315
+40214	Max MP + 360
+40215	Max MP + 450
+40216	Max MP + 900
+40217	STR + 1
+40218	DEX + 1
+40219	CON + 1
+40220	INT + 1
+40221	WIT + 1
+40222	MEN + 1
+40223	PvP Damage + 1% when equipping Amethyst Lv. 4 or a\nbove
+40224	PvP Damage + 2% when equipping Amethyst Lv. 4 or a\nbove
+40225	PvP Damage + 5% when equipping Amethyst Lv. 4 or a\nbove
+40226	Reflect 1% of Received Damage when equipping Cat's\n Eye Lv. 4 or above
+40227	Reflect 2% of Received Damage when equipping Cat's\n Eye Lv. 4 or above
+40228	Reflect 5% of Received Damage when equipping Cat's\n Eye Lv. 4 or above

@@ -12,7 +12,9 @@
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<qword alias="Quantity" />
+		<qword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</qword>
 		<word alias="Main item type" type="ItemType2" />
 
 		<branch id="is_ticket" condition="GenericItem">

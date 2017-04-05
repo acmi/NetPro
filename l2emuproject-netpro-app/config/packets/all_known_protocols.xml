@@ -126,6 +126,7 @@
 	</protocol>
 	<protocol id="20" alias="Hellbound" category="2. Kamael">
 		<version date="2008-04-23">831</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -135,6 +136,7 @@
 	</protocol>
 	<protocol id="21" alias="Gracia Part 1" category="3. Gracia">
 		<version date="2008-08-12">851</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -144,6 +146,7 @@
 	</protocol>
 	<protocol id="22" alias="Gracia Part 2" category="3. Gracia">
 		<version date="2008-10-28">12</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -153,6 +156,7 @@
 	</protocol>
 	<protocol id="23" alias="Gracia Part 2 Update 1" category="3. Gracia">
 		<version date="2008-10-29">17</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -162,6 +166,7 @@
 	</protocol>
 	<protocol id="24" alias="Gracia Final" category="3. Gracia">
 		<version date="2009-10-29">83</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -171,6 +176,7 @@
 	</protocol>
 	<protocol id="25" alias="Gracia Final Update 1" category="3. Gracia">
 		<version date="2009-10-30">87</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -180,6 +186,7 @@
 	</protocol>
 	<protocol id="26" alias="Gracia Epilogue" category="3. Gracia">
 		<version date="2009-11-17">148</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -189,6 +196,7 @@
 	</protocol>
 	<protocol id="27" alias="Gracia Epilogue Update 1" category="3. Gracia">
 		<version date="2009-11-18">152</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -198,6 +206,7 @@
 	</protocol>
 	<protocol id="28" alias="Freya" category="4. High Five">
 		<version date="2010-08-24">216</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -211,6 +220,7 @@
 	</protocol>
 	<protocol id="29" alias="High Five" category="4. High Five">
 		<version date="2011-02-15">267</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -224,6 +234,7 @@
 	</protocol>
 	<protocol id="30" alias="High Five Update 1" category="4. High Five">
 		<version date="2011-02-16">268</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -237,6 +248,7 @@
 	</protocol>
 	<protocol id="31" alias="High Five Update 2" category="4. High Five">
 		<version date="2011-02-17">271</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -250,6 +262,7 @@
 	</protocol>
 	<protocol id="32" alias="High Five Update 3" category="4. High Five">
 		<version date="2011-02-18">273</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -263,6 +276,7 @@
 	</protocol>
 	<protocol id="33" alias="Goddess Of Destruction" category="5. GoD">
 		<version date="2011-11-30">415</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -276,6 +290,7 @@
 	</protocol>
 	<protocol id="34" alias="Harmony" category="5. GoD">
 		<version date="2012-03-07">410</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -289,6 +304,7 @@
 	</protocol>
 	<protocol id="35" alias="Tauti" category="5. GoD">
 		<version date="2012-06-13">448</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -302,6 +318,7 @@
 	</protocol>
 	<protocol id="36" alias="Tauti Update 1" category="5. GoD">
 		<version date="2012-08-03">449</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -315,6 +332,7 @@
 	</protocol>
 	<protocol id="37" alias="Glory Days" category="5. GoD">
 		<version date="2012-10-24">479</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -328,6 +346,7 @@
 	</protocol>
 	<protocol id="38" alias="Glory Days Update 1" category="5. GoD">
 		<version date="2012-11-21">480</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -341,6 +360,7 @@
 	</protocol>
 	<protocol id="39" alias="Glory Days Update 2" category="5. GoD">
 		<version date="2012-11-28">488</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -354,6 +374,7 @@
 	</protocol>
 	<protocol id="40" alias="Lindvior" category="6. Lindvior">
 		<version date="2013-05-29">531</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -367,6 +388,7 @@
 	</protocol>
 	<protocol id="41" alias="Lindvior Update 1" category="6. Lindvior">
 		<version date="2013-06-12">532</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -380,6 +402,7 @@
 	</protocol>
 	<protocol id="42" alias="Lindvior Update 2" category="6. Lindvior">
 		<version date="2013-07-10">533</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -393,6 +416,7 @@
 	</protocol>
 	<protocol id="43" alias="Lindvior Update 3" category="6. Lindvior">
 		<version date="2013-07-24">557</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -406,6 +430,7 @@
 	</protocol>
 	<protocol id="44" alias="Lindvior Update 4" category="6. Lindvior">
 		<version date="2013-08-28">558</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -419,6 +444,7 @@
 	</protocol>
 	<protocol id="45" alias="Valiance" category="7. Valiance">
 		<version date="2013-12-11">575</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -432,6 +458,7 @@
 	</protocol>
 	<protocol id="46" alias="Valiance Update 1" category="7. Valiance">
 		<version date="2014-01-15">578</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -445,6 +472,7 @@
 	</protocol>
 	<protocol id="47" alias="Valiance Update 2" category="7. Valiance">
 		<version date="2014-02-12">580</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -458,6 +486,7 @@
 	</protocol>
 	<protocol id="48" alias="Valiance Update 3" category="7. Valiance">
 		<version date="2014-04-16">581</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -471,6 +500,7 @@
 	</protocol>
 	<protocol id="49" alias="Valiance Update 4" category="7. Valiance">
 		<version date="2014-06-11">583</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -484,6 +514,7 @@
 	</protocol>
 	<protocol id="50" alias="Ertheia" category="8. Ertheia">
 		<version date="2014-07-30">603</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -498,6 +529,7 @@
 	</protocol>
 	<protocol id="51" alias="Ertheia Update 1" category="8. Ertheia">
 		<version date="2014-10-08">606</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -512,6 +544,7 @@
 	</protocol>
 	<protocol id="52" alias="Ertheia Update 2" category="8. Ertheia">
 		<version date="2015-01-28">607</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -526,6 +559,7 @@
 	</protocol>
 	<protocol id="53" alias="Ertheia Update 3" category="8. Ertheia">
 		<version date="2015-03-04">610</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -540,6 +574,7 @@
 	</protocol>
 	<protocol id="54" alias="Infinite Odyssey" category="9. IO">
 		<version date="2015-04-22">24</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -554,6 +589,7 @@
 	</protocol>
 	<protocol id="55" alias="Underground" category="9. IO">
 		<version date="2015-10-14">28</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -568,6 +604,7 @@
 	</protocol>
 	<protocol id="56" alias="Helios" category="10. Helios">
 		<version date="2016-06-29">64</version>
+		<shuffle>LEGACY</shuffle>
 		<primary>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
@@ -581,5 +618,20 @@
 			<constant>0x71</constant>
 		</secondary>
 		<definitions dir="helios" />
+	</protocol>
+	<protocol id="57" alias="GC" category="11. GC">
+		<version date="2017-03-29">109</version>
+		<shuffle>MODERN</shuffle>
+		<primary>
+			<constant>0x12</constant>
+			<constant>0xB1</constant>
+			<constant>0x11</constant>
+			<constant>0xD0</constant>
+		</primary>
+		<secondary count="310">
+			<constant>0x70</constant>
+			<constant>0x71</constant>
+		</secondary>
+		<definitions dir="grand_crusade" />
 	</protocol>
 </protocols>

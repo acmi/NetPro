@@ -47,9 +47,13 @@
 	<dword alias="Shield/support weapon" type="Item" />
 	<byte alias="Knownlist state" type="KnownlistState" />
 	<dword alias="Name" type="ImmutableNpcString" />
-	<string alias="Name" />
+	<string alias="Name">
+		<scriptAlias id="OIC_GIVEN_NAME" />
+	</string>
 	<dword alias="Title" type="ImmutableNpcString" />
-	<string alias="Title" />
+	<string alias="Title">
+		<scriptAlias id="OIC_NPC_TITLE" />
+	</string>
 	<byte alias="PvP" type="Pvp" />
 	<dword alias="Reputation" />
 	<dword alias="Current satiation" />

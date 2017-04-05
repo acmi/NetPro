@@ -22,6 +22,8 @@
 		<dword alias="Purchased amount" />
 		<dword alias="Price" />
 		<byte alias="Reward" />
-		<dword alias="Inventory amount" />
+		<dword alias="Inventory amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</dword>
 	</loop>
 </packet>

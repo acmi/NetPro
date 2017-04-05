@@ -25,6 +25,16 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  */
 public interface IntegerInterpreter extends FieldValueInterpreter
 {
+	default Boolean isKnown(long value, ICacheServerID entityCacheContext)
+	{
+		return null;
+	}
+	
+	default Boolean isKnown(long value)
+	{
+		return isKnown(value, null);
+	}
+	
 	/**
 	 * Returns an interpretation of the given 8-64 bit integer value.
 	 * 

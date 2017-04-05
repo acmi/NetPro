@@ -18,6 +18,8 @@ package net.l2emuproject.proxy.script.analytics;
 import java.util.List;
 
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
+import net.l2emuproject.proxy.script.analytics.user.AbnormalStatusModifier;
+import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
 
 /**
  * Allows scripts to process high-level events.
@@ -79,6 +81,7 @@ public interface SimpleEventListener
 	 * @param skill skill ID
 	 * @param level skill level
 	 */
+	@Deprecated
 	default void onCastSuccess(L2GameClient client, int casterOID, int targetOID, int skill, int level)
 	{
 	}
@@ -183,23 +186,27 @@ public interface SimpleEventListener
 	}
 	
 	/**
-	 * Called when a new effect is added to the buff/debuff list.
+	 * Called whenever a certain abnormal effect is either lost (incl. expiry) or newly acquired. This will not be called if the only changes are effect timers changing.
 	 * 
 	 * @param client client (that received this event)
-	 * @param skillID skill ID
+	 * @param removed removed effects
+	 * @param added added effects
 	 */
-	default void onEffectAdded(L2GameClient client, int skillID)
+	default void onAbnormalListChange(L2GameClient client, List<AbnormalStatusModifier> removed, List<AbnormalStatusModifier> added)
 	{
 	}
 	
 	/**
-	 * Called when an existing effect is removed from the buff/debuff list.
+	 * Called at the smallest typical abnormal effect duration unit. Use {@link LiveUserAnalytics#getUserAbnormals(L2GameClient)} to decide if action needs to be taken.
 	 * 
 	 * @param client client (that received this event)
-	 * @param skillID skill ID
+	 * @param removed removed effects
+	 * @param added added effects
 	 */
-	default void onEffectRemoved(L2GameClient client, int skillID)
+	default void onAbnormalListTick(L2GameClient client, List<AbnormalStatusModifier> removed, List<AbnormalStatusModifier> added)
 	{
+		if (!removed.isEmpty() || !added.isEmpty())
+			onAbnormalListChange(client, removed, added);
 	}
 	
 	/**

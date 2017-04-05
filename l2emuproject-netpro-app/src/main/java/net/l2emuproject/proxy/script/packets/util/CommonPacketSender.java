@@ -379,6 +379,8 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendHTML(L2GameClient client, String html)
 	{
 		final int size = 1 + 4 + stdStringSize(html) + 4 + 4;
+		if (size > 0xFF_FF - 2)
+			throw new IllegalArgumentException("Packet requires fragmentation");
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
 		
@@ -400,6 +402,8 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendTutorialHTML(L2GameClient client, String html)
 	{
 		final int size = 1 + 4 + stdStringSize(html);
+		if (size > 0xFF_FF - 2)
+			throw new IllegalArgumentException("Packet requires fragmentation");
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
 		
@@ -550,6 +554,29 @@ public final class CommonPacketSender extends PacketWriterScript
 		sendSimpleRequest(server, 0x1F, targetOID, origin, prohibitMovement);
 	}
 	
+	public static final void sendSay2(L2GameServer server, String message, int chat)
+	{
+		sendSay2(server, message, chat, null);
+	}
+	
+	public static final void sendSay2(L2GameServer server, String message, int chat, String recipient)
+	{
+		if ((chat == CHAT_PM) != (recipient != null))
+			throw new IllegalArgumentException(chat + " " + recipient);
+		
+		final int size = 1 + stdStringSize(message) + 4 + (recipient != null ? stdStringSize(recipient) : 0);
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0x49);
+		buf.writeS(message);
+		buf.writeD(chat);
+		if (recipient != null)
+			buf.writeS(recipient);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
 	public static final void sendUserCmd(L2GameServer server, int command)
 	{
 		final int size = 1 + 4;
@@ -666,7 +693,9 @@ public final class CommonPacketSender extends PacketWriterScript
 	
 	public static final void sendRequestAutoFish(L2GameServer server, boolean enable)
 	{
-		server.sendPacket(new ProxyRepeatedPacket((byte)0xD0, (byte)0x05, (byte)0x01, (byte)(enable ? 0x01 : 0x00)));
+		final byte[] content = new byte[] { (byte)0xD0, (byte)0x05, (byte)0x01, (byte)(enable ? 0x01 : 0x00) };
+		server.sendPacket(new ProxyRepeatedPacket(content));
+		//server.getTargetClient().notifyPacketForwarded(null, ByteBuffer.wrap(content).order(ByteOrder.LITTLE_ENDIAN), System.currentTimeMillis());
 	}
 	
 	public static final void sendRequestSkillList(L2GameServer server)
@@ -682,6 +711,96 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendRequestAcquireSkill(L2GameServer server, int skillID, int skillLevel, int learnType)
 	{
 		sendLearnableSkillRequest(server, 0x7C, skillID, skillLevel, learnType);
+	}
+	
+	public static final void sendRequestExRqItemLink(L2GameServer server, int objectID)
+	{
+		final int size = 1 + 2 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x1E);
+		buf.writeD(objectID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendAnswerJoinPartyRoom(L2GameServer server, boolean accepted)
+	{
+		final int size = 1 + 2 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x30);
+		buf.writeD(accepted);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestExAcceptJoinMPCC(L2GameServer server, boolean accepted, int unknown)
+	{
+		final int size = 1 + 2 + 4 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x07);
+		buf.writeD(accepted);
+		buf.writeD(unknown);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestAnswerCoupleAction(L2GameServer server, int action, boolean accepted, int requestorID)
+	{
+		final int size = 1 + 2 + 4 + 4 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x77);
+		buf.writeD(action);
+		buf.writeD(accepted);
+		buf.writeD(requestorID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestFriendAddReply(L2GameServer server, int unknown, boolean accepted)
+	{
+		final int size = 1 + 1 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0x78);
+		buf.writeC(unknown);
+		buf.writeD(accepted);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestAnswerJoinParty(L2GameServer server, boolean accepted)
+	{
+		sendRequestAnswer(server, 0x43, accepted);
+	}
+	
+	public static final void sendAnswerTradeRequest(L2GameServer server, boolean accepted)
+	{
+		sendRequestAnswer(server, 0x55, accepted);
+	}
+	
+	private static final void sendRequestAnswer(L2GameServer server, int opcode, boolean accepted)
+	{
+		final int size = 1 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(opcode);
+		buf.writeD(accepted);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
 	private static final void sendLearnableSkillRequest(L2GameServer server, int opcode, int skillID, int skillLevel, int learnType)

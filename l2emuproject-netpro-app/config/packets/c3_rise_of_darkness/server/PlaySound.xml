@@ -10,5 +10,5 @@
 	<dword alias="Location Z" />
 
 	<!-- NEW -->
-	<dword alias="Radius" />
+	<dword alias="Delay" />
 </packet>

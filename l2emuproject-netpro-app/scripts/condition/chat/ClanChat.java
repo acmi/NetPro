@@ -15,7 +15,8 @@
  */
 package condition.chat;
 
-import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
+import net.l2emuproject.proxy.network.meta.condition.IntegerCondition;
+import net.l2emuproject.proxy.script.condition.ScriptedFieldValueCondition;
 
 /**
  * Tests whether the value of a byte/word/dword is equal to 4.<BR>
@@ -24,11 +25,11 @@ import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
  * 
  * @author _dev_
  */
-public class ClanChat extends ScriptedIntegerEqualityCondition
+public class ClanChat extends ScriptedFieldValueCondition implements IntegerCondition
 {
-	/** Constructs this condition. */
-	public ClanChat()
+	@Override
+	public boolean test(long value)
 	{
-		super(4);
+		return value == 4 || value == 26;
 	}
 }

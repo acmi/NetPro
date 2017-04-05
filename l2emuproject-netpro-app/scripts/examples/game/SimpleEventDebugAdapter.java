@@ -15,6 +15,8 @@
  */
 package examples.game;
 
+import java.util.List;
+
 import eu.revengineer.simplejse.init.DisabledScript;
 import eu.revengineer.simplejse.type.UnloadableScript;
 
@@ -22,6 +24,7 @@ import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.script.PpeEnabledScript;
 import net.l2emuproject.proxy.script.analytics.ObjectAnalytics;
 import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
+import net.l2emuproject.proxy.script.analytics.user.AbnormalStatusModifier;
 import net.l2emuproject.proxy.script.game.HighLevelEventGenerator;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
@@ -129,15 +132,9 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	}
 	
 	@Override
-	public void onEffectAdded(L2GameClient client, int skillID)
+	public void onAbnormalListChange(L2GameClient client, List<AbnormalStatusModifier> removed, List<AbnormalStatusModifier> added)
 	{
-		LOG.info("Effect gained: " + L2SkillTranslator.getInterpretation(skillID));
-	}
-	
-	@Override
-	public void onEffectRemoved(L2GameClient client, int skillID)
-	{
-		LOG.info("Effect lost: " + L2SkillTranslator.getInterpretation(skillID));
+		LOG.info("Abnormal effect list change\r\nRemoved: " + removed + "\r\nAdded: " + added);
 	}
 	
 	@Override

@@ -22,14 +22,29 @@ package net.l2emuproject.proxy.state.entity.type;
  */
 public class ItemType extends EntityWithTemplateType
 {
+	private final long _amount;
+	
 	/**
 	 * Creates an item descriptor.
 	 * 
 	 * @param templateID item template ID
+	 * @param amount item amount
 	 */
-	public ItemType(int templateID)
+	public ItemType(int templateID, long amount)
 	{
 		super(templateID);
+		
+		_amount = amount;
+	}
+	
+	/**
+	 * Returns the amount for stackable items.
+	 * 
+	 * @return item amount
+	 */
+	public long getAmount()
+	{
+		return _amount;
 	}
 	
 	@Override

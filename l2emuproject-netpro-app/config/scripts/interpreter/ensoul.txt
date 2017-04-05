@@ -646,6 +646,7 @@
 646	Rsk. Haste (Atk. Spd.+ 10% when in danger.)
 647	Rsk. Haste (Atk. Spd.+ 9% when in danger.)
 648	Acumen (Casting Spd. + 15%)
+649	Health (Max HP + 25%)
 650	Mana Up (Max MP + 30%)
 651	Guidance (Accuracy + 6.5, PvP Damage + 5%)
 652	Robust Health (Max HP + 15%, Max MP + 20%, Max CP + 30%, PvP Damage + 5%)

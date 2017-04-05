@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Added unknown CHAR (byte) at the beginning of the packet -->
 <packet id="SM_FRIEND_ADD_REQUEST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<byte alias="1" /> <!-- NEW -->
-	<string alias="Invitor name" />
+	<byte alias="1"> <!-- NEW -->
+		<scriptAlias id="far_unknown" />
+	</byte>
+	<string alias="Invitor name">
+		<scriptAlias id="far_invitor_name" />
+	</string>
 </packet>

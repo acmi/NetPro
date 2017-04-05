@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_NEW_ENCHANT_RETRY_TO_PUT_ITEMS" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Item OID" type="ObjectID">
+		<scriptAlias id="new_enchant_item1" />
+	</dword>
+	<dword alias="Item OID" type="ObjectID">
+		<scriptAlias id="new_enchant_item2" />
+	</dword>
+</packet>

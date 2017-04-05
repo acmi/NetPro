@@ -59,7 +59,7 @@ public final class ExShuffleSeedAndPublicKey extends L2GameServerPacket implemen
 		RandomAccessMMOBuffer enumerator = null;
 		try
 		{
-			enumerator = ppe.enumeratePacketPayload(client.getProtocol(), buf, client);
+			enumerator = ppe.enumeratePacketPayload(client.getProtocol(), buf, getReceiver());
 		}
 		catch (final InvalidPacketOpcodeSchemeException e)
 		{

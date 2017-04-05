@@ -622,6 +622,7 @@
 8625	Diana, Contest Participant
 8626	Babayaga
 8627	Elk
+8628	Frintezza, Enamored
 12077	Wolf
 12311	Hatchling of the Wind
 12312	Hatchling of the Stars
@@ -1148,6 +1149,17 @@
 13518	Sagittarius
 13519	Scorpio
 13520	Taurus
+13528	Cutie-pie Antharas
+13541	Solo Dance
+13542	Solo Dance
+13543	Solo Dance
+13544	Solo Dance
+13545	Solo Dance
+13546	Solo Dance
+13547	Solo Dance
+13548	Solo Dance
+13549	Solo Dance
+13550	Angel of Death
 14001	Reanimated Man
 14002	Reanimated Man
 14003	Reanimated Man
@@ -2342,6 +2354,10 @@
 15204	Burning Mechanic Golem
 15205	Burning Mechanic Golem
 15206	Burning Mechanic Golem
+15207	Discarded Wizard's Soul
+15208	Discarded Wizard's Soul
+15209	Discarded Wizard's Soul
+15210	Discarded Wizard's Soul
 15922	[not named in client]
 15923	[not named in client]
 15925	[not named in client]
@@ -2402,7 +2418,7 @@
 16052	Toy Knight
 16053	Turtle Ascetic
 16054	Monkey
-16055	Griffon
+16055	Griffin
 16056	Joy
 16057	Sorrow
 16058	Anger
@@ -3928,26 +3944,8 @@
 19495	Freed Wizard
 19496	Willy
 19497	Guphi
-19498	Bundle
-19499	Bundle
-19500	Bundle
 19501	Beleth
 19502	Darion
-19503	Bridget, Fire Slave
-19504	Deathmoz, Disciplined
-19505	Deathmoz, Magical
-19506	Flox Golem
-19507	Floxis, Disciplined
-19508	Floxis, Magical
-19509	Edan
-19510	Belika, Disciplined
-19511	Belika, Magical
-19512	Deathmoz
-19513	Tanya, Disciplined
-19514	Scarlett, Magical
-19515	Bridget, Fire Slave
-19516	Tanya, Disciplined
-19517	Scarlett, Magical
 19518	Wormhole
 19519	[not named in client]
 19520	Doom Shrieker
@@ -4044,6 +4042,28 @@
 19646	Leopold Blue Decal
 19647	Energy of Wind
 19648	Ramona
+19649	[not named in client]
+19650	Auto Entry
+19651	[not named in client]
+19652	[not named in client]
+19653	[not named in client]
+19654	[not named in client]
+19655	[not named in client]
+19656	[not named in client]
+19657	[not named in client]
+19658	[not named in client]
+19659	[not named in client]
+19660	[not named in client]
+19661	[not named in client]
+19662	[not named in client]
+19663	[not named in client]
+19664	For accepting Keucereus Mission
+19665	Giant Monster
+19666	Embryo Disciple
+19667	[not named in client]
+19668	[not named in client]
+19669	[not named in client]
+19670	[not named in client]
 20001	Gremlin
 20002	Rabbit
 20003	Goblin
@@ -5677,23 +5697,23 @@
 23123	Isolation Room Warden
 23124	Istina's Creation
 23125	Istina's Creation
-23126	Elite Escort, Embryo
-23127	Elite Manhunter, Embryo
-23128	Elite Warrior, Embryo
-23129	Elite Alchemist, Embryo
-23130	Elite High Priest, Embryo
-23131	Executor Captain, Embryo
-23132	Shilen's Enchanter, Embryo
-23133	Shilen's Priest, Embryo
-23134	Shilen's Protector, Embryo
-23135	Shilen's Warrior, Embryo
-23136	Shilen's Mage, Embryo
-23137	Shilen's Assassin, Embryo
-23138	Shilen's Bladers, Embryo
-23139	Researcher, Embryo
-23140	Archer Recruit, Embryo
-23141	Soldier Recruit, Embryo
-23142	Knight Recruit, Embryo
+23126	Embryo Elite Escort
+23127	Embryo Elite Chaser
+23128	Embryo Elite Warrior
+23129	Embryo Elite Alchemist
+23130	Embryo Elite High Priest
+23131	Embryo Executor Captain, Watchman of the Altar
+23132	Etina Gospel
+23133	Etina Priests
+23134	Etina Protectors
+23135	Etina Punishers
+23136	Etina Commination
+23137	Etina Darkmongers
+23138	Etina Bladesmen, Watchman of the Altar
+23139	Embryo Researcher
+23140	Embryo Watchman
+23141	Embryo Fighter
+23142	Embryo Guard
 23143	Octavis' Gladiator
 23144	Beast of the Arena
 23145	Octavis' Gladiator
@@ -5899,7 +5919,6 @@
 23356	Klein Soldier
 23357	Disorder Warrior
 23358	Blow Archer
-23359	Blow Soldier
 23360	Bizuard
 23361	Mutated Fly
 23362	Amos Soldier
@@ -5911,19 +5930,8 @@
 23368	Klein Soldier
 23369	Disorder Warrior
 23370	Blow Archer
-23371	Blow Soldier
 23372	Bizuard
 23373	Mutated Fly
-23374	Lavi, Disciplined
-23375	Lavi, Magical
-23376	Lavisys, Disciplined
-23377	Lavisys, Explosive
-23378	Lavisys, Soothing
-23379	Tanya, Berserk
-23380	Scarlett, Berserk
-23381	Tanya, Berserk
-23382	Scarlett, Berserk
-23383	Immortal Tanya, Immortal
 23384	Smaug
 23385	Lunatikan
 23386	Jabberwok
@@ -5940,9 +5948,6 @@
 23397	Desert Wendigo
 23398	Koraza
 23399	Bend Beetle
-23400	Lavisys, Magical
-23401	Bridget, Fire Slave
-23402	Disorder Avatar
 23403	Suffering Fanatic
 23404	Suffering Herald
 23405	Suffering Zealot
@@ -6099,7 +6104,7 @@
 23578	Nymph Guardian, Guardian of the Flower
 23579	Buoyant Seed
 23580	Fluttering Seed
-23581	Apherus, Instilled with life
+23581	Apherus
 23582	Nymph Rose, Elegant
 23583	Nymph Lily, Elegant
 23584	Nymph Tulip, Elegant
@@ -6306,7 +6311,7 @@
 23787	Nymph Lily, Contaminated
 23788	Nymph Tulip, Contaminated
 23789	Nymph Cosmos, Contaminated
-23790	Kimerian, Fairy Leader
+23790	Kimerian's Shadows, Fairy Leader
 23791	Bathus, Marred
 23792	Carcass, Marred
 23793	Kshana, Marred
@@ -6526,6 +6531,64 @@
 24011	Pirate Zombie
 24012	Saium, Relative of the Emperor
 24013	Traitor Angel
+24014	Castle Guard
+24015	Castle Guardian Knight
+24016	Castle Berserker
+24017	Castle Soul Reaper
+24018	Castle High Priest
+24019	Castle Dark Wizard
+24020	Castle Choir
+24021	Castle Soul Reaper
+24022	Embryo Magic Cannon
+24023	Embryo Castle Siege Tank
+24024	Embryo Raider
+24025	Embryo Passionate Soldier
+24026	Embryo Guardian Captain
+24027	Embryo Elite Captain
+24028	Embryo Dark Wizard
+24029	Embryo Flame Master
+24030	Embryo High Priest
+24031	Embryo Archon
+24032	Embryo Soul Reaper
+24033	Embryo Slaughterer
+24034	Embryo Soul Pathfinder
+24035	Embryo Squad Leader
+24036	Embryo Dark Judge
+24037	Embryo Siege Tank
+24038	Embryo Spy
+24039	Embryo Aide
+24040	Embryo Spy Soldier
+24041	Embryo Special Agent
+24042	Embryo Castle Magic Cannon
+24043	Castle Archer
+24044	Orc Mercenary Squad Commander
+24045	Orc Mercenary Warrior
+24046	Orc Mercenary Member
+24047	Castle Executor
+24048	Enhanced Poslof
+24049	Castle Inquisitor
+24050	Knights Commander, Rune Castle Unit
+24051	Knights Warrior, Rune Castle Unit
+24052	Knights Archer, Rune Castle Unit
+24053	Knights Priest, Rune Castle Unit
+24054	Knights Commander, Rune Castle Unit
+24055	Knights Warrior, Rune Castle Unit
+24056	Knights Archer, Rune Castle Unit
+24057	Knights Priest, Rune Castle Unit
+24058	Vampire Warrior
+24059	Vampire Rogue
+24060	Vampire Shooter
+24061	Vampire Wizard
+24062	Vampire Warrior
+24063	Vampire Rogue
+24064	Vampire Shooter
+24065	Vampire Wizard
+24066	Cannon
+24067	Sophie von Hellmann
+24068	Eilhalder von Hellmann
+24069	Alfred von Hellmann
+24070	Kain Van Halter, Traitor
+24071	Kain Van Halter, Traitor
 25001	Greyclaw Kutus, Raid Boss
 25002	Kutus' Escort, Raid Fighter
 25003	Kutus' Pawn, Raid Fighter
@@ -7311,14 +7374,8 @@
 25846	Yoentumak the Waiter, Raid Boss
 25855	Maliss, Grand Priest of Blood
 25856	Isadora, Great Magus of Greed
-25857	Corrupted Captain
-25858	Corrupted High Priest
-25859	Flynt, Raid Boss
-25860	Flynt's Disciple, Raid Fighter
-25861	Flynt's Servant, Raid Fighter
-25862	Harp, Raid Boss
-25863	Harp's Guard, Raid Fighter
-25864	Harp's Subordinate, Raid Fighter
+25857	Corrupted Captain, Guardian of the Altar
+25858	Corrupted High Priest, Guardian of the Altar
 25865	Apherus Subordinate
 25866	Apherus
 25867	Spezion, Raid Boss
@@ -7649,6 +7706,55 @@
 26196	Dimensional Makkum
 26197	Dimensional Makkum
 26198	Dimensional Makkum
+26199	Sampson, Guard Captain
+26200	Hanson, Guard Captain
+26201	Grom, Destroyer
+26202	Medvez, Executor
+26203	Zigathan, Dark Knight
+26204	Hunchback Kwai, Berserker
+26205	Kornix, Soul Reaper
+26206	Karanix, Soul Reaper
+26207	Jonadan, Creed Guardian
+26208	Demian, Creed Guardian
+26209	Berk, High-ranking Executor
+26210	Tarku, Orc Mercenary
+26211	Tarpaing, Orc Mercenary
+26212	Embryo Secure Safe, Handle with Care
+26213	Embryo Secret Safe, Handle with Care
+26214	Sakum, Ultimate Evolution Form
+26215	Madman Typhoon, Kelbim's Old Underling
+26216	Cursed Haren, Kelbim's Old Underling
+26217	Flynt, Evil Destructor
+26218	Harp, Complete Being
+26219	Maliss, Grand Priest of Blood
+26220	Isadora, Great Magus of Greed
+26221	Whitera, Guardian
+26222	Blektra, Guardian
+26223	Upgraded Siege Tank, Test Run
+26224	Vegima, Dark Shaman
+26225	Varonia, Soul Reaper
+26226	Aronia, Soul Reaper
+26227	Outh, Inquisitor
+26228	Iven, Judge
+26229	Nemertess, Incarnation of Revenge
+26230	Castle Raider
+26231	Poslof
+26232	Resurrected Castle Archer
+26233	Orc Mercenary
+26234	Castle Wizard
+26235	Kain Van Halter, Embryo Commander-in-chief
+26236	Camille, Final Disciple
+26237	Creed Guardian, Camille's Immediate
+26238	Soul Reaper, Camille's Immediate
+26239	Soul Reaper, Camille's Immediate
+26240	Judge, Camille's Immediate
+26241	Choir, Camille's Immediate
+26242	Berserker, Camille's Immediate
+26243	Mamut, Chief Gatekeeper
+26244	Isburg, Guardian Captain
+26245	Judge, Guardian Captain's Immediate
+26246	Berserker, Guardian Captain's Immediate
+26247	Roa, Camille's Special Subordinate
 27001	Orc Sniper
 27002	Orc Captain
 27003	Spirit Of Mirrors, Quest Monster
@@ -8068,7 +8174,7 @@
 27453	Sakum, Quest Monster
 27454	Weiss Ele, Aeore Healer
 27456	Wisp
-27457	Scarecrow, Training
+27457	Dummy, Training
 27458	Bat
 27459	Regenerated Kanilov
 27460	Regenerated Poslof
@@ -8470,6 +8576,7 @@
 29314	Royal Gatekeeper, Emperor's Escort
 29315	Mimillion, Red Lightning Watchman
 29316	Mimillus, Blue Lightning Watchman
+29317	Lindvior, Wind Dragon
 30001	Lector, Weapon Merchant
 30002	Jackson, Armor Merchant
 30003	Silvia, Accessory Merchant
@@ -9219,9 +9326,6 @@
 30971	Orpheus, Mad Doctor
 30972	Orpheus Resurrector
 30973	Medium Jar
-30974	Oliver, Resurrected Adventurer
-30975	Clarine, Resurrected Adventurer
-30976	Resurrected Town Maiden
 30977	Holy Ark of Secrecy 1
 30978	Holy Ark of Secrecy 2
 30979	Holy Ark of Secrecy 3
@@ -9873,7 +9977,7 @@
 31685	Asefa's Eye
 31686	Gatekeeper of Fire Dragon
 31687	Gatekeeper of Fire Dragon
-31688	Olympiad Manager
+31688	Olympiad Manager, Olympiad
 31689	Olympiad Finisher
 31690	Monument of Heroes
 31691	Training Dummy
@@ -10409,9 +10513,6 @@
 32317	Warp Gate
 32318	Warp Gate
 32319	Warp Gate
-32320	Item Broker, Adventure Guildsman
-32321	Item Broker, Adventure Guildsman
-32322	Item Broker, Adventure Guildsman
 32323	Avant-Garde, Transformation Wizard
 32324	Black Stone Monolith
 32325	Yin, Attribute Master
@@ -11744,7 +11845,7 @@
 33682	Executed Maiden's Vengeful Spirit
 33683	Spirit of the Tortured Dwarf
 33684	Spirit of One Burned Alive
-33685	Mysterious Butler
+33685	Mysterious Butler, Ceremony of Chaos
 33686	Eva's Avatar, Goddess of Water
 33687	Aslan, Flame Servant
 33688	Small Draco
@@ -11952,8 +12053,6 @@
 33892	Gatekeeper Ziggurat
 33893	Coco Brownie, Event Manager
 33894	Dandy, Mascot
-33895	Crane Activator
-33896	Agatha
 33897	Theorn
 33898	Leona Blackbird, Fire Dragon Bride
 33899	Leona Blackbird, Fire Dragon Bride
@@ -12329,6 +12428,61 @@
 34290	Piore, Dimensional Researcher
 34291	Nana, Healer of the Arena
 34292	Chef Monkey, Event Manager
+34293	Priest of Dawn, Arena
+34294	Priestess of Dusk, Arena
+34295	Leona Blackbird, Lord of the Blackbird Clan
+34296	Sporcha, Blackbird Clan
+34297	Ellikia, Verdure Elder
+34298	Devianne, Truth Seeker
+34299	Violet, Messenger from the Blackbird Clan
+34300	Blackbird Clan Soldier
+34301	Leona Blackbird, Lord of the Blackbird Clan
+34302	Ellikia, Verdure Elder
+34303	Devianne, Truth Seeker
+34304	Karla, Knight of the Queen
+34305	Adolph, Aden Vanguard Captain
+34306	Barton, Aden Vanguard
+34307	Hayuk, Aden Vanguard
+34308	Alice, Aden Vanguard
+34309	Eliyah, Aden Vanguard
+34310	Gracian Soldier
+34311	Gracian Wounded Soldier
+34312	Keucereus Defense Battery
+34313	Defense Tower Base, Keucereus Alliance Base
+34314	Ishuma, Maestro
+34315	Lai, Apprentice Blacksmith
+34316	Gerdt, Skilled Blacksmith
+34317	Gracian Archer
+34318	Gracian Elite Soldier
+34319	Erda, Keucereus Spy
+34320	Leona Blackbird, Lord of the Blackbird Clan
+34321	Sporcha, Blackbird Clan
+34322	Ellikia, Verdure Elder
+34323	Devianne, Truth Seeker
+34324	Transmission Unit
+34325	Teleport Wizard, Blackbird Clan
+34326	Messenger from Allied Force, Keucereus Defense Battle Agent
+34327	Violet, Messenger from the Blackbird Clan
+34328	Laia, Auction Broker
+34329	Gift Giving Dandy, To the Hero Who Defeated Kain Dandy
+34330	Chorong, Holiday Fairy
+34331	Logart Van Dyke, Royal Guard Captain
+34332	Dinford, Quartermaster
+34333	Giselle von Hellmann
+34334	Alfred von Hellmann
+34335	The Hellmanns Commander
+34336	The Hellmanns Warrior
+34337	The Hellmanns Archer
+34338	The Hellmanns Wizard
+34339	Kain Van Halter
+34340	Thyrad, Kain's Mate
+34341	Autrya, Kain's Mate
+34342	Erdo, Kain's Mate
+34343	Karla
+34344	Nidrah
+34345	Giselle von Hellmann
+34346	Giselle von Hellmann
+34347	Etis van Etina
 35010	Mercenary
 35011	Mercenary
 35012	Mercenary

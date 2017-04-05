@@ -19,9 +19,10 @@ import static net.l2emuproject.proxy.script.analytics.SimpleEventListener.NO_TAR
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -33,6 +34,7 @@ import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
 import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
+import net.l2emuproject.proxy.script.analytics.user.impl.ActorSkillCast;
 import net.l2emuproject.proxy.script.analytics.user.impl.InventoryItem;
 import net.l2emuproject.proxy.script.analytics.user.impl.ItemAugmentationImpl;
 import net.l2emuproject.proxy.script.analytics.user.impl.ItemEnchantEffectsImpl;
@@ -40,9 +42,13 @@ import net.l2emuproject.proxy.script.analytics.user.impl.ItemSpecialAbilitiesImp
 import net.l2emuproject.proxy.script.analytics.user.impl.UserAbnormalStatusModifier;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserAbnormals;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserInventory;
+import net.l2emuproject.proxy.script.analytics.user.impl.UserRelation;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserSkill;
+import net.l2emuproject.proxy.script.analytics.user.impl.UserSkillCoolTime;
 import net.l2emuproject.proxy.script.analytics.user.impl.UserSkillList;
+import net.l2emuproject.proxy.script.analytics.user.impl.UserVisibleWorldObjects;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
+import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.script.packets.util.RestartResponseRecipient;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
@@ -196,11 +202,55 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 	@ScriptFieldAlias
 	private static final String INVENTORY_UPDATE_ITEM_SA2 = "LUA_IU_SA2";
 	
+	@ScriptFieldAlias
+	private static final String MSU_CASTER_OID = "LUA_CASTER_OID";
+	@ScriptFieldAlias
+	private static final String MSU_SKILL_ID = "LUA_USED_SKILL_ID";
+	@ScriptFieldAlias
+	private static final String MSU_SKILL_JOINT_LEVEL = "LUA_USED_SKILL_LEVEL";
+	@ScriptFieldAlias
+	private static final String MSU_SKILL_TIME = "LUA_USED_SKILL_TOTAL_TIME";
+	@ScriptFieldAlias
+	private static final String MSU_SKILL_COOL_TIME = "LUA_USED_SKILL_COOL_TIME";
+	@ScriptFieldAlias
+	private static final String MSU_CASTER_X = "LUA_CASTER_LOC_X";
+	@ScriptFieldAlias
+	private static final String MSU_CASTER_Y = "LUA_CASTER_LOC_Y";
+	@ScriptFieldAlias
+	private static final String MSU_CASTER_Z = "LUA_CASTER_LOC_Z";
+	
+	@ScriptFieldAlias
+	private static final String CI_OID = "ci_player_oid";
+	@ScriptFieldAlias
+	private static final String NI_OID = "OIC_NPC_OID";
+	@ScriptFieldAlias
+	private static final String PI_OID = "OIC_PET_OID";
+	@ScriptFieldAlias
+	private static final String SI_OID = "OIC_SUMMON_OID";
+	@ScriptFieldAlias
+	private static final String SOI_OID = "OIC_SO_OID";
+	@ScriptFieldAlias
+	private static final String ITEM_OID = "OIC_WORLD_ITEM_OID";
+	private static final String[] VISIBLE_OID = { CI_OID, NI_OID, PI_OID, SI_OID, SOI_OID, ITEM_OID
+	};
+	
+	@ScriptFieldAlias
+	private static final String RC_OID = "rc_actor_oid";
+	@ScriptFieldAlias
+	private static final String RC_RELATION = "rc_relation";
+	@ScriptFieldAlias
+	private static final String RC_ATTACKABLE = "rc_attackable";
+	@ScriptFieldAlias
+	private static final String RC_REPUTATION = "rc_reputation";
+	@ScriptFieldAlias
+	private static final String RC_PVP = "rc_pvp";
+	
 	private static final String RESTART_DISCARDABLE_PREFIX = "user_bound_";
 	private static final String USER_INFO_KEY = RESTART_DISCARDABLE_PREFIX + "user_info";
 	private static final String USER_INVENTORY_KEY = RESTART_DISCARDABLE_PREFIX + "user_inv";
 	private static final String USER_SKILL_KEY = RESTART_DISCARDABLE_PREFIX + "user_sl";
 	private static final String USER_ABNORMAL_MODIFIER_KEY = RESTART_DISCARDABLE_PREFIX + "user_asm";
+	private static final String USER_VISIBLE_OBJECTS_KEY = RESTART_DISCARDABLE_PREFIX + "user_vwo";
 	
 	LiveUserAnalytics()
 	{
@@ -246,7 +296,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 	}
 	
 	/**
-	 * Retrieves skill list of a connected player.<BR>
+	 * Retrieves effect list of a connected player.<BR>
 	 * <BR>
 	 * If a player has not yet logged to the game world, or has already disconnected, returns {@code null}.
 	 * 
@@ -256,6 +306,17 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 	public UserAbnormals getUserAbnormals(L2GameClient client)
 	{
 		return get(client, USER_ABNORMAL_MODIFIER_KEY);
+	}
+	
+	/**
+	 * Retrieves a list of all objects currently visible to a connected player.
+	 * 
+	 * @param client game client connection endpoint
+	 * @return visible objects or {@code null}
+	 */
+	public UserVisibleWorldObjects getUserVisibleWorldObjects(L2GameClient client)
+	{
+		return get(client, USER_VISIBLE_OBJECTS_KEY);
 	}
 	
 	@Override
@@ -285,6 +346,33 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			return;
 		}
 		
+		for (final String visibleOID : VISIBLE_OID)
+		{
+			final EnumeratedPayloadField field = buf.getSingleFieldIndex(visibleOID);
+			if (field != null)
+				computeIfAbsent(client, USER_VISIBLE_OBJECTS_KEY, k -> new UserVisibleWorldObjects(getEntityContext(client))).add(buf.readInteger32(field));
+		}
+		
+		relation:
+		{
+			final List<EnumeratedPayloadField> relations = buf.getFieldIndices(RC_RELATION);
+			if (relations.isEmpty())
+				break relation;
+			
+			final UserVisibleWorldObjects visibles = computeIfAbsent(client, USER_VISIBLE_OBJECTS_KEY, k -> new UserVisibleWorldObjects(getEntityContext(client)));
+			final List<EnumeratedPayloadField> actors = buf.getFieldIndices(RC_OID), atks = buf.getFieldIndices(RC_ATTACKABLE);
+			final List<EnumeratedPayloadField> reputations = buf.getFieldIndices(RC_REPUTATION), pvps = buf.getFieldIndices(RC_PVP);
+			for (int i = 0; i < relations.size(); ++i)
+			{
+				final int playerOID = buf.readInteger32(actors.get(i));
+				final int relation = buf.readInteger32(relations.get(i));
+				final boolean attackable = buf.readInteger32(atks.get(i)) != 0;
+				final int reputation = buf.readInteger32(reputations.get(i));
+				final int pvp = buf.readInteger32(pvps.get(i));
+				visibles.setCurrentRelation(playerOID, new UserRelation(playerOID, relation, attackable, reputation, pvp));
+			}
+			return;
+		}
 		inventory:
 		{
 			final List<EnumeratedPayloadField> exts = buf.getFieldIndices(INVENTORY_ITEM_EXTENSIONS);
@@ -352,7 +440,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 				}
 				else
 					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
-				inventoryItems.add(new InventoryItem(objectID, templateID, amount, encLvl, augmentation, encEff, appearance, sa));
+				inventoryItems.add(new InventoryItem(objectID, templateID, amount, encLvl, augmentation, ItemElementalAttributes.NO_ATTRIBUTES, encEff, appearance, sa));
 			}
 			computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory()).setInventory(inventoryItems);
 		}
@@ -423,22 +511,29 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 				else
 					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
 				
-				final InventoryItem item = new InventoryItem(objectID, templateID, amount, encLvl, augmentation, encEff, appearance, sa);
+				final InventoryItem item = new InventoryItem(objectID, templateID, amount, encLvl, augmentation, ItemElementalAttributes.NO_ATTRIBUTES, encEff, appearance, sa);
 				final int change = buf.readInteger32(changes.get(i));
-				final UserInventory inv = computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory());
-				switch (change)
+				try
 				{
-					case 1: // add
-						inv.add(item);
-						break;
-					case 2: // update
-						inv.update(item);
-						break;
-					case 3: // remove
-						inv.remove(item);
-						break;
-					default:
-						throw new IllegalArgumentException("IU: " + change);
+					final UserInventory inv = computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory());
+					switch (change)
+					{
+						case 1: // add
+							inv.add(item);
+							break;
+						case 2: // update
+							inv.update(item);
+							break;
+						case 3: // remove
+							inv.remove(item);
+							break;
+						default:
+							throw new IllegalArgumentException("IU: " + change);
+					}
+				}
+				catch (final IllegalStateException e)
+				{
+					// whatever
 				}
 			}
 		}
@@ -611,6 +706,23 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			ui._waitType = buf.readFirstInteger32(WAIT_TYPE_SETTING);
 			return;
 		}
+		skillCast:
+		{
+			final EnumeratedPayloadField actorOID = buf.getSingleFieldIndex(MSU_CASTER_OID);
+			if (actorOID == null)
+				break skillCast;
+			
+			final int objectID = buf.readInteger32(actorOID);
+			if (objectID != ui._objectID)
+				return;
+			
+			final long start = System.nanoTime();
+			final int jointLevel = buf.readFirstInteger32(MSU_SKILL_JOINT_LEVEL);
+			final int skillID = buf.readFirstInteger32(MSU_SKILL_ID), skillLevel = L2SkillTranslator.getSkillLevel(jointLevel), skillSublevel = L2SkillTranslator.getSkillSublevel(jointLevel);
+			ui._lastSkillCast = new ActorSkillCast(skillID, skillLevel, skillSublevel, start, buf.readFirstInteger32(MSU_SKILL_TIME), TimeUnit.MILLISECONDS);
+			final int coolTime = buf.readFirstInteger32(MSU_SKILL_COOL_TIME);
+			ui._skillCoolTime.setCoolTime(skillID, skillLevel, skillSublevel, start, coolTime, TimeUnit.MILLISECONDS);
+		}
 		/*
 		learnableSkills:
 		{
@@ -648,25 +760,29 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 	{
 		final int _objectID;
 		final ICacheServerID _context; // for debugging toString only
-		volatile int _targetOID;
+		int _targetOID;
 		final Set<Integer> _servitorOIDs;
-		volatile int _level;
-		volatile long _sp;
-		volatile double _width, _height;
-		volatile int _personalStore;
-		volatile int _waitType;
+		int _level;
+		long _sp;
+		double _width, _height;
+		int _personalStore;
+		int _waitType;
+		SkillCast _lastSkillCast;
+		UserSkillCoolTime _skillCoolTime; // because this isn't SCT packet
 		
 		UserInfo(int objectID, ICacheServerID context)
 		{
 			_objectID = objectID;
 			_context = context;
 			_targetOID = NO_TARGET;
-			_servitorOIDs = new CopyOnWriteArraySet<>();
+			_servitorOIDs = new HashSet<>();
 			_level = 1;
 			_sp = 0;
 			_width = _height = 8;
 			_personalStore = 0;
 			_waitType = 1;
+			_lastSkillCast = null;
+			_skillCoolTime = new UserSkillCoolTime();
 		}
 		
 		/**
@@ -707,6 +823,16 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 		public int getWaitType()
 		{
 			return _waitType;
+		}
+		
+		public SkillCast getLastSkillCast()
+		{
+			return _lastSkillCast;
+		}
+		
+		public UserSkillCoolTime getSkillCoolTime()
+		{
+			return _skillCoolTime;
 		}
 		
 		/**

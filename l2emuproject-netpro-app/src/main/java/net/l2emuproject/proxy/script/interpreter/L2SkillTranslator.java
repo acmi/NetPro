@@ -49,7 +49,7 @@ public final class L2SkillTranslator
 		{
 			return String.valueOf(MetaclassRegistry.getInstance().getInterpreter(SKILL_INTERPRETER, IntegerInterpreter.class).getInterpretation(skillID));
 		}
-		catch (InvalidFieldValueInterpreterException e)
+		catch (final InvalidFieldValueInterpreterException e)
 		{
 			return String.valueOf(skillID);
 		}
@@ -110,7 +110,7 @@ public final class L2SkillTranslator
 		{
 			return String.valueOf(MetaclassRegistry.getInstance().getInterpreter(SKILL_NAME_ID_INTERPRETER, IntegerInterpreter.class).getInterpretation(skillNameID));
 		}
-		catch (InvalidFieldValueInterpreterException e)
+		catch (final InvalidFieldValueInterpreterException e)
 		{
 			return getSkillID(skillNameID) + "_" + getSkillLevel(skillNameID) + "_" + getSkillSublevel(skillNameID);
 		}
@@ -154,7 +154,7 @@ public final class L2SkillTranslator
 	}
 	
 	/**
-	 * Converts given skill name ID to a skill level.
+	 * Converts given skill name ID to a skill sublevel.
 	 * 
 	 * @param skillNameID skill name ID
 	 * @return skill level
@@ -165,7 +165,7 @@ public final class L2SkillTranslator
 	}
 	
 	/**
-	 * Converts given skill name ID to a skill sublevel.
+	 * Converts given skill name ID to a skill level.
 	 * 
 	 * @param skillNameID skill name ID
 	 * @return skill level

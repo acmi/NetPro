@@ -140,15 +140,15 @@
 655	A Grand Plan for Taming Wild Beasts
 662	A Game of Cards
 663	Seductive Whispers
-665	
-666	
-667	
-668	
-669	
-670	
-671	
-672	
-673	
+665	[not named in client]
+666	[not named in client]
+667	[not named in client]
+668	[not named in client]
+669	[not named in client]
+670	[not named in client]
+671	[not named in client]
+672	[not named in client]
+673	[not named in client]
 688	Defeat the Elrokian Raiders!
 690	|Attack| Begin Alliance Base Defense - 1
 691	|Attack| Begin Alliance Base Defense - 2

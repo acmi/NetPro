@@ -48,5 +48,6 @@ public class Parameter extends ScriptedLegacyIntegerIdInterpreter
 		addInterpretation(20, "Minute/second/recommendation amount");
 		addInterpretation(21, "8 bit integer");
 		addInterpretation(22, "16 bit integer");
+		addInterpretation(24, "Faction");
 	}
 }

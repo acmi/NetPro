@@ -54,11 +54,18 @@ public final class CommandAndControlCenter extends PpeEnabledGameScript implemen
 		_menus.put(key, menu);
 	}
 	
-	public final void add(Object key, CnCAction action) throws IllegalArgumentException
+	public final void add(Object key, CnCAction action)
+	{
+		final CnCMenu menu = get(key);
+		if (menu != null)
+			menu.add(action);
+	}
+	
+	public final void addChecked(Object key, CnCAction action) throws MissingCnCMenuException
 	{
 		final CnCMenu menu = get(key);
 		if (menu == null)
-			throw new IllegalArgumentException();
+			throw new MissingCnCMenuException(key);
 		menu.add(action);
 	}
 	
@@ -72,11 +79,18 @@ public final class CommandAndControlCenter extends PpeEnabledGameScript implemen
 		_menus.remove(key, menu);
 	}
 	
-	public final void remove(Object key, CnCAction action) throws IllegalArgumentException
+	public final void remove(Object key, CnCAction action)
+	{
+		final CnCMenu menu = get(key);
+		if (menu != null)
+			menu.remove(action);
+	}
+	
+	public final void removeChecked(Object key, CnCAction action) throws MissingCnCMenuException
 	{
 		final CnCMenu menu = get(key);
 		if (menu == null)
-			throw new IllegalArgumentException();
+			throw new MissingCnCMenuException(key);
 		menu.remove(action);
 	}
 	

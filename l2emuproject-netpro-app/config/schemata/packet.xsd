@@ -488,6 +488,7 @@
 			<xs:enumeration value="param.CharacterClass" />
 			<xs:enumeration value="param.Damage" />
 			<xs:enumeration value="param.Element" />
+			<xs:enumeration value="param.Faction" />
 			<xs:enumeration value="param.Fstring" />
 			<xs:enumeration value="param.Instance" />
 			<xs:enumeration value="param.Item" />

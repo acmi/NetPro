@@ -47,12 +47,12 @@
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</dword>
 		</branch>
-		<branch id="type" condition="param.Element"> <!-- Kamael -->
+		<branch id="type" condition="param.Element">
 			<byte alias="Element" type="ElementType">
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</byte>
 		</branch>
-		<branch id="type" condition="param.Fstring"> <!-- Freya -->
+		<branch id="type" condition="param.Fstring">
 			<dword alias="Value" type="ImmutableNpcString">
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</dword>
@@ -62,12 +62,12 @@
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</word>
 		</branch>
-		<branch id="type" condition="param.Instance"> <!-- Kamael -->
+		<branch id="type" condition="param.Instance">
 			<word alias="Instance" type="Instance">
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</word>
 		</branch>
-		<branch id="type" condition="param.Quantity"> <!-- C4 -->
+		<branch id="type" condition="param.Quantity">
 			<qword alias="Amount">
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</qword>
@@ -77,7 +77,7 @@
 				<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
 				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE4_VALUE1" />
 			</dword>
-			<dword alias="Level" type="skill.SkillLevel"> <!-- NEW -->
+			<dword alias="Level" type="skill.SkillLevel">
 				<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
 				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE4_VALUE2" />
 			</dword>
@@ -93,12 +93,12 @@
 				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE7_VALUE3" />
 			</dword>
 		</branch>
-		<branch id="type" condition="param.CharacterClass"> <!-- GoD -->
+		<branch id="type" condition="param.CharacterClass">
 			<word alias="Class" type="CharacterClass">
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</word>
 		</branch>
-		<branch id="type" condition="param.Damage"> <!-- GoD -->
+		<branch id="type" condition="param.Damage">
 			<dword alias="Target OID" type="ObjectID">
 				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE16_VALUE1" />
 			</dword>
@@ -129,15 +129,20 @@
 				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE14_VALUE6" />
 			</string>
 		</branch>
-		<branch id="type" condition="param.TinyNumberValue"> <!-- Ertheia -->
+		<branch id="type" condition="param.TinyNumberValue">
 			<byte alias="Value">
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</byte>
 		</branch>
-		<branch id="type" condition="param.SmallNumberValue"> <!-- Ertheia -->
+		<branch id="type" condition="param.SmallNumberValue">
 			<word alias="Value">
 				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
 			</word>
+		</branch>
+		<branch id="type" condition="param.Faction"> <!-- GC -->
+			<byte alias="Value" type="quest.Faction">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</byte>
 		</branch>
 	</loop>
 </packet>

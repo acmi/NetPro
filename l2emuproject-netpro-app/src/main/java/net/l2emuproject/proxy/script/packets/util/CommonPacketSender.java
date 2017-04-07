@@ -23,6 +23,8 @@ import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.mutable.MutableInt;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 
 import net.l2emuproject.geometry.point.IPoint2D;
@@ -502,6 +504,49 @@ public final class CommonPacketSender extends PacketWriterScript
 		buf.endLoop();
 		client.sendPacket(new ProxyRepeatedPacket(bb));
 		//client.notifyPacketForwarded(null, allocate(size).put(bb.array()), System.currentTimeMillis());
+	}
+	
+	public static final MutableInt sendLineExServerPrimitive(L2GameClient client, MutableInt counter, IPoint3D centroid, int clipX, int clipY, int r, int g, int b,
+			List<Pair<IPoint3D, IPoint3D>> segments)
+	{
+		if (counter == null)
+			counter = new MutableInt(0);
+		
+		final String alias = "ServerPrimitive_line" + counter.incrementAndGet();
+		
+		final PrimitiveExtras ex = new PrimitiveExtras("", r, g, b, 255);
+		final int dynamicPartSize = segments.size() * (1 + 6 * 4 + 3 * (4 * 4));
+		final int size = 1 + 2 + stdStringSize(alias) + (3 * 4) + 4 + 4 + 4 + dynamicPartSize;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xFE);
+		buf.writeH(0x11);
+		buf.writeS(alias);
+		buf.writeD(centroid.getX());
+		buf.writeD(centroid.getY());
+		buf.writeD(centroid.getZ());
+		buf.writeD(clipX);
+		buf.writeD(clipY);
+		buf.startLoop(ReservedFieldType.DWORD);
+		for (final Pair<IPoint3D, IPoint3D> segment : segments)
+		{
+			buf.writeC(2); // line segment
+			ex.write(buf);
+			final IPoint3D start = segment.getLeft(), end = segment.getRight();
+			buf.writeD(start.getX());
+			buf.writeD(start.getY());
+			buf.writeD(start.getZ());
+			buf.writeD(end.getX());
+			buf.writeD(end.getY());
+			buf.writeD(end.getZ());
+			
+			buf.countLoopElement();
+		}
+		buf.endLoop();
+		client.sendPacket(new ProxyRepeatedPacket(bb));
+		//client.notifyPacketForwarded(null, allocate(size).put(bb.array()), System.currentTimeMillis());
+		return counter;
 	}
 	
 	private static final void sendShortRequest(L2GameServer server, int opcode, int entityID, boolean forceAttack, boolean prohibitMovement)

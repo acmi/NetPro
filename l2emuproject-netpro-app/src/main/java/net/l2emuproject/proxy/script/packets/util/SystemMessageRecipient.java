@@ -104,6 +104,7 @@ public interface SystemMessageRecipient
 	int SYSMSG_TOKEN_BYTE1 = 19;
 	int SYSMSG_TOKEN_BYTE2 = 20;
 	int SYSMSG_TOKEN_WORD = 21;
+	int SYSMSG_TOKEN_FACTION = 24;
 	
 	@SuppressWarnings("unchecked")
 	static <T> T readToken(RandomAccessMMOBuffer buf) throws IllegalStateException
@@ -131,6 +132,7 @@ public interface SystemMessageRecipient
 			case SYSMSG_TOKEN_BYTE1:
 			case SYSMSG_TOKEN_BYTE2:
 			case SYSMSG_TOKEN_WORD:
+			case SYSMSG_TOKEN_FACTION:
 				return (T)Integer.valueOf(readIntegerToken(buf));
 			case SYSMSG_TOKEN_SKILL:
 				return (T)Long.valueOf(readSkillToken(buf));

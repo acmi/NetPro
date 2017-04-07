@@ -4716,6 +4716,8 @@
 		<packet id="SM_EX_RAID_SERVER_INFO" name="ExRaidServerInfo" />
 		<packet id="SM_EX_SHOW_AGIT_SIEGE_INFO" name="ExShowAgitSiegeInfo" />
 		<packet id="SM_EX_ITEM_AUCTION_STATUS" name="ExItemAuctionStatus" />
+		<packet id="SM_EX_MONSTER_BOOK_CLOSE_FORCE" name="ExMonsterBookCloseForce" />
+		<packet id="SM_EX_FACTION_LEVEL_UP_NOTIFY" name="ExFactionLevelUpNotify" />
 		<packet id="SM_EX_PRIVATE_STORE_SELLING_RESULT" name="ExPrivateStoreSellingResult" />
 		<!-- d -->
 		<packet id="SM_EX_ENTER_WORLD" name="ExEnterWorld" />

@@ -15,7 +15,9 @@
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
 		<byte alias="Slot number" type="MyInventorySlot" />
-		<qword alias="Quantity" />
+		<qword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</qword>
 		<byte alias="Main item type" type="ItemType2" />
 
 		<branch id="is_ticket" condition="GenericItem">

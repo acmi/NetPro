@@ -41,7 +41,9 @@
 			</dword>
 		</branch>
 		<unsignedByte alias="Slot number" type="InventorySlot" />
-		<qword alias="Quantity" />
+		<qword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</qword>
 		<byte alias="Main item type" type="ItemType2" /> <!-- NEW -->
 
 		<!-- NEW -->
@@ -121,7 +123,9 @@
 				<scriptAlias id="OIC_ITEM_TEMPLATE" />
 			</dword>
 			<unsignedByte alias="Slot number (inventory)" type="InventorySlot" />
-			<qword alias="Quantity" />
+			<qword alias="Amount">
+				<scriptAlias id="OIC_ITEM_AMOUNT" />
+			</qword>
 			<byte alias="Main item type" type="ItemType2" /> <!-- NEW -->
 
 			<!-- NEW -->

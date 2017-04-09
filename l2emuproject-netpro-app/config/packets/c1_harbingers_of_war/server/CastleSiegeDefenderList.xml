@@ -2,11 +2,11 @@
 <packet id="SM_CASTLE_SIEGE_DEFENDER_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Residence" type="PledgeBase" />
 	<dword alias="Owner's view" type="YesOrNo" />
-	<dword alias="Has applicants" type="YesOrNo" />
-	<dword alias="0" />
-	<dword alias="Defender count" id="index_0" />
-	<dword alias="Defender count (dupe)" />
-	<loop id="index_0">
+	<dword alias="Has applicants" type="YesOrNo" /> <!-- Current siege/registration period? -->
+	<dword alias="Part number" /> <!-- first page is 0 -->
+	<dword alias="Total defending pledge count" />
+	<dword alias="Defenders" id="cnt" />
+	<loop id="cnt">
 		<dword alias="Pledge ID" type="Pledge">
 			<scriptAlias id="PIC_PLEDGE_ID" />
 		</dword>

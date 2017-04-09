@@ -27,6 +27,6 @@ public class SoulshotGrade extends ScriptedZeroBasedIntegerIdInterpreter
 	/** Constructs this interpreter. */
 	public SoulshotGrade()
 	{
-		super(new InterpreterMetadata(-1), "N/A", "No grade", "D grade", "C grade", "B grade", "A grade", "S grade", "R grade");
+		super(new InterpreterMetadata(-2), "Substituted", "N/A", "No grade", "D grade", "C grade", "B grade", "A grade", "S grade", "R grade");
 	}
 }

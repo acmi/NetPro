@@ -23,6 +23,8 @@ import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.mutable.MutableInt;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 
 import net.l2emuproject.geometry.point.IPoint2D;
@@ -504,6 +506,49 @@ public final class CommonPacketSender extends PacketWriterScript
 		//client.notifyPacketForwarded(null, allocate(size).put(bb.array()), System.currentTimeMillis());
 	}
 	
+	public static final MutableInt sendLineExServerPrimitive(L2GameClient client, MutableInt counter, IPoint3D centroid, int clipX, int clipY, int r, int g, int b,
+			List<Pair<IPoint3D, IPoint3D>> segments)
+	{
+		if (counter == null)
+			counter = new MutableInt(0);
+		
+		final String alias = "ServerPrimitive_line" + counter.incrementAndGet();
+		
+		final PrimitiveExtras ex = new PrimitiveExtras("", r, g, b, 255);
+		final int dynamicPartSize = segments.size() * (1 + 6 * 4 + 3 * (4 * 4));
+		final int size = 1 + 2 + stdStringSize(alias) + (3 * 4) + 4 + 4 + 4 + dynamicPartSize;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xFE);
+		buf.writeH(0x11);
+		buf.writeS(alias);
+		buf.writeD(centroid.getX());
+		buf.writeD(centroid.getY());
+		buf.writeD(centroid.getZ());
+		buf.writeD(clipX);
+		buf.writeD(clipY);
+		buf.startLoop(ReservedFieldType.DWORD);
+		for (final Pair<IPoint3D, IPoint3D> segment : segments)
+		{
+			buf.writeC(2); // line segment
+			ex.write(buf);
+			final IPoint3D start = segment.getLeft(), end = segment.getRight();
+			buf.writeD(start.getX());
+			buf.writeD(start.getY());
+			buf.writeD(start.getZ());
+			buf.writeD(end.getX());
+			buf.writeD(end.getY());
+			buf.writeD(end.getZ());
+			
+			buf.countLoopElement();
+		}
+		buf.endLoop();
+		client.sendPacket(new ProxyRepeatedPacket(bb));
+		//client.notifyPacketForwarded(null, allocate(size).put(bb.array()), System.currentTimeMillis());
+		return counter;
+	}
+	
 	private static final void sendShortRequest(L2GameServer server, int opcode, int entityID, boolean forceAttack, boolean prohibitMovement)
 	{
 		final int size = 1 + 4 + 4 + 1;
@@ -552,6 +597,29 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendRequestAction(L2GameServer server, int targetOID, IPoint3D origin, boolean prohibitMovement)
 	{
 		sendSimpleRequest(server, 0x1F, targetOID, origin, prohibitMovement);
+	}
+	
+	public static final void sendSay2(L2GameServer server, String message, int chat)
+	{
+		sendSay2(server, message, chat, null);
+	}
+	
+	public static final void sendSay2(L2GameServer server, String message, int chat, String recipient)
+	{
+		if ((chat == CHAT_PM) != (recipient != null))
+			throw new IllegalArgumentException(chat + " " + recipient);
+		
+		final int size = 1 + stdStringSize(message) + 4 + (recipient != null ? stdStringSize(recipient) : 0);
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0x49);
+		buf.writeS(message);
+		buf.writeD(chat);
+		if (recipient != null)
+			buf.writeS(recipient);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
 	public static final void sendUserCmd(L2GameServer server, int command)
@@ -699,6 +767,83 @@ public final class CommonPacketSender extends PacketWriterScript
 		buf.writeC(0xD0);
 		buf.writeH(0x1E);
 		buf.writeD(objectID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendAnswerJoinPartyRoom(L2GameServer server, boolean accepted)
+	{
+		final int size = 1 + 2 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x30);
+		buf.writeD(accepted);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestExAcceptJoinMPCC(L2GameServer server, boolean accepted, int unknown)
+	{
+		final int size = 1 + 2 + 4 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x07);
+		buf.writeD(accepted);
+		buf.writeD(unknown);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestAnswerCoupleAction(L2GameServer server, int action, boolean accepted, int requestorID)
+	{
+		final int size = 1 + 2 + 4 + 4 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x77);
+		buf.writeD(action);
+		buf.writeD(accepted);
+		buf.writeD(requestorID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestFriendAddReply(L2GameServer server, int unknown, boolean accepted)
+	{
+		final int size = 1 + 1 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0x78);
+		buf.writeC(unknown);
+		buf.writeD(accepted);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestAnswerJoinParty(L2GameServer server, boolean accepted)
+	{
+		sendRequestAnswer(server, 0x43, accepted);
+	}
+	
+	public static final void sendAnswerTradeRequest(L2GameServer server, boolean accepted)
+	{
+		sendRequestAnswer(server, 0x55, accepted);
+	}
+	
+	private static final void sendRequestAnswer(L2GameServer server, int opcode, boolean accepted)
+	{
+		final int size = 1 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(opcode);
+		buf.writeD(accepted);
 		
 		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}

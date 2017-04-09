@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- It is no longer necessary to have the invitee as target, so DWORD OID field changed to STRING name field -->
 <packet id="SM_ASK_JOIN_PARTY" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<string alias="Invitor name" /> <!-- NEW -->
+	<string alias="Invitor name"> <!-- NEW -->
+		<scriptAlias id="ajp_invitor_name"/>
+	</string>
 	<dword alias="Item distribution" type="ItemRedist" />
 </packet>

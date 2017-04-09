@@ -9,7 +9,7 @@
 		<scriptAlias id="OIL_OBJECT_ID" />
 		<scriptAlias id="HLE_TARGET_OID" />
 	</dword>
-	<dword alias="0" /> <!-- NEW -->
+	<dword alias="Soulshot substitute" type="Item" /> <!-- NEW -->
 	<dword alias="Damage to main target" />
 	<dword alias="Damage modifiers" type="DamageTypes" /> <!-- NEW -->
 	<dword alias="Soulshot" type="SoulshotGrade" /> <!-- NEW -->

@@ -255,7 +255,7 @@
 		<packet id="392" name="RequestMenteeAdd" />
 		<packet id="393" name="RequestMenteeWaitingList" />
 		<packet id="394" name="RequestJoinPledgeByName" />
-		<packet id="395" name="RequestInZoneWaitingTime" />
+		<packet id="395" name="RequestInzoneWaitingTime" />
 		<packet id="396" name="RequestJoinCuriousHouse" />
 		<packet id="397" name="RequestCancelCuriousHouse" />
 		<packet id="398" name="RequestLeaveCuriousHouse" />
@@ -304,6 +304,11 @@
 		<packet id="454" name="RequestTargetActionMenu" />
 		<packet id="455" name="RequestExSendSelectedQuestZoneID" />
 		<packet id="457" name="RequestAlchemyTryMixCube" />
+		<!--
+		UNICODE "(Send2nd)"
+		UNICODE "(Send)"
+		UNICODE "RequestAlchemyConversion"
+		-->
 		<packet id="458" name="RequestAlchemyConversion" />
 		<packet id="459" name="RequestSendExecutedUIEventsCount" />
 		<packet id="462" name="RequestRegistPartySubstitute" />
@@ -1916,6 +1921,31 @@
 		UNICODE "RequestNewEnchantRetryToPutItems"
 		-->
 		<packet id="CM_REQ_NEW_ENCHANT_RETRY_TO_PUT_ITEMS" name="RequestNewEnchantRetryToPutItems" />
+		<!-- chcdddd -->
+		<packet id="CM_EX_ARENA_CUSTOM_NOTIFICATION" name="ExArenaCustomNotification" />
+		<packet id="CM_REQ_RAID_BOSS_SPAWN_INFO" name="RequestRaidBossSpawnInfo" />
+		<!-- ch -->
+		<packet id="CM_REQ_RAID_SERVER_INFO" name="RequestRaidServerInfo" />
+		<!-- ch -->
+		<packet id="CM_REQ_SHOW_AGIT_SIEGE_INFO" name="RequestShowAgitSiegeInfo" />
+		<!-- ch -->
+		<packet id="CM_REQ_ITEM_AUCTION_STATUS" name="RequestItemAuctionStatus" />
+		<!-- ch -->
+		<packet id="CM_REQ_MONSTER_BOOK_OPEN" name="RequestMonsterBookOpen" />
+		<!-- ch -->
+		<packet id="CM_REQ_MONSTER_BOOK_CLOSE" name="RequestMonsterBookClose" />
+		<!-- chh -->
+		<packet id="CM_REQ_MONSTER_BOOK_REWARD" name="RequestMonsterBookReward" />
+		<!-- ch -->
+		<packet id="CM_EX_REQ_MATCH_GROUP" name="ExRequestMatchGroup" />
+		<packet id="CM_EX_REQ_MATCH_GROUP_ASK" name="ExRequestMatchGroupAsk" />
+		<packet id="CM_EX_REQ_MATCH_GROUP_ANSWER" name="ExRequestMatchGroupAnswer" />
+		<!-- ch -->
+		<packet id="CM_EX_REQ_MATCH_GROUP_WITHDRAW" name="ExRequestMatchGroupWithdraw" />
+		<packet id="CM_EX_REQ_MATCH_GROUP_OUST" name="ExRequestMatchGroupOust" />
+		<packet id="CM_EX_REQ_MATCH_GROUP_CHANGE_MASTER" name="ExRequestMatchGroupChangeMaster" />
+		<!-- chSSS -->
+		<packet id="CM_REQ_BLOCK_LIST_FOR_AD" name="RequestBlockListForAD" />
 	</client>
 	<server>
 		<!--
@@ -2331,6 +2361,7 @@
 		<packet id="613" name="ExResponseBeautyList" />
 		<packet id="614" name="ExResponseBeautyRegistReset" />
 		<packet id="615" name="ExResponseResetList" />
+		<!-- dQ -->
 		<packet id="616" name="ExShuffleSeedAndPublicKey" />
 		<packet id="617" name="ExCheck_SpeedHack" />
 		<packet id="618" name="ExBR_NewIConCashBtnWnd" />
@@ -4230,7 +4261,7 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_REMOVE_ENCHANT_SUPPORT_ITEM_RESULT" name="ExRemoveEnchantSupportItemResult" />
-		<!--
+		<!-- dQddd, dd
 		ASCII "dQQdddd"
 		ASCII "dd"
 		UNICODE "ExAcquireAPSkillList"
@@ -4381,13 +4412,7 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_ENSOUL_RESULT" name="ExEnsoulResult" />
-		<!--
-		ASCII "ddd"
-		ASCII "hccdd"
-		UNICODE " (%d / %d)"
-		UNICODE "ExOneDayReceiveRewardList"
-		UNICODE "(Receive)%s"
-		-->
+		<!-- dddcddd, hccdd -->
 		<packet id="SM_EX_ONE_DAY_RECEIVE_REWARD_LIST" name="ExOneDayReceiveRewardList" />
 		<!--
 		ASCII "dddddd"
@@ -4686,5 +4711,15 @@
 		UNICODE "ExBlockListForAD"
 		-->
 		<packet id="SM_EX_BLOCK_LIST_FOR_AD" name="ExBlockListForAD" />
+		<packet id="SM_EX_FIELD_EVENT_EFFECT" name="ExFieldEventEffect" />
+		<packet id="SM_EX_RAID_BOSS_SPAWN_INFO" name="ExRaidBossSpawnInfo" />
+		<packet id="SM_EX_RAID_SERVER_INFO" name="ExRaidServerInfo" />
+		<packet id="SM_EX_SHOW_AGIT_SIEGE_INFO" name="ExShowAgitSiegeInfo" />
+		<packet id="SM_EX_ITEM_AUCTION_STATUS" name="ExItemAuctionStatus" />
+		<packet id="SM_EX_MONSTER_BOOK_CLOSE_FORCE" name="ExMonsterBookCloseForce" />
+		<packet id="SM_EX_FACTION_LEVEL_UP_NOTIFY" name="ExFactionLevelUpNotify" />
+		<packet id="SM_EX_PRIVATE_STORE_SELLING_RESULT" name="ExPrivateStoreSellingResult" />
+		<!-- d -->
+		<packet id="SM_EX_ENTER_WORLD" name="ExEnterWorld" />
 	</server>
 </packets>

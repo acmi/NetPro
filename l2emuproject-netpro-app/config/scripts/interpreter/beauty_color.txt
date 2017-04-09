@@ -1,0 +1,53 @@
+10001	101	Monochrome
+10002	101	Monochrome
+10003	101	Designer's Choice
+10003	102	Electric Blue
+10003	103	Harvest Grape
+10003	104	Bubblegum
+10003	105	Abyssal Black
+10003	106	Clear Emerald
+10003	107	Haystack
+10003	108	Moss Green
+10003	109	Misty Ice
+10003	110	Charcoal Gray
+10004	101	Designer's Choice
+10004	102	Electric Blue
+10004	103	Harvest Grape
+10004	104	Bubblegum
+10004	105	Abyssal Black
+10004	106	Clear Emerald
+10004	107	Haystack
+10004	108	Olive Green
+10004	109	Misty Ice
+10004	110	Charcoal Gray
+10005	101	Monochrome
+10006	101	Monochrome
+10007	101	Monochrome
+10008	101	Monochrome
+10009	101	Monochrome
+10010	101	Monochrome
+10011	101	Designer's Choice
+10011	102	Lavender
+10011	103	Gray Shadow
+10011	104	Vampire Blood
+10011	105	Royal Purple
+10011	106	Gallant Gold
+10011	107	Pale Blue
+10011	108	Cornflower
+10011	109	Pickled Olive
+10011	110	Sweet Coral
+10013	101	Designer's Choice
+10013	102	Dark Fire
+10013	103	Burgundy Wine
+10013	104	Magenta
+10013	105	Metallic Teal
+10013	106	Gallant Gold
+10013	107	Dusk Green
+10013	108	Mediator's Purple
+10013	109	Sunlit Jungle
+10013	110	Sandy Brown
+10014	101	Monochrome
+10015	101	Monochrome
+15001	101	Monochrome
+15002	101	Monochrome
+15003	101	Monochrome

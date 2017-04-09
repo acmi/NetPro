@@ -78,6 +78,8 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 	@ScriptFieldAlias
 	private static final String ITEM_NAME_ID = "OIC_ITEM_TEMPLATE";
 	@ScriptFieldAlias
+	private static final String ITEM_AMOUNT = "OIC_ITEM_AMOUNT";
+	@ScriptFieldAlias
 	private static final String STATIC_OBJECT_ID = "OIC_SO_OID";
 	@ScriptFieldAlias
 	private static final String EDITOR_ID = "OIC_SO_TEMPLATE";
@@ -225,7 +227,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 		if (oids.isEmpty())
 			return false;
 		
-		final List<EnumeratedPayloadField> names = rab.getFieldIndices(ITEM_NAME_ID);
+		final List<EnumeratedPayloadField> names = rab.getFieldIndices(ITEM_NAME_ID), amounts = rab.getFieldIndices(ITEM_AMOUNT);
 		IntegerInterpreter interp = null;
 		try
 		{
@@ -242,8 +244,9 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 				continue;
 			
 			final int id = rab.readInteger32(names.get(i));
+			final long amount = amounts.size() <= i ? 1 : rab.readInteger(amounts.get(i)); // e.g. Old CSI/UI with equip OIDs, ExUIES
 			final String name = interp != null ? String.valueOf(interp.getInterpretation(id, cacheContext)) : String.valueOf(id);
-			final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(oid, cacheContext).setType(new ItemType(id));
+			final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(oid, cacheContext).setType(new ItemType(id, amount));
 			oi.setName(name);
 		}
 		

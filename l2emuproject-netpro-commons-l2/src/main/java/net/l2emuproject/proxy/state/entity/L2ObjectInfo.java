@@ -26,27 +26,35 @@ import net.l2emuproject.geometry.point.PointGeometry;
 public class L2ObjectInfo
 {
 	private static final long STOP_MOVE_GRACE_PERIOD = 500_000_000;
+	private static final int[] INVALID_MOVE_SPEED = new int[3];
 	
-	private volatile int _targetOID;
+	private int _targetOID;
 	
-	private volatile boolean _running;
-	private volatile int _walkSpeed, _runSpeed;
-	private volatile double _speedMultiplier;
-	private volatile ObjectLocation _location, _destination;
-	private volatile Long _movementStart;
+	private boolean _running;
+	private int _environment;
+	private double _speedMultiplier;
+	private int[] _templateWalkSpeed, _templateRunSpeed;
 	
-	private volatile Long _stopMoveReceivalTime;
-	private volatile boolean _teleporting, _lastMovementInterruptedByTeleport;
+	private ObjectLocation _location, _destination;
+	private Long _movementStart;
+	
+	private Long _stopMoveReceivalTime;
+	private boolean _teleporting, _lastMovementInterruptedByTeleport;
 	
 	/** Constructs this object. */
 	public L2ObjectInfo()
 	{
-		_targetOID = 0;
-		_running = true; // currently, only players are tracked
-		_walkSpeed = _runSpeed = 50;
-		_speedMultiplier = 1D;
+		_targetOID = 0; // no target
+		
+		_running = false; // walking
+		_environment = 0; // ground
+		_speedMultiplier = 0D;
+		_templateWalkSpeed = INVALID_MOVE_SPEED;
+		_templateRunSpeed = INVALID_MOVE_SPEED;
+		
 		_location = _destination = ObjectLocation.UNKNOWN_LOCATION;
 		_movementStart = null;
+		
 		_stopMoveReceivalTime = null;
 		_teleporting = false;
 		_lastMovementInterruptedByTeleport = false;
@@ -89,28 +97,52 @@ public class L2ObjectInfo
 	}
 	
 	/**
-	 * Sets the object's movement speed.
+	 * Sets the object's movement environment (Ground/Water/Air).
+	 * 
+	 * @param environment ground/water/air
+	 * @return {@code this}
+	 */
+	public L2ObjectInfo setEnvironment(int environment)
+	{
+		if (_environment == environment)
+			return this;
+		
+		updateLocation(getCurrentLocation());
+		_environment = environment;
+		return this;
+	}
+	
+	/**
+	 * Sets the object template's movement speed.
 	 * 
 	 * @param walkSpeed speed while walking
 	 * @param runSpeed speed while running
 	 * @return {@code this}
 	 */
-	public L2ObjectInfo setMovementSpeed(int walkSpeed, int runSpeed)
+	public L2ObjectInfo setTemplateMovementSpeed(int[] walkSpeed, int[] runSpeed)
 	{
-		if (_running && _runSpeed == runSpeed)
+		if (_running)
 		{
-			_walkSpeed = walkSpeed;
-			return this;
+			if (_templateRunSpeed[_environment] == runSpeed[_environment])
+			{
+				_templateWalkSpeed = walkSpeed;
+				_templateRunSpeed = runSpeed;
+				return this;
+			}
 		}
-		if (!_running && _walkSpeed == walkSpeed)
+		else
 		{
-			_runSpeed = runSpeed;
-			return this;
+			if (_templateWalkSpeed[_environment] == walkSpeed[_environment])
+			{
+				_templateWalkSpeed = walkSpeed;
+				_templateRunSpeed = runSpeed;
+				return this;
+			}
 		}
 		
 		updateLocation(getCurrentLocation());
-		_walkSpeed = walkSpeed;
-		_runSpeed = runSpeed;
+		_templateWalkSpeed = walkSpeed;
+		_templateRunSpeed = runSpeed;
 		return this;
 	}
 	
@@ -122,7 +154,7 @@ public class L2ObjectInfo
 	 */
 	public L2ObjectInfo setSpeedMultiplier(double speedMultiplier)
 	{
-		if (_speedMultiplier == speedMultiplier)
+		if (Double.compare(_speedMultiplier, speedMultiplier) == 0)
 			return this;
 		
 		updateLocation(getCurrentLocation());
@@ -172,37 +204,9 @@ public class L2ObjectInfo
 		updateLocation(location);
 		_destination = location.equals(destination) ? ObjectLocation.UNKNOWN_LOCATION : destination;
 		
-		//if (_destination != ObjectLocation.UNKNOWN_LOCATION && getName().startsWith("YOUR_NAME_HERE "))
-		//	L2ThreadPool.schedule(new DebugWriter(), 100);
-		
 		return this;
 	}
 	
-	/*
-	final class DebugWriter implements Runnable
-	{
-		@Override
-		public void run()
-		{
-			if (_destination == ObjectLocation.UNKNOWN_LOCATION)
-				return;
-			
-			final double distanceLeftToTravel = PointGeometry.getRawPlanarDistance(_location, _destination);
-			final double distanceTraveled = getMovementSpeed() * ((System.nanoTime() - _movementStart) / 1_000_000_000D);
-			LOG.info("Travelled " + distanceTraveled + " in " + ((System.nanoTime() - _movementStart) / 1_000_000_000D) + " seconds");
-			if (distanceTraveled >= distanceLeftToTravel)
-			{
-				LOG.info("Finally arrived");
-				return;
-			}
-			
-			final IPoint2D loc = PointGeometry.getNextPointInPlanarSegment(_location, _destination, distanceTraveled);
-			LOG.info("Apparently now at " + loc.getX() + " " + loc.getY());
-			
-			L2ThreadPool.schedule(this, 50);
-		}
-	}
-	*/
 	/**
 	 * Returns the current movement destination for this object.
 	 * 
@@ -272,7 +276,7 @@ public class L2ObjectInfo
 	 */
 	public double getMovementSpeed()
 	{
-		return _speedMultiplier * (_running ? _runSpeed : _walkSpeed);
+		return _speedMultiplier * (_running ? _templateRunSpeed[_environment] : _templateWalkSpeed[_environment]);
 	}
 	
 	/**

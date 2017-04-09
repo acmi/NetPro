@@ -70,6 +70,8 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 	@ScriptFieldAlias
 	private static final String OBJECT_MOVE_MODE = "OIL_OBJECT_MOVE_MODE";
 	@ScriptFieldAlias
+	private static final String OBJECT_MOVE_ENV = "OIL_OBJECT_MOVE_ENVIRONMENT";
+	@ScriptFieldAlias
 	private static final String OBJECT_RUN_SPD = "OIL_OBJECT_RUN_SPEED";
 	@ScriptFieldAlias
 	private static final String OBJECT_WALK_SPD = "OIL_OBJECT_WALK_SPEED";
@@ -81,7 +83,8 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 	@Override
 	public void handleClientPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
-		if (buf.seekFirstOpcode().readUC() == CM_SEND_APPERING) {
+		if (buf.seekFirstOpcode().readUC() == CM_SEND_APPERING)
+		{
 			// if currently teleporting, mark as not moving and last move interrupted by teleporting
 		}
 		
@@ -211,7 +214,15 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 			}
 			
 			if (!walkSpds.isEmpty())
-				oi.setMovementSpeed(buf.readInteger32(walkSpds.get(i)), buf.readInteger32(runSpds.get(i)));
+			{
+				final int[] templateWalkSpeeds = new int[3], templateRunSpeeds = new int[3];
+				for (int j = 0; j < 3; ++j)
+				{
+					templateWalkSpeeds[j] = buf.readInteger32(walkSpds.get(i * 3 + j));
+					templateRunSpeeds[j] = buf.readInteger32(runSpds.get(i * 3 + j));
+				}
+				oi.setTemplateMovementSpeed(templateWalkSpeeds, templateRunSpeeds);
+			}
 			
 			if (!speedMultipliers.isEmpty())
 				oi.setSpeedMultiplier(buf.readDecimal(speedMultipliers.get(i)));

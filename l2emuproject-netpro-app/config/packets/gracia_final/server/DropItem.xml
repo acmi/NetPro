@@ -23,6 +23,7 @@
 	</dword>
 	<dword alias="Stackable" type="YesOrNo" />
 	<qword alias="Amount"> <!-- NEW -->
+		<scriptAlias id="OIC_ITEM_AMOUNT" />
 		<scriptAlias id="HLE_WORLD_ITEM_AMOUNT" />
 	</qword>
 	<dword alias="Unknown" type="YesOrNo" />

@@ -26,7 +26,7 @@ import net.l2emuproject.network.security.EmptyCipher;
 import net.l2emuproject.network.security.GameCipher;
 import net.l2emuproject.network.security.ICipher;
 import net.l2emuproject.network.security.LegacyGameCipher;
-import net.l2emuproject.network.security.ShuffledOpcodeManager;
+import net.l2emuproject.network.security.OpcodeTableManager;
 import net.l2emuproject.proxy.network.AbstractL2ClientProxy;
 
 /**
@@ -36,7 +36,7 @@ import net.l2emuproject.proxy.network.AbstractL2ClientProxy;
  */
 public final class L2GameClient extends AbstractL2ClientProxy
 {
-	private ShuffledOpcodeManager _deobfuscator;
+	private OpcodeTableManager _deobfuscator;
 	
 	private ICipher _cipher;
 	private boolean _firstTime;
@@ -134,7 +134,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	{
 		super.setVersion(version);
 		
-		_deobfuscator = new ShuffledOpcodeManager(version, false);
+		_deobfuscator = new OpcodeTableManager(version);
 	}
 	
 	/**
@@ -142,7 +142,7 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	 * 
 	 * @return opcode deobfuscator
 	 */
-	public ShuffledOpcodeManager getDeobfuscator()
+	public OpcodeTableManager getDeobfuscator()
 	{
 		return _deobfuscator;
 	}

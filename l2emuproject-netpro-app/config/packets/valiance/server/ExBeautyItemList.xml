@@ -3,36 +3,105 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="679" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Style Type" /> <!-- 0=hair, 1=face, 2=color -->
-	<dword alias="Hair Style Count" id="hairstyle" />
-	<loop id="hairstyle">
-		<dword alias="Parent Style Type" />
-		<dword alias="Style ID" />
-		<dword alias="Adena Price" /> <!-- remove -->
-		<dword alias="Adena Price" /> <!-- add -->
-		<dword alias="Ticket Price" />
-		<dword alias="Style OID" />
+	<dword alias="Type" type="appearance.BeautyType" id="type_1" />
+	<dword alias="Count" id="cnt_1" />
+	<loop id="cnt_1">
+		<branch id="type_1" condition="beauty.Hair">
+			<dword alias="Class name">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+			</dword>
+			<dword alias="Hair ID" type="appearance.BeautyHair">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<branch id="type_1" condition="beauty.Face">
+			<dword alias="Class name">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+			</dword>
+			<dword alias="Face ID" type="appearance.BeautyFace">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<branch id="type_1" condition="beauty.Color">
+			<dword alias="Hair ID" type="appearance.BeautyHair">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME_0" />
+			</dword>
+			<dword alias="Color ID" type="appearance.BeautyColor">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<dword alias="Removal price (adena)" />
+		<dword alias="Purchase price (adena)" />
+		<dword alias="Purchase price (tickets)" />
+		<dword alias="ID within shop" />
 	</loop>
 
-	<dword alias="Style Type" /> <!-- 0=hair, 1=face, 2=color -->
-	<dword alias="Face Style Count" id="facestyle" />
-	<loop id="facestyle">
-		<dword alias="Parent Style Type" />
-		<dword alias="Style ID" />
-		<dword alias="Adena Price" /> <!-- remove -->
-		<dword alias="Adena Price" /> <!-- add -->
-		<dword alias="Ticket Price" />
-		<dword alias="Style OID" />
+	<dword alias="Type" type="appearance.BeautyType" id="type_2" />
+	<dword alias="Count" id="cnt_2" />
+	<loop id="cnt_2">
+		<branch id="type_2" condition="beauty.Hair">
+			<dword alias="Class name">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+			</dword>
+			<dword alias="Hair ID" type="appearance.BeautyHair">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<branch id="type_2" condition="beauty.Face">
+			<dword alias="Class name">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+			</dword>
+			<dword alias="Face ID" type="appearance.BeautyFace">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<branch id="type_2" condition="beauty.Color">
+			<dword alias="Hair ID" type="appearance.BeautyHair">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME_0" />
+			</dword>
+			<dword alias="Color ID" type="appearance.BeautyColor">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<dword alias="Removal price (adena)" />
+		<dword alias="Purchase price (adena)" />
+		<dword alias="Purchase price (tickets)" />
+		<dword alias="ID within shop" />
 	</loop>
 
-	<dword alias="Style Type" /> <!-- 0=hair, 1=face, 2=color -->
-	<dword alias="Color Style Count" id="colorstyle" />
-	<loop id="colorstyle">
-		<dword alias="Parent Style Type" />
-		<dword alias="Style ID" />
-		<dword alias="Adena Price" /> <!-- remove -->
-		<dword alias="Adena Price" /> <!-- add -->
-		<dword alias="Ticket Price" />
-		<dword alias="Style OID" />
+	<dword alias="Type" type="appearance.BeautyType" id="type_3" />
+	<dword alias="Count" id="cnt_3" />
+	<loop id="cnt_3">
+		<branch id="type_3" condition="beauty.Hair">
+			<dword alias="Class name">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+			</dword>
+			<dword alias="Hair ID" type="appearance.BeautyHair">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<branch id="type_3" condition="beauty.Face">
+			<dword alias="Class name">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+			</dword>
+			<dword alias="Face ID" type="appearance.BeautyFace">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<branch id="type_3" condition="beauty.Color">
+			<dword alias="Hair ID" type="appearance.BeautyHair">
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME" />
+				<scriptAlias id="__INTERP_BEAUTY_CLASS_NAME_0" />
+			</dword>
+			<dword alias="Color ID" type="appearance.BeautyColor">
+				<scriptAlias id="__INTERP_BEAUTY_ID" />
+			</dword>
+		</branch>
+		<dword alias="Removal price (adena)" />
+		<dword alias="Purchase price (adena)" />
+		<dword alias="Purchase price (tickets)" />
+		<dword alias="ID within shop" />
 	</loop>
 </packet>

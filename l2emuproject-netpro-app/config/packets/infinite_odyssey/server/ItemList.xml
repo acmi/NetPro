@@ -18,6 +18,7 @@
 		</dword>
 		<unsignedByte alias="Slot number" type="MyInventorySlot" />
 		<qword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
 			<scriptAlias id="LUA_IL_AMOUNT"/>
 		</qword>
 		<byte alias="Main item type" type="ItemType2" />

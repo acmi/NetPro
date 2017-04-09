@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Added siege status and residence type CHARs at the end of each loop element -->
+<packet id="384" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Castle count" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Castle" type="PledgeBase" />
+		<string alias="Owner pledge" />
+		<dword alias="Tax rate" />
+		<dword alias="Siege time" type="DeclaredSiegeTime" />
+
+		<!-- NEW -->
+		<byte alias="At war" type="YesOrNo" />
+		<byte alias="Type" type="CastleResidenceInfo" />
+	</loop>
+</packet>

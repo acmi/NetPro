@@ -27,6 +27,6 @@ public class CastleResidenceInfo extends ScriptedZeroBasedIntegerIdInterpreter
 	/** Constructs this interpreter. */
 	public CastleResidenceInfo()
 	{
-		super("Neutral", "Light", "Dark");
+		super("Neutral", "Light", "Darkness");
 	}
 }

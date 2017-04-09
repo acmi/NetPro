@@ -6,6 +6,7 @@
 	</dword>
 	<dword alias="Item OID" type="ObjectID">
 		<scriptAlias id="OIC_ITEM_OID" />
+		<scriptAlias id="OIC_WORLD_ITEM_OID" />
 		<scriptAlias id="OIL_OBJECT_ID" />
 		<scriptAlias id="HLE_WORLD_ITEM_OID" />
 	</dword>
@@ -23,6 +24,7 @@
 	</dword>
 	<byte alias="Stackable" type="YesOrNo" />
 	<qword alias="Amount">
+		<scriptAlias id="OIC_ITEM_AMOUNT" />
 		<scriptAlias id="HLE_WORLD_ITEM_AMOUNT" />
 	</qword>
 	<byte alias="Unknown" type="YesOrNo" /> <!-- NEW -->

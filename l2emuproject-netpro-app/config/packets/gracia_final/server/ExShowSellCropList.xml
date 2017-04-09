@@ -23,6 +23,8 @@
 		<qword alias="Purchased amount" /> <!-- NEW -->
 		<qword alias="Price" /> <!-- NEW -->
 		<byte alias="Reward" />
-		<qword alias="Inventory amount" /> <!-- NEW -->
+		<qword alias="Inventory amount"> <!-- NEW -->
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</qword>
 	</loop>
 </packet>

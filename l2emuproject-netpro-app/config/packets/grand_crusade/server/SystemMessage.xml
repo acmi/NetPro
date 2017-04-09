@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Augmentation effect DWORDs changed to toggle CHAR -->
+<packet id="SM_SYSTEM_MESSAGE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Message" type="ImmutableSystemMessage">
+		<scriptAlias id="SYS_MESSAGE_ID" />
+	</word>
+	<byte alias="Token count" id="cnt" />
+	<loop id="cnt">
+		<byte alias="Type" type="Parameter" id="type">
+			<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE" />
+		</byte>
+		<branch id="type" condition="param.StringValue">
+			<string alias="Value">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</string>
+		</branch>
+		<branch id="type" condition="param.Player">
+			<string alias="Player">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</string>
+		</branch>
+		<branch id="type" condition="param.Item">
+			<dword alias="Item" type="Item">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</dword>
+		</branch>
+		<branch id="type" condition="param.Item2">
+			<dword alias="Item" type="Item">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE8_VALUE1" />
+			</dword>
+			<byte alias="Augmented" type="YesOrNo"> <!-- NEW -->
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE8_VALUE2" />
+			</byte>
+		</branch>
+		<branch id="type" condition="param.PledgeBase">
+			<word alias="Residence" type="PledgeBase">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</word>
+		</branch>
+		<branch id="type" condition="param.NumberValue">
+			<dword alias="Value">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" /> <!-- BEWARE: this is also used for 17 -->
+			</dword>
+		</branch>
+		<branch id="type" condition="param.Npc">
+			<dword alias="NPC" type="Npc">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</dword>
+		</branch>
+		<branch id="type" condition="param.Element">
+			<byte alias="Element" type="ElementType">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</byte>
+		</branch>
+		<branch id="type" condition="param.Fstring">
+			<dword alias="Value" type="ImmutableNpcString">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</dword>
+		</branch>
+		<branch id="type" condition="param.Sysstring">
+			<word alias="Value" type="SysString">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</word>
+		</branch>
+		<branch id="type" condition="param.Instance">
+			<word alias="Instance" type="Instance">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</word>
+		</branch>
+		<branch id="type" condition="param.Quantity">
+			<qword alias="Amount">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</qword>
+		</branch>
+		<branch id="type" condition="param.Skill">
+			<dword alias="Skill" type="Skill">
+				<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE4_VALUE1" />
+			</dword>
+			<dword alias="Level" type="skill.SkillLevel">
+				<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE4_VALUE2" />
+			</dword>
+		</branch>
+		<branch id="type" condition="param.Zone">
+			<dword alias="Location X">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE7_VALUE1" />
+			</dword>
+			<dword alias="Location Y">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE7_VALUE2" />
+			</dword>
+			<dword alias="Location Z">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE7_VALUE3" />
+			</dword>
+		</branch>
+		<branch id="type" condition="param.CharacterClass">
+			<word alias="Class" type="CharacterClass">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</word>
+		</branch>
+		<branch id="type" condition="param.Damage">
+			<dword alias="Target OID" type="ObjectID">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE16_VALUE1" />
+			</dword>
+			<dword alias="Attacker OID" type="ObjectID">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE16_VALUE2" />
+			</dword>
+			<dword alias="HP change">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE16_VALUE3" />
+			</dword>
+		</branch>
+		<branch id="type" condition="param.MutableFstring">
+			<dword alias="Value" type="ImmutableNpcString">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE14_VALUE1" />
+			</dword>
+			<string alias="1st token">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE14_VALUE2" />
+			</string>
+			<string alias="2nd token">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE14_VALUE3" />
+			</string>
+			<string alias="3rd token">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE14_VALUE4" />
+			</string>
+			<string alias="4th token">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE14_VALUE5" />
+			</string>
+			<string alias="5th token">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_TYPE14_VALUE6" />
+			</string>
+		</branch>
+		<branch id="type" condition="param.TinyNumberValue">
+			<byte alias="Value">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</byte>
+		</branch>
+		<branch id="type" condition="param.SmallNumberValue">
+			<word alias="Value">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</word>
+		</branch>
+		<branch id="type" condition="param.Faction"> <!-- GC -->
+			<byte alias="Value" type="quest.Faction">
+				<scriptAlias id="SYS_MESSAGE_TOKEN_VALUE_SINGLE" />
+			</byte>
+		</branch>
+	</loop>
+</packet>

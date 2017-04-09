@@ -282,6 +282,11 @@
 			<xs:enumeration value="WarehouseUsageResult" />
 			<xs:enumeration value="WeaponStatus" />
 			<xs:enumeration value="YesOrNo" />
+			
+			<xs:enumeration value="appearance.BeautyColor" />
+			<xs:enumeration value="appearance.BeautyFace" />
+			<xs:enumeration value="appearance.BeautyHair" />
+			<xs:enumeration value="appearance.BeautyType" />
 
 			<xs:enumeration value="ave.AbnormalVisualEffect" />
 			<xs:enumeration value="ave.AbnormalVisualEffectMask" />
@@ -441,6 +446,10 @@
 			<xs:enumeration value="airship.Movement" />
 			<xs:enumeration value="airship.Teleport" />
 			
+			<xs:enumeration value="beauty.Color" />
+			<xs:enumeration value="beauty.Face" />
+			<xs:enumeration value="beauty.Hair" />
+			
 			<xs:enumeration value="bitmask.Bit0" />
 			<xs:enumeration value="bitmask.Bit1" />
 			<xs:enumeration value="bitmask.Bit2" />
@@ -479,6 +488,7 @@
 			<xs:enumeration value="param.CharacterClass" />
 			<xs:enumeration value="param.Damage" />
 			<xs:enumeration value="param.Element" />
+			<xs:enumeration value="param.Faction" />
 			<xs:enumeration value="param.Fstring" />
 			<xs:enumeration value="param.Instance" />
 			<xs:enumeration value="param.Item" />

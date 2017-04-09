@@ -13,6 +13,7 @@
 	</dword>
 	<unsignedByte alias="Slot number" type="MyInventorySlot" />
 	<qword alias="Amount">
+		<scriptAlias id="OIC_ITEM_AMOUNT" />
 		<scriptAlias id="ex_rp_item_link_amount" />
 	</qword>
 	<byte alias="Main item type" type="ItemType2" />

@@ -13,7 +13,9 @@
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Amount" />
+		<dword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</dword>
 		<branch id="is_ticket" condition="GenericItem">
 			<word alias="Blessed" type="YesOrNo" />
 			<word alias="Enchant level" />
@@ -40,7 +42,9 @@
 		<dword alias="Item" type="Item" id="is_ticket">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Amount" />
+		<dword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</dword>
 		<branch id="is_ticket" condition="GenericItem">
 			<word alias="Blessed" type="YesOrNo" />
 			<word alias="Enchant level" />

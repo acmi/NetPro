@@ -204,7 +204,7 @@
 204	Social
 205	Options
 206	Video
-207	System/Audio
+207	Audio
 208	Game
 209	Resolution
 210	Brightness
@@ -356,11 +356,11 @@
 356	System
 357	Damage
 358	Chat
-359	Shout
-360	Clan
-361	Party
-362	Trade
-363	Whisper
+359	! Shout
+360	@ Clan Chat
+361	# Party Chat
+362	+ Trade Chat
+363	" Whisper
 364	Skill List
 365	Required SP
 366	Description
@@ -589,7 +589,7 @@
 589	Clan
 590	Alliance
 591	No Alliance
-592	Ally
+592	$ Alliance Chat
 593	Siege Information
 594	Modeling Detail
 595	No Castle Owner
@@ -737,7 +737,7 @@
 737	Number of Kept Items
 738	Manor
 739	Race Manager
-740	***
+740	-_-ㆀ
 741	Currently Watching a Game
 742	Crafting
 743	Result(s)
@@ -871,12 +871,12 @@
 871	4X
 872	Name
 873	Clan
-874	Close Range Fighter
-875	Long Range Fighter
-876	Defensive Fighter
-877	Song/Dance Assist Fighter
+874	Warrior
+875	Archer
+876	Human Knight
+877	Enchanter
 878	Wizard
-879	Healer/Buffer
+879	Healer
 880	Summoner
 881	Indicator of the Abnormal State of a Party Member
 882	Record of Seven Signs
@@ -1208,7 +1208,7 @@
 1208	Register
 1209	Delete
 1210	Clan War
-1211	Hero Voice
+1211	% Hero Voice
 1212	General Workshop
 1213	Dwarven Workshop
 1214	General Recipe Book
@@ -1278,7 +1278,7 @@
 1278	One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
 1279	Ten, Hundred, Thousand, Ten Thousand, Hundred Thousand
 1280	Ten Thousand, Hundred Million
-1281	Thousand, Million, Billion, Trillion, Quadrillion, Quintillion
+1281	Thousand, Million, Billion, B, T, QD, QN
 1282	Million, thaisuffix1, thaisuffix2
 1283	Find Private Store
 1284	General Field
@@ -1481,7 +1481,7 @@
 1481	Varnish
 1482	Removal Fee
 1483	Gemstones Needed
-1484	Command
+1484	` Alliance chat
 1485	Command On-screen Text
 1486	Toggle Buff/Debuff
 1487	Party Window Options
@@ -1534,10 +1534,10 @@
 1534	Castle/Fortress Privileges
 1535	To Fortress
 1536	Current Bid Price
-1537	X2 Bid
-1538	50% Bid
-1539	10% Bid
-1540	5% Bid
+1537	X2
+1538	+50%
+1539	+10%
+1540	+5%
 1541	Health
 1542	Delay Reset
 1543	Summon
@@ -1789,7 +1789,7 @@
 1789	Dispatch to War Declaration Clan Count
 1790	Territory Name
 1791	Territory Emblem
-1792	Single
+1792	Once
 1793	Repeat
 1794	Epic
 1795	Transfer
@@ -2466,7 +2466,7 @@
 2563	Magic Ornament
 2564	Other Item
 2565	Environmental Sound
-2566	Total Sound
+2566	Global Volume
 2567	NPC Voice
 2568	Decline Friend Requests
 2569	Decline Trade
@@ -2703,7 +2703,7 @@
 2800	Hide Private Workshop
 2801	Hide All Chat Balloons
 2802	Hide NPC Dialogue Box
-2803	Hide PC Points
+2803	Hide Player Commendation (PC) points at the beginning.
 2804	Invitation to the Ceremony of Chaos
 2805	Waiting to participate in the Ceremony of Chaos
 2806	Ceremony of Chaos
@@ -2757,14 +2757,14 @@
 2854	Use Full Screen
 2855	All On
 2856	All Off
-2857	Communications
+2857	Interaction
 2858	Auto Party Matching On
 2859	Player
 2860	Cannot Assign
 2861	Reset Settings
 2862	Apply and Close Window
 2963	Configure/Audio
-2964	Screen Information
+2964	Screen Info
 2965	Change Request
 2966	Withdraw Request
 2967	Options in Use
@@ -2774,18 +2774,18 @@
 2971	Request Available
 2972	No Request
 2973	Performance
-2974	Preset
+2974	Graphic quality
 2975	Advanced Shader Effects
 2976	Basic Resolution
 2977	Customize
 2978	Soul Crystal Enhancement
 2979	Augment
 2980	Stage
-2981	Token Obtained
+2981	Obtain coin
 2982	Reward for No. 1
 2983	Reward for All
 2984	Obtainable Reward(s)
-2985	Kaliel's Token
+2985	Sibis Coin
 2986	Conditions for War
 2987	Clan Request Explanation
 2988	Beauty Shop
@@ -2812,7 +2812,7 @@
 3009	Back to Previous Appearance
 3010	Style to be Restored
 3011	Set Chat Options
-3012	Set Chat Channel
+3012	Choose channel
 3013	Channel to be Divided
 3014	Set Message to be Displayed
 3015	System Options
@@ -2866,7 +2866,7 @@
 3063	Aeore Cardinal
 3064	Aeore Eva's Saint
 3065	Aeore Shillien Saint
-3066	Close-range Assassin
+3066	Rogue
 3067	Edit
 3068	Clan Entry
 3069	Clan Member
@@ -2971,10 +2971,10 @@
 3168	P
 3169	Lineage II News
 3170	Lock Screen Size
-3171	Infinite Odyssey
-3172	New Territory Card
-3173	Mystic Tavern
-3174	Embryo
+3171	Destruction's Shadow
+3172	Evolving Darkness
+3173	Fragment of Truth
+3174	Chaotic Ambush
 3175	This person is a friend.
 3176	This person is not a friend.
 3177	This person is in a mentor/mentee relationship with you.
@@ -3035,7 +3035,7 @@
 3232	Passive Orientation
 3233	Defensive Orientation
 3234	&World
-3235	World Chat
+3235	& World chat
 3236	Windy Healing Potion
 3237	Windy Quick Healing Potion
 3238	Wind Potion
@@ -3149,7 +3149,7 @@
 3346	Classic Server Name
 3347	Classic Server (Age 18)
 3348	Classic Server (Age 15)
-3349	Augmenting Stone
+3349	Augmenting
 3350	Enchantment Effect
 3351	Applied
 3352	Effect Applied
@@ -3208,7 +3208,7 @@
 3405	True Red
 3406	This message has been written in Mobile App Assist.
 3407	Castle sieges - Current Month
-3408	Castle sieges - Previous Month
+3408	Result of last month's castle siege
 3409	Current top-ranking clan
 3410	Final winning clan
 3411	Winning clan - 1st week
@@ -3300,8 +3300,128 @@
 3497	Go ahead with rune extraction?
 3498	Rune extraction successful.
 3499	Compound Ingredients
+3500	Retrieve failed auction money
 3501	Items must be registered one by one.
+3502	Keucereus Defense Battle
+3503	Name of Arena Server
+3504	Starting NPC
+3505	Region
+3506	Mission
+3507	Benefit
+3508	Benefit for current level
+3509	Benefit for next level
+3510	Main Characters
+3511	Monster Collection
+3512	Drop Item
+3513	Search Target
+3514	Monster Data
+3515	Faction
+3516	Location
+3517	Solo Hunting Field
+3518	Party Hunting Field
+3519	Light
+3520	Darkness
+3521	Force Level
+3522	Attack Target
+3523	Related Quest
+3524	Current State
+3525	Currently visible
+3526	Standby
+3527	Recommended Tip
+3528	Recommended Tip
+3529	Castle Information
+3530	Show Hunting Field
+3531	Show Instanced Zone
+3532	Show Raid
 3533	Equipped
+3534	Castle Siege in progress
+3535	Dimensional Siege in progress - Teleport here through Aden Castle or Rune Castle NPC Mermoden.
+3536	Dimensional Raid in progress - Teleport here through Hunters' Village NPC Merlot.
+3537	Available to use.
+3538	Auction in progress - Participate through Auction Broker Laia in front of the Town of Giran Luxury Goods Hall.
+3539	Available to use.
+3540	Keucereus Alliance Base Defense Battle in progress - Join through Bella the Town of Gludio Gatekeeper.
+3541	Available to use.
+3542	Solo Instanced Zone
+3543	Party Instanced Zone
+3544	Recommended Hunting Fields
+3545	Next Clan Hall War
+3546	Castle
+3547	Fortress
+3548	Solo/Party Hunting Field
+3549	XP
+3550	SP
+3551	Faction Point
+3552	Next auction item will be disclosed 24 hours before the auction starts.
+3553	Augmented
+3554	Unknown
+3555	Selected Item
+3556	Equipped Item
+3557	Default Settings
+3558	Advanced Settings
+3559	Global Volume Settings
+3560	Specific Volume Settings
+3561	Chat Channel
+3562	Chat Common
+3563	Channel Settings
+3564	Common Settings
+3565	Reset Channel Settings
+3566	Channel to use
+3567	Common Settings
+3568	Disable
+3569	Show only on system message window
+3570	“Common Settings - Show only on system message window” is enabled.
+3571	Performance Settings
+3572	Environment Settings
+3573	Show Detailed Settings
+3574	Hide Detailed Settings
+3575	Game Play
+3576	Visual Effect Settings
+3577	Daily Mission
+3578	View All Missions
+3579	Daily
+3580	Weekly
+3581	Monthly
+3582	One-time Mission
+3583	Daily Mission
+3584	Weekly Mission
+3585	Monthly Mission
+3586	Reward Available
+3587	Locked
+3588	Completion Requirements
+3589	Private Store Report
+3590	Price
+3591	Current Sales
+3592	Current Costs
+3593	Total Sales
+3594	Total Costs
+3595	Expected Sales
+3596	Expected Costs
+3597	Qty.
+3598	History
+3599	Boosting Event
+3600	Collection Event
+3601	PC Cafe Event
+3602	Draw Event
+3603	Special Event
+3604	Unavailable to accept
+3605	Applied Time
+3606	days
+3607	Mon
+3608	Tues
+3609	Wed
+3610	Neck
+3611	Gold
+3612	Sat
+3613	Everyday
+3614	Always
+3615	(based on regular maintenance)
+3616	Sold.
+3617	Enter the message in the store sign.
+3618	Fishing Event
+3619	Discount Event
+3620	Web Event
+3621	Purchase complete.
 4001	An envoy dispatched by the Blackbird Clan. Assigns quests associated with the Blackbird Clan.
 4002	An envoy dispatched by the Giant Trackers. Assigns quests associated with the Giant Trackers.
 4003	An envoy dispatched by the Mother Tree Guardians. Assigns quests associated with the Mother Tree Guardians.
@@ -3335,6 +3455,13 @@
 4512	Select a skill to enchant!
 4513	Battle status
 4514	Battle results
+4515	Enter Arena War
+4516	Apply for matching
+4517	Cancel matching
+4518	Confirm entry into war
+4519	Matching is completed.<br>Do you want to enter war now?
+4520	Confirm
+4521	Resurrection
 5001	L2 Store
 5002	All Items
 5003	Best
@@ -3478,7 +3605,7 @@
 5141	Sale
 5142	Limited
 5143	Event Campaign
-5144	Expiratory Modification
+5144	<Period-basis Processing>
 5145	Level Restriction
 5146	Incorrect Level
 5147	Small Bard's Ink
@@ -3502,7 +3629,7 @@
 5168	Begin Reading
 5169	Tip: "Available Readings" shows the number of times you can read your fortune. (up to 50)
 5170	Tip: "Tickets Owned" shows the number of tickets you own, which determines the number of readings allowed. (up to 50)
-5171	Tip. You can get better items from the Luxury Fortune Reading game than the Rgular Fortune Reading game.
+5171	Tip. Go to Lucky Store and use 1 Golden Festival Coin to exchange for 10 Regular Tarot Cards and for 1 Premium Tarot Card with 8 Golden Festival Coins.
 5172	Not in Use
 5173	Congratulations! Check your obtained items!
 5174	How many readings would you like to do? (up to 50)

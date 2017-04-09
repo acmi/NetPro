@@ -7,6 +7,7 @@
 	<dword alias="Caster OID" type="ObjectID">
 		<scriptAlias id="OIL_OBJECT_ID" />
 		<scriptAlias id="HLE_CASTER_OID" />
+		<scriptAlias id="LUA_CASTER_OID" />
 	</dword>
 	<dword alias="Main target OID" type="ObjectID">
 		<scriptAlias id="OIL_OBJECT_ID" />
@@ -15,17 +16,21 @@
 	<dword alias="Skill" type="Skill">
 		<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
 		<scriptAlias id="HLE_SKILL_ID" />
+		<scriptAlias id="LUA_USED_SKILL_ID" />
 	</dword>
 	<dword alias="Level" type="skill.SkillLevel">
 		<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
 		<scriptAlias id="HLE_SKILL_LEVEL" />
+		<scriptAlias id="LUA_USED_SKILL_LEVEL" />
 	</dword>
 	<dword alias="Cast time" type="MillisRemaining">
 		<scriptAlias id="HLE_CAST_TIME" />
+		<scriptAlias id="LUA_USED_SKILL_TOTAL_TIME" />
 	</dword>
 	<dword alias="-1/0" /> <!-- NEW -1 - most skills, 0 for ss or dismount skills, skillId for some triggers (ex: class change skill) -->
 	<dword alias="Reuse delay" type="MillisRemaining">
 		<scriptAlias id="HLE_COOL_TIME" />
+		<scriptAlias id="LUA_USED_SKILL_COOL_TIME" />
 	</dword>
 	<dword alias="Caster X">
 		<scriptAlias id="OIL_OBJECT_X_SERVER" />

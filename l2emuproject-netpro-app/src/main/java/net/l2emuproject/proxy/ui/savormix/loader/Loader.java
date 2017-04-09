@@ -44,6 +44,7 @@ import net.l2emuproject.proxy.script.analytics.PledgeAnalytics;
 import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
 import net.l2emuproject.proxy.script.game.HighLevelEventGenerator;
 import net.l2emuproject.proxy.script.game.PpeGameScriptRegistry;
+import net.l2emuproject.proxy.script.game.cnc.CommandAndControlCenter;
 import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.setup.SettingsManager;
 import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
@@ -233,6 +234,7 @@ public final class Loader
 					LiveUserAnalytics.getInstance().onLoad();
 					new ObjectLocationAnalytics().onLoad();
 					HighLevelEventGenerator.getInstance().onLoad();
+					CommandAndControlCenter.getInstance().onLoad();
 				}
 				new ObjectAnalytics().onLoad();
 				new PledgeAnalytics().onLoad();

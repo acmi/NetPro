@@ -68,18 +68,18 @@ public final class VersionCheck extends L2GameServerPacket implements RequiredIn
 				final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
 				if (ppe == null)
 					break usePPE;
-					
+				
 				RandomAccessMMOBuffer enumerator = null;
 				try
 				{
 					enumerator = ppe.enumeratePacketPayload(getClient().getProtocol(), buf, getClient());
 				}
-				catch (InvalidPacketOpcodeSchemeException e)
+				catch (final InvalidPacketOpcodeSchemeException e)
 				{
 					LOG.error("This cannot happen", e);
 					break usePPE;
 				}
-				catch (PartialPayloadEnumerationException e)
+				catch (final PartialPayloadEnumerationException e)
 				{
 					// ignore this due to reasons
 					enumerator = e.getBuffer();

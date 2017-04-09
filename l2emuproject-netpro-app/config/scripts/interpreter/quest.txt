@@ -140,9 +140,62 @@
 655	A Grand Plan for Taming Wild Beasts
 662	A Game of Cards
 663	Seductive Whispers
+665	[not named in client]
+666	[not named in client]
+667	[not named in client]
+668	[not named in client]
+669	[not named in client]
+670	[not named in client]
+671	[not named in client]
+672	[not named in client]
+673	[not named in client]
 688	Defeat the Elrokian Raiders!
+690	|Attack| Begin Alliance Base Defense - 1
+691	|Attack| Begin Alliance Base Defense - 2
+692	|Attack| Begin Alliance Base Defense - 3
+693	|Defense| Protecting Military Power - 1
+694	|Defense| Protecting Military Power - 2
+695	|Defense| Protecting Military Power - 3
+696	|Support| Defense Battery Crafting Support - 1
+697	|Support| Defense Battery Crafting Support - 2
+698	|Support| Defense Battery Crafting Support - 3
+699	|Attack| Sabotage Embryo Solider - 1
+700	|Attack| Sabotage Embryo Solider - 2
+701	|Attack| Sabotage Embryo Solider - 3
+702	|Defense| Gracian Soldier Support - 1
+703	|Defense| Gracian Soldier Support - 2
+704	|Defense| Gracian Soldier Support - 3
+705	|Support| Defense Battery Cannonball Crafting - 1
+706	|Support| Defense Battery Cannonball Crafting - 2
+707	|Support| Defense Battery Cannonball Crafting - 3
+708	|Attack| Neutralize Embryo - 1
+709	|Attack| Neutralize Embryo - 2
+710	|Attack| Neutralize Embryo - 3
+711	|Defense| All-out Battle - 1
+712	|Defense| All-out Battle - 2
+713	|Defense| Join the battle - 3
+714	|Support| Installing Defense Battery - 1
+715	|Support| Installing Defense Battery - 2
+716	|Support| Installing Defense Battery - 3
+717	|Attack| Eliminate Embryo Captain - 1
+718	|Attack| Eliminate Embryo Captain - 2
+719	|Attack| Eliminate Embryo Captain - 3
+720	|Defense| Eliminate Embryo Captain - 1
+721	|Defense| Eliminate Embryo Captain - 2
+722	|Defense| Eliminate Embryo Captain - 3
+723	|Support| Eliminate Enemy with Defense Battery - 1
+724	|Support| Defeat enemies with the defense artillery - 2
+725	|Support| Eliminate Enemy with Defense Battery - 3
 726	Light within the Darkness
 727	Hope within the Darkness
+729	|Attack| Impede Kain
+730	|Defense| Impede Kain
+731	|Support| Impede Kain
+732	Red Libra's Request - Kartia's Labyrinth
+733	Red Libra's Request - Crystal Prison (Baylor)
+734	Red Libra Request - Nightmare Kamaloka
+735	Red Libra Request - Embryo Command Post
+736	Red Libra Request - Altar of Shilen
 744	The Alligator Hunter returns
 745	The Outlaws are Incoming
 746	The Reason One Cannot Wait
@@ -178,8 +231,10 @@
 782	Utilize the Darkness - Seed of Hellfire
 783	Vestige of the Magic Power
 787	The Role of a Watcher
+788	Red Libra Request - Altar of Evil
 789	Waiting for Pa'agrio
 790	Obtaining Ferin's Trust
+791	Red Libra Request - Fairy Settlement
 792	The Superion Giants
 800	Hunter Guild Request - Altar of Evil
 801	Hunter Guild Request - Gludio Territory
@@ -219,18 +274,22 @@
 844	Giant's Treasure
 845	Sabotage the Embryo Supplies
 846	Building up Strength
+861	Kain's Choice
 901	How Lavasauruses Are Made
 902	Reclaim Our Era
 903	The Call of Antharas
-904	Dragon Trophy - Antharas
 905	Refined Dragon Blood
 906	The Call of Valakas
-907	Dragon Trophy - Valakas
-910	Red Libra Request - Lv. 1
-911	Red Libra Request - Lv. 2
-912	Red Libra Request - Lv. 3
-913	Red Libra Request - Lv. 4
-914	Red Libra Request - Lv. 5
+910	Red Libra Request - Isle of Souls
+911	Red Libra's Request - Seal of Shilen
+912	Red Libra Request - Monsters from Three Areas
+913	Red Libra Request - Raider's Crossroads
+914	Red Libra Request - Hellbound
+915	Red Libra Request - Enchanted Valley
+916	Red Libra Request - Giant's Cave
+917	Red Libra Request - Garden of Spirits
+918	Red Libra Request - Atelia Fortress
+919	Red Libra Request - Superion
 922	Hunter Guild Request - Northern Region, Isle of Prayer
 923	Shinedust Extraction
 924	Giant of the Restoration Room
@@ -244,6 +303,11 @@
 937	To Revive the Fishing Guild
 938	The Fisherman's Other Hobby
 940	Hunter Guild Request - Atelia Fortress
+985	Adventure Guild's Special Request - Lv1
+986	Adventure Guild's Special Request - Lv. 2
+987	Adventure Guild's Special Request - Lv. 3
+988	Adventure Guild's Special Request - Lv. 4
+989	Adventure Guild's Special Request - Lv. 5
 10273	Good Day to Fly
 10274	Collecting in the Air
 10275	Containing the Attribute Power
@@ -299,7 +363,8 @@
 10351	Owner of Hall
 10353	Certification of Value
 10354	Resurrected Owner of Hall
-10357	Altar of Blood that Awakens Destruction
+10355	Blacksmith's Soul-awakening Weapon - 1
+10356	Blacksmith's Soul-awakening Weapon - 2
 10358	Divided Sakum, Poslof
 10359	Sakum's Trace
 10360	Destiny Proven
@@ -361,6 +426,7 @@
 10420	The Varka Silenos Supporters
 10421	Assassination of the Varka Silenos Commander
 10422	Assassination of the Varka Silenos Chief
+10423	Embryo Stronghold Ambush
 10424	Kekropus' Letter: Belos' Whereabouts
 10425	The Ketra Orc Supporters
 10426	Assassination of the Ketra Orc Commander
@@ -374,12 +440,12 @@
 10450	A Dark Ambition
 10452	Is it Edible?
 10453	Stopping the Wind Dragon
+10454	Final Embryo Apostle
 10455	Elikia's Letter
 10456	Operation: Rescue
 10457	Kefensis' Illusion
 10459	A Sick Ambition
 10460	Return of the Alligator Hunter
-10461	Tapping the Power Within
 10462	Temper a Rusting Blade
 10465	Soul Frost Sword
 10472	Winds of Fate: Encroaching Shadows
@@ -401,6 +467,7 @@
 10531	Odd Happenings at Dragon Valley
 10532	Uncovering the Conspiracy
 10534	Hatchling Research
+10535	Blacksmith's Soul-awakening Weapon - 3
 10537	Kamael Disarray
 10538	Giant's Evolution
 10539	Energy Supply Cutoff Plan
@@ -532,3 +599,13 @@
 10857	Secret Teleport
 10858	Queen Ramona, Controller of the Vessel
 10859	Own the Earth and the Heavens
+10873	Exalted, Reaching Another Level
+10874	Against the New Enemy
+10875	For Reputation
+10876	Leader's Grace
+10877	Break Through Crisis
+10879	Exalted, Guide to Power
+10880	The Last One Standing
+10881	For the Pride
+10882	Victory Collection
+10883	Immortal Honor

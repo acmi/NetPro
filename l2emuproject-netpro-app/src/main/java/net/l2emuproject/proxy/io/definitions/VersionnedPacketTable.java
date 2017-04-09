@@ -54,6 +54,7 @@ import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionFactory;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
+import net.l2emuproject.network.security.OpcodeTableShuffleType;
 import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
@@ -85,16 +86,14 @@ public class VersionnedPacketTable implements IOConstants
 	{
 		loadConfig();
 		
-		ProtocolVersionManager.getInstance().addLoginFactory(new ProtocolVersionFactory<ILoginProtocolVersion>()
-		{
+		ProtocolVersionManager.getInstance().addLoginFactory(new ProtocolVersionFactory<ILoginProtocolVersion>(){
 			@Override
 			public ILoginProtocolVersion getByVersion(int version)
 			{
 				return _definitions.getLoginProtocol(version);
 			}
 		});
-		ProtocolVersionManager.getInstance().addGameFactory(new ProtocolVersionFactory<IGameProtocolVersion>()
-		{
+		ProtocolVersionManager.getInstance().addGameFactory(new ProtocolVersionFactory<IGameProtocolVersion>(){
 			@Override
 			public IGameProtocolVersion getByVersion(int version)
 			{
@@ -238,6 +237,7 @@ public class VersionnedPacketTable implements IOConstants
 					continue;
 				}
 				
+				OpcodeTableShuffleType shuffleMode = OpcodeTableShuffleType.NONE;
 				int[] primary = ArrayUtils.EMPTY_INT_ARRAY, secondary = ArrayUtils.EMPTY_INT_ARRAY;
 				int secondaryCount = 0x1FF;
 				VersionInfo version = null;
@@ -249,6 +249,9 @@ public class VersionnedPacketTable implements IOConstants
 					{
 						case "version":
 							version = new VersionInfo(Integer.parseInt(opt.getTextContent()), L2XMLUtils.getString(opt, "date"));
+							break;
+						case "shuffle":
+							shuffleMode = Enum.valueOf(OpcodeTableShuffleType.class, opt.getTextContent());
 							break;
 						case "primary":
 							for (final Node op : L2XMLUtils.listNodesByNodeName(opt, "constant"))
@@ -281,12 +284,12 @@ public class VersionnedPacketTable implements IOConstants
 					}
 					else
 					{
-						final UserDefinedGameProtocolVersion ver = new UserDefinedGameProtocolVersion(alias, category, version._version, df.parse(version._date).getTime(), primary, secondaryCount,
-								secondary);
+						final UserDefinedGameProtocolVersion ver = new UserDefinedGameProtocolVersion(alias, category, version._version, df.parse(version._date).getTime(), shuffleMode, primary,
+								secondaryCount, secondary);
 						gp.put(ver, definitionDir);
 					}
 				}
-				catch (ParseException e)
+				catch (final ParseException e)
 				{
 					LOG.warn("Failed parsing protocol " + alias, e);
 					continue;
@@ -400,12 +403,12 @@ public class VersionnedPacketTable implements IOConstants
 							declaredOpcodes.clear();
 							assignedIDs.clear();
 						}
-						catch (FileNotFoundException ex)
+						catch (final FileNotFoundException ex)
 						{
 							// with incremental loading, this is OK now
 							// LOG.warn(e.getKey() + ": " + ex.getMessage());
 						}
-						catch (Exception ex)
+						catch (final Exception ex)
 						{
 							LOG.fatal(e.getKey(), ex);
 							continue;
@@ -455,7 +458,7 @@ public class VersionnedPacketTable implements IOConstants
 								Files.walkFileTree(root.resolve("client"), loader);
 								LOG.info(proName + ": [" + loader.getAdded() + " new, " + loader.getUpdated() + " updated, " + removedClientPackets + " removed client packets].");
 							}
-							catch (NoSuchFileException ex)
+							catch (final NoSuchFileException ex)
 							{
 								// looks too verbose to me
 								// LOG.warn(e.getKey() + ": missing " + ex.getMessage());
@@ -470,7 +473,7 @@ public class VersionnedPacketTable implements IOConstants
 								Files.walkFileTree(root.resolve("server"), loader);
 								LOG.info(proName + ": [" + loader.getAdded() + " new, " + loader.getUpdated() + " updated, " + removedServerPackets + " removed server packets].");
 							}
-							catch (NoSuchFileException ex)
+							catch (final NoSuchFileException ex)
 							{
 								// looks too verbose to me
 								// LOG.warn(e.getKey() + ": missing " + ex.getMessage());
@@ -583,13 +586,13 @@ public class VersionnedPacketTable implements IOConstants
 							declaredOpcodes.clear();
 							assignedIDs.clear();
 						}
-						catch (FileNotFoundException ex)
+						catch (final FileNotFoundException ex)
 						{
 							// with incremental loading, this is OK now
 							// it.remove();
 							// LOG.warn(e.getKey() + ": " + ex.getMessage());
 						}
-						catch (Exception ex)
+						catch (final Exception ex)
 						{
 							it.remove();
 							LOG.fatal(e.getKey(), ex);
@@ -597,7 +600,8 @@ public class VersionnedPacketTable implements IOConstants
 						}
 						
 						// but packets are not, as there might not be any changes between protocol revisions
-						LOG.info(proName + " declares " + id2PrefixClient.size() + " client and " + id2PrefixServer.size() + " server packets.");
+						LOG.info(proName + " declares " + id2PrefixClient.size() + " client and " + id2PrefixServer.size() + " server packets. Opcode shuffle: "
+								+ e.getKey().getOpcodeTableShuffleConfig().getShuffleMode());
 						if (!redundantMappings.isEmpty())
 						{
 							LOG.info(proName + " redundantly declares " + redundantMappings);
@@ -642,7 +646,7 @@ public class VersionnedPacketTable implements IOConstants
 								Files.walkFileTree(root.resolve("client"), loader);
 								LOG.info(proName + ": [" + loader.getAdded() + " new, " + loader.getUpdated() + " updated, " + removedClientPackets + " removed client packets].");
 							}
-							catch (NoSuchFileException ex)
+							catch (final NoSuchFileException ex)
 							{
 								// looks too verbose to me
 								// LOG.warn(e.getKey() + ": missing " + ex.getMessage());
@@ -657,7 +661,7 @@ public class VersionnedPacketTable implements IOConstants
 								Files.walkFileTree(root.resolve("server"), loader);
 								LOG.info(proName + ": [" + loader.getAdded() + " new, " + loader.getUpdated() + " updated, " + removedServerPackets + " removed server packets].");
 							}
-							catch (NoSuchFileException ex)
+							catch (final NoSuchFileException ex)
 							{
 								// looks too verbose to me
 								// LOG.warn(e.getKey() + ": missing " + ex.getMessage());
@@ -691,8 +695,8 @@ public class VersionnedPacketTable implements IOConstants
 				}
 			}
 			
-			_definitions = new ProtocolDefinitions(lp.keySet(), gp.keySet(), new VersionnedPacketTemplateContainer<UserDefinedLoginProtocolVersion>(loginMap, lp.lastKey()),
-					new VersionnedPacketTemplateContainer<UserDefinedGameProtocolVersion>(gameMap, gp.lastKey()));
+			_definitions = new ProtocolDefinitions(lp.keySet(), gp.keySet(), new VersionnedPacketTemplateContainer<>(loginMap, lp.lastKey()),
+					new VersionnedPacketTemplateContainer<>(gameMap, gp.lastKey()));
 			
 			if (L2PpeProvider.getPacketPayloadEnumerator() == null)
 				L2PpeProvider.initialize(new L2PacketTablePayloadEnumerator());

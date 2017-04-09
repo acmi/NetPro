@@ -50,9 +50,25 @@
 44	6	Beleth's Magic Circle
 44	8	Desert Quarry
 44	13	Phantasmal Ridge
-79	2	Western Enchanted Valley
-79	4	Eastern Enchanted Valley
+79	2	Northern Enchanted Valley
+79	4	Southern Enchanted Valley
 80	2	Superion Starboard
 80	4	Superion Port
 84	1	Blackbird Campsite
 85	1	Blackbird Campsite
+86	1	Support Devianne's Squad
+86	2	Support Leona's Squad
+86	5	Support Sporcha's Squad
+86	7	Support Elikia's Squad
+89	1	Support Leona's Squad
+89	5	Support Sporcha's Squad
+89	9	Support Elikia's Squad
+92	1	Support Leona's Squad
+92	3	Support Devianne's Squad
+92	6	Support Sporcha's Squad
+95	1	Support Devianne's Squad
+95	5	Support Leona's Squad
+95	9	Support Elikia's Squad
+98	1	Support Devianne's Squad
+98	4	Support Sporcha's Squad
+98	5	Support Elikia's Squad

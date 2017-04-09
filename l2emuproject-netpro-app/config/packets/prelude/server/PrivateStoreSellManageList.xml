@@ -12,7 +12,9 @@
 		<dword alias="Item" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Amount" />
+		<dword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</dword>
 		<word alias="Blessed" type="YesOrNo" />
 		<word alias="Enchant level" />
 		<word alias="0" />
@@ -28,7 +30,9 @@
 		<dword alias="Item" type="Item">
 			<scriptAlias id="OIC_ITEM_TEMPLATE" />
 		</dword>
-		<dword alias="Amount" />
+		<dword alias="Amount">
+			<scriptAlias id="OIC_ITEM_AMOUNT" />
+		</dword>
 		<word alias="Blessed" type="YesOrNo" />
 		<word alias="Enchant level" />
 		<word alias="0" />

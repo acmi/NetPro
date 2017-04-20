@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.script.analytics;
 
+import net.l2emuproject.proxy.StartupOption;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
@@ -22,7 +23,6 @@ import net.l2emuproject.proxy.script.PpeEnabledLoaderScript;
 import net.l2emuproject.proxy.script.PpeEnabledLoaderScriptRegistry;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 
 /**
  * A script that operates on a or enables certain state about each game world to be saved.
@@ -52,18 +52,18 @@ public abstract class PpeAnalyticsScript extends PpeEnabledGameScript implements
 	@Override
 	public void onLoad() throws RuntimeException
 	{
-		if (LoadOption.DISABLE_PROXY.isNotSet())
+		if (StartupOption.DISABLE_PROXY.isNotSet())
 			super.onLoad();
-		if (LoadOption.DISABLE_UI.isNotSet())
+		if (StartupOption.DISABLE_UI.isNotSet())
 			PpeEnabledLoaderScriptRegistry.getInstance().register(this);
 	}
 	
 	@Override
 	public void onUnload() throws RuntimeException
 	{
-		if (LoadOption.DISABLE_PROXY.isNotSet())
+		if (StartupOption.DISABLE_PROXY.isNotSet())
 			super.onUnload();
-		if (LoadOption.DISABLE_UI.isNotSet())
+		if (StartupOption.DISABLE_UI.isNotSet())
 			PpeEnabledLoaderScriptRegistry.getInstance().remove(this);
 	}
 }

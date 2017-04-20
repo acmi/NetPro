@@ -600,8 +600,8 @@ public class VersionnedPacketTable implements IOConstants
 						}
 						
 						// but packets are not, as there might not be any changes between protocol revisions
-						LOG.info(proName + " declares " + id2PrefixClient.size() + " client and " + id2PrefixServer.size() + " server packets. Opcode shuffle: "
-								+ e.getKey().getOpcodeTableShuffleConfig().getShuffleMode());
+						LOG.info(proName + " declares " + id2PrefixClient.size() + " client[shuffle: " + e.getKey().getOpcodeTableShuffleConfig().getShuffleMode() + "] and " + id2PrefixServer.size()
+								+ " server packets.");
 						if (!redundantMappings.isEmpty())
 						{
 							LOG.info(proName + " redundantly declares " + redundantMappings);

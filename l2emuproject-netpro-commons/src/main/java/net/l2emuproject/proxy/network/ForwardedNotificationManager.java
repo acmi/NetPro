@@ -28,8 +28,6 @@ import net.l2emuproject.proxy.network.listener.PacketManipulator;
 import net.l2emuproject.util.Rnd;
 import net.l2emuproject.util.logging.L2Logger;
 
-import javolution.util.FastMap;
-
 /**
  * Ensures that forwarded packet notifications are executed in order for each client/server pair.
  * 

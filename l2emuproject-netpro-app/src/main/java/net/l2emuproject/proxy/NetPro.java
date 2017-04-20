@@ -65,6 +65,7 @@ import net.l2emuproject.proxy.script.PpeEnabledLoaderScriptRegistry;
 import net.l2emuproject.proxy.script.ScriptManager;
 import net.l2emuproject.proxy.script.analytics.ObjectAnalytics;
 import net.l2emuproject.proxy.script.analytics.ObjectLocationAnalytics;
+import net.l2emuproject.proxy.script.analytics.PledgeAnalytics;
 import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
 import net.l2emuproject.proxy.script.game.HighLevelEventGenerator;
 import net.l2emuproject.proxy.script.game.PpeGameScriptRegistry;
@@ -271,6 +272,7 @@ public class NetPro extends Application implements NetProThreadPriority
 				HighLevelEventGenerator.getInstance().onLoad();
 			}
 			new ObjectAnalytics().onLoad();
+			new PledgeAnalytics().onLoad();
 			
 			// 2.2 LOAD USER SCRIPTS
 			if (reporter != null)

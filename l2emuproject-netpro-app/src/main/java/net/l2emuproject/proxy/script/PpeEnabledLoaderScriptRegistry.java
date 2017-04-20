@@ -30,6 +30,7 @@ import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationEx
 import net.l2emuproject.proxy.script.game.PpeGameScriptRegistry;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLog;
 import net.l2emuproject.proxy.ui.savormix.io.task.HistoricalPacketLogAsAuthor;
+import net.l2emuproject.util.StackTraceUtil;
 
 /**
  * Allows PPE scripts to deal with historical packet logs.
@@ -77,12 +78,12 @@ public class PpeEnabledLoaderScriptRegistry extends LogLoadScript
 		{
 			rab = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(version, buf, new HistoricalPacketLogAsAuthor(cacheContext, EndpointType.CLIENT));
 		}
-		catch (InvalidPacketOpcodeSchemeException e)
+		catch (final InvalidPacketOpcodeSchemeException e)
 		{
 			LOG.error("Invalid client packet", e);
 			return;
 		}
-		catch (PartialPayloadEnumerationException e)
+		catch (final PartialPayloadEnumerationException e)
 		{
 			LOG.error("Invalid client packet " + e.getTemplate(), e);
 			return;
@@ -95,7 +96,7 @@ public class PpeEnabledLoaderScriptRegistry extends LogLoadScript
 				if (!Collections.disjoint(script.getHandledScriptFieldAliases(), rab.getAllFields()))
 					script.handleClientPacket(rab, cacheContext);
 			}
-			catch (RuntimeException e)
+			catch (final RuntimeException e)
 			{
 				LOG.error("PPE Loader game script '" + script.getName() + "' failed handling client packet", e);
 			}
@@ -110,14 +111,14 @@ public class PpeEnabledLoaderScriptRegistry extends LogLoadScript
 		{
 			rab = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(version, buf, new HistoricalPacketLogAsAuthor(cacheContext, EndpointType.SERVER));
 		}
-		catch (InvalidPacketOpcodeSchemeException e)
+		catch (final InvalidPacketOpcodeSchemeException e)
 		{
 			LOG.error("Invalid server packet", e);
 			return;
 		}
-		catch (PartialPayloadEnumerationException e)
+		catch (final PartialPayloadEnumerationException e)
 		{
-			LOG.error("Invalid server packet " + e.getTemplate(), e);
+			LOG.error("Invalid server packet " + e.getTemplate(), StackTraceUtil.stripRunnable(e));
 			return;
 		}
 		
@@ -128,7 +129,7 @@ public class PpeEnabledLoaderScriptRegistry extends LogLoadScript
 				if (!Collections.disjoint(script.getHandledScriptFieldAliases(), rab.getAllFields()))
 					script.handleServerPacket(rab, cacheContext);
 			}
-			catch (RuntimeException e)
+			catch (final RuntimeException e)
 			{
 				LOG.error("PPE Loader game script '" + script.getName() + "' failed handling server packet", e);
 			}

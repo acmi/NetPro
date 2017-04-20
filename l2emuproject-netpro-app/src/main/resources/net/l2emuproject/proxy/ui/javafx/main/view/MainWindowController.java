@@ -1303,7 +1303,6 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	public void onClientPacket(Proxy sender, Proxy recipient, ByteBuffer packet, long time) throws RuntimeException
 	{
 		findTabAndAddPacket(sender, recipient, packet, time);
-		
 	}
 	
 	@Override

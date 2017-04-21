@@ -1265,16 +1265,16 @@
 1011265	10th Anniversary Item (x5000)
 1011266	Dandy's Scroll: Release Seal
 1011267	10th Anniversary Pack
-1011268	12th Anniversary Veteran Pack (1-year)
-1011269	12th Anniversary Veteran Pack (2-year)
-1011270	12th Anniversary Veteran Pack (3-year)
-1011271	12th Anniversary Veteran Pack (4-year)
-1011272	12th Anniversary Veteran Pack (5-year)
-1011273	12th Anniversary Veteran Pack (6-year)
-1011274	12th Anniversary Veteran Pack (7-year)
-1011275	12th Anniversary Veteran Pack (8-year)
-1011276	12th Anniversary Veteran Pack (9-year)
-1011277	12th Anniversary Veteran Pack (10-year)
+1011268	13th Anniversary Veteran Pack (1-year)
+1011269	13th Anniversary Veteran Pack (2-year)
+1011270	13th Anniversary Veteran Pack (3-year)
+1011271	13th Anniversary Veteran Pack (4-year)
+1011272	13th Anniversary Veteran Pack (5-year)
+1011273	13th Anniversary Veteran Pack (6-year)
+1011274	13th Anniversary Veteran Pack (7-year)
+1011275	13th Anniversary Veteran Pack (8-year)
+1011276	13th Anniversary Veteran Pack (9-year)
+1011277	13th Anniversary Veteran Pack (10-year)
 1011278	Mount - Unicorn
 1011279	Mount - Black Bear
 1011280	Mount - Tame Princess Ant
@@ -1485,7 +1485,7 @@
 1011485	Gemstone R-grade (x100)
 1011486	Gemstone A-grade (x1000)
 1011487	Appearance Stone: Transparent Armor
-1011488	12th Anniversary Veteran Pack (11-year)
+1011488	13th Anniversary Veteran Pack (11-year)
 1011489	Festival's Cloak - Pearl White
 1011490	Festival's Cloak - Pitch Black
 1011491	Festival's Cloak - Blood Red
@@ -1726,7 +1726,7 @@
 1011726	Mysterious Water Resistance Dye (7-day)
 1011727	Mysterious Wind Resistance Dye (7-day)
 1011728	Mysterious Earth Resistance Dye (7-day)
-1011729	12th Anniversary Veteran Pack (12-year)
+1011729	13th Anniversary Veteran Pack (12-year)
 1011730	Blue Dynasty Outfit Bundle
 1011731	My Teleport Scroll
 1011732	Bow of Light
@@ -1805,3 +1805,11 @@
 1011805	Bloody Amaranthine Enhancement Stone
 1011806	Sealed Talisman - Longing
 1011807	Dark Amaranthine Enhancement Stone
+1011808	Letter Collector's Pouch: RIIS x1
+1011809	Letter Collector's Pouch: RIIS x10
+1011810	Complete Letter Set: TOGETHER x1
+1011811	Complete Letter Set: TOGETHER x50
+1011812	Complete Letter Set: LINEAGE II x1
+1011813	Complete Letter Set: LINEAGE II x50
+1011814	Complete Letter Set: NCSOFT x1
+1011815	Complete Letter Set: NCSOFT x50

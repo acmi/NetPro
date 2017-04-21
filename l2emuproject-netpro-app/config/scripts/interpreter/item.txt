@@ -28004,6 +28004,9 @@
 28533	Sapphire Lv. 3 30-day
 28534	Emerald Lv. 3 30-day
 28535	Vital Stone Lv. 3 30-day
+28536	Complete Letter Set: TOGETHER
+28537	Complete Letter Set: LINEAGE II
+28538	Complete Letter Set: NCSOFT
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -40886,5 +40889,21 @@
 47924	Coin of Light
 47925	Red Libra Request - Altar of Shilen
 47926	Red Libra Request - Altar of Shilen
+48202	Circlet of Authority
+48203	Noble Circlet of Authority
+48204	Radiant Circlet of Authority
+48205	Circlet of Foresight
+48206	Noble Circlet of Foresight
+48207	Radiant Circlet of Foresight
+48208	Circlet of Grace
+48209	Noble Circlet of Grace
+48210	Radiant Circlet of Grace
+48211	Blessed Circlet Enchant Scroll
+48212	Noble Upgrade Stone
+48213	Radiant Upgrade Stone
+48214	Reconstruction Society's Enchantment Pack
+48215	Circlet Spirit Stone
+48216	Circlet Upgrade Stone Pack
+48217	High-grade Balthus Knight Mark
 49783	Sibis Coin Box
 49798	Cheer Stamen Event

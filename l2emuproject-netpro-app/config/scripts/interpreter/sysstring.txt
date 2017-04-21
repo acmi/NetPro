@@ -737,7 +737,7 @@
 737	Number of Kept Items
 738	Manor
 739	Race Manager
-740	-_-ㆀ
+740	***
 741	Currently Watching a Game
 742	Crafting
 743	Result(s)
@@ -3422,6 +3422,17 @@
 3619	Discount Event
 3620	Web Event
 3621	Purchase complete.
+3626	Equipment Upgrade
+3627	Upgrade
+3628	Click on the equipment slot to upgrade.
+3629	Click on the equipment to upgrade.
+3630	You can check the ingredients needed and the effects of the upgrade after you insert an item.
+3631	Upgrade the equipment above?
+3632	The enchant value might change after the upgrade.
+3633	Soul Crystal Enhancement/Augmentation/Attribute/Appearance options will be kept the same.
+3635	Imbuing power into the equipment.
+3636	Upgrade Success!!
+3637	Not enough ingredients.
 4001	An envoy dispatched by the Blackbird Clan. Assigns quests associated with the Blackbird Clan.
 4002	An envoy dispatched by the Giant Trackers. Assigns quests associated with the Giant Trackers.
 4003	An envoy dispatched by the Mother Tree Guardians. Assigns quests associated with the Mother Tree Guardians.

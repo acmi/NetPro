@@ -1946,6 +1946,7 @@
 		<packet id="CM_EX_REQ_MATCH_GROUP_CHANGE_MASTER" name="ExRequestMatchGroupChangeMaster" />
 		<!-- chSSS -->
 		<packet id="CM_REQ_BLOCK_LIST_FOR_AD" name="RequestBlockListForAD" />
+		<packet id="CM_REQ_UPGRADE_SYSTEM_RESULT" name="RequestUpgradeSystemResult" />
 	</client>
 	<server>
 		<!--
@@ -4711,15 +4712,34 @@
 		UNICODE "ExBlockListForAD"
 		-->
 		<packet id="SM_EX_BLOCK_LIST_FOR_AD" name="ExBlockListForAD" />
+		<packet id="SM_EX_ARENA_CUSTOM_NOTIFICATION" name="ExArenaCustomNotification" />
+		<packet id="SM_EX_FIELD_EVENT_STEP" name="ExFieldEventStep" />
+		<packet id="SM_EX_FIELD_EVENT_POINT" name="ExFieldEventPoint" />
 		<packet id="SM_EX_FIELD_EVENT_EFFECT" name="ExFieldEventEffect" />
 		<packet id="SM_EX_RAID_BOSS_SPAWN_INFO" name="ExRaidBossSpawnInfo" />
 		<packet id="SM_EX_RAID_SERVER_INFO" name="ExRaidServerInfo" />
 		<packet id="SM_EX_SHOW_AGIT_SIEGE_INFO" name="ExShowAgitSiegeInfo" />
 		<packet id="SM_EX_ITEM_AUCTION_STATUS" name="ExItemAuctionStatus" />
+		<packet id="SM_EX_MONSTER_BOOK" name="ExMonsterBook" />
+		<packet id="SM_EX_MONSTER_BOOK_REWARD_ICON" name="ExMonsterBookRewardIcon" />
+		<packet id="SM_EX_MONSTER_BOOK_ON_FACTION_UI" name="ExMonsterBookOnFactionUI" />
+		<packet id="SM_EX_MONSTER_BOOK_OPEN_RESULT" name="ExMonsterBookOpenResult" />
 		<packet id="SM_EX_MONSTER_BOOK_CLOSE_FORCE" name="ExMonsterBookCloseForce" />
 		<packet id="SM_EX_FACTION_LEVEL_UP_NOTIFY" name="ExFactionLevelUpNotify" />
+		<packet id="SM_EX_ITEM_AUCTION_NEXT_INFO" name="ExItemAuctionNextInfo" />
+		<packet id="SM_EX_ITEM_AUCTION_UPDATED_BIDDING_INFO" name="ExItemAuctionUpdatedBiddingInfo" />
+		<packet id="SM_EX_PRIVATE_STORE_BUYING_RESULT" name="ExPrivateStoreBuyingResult" />
 		<packet id="SM_EX_PRIVATE_STORE_SELLING_RESULT" name="ExPrivateStoreSellingResult" />
 		<!-- d -->
 		<packet id="SM_EX_ENTER_WORLD" name="ExEnterWorld" />
+		<packet id="SM_EX_MATCH_GROUP" name="ExMatchGroup" />
+		<packet id="SM_EX_MATCH_GROUP_ASK" name="ExMatchGroupAsk" />
+		<packet id="SM_EX_MATCH_GROUP_WITHDRAW" name="ExMatchGroupWithdraw" />
+		<packet id="SM_EX_MATCH_GROUP_OUST" name="ExMatchGroupOust" />
+		<packet id="SM_EX_ARENA_SHOW_ENEMY_PARTY_LOCATION" name="ExArenaShowEnemyPartyLocation" />
+		<packet id="SM_EX_DRESS_ROOM_UI_OPEN" name="ExDressRoomUIOpen" />
+		<packet id="SM_EX_DRESS_HANGER_LIST" name="ExDressHangerList" />
+		<packet id="SM_EX_SHOW_UPGRADE_SYSTEM" name="ExShowUpgradeSystem" />
+		<packet id="SM_EX_UPGRADE_SYSTEM_RESULT" name="ExUpgradeSystemResult" />
 	</server>
 </packets>

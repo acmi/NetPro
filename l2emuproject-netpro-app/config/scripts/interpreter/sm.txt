@@ -3093,8 +3093,8 @@
 3242	Do not forget, woman of Devastation!!
 3243	This is getting out of hand. You must flee!
 3244	Take that
-3245	
-3246	
+3245	[not named in client]
+3246	[not named in client]
 3247	Argh... Ha ha ha, pretty impressive, as if you cut from the fabric of the gods.
 3248	Yes... You're doing well…
 3249	I don't know what you are talking about…
@@ -3105,8 +3105,8 @@
 3254	An error has occurred at the arena, and all matches will handled at no cost.
 3255	Arcane Shield decreased your MP by $s1 instead of HP.
 3256	MP became 0 and the Arcane Shield is disappearing.
-3257	
-3258	
+3257	[not named in client]
+3258	[not named in client]
 3259	You have acquired $s1 XP (Bonus: $s2) and $s3 SP (Bonus: $s4).
 3260	You cannot use the skill because the servitor has not been summoned.
 3261	This week, you can participate in a total of $s1 matches.
@@ -3155,7 +3155,7 @@
 3304	$s1h $s2m
 3305	Number of people: $s1
 3306	You are declaring Clan War against $s1. If you withdraw from the war, your clan will lose 5,000 Reputation points. Proceed?
-3307	$s1 will be deleted from Friend List.\nDo you want to continue?  
+3307	$s1 will be deleted from Friend List.\nDo you want to continue?  à
 3308	No character is selected to add to the list. Please select a character.
 3309	You are now recording a video. UI can be hidden using Alt + H.
 3310	Recording will be ended due to lack of capacity in the hard disk. The video that has been recorded so far will automatically be stored on the path of $s1.
@@ -4063,7 +4063,7 @@
 4305	The gods no longer watch over us.
 4306	How much longer until you realize this?
 4307	Rise above the bounds of mortality and forge your own path.
-4308	
+4308	[not named in client]
 4309	To being ... Exalted!
 4310	The quest you've just completed can be completed $s1 times. Each account can complete this quest $s2 times per week, and it's reset after each maintenance.
 4311	I've been expecting you. Fall victim to my blades.
@@ -4226,6 +4226,12 @@
 4468	Task cannot be completed: Your selling price exceeds the Adena limit.
 4469	Task cannot be completed: Your balance exceeds the Adena limit.
 4470	Task cannot be completed: Your balance after the transaction exceeds the Adena limit.
+4471	The item was upgraded successfully and you obtained a $s1.
+4472	$c1 has succeeded in upgrading equipment and obtained a $s2.
+4473	Failed the operation.
+4474	Failed because the target item does not exist.
+4475	Failed because there are not enough ingredients.
+4476	Failed because there's not enough Adena.
 4601	- Great P. Def. and skillful Shield Defense<br>- Increased P. Def. for the whole party<br>- Protect party members
 4602	By the will of the Chaos, the power of Abelius, the Golden Commander of the ancient giants, has been combined with the ancient power of light. The blessing of the giants and the light upon him gave him the courage to be the fearless shield of the continent.
 4603	- Great P. Def.<br>- Increased P. Atk. For the whole party<br>Vampiric Rage and Reinforced Dark Panther

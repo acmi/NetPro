@@ -16378,294 +16378,294 @@
 16378	CON +1
 16379	INT +1
 16380	MEN +1
-16381	
-16382	
-16383	
-16384	
-16385	
-16386	
-16387	
-16388	
-16389	
-16390	
-16391	
-16392	
-16393	
-16394	
-16395	
-16396	
-16397	
-16398	
-16399	
-16400	
-16401	
-16402	
-16403	
-16404	
-16405	
-16406	
-16407	
-16408	
-16409	
-16410	
-16411	
-16412	
-16413	
-16414	
-16415	
-16416	
-16417	
-16418	
-16419	
-16420	
-16421	
-16422	
-16423	
-16424	
-16425	
-16426	
-16427	
-16428	
-16429	
-16430	
-16431	
-16432	
-16433	
-16434	
-16435	
-16436	
-16437	
-16438	
-16439	
-16440	
-16441	
-16442	
-16443	
-16444	
-16445	
-16446	
-16447	
-16448	
-16449	
-16450	
-16451	
-16452	
-16453	
-16454	
-16455	
-16456	
-16457	
-16458	
-16459	
-16460	
-16461	
-16462	
-16463	
-16464	
-16465	
-16466	
-16467	
-16468	
-16469	
-16470	
-16471	
-16472	
-16473	
-16474	
-16475	
-16476	
-16477	
-16478	
-16479	
-16480	
-16481	
-16482	
-16483	
-16484	
-16485	
-16486	
-16487	
-16488	
-16489	
-16490	
-16491	
-16492	
-16493	
-16494	
-16495	
-16496	
-16497	
-16498	
-16499	
-16500	
-16501	
-16502	
-16503	
-16504	
-16505	
-16506	
-16507	
-16508	
-16509	
-16510	
-16511	
-16512	
-16513	
-16514	
-16515	
-16516	
-16517	
-16518	
-16519	
-16520	
-16521	
-16522	
-16523	
-16524	
-16525	
-16526	
-16527	
-16528	
-16529	
-16530	
-16531	
-16532	
-16533	
-16534	
-16535	
-16536	
-16537	
-16538	
-16539	
-16540	
-16541	
-16542	
-16543	
-16544	
-16545	
-16546	
-16547	
-16548	
-16549	
-16550	
-16551	
-16552	
-16553	
-16554	
-16555	
-16556	
-16557	
-16558	
-16559	
-16560	
-16561	
-16562	
-16563	
-16564	
-16565	
-16566	
-16567	
-16568	
-16569	
-16570	
-16571	
-16572	
-16573	
-16574	
-16575	
-16576	
-16577	
-16578	
-16579	
-16580	
-16581	
-16582	
-16583	
-16584	
-16585	
-16586	
-16587	
-16588	
-16589	
-16590	
-16591	
-16592	
-16593	
-16594	
-16595	
-16596	
-16597	
-16598	
-16599	
-16600	
-16601	
-16602	
-16603	
-16604	
-16605	
-16606	
-16607	
-16608	
-16609	
-16610	
-16611	
-16612	
-16613	
-16614	
-16615	
-16616	
-16617	
-16618	
-16619	
-16620	
-16621	
-16622	
-16623	
-16624	
-16625	
-16626	
-16627	
-16628	
-16629	
-16630	
-16631	
-16632	
-16633	
-16634	
-16635	
-16636	
-16637	
-16638	
-16639	
-16640	
-16641	
-16642	
-16643	
-16644	
-16645	
-16646	
-16647	
-16648	
-16649	
-16650	
-16651	
-16652	
-16653	
-16654	
-16655	
-16656	
-16657	
-16658	
-16659	
-16660	
-16661	
-16662	
-16663	
-16664	
-16665	
-16666	
-16667	
-16668	
+16381	[not named in client]
+16382	[not named in client]
+16383	[not named in client]
+16384	[not named in client]
+16385	[not named in client]
+16386	[not named in client]
+16387	[not named in client]
+16388	[not named in client]
+16389	[not named in client]
+16390	[not named in client]
+16391	[not named in client]
+16392	[not named in client]
+16393	[not named in client]
+16394	[not named in client]
+16395	[not named in client]
+16396	[not named in client]
+16397	[not named in client]
+16398	[not named in client]
+16399	[not named in client]
+16400	[not named in client]
+16401	[not named in client]
+16402	[not named in client]
+16403	[not named in client]
+16404	[not named in client]
+16405	[not named in client]
+16406	[not named in client]
+16407	[not named in client]
+16408	[not named in client]
+16409	[not named in client]
+16410	[not named in client]
+16411	[not named in client]
+16412	[not named in client]
+16413	[not named in client]
+16414	[not named in client]
+16415	[not named in client]
+16416	[not named in client]
+16417	[not named in client]
+16418	[not named in client]
+16419	[not named in client]
+16420	[not named in client]
+16421	[not named in client]
+16422	[not named in client]
+16423	[not named in client]
+16424	[not named in client]
+16425	[not named in client]
+16426	[not named in client]
+16427	[not named in client]
+16428	[not named in client]
+16429	[not named in client]
+16430	[not named in client]
+16431	[not named in client]
+16432	[not named in client]
+16433	[not named in client]
+16434	[not named in client]
+16435	[not named in client]
+16436	[not named in client]
+16437	[not named in client]
+16438	[not named in client]
+16439	[not named in client]
+16440	[not named in client]
+16441	[not named in client]
+16442	[not named in client]
+16443	[not named in client]
+16444	[not named in client]
+16445	[not named in client]
+16446	[not named in client]
+16447	[not named in client]
+16448	[not named in client]
+16449	[not named in client]
+16450	[not named in client]
+16451	[not named in client]
+16452	[not named in client]
+16453	[not named in client]
+16454	[not named in client]
+16455	[not named in client]
+16456	[not named in client]
+16457	[not named in client]
+16458	[not named in client]
+16459	[not named in client]
+16460	[not named in client]
+16461	[not named in client]
+16462	[not named in client]
+16463	[not named in client]
+16464	[not named in client]
+16465	[not named in client]
+16466	[not named in client]
+16467	[not named in client]
+16468	[not named in client]
+16469	[not named in client]
+16470	[not named in client]
+16471	[not named in client]
+16472	[not named in client]
+16473	[not named in client]
+16474	[not named in client]
+16475	[not named in client]
+16476	[not named in client]
+16477	[not named in client]
+16478	[not named in client]
+16479	[not named in client]
+16480	[not named in client]
+16481	[not named in client]
+16482	[not named in client]
+16483	[not named in client]
+16484	[not named in client]
+16485	[not named in client]
+16486	[not named in client]
+16487	[not named in client]
+16488	[not named in client]
+16489	[not named in client]
+16490	[not named in client]
+16491	[not named in client]
+16492	[not named in client]
+16493	[not named in client]
+16494	[not named in client]
+16495	[not named in client]
+16496	[not named in client]
+16497	[not named in client]
+16498	[not named in client]
+16499	[not named in client]
+16500	[not named in client]
+16501	[not named in client]
+16502	[not named in client]
+16503	[not named in client]
+16504	[not named in client]
+16505	[not named in client]
+16506	[not named in client]
+16507	[not named in client]
+16508	[not named in client]
+16509	[not named in client]
+16510	[not named in client]
+16511	[not named in client]
+16512	[not named in client]
+16513	[not named in client]
+16514	[not named in client]
+16515	[not named in client]
+16516	[not named in client]
+16517	[not named in client]
+16518	[not named in client]
+16519	[not named in client]
+16520	[not named in client]
+16521	[not named in client]
+16522	[not named in client]
+16523	[not named in client]
+16524	[not named in client]
+16525	[not named in client]
+16526	[not named in client]
+16527	[not named in client]
+16528	[not named in client]
+16529	[not named in client]
+16530	[not named in client]
+16531	[not named in client]
+16532	[not named in client]
+16533	[not named in client]
+16534	[not named in client]
+16535	[not named in client]
+16536	[not named in client]
+16537	[not named in client]
+16538	[not named in client]
+16539	[not named in client]
+16540	[not named in client]
+16541	[not named in client]
+16542	[not named in client]
+16543	[not named in client]
+16544	[not named in client]
+16545	[not named in client]
+16546	[not named in client]
+16547	[not named in client]
+16548	[not named in client]
+16549	[not named in client]
+16550	[not named in client]
+16551	[not named in client]
+16552	[not named in client]
+16553	[not named in client]
+16554	[not named in client]
+16555	[not named in client]
+16556	[not named in client]
+16557	[not named in client]
+16558	[not named in client]
+16559	[not named in client]
+16560	[not named in client]
+16561	[not named in client]
+16562	[not named in client]
+16563	[not named in client]
+16564	[not named in client]
+16565	[not named in client]
+16566	[not named in client]
+16567	[not named in client]
+16568	[not named in client]
+16569	[not named in client]
+16570	[not named in client]
+16571	[not named in client]
+16572	[not named in client]
+16573	[not named in client]
+16574	[not named in client]
+16575	[not named in client]
+16576	[not named in client]
+16577	[not named in client]
+16578	[not named in client]
+16579	[not named in client]
+16580	[not named in client]
+16581	[not named in client]
+16582	[not named in client]
+16583	[not named in client]
+16584	[not named in client]
+16585	[not named in client]
+16586	[not named in client]
+16587	[not named in client]
+16588	[not named in client]
+16589	[not named in client]
+16590	[not named in client]
+16591	[not named in client]
+16592	[not named in client]
+16593	[not named in client]
+16594	[not named in client]
+16595	[not named in client]
+16596	[not named in client]
+16597	[not named in client]
+16598	[not named in client]
+16599	[not named in client]
+16600	[not named in client]
+16601	[not named in client]
+16602	[not named in client]
+16603	[not named in client]
+16604	[not named in client]
+16605	[not named in client]
+16606	[not named in client]
+16607	[not named in client]
+16608	[not named in client]
+16609	[not named in client]
+16610	[not named in client]
+16611	[not named in client]
+16612	[not named in client]
+16613	[not named in client]
+16614	[not named in client]
+16615	[not named in client]
+16616	[not named in client]
+16617	[not named in client]
+16618	[not named in client]
+16619	[not named in client]
+16620	[not named in client]
+16621	[not named in client]
+16622	[not named in client]
+16623	[not named in client]
+16624	[not named in client]
+16625	[not named in client]
+16626	[not named in client]
+16627	[not named in client]
+16628	[not named in client]
+16629	[not named in client]
+16630	[not named in client]
+16631	[not named in client]
+16632	[not named in client]
+16633	[not named in client]
+16634	[not named in client]
+16635	[not named in client]
+16636	[not named in client]
+16637	[not named in client]
+16638	[not named in client]
+16639	[not named in client]
+16640	[not named in client]
+16641	[not named in client]
+16642	[not named in client]
+16643	[not named in client]
+16644	[not named in client]
+16645	[not named in client]
+16646	[not named in client]
+16647	[not named in client]
+16648	[not named in client]
+16649	[not named in client]
+16650	[not named in client]
+16651	[not named in client]
+16652	[not named in client]
+16653	[not named in client]
+16654	[not named in client]
+16655	[not named in client]
+16656	[not named in client]
+16657	[not named in client]
+16658	[not named in client]
+16659	[not named in client]
+16660	[not named in client]
+16661	[not named in client]
+16662	[not named in client]
+16663	[not named in client]
+16664	[not named in client]
+16665	[not named in client]
+16666	[not named in client]
+16667	[not named in client]
+16668	[not named in client]
 16669	Passive: Increases Earth P. Def.
 16670	Passive: Increases Fire P. Def.
 16671	Passive: Increases Holy P. Def.
@@ -30173,7 +30173,7 @@
 30173	Increases Resistance to Drag. Increases Resistance to Binding.
 30174	Increases Resistance to Drag. Increases Resistance to Binding.
 30175	Increases Resistance to Binding.
-30176	
+30176	[not named in client]
 30177	M. Def. + 1
 30178	M. Def. + 2
 30179	M. Def. + 3
@@ -32978,6 +32978,86 @@
 32978	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 10%
 32979	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 15%
 32980	Casting Spd. + 15%, M. Critical Damage 10%, Max HP\n/MP + 15%, M. Atk. + 7 NPC Damage + 10%
+33209	PvP Damage + 5%
+33210	PvP Received Damage - 5%
+33211	PvE Damage + 5%
+33212	PvE Received Damage - 5%
+33213	Potion/Elixir Effect + 500
+33214	Damage to Immobilized Targets + 5%
+33215	Received Damage When Immobilized - 5%
+33216	P. Atk. + 1%
+33217	M. Atk. + 1%
+33218	P. Def. + 2%
+33219	M. Def. + 2%
+33220	Atk. Spd. + 2%
+33221	Casting Spd. + 2%
+33222	Max HP + 2%
+33223	Max MP + 2%
+33224	Max CP + 2%
+33225	P. Accuracy + 1
+33226	P. Evasion + 1
+33227	M. Accuracy + 1
+33228	M. Evasion + 1
+33229	Fire Resistance + 10
+33230	Water Resistance + 10
+33231	Wind Resistance + 10
+33232	Earth Resistance + 10
+33233	Holy Resistance + 10
+33234	Darkness Resistance + 10
+33235	STR + 1
+33236	STR + 2
+33237	STR + 3, Attack Attribute + 10
+33238	STR + 4, Attack Attribute + 30
+33239	STR + 5, Attack Attribute + 50, Vitality Status XP\n/SP + 10%
+33240	P. Atk. + 1%
+33241	P. Atk. + 2%
+33242	P. Atk. 3%, P. Critical Rate + 10
+33243	P. Atk. 5%, P. Critical Rate + 30
+33244	P. Atk. 7%, P. Critical Rate + 50, XP/SP Acquired \n+ 10%
+33245	P./M. Skill Critical Damage + 1%
+33246	P./M. Skill Critical Damage + 3%
+33247	P./M. Skill Critical Damage 5%, P. Skill Power + 1\n%
+33248	P./M. Skill Critical Damage 7%, P. Skill Power + 3\n%
+33249	P./M. Skill Critical Damage 10%, P. Skill Power 5%\n, Max HP/MP/CP + 5%
+33250	INT + 1
+33251	INT + 2
+33252	INT + 3, Attack Attribute + 10
+33253	INT + 4, Attack Attribute + 30
+33254	INT + 5, Attack Attribute 50, Vitality Status XP/S\nP + 10%
+33255	M. Atk. + 1%
+33256	M. Atk. + 4%
+33257	M. Atk. + 6%, M. Critical Rate + 10
+33258	M. Atk. + 10%, M. Critical Rate + 30
+33259	M. Atk. + 14%, M. Critical Rate 50, XP/SP Acquired\n + 10%
+33260	M. Critical Damage + 1%
+33261	M. Critical Damage + 3%
+33262	M. Critical Damage 5%, M. Skill Power + 1%
+33263	M. Critical Damage 7%, M. Skill Power + 3%
+33264	M. Critical Damage 10%, M. Skill Power 5%, Max HP/\nMP/CP + 5%
+33265	CON/MEN + 1
+33266	CON/MEN + 2
+33267	CON/MEN + 3, All Defense Attribute + 10
+33268	CON/MEN + 4, All Defense Attribute + 30
+33269	CON/MEN + 5, All Defense Attribute + 50, Vitality \nStatus XP/SP + 10%
+33270	P. Def./M. Def. + 1%
+33271	P. Def./M. Def. + 2%
+33272	P. Def. + 3%, M. Def. + 4%, Debuff Resistance + 1%
+33273	P. Def./M. Def. + 5%, Debuff Resistance + 3%
+33274	P. Def./M. Def. + 7%, Debuff Resistance 5%, XP/SP \nAcquired + 10%
+33275	Received Critical Damage - 3%
+33276	Received Critical Damage - 5%
+33277	Received Critical Damage - 7%, Received Damage - 3\n%
+33278	Received Critical Damage - 10%, Received Damage - \n7%
+33279	Received Critical Damage - 15%, Received Damage - \n10%, Max HP/MP/CP + 5%
+33280	LUC/CHA + 1
+33281	LUC/CHA + 1, STR + 5, Attack Attribute + 50, Vital\nity Status XP/SP + 10%
+33282	XP/SP + 10%,  Vitality Status XP/SP + 10%, P. Atk.\n + 7%, P. Critical Rate + 50, LUC/CHA + 1, STR + 5\n, Attack Attribute + 50
+33283	LUC/CHA + 1
+33284	LUC/CHA + 1, INT + 5, Attack Attribute + 50, Vital\nity Status XP/SP + 10%
+33285	XP/SP 10%, Vitality Status XP/SP +10%, M. Atk. + 1\n4%, M. Critical Rate + 50, LUC/CHA + 1, INT + 5, A\nttack Attribute + 50
+33286	LUC/CHA + 1
+33287	LUC/CHA + 1, CON/MEN + 5, All Defense Attribute + \n50, Vitality Status XP/SP + 10%
+33288	XP/SP 10%, Vitality Status XP/SP + 10%, P. Def./M.\n Def. + 7%, All Debuff Resistance + 5%, LUC/CHA + \n1, CON/MEN + 5, All Defense Attribute + 50
 40001	Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. C\nan be used in the Olympiad.
 40002	Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. \nCan be used in the Olympiad.
 40003	Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, \nAttribute Def. + 5. Can be used in the Olympiad.

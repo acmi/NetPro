@@ -30,6 +30,9 @@
 		<packet opcodePrefix="D0 34 01" id="CM_EX_REQ_MATCH_GROUP_OUST" />
 		<packet opcodePrefix="D0 35 01" id="CM_EX_REQ_MATCH_GROUP_CHANGE_MASTER" />
 		<packet opcodePrefix="D0 36 01" id="CM_REQ_BLOCK_LIST_FOR_AD" />
+
+		<!-- 2017-04-12 -->
+		<packet opcodePrefix="D0 37 01" id="CM_REQ_UPGRADE_SYSTEM_RESULT" />
 	</client>
 	<server>
 		<packet opcodePrefix="FE A7 01" id="SM_EX_ARENA_CUSTOM_NOTIFICATION" />
@@ -69,5 +72,12 @@
 		<packet opcodePrefix="FE C9 01" id="SM_EX_MATCH_GROUP_ASK" />
 		<packet opcodePrefix="FE CA 01" id="SM_EX_MATCH_GROUP_WITHDRAW" />
 		<packet opcodePrefix="FE CB 01" id="SM_EX_MATCH_GROUP_OUST" />
+
+		<!-- 2017-04-12 -->
+		<packet opcodePrefix="FE CC 01" id="SM_EX_ARENA_SHOW_ENEMY_PARTY_LOCATION" />
+		<packet opcodePrefix="FE CD 01" id="SM_EX_DRESS_ROOM_UI_OPEN" />
+		<packet opcodePrefix="FE CE 01" id="SM_EX_DRESS_HANGER_LIST" />
+		<packet opcodePrefix="FE CF 01" id="SM_EX_SHOW_UPGRADE_SYSTEM" />
+		<packet opcodePrefix="FE D0 01" id="SM_EX_UPGRADE_SYSTEM_RESULT" />
 	</server>
 </mapping>

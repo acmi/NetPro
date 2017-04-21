@@ -619,16 +619,17 @@
 		</secondary>
 		<definitions dir="helios" />
 	</protocol>
-	<protocol id="57" alias="GC" category="11. GC">
+	<protocol id="57" alias="Grand Crusade" category="11. GC">
 		<version date="2017-03-29">109</version>
 		<shuffle>MODERN</shuffle>
 		<primary>
+			<constant>0x11</constant>
 			<constant>0x12</constant>
 			<constant>0xB1</constant>
-			<constant>0x11</constant>
 			<constant>0xD0</constant>
 		</primary>
-		<secondary count="310">
+		<!-- secondary count="310" --> <!-- Before 04-12 -->
+		<secondary count="311">
 			<constant>0x70</constant>
 			<constant>0x71</constant>
 		</secondary>

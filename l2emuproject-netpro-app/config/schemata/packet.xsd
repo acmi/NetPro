@@ -393,6 +393,7 @@
 			<xs:enumeration value="shortcut.ShortcutSlotBase12" />
 			<xs:enumeration value="shortcut.ShortcutType" />
 
+			<xs:enumeration value="skill.AbnormalType" />
 			<xs:enumeration value="skill.SkillLevel" />
 			<xs:enumeration value="skill.SkillUseType" />
 

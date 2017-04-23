@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Unknown & remaining time DWORD fields are now WORDs -->
 <packet id="541" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Actor OID" type="ObjectID" />
-	<word alias="Count" id="index_0" />
-	<loop id="index_0">
+	<dword alias="Actor OID" type="ObjectID">
+		<scriptAlias id="ASUFT_ACTOR_OID"/>
+	</dword>
+	<word alias="Count" id="cnt" />
+	<loop id="cnt">
 		<dword alias="Skill" type="Skill">
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+			<scriptAlias id="ASUFT_SKILL_ID"/>
 		</dword>
 		<word alias="Level" type="skill.SkillLevel">
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+			<scriptAlias id="ASUFT_SKILL_LEVEL"/>
 		</word>
 
 		<!-- NEW -->
-		<word alias="Unknown" />
-		<word alias="Time left" type="TimeRemaining" id="ex" />
+		<word alias="Abnormal type" type="skill.AbnormalType">
+			<scriptAlias id="ASUFT_ABNORMAL_TYPE"/>
+		</word>
+		<word alias="Time left" type="TimeRemaining" id="ex">
+			<scriptAlias id="ASUFT_TIME_LEFT_SHORT"/>
+		</word>
 		<branch id="ex" condition="LongEffect">
-			<dword alias="Total time left" type="TimeRemaining" />
+			<dword alias="Total time left" type="TimeRemaining">
+				<scriptAlias id="ASUFT_TIME_LEFT_LONG"/>
+			</dword>
 		</branch>
 
-		<dword alias="Caster OID" type="ObjectID" />
+		<dword alias="Caster OID" type="ObjectID">
+			<scriptAlias id="ASUFT_CASTER_OID"/>
+		</dword>
 	</loop>
 </packet>

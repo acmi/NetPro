@@ -14,7 +14,7 @@
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
 			<scriptAlias id="ASUFT_SKILL_LEVEL"/>
 		</dword>
-		<word alias="Abnormal type">
+		<word alias="Abnormal type" type="skill.AbnormalType">
 			<scriptAlias id="ASUFT_ABNORMAL_TYPE"/>
 		</word>
 		<word alias="Time left" type="TimeRemaining" id="ex">

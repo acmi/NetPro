@@ -57,7 +57,7 @@ public final class FXUtils
 	public static final List<? extends javafx.scene.image.Image> getIconListFX()
 	{
 		final List<javafx.scene.image.Image> icons = new ArrayList<>(ICON_SIZES.length);
-		for (int sz : ICON_SIZES)
+		for (final int sz : ICON_SIZES)
 			icons.add(new javafx.scene.image.Image(FXUtils.class.getResource("icon-" + sz + ".png").toString()));
 		return icons;
 	}
@@ -74,7 +74,7 @@ public final class FXUtils
 	{
 		final ByteArrayOutputStream output = new ByteArrayOutputStream();
 		ImageIO.write(image, "PNG", output);
-		return "data:base64," + Base64.getMimeEncoder().encodeToString(output.toByteArray());
+		return "data:image/png;base64," + Base64.getMimeEncoder().encodeToString(output.toByteArray());
 	}
 	
 	/**

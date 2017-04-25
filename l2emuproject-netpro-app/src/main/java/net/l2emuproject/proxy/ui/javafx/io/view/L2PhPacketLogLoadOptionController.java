@@ -114,7 +114,7 @@ public final class L2PhPacketLogLoadOptionController implements Initializable
 	public void initialize(URL location, ResourceBundle resources)
 	{
 		final Calendar machineTime = Calendar.getInstance();
-		_spTzOffset.setValueFactory(new DoubleSpinnerValueFactory(-12, +12, (double)-machineTime.get(Calendar.ZONE_OFFSET) / ONE_HOUR_MILLISECONDS, 1));
+		_spTzOffset.setValueFactory(new DoubleSpinnerValueFactory(-12, +12, (double)(-machineTime.get(Calendar.ZONE_OFFSET) - machineTime.get(Calendar.DST_OFFSET)) / ONE_HOUR_MILLISECONDS, 1));
 		_labTzOffset.textProperty().bind(UIStrings.getEx("load.infodlg.phx.options.tzoffset.explain", Bindings.createStringBinding(() -> {
 			final DateFormat df = new SimpleDateFormat("HH:mm");
 			return df.format(new Date(_firstPacketArrivalTimeProperty.get() + (long)(_spTzOffset.getValue() * ONE_HOUR_MILLISECONDS)));
@@ -225,10 +225,12 @@ public final class L2PhPacketLogLoadOptionController implements Initializable
 					final L2PhLogFilePacket packet = it.next();
 					packetsRead.incrementAndGet();
 					// scripts enable analytics on packets that will be visible in the table
-					scriptManager.onLoadedPacket(packet.getService().isLogin(), packet.getEndpoint().isClient(), packet.getContent(), protocolVersion, cacheContext, packet.getReceivalTime());
+					scriptManager.onLoadedPacket(packet.getService().isLogin(), packet.getEndpoint().isClient(), packet.getContent(), protocolVersion, cacheContext,
+							packet.getReceivalTime() + options.getTzOffset());
 					if (L2PhLogFileUtils.isLoadable(packet, options))
 					{
-						final PacketLogEntry packetEntry = new PacketLogEntry(new ReceivedPacket(packet.getService(), packet.getEndpoint(), packet.getContent(), packet.getReceivalTime()));
+						final PacketLogEntry packetEntry = new PacketLogEntry(
+								new ReceivedPacket(packet.getService(), packet.getEndpoint(), packet.getContent(), packet.getReceivalTime() + options.getTzOffset()));
 						packetEntry.updateView(protocolVersion);
 						
 						synchronized (packets)

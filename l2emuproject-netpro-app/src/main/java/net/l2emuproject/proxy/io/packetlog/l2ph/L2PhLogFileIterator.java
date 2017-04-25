@@ -77,7 +77,7 @@ public class L2PhLogFileIterator implements IL2PhLogFileIterator
 		final ServiceType service = L2PhLogFileUtils.toServiceType(_nextPacket[0]);
 		final EndpointType endpoint = EndpointType.valueOf((_nextPacket[0] & 1) == 0);
 		_timeBuffer.put(_nextPacket, 1, _timeBuffer.remaining()).position(0);
-		final long time = L2PhLogFileUtils.toUNIX(_timeBuffer.getLong(0));
+		final long time = L2PhLogFileUtils.toUNIX(_timeBuffer.getDouble(0));
 		final byte[] content = Arrays.copyOfRange(_nextPacket, 11, _nextPacket.length);
 		_nextPacket = null;
 		return new L2PhLogFilePacket(service, endpoint, time, content);

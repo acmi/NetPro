@@ -3640,7 +3640,7 @@
 5168	Begin Reading
 5169	Tip: "Available Readings" shows the number of times you can read your fortune. (up to 50)
 5170	Tip: "Tickets Owned" shows the number of tickets you own, which determines the number of readings allowed. (up to 50)
-5171	Tip. Go to Lucky Store and use 1 Golden Festival Coin to exchange for 10 Regular Tarot Cards and for 1 Premium Tarot Card with 8 Golden Festival Coins.
+5171	Tip. Select a card within 5 seconds before the game starts, or it will be selected automatically.
 5172	Not in Use
 5173	Congratulations! Check your obtained items!
 5174	How many readings would you like to do? (up to 50)

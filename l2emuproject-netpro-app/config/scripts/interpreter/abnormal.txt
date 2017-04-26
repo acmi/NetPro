@@ -419,7 +419,7 @@
 542	unk_crippling_dance
 546	unk_desert_thirst
 548	unk_faceoff
-549	unk_duelist_strato_lenker_fury
+549	unk_duelist_lenker_fury
 552	unk_potion_of_protection
 561	unk_bluff
 572	unk_arcane_protection
@@ -432,8 +432,8 @@
 585	unk_sayhas_blessing
 587	unk_compelling_wind
 588	unk_divine_storm
-589	synergy_strato_lenker
-590	synergy_sayhas_seer
+589	synergy_lenker
+590	synergy_seer
 593	unk_inside_position
 595	unk_multi_debuff
 596	unk_steel_mind

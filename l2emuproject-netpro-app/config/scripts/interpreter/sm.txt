@@ -4848,7 +4848,7 @@
 6201	No more offerings can be registered.
 6202	How many $s1 would you like to register as offerings?
 6203	How many $s1 would you like to remove from the offerings?
-6204	%c1 has successfully crafted %s2.
+6204	$c1 has successfully crafted $s2.
 6205	We're upgrading our systems, and you must migrate your account to continue playing. Click <BLUE02><u><a href='event:here'>here</a></u></BLUE02> to log into your NC Account
 6206	Your current success rate is $s1%%. Adding offerings can increase the success rate to 100%% for certain recipes. Continue?
 6501	You cannot bookmark this location because you do not have a My Teleport Flag.

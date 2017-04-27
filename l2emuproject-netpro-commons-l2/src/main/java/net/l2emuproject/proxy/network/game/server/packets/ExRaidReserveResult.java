@@ -78,7 +78,7 @@ public final class ExRaidReserveResult extends L2GameServerPacket implements Req
 		final IProtocolVersion protocol = client.getProtocol();
 		if (protocol.isOlderThan(ClientProtocolVersion.GRACIA_EPILOGUE))
 			return;
-		if (_opcode2 == OPCODE2_LEGACY && !protocol.isOlderThan(ClientProtocolVersion.TAUTI_UPDATE_1))
+		if ((_opcode2 == OPCODE2) != protocol.isNewerThanOrEqualTo(ClientProtocolVersion.TAUTI_UPDATE_1))
 			return;
 		
 		RandomAccessMMOBuffer enumerator = null;

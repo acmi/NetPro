@@ -53,10 +53,12 @@ public final class L2GameServerPackets extends ProxyPacketHandler
 			case CharacterSelected.OPCODE:
 				return new CharacterSelected();
 			case OPCODE_FOR_OP2:
-				switch (buf.getChar(1))
+				final int opcode2 = buf.getChar(1);
+				switch (opcode2)
 				{
 					case ExRaidReserveResult.OPCODE2:
-						return new ExRaidReserveResult();
+					case ExRaidReserveResult.OPCODE2_LEGACY:
+						return new ExRaidReserveResult(opcode2);
 					case ExShuffleSeedAndPublicKey.OPCODE2:
 						if (client.isHandshakeDone())
 							return null;

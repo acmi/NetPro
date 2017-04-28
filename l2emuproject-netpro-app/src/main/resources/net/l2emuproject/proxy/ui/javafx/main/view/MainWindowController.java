@@ -111,7 +111,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
@@ -150,7 +149,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.RadialGradient;
 import javafx.scene.paint.Stop;
-import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Modality;
@@ -169,7 +167,13 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	static final L2Logger LOG = L2Logger.getLogger(MainWindowController.class);
 	
 	private File _lastOpenDirectory = IOConstants.LOG_DIRECTORY.toFile();
-	private File _lastOpenDirectoryL2PH = null;
+	
+	private final File _lastConvertDirectory = null;
+	
+	private final File _lastSaveDirectory = null;
+	
+	@FXML
+	private MenuItem _miSave;
 	
 	@FXML
 	private TabPane _tpConnections;
@@ -181,10 +185,10 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	private TextArea _taConsole;
 	
 	@FXML
-	private ToggleButton _tbConsoleWrap;
+	private CheckMenuItem _cmiConsoleWrap;
 	
 	@FXML
-	private ToggleButton _tbConsoleScroll;
+	private CheckMenuItem _cmiConsoleScroll;
 	
 	@FXML
 	private Slider _sConsoleFontSize;
@@ -220,22 +224,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	private Label _labProtocol;
 	
 	@FXML
-	private Menu _mExport;
-	
-	@FXML
-	private Menu _mSelectedPacketExport;
-	
-	@FXML
-	private Menu _mVisiblePacketExport;
-	
-	@FXML
-	private Menu _mMemoryPacketExport;
-	
-	@FXML
 	private CheckMenuItem _showLogConsole;
-	
-	@FXML
-	private CheckMenuItem _scrollLock;
 	
 	@FXML
 	private Menu _mPacketDisplay;
@@ -257,6 +246,10 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
+		_cbCaptureSession.setVisible(false);
+		_labProtocol.setVisible(false);
+		_tbPacketHidingConfig.setVisible(false);
+		
 		final Timeline tlHeapUsage = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 			final long free = Runtime.getRuntime().freeMemory(), total = Runtime.getRuntime().totalMemory(), used = total - free;
 			final L2TextBuilder tb = new L2TextBuilder(BytesizeInterpreter.consolidate(used, BytesizeUnit.BYTES, BytesizeUnit.BYTES, BytesizeUnit.MEBIBYTES, "0M"));
@@ -286,7 +279,8 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 			final Object ctrl = neu != null ? neu.getUserData() : null;
 			if (ctrl == null || !(ctrl instanceof PacketLogTabUserData))
 			{
-				_mExport.setDisable(true);
+				_miSave.disableProperty().unbind();
+				_miSave.setDisable(true);
 				
 				_cbCaptureSession.setVisible(false);
 				_labProtocol.setVisible(false);
@@ -296,10 +290,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 			
 			final PacketLogTabController controller = ((PacketLogTabUserData)ctrl).getController();
 			
-			_mSelectedPacketExport.disableProperty().bind(Bindings.not(controller.anyPacketSelected()));
-			_mVisiblePacketExport.disableProperty().bind(Bindings.not(controller.hasVisiblePackets()));
-			_mMemoryPacketExport.disableProperty().bind(Bindings.not(controller.hasMemoryPackets()));
-			_mExport.setDisable(false);
+			_miSave.disableProperty().bind(Bindings.not(controller.hasMemoryPackets()));
 			
 			_labProtocol.textProperty().bind(Bindings.convert(controller.protocolProperty()));
 			_labProtocol.setVisible(true);
@@ -319,7 +310,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 			}
 		});
 		
-		_taConsole.wrapTextProperty().bind(_tbConsoleWrap.selectedProperty());
+		_taConsole.wrapTextProperty().bind(_cmiConsoleWrap.selectedProperty());
 		_taConsole.styleProperty().bind(Bindings.concat("-fx-font-size:", _sConsoleFontSize.valueProperty(), "; -fx-font-family: Consolas, monospace"));
 		clearConsole(null);
 		
@@ -527,12 +518,23 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	// --------------------------
 	
 	@FXML
-	private void showOpenLogNP(ActionEvent event)
+	private void showOpenHistoricalPacketLog(ActionEvent event)
 	{
 		final FileChooser fc = new FileChooser();
-		fc.setTitle(UIStrings.get("open.netpro.fileselect.title"));
-		fc.getExtensionFilters().addAll(new ExtensionFilter(UIStrings.get("open.netpro.fileselect.description"), "*." + LOG_EXTENSION),
-				new ExtensionFilter(UIStrings.get("generic.filedlg.allfiles"), "*.*"));
+		fc.setTitle(UIStrings.get("menu.file.open.filedlg.title"));
+		// @formatter:off
+		fc.getExtensionFilters().addAll(
+			new ExtensionFilter(UIStrings.get("menu.file.open.filedlg.filter.all"), "*." + HISTORICAL_LOG_EXTENSION, "*." + LOG_EXTENSION, "*.pLog", "*.rawLog", "*.psl"),
+			new ExtensionFilter(UIStrings.get("menu.file.open.filedlg.filter.all.np"), "*." + HISTORICAL_LOG_EXTENSION, "*." + LOG_EXTENSION),
+			new ExtensionFilter(UIStrings.get("menu.file.open.filedlg.filter.np.npl"), "*." + HISTORICAL_LOG_EXTENSION),
+			new ExtensionFilter(UIStrings.get("menu.file.open.filedlg.filter.np.plog"), "*." + LOG_EXTENSION),
+			new ExtensionFilter(UIStrings.get("menu.file.open.filedlg.filter.all.l2ph"), "*.pLog", "*.rawLog"),
+			new ExtensionFilter(UIStrings.get("menu.file.open.filedlg.filter.l2ph.pLog"), "*.pLog"),
+			new ExtensionFilter(UIStrings.get("menu.file.open.filedlg.filter.l2ph.rawLog"), "*.rawLog"),
+			new ExtensionFilter(UIStrings.get("menu.file.open.filedlg.filter.ps.psl"), "*.psl"),
+			new ExtensionFilter(UIStrings.get("generic.filedlg.allfiles"), "*.*")
+		);
+		// @formatter:on
 		fc.setInitialDirectory(_lastOpenDirectory);
 		
 		final List<File> selectedFiles = fc.showOpenMultipleDialog(getMainWindow());
@@ -545,13 +547,80 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 				selectedFiles.size() > 1 ? "open.netpro.waitdlg.header.multiple" : "open.netpro.waitdlg.header",
 				selectedFiles.size() > 1 ? String.valueOf(selectedFiles.size()) : selectedFiles.iterator().next().getName());
 		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() -> {
-			final List<LogFileHeader> validLogFiles = new ArrayList<>(selectedFiles.size());
+			final List<Object> validLogFiles = new ArrayList<>(selectedFiles.size());
 			for (final File selectedFile : selectedFiles)
 			{
 				final Path packetLogFile = selectedFile.toPath();
 				final String filename = packetLogFile.getFileName().toString();
+				
+				// to simplify error reporting, the rules are simple:
+				// 3rd party logs will be attempted to open BY EXTENSION ONLY
+				// Everything else will be attempted as NP logs, and if that fails, legacy NP logs
 				try
 				{
+					if (filename.endsWith(".pLog"))
+					{
+						validLogFiles.add(L2PhLogFileUtils.getMetadata(packetLogFile));
+						continue;
+					}
+					else if (filename.endsWith(".rawLog"))
+					{
+						validLogFiles.add(L2PhLogFileUtils.getRawMetadata(packetLogFile));
+						continue;
+					}
+				}
+				catch (final IOException e)
+				{
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					Platform.runLater(
+							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+					{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
+					continue;
+				}
+				catch (final InsufficientlyLargeFileException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
+							"open.netpro.err.dialog.header.toosmall", null, "open.netpro.err.dialog.content.toosmall", filename).show());
+					continue;
+				}
+				catch (final UnknownFileTypeException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
+							"open.netpro.err.dialog.header.wrongfile", null, "open.netpro.err.dialog.content.wrongfile", filename, HexUtil.bytesToHexString(e.getMagic8Bytes(), " ")).show());
+					continue;
+				}
+				catch (final DamagedFileException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.damaged",
+							null, "open.netpro.err.dialog.content.damaged", filename).show());
+					continue;
+				}
+				catch (final RuntimeException e)
+				{
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					Platform.runLater(
+							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+					{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
+					continue;
+				}
+				
+				try
+				{
+					if (filename.endsWith(".psl"))
+						continue; // TODO: packet samurai log
+				}
+				catch (final RuntimeException e)
+				{
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					Platform.runLater(
+							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+					{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
+					continue;
+				}
+				
+				try
+				{
+					// TODO: NetPro2 packet log
 					validLogFiles.add(PacketLogFileUtils.getMetadata(packetLogFile));
 				}
 				catch (final InterruptedException e)
@@ -624,7 +693,41 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 				{
 					for (int i = 0; i < tabs.length; ++i)
 					{
-						final LogFileHeader validLogFile = validLogFiles.get(i);
+						final Object header = validLogFiles.get(i);
+						if (header instanceof L2PhLogFileHeader)
+						{
+							final L2PhLogFileHeader validLogFile = (L2PhLogFileHeader)header;
+							
+							final String approxSize, exactSize;
+							final NumberFormat integerFormat = NumberFormat.getIntegerInstance(UIStrings.CURRENT_LOCALE);
+							final long filesize = validLogFile.getLogFileSize();
+							if (filesize != -1)
+							{
+								approxSize = BytesizeFormat.formatAsDecimal(filesize);
+								exactSize = UIStrings.get("load.infodlg.details.size.tooltip", integerFormat.format(filesize));
+							}
+							else
+							{
+								approxSize = UIStrings.get("generic.unavailable");
+								exactSize = UIStrings.get("load.infodlg.details.size.unavailable.tooltip");
+							}
+							
+							final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(L2PhPacketLogLoadOptionController.class), UIStrings.getBundle());
+							final TitledPane tab = loader.load();
+							final L2PhPacketLogLoadOptionController controller = loader.getController();
+							controller.setMainWindow(this);
+							
+							final ServiceType service = validLogFile.getFirstPacketServiceType();
+							final String filename = validLogFile.getLogFile().getFileName().toString();
+							controller.setPacketLog(filename, approxSize, exactSize, UIStrings.get(validLogFile.isRaw() ? "load.infodlg.phx.details.type.raw" : "load.infodlg.phx.details.type.std"),
+									FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
+									ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin()), validLogFile.getFirstPacketArrivalTime());
+							tab.setUserData(validLogFile);
+							tabs[i] = tab;
+							continue;
+						}
+						
+						final LogFileHeader validLogFile = (LogFileHeader)header;
 						
 						final String approxSize, exactSize;
 						final NumberFormat integerFormat = NumberFormat.getIntegerInstance(UIStrings.CURRENT_LOCALE);
@@ -674,229 +777,6 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 			});
 		});
 		waitDialog.setCancelAction(() -> preprocessTask.cancel(true));
-	}
-	
-	@FXML
-	private void showRepairLogNP(ActionEvent event)
-	{
-		final DirectoryChooser dc = new DirectoryChooser();
-		dc.setTitle(UIStrings.get("repair.netpro.dirselect.title"));
-		
-		final File selectedDir = dc.showDialog(getMainWindow());
-		if (selectedDir == null)
-			return;
-	}
-	
-	@FXML
-	private void showOpenLogPH(ActionEvent event)
-	{
-		final FileChooser fc = new FileChooser();
-		fc.setTitle(UIStrings.get("open.l2ph.fileselect.title"));
-		fc.getExtensionFilters().addAll(new ExtensionFilter(UIStrings.get("open.l2ph.fileselect.description"), "*.pLog", "*.rawLog"),
-				new ExtensionFilter(UIStrings.get("open.l2ph.fileselect.description.std"), "*.pLog"),
-				new ExtensionFilter(UIStrings.get("open.l2ph.fileselect.description.raw"), "*.rawLog"),
-				new ExtensionFilter(UIStrings.get("generic.filedlg.allfiles"), "*.*"));
-		fc.setInitialDirectory(_lastOpenDirectoryL2PH);
-		
-		final List<File> selectedFiles = fc.showOpenMultipleDialog(getMainWindow());
-		if (selectedFiles == null || selectedFiles.isEmpty())
-			return;
-		
-		_lastOpenDirectoryL2PH = selectedFiles.iterator().next().getParentFile();
-		
-		final WaitingIndicatorDialogController waitDialog = showWaitDialog(getMainWindow(), "generic.waitdlg.title",
-				selectedFiles.size() > 1 ? "open.netpro.waitdlg.header.multiple" : "open.netpro.waitdlg.header",
-				selectedFiles.size() > 1 ? String.valueOf(selectedFiles.size()) : selectedFiles.iterator().next().getName());
-		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() -> {
-			final List<L2PhLogFileHeader> validLogFiles = new ArrayList<>(selectedFiles.size());
-			for (final File selectedFile : selectedFiles)
-			{
-				final Path packetLogFile = selectedFile.toPath();
-				final String filename = packetLogFile.getFileName().toString();
-				try
-				{
-					try
-					{
-						validLogFiles.add(L2PhLogFileUtils.getRawMetadata(packetLogFile));
-					}
-					catch (final UnknownFileTypeException e)
-					{
-						validLogFiles.add(L2PhLogFileUtils.getMetadata(packetLogFile));
-					}
-				}
-				catch (final IOException e)
-				{
-					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
-					Platform.runLater(
-							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-					{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
-				}
-				catch (final InsufficientlyLargeFileException e)
-				{
-					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
-							"open.netpro.err.dialog.header.toosmall", null, "open.netpro.err.dialog.content.toosmall", filename).show());
-				}
-				catch (final UnknownFileTypeException e)
-				{
-					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
-							"open.netpro.err.dialog.header.wrongfile", null, "open.netpro.err.dialog.content.wrongfile", filename, HexUtil.bytesToHexString(e.getMagic8Bytes(), " ")).show());
-				}
-				catch (final DamagedFileException e)
-				{
-					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.damaged",
-							null, "open.netpro.err.dialog.content.damaged", filename).show());
-				}
-				catch (final RuntimeException e)
-				{
-					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
-					Platform.runLater(
-							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-					{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
-				}
-			}
-			
-			Platform.runLater(() -> {
-				waitDialog.onWaitEnd();
-				
-				if (validLogFiles.isEmpty())
-					return;
-				
-				// make the tabbed window here
-				final Stage confirmStage = new Stage(StageStyle.DECORATED);
-				
-				final TitledPane[] tabs = new TitledPane[validLogFiles.size()];
-				try
-				{
-					for (int i = 0; i < tabs.length; ++i)
-					{
-						final L2PhLogFileHeader validLogFile = validLogFiles.get(i);
-						
-						final String approxSize, exactSize;
-						final NumberFormat integerFormat = NumberFormat.getIntegerInstance(UIStrings.CURRENT_LOCALE);
-						final long filesize = validLogFile.getLogFileSize();
-						if (filesize != -1)
-						{
-							approxSize = BytesizeFormat.formatAsDecimal(filesize);
-							exactSize = UIStrings.get("load.infodlg.details.size.tooltip", integerFormat.format(filesize));
-						}
-						else
-						{
-							approxSize = UIStrings.get("generic.unavailable");
-							exactSize = UIStrings.get("load.infodlg.details.size.unavailable.tooltip");
-						}
-						
-						final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(L2PhPacketLogLoadOptionController.class), UIStrings.getBundle());
-						final TitledPane tab = loader.load();
-						final L2PhPacketLogLoadOptionController controller = loader.getController();
-						controller.setMainWindow(this);
-						
-						final ServiceType service = validLogFile.getFirstPacketServiceType();
-						final String filename = validLogFile.getLogFile().getFileName().toString();
-						controller.setPacketLog(filename, approxSize, exactSize, UIStrings.get(validLogFile.isRaw() ? "load.infodlg.phx.details.type.raw" : "load.infodlg.phx.details.type.std"),
-								FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
-								ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin()), validLogFile.getFirstPacketArrivalTime());
-						tab.setUserData(validLogFile);
-						tabs[i] = tab;
-					}
-				}
-				catch (final IOException e)
-				{
-					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
-					wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.NONE).show();
-					return;
-				}
-				
-				final Accordion tabPane = new Accordion(tabs);
-				tabPane.setExpandedPane(tabs[0]);
-				
-				// no owner here - any invalid load options should only block the confirm window, but not the main window
-				confirmStage.setTitle(UIStrings.get("load.infodlg.title"));
-				confirmStage.setScene(new Scene(tabPane));
-				confirmStage.getIcons().addAll(FXUtils.getIconListFX());
-				confirmStage.setAlwaysOnTop(true);
-				WindowTracker.getInstance().add(confirmStage);
-				confirmStage.show();
-			});
-		});
-		waitDialog.setCancelAction(() -> preprocessTask.cancel(true));
-	}
-	
-	@FXML
-	private void showOpenLogPS(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showSaveVisiblePackets(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showSaveVisiblePacketsXML(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showSaveMemoryPackets(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showSaveMemoryPacketsXML(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showConvertToPlaintext(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showConvertToXML(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showConvertToPhx(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showConvertToPhxRaw(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showConvertToPacketSamurai(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showConvertToStream(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void showPacketExplainer(ActionEvent event)
-	{
-		
-	}
-	
-	@FXML
-	private void openNewPacketInjectDialog(ActionEvent event)
-	{
-		
 	}
 	
 	@FXML
@@ -1185,12 +1065,6 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 		}
 	}
 	
-	@FXML
-	private void loadAllScripts(ActionEvent event)
-	{
-		
-	}
-	
 	// --------------------------
 	// ========== SCRIPT MENU END
 	// --------------------------
@@ -1235,16 +1109,6 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	// ------------------------
 	
 	/**
-	 * Returns the scroll lock property.
-	 * 
-	 * @return scroll lock
-	 */
-	public BooleanProperty scrollLockProperty()
-	{
-		return _scrollLock.selectedProperty();
-	}
-	
-	/**
 	 * Adds a new message to the console tab.
 	 * 
 	 * @param message log entry
@@ -1254,7 +1118,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 		final double left = _taConsole.getScrollLeft(), top = _taConsole.getScrollTop();
 		_taConsole.appendText(message);
 		_taConsole.appendText("\r\n");
-		if (_tbConsoleScroll.isSelected())
+		if (_cmiConsoleScroll.isSelected())
 		{
 			_taConsole.setScrollLeft(left);
 			_taConsole.setScrollTop(top);
@@ -1396,7 +1260,6 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 			
 			//controller.protocolProperty().set(protocolVersion);
 			controller.setEntityCacheContext(new ServerSocketID(server.getInetSocketAddress()));
-			controller.installScrollLock(scrollLockProperty());
 			controller.setOnProtocolPacketHidingConfigurationChange(this::refreshFilters);
 			
 			final Canvas icon = new Canvas(10, 10);

@@ -171,7 +171,6 @@ public final class PacketLogLoadOptionController
 		final HistoricalPacketLog cacheContext = new HistoricalPacketLog(logFileHeader.getLogFile());
 		controller.protocolProperty().set(protocolVersion);
 		controller.setEntityCacheContext(cacheContext);
-		controller.installScrollLock(_mainWindow.scrollLockProperty());
 		controller.setOnProtocolPacketHidingConfigurationChange(_mainWindow::refreshFilters);
 		
 		closeTab(event);

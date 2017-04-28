@@ -22,6 +22,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import java.util.Locale;
 
 import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
@@ -90,23 +91,23 @@ public final class FXUtils
 		switch (filter.getType())
 		{
 			case EQUALS:
-				if (!actualValue.equals(filterValue))
+				if (!actualValue.equalsIgnoreCase(filterValue))
 					return true;
 				break;
 			case NOTEQUALS:
-				if (actualValue.equals(filterValue))
+				if (actualValue.equalsIgnoreCase(filterValue))
 					return true;
 				break;
 			case CONTAINS:
-				if (!actualValue.contains(filterValue))
+				if (!actualValue.toLowerCase(Locale.ENGLISH).contains(filterValue.toLowerCase(Locale.ENGLISH)))
 					return true;
 				break;
 			case STARTSWITH:
-				if (!actualValue.startsWith(filterValue))
+				if (!actualValue.toLowerCase(Locale.ENGLISH).startsWith(filterValue.toLowerCase(Locale.ENGLISH)))
 					return true;
 				break;
 			case ENDSWITH:
-				if (!actualValue.endsWith(filterValue))
+				if (!actualValue.toLowerCase(Locale.ENGLISH).endsWith(filterValue.toLowerCase(Locale.ENGLISH)))
 					return true;
 				break;
 		}

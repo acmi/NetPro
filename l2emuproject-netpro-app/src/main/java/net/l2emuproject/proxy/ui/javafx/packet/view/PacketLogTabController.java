@@ -68,9 +68,6 @@ import net.l2emuproject.proxy.ui.javafx.packet.PacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.BooleanProperty;
@@ -93,7 +90,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.Duration;
 
 /**
  * A controller that manages a single packet log tab.
@@ -218,6 +214,7 @@ public class PacketLogTabController implements Initializable
 		_colOpcode.setCellValueFactory(new PropertyValueFactory<>("opcode"));
 		_colName.setCellValueFactory(new PropertyValueFactory<>("name"));
 		
+		/*
 		final Timeline tlAutoScroll = new Timeline(new KeyFrame(Duration.ZERO), new KeyFrame(Duration.millis(AUTO_SCROLL_THRESHOLD), e -> {
 			if (!_autoScrollPending)
 				return;
@@ -229,6 +226,7 @@ public class PacketLogTabController implements Initializable
 		}));
 		tlAutoScroll.setCycleCount(Animation.INDEFINITE);
 		tlAutoScroll.play();
+		*/
 		
 		_cmiIgnoreFilters.selectedProperty().addListener((obs, old, neu) -> applyFilters());
 	}
@@ -464,19 +462,6 @@ public class PacketLogTabController implements Initializable
 	}
 	
 	/**
-	 * Allows the automatic scrolldown behavior to be controlled for the packet table.
-	 * 
-	 * @param scrollLockProperty scroll lock
-	 */
-	public void installScrollLock(BooleanProperty scrollLockProperty)
-	{
-		if (scrollLockProperty == null)
-			scrollLockProperty = new SimpleBooleanProperty(false);
-		
-		_scrollLockProperty = scrollLockProperty;
-	}
-	
-	/**
 	 * Assigns an action to be taken when a packet template is set to hidden in the associated protocol's configuration.
 	 * 
 	 * @param onProtocolHidingConfigChange an action
@@ -533,7 +518,20 @@ public class PacketLogTabController implements Initializable
 		if (tablePackets.isEmpty())
 			return;
 		
+		final int noScrollIndex = _tvPackets.getItems().size() - 1;
+		
 		_tablePackets.addAll(tablePackets);
-		_autoScrollPending = !_scrollLockProperty.get();
+		
+		if (_scrollLockProperty.get())
+		{
+			if (noScrollIndex >= 0)
+				_tvPackets.scrollTo(noScrollIndex);
+		}
+		else
+		{
+			final int doScrollIndex = _tvPackets.getItems().size() - 1;
+			if (doScrollIndex >= 0)
+				_tvPackets.scrollTo(doScrollIndex);
+		}
 	}
 }

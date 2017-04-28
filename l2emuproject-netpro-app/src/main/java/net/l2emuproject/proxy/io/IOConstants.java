@@ -92,11 +92,15 @@ public interface IOConstants
 	/** Version of packet display configuration file format for files written by this application. */
 	int PROTOCOL_PACKET_HIDING_VERSION = 1;
 	
-	long HISTORICAL_LOG_MAGIC_COMPLETE = 0x4E5020504C4F472BL;
-	long HISTORICAL_LOG_MAGIC_INCOMPLETE = 0x4E5020504C4F472DL;
+	long HISTORICAL_LOG_MAGIC_COMPLETE = 0x4E5020504C4F472BL, HISTORICAL_LOG_MAGIC_INCOMPLETE = 0x4E5020504C4F472DL;
 	String HISTORICAL_LOG_EXTENSION = "npl";
-	int HISTORICAL_LOG_VERSION = 1;
-	int HISTORICAL_LOG_REQUIRED_VERSION = 1;
+	int HISTORICAL_LOG_FILE_VERSION_MAJOR = 1, HISTORICAL_LOG_FILE_VERSION_MINOR = 1;
+	String HISTORICAL_LOG_CREATOR = "NetPro 2.0-SNAPSHOT";
+	int INDEX_ABNORMAL_TYPES = stringToMagic('A', 'B', 'N', 'T'), INDEX_PLAYER_CHAR_NAMES = stringToMagic('P', 'C', 'H', 'N'), INDEX_PLAYER_CHAR_SUBJOBS = stringToMagic('P', 'C', 'H', 'S');
+	int INDEX_NPC_TEMPLATES = stringToMagic('N', 'P', 'C', 'T'), INDEX_PET_TEMPLATES = stringToMagic('P', 'E', 'T', 'T'), INDEX_SUMMON_TEMPLATES = stringToMagic('S', 'U', 'M', 'T');
+	int INDEX_STATIC_OBJECT_TEMPLATES = stringToMagic('S', 'T', 'O', 'T'), INDEX_CASTED_OR_LAUNCHED_SKILLS = stringToMagic('S', 'K', 'L', 'C'), INDEX_OWNED_SKILLS = stringToMagic('S', 'K', 'L', 'O');
+	int INDEX_SKILL_TO_CASTER_TEMPLATE = stringToMagic('C', 'A', 'S', 'T'), INDEX_ROLES = stringToMagic('R', 'O', 'L', 'E'), INDEX_RELATIONS = stringToMagic('R', 'L', 'T', 'N');
+	int INDEX_ABNORMAL_VISUAL_EFFECTS = stringToMagic('A', 'V', 'E', 'S');
 	
 	/**
 	 * Opens a resource file.
@@ -108,5 +112,15 @@ public interface IOConstants
 	static BufferedReader openScriptResource(String... relativePath) throws IOException
 	{
 		return Files.newBufferedReader(SCRIPT_CONFIG_DIRECTORY.resolve(Paths.get(".", relativePath)));
+	}
+	
+	static long stringToMagic(char c1, char c2, char c3, char c4, char c5, char c6, char c7, char c8)
+	{
+		return 0L;
+	}
+	
+	static int stringToMagic(char c1, char c2, char c3, char c4)
+	{
+		return 0;
 	}
 }

@@ -29,9 +29,10 @@ import net.l2emuproject.network.mmocore.MMOConfig;
 import net.l2emuproject.proxy.network.AbstractL2ClientProxy;
 import net.l2emuproject.proxy.network.AbstractL2ServerConnections;
 import net.l2emuproject.proxy.network.BindableSocketSet;
+import net.l2emuproject.proxy.network.L2AuthSocket;
 import net.l2emuproject.proxy.network.ListenSocket;
-import net.l2emuproject.proxy.network.ProxySocket;
 import net.l2emuproject.proxy.network.login.client.L2LoginClient;
+import net.l2emuproject.proxy.network.login.client.packets.RequestServerList;
 
 /**
  * Manages outgoing connections to game servers initiated when a new L2 client connects to this proxy.
@@ -73,14 +74,14 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections
 	}
 	
 	private IPv4AddressTrie<ListenSocket> _advertisedSockets;
-	private Set<ProxySocket> _sockets;
+	private Set<L2AuthSocket> _sockets;
 	
 	L2LoginServerConnections(MMOConfig config) throws IOException
 	{
 		super(config, L2LoginServerPackets.getInstance());
 		
 		_advertisedSockets = new IPv4AddressTrie<>(Collections.singletonMap(new IPv4AddressPrefix(0, 0), new ListenSocket(InetAddress.getLocalHost(), 7776)));
-		_sockets = Collections.singleton(new ProxySocket(ListenSocket.WILDCARD, 2106, "127.0.0.1", 2107));
+		_sockets = Collections.singleton(new L2AuthSocket(ListenSocket.WILDCARD, 2106, "127.0.0.1", 2107, -1));
 	}
 	
 	/**
@@ -106,8 +107,8 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections
 		}
 		
 		final ListenSocket receiverWrapper = new ListenSocket(receiverAddress.getAddress(), receiverAddress.getPort());
-		ProxySocket socket = null;
-		for (final ProxySocket ps : _sockets)
+		L2AuthSocket socket = null;
+		for (final L2AuthSocket ps : _sockets)
 		{
 			if (ps.bindingEquals(receiverWrapper))
 			{
@@ -122,6 +123,10 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections
 			client.closeNow();
 			return;
 		}
+		
+		final int expectedSL = socket.getServerListVersion();
+		if (expectedSL != -1)
+			RequestServerList.setServerListVersion(client, expectedSL);
 		
 		try
 		{
@@ -168,7 +173,7 @@ public final class L2LoginServerConnections extends AbstractL2ServerConnections
 	 * 
 	 * @param sockets proxied sockets
 	 */
-	public void setAuthSockets(BindableSocketSet<ProxySocket> sockets)
+	public void setAuthSockets(BindableSocketSet<L2AuthSocket> sockets)
 	{
 		_sockets = sockets;
 	}

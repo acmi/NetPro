@@ -145,11 +145,10 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		_list.setColumnSelectionAllowed(false);
 		_list.setRowSelectionAllowed(true);
 		_list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		_list.getSelectionModel().addListSelectionListener(e ->
-		{
+		_list.getSelectionModel().addListSelectionListener(e -> {
 			if (e.getValueIsAdjusting())
 				return;
-				
+			
 			final int row = _list.getSelectedRow();
 			if (row == -1)
 			{
@@ -161,23 +160,21 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		});
 		for (int i = 0; i < PacketListModel.COL_WIDTHS.length; i++)
 		{
-			TableColumn tc = _list.getColumnModel().getColumn(i);
+			final TableColumn tc = _list.getColumnModel().getColumn(i);
 			tc.setPreferredWidth(PacketListModel.COL_WIDTHS[i]);
 		}
 		_list.setFillsViewportHeight(true);
-		_list.addComponentListener(new ComponentAdapter()
-		{
+		_list.addComponentListener(new ComponentAdapter(){
 			@Override
 			public void componentResized(ComponentEvent e)
 			{
 				if (Frontend.SCROLL_LOCK)
 					return;
-					
+				
 				_list.scrollRectToVisible(_list.getCellRect(_list.getRowCount() - 1, 0, true));
 			}
 		});
-		_list.setTransferHandler(new TransferHandler()
-		{
+		_list.setTransferHandler(new TransferHandler(){
 			private static final long serialVersionUID = 3211306296809776535L;
 			
 			@Override
@@ -188,7 +185,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 				{
 					ToPlaintextVisitor.writePacket(getSelectedPacket(), _version, new MMOBuffer(), _cacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
 				}
-				catch (IOException e)
+				catch (final IOException e)
 				{
 					// L2TB doesn't throw
 				}
@@ -201,25 +198,24 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 				return COPY;
 			}
 		});
-		JPanel list = new JPanel();
+		final JPanel list = new JPanel();
 		list.setMinimumSize(new Dimension(400, 200));
 		list.setPreferredSize(new Dimension(400, 200));
 		list.setLayout(new BorderLayout());
 		final JScrollPane enhancedHeaderPane = new JScrollPane(_list);
-		enhancedHeaderPane.setColumnHeader(new JViewport()
-		{
+		enhancedHeaderPane.setColumnHeader(new JViewport(){
 			private static final long serialVersionUID = -6722591939160893883L;
 			
 			@Override
 			public Dimension getPreferredSize()
 			{
-				Dimension d = super.getPreferredSize();
+				final Dimension d = super.getPreferredSize();
 				d.height = Math.max(d.height, header.getDefaultRenderer().getPreferredSize().height);
 				return d;
 			}
 		});
 		list.add(enhancedHeaderPane, BorderLayout.CENTER);
-		JPanel s = new JPanel(new GridLayout(2, 0));
+		final JPanel s = new JPanel(new GridLayout(2, 0));
 		{
 			_clearAll = new JButton("Clear memory");
 			_clearAll.setToolTipText("Removes all packets currently cached in memory for this packet log.");
@@ -232,13 +228,13 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			clear.addActionListener(this);
 			
 			_formatter = NumberFormat.getIntegerInstance(Loader.getLocale());
-			JPanel visible = new JPanel();
+			final JPanel visible = new JPanel();
 			{
 				visible.add(new JLabel("Table (unfiltered):"));
 				visible.add(_displayed = new JLabel(_formatter.format(0)));
 			}
 			s.add(visible);
-			JPanel total = new JPanel();
+			final JPanel total = new JPanel();
 			{
 				total.add(new JLabel("Memory:"));
 				total.add(_total = new JLabel(_formatter.format(0)));
@@ -392,6 +388,16 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 	}
 	
 	/**
+	 * Special case.
+	 * 
+	 * @param version server list type
+	 */
+	public void setServerListVersion(int version)
+	{
+		_display._serverListType = version;
+	}
+	
+	/**
 	 * Returns whether this list is in packet refusal mode.
 	 * 
 	 * @return whether capture is disabled
@@ -430,7 +436,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		final int row = _list.getSelectedRow();
 		if (row == -1)
 			return null;
-			
+		
 		return _model.getValueAt(_list.getRowSorter().convertRowIndexToModel(row)).getPacket();
 	}
 	
@@ -468,8 +474,8 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		{
 			for (final PacketListEntry cached : _cached)
 				cached.queryTemplate(_owner.getProtocol());
-				
-			int lastRow = getRowCount() - 1;
+			
+			final int lastRow = getRowCount() - 1;
 			if (lastRow >= 0)
 				fireTableRowsUpdated(0, lastRow);
 		}
@@ -547,11 +553,11 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 					{
 						rab = ppe.enumeratePacketPayload(_owner._version, buf, () -> EndpointType.CLIENT);
 					}
-					catch (PartialPayloadEnumerationException e)
+					catch (final PartialPayloadEnumerationException e)
 					{
 						rab = e.getBuffer();
 					}
-					catch (InvalidPacketOpcodeSchemeException e)
+					catch (final InvalidPacketOpcodeSchemeException e)
 					{
 						LOG.error("This cannot happen", e);
 					}
@@ -562,12 +568,12 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			
 			if (_owner._captureState == ListCaptureState.CAPTURE_DISABLED)
 				return;
-				
+			
 			final PacketListEntry e = new PacketListEntry(_owner.getProtocol(), packet);
 			_cached.add(e);
 			if (fire)
 				_owner.updateCachedCount(_cached.size());
-				
+			
 			addPacket(e, fire);
 		}
 		
@@ -580,7 +586,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			final IPacketTemplate pt = VersionnedPacketTable.getInstance().getTemplate(_owner.getProtocol(), packet.getEndpoint(), packet.getBody());
 			if (!config.contains(pt.isDefined() ? pt : IPacketTemplate.ANY_DYNAMIC_PACKET))
 				return;
-				
+			
 			final int idx = _displayed.size();
 			_displayed.add(e);
 			if (fire)
@@ -595,7 +601,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			for (final Set<?> set : sets)
 				if (set != null && !set.isEmpty())
 					return false;
-					
+				
 			return true;
 		}
 		
@@ -611,12 +617,12 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		{
 			boolean rebuild = (isEmpty(addedClientPackets, removedClientPackets, addedServerPackets, removedServerPackets) || // no info supplied
 					!isEmpty(addedClientPackets, addedServerPackets)); // must reform anyway
-					
+			
 			if (removedClientPackets != null && removedClientPackets.size() > displayedClientPackets.size())
 				rebuild = true;
 			else if (removedServerPackets != null && removedServerPackets.size() > displayedServerPackets.size())
 				rebuild = true;
-				
+			
 			setDisplayed(displayedClientPackets, true);
 			setDisplayed(displayedServerPackets, false);
 			
@@ -627,9 +633,9 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			{
 				removeDisplayed();
 				
-				for (PacketListEntry e : _cached)
+				for (final PacketListEntry e : _cached)
 					addPacket(e, false);
-					
+				
 				final int visible = _displayed.size();
 				if (visible > 0)
 					fireTableRowsInserted(0, visible - 1);
@@ -642,7 +648,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			// something has been removed
 			final VersionnedPacketTable table = VersionnedPacketTable.getInstance();
 			int index = 0;
-			for (Iterator<PacketListEntry> it = _displayed.iterator(); it.hasNext();)
+			for (final Iterator<PacketListEntry> it = _displayed.iterator(); it.hasNext();)
 			{
 				final PacketListEntry e = it.next();
 				final ReceivedPacket rp = e.getPacket();
@@ -689,7 +695,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		@Override
 		public String getValueAt(int rowIndex, int columnIndex)
 		{
-			PacketListEntry ple = getValueAt(rowIndex);
+			final PacketListEntry ple = getValueAt(rowIndex);
 			switch (columnIndex)
 			{
 				case 0:
@@ -712,7 +718,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		{
 			if (displayed == null)
 				displayed = Collections.emptySet();
-				
+			
 			if (client)
 				_showFromClient = displayed;
 			else
@@ -751,7 +757,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 			final int total = view.getViewRowCount();
 			if (total == 0)
 				return Collections.emptyList();
-				
+			
 			final List<ReceivedPacket> result = new ArrayList<>(total);
 			for (int i = 0; i < total; ++i)
 				result.add(_model.getValueAt(view.convertRowIndexToModel(i)).getPacket());
@@ -761,7 +767,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		@Override
 		public List<ReceivedPacket> getTablePackets()
 		{
-			final List<ReceivedPacket> result = new ArrayList<ReceivedPacket>(_model._displayed.size());
+			final List<ReceivedPacket> result = new ArrayList<>(_model._displayed.size());
 			for (final PacketListEntry e : _model._displayed)
 				result.add(e.getPacket());
 			return result;
@@ -770,7 +776,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 		@Override
 		public List<ReceivedPacket> getMemoryPackets()
 		{
-			final List<ReceivedPacket> result = new ArrayList<ReceivedPacket>(_model._cached.size());
+			final List<ReceivedPacket> result = new ArrayList<>(_model._cached.size());
 			for (final PacketListEntry e : _model._cached)
 				result.add(e.getPacket());
 			return result;

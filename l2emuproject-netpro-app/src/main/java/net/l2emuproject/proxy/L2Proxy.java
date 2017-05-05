@@ -33,6 +33,7 @@ import net.l2emuproject.lang.management.StartupManager.StartupHook;
 import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.config.ConfigMarker;
 import net.l2emuproject.proxy.config.ProxyConfig;
+import net.l2emuproject.proxy.network.L2AuthSocket;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
 import net.l2emuproject.proxy.network.game.client.L2GameClientConnections;
@@ -159,9 +160,9 @@ public class L2Proxy
 			
 			try
 			{
-				for (final Iterator<ProxySocket> it = sm.getAuthSockets().iterator(); it.hasNext();)
+				for (final Iterator<L2AuthSocket> it = sm.getAuthSockets().iterator(); it.hasNext();)
 				{
-					final ProxySocket socket = it.next();
+					final L2AuthSocket socket = it.next();
 					try
 					{
 						if (logger.isTraceEnabled())

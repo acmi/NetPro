@@ -33,8 +33,8 @@ import org.xml.sax.SAXException;
 import net.l2emuproject.network.IPv4AddressPrefix;
 import net.l2emuproject.network.IPv4AddressTrie;
 import net.l2emuproject.proxy.network.BindableSocketSet;
+import net.l2emuproject.proxy.network.L2AuthSocket;
 import net.l2emuproject.proxy.network.ListenSocket;
-import net.l2emuproject.proxy.network.ProxySocket;
 import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
 import net.l2emuproject.util.L2XMLUtils;
 import net.l2emuproject.util.logging.L2Logger;
@@ -50,13 +50,13 @@ public final class SocketManager implements IOConstants
 	
 	private static final Pattern IPV4_ADDRESS_PREFIX = Pattern.compile(
 			"((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))\\.((?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9][0-9])|(?:[1-9]?[0-9]))/((?:[1-2]?[0-9])|(?:3[0-2]))");
-			
+	
 	private final IPv4AddressTrie<ListenSocket> _gameWorldHubSockets;
-	private final BindableSocketSet<ProxySocket> _authSockets;
+	private final BindableSocketSet<L2AuthSocket> _authSockets;
 	
 	SocketManager()
 	{
-		Pair<IPv4AddressTrie<ListenSocket>, BindableSocketSet<ProxySocket>> cfg = null;
+		Pair<IPv4AddressTrie<ListenSocket>, BindableSocketSet<L2AuthSocket>> cfg = null;
 		try
 		{
 			cfg = load(APPLICATION_DIRECTORY.resolve("serviceconfig.xml"));
@@ -65,7 +65,7 @@ public final class SocketManager implements IOConstants
 		{
 			// ignore and load predefined
 		}
-		catch (Exception e)
+		catch (final Exception e)
 		{
 			LOG.error("User's service config", e);
 		}
@@ -76,7 +76,7 @@ public final class SocketManager implements IOConstants
 			{
 				cfg = load(CONFIG_DIRECTORY.resolve("serviceconfig.xml"));
 			}
-			catch (Exception e)
+			catch (final Exception e)
 			{
 				throw new InternalError(e);
 			}
@@ -86,7 +86,7 @@ public final class SocketManager implements IOConstants
 		_authSockets = cfg.getRight();
 	}
 	
-	private final Pair<IPv4AddressTrie<ListenSocket>, BindableSocketSet<ProxySocket>> load(Path file) throws IOException, ParserConfigurationException, SAXException, RuntimeException
+	private final Pair<IPv4AddressTrie<ListenSocket>, BindableSocketSet<L2AuthSocket>> load(Path file) throws IOException, ParserConfigurationException, SAXException, RuntimeException
 	{
 		final Node root = L2XMLUtils.childNamed(L2XMLUtils.getXMLFile(file), "sockets");
 		final IPv4AddressTrie<ListenSocket> gwSockets = new IPv4AddressTrie<>();
@@ -104,23 +104,23 @@ public final class SocketManager implements IOConstants
 			final Matcher cap = IPV4_ADDRESS_PREFIX.matcher(tmp);
 			if (!cap.matches())
 				throw new IllegalArgumentException(tmp);
-				
+			
 			final byte[] addr = new byte[4];
 			for (int i = 0; i < 4; ++i)
 				addr[i] = (byte)Integer.parseInt(cap.group(i + 1));
 			final IPv4AddressPrefix prefix = new IPv4AddressPrefix(addr, Integer.parseInt(cap.group(5)));
 			gwSockets.put(prefix, socket);
 		}
-		final BindableSocketSet<ProxySocket> authSockets = new BindableSocketSet<>();
+		final BindableSocketSet<L2AuthSocket> authSockets = new BindableSocketSet<>();
 		for (final Node sock : L2XMLUtils.listNodesByNodeName(L2XMLUtils.firstChildNamed(root, "authorizationSockets"), "authorizationSocket"))
 		{
 			if (L2XMLUtils.getNodeAttributeBooleanValue(sock, "disabled", false))
 				continue;
-				
+			
 			final Node listen = L2XMLUtils.firstChildNamed(sock, "listen");
 			final Node svc = L2XMLUtils.firstChildNamed(sock, "service");
-			authSockets.add(new ProxySocket(InetAddress.getByName(L2XMLUtils.getString(listen, "ip")), L2XMLUtils.getInteger(listen, "port"), L2XMLUtils.getString(svc, "host"),
-					L2XMLUtils.getInteger(svc, "port")));
+			authSockets.add(new L2AuthSocket(InetAddress.getByName(L2XMLUtils.getString(listen, "ip")), L2XMLUtils.getInteger(listen, "port"), L2XMLUtils.getString(svc, "host"),
+					L2XMLUtils.getInteger(svc, "port"), L2XMLUtils.getInteger(svc, "serverListVersion", -1)));
 		}
 		return ImmutablePair.of(gwSockets, authSockets);
 	}
@@ -140,7 +140,7 @@ public final class SocketManager implements IOConstants
 	 * 
 	 * @return login sockets
 	 */
-	public BindableSocketSet<ProxySocket> getAuthSockets()
+	public BindableSocketSet<L2AuthSocket> getAuthSockets()
 	{
 		return _authSockets;
 	}

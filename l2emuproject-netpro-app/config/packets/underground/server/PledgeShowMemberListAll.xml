@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Added the attendance (activity) bonus CHAR (byte) to each member in the loop -->
 <packet id="SM_PLEDGE_SHOW_MEMBER_LIST_ALL" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Subunit" type="YesOrNo" />
+	<dword alias="Not the last unit" type="YesOrNo" />
 	<dword alias="Pledge ID" type="Pledge">
 		<scriptAlias id="PIC_PLEDGE_ID" />
 	</dword>

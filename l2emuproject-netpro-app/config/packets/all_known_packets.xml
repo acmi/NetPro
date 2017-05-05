@@ -2224,8 +2224,6 @@
 		<packet id="467" name="ExEnchantSkillResult" />
 		<packet id="468" name="ExRefundList" />
 		<packet id="469" name="ExNoticePostArrived" />
-		<packet id="470" name="ExShowReceivedPostList" />
-		<packet id="471" name="ExReplyReceivedPost" />
 		<packet id="472" name="ExShowSentPostList" />
 		<packet id="473" name="ExReplySentPost" />
 		<packet id="474" name="ExResponseShowStepOne" />
@@ -4184,6 +4182,22 @@
 		UNICODE "(Receive)%s"
 		-->
 		<packet id="SM_EX_SHOW_SEED_MAP_INFO" name="ExShowSeedMapInfo" />
+		
+		<!-- dd -->
+		<!-- loop -->
+		<!--   d type -->
+		<!--   [type 4 or 5] ddSSddddddd -->
+		<!--   [other types] dSSddddddd -->
+		<!-- /loop -->
+		<!-- dd -->
+		<packet id="SM_EX_SHOW_RECEIVED_POST_LIST" name="ExShowReceivedPostList" />
+		<!-- d -->
+		<!-- [type 4] dddddSSSd -->
+		<!-- [type 5] dddddddddddddSSSd -->
+		<!-- [others] dddSSSd -->
+		<!-- attached item loop (generic), element suffix: d -->
+		<!-- Qdd -->
+		<packet id="SM_EX_REPLY_RECEIVED_POST" name="ExReplyReceivedPost" />
 		
 		<!--
 		UNICODE "(Receive2nd)"

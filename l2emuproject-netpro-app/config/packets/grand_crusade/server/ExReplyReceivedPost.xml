@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Augmentation/enchant effect WORDs are now DWORDs -->
-<!-- Underground: Soul Crystal Effect extension -->
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="SM_EX_REPLY_RECEIVED_POST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Type" type="MailMessageType" />
+	<dword alias="Type" type="mail.MailMessageType" id="type" />
+	
+	<branch id="type" condition="mail.CommissionBuyMailMessage">
+		<dword alias="Item" type="Item" />
+		<dword alias="Enchant level" />
+		<dword alias="" />
+		<dword alias="" />
+		<dword alias="Attribute" />
+		<dword alias="" />
+		<dword alias="" />
+		<dword alias="" />
+	</branch>
+	<branch id="type" condition="mail.CommissionMailMessage">
+		<dword alias="Subject" type="ImmutableSystemMessage" />
+		<dword alias="Message" type="ImmutableSystemMessage" />
+	</branch>
+	
 	<dword alias="Message ID" />
 	<dword alias="Locked" type="YesOrNo" /> <!-- unsure about this, typically 0 -->
 	<dword alias="Replies disabled" type="YesOrNo" /> <!-- if enabled, clicking 'Reply' has no effect -->
 	<string alias="Recipient" />
-	<string alias="Subject" />
-	<string alias="Message" />
+	<branch id="type" condition="mail.NonCommissionMailMessage">
+		<string alias="Subject" />
+		<string alias="Message" />
+	</branch>
+	<branch id="type" condition="mail.CommissionMailMessage">
+		<string alias="Title" />
+		<string alias="Content/token" />
+	</branch>
 	<dword alias="Attachment count" id="index_0" />
 	<loop id="index_0">
 		<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />

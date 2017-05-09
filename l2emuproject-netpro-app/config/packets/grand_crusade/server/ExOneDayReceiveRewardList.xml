@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Added three DWORDs at the start of packet -->
+<!-- Added three remaining time DWORDs at the start of packet -->
 <packet id="SM_EX_ONE_DAY_RECEIVE_REWARD_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<!-- NEW -->
-	<dword alias="" />
-	<dword alias="" />
-	<dword alias="" />
+	<dword alias="Until 06:30 UTC" type="TimeRemaining" />
+	<dword alias="Until Monday 06:30 UTC" type="TimeRemaining" />
+	<dword alias="Until 1st of month 06:30 UTC" type="TimeRemaining" />
 
 	<byte alias="23" />
 	<dword alias="Viewer's class" type="CharacterClass" />

@@ -1947,6 +1947,7 @@
 		<!-- chSSS -->
 		<packet id="CM_REQ_BLOCK_LIST_FOR_AD" name="RequestBlockListForAD" />
 		<packet id="CM_REQ_UPGRADE_SYSTEM_RESULT" name="RequestUpgradeSystemResult" />
+		<packet id="CM_REQ_USER_BAN_INFO" name="RequestUserBanInfo" />
 	</client>
 	<server>
 		<!--
@@ -4755,5 +4756,6 @@
 		<packet id="SM_EX_DRESS_HANGER_LIST" name="ExDressHangerList" />
 		<packet id="SM_EX_SHOW_UPGRADE_SYSTEM" name="ExShowUpgradeSystem" />
 		<packet id="SM_EX_UPGRADE_SYSTEM_RESULT" name="ExUpgradeSystemResult" />
+		<packet id="SM_EX_USER_BAN_INFO" name="ExUserBanInfo" />
 	</server>
 </packets>

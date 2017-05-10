@@ -1813,3 +1813,16 @@
 1011813	Complete Letter Set: LINEAGE II x50
 1011814	Complete Letter Set: NCSOFT x1
 1011815	Complete Letter Set: NCSOFT x50
+1011816	Pa’agrio’s Special Pack
+1011817	Maphr’s Special Pack
+1011818	Sayha’s Special Pack
+1011819	Eva’s Special Pack
+1011820	Blessed Scroll: Enchant Elemental Shirt x1
+1011821	Blessed Scroll: Enchant Elemental Shirt x25
+1011822	Blessed Scroll: Enchant Elemental Shirt x100
+1011823	Physical Reflect Shirt
+1011824	Magical Reflect Shirt
+1011825	Shiny Elemental Shirt
+1011826	7-Day Boost Pack
+1011827	30-Day Boost Pack
+1011828	Big Vitality Pack

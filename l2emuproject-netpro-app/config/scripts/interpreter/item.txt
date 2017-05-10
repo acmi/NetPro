@@ -40907,5 +40907,6 @@
 48217	High-grade Balthus Knight Mark
 48218	Veteran Duo Bracelet Pack Event
 48219	Returned Duo Bracelet Pack Event
+48220	NoItemName
 49783	Sibis Coin Box
 49798	Cheer Pom Poms Event

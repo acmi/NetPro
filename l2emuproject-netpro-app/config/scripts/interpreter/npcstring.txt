@@ -6000,7 +6000,7 @@
 587702	|Lv. 103+| Break Through Crisis (In progress)
 587703	|Lv. 103+| Break Through Crisis (Completed)
 587704	|Lv. 103+| Break Through Crisis
-587711	Open 15 Hunter Guild Diagrams.
+587711	Open 10 Hunter Guild Diagrams.
 587712	Talk with Arcturus.
 587901	|Lv. 104+| Exalted, Guide to Power
 587902	|Lv. 104+| Exalted, Guide to Power (In progress)

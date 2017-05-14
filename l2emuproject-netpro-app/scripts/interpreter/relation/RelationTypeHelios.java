@@ -39,10 +39,10 @@ public class RelationTypeHelios extends ScriptedBitmaskInterpreter
 				"In pledge",
 				"Pledge leader",
 				"Same pledge",
-				null,
-				null, // 10
-				null,
-				null,
+				"Siege participant",
+				"Siege attacker", // 10
+				"Siege ally",
+				"Siege enemy",
 				null,
 				// A war declaration was received from the player's pledge
 				"Enemy pledge – attacker",
@@ -52,7 +52,6 @@ public class RelationTypeHelios extends ScriptedBitmaskInterpreter
 				"Alliance leader"
 				// TODO: fortress siege
 				// clanhall siege
-				// castle siege
 		);
 		// @formatter:on
 	}

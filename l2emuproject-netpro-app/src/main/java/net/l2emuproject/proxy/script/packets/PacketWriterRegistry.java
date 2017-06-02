@@ -24,6 +24,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.Proxy;
+import net.l2emuproject.proxy.script.packets.util.CommonPacketSender;
 import net.l2emuproject.util.concurrent.MapUtils;
 
 /**
@@ -40,6 +41,7 @@ public final class PacketWriterRegistry
 		_packetWriters = new EnumMap<>(EndpointType.class);
 		for (final EndpointType et : EndpointType.values())
 			_packetWriters.put(et, new ConcurrentHashMap<>());
+		new CommonPacketSender().onLoad();
 	}
 	
 	/**

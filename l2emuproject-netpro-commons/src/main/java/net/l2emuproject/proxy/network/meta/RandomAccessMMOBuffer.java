@@ -45,6 +45,7 @@ public class RandomAccessMMOBuffer
 	final ByteBuffer _buffer;
 	private final MMOBuffer _buf;
 	private Map<String, List<EnumeratedPayloadField>> _fields;
+	private String _packetName;
 	
 	// extension fields
 	private final IProtocolVersion _protocol;
@@ -64,6 +65,7 @@ public class RandomAccessMMOBuffer
 	{
 		_buf = buffer;
 		_fields = Collections.emptyMap();
+		_packetName = null;
 		
 		// we do not want MMOBuffer to depend on this class
 		final Field buf = MMOBuffer.class.getDeclaredField("_buffer");
@@ -373,6 +375,26 @@ public class RandomAccessMMOBuffer
 	public void setEnumeratedFields(Map<String, List<EnumeratedPayloadField>> fields)
 	{
 		_fields = fields;
+	}
+	
+	/**
+	 * Returns the packet name (if applicable).
+	 * 
+	 * @return packet name
+	 */
+	public String getPacketName()
+	{
+		return _packetName;
+	}
+	
+	/**
+	 * Specifies the name of the packet template used during enumeration.
+	 * 
+	 * @param packetName packet name
+	 */
+	public void setPacketName(String packetName)
+	{
+		_packetName = packetName;
 	}
 	
 	// extension fields

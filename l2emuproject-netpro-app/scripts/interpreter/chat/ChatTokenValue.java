@@ -17,6 +17,7 @@ package interpreter.chat;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
 
+import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
@@ -47,8 +48,7 @@ public abstract class ChatTokenValue extends ScriptedFieldValueInterpreter imple
 	protected ChatTokenValue(String typeFieldAlias)
 	{
 		_typeFieldAlias = typeFieldAlias;
-		_type = new ThreadLocal<TokenType>()
-		{
+		_type = new ThreadLocal<TokenType>(){
 			@Override
 			protected TokenType initialValue()
 			{
@@ -60,7 +60,8 @@ public abstract class ChatTokenValue extends ScriptedFieldValueInterpreter imple
 	@Override
 	public void reviewContext(RandomAccessMMOBuffer buffer)
 	{
-		_type.set(ChatTokenType.getType(buffer.readFirstInteger32(_typeFieldAlias)));
+		final EnumeratedPayloadField field = buffer.getSingleFieldIndex(_typeFieldAlias);
+		_type.set(field != null ? ChatTokenType.getType(buffer.readInteger32(field)) : TokenType.STRING);
 	}
 	
 	@Override

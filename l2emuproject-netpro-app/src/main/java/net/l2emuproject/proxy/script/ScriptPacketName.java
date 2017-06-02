@@ -21,12 +21,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Indicates that the annotated {@link String} field names an enumerateable field to be handled by a PPE script.
+ * Indicates that the annotated {@link String} packet names to be handled by a PPE script.
  * 
  * @author _dev_
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface ScriptFieldAlias
+public @interface ScriptPacketName
 {
 }

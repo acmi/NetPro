@@ -34,6 +34,7 @@ import net.l2emuproject.proxy.script.packets.InvalidPacketWriterArgumentsExcepti
 import net.l2emuproject.proxy.script.packets.PacketWriterRegistry;
 import net.l2emuproject.proxy.script.packets.UnknownPacketIdentifierException;
 import net.l2emuproject.proxy.script.packets.UnknownPacketStructureException;
+import net.l2emuproject.proxy.script.packets.util.CommonPacketSender;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfo.DestinationType;
 import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
@@ -102,13 +103,14 @@ public class ObjectLocationAnalytics extends PpeEnabledGameScript implements Int
 		final L2TextBuilder tb = new L2TextBuilder("Your OID is ").append(ui.getUserOID());
 		{
 			tb.append(", location (").append(loc.getX()).append("; ").append(loc.getY()).append("; ");
-			tb.append(loc.getZ()).append(").");
+			tb.append(loc.getZ()).append(") ").append('[').append((loc.getX() >> 15) + 20).append('_').append((loc.getY() >> 15) + 18).append(']');
 		}
 		try
 		{
-			PacketWriterRegistry.getInstance().sendPacket(client, "SM_SAY2", 5, "SYS", tb.toString());
+			//PacketWriterRegistry.getInstance().sendPacket(client, "SM_SAY2", 5, "SYS", tb.toString());
+			CommonPacketSender.sendChatMessage(client, 5, "SYS", tb.toString());
 		}
-		catch (InvalidPacketWriterArgumentsException | UnknownPacketStructureException | UnknownPacketIdentifierException e)
+		catch (InvalidPacketWriterArgumentsException | UnknownPacketIdentifierException/* | UnknownPacketStructureException*/ e)
 		{
 			LOG.error("", e);
 			return;

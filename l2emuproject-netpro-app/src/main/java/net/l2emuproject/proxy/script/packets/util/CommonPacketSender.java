@@ -111,7 +111,7 @@ public final class CommonPacketSender extends PacketWriterScript
 	@Override
 	public IProtocolVersion newestSupportedProtocolVersion()
 	{
-		return ClientProtocolVersion.HELIOS;
+		return ClientProtocolVersion.GRAND_CRUSADE_UPDATE_1;
 	}
 	
 	@Override
@@ -846,6 +846,66 @@ public final class CommonPacketSender extends PacketWriterScript
 		buf.writeD(accepted);
 		
 		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestExTryToPutEnchantTargetItem(L2GameServer server, int itemOID)
+	{
+		final int size = 1 + 2 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x49);
+		buf.writeD(itemOID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestExCancelEnchantItem(L2GameServer server)
+	{
+		sendRequestEx(server, 0x4B);
+	}
+	
+	public static final void sendRequestExAddEnchantScrollItem(L2GameServer server, int scrollOID, int itemOID)
+	{
+		final int size = 1 + 2 + 4 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0xE3);
+		buf.writeD(scrollOID);
+		buf.writeD(itemOID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestExRemoveEnchantSupportItem(L2GameServer server)
+	{
+		sendRequestEx(server, 0xE4);
+	}
+	
+	public static final void sendRequestEnchantItem(L2GameServer server, int itemOID, int supportItemOID)
+	{
+		final int size = 1 + 4 + 4;
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0x5F);
+		buf.writeD(itemOID);
+		buf.writeD(supportItemOID);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestCuriousHouseHtml(L2GameServer server)
+	{
+		sendRequestEx(server, 0xC1);
+	}
+	
+	private static final void sendRequestEx(L2GameServer server, int secondOp)
+	{
+		server.sendPacket(new ProxyRepeatedPacket((byte)0xD0, (byte)(secondOp & 0xFF), (byte)(secondOp >> 8)));
 	}
 	
 	private static final void sendLearnableSkillRequest(L2GameServer server, int opcode, int skillID, int skillLevel, int learnType)

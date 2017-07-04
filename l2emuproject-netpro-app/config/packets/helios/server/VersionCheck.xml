@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- New CHAR field appended at the end of the packet (Arena mode?) -->
 <packet id="SM_VERSION_CHECK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<byte alias="Compatible" type="YesOrNo" />
+	<byte alias="Exact version match" type="YesOrNo" />
 	<qword alias="Cipher key part">
 		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_CIPHER_KEY_HALF" />
 	</qword>
@@ -9,7 +9,7 @@
 		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_CIPHER_STATE" />
 	</dword>
 	<dword alias="Server" type="GameServerName" />
-	<byte alias="1" />
+	<byte alias="Merged server" type="YesOrNo" />
 	<dword alias="CM opcode shuffling seed">
 		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_OBFUSCATION_KEY" />
 	</dword>

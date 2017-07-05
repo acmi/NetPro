@@ -104,4 +104,10 @@ public class L2PhLogFileHeader
 	{
 		return _protocol;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return _logFile.toString();
+	}
 }

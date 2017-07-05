@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.l2emuproject.proxy.io.packetlog.l2ph;
+package net.l2emuproject.proxy.io.packetlog.ps;
 
+import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
+import java.util.Iterator;
 
 import net.l2emuproject.io.EmptyChecksum;
 import net.l2emuproject.network.mmocore.MMOBuffer;
@@ -28,34 +30,41 @@ import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.io.NewIOHelper;
 import net.l2emuproject.proxy.io.exception.LogFileIterationIOException;
 import net.l2emuproject.proxy.network.EndpointType;
-import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.client.L2GameClientPackets;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.game.server.L2GameServerPackets;
 
 /**
- * Allows convenient L2PacketHack raw packet log reading.
+ * Allows convenient PacketSamurai/YAL packet log reading.
  * 
  * @author _dev_
  */
-public class L2PhRawLogFileIterator implements IL2PhLogFileIterator, IOConstants
+public class PSPacketLogPartIterator implements Iterator<PSLogFilePacket>, AutoCloseable, Closeable, IOConstants
 {
-	private final L2PhLogFileHeader _logFileMetadata;
+	private final PSLogPartHeader _logFileMetadata;
 	private final NewIOHelper _input;
+	private final boolean _unshuffleOpcodes;
 	
 	private final L2GameClient _fakeClient;
 	private final L2GameServer _fakeServer;
+	private final ByteBuffer _copyVsNew;
 	private final MMOBuffer _buf;
 	
-	L2PhRawLogFileIterator(L2PhLogFileHeader logFileMetadata) throws IOException
+	PSPacketLogPartIterator(PSLogPartHeader logFileMetadata, boolean unshuffleOpcodes, L2GameServer fakeServer) throws IOException
 	{
 		_logFileMetadata = logFileMetadata;
 		_input = new NewIOHelper(Files.newByteChannel(logFileMetadata.getLogFile(), StandardOpenOption.READ), ByteBuffer.allocate(DEFAULT_BUFFER_SIZE).order(ByteOrder.LITTLE_ENDIAN),
 				EmptyChecksum.getInstance());
+		_unshuffleOpcodes = unshuffleOpcodes;
 		
-		_fakeServer = new L2GameServer(null, null, _fakeClient = new L2GameClient(null, null));
-		_buf = new MMOBuffer();
+		// move to first packet
+		_input.setPositionInChannel(logFileMetadata.getHeaderSize());
+		
+		_fakeServer = fakeServer;
+		_fakeClient = fakeServer.getTargetClient();
+		_copyVsNew = ByteBuffer.allocate(1 << 16 - 3).order(ByteOrder.LITTLE_ENDIAN);
+		_buf = new MMOBuffer().setByteBuffer(_copyVsNew);
 	}
 	
 	@Override
@@ -63,7 +72,7 @@ public class L2PhRawLogFileIterator implements IL2PhLogFileIterator, IOConstants
 	{
 		try
 		{
-			_input.fetchUntilAvailable(1/* + 2 + 8 + 2*/);
+			_input.fetchUntilAvailable(1/* + 2 + 8*/);
 			return true;
 		}
 		catch (final EOFException e)
@@ -77,35 +86,53 @@ public class L2PhRawLogFileIterator implements IL2PhLogFileIterator, IOConstants
 	}
 	
 	@Override
-	public L2PhLogFilePacket next() throws LogFileIterationIOException
+	public PSLogFilePacket next() throws LogFileIterationIOException
 	{
 		try
 		{
-			final int packetType = _input.readByte();
-			final int size = _input.readChar() - 2;
-			
-			final ServiceType service = L2PhLogFileUtils.toServiceType((byte)packetType);
-			final EndpointType endpoint = EndpointType.valueOf((packetType & 1) == 0);
-			final long time = L2PhLogFileUtils.toUNIX(Double.longBitsToDouble(_input.readLong()));
-			_input.readChar(); // packet size as part of packet
-			final byte[] content = new byte[size];
-			_input.read(content);
-			
-			final ByteBuffer wrapper = ByteBuffer.wrap(content).order(ByteOrder.LITTLE_ENDIAN);
-			_buf.setByteBuffer(wrapper);
-			if (endpoint.isClient())
+			while (true)
 			{
-				_fakeClient.decipher(wrapper);
-				_fakeClient.setFirstTime(false);
-				L2GameClientPackets.getInstance().handlePacket(wrapper, _fakeClient, _buf.readUC()).readAndChangeState(_fakeClient, _buf);
+				final EndpointType type = EndpointType.valueOf(!_input.readBoolean());
+				final byte[] body = new byte[_input.readChar() - 2];
+				final long time = _input.readLong();
+				_input.read(body);
+				
+				if (_logFileMetadata.isEnciphered())
+				{
+					_copyVsNew.clear();
+					_copyVsNew.put(body).flip();
+					if (type.isClient())
+					{
+						_fakeClient.decipher(_copyVsNew);
+						_fakeClient.setFirstTime(false);
+						L2GameClientPackets.getInstance().handlePacket(_copyVsNew, _fakeClient, _buf.readUC()).readAndChangeState(_fakeClient, _buf);
+					}
+					else
+					{
+						_fakeServer.decipher(_copyVsNew);
+						L2GameServerPackets.getInstance().handlePacket(_copyVsNew, _fakeServer, _buf.readUC()).readAndChangeState(_fakeServer, _buf);
+					}
+					_copyVsNew.position(0);
+					_copyVsNew.get(body);
+				}
+				else if (_unshuffleOpcodes)
+				{
+					_copyVsNew.clear();
+					_copyVsNew.put(body).flip();
+					if (type.isClient())
+					{
+						_fakeClient.getDeobfuscator().decodeOpcodes(_copyVsNew);
+						final int len = Math.min(3, body.length);
+						for (int i = 0; i < len; ++i)
+							body[i] = _copyVsNew.get(i);
+						L2GameClientPackets.getInstance().handlePacket(_copyVsNew, _fakeClient, _buf.readUC()).readAndChangeState(_fakeClient, _buf);
+					}
+					else
+						L2GameServerPackets.getInstance().handlePacket(_copyVsNew, _fakeServer, _buf.readUC()).readAndChangeState(_fakeServer, _buf);
+				}
+				
+				return new PSLogFilePacket(type, body, time);
 			}
-			else
-			{
-				_fakeServer.decipher(wrapper);
-				L2GameServerPackets.getInstance().handlePacket(wrapper, _fakeServer, _buf.readUC()).readAndChangeState(_fakeServer, _buf);
-			}
-			
-			return new L2PhLogFilePacket(service, endpoint, time, content);
 		}
 		catch (final IOException e)
 		{

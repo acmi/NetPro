@@ -83,10 +83,11 @@ public class L2PacketTablePayloadEnumerator implements PacketPayloadEnumerator
 			final IPacketTemplate template;
 			try
 			{
-				result._buffer.clear();
+				//result._buffer.clear();
+				result._buffer.position(0);
 				template = VersionnedPacketTable.getInstance().getTemplate(protocol, endpoint, result._buffer);
 			}
-			catch (RuntimeException e)
+			catch (final RuntimeException e)
 			{
 				throw new InvalidPacketOpcodeSchemeException(endpoint, HexUtil.bytesToHexString(ByteBufferUtils.asMutable(result._buffer).array(), " "), e);
 			}
@@ -234,7 +235,7 @@ public class L2PacketTablePayloadEnumerator implements PacketPayloadEnumerator
 				List<EnumeratedPayloadField> list = _result.getEnumeratedFields().get(alias);
 				if (list == null)
 				{
-					Integer size = _loopSizes.peek();
+					final Integer size = _loopSizes.peek();
 					list = new ArrayList<>(size != null ? size : 1);
 					_result.getEnumeratedFields().put(alias, list);
 				}

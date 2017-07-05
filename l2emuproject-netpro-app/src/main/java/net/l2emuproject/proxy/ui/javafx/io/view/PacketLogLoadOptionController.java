@@ -41,7 +41,6 @@ import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.WindowTracker;
-import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabUserData;
@@ -55,38 +54,22 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Accordion;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
-import javafx.scene.control.TitledPane;
-import javafx.scene.control.Tooltip;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.stage.Window;
 
 /**
  * Handles the packet log loading option selection dialog.
  * 
  * @author _dev_
  */
-public final class PacketLogLoadOptionController
+public final class PacketLogLoadOptionController extends AbstractLogLoadOptionController<LogFileHeader>
 {
-	private MainWindowController _mainWindow;
-	
-	@FXML
-	private TitledPane _tpWrapper;
-	
-	@FXML
-	private Label _labSize;
-	
-	@FXML
-	private Tooltip _ttSize;
-	
 	@FXML
 	private Label _labVersion;
 	
@@ -94,21 +77,10 @@ public final class PacketLogLoadOptionController
 	private Label _labPacketCount;
 	
 	@FXML
-	private ComboBox<IProtocolVersion> _cbProtocol;
-	
-	@FXML
-	private CheckBox _cbInvisible;
-	
-	@FXML
 	private CheckBox _cbInjected;
 	
 	@FXML
 	private CheckBox _cbNonCaptured;
-	
-	private Window getDialogWindow()
-	{
-		return _cbProtocol.getScene().getWindow();
-	}
 	
 	@FXML
 	private void loadPacketLog(ActionEvent event)
@@ -124,7 +96,7 @@ public final class PacketLogLoadOptionController
 		final LogFileHeader logFileHeader;
 		try
 		{
-			logFileHeader = (LogFileHeader)_tpWrapper.getUserData();
+			logFileHeader = getUserData();
 		}
 		catch (NullPointerException | ClassCastException e)
 		{
@@ -266,39 +238,6 @@ public final class PacketLogLoadOptionController
 		progressDialog.setTask(loadTask);
 	}
 	
-	@FXML
-	private void closeTab(ActionEvent event)
-	{
-		final Window wnd = getDialogWindow();
-		
-		final Accordion tabPane = (Accordion)_tpWrapper.getParent();
-		final ObservableList<TitledPane> panes = tabPane.getPanes();
-		if (panes.size() == 1)
-		{
-			wnd.hide();
-			return;
-		}
-		
-		int index = panes.indexOf(_tpWrapper);
-		panes.remove(index);
-		if (index >= panes.size())
-			index = panes.size() - 1;
-		tabPane.setExpandedPane(panes.get(index));
-		
-		// if animation is enabled, this must run after animation completes
-		wnd.sizeToScene();
-	}
-	
-	/**
-	 * Links this controller with the main window.
-	 * 
-	 * @param mainWindow primary application window
-	 */
-	public void setMainWindow(MainWindowController mainWindow)
-	{
-		_mainWindow = mainWindow;
-	}
-	
 	/**
 	 * Initializes the packet log summary view.
 	 * 
@@ -313,12 +252,9 @@ public final class PacketLogLoadOptionController
 	public void setPacketLog(String filename, String approxSize, String exactSize, String logVersion, String packetCount, ObservableList<IProtocolVersion> applicableProtocols,
 			IProtocolVersion detectedProtocol)
 	{
-		_tpWrapper.setText(filename);
-		_labSize.setText(approxSize);
-		_ttSize.setText(exactSize);
+		setPacketLog(filename, approxSize, exactSize, applicableProtocols, detectedProtocol);
+		
 		_labVersion.setText(logVersion);
 		_labPacketCount.setText(packetCount);
-		_cbProtocol.setItems(applicableProtocols);
-		_cbProtocol.getSelectionModel().select(detectedProtocol);
 	}
 }

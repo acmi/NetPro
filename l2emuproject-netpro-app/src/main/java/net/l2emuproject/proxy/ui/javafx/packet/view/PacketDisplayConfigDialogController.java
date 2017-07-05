@@ -118,9 +118,8 @@ public class PacketDisplayConfigDialogController implements IOConstants
 			hidingConfigFile = selectedFile.toPath().resolveSibling(filename);
 		}
 		
-		final WaitingIndicatorDialogController waitDialog = UtilityDialogs.showWaitDialog(wnd, "generic.waitdlg.title", "open.netpro.waitdlg.header", selectedFile.getName());
-		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() ->
-		{
+		final WaitingIndicatorDialogController waitDialog = UtilityDialogs.showWaitDialog(wnd, "generic.waitdlg.title", "open.waitdlg.header", selectedFile.getName());
+		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() -> {
 			final String filename = hidingConfigFile.getFileName().toString();
 			final Map<EndpointType, Set<byte[]>> phc, tmp;
 			switch (exportType)
@@ -146,11 +145,11 @@ public class PacketDisplayConfigDialogController implements IOConstants
 				PacketHidingConfigFileUtils.saveHidingConfiguration(hidingConfigFile,
 						new PacketHidingConfig(phc.getOrDefault(EndpointType.CLIENT, Collections.emptySet()), phc.getOrDefault(EndpointType.SERVER, Collections.emptySet())));
 			}
-			catch (InterruptedException e)
+			catch (final InterruptedException e)
 			{
 				// cancelled by user
 			}
-			catch (IOException e)
+			catch (final IOException e)
 			{
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 				Platform.runLater(() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.io", null, wnd, Modality.NONE).show());
@@ -177,9 +176,8 @@ public class PacketDisplayConfigDialogController implements IOConstants
 		
 		_lastOpenDirectory = selectedFile.getParentFile();
 		
-		final WaitingIndicatorDialogController waitDialog = UtilityDialogs.showWaitDialog(wnd, "generic.waitdlg.title", "open.netpro.waitdlg.header", selectedFile.getName());
-		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() ->
-		{
+		final WaitingIndicatorDialogController waitDialog = UtilityDialogs.showWaitDialog(wnd, "generic.waitdlg.title", "open.waitdlg.header", selectedFile.getName());
+		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() -> {
 			final Path hidingConfigFile = selectedFile.toPath();
 			final String filename = hidingConfigFile.getFileName().toString();
 			
@@ -188,39 +186,38 @@ public class PacketDisplayConfigDialogController implements IOConstants
 			{
 				tmp = PacketHidingConfigFileUtils.readHidingConfiguration(hidingConfigFile);
 			}
-			catch (InterruptedException e)
+			catch (final InterruptedException e)
 			{
 				// cancelled by user
 			}
-			catch (IOException e)
+			catch (final IOException e)
 			{
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 				Platform.runLater(() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.io", null, wnd, Modality.NONE).show());
 			}
-			catch (InsufficientlyLargeFileException e)
+			catch (final InsufficientlyLargeFileException e)
 			{
 				Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, wnd, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.toosmall", null,
 						"open.nph.err.dialog.content.toosmall", filename).show());
 			}
-			catch (UnknownFileTypeException e)
+			catch (final UnknownFileTypeException e)
 			{
 				Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, wnd, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.wrongfile", null,
 						"open.nph.err.dialog.content.wrongfile", filename, HexUtil.bytesToHexString(e.getMagic8Bytes(), " ")).show());
 			}
-			catch (DamagedFileException e)
+			catch (final DamagedFileException e)
 			{
 				Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, wnd, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.damaged", null,
 						"open.netpro.err.dialog.content.damaged", filename).show());
 			}
-			catch (RuntimeException e)
+			catch (final RuntimeException e)
 			{
 				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 				Platform.runLater(() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.runtime", null, wnd, Modality.NONE).show());
 			}
 			
 			final IPacketHidingConfig config = tmp;
-			Platform.runLater(() ->
-			{
+			Platform.runLater(() -> {
 				waitDialog.onWaitEnd();
 				
 				if (config == null)

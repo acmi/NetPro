@@ -100,7 +100,7 @@ public interface IOConstants
 	int INDEX_NPC_TEMPLATES = stringToMagic('N', 'P', 'C', 'T'), INDEX_PET_TEMPLATES = stringToMagic('P', 'E', 'T', 'T'), INDEX_SUMMON_TEMPLATES = stringToMagic('S', 'U', 'M', 'T');
 	int INDEX_STATIC_OBJECT_TEMPLATES = stringToMagic('S', 'T', 'O', 'T'), INDEX_CASTED_OR_LAUNCHED_SKILLS = stringToMagic('S', 'K', 'L', 'C'), INDEX_OWNED_SKILLS = stringToMagic('S', 'K', 'L', 'O');
 	int INDEX_SKILL_TO_CASTER_TEMPLATE = stringToMagic('C', 'A', 'S', 'T'), INDEX_ROLES = stringToMagic('R', 'O', 'L', 'E'), INDEX_RELATIONS = stringToMagic('R', 'L', 'T', 'N');
-	int INDEX_ABNORMAL_VISUAL_EFFECTS = stringToMagic('A', 'V', 'E', 'S');
+	int INDEX_ABNORMAL_VISUAL_EFFECTS = stringToMagic('A', 'V', 'E', 'S'), INDEX_MULTISELL = stringToMagic('M', 'T', 'S', 'L'), INDEX_USERS = stringToMagic('U', 'S', 'E', 'R');
 	
 	/**
 	 * Opens a resource file.

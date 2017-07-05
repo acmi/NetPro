@@ -19,26 +19,21 @@ import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.makeNonModalUtilit
 import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.wrapException;
 
 import java.io.IOException;
-import java.net.URL;
 import java.nio.channels.ClosedByInterruptException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.io.exception.LogFileIterationIOException;
-import net.l2emuproject.proxy.io.packetlog.l2ph.IL2PhLogFileIterator;
-import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileHeader;
-import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFilePacket;
-import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileUtils;
-import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogLoadOptions;
+import net.l2emuproject.proxy.io.packetlog.ps.PSLogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.ps.PSLogFilePacket;
+import net.l2emuproject.proxy.io.packetlog.ps.PSLogLoadOptions;
+import net.l2emuproject.proxy.io.packetlog.ps.PSPacketLogFileIterator;
+import net.l2emuproject.proxy.io.packetlog.ps.PSPacketLogUtils;
+import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.UIStrings;
@@ -52,19 +47,15 @@ import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
 
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.SimpleLongProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory;
 import javafx.scene.control.Tab;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -75,31 +66,34 @@ import javafx.stage.StageStyle;
  * 
  * @author _dev_
  */
-public final class L2PhPacketLogLoadOptionController extends AbstractLogLoadOptionController<L2PhLogFileHeader> implements Initializable
+public final class SamuraiPacketLogLoadOptionController extends AbstractLogLoadOptionController<PSLogFileHeader>
 {
-	private static final int ONE_HOUR_MILLISECONDS = 60 * 60 * 1_000;
+	@FXML
+	private Label _labVersion;
 	
 	@FXML
-	private Label _labType;
+	private Label _labPacketCount;
 	
 	@FXML
-	private Spinner<Double> _spTzOffset;
+	private Label _labStructure;
 	
 	@FXML
-	private Label _labTzOffset;
+	private Label _labServer;
 	
-	private final SimpleLongProperty _firstPacketArrivalTimeProperty = new SimpleLongProperty(0L);
+	@FXML
+	private Label _labClient;
 	
-	@Override
-	public void initialize(URL location, ResourceBundle resources)
-	{
-		final Calendar machineTime = Calendar.getInstance();
-		_spTzOffset.setValueFactory(new DoubleSpinnerValueFactory(-12, +12, (double)(-machineTime.get(Calendar.ZONE_OFFSET) - machineTime.get(Calendar.DST_OFFSET)) / ONE_HOUR_MILLISECONDS, 1));
-		_labTzOffset.textProperty().bind(UIStrings.getEx("load.infodlg.phx.options.tzoffset.explain", Bindings.createStringBinding(() -> {
-			final DateFormat df = new SimpleDateFormat("HH:mm");
-			return df.format(new Date(_firstPacketArrivalTimeProperty.get() + (long)(_spTzOffset.getValue() * ONE_HOUR_MILLISECONDS)));
-		}, _firstPacketArrivalTimeProperty, _spTzOffset.valueProperty())));
-	}
+	@FXML
+	private Label _labProtocol;
+	
+	@FXML
+	private Label _labComment;
+	
+	@FXML
+	private Label _labStream;
+	
+	@FXML
+	private CheckBox _cbUnshuffle;
 	
 	@FXML
 	private void loadPacketLog(ActionEvent event)
@@ -112,7 +106,7 @@ public final class L2PhPacketLogLoadOptionController extends AbstractLogLoadOpti
 			return;
 		}
 		
-		final L2PhLogFileHeader logFileHeader;
+		final PSLogFileHeader logFileHeader;
 		try
 		{
 			logFileHeader = getUserData();
@@ -135,7 +129,7 @@ public final class L2PhPacketLogLoadOptionController extends AbstractLogLoadOpti
 			return;
 		}
 		
-		final String filename = logFileHeader.getLogFile().getFileName().toString();
+		final String filename = logFileHeader.getParts().get(0).getLogFile().getFileName().toString();
 		
 		final Tab tab;
 		final PacketLogTabController controller;
@@ -154,12 +148,12 @@ public final class L2PhPacketLogLoadOptionController extends AbstractLogLoadOpti
 		}
 		catch (final IOException e)
 		{
-			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, L2PhPacketLogLoadOptionController.class.getName());
+			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, SamuraiPacketLogLoadOptionController.class.getName());
 			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getDialogWindow(), Modality.WINDOW_MODAL).show();
 			return;
 		}
 		
-		final HistoricalPacketLog cacheContext = new HistoricalPacketLog(logFileHeader.getLogFile());
+		final HistoricalPacketLog cacheContext = new HistoricalPacketLog(logFileHeader.getParts().get(0).getLogFile());
 		controller.protocolProperty().set(protocolVersion);
 		controller.setEntityCacheContext(cacheContext);
 		controller.setOnProtocolPacketHidingConfigurationChange(_mainWindow::refreshFilters);
@@ -182,29 +176,29 @@ public final class L2PhPacketLogLoadOptionController extends AbstractLogLoadOpti
 		WindowTracker.getInstance().add(progressDialogWindow);
 		progressDialogWindow.show();
 		
-		final L2PhLogLoadOptions options = new L2PhLogLoadOptions(protocolVersion, (long)(_spTzOffset.getValue() * ONE_HOUR_MILLISECONDS));
+		final PSLogLoadOptions options = new PSLogLoadOptions(protocolVersion, _cbUnshuffle.isSelected());
 		final LogLoadScriptManager scriptManager = LogLoadScriptManager.getInstance();
 		
 		final AtomicBoolean canUpdateUI = new AtomicBoolean(true);
 		final AtomicInteger packetsRead = new AtomicInteger(0);
 		final List<PacketLogEntry> packets = new ArrayList<>();
+		final ServiceType svcType = ServiceType.valueOf(protocolVersion);
 		final Future<?> loadTask = L2ThreadPool.submitLongRunning(() -> {
-			try (final IL2PhLogFileIterator it = L2PhLogFileUtils.getPacketIterator(logFileHeader))
+			try (final PSPacketLogFileIterator it = PSPacketLogUtils.getPacketIterator(logFileHeader, options.isDecodeOpcodes()))
 			{
 				while (it.hasNext())
 				{
 					if (Thread.interrupted())
 						return;
 					
-					final L2PhLogFilePacket packet = it.next();
+					final PSLogFilePacket packet = it.next();
 					packetsRead.incrementAndGet();
 					// scripts enable analytics on packets that will be visible in the table
-					scriptManager.onLoadedPacket(packet.getService().isLogin(), packet.getEndpoint().isClient(), packet.getContent(), protocolVersion, cacheContext,
-							packet.getReceivalTime() + options.getTzOffset());
-					if (L2PhLogFileUtils.isLoadable(packet, options))
+					scriptManager.onLoadedPacket(svcType.isLogin(), packet.getEndpoint().isClient(), packet.getContent(), protocolVersion, cacheContext, packet.getReceivalTime());
+					if (PSPacketLogUtils.isLoadable(packet, options))
 					{
 						final PacketLogEntry packetEntry = new PacketLogEntry(
-								new ReceivedPacket(packet.getService(), packet.getEndpoint(), packet.getContent(), packet.getReceivalTime() + options.getTzOffset()));
+								new ReceivedPacket(svcType, packet.getEndpoint(), packet.getContent(), packet.getReceivalTime()));
 						packetEntry.updateView(protocolVersion);
 						
 						synchronized (packets)
@@ -228,10 +222,10 @@ public final class L2PhPacketLogLoadOptionController extends AbstractLogLoadOpti
 			}
 			catch (final IOException e) // trying to open
 			{
-				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, L2PhPacketLogLoadOptionController.class.getName());
+				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, SamuraiPacketLogLoadOptionController.class.getName());
 				Platform.runLater(
 						() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-				{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
+						{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
 			}
 			catch (final LogFileIterationIOException ew) // during read
 			{
@@ -239,10 +233,10 @@ public final class L2PhPacketLogLoadOptionController extends AbstractLogLoadOpti
 				if (e instanceof ClosedByInterruptException) // user cancelled operation
 					return;
 				
-				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, L2PhPacketLogLoadOptionController.class.getName());
+				final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, SamuraiPacketLogLoadOptionController.class.getName());
 				Platform.runLater(
 						() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-				{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
+						{ filename }, "open.netpro.err.dialog.header.io", null, getDialogWindow(), Modality.NONE).show());
 			}
 			finally
 			{
@@ -258,17 +252,35 @@ public final class L2PhPacketLogLoadOptionController extends AbstractLogLoadOpti
 	 * @param filename filename of the packet log
 	 * @param approxSize approximate filesize representation
 	 * @param exactSize exact filesize declaration
-	 * @param type type of log file (standard/raw)
+	 * @param logVersion file format version
+	 * @param packetCount total amount of packets in file
+	 * @param structure single or multiple parts
+	 * @param serverAddress server socket address
+	 * @param clientAddress client socket address
+	 * @param protocolName service/protocol name
+	 * @param comment any text
+	 * @param streamType unprocessed or preprocessed packets
 	 * @param applicableProtocols all protocol versions applicable to this type of log
 	 * @param detectedProtocol log protocol version
-	 * @param firstPacketArrivalTime time at which the first packet arrived
+	 * @param unshuffleDisabled whether stream is unprocessed
+	 * @param unshuffleSelected whether NP should unshuffle client opcodes in a preprocessed stream
 	 */
-	public void setPacketLog(String filename, String approxSize, String exactSize, String type, ObservableList<IProtocolVersion> applicableProtocols,
-			IProtocolVersion detectedProtocol, long firstPacketArrivalTime)
+	public void setPacketLog(String filename, String approxSize, String exactSize, String logVersion, String packetCount, String structure, String serverAddress, String clientAddress,
+			String protocolName, String comment, String streamType, ObservableList<IProtocolVersion> applicableProtocols,
+			IProtocolVersion detectedProtocol, boolean unshuffleDisabled, boolean unshuffleSelected)
 	{
 		setPacketLog(filename, approxSize, exactSize, applicableProtocols, detectedProtocol);
 		
-		_labType.setText(type);
-		_firstPacketArrivalTimeProperty.set(firstPacketArrivalTime);
+		_labVersion.setText(logVersion);
+		_labPacketCount.setText(packetCount);
+		_labStructure.setText(structure);
+		_labServer.setText(serverAddress);
+		_labClient.setText(clientAddress);
+		_labProtocol.setText(protocolName);
+		_labComment.setText(comment);
+		_labStream.setText(streamType);
+		
+		_cbUnshuffle.setDisable(unshuffleDisabled);
+		_cbUnshuffle.setSelected(unshuffleSelected);
 	}
 }

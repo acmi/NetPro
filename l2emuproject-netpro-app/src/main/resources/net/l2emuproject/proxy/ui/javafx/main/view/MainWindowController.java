@@ -75,6 +75,9 @@ import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
 import net.l2emuproject.proxy.io.packetlog.PacketLogFileUtils;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileHeader;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileUtils;
+import net.l2emuproject.proxy.io.packetlog.ps.PSLogFileHeader;
+import net.l2emuproject.proxy.io.packetlog.ps.PSLogPartHeader;
+import net.l2emuproject.proxy.io.packetlog.ps.PSPacketLogUtils;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ServiceType;
@@ -95,6 +98,7 @@ import net.l2emuproject.proxy.ui.javafx.WindowTracker;
 import net.l2emuproject.proxy.ui.javafx.error.view.ExceptionSummaryDialogController;
 import net.l2emuproject.proxy.ui.javafx.io.view.L2PhPacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController;
+import net.l2emuproject.proxy.ui.javafx.io.view.SamuraiPacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController;
@@ -544,7 +548,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 		_lastOpenDirectory = selectedFiles.iterator().next().getParentFile();
 		
 		final WaitingIndicatorDialogController waitDialog = showWaitDialog(getMainWindow(), "generic.waitdlg.title",
-				selectedFiles.size() > 1 ? "open.netpro.waitdlg.header.multiple" : "open.netpro.waitdlg.header",
+				selectedFiles.size() > 1 ? "open.waitdlg.header.multiple" : "open.waitdlg.header",
 				selectedFiles.size() > 1 ? String.valueOf(selectedFiles.size()) : selectedFiles.iterator().next().getName());
 		final Future<?> preprocessTask = L2ThreadPool.submitLongRunning(() -> {
 			final List<Object> validLogFiles = new ArrayList<>(selectedFiles.size());
@@ -574,7 +578,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 					Platform.runLater(
 							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-					{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
+							{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
 					continue;
 				}
 				catch (final InsufficientlyLargeFileException e)
@@ -600,21 +604,58 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 					Platform.runLater(
 							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-					{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
+							{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
 					continue;
 				}
 				
 				try
 				{
 					if (filename.endsWith(".psl"))
+					{
+						final PSLogFileHeader fullHeader = PSPacketLogUtils.getMetadata(packetLogFile);
+						if (fullHeader != null)
+							validLogFiles.add(fullHeader);
 						continue; // TODO: packet samurai log
+					}
+				}
+				catch (final InterruptedException e)
+				{
+					// cancelled by user
+					validLogFiles.clear();
+					break;
+				}
+				catch (final IOException e)
+				{
+					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
+					Platform.runLater(
+							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
+							{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
+					continue;
+				}
+				catch (final InsufficientlyLargeFileException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(WARNING, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename },
+							"open.netpro.err.dialog.header.toosmall", null, "open.netpro.err.dialog.content.toosmall", filename).show());
+					continue;
+				}
+				catch (final TruncatedPacketLogFileException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.truncated",
+							null, "open.netpro.err.dialog.content.truncated", filename).show());
+					continue;
+				}
+				catch (final DamagedFileException e)
+				{
+					Platform.runLater(() -> makeNonModalUtilityAlert(ERROR, getMainWindow(), "open.netpro.err.dialog.title.named", new Object[] { filename }, "open.netpro.err.dialog.header.damaged",
+							null, "open.netpro.err.dialog.content.damaged", filename).show());
+					continue;
 				}
 				catch (final RuntimeException e)
 				{
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 					Platform.runLater(
 							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-					{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
+							{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
 					continue;
 				}
 				
@@ -634,7 +675,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 					Platform.runLater(
 							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-					{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
+							{ filename }, "open.netpro.err.dialog.header.io", null, getMainWindow(), Modality.NONE).show());
 				}
 				catch (final InsufficientlyLargeFileException e)
 				{
@@ -675,7 +716,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 					final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, MainWindowController.class.getName());
 					Platform.runLater(
 							() -> wrapException(t, "open.netpro.err.dialog.title.named", new Object[]
-					{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
+							{ filename }, "open.netpro.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
 				}
 			}
 			
@@ -722,6 +763,53 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 							controller.setPacketLog(filename, approxSize, exactSize, UIStrings.get(validLogFile.isRaw() ? "load.infodlg.phx.details.type.raw" : "load.infodlg.phx.details.type.std"),
 									FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
 									ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin()), validLogFile.getFirstPacketArrivalTime());
+							tab.setUserData(validLogFile);
+							tabs[i] = tab;
+							continue;
+						}
+						if (header instanceof PSLogFileHeader)
+						{
+							final PSLogFileHeader validLogFile = (PSLogFileHeader)header;
+							final String approxSize, exactSize;
+							final NumberFormat integerFormat = NumberFormat.getIntegerInstance(UIStrings.CURRENT_LOCALE);
+							long filesize = 0;
+							for (final PSLogPartHeader logPart : validLogFile.getParts())
+							{
+								if (logPart.getLogFileSize() == -1)
+								{
+									filesize = -1;
+									break;
+								}
+								filesize += logPart.getLogFileSize();
+							}
+							if (filesize != -1)
+							{
+								approxSize = BytesizeFormat.formatAsDecimal(filesize);
+								exactSize = UIStrings.get("load.infodlg.details.size.tooltip", integerFormat.format(filesize));
+							}
+							else
+							{
+								approxSize = UIStrings.get("generic.unavailable");
+								exactSize = UIStrings.get("load.infodlg.details.size.unavailable.tooltip");
+							}
+							
+							final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(SamuraiPacketLogLoadOptionController.class), UIStrings.getBundle());
+							final TitledPane tab = loader.load();
+							final SamuraiPacketLogLoadOptionController controller = loader.getController();
+							controller.setMainWindow(this);
+							
+							final PSLogPartHeader logPart = validLogFile.getParts().get(0);
+							final ServiceType service = logPart.getServicePort() == 2106 ? ServiceType.LOGIN : ServiceType.GAME;
+							final String filename = logPart.getLogFile().getFileName().toString();
+							final Long cp = logPart.getSessionID() % logPart.getServicePort() == 0 ? logPart.getSessionID() / logPart.getServicePort() : null;
+							controller.setPacketLog(filename, approxSize, exactSize, HexUtil.fillHex(logPart.getVersion(), 2),
+									integerFormat.format(validLogFile.getParts().stream().mapToLong(PSLogPartHeader::getPackets).sum()),
+									UIStrings.get(logPart.isMultipart() ? "load.infodlg.ps.details.structure.multipart" : "load.infodlg.ps.details.structure.solid"),
+									logPart.getServerIP().getHostAddress() + ":" + logPart.getServicePort(),
+									logPart.getClientIP().getHostAddress() + (cp != null ? (":" + cp) : ""), logPart.getProtocolName(), logPart.getComments(),
+									UIStrings.get(logPart.isEnciphered() ? "load.infodlg.ps.details.stream.unprocessed" : "load.infodlg.ps.details.stream.preprocessed"),
+									FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
+									ProtocolVersionManager.getInstance().getProtocol(logPart.getProtocol(), service.isLogin()), logPart.isEnciphered(), logPart.isEnciphered());
 							tab.setUserData(validLogFile);
 							tabs[i] = tab;
 							continue;

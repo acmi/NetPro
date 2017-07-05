@@ -35,14 +35,14 @@ import net.l2emuproject.util.HexUtil;
  */
 public class L2PhLogFileIterator implements IL2PhLogFileIterator
 {
-	//private final L2PhLogFileHeader _logFileMetadata;
+	private final L2PhLogFileHeader _logFileMetadata;
 	private final BufferedReader _input;
 	private final ByteBuffer _timeBuffer;
 	private byte[] _nextPacket;
 	
 	L2PhLogFileIterator(L2PhLogFileHeader logFileMetadata) throws IOException
 	{
-		//_logFileMetadata = logFileMetadata;
+		_logFileMetadata = logFileMetadata;
 		_input = Files.newBufferedReader(logFileMetadata.getLogFile(), StandardCharsets.US_ASCII);
 		_timeBuffer = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN);
 		_nextPacket = null;
@@ -65,7 +65,7 @@ public class L2PhLogFileIterator implements IL2PhLogFileIterator
 		}
 		catch (final IOException e)
 		{
-			throw new LogFileIterationIOException(e);
+			throw new LogFileIterationIOException(_logFileMetadata.getLogFile().getFileName().toString(), e);
 		}
 	}
 	
@@ -87,5 +87,11 @@ public class L2PhLogFileIterator implements IL2PhLogFileIterator
 	public void close() throws IOException
 	{
 		_input.close();
+	}
+	
+	@Override
+	public String toString()
+	{
+		return _logFileMetadata.toString();
 	}
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<TitledPane fx:id="_tpWrapper" animated="false" text="NetPro_packet_log.plog" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController">
+<TitledPane fx:id="_tpWrapper" animated="false" text="live123456789.psl" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.io.view.SamuraiPacketLogLoadOptionController">
    <content>
       <VBox>
          <children>
@@ -28,6 +28,12 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1">
@@ -49,10 +55,52 @@
                               <Label fx:id="_labPacketCount" text="123,456,789" />
                            </children>
                         </FlowPane>
-                        <Label text="%load.infodlg.details.size" />
+                        <Label text="%load.infodlg.details.size">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin></Label>
                         <Label text="%load.infodlg.details.version" GridPane.rowIndex="1" />
                         <Label text="%load.infodlg.details.packetcount" GridPane.rowIndex="2" />
+                        <Label text="%load.infodlg.ps.details.structure" GridPane.rowIndex="3" />
+                        <Label text="%load.infodlg.ps.details.server" GridPane.rowIndex="4" />
+                        <Label text="%load.infodlg.ps.details.client" GridPane.rowIndex="5" />
+                        <Label text="%load.infodlg.ps.details.protocol" GridPane.rowIndex="6" />
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="_labStructure" text="%load.infodlg.ps.details.structure.solid" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="_labServer" text="Naia:7777" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="_labClient" text="THIS:21345" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="_labProtocol" text="lineage2" />
+                           </children>
+                        </FlowPane>
+                        <Label text="%load.infodlg.ps.details.comment" GridPane.rowIndex="7" />
+                        <Label text="%load.infodlg.ps.details.stream" GridPane.rowIndex="8" />
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="_labComment" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <children>
+                              <Label fx:id="_labStream" text="%load.infodlg.ps.details.stream.preprocessed" />
+                           </children>
+                        </FlowPane>
                      </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </GridPane>
                </content>
             </TitledPane>
@@ -65,6 +113,7 @@
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </ComboBox>
+                        <CheckBox fx:id="_cbUnshuffle" mnemonicParsing="false" text="%load.infodlg.ps.options.unshuffle" />
                         <CheckBox fx:id="_cbInvisible" mnemonicParsing="false" selected="true" text="%load.infodlg.options.include.invisible">
                            <tooltip>
                               <Tooltip text="%load.infodlg.options.include.invisible.tooltip" />

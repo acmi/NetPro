@@ -30,9 +30,10 @@ public final class LogFileIterationIOException extends RuntimeException
 	/**
 	 * Wraps an {@link IOException}.
 	 * 
+	 * @param filename associated log file
 	 * @param cause the real cause
 	 */
-	public LogFileIterationIOException(IOException cause)
+	public LogFileIterationIOException(String filename, IOException cause)
 	{
 		super(cause);
 	}

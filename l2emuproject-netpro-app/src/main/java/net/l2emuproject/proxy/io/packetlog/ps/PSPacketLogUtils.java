@@ -23,20 +23,25 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
+import net.l2emuproject.io.EmptyChecksum;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.io.NewIOHelper;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.io.exception.DamagedFileException;
-import net.l2emuproject.proxy.io.exception.EmptyPacketLogException;
-import net.l2emuproject.proxy.io.exception.IncompletePacketLogFileException;
 import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
 import net.l2emuproject.proxy.io.exception.TruncatedPacketLogFileException;
-import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.network.EndpointType;
+import net.l2emuproject.proxy.network.game.client.packets.SendProtocolVersion;
 import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
+import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * Various methods related to PacketSamurai/YAL historical packet log file handling.
@@ -45,6 +50,8 @@ import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
  */
 public class PSPacketLogUtils
 {
+	private static final L2Logger LOG = L2Logger.getLogger(PSPacketLogUtils.class);
+	
 	private PSPacketLogUtils()
 	{
 		// utility class
@@ -54,12 +61,13 @@ public class PSPacketLogUtils
 	 * Returns an iterator that can iterate over packets contained in a PacketSamurai/YAL packet log file.
 	 * 
 	 * @param logFileMetadata log file metadata
+	 * @param unshuffleOpcodes whether to additionally unshuffle client opcodes
 	 * @return logfile packet iterator
 	 * @throws IOException if a generic I/O error occurs
 	 */
-	public static final PSPacketLogFileIterator getPacketIterator(PSLogFileHeader logFileMetadata) throws IOException
+	public static final PSPacketLogFileIterator getPacketIterator(PSLogFileHeader logFileMetadata, boolean unshuffleOpcodes) throws IOException
 	{
-		return new PSPacketLogFileIterator(logFileMetadata);
+		return new PSPacketLogFileIterator(logFileMetadata, unshuffleOpcodes);
 	}
 	
 	/**
@@ -83,16 +91,51 @@ public class PSPacketLogUtils
 	 * @param packetLogFile path to log file
 	 * @return log file metadata
 	 * @throws InsufficientlyLargeFileException if the given file is too small to be a NetPro packet log
-	 * @throws IncompletePacketLogFileException if the given file is either a work in progress or it's generation was abruptly terminated
-	 * @throws UnknownFileTypeException if the given file is not a NetPro packet log (different/unknown format)
 	 * @throws TruncatedPacketLogFileException if the given file does not include all mandatory metadata fields
-	 * @throws EmptyPacketLogException if the given packet log is empty
 	 * @throws DamagedFileException if the given file contains incoherent metadata
 	 * @throws InterruptedException if the operation was cancelled by the user
 	 * @throws IOException in case of a general I/O error
 	 */
-	public static final PSLogFileHeader getMetadata(Path packetLogFile) throws InsufficientlyLargeFileException, IncompletePacketLogFileException, UnknownFileTypeException,
-			TruncatedPacketLogFileException, EmptyPacketLogException, DamagedFileException, InterruptedException, IOException
+	public static final PSLogFileHeader getMetadata(Path packetLogFile)
+			throws InsufficientlyLargeFileException, TruncatedPacketLogFileException, DamagedFileException, InterruptedException, IOException
+	{
+		final String filename = packetLogFile.getFileName().toString();
+		final int partSepIndex = filename.lastIndexOf('-');
+		if (partSepIndex != -1)
+		{
+			int extensionIndex = filename.indexOf('.', partSepIndex);
+			if (extensionIndex == -1)
+				extensionIndex = filename.length();
+			final Path test = packetLogFile.resolveSibling(new StringBuilder(filename.length()).append(filename, 0, partSepIndex).append(filename, extensionIndex, filename.length()).toString());
+			if (Files.exists(test))
+				return null;
+		}
+		
+		final PSLogPartHeader partHeader = getPartMetadata(packetLogFile);
+		if (!partHeader.isMultipart())
+			return new PSLogFileHeader(Collections.singletonList(partHeader));
+		if (partHeader.getPartNumber() != 0)
+			return null;
+		
+		final List<PSLogPartHeader> parts = new ArrayList<>();
+		parts.add(partHeader);
+		final int ip = filename.lastIndexOf('.');
+		final StringBuilder sb = new StringBuilder(filename.length() + 5).append(filename, 0, ip);
+		for (int i = 1;; ++i)
+		{
+			sb.setLength(ip);
+			sb.append('-').append(i).append(filename, ip, filename.length());
+			
+			final Path nextPart = packetLogFile.resolveSibling(sb.toString());
+			if (!Files.exists(nextPart))
+				return new PSLogFileHeader(parts);
+			
+			parts.add(getPartMetadata(nextPart));
+		}
+	}
+	
+	private static final PSLogPartHeader getPartMetadata(Path packetLogFile)
+			throws InsufficientlyLargeFileException, TruncatedPacketLogFileException, DamagedFileException, InterruptedException, IOException
 	{
 		final int minSize = 1 + 4 + 1 + 2 + 2 + 4 + 4 + 2 + 2 + 2 + 8 + 8 + 1;
 		
@@ -103,12 +146,17 @@ public class PSPacketLogUtils
 			if (size < minSize)
 				throw new InsufficientlyLargeFileException();
 		}
+		catch (final NoSuchFileException e)
+		{
+			throw e;
+		}
 		catch (final IOException e)
 		{
 			// whatever
 		}
 		
-		try (final SeekableByteChannel channel = Files.newByteChannel(packetLogFile, StandardOpenOption.READ); final NewIOHelper in = new NewIOHelper(channel))
+		try (final SeekableByteChannel channel = Files.newByteChannel(packetLogFile, StandardOpenOption.READ);
+				final NewIOHelper in = new NewIOHelper(channel, ByteBuffer.allocate(IOConstants.DEFAULT_BUFFER_SIZE).order(ByteOrder.LITTLE_ENDIAN), EmptyChecksum.getInstance()))
 		{
 			try
 			{
@@ -120,7 +168,7 @@ public class PSPacketLogUtils
 			}
 			
 			final int logFileVersion = in.readByte();
-			final int totalPackets = in.readInt();
+			int totalPackets = in.readInt();
 			if (totalPackets < 0)
 			{
 				throw new DamagedFileException("Packet amount");
@@ -153,8 +201,11 @@ public class PSPacketLogUtils
 				throw new InterruptedException();
 			
 			int protocolVersionNumber = -1;
-			extractProtocolVersion:
+			extractProtocolVersion: try
 			{
+				if (totalPackets < 1)
+					break extractProtocolVersion;
+				
 				// first packet should be [C] SendProtocolVersion
 				if (in.readBoolean()) // not a client packet
 					break extractProtocolVersion;
@@ -166,7 +217,7 @@ public class PSPacketLogUtils
 				in.readLong();
 				
 				final int opcode = in.readByte();
-				if (opcode != 0x00 && opcode != 0x0E) // Chronicle opcode/Throne opcode
+				if (opcode != SendProtocolVersion.OPCODE_LEGACY && opcode != SendProtocolVersion.OPCODE) // Chronicle opcode/Throne opcode
 					break extractProtocolVersion;
 				
 				final ByteBuffer leBuffer = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
@@ -175,7 +226,12 @@ public class PSPacketLogUtils
 				
 				protocolVersionNumber = leBuffer.getInt();
 			}
-			return new PSLogFileHeader(packetLogFile, size, logFileVersion, totalPackets, multipart, partNumber, servicePort, sourceIP, destinationIP, protocolName, comments, serverType,
+			catch (final EOFException e)
+			{
+				LOG.warn("0/" + totalPackets + " packets found in " + packetLogFile.getFileName());
+				totalPackets = 0;
+			}
+			return new PSLogPartHeader(packetLogFile, size, logFileVersion, totalPackets, multipart, partNumber, servicePort, sourceIP, destinationIP, protocolName, comments, serverType,
 					analyzerBitSet, sessionID, enciphered, protocolVersionNumber);
 		}
 		catch (final BufferUnderflowException e)

@@ -59,9 +59,9 @@ public class NetProPacketLogFileIterator implements Iterator<LogFilePacket>, Aut
 			return _input.getPositionInChannel(false) + (_logFileMetadata.getVersion() >= 7 ? MINIMAL_PACKET_LENGTH_IN_LOG_FILE_V7 : MINIMAL_PACKET_LENGTH_IN_LOG_FILE) <= _logFileMetadata
 					.getFooterStart();
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
-			throw new LogFileIterationIOException(e);
+			throw new LogFileIterationIOException(_logFileMetadata.getLogFile().getFileName().toString(), e);
 		}
 	}
 	
@@ -70,20 +70,17 @@ public class NetProPacketLogFileIterator implements Iterator<LogFilePacket>, Aut
 	{
 		try
 		{
-			while (true)
-			{
-				final EndpointType type = EndpointType.valueOf(_input.readBoolean());
-				final byte[] body = new byte[_input.readChar()];
-				_input.read(body);
-				final long time = _input.readLong();
-				final Set<LoggedPacketFlag> flags = _logFileMetadata.getVersion() >= 7 ? BitMaskUtils.setOf(_input.readByte(), LoggedPacketFlag.class) : Collections.emptySet();
-				
-				return new LogFilePacket(type, body, time, flags);
-			}
+			final EndpointType type = EndpointType.valueOf(_input.readBoolean());
+			final byte[] body = new byte[_input.readChar()];
+			_input.read(body);
+			final long time = _input.readLong();
+			final Set<LoggedPacketFlag> flags = _logFileMetadata.getVersion() >= 7 ? BitMaskUtils.setOf(_input.readByte(), LoggedPacketFlag.class) : Collections.emptySet();
+			
+			return new LogFilePacket(type, body, time, flags);
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
-			throw new LogFileIterationIOException(e);
+			throw new LogFileIterationIOException(_logFileMetadata.getLogFile().getFileName().toString(), e);
 		}
 	}
 	
@@ -91,5 +88,11 @@ public class NetProPacketLogFileIterator implements Iterator<LogFilePacket>, Aut
 	public void close() throws IOException
 	{
 		_input.close();
+	}
+	
+	@Override
+	public String toString()
+	{
+		return _logFileMetadata.toString();
 	}
 }

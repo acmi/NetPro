@@ -194,4 +194,10 @@ public class LogFileHeader
 	{
 		return _footerStart;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return _logFile.toString();
+	}
 }

@@ -16,22 +16,12 @@
 package net.l2emuproject.proxy.io.packetlog.ps;
 
 import java.io.Closeable;
-import java.io.EOFException;
 import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
 import java.util.Iterator;
 
-import net.l2emuproject.network.mmocore.MMOBuffer;
-import net.l2emuproject.proxy.io.NewIOHelper;
 import net.l2emuproject.proxy.io.exception.LogFileIterationIOException;
-import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
-import net.l2emuproject.proxy.network.game.client.L2GameClientPackets;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
-import net.l2emuproject.proxy.network.game.server.L2GameServerPackets;
 
 /**
  * Allows convenient PacketSamurai/YAL packet log reading.
@@ -41,83 +31,69 @@ import net.l2emuproject.proxy.network.game.server.L2GameServerPackets;
 public class PSPacketLogFileIterator implements Iterator<PSLogFilePacket>, AutoCloseable, Closeable
 {
 	private final PSLogFileHeader _logFileMetadata;
-	private final NewIOHelper _input;
-	
-	private final L2GameClient _fakeClient;
+	private final boolean _unshuffleOpcodes;
 	private final L2GameServer _fakeServer;
-	private final MMOBuffer _buf;
 	
-	PSPacketLogFileIterator(PSLogFileHeader logFileMetadata) throws IOException
+	private int _delegateIndex;
+	private PSPacketLogPartIterator _delegate;
+	
+	PSPacketLogFileIterator(PSLogFileHeader logFileMetadata, boolean unshuffleOpcodes) throws IOException
 	{
 		_logFileMetadata = logFileMetadata;
-		_input = new NewIOHelper(Files.newByteChannel(logFileMetadata.getLogFile(), StandardOpenOption.READ));
+		_unshuffleOpcodes = unshuffleOpcodes;
 		
-		// move to first packet
-		_input.setPositionInChannel(logFileMetadata.getHeaderSize());
-		
-		_fakeServer = new L2GameServer(null, null, _fakeClient = new L2GameClient(null, null));
-		_buf = new MMOBuffer();
+		_delegate = new PSPacketLogPartIterator(logFileMetadata.getParts().get(_delegateIndex = 0), unshuffleOpcodes, _fakeServer = new L2GameServer(null, null, new L2GameClient(null, null)));
 	}
 	
 	@Override
 	public boolean hasNext() throws LogFileIterationIOException
 	{
-		try
+		while (_delegateIndex < _logFileMetadata.getParts().size())
 		{
-			_input.fetchUntilAvailable(1/* + 2 + 8*/);
-			return true;
+			final boolean result = _delegate.hasNext();
+			if (result)
+				return true;
+			
+			try
+			{
+				_delegate.close();
+			}
+			catch (final IOException e)
+			{
+				// whatever
+			}
+			
+			if (++_delegateIndex >= _logFileMetadata.getParts().size())
+				return false;
+			
+			try
+			{
+				_delegate = new PSPacketLogPartIterator(_logFileMetadata.getParts().get(_delegateIndex), _unshuffleOpcodes, _fakeServer);
+			}
+			catch (final IOException e)
+			{
+				throw new LogFileIterationIOException(_logFileMetadata.getParts().get(_delegateIndex).getLogFile().getFileName().toString(), e);
+			}
 		}
-		catch (final EOFException e)
-		{
-			return false;
-		}
-		catch (final IOException e)
-		{
-			throw new LogFileIterationIOException(e);
-		}
+		return false;
 	}
 	
 	@Override
 	public PSLogFilePacket next() throws LogFileIterationIOException
 	{
-		try
-		{
-			while (true)
-			{
-				final EndpointType type = EndpointType.valueOf(!_input.readBoolean());
-				final byte[] body = new byte[_input.readChar() - 2];
-				final long time = _input.readLong();
-				_input.read(body);
-				
-				if (_logFileMetadata.isEnciphered())
-				{
-					final ByteBuffer wrapper = ByteBuffer.wrap(body).order(ByteOrder.LITTLE_ENDIAN);
-					_buf.setByteBuffer(wrapper);
-					if (type.isClient())
-					{
-						_fakeClient.decipher(wrapper);
-						_fakeClient.setFirstTime(false);
-						L2GameClientPackets.getInstance().handlePacket(wrapper, _fakeClient, _buf.readUC()).readAndChangeState(_fakeClient, _buf);
-					}
-					else
-					{
-						_fakeServer.decipher(wrapper);
-						L2GameServerPackets.getInstance().handlePacket(wrapper, _fakeServer, _buf.readUC()).readAndChangeState(_fakeServer, _buf);
-					}
-				}
-				
-				return new PSLogFilePacket(type, body, time);
-			}
-		}
-		catch (final IOException e)
-		{
-			throw new LogFileIterationIOException(e);
-		}
+		hasNext();
+		return _delegate.next();
 	}
 	
 	@Override
 	public void close() throws IOException
 	{
-		_input.close();
+		_delegate.close();
+	}
+	
+	@Override
+	public String toString()
+	{
+		return _logFileMetadata.toString();
 	}
 }

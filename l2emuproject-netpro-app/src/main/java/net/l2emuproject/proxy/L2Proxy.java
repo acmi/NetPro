@@ -42,7 +42,6 @@ import net.l2emuproject.proxy.network.game.server.L2GameServerConnections;
 import net.l2emuproject.proxy.network.login.client.L2LoginClientConnections;
 import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
 import net.l2emuproject.proxy.setup.SocketManager;
-import net.l2emuproject.proxy.ui.savormix.io.AutoLogger;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.AppInit;
 import net.l2emuproject.util.L2Utils;
@@ -210,7 +209,7 @@ public class L2Proxy
 			
 			logger.trace("Setting up automatic packet logging…");
 			{
-				final AutoLogger al = AutoLogger.getInstance();
+				final HistoricalLogIOThread al = HistoricalLogIOThread.getInstance();
 				lcc.addConnectionListener(al);
 				lcc.addPacketListener(al);
 				lsc.addPacketListener(al);

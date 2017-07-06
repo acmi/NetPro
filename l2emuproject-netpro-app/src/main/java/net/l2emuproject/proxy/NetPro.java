@@ -311,7 +311,8 @@ public class NetPro extends Application implements NetProThreadPriority
 									final Alert confirmDlg = new Alert(AlertType.WARNING);
 									confirmDlg.setTitle(UIStrings.get("startup.scripts.stalecache.dialog.title"));
 									confirmDlg.setHeaderText(UIStrings.get("startup.scripts.stalecache.dialog.header"));
-									confirmDlg.setContentText(UIStrings.get("startup.scripts.stalecache.dialog.content", UIStrings.get("generic.button.yes"), UIStrings.get("generic.button.no")));
+									confirmDlg.setContentText(UIStrings.get("startup.scripts.stalecache.dialog.content", UIStrings.get("generic.button.yes").replace("_", ""),
+											UIStrings.get("generic.button.no").replace("_", "")));
 									confirmDlg.getButtonTypes().setAll(new ButtonType(UIStrings.get("generic.button.yes"), ButtonData.YES),
 											new ButtonType(UIStrings.get("generic.button.no"), ButtonData.NO));
 									

@@ -27,6 +27,7 @@ import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
+import net.l2emuproject.proxy.ui.i18n.UIStrings;
 import net.l2emuproject.proxy.ui.javafx.FXUtils;
 import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketTemplateEntry;
@@ -40,7 +41,9 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -65,6 +68,15 @@ public class PacketDisplayConfigTableViewController implements Initializable
 	
 	@FXML
 	private FilterableStringTableColumn<FilteredTableView<PacketTemplateEntry>, String> _tcTemplateName;
+	
+	@FXML
+	private Button _btnAll;
+	
+	@FXML
+	private Button _btnNone;
+	
+	@FXML
+	private ToggleButton _tbDefaultColumn;
 	
 	private final ObservableList<PacketTemplateEntry> _allTemplates, _visibleTemplates;
 	
@@ -91,12 +103,16 @@ public class PacketDisplayConfigTableViewController implements Initializable
 		sortableTablePackets.comparatorProperty().bind(_tvTemplates.comparatorProperty());
 		_tvTemplates.setItems(sortableTablePackets);
 		_tvTemplates.addEventHandler(ColumnFilterEvent.FILTER_CHANGED_EVENT, e -> applyFilters());
+		
+		_tbDefaultColumn.disableProperty().bind(_tcShowInTab.visibleProperty().not());
+		_tbDefaultColumn.selectedProperty().addListener((obs, old, neu) -> onToggleDefaultColumn());
+		onToggleDefaultColumn();
 	}
 	
 	@FXML
 	private void setAllHidden(ActionEvent event)
 	{
-		if (_tcShowInTab.isVisible())
+		if (/*_tcShowInTab.isVisible()*/_tbDefaultColumn.isSelected())
 		{
 			final Runnable onCompletion = _onTabConfigChange;
 			_onTabConfigChange = null;
@@ -119,7 +135,7 @@ public class PacketDisplayConfigTableViewController implements Initializable
 	@FXML
 	private void setAllVisible(ActionEvent event)
 	{
-		if (_tcShowInTab.isVisible())
+		if (/*_tcShowInTab.isVisible()*/_tbDefaultColumn.isSelected())
 		{
 			final Runnable onCompletion = _onTabConfigChange;
 			_onTabConfigChange = null;
@@ -139,12 +155,30 @@ public class PacketDisplayConfigTableViewController implements Initializable
 			(_onProtocolConfigChange = onCompletion).run();
 	}
 	
+	void onToggleDefaultColumn()
+	{
+		final String tb, btn;
+		if (_tbDefaultColumn.isSelected())
+		{
+			tb = UIStrings.get("packetdc.table.select.column.tab");
+			btn = UIStrings.get("packetdc.table.column.enable.tab");
+		}
+		else
+		{
+			tb = UIStrings.get("packetdc.table.select.column.protocol");
+			btn = UIStrings.get("packetdc.table.column.enable.protocol");
+		}
+		_tbDefaultColumn.setText(tb);
+		_btnAll.setText(UIStrings.get("packetdc.table.select.all", btn));
+		_btnNone.setText(UIStrings.get("packetdc.table.select.none", btn));
+	}
+	
 	private boolean isHiddenByName(PacketTemplateEntry packetEntry)
 	{
 		for (final StringOperator filter : _tcTemplateName.getFilters())
 			if (FXUtils.isHidden(packetEntry.nameProperty().get(), filter))
 				return true;
-		
+			
 		return false;
 	}
 	
@@ -174,14 +208,14 @@ public class PacketDisplayConfigTableViewController implements Initializable
 		_onProtocolConfigChange = onProtocolConfigChange;
 		
 		_tcShowInTab.setVisible(tabHidingConfigProperty != null);
+		_tbDefaultColumn.setSelected(tabHidingConfigProperty != null);
 		_allTemplates.clear();
 		final ObservableValue<IPacketHidingConfig> protocolHidingConfig = ProtocolPacketHidingManager.getInstance().getHidingConfiguration(protocolVersion);
 		for (final IPacketTemplate template : templates)
 		{
 			final PacketTemplateEntry entry = new PacketTemplateEntry(template, tabHidingConfigProperty != null ? !tabHidingConfigProperty.get().isHidden(endpointType, template) : false,
 					!protocolHidingConfig.getValue().isHidden(endpointType, template), protocolVersion);
-			entry.visibleInProtocolProperty().addListener((obs, old, neu) ->
-			{
+			entry.visibleInProtocolProperty().addListener((obs, old, neu) -> {
 				protocolHidingConfig.getValue().setHidden(endpointType, template, !neu);
 				ProtocolPacketHidingManager.getInstance().markModified(protocolVersion);
 				if (_onProtocolConfigChange != null)
@@ -189,8 +223,7 @@ public class PacketDisplayConfigTableViewController implements Initializable
 			});
 			if (tabHidingConfigProperty != null)
 			{
-				entry.visibleInTabProperty().addListener((obs, old, neu) ->
-				{
+				entry.visibleInTabProperty().addListener((obs, old, neu) -> {
 					tabHidingConfigProperty.get().setHidden(endpointType, template, !neu);
 					if (_onTabConfigChange != null)
 						_onTabConfigChange.run();

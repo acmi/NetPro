@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -10,7 +11,7 @@
 <?import org.google.jhsheets.filtered.FilteredTableView?>
 <?import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigTableViewController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigTableViewController">
    <center>
       <FilteredTableView fx:id="_tvTemplates" editable="true" fixedCellSize="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
         <columns>
@@ -27,6 +28,7 @@
    <bottom>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -34,8 +36,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setAllVisible" text="%packetdc.table.select.all" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setAllHidden" text="%packetdc.table.select.none" GridPane.columnIndex="1" />
+            <Button fx:id="_btnAll" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setAllVisible" text="%packetdc.table.select.all" GridPane.columnIndex="1" />
+            <Button fx:id="_btnNone" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setAllHidden" text="%packetdc.table.select.none" GridPane.columnIndex="2" />
+            <ToggleButton fx:id="_tbDefaultColumn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="%packetdc.table.select.column.tab" />
          </children>
       </GridPane>
    </bottom>

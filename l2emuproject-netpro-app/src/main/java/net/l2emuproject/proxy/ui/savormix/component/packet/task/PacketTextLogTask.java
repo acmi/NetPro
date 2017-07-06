@@ -59,7 +59,7 @@ public final class PacketTextLogTask extends AbstractPacketWriteTask implements 
 	@Override
 	protected void writePacket(Writer writer, ReceivedPacket packet) throws IOException
 	{
-		ToPlaintextVisitor.writePacket(packet, _protocol, _buf, _cacheContext, _df, writer.append("\r\n"));
+		ToPlaintextVisitor.writePacket(packet, _protocol, _buf, _cacheContext, _df, false, writer.append("\r\n"));
 	}
 	
 	@Override

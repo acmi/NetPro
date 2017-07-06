@@ -18,7 +18,7 @@
 <?import org.google.jhsheets.filtered.FilteredTableView?>
 <?import org.google.jhsheets.filtered.tablecolumn.FilterableStringTableColumn?>
 
-<SplitPane dividerPositions="0.55" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="352.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController">
+<SplitPane dividerPositions="0.55" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="352.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController">
    <items>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <bottom>
@@ -72,6 +72,19 @@
                               <MenuItem fx:id="_miHidePacketInProtocol" onAction="#hidePacketInProtocol" text="%packettab.cmenu.hiding.protocol" />
                               <SeparatorMenuItem mnemonicParsing="false" />
                               <CheckMenuItem fx:id="_cmiIgnoreFilters" text="%packettab.cmenu.hiding.disable" />
+                          </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu text="%packettab.cmenu.copy.advmenu.visible">
+                          <items>
+                            <MenuItem onAction="#copyVisiblePacketsAsPlaintext" text="%packettab.cmenu.copy.txt" />
+                              <MenuItem onAction="#copyVisiblePacketsAsXML" text="%packettab.cmenu.copy.xml" />
+                          </items>
+                        </Menu>
+                        <Menu text="%packettab.cmenu.copy.advmenu.memory">
+                          <items>
+                            <MenuItem onAction="#copyMemoryPacketsAsPlaintext" text="%packettab.cmenu.copy.txt" />
+                              <MenuItem onAction="#copyMemoryPacketsAsXML" text="%packettab.cmenu.copy.xml" />
                           </items>
                         </Menu>
                     </items>

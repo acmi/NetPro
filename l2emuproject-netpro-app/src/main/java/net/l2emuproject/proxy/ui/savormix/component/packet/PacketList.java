@@ -183,7 +183,7 @@ public final class PacketList extends JSplitPane implements ActionListener, Requ
 				final L2TextBuilder sb = new L2TextBuilder();
 				try
 				{
-					ToPlaintextVisitor.writePacket(getSelectedPacket(), _version, new MMOBuffer(), _cacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+					ToPlaintextVisitor.writePacket(getSelectedPacket(), _version, new MMOBuffer(), _cacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), true, sb);
 				}
 				catch (final IOException e)
 				{

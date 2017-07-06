@@ -408,7 +408,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							try
 							{
 								ToPlaintextVisitor.writePacket(pta.getSelectedPacket(), pta.getProtocolVersion(), new MMOBuffer(), pta.getCacheContext(), new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS),
-										sb);
+										true, sb);
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
 							}
 							catch (final IOException ex)
@@ -462,9 +462,9 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final L2TextBuilder sb = new L2TextBuilder();
 							try
 							{
-								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, false, sb);
 								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
-									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, false, sb.append("\r\n"));
 								if (it.hasNext())
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
@@ -564,9 +564,9 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final L2TextBuilder sb = new L2TextBuilder();
 							try
 							{
-								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, true, sb);
 								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
-									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, true, sb.append("\r\n"));
 								if (it.hasNext())
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
@@ -666,9 +666,9 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 							final L2TextBuilder sb = new L2TextBuilder();
 							try
 							{
-								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb);
+								ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, true, sb);
 								for (int i = 0; i < MAX_PACKETS_TO_CLIPBOARD && it.hasNext(); ++i)
-									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, sb.append("\r\n"));
+									ToPlaintextVisitor.writePacket(it.next(), pta.getProtocolVersion(), buf, pta.getCacheContext(), df, true, sb.append("\r\n"));
 								if (it.hasNext())
 									sb.append("\r\n…");
 								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.moveToString()), null);
@@ -1029,7 +1029,7 @@ public final class Frontend extends JFrame implements IOConstants, EventSink
 				about.setMnemonic(KeyEvent.VK_A);
 				about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
 				about.setToolTipText("Shows information about this application.");
-
+				
 				/*
 				final String suffix;
 				if (NetProInfo.isUnreleased())

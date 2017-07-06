@@ -125,7 +125,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 	public void onPacket(ReceivedPacket packet, Set<LoggedPacketFlag> flags) throws Exception
 	{
 		_writer.append("\r\n");
-		writePacket(packet, _protocol, _buf, _cacheContext, _df, _writer, flags.contains(HIDDEN));
+		writePacket(packet, _protocol, _buf, _cacheContext, _df, false, _writer, flags.contains(HIDDEN));
 		_writer.append("\r\n");
 	}
 	
@@ -137,17 +137,20 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 	 * @param buf preallocated content wrapper
 	 * @param cacheContext entity cache context
 	 * @param df preferred date format
+	 * @param lessVerbose remove lines between packets
 	 * @param writer a string builder wrapper
 	 * @return {@code writer}
 	 * @throws IOException if packet content cannot be written
 	 */
-	public static final Appendable writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, Appendable writer) throws IOException
+	public static final Appendable writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, boolean lessVerbose, Appendable writer)
+			throws IOException
 	{
-		writePacket(packet, protocol, buf, cacheContext, df, writer, false);
+		writePacket(packet, protocol, buf, cacheContext, df, lessVerbose, writer, false);
 		return writer;
 	}
 	
-	private static final void writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, Appendable writer, boolean hidden)
+	private static final void writePacket(ReceivedPacket packet, IProtocolVersion protocol, MMOBuffer buf, ICacheServerID cacheContext, DateFormat df, boolean lessVerbose, Appendable writer,
+			boolean hidden)
 			throws IOException
 	{
 		final boolean client = packet.getEndpoint().isClient();
@@ -165,17 +168,20 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					final ByteBuffer independentWrapper = body.duplicate().order(body.order());
 					wireframe = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(protocol, buf.setByteBuffer(independentWrapper), packet::getEndpoint);
 				}
-				catch (InvalidPacketOpcodeSchemeException e)
+				catch (final InvalidPacketOpcodeSchemeException e)
 				{
 					if (!hidden)
 					{
-						for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
-							writer.append('=');
+						if (!lessVerbose)
+						{
+							for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
+								writer.append('=');
+						}
 						writer.append("\r\n").append("INVALID PACKET").append(HexUtil.printData(body.array()));
 					}
 					break packetContent;
 				}
-				catch (PartialPayloadEnumerationException e)
+				catch (final PartialPayloadEnumerationException e)
 				{
 					wireframe = e.getBuffer();
 					
@@ -199,9 +205,12 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			if (hidden)
 				return;
 			
-			for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
-				writer.append('=');
-			writer.append("\r\n");
+			if (!lessVerbose)
+			{
+				for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
+					writer.append('=');
+				writer.append("\r\n");
+			}
 			
 			final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(protocol, packet.getEndpoint(), body.array());
 			writer.append("\t[").append(client ? 'C' : 'S').append("] ").append(HexUtil.bytesToHexString(template.getPrefix(), ":")).append(' ').append(template.getName()).append("\r\n");
@@ -211,7 +220,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			final Map<FieldValueReadOption, Object> options = new EnumMap<>(FieldValueReadOption.class);
 			options.put(FieldValueReadOption.APPLY_MODIFICATIONS, null);
 			options.put(FieldValueReadOption.COMPUTE_INTERPRETATION, ctx);
-			template.visitStructureElements(new PacketStructureElementVisitor() {
+			template.visitStructureElements(new PacketStructureElementVisitor(){
 				private final Map<LoopElement, LoopVisitation> _loops = new HashMap<>();
 				
 				@Override
@@ -219,14 +228,14 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 				{
 					try
 					{
-						if (bytesWithoutOpcodes > 0)
+						if (bytesWithoutOpcodes > 0 && !lessVerbose)
 						{
 							for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
 								writer.append('-');
 							writer.append("\r\n");
 						}
 					}
-					catch (IOException e)
+					catch (final IOException e)
 					{
 						throw new RuntimeException(e);
 					}
@@ -253,7 +262,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					{
 						writer.append(expectedIterations > 0 ? "~~~~ Loop start ~~~~\r\n" : "~~~~ Empty loop ~~~~\r\n");
 					}
-					catch (IOException e)
+					catch (final IOException e)
 					{
 						throw new RuntimeException(e);
 					}
@@ -273,7 +282,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					{
 						writer.append("~~ Loop element delimiter ~~\r\n");
 					}
-					catch (IOException e)
+					catch (final IOException e)
 					{
 						throw new RuntimeException(e);
 					}
@@ -295,7 +304,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					{
 						writer.append("~~~~ Loop end ~~~~\r\n");
 					}
-					catch (IOException e)
+					catch (final IOException e)
 					{
 						throw new RuntimeException(e);
 					}
@@ -325,7 +334,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 							element.readValue(new MMOBuffer().setByteBuffer(fallback), Collections.emptyMap());
 							fieldWidth = fallback.position();
 						}
-						catch (BufferUnderflowException e)
+						catch (final BufferUnderflowException e)
 						{
 							// what
 						}
@@ -372,7 +381,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 						if (remainingBytes > 0)
 							writer.append("and ").append(String.valueOf(remainingBytes)).append(" more bytes…\r\n");
 					}
-					catch (IOException e2)
+					catch (final IOException e2)
 					{
 						throw new RuntimeException(e2);
 					}
@@ -388,7 +397,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 						writer.append("and ").append(String.valueOf(remainingBytes)).append(" more bytes…\r\n");
 						writer.append(e.toString()).append("\r\n");
 					}
-					catch (IOException e2)
+					catch (final IOException e2)
 					{
 						throw new RuntimeException(e2);
 					}
@@ -404,15 +413,18 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 					{
 						writer.append("… and ").append(String.valueOf(remainingBytes)).append(" more bytes\r\n");
 					}
-					catch (IOException e)
+					catch (final IOException e)
 					{
 						throw new RuntimeException(e);
 					}
 				}
 			}, body, options);
 		}
-		for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
-			writer.append('=');
+		if (!lessVerbose)
+		{
+			for (int i = 0; i < PACKET_BOUNDARY_MARKER_LEN; ++i)
+				writer.append('=');
+		}
 	}
 	
 	static final void writeAsText(Appendable writer, FieldElement<?> field, FieldValue value, Object readValue, DataType visualDataType)
@@ -456,7 +468,7 @@ public class ToPlaintextVisitor implements HistoricalLogPacketVisitor, IOConstan
 			}
 			writer.append("\r\n");
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			throw new RuntimeException(e);
 		}

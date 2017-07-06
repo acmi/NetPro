@@ -354,7 +354,7 @@ public class PacketLogTabController implements Initializable
 		{
 			final MMOBuffer buf = new MMOBuffer();
 			for (final PacketLogEntry packetEntry : packets)
-				ToPlaintextVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), buf, _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), sb);
+				ToPlaintextVisitor.writePacket(packetEntry.getPacket(), _protocolProperty.get(), buf, _entityCacheContext, new SimpleDateFormat(ISO_DATE_TIME_ZONE_MS), packets.size() < 5, sb);
 			return sb.moveToString();
 		}
 		catch (final IOException e)

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_EX_REPLY_RECEIVED_POST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="mail.MailMessageType" id="type" />
+	
+	<branch id="type" condition="mail.CommissionBuyMailMessage">
+		<dword alias="Item" type="Item" />
+		<dword alias="Enchant level" />
+		<dword alias="" />
+		<dword alias="" />
+		<dword alias="Attribute" />
+		<dword alias="" />
+		<dword alias="" />
+		<dword alias="" />
+	</branch>
+	<branch id="type" condition="mail.CommissionMailMessage">
+		<dword alias="Subject" type="ImmutableSystemMessage" />
+		<dword alias="Message" type="ImmutableSystemMessage" />
+	</branch>
+	
+	<dword alias="Message ID" />
+	<dword alias="Locked" type="YesOrNo" /> <!-- unsure about this, typically 0 -->
+	<dword alias="Replies disabled" type="YesOrNo" /> <!-- if enabled, clicking 'Reply' has no effect -->
+	<string alias="Recipient" />
+	<branch id="type" condition="mail.NonCommissionMailMessage">
+		<string alias="Subject" />
+		<string alias="Message" />
+	</branch>
+	<branch id="type" condition="mail.CommissionMailMessage">
+		<string alias="Title" />
+		<string alias="Content/token" />
+	</branch>
+	<dword alias="Attachment count" id="index_0" />
+	<loop id="index_0">
+		<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />
+		<dword alias="0" /> <!-- former OID -->
+		<dword alias="Item" type="Item" id="is_ticket" />
+		<byte alias="0" /> <!-- former slot number -->
+		<qword alias="Quantity" />
+		<byte alias="Main item type" type="ItemType2" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<byte alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedByte alias="Round of lottery" mod="NewLotteryEvent" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<unsignedByte alias="Lane(s)" type="item.MonsterRaceLane" />
+		</branch>
+
+		<word alias="Equipped" type="YesOrNo" />
+		<qword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<byte alias="Enchant level" />
+			<byte alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- still written due to private stores & co., no VISUAL effect in client -->
+			<unsignedByte alias="Selected numbers (truncated)" type="LottoNumbers" />
+			<unsignedByte alias="Selected numbers (upper byte)" mod="ShiftLeft16" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+			<byte alias="Race number" />
+			<byte alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<dword alias="Mana left" type="ShadowMana" />
+		<dword alias="Time remaining" type="TimeRemaining" />
+		<byte alias="Usable" type="YesOrNo" />
+
+		<!-- NEW -->
+		<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
+			<dword alias="Augmentation effect (1)" type="Augmentation" />
+			<dword alias="Augmentation effect (2)" type="Augmentation" />
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit1"> <!-- elemental info -->
+			<word alias="Attack element" type="ElementType" />
+			<word alias="Attack element power" type="ElementPower" />
+			<word alias="Fire defense" type="ElementPower" />
+			<word alias="Water defense" type="ElementPower" />
+			<word alias="Wind defense" type="ElementPower" />
+			<word alias="Earth defense" type="ElementPower" />
+			<word alias="Holy defense" type="ElementPower" />
+			<word alias="Dark defense" type="ElementPower" />
+		</branch>
+		<!-- NEW -->
+		<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
+			<dword alias="Enchant effect (1)" type="Augmentation" />
+			<dword alias="Enchant effect (2)" type="Augmentation" />
+			<dword alias="Enchant effect (3)" type="Augmentation" />
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit3"> <!-- appearance info -->
+			<branch id="is_ticket" condition="GenericItem">
+				<dword alias="Visible item" type="Item" />
+			</branch>
+			<branch id="is_ticket" condition="LotteryTicket">
+				<dword alias="Selected numbers (truncated)" type="LottoNumbers" />
+			</branch>
+			<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+				<word alias="Race number" />
+				<word alias="Bet" type="MonsterRaceBetMultiplier" />
+			</branch>
+		</branch>
+		<!-- NEW (Underground) -->
+		<branch id="extra_info" condition="bitmask.Bit4"> <!-- soul crystal (SA) info -->
+			<byte alias="Primary special abilities" id="sa1_cnt" />
+			<loop id="sa1_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+			<byte alias="Secondary special abilities" id="sa2_cnt" />
+			<loop id="sa2_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal" />
+			</loop>
+		</branch>
+		<dword alias="Item PK" />
+	</loop>
+	<qword alias="Price" />
+	<dword alias="Returnable" type="YesOrNo" /> <!-- Send Back button visible/invisible -->
+	<dword alias="Sender character ID" />
+</packet>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="D0 38 01" id="CM_REQ_USER_BAN_INFO" />
+	</client>
+	<server>
+		<packet opcodePrefix="FE D1 01" id="SM_EX_USER_BAN_INFO" />
+	</server>
+</mapping>

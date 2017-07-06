@@ -34,6 +34,7 @@ import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.config.ConfigMarker;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.io.packetlog.HistoricalLogIOThread;
+import net.l2emuproject.proxy.network.L2AuthSocket;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.ProxySocket;
 import net.l2emuproject.proxy.network.game.client.L2GameClientConnections;
@@ -41,11 +42,12 @@ import net.l2emuproject.proxy.network.game.server.L2GameServerConnections;
 import net.l2emuproject.proxy.network.login.client.L2LoginClientConnections;
 import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
 import net.l2emuproject.proxy.setup.SocketManager;
-import net.l2emuproject.proxy.ui.i18n.UIStrings;
+import net.l2emuproject.proxy.ui.savormix.io.AutoLogger;
 import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.AppInit;
 import net.l2emuproject.util.L2Utils;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
+import net.l2emuproject.util.concurrent.ThreadPoolInitializer;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -56,7 +58,6 @@ import net.l2emuproject.util.logging.L2Logger;
 public class L2Proxy
 {
 	private static Collection<StartupHook> STARTUP_HOOKS = new ArrayList<>();
-	private static StartupStateReporter STATE_REPORTER;
 	
 	/**
 	 * Adds a task to be executed after fundamental initialization, but before starting the proxy server.
@@ -73,32 +74,17 @@ public class L2Proxy
 	}
 	
 	/**
-	 * Sets the current state reporter.
-	 * 
-	 * @param reporter state reporter
-	 */
-	public static void setStartupReporter(StartupStateReporter reporter)
-	{
-		STATE_REPORTER = reporter;
-	}
-	
-	/**
 	 * Launches the proxy core.
 	 * 
 	 * @param args ignored
 	 */
 	public static void main(String... args)
 	{
-		if (STATE_REPORTER != null)
-			STATE_REPORTER.onState(UIStrings.get("startup.config"));
-		// 1. INIT LOGGING, ORDERED SHUTDOWN HOOK, DEADLOCK DETECTION, FALLBACK EXCEPTION HANDLER
 		AppInit.defaultInit();
-		// 2. LOG APP LOGO/VERSION
 		NetProInfo.showStartupInfo();
 		
 		final L2Logger logger = L2Logger.getLogger(L2Proxy.class);
 		logger.debug("Loading configuration…");
-		// 3. LOAD CONFIG PROPERTIES
 		try
 		{
 			CurrentConfigManager.getInstance().registerAll(ConfigMarker.class.getPackage()).load();
@@ -111,11 +97,12 @@ public class L2Proxy
 		}
 		logger.spam("…SUCCESS");
 		
-		// 4. INIT TP
 		logger.spam("Setting up thread pools…");
 		try
 		{
-			L2ThreadPool.initThreadPools(new NetProThreadPools());
+			L2ThreadPool.initThreadPools(new ThreadPoolInitializer(){
+				// FIXME: this needs to be done eventually
+			});
 		}
 		catch (final Exception e)
 		{
@@ -138,7 +125,6 @@ public class L2Proxy
 			logger.spam("Sleep intervals set.");
 		}
 		
-		// 5. EXECUTE POST-INIT HOOKS
 		logger.debug("Executing hooks before network init…");
 		synchronized (L2Proxy.class)
 		{
@@ -162,9 +148,6 @@ public class L2Proxy
 		final L2LoginServerConnections lsc;
 		if (LoadOption.DISABLE_PROXY.isNotSet())
 		{
-			// 6. OPEN SOCKETS
-			if (STATE_REPORTER != null)
-				STATE_REPORTER.onState(UIStrings.get("startup.sockets"));
 			logger.debug("Setting up sockets…");
 			final SocketManager sm = SocketManager.getInstance();
 			final L2LoginClientConnections lcc = L2LoginClientConnections.getInstance();
@@ -178,9 +161,9 @@ public class L2Proxy
 			
 			try
 			{
-				for (final Iterator<ProxySocket> it = sm.getAuthSockets().iterator(); it.hasNext();)
+				for (final Iterator<L2AuthSocket> it = sm.getAuthSockets().iterator(); it.hasNext();)
 				{
-					final ProxySocket socket = it.next();
+					final L2AuthSocket socket = it.next();
 					try
 					{
 						if (logger.isTraceEnabled())
@@ -225,29 +208,25 @@ public class L2Proxy
 				return;
 			}
 			
-			if (STATE_REPORTER != null)
-				STATE_REPORTER.onState(UIStrings.get("startup.autologger"));
 			logger.trace("Setting up automatic packet logging…");
 			{
-				final HistoricalLogIOThread ioThread = HistoricalLogIOThread.getInstance();
-				lcc.addConnectionListener(ioThread);
-				lcc.addPacketListener(ioThread);
-				lsc.addPacketListener(ioThread);
-				gcc.addConnectionListener(ioThread);
-				gcc.addPacketListener(ioThread);
-				L2GameServerConnections.getInstance().addPacketListener(ioThread);
+				final AutoLogger al = AutoLogger.getInstance();
+				lcc.addConnectionListener(al);
+				lcc.addPacketListener(al);
+				lsc.addPacketListener(al);
+				gcc.addConnectionListener(al);
+				gcc.addPacketListener(al);
+				L2GameServerConnections.getInstance().addPacketListener(al);
 			}
 			logger.spam("…SUCCESS");
 		}
 		else
 			lsc = null;
 		
-		// 7. LOG JVM INFO AND EXECUTE GENERIC STARTUP HOOKS
 		AppInit.defaultPostInit(NetProInfo.getFullVersionInfo());
 		
 		if (lsc != null)
 		{
-			// 8. LOG SOCKET INFO
 			L2Utils.printSection("Proxy");
 			final L2TextBuilder tb = new L2TextBuilder();
 			tb.appendNewline("Configuration:");

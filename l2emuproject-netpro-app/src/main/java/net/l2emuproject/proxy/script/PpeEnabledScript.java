@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.script;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Collection;
@@ -50,34 +51,38 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	// not intended to be used by subclasses!
 	private static final L2Logger LOG = L2Logger.getLogger(PpeEnabledScript.class);
 	
-	private final Set<String> _handledAliases;
+	private final Set<String> _handledAliases, _handledNames;
 	
 	/** Creates a PPE script. */
 	protected PpeEnabledScript()
 	{
 		final Set<String> aliases = new TreeSet<>();
 		for (Class<?> c = getClass(); c != null; c = c.getSuperclass())
-			fillAliasesRecursively(aliases, c);
+			fillAliasesRecursively(aliases, c, ScriptFieldAlias.class);
 		_handledAliases = ImmutableSortedArraySet.of(aliases, String.class);
+		final Set<String> packets = new TreeSet<>();
+		for (Class<?> c = getClass(); c != null; c = c.getSuperclass())
+			fillAliasesRecursively(packets, c, ScriptPacketName.class);
+		_handledNames = ImmutableSortedArraySet.of(packets, String.class);
 	}
 	
-	private static final void fillAliasesRecursively(Collection<String> aliases, Class<?> declaringClass)
+	private static final <T extends Annotation> void fillAliasesRecursively(Collection<String> aliases, Class<?> declaringClass, Class<T> markerAnnotationClass)
 	{
 		// take an overriding field value over others
-		fillAliases(aliases, declaringClass);
+		fillAliases(aliases, declaringClass, markerAnnotationClass);
 		for (final Class<?> superClass : declaringClass.getInterfaces())
-			fillAliasesRecursively(aliases, superClass);
+			fillAliasesRecursively(aliases, superClass, markerAnnotationClass);
 	}
 	
-	private static final void fillAliases(Collection<String> aliases, Class<?> declaringClass)
+	private static final <T extends Annotation> void fillAliases(Collection<String> aliases, Class<?> declaringClass, Class<T> markerAnnotationClass)
 	{
 		for (final Field f : declaringClass.getDeclaredFields())
 		{
 			if (!Modifier.isStatic(f.getModifiers()))
 				continue;
 			
-			final ScriptFieldAlias sfa = f.getAnnotation(ScriptFieldAlias.class);
-			if (sfa == null || sfa.disabled())
+			final Object anno = f.getAnnotation(markerAnnotationClass);
+			if (anno == null)
 				continue;
 			
 			try
@@ -101,6 +106,16 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	public final Set<String> getHandledScriptFieldAliases()
 	{
 		return _handledAliases;
+	}
+	
+	/**
+	 * Returns all packet names to be handled by this script.
+	 * 
+	 * @return packet names
+	 */
+	public final Set<String> getHandledPacketNames()
+	{
+		return _handledNames;
 	}
 	
 	/**

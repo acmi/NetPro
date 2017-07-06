@@ -112,12 +112,12 @@ public final class PpeGameScriptRegistry extends GameScript
 		{
 			rab = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(client.getProtocol(), buf, client);
 		}
-		catch (InvalidPacketOpcodeSchemeException e)
+		catch (final InvalidPacketOpcodeSchemeException e)
 		{
 			LOG.error("Invalid client packet", e);
 			return;
 		}
-		catch (PartialPayloadEnumerationException e)
+		catch (final PartialPayloadEnumerationException e)
 		{
 			final IPacketTemplate template = e.getTemplate();
 			if (!template.isDefined())
@@ -135,13 +135,36 @@ public final class PpeGameScriptRegistry extends GameScript
 		}
 		
 		if (rab.getAllFields().isEmpty())
+		{
+			if (rab.getPacketName() == null)
+				return;
+			
+			for (final PpeEnabledGameScript script : _registry)
+			{
+				try
+				{
+					if (script.getHandledPacketNames().contains(rab.getPacketName()))
+					{
+						final long start = System.nanoTime();
+						script.handleClientPacket(client, (L2GameServer)client.getTarget(), rab);
+						final long end = System.nanoTime();
+						
+						RunnableStatsManager.handleStats(script.getClass(), "handleClientPacket(L2GameClient, L2GameServer, RandomAccessMMOBuffer)", end - start, 50);
+					}
+				}
+				catch (final RuntimeException e)
+				{
+					LOG.error("PPE Game script '" + script.getName() + "' failed handling client packet", e);
+				}
+			}
 			return;
+		}
 		
 		for (final PpeEnabledGameScript script : _registry)
 		{
 			try
 			{
-				if (!Collections.disjoint(script.getHandledScriptFieldAliases(), rab.getAllFields()))
+				if (!Collections.disjoint(script.getHandledScriptFieldAliases(), rab.getAllFields()) || script.getHandledPacketNames().contains(rab.getPacketName()))
 				{
 					final long start = System.nanoTime();
 					script.handleClientPacket(client, (L2GameServer)client.getTarget(), rab);
@@ -150,7 +173,7 @@ public final class PpeGameScriptRegistry extends GameScript
 					RunnableStatsManager.handleStats(script.getClass(), "handleClientPacket(L2GameClient, L2GameServer, RandomAccessMMOBuffer)", end - start, 50);
 				}
 			}
-			catch (RuntimeException e)
+			catch (final RuntimeException e)
 			{
 				LOG.error("PPE Game script '" + script.getName() + "' failed handling client packet", e);
 			}
@@ -165,12 +188,12 @@ public final class PpeGameScriptRegistry extends GameScript
 		{
 			rab = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(server.getProtocol(), buf, server);
 		}
-		catch (InvalidPacketOpcodeSchemeException e)
+		catch (final InvalidPacketOpcodeSchemeException e)
 		{
 			LOG.error("Invalid server packet", e);
 			return;
 		}
-		catch (PartialPayloadEnumerationException e)
+		catch (final PartialPayloadEnumerationException e)
 		{
 			final IPacketTemplate template = e.getTemplate();
 			if (!template.isDefined())
@@ -188,13 +211,36 @@ public final class PpeGameScriptRegistry extends GameScript
 		}
 		
 		if (rab.getAllFields().isEmpty())
+		{
+			if (rab.getPacketName() == null)
+				return;
+			
+			for (final PpeEnabledGameScript script : _registry)
+			{
+				try
+				{
+					if (script.getHandledPacketNames().contains(rab.getPacketName()))
+					{
+						final long start = System.nanoTime();
+						script.handleServerPacket(server.getTargetClient(), server, rab);
+						final long end = System.nanoTime();
+						
+						RunnableStatsManager.handleStats(script.getClass(), "handleServerPacket(L2GameClient, L2GameServer, RandomAccessMMOBuffer)", end - start, 50);
+					}
+				}
+				catch (final RuntimeException e)
+				{
+					LOG.error("PPE Game script '" + script.getName() + "' failed handling server packet", e);
+				}
+			}
 			return;
+		}
 		
 		for (final PpeEnabledGameScript script : _registry)
 		{
 			try
 			{
-				if (!Collections.disjoint(script.getHandledScriptFieldAliases(), rab.getAllFields()))
+				if (!Collections.disjoint(script.getHandledScriptFieldAliases(), rab.getAllFields()) || script.getHandledPacketNames().contains(rab.getPacketName()))
 				{
 					final long start = System.nanoTime();
 					script.handleServerPacket(server.getTargetClient(), server, rab);
@@ -203,7 +249,7 @@ public final class PpeGameScriptRegistry extends GameScript
 					RunnableStatsManager.handleStats(script.getClass(), "handleServerPacket(L2GameClient, L2GameServer, RandomAccessMMOBuffer)", end - start, 50);
 				}
 			}
-			catch (RuntimeException e)
+			catch (final RuntimeException e)
 			{
 				LOG.error("PPE Game script '" + script.getName() + "' failed handling server packet", e);
 			}
@@ -229,11 +275,11 @@ public final class PpeGameScriptRegistry extends GameScript
 				buf.setByteBuffer(sent);
 				rab = L2PpeProvider.getPacketPayloadEnumerator().enumeratePacketPayload(sender.getProtocol(), buf, sender);
 			}
-			catch (InvalidPacketOpcodeSchemeException e)
+			catch (final InvalidPacketOpcodeSchemeException e)
 			{
 				return;
 			}
-			catch (PartialPayloadEnumerationException e)
+			catch (final PartialPayloadEnumerationException e)
 			{
 				final IPacketTemplate template = e.getTemplate();
 				if (!template.isDefined())
@@ -263,7 +309,7 @@ public final class PpeGameScriptRegistry extends GameScript
 						RunnableStatsManager.handleStats(script.getClass(), "handleInjectedClientPacket(L2GameClient, L2GameServer, RandomAccessMMOBuffer)", end - start, 50);
 					}
 				}
-				catch (RuntimeException e)
+				catch (final RuntimeException e)
 				{
 					LOG.error("PPE Game script '" + script.getName() + "' failed handling injected client packet", e);
 				}

@@ -344,6 +344,8 @@
 			
 			<xs:enumeration value="lucky.FortuneReading" />
 			<xs:enumeration value="lucky.ReadingResult" />
+			
+			<xs:enumeration value="mail.MailMessageType" />
 
 			<xs:enumeration value="olympiad.InfoMode" />
 
@@ -393,6 +395,7 @@
 			<xs:enumeration value="shortcut.ShortcutSlotBase12" />
 			<xs:enumeration value="shortcut.ShortcutType" />
 
+			<xs:enumeration value="skill.AbnormalType" />
 			<xs:enumeration value="skill.SkillLevel" />
 			<xs:enumeration value="skill.SkillUseType" />
 
@@ -477,6 +480,12 @@
 			<xs:enumeration value="macro.Delay" />
 			<xs:enumeration value="macro.Shortcut" />
 			<xs:enumeration value="macro.Skill" />
+			
+			<xs:enumeration value="mail.CommissionBuyMailMessage" />
+			<xs:enumeration value="mail.CommissionDeleteMailMessage" />
+			<xs:enumeration value="mail.CommissionMailMessage" />
+			<xs:enumeration value="mail.NonCommissionMailMessage" />
+			<xs:enumeration value="mail.NPCMailMessage" />
 			
 			<xs:enumeration value="museum.AwakenedClass" />
 			<xs:enumeration value="museum.DefaultStat" />

@@ -113,8 +113,8 @@
 		<packet opcodePrefix="FE A8 00" id="467" />
 		<packet opcodePrefix="FE A9 00" id="468" />
 		<packet opcodePrefix="FE AA 00" id="469" />
-		<packet opcodePrefix="FE AB 00" id="470" />
-		<packet opcodePrefix="FE AC 00" id="471" />
+		<packet opcodePrefix="FE AB 00" id="SM_EX_SHOW_RECEIVED_POST_LIST" />
+		<packet opcodePrefix="FE AC 00" id="SM_EX_REPLY_RECEIVED_POST" />
 		<packet opcodePrefix="FE AD 00" id="472" />
 		<packet opcodePrefix="FE AE 00" id="473" />
 		<packet opcodePrefix="FE AF 00" id="474" />

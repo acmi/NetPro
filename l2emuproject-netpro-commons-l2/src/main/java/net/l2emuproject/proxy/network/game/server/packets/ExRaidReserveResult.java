@@ -21,6 +21,8 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.ListenSocket;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.L2GameServerInfo;
@@ -48,13 +50,21 @@ public final class ExRaidReserveResult extends L2GameServerPacket implements Req
 {
 	/** Packet's extended identifier */
 	public static final int OPCODE2 = 0x00_B7;
+	/** Packet's extended identifier (legacy) */
+	public static final int OPCODE2_LEGACY = 0x00_B6;
+	
+	private final int _opcode2;
 	
 	/**
 	 * Constructs a packet to extract cipher and obfuscation keys.
+	 * 
+	 * @param opcode2 2nd opcode
 	 */
-	public ExRaidReserveResult()
+	public ExRaidReserveResult(int opcode2)
 	{
 		super(L2GameServerPackets.OPCODE_FOR_OP2);
+		
+		_opcode2 = opcode2;
 	}
 	
 	@Override
@@ -63,6 +73,12 @@ public final class ExRaidReserveResult extends L2GameServerPacket implements Req
 		final L2GameClient client = getRecipient();
 		final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
 		if (ppe == null)
+			return;
+		
+		final IProtocolVersion protocol = client.getProtocol();
+		if (protocol.isOlderThan(ClientProtocolVersion.GRACIA_EPILOGUE))
+			return;
+		if ((_opcode2 == OPCODE2) != protocol.isNewerThanOrEqualTo(ClientProtocolVersion.TAUTI_UPDATE_1))
 			return;
 		
 		RandomAccessMMOBuffer enumerator = null;

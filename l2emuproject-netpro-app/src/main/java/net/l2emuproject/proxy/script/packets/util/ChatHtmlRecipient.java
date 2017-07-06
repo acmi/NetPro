@@ -22,6 +22,9 @@ import net.l2emuproject.proxy.script.ScriptFieldAlias;
  */
 public interface ChatHtmlRecipient extends NpcHtmlRecipient
 {
+	/** Associated world object ID */
+	@ScriptFieldAlias
+	String QUEST_HTML_OWNER = "quest_html_owner_oid";
 	/** Identifies a field that contains quest HTML shown to client. */
 	@ScriptFieldAlias
 	String QUEST_HTML_CONTENT = "quest_html_content";

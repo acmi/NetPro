@@ -98,6 +98,8 @@ public class L2PacketTablePayloadEnumerator implements PacketPayloadEnumerator
 				throw visitor._partialEnumerationException;
 			if (visitor._failure != null)
 				throw visitor._failure;
+			if (template.isDefined())
+				result.setPacketName(template.getName());
 			return result;
 		}
 		finally

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Enchant effect WORDs are now DWORDs -->
 <packet id="SM_ENCHANT_RESULT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Outcome" type="EnchantResult" id="result" />
+	<dword alias="Outcome" type="EnchantResult" id="result">
+		<scriptAlias id="enchant_result"/>
+	</dword>
 	<dword alias="Received item" type="Item" />
 	<qword alias="Received item count" />
-	<dword alias="Enchant level" />
+	<dword alias="Enchant level">
+		<scriptAlias id="enchant_result_level" />
+	</dword>
 
 	<!-- NEW -->
 	<dword alias="Enchant effect (1)" type="Augmentation" />

@@ -259,6 +259,16 @@ public final class L2LoginClient extends AbstractL2ClientProxy
 	}
 	
 	/**
+	 * Disables additional flags related to network protocol detection/negotiation.
+	 * 
+	 * @param flags flags to unset
+	 */
+	public void disableProtocolFlags(int flags)
+	{
+		_protocolFlags &= ~flags;
+	}
+	
+	/**
 	 * Tests if a protocol related flag is set.
 	 * 
 	 * @param flags flags to test

@@ -15,6 +15,7 @@
  */
 package examples.game.stealth;
 
+import net.l2emuproject.network.protocol.ClientProtocolVersion;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
@@ -29,18 +30,17 @@ import net.l2emuproject.proxy.script.game.GameScript;
  */
 public final class AntiMsnLogging extends GameScript
 {
-	private static final int REPORT_MSN_CHAT_MESSAGE = 109;
-	
 	/** Constructs this script. */
 	public AntiMsnLogging()
 	{
-		super(new int[] { REPORT_MSN_CHAT_MESSAGE }, null);
+		super(new int[] { 0x6D, 0xCE }, null);
 	}
 	
 	@Override
 	protected void clientPacketArrived(L2GameClient sender, L2GameServer recipient, Packet packet) throws IllegalStateException
 	{
-		//packet.demandLoss(this);
+		if ((packet.getForwardedBody().get(0) == 0x6D) == sender.getProtocol().isNewerThanOrEqualTo(ClientProtocolVersion.THE_KAMAEL))
+			packet.demandLoss(this);
 	}
 	
 	@Override

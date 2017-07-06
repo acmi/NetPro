@@ -62,6 +62,7 @@ import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;
 import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.network.login.client.L2LoginClient;
+import net.l2emuproject.proxy.network.login.client.packets.RequestServerList;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
@@ -156,7 +157,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		_captureSettingAccessor = captureSettingAccessor;
 		
 		_placeHolder = new JPanel();
-		JLabel empty = new JLabel(LoadOption.DISABLE_PROXY.isNotSet() ? "No connections" : "No open packet logs");
+		final JLabel empty = new JLabel(LoadOption.DISABLE_PROXY.isNotSet() ? "No connections" : "No open packet logs");
 		empty.setHorizontalAlignment(CENTER);
 		empty.setVerticalAlignment(CENTER);
 		getPlaceHolder().add(empty);
@@ -169,8 +170,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		addTab(IDLE, null, getPlaceHolder()/*, "No connections have been made to this proxy server yet."*/);
 		
 		// perhaps one day move to #setTabComponentAt(int, Component)?
-		addMouseListener(new MouseAdapter()
-		{
+		addMouseListener(new MouseAdapter(){
 			@Override
 			public void mousePressed(MouseEvent e)
 			{
@@ -220,7 +220,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		}
 		else if (getSelectedComponent() != requestor)
 			return;
-			
+		
 		_captureSettingAccessor.onOpen(requestor);
 	}
 	
@@ -234,7 +234,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		final Component c = getSelectedComponent();
 		if (!(c instanceof PacketList))
 			return null;
-			
+		
 		final PacketList pl = (PacketList)c;
 		return pl.getAccessor();
 	}
@@ -249,7 +249,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (_captureSettingAccessor.isGlobalCaptureDisabled())
 			return true;
-			
+		
 		final PacketList pl = _live.get(client);
 		return pl != null ? pl.isSessionCaptureDisabled() : false;
 	}
@@ -265,7 +265,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		final Component c = getSelectedComponent();
 		if (!(c instanceof PacketList))
 			return false;
-			
+		
 		final PacketList pl = (PacketList)c;
 		pl.setCaptureState(disabled ? ListCaptureState.CAPTURE_DISABLED : ListCaptureState.CAPTURE_ENABLED);
 		return true;
@@ -316,15 +316,14 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			list.notifyDefinitionsChanged();
 		for (final PacketList list : _logFile)
 			list.notifyDefinitionsChanged();
-			
+		
 		requestUpdateSummary(null);
 	}
 	
 	@Override
 	public void onProtocolVersion(Proxy affected, IProtocolVersion protocol) throws RuntimeException
 	{
-		SwingUtilities.invokeLater(() ->
-		{
+		SwingUtilities.invokeLater(() -> {
 			// version is assigned to client
 			final PacketList pl = _live.get(affected);
 			if (pl == null)
@@ -342,14 +341,13 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (_captureSettingAccessor.isGlobalCaptureDisabled())
 			return;
-			
+		
 		final byte[] body = new byte[packet.clear().remaining()];
 		packet.get(body);
 		
 		final ReceivedPacket rp = new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time);
 		
-		SwingUtilities.invokeLater(() ->
-		{
+		SwingUtilities.invokeLater(() -> {
 			final PacketList pl = _live.get(sender);
 			if (pl != null)
 			{
@@ -369,19 +367,18 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (_captureSettingAccessor.isGlobalCaptureDisabled())
 			return;
-			
+		
 		final byte[] body = new byte[packet.clear().remaining()];
 		packet.get(body);
 		
-		SwingUtilities.invokeLater(() ->
-		{
+		SwingUtilities.invokeLater(() -> {
 			if (recipient == null)
 			{
 				LOG.info("Packet without recipient: " + HexUtil.printData(body));
 				return;
 			}
 			
-			PacketList pl = _live.get(recipient);
+			final PacketList pl = _live.get(recipient);
 			if (pl != null)
 				pl.addPacket(new ReceivedPacket(ServiceType.valueOf(sender.getProtocol()), sender.getType(), body, time));
 		});
@@ -441,7 +438,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (login && ProxyConfig.NO_TABS_FOR_LOGIN_CONNECTIONS)
 			return;
-			
+		
 		final String name;
 		{
 			final StringBuilder sb = new StringBuilder();
@@ -458,15 +455,28 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			tooltip = sb.append(getDateTimeFormatter().format(time)).moveToString();
 		}
 		
-		SwingUtilities.invokeLater(() ->
-		{
+		SwingUtilities.invokeLater(() -> {
 			final PacketList list = new PacketList(login, login ? 10 : -1, new ServerSocketID(key.getServer().getInetSocketAddress()));
 			list.setCaptureState(ListCaptureState.CAPTURE_ENABLED);
 			
 			final List<ReceivedPacket> clientPackets = _clientPacketsBeforeServerConnection.remove(key);
 			if (clientPackets != null && !_captureSettingAccessor.isGlobalCaptureDisabled())
 				list.addPackets(clientPackets, false);
-				
+			
+			if (login)
+			{
+				final L2LoginClient client = (L2LoginClient)key.getClient();
+				if (client.isProtocolFlagSet(L2LoginClient.FLAG_SERVER_LIST_FREYA))
+					list.setServerListVersion(RequestServerList.TYPE_FREYA);
+				else if (client.isProtocolFlagSet(L2LoginClient.FLAG_SERVER_LIST_C2))
+					list.setServerListVersion(RequestServerList.TYPE_C2);
+				else if (client.isProtocolFlagSet(L2LoginClient.FLAG_SERVER_LIST_C1))
+					list.setServerListVersion(RequestServerList.TYPE_C1);
+				else if (client.isProtocolFlagSet(L2LoginClient.FLAG_SERVER_LIST_NAMED))
+					list.setServerListVersion(RequestServerList.TYPE_NAMED);
+				else if (client.isProtocolFlagSet(L2LoginClient.FLAG_SERVER_LIST_C0))
+					list.setServerListVersion(RequestServerList.TYPE_C0);
+			}
 			addNewList(key, list, key.getProtocol(), name, tooltip);
 		});
 	}
@@ -478,11 +488,10 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		final PacketList pl = _live.get(client);
 		if (pl == null)
 			return;
-			
+		
 		_offline.add(pl);
 		pl.setCaptureState(ListCaptureState.OFFLINE);
-		SwingUtilities.invokeLater(() ->
-		{
+		SwingUtilities.invokeLater(() -> {
 			final int i = indexOfComponent(pl);
 			final Icon icon = pl.isLogin() ? _iconLoginI : _iconGameI;
 			setIconAt(i, icon);
@@ -515,7 +524,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			_live.put(key, list);
 		else
 			_logFile.add(list);
-			
+		
 		final ActionListener remover = e -> removeList(list, key);
 		
 		final JPopupMenu menu = new JPopupMenu();
@@ -527,8 +536,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			menu.addSeparator();
 			final JMenuItem closeOff = new JMenuItem("Close all disconnected");
 			closeOff.setMnemonic(KeyEvent.VK_O);
-			closeOff.addActionListener(e ->
-			{
+			closeOff.addActionListener(e -> {
 				for (final PacketList off : _offline)
 					removeList(off, null);
 			});
@@ -543,7 +551,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		for (int i = 0; i < limit; ++i)
 			if (IDLE.equals(getTitleAt(i)))
 				removeTabAt(i);
-				
+			
 		final Icon icon;
 		if (key != null)
 			icon = list.isLogin() ? _iconLoginA : _iconGameA;
@@ -553,7 +561,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		
 		// customize tab l&f
 		final int i = indexOfComponent(list);
-		JPanel tab = new JPanel();
+		final JPanel tab = new JPanel();
 		tab.setOpaque(false);
 		{
 			tab.add(new JLabel(name, icon, CENTER));
@@ -570,7 +578,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (key != null)
 			_live.remove(key);
-			
+		
 		_offline.remove(list);
 		_logFile.remove(list);
 		
@@ -579,7 +587,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		
 		if (getTabCount() == 0 || (getTabCount() == 1 && CONSOLE.equals(getTitleAt(0))))
 			addTab(IDLE, null, getPlaceHolder(), "No connections to display.");
-			
+		
 		requestUpdateSummary(null);
 		
 		list.onRemove();
@@ -589,7 +597,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	{
 		if (LoadOption.DISABLE_DEFS.isSet())
 			return Collections.singleton(IPacketTemplate.ANY_DYNAMIC_PACKET);
-			
+		
 		return (client ? _displayedClient : _displayedServer).get(protocol);
 	}
 	
@@ -607,7 +615,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 	private void notifyDisplayConfigChanged(IProtocolVersion protocol, Set<IPacketTemplate> displayedClientPackets, Set<IPacketTemplate> addedClientPackets, Set<IPacketTemplate> removedClientPackets,
 			Set<IPacketTemplate> displayedServerPackets, Set<IPacketTemplate> addedServerPackets, Set<IPacketTemplate> removedServerPackets)
 	{
-		for (Entry<Proxy, PacketList> e : _live.entrySet())
+		for (final Entry<Proxy, PacketList> e : _live.entrySet())
 		{
 			if (protocol.equals(e.getKey().getProtocol()))
 			{
@@ -615,7 +623,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			}
 		}
 		
-		for (PacketList pl : _offline)
+		for (final PacketList pl : _offline)
 		{
 			if (protocol.equals(pl.getProtocol()))
 			{
@@ -623,7 +631,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 			}
 		}
 		
-		for (PacketList pl : _logFile)
+		for (final PacketList pl : _logFile)
 		{
 			if (protocol.equals(pl.getProtocol()))
 			{
@@ -661,7 +669,7 @@ public final class ConnectionPane extends JTabbedPane implements ConnectionListe
 		protected void paintComponent(Graphics g)
 		{
 			super.paintComponent(g);
-			Graphics2D g2 = (Graphics2D)g.create();
+			final Graphics2D g2 = (Graphics2D)g.create();
 			g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			// shift the image for pressed buttons
 			if (getModel().isPressed())

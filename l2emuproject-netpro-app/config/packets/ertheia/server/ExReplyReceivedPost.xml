@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Due to bandwidth optimization, augmentation & enchant effects, elemental attribute and appearance fields are now written on demand -->
-<packet id="471" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_EX_REPLY_RECEIVED_POST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Type" type="MailMessageType" />
 	<dword alias="Message ID" />
 	<dword alias="Locked" type="YesOrNo" /> <!-- unsure about this, typically 0 -->

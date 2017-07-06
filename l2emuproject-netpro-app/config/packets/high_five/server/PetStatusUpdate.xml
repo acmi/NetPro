@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was automatically generated when converting from the legacy definition format. -->
+<!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
+<!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
+<packet id="SM_PET_STATUS_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Type" type="ServitorType" id="type" />
+	<branch id="type" condition="servitor.Summon">
+		<dword alias="Summon OID" type="ObjectID">
+			<scriptAlias id="OIC_SUMMON_OID" />
+			<scriptAlias id="OIL_OBJECT_ID" />
+			<scriptAlias id="LUA_USER_SUMMON_OID" />
+		</dword>
+	</branch>
+	<branch id="type" condition="servitor.Pet">
+		<dword alias="Pet OID" type="ObjectID">
+			<scriptAlias id="OIC_PET_OID" />
+			<scriptAlias id="OIL_OBJECT_ID" />
+			<scriptAlias id="LUA_USER_PET_OID" />
+		</dword>
+	</branch>
+	<dword alias="Location X">
+		<scriptAlias id="OIL_OBJECT_X_SERVER" />
+	</dword>
+	<dword alias="Location Y">
+		<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+	</dword>
+	<dword alias="Location Z">
+		<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+	</dword>
+	<string alias="Name" />
+	<dword alias="Current satiation" />
+	<dword alias="Maximum satiation" />
+	<dword alias="Current HP" />
+	<dword alias="Maximum HP" />
+	<dword alias="Current MP" />
+	<dword alias="Maximum MP" />
+	<dword alias="Level" />
+	<qword alias="XP" />
+	<qword alias="Current level XP" />
+	<qword alias="Next level XP" />
+</packet>

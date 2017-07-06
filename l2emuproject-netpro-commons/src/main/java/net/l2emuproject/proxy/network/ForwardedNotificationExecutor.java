@@ -232,7 +232,18 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 			// auto-assume call from a long-running task thread
 			try
 			{
-				return submit(() -> executeSessionBound(client, key, r)).get();
+				final Future<Future<?>> task = submit(() -> executeSessionBound(client, key, r));
+				while (true)
+				{
+					try
+					{
+						return task.get(1, TimeUnit.SECONDS);
+					}
+					catch (final TimeoutException e)
+					{
+						LOG.error("Still scheduling (instant) " + key + ", executor blocked!");
+					}
+				}
 			}
 			catch (InterruptedException | ExecutionException e)
 			{
@@ -268,7 +279,18 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 			// auto-assume call from a long-running task thread
 			try
 			{
-				return submit(() -> scheduleSessionBound(client, key, r, delay, unit)).get();
+				final Future<ScheduledFuture<?>> task = submit(() -> scheduleSessionBound(client, key, r, delay, unit));
+				while (true)
+				{
+					try
+					{
+						return task.get(1, TimeUnit.SECONDS);
+					}
+					catch (final TimeoutException e)
+					{
+						LOG.error("Still scheduling " + key + ", executor blocked!");
+					}
+				}
 			}
 			catch (InterruptedException | ExecutionException e)
 			{
@@ -304,7 +326,18 @@ public class ForwardedNotificationExecutor extends ScheduledThreadPoolExecutor i
 			// auto-assume call from a long-running task thread
 			try
 			{
-				return submit(() -> scheduleSessionBoundWithFixedDelay(client, key, r, initialDelay, delay, unit)).get();
+				final Future<ScheduledFuture<?>> task = submit(() -> scheduleSessionBoundWithFixedDelay(client, key, r, initialDelay, delay, unit));
+				while (true)
+				{
+					try
+					{
+						return task.get(1, TimeUnit.SECONDS);
+					}
+					catch (final TimeoutException e)
+					{
+						LOG.error("Still scheduling " + key + ", executor blocked!");
+					}
+				}
 			}
 			catch (InterruptedException | ExecutionException e)
 			{

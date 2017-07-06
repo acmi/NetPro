@@ -29,10 +29,4 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface ScriptFieldAlias
 {
-	/**
-	 * Whether this script should not receive notifications of packets that contain this field.
-	 * 
-	 * @return is field handling disabled at this time
-	 */
-	boolean disabled() default false;
 }

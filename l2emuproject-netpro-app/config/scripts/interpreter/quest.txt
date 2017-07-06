@@ -140,15 +140,15 @@
 655	A Grand Plan for Taming Wild Beasts
 662	A Game of Cards
 663	Seductive Whispers
-665	[not named in client]
-666	[not named in client]
-667	[not named in client]
-668	[not named in client]
-669	[not named in client]
-670	[not named in client]
-671	[not named in client]
-672	[not named in client]
-673	[not named in client]
+665	Basic Training for Hunter Guild Member
+666	Knowledgeable Hunter Guild Member
+667	How to Cover Shilen's Eyes
+668	Fight with Giants
+669	Intense Fight against Dragon
+670	Defeating the Lord of Seed
+671	Path to Finding the Past
+672	Embryo the Archenemy
+673	Beleth' Ambition
 688	Defeat the Elrokian Raiders!
 690	|Attack| Begin Alliance Base Defense - 1
 691	|Attack| Begin Alliance Base Defense - 2
@@ -367,7 +367,7 @@
 10356	Blacksmith's Soul-awakening Weapon - 2
 10358	Divided Sakum, Poslof
 10359	Sakum's Trace
-10360	Destiny Proven
+10360	Certification of Fate
 10362	Certification of the Seeker
 10363	Request of the Seeker
 10364	Obligations of the Seeker

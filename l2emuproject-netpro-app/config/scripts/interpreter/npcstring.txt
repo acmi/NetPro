@@ -1384,8 +1384,8 @@
 18565	Did you see the Ertheia? They are such an enigma!
 18566	Meet the Ertheia! They are an otherwordly people that came through the dimensions!
 18567	Go on an adventure! Sing with the winds with the Ertheia, children of the wind!
-18568	
-18569	
+18568	[not named in client]
+18569	[not named in client]
 18601	|Lv. 41+| Contract Execution
 18602	|Lv. 41+| Contract Execution (In progress)
 18603	|Lv. 41+| Contract Execution (Completed)
@@ -3204,10 +3204,10 @@
 75970	Dark Crystal
 75971	Holy Crystal
 75972	Antharas' Symbol Dye
-76001	|Lv. 99+| Lock Down
-76002	|Lv. 99+| Lock Down (In progress)
-76003	|Lv. 99+| Lock Down (Completed)
-76004	|Lv. 99+| Lock Down
+76001	|Lv. 99+| Block the Exit
+76002	|Lv. 99+| Block the Exit (In progress)
+76003	|Lv. 99+| Block the Exit (Completed)
+76004	|Lv. 99+| Block the Exit
 76011	Speak with Curtiz
 76101	|Lv. 65 - 69| Assisting the Golden Ram Army
 76102	|Lv. 65 - 69| Assisting the Golden Ram Army (In progress)
@@ -6000,7 +6000,7 @@
 587702	|Lv. 103+| Break Through Crisis (In progress)
 587703	|Lv. 103+| Break Through Crisis (Completed)
 587704	|Lv. 103+| Break Through Crisis
-587711	Open 15 Hunter Guild Diagrams.
+587711	Open 10 Hunter Guild Diagrams.
 587712	Talk with Arcturus.
 587901	|Lv. 104+| Exalted, Guide to Power
 587902	|Lv. 104+| Exalted, Guide to Power (In progress)
@@ -7550,7 +7550,7 @@
 1116134	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=-2&reply=418">Trickster</button>
 1116135	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=-2&reply=419">Inspector</button>
 1116136	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=-2&reply=420">Judicator</button>
-1119999	
+1119999	[not named in client]
 1120001	Greyclaw Kutus (lv23)
 1120002	Turek Mercenary Captain (lv30)
 1120003	Retreat Spider Cletu (lv42)
@@ -9067,7 +9067,7 @@
 1800698	Spread the word! Brave warriors have stormed the Hall of Suffering, and are marching onto the Hall of Erosion in the Seed of Infinity!
 1800699	Spread the word! Allies have penetrated the Heart of Infinity, and are locked in battle with Ekimus himself while eradicating the remaining Undead!
 1800700	Spread the word! The flag of the Keucereus Alliance flies proudly over the Seed of Infinity!
-1800701	
+1800701	[not named in client]
 1800702	Spread the word! The Undead are back, and pouring out into the Hall of Suffering and the Hall of Erosion!
 1800703	Spread the word! The returning Undead are about to bring Ekimus back. Send reinforcements to the Heart of Infinity and the Hall of Suffering!
 1800704	Stabbing three times!
@@ -9082,7 +9082,7 @@
 1800713	Our forces have occupied it and are currently investigating the depths.
 1800714	It's under occupation by our forces, but the enemy has resurrected and is attacking toward the Hall of Suffering and the Hall of Erosion.
 1800715	It's under occupation by our forces, but the enemy has already overtaken the Hall of Erosion and is driving out our forces from the Hall of Suffering toward the Heart. It seems that Ekimus will revive shortly.
-1800716	
+1800716	[not named in client]
 1800717	Tiat's followers are coming to retake the Seed of Destruction! Get ready to stop the enemies!
 1800718	It's hurting... I'm in pain... What can I do for the pain...
 1800719	No... When I lose that one... I'll be in more pain...

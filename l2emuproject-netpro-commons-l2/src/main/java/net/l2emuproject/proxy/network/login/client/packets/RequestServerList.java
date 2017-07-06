@@ -25,6 +25,7 @@ import java.nio.BufferUnderflowException;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.Packet;
+import net.l2emuproject.proxy.network.login.client.L2LoginClient;
 import net.l2emuproject.proxy.network.meta.PacketPayloadEnumerator;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.RequiredInvasiveOperations;
@@ -72,18 +73,18 @@ public final class RequestServerList extends L2LoginClientPacket implements Requ
 				final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
 				if (ppe == null)
 					break usePPE;
-					
+				
 				RandomAccessMMOBuffer enumerator = null;
 				try
 				{
 					enumerator = ppe.enumeratePacketPayload(getClient().getProtocol(), buf, getClient());
 				}
-				catch (InvalidPacketOpcodeSchemeException e)
+				catch (final InvalidPacketOpcodeSchemeException e)
 				{
 					LOG.error("This cannot happen", e);
 					break usePPE;
 				}
-				catch (PartialPayloadEnumerationException e)
+				catch (final PartialPayloadEnumerationException e)
 				{
 					// ignore this due to reasons
 					enumerator = e.getBuffer();
@@ -99,25 +100,7 @@ public final class RequestServerList extends L2LoginClientPacket implements Requ
 			type = buf.readC();
 		}
 		
-		if (type >= TYPE_C0)
-		{
-			getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_C0);
-			if (type == TYPE_NAMED)
-			{
-				getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_NAMED);
-				return;
-			}
-			if (type >= TYPE_C1)
-			{
-				getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_C1);
-				if (type >= TYPE_C2)
-				{
-					getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_C2);
-					if (type >= TYPE_FREYA)
-						getReceiver().enableProtocolFlags(FLAG_SERVER_LIST_FREYA);
-				}
-			}
-		}
+		setServerListVersion(getReceiver(), type);
 	}
 	
 	@Override
@@ -125,5 +108,29 @@ public final class RequestServerList extends L2LoginClientPacket implements Requ
 	{
 		// return READ_Q + READ_C;
 		return 0; // due to PPE
+	}
+	
+	public static final void setServerListVersion(L2LoginClient client, int version)
+	{
+		client.disableProtocolFlags(FLAG_SERVER_LIST_C0 | FLAG_SERVER_LIST_NAMED | FLAG_SERVER_LIST_C1 | FLAG_SERVER_LIST_C2 | FLAG_SERVER_LIST_FREYA);
+		if (version >= TYPE_C0)
+		{
+			client.enableProtocolFlags(FLAG_SERVER_LIST_C0);
+			if (version == TYPE_NAMED)
+			{
+				client.enableProtocolFlags(FLAG_SERVER_LIST_NAMED);
+				return;
+			}
+			if (version >= TYPE_C1)
+			{
+				client.enableProtocolFlags(FLAG_SERVER_LIST_C1);
+				if (version >= TYPE_C2)
+				{
+					client.enableProtocolFlags(FLAG_SERVER_LIST_C2);
+					if (version >= TYPE_FREYA)
+						client.enableProtocolFlags(FLAG_SERVER_LIST_FREYA);
+				}
+			}
+		}
 	}
 }

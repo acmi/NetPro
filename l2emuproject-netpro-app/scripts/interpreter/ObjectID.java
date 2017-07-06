@@ -30,6 +30,21 @@ public class ObjectID extends ScriptedFieldValueInterpreter implements IntegerIn
 	@Override
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
-		return L2ObjectInfoCache.getOrAdd((int)value, entityCacheContext).getName();
+		final StringBuilder sb = new StringBuilder(L2ObjectInfoCache.getOrAdd((int)value, entityCacheContext).getName());
+		sb.append(" -> ").append(SmartIdClass.toString((int)value)).append('[').append(value & 0x0F_FF_FF);
+		return sb.append("]r[").append((value >>> 20) & 0x7F).append(']').toString();
+	}
+	
+	private enum SmartIdClass
+	{
+		FAKE_ITEM, AIRSHIP, ITEM, CREATURE, VEHICLE, STATIC_OBJECT, PLEDGE, PARTY, GENERAL_OBJECT, ALLIANCE;
+		
+		public static final String toString(int sid)
+		{
+			final int cls = (sid >>> 27);
+			if (cls - 6 > values().length)
+				return "What " + cls + " -_- ";
+			return values()[cls - 6].toString();
+		}
 	}
 }

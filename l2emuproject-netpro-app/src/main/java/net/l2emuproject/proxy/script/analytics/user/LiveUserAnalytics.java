@@ -233,6 +233,8 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 	private static final String ITEM_OID = "OIC_WORLD_ITEM_OID";
 	private static final String[] VISIBLE_OID = { CI_OID, NI_OID, PI_OID, SI_OID, SOI_OID, ITEM_OID
 	};
+	@ScriptFieldAlias
+	private static final String DELETED_OID = "HLE_DELETED_OID";
 	
 	@ScriptFieldAlias
 	private static final String RC_OID = "rc_actor_oid";
@@ -346,6 +348,17 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			return;
 		}
 		
+		deletion:
+		{
+			final List<EnumeratedPayloadField> deletions = buf.getFieldIndices(DELETED_OID);
+			if (deletions.isEmpty())
+				break deletion;
+			
+			final UserVisibleWorldObjects visibleObjects = computeIfAbsent(client, USER_VISIBLE_OBJECTS_KEY, k -> new UserVisibleWorldObjects(getEntityContext(client)));
+			for (final EnumeratedPayloadField field : deletions)
+				visibleObjects.delete(buf.readInteger32(field));
+		}
+		
 		for (final String visibleOID : VISIBLE_OID)
 		{
 			final EnumeratedPayloadField field = buf.getSingleFieldIndex(visibleOID);
@@ -410,7 +423,8 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 				else
 					encLvl = 0;
 				final ItemAugmentation augmentation = ex.contains(ItemExtension.AUGMENTATION)
-						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex))) : ItemAugmentation.NO_AUGMENTATION;
+						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex)))
+						: ItemAugmentation.NO_AUGMENTATION;
 				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
 						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
 						: ItemEnchantEffects.NO_EFFECTS;
@@ -480,7 +494,8 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 				else
 					encLvl = 0;
 				final ItemAugmentation augmentation = ex.contains(ItemExtension.AUGMENTATION)
-						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex))) : ItemAugmentation.NO_AUGMENTATION;
+						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex)))
+						: ItemAugmentation.NO_AUGMENTATION;
 				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
 						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
 						: ItemEnchantEffects.NO_EFFECTS;

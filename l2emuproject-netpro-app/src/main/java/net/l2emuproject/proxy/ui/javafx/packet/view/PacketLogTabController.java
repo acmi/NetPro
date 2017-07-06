@@ -89,6 +89,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -163,6 +164,8 @@ public class PacketLogTabController implements Initializable
 			for (final PacketLogEntry e : _memoryPackets)
 				e.updateView(neu);
 			_tvPackets.refresh();
+			
+			refreshSelectedPacketView();
 		});
 		_scrollLockProperty = new SimpleBooleanProperty(false);
 		// will only be modified on the UI thread
@@ -378,6 +381,17 @@ public class PacketLogTabController implements Initializable
 		{
 			// L2TB doesn't throw
 			throw new AssertionError("L2TextBuilder", e);
+		}
+	}
+	
+	/** Forcefully recomputes packet content for preview. */
+	public void refreshSelectedPacketView()
+	{
+		final TableViewSelectionModel<PacketLogEntry> selection = _tvPackets.getSelectionModel();
+		if (!selection.isEmpty())
+		{
+			final Pair<String, String> html = Packet2Html.getHTML(selection.getSelectedItem().getPacket(), _protocolProperty.getValue(), _entityCacheContext);
+			_packetDisplayController.setContent(html.getLeft(), html.getRight());
 		}
 	}
 	

@@ -161,7 +161,7 @@
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem text="%menu.file.reloaddef">
+                  <MenuItem onAction="#reloadDefinitions" text="%menu.file.reloaddef">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="F5" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>

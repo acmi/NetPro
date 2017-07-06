@@ -3,7 +3,7 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="565" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Awakened Class Id" type="CharacterClass" />
-	<dword alias="Show Animation" type="YesOrNo" />
-	<dword alias="Can Change" type="YesOrNo" />
+	<dword alias="Fifth class" type="CharacterClass" />
+	<dword alias="Show animation" type="YesOrNo" />
+	<dword alias="Can change" type="YesOrNo" />
 </packet>

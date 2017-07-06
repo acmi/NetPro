@@ -81,12 +81,6 @@
                               <MenuItem onAction="#copyVisiblePacketsAsXML" text="%packettab.cmenu.copy.xml" />
                           </items>
                         </Menu>
-                        <Menu text="%packettab.cmenu.copy.advmenu.memory">
-                          <items>
-                            <MenuItem onAction="#copyMemoryPacketsAsPlaintext" text="%packettab.cmenu.copy.txt" />
-                              <MenuItem onAction="#copyMemoryPacketsAsXML" text="%packettab.cmenu.copy.xml" />
-                          </items>
-                        </Menu>
                     </items>
                   </ContextMenu>
                </contextMenu>

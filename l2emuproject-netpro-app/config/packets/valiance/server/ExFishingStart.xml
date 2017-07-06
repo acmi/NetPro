@@ -12,5 +12,5 @@
 	<dword alias="Lure's Z" />
 
 	<!-- NEW -->
-	<byte alias="Unk" />
+	<byte alias="2" />
 </packet>

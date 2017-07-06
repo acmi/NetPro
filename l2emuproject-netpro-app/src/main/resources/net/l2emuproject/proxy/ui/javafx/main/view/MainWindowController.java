@@ -172,10 +172,6 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	
 	private File _lastOpenDirectory = IOConstants.LOG_DIRECTORY.toFile();
 	
-	private final File _lastConvertDirectory = null;
-	
-	private final File _lastSaveDirectory = null;
-	
 	@FXML
 	private MenuItem _miSave;
 	
@@ -870,7 +866,27 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	@FXML
 	private void reloadDefinitions(ActionEvent event)
 	{
-		rebuildProtocolMenu();
+		L2ThreadPool.executeLongRunning(() -> {
+			VersionnedPacketTable.getInstance().reloadConfig();
+			Platform.runLater(() -> {
+				rebuildProtocolMenu();
+				
+				final ObservableList<Tab> tabs = _tpConnections.getTabs();
+				for (final Tab tab : tabs)
+				{
+					final Object ud = tab.getUserData();
+					if (!(ud instanceof PacketLogTabUserData))
+						continue;
+					
+					final PacketLogTabUserData userData = (PacketLogTabUserData)ud;
+					final ObjectProperty<IProtocolVersion> pp = userData.getController().protocolProperty();
+					final IProtocolVersion old = pp.getValue();
+					final IProtocolVersion neu = ProtocolVersionManager.getInstance().getProtocol(old.getVersion(), ServiceType.valueOf(old).isLogin());
+					pp.set(neu);
+					userData.getController().refreshSelectedPacketView();
+				}
+			});
+		});
 	}
 	
 	@FXML

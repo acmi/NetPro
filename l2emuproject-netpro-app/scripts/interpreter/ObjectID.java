@@ -31,8 +31,9 @@ public class ObjectID extends ScriptedFieldValueInterpreter implements IntegerIn
 	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
 	{
 		final StringBuilder sb = new StringBuilder(L2ObjectInfoCache.getOrAdd((int)value, entityCacheContext).getName());
-		sb.append(" -> ").append(SmartIdClass.toString((int)value)).append('[').append(value & 0x0F_FF_FF);
-		return sb.append("]r[").append((value >>> 20) & 0x7F).append(']').toString();
+		if (value != 0)
+			sb.append(" -> ").append(SmartIdClass.toString((int)value)).append('[').append(value & 0x0F_FF_FF).append("]r[").append((value >>> 20) & 0x7F).append(']');
+		return sb.toString();
 	}
 	
 	private enum SmartIdClass

@@ -43,6 +43,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
@@ -62,6 +63,7 @@ import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.NetPro;
+import net.l2emuproject.proxy.StartupOption;
 import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.io.exception.DamagedFileException;
@@ -71,6 +73,7 @@ import net.l2emuproject.proxy.io.exception.IncompletePacketLogFileException;
 import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
 import net.l2emuproject.proxy.io.exception.TruncatedPacketLogFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
+import net.l2emuproject.proxy.io.packetlog.HistoricalLogIOThread.CaptureController;
 import net.l2emuproject.proxy.io.packetlog.LogFileHeader;
 import net.l2emuproject.proxy.io.packetlog.PacketLogFileUtils;
 import net.l2emuproject.proxy.io.packetlog.l2ph.L2PhLogFileHeader;
@@ -104,7 +107,6 @@ import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabUserData;
-import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.HexUtil;
 import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
@@ -166,7 +168,7 @@ import javafx.util.Duration;
  * 
  * @author _dev_
  */
-public class MainWindowController implements Initializable, IOConstants, ConnectionListener, PacketListener
+public class MainWindowController implements Initializable, IOConstants, ConnectionListener, PacketListener, CaptureController
 {
 	static final L2Logger LOG = L2Logger.getLogger(MainWindowController.class);
 	
@@ -236,11 +238,16 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	
 	private final MutableInt _connectionIdentifier;
 	
+	private final Map<Proxy, Boolean> _sessionCapture;
+	private volatile boolean _globalCaptureDisable;
+	
 	/** Constructs this controller. */
 	public MainWindowController()
 	{
 		_openPacketHidingConfigWindows = new HashMap<>();
 		_connectionIdentifier = new MutableInt(0);
+		
+		_sessionCapture = new ConcurrentHashMap<>();
 	}
 	
 	@Override
@@ -288,13 +295,15 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 				return;
 			}
 			
-			final PacketLogTabController controller = ((PacketLogTabUserData)ctrl).getController();
+			final PacketLogTabUserData ud = (PacketLogTabUserData)ctrl;
+			final PacketLogTabController controller = ud.getController();
 			
 			_miSave.disableProperty().bind(Bindings.not(controller.hasMemoryPackets()));
 			
 			_labProtocol.textProperty().bind(Bindings.convert(controller.protocolProperty()));
 			_labProtocol.setVisible(true);
 			_tbPacketHidingConfig.setVisible(true);
+			_cbCaptureSession.setSelected(ud.isCaptureDisabled());
 		});
 		_tpConnections.addEventHandler(KeyEvent.KEY_PRESSED, e -> {
 			if (e.getCode() != KeyCode.F3 || e.isAltDown())
@@ -318,11 +327,27 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 			@Override
 			public Boolean getValue()
 			{
-				return LoadOption.DISABLE_SCRIPTS.isSet() || NetProScriptCache.getInstance().isCompilerUnavailable();
+				return StartupOption.DISABLE_SCRIPTS.isSet() || NetProScriptCache.getInstance().isCompilerUnavailable();
 			}
 		});
 		
 		rebuildProtocolMenu();
+		
+		_globalCaptureDisable = _cbCaptureGlobal.isSelected();
+		_cbCaptureGlobal.selectedProperty().addListener((obs, old, neu) -> _globalCaptureDisable = neu);
+		_cbCaptureSession.selectedProperty().addListener((obs, old, neu) -> {
+			final Tab tab = _tpConnections.getSelectionModel().getSelectedItem();
+			if (tab == null)
+				return;
+			
+			final Object ud = tab.getUserData();
+			if (!(ud instanceof PacketLogTabUserData))
+				return;
+			
+			final PacketLogTabUserData userData = (PacketLogTabUserData)ud;
+			userData.setCaptureDisabled(neu);
+			_sessionCapture.put(userData.getClient(), neu);
+		});
 	}
 	
 	private void rebuildProtocolMenu()
@@ -332,7 +357,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 		_openPacketHidingConfigWindows.clear();
 		
 		_mPacketDisplay.getItems().clear();
-		_mPacketDisplay.setDisable(LoadOption.DISABLE_DEFS.isSet());
+		_mPacketDisplay.setDisable(StartupOption.DISABLE_DEFS.isSet());
 		if (_mPacketDisplay.isDisable())
 			return;
 		
@@ -611,7 +636,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 						final PSLogFileHeader fullHeader = PSPacketLogUtils.getMetadata(packetLogFile);
 						if (fullHeader != null)
 							validLogFiles.add(fullHeader);
-						continue; // TODO: packet samurai log
+						continue;
 					}
 				}
 				catch (final InterruptedException e)
@@ -1257,14 +1282,19 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	public void addConnectionTab(Tab tab)
 	{
 		final ObservableList<Tab> tabs = _tpConnections.getTabs();
+		final PacketLogTabUserData userData = (PacketLogTabUserData)tab.getUserData();
 		tab.setOnClosed(e -> {
 			final int threshold = tabs.contains(_tabConsole) ? 1 : 0;
 			if (tabs.size() <= threshold)
 				tabs.add(_tabIdle);
+			if (userData.getClient() != null)
+				_sessionCapture.remove(userData.getClient());
 		});
 		tabs.remove(_tabIdle);
 		tabs.add(tab);
 		_tpConnections.getSelectionModel().select(tab);
+		if (userData.getClient() != null)
+			_sessionCapture.put(userData.getClient(), userData.isCaptureDisabled());
 	}
 	
 	@Override
@@ -1302,7 +1332,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 				if (userData.getClient() != sender && userData.getServer() != sender && userData.getClient() != recipient && userData.getServer() != recipient)
 					continue;
 				
-				if (_cbCaptureSession.isSelected() && tab == _tpConnections.getSelectionModel().getSelectedItem())
+				if (userData.isCaptureDisabled())
 					return;
 				
 				ple.updateView(sender.getProtocol());
@@ -1362,7 +1392,7 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 				return;
 			}
 			
-			//controller.protocolProperty().set(protocolVersion);
+			controller.protocolProperty().set(server.getProtocol());
 			controller.setEntityCacheContext(new ServerSocketID(server.getInetSocketAddress()));
 			controller.setOnProtocolPacketHidingConfigurationChange(this::refreshFilters);
 			
@@ -1403,5 +1433,11 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 				break;
 			}
 		});
+	}
+	
+	@Override
+	public boolean isCaptureDisabledFor(Proxy client)
+	{
+		return _globalCaptureDisable || _sessionCapture.getOrDefault(client, Boolean.FALSE).booleanValue();
 	}
 }

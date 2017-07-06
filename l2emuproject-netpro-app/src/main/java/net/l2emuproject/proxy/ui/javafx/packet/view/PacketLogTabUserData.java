@@ -27,6 +27,7 @@ public final class PacketLogTabUserData
 {
 	private final PacketLogTabController _controller;
 	private Reference<Proxy> _client, _server;
+	private boolean _captureDisabled;
 	
 	public PacketLogTabUserData(PacketLogTabController controller)
 	{
@@ -51,6 +52,16 @@ public final class PacketLogTabUserData
 	public void setServer(Proxy server)
 	{
 		_server = new WeakReference<>(server);
+	}
+	
+	public boolean isCaptureDisabled()
+	{
+		return _captureDisabled;
+	}
+	
+	public void setCaptureDisabled(boolean captureDisabled)
+	{
+		_captureDisabled = captureDisabled;
 	}
 	
 	public PacketLogTabController getController()

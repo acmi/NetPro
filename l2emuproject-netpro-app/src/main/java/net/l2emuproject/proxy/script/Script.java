@@ -24,11 +24,11 @@ import eu.revengineer.simplejse.type.UnloadableScript;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.StartupOption;
 import net.l2emuproject.proxy.network.Packet;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;
 import net.l2emuproject.proxy.network.listener.PacketManipulator;
-import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.ObjectPool;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -86,7 +86,7 @@ public abstract class Script<C extends Proxy, S extends Proxy> implements Connec
 	public void onLoad() throws RuntimeException
 	{
 		ScriptManager.getInstance().addScript(this);
-		setEnabled(LoadOption.DISABLE_SCRIPTS.isNotSet());
+		setEnabled(StartupOption.DISABLE_SCRIPTS.isNotSet());
 	}
 	
 	@Override

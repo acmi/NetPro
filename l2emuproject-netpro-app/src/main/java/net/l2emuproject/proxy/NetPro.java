@@ -55,6 +55,7 @@ import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
 import net.l2emuproject.proxy.config.ProxyConfig;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
+import net.l2emuproject.proxy.io.packetlog.HistoricalLogIOThread;
 import net.l2emuproject.proxy.network.game.client.L2GameClientConnections;
 import net.l2emuproject.proxy.network.game.server.L2GameServerConnections;
 import net.l2emuproject.proxy.network.login.client.L2LoginClientConnections;
@@ -79,7 +80,6 @@ import net.l2emuproject.proxy.ui.javafx.error.view.ExceptionSummaryDialogControl
 import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.main.view.SplashScreenController;
 import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
-import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.StackTraceUtil;
 import net.l2emuproject.util.logging.ListeningLog;
 
@@ -286,7 +286,7 @@ public class NetPro extends Application implements NetProThreadPriority
 			
 			final NetProScriptCache cache = NetProScriptCache.getInstance();
 			final Map<Class<?>, RuntimeException> fqcn2Exception = new TreeMap<>((c1, c2) -> c1.getName().compareTo(c2.getName()));
-			scripts: if (LoadOption.DISABLE_SCRIPTS.isNotSet())
+			scripts: if (StartupOption.DISABLE_SCRIPTS.isNotSet())
 			{
 				loadCache: if (!ProxyConfig.DISABLE_SCRIPT_CACHE)
 				{
@@ -504,6 +504,7 @@ public class NetPro extends Application implements NetProThreadPriority
 				final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(MainWindowController.class), UIStrings.getBundle());
 				final Scene scene = new Scene(loader.load());
 				final MainWindowController controller = loader.getController();
+				HistoricalLogIOThread.getInstance().setCaptureController(controller);
 				// 3.2 LINK LOGGING WITH UI CONSOLE
 				final Timeline tlLogging = new Timeline(new KeyFrame(Duration.ZERO, evt -> {
 					for (String msg; (msg = PENDING_LOG_ENTRIES.poll()) != null;)
@@ -571,7 +572,7 @@ public class NetPro extends Application implements NetProThreadPriority
 	/**
 	 * Starts the application.
 	 * 
-	 * @param args command line arguments, governed by {@link LoadOption}
+	 * @param args command line arguments, governed by {@link StartupOption}
 	 */
 	public static void main(String[] args)
 	{

@@ -42,7 +42,6 @@ import net.l2emuproject.proxy.network.game.server.L2GameServerConnections;
 import net.l2emuproject.proxy.network.login.client.L2LoginClientConnections;
 import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
 import net.l2emuproject.proxy.setup.SocketManager;
-import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.AppInit;
 import net.l2emuproject.util.L2Utils;
 import net.l2emuproject.util.concurrent.L2ThreadPool;
@@ -111,7 +110,7 @@ public class L2Proxy
 		}
 		logger.spam("…SUCCESS");
 		
-		if (LoadOption.DISABLE_PROXY.isNotSet())
+		if (StartupOption.DISABLE_PROXY.isNotSet())
 		{
 			logger.spam("Setting mmocore thread sleep interval values…");
 			System.setProperty(L2LoginClientConnections.class.getName() + "#" + PROPERTY_ACC_INTERVAL, String.valueOf(ProxyConfig.ACC_SELECTOR_INTERVAL_LOGIN));
@@ -145,7 +144,7 @@ public class L2Proxy
 		logger.trace("All pre-proxy hooks executed.");
 		
 		final L2LoginServerConnections lsc;
-		if (LoadOption.DISABLE_PROXY.isNotSet())
+		if (StartupOption.DISABLE_PROXY.isNotSet())
 		{
 			logger.debug("Setting up sockets…");
 			final SocketManager sm = SocketManager.getInstance();

@@ -2,19 +2,13 @@
 <sockets xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net schemata/svcfg.xsd">
 
 	<gameWorldSockets> <!-- injected into ServerList -->
-		<gameWorldSocket clientAddressPrefix="0.0.0.0/0" ip="127.0.0.1" port="7776" />
+		<gameWorldSocket clientAddressPrefix="0.0.0.0/0" ip="127.0.0.1" port="2112" />
 	</gameWorldSockets>
 
 	<authorizationSockets>
-		<!-- Example local authorization daemon (login server), listening on port 2107 -->
-		<authorizationSocket>
-			<listen ip="0.0.0.0" port="2106" />
-			<!-- If the local server sends ServerList without client's request, version 5 (Freya) shall be assumed by default -->
-			<service host="localhost" port="2107" serverListVersion="5" /> <!-- 1 for prelude, 3 for C1, 4 for C2 to GE -->
-		</authorizationSocket>
 		<!-- Example: NA -->
-		<authorizationSocket disabled="true">
-			<listen ip="0.0.0.0" port="2106" />
+		<authorizationSocket>
+			<listen ip="0.0.0.0" port="2111" />
 			<service host="64.25.35.104" port="2106" />
 		</authorizationSocket>
 	</authorizationSockets>

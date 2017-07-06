@@ -40,6 +40,7 @@ import org.apache.commons.lang3.mutable.MutableInt;
 import net.l2emuproject.io.UnmanagedResource;
 import net.l2emuproject.lang.NetProThreadPriority;
 import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.StartupOption;
 import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.io.NewIOHelper;
 import net.l2emuproject.proxy.network.EndpointType;
@@ -48,9 +49,6 @@ import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;
 import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
-import net.l2emuproject.proxy.ui.savormix.component.ConnectionPane;
-import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
-import net.l2emuproject.proxy.ui.savormix.loader.Loader;
 import net.l2emuproject.util.BitMaskUtils;
 import net.l2emuproject.util.Rnd;
 import net.l2emuproject.util.logging.L2Logger;
@@ -70,6 +68,8 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 	
 	private final BlockingQueue<Object> _actions;
 	
+	private CaptureController _captureController;
+	
 	HistoricalLogIOThread()
 	{
 		super(HistoricalLogIOThread.class.getSimpleName());
@@ -82,11 +82,12 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 		
 		_actions = new LinkedBlockingQueue<>();
 		
-		net.l2emuproject.lang.management.ShutdownManager.addShutdownHook(() ->
-		{
+		net.l2emuproject.lang.management.ShutdownManager.addShutdownHook(() -> {
 			LOG.info("Interrupting...");
 			HistoricalLogIOThread.this.interrupt();
 		});
+		
+		_captureController = c -> false;
 	}
 	
 	@Override
@@ -104,7 +105,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 				{
 					action = _actions.take();
 				}
-				catch (InterruptedException e)
+				catch (final InterruptedException e)
 				{
 					break;
 				}
@@ -127,9 +128,9 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 						
 						// let's waste some CPU to see if we should stop using CPU
 						// because all that can be done is to keep waiting
-						for (Object pendingAction : _actions)
+						for (final Object pendingAction : _actions)
 						{
-							// a connection that is still pending completion; safe to wait 
+							// a connection that is still pending completion; safe to wait
 							if (pendingAction instanceof ConnectionWrapper && ((ConnectionWrapper)pendingAction)._client.getTarget() == null)
 								continue;
 							
@@ -142,7 +143,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 						{
 							Thread.sleep(1);
 						}
-						catch (InterruptedException e)
+						catch (final InterruptedException e)
 						{
 							break;
 						}
@@ -196,7 +197,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 							log.onPacket(packet);
 						}
 					}
-					catch (IOException e)
+					catch (final IOException e)
 					{
 						_files.remove(((PacketWrapper)action)._client);
 						UnmanagedResource.close(ioh);
@@ -206,7 +207,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 				else
 					LOG.error("Unknown action: " + action);
 			}
-			catch (Throwable t)
+			catch (final Throwable t)
 			{
 				LOG.error("Generic error", t);
 			}
@@ -220,7 +221,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 		_delayed.clear();
 		
 		LOG.info("Finalizing open files.");
-		for (Entry<Proxy, PacketLog> e : _files.entrySet())
+		for (final Entry<Proxy, PacketLog> e : _files.entrySet())
 			closeFile(e.getValue(), e.getKey().getProtocol());
 		
 		LOG.info("Packet logging terminated successfully.");
@@ -262,7 +263,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 			{
 				Files.createDirectories(dir);
 			}
-			catch (IOException e)
+			catch (final IOException e)
 			{
 				LOG.error("Cannot create packet log directory.", e);
 				return;
@@ -271,7 +272,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 			final StringBuilder fn = new StringBuilder();
 			
 			{
-				if (LoadOption.FORCE_FULL_LOG_FILENAME.isSet())
+				if (StartupOption.FORCE_FULL_LOG_FILENAME.isSet())
 					fn.append(type.isLogin() ? 'L' : 'G').append(provider.getTarget().getHostAddress()).append('_');
 				
 				final Date d = new Date(connection._time);
@@ -293,7 +294,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 			
 			_files.put(provider, new PacketLog(ioh));
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			UnmanagedResource.close(chan);
 			LOG.error("Cannot open packet log file!", e);
@@ -346,7 +347,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 			}
 			ioh.flush();
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			LOG.error("Cannot finalize packet log file!", e);
 		}
@@ -418,15 +419,21 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 		_actions.add(client);
 	}
 	
+	public void setCaptureController(CaptureController controller)
+	{
+		_captureController = controller;
+	}
+	
 	private static final Set<LoggedPacketFlag> CAPTURE_DISABLED_FLAGS = Collections.singleton(LoggedPacketFlag.HIDDEN);
 	
-	private static final Set<LoggedPacketFlag> getPacketFlags(Proxy client)
+	private final Set<LoggedPacketFlag> getPacketFlags(Proxy client)
 	{
-		final ConnectionPane cp = Loader.getActiveUIPane();
-		if (cp == null)
-			return Collections.emptySet();
-		
-		return cp.isCaptureDisabledFor(client) ? CAPTURE_DISABLED_FLAGS : Collections.emptySet();
+		return _captureController.isCaptureDisabledFor(client) ? CAPTURE_DISABLED_FLAGS : Collections.emptySet();
+	}
+	
+	public interface CaptureController
+	{
+		boolean isCaptureDisabledFor(Proxy client);
 	}
 	
 	/**

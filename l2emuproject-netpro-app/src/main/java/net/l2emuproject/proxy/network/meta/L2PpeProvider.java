@@ -15,7 +15,7 @@
  */
 package net.l2emuproject.proxy.network.meta;
 
-import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
+import net.l2emuproject.proxy.StartupOption;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
@@ -51,7 +51,7 @@ public class L2PpeProvider
 	 */
 	public static void initialize(L2PacketTablePayloadEnumerator ppe)
 	{
-		if (LoadOption.DISABLE_DEFS.isSet())
+		if (StartupOption.DISABLE_DEFS.isSet())
 			return;
 		
 		INSTANCE = ppe;

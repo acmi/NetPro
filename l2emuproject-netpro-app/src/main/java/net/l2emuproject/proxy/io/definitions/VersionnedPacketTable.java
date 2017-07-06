@@ -55,6 +55,7 @@ import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionFactory;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.network.security.OpcodeTableShuffleType;
+import net.l2emuproject.proxy.StartupOption;
 import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
@@ -65,7 +66,6 @@ import net.l2emuproject.proxy.network.meta.UserDefinedGameProtocolVersion;
 import net.l2emuproject.proxy.network.meta.UserDefinedLoginProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.PacketPrefixResolver;
 import net.l2emuproject.proxy.network.meta.container.VersionnedPacketTemplateContainer;
-import net.l2emuproject.proxy.ui.savormix.loader.LoadOption;
 import net.l2emuproject.util.HexUtil;
 import net.l2emuproject.util.L2XMLUtils;
 import net.l2emuproject.util.logging.L2Logger;
@@ -304,7 +304,7 @@ public class VersionnedPacketTable implements IOConstants
 			
 			final Map<UserDefinedLoginProtocolVersion, Map<EndpointType, PacketPrefixResolver>> loginMap;
 			final Map<UserDefinedGameProtocolVersion, Map<EndpointType, PacketPrefixResolver>> gameMap;
-			if (LoadOption.DISABLE_DEFS.isNotSet())
+			if (StartupOption.DISABLE_DEFS.isNotSet())
 			{
 				LOG.info("Loading packet definitions…");
 				

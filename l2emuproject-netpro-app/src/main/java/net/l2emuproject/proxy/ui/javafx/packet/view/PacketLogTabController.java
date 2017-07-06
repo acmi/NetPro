@@ -532,10 +532,10 @@ public class PacketLogTabController implements Initializable
 		if (tablePackets.isEmpty())
 			return;
 		
-		final int noScrollIndex = _tvPackets.getItems().size() - 1;
+		//final int noScrollIndex = _tvPackets.getItems().size() - 1;
 		
 		_tablePackets.addAll(tablePackets);
-		
+		/*
 		if (_scrollLockProperty.get())
 		{
 			if (noScrollIndex >= 0)
@@ -547,5 +547,6 @@ public class PacketLogTabController implements Initializable
 			if (doScrollIndex >= 0)
 				_tvPackets.scrollTo(doScrollIndex);
 		}
+		*/
 	}
 }

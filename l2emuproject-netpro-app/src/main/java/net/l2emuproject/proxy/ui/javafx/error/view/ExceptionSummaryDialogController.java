@@ -55,6 +55,7 @@ public final class ExceptionSummaryDialogController implements Initializable
 	 * Sets the exceptions to be displayed.
 	 * 
 	 * @param exceptions exception map
+	 * @param <V> exception type
 	 */
 	public <V extends Throwable> void setAllExceptions(Map<?, V> exceptions)
 	{
@@ -66,6 +67,8 @@ public final class ExceptionSummaryDialogController implements Initializable
 	 * 
 	 * @param exceptions exception map
 	 * @param keyConverter entry name function
+	 * @param <K> associated element type
+	 * @param <V> exception type
 	 */
 	public <K, V extends Throwable> void setAllExceptions(Map<K, V> exceptions, Function<K, String> keyConverter)
 	{
@@ -78,6 +81,8 @@ public final class ExceptionSummaryDialogController implements Initializable
 	 * @param exceptions exception map
 	 * @param keyConverter entry name function
 	 * @param valueConverter entry details function
+	 * @param <K> associated element type
+	 * @param <V> exception type
 	 */
 	public <K, V extends Throwable> void setAllExceptions(Map<K, V> exceptions, Function<K, String> keyConverter, Function<Throwable, String> valueConverter)
 	{
@@ -90,6 +95,8 @@ public final class ExceptionSummaryDialogController implements Initializable
 	 * @param exceptions exception map
 	 * @param keyConverter entry name function
 	 * @param valueConverter entry details function
+	 * @param <K> associated element type
+	 * @param <V> exception type
 	 */
 	public <K, V extends Throwable> void setAllExceptions(Map<K, V> exceptions, Function<K, String> keyConverter, BiFunction<K, Throwable, String> valueConverter)
 	{

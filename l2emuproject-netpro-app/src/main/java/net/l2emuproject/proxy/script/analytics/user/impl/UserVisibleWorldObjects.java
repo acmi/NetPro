@@ -49,33 +49,33 @@ public final class UserVisibleWorldObjects implements VisibleWorldObjects
 	}
 	
 	@Override
-	public boolean isCurrentlyVisible(int worldObjectID)
+	public boolean isCurrentlyVisible(int smartID)
 	{
-		return _visibleObjects.containsKey(worldObjectID);
+		return _visibleObjects.containsKey(smartID);
 	}
 	
 	@Override
-	public void add(int worldObjectID)
+	public void add(int smartID)
 	{
-		_visibleObjects.put(worldObjectID, null);
+		_visibleObjects.put(smartID, null);
 	}
 	
 	@Override
-	public void delete(int worldObjectID)
+	public void delete(int smartID)
 	{
-		_visibleObjects.remove(worldObjectID);
+		_visibleObjects.remove(smartID);
 	}
 	
 	@Override
-	public PlayerToPlayerRelation getCurrentRelation(int worldObjectID)
+	public PlayerToPlayerRelation getCurrentRelation(int smartID)
 	{
-		return _visibleObjects.get(worldObjectID);
+		return _visibleObjects.get(smartID);
 	}
 	
 	@Override
-	public void setCurrentRelation(int worldObjectID, PlayerToPlayerRelation relation)
+	public void setCurrentRelation(int smartID, PlayerToPlayerRelation relation)
 	{
-		_visibleObjects.replace(worldObjectID, relation);
+		_visibleObjects.replace(smartID, relation);
 	}
 	
 	@Override

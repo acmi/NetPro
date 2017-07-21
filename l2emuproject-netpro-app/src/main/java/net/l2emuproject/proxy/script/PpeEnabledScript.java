@@ -152,8 +152,9 @@ public abstract class PpeEnabledScript<C extends AbstractL2ClientProxy, S extend
 	 * Performs any clean up actions (if necessary) following a client disconnection.
 	 * 
 	 * @param client disconnected client endpoint
+	 * @throws RuntimeException any unexpected exception
 	 */
-	public void handleDisconnection(C client)
+	public void handleDisconnection(C client) throws RuntimeException
 	{
 	}
 	

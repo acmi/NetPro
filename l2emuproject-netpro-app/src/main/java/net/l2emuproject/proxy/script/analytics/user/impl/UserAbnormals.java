@@ -21,16 +21,17 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import net.l2emuproject.proxy.script.analytics.user.AbnormalEffectList;
 import net.l2emuproject.proxy.script.analytics.user.AbnormalStatusModifier;
 
 /**
- * Wraps the currently active abnormal status moifiers.
+ * Wraps the currently active abnormal status modifiers.
  * 
  * @author _dev_
  */
-public final class UserAbnormals implements Iterable<AbnormalStatusModifier>
+public final class UserAbnormals implements AbnormalEffectList
 {
-	private volatile Map<Integer, AbnormalStatusModifier> _abnormalModifiers;
+	private Map<Integer, AbnormalStatusModifier> _abnormalModifiers;
 	
 	/** Creates an empty abnormal status modifier list. */
 	public UserAbnormals()
@@ -48,50 +49,44 @@ public final class UserAbnormals implements Iterable<AbnormalStatusModifier>
 		final Map<Integer, AbnormalStatusModifier> skillID2Abnormal = new LinkedHashMap<>();
 		for (final AbnormalStatusModifier mod : abnormals)
 			skillID2Abnormal.put(mod.getSkillID(), mod);
-		_abnormalModifiers = Collections.unmodifiableMap(skillID2Abnormal);
+		_abnormalModifiers = skillID2Abnormal;
 	}
 	
 	/**
-	 * Returns a modifier associated with the given skill ID, if it hasn't expired yet.
+	 * Adds a new abnormal status modifier (effect).
 	 * 
-	 * @param skillID skill ID
-	 * @return an active abnormal status modifier for the given skill ID
+	 * @param abnormal new effect
 	 */
-	public AbnormalStatusModifier getBySkillID(int skillID)
+	public void addAbnormalModifier(AbnormalStatusModifier abnormal)
 	{
-		return getBySkillID(skillID, false);
+		_abnormalModifiers.put(abnormal.getSkillID(), abnormal);
 	}
 	
 	/**
-	 * Returns a modifier associated with the given skill ID.
+	 * Removes abnormal status modifier (effect).
 	 * 
-	 * @param skillID skill ID
-	 * @param includeExpired {@code true} to check the list as it was received, ignoring expiry
-	 * @return an active abnormal status modifier for the given skill ID
+	 * @param skillID effect skill ID
 	 */
+	public void removeAbnormalModifier(int skillID)
+	{
+		_abnormalModifiers.remove(skillID);
+	}
+	
+	@Override
 	public AbnormalStatusModifier getBySkillID(int skillID, boolean includeExpired)
 	{
 		final AbnormalStatusModifier modifier = _abnormalModifiers.get(skillID);
 		return modifier != null && !modifier.isExpired() ? modifier : null;
 	}
 	
-	/**
-	 * Returns whether there is at least one currently active effect related to the given skill ID.
-	 * 
-	 * @param skillID skill ID
-	 * @return {@code true} if the given skill's abnormal modifier is in effect, {@code false} otherwise
-	 */
+	@Override
 	public boolean isInEffect(int skillID)
 	{
 		final AbnormalStatusModifier mod = getBySkillID(skillID);
 		return mod != null && !mod.isExpired();
 	}
 	
-	/**
-	 * Returns all currently active abnormal status modifiers.
-	 * 
-	 * @return active abnormals
-	 */
+	@Override
 	public Stream<AbnormalStatusModifier> getActiveModifiers()
 	{
 		return _abnormalModifiers.values().stream().filter(m -> !m.isExpired());
@@ -100,7 +95,7 @@ public final class UserAbnormals implements Iterable<AbnormalStatusModifier>
 	@Override
 	public Iterator<AbnormalStatusModifier> iterator()
 	{
-		return _abnormalModifiers.values().iterator();
+		return Collections.unmodifiableMap(_abnormalModifiers).values().iterator();
 	}
 	
 	@Override

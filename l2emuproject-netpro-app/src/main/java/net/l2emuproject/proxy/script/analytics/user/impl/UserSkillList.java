@@ -30,7 +30,7 @@ import net.l2emuproject.proxy.script.analytics.user.SkillListSkill;
  */
 public final class UserSkillList implements Iterable<SkillListSkill>
 {
-	private volatile Map<Integer, SkillListSkill> _skills;
+	private Map<Integer, SkillListSkill> _skills;
 	
 	/** Creates an empty skill list. */
 	public UserSkillList()

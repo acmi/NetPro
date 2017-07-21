@@ -28,7 +28,7 @@ import java.util.stream.Stream;
  */
 public final class UserInventory implements Iterable<InventoryItem>
 {
-	private volatile Map<Integer, InventoryItem> _items;
+	private Map<Integer, InventoryItem> _items;
 	
 	/** Creates an empty inventory. */
 	public UserInventory()

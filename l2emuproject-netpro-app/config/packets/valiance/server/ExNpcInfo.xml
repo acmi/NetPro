@@ -79,7 +79,7 @@
 		<byte alias="Attackable" type="YesOrNo">
 			<scriptAlias id="npc_info_enemy" />
 		</byte>
-		<dword alias="Relations" />
+		<dword alias="Relations" type="relation.RelationTypeHelios" />
 		<string alias="Title">
 			<scriptAlias id="OIC_NPC_TITLE" />
 		</string>

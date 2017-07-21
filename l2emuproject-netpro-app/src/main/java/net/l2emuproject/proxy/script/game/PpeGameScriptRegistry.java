@@ -101,7 +101,16 @@ public final class PpeGameScriptRegistry extends GameScript
 	protected void connectionTerminated(L2GameClient client, L2GameServer server)
 	{
 		for (final PpeEnabledGameScript script : _registry)
-			script.handleDisconnection(client);
+		{
+			try
+			{
+				script.handleDisconnection(client);
+			}
+			catch (final RuntimeException e)
+			{
+				LOG.error(this, e);
+			}
+		}
 	}
 	
 	@Override

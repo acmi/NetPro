@@ -23,7 +23,7 @@
 	<unsignedByte alias="1st block size" />
 	<branch description="1st block">
 		<byte alias="Attackable" type="YesOrNo" />
-		<dword alias="Relations" />
+		<dword alias="Relations" type="relation.RelationTypeHelios" />
 		<string alias="Title">
 			<scriptAlias id="OIC_NPC_TITLE" />
 		</string>

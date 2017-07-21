@@ -1311,6 +1311,9 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	
 	private void findTabAndAddPacket(Proxy sender, Proxy recipient, ByteBuffer packet, long time)
 	{
+		if (isCaptureDisabledFor(sender.getClient()))
+			return;
+		
 		final byte[] body = new byte[packet.clear().remaining()];
 		packet.get(body);
 		

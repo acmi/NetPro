@@ -758,30 +758,27 @@ public final class CommonPacketSender extends PacketWriterScript
 		sendLearnableSkillRequest(server, 0x7C, skillID, skillLevel, learnType);
 	}
 	
-	public static final void sendRequestExRqItemLink(L2GameServer server, int objectID)
+	private static final void sendRequestExD(L2GameServer server, int exOpcode, int value)
 	{
 		final int size = 1 + 2 + 4;
 		final ByteBuffer bb = allocate(size);
 		final MMOBuffer buf = allocate(bb);
 		
 		buf.writeC(0xD0);
-		buf.writeH(0x1E);
-		buf.writeD(objectID);
+		buf.writeH(exOpcode);
+		buf.writeD(value);
 		
 		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	public static final void sendRequestExRqItemLink(L2GameServer server, int objectID)
+	{
+		sendRequestExD(server, 0x1E, objectID);
+	}
+	
 	public static final void sendAnswerJoinPartyRoom(L2GameServer server, boolean accepted)
 	{
-		final int size = 1 + 2 + 4;
-		final ByteBuffer bb = allocate(size);
-		final MMOBuffer buf = allocate(bb);
-		
-		buf.writeC(0xD0);
-		buf.writeH(0x30);
-		buf.writeD(accepted);
-		
-		server.sendPacket(new ProxyRepeatedPacket(bb));
+		sendRequestExD(server, 0x30, accepted ? 1 : 0);
 	}
 	
 	public static final void sendRequestExAcceptJoinMPCC(L2GameServer server, boolean accepted, int unknown)
@@ -850,15 +847,7 @@ public final class CommonPacketSender extends PacketWriterScript
 	
 	public static final void sendRequestExTryToPutEnchantTargetItem(L2GameServer server, int itemOID)
 	{
-		final int size = 1 + 2 + 4;
-		final ByteBuffer bb = allocate(size);
-		final MMOBuffer buf = allocate(bb);
-		
-		buf.writeC(0xD0);
-		buf.writeH(0x49);
-		buf.writeD(itemOID);
-		
-		server.sendPacket(new ProxyRepeatedPacket(bb));
+		sendRequestExD(server, 0x49, itemOID);
 	}
 	
 	public static final void sendRequestExCancelEnchantItem(L2GameServer server)
@@ -901,6 +890,11 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendRequestCuriousHouseHtml(L2GameServer server)
 	{
 		sendRequestEx(server, 0xC1);
+	}
+	
+	public static final void sendRequestAnswerPartyLootingModify(L2GameServer server, boolean accepted)
+	{
+		sendRequestExD(server, 0x76, accepted ? 1 : 0);
 	}
 	
 	private static final void sendRequestEx(L2GameServer server, int secondOp)

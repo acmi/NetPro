@@ -64,7 +64,7 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, ProxyRepeatedPacket>implements IPacketSource
+public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, ProxyRepeatedPacket> implements IPacketSource
 {
 	/** Bundles log entries and logs them asynchronously each second. */
 	protected static final MMOLogger LOG = new MMOLogger(Proxy.class, 1_000);
@@ -140,12 +140,12 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	{
 		if (!_disconnected.compareAndSet(false, true))
 			return;
-			
+		
 		onDisconnectionImpl();
 		
 		if (getType() == EndpointType.SERVER)
 			EntityInfoCache.removeSharedContext(new ServerSocketID(getInetSocketAddress()));
-			
+		
 		if (_target != null && !_target.isDced())
 		{
 			_target.weakClose();
@@ -191,7 +191,7 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	{
 		if (target != null && target.getType() == getType())
 			throw new IllegalArgumentException("Invalid binding");
-			
+		
 		_target = target;
 	}
 	
@@ -254,7 +254,7 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	 */
 	public final void notifyPacketArrived(final Packet packet)
 	{
-		for (PacketManipulator pm : getPacketManipulators())
+		for (final PacketManipulator pm : getPacketManipulators())
 		{
 			try
 			{
@@ -266,10 +266,11 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 					pm.packetArrived(this, getTarget(), packet);
 					final long end = System.nanoTime();
 					RunnableStatsManager.handleStats(pm.getClass(), "packetArrived(Proxy, Proxy, Packet)", end - start, packet.getForwardedBody() == ref
-							? getMmoController().getBlockingImmutablePacketProcessingWarnThreshold() : getMmoController().getBlockingMutablePacketProcessingWarnThreshold());
+							? getMmoController().getBlockingImmutablePacketProcessingWarnThreshold()
+							: getMmoController().getBlockingMutablePacketProcessingWarnThreshold());
 				}
 			}
-			catch (RuntimeException e)
+			catch (final RuntimeException e)
 			{
 				LOG.error(pm, e);
 			}
@@ -296,15 +297,15 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 	{
 		if (_mmoController == null)
 			return;
-			
-		for (PacketListener pl : getPacketListeners())
+		
+		for (final PacketListener pl : getPacketListeners())
 		{
 			final long start = System.nanoTime();
 			pl.onProtocolVersion(this, version);
 			final long end = System.nanoTime();
 			RunnableStatsManager.handleStats(pl.getClass(), "onProtocolVersion(Proxy, IProtocolVersion)", end - start, 1);
 		}
-		for (PacketManipulator pm : getPacketManipulators())
+		for (final PacketManipulator pm : getPacketManipulators())
 		{
 			final long start = System.nanoTime();
 			pm.onProtocolVersion(this, version);
@@ -361,7 +362,7 @@ public abstract class Proxy extends MMOConnection<Proxy, ProxyReceivedPacket, Pr
 				{
 					listener.onDisconnection(_client, _server);
 				}
-				catch (RuntimeException e)
+				catch (final RuntimeException e)
 				{
 					LOG.error(listener, e);
 				}

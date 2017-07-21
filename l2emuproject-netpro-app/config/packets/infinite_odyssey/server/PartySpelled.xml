@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Skill level WORD changed to DWORD -->
 <packet id="SM_PARTY_SPELLED" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Member type" type="PartyMemberType" />
-	<dword alias="Member OID" type="ObjectID" />
-	<dword alias="Effect count" id="index_0" />
-	<loop id="index_0">
+	<dword alias="Member type" type="PartyMemberType">
+		<scriptAlias id="pspl_member_type" />
+	</dword>
+	<dword alias="Member OID" type="ObjectID">
+		<scriptAlias id="pspl_member_sid" />
+	</dword>
+	<dword alias="Effect count" id="cnt">
+		<scriptAlias id="pspl_effect_count" />
+	</dword>
+	<loop id="cnt">
 		<dword alias="Skill" type="Skill">
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_ID" />
+			<scriptAlias id="pspl_skill_id" />
 		</dword>
 		<dword alias="Level" type="skill.SkillLevel"> <!-- NEW -->
 			<scriptAlias id="__INTERP_CORRECTION_SKILL_LEVEL" />
+			<scriptAlias id="pspl_skill_level" />
 		</dword>
 		<dword alias="0" />
-		<word alias="Time left" type="TimeRemaining" id="ex" />
+		<word alias="Time left" type="TimeRemaining" id="ex">
+			<scriptAlias id="pspl_seconds_left" />
+		</word>
 		<branch id="ex" condition="LongEffect">
-			<dword alias="Total time left" type="TimeRemaining" />
+			<dword alias="Total time left" type="TimeRemaining">
+				<scriptAlias id="pspl_seconds_left_ex" />
+			</dword>
 		</branch>
 	</loop>
 </packet>

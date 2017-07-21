@@ -5,39 +5,59 @@
 
 <!-- Optimized to a modular structure -->
 <packet id="SM_PARTY_SMALL_WINDOW_UPDATE" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Member OID" type="ObjectID" />
+	<dword alias="Member OID" type="ObjectID">
+		<scriptAlias id="pswu_member_sid" />
+	</dword>
 	<unsignedByte alias="Bitmask byte #1" id="PSWU_1" />
 	<unsignedByte alias="Bitmask byte #2" id="PSWU_2" />
 
 	<branch id="PSWU_1" condition="bitmask.Bit0">
-		<dword alias="Current CP" />
+		<dword alias="Current CP">
+			<scriptAlias id="pswu_member_ccp" />
+		</dword>
 	</branch>
 	<branch id="PSWU_1" condition="bitmask.Bit1">
-		<dword alias="Maximum CP" />
+		<dword alias="Maximum CP">
+			<scriptAlias id="pswu_member_mcp" />
+		</dword>
 	</branch>
 	<branch id="PSWU_1" condition="bitmask.Bit2">
-		<dword alias="Current HP" /> <!-- real -->
+		<dword alias="Current HP">
+			<scriptAlias id="pswu_member_chp" />
+		</dword>
 	</branch>
 	<branch id="PSWU_1" condition="bitmask.Bit3">
-		<dword alias="Maximum HP" /> <!-- real -->
+		<dword alias="Maximum HP">
+			<scriptAlias id="pswu_member_mhp" />
+		</dword>
 	</branch>
 	<branch id="PSWU_1" condition="bitmask.Bit4">
-		<dword alias="Current MP" />
+		<dword alias="Current MP">
+			<scriptAlias id="pswu_member_cmp" />
+		</dword>
 	</branch>
 	<branch id="PSWU_1" condition="bitmask.Bit5">
-		<dword alias="Maximum MP" />
+		<dword alias="Maximum MP">
+			<scriptAlias id="pswu_member_mmp" />
+		</dword>
 	</branch>
 	<branch id="PSWU_1" condition="bitmask.Bit6">
-		<byte alias="Level" />
+		<byte alias="Level">
+			<scriptAlias id="pswu_member_level" />
+		</byte>
 	</branch>
 	<branch id="PSWU_1" condition="bitmask.Bit7">
-		<word alias="Class" type="CharacterClass" />
+		<word alias="Class" type="CharacterClass">
+			<scriptAlias id="pswu_member_subjob" />
+		</word>
 	</branch>
 
 	<branch id="PSWU_2" condition="bitmask.Bit0">
 		<byte alias="Party Substitute" type="YesOrNo" />
 	</branch>
 	<branch id="PSWU_2" condition="bitmask.Bit1">
-		<dword alias="Vitality" type="VitalityLevel" />
+		<dword alias="Vitality" type="VitalityLevel">
+			<scriptAlias id="pswu_member_vp" />
+		</dword>
 	</branch>
 </packet>

@@ -33,6 +33,7 @@ import net.l2emuproject.proxy.network.game.server.L2GameServer;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
+import net.l2emuproject.proxy.script.ScriptPacketName;
 import net.l2emuproject.proxy.script.analytics.SimpleEventListener;
 import net.l2emuproject.proxy.script.analytics.user.impl.ActorSkillCast;
 import net.l2emuproject.proxy.script.analytics.user.impl.InventoryItem;
@@ -246,6 +247,48 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 	private static final String RC_REPUTATION = "rc_reputation";
 	@ScriptFieldAlias
 	private static final String RC_PVP = "rc_pvp";
+	
+	//@ScriptFieldAlias
+	//private static final String PARTY_WITHDRAWAL_RESULT = "withdrawal_party_result";
+	//@ScriptFieldAlias
+	//private static final String DISMISS_PARTY_RESULT = "set_dismiss_party_result";
+	@ScriptFieldAlias
+	private static final String PSWU_SID = "pswu_member_sid";
+	@ScriptFieldAlias
+	private static final String PSWU_CP = "pswu_member_ccp";
+	@ScriptFieldAlias
+	private static final String PSWU_MAX_CP = "pswu_member_mcp";
+	@ScriptFieldAlias
+	private static final String PSWU_HP = "pswu_member_chp";
+	@ScriptFieldAlias
+	private static final String PSWU_MAX_HP = "pswu_member_mhp";
+	@ScriptFieldAlias
+	private static final String PSWU_MP = "pswu_member_cmp";
+	@ScriptFieldAlias
+	private static final String PSWU_MAX_MP = "pswu_member_mmp";
+	@ScriptFieldAlias
+	private static final String PSWU_LEVEL = "pswu_member_level";
+	@ScriptFieldAlias
+	private static final String PSWU_SUBJOB = "pswu_member_subjob";
+	@ScriptFieldAlias
+	private static final String PSWU_VP = "pswu_member_vp";
+	
+	@ScriptFieldAlias
+	private static final String PS_TYPE = "pspl_member_type";
+	@ScriptFieldAlias
+	private static final String PS_SID = "pspl_member_sid";
+	@ScriptFieldAlias
+	private static final String PS_CNT = "pspl_effect_count";
+	@ScriptFieldAlias
+	private static final String PS_SKILL_ID = "pspl_skill_id";
+	@ScriptFieldAlias
+	private static final String PS_SKILL_JOINT_LEVEL = "pspl_skill_level";
+	@ScriptFieldAlias
+	private static final String PS_EFFECT_TIME = "pspl_seconds_left";
+	@ScriptFieldAlias
+	private static final String PS_EFFECT_TIME_EX = "pspl_seconds_left_ex";
+	@ScriptPacketName
+	private static final String PARTY_OVER = "SM_PARTY_SMALL_WINDOW_DELETE_ALL";
 	
 	private static final String RESTART_DISCARDABLE_PREFIX = "user_bound_";
 	private static final String USER_INFO_KEY = RESTART_DISCARDABLE_PREFIX + "user_info";
@@ -775,7 +818,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 	{
 		final int _objectID;
 		final ICacheServerID _context; // for debugging toString only
-		int _targetOID;
+		volatile int _targetOID;
 		final Set<Integer> _servitorOIDs;
 		int _level;
 		long _sp;

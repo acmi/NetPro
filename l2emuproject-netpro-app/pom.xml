@@ -58,8 +58,7 @@
 							<customClasspathLayout>lib/$${artifact.artifactId}-$${artifact.version}$${dashClassifier?}.$${artifact.extension}</customClasspathLayout>
 						</manifest>
 						<manifestEntries>
-							<Main-Class>net.l2emuproject.proxy.ui.savormix.loader.Loader</Main-Class>
-							<SplashScreen-Image>net/l2emuproject/proxy/ui/savormix/l2emu_logo.png</SplashScreen-Image>
+							<Main-Class>net.l2emuproject.proxy.NetPro</Main-Class>
 						</manifestEntries>
 					</archive>
 				</configuration>

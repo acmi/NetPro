@@ -28007,6 +28007,44 @@
 28536	Complete Letter Set: TOGETHER
 28537	Complete Letter Set: LINEAGE II
 28538	Complete Letter Set: NCSOFT
+28539	Brooch Spirit Stone
+28540	Brooch Spirit Stone Rare-Type
+28541	Secret Embryo Bait (85)
+28542	Secret Embryo Bait (95)
+28543	Secret Embryo Bait (99)
+28544	Secret Embryo Bait (102)
+28545	Secret Embryo Bait (105)
+28546	Secret Embryo Bait Coupon
+28547	Embryo Reward Box
+28548	Smuggled Embryo Chest
+28549	Secret Embryo Bait (85)
+28550	Secret Embryo Bait (95)
+28551	Secret Embryo Bait (99)
+28552	Secret Embryo Bait (102)
+28553	Secret Embryo Bait (105)
+28554	Secret Embryo Bait Coupon
+28555	Embryo Reward Box
+28556	Smuggled Embryo Chest
+28557	Galup's Special Gift
+28558	Bloody Amaranthine Ingredient Set
+28559	Bloody Eternal Ingredient Set
+28560	Dark Amaranthine Ingredient Set
+28561	Dark Eternal Ingredient Set
+28562	Storm Scroll and Miraculous Medicine Set
+28563	Ultimate Fortune Jewelry Box
+28564	Cat's Eye Fortune Box
+28565	Vital Stone Treasure Chest of Good Fortune
+28566	Tanzanite Treasure Chest of Good Fortune
+28567	Amethyst Treasure Chest of Good Fortune
+28568	Garnet Treasure Chest of Good Fortune
+28569	Secret Embryo Bait (85)
+28570	Secret Embryo Bait (95)
+28571	Secret Embryo Bait (99)
+28572	Secret Embryo Bait (102)
+28573	Secret Embryo Bait (105)
+28574	Secret Embryo Bait Coupon
+28575	Embryo Reward Box
+28576	Smuggled Embryo Chest
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -40889,6 +40927,32 @@
 47924	Coin of Light
 47925	Red Libra Request - Altar of Shilen
 47926	Red Libra Request - Altar of Shilen
+47927	Magic Fan - Blue
+47928	Magic Woodpile
+47929	Large Magic Woodpile
+47930	Elvish Soulstone
+47931	Dark Elf Soulstone
+47932	Orc Soulstone
+47933	Dwarvish Soulstone
+47934	Human Soulstone
+47935	Kamael Soulstone
+47936	Ertheia Soulstone
+47937	Lineage 2 Soulstone
+47938	First Gift Box
+47939	Second Gift Box
+47940	Third Gift Box
+47941	Golden Orc Treasure Chest
+47942	Old Orc Box
+47943	Golden Orc Treasure Chest
+47944	13th Anniversary Item
+47945	Magic Fan - Yellow
+47946	Magic Flame
+47947	Request - Instanced Zone Dungeon
+47948	Request - Fields
+47949	Request - Instanced Zone Dungeon
+47950	Request - Fields
+48004	Scroll: Energy of Harmony
+48031	Entrance Pass: Shilen's Altar
 48202	Circlet of Authority
 48203	Noble Circlet of Authority
 48204	Radiant Circlet of Authority
@@ -40907,6 +40971,6 @@
 48217	High-grade Balthus Knight Mark
 48218	Veteran Duo Bracelet Pack Event
 48219	Returned Duo Bracelet Pack Event
-48220	NoItemName
+48220	Royal White Save Ticket (R99) Event
 49783	Sibis Coin Box
 49798	Cheer Pom Poms Event

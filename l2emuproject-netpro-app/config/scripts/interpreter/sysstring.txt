@@ -3006,9 +3006,9 @@
 3203	- Can also acquire the "10th Anniversary Item" if the raid is successful<br>- The raid occurs every Friday~Sunday at 11:00 AM, 2:00 PM, and 11:00 PM<br>- The reward can be acquired once a day regardless of the number of raids<br>- Only one character Lv. 85 or above within an account can receive the reward.
 3204	First Event
 3205	Second Event
-3206	Dandy's Dragon Weapons
+3206	Dancing Cats
 3207	Dandy has come to celebrate the 10th anniversary of Lineage 2!<br>- Speak with Dandy to try powerful Dragon Weapons during the event for 100,000 Adena.<br>- Upgrade Dragon weapons by claiming daily gift of Dandy's Scroll Release Seal from Dandy. Purchase extra Dandy's Scrolls on the L2 Store!
-3208	10th Anniversary Event
+3208	13th Anniversary Event
 3209	Collect Memory Fragments located throughout the world of Aden.<br>Obtain 10th Anniversary Items through monster hunting and take them to Chaotic Chronicle the NPC for Memory Fragments. While receiving the rewards, you may learn something new about this continent. (Can acquire Secret Fragments 1 and 4)
 3210	Smashing Squashes
 3211	Take the "10th Anniversary Item" that can be acquired through monster hunting and go see the event NPC "Chaotic Throne" to receive squash seeds. While receiving the rewards, you may learn something new about this continent. (can acquire Secret Fragments 2 and 5)
@@ -3717,6 +3717,10 @@
 5852	No Rewards Available
 5853	Block Impolite Characters
 5854	Block Adena Sale Ads
+5857	Magic Flame
+5858	Receive Reward: At the Campfire
+5859	Permanent Ban
+5860	Temporary Ban
 7001	Roll Dice to Distribute Items
 7002	Manual Distribution by Party Leader
 7003	Roll Dice

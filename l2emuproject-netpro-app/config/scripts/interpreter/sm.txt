@@ -2490,7 +2490,7 @@
 2489	You must target a control device in order to perform this action.
 2490	You cannot perform this action because you are too far away from the control device.
 2491	Your airship cannot teleport because due to low fuel.
-2492	The airship has been summoned. It will automatically depart in %s minute(s).
+2492	The airship has been summoned. It will automatically depart in $s1 minute(s).
 2493	Enter chat mode is automatically enabled when you are in a flying transformation state.
 2494	Enter chat mode is automatically enabled when you are in airship control mode.
 2495	W (go forward), S (stop), A (turn left), D (turn right), E (increase altitude) and Q (decrease altitude).
@@ -3961,7 +3961,7 @@
 4203	You are not in an alliance.
 4204	Only Heroes can enter the Hero channel.
 4205	Sayune cannot be used while taking other actions.
-4206	You gained Ability Points as a bonus!
+4206	You gained SP as a bonus!
 4207	Please beware of chat phishing.
 4208	Content no. 12 will be deleted. Proceed?
 4209	You consumed $s1 Raid Points.
@@ -4232,6 +4232,16 @@
 4474	Failed because the target item does not exist.
 4475	Failed because there are not enough ingredients.
 4476	Failed because there's not enough Adena.
+4477	Kneel down! Frederick the Destroyer will appear!
+4478	The festival of flames begins!
+4479	Greenhorns, show your respect!
+4480	After the festival of flames ends, "Victory" will appear.
+4481	We remember your excitement, your luck, and your happiness.
+4482	We remember your sadness, your anger, and your sorrow.
+4483	At some point your memories became mine and they became our memories.
+4484	Thank you for your unwavering faith for all this time.
+4485	Thank you for your love.
+4486	Lineage 2 will always be by your side.
 4601	- Great P. Def. and skillful Shield Defense<br>- Increased P. Def. for the whole party<br>- Protect party members
 4602	By the will of the Chaos, the power of Abelius, the Golden Commander of the ancient giants, has been combined with the ancient power of light. The blessing of the giants and the light upon him gave him the courage to be the fearless shield of the continent.
 4603	- Great P. Def.<br>- Increased P. Atk. For the whole party<br>Vampiric Rage and Reinforced Dark Panther
@@ -4573,6 +4583,7 @@
 5070	<font size='15' color='#FFDF5F'>As of April 22nd 2015, Lineage II launched the updated Classic Server.</font><br><font size='13' color='#ABABAB'>Giran, Elf, Dark Elf</font> → Giran (NEW)
 5071	<font color='#FFDF4C'>Generous benefits await the returning heroes!</font>
 5072	To get the dormant user benefits, go to <font color='#FFDF4C'>Lineage II Homepage > Dormant user coupon page</font>(<font color='#6699FF'><a href='asfunction:homePage'>lineage2.plaync.com/service/freecoupon/dormancy</a></font>).<br>Get the dormant user benefits and access our game!
+5142	Level $s1 Reward
 5300	Your account has been suspended due to account theft. If you registered your e-mail in your personal information, a notification mail will have been sent, so please check. If you have nothing to do with the account theft, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Account theft report center</font> and submit your letter of objection. For more information, <font color="FFDF4C">contact us via 1-to-1 inquiry through the Support Center</font>.
 5301	Your account has been suspended as per our management policy for manipulating our GM service or customer support service to disrupt other users' normal gameplay or the company's game operation. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
 5302	Your account has been suspended as per our management policy for failing to verify your account during the specified period after submitting the report of account theft. To unblock your account, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Report center</font> and go through the user verification process in the account theft report. For more information, go to <font color="FFDF4C">plaync (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
@@ -4701,7 +4712,7 @@
 6054	You have earned $s1's Fame through the PC Bonus.
 6055	Membership cannot be changed because requirements of a clan member are not met.
 6056	$s1 (Currently $s3 time(s) has/have been used out of maximum $s2 times)
-6057	You cannot purchase the PC item. Make sure you have enough room in your inventory, and that make you are not suffering from the weight penalty. (The item will be resupplied every 5 minutes.)
+6057	You cannot purchase the PC item. Make sure you have at least 10%% free space in your inventory, and make sure that you are not suffering from the weight penalty. (The item will be resupplied every 5 minutes.)
 6058	That account is pending email authentication. Please verify authentication email with registered email account.
 6059	ID or Email
 6060	Password with no more than 16 characters
@@ -4892,6 +4903,8 @@
 6831	Cannot request duels when participating in the Olympiad/Ceremony of Chaos.
 6832	You cannot drop any more items in this zone. Please try again after picking up the item on the ground.
 6833	The character has already been blocked.
+6834	Your character has been restricted. <br>Please check the icon below for details.
+6835	Your account has been suspended as per our management policy for disrupting other users' normal gameplay or the company's game operation. For more information, contact us through the Support Center.
 7001	Cannot proceed until the current dice roll is over.
 7002	Your inventory's weight/limit has been exceeded, so you can't participate in the dice roll.
 7003	You are outside the range to participate in the dice roll.

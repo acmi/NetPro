@@ -3746,6 +3746,18 @@
 86110	Help Kain and battle.
 86111	Defeat Kain with change-of-heart.
 86112	Talk with Settlen.
+89501	|Above Lv 85| Another Side of the Festival – 1
+89502	|Above Lv 85| Another Side of the Festival – 1 (In progress)
+89503	|Above Lv 85| Another Side of the Festival – 1 (Completed)
+89504	|Above Lv 85| Another Side of the Festival – 1
+89505	Field Request Complete
+89510	Talk to Bliss
+89601	|Above Lv 85| Another Side of the Festival – 2
+89602	|Above Lv 85| Another Side of the Festival – 2 (In progress)
+89603	|Above Lv 85| Another Side of the Festival – 2 (Completed)
+89604	|Above Lv 85| Another Side of the Festival – 2
+89605	Instanced Zone Dungeon Complete
+89610	Talk to Bliss
 90101	|Lv. 76+| How Lavasauruses Are Made
 90102	|Lv. 76+| How Lavasauruses Are Made (In progress)
 90103	|Lv. 76+| How Lavasauruses Are Made (Completed)
@@ -12646,6 +12658,45 @@
 3000099	Ah! Please close your eyes. If not, I will fall into them.
 3000100	Talk to me now! I'll disappear in 10 seconds.
 3000101	Sibis' Letter has arrived.\nClick the question mark icon to read its contents.
+3000102	If you want to get a Magic Flame from us,
+3000103	Only the Magic Fan skill will incite the flames.
+3000104	Let"s work together, friend!
+3000105	The Magic Fan has 2 skills.
+3000106	you should check whether you have a Magic Fan equipped.
+3000107	Oh my! How dare you, without a Magic Fan!
+3000108	You don"t have a Magic Fan? You are very brave.
+3000109	When you equip the Magic Fan, you will get 2 skills.
+3000110	A Magic Fan?
+3000111	I am so angry! If you dance, perhaps we will quell our anger.
+3000112	Dancing time!
+3000113	Just try to see what happens if you make a wish without a Magic Flame! I... I will burn you to ashes!
+3000114	I cannot just give you a Magic Flame!
+3000115	Pfft!
+3000116	What, with those abilities you want a Magic Flame?
+3000117	Aaaargh! I am starting to burn up!
+3000118	Oh, the wind is cold.
+3000119	10 seconds left, stay strong!
+3000120	30 seconds left, stay strong!
+3000121	Did you... did you take the Magic Flame?
+3000122	Oh, those flames are bright...
+3000123	May your flames burn bright!
+3000124	Don"t forget our bright flames!
+3000125	The festival of flames begins!
+3000126	After the festival of flames ends, "Victory" will appear.
+3000127	We remember your excitement, your luck, and your happiness.
+3000128	We remember your sadness, your anger, and your sorrow.
+3000129	At some point your memories became mine and they turned into our memories.
+3000130	You can get rewards if you talk to "Victory".
+3000131	Thank you for your unwavering faith for all this time.
+3000132	Thank you for your love.
+3000133	Lineage 2 will always be by your side.
+3000134	Children, show your respect!
+3000135	Don"t stand so close! Step back! Tauti will use Whirlwind.
+3000136	The magic and arrow attacks are not to be underestimated. Tauti will use Typhoon.
+3000137	Whahaha. Nice to meet you. Shall we dance a last dance?
+3000138	Try it with the Magic Fan Breeze and Gust skills!
+3000139	I just want to feel the Breeze and the Gust.
+3000140	Kneel down! Frederick the Destroyer will appear!
 8888001	Intruder. The gate will soon be closed.
 8888002	Who dare to interrupt our rest...
 8888003	Those who came here looking for cursed ones... welcome.

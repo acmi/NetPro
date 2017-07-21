@@ -1160,6 +1160,8 @@
 13548	Solo Dance
 13549	Solo Dance
 13550	Angel of Death
+13551	Magic Woodpile
+13552	Large Magic Woodpile
 14001	Reanimated Man
 14002	Reanimated Man
 14003	Reanimated Man
@@ -4065,6 +4067,7 @@
 19669	[not named in client]
 19670	[not named in client]
 19671	[not named in client]
+19672	Firecracker Box
 19673	[not named in client]
 20001	Gremlin
 20002	Rabbit
@@ -7757,6 +7760,7 @@
 26245	Judge, Guardian Captain's Immediate
 26246	Berserker, Guardian Captain's Immediate
 26247	Roa, Camille's Special Subordinate
+26248	Frederick the Destroyer
 27001	Orc Sniper
 27002	Orc Captain
 27003	Spirit Of Mirrors, Quest Monster
@@ -12485,6 +12489,13 @@
 34345	Giselle von Hellmann
 34346	Giselle von Hellmann
 34347	Etis van Etina
+34348	Victory, Congratulations
+34349	Bliss, Magic Flame Trader
+34351	Dancing Cat
+34352	Dancing Cat
+34353	Dancing Cat
+34354	Dancing Cat
+34355	Leona Blackbird, Lord of the Blackbird Clan
 35010	Mercenary
 35011	Mercenary
 35012	Mercenary

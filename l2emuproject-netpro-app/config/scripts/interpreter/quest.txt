@@ -275,6 +275,8 @@
 845	Sabotage the Embryo Supplies
 846	Building up Strength
 861	Kain's Choice
+895	Another Side of the Festival - 1
+896	Another Side of the Festival - 2
 901	How Lavasauruses Are Made
 902	Reclaim Our Era
 903	The Call of Antharas

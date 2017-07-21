@@ -1127,6 +1127,12 @@
 861	7	Defeat Kain with change-of-heart. (Kain caved in by Etis van Etina and changed his mind. Defeat Kain who turned his back.)
 861	8	To Pub Owner Settlen (Settlen is looking for you. If you've already heard, go to find Settlen.)
 861	-1	[completed]
+895	1	Request for the Festival (The festival organizers in Aden have issued requests for the great festival Participate by carrying out the daily missions in the following regions. Bloody Swampland: Duty of the Survivor Fairy Settlement: To Calm the Flood Dreaming of Peace Isle of Souls: Uncover the Secret Seal of Shilen: Kicking Out Unwelcome Guests Cemetery: The Fallen King's Men The Pagan Temple: Triol's Movement Blazing Swamp: Waiting for Pa'agrio Hellbound: Retrieving the Fragment of Chaos, Vestige of the Magic Power, Commando Rescue, Disparaging the Phantoms Garden of Spirits: Obtaining Ferin's Trust, Memories of the Wind, Sayha’s Energy Giant's Cave: Shinedust Extraction, Giant of the Restoration Room, Captive Demons, Giant Evolution Control Giant's Treasure Atelia Fortress: Plans to Repair the Stronghold, Sabotage the Embryo Supplies, Building up Strength Enchanted Valley: Disappeared Race, New Fairy, Contamination Containment Superion: The Superion Giants)
+895	2	Return to Bliss (You completed all requests. Visit Bliss, who can be found at the altar in each village.)
+895	-1	[completed]
+896	1	Request for the Festival (The festival organizers in Aden have issued requests for the great festival Participate by carrying out the daily missions in the following regions. Kartia's Labyrinth: Incarnation of Greed Zellaka, Incarnation of Jealousy Pelline, Incarnation of Gluttony Kalios Nightmare Mamaloka: Seal the Exit Command Post: Attack on the Command Post)
+896	2	Return to Bliss (You completed all requests. Visit Bliss, who can be found at the altar in each village.)
+896	-1	[completed]
 901	1	Lavasaurus Research (In the Forge of the Gods, hunt Newborn, Fledgling, Adult, and Elderly Lavasauruses and obtain from them Lavasaurus Stone, Head, Body fragment, and Horn fragments.)
 901	2	Lavasaurus Fragments (Take the Lavasaurus fragments back to Blacksmith of Wind Rooney.)
 901	-1	[completed]
@@ -2578,6 +2584,6 @@
 10882	2	Return to Settlen. (You succeeded in obtaining all the storybooks. Return to Settlen, the owner of the Underground Gainak Pub, and report this.)
 10882	-1	[completed]
 10883	1	Defeat Camille (Admiral Keucereus of the Keucereus Alliance Base argued that you should protect the world against crisis if you seek immortal honor and asked you to perform a worthy mission. Monsters to Hunt - Camille)
-10883	2	Defeat Kain (You have defeated Camille. It's time to deal with Kain.  Monsters to Hunt - Kain)
+10883	2	Defeat Kain and talk to Leona (You have defeated Camille. It's time to deal with Kain. Go talk to Leona Blackbird after defeating Kain. Monsters to Hunt - Kain)
 10883	3	Return to Keucereus. (You finished all the missions that Admiral Keucereus in the Keucereus Alliance Base told you to do. Now return to him and report that the mission has been completed.)
 10883	-1	[completed]

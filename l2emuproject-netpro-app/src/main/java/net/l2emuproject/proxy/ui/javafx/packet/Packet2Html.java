@@ -403,9 +403,16 @@ public final class Packet2Html implements ISODateTime
 			_packetBodyBuilder.append(" <font class=\"").append(visualDataType).append("_\"").append(" title=\"").append(field.getAlias());
 			if (visualDataType != DataType.BYTES && !(value.interpreted() instanceof RenderedImage))
 			{
-				_packetBodyBuilder.append(": ").append(interpretation);
-				if (appendedReadValue != null)
-					_packetBodyBuilder.append(" (").append(appendedReadValue).append(")");
+				_packetBodyBuilder.append(": ");
+				System.out.println(interpretation);
+				if (!String.valueOf(interpretation).startsWith("<"))
+				{
+					_packetBodyBuilder.append(interpretation);
+					if (appendedReadValue != null)
+						_packetBodyBuilder.append(" (").append(appendedReadValue).append(")");
+				}
+				else if (appendedReadValue != null)
+					_packetBodyBuilder.append(appendedReadValue);
 			}
 			_packetBodyBuilder.append("\">");
 			if (wrapTag != null)

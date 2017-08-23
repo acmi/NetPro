@@ -1830,3 +1830,22 @@
 1011830	Intermediate Embryo Fishing Pack
 1011831	Advanced Embryo Fishing Pack
 1011832	1-Day Fancy Fishing Rod Pack
+1011833	30-Day Boost Pack (August)
+1011834	Elmoreden's Cloak (PvP)
+1011835	Aden's Cloak (Magic PvE)
+1011836	Elmore's Cloak (Physical PvE)
+1011837	Ferios' Cloak (Resistances)
+1011838	Small Cloak Enchant Scroll Pack
+1011839	Medium Cloak Enchant Scroll Pack
+1011840	Large Cloak Enchant Scroll Pack
+1011841	Small Legendary Cloak Enchant Scroll Pack
+1011842	Medium Legendary Cloak Enchant Scroll Pack
+1011843	Large Legendary Cloak Enchant Scroll Pack
+1011844	Spirit Stone - Ancient Kingdom
+1011845	Spirit Stone - Elmoreden
+1011846	Spirit Stone - Aden
+1011847	Spirit Stone - Elmore
+1011848	Spirit Stone - Ferios
+1011849	Legendary Scroll
+1011850	Ancient Cloak Enchant Scroll
+1011851	Valkyrie Appearance Stone

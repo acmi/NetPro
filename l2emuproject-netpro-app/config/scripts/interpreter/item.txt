@@ -28045,6 +28045,38 @@
 28574	Secret Embryo Bait Coupon
 28575	Embryo Reward Box
 28576	Smuggled Embryo Chest
+28577	Secret Embryo Bait (85)
+28578	Secret Embryo Bait (95)
+28579	Secret Embryo Bait (99)
+28580	Secret Embryo Bait (102)
+28581	Secret Embryo Bait (105)
+28582	Secret Embryo Bait Coupon
+28583	Embryo Reward Box
+28584	Smuggled Embryo Chest
+28585	Elmoreden Cloak
+28586	Aden Cloak
+28587	Elmore Cloak
+28588	Ferios Cloak
+28589	Elmoreden Cloak - Legendary
+28590	Aden Cloak - Legendary
+28591	Elmore Cloak - Legendary
+28592	Ferios Cloak - Legendary
+28593	Scroll: Enchant Cloak
+28594	Scroll: Enchant Cloak - Legendary
+28595	Scroll: Ancient Cloak - Legendary
+28596	Legendary Scroll
+28597	Spirit Stone - Ancient Kingdom
+28598	Spirit Stone - Elmoreden
+28599	Spirit Stone - Aden
+28600	Spirit Stone - Elmore
+28601	Spirit Stone - Ferios
+28602	Spirit Stone Pack - Legendary
+28603	Dragon's Treasure Chest
+28604	Shining Dragon's Treasure Chest
+28605	NoItemName
+28606	NoItemName
+28607	NoItemName
+28608	NoItemName
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -40952,6 +40984,10 @@
 47949	Request - Instanced Zone Dungeon
 47950	Request - Fields
 48004	Scroll: Energy of Harmony
+48018	Chevalier Outfit
+48021	Valkyrie Outfit
+48025	Chevalier Outfit Appearance Stone
+48028	Valkyrie Outfit Appearance Stone
 48031	Entrance Pass: Shilen's Altar
 48202	Circlet of Authority
 48203	Noble Circlet of Authority

@@ -24802,56 +24802,56 @@
 24802	HP Recovery + 0.34
 24803	MP Recovery + 0.1
 24804	HP Recovery + 0.16 MP Recovery + 0.05
-24805	P. Def. + 28.0 M. Def. + 9.0
-24806	P. Def. + 29.0 M. Def. + 10.0
-24807	P. Def. + 30.0 M. Def. + 11.0
-24808	P. Def. + 31.0 M. Def. + 12.0
-24809	P. Def. + 32.0 M. Def. + 13.0
-24810	P. Def. + 33.0 M. Def. + 14.0
-24811	P. Def. + 34.0 M. Def. + 15.0
-24812	P. Def. + 35.0 M. Def. + 16.0
-24813	P. Def. + 36.0 M. Def. + 17.0
-24814	P. Def. + 37.0 M. Def. + 18.0
-24815	P. Def. + 38.0 M. Def. + 19.0
-24816	P. Def. + 39.0 M. Def. + 20.0
-24817	P. Def. + 40.0 M. Def. + 21.0
-24818	P. Def. + 41.0 M. Def. + 22.0
-24819	P. Def. + 42.0 M. Def. + 23.0
-24820	P. Def. + 43.0 M. Def. + 24.0
-24821	P. Def. + 44.0 M. Def. + 25.0
-24822	P. Def. + 45.0 M. Def. + 26.0
-24823	P. Def. + 46.0 M. Def. + 27.0
-24824	P. Def. + 47.0 M. Def. + 28.0
-24825	P. Def. + 48.0 M. Def. + 29.0
-24826	P. Def. + 49.0 M. Def. + 30.0
-24827	P. Def. + 50.0 M. Def. + 31.0
-24828	P. Def. + 51.0 M. Def. + 32.0
-24829	P. Def. + 52.0 M. Def. + 33.0
-24830	P. Def. + 53.0 M. Def. + 34.0
-24831	P. Def. + 54.0 M. Def. + 35.0
-24832	P. Def. + 55.0 M. Def. + 36.0
-24833	P. Def. + 56.0 M. Def. + 37.0
-24834	P. Def. + 57.0 M. Def. + 38.0
-24835	P. Def. + 58.0 M. Def. + 39.0
-24836	P. Def. + 59.0 M. Def. + 40.0
-24837	P. Def. + 60.0 M. Def. + 41.0
-24838	P. Def. + 61.0 M. Def. + 42.0
-24839	P. Def. + 62.0 M. Def. + 43.0
-24840	P. Def. + 63.0 M. Def. + 44.0
-24841	P. Def. + 64.0 M. Def. + 45.0
-24842	P. Def. + 65.0 M. Def. + 46.0
-24843	P. Def. + 66.0 M. Def. + 47.0
-24844	P. Def. + 67.0 M. Def. + 48.0
-24845	P. Def. + 68.0 M. Def. + 49.0
-24846	P. Def. + 69.0 M. Def. + 50.0
-24847	P. Def. + 70.0 M. Def. + 51.0
-24848	P. Def. + 71.0 M. Def. + 52.0
-24849	P. Def. + 72.0 M. Def. + 53.0
-24850	P. Def. + 73.0 M. Def. + 54.0
-24851	P. Def. + 74.0 M. Def. + 55.0
-24852	P. Def. + 75.0 M. Def. + 56.0
-24853	P. Def. + 76.0 M. Def. + 57.0
-24854	P. Def. + 77.0 M. Def. + 58.0
+24805	P. Def. +28.0 M. Def. +9.0
+24806	P. Def. +29.0 M. Def. +10.0
+24807	P. Def. +30.0 M. Def. +11.0
+24808	P. Def. +31.0 M. Def. +12.0
+24809	P. Def. +32.0 M. Def. +13.0
+24810	P. Def. +33.0 M. Def. +14.0
+24811	P. Def. +34.0 M. Def. +15.0
+24812	P. Def. +35.0 M. Def. +16.0
+24813	P. Def. +36.0 M. Def. +17.0
+24814	P. Def. +37.0 M. Def. +18.0
+24815	P. Def. +38.0 M. Def. +19.0
+24816	P. Def. +39.0 M. Def. +20.0
+24817	P. Def. +40.0 M. Def. +21.0
+24818	P. Def. +41.0 M. Def. +22.0
+24819	P. Def. +42.0 M. Def. +23.0
+24820	P. Def. +43.0 M. Def. +24.0
+24821	P. Def. +44.0 M. Def. +25.0
+24822	P. Def. +45.0 M. Def. +26.0
+24823	P. Def. +46.0 M. Def. +27.0
+24824	P. Def. +47.0 M. Def. +28.0
+24825	P. Def. +48.0 M. Def. +29.0
+24826	P. Def. +49.0 M. Def. +30.0
+24827	P. Def. +50.0 M. Def. +31.0
+24828	P. Def. +51.0 M. Def. +32.0
+24829	P. Def. +52.0 M. Def. +33.0
+24830	P. Def. +53.0 M. Def. +34.0
+24831	P. Def. +54.0 M. Def. +35.0
+24832	P. Def. +55.0 M. Def. +36.0
+24833	P. Def. +56.0 M. Def. +37.0
+24834	P. Def. +57.0 M. Def. +38.0
+24835	P. Def. +58.0 M. Def. +39.0
+24836	P. Def. +59.0 M. Def. +40.0
+24837	P. Def. +60.0 M. Def. +41.0
+24838	P. Def. +61.0 M. Def. +42.0
+24839	P. Def. +62.0 M. Def. +43.0
+24840	P. Def. +63.0 M. Def. +44.0
+24841	P. Def. +64.0 M. Def. +45.0
+24842	P. Def. +65.0 M. Def. +46.0
+24843	P. Def. +66.0 M. Def. +47.0
+24844	P. Def. +67.0 M. Def. +48.0
+24845	P. Def. +68.0 M. Def. +49.0
+24846	P. Def. +69.0 M. Def. +50.0
+24847	P. Def. +70.0 M. Def. +51.0
+24848	P. Def. +71.0 M. Def. +52.0
+24849	P. Def. +72.0 M. Def. +53.0
+24850	P. Def. +73.0 M. Def. +54.0
+24851	P. Def. +74.0 M. Def. +55.0
+24852	P. Def. +75.0 M. Def. +56.0
+24853	P. Def. +76.0 M. Def. +57.0
+24854	P. Def. +77.0 M. Def. +58.0
 24855	Increases Water/Fire/Wind/Earth/Holy/Dark P. Def. by 5 each
 24856	Increases Water/Fire/Wind/Earth/Holy/Dark P. Def. by 7 each
 24857	Increases Water/Fire/Wind/Earth/Holy/Dark P. Def. by 10 each
@@ -24946,7 +24946,7 @@
 24946	INT +5. STR +5. CON +5. MEN +5.
 24947	INT +5. STR +5. CON +5. MEN +5.
 24948	INT +5. STR +5. CON +5. MEN +5.
-24949	P. Def. + 27.0 M. Def. + 8.0
+24949	P. Def. +27.0 M. Def. +8.0
 24950	Passive: Item drop rate + 10%.
 24951	Passive: Item drop rate + 20%.
 24952	Passive: Item drop rate + 30%.
@@ -33286,3 +33286,762 @@
 40226	Reflect 1% of Received Damage when equipping Cat's Eye Lv. 4 or above
 40227	Reflect 2% of Received Damage when equipping Cat's Eye Lv. 4 or above
 40228	Reflect 5% of Received Damage when equipping Cat's Eye Lv. 4 or above
+40229	Increases PvP Attack Damage when enchanted and bestows various passive and active skills.
+40230	PvP Attack Damage +1%
+40231	PvP Attack Damage +2%
+40232	PvP Attack Damage +3%
+40233	PvP Attack Damage +4%
+40234	PvP Attack Damage +5% M. Def. +5%
+40235	PvP Attack Damage +6% M. Def. +5%
+40236	PvP Attack Damage +7%, when using a single attack skill, deals 6500 fixed PvP damage to target at a certain M. Def. +5%
+40237	PvP Attack Damage +8%, when using a single attack skill, deals 6500 fixed PvP damage to target at a certain rate M. Def. +5%
+40238	PvP Attack Damage +9%, when using a single attack skill, deals 6500 fixed PvP damage to target at a certain rate, Max CP +2800 M. Def. +5%
+40239	PvP Attack Damage +10%, when using a single attack skill, deals 6500 fixed PvP damage to target at a certain rate, Max CP +3080 M. Def. +5%
+40240	PvP Attack Damage +11%, when using a single attack skill, deals 9000 fixed PvP damage to target at a certain rate, Max CP +3388 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 50%
+40241	PvP Attack Damage +12%, when using a single attack skill, deals 9000 fixed PvP damage to target at a certain rate, Max CP +3727 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 53%
+40242	PvP Attack Damage +13%, when using a single attack skill, deals 9000 fixed PvP damage to target at a certain rate, Max CP +4099 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 56%, and when you land a hit, you have a chance to recover 50% of CP
+40243	PvP Attack Damage +14%, when using a single attack skill, deals 9000 fixed PvP damage to target at a certain rate, Max CP +4509 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 58%, and when you land a hit, you have a chance to recover 53% of CP
+40244	PvP Attack Damage +15%, when using a single attack skill, deals 11000 fixed PvP damage to target at a certain rate, Max CP +4960 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 60%, and when you land a hit, you have a chance to recover 55% of CP
+40245	PvP Attack Damage +16%, when using a single attack skill, deals 11000 fixed PvP damage to target at a certain rate, Max CP +5456 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 62%, and when you land a hit, you have a chance to recover 58% of CP
+40246	PvP Attack Damage +17%, when using a single attack skill, deals 11000 fixed PvP damage to target at a certain rate, Max CP +6002 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 64%, and when you land a hit, you have a chance to recover 61% of CP
+40247	PvP Attack Damage +18%, when using a single attack skill, deals 11000 fixed PvP damage to target at a certain rate, Max CP +6602 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 66%, and when you land a hit, you have a chance to recover 64% of CP Damage to Immobilized Targets +30%
+40248	PvP Attack Damage +19%, when using an attack skill, deals 15000 fixed PvP damage to target at a certain rate, Max CP +7262 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 68%, and when you land a hit, you have a chance to recover 67% of CP Damage to Immobilized Targets +40%
+40249	PvP Attack Damage +20%, when using an attack skill, deals 15000 fixed PvP damage to target at a certain rate, Max CP +7989 M. Def. +5%, when using a single attack skill, there's a chance the target's CP will be reduced by 70%, and when you land a hit, you have a chance to recover 70% of CP Damage to Immobilized Targets +50%, and has a chance to inflict damage and knock down enemy who attacked
+40250	Active Skill: Ignore Damage
+40251	Active Skill: Ignore Damage Active Skill: Blessing of Elmoreden
+40252	Increases Magic Attack PvE Damage when enchanted and bestows various passive and active skills.
+40253	Magic PvE Damage to normal monsters +1%
+40254	Magic PvE Damage to normal monsters +2%
+40255	Magic PvE Damage to normal monsters +3%
+40256	Magic PvE Damage to normal monsters +4%
+40257	Magic PvE Damage to normal monsters +5% M. Atk. +7%
+40258	Magic PvE Damage to normal monsters +6% M. Atk. +7%
+40259	Magic PvE Damage to all monsters +7%, when using an attack skill, Magic PvE Damage +50% at a certain rate M. Atk. +7%
+40260	Magic PvE Damage to all monsters +8%, when using an attack skill, Magic PvE Damage +55% at a certain rate M. Atk. +7%
+40261	Magic PvE Damage to all monsters +9%, when using an attack skill, Magic PvE Damage +61% at a certain rate M. Atk. +7%, EXP/SP +7% when hunting
+40262	Magic PvE Damage to all monsters +10%, when using an attack skill, Magic PvE Damage +67% at a certain rate M. Atk. +7%, EXP/SP +8% when hunting
+40263	Magic PvE Damage to all monsters +11%, when using an attack skill, Magic PvE Damage +73% at a certain rate M. Atk. +7%, EXP/SP +9% when hunting, M. Skill Critical Damage +3%
+40264	Magic PvE Damage to all monsters +12%, when using an attack skill, Magic PvE Damage +81% at a certain rate M. Atk. +7%, EXP/SP +10% when hunting, M. Skill Critical Damage +4%
+40265	Magic PvE Damage to all monsters +13%, when using an attack skill, Magic PvE Damage +89% at a certain rate M. Atk. +7%, EXP/SP +11% when hunting, M. Skill Critical Damage +5%
+40266	Magic PvE Damage to all monsters +14%, when using an attack skill, Magic PvE Damage +97% at a certain rate M. Atk. +7%, EXP/SP +12% when hunting, M. Skill Critical Damage +6%
+40267	Magic PvE Damage to all monsters +15%, when using an attack skill, Magic PvE Damage +107% at a certain rate M. Atk. +7%, EXP/SP +13% when hunting, M. Skill Critical Damage +7%
+40268	Magic PvE Damage to all monsters +16%, when using an attack skill, Magic PvE Damage +118% at a certain rate M. Atk. +7%, EXP/SP +14% when hunting, M. Skill Critical Damage +8%
+40269	Magic PvE Damage to all monsters +17%, when using an attack skill, Magic PvE Damage +130% at a certain rate M. Atk. +7%, EXP/SP +15% when hunting, M. Skill Critical Damage +9%
+40270	Magic PvE Damage to all monsters +18%, when using an attack skill, Magic PvE Damage +200% at a certain rate M. Atk. +7%, EXP/SP +16% when hunting, M. Skill Critical Damage +10%
+40271	Magic PvE Damage to all monsters +19%, when using an attack skill, Magic PvE Damage +200% at a certain rate M. Atk. +7%, EXP/SP +17% when hunting, M. Skill Critical Damage +11%
+40272	Magic PvE Damage to all monsters +20%, when using an attack skill, Magic PvE Damage +200% at a certain rate M. Atk. +7%, EXP/SP +20% when hunting, M. Skill Critical Damage +15%
+40273	Active Skill: Blessing of Aden
+40274	Active Skill: Blessing of Aden Active Skill: Spirit of Aden
+40275	Increases Physical Attack PvE Damage when enchanted and bestows various passive and active skills.
+40276	Physical PvE Damage to normal monsters +1%
+40277	Physical PvE Damage to normal monsters +2%
+40278	Physical PvE Damage to normal monsters +3%
+40279	Physical PvE Damage to normal monsters +4%
+40280	Physical PvE Damage to normal monsters +5% P. Atk. +7%
+40281	Physical PvE Damage to normal monsters +6% P. Atk. +7%
+40282	Physical PvE Damage to all monsters +7%, when using an attack skill, Physical PvE Damage +50% at a certain rate P. Atk. +7%
+40283	Physical PvE Damage to all monsters +8%, when using an attack skill, Physical PvE Damage +55% at a certain rate P. Atk. +7%
+40284	Physical PvE Damage to all monsters +9%, when using an attack skill, Physical PvE Damage +61% at a certain rate P. Atk. + 7%, EXP/SP +7% when hunting
+40285	Physical PvE Damage to all monsters +10%, when using an attack skill, Physical PvE Damage +67% at a certain rate P. Atk. + 7%, EXP/SP +8% when hunting
+40286	Physical PvE Damage to all monsters +11%, when using an attack skill, Physical PvE Damage +73% at a certain rate P. Atk. + 7%, EXP/SP +9% when hunting, P. Skill Critical Damage +3%
+40287	Physical PvE Damage to all monsters +12%, when using an attack skill, Physical PvE Damage +81% at a certain rate P. Atk. + 7%, EXP/SP +10% when hunting, P. Skill Critical Damage +4%
+40288	Physical PvE Damage to all monsters +13%, when using an attack skill, Physical PvE Damage +89% at a certain rate P. Atk. + 7%, EXP/SP +11% when hunting, P. Skill Critical Damage +5%
+40289	Physical PvE Damage to all monsters +14%, when using an attack skill, Physical PvE Damage +97% at a certain rate P. Atk. + 7%, EXP/SP +12% when hunting, P. Skill Critical Damage +6%
+40290	Physical PvE Damage to all monsters +15%, when using an attack skill, Physical PvE Damage +107% at a certain rate P. Atk. + 7%, EXP/SP +13% when hunting, P. Skill Critical Damage +7%
+40291	Physical PvE Damage to all monsters +16%, when using an attack skill, Physical PvE Damage +118% at a certain rate P. Atk. + 7%, EXP/SP +14% when hunting, P. Skill Critical Damage +8%
+40292	Physical PvE Damage to all monsters +17%, when using an attack skill, Physical PvE Damage +130% at a certain rate P. Atk. + 7%, EXP/SP +15% when hunting, P. Skill Critical Damage +9%
+40293	Physical PvE Damage to all monsters +18%, when using an attack skill, Physical PvE Damage +200% at a certain rate P. Atk. + 7%, EXP/SP +16% when hunting, P. Skill Critical Damage +10%
+40294	Physical PvE Damage to all monsters +19%, when using an attack skill, Physical PvE Damage +200% at a certain rate P. Atk. + 7%, EXP/SP +17% when hunting, P. Skill Critical Damage +11%
+40295	Physical PvE Damage to all monsters +20%, when using an attack skill, Physical PvE Damage +200% at a certain rate P. Atk. + 7%, EXP/SP +20% when hunting, P. Skill Critical Damage +15%
+40296	Active Skill: Blessing of Elmore
+40297	Active Skill: Blessing of Elmore Active Skill: Spirit of Elmore
+40298	Increases resistance to all attributes when enchanted and bestows various passive and active skills.
+40299	All Attribute Resistance +10
+40300	All Attribute Resistance +12
+40301	All Attribute Resistance +14
+40302	All Attribute Resistance +16
+40303	All Attribute Resistance +18 P. Def. + 5%
+40304	All Attribute Resistance +20 P. Def. + 5%
+40305	All Attribute Resistance +22, Fixed Damage Resistance +5%, creates a shield that absorbs 30000 damage at a certain rate P. Def. + 5%
+40306	All Attribute Resistance +24, Fixed Damage Resistance +6%, creates a shield that absorbs 31500 damage at a certain rate P. Def. + 5%
+40307	All Attribute Resistance +26, Fixed Damage Resistance +7%, creates a shield that absorbs 33075 damage at a certain rate P. Def. + 5%, Max HP +2800
+40308	All Attribute Resistance +28, Fixed Damage Resistance +8%, creates a shield that absorbs 34729 damage at a certain rate P. Def. + 5%, Max HP +3080
+40309	All Attribute Resistance +30, Fixed Damage Resistance +9%, creates a shield that absorbs 36465 damage at a certain rate P. Def. + 5%, Max HP +3388, Damage Received when Immobilized -30%
+40310	All Attribute Resistance +32, Fixed Damage Resistance +10%, creates a shield that absorbs 38288 damage at a certain rate P. Def. + 5%, Max HP +3727, Damage Received when Immobilized -32%
+40311	All Attribute Resistance +34, Fixed Damage Resistance +11%, creates a shield that absorbs 40203 damage at a certain rate P. Def. + 5%, Max HP +4099, Damage Received when Immobilized -33%, P./M. Def. +16000 at a certain rate when hit
+40312	All Attribute Resistance +36, Fixed Damage Resistance +13%, creates a shield that absorbs 42213 damage at a certain rate P. Def. + 5%, Max HP +4509, Damage Received when Immobilized -35%, P./M. Def. +16000 at a certain rate when hit
+40313	All Attribute Resistance +38, Fixed Damage Resistance +15%, creates a shield that absorbs 44324 damage at a certain rate P. Def. + 5%, Max HP +4960, Damage Received when Immobilized -36%, P./M. Def. +17000 at a certain rate when hit
+40314	All Attribute Resistance +40, Fixed Damage Resistance +16%, creates a shield that absorbs 46540 damage at a certain rate P. Def. + 5%, Max HP +5456, Damage Received when Immobilized -38%, P./M. Def. +17000 at a certain rate when hit
+40315	All Attribute Resistance +42, Fixed Damage Resistance +17%, creates a shield that absorbs 48867 damage at a certain rate P. Def. + 5%, Max HP +6002, Damage Received when Immobilized -40%, P./M. Def. +17000 at a certain rate when hit
+40316	All Attribute Resistance +44, Fixed Damage Resistance +18%, creates a shield that absorbs 51310 damage at a certain rate P. Def. + 5%, Max HP +6602, Damage Received when Immobilized -42%, P./M. Def. +18000 at a certain rate when hit When hit, P./M. Attack +50% for party members at a certain rate
+40317	All Attribute Resistance +46, Fixed Damage Resistance +19%, creates a shield that absorbs 53876 damage at a certain rate P. Def. + 5%, Max HP +7262, Damage Received when Immobilized -44%, P./M. Def. +18000 at a certain rate when hit When hit, P./M. Attack +55% for party members at a certain rate
+40318	All Attribute Resistance +50, Fixed Damage Resistance +20%, creates a shield that absorbs 56569 damage at a certain rate P. Def. + 5%, Max HP +7989, Damage Received when Immobilized -50%, P./M. Def. +18000 at a certain rate when hit When hit, P./M. Attack +60% for party members at a certain rate
+40319	Active Skill: Blessing of Ferios
+40320	P. Atk. +69
+40321	P. Atk. +82
+40322	P. Atk. +107
+40323	P. Atk. +132
+40324	P. Atk. +157
+40325	P. Atk. +188
+40326	P. Atk. +220
+40327	P. Atk. +251
+40328	P. Atk. +314
+40329	P. Atk. +628
+40330	M. Atk. +74
+40331	M. Atk. +87
+40332	M. Atk. +114
+40333	M. Atk. +141
+40334	M. Atk. +168
+40335	M. Atk. +201
+40336	M. Atk. +235
+40337	M. Atk. +269
+40338	M. Atk. +336
+40339	M. Atk. +672
+40340	Atk. Spd. +10
+40341	Atk. Spd. +12
+40342	Atk. Spd. +15
+40343	Atk. Spd. +19
+40344	Atk. Spd. +23
+40345	Atk. Spd. +27
+40346	Atk. Spd. +32
+40347	Atk. Spd. +36
+40348	Atk. Spd. +45
+40349	Atk. Spd. +90
+40350	Casting Spd. +10
+40351	Casting Spd. +12
+40352	Casting Spd. +15
+40353	Casting Spd. +19
+40354	Casting Spd. +23
+40355	Casting Spd. +27
+40356	Casting Spd. +32
+40357	Casting Spd. +36
+40358	Casting Spd. +45
+40359	Casting Spd. +90
+40360	P. Accuracy +1
+40361	P. Accuracy +2
+40362	P. Accuracy +3
+40363	P. Accuracy +4
+40364	P. Accuracy +5
+40365	M. Accuracy +1
+40366	M. Accuracy +2
+40367	M. Accuracy +3
+40368	M. Accuracy +4
+40369	M. Accuracy +5
+40370	Max HP +99
+40371	Max HP +117
+40372	Max HP +153
+40373	Max HP +189
+40374	Max HP +225
+40375	Max HP +270
+40376	Max HP +315
+40377	Max HP +360
+40378	Max HP +450
+40379	Max HP +900
+40380	Max MP +99
+40381	Max MP +117
+40382	Max MP +153
+40383	Max MP +189
+40384	Max MP +225
+40385	Max MP +270
+40386	Max MP +315
+40387	Max MP +360
+40388	Max MP +450
+40389	Max MP +900
+40390	Max CP +99
+40391	Max CP +117
+40392	Max CP +153
+40393	Max CP +189
+40394	Max CP +225
+40395	Max CP +270
+40396	Max CP +315
+40397	Max CP +360
+40398	Max CP +450
+40399	Max CP +900
+40400	STR +1
+40401	STR +2
+40402	CON +1
+40403	CON +2
+40404	MEN +1
+40405	MEN +2
+40406	DEX +1
+40407	DEX +2
+40408	WIT +1
+40409	WIT +2
+40410	LUC +1
+40411	LUC +2
+40412	CHA +1
+40413	CHA +2
+40414	INT +1
+40415	INT +2
+40416	P. Critical Rate +1.7%
+40417	P. Critical Rate +2%
+40418	P. Critical Rate +2.6%
+40419	P. Critical Rate +3.2%
+40420	P. Critical Rate +3.8%
+40421	P. Critical Rate +4.5%
+40422	P. Critical Rate +5.3%
+40423	P. Critical Rate +6%
+40424	P. Critical Rate +7.5%
+40425	P. Critical Rate +15%
+40426	P. Skill Critical Rate +0.9%
+40427	P. Skill Critical Rate +1%
+40428	P. Skill Critical Rate +1.3%
+40429	P. Skill Critical Rate +1.6%
+40430	P. Skill Critical Rate +1.9%
+40431	P. Skill Critical Rate +2.3%
+40432	P. Skill Critical Rate +2.7%
+40433	P. Skill Critical Rate +3%
+40434	P. Skill Critical Rate +3.8%
+40435	P. Skill Critical Rate +7.5%
+40436	M. Critical Rate +1%
+40437	M. Critical Rate +2%
+40438	M. Critical Rate +3%
+40439	M. Critical Rate +4%
+40440	M. Critical Rate +5%
+40441	M. Critical Rate +6%
+40442	M. Critical Rate +7%
+40443	M. Critical Rate +8%
+40444	M. Critical Rate +9%
+40445	M. Critical Rate +15%
+40446	P. Critical Damage +0.9%
+40447	P. Critical Damage +1%
+40448	P. Critical Damage +1.3%
+40449	P. Critical Damage +1.6%
+40450	P. Critical Damage +1.9%
+40451	P. Critical Damage +2.3%
+40452	P. Critical Damage +2.7%
+40453	P. Critical Damage +3%
+40454	P. Critical Damage +3.8%
+40455	P. Critical Damage +7.5%
+40456	P. Skill Critical Damage +0.9%
+40457	P. Skill Critical Damage +1%
+40458	P. Skill Critical Damage +1.3%
+40459	P. Skill Critical Damage +1.6%
+40460	P. Skill Critical Damage +1.9%
+40461	P. Skill Critical Damage +2.3%
+40462	P. Skill Critical Damage +2.7%
+40463	P. Skill Critical Damage +3%
+40464	P. Skill Critical Damage +3.8%
+40465	P. Skill Critical Damage +7.5%
+40466	M. Critical Damage +1%
+40467	M. Critical Damage +1%
+40468	M. Critical Damage +2%
+40469	M. Critical Damage +2%
+40470	M. Critical Damage +3%
+40471	M. Critical Damage +3%
+40472	M. Critical Damage +4%
+40473	M. Critical Damage +5%
+40474	M. Critical Damage +6%
+40475	M. Critical Damage +7%
+40476	Attack Attribute Bonus +5
+40477	Attack Attribute Bonus +6
+40478	Attack Attribute Bonus +7
+40479	Attack Attribute Bonus +8
+40480	Attack Attribute Bonus +9
+40481	Attack Attribute Bonus +10
+40482	Attack Attribute Bonus +13
+40483	Attack Attribute Bonus +15
+40484	Attack Attribute Bonus +18
+40485	Attack Attribute Bonus +35
+40486	Stun Attack Success Rate +1.5%
+40487	Stun Attack Success Rate +2.5%
+40488	Stun Attack Success Rate +3%
+40489	Stun Attack Success Rate +3.5%
+40490	Stun Attack Success Rate +4.5%
+40491	Stun Attack Success Rate +5%
+40492	Stun Attack Success Rate +6%
+40493	Stun Attack Success Rate +7.5%
+40494	Stun Attack Success Rate +15%
+40495	Hold Attack Success Rate +1.5%
+40496	Hold Attack Success Rate +2.5%
+40497	Hold Attack Success Rate +3%
+40498	Hold Attack Success Rate +3.5%
+40499	Hold Attack Success Rate +4.5%
+40500	Hold Attack Success Rate +5%
+40501	Hold Attack Success Rate +6%
+40502	Hold Attack Success Rate +7.5%
+40503	Hold Attack Success Rate +15%
+40504	Bleeding Attack Success Rate +1.5%
+40505	Bleeding Attack Success Rate +2.5%
+40506	Bleeding Attack Success Rate +3%
+40507	Bleeding Attack Success Rate +3.5%
+40508	Bleeding Attack Success Rate +4.5%
+40509	Bleeding Attack Success Rate +5%
+40510	Bleeding Attack Success Rate +6%
+40511	Bleeding Attack Success Rate +7.5%
+40512	Bleeding Attack Success Rate +15%
+40513	Paralysis Attack Success Rate +1.5%
+40514	Paralysis Attack Success Rate +2.5%
+40515	Paralysis Attack Success Rate +3%
+40516	Paralysis Attack Success Rate +3.5%
+40517	Paralysis Attack Success Rate +4.5%
+40518	Paralysis Attack Success Rate +5%
+40519	Paralysis Attack Success Rate +6%
+40520	Paralysis Attack Success Rate +7.5%
+40521	Paralysis Attack Success Rate +15%
+40522	Mind Attack Success Rate +1.5%
+40523	Mind Attack Success Rate +2.5%
+40524	Mind Attack Success Rate +3%
+40525	Mind Attack Success Rate +3.5%
+40526	Mind Attack Success Rate +4.5%
+40527	Mind Attack Success Rate +5%
+40528	Mind Attack Success Rate +6%
+40529	Mind Attack Success Rate +7.5%
+40530	Mind Attack Success Rate +15%
+40531	Sleep Attack Success Rate +1.5%
+40532	Sleep Attack Success Rate +2.5%
+40533	Sleep Attack Success Rate +3%
+40534	Sleep Attack Success Rate +3.5%
+40535	Sleep Attack Success Rate +4.5%
+40536	Sleep Attack Success Rate +5%
+40537	Sleep Attack Success Rate +6%
+40538	Sleep Attack Success Rate +7.5%
+40539	Sleep Attack Success Rate +15%
+40540	Poison Attack Success Rate +1.5%
+40541	Poison Attack Success Rate +2.5%
+40542	Poison Attack Success Rate +3%
+40543	Poison Attack Success Rate +3.5%
+40544	Poison Attack Success Rate +4.5%
+40545	Poison Attack Success Rate +5%
+40546	Poison Attack Success Rate +6%
+40547	Poison Attack Success Rate +7.5%
+40548	Poison Attack Success Rate +15%
+40549	Knock Back/Knock Down Attack Success Rate +1.5%
+40550	Knock Back/Knock Down Attack Success Rate +2.5%
+40551	Knock Back/Knock Down Attack Success Rate +3%
+40552	Knock Back/Knock Down Attack Success Rate +3.5%
+40553	Knock Back/Knock Down Attack Success Rate +4.5%
+40554	Knock Back/Knock Down Attack Success Rate +5%
+40555	Knock Back/Knock Down Attack Success Rate +6%
+40556	Knock Back/Knock Down Attack Success Rate +7.5%
+40557	Knock Back/Knock Down Attack Success Rate +15%
+40558	Aerial Yoke Attack Success Rate +1.5%
+40559	Aerial Yoke Attack Success Rate +2.5%
+40560	Aerial Yoke Attack Success Rate +3%
+40561	Aerial Yoke Attack Success Rate +3.5%
+40562	Aerial Yoke Attack Success Rate +4.5%
+40563	Aerial Yoke Attack Success Rate +5%
+40564	Aerial Yoke Attack Success Rate +6%
+40565	Aerial Yoke Attack Success Rate +7.5%
+40566	Aerial Yoke Attack Success Rate +15%
+40567	Pull Attack Success Rate +1.5%
+40568	Pull Attack Success Rate +2.5%
+40569	Pull Attack Success Rate +3%
+40570	Pull Attack Success Rate +3.5%
+40571	Pull Attack Success Rate +4.5%
+40572	Pull Attack Success Rate +5%
+40573	Pull Attack Success Rate +6%
+40574	Pull Attack Success Rate +7.5%
+40575	Pull Attack Success Rate +15%
+40576	Petrification Attack Success Rate +1.5%
+40577	Petrification Attack Success Rate +2.5%
+40578	Petrification Attack Success Rate +3%
+40579	Petrification Attack Success Rate +3.5%
+40580	Petrification Attack Success Rate +4.5%
+40581	Petrification Attack Success Rate +5%
+40582	Petrification Attack Success Rate +6%
+40583	Petrification Attack Success Rate +7.5%
+40584	Petrification Attack Success Rate +15%
+40585	Max HP +4%
+40586	Max HP +4.5%
+40587	Max HP +5%
+40588	Max MP +4%
+40589	Max MP +4.5%
+40590	Max MP +5%
+40591	Max CP +4%
+40592	Max CP +4.5%
+40593	Max CP +5%
+40594	P. Atk. +4%
+40595	P. Atk. +4.5%
+40596	P. Atk. +5%
+40597	P. Def. +4%
+40598	P. Def. +4.5%
+40599	P. Def. +5%
+40600	Atk. Spd. +4%
+40601	Atk. Spd. +4.5%
+40602	Atk. Spd. +5%
+40603	Speed +10
+40604	Speed +13
+40605	Speed +15
+40606	M. Atk. +4%
+40607	M. Atk. +4.5%
+40608	M. Atk. +5%
+40609	M. Def. +4%
+40610	M. Def. +4.5%
+40611	M. Def. +5%
+40612	Casting Spd. +4%
+40613	Casting Spd. +4.5%
+40614	Casting Spd. +5%
+40615	PvP Damage +4%
+40616	PvP Damage +4.5%
+40617	PvP Damage +5%
+40618	Received PvP Damage -4%
+40619	Received PvP Damage -4.5%
+40620	Received PvP Damage -5%
+40621	PvE Damage +4%
+40622	PvE Damage +4.5%
+40623	PvE Damage +5%
+40624	Received PvE Damage -4%
+40625	Received PvE Damage -4.5%
+40626	Received PvE Damage -5%
+40627	EXP when hunting +4%
+40628	EXP when hunting +4.5%
+40629	EXP when hunting +5%
+40630	SP when hunting +4%
+40631	SP when hunting +4.5%
+40632	SP when hunting +5%
+40633	Chance to recover 4% of damage as HP
+40634	Chance to recover 4.5% of damage as HP
+40635	Chance to recover 5% of damage as HP
+40636	P. Skill MP Consumption -3%
+40637	P. Skill MP Consumption -4%
+40638	P. Skill MP Consumption -5%
+40639	M. Skill MP Consumption -3%
+40640	M. Skill MP Consumption -4%
+40641	M. Skill MP Consumption -5%
+40642	Reflect 7% of received damage
+40643	Reflect 8% of received damage
+40644	Reflect 9% of received damage
+40645	P. Atk. +69
+40646	P. Atk. +82
+40647	P. Atk. +107
+40648	P. Atk. +132
+40649	P. Atk. +157
+40650	P. Atk. +188
+40651	P. Atk. +220
+40652	P. Atk. +251
+40653	P. Atk. +314
+40654	P. Atk. +628
+40655	M. Atk. +74
+40656	M. Atk. +87
+40657	M. Atk. +114
+40658	M. Atk. +141
+40659	M. Atk. +168
+40660	M. Atk. +201
+40661	M. Atk. +235
+40662	M. Atk. +269
+40663	M. Atk. +336
+40664	M. Atk. +672
+40665	Atk. Spd. +10
+40666	Atk. Spd. +12
+40667	Atk. Spd. +15
+40668	Atk. Spd. +19
+40669	Atk. Spd. +23
+40670	Atk. Spd. +27
+40671	Atk. Spd. +32
+40672	Atk. Spd. +36
+40673	Atk. Spd. +45
+40674	Atk. Spd. +90
+40675	Casting Spd. +10
+40676	Casting Spd. +12
+40677	Casting Spd. +15
+40678	Casting Spd. +19
+40679	Casting Spd. +23
+40680	Casting Spd. +27
+40681	Casting Spd. +32
+40682	Casting Spd. +36
+40683	Casting Spd. +45
+40684	Casting Spd. +90
+40685	P. Accuracy +1
+40686	P. Accuracy +2
+40687	P. Accuracy +3
+40688	P. Accuracy +4
+40689	P. Accuracy +5
+40690	M. Accuracy +1
+40691	M. Accuracy +2
+40692	M. Accuracy +3
+40693	M. Accuracy +4
+40694	M. Accuracy +5
+40695	Max HP +99
+40696	Max HP +117
+40697	Max HP +153
+40698	Max HP +189
+40699	Max HP +225
+40700	Max HP +270
+40701	Max HP +315
+40702	Max HP +360
+40703	Max HP +450
+40704	Max HP +900
+40705	Max MP +99
+40706	Max MP +117
+40707	Max MP +153
+40708	Max MP +189
+40709	Max MP +225
+40710	Max MP +270
+40711	Max MP +315
+40712	Max MP +360
+40713	Max MP +450
+40714	Max MP +900
+40715	Max CP +99
+40716	Max CP +117
+40717	Max CP +153
+40718	Max CP +189
+40719	Max CP +225
+40720	Max CP +270
+40721	Max CP +315
+40722	Max CP +360
+40723	Max CP +450
+40724	Max CP +900
+40725	STR +1
+40726	STR +2
+40727	CON +1
+40728	CON +2
+40729	MEN +1
+40730	MEN +2
+40731	DEX +1
+40732	DEX +2
+40733	WIT +1
+40734	WIT +2
+40735	LUC +1
+40736	LUC +2
+40737	CHA +1
+40738	CHA +2
+40739	INT +1
+40740	INT +2
+40741	P. Critical Rate +1.7%
+40742	P. Critical Rate +2%
+40743	P. Critical Rate +2.6%
+40744	P. Critical Rate +3.2%
+40745	P. Critical Rate +3.8%
+40746	P. Critical Rate +4.5%
+40747	P. Critical Rate +5.3%
+40748	P. Critical Rate +6%
+40749	P. Critical Rate +7.5%
+40750	P. Critical Rate +15%
+40751	P. Skill Critical Rate +0.9%
+40752	P. Skill Critical Rate +1%
+40753	P. Skill Critical Rate +1.3%
+40754	P. Skill Critical Rate +1.6%
+40755	P. Skill Critical Rate +1.9%
+40756	P. Skill Critical Rate +2.3%
+40757	P. Skill Critical Rate +2.7%
+40758	P. Skill Critical Rate +3%
+40759	P. Skill Critical Rate +3.8%
+40760	P. Skill Critical Rate +7.5%
+40761	M. Critical Rate +1%
+40762	M. Critical Rate +2%
+40763	M. Critical Rate +3%
+40764	M. Critical Rate +4%
+40765	M. Critical Rate +5%
+40766	M. Critical Rate +6%
+40767	M. Critical Rate +7%
+40768	M. Critical Rate +8%
+40769	M. Critical Rate +9%
+40770	M. Critical Rate +15%
+40771	P. Critical Damage +0.9%
+40772	P. Critical Damage +1%
+40773	P. Critical Damage +1.3%
+40774	P. Critical Damage +1.6%
+40775	P. Critical Damage +1.9%
+40776	P. Critical Damage +2.3%
+40777	P. Critical Damage +2.7%
+40778	P. Critical Damage +3%
+40779	P. Critical Damage +3.8%
+40780	P. Critical Damage +7.5%
+40781	P. Skill Critical Damage +0.9%
+40782	P. Skill Critical Damage +1%
+40783	P. Skill Critical Damage +1.3%
+40784	P. Skill Critical Damage +1.6%
+40785	P. Skill Critical Damage +1.9%
+40786	P. Skill Critical Damage +2.3%
+40787	P. Skill Critical Damage +2.7%
+40788	P. Skill Critical Damage +3%
+40789	P. Skill Critical Damage +3.8%
+40790	P. Skill Critical Damage +7.5%
+40791	M. Critical Damage +1%
+40792	M. Critical Damage +1%
+40793	M. Critical Damage +2%
+40794	M. Critical Damage +2%
+40795	M. Critical Damage +3%
+40796	M. Critical Damage +3%
+40797	M. Critical Damage +4%
+40798	M. Critical Damage +5%
+40799	M. Critical Damage +6%
+40800	M. Critical Damage +7%
+40801	Attack Attribute Bonus +5
+40802	Attack Attribute Bonus +6
+40803	Attack Attribute Bonus +7
+40804	Attack Attribute Bonus +8
+40805	Attack Attribute Bonus +9
+40806	Attack Attribute Bonus +10
+40807	Attack Attribute Bonus +13
+40808	Attack Attribute Bonus +15
+40809	Attack Attribute Bonus +18
+40810	Attack Attribute Bonus +35
+40811	Stun Attack Success Rate +1.5%
+40812	Stun Attack Success Rate +2.5%
+40813	Stun Attack Success Rate +3%
+40814	Stun Attack Success Rate +3.5%
+40815	Stun Attack Success Rate +4.5%
+40816	Stun Attack Success Rate +5%
+40817	Stun Attack Success Rate +6%
+40818	Stun Attack Success Rate +7.5%
+40819	Stun Attack Success Rate +15%
+40820	Hold Attack Success Rate +1.5%
+40821	Hold Attack Success Rate +2.5%
+40822	Hold Attack Success Rate +3%
+40823	Hold Attack Success Rate +3.5%
+40824	Hold Attack Success Rate +4.5%
+40825	Hold Attack Success Rate +5%
+40826	Hold Attack Success Rate +6%
+40827	Hold Attack Success Rate +7.5%
+40828	Hold Attack Success Rate +15%
+40829	Bleeding Attack Success Rate +1.5%
+40830	Bleeding Attack Success Rate +2.5%
+40831	Bleeding Attack Success Rate +3%
+40832	Bleeding Attack Success Rate +3.5%
+40833	Bleeding Attack Success Rate +4.5%
+40834	Bleeding Attack Success Rate +5%
+40835	Bleeding Attack Success Rate +6%
+40836	Bleeding Attack Success Rate +7.5%
+40837	Bleeding Attack Success Rate +15%
+40838	Paralysis Attack Success Rate +1.5%
+40839	Paralysis Attack Success Rate +2.5%
+40840	Paralysis Attack Success Rate +3%
+40841	Paralysis Attack Success Rate +3.5%
+40842	Paralysis Attack Success Rate +4.5%
+40843	Paralysis Attack Success Rate +5%
+40844	Paralysis Attack Success Rate +6%
+40845	Paralysis Attack Success Rate +7.5%
+40846	Paralysis Attack Success Rate +15%
+40847	Mind Attack Success Rate +1.5%
+40848	Mind Attack Success Rate +2.5%
+40849	Mind Attack Success Rate +3%
+40850	Mind Attack Success Rate +3.5%
+40851	Mind Attack Success Rate +4.5%
+40852	Mind Attack Success Rate +5%
+40853	Mind Attack Success Rate +6%
+40854	Mind Attack Success Rate +7.5%
+40855	Mind Attack Success Rate +15%
+40856	Sleep Attack Success Rate +1.5%
+40857	Sleep Attack Success Rate +2.5%
+40858	Sleep Attack Success Rate +3%
+40859	Sleep Attack Success Rate +3.5%
+40860	Sleep Attack Success Rate +4.5%
+40861	Sleep Attack Success Rate +5%
+40862	Sleep Attack Success Rate +6%
+40863	Sleep Attack Success Rate +7.5%
+40864	Sleep Attack Success Rate +15%
+40865	Poison Attack Success Rate +1.5%
+40866	Poison Attack Success Rate +2.5%
+40867	Poison Attack Success Rate +3%
+40868	Poison Attack Success Rate +3.5%
+40869	Poison Attack Success Rate +4.5%
+40870	Poison Attack Success Rate +5%
+40871	Poison Attack Success Rate +6%
+40872	Poison Attack Success Rate +7.5%
+40873	Poison Attack Success Rate +15%
+40874	Knock Back/Knock Down Attack Success Rate +1.5%
+40875	Knock Back/Knock Down Attack Success Rate +2.5%
+40876	Knock Back/Knock Down Attack Success Rate +3%
+40877	Knock Back/Knock Down Attack Success Rate +3.5%
+40878	Knock Back/Knock Down Attack Success Rate +4.5%
+40879	Knock Back/Knock Down Attack Success Rate +5%
+40880	Knock Back/Knock Down Attack Success Rate +6%
+40881	Knock Back/Knock Down Attack Success Rate +7.5%
+40882	Knock Back/Knock Down Attack Success Rate +15%
+40883	Aerial Yoke Attack Success Rate +1.5%
+40884	Aerial Yoke Attack Success Rate +2.5%
+40885	Aerial Yoke Attack Success Rate +3%
+40886	Aerial Yoke Attack Success Rate +3.5%
+40887	Aerial Yoke Attack Success Rate +4.5%
+40888	Aerial Yoke Attack Success Rate +5%
+40889	Aerial Yoke Attack Success Rate +6%
+40890	Aerial Yoke Attack Success Rate +7.5%
+40891	Aerial Yoke Attack Success Rate +15%
+40892	Pull Attack Success Rate +1.5%
+40893	Pull Attack Success Rate +2.5%
+40894	Pull Attack Success Rate +3%
+40895	Pull Attack Success Rate +3.5%
+40896	Pull Attack Success Rate +4.5%
+40897	Pull Attack Success Rate +5%
+40898	Pull Attack Success Rate +6%
+40899	Pull Attack Success Rate +7.5%
+40900	Pull Attack Success Rate +15%
+40901	Petrification Attack Success Rate +1.5%
+40902	Petrification Attack Success Rate +2.5%
+40903	Petrification Attack Success Rate +3%
+40904	Petrification Attack Success Rate +3.5%
+40905	Petrification Attack Success Rate +4.5%
+40906	Petrification Attack Success Rate +5%
+40907	Petrification Attack Success Rate +6%
+40908	Petrification Attack Success Rate +7.5%
+40909	Petrification Attack Success Rate +15%
+40910	Max HP +4%
+40911	Max HP +4.5%
+40912	Max HP +5%
+40913	Max MP +4%
+40914	Max MP +4.5%
+40915	Max MP +5%
+40916	Max CP +4%
+40917	Max CP +4.5%
+40918	Max CP +5%
+40919	P. Atk. +4%
+40920	P. Atk. +4.5%
+40921	P. Atk. +5%
+40922	P. Def. +4%
+40923	P. Def. +4.5%
+40924	P. Def. +5%
+40925	Atk. Spd. +4%
+40926	Atk. Spd. +4.5%
+40927	Atk. Spd. +5%
+40928	Speed +10
+40929	Speed +13
+40930	Speed +15
+40931	M. Atk. +4%
+40932	M. Atk. +4.5%
+40933	M. Atk. +5%
+40934	M. Def. +4%
+40935	M. Def. +4.5%
+40936	M. Def. +5%
+40937	Casting Spd. +4%
+40938	Casting Spd. +4.5%
+40939	Casting Spd. +5%
+40940	PvP Damage +4%
+40941	PvP Damage +4.5%
+40942	PvP Damage +5%
+40943	Received PvP Damage -4%
+40944	Received PvP Damage -4.5%
+40945	Received PvP Damage -5%
+40946	PvE Damage +4%
+40947	PvE Damage +4.5%
+40948	PvE Damage +5%
+40949	Received PvE Damage -4%
+40950	Received PvE Damage -4.5%
+40951	Received PvE Damage -5%
+40952	EXP when hunting +4%
+40953	EXP when hunting +4.5%
+40954	EXP when hunting +5%
+40955	SP when hunting +4%
+40956	SP when hunting +4.5%
+40957	SP when hunting +5%
+40958	Chance to recover 4% of damage as HP
+40959	Chance to recover 4.5% of damage as HP
+40960	Chance to recover 5% of damage as HP
+40961	P. Skill MP Consumption -3%
+40962	P. Skill MP Consumption -4%
+40963	P. Skill MP Consumption -5%
+40964	M. Skill MP Consumption -3%
+40965	M. Skill MP Consumption -4%
+40966	M. Skill MP Consumption -5%
+40967	Fixed Damage Resistance +5
+40968	Fixed Damage Resistance +7
+40969	Fixed Damage Resistance +10
+40970	Reflects 3% of all status effects
+40971	Reflects 4% of all status effects
+40972	Reflects 5% of all status effects
+40973	When using a single attack skill, there's a chance for Silence to be activated.
+40974	Active Skill: When receiving a fatal attack, CP/HP recovers by 100% for 1 minute. When the effect is applied the buff disappears.
+40975	Activates a shield that has a chance to absorb 10000 damage when hit.
+40976	Activates a shield that has a chance to absorb 15000 damage when hit.
+40977	Activates a shield that has a chance to absorb 30000 damage when hit.
+40978	P./M. Skill Power +5%
+40979	P./M. Skill Power +10%
+40980	P./M. Skill Power +15%
+40981	Active Skill: Resurrects from death with full recovery. Buffs/debuffs stay when dying. However, the Noblesse Blessing and Lucky Charms disappear.
+40982	Has a chance to create a circle around when hit that cancels any ranged attacks and debuffs for 30 seconds by twisting the space. When hit inside the circle, you will receive damage.
+40983	Invincibility activated if damage received when HP is below 30%.
+40984	Has a chance to create a circle around when hit that cancels any ranged attacks and debuffs for 15 seconds by twisting the space, and Speed +100. When hit inside the circle, you will receive damage.
+40985	Bonus EXP obtained in Vitality state +2%.
+40986	Bonus EXP obtained in Vitality state +10%.
+40987	Bonus EXP obtained in Vitality state +20%.

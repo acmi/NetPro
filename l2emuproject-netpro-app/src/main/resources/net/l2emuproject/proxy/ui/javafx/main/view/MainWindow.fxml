@@ -25,13 +25,13 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="629.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController">
+<BorderPane prefHeight="629.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController">
    <center>
       <StackPane BorderPane.alignment="CENTER">
          <children>
             <TabPane fx:id="_tpConnections" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="ALL_TABS">
               <tabs>
-                <Tab fx:id="_tabConsole" closable="false" text="%main.consoletab.title">
+                <Tab fx:id="_tabConsole" closable="false" disable="true" text="%main.consoletab.title">
                      <content>
                         <TextArea fx:id="_taConsole" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="%main.consoletab.prompt" wrapText="true">
                            <font>
@@ -176,7 +176,7 @@
           </Menu>
           <Menu text="%menu.view.title">
             <items>
-                  <CheckMenuItem fx:id="_showLogConsole" onAction="#toggleConsole" selected="true" text="%menu.view.logging">
+                  <CheckMenuItem fx:id="_showLogConsole" disable="true" onAction="#toggleConsole" text="%menu.view.logging">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="F12" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>

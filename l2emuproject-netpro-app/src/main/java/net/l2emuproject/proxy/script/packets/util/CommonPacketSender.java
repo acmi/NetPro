@@ -21,6 +21,7 @@ import static net.l2emuproject.proxy.network.EndpointType.SERVER;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.lang3.mutable.MutableInt;
@@ -273,7 +274,8 @@ public final class CommonPacketSender extends PacketWriterScript
 		buf.writeD(0);
 		buf.writeD(chat);
 		buf.writeS(talker);
-		buf.writeD(-1);
+		if (client.getProtocol().isNewerThanOrEqualTo(ClientProtocolVersion.FREYA))
+			buf.writeD(-1);
 		buf.writeS(message);
 		
 		client.sendPacket(new ProxyRepeatedPacket(bb));
@@ -298,7 +300,8 @@ public final class CommonPacketSender extends PacketWriterScript
 		buf.writeD(0);
 		buf.writeD(2);
 		buf.writeS(talker);
-		buf.writeD(-1);
+		if (client.getProtocol().isNewerThanOrEqualTo(ClientProtocolVersion.FREYA))
+			buf.writeD(-1);
 		buf.writeS(message);
 		buf.writeC(talkerLevel);
 		buf.writeC(talkerFlags);
@@ -895,6 +898,21 @@ public final class CommonPacketSender extends PacketWriterScript
 	public static final void sendRequestAnswerPartyLootingModify(L2GameServer server, boolean accepted)
 	{
 		sendRequestExD(server, 0x76, accepted ? 1 : 0);
+	}
+	
+	public static final void sendRequestRaidBossSpawnInfo(L2GameServer server, Collection<Integer> templateIDs)
+	{
+		final int size = 1 + 2 + 4 + 4 * templateIDs.size();
+		final ByteBuffer bb = allocate(size);
+		final MMOBuffer buf = allocate(bb);
+		
+		buf.writeC(0xD0);
+		buf.writeH(0x129);
+		buf.writeD(templateIDs.size());
+		for (final Integer id : templateIDs)
+			buf.writeD(id);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
 	private static final void sendRequestEx(L2GameServer server, int secondOp)

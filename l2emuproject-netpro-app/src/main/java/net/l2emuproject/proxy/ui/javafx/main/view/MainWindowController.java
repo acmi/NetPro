@@ -1015,33 +1015,41 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 						}
 						catch (final MutableOperationInProgressException e)
 						{
-							nextWaitDialogController.onWaitEnd();
-							
-							makeNonModalUtilityAlert(ERROR, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.singleop", "scripts.load.err.dialog.content.singleop",
-									result).show();
+							Platform.runLater(() -> {
+								nextWaitDialogController.onWaitEnd();
+								
+								makeNonModalUtilityAlert(ERROR, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.singleop", "scripts.load.err.dialog.content.singleop",
+										result).show();
+							});
 							return;
 						}
 						catch (final DependencyResolutionException e)
 						{
-							nextWaitDialogController.onWaitEnd();
-							
-							makeNonModalUtilityAlert(ERROR, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.apt", "scripts.load.err.dialog.content.apt",
-									System.getProperty("java.home"));
+							Platform.runLater(() -> {
+								nextWaitDialogController.onWaitEnd();
+								
+								makeNonModalUtilityAlert(ERROR, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.apt", "scripts.load.err.dialog.content.apt",
+										System.getProperty("java.home"));
+							});
 							return;
 						}
 						catch (final IOException e)
 						{
-							nextWaitDialogController.onWaitEnd();
-							
-							initNonModalUtilityDialog(new ExceptionAlert(e), getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.runtime", null).show();
+							Platform.runLater(() -> {
+								nextWaitDialogController.onWaitEnd();
+								
+								initNonModalUtilityDialog(new ExceptionAlert(e), getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.runtime", null).show();
+							});
 							return;
 						}
 						catch (final IllegalArgumentException e)
 						{
-							nextWaitDialogController.onWaitEnd();
-							
-							makeNonModalUtilityAlert(INFORMATION, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.nonexistent",
-									"scripts.load.err.dialog.content.nonexistent", result).show();
+							Platform.runLater(() -> {
+								nextWaitDialogController.onWaitEnd();
+								
+								makeNonModalUtilityAlert(INFORMATION, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.nonexistent",
+										"scripts.load.err.dialog.content.nonexistent", result).show();
+							});
 							return;
 						}
 						

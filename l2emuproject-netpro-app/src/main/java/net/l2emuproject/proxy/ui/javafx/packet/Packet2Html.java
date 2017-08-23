@@ -404,7 +404,6 @@ public final class Packet2Html implements ISODateTime
 			if (visualDataType != DataType.BYTES && !(value.interpreted() instanceof RenderedImage))
 			{
 				_packetBodyBuilder.append(": ");
-				System.out.println(interpretation);
 				if (!String.valueOf(interpretation).startsWith("<"))
 				{
 					_packetBodyBuilder.append(interpretation);

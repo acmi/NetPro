@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="SM_EX_RAID_BOSS_SPAWN_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Alive NPCs" id="cnt" />
+	<dword alias="Alive NPCs" id="cnt">
+		<scriptAlias id="raid_boss_spawn_alive_cnt" />
+	</dword>
 	<loop id="cnt">
-		<dword alias="Alive" type="Npc" />
+		<dword alias="Alive" type="Npc">
+			<scriptAlias id="raid_boss_spawn_alive_template_id" />
+		</dword>
 	</loop>
 </packet>

@@ -31,10 +31,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
-import java.util.Queue;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Semaphore;
 
 import javax.tools.Diagnostic;
@@ -82,7 +80,6 @@ import net.l2emuproject.proxy.ui.javafx.main.view.MainWindowController;
 import net.l2emuproject.proxy.ui.javafx.main.view.SplashScreenController;
 import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
 import net.l2emuproject.util.StackTraceUtil;
-import net.l2emuproject.util.logging.ListeningLog;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -121,7 +118,7 @@ import javafx.util.Duration;
  */
 public class NetPro extends Application implements NetProThreadPriority
 {
-	private static final Queue<String> PENDING_LOG_ENTRIES = new ArrayBlockingQueue<>(50_000, true);
+	//private static final Queue<String> PENDING_LOG_ENTRIES = new ArrayBlockingQueue<>(50_000, true);
 	private static final StringProperty LOADING_STAGE_DESCRIPTION = new SimpleStringProperty(null);
 	
 	static Stage SPLASH_STAGE, PRIMARY_STAGE;
@@ -247,14 +244,14 @@ public class NetPro extends Application implements NetProThreadPriority
 			// 1.1 GET ACCESS TO SPLASH SCREEN
 			reporter = desc -> Platform.runLater(() -> LOADING_STAGE_DESCRIPTION.setValue(desc));
 			// 1.2 SETUP UI LOGGING FORWARDER
-			ListeningLog.addListener(message -> {
-				final boolean added = PENDING_LOG_ENTRIES.offer(message);
-				if (!added)
-				{
-					PENDING_LOG_ENTRIES.clear();
-					PENDING_LOG_ENTRIES.offer("|--------------------|--------------------|");
-				}
-			});
+			//ListeningLog.addListener(message -> {
+			//	final boolean added = PENDING_LOG_ENTRIES.offer(message);
+			//	if (!added)
+			//	{
+			//		PENDING_LOG_ENTRIES.clear();
+			//		PENDING_LOG_ENTRIES.offer("|--------------------|--------------------|");
+			//	}
+			//});
 		}
 		else
 			reporter = null;
@@ -508,12 +505,12 @@ public class NetPro extends Application implements NetProThreadPriority
 				final MainWindowController controller = loader.getController();
 				HistoricalLogIOThread.getInstance().setCaptureController(controller);
 				// 3.2 LINK LOGGING WITH UI CONSOLE
-				final Timeline tlLogging = new Timeline(new KeyFrame(Duration.ZERO, evt -> {
-					for (String msg; (msg = PENDING_LOG_ENTRIES.poll()) != null;)
-						controller.appendToConsole(msg);
-				}), new KeyFrame(Duration.seconds(0.2)));
-				tlLogging.setCycleCount(Animation.INDEFINITE);
-				tlLogging.play();
+				//final Timeline tlLogging = new Timeline(new KeyFrame(Duration.ZERO, evt -> {
+				//	for (String msg; (msg = PENDING_LOG_ENTRIES.poll()) != null;)
+				//		controller.appendToConsole(msg);
+				//}), new KeyFrame(Duration.seconds(0.2)));
+				//tlLogging.setCycleCount(Animation.INDEFINITE);
+				//tlLogging.play();
 				PRIMARY_STAGE.setScene(scene);
 				PRIMARY_STAGE.setTitle("NetPro" + (NetProInfo.isUnreleased() ? "" : " " + (NetProInfo.isSnapshot() ? "r" + NetProInfo.getRevisionNumber() : NetProInfo.getVersion())));
 				PRIMARY_STAGE.getIcons().addAll(FXUtils.getIconListFX());

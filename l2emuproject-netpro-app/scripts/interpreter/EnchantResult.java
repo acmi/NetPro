@@ -34,7 +34,8 @@ public class EnchantResult extends ScriptedZeroBasedIntegerIdInterpreter
 				"Inappriopriate conditions",
 				"Failed enchant: retained item",
 				"Failed enchant: lost item",
-				"Failed enchant: retained enchant level"
+				"Failed enchant: retained enchant level",
+				"Failed enchant: reduced enchant level"
 				);
 		// @formatter:on
 	}

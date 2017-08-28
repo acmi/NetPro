@@ -15,18 +15,19 @@
  */
 package condition;
 
-import net.l2emuproject.proxy.script.condition.ScriptedIntegerEqualityCondition;
+import net.l2emuproject.proxy.network.meta.condition.IntegerCondition;
+import net.l2emuproject.proxy.script.condition.ScriptedFieldValueCondition;
 
 /**
- * Tests whether the value of a byte/word/dword is equal to 3.
+ * Tests whether the value of a byte/word/dword is equal to 3 or 6.
  * 
  * @author _dev_
  */
-public class EnchantFailRetainItem extends ScriptedIntegerEqualityCondition
+public class EnchantFailRetainItem extends ScriptedFieldValueCondition implements IntegerCondition
 {
-	/** Constructs this condition. */
-	public EnchantFailRetainItem()
+	@Override
+	public boolean test(long value)
 	{
-		super(3);
+		return value == 3 || value == 6;
 	}
 }

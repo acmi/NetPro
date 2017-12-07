@@ -3,46 +3,72 @@
 <!-- The packet definition might be a clone of an existing definition in an earlier protocol version. -->
 <!-- If so, delete this file. Otherwise, delete this comment (or replace with comments on what has changed). -->
 <packet id="SM_CONFIRM_DLG" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<dword alias="Message" type="ImmutableSystemMessage" />
+	<dword alias="Message" type="ImmutableSystemMessage">
+		<scriptAlias id="CDLG_MESSAGE_ID" />
+	</dword>
 	<dword alias="Parameter count" id="index_0" />
 	<loop id="index_0">
-		<dword alias="Parameter" type="Parameter" id="cond_1" />
+		<dword alias="Parameter" type="Parameter" id="cond_1">
+			<scriptAlias id="CDLG_TOKEN_TYPE" />
+		</dword>
 		<branch id="cond_1" condition="param.StringValue">
-			<string alias="Value" />
+			<string alias="Value">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</string>
 		</branch>
 		<branch id="cond_1" condition="param.Player">
-			<string alias="Player" />
+			<string alias="Player">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</string>
 		</branch>
 		<branch id="cond_1" condition="param.Item">
-			<dword alias="Item" type="Item" />
+			<dword alias="Item" type="Item">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</dword>
 		</branch>
 		<branch id="cond_1" condition="param.Item2">
 			<dword alias="Item" type="Item" />
 			<dword alias="0" />
 		</branch>
 		<branch id="cond_1" condition="param.PledgeBase">
-			<dword alias="Real estate" type="PledgeBase" />
+			<dword alias="Residence" type="PledgeBase">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</dword>
 		</branch>
 		<branch id="cond_1" condition="param.NumberValue">
-			<dword alias="Value" />
+			<dword alias="Value">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</dword>
 		</branch>
 		<branch id="cond_1" condition="param.Npc">
-			<dword alias="NPC" type="Npc" />
+			<dword alias="NPC" type="Npc">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</dword>
 		</branch>
 		<branch id="cond_1" condition="param.Element"> <!-- Kamael -->
-			<dword alias="Element" type="ElementType" />
+			<dword alias="Element" type="ElementType">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</dword>
 		</branch>
 		<branch id="cond_1" condition="param.Fstring"> <!-- Freya -->
-			<dword alias="Value" type="ImmutableNpcString" />
+			<dword alias="Value" type="ImmutableNpcString">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</dword>
 		</branch>
 		<branch id="cond_1" condition="param.Sysstring">
-			<dword alias="Value" type="SysString" />
+			<dword alias="Value" type="SysString">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</dword>
 		</branch>
 		<branch id="cond_1" condition="param.Instance"> <!-- Kamael -->
-			<dword alias="Instance" type="Instance" />
+			<dword alias="Instance" type="Instance">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</dword>
 		</branch>
 		<branch id="cond_1" condition="param.Quantity"> <!-- C4 -->
-			<qword alias="Quantity" />
+			<qword alias="Quantity">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</qword>
 		</branch>
 		<branch id="cond_1" condition="param.Skill">
 			<dword alias="Skill" type="Skill">
@@ -71,12 +97,20 @@
 			<string alias="5th token" />
 		</branch>
 		<branch id="cond_1" condition="param.TinyNumberValue"> <!-- Ertheia -->
-			<byte alias="Value" />
+			<byte alias="Value">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</byte>
 		</branch>
 		<branch id="cond_1" condition="param.SmallNumberValue"> <!-- Ertheia -->
-			<word alias="Value" />
+			<word alias="Value">
+				<scriptAlias id="CDLG_TOKEN_VALUE_SINGLE" />
+			</word>
 		</branch>
 	</loop>
-	<dword alias="Time to answer" type="MillisRemaining" />
-	<dword alias="Associated ID" /> <!-- 0/uptime/OID -->
+	<dword alias="Time to answer" type="MillisRemaining">
+		<scriptAlias id="CDLG_TIME" />
+	</dword>
+	<dword alias="Associated ID"> <!-- 0/uptime/OID -->
+		<scriptAlias id="CDLG_ID" />
+	</dword>
 </packet>

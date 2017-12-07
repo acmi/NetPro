@@ -43,9 +43,10 @@ public class ObjectID extends ScriptedFieldValueInterpreter implements IntegerIn
 		public static final String toString(int sid)
 		{
 			final int cls = (sid >>> 27);
-			if (cls - 6 > values().length)
+			final int index = cls - 6;
+			if (index < 0 || index > values().length)
 				return "What " + cls + " -_- ";
-			return values()[cls - 6].toString();
+			return values()[index].toString();
 		}
 	}
 }

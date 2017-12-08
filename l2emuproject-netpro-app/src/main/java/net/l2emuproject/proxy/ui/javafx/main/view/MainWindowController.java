@@ -1074,19 +1074,21 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 			}
 			catch (final MutableOperationInProgressException e)
 			{
-				waitDialogController.onWaitEnd();
-				
-				makeNonModalUtilityAlert(ERROR, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.singleop", "scripts.load.err.dialog.content.singleop", pattern)
-						.show();
+				Platform.runLater(() -> {
+					waitDialogController.onWaitEnd();
+					
+					makeNonModalUtilityAlert(ERROR, getMainWindow(), "scripts.load.err.dialog.title", "scripts.load.err.dialog.header.singleop", "scripts.load.err.dialog.content.singleop", pattern)
+							.show();
+				});
 			}
 			catch (final InterruptedException e)
 			{
 				// application shutting down
-				waitDialogController.onWaitEnd();
+				Platform.runLater(waitDialogController::onWaitEnd);
 			}
 			catch (final IOException ex)
 			{
-				wrapException(ex, "scripts.load.err.dialog.title", null, "scripts.load.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show();
+				Platform.runLater(() -> wrapException(ex, "scripts.load.err.dialog.title", null, "scripts.load.err.dialog.header.runtime", null, getMainWindow(), Modality.NONE).show());
 			}
 		});
 		waitDialogController.setCancelAction(() -> task.cancel(true));

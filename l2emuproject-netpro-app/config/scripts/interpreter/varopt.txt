@@ -24802,56 +24802,56 @@
 24802	HP Recovery + 0.34
 24803	MP Recovery + 0.1
 24804	HP Recovery + 0.16 MP Recovery + 0.05
-24805	P. Def. +28.0 M. Def. +9.0
-24806	P. Def. +29.0 M. Def. +10.0
-24807	P. Def. +30.0 M. Def. +11.0
-24808	P. Def. +31.0 M. Def. +12.0
-24809	P. Def. +32.0 M. Def. +13.0
-24810	P. Def. +33.0 M. Def. +14.0
-24811	P. Def. +34.0 M. Def. +15.0
-24812	P. Def. +35.0 M. Def. +16.0
-24813	P. Def. +36.0 M. Def. +17.0
-24814	P. Def. +37.0 M. Def. +18.0
-24815	P. Def. +38.0 M. Def. +19.0
-24816	P. Def. +39.0 M. Def. +20.0
-24817	P. Def. +40.0 M. Def. +21.0
-24818	P. Def. +41.0 M. Def. +22.0
-24819	P. Def. +42.0 M. Def. +23.0
-24820	P. Def. +43.0 M. Def. +24.0
-24821	P. Def. +44.0 M. Def. +25.0
-24822	P. Def. +45.0 M. Def. +26.0
-24823	P. Def. +46.0 M. Def. +27.0
-24824	P. Def. +47.0 M. Def. +28.0
-24825	P. Def. +48.0 M. Def. +29.0
-24826	P. Def. +49.0 M. Def. +30.0
-24827	P. Def. +50.0 M. Def. +31.0
-24828	P. Def. +51.0 M. Def. +32.0
-24829	P. Def. +52.0 M. Def. +33.0
-24830	P. Def. +53.0 M. Def. +34.0
-24831	P. Def. +54.0 M. Def. +35.0
-24832	P. Def. +55.0 M. Def. +36.0
-24833	P. Def. +56.0 M. Def. +37.0
-24834	P. Def. +57.0 M. Def. +38.0
-24835	P. Def. +58.0 M. Def. +39.0
-24836	P. Def. +59.0 M. Def. +40.0
-24837	P. Def. +60.0 M. Def. +41.0
-24838	P. Def. +61.0 M. Def. +42.0
-24839	P. Def. +62.0 M. Def. +43.0
-24840	P. Def. +63.0 M. Def. +44.0
-24841	P. Def. +64.0 M. Def. +45.0
-24842	P. Def. +65.0 M. Def. +46.0
-24843	P. Def. +66.0 M. Def. +47.0
-24844	P. Def. +67.0 M. Def. +48.0
-24845	P. Def. +68.0 M. Def. +49.0
-24846	P. Def. +69.0 M. Def. +50.0
-24847	P. Def. +70.0 M. Def. +51.0
-24848	P. Def. +71.0 M. Def. +52.0
-24849	P. Def. +72.0 M. Def. +53.0
-24850	P. Def. +73.0 M. Def. +54.0
-24851	P. Def. +74.0 M. Def. +55.0
-24852	P. Def. +75.0 M. Def. +56.0
-24853	P. Def. +76.0 M. Def. +57.0
-24854	P. Def. +77.0 M. Def. +58.0
+24805	P. Def. + 28.0 M. Def. + 9.0
+24806	P. Def. + 29.0 M. Def. + 10.0
+24807	P. Def. + 30.0 M. Def. + 11.0
+24808	P. Def. + 31.0 M. Def. + 12.0
+24809	P. Def. + 32.0 M. Def. + 13.0
+24810	P. Def. + 33.0 M. Def. + 14.0
+24811	P. Def. + 34.0 M. Def. + 15.0
+24812	P. Def. + 35.0 M. Def. + 16.0
+24813	P. Def. + 36.0 M. Def. + 17.0
+24814	P. Def. + 37.0 M. Def. + 18.0
+24815	P. Def. + 38.0 M. Def. + 19.0
+24816	P. Def. + 39.0 M. Def. + 20.0
+24817	P. Def. + 40.0 M. Def. + 21.0
+24818	P. Def. + 41.0 M. Def. + 22.0
+24819	P. Def. + 42.0 M. Def. + 23.0
+24820	P. Def. + 43.0 M. Def. + 24.0
+24821	P. Def. + 44.0 M. Def. + 25.0
+24822	P. Def. + 45.0 M. Def. + 26.0
+24823	P. Def. + 46.0 M. Def. + 27.0
+24824	P. Def. + 47.0 M. Def. + 28.0
+24825	P. Def. + 48.0 M. Def. + 29.0
+24826	P. Def. + 49.0 M. Def. + 30.0
+24827	P. Def. + 50.0 M. Def. + 31.0
+24828	P. Def. + 51.0 M. Def. + 32.0
+24829	P. Def. + 52.0 M. Def. + 33.0
+24830	P. Def. + 53.0 M. Def. + 34.0
+24831	P. Def. + 54.0 M. Def. + 35.0
+24832	P. Def. + 55.0 M. Def. + 36.0
+24833	P. Def. + 56.0 M. Def. + 37.0
+24834	P. Def. + 57.0 M. Def. + 38.0
+24835	P. Def. + 58.0 M. Def. + 39.0
+24836	P. Def. + 59.0 M. Def. + 40.0
+24837	P. Def. + 60.0 M. Def. + 41.0
+24838	P. Def. + 61.0 M. Def. + 42.0
+24839	P. Def. + 62.0 M. Def. + 43.0
+24840	P. Def. + 63.0 M. Def. + 44.0
+24841	P. Def. + 64.0 M. Def. + 45.0
+24842	P. Def. + 65.0 M. Def. + 46.0
+24843	P. Def. + 66.0 M. Def. + 47.0
+24844	P. Def. + 67.0 M. Def. + 48.0
+24845	P. Def. + 68.0 M. Def. + 49.0
+24846	P. Def. + 69.0 M. Def. + 50.0
+24847	P. Def. + 70.0 M. Def. + 51.0
+24848	P. Def. + 71.0 M. Def. + 52.0
+24849	P. Def. + 72.0 M. Def. + 53.0
+24850	P. Def. + 73.0 M. Def. + 54.0
+24851	P. Def. + 74.0 M. Def. + 55.0
+24852	P. Def. + 75.0 M. Def. + 56.0
+24853	P. Def. + 76.0 M. Def. + 57.0
+24854	P. Def. + 77.0 M. Def. + 58.0
 24855	Increases Water/Fire/Wind/Earth/Holy/Dark P. Def. by 5 each
 24856	Increases Water/Fire/Wind/Earth/Holy/Dark P. Def. by 7 each
 24857	Increases Water/Fire/Wind/Earth/Holy/Dark P. Def. by 10 each
@@ -24946,7 +24946,7 @@
 24946	INT +5. STR +5. CON +5. MEN +5.
 24947	INT +5. STR +5. CON +5. MEN +5.
 24948	INT +5. STR +5. CON +5. MEN +5.
-24949	P. Def. +27.0 M. Def. +8.0
+24949	P. Def. + 27.0 M. Def. + 8.0
 24950	Passive: Item drop rate + 10%.
 24951	Passive: Item drop rate + 20%.
 24952	Passive: Item drop rate + 30%.
@@ -32966,18 +32966,246 @@
 32966	Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 10%
 32967	Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%
 32968	Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, M. Atk. + 7% NPC Damage + 10%
-32969	Casting Spd. + 5%
-32970	Casting Spd. + 7%
-32971	Casting Spd. + 10%
-32972	Casting Spd. + 12%
-32973	Casting Spd. + 15%
-32974	Casting Spd. + 15%, M. Critical Damage 3%
-32975	Casting Spd. + 15%, M. Critical Damage 6%
-32976	Casting Spd. + 15%, M. Critical Damage 10%
-32977	Casting Spd. + 15%, M. Critical Damage 10%, Max HP/MP + 5%
-32978	Casting Spd. + 15%, M. Critical Damage 10%, Max HP/MP + 10%
-32979	Casting Spd. + 15%, M. Critical Damage 10%, Max HP/MP + 15%
-32980	Casting Spd. + 15%, M. Critical Damage 10%, Max HP/MP + 15%, M. Atk. + 7% NPC Damage + 10%
+32969	Atk. Spd. + 5%, Casting Spd. + 5%
+32970	Atk. Spd. + 7%, Casting Spd. + 7%
+32971	Atk. Spd. + 10%, Casting Spd. + 10%
+32972	Atk. Spd. + 12%, Casting Spd. + 12%
+32973	Atk. Spd. + 15%, Casting Spd. + 15%
+32974	Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 3% M. Critical Damage + 3%
+32975	Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 6%, M. Critical Damage + 6%
+32976	Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%
+32977	Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%, Max HP/MP + 5%, Max HP/MP + 5%
+32978	Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%, Max HP/MP + 10%, Max HP/MP + 10%
+32979	Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%, Max HP/MP + 15%, Max HP/MP + 15%
+32980	Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage +10%, Max HP/MP + 15%, P. Atk. + 7%, M. Atk. + 7% NPC Damage + 10%
+32981	When Topaz Lv. 4 or higher is equipped, PvP Damage +1%
+32982	When Topaz Lv. 4 or higher is equipped, PvP Damage +2%
+32983	When Topaz Lv. 4 or higher is equipped, PvP Damage +5%
+32984	When Ruby Lv. 4 or higher is equipped, P. Atk. +1%
+32985	When Ruby Lv. 4 or higher is equipped, P. Atk. +2%
+32986	When Ruby Lv. 4 or higher is equipped, P. Atk. +5%
+32987	When Sapphire Lv. 4 or higher is equipped, M. Atk. +2%
+32988	When Sapphire Lv. 4 or higher is equipped, M. Atk. +4%
+32989	When Sapphire Lv. 4 or higher is equipped, M. Atk. +7%
+32990	When Obsidian Lv. 4 or higher is equipped, PVP Damage Received -1%
+32991	When Obsidian Lv. 4 or higher is equipped, PVP Damage Received -2%
+32992	When Obsidian Lv. 4 or higher is equipped, PVP Damage Received -5%
+32993	When Opal Lv. 4 or higher is equipped, Attack Attribute +10
+32994	When Opal Lv. 4 or higher is equipped, Attack Attribute +20
+32995	When Opal Lv. 4 or higher is equipped, Attack Attribute +50
+32996	When Emerald Lv. 4 or higher is equipped, MEN +1
+32997	When Emerald Lv. 4 or higher is equipped, CON +1, MEN +1
+32998	When Emerald Lv. 4 or higher is equipped, CON +1, MEN +1, LCK +1, CHA +1
+32999	When Aquamarine Lv. 4 or higher is equipped, Max MP +5%
+33000	When Aquamarine Lv. 4 or higher is equipped, Max MP +10%
+33001	When Aquamarine Lv. 4 or higher is equipped, Max MP +20%
+33002	When Diamond Lv. 4 or higher is equipped, P. Def. +283
+33003	When Diamond Lv. 4 or higher is equipped, P. Def. +567
+33004	When Diamond Lv. 4 or higher is equipped, P. Def. +945
+33005	When Pearl Lv. 4 or higher is equipped, M. Def. +283
+33006	When Pearl Lv. 4 or higher is equipped, M. Def. +328
+33007	When Pearl Lv. 4 or higher is equipped, M. Def. +548
+33008	When Tanzanite Lv. 4 or higher is equipped, Received Damage -1%
+33009	When Tanzanite Lv. 4 or higher is equipped, Received Damage -2%
+33010	When Tanzanite Lv. 4 or higher is equipped, Received Damage -3%
+33011	When Garnet Lv. 4 or higher is equipped, Max HP +2%
+33012	When Garnet Lv. 4 or higher is equipped, Max HP +5%
+33013	When Garnet Lv. 4 or higher is equipped, Max HP +10%
+33014	When Vital Stone Lv. 4 or higher is equipped, Vitality Bonus XP +1%
+33015	When Vital Stone Lv. 4 or higher is equipped, Vitality Bonus XP +2%
+33016	When Vital Stone Lv. 4 or higher is equipped, Vitality Bonus XP +5%
+33017	When Red Cat's Eye Lv. 4 or higher is equipped, P. Skill Power +1%
+33018	When Red Cat's Eye Lv. 4 or higher is equipped, P. Skill Power +2%
+33019	When Red Cat's Eye Lv. 4 or higher is equipped, P. Skill Power +5%
+33020	When Blue Cat's Eye Lv. 4 or higher is equipped, M. Skill Power +1%
+33021	When Blue Cat's Eye Lv. 4 or higher is equipped, M. Skill Power +2%
+33022	When Blue Cat's Eye Lv. 4 or higher is equipped, M. Skill Power +5%
+33023	[not named in client]
+33024	[not named in client]
+33025	[not named in client]
+33026	[not named in client]
+33027	[not named in client]
+33028	[not named in client]
+33029	[not named in client]
+33030	[not named in client]
+33031	[not named in client]
+33032	[not named in client]
+33033	[not named in client]
+33034	[not named in client]
+33035	[not named in client]
+33036	[not named in client]
+33037	[not named in client]
+33038	[not named in client]
+33039	[not named in client]
+33040	[not named in client]
+33041	[not named in client]
+33042	[not named in client]
+33043	[not named in client]
+33044	[not named in client]
+33045	[not named in client]
+33046	[not named in client]
+33047	[not named in client]
+33048	[not named in client]
+33049	[not named in client]
+33050	[not named in client]
+33051	[not named in client]
+33052	[not named in client]
+33053	[not named in client]
+33054	[not named in client]
+33055	[not named in client]
+33056	[not named in client]
+33057	[not named in client]
+33058	[not named in client]
+33059	[not named in client]
+33060	[not named in client]
+33061	[not named in client]
+33062	[not named in client]
+33063	[not named in client]
+33064	[not named in client]
+33065	[not named in client]
+33066	[not named in client]
+33067	[not named in client]
+33068	[not named in client]
+33069	[not named in client]
+33070	[not named in client]
+33071	[not named in client]
+33072	[not named in client]
+33073	[not named in client]
+33074	[not named in client]
+33075	[not named in client]
+33076	[not named in client]
+33077	[not named in client]
+33078	[not named in client]
+33079	[not named in client]
+33080	[not named in client]
+33081	[not named in client]
+33082	[not named in client]
+33083	[not named in client]
+33084	[not named in client]
+33085	[not named in client]
+33086	[not named in client]
+33087	[not named in client]
+33088	[not named in client]
+33089	[not named in client]
+33090	[not named in client]
+33091	[not named in client]
+33092	[not named in client]
+33093	[not named in client]
+33094	[not named in client]
+33095	[not named in client]
+33096	[not named in client]
+33097	[not named in client]
+33098	[not named in client]
+33099	[not named in client]
+33100	[not named in client]
+33101	[not named in client]
+33102	[not named in client]
+33103	[not named in client]
+33104	[not named in client]
+33105	[not named in client]
+33106	[not named in client]
+33107	[not named in client]
+33108	[not named in client]
+33109	[not named in client]
+33110	[not named in client]
+33111	[not named in client]
+33112	[not named in client]
+33113	[not named in client]
+33114	[not named in client]
+33115	[not named in client]
+33116	[not named in client]
+33117	[not named in client]
+33118	[not named in client]
+33119	[not named in client]
+33120	[not named in client]
+33121	[not named in client]
+33122	[not named in client]
+33123	[not named in client]
+33124	[not named in client]
+33125	[not named in client]
+33126	[not named in client]
+33127	[not named in client]
+33128	[not named in client]
+33129	[not named in client]
+33130	[not named in client]
+33131	[not named in client]
+33132	[not named in client]
+33133	[not named in client]
+33134	[not named in client]
+33135	[not named in client]
+33136	[not named in client]
+33137	[not named in client]
+33138	[not named in client]
+33139	[not named in client]
+33140	[not named in client]
+33141	[not named in client]
+33142	[not named in client]
+33143	[not named in client]
+33144	[not named in client]
+33145	[not named in client]
+33146	[not named in client]
+33147	[not named in client]
+33148	[not named in client]
+33149	[not named in client]
+33150	[not named in client]
+33151	[not named in client]
+33152	[not named in client]
+33153	[not named in client]
+33154	[not named in client]
+33155	[not named in client]
+33156	[not named in client]
+33157	[not named in client]
+33158	[not named in client]
+33159	[not named in client]
+33160	[not named in client]
+33161	[not named in client]
+33162	[not named in client]
+33163	[not named in client]
+33164	[not named in client]
+33165	[not named in client]
+33166	[not named in client]
+33167	[not named in client]
+33168	[not named in client]
+33169	[not named in client]
+33170	[not named in client]
+33171	[not named in client]
+33172	[not named in client]
+33173	[not named in client]
+33174	[not named in client]
+33175	[not named in client]
+33176	[not named in client]
+33177	[not named in client]
+33178	[not named in client]
+33179	[not named in client]
+33180	[not named in client]
+33181	[not named in client]
+33182	[not named in client]
+33183	[not named in client]
+33184	[not named in client]
+33185	[not named in client]
+33186	[not named in client]
+33187	[not named in client]
+33188	[not named in client]
+33189	[not named in client]
+33190	[not named in client]
+33191	[not named in client]
+33192	[not named in client]
+33193	[not named in client]
+33194	[not named in client]
+33195	[not named in client]
+33196	[not named in client]
+33197	[not named in client]
+33198	[not named in client]
+33199	[not named in client]
+33200	[not named in client]
+33201	[not named in client]
+33202	[not named in client]
+33203	[not named in client]
+33204	[not named in client]
+33205	[not named in client]
+33206	[not named in client]
+33207	[not named in client]
+33208	[not named in client]
 33209	PvP Damage + 5%
 33210	PvP Received Damage - 5%
 33211	PvE Damage + 5%
@@ -33058,6 +33286,90 @@
 33286	LUC/CHA + 1
 33287	LUC/CHA + 1, CON/MEN + 5, All Defense Attribute + 50, Vitality Status XP/SP + 10%
 33288	XP/SP 10%, Vitality Status XP/SP + 10%, P. Def./M. Def. + 7%, All Debuff Resistance + 5%, LUC/CHA + 1, CON/MEN + 5, All Defense Attribute + 50
+33289	Basic Ability increases when enchanted
+33290	STR +1, DEX +1, CON +1, INT +1, WIT +1, MEN +1, LUC +1, CHA +1\nAll Debuff Resistance increases when enchanted
+33291	STR +2, DEX +2, CON +2, INT +2, WIT +2, MEN +2, LUC +2, CHA +2, All Debuff Resistance + 5%\nEffect of Recovery Potions/Elixirs increases when enchanted
+33292	STR +3, DEX +3, CON +3, INT +3, WIT +3, MEN +3, LUC +3, CHA +3, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +500\nReceived PvP Damage decreases when enchanted
+33293	MEN +1
+33294	CON +1, MEN +1
+33295	CON +1, MEN +1, LUC +1
+33296	DEX +1, CON +1, WIT +1, MEN +1, LUC +1
+33297	STR +1, DEX +1, CON +1, INT +1, WIT +1, MEN +1, LUC +1, CHA +1
+33298	STR +1, DEX +1, CON +1, INT +1, WIT +1, MEN +2, LUC +1, CHA +1, All Debuff Resistance + 1%
+33299	STR +1, DEX +1, CON +2, INT +1, WIT +1, MEN +2, LUC +1, CHA +1, All Debuff Resistance + 2%
+33300	STR +1, DEX +1, CON +2, INT +1, WIT +1, MEN +2, LUC +2, CHA +1, All Debuff Resistance + 3%
+33301	STR +1, DEX +2, CON +2, INT +1, WIT +2, MEN +2, LUC +1, CHA +1, All Debuff Resistance + 4%
+33302	STR +2, DEX +2, CON +2, INT +2, WIT +2, MEN +2, LUC +2, CHA +2, All Debuff Resistance + 5%
+33303	STR +2, DEX +2, CON +2, INT +2, WIT +2, MEN +3, LUC +2, CHA +2, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +100
+33304	STR +2, DEX +2, CON +3, INT +2, WIT +2, MEN +3, LUC +2, CHA +2, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +200
+33305	STR +2, DEX +2, CON +3, INT +2, WIT +2, MEN +3, LUC +3, CHA +2, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +300
+33306	STR +2, DEX +3, CON +3, INT +2, WIT +3, MEN +3, LUC +3, CHA +2, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +400
+33307	STR +3, DEX +3, CON +3, INT +3, WIT +3, MEN +3, LUC +3, CHA +3, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +500
+33308	STR +3, DEX +3, CON +3, INT +3, WIT +3, MEN +4, LUC +3, CHA +3, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +500, Received PvP Damage -1%
+33309	STR +3, DEX +3, CON +4, INT +3, WIT +3, MEN +4, LUC +3, CHA +3, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +500, Received PvP Damage -2%
+33310	STR +3, DEX +3, CON +4, INT +3, WIT +3, MEN +4, LUC +4, CHA +3, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +500, Received PvP Damage -3%
+33311	STR +3, DEX +4, CON +4, INT +3, WIT +4, MEN +4, LUC +4, CHA +3, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +500, Received PvP Damage -4%
+33312	STR +4, DEX +4, CON +4, INT +4, WIT +4, MEN +4, LUC +4, CHA +4, All Debuff Resistance + 5%, Recovery Potion/Elixir Effect +500, Received PvP Damage -5%
+33313	Basic Ability increases when enchanted
+33314	STR +1, DEX +1, CON +1, INT +1, WIT +1, MEN +1, LUC +1, CHA +1\nVitality EXP/SP Bonus increased when enchanted
+33315	STR +2, DEX +2, CON +2, INT +2, WIT +2, MEN +2, LUC +2, CHA +2, Vitality EXP/SP Bonus +5%\nMax HP increasese when enchanted
+33316	STR +3, DEX +3, CON +3, INT +3, WIT +3, MEN +3, LUC +3, CHA +3, Vitality EXP/SP Bonus +5%, Max HP +5000\nReceived PvE Damage decreases when enchanted
+33317	MEN +1
+33318	CON +1, MEN +1
+33319	CON +1, MEN +1, LUC +1
+33320	DEX +1, CON +1, WIT +1, MEN +1, LUC +1
+33321	STR +1, DEX +1, CON +1, INT +1, WIT +1, MEN +1, LUC +1, CHA +1
+33322	STR +1, DEX +1, CON +1, INT +1, WIT +1, MEN +2, LUC +1, CHA +1, Vitality EXP/SP +1%
+33323	STR +1, DEX +1, CON +2, INT +1, WIT +1, MEN +2, LUC +1, CHA +1, Vitality EXP/SP +2%
+33324	STR +1, DEX +1, CON +2, INT +1, WIT +1, MEN +2, LUC +2, CHA +1, Vitality EXP/SP +3%
+33325	STR +1, DEX +2, CON +2, INT +1, WIT +2, MEN +2, LUC +1, CHA +1, Vitality EXP/SP +4%
+33326	STR +2, DEX +2, CON +2, INT +2, WIT +2, MEN +2, LUC +2, CHA +2, Vitality EXP/SP +5%
+33327	STR +2, DEX +2, CON +2, INT +2, WIT +2, MEN +3, LUC +2, CHA +2, Vitality EXP/SP +5%, Max HP +1000
+33328	STR +2, DEX +2, CON +3, INT +2, WIT +2, MEN +3, LUC +2, CHA +2, Vitality EXP/SP +5%, Max HP +2000
+33329	STR +2, DEX +2, CON +3, INT +2, WIT +2, MEN +3, LUC +3, CHA +2, Vitality EXP/SP +5%, Max HP +3000
+33330	STR +2, DEX +3, CON +3, INT +2, WIT +3, MEN +3, LUC +3, CHA +2, Vitality EXP/SP +5%, Max HP +4000
+33331	STR +3, DEX +3, CON +3, INT +3, WIT +3, MEN +3, LUC +3, CHA +3, Vitality EXP/SP +5%, Max HP +5000
+33332	STR +3, DEX +3, CON +3, INT +3, WIT +3, MEN +4, LUC +3, CHA +3, Vitality EXP/SP +5%, Max HP +5000, Received PvE Damage -1%
+33333	STR +3, DEX +3, CON +4, INT +3, WIT +3, MEN +4, LUC +3, CHA +3, Vitality EXP/SP +5%, Max HP +5000, Received PvE Damage -2%
+33334	STR +3, DEX +3, CON +4, INT +3, WIT +3, MEN +4, LUC +4, CHA +3, Vitality EXP/SP +5%, Max HP +5000, Received PvE Damage -3%
+33335	STR +3, DEX +4, CON +4, INT +3, WIT +4, MEN +4, LUC +4, CHA +3, Vitality EXP/SP +5%, Max HP +5000, Received PvE Damage -4%
+33336	STR +4, DEX +4, CON +4, INT +4, WIT +4, MEN +4, LUC +4, CHA +4, Vitality EXP/SP +5%, Max HP +5000, Received PvE Damage -5%
+33337	EXP/SP +3%, P./M. Def +5%, Speed +7, P./M. Received Critical Damage -5%. STR 3, DEX 3, CON 3, INT 3, WIT 3, MEN 3, LUC 3, CHA 3.
+33338	EXP/SP +3%, P./M. Def +5%, Speed +7, P./M. Received Critical Damage -5%. STR 3, DEX 3, CON 4, INT 3, WIT 3, MEN 4, LUC 3, CHA 3.
+33339	EXP/SP +3%, P./M. Def +5%, Speed +7, P./M. Received Critical Damage -5%. STR 3, DEX 3, CON 4, INT 3, WIT 3, MEN 4, LUC 4, CHA 3.
+33340	EXP/SP +3%, P./M. Def +5%, Speed +7, P./M. Received Critical Damage -5%. STR 3, DEX 4, CON 4, INT 3, WIT 4, MEN 4, LUC 4, CHA 3.
+33341	EXP/SP +3%, P./M. Def +5%, Speed +7, P./M. Received Critical Damage -5%. STR 4, DEX 4, CON 4, INT 4, WIT 4, MEN 4, LUC 4, CHA 3.
+33342	EXP/SP +3%, P./M. Def +5%, Speed +7, P./M. Received Critical Damage -5%. STR 4, DEX 4, CON 4, INT 4, WIT 4, MEN 4, LUC 4, CHA 4.
+33343	EXP/SP +6%, P./M. Def +10%, Speed +7, P./M. Received Critical Damage -10%, All Skills Cooldown -3%. STR 4, DEX 4, CON 4, INT 4, WIT 4, MEN 4, LUC 4, CHA 4.
+33344	EXP/SP +6%, P./M. Def +10%, Speed +7, P./M. Received Critical Damage -10%, All Skills Cooldown -3%. STR 4, DEX 4, CON 5, INT 4, WIT 4, MEN 5, LUC 4, CHA 4.
+33345	EXP/SP +6%, P./M. Def +10%, Speed +7, P./M. Received Critical Damage -10%, All Skills Cooldown -3%. STR 4, DEX 4, CON 5, INT 4, WIT 4, MEN 5, LUC 5, CHA 4.
+33346	EXP/SP +6%, P./M. Def +10%, Speed +7, P./M. Received Critical Damage -10%, All Skills Cooldown -3%. STR 4, DEX 5, CON 5, INT 4, WIT 5, MEN 5, LUC 5, CHA 4.
+33347	EXP/SP +6%, P./M. Def +10%, Speed +7, P./M. Received Critical Damage -10%, All Skills Cooldown -3%. STR 5, DEX 5, CON 5, INT 5, WIT 5, MEN 5, LUC 5, CHA 4.
+33348	EXP/SP +6%, P./M. Def +10%, Speed +7, P./M. Received Critical Damage -10%, All Skills Cooldown -3%. STR 5, DEX 5, CON 5, INT 5, WIT 5, MEN 5, LUC 5, CHA 5.
+33349	EXP/SP +10%, P./M. Def +15%, Speed +7, P./M. Received Critical Damage -15%, All Skills Cooldown -3%. STR 5, DEX 5, CON 5, INT 5, WIT 5, MEN 5, LUC 5, CHA 5.
+33350	EXP/SP +10%, P./M. Def +15%, Speed +7, P./M. Received Critical Damage -15%, All Skills Cooldown -3%. STR 5, DEX 5, CON 6, INT 5, WIT 5, MEN 6, LUC 5, CHA 5.
+33351	EXP/SP +10%, P./M. Def +15%, Speed +7, P./M. Received Critical Damage -15%, All Skills Cooldown -3%. STR 5, DEX 5, CON 6, INT 5, WIT 5, MEN 6, LUC 6, CHA 5.
+33352	EXP/SP +10%, P./M. Def +15%, Speed +7, P./M. Received Critical Damage -15%, All Skills Cooldown -3%. STR 5, DEX 6, CON 6, INT 5, WIT 6, MEN 6, LUC 6, CHA 5.
+33353	EXP/SP +10%, P./M. Def +15%, Speed +7, P./M. Received Critical Damage -15%, All Skills Cooldown -3%. STR 6, DEX 6, CON 6, INT 6, WIT 6, MEN 6, LUC 6, CHA 5.
+33354	EXP/SP +10%, P./M. Def +15%, Speed +7, P./M. Received Critical Damage -15%, All Skills Cooldown -3%. STR 6, DEX 6, CON 6, INT 6, WIT 6, MEN 6, LUC 6, CHA 6.
+33355	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33356	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33357	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33358	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33359	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33360	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33361	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33362	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33363	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33364	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33365	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33366	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33367	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33368	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33369	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33370	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33371	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33372	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
 40001	Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. Can be used in the Olympiad.
 40002	Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. Can be used in the Olympiad.
 40003	Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, Attribute Def. + 5. Can be used in the Olympiad.
@@ -33523,26 +33835,26 @@
 40463	P. Skill Critical Damage +3%
 40464	P. Skill Critical Damage +3.8%
 40465	P. Skill Critical Damage +7.5%
-40466	M. Critical Damage +1%
-40467	M. Critical Damage +1%
-40468	M. Critical Damage +2%
-40469	M. Critical Damage +2%
-40470	M. Critical Damage +3%
-40471	M. Critical Damage +3%
-40472	M. Critical Damage +4%
-40473	M. Critical Damage +5%
-40474	M. Critical Damage +6%
-40475	M. Critical Damage +7%
-40476	Attack Attribute Bonus +5
-40477	Attack Attribute Bonus +6
-40478	Attack Attribute Bonus +7
-40479	Attack Attribute Bonus +8
-40480	Attack Attribute Bonus +9
-40481	Attack Attribute Bonus +10
-40482	Attack Attribute Bonus +13
-40483	Attack Attribute Bonus +15
-40484	Attack Attribute Bonus +18
-40485	Attack Attribute Bonus +35
+40466	M. Skill Critical Damage +1%
+40467	M. Skill Critical Damage +1%
+40468	M. Skill Critical Damage +2%
+40469	M. Skill Critical Damage +2%
+40470	M. Skill Critical Damage +3%
+40471	M. Skill Critical Damage +3%
+40472	M. Skill Critical Damage +4%
+40473	M. Skill Critical Damage +5%
+40474	M. Skill Critical Damage +6%
+40475	M. Skill Critical Damage +7%
+40476	Attack Attribute +5
+40477	Attack Attribute +6
+40478	Attack Attribute +7
+40479	Attack Attribute +8
+40480	Attack Attribute +9
+40481	Attack Attribute +10
+40482	Attack Attribute +13
+40483	Attack Attribute +15
+40484	Attack Attribute +18
+40485	Attack Attribute +35
 40486	Stun Attack Success Rate +1.5%
 40487	Stun Attack Success Rate +2.5%
 40488	Stun Attack Success Rate +3%
@@ -33561,15 +33873,15 @@
 40501	Hold Attack Success Rate +6%
 40502	Hold Attack Success Rate +7.5%
 40503	Hold Attack Success Rate +15%
-40504	Bleeding Attack Success Rate +1.5%
-40505	Bleeding Attack Success Rate +2.5%
-40506	Bleeding Attack Success Rate +3%
-40507	Bleeding Attack Success Rate +3.5%
-40508	Bleeding Attack Success Rate +4.5%
-40509	Bleeding Attack Success Rate +5%
-40510	Bleeding Attack Success Rate +6%
-40511	Bleeding Attack Success Rate +7.5%
-40512	Bleeding Attack Success Rate +15%
+40504	Bleed Attack Success Rate +1.5%
+40505	Bleed Attack Success Rate +2.5%
+40506	Bleed Attack Success Rate +3%
+40507	Bleed Attack Success Rate +3.5%
+40508	Bleed Attack Success Rate +4.5%
+40509	Bleed Attack Success Rate +5%
+40510	Bleed Attack Success Rate +6%
+40511	Bleed Attack Success Rate +7.5%
+40512	Bleed Attack Success Rate +15%
 40513	Paralysis Attack Success Rate +1.5%
 40514	Paralysis Attack Success Rate +2.5%
 40515	Paralysis Attack Success Rate +3%
@@ -33579,15 +33891,15 @@
 40519	Paralysis Attack Success Rate +6%
 40520	Paralysis Attack Success Rate +7.5%
 40521	Paralysis Attack Success Rate +15%
-40522	Mind Attack Success Rate +1.5%
-40523	Mind Attack Success Rate +2.5%
-40524	Mind Attack Success Rate +3%
-40525	Mind Attack Success Rate +3.5%
-40526	Mind Attack Success Rate +4.5%
-40527	Mind Attack Success Rate +5%
-40528	Mind Attack Success Rate +6%
-40529	Mind Attack Success Rate +7.5%
-40530	Mind Attack Success Rate +15%
+40522	Mental Attack Success Rate +1.5%
+40523	Mental Attack Success Rate +2.5%
+40524	Mental Attack Success Rate +3%
+40525	Mental Attack Success Rate +3.5%
+40526	Mental Attack Success Rate +4.5%
+40527	Mental Attack Success Rate +5%
+40528	Mental Attack Success Rate +6%
+40529	Mental Attack Success Rate +7.5%
+40530	Mental Attack Success Rate +15%
 40531	Sleep Attack Success Rate +1.5%
 40532	Sleep Attack Success Rate +2.5%
 40533	Sleep Attack Success Rate +3%
@@ -33684,12 +33996,12 @@
 40624	Received PvE Damage -4%
 40625	Received PvE Damage -4.5%
 40626	Received PvE Damage -5%
-40627	EXP when hunting +4%
-40628	EXP when hunting +4.5%
-40629	EXP when hunting +5%
-40630	SP when hunting +4%
-40631	SP when hunting +4.5%
-40632	SP when hunting +5%
+40627	XP When Hunting +4%
+40628	XP When Hunting +4.5%
+40629	XP When Hunting +5%
+40630	SP When Hunting +4%
+40631	SP When Hunting +4.5%
+40632	SP When Hunting +5%
 40633	Chance to recover 4% of damage as HP
 40634	Chance to recover 4.5% of damage as HP
 40635	Chance to recover 5% of damage as HP
@@ -33848,26 +34160,26 @@
 40788	P. Skill Critical Damage +3%
 40789	P. Skill Critical Damage +3.8%
 40790	P. Skill Critical Damage +7.5%
-40791	M. Critical Damage +1%
-40792	M. Critical Damage +1%
-40793	M. Critical Damage +2%
-40794	M. Critical Damage +2%
-40795	M. Critical Damage +3%
-40796	M. Critical Damage +3%
-40797	M. Critical Damage +4%
-40798	M. Critical Damage +5%
-40799	M. Critical Damage +6%
-40800	M. Critical Damage +7%
-40801	Attack Attribute Bonus +5
-40802	Attack Attribute Bonus +6
-40803	Attack Attribute Bonus +7
-40804	Attack Attribute Bonus +8
-40805	Attack Attribute Bonus +9
-40806	Attack Attribute Bonus +10
-40807	Attack Attribute Bonus +13
-40808	Attack Attribute Bonus +15
-40809	Attack Attribute Bonus +18
-40810	Attack Attribute Bonus +35
+40791	M. Skill Critical Damage +1%
+40792	M. Skill Critical Damage +1%
+40793	M. Skill Critical Damage +2%
+40794	M. Skill Critical Damage +2%
+40795	M. Skill Critical Damage +3%
+40796	M. Skill Critical Damage +3%
+40797	M. Skill Critical Damage +4%
+40798	M. Skill Critical Damage +5%
+40799	M. Skill Critical Damage +6%
+40800	M. Skill Critical Damage +7%
+40801	Attack Attribute +5
+40802	Attack Attribute +6
+40803	Attack Attribute +7
+40804	Attack Attribute +8
+40805	Attack Attribute +9
+40806	Attack Attribute +10
+40807	Attack Attribute +13
+40808	Attack Attribute +15
+40809	Attack Attribute +18
+40810	Attack Attribute +35
 40811	Stun Attack Success Rate +1.5%
 40812	Stun Attack Success Rate +2.5%
 40813	Stun Attack Success Rate +3%
@@ -33886,15 +34198,15 @@
 40826	Hold Attack Success Rate +6%
 40827	Hold Attack Success Rate +7.5%
 40828	Hold Attack Success Rate +15%
-40829	Bleeding Attack Success Rate +1.5%
-40830	Bleeding Attack Success Rate +2.5%
-40831	Bleeding Attack Success Rate +3%
-40832	Bleeding Attack Success Rate +3.5%
-40833	Bleeding Attack Success Rate +4.5%
-40834	Bleeding Attack Success Rate +5%
-40835	Bleeding Attack Success Rate +6%
-40836	Bleeding Attack Success Rate +7.5%
-40837	Bleeding Attack Success Rate +15%
+40829	Bleed Attack Success Rate +1.5%
+40830	Bleed Attack Success Rate +2.5%
+40831	Bleed Attack Success Rate +3%
+40832	Bleed Attack Success Rate +3.5%
+40833	Bleed Attack Success Rate +4.5%
+40834	Bleed Attack Success Rate +5%
+40835	Bleed Attack Success Rate +6%
+40836	Bleed Attack Success Rate +7.5%
+40837	Bleed Attack Success Rate +15%
 40838	Paralysis Attack Success Rate +1.5%
 40839	Paralysis Attack Success Rate +2.5%
 40840	Paralysis Attack Success Rate +3%
@@ -33904,15 +34216,15 @@
 40844	Paralysis Attack Success Rate +6%
 40845	Paralysis Attack Success Rate +7.5%
 40846	Paralysis Attack Success Rate +15%
-40847	Mind Attack Success Rate +1.5%
-40848	Mind Attack Success Rate +2.5%
-40849	Mind Attack Success Rate +3%
-40850	Mind Attack Success Rate +3.5%
-40851	Mind Attack Success Rate +4.5%
-40852	Mind Attack Success Rate +5%
-40853	Mind Attack Success Rate +6%
-40854	Mind Attack Success Rate +7.5%
-40855	Mind Attack Success Rate +15%
+40847	Mental Attack Success Rate +1.5%
+40848	Mental Attack Success Rate +2.5%
+40849	Mental Attack Success Rate +3%
+40850	Mental Attack Success Rate +3.5%
+40851	Mental Attack Success Rate +4.5%
+40852	Mental Attack Success Rate +5%
+40853	Mental Attack Success Rate +6%
+40854	Mental Attack Success Rate +7.5%
+40855	Mental Attack Success Rate +15%
 40856	Sleep Attack Success Rate +1.5%
 40857	Sleep Attack Success Rate +2.5%
 40858	Sleep Attack Success Rate +3%
@@ -34009,12 +34321,12 @@
 40949	Received PvE Damage -4%
 40950	Received PvE Damage -4.5%
 40951	Received PvE Damage -5%
-40952	EXP when hunting +4%
-40953	EXP when hunting +4.5%
-40954	EXP when hunting +5%
-40955	SP when hunting +4%
-40956	SP when hunting +4.5%
-40957	SP when hunting +5%
+40952	XP When Hunting +4%
+40953	XP When Hunting +4.5%
+40954	XP When Hunting +5%
+40955	SP When Hunting +4%
+40956	SP When Hunting +4.5%
+40957	SP When Hunting +5%
 40958	Chance to recover 4% of damage as HP
 40959	Chance to recover 4.5% of damage as HP
 40960	Chance to recover 5% of damage as HP
@@ -34045,3 +34357,135 @@
 40985	Bonus EXP obtained in Vitality state +2%.
 40986	Bonus EXP obtained in Vitality state +10%.
 40987	Bonus EXP obtained in Vitality state +20%.
+40988	[not named in client]
+40989	[not named in client]
+40990	[not named in client]
+40991	[not named in client]
+40992	[not named in client]
+40993	[not named in client]
+40994	[not named in client]
+40995	[not named in client]
+40996	[not named in client]
+40997	[not named in client]
+40998	[not named in client]
+40999	[not named in client]
+41000	[not named in client]
+41001	[not named in client]
+41002	[not named in client]
+41003	[not named in client]
+41004	[not named in client]
+41005	[not named in client]
+41006	[not named in client]
+41007	[not named in client]
+41008	[not named in client]
+41009	[not named in client]
+41010	[not named in client]
+41011	[not named in client]
+41012	[not named in client]
+41013	[not named in client]
+41014	[not named in client]
+41015	[not named in client]
+41016	[not named in client]
+41017	[not named in client]
+41018	[not named in client]
+41019	[not named in client]
+41020	[not named in client]
+41021	[not named in client]
+41022	[not named in client]
+41023	[not named in client]
+41024	[not named in client]
+41025	[not named in client]
+41026	[not named in client]
+41027	[not named in client]
+41028	[not named in client]
+41029	[not named in client]
+41030	[not named in client]
+41031	[not named in client]
+41032	[not named in client]
+41033	[not named in client]
+41034	[not named in client]
+41035	[not named in client]
+41036	[not named in client]
+41037	[not named in client]
+41038	[not named in client]
+41039	[not named in client]
+41040	[not named in client]
+41041	[not named in client]
+41042	[not named in client]
+41043	[not named in client]
+41044	[not named in client]
+41045	[not named in client]
+41046	[not named in client]
+41047	[not named in client]
+41048	[not named in client]
+41049	[not named in client]
+41050	[not named in client]
+41051	[not named in client]
+41052	[not named in client]
+41053	[not named in client]
+41054	[not named in client]
+41055	[not named in client]
+41056	[not named in client]
+41057	[not named in client]
+41058	[not named in client]
+41059	[not named in client]
+41060	[not named in client]
+41061	[not named in client]
+41062	[not named in client]
+41063	[not named in client]
+41064	[not named in client]
+41065	[not named in client]
+41066	[not named in client]
+41067	[not named in client]
+41068	[not named in client]
+41069	[not named in client]
+41070	[not named in client]
+41071	[not named in client]
+41072	[not named in client]
+41073	[not named in client]
+41074	[not named in client]
+41075	[not named in client]
+41076	[not named in client]
+41077	[not named in client]
+41078	[not named in client]
+41079	[not named in client]
+41080	[not named in client]
+41081	[not named in client]
+41082	[not named in client]
+41083	[not named in client]
+41084	[not named in client]
+41085	[not named in client]
+41086	[not named in client]
+41087	[not named in client]
+41088	[not named in client]
+41089	[not named in client]
+41090	[not named in client]
+41091	[not named in client]
+41092	[not named in client]
+41093	[not named in client]
+41094	[not named in client]
+41095	[not named in client]
+41096	[not named in client]
+41097	[not named in client]
+41098	[not named in client]
+41099	[not named in client]
+41100	[not named in client]
+41101	[not named in client]
+41102	[not named in client]
+41103	[not named in client]
+41104	[not named in client]
+41105	[not named in client]
+41106	[not named in client]
+41107	[not named in client]
+41108	[not named in client]
+41109	[not named in client]
+41110	[not named in client]
+41111	[not named in client]
+41112	[not named in client]
+41113	[not named in client]
+41114	[not named in client]
+41115	[not named in client]
+41116	[not named in client]
+41117	[not named in client]
+41118	[not named in client]
+41119	[not named in client]

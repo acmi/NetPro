@@ -79,27 +79,27 @@
 2003	|Lv. 82+| Bring Up With Love (Completed)
 2004	|Lv. 82+| Bring Up With Love
 2005	Are you trying to tame me? Don't do that!
-2006	Don't give such a thing.  You can endanger yourself!
-2007	Yuck!  What is this?  It tastes terrible!
-2008	I'm hungry.  Give me a little more, please.
-2009	What is this?  Is this edible?
+2006	Don't give such a thing. You can endanger yourself!
+2007	Yuck! What is this? It tastes terrible!
+2008	I'm hungry. Give me a little more, please.
+2009	What is this? Is this edible?
 2010	Don't worry about me.
-2011	Thank you.  That was delicious!
+2011	Thank you. That was delicious!
 2012	I think I am starting to like you!
-2013	Eeeeek!  Eeeeek!
-2014	Don't keep trying to tame me.  I don't want to be tamed.
-2015	It is just food to me.  Although it may also be your hand.
-2016	If I keep eating like this, won't I become fat?  *chomp chomp*
+2013	Eeeeek! Eeeeek!
+2014	Don't keep trying to tame me. I don't want to be tamed.
+2015	It is just food to me. Although it may also be your hand.
+2016	If I keep eating like this, won't I become fat? *chomp chomp*
 2017	Why do you keep feeding me?
-2018	Don't trust me.  I'm afraid I may betray you later.
+2018	Don't trust me. I'm afraid I may betray you later.
 2019	Grrrrr....
 2020	You brought this upon yourself...!
-2021	I feel strange...!  I keep having these evil thoughts...!
+2021	I feel strange...! I keep having these evil thoughts...!
 2022	Alas... so this is how it all ends...
 2023	I don't feel so good... Oh, my mind is very troubled...!
 2024	$s1, so what do you think it is like to be tamed?
 2025	$s1, whenever I see spice, I think I will miss your hand that used to feed it to me.
-2026	$s1, don't go to the village.  I don't have the strength to follow you.
+2026	$s1, don't go to the village. I don't have the strength to follow you.
 2027	Thank you for trusting me, $s1. I hope I will be helpful to you.
 2028	$s1, will I be able to help you?
 2029	I guess it's just my animal magnetism.
@@ -303,7 +303,7 @@
 6762	You are so stubborn... I must follow him now...
 6763	Seek enlightenment from the Tablet.
 6764	Arrogant beings! You are all doomed!
-6765	My  time in your world has come to an end. Consider yourselves lucky...
+6765	My time in your world has come to an end. Consider yourselves lucky...
 6766	$s1! How dare you!!!
 6767	$s1! Ahhaa! Your god forsakes you!
 6801	Saga of the Soul Hound
@@ -935,7 +935,7 @@
 9666	$s1! Are you trying to get in my way?
 9667	$s1! When I come back, I'll kill you.
 9750	$s1? Wake up! Time to die!
-9751	You're tougher than I thought!  I'll be back!
+9751	You're tougher than I thought! I'll be back!
 9752	I lost? It can't be!
 9753	Are you the one who's been bothering my minions, $s1?
 9754	Dammit! I can't believe you beat me!
@@ -1016,7 +1016,7 @@
 10075	Dear $s1, may the blessings of Einhasad be with you always.
 10076	Dear brother $s1, follow the path of light with me...
 10077	$s1, why would you choose the path of darkness?!
-10078	$s1!  How dare you defy the will of Einhasad!
+10078	$s1! How dare you defy the will of Einhasad!
 10079	The door to the 3rd floor of the altar is now open.
 10101	Sword of Solidarity
 10102	Sword of Solidarity (In Progress)
@@ -1560,7 +1560,7 @@
 22934	I'll take your lives later!
 22935	That sword is really...!
 22936	No! I haven't completely finished the command for destruction and slaughter yet!!!
-22937	How dare you wake me!  Now you shall die!
+22937	How dare you wake me! Now you shall die!
 23001	Test of the Summoner
 23002	Test of the Summoner (In Progress)
 23003	Test of the Summoner (Done)
@@ -1667,7 +1667,7 @@
 24703	Path of the Noblesse, Precious Soul - 4 (Done)
 24704	Path of the Noblesse, Precious Soul - 4
 24801	Returner Tutorial
-24850	You've gained $s2 XP and $s3 skill points  with $s1 Mark of Effort.
+24850	You've gained $s2 XP and $s3 skill points with $s1 Mark of Effort.
 24851	You've received $s3 Marks of Effort from leveling up from $s1 to $s2.
 24901	Poisoned Plains of the Lizardmen
 24902	Poisoned Plains of the Lizardmen (In Progress)
@@ -1865,7 +1865,7 @@
 33425	I am a great empire, Bonaparterius!
 33426	Let your head down before the Lord!
 33501	The Song of the Hunter
-33502	The Song of the Hunter  (In Progress)
+33502	The Song of the Hunter (In Progress)
 33504	The Song of the Hunter
 33511	We'll take the property of the ancient empire!
 33512	Show me the pretty sparkling things! They're all mine!
@@ -1945,7 +1945,7 @@
 34832	You fools will get what's coming to you!
 34833	Sorry about this, but I must kill you now.
 34834	I have the key. Why don't you come and take it?
-34835	You guys wouldn't know... the seven seals are...  Arrrgh!
+34835	You guys wouldn't know... the seven seals are... Arrrgh!
 34836	I shall drench this mountain with your blood!
 34837	That doesn't belong to you. Don't touch it!
 34838	Get out of my sight, you infidels!
@@ -2136,7 +2136,7 @@
 42119	Get out of the sacred tree, you scoundrels!
 42120	Death to the thieves of the pure water of the world!
 42231	Hey, it seems like you need my help, doesn't it?
-42232	Almost got it... Ouch! Stop!  Damn these bloody manacles!
+42232	Almost got it... Ouch! Stop! Damn these bloody manacles!
 42233	Oh, that smarts!
 42234	Hey, master! Pay attention! I'm dying over here!
 42235	What have I done to deserve this?
@@ -2151,7 +2151,7 @@
 42244	Hey, if you continue to waste time you will never finish your penance!
 42245	I know you don't like me. The feeling is mutual!
 42246	I need a drink.
-42247	Oh, this is dragging on too long...  At this rate I won't make it home before the seven seals are broken.
+42247	Oh, this is dragging on too long... At this rate I won't make it home before the seven seals are broken.
 42301	Take Your Best Shot
 42302	Take Your Best Shot (In Progress)
 42304	Take Your Best Shot
@@ -2403,10 +2403,10 @@
 49204	|Lv. 80+| Tomb Raiders
 49250	Stop the monsters from collecting the relics.
 49251	Thanks again for today's work. I will see you tomorrow.
-49301	|Lv. 95 - 105| Kicking Out Unwelcome Guests
-49302	|Lv. 95 - 105| Kicking Out Unwelcome Guests (In progress)
-49303	|Lv. 95 - 105| Kicking Out Unwelcome Guests (Completed)
-49304	|Lv. 95 - 105| Kicking Out Unwelcome Guests
+49301	|Lv. 94-104| Kicking Out Unwelcome Guests
+49302	|Lv. 94-104| Kicking Out Unwelcome Guests (In progress)
+49303	|Lv. 94-104| Kicking Out Unwelcome Guests (Completed)
+49304	|Lv. 94-104| Kicking Out Unwelcome Guests
 49401	|Lv. 85 - 89| Incarnation of Greed, Zellaka
 49402	|Lv. 85 - 89| Incarnation of Greed, Zellaka (In progress)
 49403	|Lv. 85 - 89| Incarnation of Greed, Zellaka (Completed)
@@ -2454,7 +2454,7 @@
 50503	|Lv. 1+| Blood Offering (Completed)
 50504	|Lv. 1+| Blood Offering
 50701	Into the Chaos
-50702	Into the Chaos  (In Progress)
+50702	Into the Chaos (In Progress)
 50704	Into the Chaos
 50801	|Lv. 1+| A Clan's Reputation
 50802	|Lv. 1+| A Clan's Reputation (In progress)
@@ -2494,6 +2494,191 @@
 55302	|Lv. 85+| Olympiad Undefeated (In progress)
 55303	|Lv. 85+| Olympiad Undefeated (Completed)
 55304	|Lv. 85+| Olympiad Undefeated
+56101	|Lv. 85-87| Basic Mission: Harnak Underground Ruins
+56102	|Lv. 85-87| Basic Mission: Harnak Underground Ruins (In progress)
+56103	|Lv. 85-87| Basic Mission: Harnak Underground Ruins (Completed)
+56104	|Lv. 85-87| Basic Mission: Harnak Underground Ruins
+56111	Hear about the mission
+56112	Talk to Elisa
+56113	Talk to Milia
+56114	Talk to Hadel
+56115	Complete the quest "Beyond the Memories"
+56116	Talk to Penny
+56120	Talk to Hadel
+56201	|Lv. 85-88| Basic Mission: Altar of Evil
+56202	|Lv. 85-88| Basic Mission: Altar of Evil (In progress)
+56203	|Lv. 85-88| Basic Mission: Altar of Evil (Completed)
+56204	|Lv. 85-88| Basic Mission: Altar of Evil
+56211	Hear about the mission
+56212	Talk to Elisa
+56213	Talk to Bella
+56214	Use the Teleport Device
+56215	Talk to Lapathia
+56216	Talk to Penny
+56220	Talk to Lapathia
+56221	Complete the quest "The Purification Ritual"
+56222	Complete the quest "Wash Blood with Blood"
+56301	|Lv. 86-90| Basic Mission: Bloody Swampland
+56302	|Lv. 86-90| Basic Mission: Bloody Swampland (In progress)
+56303	|Lv. 86-90| Basic Mission: Bloody Swampland (Completed)
+56304	|Lv. 86-90| Basic Mission: Bloody Swampland
+56311	Talk to Vollodos
+56312	Carry out Vollodos' mission
+56313	Talk to Penny
+56321	Complete the quest "Meaning of Survival"
+56322	Complete the quest "Never Say Good Bye"
+56401	|Lv. 85-94| Basic Mission: Kartia's Labyrinth (Solo)
+56402	|Lv. 85-94| Basic Mission: Kartia's Labyrinth (Solo) (In progress)
+56403	|Lv. 85-94| Basic Mission: Kartia's Labyrinth (Solo) (Completed)
+56404	|Lv. 85-94| Basic Mission: Kartia's Labyrinth (Solo)
+56411	Hear about the mission
+56412	Talk to Kartia Researcher
+56413	Carry out Kartia Researcher's mission
+56414	Talk to Penny
+56501	|Lv. 88-91| Basic Mission: Fairy Settlement - West
+56502	|Lv. 88-91| Basic Mission: Fairy Settlement - West (In progress)
+56503	|Lv. 88-91| Basic Mission: Fairy Settlement - West (Completed)
+56504	|Lv. 88-91| Basic Mission: Fairy Settlement - West
+56511	Hear about the mission
+56512	Talk to Lada
+56513	Complete the quest "Shadow of Terror: Blackish Red Fog"
+56514	Talk to Fairy Citizen
+56515	Complete Fairy Citizen's mission
+56516	Talk to Penny
+56521	Complete the quest "To Calm the Flood"
+56522	Complete the quest "Can't Go Against the Time"
+56601	|Lv. 90-94| Basic Mission: Fairy Settlement - East
+56602	|Lv. 90-94| Basic Mission: Fairy Settlement - East (In progress)
+56603	|Lv. 90-94| Basic Mission: Fairy Settlement - East (Completed)
+56604	|Lv. 90-94| Basic Mission: Fairy Settlement - East
+56611	Hear about the mission
+56612	Talk to Lada
+56613	Complete the quest "Shadow of Terror: Blackish Red Fog"
+56614	Talk to Nerupa
+56615	Carry out Nerupa's mission
+56616	Talk to Penny
+56621	Complete the quest "Dreaming of Peace"
+56622	Complete the quest "Mutated Creatures"
+56701	|Lv. 93 - 94| Basic Mission: Isle of Souls
+56702	|Lv. 93 - 94| Basic Mission: Isle of Souls (In progress)
+56703	|Lv. 93 - 94| Basic Mission: Isle of Souls (Completed)
+56704	|Lv. 93 - 94| Basic Mission: Isle of Souls
+56711	Hear about the mission
+56712	Talk to Tapoy
+56713	Complete the quest "Mysterious Journey"
+56714	Speak with Hesed
+56715	Carry out Hesed's mission
+56716	Talk to Penny
+56721	Complete the quest "Uncover the Secret"
+56722	Complete the quest "More Aggressive Operation"
+56801	|Lv. 93-95| Special Mission: Nornil's Cave
+56802	|Lv. 93-95| Special Mission: Nornil's Cave (In progress)
+56803	|Lv. 93-95| Special Mission: Nornil's Cave (Completed)
+56804	|Lv. 93-95| Special Mission: Nornil's Cave
+56811	Hear about the mission
+56812	Talk to Tapoy
+56813	Complete the quest "Mysterious Journey"
+56814	Talk to Verna
+56815	Carry out Verna's mission
+56816	Talk to Penny
+56821	Complete the quest "Reacting to a Crisis"
+56822	Complete the quest "Head-on Crash"
+56901	|Lv. 94-96| Basic Mission: Seal of Shilen
+56902	|Lv. 94-96| Basic Mission: Seal of Shilen (In progress)
+56903	|Lv. 94-96| Basic Mission: Seal of Shilen (Completed)
+56904	|Lv. 94-96| Basic Mission: Seal of Shilen
+56911	Talk to Agent Georgio
+56912	Complete the quest "Kicking Out Unwelcome Guests"
+56913	Talk to Penny
+57001	|Lv. 87-94| Special Mission: Kartia's Labyrinth (Party)
+57002	|Lv. 87-94| Special Mission: Kartia's Labyrinth (Party) (In progress)
+57003	|Lv. 87-94| Special Mission: Kartia's Labyrinth (Party) (Completed)
+57004	|Lv. 87-94| Special Mission: Kartia's Labyrinth (Party)
+57011	Hear about the mission
+57012	Talk to Kartia Researcher
+57013	Carry out Kartia Researcher's mission
+57014	Talk to Penny
+57101	|Lv. 86-88| Special Mission: Proof of Unity (Field Raid)
+57102	|Lv. 86-88| Special Mission: Proof of Unity (Field Raid) (In progress)
+57103	|Lv. 86-88| Special Mission: Proof of Unity (Field Raid) (Completed)
+57104	|Lv. 86-88| Special Mission: Proof of Unity (Field Raid)
+57112	Talk to Penny
+57201	|Lv. 88-92| Special Mission: Proof of Courage (Field Raid)
+57202	|Lv. 88-92| Special Mission: Proof of Courage (Field Raid) (In progress)
+57203	|Lv. 88-92| Special Mission: Proof of Courage (Field Raid) (Completed)
+57204	|Lv. 88-92| Special Mission: Proof of Courage (Field Raid)
+57212	Talk to Penny
+57301	|Lv. 92-95| Special Mission: Proof of Strength (Field Raid)
+57302	|Lv. 92-95| Special Mission: Proof of Strength (Field Raid) (In progress)
+57303	|Lv. 92-95| Special Mission: Proof of Strength (Field Raid) (Completed)
+57304	|Lv. 92-95| Special Mission: Proof of Strength (Field Raid)
+57312	Talk to Penny
+57401	|Lv. 93-95| Special Mission: Nornil's Garden
+57402	|Lv. 93-95| Special Mission: Nornil's Garden (In progress)
+57403	|Lv. 93-95| Special Mission: Nornil's Garden (Completed)
+57404	|Lv. 93-95| Special Mission: Nornil's Garden
+57411	Clear Nornil's Garden
+57412	Talk to Penny
+57501	|Lv. 90-94| Special Mission: Fortuna
+57502	|Lv. 90-94| Special Mission: Fortuna (In progress)
+57503	|Lv. 90-94| Special Mission: Fortuna (Completed)
+57504	|Lv. 90-94| Special Mission: Fortuna
+57511	Clear Fortuna
+57512	Talk to Penny
+57601	|Lv. 90-94| Special Mission: Defeat Spezion
+57602	|Lv. 90-94| Special Mission: Defeat Spezion (In progress)
+57603	|Lv. 90-94| Special Mission: Defeat Spezion (Completed)
+57604	|Lv. 90-94| Special Mission: Defeat Spezion
+57611	Defeat Spezion
+57612	Talk to Penny
+58001	|Lv. 85-95| Beyond the Memories
+58002	|Lv. 85-95| Beyond the Memories (In progress)
+58003	|Lv. 85-95| Beyond the Memories (Completed)
+58004	|Lv. 85-95| Beyond the Memories
+58011	Defeat monsters in the Underground Ruins
+58012	Talk to Hadel
+58101	|Lv. 85-95| The Purification Ritual
+58102	|Lv. 85-95| The Purification Ritual (In progress)
+58103	|Lv. 85-95| The Purification Ritual (Completed)
+58104	|Lv. 85-95| The Purification Ritual
+58111	Talk to Lapathia
+58201	|Lv. 85-95| Wash Blood with Blood
+58202	|Lv. 85-95| Wash Blood with Blood (In progress)
+58203	|Lv. 85-95| Wash Blood with Blood (Completed)
+58204	|Lv. 85-95| Wash Blood with Blood
+58211	Talk to Lapathia
+58301	|Lv. 86-96| Meaning of Survival
+58302	|Lv. 86-96| Meaning of Survival (In progress)
+58303	|Lv. 86-96| Meaning of Survival (Completed)
+58304	|Lv. 86-96| Meaning of Survival
+58311	Talk to Vollodos
+58401	|Lv. 86-96| Never Say Good Bye
+58402	|Lv. 86-96| Never Say Good Bye (In progress)
+58403	|Lv. 86-96| Never Say Good Bye (Completed)
+58404	|Lv. 86-96| Never Say Good Bye
+58411	Talk to Vollodos
+58501	|Lv. 88-98| Can't Go Against the Time
+58502	|Lv. 88-98| Can't Go Against the Time (In progress)
+58503	|Lv. 88-98| Can't Go Against the Time (Completed)
+58504	|Lv. 88-98| Can't Go Against the Time
+58511	Talk to Fairy Citizen
+58601	|Lv. 90-100| Mutated Creatures
+58602	|Lv. 90-100| Mutated Creatures (In progress)
+58603	|Lv. 90-100| Mutated Creatures (Completed)
+58604	|Lv. 90-100| Mutated Creatures
+58611	Talk to Nerupa
+58701	|Lv. 93-103| More Aggressive Operation
+58702	|Lv. 93-103| More Aggressive Operation (In progress)
+58703	|Lv. 93-103| More Aggressive Operation (Completed)
+58704	|Lv. 93-103| More Aggressive Operation
+58711	Defeat monsters around the tent
+58712	Speak with Hesed
+58801	|Lv. 93-103| Head-on Crash
+58802	|Lv. 93-103| Head-on Crash (In progress)
+58803	|Lv. 93-103| Head-on Crash (Completed)
+58804	|Lv. 93-103| Head-on Crash
+58811	Defeat Spicula Larva
+58812	Talk to Verna
 60000	I'll start the furnace mechanism. Watch for the pattern.
 60001	Only 1 minute left!
 60002	Just 10 seconds left!
@@ -2553,13 +2738,13 @@
 61001	Magical Power of Water - Part 2
 61002	Magical Power of Water - Part 2 (In Progress)
 61004	Magical Power of Water - Part 2
-61050	The magical power of water comes from the power of storm and hail!  If you dare to confront it, only death will await you!
-61051	The power of constraint is getting weaker.  Your ritual has failed!
+61050	The magical power of water comes from the power of storm and hail! If you dare to confront it, only death will await you!
+61051	The power of constraint is getting weaker. Your ritual has failed!
 61101	Alliance with Varka Silenos
 61102	Alliance with Varka Silenos (In Progress)
 61104	Alliance with Varka Silenos
 61201	Battle against Ketra Orcs
-61202	Battle against Ketra Orcs  (In Progress)
+61202	Battle against Ketra Orcs (In Progress)
 61204	Battle against Ketra Orcs
 61301	Prove Your Courage! (Varka)
 61302	Prove Your Courage! (Varka) (In Progress)
@@ -2575,8 +2760,8 @@
 61601	Magical Power of Fire - Part 2
 61602	Magical Power of Fire - Part 2 (In Progress)
 61604	Magical Power of Fire - Part 2
-61650	The magical power of fire is also the power of flames and lava!  If you dare to confront it, only death will await you!
-61651	The power of constraint is getting weaker.  Your ritual has failed!
+61650	The magical power of fire is also the power of flames and lava! If you dare to confront it, only death will await you!
+61651	The power of constraint is getting weaker. Your ritual has failed!
 61701	|Lv. 74 - 80| Gather the Flames
 61702	|Lv. 74 - 80| Gather the Flames (In progress)
 61703	|Lv. 74 - 80| Gather the Flames (Completed)
@@ -2772,6 +2957,26 @@
 67303	|Lv. 85+| Beleth's Ambition (Completed)
 67304	|Lv. 85+| Beleth's Ambition
 67305	Defeat Beleth
+67401	|Lv. 103+| Changes in the Shadow of the Mother Tree
+67402	|Lv. 103+| Changes in the Shadow of the Mother Tree (In progress)
+67403	|Lv. 103+| Changes in the Shadow of the Mother Tree (Completed)
+67404	|Lv. 103+| Changes in the Shadow of the Mother Tree
+67411	Select mission stage
+67412	Talk to Nerupa
+67501	|Lv. 103+| What the Thread of the Past Shows
+67502	|Lv. 103+| What the Thread of the Past Shows (In progress)
+67503	|Lv. 103+| What the Thread of the Past Shows (Completed)
+67504	|Lv. 103+| What the Thread of the Past Shows
+67511	Select mission stage
+67512	Talk to Nerupa
+67602	|Lv. 96-106| Hunter Guild Request – Wasteland West (In progress)
+67603	|Lv. 96-106| Hunter Guild Request – Wasteland West (Completed)
+67702	|Lv. 96-106| Hunter Guild Request – Wasteland East (In progress)
+67703	|Lv. 96-106| Hunter Guild Request – Wasteland East (Completed)
+67802	|Lv. 100-110| Hunter Guild Request – Forest of the Dead (In progress)
+67803	|Lv. 100-110| Hunter Guild Request – Forest of the Dead (Completed)
+67902	|Lv. 100-110| Hunter Guild Request – Swamp of Screams (In progress)
+67903	|Lv. 100-110| Hunter Guild Request – Swamp of Screams (Completed)
 68801	|Lv. 75 - 85| Defeat the Elrokian Raiders!
 68802	|Lv. 75 - 85| Defeat the Elrokian Raiders! (In progress)
 68803	|Lv. 75 - 85| Defeat the Elrokian Raiders! (Completed)
@@ -2809,6 +3014,9 @@
 69705	I'll start making the parts of the Keucereus Defense Battery from now on.
 69706	I need some time to make the parts. Cover me while I'm working.
 69707	Good work. I've finished crafting the parts for the Keucereus Defense Battery.
+69710	Protect Ishuma
+69711	Talk to Ishuma
+69712	Protect Ishuma again
 69801	Block the Lord's Escape
 69802	Block the Lord's Escape (In Progress)
 69804	Block the Lord's Escape
@@ -3067,9 +3275,20 @@
 73651	Defeat $s1 wizards and summoners!
 73661	You have defeated $s2 of $s1 enemies.
 73662	You weakened the enemy's magic!
+73701	|Lv. 102+| A Sword Hidden in a Smile
+73702	|Lv. 102+| A Sword Hidden in a Smile (In progress)
+73703	|Lv. 102+| A Sword Hidden in a Smile (Completed)
+73704	|Lv. 102+| A Sword Hidden in a Smile
+73711	Select mission stage
+73712	Talk to Histie
 73751	Defeat $s1 healers and buffers.
 73761	You have defeated $s2 of $s1 healers and buffers.
 73762	You have weakened the enemy's support!
+73801	|Lv. 95-106| Dimensional Exploration of the Unworldly Visitors
+73802	|Lv. 95-106| Dimensional Exploration of the Unworldly Visitors (In progress)
+73803	|Lv. 95-106| Dimensional Exploration of the Unworldly Visitors (Completed)
+73804	|Lv. 95-106| Dimensional Exploration of the Unworldly Visitors
+73805	Talk to Tarti
 73851	Defeat $s1 warsmiths and overlords.
 73861	You have defeated $s2 of $s1 warsmiths and overlords.
 73862	You destroyed the enemy's professionals!
@@ -3083,6 +3302,11 @@
 74204	Castle of Darkness: Liberation
 74251	You liberated the darkness-filled castle!
 74252	You and your comrades have completed a great feat!
+74301	|Lv. 102+| At the Altar of Oblivion
+74302	|Lv. 102+| At the Altar of Oblivion (In progress)
+74303	|Lv. 102+| At the Altar of Oblivion (Completed)
+74304	|Lv. 102+| At the Altar of Oblivion
+74310	Talk to Ferin
 74401	|Lv. 40 - 45| The Alligator Hunter Returns
 74402	|Lv. 40 - 45| The Alligator Hunter Returns (In progress)
 74404	|Lv. 40 - 45| The Alligator Hunter Returns
@@ -3108,6 +3332,13 @@
 74804	|Lv. 61 - 64| Endless Revenge
 74811	Speak with Shuvann
 74812	Speak with Mathias
+74901	|Lv. 88-100| Ties with Guardians
+74902	|Lv. 88-100| Ties with Guardians (In progress)
+74903	|Lv. 88-100| Ties with Guardians (Completed)
+74904	|Lv. 88-100| Ties with Guardians
+74911	Select mission stage
+74912	Solve issue in the Fairy Settlement
+74913	Talk to Rafini
 75001	|Lv. 95+| Seven Flowers
 75002	|Lv. 95+| Seven Flowers (In progress)
 75003	|Lv. 95+| Seven Flowers (Completed)
@@ -3273,6 +3504,7 @@
 77403	|Lv. 90 - 100| Dreaming of Peace (Completed)
 77404	|Lv. 90 - 100| Dreaming of Peace
 77405	Defeat the violent monsters
+77406	Talk to Nerupa
 77501	|Lv. 99+| Retrieving the Chaos Fragment
 77502	|Lv. 99+| Retrieving the Chaos Fragment (In progress)
 77503	|Lv. 99+| Retrieving the Chaos Fragment (Completed)
@@ -3355,10 +3587,10 @@
 78902	|Lv. 97+| Waiting for Pa'agrio (In progress)
 78903	|Lv. 97+| Waiting for Pa'agrio (Completed)
 78904	|Lv. 97+| Waiting for Pa'agrio
-79001	|Lv. 100+| Obtaining Ferin's Trust
-79002	|Lv. 100+| Obtaining Ferin's Trust (In progress)
-79003	|Lv. 100+| Obtaining Ferin's Trust (Completed)
-79004	|Lv. 100+| Obtaining Ferin's Trust
+79001	|Lv. 102+| Obtaining Ferin's Trust
+79002	|Lv. 102+| Obtaining Ferin's Trust (In progress)
+79003	|Lv. 102+| Obtaining Ferin's Trust (Completed)
+79004	|Lv. 102+| Obtaining Ferin's Trust
 79011	Select quest stage
 79012	Speak with Master Cyphona
 79101	|Lv. 85 - 95| Red Libra Request - Fairy Settlement
@@ -3372,7 +3604,8 @@
 79202	|Lv. 102+| The Superion Giants (In progress)
 79203	|Lv. 102+| The Superion Giants (Completed)
 79204	|Lv. 102+| The Superion Giants
-79210	Talk to Histie
+79211	Select mission stage
+79212	Talk to Histie
 79301	|Lv. 100+| A Clue Amidst Despair
 79302	|Lv. 100+| A Clue Amidst Despair (In progress)
 79303	|Lv. 100+| A Clue Amidst Despair (Completed)
@@ -3879,12 +4112,12 @@
 92405	Select quest
 92410	Speak with Vice Hierarch Schumadriba
 92411	Eliminate the Giant
-92502	|Lv. 98 - 108| Hunter Guild Request - Garden of Spirits (In progress)
-92503	|Lv. 98 - 108| Hunter Guild Request - Garden of Spirits (Completed)
-92601	|Lv. 95+| Exploring the Dimension - 30-day Search Operation
-92602	|Lv. 95+| Exploring the Dimension - 30-day Search Operation (In progress)
-92603	|Lv. 95+| Exploring the Dimension - 30-day Search Operation (Completed)
-92604	|Lv. 95+| Exploring the Dimension - 30-day Search Operation
+92502	|Lv. 100-110| Hunter Guild Request - Garden of Spirits (In progress)
+92503	|Lv. 100-110| Hunter Guild Request - Garden of Spirits (Completed)
+92601	|Lv. 95-102| Exploring the Dimension-30-day Search Operation
+92602	|Lv. 95-102| Exploring the Dimension-30-day Search Operation (In progress)
+92603	|Lv. 95-102| Exploring the Dimension-30-day Search Operation (Completed)
+92604	|Lv. 95-102| Exploring the Dimension-30-day Search Operation
 92801	|Lv. 100+| 100-day Subjugation Operation
 92802	|Lv. 100+| 100-day Subjugation Operation (In progress)
 92803	|Lv. 100+| 100-day Subjugation Operation (Completed)
@@ -3904,16 +4137,16 @@
 93004	|Lv. 99+| Disparaging the Phantoms
 93011	Select quest stage
 93012	Speak with Sporcha
-93101	|Lv. 100+| Memories of the Wind
-93102	|Lv. 100+| Memories of the Wind (In progress)
-93103	|Lv. 100+| Memories of the Wind (Completed)
-93104	|Lv. 100+| Memories of the Wind
+93101	|Lv. 102+| Memories of the Wind
+93102	|Lv. 102+| Memories of the Wind (In progress)
+93103	|Lv. 102+| Memories of the Wind (Completed)
+93104	|Lv. 102+| Memories of the Wind
 93111	Select quest stage
 93112	Speak with Cyphona
-93201	|Lv. 100+| Sayha's Energy
-93202	|Lv. 100+| Sayha's Energy (In progress)
-93203	|Lv. 100+| Sayha's Energy (Completed)
-93204	|Lv. 100+| Sayha's Energy
+93201	|Lv. 102+| Sayha's Energy
+93202	|Lv. 102+| Sayha's Energy (In progress)
+93203	|Lv. 102+| Sayha's Energy (Completed)
+93204	|Lv. 102+| Sayha's Energy
 93211	Select quest stage
 93212	Speak with Belas
 93701	|Lv. 85+| To Revive the Fishing Guild
@@ -3928,8 +4161,8 @@
 93804	|Lv. 85+| The Fisherman's Other Hobby
 93805	Deliver the Hobby Mark
 93810	Conversation with Santiago
-94002	|Lv. 98 - 108| Hunter Guild Request - Atelia Fortress (In progress)
-94003	|Lv. 98 - 108| Hunter Guild Request - Atelia Fortress (Completed)
+94002	|Lv. 100-110| Hunter Guild Request - Atelia Fortress (In progress)
+94003	|Lv. 100-110| Hunter Guild Request - Atelia Fortress (Completed)
 94301	|Lv. 90+| Filling the Energy of Destruction
 94302	|Lv. 90+| Filling the Energy of Destruction (In progress)
 94303	|Lv. 90+| Filling the Energy of Destruction (Completed)
@@ -3979,7 +4212,7 @@
 98919	Lv. 97+
 98920	Lv. 99+
 98921	Lv. 101+
-99601	Tra la la... Today, I'm going to make another fun-filled trip.  I wonder what I should look for this time...
+99601	Tra la la... Today, I'm going to make another fun-filled trip. I wonder what I should look for this time...
 99700	What's this? Why am I being disturbed?
 99701	Ta-da! Here I am!
 99702	What are you looking at?
@@ -4236,6 +4469,8 @@
 530402	|Lv. 90+| For the Forgotten Heroes (In progress)
 530403	|Lv. 90+| For the Forgotten Heroes (Completed)
 530404	|Lv. 90+| For the Forgotten Heroes
+530411	Talk to Izael
+530412	Talk to Izael
 530501	|Lv. 88+| Unstoppable Futile Efforts
 530502	|Lv. 88+| Unstoppable Futile Efforts (In progress)
 530503	|Lv. 88+| Unstoppable Futile Efforts (Completed)
@@ -4524,10 +4759,11 @@
 537204	|Lv. 76 - 81| Purgatory Volvere
 537250	Please defeat the monster called the Bloody Succubus.
 537251	If what you say is true, this must be very serious.
-537301	|Lv. 95 - 99| Exploring the Dimension - Sealing the Dimension
-537302	|Lv. 95 - 99| Exploring the Dimension - Sealing the Dimension (In progress)
-537303	|Lv. 95 - 99| Exploring the Dimension - Sealing the Dimension (Completed)
-537304	|Lv. 95 - 99| Exploring the Dimension - Sealing the Dimension
+537301	|Lv. 95-102| Exploring the Dimension-Sealing the Dimension
+537302	|Lv. 95-102| Exploring the Dimension-Sealing the Dimension (In progress)
+537303	|Lv. 95-102| Exploring the Dimension-Sealing the Dimension (Completed)
+537304	|Lv. 95-102| Exploring the Dimension-Sealing the Dimension
+537310	A message has arrived from the Dimensional Rift.\nClick the question-mark icon to read.
 537401	|Lv. 80+| That Place Succubus
 537402	|Lv. 80+| That Place Succubus (In progress)
 537403	|Lv. 80+| That Place Succubus (Completed)
@@ -5183,6 +5419,251 @@
 554406	Speak with Lector
 554407	Speak with Jackson
 554408	Speak with Trevor
+555201	Challenge! Balthus Knight!
+555202	Challenge! Balthus Knight! (In progress)
+555203	Challenge! Balthus Knight! (Completed)
+555204	Challenge! Balthus Knight!
+555210	Talk to Stig Mach
+555301	What Matters More Than Ability
+555302	What Matters More Than Ability (In progress)
+555303	What Matters More Than Ability (Completed)
+555304	What Matters More Than Ability
+555310	Talk to McCoy
+555311	Uses skills to defeat
+555401	Gift for You
+555402	Gift for You (In progress)
+555403	Gift for You (Completed)
+555404	Gift for You
+555410	Deliver to Camcud
+555411	Talk to Sibis
+555412	Deliver to Tarti
+555413	Deliver to Stig Mach
+555501	Charge at Antharas
+555502	Charge at Antharas (In progress)
+555503	Charge at Antharas (Completed)
+555504	Charge at Antharas
+555510	Join the Antharas battle
+555511	Talk to Roien
+555512	Talk to Brome
+555513	Talk to Mion
+555514	Talk to Kayleen
+555515	Talk to Elias
+555516	Talk to Takhun
+555517	Talk to Elena
+555518	Talk to Ultrian
+555519	Talk to Tariah
+555520	Talk to Narita
+555521	Talk to Stig Mach
+555522	Talk to Herphah
+555601	Forgotten Power: Start of Fate
+555602	Forgotten Power: Start of Fate (In progress)
+555603	Forgotten Power: Start of Fate (Completed)
+555604	Forgotten Power: Start of Fate
+555610	Sigel Knight's Awakening
+555611	Tyrr Warrior's Awakening
+555612	Othell Rogue's Awakening
+555613	Yul Archer's Awakening
+555614	Wynn Summoner's Awakening
+555615	Iss Enchanter's Awakening
+555616	Feoh Wizard's Awakening
+555617	Aeore Healer's Awakening
+555701	New Power, Winds of Fate
+555702	New Power, Winds of Fate (In progress)
+555703	New Power, Winds of Fate (Completed)
+555704	New Power, Winds of Fate
+555710	Unlocking the Mass Ripper's Power
+555711	Unlocking the Seer's Power
+555801	Hidden in Chaos
+555802	Hidden in Chaos (In progress)
+555803	Hidden in Chaos (Completed)
+555804	Hidden in Chaos
+555810	Talk to the Monk of Chaos
+555811	You can learn 2 Revelation Skills by using 2 Chaos Pomanders.
+555901	Before the Guide
+555902	Before the Guide (In progress)
+555903	Before the Guide (Completed)
+555904	Before the Guide
+555910	Talk to Herphah
+556001	|Lv. 85-95| Way of Wandering Knight
+556002	|Lv. 85-95| Way of Wandering Knight (In progress)
+556003	|Lv. 85-95| Way of Wandering Knight (Completed)
+556004	|Lv. 85-95| Way of Wandering Knight
+556010	A message has arrived from Herphah.\nClick the question-mark icon to read.
+556011	Hear about Clans
+556012	Talk to Adventurers' Guide
+556013	Talk to Herphah
+556014	Hear about Factions
+556015	Talk to Penny
+556016	Reach Faction Amity Level 1
+556017	Talk to Herphah
+556101	|Lv. 85-95| Across the Death Line
+556102	|Lv. 85-95| Across the Death Line (In progress)
+556103	|Lv. 85-95| Across the Death Line (Completed)
+556104	|Lv. 85-95| Across the Death Line
+556111	Hear about the Death Penalty
+556112	Talk to Penny
+556113	Reach Faction Amity Level 2
+556114	Return to Herphah
+556201	|Lv. 85-95| Take Up Arms
+556202	|Lv. 85-95| Take Up Arms (In progress)
+556203	|Lv. 85-95| Take Up Arms (Completed)
+556204	|Lv. 85-95| Take Up Arms
+556211	Meet with Penny
+556212	Reach Faction Amity Level 3 or higher
+556213	Return to Herphah
+556301	|Lv. 85-95| Control of Power
+556302	|Lv. 85-95| Control of Power (In progress)
+556303	|Lv. 85-95| Control of Power (Completed)
+556304	|Lv. 85-95| Control of Power
+556311	Meet with Penny
+556312	Reach Faction Amity Level 4 or higher
+556313	Return to Herphah
+556401	|Lv. 85-95| Prove Progress
+556402	|Lv. 85-95| Prove Progress (In progress)
+556403	|Lv. 85-95| Prove Progress (Completed)
+556404	|Lv. 85-95| Prove Progress
+556411	Meet with Penny
+556412	Reach Faction Amity Level 5 or higher
+556413	Return to Herphah
+556501	|Lv. 85-95| Nothing Is Impossible
+556502	|Lv. 85-95| Nothing Is Impossible (In progress)
+556503	|Lv. 85-95| Nothing Is Impossible (Completed)
+556504	|Lv. 85-95| Nothing Is Impossible
+556511	Meet with Penny
+556512	Reach Faction Amity Level 6 or higher
+556513	Return to Herphah
+556601	|Lv. 95+| Best Choice
+556602	|Lv. 95+| Best Choice (In progress)
+556603	|Lv. 95+| Best Choice (Completed)
+556604	|Lv. 95+| Best Choice
+556611	Talk to Herphah
+556701	|Lv. 93-95| Special Mission: Nornil's Garden
+556702	|Lv. 93-95| Special Mission: Nornil's Garden (In progress)
+556703	|Lv. 93-95| Special Mission: Nornil's Garden (Completed)
+556704	|Lv. 93-95| Special Mission: Nornil's Garden
+556711	Hear about the mission
+556712	Complete the quest "Mysterious Journey"
+556713	Carry out Tapoy's mission
+556714	Speak with Hesed
+556715	Complete the quest "Soulless One"
+556716	Talk to Penny
+556801	|Lv. 102+| Kamael's Technological Advancement
+556802	|Lv. 102+| Kamael's Technological Advancement (In progress)
+556803	|Lv. 102+| Kamael's Technological Advancement (Completed)
+556804	|Lv. 102+| Kamael's Technological Advancement
+556805	Defeat the Hunter
+556810	Talk to Histie
+556901	|Lv. 102+| Declaration of War
+556902	|Lv. 102+| Declaration of War (In progress)
+556903	|Lv. 102+| Declaration of War (Completed)
+556904	|Lv. 102+| Declaration of War
+556905	Defeat the Hunter
+556906	Eliminate the Giant at the Superion Fortress
+556910	Talk to Histie
+556911	Talk to Kekropus
+557001	|Lv. 102+| Hurrah for Kamael's Independence
+557002	|Lv. 102+| Hurrah for Kamael's Independence (In progress)
+557003	|Lv. 102+| Hurrah for Kamael's Independence (Completed)
+557004	|Lv. 102+| Hurrah for Kamael's Independence
+557005	Defeat Helios
+557006	Eliminate the Enchant Type Giant
+557010	Talk to Kekropus
+557101	|Lv. 95-106| Strategic Reconciliation
+557102	|Lv. 95-106| Strategic Reconciliation (In progress)
+557103	|Lv. 95-106| Strategic Reconciliation (Completed)
+557104	|Lv. 95-106| Strategic Reconciliation
+557105	Talk to Tarti
+557201	|Lv. 101+| To Expel the Embryo's Forces
+557202	|Lv. 101+| To Expel the Embryo's Forces (In progress)
+557203	|Lv. 101+| To Expel the Embryo's Forces (Completed)
+557204	|Lv. 101+| To Expel the Embryo's Forces
+557205	Defeat the Embryo's Apostle
+557210	Talk to Logart van Dyke
+557401	|Lv. 90-94| Special Mission: Fortuna
+557402	|Lv. 90-94| Special Mission: Fortuna (In progress)
+557403	|Lv. 90-94| Special Mission: Fortuna (Completed)
+557404	|Lv. 90-94| Special Mission: Fortuna
+557411	Talk to Izael
+557412	Complete the quest "For the Forgotten Heroes"
+557413	Talk to Penny
+557501	|Lv. 95+| Let's Go Fishing
+557502	|Lv. 95+| Let's Go Fishing (In progress)
+557503	|Lv. 95+| Let's Go Fishing (Completed)
+557504	|Lv. 95+| Let's Go Fishing
+557511	Hear about fishing
+557512	Catch Practice Fish
+557513	Talk to Santiago
+557601	|Lv. 95+| Glittering Weapons
+557602	|Lv. 95+| Glittering Weapons (In progress)
+557603	|Lv. 95+| Glittering Weapons (Completed)
+557604	|Lv. 95+| Glittering Weapons
+557611	Hear about Enchantment
+557612	+7 Enhancement Practice Long Sword
+557613	+3 Enhancement Practice Long Sword
+557614	Talk to Rupio
+557701	|Lv. 95+| Temper a Rusting Blade
+557702	|Lv. 95+| Temper a Rusting Blade (In progress)
+557703	|Lv. 95+| Temper a Rusting Blade (Completed)
+557704	|Lv. 95+| Temper a Rusting Blade
+557711	Hear about Augmenting
+557712	Practice Augmenting
+557713	Talk to Flutter
+557801	|Lv. 95+| The Soul of a Sword
+557802	|Lv. 95+| The Soul of a Sword (In progress)
+557803	|Lv. 95+| The Soul of a Sword (Completed)
+557804	|Lv. 95+| The Soul of a Sword
+557811	Hear about Soul Crystal Enhancing
+557812	Practice Soul Crystal Enhancing
+557813	Talk to Vincenz
+557901	|Lv. 95+| Containing the Attribute Power
+557902	|Lv. 95+| Containing the Attribute Power (In progress)
+557903	|Lv. 95+| Containing the Attribute Power (Completed)
+557904	|Lv. 95+| Containing the Attribute Power
+557911	Hear about Attributes
+557912	Choose supplies
+557913	Practice Attributes
+557914	Talk to Ferris
+558001	|Lv. 90-94| Special Mission: Defeat Spezion
+558002	|Lv. 90-94| Special Mission: Defeat Spezion (In progress)
+558003	|Lv. 90-94| Special Mission: Defeat Spezion (Completed)
+558004	|Lv. 90-94| Special Mission: Defeat Spezion
+558011	Talk to Opera
+558012	Complete the quest "Undecaying Memory of the Past"
+558013	Talk to Penny
+559401	|Lv. 97+| Fergason's Scheme
+559402	|Lv. 97+| Fergason's Scheme (In progress)
+559403	|Lv. 97+| Fergason's Scheme (Completed)
+559404	|Lv. 97+| Fergason's Scheme
+559410	Talk to Sizrak
+559411	Talk to Aku
+559412	Talk to Fergason
+559501	|Lv. 99+| The Dimensional Warp, Part 8
+559502	|Lv. 99+| The Dimensional Warp, Part 8 (In progress)
+559503	|Lv. 99+| The Dimensional Warp, Part 8 (Completed)
+559504	|Lv. 99+| The Dimensional Warp, Part 8
+559510	Talk to Resed
+559601	|Lv. 99+| The Dimensional Warp, Part 9
+559602	|Lv. 99+| The Dimensional Warp, Part 9 (In progress)
+559603	|Lv. 99+| The Dimensional Warp, Part 9 (Completed)
+559604	|Lv. 99+| The Dimensional Warp, Part 9
+559701	|Lv. 103+| Escape to the Shadow of the Mother Tree
+559702	|Lv. 103+| Escape to the Shadow of the Mother Tree (In progress)
+559703	|Lv. 103+| Escape to the Shadow of the Mother Tree (Completed)
+559704	|Lv. 103+| Escape to the Shadow of the Mother Tree
+559710	Talk to Nerupa
+559801	|Lv. 103+| With All Your Might
+559802	|Lv. 103+| With All Your Might (In progress)
+559803	|Lv. 103+| With All Your Might (Completed)
+559804	|Lv. 103+| With All Your Might
+559810	Talk to Nerupa
+559811	Talk to Asterios
+559901	|Lv. 103+| Thread of Fate Hanging on the Mother Tree
+559902	|Lv. 103+| Thread of Fate Hanging on the Mother Tree (In progress)
+559903	|Lv. 103+| Thread of Fate Hanging on the Mother Tree (Completed)
+559904	|Lv. 103+| Thread of Fate Hanging on the Mother Tree
+559910	Confirm Nerupa's Power
+559911	Talk to Nerupa
+559912	Defeat Repeat
 565801	|Lv. 100+| Makkum in the Dimension
 565802	|Lv. 100+| Makkum in the Dimension (In progress)
 565803	|Lv. 100+| Makkum in the Dimension (Completed)
@@ -5227,12 +5708,7 @@
 571003	|Lv. 61 - 65| Life Energy Repository (Completed)
 571004	|Lv. 61 - 65| Life Energy Repository
 571011	Find the Life Energy Repository
-571200	A minstrel has sent an invitation.\nClick the question-mark icon to read.
-571201	|Lv. 85 - 87| The Minstrel's Song, Part 1
-571202	|Lv. 85 - 87| The Minstrel's Song, Part 1 (In progress)
-571203	|Lv. 85 - 87| The Minstrel's Song, Part 1 (Completed)
-571204	|Lv. 85 - 87| The Minstrel's Song, Part 1
-571211	Talk to Liberatto
+571200	Tulesir has sent an invitation.\nClick the question-mark icon to read.
 571301	|Lv. 85+| The Hero's Journey: Bloody Swampland
 571302	|Lv. 85+| The Hero's Journey: Bloody Swampland (In progress)
 571303	|Lv. 85+| The Hero's Journey: Bloody Swampland (Completed)
@@ -5261,12 +5737,6 @@
 571611	Talk to Liberatto
 571612	Talk to Kartia Researcher
 571613	Talk to Kartia Researcher
-571701	|Lv. 88 - 89| The Minstrel's Song, Part 2
-571702	|Lv. 88 - 89| The Minstrel's Song, Part 2 (In progress)
-571703	|Lv. 88 - 89| The Minstrel's Song, Part 2 (Completed)
-571704	|Lv. 88 - 89| The Minstrel's Song, Part 2
-571711	Talk to Miso
-571712	Speak with Lada
 571801	|Lv. 88+| The Hero's Journey: Fairy Settlement
 571802	|Lv. 88+| The Hero's Journey: Fairy Settlement (In progress)
 571803	|Lv. 88+| The Hero's Journey: Fairy Settlement (Completed)
@@ -5274,12 +5744,6 @@
 571811	Talk to Miso
 571812	Talk to Fairy Refugee
 571813	Talk to Fairy Refugee
-572001	|Lv. 90 - 92| The Minstrel's Song, Part 3
-572002	|Lv. 90 - 92| The Minstrel's Song, Part 3 (In progress)
-572003	|Lv. 90 - 92| The Minstrel's Song, Part 3 (Completed)
-572004	|Lv. 90 - 92| The Minstrel's Song, Part 3
-572011	Talk to Miso
-572012	Speak with Nerupa
 572101	|Lv. 90+| The Hero's Journey: Prison of Darkness
 572102	|Lv. 90+| The Hero's Journey: Prison of Darkness (In progress)
 572103	|Lv. 90+| The Hero's Journey: Prison of Darkness (Completed)
@@ -5294,12 +5758,6 @@
 572211	Talk to Miso
 572212	Talk to Izael
 572213	Talk to Izael
-572301	|Lv. 93 - 94| The Minstrel's Song, Part 4
-572302	|Lv. 93 - 94| The Minstrel's Song, Part 4 (In progress)
-572303	|Lv. 93 - 94| The Minstrel's Song, Part 4 (Completed)
-572304	|Lv. 92 - 94| The Minstrel's Song, Part 4
-572311	Talk to Marmie
-572312	Speak with Tapoy
 572401	|Lv. 92+| The Hero's Journey: Isle of Souls
 572402	|Lv. 92+| The Hero's Journey: Isle of Souls (In progress)
 572403	|Lv. 92+| The Hero's Journey: Isle of Souls (Completed)
@@ -5314,10 +5772,10 @@
 572511	Talk to Marmie
 572512	Talk to Verna
 572513	Talk to Verna
-572601	|Lv. 95 - 96| The Minstrel's Song, Part 5
-572602	|Lv. 95 - 96| The Minstrel's Song, Part 5 (In progress)
-572603	|Lv. 95 - 96| The Minstrel's Song, Part 5 (Completed)
-572604	|Lv. 95 - 96| The Minstrel's Song, Part 5
+572601	|Lv. 95-96| Tulesir's Song, Part 1
+572602	|Lv. 95-96| Tulesir's Song, Part 1 (In progress)
+572603	|Lv. 95-96| Tulesir's Song, Part 1 (Completed)
+572604	|Lv. 95-96| Tulesir's Song, Part 1
 572611	Talk to Tulesir
 572612	Speak with Agent Georgio
 572701	|Lv. 95+| The Hero's Journey: Seal of Shilen
@@ -5348,10 +5806,10 @@
 573011	Talk to Tulesir
 573012	Talk to Severin
 573013	Talk to Severin
-573101	|Lv. 97 - 99| The Minstrel's Song, Part 6
-573102	|Lv. 97 - 99| The Minstrel's Song, Part 6 (In progress)
-573103	|Lv. 97 - 99| The Minstrel's Song, Part 6 (Completed)
-573104	|Lv. 97 - 99| The Minstrel's Song, Part 6
+573101	|Lv. 97-99| Tulesir's Song, Part 2
+573102	|Lv. 97-99| Tulesir's Song, Part 2 (In progress)
+573103	|Lv. 97-99| Tulesir's Song, Part 2 (Completed)
+573104	|Lv. 97-99| Tulesir's Song, Part 2
 573111	Talk to Tulesir
 573201	|Lv. 1 - 20| A Foreign Land
 573202	|Lv. 1 - 20| A Foreign Land (In progress)
@@ -5687,6 +6145,7 @@
 579804	|Lv. 81 - 84| Letters from the Queen: Dragon Valley
 579811	Talk to Maximilian
 579812	Talk to Namo
+579820	You can grow stronger here.\nYou can obtain the next Queen Navari's Letter at Lv. 81!
 579901	|Lv. 81 - 84| Strange Things Afoot in the Valley
 579902	|Lv. 81 - 84| Strange Things Afoot in the Valley (In progress)
 579903	|Lv. 81 - 84| Strange Things Afoot in the Valley (Completed)
@@ -5697,34 +6156,34 @@
 580003	|Lv. 81 - 84| Reconnaissance at Dragon Valley (Completed)
 580004	|Lv. 81 - 84| Reconnaissance at Dragon Valley
 580011	Subjugation in the Southern Dragon Valley
-580101	The Dimensional Warp, Part 1
-580102	The Dimensional Warp, Part 1 (In Progress)
-580103	The Dimensional Warp, Part 1 (Done)
-580104	The Dimensional Warp, Part 1
-580201	The Dimensional Warp, Part 2
-580202	The Dimensional Warp, Part 2 (In Progress)
-580203	The Dimensional Warp, Part 2 (Done)
-580204	The Dimensional Warp, Part 2
-580301	The Dimensional Warp, Part 3
-580302	The Dimensional Warp, Part 3 (In Progress)
-580303	The Dimensional Warp, Part 3 (Done)
-580304	The Dimensional Warp, Part 3
-580401	The Dimensional Warp, Part 4
-580402	The Dimensional Warp, Part 4 (In Progress)
-580403	The Dimensional Warp, Part 4 (Done)
-580404	The Dimensional Warp, Part 4
-580501	The Dimensional Warp, Part 5
-580502	The Dimensional Warp, Part 5 (In Progress)
-580503	The Dimensional Warp, Part 5 (Done)
-580504	The Dimensional Warp, Part 5
-580601	The Dimensional Warp, Part 6
-580602	The Dimensional Warp, Part 6 (In Progress)
-580603	The Dimensional Warp, Part 6 (Done)
-580604	The Dimensional Warp, Part 6
-580701	The Dimensional Warp, Part 7
-580702	The Dimensional Warp, Part 7 (In Progress)
-580703	The Dimensional Warp, Part 7 (Done)
-580704	The Dimensional Warp, Part 7
+580101	|Lv. 99+| The Dimensional Warp, Part 1
+580102	|Lv. 99+| The Dimensional Warp, Part 1 (In progress)
+580103	|Lv. 99+| The Dimensional Warp, Part 1 (Completed)
+580104	|Lv. 99+| The Dimensional Warp, Part 1
+580201	|Lv. 99+| The Dimensional Warp, Part 2
+580202	|Lv. 99+| The Dimensional Warp, Part 2 (In progress)
+580203	|Lv. 99+| The Dimensional Warp, Part 2 (Completed)
+580204	|Lv. 99+| The Dimensional Warp, Part 2
+580301	|Lv. 99+| The Dimensional Warp, Part 3
+580302	|Lv. 99+| The Dimensional Warp, Part 3 (In progress)
+580303	|Lv. 99+| The Dimensional Warp, Part 3 (Completed)
+580304	|Lv. 99+| The Dimensional Warp, Part 3
+580401	|Lv. 99+| The Dimensional Warp, Part 4
+580402	|Lv. 99+| The Dimensional Warp, Part 4 (In progress)
+580403	|Lv. 99+| The Dimensional Warp, Part 4 (Completed)
+580404	|Lv. 99+| The Dimensional Warp, Part 4
+580501	|Lv. 99+| The Dimensional Warp, Part 5
+580502	|Lv. 99+| The Dimensional Warp, Part 5 (In progress)
+580503	|Lv. 99+| The Dimensional Warp, Part 5 (Completed)
+580504	|Lv. 99+| The Dimensional Warp, Part 5
+580601	|Lv. 99+| The Dimensional Warp, Part 6
+580602	|Lv. 99+| The Dimensional Warp, Part 6 (In progress)
+580603	|Lv. 99+| The Dimensional Warp, Part 6 (Completed)
+580604	|Lv. 99+| The Dimensional Warp, Part 6
+580701	|Lv. 99+| The Dimensional Warp, Part 7
+580702	|Lv. 99+| The Dimensional Warp, Part 7 (In progress)
+580703	|Lv. 99+| The Dimensional Warp, Part 7 (Completed)
+580704	|Lv. 99+| The Dimensional Warp, Part 7
 580901	|Lv. 97 - 99| The Hero's Journey: Blazing Swamp
 580902	|Lv. 97 - 99| The Hero's Journey: Blazing Swamp (In progress)
 580903	|Lv. 97 - 99| The Hero's Journey: Blazing Swamp (Completed)
@@ -5840,32 +6299,32 @@
 582704	|Lv. 100+| Step Up to Lead
 582711	Party/Association Leader Bonus
 582712	Talk with Sir Gustav Athebaldt
-582901	|Lv. 100+| In Search of the Cause
-582902	|Lv. 100+| In Search of the Cause (In progress)
-582903	|Lv. 100+| In Search of the Cause (Completed)
-582904	|Lv. 100+| In Search of the Cause
+582901	|Lv. 102+| In Search of the Cause
+582902	|Lv. 102+| In Search of the Cause (In progress)
+582903	|Lv. 102+| In Search of the Cause (Completed)
+582904	|Lv. 102+| In Search of the Cause
 582911	Go to the Blackbird Campsite
 582912	Talk to Ferin
 582913	Talk to Cyphona
-583001	|Lv. 100+| The Lost Garden of Spirits
-583002	|Lv. 100+| The Lost Garden of Spirits (In progress)
-583003	|Lv. 100+| The Lost Garden of Spirits (Completed)
-583004	|Lv. 100+| The Lost Garden of Spirits
+583001	|Lv. 102+| The Lost Garden of Spirits
+583002	|Lv. 102+| The Lost Garden of Spirits (In progress)
+583003	|Lv. 102+| The Lost Garden of Spirits (Completed)
+583004	|Lv. 102+| The Lost Garden of Spirits
 583012	Speak with Cyphona
-583101	|Lv. 100+| Unbelievable Sight
-583102	|Lv. 100+| Unbelievable Sight (In progress)
-583103	|Lv. 100+| Unbelievable Sight (Completed)
-583104	|Lv. 100+| Unbelievable Sight
+583101	|Lv. 102+| Unbelievable Sight
+583102	|Lv. 102+| Unbelievable Sight (In progress)
+583103	|Lv. 102+| Unbelievable Sight (Completed)
+583104	|Lv. 102+| Unbelievable Sight
 583112	Speak with Belas
-583201	|Lv. 100+| Energy of Sadness and Anger
-583202	|Lv. 100+| Energy of Sadness and Anger (In progress)
-583203	|Lv. 100+| Energy of Sadness and Anger (Completed)
-583204	|Lv. 100+| Energy of Sadness and Anger
+583201	|Lv. 102+| Energy of Sadness and Anger
+583202	|Lv. 102+| Energy of Sadness and Anger (In progress)
+583203	|Lv. 102+| Energy of Sadness and Anger (Completed)
+583204	|Lv. 102+| Energy of Sadness and Anger
 583212	Speak with Belas
-583301	|Lv. 100+| Put the Queen of Spirits to Sleep
-583302	|Lv. 100+| Put the Queen of Spirits to Sleep (In progress)
-583303	|Lv. 100+| Put the Queen of Spirits to Sleep (Completed)
-583304	|Lv. 100+| Put the Queen of Spirits to Sleep
+583301	|Lv. 102+| Put the Queen of Spirits to Sleep
+583302	|Lv. 102+| Put the Queen of Spirits to Sleep (In Progress)
+583303	|Lv. 102+| Put the Queen of Spirits to Sleep (Completed)
+583304	|Lv. 102+| Put the Queen of Spirits to Sleep
 583312	Speak with Ferin
 583601	|Lv. 101+| Disappeared Clan Member
 583602	|Lv. 101+| Disappeared Clan Member (In progress)
@@ -5935,10 +6394,10 @@
 584813	Speak with Erica Ken Weber
 584814	Speak with Sporcha
 584815	Speak with Leona
-584901	|Lv. 100+| Trials for Adaptation
-584902	|Lv. 100+| Trials for Adaptation (In progress)
-584903	|Lv. 100+| Trials for Adaptation (Completed)
-584904	|Lv. 100+| Trials for Adaptation
+584901	|Lv. 102+| Trials for Adaptation
+584902	|Lv. 102+| Trials for Adaptation (In progress)
+584903	|Lv. 102+| Trials for Adaptation (Completed)
+584904	|Lv. 102+| Trials for Adaptation
 584911	Speak with Ferin
 584912	Speak with Eubina
 584913	Speak with Rotoeh
@@ -6306,7 +6765,7 @@
 1000264	This is the garden of Eva.
 1000265	The garden of Eva is a sacred place.
 1000266	Do you mean to insult Eva?
-1000267	How rude!  Eva's love is available to all, even to an ill-mannered lout like yourself!
+1000267	How rude! Eva's love is available to all, even to an ill-mannered lout like yourself!
 1000268	This place once belonged to Lord Shilen.
 1000269	Leave this palace to us, spirits of Eva.
 1000270	Why are you getting in our way?
@@ -6475,15 +6934,15 @@
 1000459	If you want to be the opponent of me, Daimon the White-eyed, you should at least have the basic skills~!
 1000460	You stupid creatures that are bound to the earth. You are suffering too much while dragging your fat, heavy bodies. I, Daimon, will lighten your burden.
 1000461	A weak and stupid tribe like yours doesn't deserve to be my enemy! Bwa ha ha ha!
-1000462	You dare to invade the territory of Daimon, the White-eyed!  Now, you will pay the price for your action!
+1000462	You dare to invade the territory of Daimon, the White-eyed! Now, you will pay the price for your action!
 1000463	This is the grace of Daimon the White-eyed, the great Monster Eye Lord! Ha Ha Ha!
-1000464	$s1!  You have become a Hero of Sigel Knights. Congratulations!
-1000465	$s1!  You have become a Hero of Tyrr Warriors. Congratulations!
-1000466	$s1!  You have become a Hero of Othell Rogue. Congratulations!
-1000467	$s1!  You have become a Hero of Yul Archer. Congratulations!
-1000468	$s1!  You have become a Hero of Feoh Wizard. Congratulations!
-1000469	$s1!  You have become a Hero of Iss Enchanter. Congratulations!
-1000470	$s1!  You have become a Hero of Wynn Summoner. Congratulations!
+1000464	$s1! You have become a Hero of Sigel Knights. Congratulations!
+1000465	$s1! You have become a Hero of Tyrr Warriors. Congratulations!
+1000466	$s1! You have become a Hero of Othell Rogue. Congratulations!
+1000467	$s1! You have become a Hero of Yul Archer. Congratulations!
+1000468	$s1! You have become a Hero of Feoh Wizard. Congratulations!
+1000469	$s1! You have become a Hero of Iss Enchanter. Congratulations!
+1000470	$s1! You have become a Hero of Wynn Summoner. Congratulations!
 1000471	$s1! You have become a Hero of Aeore Healer. Congratulations!
 1000472	**Unregistered**
 1000473	**Unregistered**
@@ -6787,14 +7246,14 @@
 1010403	Do you know what a frog tastes like?
 1010404	I will show you the power of a frog!
 1010405	I will swallow at a mouthful!
-1010406	Ugh, no chance.  How could this elder pass away like this!
+1010406	Ugh, no chance. How could this elder pass away like this!
 1010407	Croak! Croak! A frog is dying!
-1010408	A frog tastes bad!  Yuck!
+1010408	A frog tastes bad! Yuck!
 1010409	Kaak! $s1, What are you doing now?
 1010410	Huh, $s1 You pierced into the body of the Spirit with a needle. Are you ready?
 1010411	Ooh $s1 That's you. But, no lady is pleased with this savage invitation!
 1010412	You made me angry!
-1010413	It is but a scratch!  Is that all you can do?!
+1010413	It is but a scratch! Is that all you can do?!
 1010414	Feel my pain!
 1010415	I'll get you for this!
 1010416	I will tell fish not to take your bait!
@@ -6835,15 +7294,15 @@
 1010451	Eeek... I feel sick...yow...!
 1010452	I have failed...
 1010453	Activity of life... Is stopped... Chizifc...
-1010454	Growling! $s1 -  Growling!
+1010454	Growling! $s1 - Growling!
 1010455	I can smell $s1..!
 1010456	Looks delicious, $s1!
 1010457	I will catch you!
 1010458	Uah, ah, ah, I couldn't eat anything for a long time!
 1010459	I can swallow you at a mouthful!
-1010460	What?!  I am defeated by the prey!
+1010460	What?! I am defeated by the prey!
 1010461	You are my food! I have to kill you!
-1010462	I can't believe I am eaten up by my prey...  Gah!
+1010462	I can't believe I am eaten up by my prey... Gah!
 1010463	....You caught me, $s1...?
 1010464	You're lucky to have even seen me, $s1.
 1010465	$s1, you can't leave here alive. Give up.
@@ -6892,7 +7351,7 @@
 1010508	Entrance to Antharas' Lair
 1010509	Antharas' Lair - 1st Level
 1010510	Antharas' Lair - 2nd Level
-1010511	Antharas' Lair -  Magic Force Field Bridge
+1010511	Antharas' Lair - Magic Force Field Bridge
 1010512	The Heart of Antharas' Lair
 1010513	East of the Field of Silence
 1010514	West of the Field of Silence
@@ -7004,10 +7463,10 @@
 1010620	Frost Lake
 1010621	Wastelands (Lv. 35)
 1010622	Wastelands, Western Region
-1010623	Who dares to covet the throne of our castle!  Leave immediately or you will pay the price of your audacity with your very own blood!
-1010624	Hmm, those who are not of the bloodline are coming this way to take over the castle?!  Humph!  The bitter grudges of the dead.  You must not make light of their power!
-1010625	Aargh...!  If I die, then the magic force field of blood will...!
-1010626	It's not over yet...  It won't be... over... like this... Never...
+1010623	Who dares to covet the throne of our castle! Leave immediately or you will pay the price of your audacity with your very own blood!
+1010624	Hmm, those who are not of the bloodline are coming this way to take over the castle?! Humph! The bitter grudges of the dead. You must not make light of their power!
+1010625	Aargh...! If I die, then the magic force field of blood will...!
+1010626	It's not over yet... It won't be... over... like this... Never...
 1010627	Oooh! Who poured nectar on my head while I was sleeping?
 1010628	Please wait a moment.
 1010629	The word you need this time is $s1.
@@ -7018,7 +7477,7 @@
 1010634	$s1 team's jackpot has $s2 percent of its HP remaining.
 1010635	Undecided
 1010636	Heh Heh... I see that the feast has begun! Be wary! The curse of the Hellmann family has poisoned this land!
-1010637	Arise, my faithful servants! You, my people who have inherited the blood.  It is the calling of my daughter.  The feast of blood will now begin!
+1010637	Arise, my faithful servants! You, my people who have inherited the blood. It is the calling of my daughter. The feast of blood will now begin!
 1010638	You may have lordship over the forest for now…but remember! The true lord will return… Enjoy your power while it lasts, if you can manage to sleep at night! Hahaha!
 1010639	Grarr! For the next 2 minutes or so, the game arena are will be cleaned. Throw any items you don't need to the floor now.
 1010640	Grarr! $s1 team is using the Hot Spring Brimstone on the opponent's camp.
@@ -7088,7 +7547,7 @@
 1010704	Field of Silence Center
 1010705	Field of Whispers Center
 1010706	Shyeed's Cavern
-1010707	Sel Mahum Training Grounds (South Gate)  (Lv. 81)
+1010707	Sel Mahum Training Grounds (South Gate) (Lv. 81)
 1010708	Sel Mahum Training Grounds (Lv. 81)
 1010709	Seed of Infinity Dock
 1010710	Seed of Destruction Dock
@@ -7124,7 +7583,7 @@
 1010740	Reliquary of the Giants
 1010741	Faeron Village
 1010742	Whispering Woods
-1010743	Blackbird Campsite (Lv.100)
+1010743	Blackbird Campsite (Lv. 101)
 1010744	Enchanted Valley (Lv. 102)
 1010745	Gludio Airship Wharf
 1010746	Underground Gainak
@@ -7250,8 +7709,35 @@
 1036304	You've shown your condolences to a fourth corpse.
 1036305	You've shown your condolences to a fifth corpse.
 1036344	Don't toy with the dead!
+1083474	The battle time has ended in the Throne of Heroes. The instanced zone will be closed shortly.
+1083475	Subclass/Dual Class Master Raina's message has arrived.\nClick the question mark icon to check the message.
+1083476	A Lithra Bud has appeared.
+1083477	Nerupa's power resonates with Mother Tree Guardian $s1 and begins to turn back time.
+1083478	A Nerupa Bud has appeared.
+1083479	Lithra Bloom
+1083480	Nerupa Bloom
+1083481	The Raid Boss uses the Limit Barrier.\nFocus your attacks to destroy the Limit Barrier in 15 seconds.
+1083482	Soul Plunderer Death Reaper has appeared to guide the dead Raid Boss.
 1083483	Cannon Loaded
 1083484	Fire Cannon (Preparing)
+1083485	Those foolish ones, bound by their past!
+1083486	A deadly scent! Protect me!
+1083487	Where is the cowardly Nerupa?
+1083488	Do you believe you can turn the Mother Tree back to what it once was?
+1083489	Nerupa... he really isn't showing himself…
+1083490	As long as the Mother Tree exists... I... won't go either…
+1083491	Who read you your fate and sent you here?
+1083492	You have destroyed the Limit Barrier!
+1083493	You have failed to destroy the Limit Barrier.\nThe raid boss fully recovers its CON.
+1083494	1 hour has passed.\nDeath Reaper leaves leisurely with the soul of the raid boss.
+1083495	Lithra has revealed herself.
+1083496	Nerupa Aprias is beginning to appear.
+1083497	Lithra's power has weakened.
+1083498	Nerupa's power has weakened.
+1083499	Lithra Aprias is beginning to appear.
+1083500	Lithra has hidden herself in the fragrance of flowers.
+1083501	Lithra's defeat has tipped the balance of power, and Nerupa's power grows stronger.
+1083502	Nerupa's power begins to turn back time.
 1110001	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=419&reply=0">Can be used for item transportation.</button>
 1110002	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=419&reply=0">Can help during hunting by assisting in attacks. </button>
 1110003	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=419&reply=1">Can be sent to the village to buy items.</button>
@@ -7694,7 +8180,7 @@
 1120129	Kuroboros' Priest (lv23)
 1120130	Soul Scavenger (lv25)
 1120131	Discarded Guardian (lv20)
-1120132	Malex, Herald of Dagoniel  (lv21)
+1120132	Malex, Herald of Dagoniel (lv21)
 1120133	Zombie Lord Ferkel (lv20)
 1120134	Madness Beast (lv20)
 1120135	Kaysha, Herald of Icarus (lv21)
@@ -7708,7 +8194,7 @@
 1120143	Eye of Beleth (lv35)
 1120144	Skyla (lv32)
 1120145	Corsair Captain Kylon (lv33)
-1120146	Lord Ishka  (lv60)
+1120146	Lord Ishka (lv60)
 1120147	Road Scavenger Leader (lv40)
 1120148	Necrosentinel Royal Guard (lv47)
 1120149	Nakondas (lv40)
@@ -7902,12 +8388,12 @@
 1120337	Darion (lv99)
 1121000	Steward: Please wait a moment.
 1121001	Steward: Please restore the Queen's former appearance!
-1121002	Steward: Waste no time!  Please hurry!
+1121002	Steward: Waste no time! Please hurry!
 1121003	Steward: Was it indeed too much to ask...
 1121004	Freya: Heathens! Feel my chill!
 1121005	Attention please! The gates will be closing shortly. All visitors to the Queen's Castle should leave immediately.
 1121006	You cannot carry a weapon without authorization!
-1121007	Are you trying to deceive me?  I'm disappointed.
+1121007	Are you trying to deceive me? I'm disappointed.
 1121008	30 minutes remain.
 1121009	20 minutes remain.
 1200001	Chilly Coda
@@ -7967,10 +8453,10 @@
 1300005	At last! The Magic Circle that protects the fortress has weakened! Volunteers, stand back!
 1300006	Aiieeee! Command Center! This is guard unit! We need backup right away!
 1300007	Fortress power disabled.
-1300008	Oh my, what has become of me???  My fame.. my friends.. lost.. all lost...
+1300008	Oh my, what has become of me??? My fame.. my friends.. lost.. all lost...
 1300009	Machine No. 1 - Power Off!
-1300010	Machine No. 2  - Power Off!
-1300011	Machine No. 3  - Power Off!
+1300010	Machine No. 2 - Power Off!
+1300011	Machine No. 3 - Power Off!
 1300012	Everyone, concentrate your attacks on $s1! Show the enemy your resolve!
 1300013	Attacking the enemy's reinforcements is necessary. Time to die!
 1300014	Fire Spirit, unleash your power! Burn the enemy!!
@@ -8260,7 +8746,7 @@
 1620089	No you cannot. Master~!
 1620090	Master~! -_-
 1620091	......
-1620092	This is a hideout made with 'Shine Stone' used in Giant's Dimensional technique.  Supposedly the capital of the Giants that hasn't been found yet is still somewhere in the Dimensional Crack...
+1620092	This is a hideout made with 'Shine Stone' used in Giant's Dimensional technique. Supposedly the capital of the Giants that hasn't been found yet is still somewhere in the Dimensional Crack...
 1620093	The Earth Wyrm has lost consciousness.
 1620094	The Earth Wyrm stopped gathering energy.
 1620095	The Earth Wyrm completed gathering energy.
@@ -8379,10 +8865,135 @@
 1717877	Alfred von Hellmann, now vampire, has appeared.
 1717888	Giselle? In this creepy place?
 1717889	Go to where Kain and your allies are.
-1800001	(Queen Ant)  # $s1's Command Channel has looting rights.
-1800002	(Core)  # $s1's Command Channel has looting rights.
-1800003	(Orphen)  # $s1's Command Channel has looting rights.
-1800004	(Zaken)  # $s1's Command Channel has looting rights.
+1717890	The Spirit's Evil Thoughts are being concentrated.
+1717891	The concentrated Spirit's Evil Thoughts have grown more powerful.
+1717892	The concentrated Spirit's Evil Thoughts have turned into Harpe.
+1717893	A door that leads to Isabella has opened.
+1717894	Leona Blackbird has appeared at the Primeval Isle Wharf and will wait 15 minutes for the warrior who has to report to Admiral Keucereus.
+1717895	You can pick up the Hatchling Scales.
+1717896	Use your skills to attack.
+1717897	Double-click the equipment in your inventory to equip it.
+1717898	Tarti is worried about $s1.
+1717899	Open your inventory and double-click the Balthus Knight Supply Box\nto check the Soulshots.
+1717900	Open your inventory and double-click the Balthus Knight Supply Box\nto check the Blessed Spiritshots.
+1717901	Use a skill to become free of the monster's petrifaction.
+1717902	Fight together with Stig Mach to slay the Gem Dragon.
+1717903	The blood spilled by my comrades will not have been in vain.
+1717904	Don't take us lightly!
+1717905	Herphah. I didn't know you'd come.
+1717906	It's not the time to be wandering around anymore!
+1717907	Try to keep up with me if you can, kid.
+1717908	There's no time to look back.
+1717909	Don't think that we'll lose!
+1717910	Trust the weapon in your hand!
+1717911	As long as I'm here, you will survive!
+1717912	How come we didn't know that Antharas had these abilities until now?
+1717913	I won't let you take more lives of my comrades.
+1717914	Say thanks when you feel grateful.
+1717915	Who'll be the most surprised if we become the Balthus Knights?
+1717916	You think that will scare me?
+1717917	I'll catch Antharas! I won't give him up, not even to you!
+1717918	You look just like that hatchling I met!
+1717919	You're not trying to get to Antharas without us, are you?
+1717920	I'll protect you!
+1717921	I wasn't aware that Antharas could change forms…
+1717922	Do you think I could get alchemy ingredients?
+1717923	Thanks, that really was quite dangerous just then.
+1717924	Never forget that the lives of your comrades lie behind your shield.
+1717925	Be careful! You need to live so your comrades can survive!
+1717926	Your job is to distract the enemy!
+1717927	Don't worry about the shapeshifting. We will survive this!
+1717928	This weapon will give you power!
+1717929	The bigger they are, the slower they move!
+1717930	And I was worried about the polymorph! Piece of cake!
+1717931	Hey, newbie! Were you scared?
+1717932	If we don't attack him with all our might, this battle will never end!
+1717933	This weapon will give you strength!
+1717934	Find the enemy's weakness and exploit it! That can be crucial!
+1717935	This is the chance to fire our most powerful attack at the enemy.
+1717936	Attacking the enemy from behind can be quite effective.
+1717937	In moments of danger, we can hide.
+1717938	This weapon will give you power!
+1717939	We must stay strong so our comrades can find strength in us.
+1717940	A powerful attack and a critical wound!
+1717941	Don't get distracted! Attack!
+1717942	Trust your comrades. And never stop attacking.
+1717943	This weapon will give you power!
+1717944	You're in my way. Don't stay too close!
+1717945	You need to concentrate during battle. Shouldn't you take care of your Servitor?
+1717946	You and your Servitor are one. Don't let down your guard because you're not hurt.
+1717947	Idiot! Now I'm getting pissed off.
+1717948	This weapon will give you strength!
+1717949	No need to be afraid of dragons. They are just one of many enemies we encounter.
+1717950	Your power makes us strong.
+1717951	When you run out of CON, you need to pull all stops.
+1717952	This is not good. Time to change our strategy.
+1717953	This weapon will give you strength!
+1717954	We must see this through to the end.
+1717955	Hey, if you go too far, I can't heal you!
+1717956	Everyone's life depends on the decisions you make in battle.
+1717957	Hah... now what's that? I didn't hear about that before.
+1717958	This weapon will give you strength!
+1717959	That dragon is just big, nothing else.
+1717960	Hey, don't you have any stronger attacks?
+1717961	Don't rest! Attack! That's the smartest thing you can do.
+1717962	Oh, now it's time to really show what you can do.
+1717963	Use this weapon. It will give you strength.
+1717964	How old is that dragon?
+1717965	I'm really quick, huh? I can attack even quicker.
+1717966	Find the right time to use your power.
+1717967	Wow! I really wanted to do something like that.
+1717968	That's more difficult than I thought. This weapon will give you strength!
+1717969	Never let your guard down, or danger will find you before you know it.
+1717970	You need to use the Energy of Wind well.
+1717971	Trust in your comrades and give your best.
+1717972	There must be more we don't know about Antharas.
+1717973	This weapon will give you power!
+1717974	We'll see a lot of each other in the future.
+1717975	It's important to prepare supply items.
+1717976	Use the skill Shield Impact.
+1717977	Use the skill Armor Destruction.
+1717978	Use the skill Chain Blow.
+1717979	Use the skill Quick Shot.
+1717980	Use the skill Elemental Storm.
+1717981	Use the skill Resolving Bash.
+1717982	Use the skill Mark of Weakness.
+1717983	Use the skill Dark Blast.
+1717984	Use the skill Lateral Hit.
+1717985	When 'Sign of Storm' reaches Lv. 3 by using "Hydro Attack",\ntry using "Hydro Flare".
+1717986	You cannot continue this quest because it has been deleted.
+1717987	You have to restart the quest because the battle has ended.
+1717988	Press the Tab key to check your inventory.
+1717989	Double-click Paulina's equipment set to obtain the equipment.
+1717990	Double-click weapons and armor to equip them.
+1717991	Roien is calling for $s1.
+1717992	Brome is calling for $s1.
+1717993	Mion is calling for $s1.
+1717994	Kayleen is calling for $s1.
+1717995	Takhun is calling for $s1.
+1717996	Elena is calling for $s1.
+1717997	Ultrian is calling for $s1.
+1717998	Tariah is calling for $s1.
+1717999	Narita is calling for $s1.
+1718000	Elias is calling for $s1.
+1718001	Equip an Antharas Shaper.
+1718002	Equip an Antharas Slasher.
+1718003	Equip an Antharas Thrower.
+1718004	Equip an Antharas Buster.
+1718005	Equip an Antharas Cutter.
+1718006	Equip an Antharas Stormer.
+1718007	Equip an Antharas Fighter.
+1718008	Equip an Antharas Dualsword.
+1718009	Use the item skill Antharas Breath on Antharas.
+1718010	Press Alt + K to open the "Learn Skill" tab and learn new skills.\nThe skills in the "Active" tab can be added to the Shortcuts.
+1718011	Talk to Herphah.
+1718012	New reinforcements have arrived.
+1718013	Antharas has polymorphed.
+1718014	Please return to the Balthus Knight Barracks and recover...
+1800001	(Queen Ant) # $s1's Command Channel has looting rights.
+1800002	(Core) # $s1's Command Channel has looting rights.
+1800003	(Orphen) # $s1's Command Channel has looting rights.
+1800004	(Zaken) # $s1's Command Channel has looting rights.
 1800005	(Queen Ant) Looting rules are no longer active.
 1800006	(Core) Looting rules are no longer active.
 1800007	(Orphen) Looting rules are no longer active.
@@ -8612,7 +9223,7 @@
 1800231	Ekimus has been weakened by losing strength from a tumor!
 1800232	The Soul Coffin has awakened Ekimus. If $s1 more Soul Coffin(s) are created, the defense of the Heart of Infinity will fail...
 1800233	C'mon, c'mon! Show your face, you little rats! Let me see what the doomed weaklings are scheming!
-1800234	Impressive.... Hahaha it's so much fun, but I need to chill a little while.  Argekunte, clear the way!
+1800234	Impressive.... Hahaha it's so much fun, but I need to chill a little while. Argekunte, clear the way!
 1800235	Kyahaha! Since the tumor has been resurrected, I no longer need to waste my time on you!
 1800236	Keu... I will leave for now... But don't think this is over... The Seed of Infinity can never die...
 1800237	Kahahaha! That guy's nothing! He can't even kill without my permission! See here! Ultimate forgotten magic! Deathless Guardian!
@@ -9116,7 +9727,7 @@
 1800735	Shall I go to take a look if Santa is still there? Hehe
 1800736	Oh ho ho.... Happy Holidays!!
 1800737	Santa could give nice presents only if he's released from the Turkey...
-1800738	Oh ho ho... Oh ho ho... Thank you. Ladies and gentlemen!  I will repay you for sure.
+1800738	Oh ho ho... Oh ho ho... Thank you. Ladies and gentlemen! I will repay you for sure.
 1800739	Happy Holidays~ You're doing a good job.
 1800740	Happy Holidays~ Thank you for rescuing me from that wretched Turkey.
 1800741	$s1 . I have prepared a gift for you.
@@ -9238,7 +9849,7 @@
 1800857	Peunglui muglanep!
 1800858	Naia waganagel peutagun!
 1800859	Drive device partial destruction impulse result
-1800860	Even the Magic Force  binds you, you  will never be forgiven...
+1800860	Even the Magic Force binds you, you will never be forgiven...
 1800861	Oh giants, an intruder has been discovered.
 1800862	All is vanity! but this cannot be the end!
 1800863	Those who are in front of my eyes! will be destroyed!
@@ -9252,14 +9863,14 @@
 1800871	Sorry but this is all I have.. Give me a break!
 1800872	Peunglui muglanep Naia waganagel peutagun!
 1800873	Drive device entire destruction moving suspension
-1800874	Ah ah... From the Magic Force,  no more... I will be freed
+1800874	Ah ah... From the Magic Force, no more... I will be freed
 1800875	You guys are detected!
 1800876	What kind of creatures are you!
 1800877	$s2 of level $s1 is acquired
 1800878	Life Stone from the Beginning acquired
 1800879	When inventory weight/number are more than 80%, the Life Stone from the Beginning cannot be acquired.
 1800880	You are under my thumb!!
-1800881	20 minutes are added to the  remaining time in the Instant Zone.
+1800881	20 minutes are added to the remaining time in the Instant Zone.
 1800882	Hurry hurry
 1800883	I am not that type of person who stays in one place for a long time
 1800884	It's hard for me to keep standing like this
@@ -9363,7 +9974,7 @@
 1800982	Oh! It burst! The contents are spilling out~
 1800983	Hohoho~ Play better!
 1800984	Oh~!! You're very talented, huh~?
-1800985	Play some more! More!  More!  More!
+1800985	Play some more! More! More! More!
 1800986	I eat hits and grow!!
 1800987	Buck up~ There isn't much time~
 1800988	Do you think I'll burst with just that~?
@@ -9537,7 +10148,7 @@
 1801156	Hmm? Hey, did you give $s1 something? But it was just 1. Haha.
 1801157	$s1 pulled one with $s2 digits. Lucky~ Not bad~
 1801158	It's better than losing it all, right? Or does this feel worse?
-1801159	Ahem~!  $s1 has no luck at all. Try praying.
+1801159	Ahem~! $s1 has no luck at all. Try praying.
 1801160	Ah... It's over. What kind of guy is that? Damn... Fine, you $s1, take it and get outta here.
 1801161	A big piece is made up of little pieces. So here's a little piece~
 1801162	You don't feel bad, right? Are you sad? But don't cry~
@@ -9992,7 +10603,7 @@
 1801613	Give me freedom or give me death!
 1801614	Us! Today! Here! We shall write new history by defeating Tauti! For freedom and happiness!
 1801615	We are not your pets or cattle!
-1801616	You will die!     And I will live.
+1801616	You will die!   And I will live.
 1801617	We cannot forgive Tauti for feeding on us anymore!
 1801618	Fight for the sake of our future!
 1801619	If we all fall here, our plan will certainly fail. Please protect my friends.
@@ -10683,8 +11294,8 @@
 1802491	Well, it's been nice knowing you. Shall we have the last dance?
 1802492	Back away! I will use Tauti's Cyclone.
 1802493	Magic and arrows, hm? Well, take a dose of Tauti's Typhoon!
-1802494	Talk to Victory for reward.
-1802495	Talk to Difeet for reward.
+1802494	Talk to Victri for a reward.
+1802495	Talk to Difeet for a reward.
 1802496	The Repository is attacked! Fight! Fight!
 1802497	Argh! Who is…hiding there…?
 1802498	A smart Giant, huh? Well, hand it over! The Kartia's Seed is ours!
@@ -10763,7 +11374,7 @@
 1802571	Grow stronger here until you receive the next letter from Kekropus at Lv. 70!
 1802572	Grow stronger here until you receive the next letter from Kekropus at Lv. 76!
 1802573	Grow stronger here until you receive the next letter from Kekropus at Lv. 81!
-1802574	You have finished all of Kekropus' Letters! Grow stronger here until you receive letters from a minstrel at Lv. 85.
+1802574	You have completed all of Kekropus' Letter.
 1802575	Dimensional Warp Lv. $s1
 1802576	I thought I had warned you all.
 1802577	No more talk! Only judgment!
@@ -10844,7 +11455,7 @@
 1802652	Time for judgment, fools!
 1802653	Run if you wish to live.
 1802654	A dragon appears, confused by the dimensional gale!
-1802655	You have been branded with the Reaper's Seal due to $s1‘s Red Energy.
+1802655	You have been branded with the Reaper's Seal due to $s1's Red Energy.
 1802656	You can go to Underground Lv. 3 using the elevator in the back.
 1802657	You cannot Liberate while your servitor is present.
 1802658	You cannot Liberate while transformed.
@@ -10867,7 +11478,7 @@
 1802675	Grow stronger here until you receive the next letter from Queen Navari at Lv. 65!
 1802676	Grow stronger here until you receive the next letter from Queen Navari at Lv. 70!
 1802677	Grow stronger here until you receive the next letter from Queen Navari at Lv. 76!
-1802678	You have finished all of Queen Navari's Letters! Grow stronger here until you receive letters from a minstrel at Lv. 85.
+1802678	You have completed Queen Navari's Letter.
 1802679	So good, neigh!
 1802680	Thank you! What a delicious carrot.
 1802681	So good…so good.
@@ -11025,8 +11636,8 @@
 1802833	The HP of Vengeful Oretross in the Town of Gludio has fallen below 50%%.
 1802834	The HP of Vengeful Eligos in the Town of Gludio has fallen below 50%%.
 1802835	The HP of Vengeful Lerazia in Gludin Village has fallen below 50%%.
-1802836	The HP of  in Gludin Village Vengeful Edaire has fallen below 50%%.
-1802837	The HP of  in Gludin Village Vengeful Agonia has fallen below 50%%.
+1802836	The HP of in Gludin Village Vengeful Edaire has fallen below 50%%.
+1802837	The HP of in Gludin Village Vengeful Agonia has fallen below 50%%.
 1802838	The HP of Nerva Orc Nergatt in the Town of Schuttgart has fallen below 50%%.
 1802839	The HP of Amden Orc Turation in the Town of Schuttgart has fallen below 50%%.
 1802840	The HP of Nerva Chief Turakan in the Town of Schuttgart has fallen below 50%%.
@@ -11070,7 +11681,7 @@
 1802878	The battle against Valakas' Herald Potigia in the Town of Goddard has ended.
 1802879	The battle against Antharas' Herald Komabor in the Town of Goddard has ended.
 1802880	The battle against Vengeful Agarez in the Town of Gludio has ended.
-1802881	The battle against Vengeful Oretross in the  Town of Gludio has ended.
+1802881	The battle against Vengeful Oretross in the Town of Gludio has ended.
 1802882	The battle against Vengeful Eligos in the Town of Gludio has ended.
 1802883	The battle against Vengeful Lerazia in Gludin Village has ended.
 1802884	The battle against Vengeful Edaire in Gludin Village has ended.
@@ -11099,8 +11710,8 @@
 1802907	Vengeful Lerazia in Gludin Village has been defeated and out of the 8 villages, you are on the lead.
 1802908	Vengeful Edaire in Gludin Village has been defeated and out of the 8 villages, you are on the lead.
 1802909	Vengeful Agonia in Gludin Village has been defeated and out of the 8 villages, you are on the lead.
-1802910	Nerva Orc Nergatt in the Town of Schuttgart  has been defeated and out of the 8 villages, you are on the lead.
-1802911	Amden Orc Turation in the Town of Schuttgart  has been defeated and out of the 8 villages, you are on the lead.
+1802910	Nerva Orc Nergatt in the Town of Schuttgart has been defeated and out of the 8 villages, you are on the lead.
+1802911	Amden Orc Turation in the Town of Schuttgart has been defeated and out of the 8 villages, you are on the lead.
 1802912	Nerva Chief Turakan in the Town of Schuttgart has been defeated and out of the 8 villages, you are on the lead.
 1802913	Theor in Gainak has been defeated and out of the 8 villages, you are on the lead.
 1802914	Tebot in Gainak has been defeated and out of the 8 villages, you are on the lead.
@@ -11574,6 +12185,116 @@
 1803383	Don't get in the way of the Embryo!
 1803384	Brace yourselves! This is what we're made of!
 1803385	Impede them so that the Defense Battery can't be activated!
+1803386	The 33333 Event is on! The user who lands the 33333rd hit on Dandy will hit the jackpot!
+1803387	The 77777 Event is on! The user who lands the 77777th hit on Super Cat will hit the jackpot!
+1803388	The 77777 Event is on! The user who lands the 77777th hit on the Dancing Bard will hit the jackpot!
+1803389	The 33333 Event is on! The user who lands the 33333rd hit on Dandy will hit the jackpot!
+1803390	The 99999 Event is on! The user who lands the 99999th hit on Snowman will hit the jackpot!
+1803391	3 seconds
+1803392	2 seconds
+1803393	1 second
+1803394	Start!!
+1803395	The winner of this event is $s1. Congratulations!
+1803396	Has been hit $s1 times.
+1803397	There's no time to hesitate! Hurry and follow me.
+1803398	This is a dangerous place, but just trust me!
+1803399	Even if I'm here with you, you shouldn't let up on your attacks.
+1803400	Here! Hurry and attack!
+1803401	Be aware of your surroundings.
+1803402	Since we work great together, we'll do well.
+1803403	We're good friends, aren't we?
+1803404	I heard that Spicula Zero is dangerous. We'd better be careful.
+1803405	I'll show you the results of my training, so look forward to it!
+1803406	See? There's nothing you and I can't do when we're together!
+1803407	The challenge for the Throne of Heroes will begin shortly. Please get ready.
+1803408	The first challenge will begin in 10 seconds.
+1803409	5 seconds
+1803410	4 seconds
+1803411	3 seconds
+1803412	2 seconds
+1803413	1 second
+1803414	The first challenge begins.
+1803415	Darion frees himself from the restraints that suppressed him and reveals his true power.
+1803416	The first challenge has been completed successfully. The second challenge will begin shortly.
+1803417	The second challenge will begin in 10 seconds.
+1803418	The second challenge will begin.
+1803419	Goldberg will summon his minions in 5 seconds.
+1803420	Goldberg brings out all of the power within him.
+1803421	The second challenge has been completed successfully. The third challenge will begin shortly.
+1803422	The third challenge will begin in 10 seconds.
+1803423	The third challenge will begin.
+1803424	The third challenge has been completed successfully.
+1803425	Zaken summons monsters from another world.
+1803426	Your blood is mine!
+1803427	Cowards, you can't even approach me. Behold my power.
+1803428	Zaken reveals his hidden power.
+1803429	Tiat summons his minions.
+1803430	Tiat reveals his dignity.
+1803431	Tauti summons his mechanical contraption.
+1803432	Tauti intends to show off his power to his followers.
+1803433	Tauti intends to show off his power to those who avoid him.
+1803434	Antharas has disappeared inside his nest for recovery.
+1803435	Press Alt + K to open the Skill window.\nYou can add the skills in the "Active" tab to the Shortcuts.
+1803436	Are you looking for the captain? Follow this path, go up the stairs and turn left.
+1803437	Hurry and return after reporting to Captain Stig Mach! Just go up the stairs next to me.
+1803438	Talk to the Monk of Chaos.\nYou can learn about the Revelation skills.
+1803439	Talk to Balthus Knight Captain Stig Mach again.
+1803440	Talk to Hatchling Manager McCoy again.
+1803441	Go find and talk to Balthus Knight Camcud.
+1803442	Go find and talk to Balthus Knight Sibis.
+1803443	Go find and talk to Tarti.
+1803444	Talk to Balthus Knight Captain Stig Mach.
+1803445	Open your inventory and double-click the Balthus Knight Supply Box\nto check the Beast Soulshots.
+1803446	Learn 2 Revelation skills and talk to the Monk of Chaos again.
+1803447	Antharas' CON has decreased.
+1803448	Antharas has suffered critical injuries.
+1803449	Mary Reed summons her minions.
+1803450	Mary Reed reveals her true power.
+1803451	Antharas has appeared.
+1803452	At last, Antharas is here!
+1803453	Now, it's time for us to shine!
+1803454	As there hasn't been a boss battle for some time, the Throne of Heroes will end shortly.
+1803455	Injured comrades have retreated,\nand Herphah has arrived with new reinforcements.
+1803456	I won't let some Gem Dragon defeat me!
+1803457	What in the world is going on here?!
+1803458	Press Alt + K to open the Skill window\nand add Hydro Attack in the Active tab to the Shortcuts.
+1803459	Press Alt + K to open the Skill window\nand add Elemental Spike in the Active tab to the Shortcuts.
+1803460	Press Alt + K to open the Skill window\nand add Dark Blast in the Active tab to the Shortcuts.
+1803461	Use a skill on the Gem Dragon.
+1803462	Antharas summons Hatchlings.
+1803463	Antharas summons Gem Dragons.
+1803464	Talk to Hatchling Manager McCoy.
+1803465	Equip the armor obtained from Paulina's Heavy Armor Box.
+1803466	Equip the armor obtained from Paulina's Light Armor Box.
+1803467	Equip the armor obtained from Paulina's Robe Box.
+1803468	Other comrades have returned first to recover.
+1803469	Antharas summons young dragons.
+1803470	Antharas summons Hatchling Bombers.
+1803471	Press Alt + K to check Summon Cute Bear and Summon Saber Tooth Cougar, then use the skills\nto continue the battle using Servitors.
+1803472	Double-click a Servitor to give it orders.
+1803473	Attack a Hatchling.
+1803503	The cannon is sealed
+1803504	The Prison Warden is dead and the cannon in the sector is activated.
+1803505	All Prison Wardens are dead and Spezion is released from his seal.
+1803506	Spezion recalls his clones and brings out his true power.
+1803507	$s1 has gained a Cannonball of Despair.
+1803508	$s1 has gained a Cannonball of Rage.
+1803509	$s1 has gained a Cannonball of Lunacy.
+1803510	Spezion's invincibility has been turned off for 1 minute.
+1803511	Spezion is engulfed in the Memories of Despair.
+1803512	Spezion is engulfed in the Memories of Lunacy.
+1803513	Spezion is engulfed in the Memories of Rage.
+1803514	The 33333 Event is on!\nLand the 33333rd hit on the raid boss to receive amazing rewards!
+1803515	The 77777 Event is on!\nLand the 77777th hit on the raid boss to receive amazing rewards!
+1803516	The 99999 Event is on!\nLand the 99999th hit on the raid boss to receive amazing rewards!
+1803517	$s1 uses the clone generator to summon the elite guards.
+1803518	$s1 has been refused entry. Required quests have not been completed.
+1803519	$s1 has reached +20 Enchantment Level and gained a +16 Bloody Amaranthine Weapon.
+1803520	$s1 has reached +21 Enchantment Level and gained a +18 Bloody Amaranthine Weapon.
+1803521	$s1 has reached +22 Enchantment Level and gained a +16 Dark Amaranthine Weapon.
+1803522	$s1 has reached +23 Enchantment Level and gained a +18 Dark Amaranthine Weapon.
+1803523	$s1 has reached +24 Enchantment Level and gained a Dragons Klaus Fragment.
+1803524	$s1 has reached +25 Enchantment Level and gained a Dragons Klaus Standard.
 1810363	You are too far from the corpse.
 1810364	Grudge of Ye Sagira victims have been relieved with your tears.
 1811000	Fighter
@@ -11914,7 +12635,7 @@
 1900015	Shall I go to see if Santa is still there? Hehe~
 1900016	Oh ho ho.... Happy Holidays!!
 1900017	Santa can give nice presents only if he's released from the Turkey...
-1900018	Oh ho ho... Oh ho ho... Thank you. Everyone!  I will repay you for sure.
+1900018	Oh ho ho... Oh ho ho... Thank you. Everyone! I will repay you for sure.
 1900019	Happy Holidays~ Well done.
 1900020	Happy Holidays~ Thank you for rescuing me from that wretched Turkey.
 1900021	%s. I have prepared a gift for you.
@@ -11934,7 +12655,7 @@
 1900035	Just you wait! I'm going to show you my killer technique.
 1900036	You don't dare attack me!
 1900037	It's different from the Fire Spirit. It's not the Fire Spirit! Feel my wrath!
-1900038	Cold... This place...  Is this where I die...?
+1900038	Cold... This place... Is this where I die...?
 1900039	My body is cooling. Oh, Gran Kain... Forgive me...
 1900040	Idiot! I only incur damage from bare-handed attacks!
 1900041	You summoned me, so you must be confident, huh? Here I come! Jack game!
@@ -12295,7 +13016,7 @@
 2000092	The age of chaos and darkness has come. I shall guide you to darkness.
 2000093	I will make you invincible with the power of this plague.
 2000094	Humans…so complacent and weak after years of peace. How about I let you spread the fear of pestilence unto them?
-2000095	For the prosperity of my people, I will use my power on Jermann and Jermann only.  I cannot overpower my own people.
+2000095	For the prosperity of my people, I will use my power on Jermann and Jermann only. I cannot overpower my own people.
 2000096	Are you ready to face your enemies?
 2000097	You sense the presence of Pirate Captain Uthanka at the outskirts of Talking Island Village.
 2000098	Dwarven Rescue
@@ -12697,6 +13418,7 @@
 3000138	Try it with the Magic Fan Breeze and Gust skills!
 3000139	I just want to feel the Breeze and the Gust.
 3000140	Kneel down! Frederick the Destroyer will appear!
+3000141	As the party includes a new/returning warrior, a bonus reward will be given if the raid is successful.
 8888001	Intruder. The gate will soon be closed.
 8888002	Who dare to interrupt our rest...
 8888003	Those who came here looking for cursed ones... welcome.
@@ -12907,6 +13629,114 @@
 11170134	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=$s1&reply=$s2">Arbalester / Trickster</button>
 11170135	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=$s1&reply=$s2">Inspector / Judicator</button>
 11170136	<Button ALIGN=LEFT ICON="NORMAL" action="bypass -h menu_select?ask=$s1&reply=$s2">Inspector / Judicator</button>
+12230001	The assault of Etinah Great Temple has begun in Server Devianne.
+12230002	The assault of Etinah Great Temple has begun in Server Nevit.
+12230003	The assault of Etinah Great Temple has begun in Server Cara.
+12230004	The assault of Etinah Great Temple has begun in Server Tersi.
+12230005	The assault of Etinah Great Temple has begun in Server Bremnon.
+12230006	The assault of Etinah Great Temple has begun in Server Lionel.
+12230007	The assault of Etinah Great Temple has begun in Server Bartz.
+12230008	The assault of Etinah Great Temple has begun in Server Sieghardt.
+12230009	The assault of Etinah Great Temple has begun in Server Kain.
+12230010	The heroes of Aden have gathered to assault Etinah Great Temple.
+12230011	Server Devianne has been selected as the main server and will face Etis van Etina.
+12230012	Server Nevit has been selected as the main server and will face Etis van Etina.
+12230013	Server Cara has been selected as the main server and will face Etis van Etina.
+12230014	Server Tersi has been selected as the main server and will face Etis van Etina.
+12230015	Server Bremnon has been selected as the main server and will face Etis van Etina.
+12230016	Server Lionel has been selected as the main server and will face Etis van Etina.
+12230017	Server Bartz has been selected as the main server and will face Etis van Etina.
+12230018	Server Sieghardt has been selected as the main server and will face Etis van Etina.
+12230019	Server Kain has been selected as the main server and will face Etis van Etina.
+12230020	Server Devianne has been selected as a support server and will face Kain van Halter.
+12230021	Server Nevit has been selected as a support server and will face Kain van Halter.
+12230022	Server Cara has been selected as a support server and will face Kain van Halter.
+12230023	Server Tersi has been selected as a support server and will face Kain van Halter.
+12230024	Server Bremnon has been selected as a support server and will face Kain van Halter.
+12230025	Server Lionel has been selected as a support server and will face Kain van Halter.
+12230026	Server Bartz has been selected as a support server and will face Kain van Halter.
+12230027	Server Sieghardt has been selected as a support server and will face Kain van Halter.
+12230028	Server Kain has been selected as a support server and will face Kain van Halter.
+12230029	Gatekeeper Paragon of the Great Temple has fallen. The news of the victory will be reported back home.
+12230030	Server Devianne has engaged Etis van Etina in battle.
+12230031	Server Nevit has engaged Etis van Etina in battle.
+12230032	Server Cara has engaged Etis van Etina in battle.
+12230033	Server Tersi has engaged Etis van Etina in battle.
+12230034	Server Bremnon has engaged Etis van Etina in battle.
+12230035	Server Lionel has engaged Etis van Etina in battle.
+12230036	Server Bartz has engaged Etis van Etina in battle.
+12230037	Server Sieghardt has engaged Etis van Etina in battle.
+12230038	Server Kain has engaged Etis van Etina in battle.
+12230039	Server Devianne has engaged Kain van Halter in battle.
+12230040	Server Nevit has engaged Kain van Halter in battle.
+12230041	Server Cara has engaged Kain van Halter in battle.
+12230042	Server Tersi has engaged Kain van Halter in battle.
+12230043	Server Bremnon has engaged Kain van Halter in battle.
+12230044	Server Lionel has engaged Kain van Halter in battle.
+12230045	Server Bartz has engaged Kain van Halter in battle.
+12230046	Server Sieghardt has engaged Kain van Halter in battle.
+12230047	Server Kain has engaged Kain van Halter in battle.
+12230048	Server Devianne has battled Etis van Etina and forced her to reveal her true self.
+12230049	Server Nevit has battled Etis van Etina and forced her to reveal her true self.
+12230050	Server Cara has battled Etis van Etina and forced her to reveal her true self.
+12230051	Server Tersi has battled Etis van Etina and forced her to reveal her true self.
+12230052	Server Bremnon has battled Etis van Etina and forced her to reveal her true self.
+12230053	Server Lionel has battled Etis van Etina and forced her to reveal her true self.
+12230054	Server Bartz has battled Etis van Etina and forced her to reveal her true self.
+12230055	Server Sieghardt has battled Etis van Etina and forced her to reveal her true self.
+12230056	Server Kain has battled Etis van Etina and forced her to reveal her true self.
+12230057	Server Devianne has defeated Etis van Etina and won the battle.
+12230058	Server Nevit has defeated Etis van Etina and won the battle.
+12230059	Server Cara has defeated Etis van Etina and won the battle.
+12230060	Server Tersi has defeated Etis van Etina and won the battle.
+12230061	Server Bremnon has defeated Etis van Etina and won the battle.
+12230062	Server Lionel has defeated Etis van Etina and won the battle.
+12230063	Server Bartz has defeated Etis van Etina and won the battle.
+12230064	Server Sieghardt has defeated Etis van Etina and won the battle.
+12230065	Server Kain has defeated Etis van Etina and won the battle.
+12230066	Server Devianne has defeated Kain van Halter and won the battle.
+12230067	Server Nevit has defeated Kain van Halter and won the battle.
+12230068	Server Cara has defeated Kain van Halter and won the battle.
+12230069	Server Tersi has defeated Kain van Halter and won the battle.
+12230070	Server Bremnon has defeated Kain van Halter and won the battle.
+12230071	Server Lionel has defeated Kain van Halter and won the battle.
+12230072	Server Bartz has defeated Kain van Halter and won the battle.
+12230073	Server Sieghardt has defeated Kain van Halter and won the battle.
+12230074	Server Kain has defeated Kain van Halter and won the battle.
+12230075	The Seal of Gnosis activates and enormous power begins to flow out.
+12230076	The Seal of Strife activates and enormous power begins to flow out.
+12230077	The Seal of Avarice activates and enormous power begins to flow out.
+12230078	The Seal of Punishment activates and enormous power begins to flow out.
+12230079	The Seal of Awakening activates and enormous power begins to flow out.
+12230080	The Seal of Calamity activates and enormous power begins to flow out.
+12230081	The Seal of Destruction activates and the entire Etinah Great Temple is now under the influence of the seal.
+12230082	Etis van Etina uses the power of the Seven Signs to summon all 7 seals inside the temple.
+12230083	Kain van Halter uses the power of the Seven Signs to summon 4 seals inside the temple.
+12230084	Etina's elite minions have appeared inside the Great Temple.
+12230085	Time is up and the assault on Etinah Great Temple has failed. All forces will retreat in 30 seconds.
+12230086	$s1 has been refused entry to Etinah Great Temple for failing to meet the faction level requirement.
+12230087	$s1 has been refused entry to Etinah Great Temple for failing to meet the character level requirement.
+12230088	$s1 has been refused entry to Etinah Great Temple for being too far from the rest of the alliance members.
+12230090	A teleport device that takes you outside has appeared. You will be automatically teleported outside in 3 minutes.
+12230091	60 minutes remaining until the time expires for the assault on the Etinah Great Temple Outer Wall.
+12230092	30 minutes remaining until the time expires for the assault on the Etinah Great Temple Outer Wall.
+12230093	1 minute remaining until the time expires for the assault on the Etinah Great Temple Outer Wall.
+12230094	60 minutes remaining until the time expires for the assault on the Etinah Great Temple Inner Wall.
+12230095	30 minutes remaining until the time expires for the assault on the Etinah Great Temple Inner Wall.
+12230096	1 minute remaining until the time expires for the assault on the Etinah Great Temple Inner Wall.
+12230100	Praise the magnificent heroes who saved our world from the threats of Etis van Etina and Embryo!
+12230101	Applaud the victory of the heroes who saved us and remember this glorious day forever!
+12230102	Receive the blessings of the saviors who shone like a ray of light and saved the world from danger!
+12230103	Great heroes have defeated Etis van Etina in Etinah Great Temple.
+12230104	Great heroes have defeated Kain van Halter in Etinah Great Temple.
+12240001	Server $s1 has started the attack on Etina's Great Temple.
+12240002	Server $s1 has been selected as the representative server to face Etis Van Etina.
+12240003	Server $s1 has been selected as the supporting server and will be facing Kain Van Halter.
+12240004	Server $s1 has started the battle against Etis Van Etina.
+12240005	Server $s1 has started the battle against Kain Van Halter
+12240006	Server $s1 has ended the battle against Etis Van Etina, reveling his true form.
+12240007	Server $s1 has defeated Etis Van Etina.
+12240008	Server $s1 has defeated Kain Van Halter.
 14211701	You must activate the 4 Generators.
 14211702	Protect the Generator!
 14211703	$s1 has charged the cannon!
@@ -13133,7 +13963,7 @@
 901900152	To serve him now means you will be able to escape a worse situation.
 901900153	Oh goddess of destruction, forgive us...
 901900154	When the sky turns blood red and the earth begins to crumble… from the darkness… she will return.
-901900155	Energy of earth is gathering near  Antharas' legs.
+901900155	Energy of earth is gathering near Antharas' legs.
 901900156	Antharas starts to absorb the energy of earth.
 901900157	Antharas raises its thick tail.
 901900158	You are overcome by the strength of Antharas.

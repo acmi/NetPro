@@ -639,8 +639,8 @@
 639	Red Flame Shield
 640	Elven Crystal Shield
 641	Dark Crystal Shield
-642	Elven Vagian Shield
-643	Dark Vagian Shield
+642	Elven Bejian Shield
+643	Dark Bejian Shield
 644	Twilight Shield
 645	Art of Shield
 646	Shield of Silence
@@ -670,7 +670,7 @@
 670	Shield of Bravery
 671	Blood Shield
 672	Absolute Shield
-673	Avadon Shield
+673	Abaddon Shield
 674	Divine Shield
 675	Silk Yarn Undergarment Set
 676	Pure White Undergarment Set
@@ -1327,9 +1327,9 @@
 1327	Boots
 1328	Shield of Grace
 1329	Shield of Victory
-1330	Zubei's Shield
+1330	Zubei's Shield for Kamex
 1331	Otherworldly Shield
-1332	Knight's Shield
+1332	Knight's Shield for Kamex
 1333	Brandish
 1334	Predator's Fang
 1335	Goblin Club
@@ -2189,7 +2189,7 @@
 2189	Recipe: Mithril Tunic
 2190	Recipe: Mithril Stockings
 2191	Recipe: RIP Gauntlets
-2192	Recipe: Kite Shield
+2192	Recipe: Kite Shield (100%)
 2193	Recipe: Boots of Strength
 2194	Recipe: Mithril Gloves
 2195	Recipe: Half Plate Armor
@@ -2214,13 +2214,13 @@
 2214	Recipe: Dwarven Chain Gaiters
 2215	Recipe: Robe of Seal
 2216	Recipe: Great Helmet
-2217	Recipe: Knight's Shield
+2217	Recipe: Knight's Shield (100%)
 2218	Recipe: Pa'agrio Hand
 2219	Recipe: Crimson Boots
 2220	Recipe: Rind Leather Armor
 2221	Recipe: Rind Leather Gaiters
 2222	Recipe: Compound Armor
-2223	Recipe: Tower Shield
+2223	Recipe: Tower Shield (100%)
 2224	Recipe: Demon's Tunic
 2225	Recipe: Demon's Stockings
 2226	Recipe: Mithril Gauntlets
@@ -2495,7 +2495,7 @@
 2495	Chain Shield
 2496	Dwarven Chain Shield
 2497	Full Plate Shield
-2498	Shield of Nightmare
+2498	Shield of Nightmares
 2499	Elven Long Sword
 2500	Dark Legion's Edge
 2501	Bone Club
@@ -2979,12 +2979,12 @@
 2979	Recipe: Manticore Skin Gloves
 2980	Recipe: Brigandine Gauntlets
 2981	Recipe: Elven Mithril Gloves
-2982	Recipe: Brigandine Shield
+2982	Recipe: Brigandine Shield (100%)
 2983	Recipe: Plate Helmet
 2984	Recipe: Salamander Skin Boots
 2985	Recipe: Plate Boots
 2986	Recipe: Sage's Worn Gloves
-2987	Recipe: Plate Shield
+2987	Recipe: Plate Shield (100%)
 2988	Recipe: Reinforced Mithril Gaiters
 2989	Recipe: Chain Hood
 2990	Recipe: Chain Boots
@@ -2995,9 +2995,9 @@
 2995	Recipe: Reinforced Mithril Gloves
 2996	Recipe: Chain Gloves
 2997	Recipe: Karmian Gloves
-2998	Recipe: Chain Shield
+2998	Recipe: Chain Shield (100%)
 2999	Recipe: Plated Leather Gloves
-3000	Recipe: Dwarven Chain Shield
+3000	Recipe: Dwarven Chain Shield (100%)
 3001	Recipe: Rind Leather Boots
 3002	Recipe: Dwarven Chain Gloves
 3003	Recipe: Gloves of Seal
@@ -3016,7 +3016,7 @@
 3016	Recipe: Full Plate Gauntlets
 3017	Recipe: Divine Gloves
 3018	Recipe: Blessed Gloves
-3019	Recipe: Full Plate Shield
+3019	Recipe: Full Plate Shield (100%)
 3020	Recipe: Elven Long Sword
 3021	Recipe: Dwarven War Hammer
 3022	Recipe: Yaksa Mace
@@ -4129,7 +4129,7 @@
 4129	Recipe: Black Ore Earring
 4130	Recipe: Black Ore Ring
 4131	Recipe: Black Ore Necklace
-4132	Recipe: Compound Shield
+4132	Recipe: Compound Shield (100%)
 4133	Recipe: Zubei's Breastplate
 4134	Recipe: Zubei's Gaiters
 4135	Recipe: Implosion Boots
@@ -4151,7 +4151,7 @@
 4151	Recipe: Chain Gloves of Silence
 4152	Recipe: Guardian's Gloves
 4153	Recipe: Gloves of Blessing
-4154	Recipe: Doom Shield
+4154	Recipe: Doom Shield (100%)
 4155	Recipe: Blue Wolf Breastplate
 4156	Recipe: Boots of Blessing
 4157	Recipe: Blue Wolf Gaiters
@@ -4175,7 +4175,7 @@
 4175	Recipe: Sealed Avadon Boots
 4176	Recipe: Sealed Doom Boots
 4177	Recipe: Sealed Zubei's Gauntlets
-4178	Recipe: Zubei's Shield
+4178	Recipe: Zubei's Shield (100%)
 4179	Recipe: Zubei's Helmet
 4180	Recipe: Silver Arrow
 4181	Recipe: Pata
@@ -4436,9 +4436,9 @@
 4436	Bentley's Request
 4437	Carson's Request
 4438	Knuckle Duster Edge
-4439	Avadon Shield Fragment
+4439	Abaddon Shield Fragment
 4440	Recipe: Knuckle Duster
-4441	Recipe: Avadon Shield
+4441	Recipe: Abaddon Shield (100%)
 4442	Lottery Ticket
 4443	Monster Race Ticket - Single
 4444	Monster Race Ticket - Double
@@ -4933,7 +4933,7 @@
 4933	Spellbook: Blizzard
 4934	Spellbook: Demon Wind
 4935	Spellbook: Elemental Symphony
-4936	Recipe: Avadon Shield (60%)
+4936	Recipe: Abaddon Shield (60%)
 4937	Recipe: Adamantite Earring (70%)
 4938	Recipe: Adamantite Ring (70%)
 4939	Recipe: Adamantite Necklace (70%)
@@ -5361,10 +5361,10 @@
 5361	(Not in Use) Recipe: Phoenix Ring
 5362	(Not in Use) Recipe: Inferno Ring(70%)
 5363	(Not in Use) Recipe: Inferno Ring
-5364	Recipe: Sealed Dark Crystal Shield(60%)
-5365	Recipe: Sealed Dark Crystal Shield
-5366	Recipe: Sealed Shield of Nightmare(60%)
-5367	Recipe: Sealed Shield of Nightmare
+5364	Recipe: Sealed Dark Crystal Shield (60%)
+5365	Recipe: Sealed Dark Crystal Shield (100%)
+5366	Recipe: Sealed Shield of Nightmares (60%)
+5367	Recipe: Sealed Shield of Nightmares (100%)
 5368	Recipe: Sealed Dark Crystal Boots(60%)
 5369	Recipe: Sealed Dark Crystal Boots
 5370	Recipe: Sealed Tallum Boots(60%)
@@ -5492,7 +5492,7 @@
 5492	Phoenix Ring Gemstone
 5493	Majestic Ring Gemstone
 5494	Sealed Dark Crystal Shield Fragment
-5495	Sealed Shield of Nightmare Fragment
+5495	Sealed Shield of Nightmares Fragment
 5496	Sealed Dark Crystal Boot Lining
 5497	Sealed Tallum Boot Lining
 5498	Sealed Boots of Underworld Lining
@@ -6702,7 +6702,7 @@
 6702	Sealed Imperial Crusader Gaiter Pattern
 6703	Sealed Imperial Crusader Gauntlet Design
 6704	Sealed Imperial Crusader Boot Design
-6705	Sealed Imperial Crusader Shield Part
+6705	Sealed Imperial Crusader Shield Fragment
 6706	Sealed Imperial Crusader Helmet Pattern
 6707	Sealed Draconic Leather Armor Part
 6708	Sealed Draconic Leather Glove Fabric
@@ -6859,7 +6859,7 @@
 6859	Recipe: Sealed Imperial Crusader Boots (60%)
 6860	Recipe: Sealed Imperial Crusader Boots
 6861	Recipe: Sealed Imperial Crusader Shield (60%)
-6862	Recipe: Sealed Imperial Crusader Shield
+6862	Recipe: Sealed Imperial Crusader Shield (100%)
 6863	Recipe: Sealed Imperial Crusader Helmet (60%)
 6864	Recipe: Sealed Imperial Crusader Helmet
 6865	Recipe: Sealed Draconic Leather Armor (60%)
@@ -9126,7 +9126,7 @@
 9126	Low-grade Shadow Armor Set Pack (A-grade) (Robe)
 9127	High-grade Shadow Armor Set Pack (A-grade) (Robe)
 9128	Shadow Item: Mithril Gauntlets
-9129	Shadow Item: Shield of Nightmare
+9129	Shadow Item: Shield of Nightmares
 9130	Item Set Pack (No-grade) (Wizard)
 9131	Item Set Pack (D-grade) (Wizard)
 9132	Item Set Pack (C-grade) (Wizard)
@@ -9510,7 +9510,7 @@
 9510	Recipe: Sealed Dynasty Circlet
 9511	Recipe: Sealed Dynasty Gloves
 9512	Recipe: Sealed Dynasty Shoes
-9513	Recipe: Sealed Dynasty Shield
+9513	Recipe: Sealed Dynasty Shield (100%)
 9514	Sealed Dynasty Breastplate
 9515	Sealed Dynasty Gaiters
 9516	Sealed Dynasty Helmet
@@ -11371,7 +11371,7 @@
 11371	Avadon Boots Light Armor
 11372	Avadon Boots Robe
 11373	Avadon Circlet Heavy Armor
-11374	Avadon Shield
+11374	Abaddon Shield
 11375	Avadon Gaiters
 11376	Avadon Breastplate
 11377	Tunic of Zubei
@@ -11477,7 +11477,7 @@
 11477	Boots of Nightmare Heavy Armor
 11478	Boots of Nightmare Light Armor
 11479	Boots of Nightmare Robe
-11480	Shield of Nightmare
+11480	Shield of Nightmares
 11481	Helm of Nightmare Heavy Armor
 11482	Great Wolf Oriharukon Armor
 11483	Draconic Leather Gloves
@@ -12168,7 +12168,7 @@
 12168	Common Item - Avadon Boots Light Armor
 12169	Common Item - Avadon Boots Robe
 12170	Common Item - Avadon Circlet
-12171	Common Item - Avadon Shield
+12171	Common Item - Abaddon Shield
 12172	Common Item - Avadon Gaiters
 12173	Common Item - Avadon Breastplate
 12174	Common Item - Thin Leather Shirt
@@ -12265,7 +12265,7 @@
 12265	Common Item - Sealed Leather Armor of Nightmare
 12266	Common Item - Sealed Robe of Nightmare
 12267	Common Item - Sealed Boots of Nightmare
-12268	Common Item - Sealed Shield of Nightmare
+12268	Common Item - Sealed Shield of Nightmares
 12269	Common Item - Sealed Helm of Nightmare
 12270	Common Item - Armor of Nightmare
 12271	Common Item - Gauntlets of Nightmare Heavy Armor
@@ -12508,7 +12508,7 @@
 12508	Foundation Avadon Boots
 12509	Foundation Avadon Boots
 12510	Foundation Avadon Circlet
-12511	Foundation Avadon Shield
+12511	Foundation Abaddon Shield
 12512	Foundation Avadon Gaiters
 12513	Foundation Avadon Breastplate
 12514	Foundation Tunic of Zubei
@@ -12603,7 +12603,7 @@
 12603	Foundation Sealed Leather Armor of Nightmare
 12604	Foundation Sealed Robe of Nightmare
 12605	Foundation Sealed Boots of Nightmare
-12606	Foundation Sealed Shield of Nightmare
+12606	Foundation Sealed Shield of Nightmares
 12607	Foundation Sealed Helm of Nightmare
 12608	Foundation Armor of Nightmare
 12609	Foundation Gauntlets of Nightmare
@@ -12614,7 +12614,7 @@
 12614	Foundation Boots of Nightmare
 12615	Foundation Boots of Nightmare
 12616	Foundation Boots of Nightmare
-12617	Foundation Shield of Nightmare
+12617	Foundation Shield of Nightmares
 12618	Foundation Helm of Nightmare
 12619	Foundation Draconic Leather Gloves
 12620	Foundation Draconic Leather Boots
@@ -13366,7 +13366,7 @@
 13366	Near Kamaloka 5-unit Pack (Event)
 13367	Kamaloka (Labyrinth of the Abyss) 5-unit Pack (Event)
 13368	Feather of Blessing Pack (Event)
-13369	Agathion - Love Pack (7-day) (Event)
+13369	Agathion- Love Pack (7-day) (Event)
 13370	Pumpkin Transformation Stick Pack (7-day) (Event)
 13371	Kat the Cat Hat Pack (7-day) (Event)
 13372	Feline Queen Hat Pack (7-day) (Event)
@@ -14984,7 +14984,7 @@
 14984	Avadon Circlet of Fortune 30-day
 14985	Avadon Gloves of Fortune - Robe 30-day
 14986	Avadon Boots of Fortune - Robe 30-day
-14987	Avadon Shield of Fortune 30-day
+14987	Abaddon Shield of Fortune 30-day
 14988	Karmian Tunic of Fortune 30-day
 14989	Karmian Stockings of Fortune 30-day
 14990	Karmian Gloves of Fortune 30-day
@@ -15098,7 +15098,7 @@
 15098	Avadon Circlet of Fortune 10-day
 15099	Avadon Gloves of Fortune - Robe 10-day
 15100	Avadon Boots of Fortune - Robe 10-day
-15101	Avadon Shield of Fortune 10-day
+15101	Abaddon Shield of Fortune 10-day
 15102	Karmian Tunic of Fortune 10-day
 15103	Karmian Stockings of Fortune 10-day
 15104	Karmian Gloves of Fortune 10-day
@@ -16444,7 +16444,7 @@
 16872	Avadon Circlet of Fortune 90-day
 16873	Avadon Gloves of Fortune - Robe 90-day
 16874	Avadon Boots of Fortune - Robe 90-day
-16875	Avadon Shield of Fortune 90-day
+16875	Abaddon Shield of Fortune 90-day
 16876	Karmian Tunic of Fortune 90-day
 16877	Karmian Stockings of Fortune 90-day
 16878	Karmian Gloves of Fortune 90-day
@@ -19084,7 +19084,7 @@
 19524	Immortal Gaiters Attack Type / Heavy
 19525	Immortal Gauntlets Attack Type / Heavy
 19526	Immortal Boots Attack Type / Heavy
-19527	Immortal Shield Attack Type / Heavy
+19527	Immortal Shield Attack Type/Heavy
 19528	Immortal Leather Helmet Assassin Type / Light
 19529	Immortal Leather Armor Assassin Type / Light
 19530	Immortal Leather Leggings Assassin Type / Light
@@ -19100,7 +19100,7 @@
 19540	Twilight Gaiters Attack Type / Heavy
 19541	Twilight Gauntlets Attack Type / Heavy
 19542	Twilight Boots Attack Type / Heavy
-19543	Twilight Shield Attack Type / Heavy
+19543	Twilight Shield Attack Type/Heavy
 19544	Twilight Leather Helmet Assassin Type / Light
 19545	Twilight Leather Armor Assassin Type / Light
 19546	Twilight Leather Leggings Assassin Type / Light
@@ -19116,7 +19116,7 @@
 19556	Seraph Gaiters Attack Type / Heavy
 19557	Seraph Gauntlets Attack Type / Heavy
 19558	Seraph Boots Attack Type / Heavy
-19559	Seraph Shield Attack Type / Heavy
+19559	Seraph Shield Attack Type/Heavy
 19560	Seraph Leather Helmet Assassin Type / Light
 19561	Seraph Leather Armor Assassin Type / Light
 19562	Seraph Leather Leggings Assassin Type / Light
@@ -19132,7 +19132,7 @@
 19572	Eternal Gaiters Attack Type / Heavy
 19573	Eternal Gauntlets Attack Type / Heavy
 19574	Eternal Boots Attack Type / Heavy
-19575	Eternal Shield Attack Type / Heavy
+19575	Eternal Shield Attack Type/Heavy
 19576	Eternal Leather Helmet Assassin Type / Light
 19577	Eternal Leather Armor Assassin Type / Light
 19578	Eternal Leather Leggings Assassin Type / Light
@@ -19148,7 +19148,7 @@
 19588	Bound Immortal Gaiters Attack Type / Heavy
 19589	Bound Immortal Gauntlets Attack Type / Heavy
 19590	Bound Immortal Boots Attack Type / Heavy
-19591	Bound Immortal Shield Attack Type / Heavy
+19591	Bound Immortal Shield Attack Type/Heavy
 19592	Bound Immortal Leather Helmet Assassin Type / Light
 19593	Bound Immortal Leather Armor Assassin Type / Light
 19594	Bound Immortal Leather Leggings Assassin Type / Light
@@ -19164,7 +19164,7 @@
 19604	Bound Twilight Gaiters Attack Type / Heavy
 19605	Bound Twilight Gauntlets Attack Type / Heavy
 19606	Bound Twilight Boots Attack Type / Heavy
-19607	Bound Twilight Shield Attack Type / Heavy
+19607	Bound Twilight Shield Attack Type/Heavy
 19608	Bound Twilight Leather Helmet Assassin Type / Light
 19609	Bound Twilight Leather Armor Assassin Type / Light
 19610	Bound Twilight Leather Leggings Assassin Type / Light
@@ -19180,7 +19180,7 @@
 19620	Bound Seraph Gaiters Attack Type / Heavy
 19621	Bound Seraph Gauntlets Attack Type / Heavy
 19622	Bound Seraph Boots Attack Type / Heavy
-19623	Bound Seraph Shield Attack Type / Heavy
+19623	Bound Seraph Shield Attack Type/Heavy
 19624	Bound Seraph Leather Helmet Assassin Type / Light
 19625	Bound Seraph Leather Armor Assassin Type / Light
 19626	Bound Seraph Leather Leggings Assassin Type / Light
@@ -19196,7 +19196,7 @@
 19636	Bound Eternal Gaiters Attack Type / Heavy
 19637	Bound Eternal Gauntlets Attack Type / Heavy
 19638	Bound Eternal Boots Attack Type / Heavy
-19639	Bound Eternal Shield Attack Type / Heavy
+19639	Bound Eternal Shield Attack Type/Heavy
 19640	Bound Eternal Leather Helmet Assassin Type / Light
 19641	Bound Eternal Leather Armor Assassin Type / Light
 19642	Bound Eternal Leather Leggings Assassin Type / Light
@@ -19212,7 +19212,7 @@
 19652	Blessed Immortal Gaiters Attack Type / Heavy
 19653	Blessed Immortal Gauntlets Attack Type / Heavy
 19654	Blessed Immortal Boots Attack Type / Heavy
-19655	Blessed Immortal Shield Attack Type / Heavy
+19655	Blessed Immortal Shield Attack Type/Heavy
 19656	Blessed Immortal Leather Helmet Assassin Type / Light
 19657	Blessed Immortal Leather Armor Assassin Type / Light
 19658	Blessed Immortal Leather Leggings Assassin Type / Light
@@ -19228,7 +19228,7 @@
 19668	Blessed Twilight Gaiters Attack Type / Heavy
 19669	Blessed Twilight Gauntlets Attack Type / Heavy
 19670	Blessed Twilight Boots Attack Type / Heavy
-19671	Blessed Twilight Shield Attack Type / Heavy
+19671	Blessed Twilight Shield Attack Type/Heavy
 19672	Blessed Twilight Leather Helmet Assassin Type / Light
 19673	Blessed Twilight Leather Armor Assassin Type / Light
 19674	Blessed Twilight Leather Leggings Assassin Type / Light
@@ -19244,7 +19244,7 @@
 19684	Blessed Seraph Gaiters Attack Type / Heavy
 19685	Blessed Seraph Gauntlets Attack Type / Heavy
 19686	Blessed Seraph Boots Attack Type / Heavy
-19687	Blessed Seraph Shield Attack Type / Heavy
+19687	Blessed Seraph Shield Attack Type/Heavy
 19688	Blessed Seraph Leather Helmet Assassin Type / Light
 19689	Blessed Seraph Leather Armor Assassin Type / Light
 19690	Blessed Seraph Leather Leggings Assassin Type / Light
@@ -19260,7 +19260,7 @@
 19700	Blessed Eternal Gaiters Attack Type / Heavy
 19701	Blessed Eternal Gauntlets Attack Type / Heavy
 19702	Blessed Eternal Boots Attack Type / Heavy
-19703	Blessed Eternal Shield Attack Type / Heavy
+19703	Blessed Eternal Shield Attack Type/Heavy
 19704	Blessed Eternal Leather Helmet Assassin Type / Light
 19705	Blessed Eternal Leather Armor Assassin Type / Light
 19706	Blessed Eternal Leather Leggings Assassin Type / Light
@@ -19276,7 +19276,7 @@
 19716	Blessed Durandia Gaiters Attack Type / Heavy
 19717	Blessed Durandia Gauntlets Attack Type / Heavy
 19718	Blessed Durandia Boots Attack Type / Heavy
-19719	Blessed Durandia Shield Attack Type / Heavy
+19719	Blessed Durandia Shield Attack Type/Heavy
 19720	Blessed Durandia Leather Helmet Assassin Type / Light
 19721	Blessed Durandia Leather Armor Assassin Type / Light
 19722	Blessed Durandia Leather Leggings Assassin Type / Light
@@ -19292,7 +19292,7 @@
 19732	Immortal Gaiters Defense Type / Heavy
 19733	Immortal Gauntlets Defense Type / Heavy
 19734	Immortal Boots Defense Type / Heavy
-19735	Immortal Shield Defense Type / Heavy
+19735	Immortal Shield Defense Type/Heavy
 19736	Immortal Leather Helmet Enchant Type / Light
 19737	Immortal Leather Armor Enchant Type / Light
 19738	Immortal Leather Leggings Enchant Type / Light
@@ -19308,7 +19308,7 @@
 19748	Twilight Gaiters Defense Type / Heavy
 19749	Twilight Gauntlets Defense Type / Heavy
 19750	Twilight Boots Defense Type / Heavy
-19751	Twilight Shield Defense Type / Heavy
+19751	Twilight Shield Defense Type/Heavy
 19752	Twilight Leather Helmet Enchant Type / Light
 19753	Twilight Leather Armor Enchant Type / Light
 19754	Twilight Leather Leggings Enchant Type / Light
@@ -19324,7 +19324,7 @@
 19764	Seraph Gaiters Defense Type / Heavy
 19765	Seraph Gauntlets Defense Type / Heavy
 19766	Seraph Boots Defense Type / Heavy
-19767	Seraph Shield Defense Type / Heavy
+19767	Seraph Shield Defense Type/Heavy
 19768	Seraph Leather Helmet Enchant Type / Light
 19769	Seraph Leather Armor Enchant Type / Light
 19770	Seraph Leather Leggings Enchant Type / Light
@@ -19340,7 +19340,7 @@
 19780	Eternal Gaiters Defense Type / Heavy
 19781	Eternal Gauntlets Defense Type / Heavy
 19782	Eternal Boots Defense Type / Heavy
-19783	Eternal Shield Defense Type / Heavy
+19783	Eternal Shield Defense Type/Heavy
 19784	Eternal Leather Helmet Enchant Type / Light
 19785	Eternal Leather Armor Enchant Type / Light
 19786	Eternal Leather Leggings Enchant Type / Light
@@ -19356,7 +19356,7 @@
 19796	Bound Immortal Gaiters Defense Type / Heavy
 19797	Bound Immortal Gauntlets Defense Type / Heavy
 19798	Bound Immortal Boots Defense Type / Heavy
-19799	Bound Immortal Shield Defense Type / Heavy
+19799	Bound Immortal Shield Defense Type/Heavy
 19800	Bound Immortal Leather Helmet Enchant Type / Light
 19801	Bound Immortal Leather Armor Enchant Type / Light
 19802	Bound Immortal Leather Leggings Enchant Type / Light
@@ -19372,7 +19372,7 @@
 19812	Bound Twilight Gaiters Defense Type / Heavy
 19813	Bound Twilight Gauntlets Defense Type / Heavy
 19814	Bound Twilight Boots Defense Type / Heavy
-19815	Bound Twilight Shield Defense Type / Heavy
+19815	Bound Twilight Shield Defense Type/Heavy
 19816	Bound Twilight Leather Helmet Enchant Type / Light
 19817	Bound Twilight Leather Armor Enchant Type / Light
 19818	Bound Twilight Leather Leggings Enchant Type / Light
@@ -19388,7 +19388,7 @@
 19828	Bound Seraph Gaiters Defense Type / Heavy
 19829	Bound Seraph Gauntlets Defense Type / Heavy
 19830	Bound Seraph Boots Defense Type / Heavy
-19831	Bound Seraph Shield Defense Type / Heavy
+19831	Bound Seraph Shield Defense Type/Heavy
 19832	Bound Seraph Leather Helmet Enchant Type / Light
 19833	Bound Seraph Leather Armor Enchant Type / Light
 19834	Bound Seraph Leather Leggings Enchant Type / Light
@@ -19404,7 +19404,7 @@
 19844	Bound Eternal Gaiters Defense Type / Heavy
 19845	Bound Eternal Gauntlets Defense Type / Heavy
 19846	Bound Eternal Boots Defense Type / Heavy
-19847	Bound Eternal Shield Defense Type / Heavy
+19847	Bound Eternal Shield Defense Type/Heavy
 19848	Bound Eternal Leather Helmet Enchant Type / Light
 19849	Bound Eternal Leather Armor Enchant Type / Light
 19850	Bound Eternal Leather Leggings Enchant Type / Light
@@ -19420,7 +19420,7 @@
 19860	Blessed Immortal Gaiters Defense Type / Heavy
 19861	Blessed Immortal Gauntlets Defense Type / Heavy
 19862	Blessed Immortal Boots Defense Type / Heavy
-19863	Blessed Immortal Shield Defense Type / Heavy
+19863	Blessed Immortal Shield Defense Type/Heavy
 19864	Blessed Immortal Leather Helmet Enchant Type / Light
 19865	Blessed Immortal Leather Armor Enchant Type / Light
 19866	Blessed Immortal Leather Leggings Enchant Type / Light
@@ -19436,7 +19436,7 @@
 19876	Blessed Twilight Gaiters Defense Type / Heavy
 19877	Blessed Twilight Gauntlets Defense Type / Heavy
 19878	Blessed Twilight Boots Defense Type / Heavy
-19879	Blessed Twilight Shield Defense Type / Heavy
+19879	Blessed Twilight Shield Defense Type/Heavy
 19880	Blessed Twilight Leather Helmet Enchant Type / Light
 19881	Blessed Twilight Leather Armor Enchant Type / Light
 19882	Blessed Twilight Leather Leggings Enchant Type / Light
@@ -19452,7 +19452,7 @@
 19892	Blessed Seraph Gaiters Defense Type / Heavy
 19893	Blessed Seraph Gauntlets Defense Type / Heavy
 19894	Blessed Seraph Boots Defense Type / Heavy
-19895	Blessed Seraph Shield Defense Type / Heavy
+19895	Blessed Seraph Shield Defense Type/Heavy
 19896	Blessed Seraph Leather Helmet Enchant Type / Light
 19897	Blessed Seraph Leather Armor Enchant Type / Light
 19898	Blessed Seraph Leather Leggings Enchant Type / Light
@@ -19468,7 +19468,7 @@
 19908	Blessed Eternal Gaiters Defense Type / Heavy
 19909	Blessed Eternal Gauntlets Defense Type / Heavy
 19910	Blessed Eternal Boots Defense Type / Heavy
-19911	Blessed Eternal Shield Defense Type / Heavy
+19911	Blessed Eternal Shield Defense Type/Heavy
 19912	Blessed Eternal Leather Helmet Enchant Type / Light
 19913	Blessed Eternal Leather Armor Enchant Type / Light
 19914	Blessed Eternal Leather Leggings Enchant Type / Light
@@ -19484,7 +19484,7 @@
 19924	Blessed Durandia Gaiters Defense Type / Heavy
 19925	Blessed Durandia Gauntlets Defense Type / Heavy
 19926	Blessed Durandia Boots Defense Type / Heavy
-19927	Blessed Durandia Shield Defense Type / Heavy
+19927	Blessed Durandia Shield Defense Type/Heavy
 19928	Blessed Durandia Leather Helmet Enchant Type / Light
 19929	Blessed Durandia Leather Armor Enchant Type / Light
 19930	Blessed Durandia Leather Leggings Enchant Type / Light
@@ -25780,12 +25780,12 @@
 26309	Offering Test Recipe 4
 26310	Offering Test Recipe 5
 26311	Offering Test Ingredient 1
-26312	Offering Test Ingredient  2
-26313	Offering Test Ingredient  3
-26314	Offering Test Ingredient  4
-26315	Offering Test Ingredient  5
-26316	Offering Test Ingredient  6
-26317	Offering Test Ingredient  7
+26312	Offering Test Ingredient 2
+26313	Offering Test Ingredient 3
+26314	Offering Test Ingredient 4
+26315	Offering Test Ingredient 5
+26316	Offering Test Ingredient 6
+26317	Offering Test Ingredient 7
 26318	Dragon Scales
 26319	Venir's Talisman Stage 1 Pack
 26320	Venir's Talisman Stage 2 Pack
@@ -28073,10 +28073,532 @@
 28602	Spirit Stone Pack - Legendary
 28603	Dragon's Treasure Chest
 28604	Shining Dragon's Treasure Chest
-28605	NoItemName
-28606	NoItemName
-28607	NoItemName
-28608	NoItemName
+28605	+10 Elmoreden Cloak - Legendary Box
+28606	+10 Aden Cloak - Legendary Box
+28607	+10 Elmore Cloak - Legendary Box
+28608	+10 Ferios Cloak - Legendary Box
+28609	High-grade Balthus Knight Mark
+28610	Veteran Duo Bracelet Pack Event
+28611	Returned Duo Bracelet Pack Event
+28612	Royal White Save Ticket (R99) Event
+28613	Evolved Agathion - Virgo Stage 1
+28614	Evolved Agathion - Virgo Stage 2
+28615	Evolved Agathion - Virgo Stage 3
+28616	Evolved Agathion - Virgo Stage 4
+28617	Evolved Agathion - Virgo Stage 5
+28618	Evolved Agathion - Capricorn Stage 1
+28619	Evolved Agathion - Capricorn Stage 2
+28620	Evolved Agathion - Capricorn Stage 3
+28621	Evolved Agathion - Capricorn Stage 4
+28622	Evolved Agathion - Capricorn Stage 5
+28623	Evolved Agathion - Libra Stage 1
+28624	Evolved Agathion - Libra Stage 2
+28625	Evolved Agathion - Libra Stage 3
+28626	Evolved Agathion - Libra Stage 4
+28627	Evolved Agathion - Libra Stage 5
+28628	Evolved Agathion - Aries Stage 1
+28629	Evolved Agathion - Aries Stage 2
+28630	Evolved Agathion - Aries Stage 3
+28631	Evolved Agathion - Aries Stage 4
+28632	Evolved Agathion - Aries Stage 5
+28633	Evolved Agathion - Taurus Stage 1
+28634	Evolved Agathion - Taurus Stage 2
+28635	Evolved Agathion - Taurus Stage 3
+28636	Evolved Agathion - Taurus Stage 4
+28637	Evolved Agathion - Taurus Stage 5
+28638	Evolved Agathion - Leo Stage 1
+28639	Evolved Agathion - Leo Stage 2
+28640	Evolved Agathion - Leo Stage 3
+28641	Evolved Agathion - Leo Stage 4
+28642	Evolved Agathion - Leo Stage 5
+28643	Evolved Agathion - Gemini Stage 1
+28644	Evolved Agathion - Gemini Stage 2
+28645	Evolved Agathion - Gemini Stage 3
+28646	Evolved Agathion - Gemini Stage 4
+28647	Evolved Agathion - Gemini Stage 5
+28648	Evolved Agathion - Scorpio Stage 1
+28649	Evolved Agathion - Scorpio Stage 2
+28650	Evolved Agathion - Scorpio Stage 3
+28651	Evolved Agathion - Scorpio Stage 4
+28652	Evolved Agathion - Scorpio Stage 5
+28653	Evolved Agathion - Aquarius Stage 1
+28654	Evolved Agathion - Aquarius Stage 2
+28655	Evolved Agathion - Aquarius Stage 3
+28656	Evolved Agathion - Aquarius Stage 4
+28657	Evolved Agathion - Aquarius Stage 5
+28658	Evolved Agathion - Pisces Stage 1
+28659	Evolved Agathion - Pisces Stage 2
+28660	Evolved Agathion - Pisces Stage 3
+28661	Evolved Agathion - Pisces Stage 4
+28662	Evolved Agathion - Pisces Stage 5
+28663	Evolved Agathion - Sagittarius Stage 1
+28664	Evolved Agathion - Sagittarius Stage 2
+28665	Evolved Agathion - Sagittarius Stage 3
+28666	Evolved Agathion - Sagittarius Stage 4
+28667	Evolved Agathion - Sagittarius Stage 5
+28668	Evolved Agathion - Cancer Stage 1
+28669	Evolved Agathion - Cancer Stage 2
+28670	Evolved Agathion - Cancer Stage 3
+28671	Evolved Agathion - Cancer Stage 4
+28672	Evolved Agathion - Cancer Stage 5
+28673	Evolved Agathion - Virgo Stage 1
+28674	Evolved Agathion - Virgo Stage 2
+28675	Evolved Agathion - Virgo Stage 3
+28676	Evolved Agathion - Virgo Stage 4
+28677	Evolved Agathion - Virgo Stage 5
+28678	Evolved Agathion - Capricorn Stage 1
+28679	Evolved Agathion - Capricorn Stage 2
+28680	Evolved Agathion - Capricorn Stage 3
+28681	Evolved Agathion - Capricorn Stage 4
+28682	Evolved Agathion - Capricorn Stage 5
+28683	Evolved Agathion - Libra Stage 1
+28684	Evolved Agathion - Libra Stage 2
+28685	Evolved Agathion - Libra Stage 3
+28686	Evolved Agathion - Libra Stage 4
+28687	Evolved Agathion - Libra Stage 5
+28688	Evolved Agathion - Aries Stage 1
+28689	Evolved Agathion - Aries Stage 2
+28690	Evolved Agathion - Aries Stage 3
+28691	Evolved Agathion - Aries Stage 4
+28692	Evolved Agathion - Aries Stage 5
+28693	Evolved Agathion - Taurus Stage 1
+28694	Evolved Agathion - Taurus Stage 2
+28695	Evolved Agathion - Taurus Stage 3
+28696	Evolved Agathion - Taurus Stage 4
+28697	Evolved Agathion - Taurus Stage 5
+28698	Evolved Agathion - Leo Stage 1
+28699	Evolved Agathion - Leo Stage 2
+28700	Evolved Agathion - Leo Stage 3
+28701	Evolved Agathion - Leo Stage 4
+28702	Evolved Agathion - Leo Stage 5
+28703	Evolved Agathion - Gemini Stage 1
+28704	Evolved Agathion - Gemini Stage 2
+28705	Evolved Agathion - Gemini Stage 3
+28706	Evolved Agathion - Gemini Stage 4
+28707	Evolved Agathion - Gemini Stage 5
+28708	Evolved Agathion - Scorpio Stage 1
+28709	Evolved Agathion - Scorpio Stage 2
+28710	Evolved Agathion - Scorpio Stage 3
+28711	Evolved Agathion - Scorpio Stage 4
+28712	Evolved Agathion - Scorpio Stage 5
+28713	Evolved Agathion - Aquarius Stage 1
+28714	Evolved Agathion - Aquarius Stage 2
+28715	Evolved Agathion - Aquarius Stage 3
+28716	Evolved Agathion - Aquarius Stage 4
+28717	Evolved Agathion - Aquarius Stage 5
+28718	Evolved Agathion - Pisces Stage 1
+28719	Evolved Agathion - Pisces Stage 2
+28720	Evolved Agathion - Pisces Stage 3
+28721	Evolved Agathion - Pisces Stage 4
+28722	Evolved Agathion - Pisces Stage 5
+28723	Evolved Agathion - Sagittarius Stage 1
+28724	Evolved Agathion - Sagittarius Stage 2
+28725	Evolved Agathion - Sagittarius Stage 3
+28726	Evolved Agathion - Sagittarius Stage 4
+28727	Evolved Agathion - Sagittarius Stage 5
+28728	Evolved Agathion - Cancer Stage 1
+28729	Evolved Agathion - Cancer Stage 2
+28730	Evolved Agathion - Cancer Stage 3
+28731	Evolved Agathion - Cancer Stage 4
+28732	Evolved Agathion - Cancer Stage 5
+28733	Sealed Virgo Agathion Charm Not Used
+28734	Sealed Capricorn Agathion Charm Not Used
+28735	Sealed Libra Agathion Charm Not Used
+28736	Sealed Aries Agathion Charm Not Used
+28737	Sealed Taurus Agathion Charm Not Used
+28738	Sealed Leo Agathion Charm Not Used
+28739	Sealed Gemini Agathion Charm Not Used
+28740	Sealed Scorpio Agathion Charm Not Used
+28741	Sealed Aquarius Agathion Charm Not Used
+28742	Sealed Pisces Agathion Charm Not Used
+28743	Sealed Sagittarius Agathion Charm Not Used
+28744	Sealed Cancer Agathion Charm Not Used
+28745	Virgo Agathion Charm Not Used
+28746	Capricorn Agathion Charm Not Used
+28747	Libra Agathion Charm Not Used
+28748	Aries Agathion Charm Not Used
+28749	Taurus Agathion Charm Not Used
+28750	Leo Agathion Charm Not Used
+28751	Gemini Agathion Charm Not Used
+28752	Scorpio Agathion Charm Not Used
+28753	Aquarius Agathion Charm Not Used
+28754	Pisces Agathion Charm Not Used
+28755	Sagittarius Agathion Charm Not Used
+28756	Cancer Agathion Charm Not Used
+28757	Zodiac Agathion Charm Book of Growth
+28758	Ancient Zodiac Agathion Charm Book of Growth
+28759	Zodiac Agathion Cube Not Used
+28760	Seed Bracelet
+28761	Red Stars Bottle
+28762	Agathion Evolution Stone
+28763	Agathion Charm - Guardian of Dawn Kallesin
+28764	Agathion Charm - Freya (30-day)
+28765	Red Zubei Armor Armor Appearance Stone Event
+28766	Stable Cloak Enchantment Scroll - Legendary
+28767	Ancient Cloak (Legendary) Scroll Pack
+28768	Ancient Kingdom's Coin
+28769	Virgo Agathion Charm Stage 1
+28770	Virgo Agathion Charm Stage 2
+28771	Virgo Agathion Charm Stage 3
+28772	Virgo Agathion Charm Stage 4
+28773	Virgo Agathion Charm Stage 5
+28774	Virgo Agathion Charm Stage 6
+28775	Virgo Agathion Charm Stage 7
+28776	Virgo Agathion Charm Stage 8
+28777	Virgo Agathion Charm Stage 9
+28778	Virgo Agathion Charm Stage 10
+28779	Virgo Agathion Charm Stage 11
+28780	Virgo Agathion Charm Stage 12
+28781	Capricorn Agathion Charm Stage 1
+28782	Capricorn Agathion Charm Stage 2
+28783	Capricorn Agathion Charm Stage 3
+28784	Capricorn Agathion Charm Stage 4
+28785	Capricorn Agathion Charm Stage 5
+28786	Capricorn Agathion Charm Stage 6
+28787	Capricorn Agathion Charm Stage 7
+28788	Capricorn Agathion Charm Stage 8
+28789	Capricorn Agathion Charm Stage 9
+28790	Capricorn Agathion Charm Stage 10
+28791	Capricorn Agathion Charm Stage 11
+28792	Capricorn Agathion Charm Stage 12
+28793	Libra Agathion Charm Stage 1
+28794	Libra Agathion Charm Stage 2
+28795	Libra Agathion Charm Stage 3
+28796	Libra Agathion Charm Stage 4
+28797	Libra Agathion Charm Stage 5
+28798	Libra Agathion Charm Stage 6
+28799	Libra Agathion Charm Stage 7
+28800	Libra Agathion Charm Stage 8
+28801	Libra Agathion Charm Stage 9
+28802	Libra Agathion Charm Stage 10
+28803	Libra Agathion Charm Stage 11
+28804	Libra Agathion Charm Stage 12
+28805	Aries Agathion Charm Stage 1
+28806	Aries Agathion Charm Stage 2
+28807	Aries Agathion Charm Stage 3
+28808	Aries Agathion Charm Stage 4
+28809	Aries Agathion Charm Stage 5
+28810	Aries Agathion Charm Stage 6
+28811	Aries Agathion Charm Stage 7
+28812	Aries Agathion Charm Stage 8
+28813	Aries Agathion Charm Stage 9
+28814	Aries Agathion Charm Stage 10
+28815	Aries Agathion Charm Stage 11
+28816	Aries Agathion Charm Stage 12
+28817	Taurus Agathion Charm Stage 1
+28818	Taurus Agathion Charm Stage 2
+28819	Taurus Agathion Charm Stage 3
+28820	Taurus Agathion Charm Stage 4
+28821	Taurus Agathion Charm Stage 5
+28822	Taurus Agathion Charm Stage 6
+28823	Taurus Agathion Charm Stage 7
+28824	Taurus Agathion Charm Stage 8
+28825	Taurus Agathion Charm Stage 9
+28826	Taurus Agathion Charm Stage 10
+28827	Taurus Agathion Charm Stage 11
+28828	Taurus Agathion Charm Stage 12
+28829	Leo Agathion Charm Stage 1
+28830	Leo Agathion Charm Stage 2
+28831	Leo Agathion Charm Stage 3
+28832	Leo Agathion Charm Stage 4
+28833	Leo Agathion Charm Stage 5
+28834	Leo Agathion Charm Stage 6
+28835	Leo Agathion Charm Stage 7
+28836	Leo Agathion Charm Stage 8
+28837	Leo Agathion Charm Stage 9
+28838	Leo Agathion Charm Stage 10
+28839	Leo Agathion Charm Stage 11
+28840	Leo Agathion Charm Stage 12
+28841	Gemini Agathion Charm Stage 1
+28842	Gemini Agathion Charm Stage 2
+28843	Gemini Agathion Charm Stage 3
+28844	Gemini Agathion Charm Stage 4
+28845	Gemini Agathion Charm Stage 5
+28846	Gemini Agathion Charm Stage 6
+28847	Gemini Agathion Charm Stage 7
+28848	Gemini Agathion Charm Stage 8
+28849	Gemini Agathion Charm Stage 9
+28850	Gemini Agathion Charm Stage 10
+28851	Gemini Agathion Charm Stage 11
+28852	Gemini Agathion Charm Stage 12
+28853	Scorpio Agathion Charm Stage 1
+28854	Scorpio Agathion Charm Stage 2
+28855	Scorpio Agathion Charm Stage 3
+28856	Scorpio Agathion Charm Stage 4
+28857	Scorpio Agathion Charm Stage 5
+28858	Scorpio Agathion Charm Stage 6
+28859	Scorpio Agathion Charm Stage 7
+28860	Scorpio Agathion Charm Stage 8
+28861	Scorpio Agathion Charm Stage 9
+28862	Scorpio Agathion Charm Stage 10
+28863	Scorpio Agathion Charm Stage 11
+28864	Scorpio Agathion Charm Stage 12
+28865	Aquarius Agathion Charm Stage 1
+28866	Aquarius Agathion Charm Stage 2
+28867	Aquarius Agathion Charm Stage 3
+28868	Aquarius Agathion Charm Stage 4
+28869	Aquarius Agathion Charm Stage 5
+28870	Aquarius Agathion Charm Stage 6
+28871	Aquarius Agathion Charm Stage 7
+28872	Aquarius Agathion Charm Stage 8
+28873	Aquarius Agathion Charm Stage 9
+28874	Aquarius Agathion Charm Stage 10
+28875	Aquarius Agathion Charm Stage 11
+28876	Aquarius Agathion Charm Stage 12
+28877	Pisces Agathion Charm Stage 1
+28878	Pisces Agathion Charm Stage 2
+28879	Pisces Agathion Charm Stage 3
+28880	Pisces Agathion Charm Stage 4
+28881	Pisces Agathion Charm Stage 5
+28882	Pisces Agathion Charm Stage 6
+28883	Pisces Agathion Charm Stage 7
+28884	Pisces Agathion Charm Stage 8
+28885	Pisces Agathion Charm Stage 9
+28886	Pisces Agathion Charm Stage 10
+28887	Pisces Agathion Charm Stage 11
+28888	Pisces Agathion Charm Stage 12
+28889	Sagittarius Agathion Charm Stage 1
+28890	Sagittarius Agathion Charm Stage 2
+28891	Sagittarius Agathion Charm Stage 3
+28892	Sagittarius Agathion Charm Stage 4
+28893	Sagittarius Agathion Charm Stage 5
+28894	Sagittarius Agathion Charm Stage 6
+28895	Sagittarius Agathion Charm Stage 7
+28896	Sagittarius Agathion Charm Stage 8
+28897	Sagittarius Agathion Charm Stage 9
+28898	Sagittarius Agathion Charm Stage 10
+28899	Sagittarius Agathion Charm Stage 11
+28900	Sagittarius Agathion Charm Stage 12
+28901	Cancer Agathion Charm Stage 1
+28902	Cancer Agathion Charm Stage 2
+28903	Cancer Agathion Charm Stage 3
+28904	Cancer Agathion Charm Stage 4
+28905	Cancer Agathion Charm Stage 5
+28906	Cancer Agathion Charm Stage 6
+28907	Cancer Agathion Charm Stage 7
+28908	Cancer Agathion Charm Stage 8
+28909	Cancer Agathion Charm Stage 9
+28910	Cancer Agathion Charm Stage 10
+28911	Cancer Agathion Charm Stage 11
+28912	Cancer Agathion Charm Stage 12
+28913	Virgo Agathion Charm From the Star Stage 1
+28914	Virgo Agathion Charm From the Star Stage 2
+28915	Virgo Agathion Charm From the Star Stage 3
+28916	Virgo Agathion Charm From the Star Stage 4
+28917	Virgo Agathion Charm From the Star Stage 5
+28918	Virgo Agathion Charm From the Star Stage 6
+28919	Virgo Agathion Charm From the Star Stage 7
+28920	Virgo Agathion Charm From the Star Stage 8
+28921	Virgo Agathion Charm From the Star Stage 9
+28922	Virgo Agathion Charm From the Star Stage 10
+28923	Virgo Agathion Charm From the Star Stage 11
+28924	Virgo Agathion Charm From the Star Stage 12
+28925	Capricorn Agathion Charm From the Star Stage 1
+28926	Capricorn Agathion Charm From the Star Stage 2
+28927	Capricorn Agathion Charm From the Star Stage 3
+28928	Capricorn Agathion Charm From the Star Stage 4
+28929	Capricorn Agathion Charm From the Star Stage 5
+28930	Capricorn Agathion Charm From the Star Stage 6
+28931	Capricorn Agathion Charm From the Star Stage 7
+28932	Capricorn Agathion Charm From the Star Stage 8
+28933	Capricorn Agathion Charm From the Star Stage 9
+28934	Capricorn Agathion Charm From the Star Stage 10
+28935	Capricorn Agathion Charm From the Star Stage 11
+28936	Capricorn Agathion Charm From the Star Stage 12
+28937	Libra Agathion Charm From the Star Stage 1
+28938	Libra Agathion Charm From the Star Stage 2
+28939	Libra Agathion Charm From the Star Stage 3
+28940	Libra Agathion Charm From the Star Stage 4
+28941	Libra Agathion Charm From the Star Stage 5
+28942	Libra Agathion Charm From the Star Stage 6
+28943	Libra Agathion Charm From the Star Stage 7
+28944	Libra Agathion Charm From the Star Stage 8
+28945	Libra Agathion Charm From the Star Stage 9
+28946	Libra Agathion Charm From the Star Stage 10
+28947	Libra Agathion Charm From the Star Stage 11
+28948	Libra Agathion Charm From the Star Stage 12
+28949	Aries Agathion Charm From the Star Stage 1
+28950	Aries Agathion Charm From the Star Stage 2
+28951	Aries Agathion Charm From the Star Stage 3
+28952	Aries Agathion Charm From the Star Stage 4
+28953	Aries Agathion Charm From the Star Stage 5
+28954	Aries Agathion Charm From the Star Stage 6
+28955	Aries Agathion Charm From the Star Stage 7
+28956	Aries Agathion Charm From the Star Stage 8
+28957	Aries Agathion Charm From the Star Stage 9
+28958	Aries Agathion Charm From the Star Stage 10
+28959	Aries Agathion Charm From the Star Stage 11
+28960	Aries Agathion Charm From the Star Stage 12
+28961	Taurus Agathion Charm From the Star Stage 1
+28962	Taurus Agathion Charm From the Star Stage 2
+28963	Taurus Agathion Charm From the Star Stage 3
+28964	Taurus Agathion Charm From the Star Stage 4
+28965	Taurus Agathion Charm From the Star Stage 5
+28966	Taurus Agathion Charm From the Star Stage 6
+28967	Taurus Agathion Charm From the Star Stage 7
+28968	Taurus Agathion Charm From the Star Stage 8
+28969	Taurus Agathion Charm From the Star Stage 9
+28970	Taurus Agathion Charm From the Star Stage 10
+28971	Taurus Agathion Charm From the Star Stage 11
+28972	Taurus Agathion Charm From the Star Stage 12
+28973	Leo Agathion Charm From the Star Stage 1
+28974	Leo Agathion Charm From the Star Stage 2
+28975	Leo Agathion Charm From the Star Stage 3
+28976	Leo Agathion Charm From the Star Stage 4
+28977	Leo Agathion Charm From the Star Stage 5
+28978	Leo Agathion Charm From the Star Stage 6
+28979	Leo Agathion Charm From the Star Stage 7
+28980	Leo Agathion Charm From the Star Stage 8
+28981	Leo Agathion Charm From the Star Stage 9
+28982	Leo Agathion Charm From the Star Stage 10
+28983	Leo Agathion Charm From the Star Stage 11
+28984	Leo Agathion Charm From the Star Stage 12
+28985	Gemini Agathion Charm From the Star Stage 1
+28986	Gemini Agathion Charm From the Star Stage 2
+28987	Gemini Agathion Charm From the Star Stage 3
+28988	Gemini Agathion Charm From the Star Stage 4
+28989	Gemini Agathion Charm From the Star Stage 5
+28990	Gemini Agathion Charm From the Star Stage 6
+28991	Gemini Agathion Charm From the Star Stage 7
+28992	Gemini Agathion Charm From the Star Stage 8
+28993	Gemini Agathion Charm From the Star Stage 9
+28994	Gemini Agathion Charm From the Star Stage 10
+28995	Gemini Agathion Charm From the Star Stage 11
+28996	Gemini Agathion Charm From the Star Stage 12
+28997	Scorpio Agathion Charm From the Star Stage 1
+28998	Scorpio Agathion Charm From the Star Stage 2
+28999	Scorpio Agathion Charm From the Star Stage 3
+29000	Scorpio Agathion Charm From the Star Stage 4
+29001	Scorpio Agathion Charm From the Star Stage 5
+29002	Scorpio Agathion Charm From the Star Stage 6
+29003	Scorpio Agathion Charm From the Star Stage 7
+29004	Scorpio Agathion Charm From the Star Stage 8
+29005	Scorpio Agathion Charm From the Star Stage 9
+29006	Scorpio Agathion Charm From the Star Stage 10
+29007	Scorpio Agathion Charm From the Star Stage 11
+29008	Scorpio Agathion Charm From the Star Stage 12
+29009	Aquarius Agathion Charm From the Star Stage 1
+29010	Aquarius Agathion Charm From the Star Stage 2
+29011	Aquarius Agathion Charm From the Star Stage 3
+29012	Aquarius Agathion Charm From the Star Stage 4
+29013	Aquarius Agathion Charm From the Star Stage 5
+29014	Aquarius Agathion Charm From the Star Stage 6
+29015	Aquarius Agathion Charm From the Star Stage 7
+29016	Aquarius Agathion Charm From the Star Stage 8
+29017	Aquarius Agathion Charm From the Star Stage 9
+29018	Aquarius Agathion Charm From the Star Stage 10
+29019	Aquarius Agathion Charm From the Star Stage 11
+29020	Aquarius Agathion Charm From the Star Stage 12
+29021	Pisces Agathion Charm From the Star Stage 1
+29022	Pisces Agathion Charm From the Star Stage 2
+29023	Pisces Agathion Charm From the Star Stage 3
+29024	Pisces Agathion Charm From the Star Stage 4
+29025	Pisces Agathion Charm From the Star Stage 5
+29026	Pisces Agathion Charm From the Star Stage 6
+29027	Pisces Agathion Charm From the Star Stage 7
+29028	Pisces Agathion Charm From the Star Stage 8
+29029	Pisces Agathion Charm From the Star Stage 9
+29030	Pisces Agathion Charm From the Star Stage 10
+29031	Pisces Agathion Charm From the Star Stage 11
+29032	Pisces Agathion Charm From the Star Stage 12
+29033	Sagittarius Agathion Charm From the Star Stage 1
+29034	Sagittarius Agathion Charm From the Star Stage 2
+29035	Sagittarius Agathion Charm From the Star Stage 3
+29036	Sagittarius Agathion Charm From the Star Stage 4
+29037	Sagittarius Agathion Charm From the Star Stage 5
+29038	Sagittarius Agathion Charm From the Star Stage 6
+29039	Sagittarius Agathion Charm From the Star Stage 7
+29040	Sagittarius Agathion Charm From the Star Stage 8
+29041	Sagittarius Agathion Charm From the Star Stage 9
+29042	Sagittarius Agathion Charm From the Star Stage 10
+29043	Sagittarius Agathion Charm From the Star Stage 11
+29044	Sagittarius Agathion Charm From the Star Stage 12
+29045	Cancer Agathion Charm From the Star Stage 1
+29046	Cancer Agathion Charm From the Star Stage 2
+29047	Cancer Agathion Charm From the Star Stage 3
+29048	Cancer Agathion Charm From the Star Stage 4
+29049	Cancer Agathion Charm From the Star Stage 5
+29050	Cancer Agathion Charm From the Star Stage 6
+29051	Cancer Agathion Charm From the Star Stage 7
+29052	Cancer Agathion Charm From the Star Stage 8
+29053	Cancer Agathion Charm From the Star Stage 9
+29054	Cancer Agathion Charm From the Star Stage 10
+29055	Cancer Agathion Charm From the Star Stage 11
+29056	Cancer Agathion Charm From the Star Stage 12
+29057	Sayha's Talisman Stage 1
+29058	Sayha's Talisman Stage 2
+29059	Sayha's Talisman Stage 3
+29060	Sayha's Talisman Stage 4
+29061	Sayha's Talisman Stage 5
+29062	Sayha's Talisman Stage 6
+29063	Sayha's Talisman Stage 7
+29064	Sayha's Talisman Stage 8
+29065	Sayha's Talisman Stage 9
+29066	Sayha's Talisman Stage 10
+29067	Sayha's Talisman Pack
+29068	Sayha's Talisman Stage 7 Pack
+29069	Sayha's Talisman Stage 8 Pack
+29070	Sayha's Talisman Stage 9 Pack
+29071	Sayha's Talisman Stage 10 Pack
+29072	Fortune Talisman Pack
+29073	Mother Tree's Blessed Herbs
+29074	Jack O'Lantern
+29075	Halloween Gift
+29076	Halloween Candy Event
+29077	Talisman - Abundance Pack
+29078	Greater Vital Stone 30-day
+29079	Greater Vital Stone Box 30-day
+29080	Wondrous Jewelry Box Event
+29081	Dimensional Talisman - Attack Attribute 30-day
+29082	Dimensional Talisman - Attack Attribute Pack (30-day)
+29083	Virgo Agathion Charm - Stage 1 15-day
+29084	Capricorn Agathion Charm - Stage 1 15-day
+29085	Libra Agathion Charm - Stage 1 15-day
+29086	Aries Agathion Charm - Stage 1 15-day
+29087	Taurus Agathion Charm - Stage 1 15-day
+29088	Leo Agathion Charm - Stage 1 15-day
+29089	Gemini Agathion Charm - Stage 1 15-day
+29090	Scorpio Agathion Charm - Stage 1 15-day
+29091	Aquarius Agathion Charm - Stage 1 15-day
+29092	Pisces Agathion Charm - Stage 1 15-day
+29093	Sagittarius Agathion Charm - Stage 1 15-day
+29094	Cancer Agathion Charm - Stage 1 15-day
+29095	Virgo Agathion Charm - Stage 1 30-day
+29096	Capricorn Agathion Charm - Stage 1 30-day
+29097	Libra Agathion Charm - Stage 1 30-day
+29098	Aries Agathion Charm - Stage 1 30-day
+29099	Taurus Agathion Charm - Stage 1 30-day
+29100	Leo Agathion Charm - Stage 1 30-day
+29101	Gemini Agathion Charm - Stage 1 30-day
+29102	Scorpio Agathion Charm - Stage 1 30-day
+29103	Aquarius Agathion Charm - Stage 1 30-day
+29104	Pisces Agathion Charm - Stage 1 30-day
+29105	Sagittarius Agathion Charm - Stage 1 30-day
+29106	Cancer Agathion Charm - Stage 1 30-day
+29107	Virgo Agathion Charm Park Pack 30-day
+29108	Virgo Agathion Charm Park Pack 15-day
+29109	Capricorn Agathion Charm Park 30-day
+29110	Capricorn Agathion Charm Park 15-day
+29111	Libra Agathion Charm Park 30-day
+29112	Libra Agathion Charm Park 15-day
+29113	Aries Agathion Charm Park 30-day
+29114	Aries Agathion Charm Park 15-day
+29115	Taurus Agathion Charm Park 30-day
+29116	Taurus Agathion Charm Park 15-day
+29117	Leo Agathion Charm Park 30-day
+29118	Leo Agathion Charm Park 15-day
+29119	Gemini Agathion Charm Park 30-day
+29120	Gemini Agathion Charm Park 15-day
+29121	Scorpio Agathion Charm Park 30-day
+29122	Scorpio Agathion Charm Park 15-day
+29123	Aquarius Agathion Charm Park 30-day
+29124	Aquarius Agathion Charm Park 15-day
+29125	Pisces Agathion Charm Park 30-day
+29126	Pisces Agathion Charm Park 15-day
+29127	Sagittarius Agathion Charm Park 30-day
+29128	Sagittarius Agathion Charm Park 15-day
+29129	Cancer Agathion Charm Park 30-day
+29130	Cancer Agathion Charm Park 15-day
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -29022,7 +29544,7 @@
 30942	Bound Arthro Nail - Rsk. Haste
 30943	Bound Avadon Breastplate
 30944	Bound Avadon Gaiters
-30945	Bound Avadon Shield
+30945	Bound Abaddon Shield
 30946	Bound Avadon Circlet
 30947	Bound Avadon Boots Heavy Armor
 30948	Bound Avadon Boots Light Armor
@@ -29912,7 +30434,7 @@
 31832	Unidentified Arm Breaker
 31833	Unidentified Arbalest
 31834	Unidentified Helm of Nightmare
-31835	Unidentified Shield of Nightmare
+31835	Unidentified Shield of Nightmares
 31836	Unidentified Boots of Nightmare
 31837	Unidentified Robe of Nightmare
 31838	Unidentified Leather Armor of Nightmare
@@ -29939,7 +30461,7 @@
 31859	Unidentified Arthro Nail
 31860	Unidentified Avadon Breastplate
 31861	Unidentified Avadon Gaiters
-31862	Unidentified Avadon Shield
+31862	Unidentified Abaddon Shield
 31863	Unidentified Avadon Circlet
 31864	Unidentified Avadon Boots
 31865	Unidentified Avadon Robe
@@ -30576,7 +31098,7 @@
 32496	Fantasy Dark Crystal Helmet Not in Use
 32497	Fantasy Majestic Circlet Not in Use
 32498	Fantasy Dark Crystal Shield Not in Use
-32499	Fantasy Shield of Nightmare Not in Use
+32499	Fantasy Shield of Nightmares Not in Use
 32500	Fantasy Angel Slayer Not in Use
 32501	Fantasy Dynasty Knife Not in Use
 32502	Fantasy Dynasty Dual Dagger Not in Use
@@ -31380,7 +31902,7 @@
 33300	Majestic Plate Armor of Destiny (Fire, Wind, Dark)
 33301	Majestic Gauntlets of Destiny (Fire, Wind, Dark) Heavy Armor
 33302	Majestic Boots of Destiny (Fire, Wind, Dark) Heavy Armor
-33303	Shield of Nightmare of Destiny (Fire, Wind, Dark)
+33303	Shield of Nightmares of Destiny (Fire, Wind, Dark)
 33304	Majestic Circlet of Destiny (Fire, Wind, Dark)
 33305	Majestic Leather Armor of Destiny (Fire, Wind, Dark)
 33306	Majestic Gauntlets of Destiny (Fire, Wind, Dark) Light Armor
@@ -31787,7 +32309,7 @@
 33707	Unidentified Dragon Grinder Event
 33708	Unidentified Tallum Blade*Damascus Event
 33709	Unidentified Helm of Nightmare Event
-33710	Unidentified Shield of Nightmare Event
+33710	Unidentified Shield of Nightmares Event
 33711	Unidentified Boots of Nightmare Event
 33712	Unidentified Robe of Nightmare Event
 33713	Unidentified Leather Armor of Nightmare Event
@@ -32033,7 +32555,7 @@
 33953	Immortal Gaiters Attack Type / Heavy (Event)
 33954	Immortal Gauntlets Attack Type / Heavy (Event)
 33955	Immortal Boots Attack Type / Heavy (Event)
-33956	Immortal Shield Attack Type / Heavy (Event)
+33956	Immortal Shield Attack Type/Heavy (Event)
 33957	Immortal Leather Helmet Assassin Type / Light (Event)
 33958	Immortal Leather Armor Assassin Type / Light (Event)
 33959	Immortal Leather Leggings Assassin Type / Light (Event)
@@ -32049,7 +32571,7 @@
 33969	Immortal Gaiters Defense Type / Heavy (Event)
 33970	Immortal Gauntlets Defense Type / Heavy (Event)
 33971	Immortal Boots Defense Type / Heavy (Event)
-33972	Immortal Shield Defense Type / Heavy (Event)
+33972	Immortal Shield Defense Type/Heavy (Event)
 33973	Immortal Leather Helmet Enchant Type / Light (Event)
 33974	Immortal Leather Armor Enchant Type / Light (Event)
 33975	Immortal Leather Leggings Enchant Type / Light (Event)
@@ -33501,7 +34023,7 @@
 35433	Recipe: Seraph Gaiters (60%)
 35434	Recipe: Seraph Gauntlets (60%)
 35435	Recipe: Seraph Boots (60%)
-35436	Recipe: Seraph Shield (60%)
+35436	Recipe: Seraph Shield (60%)
 35437	Recipe: Seraph Leather Helmet (60%)
 35438	Recipe: Seraph Leather Armor (60%)
 35439	Recipe: Seraph Leather Leggings (60%)
@@ -33532,7 +34054,7 @@
 35464	Recipe: Eternal Gaiters (60%)
 35465	Recipe: Eternal Gauntlets (60%)
 35466	Recipe: Eternal Boots (60%)
-35467	Recipe: Eternal Shield (60%)
+35467	Recipe: Eternal Shield (60%)
 35468	Recipe: Eternal Leather Helmet (60%)
 35469	Recipe: Eternal Leather Armor (60%)
 35470	Recipe: Eternal Leather Leggings (60%)
@@ -33563,7 +34085,7 @@
 35495	Recipe: Blessed Seraph Gaiters (60%)
 35496	Recipe: Blessed Seraph Gauntlets (60%)
 35497	Recipe: Blessed Seraph Boots (60%)
-35498	Recipe: Blessed Seraph Shield (60%)
+35498	Recipe: Blessed Seraph Shield (60%)
 35499	Recipe: Blessed Seraph Leather Helmet (60%)
 35500	Recipe: Blessed Seraph Leather Armor (60%)
 35501	Recipe: Blessed Seraph Leather Leggings (60%)
@@ -33594,7 +34116,7 @@
 35526	Recipe: Blessed Eternal Gaiters (60%)
 35527	Recipe: Blessed Eternal Gauntlets (60%)
 35528	Recipe: Blessed Eternal Boots (60%)
-35529	Recipe: Blessed Eternal Shield (60%)
+35529	Recipe: Blessed Eternal Shield (60%)
 35530	Recipe: Blessed Eternal Leather Helmet (60%)
 35531	Recipe: Blessed Eternal Leather Armor (60%)
 35532	Recipe: Blessed Eternal Leather Leggings (60%)
@@ -34462,8 +34984,8 @@
 36406	Rare Accessory Pack (Permanent) Event
 36407	Weapon Pack (R99-grade) Event
 36408	Unbind Scroll Pack Event
-36409	Blessed Antharas' Earring (14-day) Event
-36410	Blessed Valakas' Necklace (14-day) Event
+36409	Blessed Antharas' Earring 14-day
+36410	Blessed Valakas' Necklace 14-day
 36411	Tauti's Ring (14-day) Event
 36412	Earth Wyrm Heart Ring (14-day) Event
 36413	Single Mesh Armor
@@ -34770,13 +35292,13 @@
 36714	Kartia's Mutated Seed
 36715	Evil Freed Soul
 36716	Guardian Soul's Pendant
-36717	Augmentation Practice Weapon
+36717	Augmentation Practice StormBringer
 36718	Augmentation Practice Spirit Stone (46)
-36719	Augmentation Practice Gemstone (D-grade)
-36720	Practice StormBringer
-36721	Practice Green Soul Crystal - Stage 5
-36722	Enhancement Practice Gemstone (C-grade)
-36723	Practice StormBringer Focus
+36719	Augmentation Practice Gemstone (R-grade)
+36720	Soul Crystal Practice StormBringer
+36721	Practice Kain's Soul Crystal - Stage 1
+36722	Soul Crystal Practice Gemstone
+36723	Soul Crystal Option StormBringer Focus
 36724	Practice Leather Belt
 36725	Practice Magic Pin (C-grade)
 36726	Flutter's Magic Pin Leather Belt (Low-grade)
@@ -35186,7 +35708,7 @@
 37131	Istina/ Octavis Accessory Pack Event
 37132	Top-grade Enchantment Pack Event
 37133	Hair Accessory/ Pendant Pack Event
-37134	Lv. 5 Legendary Dye Pack Event
+37134	Lv. 5 Legendary Dye Pack
 37135	Steel Plate Helmet (60-day)
 37136	Steel Plate Armor (60-day)
 37137	Steel Plate Boots (60-day)
@@ -35209,7 +35731,7 @@
 37154	Steel Avadon Circlet (60-day)
 37155	Steel Avadon Gloves (Robe) (60-day)
 37156	Steel Avadon Boots (Robe) (60-day)
-37157	Steel Avadon Shield (60-day)
+37157	Steel Abaddon Shield (60-day)
 37158	Steel Leather Armor of Doom (60-day)
 37159	Steel Doom Gloves (Light) (60-day)
 37160	Steel Doom Boots (Light) (60-day)
@@ -35217,7 +35739,7 @@
 37162	Steel Helm of Nightmare (60-day)
 37163	Steel Gauntlets of Nightmare (Heavy) (60-day)
 37164	Steel Boots of Nightmare (Heavy) (60-day)
-37165	Steel Shield of Nightmare (60-day)
+37165	Steel Shield of Nightmares (60-day)
 37166	Steel Dark Crystal Robe (60-day)
 37167	Steel Dark Crystal Helmet (60-day)
 37168	Steel Dark Crystal Gloves (Robe) (60-day)
@@ -35717,7 +36239,7 @@
 37663	Refined Romantic Chapeau: Green
 37664	Refined Romantic Chapeau: Red
 37665	Refined Romantic Chapeau: Yellow
-37666	Rare Accessory Pack 30-day
+37666	Rare Accessory Pack
 37667	Blessed Antharas' Earring 30-day
 37668	Blessed Valakas' Necklace 30-day
 37669	Tauti's Ring 30-day
@@ -36017,7 +36539,7 @@
 37963	Immortal Gaiters Crafting Pack Heavy Armor
 37964	Immortal Gauntlets Crafting Pack Heavy Armor
 37965	Immortal Boots Crafting Pack Heavy Armor
-37966	Immortal Shield Crafting Pack Heavy Armor
+37966	Immortal Shield Crafting Box Heavy Armor
 37967	Immortal Leather Helmet Crafting Pack Light Armor
 37968	Immortal Leather Armor Crafting Pack Light Armor
 37969	Immortal Leather Leggings Crafting Pack Light Armor
@@ -36048,7 +36570,7 @@
 37994	Twilight Gaiters Crafting Pack Heavy Armor
 37995	Twilight Gauntlets Crafting Pack Heavy Armor
 37996	Twilight Boots Crafting Pack Heavy Armor
-37997	Twilight Shield Crafting Pack Heavy Armor
+37997	Twilight Shield Crafting Box Heavy Armor
 37998	Twilight Leather Helmet Crafting Pack Light Armor
 37999	Twilight Leather Armor Crafting Pack Light Armor
 38000	Twilight Leather Leggings Crafting Pack Light Armor
@@ -36079,7 +36601,7 @@
 38025	Seraph Gaiters Crafting Pack Heavy Armor
 38026	Seraph Gauntlets Crafting Pack Heavy Armor
 38027	Seraph Boots Crafting Pack Heavy Armor
-38028	Seraph Shield Crafting Pack Heavy Armor
+38028	Seraph Shield Crafting Box Heavy Armor
 38029	Seraph Leather Helmet Crafting Pack Light Armor
 38030	Seraph Leather Armor Crafting Pack Light Armor
 38031	Seraph Leather Leggings Crafting Pack Light Armor
@@ -36110,7 +36632,7 @@
 38056	Eternal Gaiters Crafting Pack Heavy Armor
 38057	Eternal Gauntlets Crafting Pack Heavy Armor
 38058	Eternal Boots Crafting Pack Heavy Armor
-38059	Eternal Shield Crafting Pack Heavy Armor
+38059	Eternal Shield Crafting Box Heavy Armor
 38060	Eternal Leather Helmet Crafting Pack Light Armor
 38061	Eternal Leather Armor Crafting Pack Light Armor
 38062	Eternal Leather Leggings Crafting Pack Light Armor
@@ -36675,7 +37197,7 @@
 38621	Steel Avadon Circlet
 38622	Steel Avadon Gloves (Robe)
 38623	Steel Avadon Boots (Robe)
-38624	Steel Avadon Shield
+38624	Steel Abaddon Shield
 38625	Steel Leather Armor of Doom
 38626	Steel Doom Gloves (Light Armor)
 38627	Steel Doom Boots (Light Armor)
@@ -37226,7 +37748,7 @@
 39172	+ 5 Eternal Gaiters Coupon Heavy Armor
 39173	+ 5 Eternal Gauntlets Coupon Heavy Armor
 39174	+ 5 Eternal Boots Coupon Heavy Armor
-39175	+ 5 Eternal Shield Coupon Heavy Armor
+39175	+5 Eternal Shield Coupon Heavy Armor
 39176	+ 5 Eternal Leather Helmet Coupon Light Armor
 39177	+ 5 Eternal Leather Armor Coupon Light Armor
 39178	+ 5 Eternal Leather Leggings Coupon Light Armor
@@ -37237,13 +37759,13 @@
 39183	+ 5 Eternal Stockings Coupon Robe
 39184	+ 5 Eternal Gloves Coupon Robe
 39185	+ 5 Eternal Shoes Coupon Robe
-39186	+ 5 Eternal Sigil Coupon Robe
+39186	+5 Eternal Sigil Coupon Robe
 39187	+ 6 Eternal Helmet Coupon Heavy Armor
 39188	+ 6 Eternal Breastplate Coupon Heavy Armor
 39189	+ 6 Eternal Gaiters Coupon Heavy Armor
 39190	+ 6 Eternal Gauntlets Coupon Heavy Armor
 39191	+ 6 Eternal Boots Coupon Heavy Armor
-39192	+ 6 Eternal Shield Coupon Heavy Armor
+39192	+6 Eternal Shield Coupon Heavy Armor
 39193	+ 6 Eternal Leather Helmet Coupon Light Armor
 39194	+ 6 Eternal Leather Armor Coupon Light Armor
 39195	+ 6 Eternal Leather Leggings Coupon Light Armor
@@ -37254,13 +37776,13 @@
 39200	+ 6 Eternal Stockings Coupon Robe
 39201	+ 6 Eternal Gloves Coupon Robe
 39202	+ 6 Eternal Shoes Coupon Robe
-39203	+ 6 Eternal Sigil Coupon Robe
+39203	+6 Eternal Sigil Coupon Robe
 39204	+ 8 Eternal Helmet Coupon Heavy Armor
 39205	+ 8 Eternal Breastplate Coupon Heavy Armor
 39206	+ 8 Eternal Gaiters Coupon Heavy Armor
 39207	+ 8 Eternal Gauntlets Coupon Heavy Armor
 39208	+ 8 Eternal Boots Coupon Heavy Armor
-39209	+ 8 Eternal Shield Coupon Heavy Armor
+39209	+8 Eternal Shield Coupon Heavy Armor
 39210	+ 8 Eternal Leather Helmet Coupon Light Armor
 39211	+ 8 Eternal Leather Armor Coupon Light Armor
 39212	+ 8 Eternal Leather Leggings Coupon Light Armor
@@ -37271,13 +37793,13 @@
 39217	+ 8 Eternal Stockings Coupon Robe
 39218	+ 8 Eternal Gloves Coupon Robe
 39219	+ 8 Eternal Shoes Coupon Robe
-39220	+ 8 Eternal Sigil Coupon Robe
+39220	+8 Eternal Sigil Coupon Robe
 39221	+ 5 Seraph Helmet Coupon Heavy Armor
 39222	+ 5 Seraph Breastplate Coupon Heavy Armor
 39223	+ 5 Seraph Gaiters Coupon Heavy Armor
 39224	+ 5 Seraph Gauntlets Coupon Heavy Armor
 39225	+ 5 Seraph Boots Coupon Heavy Armor
-39226	+ 5 Seraph Shield Coupon Heavy Armor
+39226	+5 Seraph Shield Coupon Heavy Armor
 39227	+ 5 Seraph Leather Helmet Coupon Light Armor
 39228	+ 5 Seraph Leather Armor Coupon Light Armor
 39229	+ 5 Seraph Leather Leggings Coupon Light Armor
@@ -37288,13 +37810,13 @@
 39234	+ 5 Seraph Stockings Coupon Robe
 39235	+ 5 Seraph Gloves Coupon Robe
 39236	+ 5 Seraph Shoes Coupon Robe
-39237	+ 5 Seraph Sigil Coupon Robe
+39237	+5 Seraph Sigil Coupon Robe
 39238	+ 6 Seraph Helmet Coupon Heavy Armor
 39239	+ 6 Seraph Breastplate Coupon Heavy Armor
 39240	+ 6 Seraph Gaiters Coupon Heavy Armor
 39241	+ 6 Seraph Gauntlets Coupon Heavy Armor
 39242	+ 6 Seraph Boots Coupon Heavy Armor
-39243	+ 6 Seraph Shield Coupon Heavy Armor
+39243	+6 Seraph Shield Coupon Heavy Armor
 39244	+ 6 Seraph Leather Helmet Coupon Light Armor
 39245	+ 6 Seraph Leather Armor Coupon Light Armor
 39246	+ 6 Seraph Leather Leggings Coupon Light Armor
@@ -37305,13 +37827,13 @@
 39251	+ 6 Seraph Stockings Coupon Robe
 39252	+ 6 Seraph Gloves Coupon Robe
 39253	+ 6 Seraph Shoes Coupon Robe
-39254	+ 6 Seraph Sigil Coupon Robe
+39254	+6 Seraph Sigil Coupon Robe
 39255	+ 8 Seraph Helmet Coupon Heavy Armor
 39256	+ 8 Seraph Breastplate Coupon Heavy Armor
 39257	+ 8 Seraph Gaiters Coupon Heavy Armor
 39258	+ 8 Seraph Gauntlets Coupon Heavy Armor
 39259	+ 8 Seraph Boots Coupon Heavy Armor
-39260	+ 8 Seraph Shield Coupon Heavy Armor
+39260	+8 Seraph Shield Coupon Heavy Armor
 39261	+ 8 Seraph Leather Helmet Coupon Light Armor
 39262	+ 8 Seraph Leather Armor Coupon Light Armor
 39263	+ 8 Seraph Leather Leggings Coupon Light Armor
@@ -37322,13 +37844,13 @@
 39268	+ 8 Seraph Stockings Coupon Robe
 39269	+ 8 Seraph Gloves Coupon Robe
 39270	+ 8 Seraph Shoes Coupon Robe
-39271	+ 8 Seraph Sigil Coupon Robe
+39271	+8 Seraph Sigil Coupon Robe
 39272	+ 5 Twilight Helmet Coupon Heavy Armor
 39273	+ 5 Twilight Breastplate Coupon Heavy Armor
 39274	+ 5 Twilight Gaiters Coupon Heavy Armor
 39275	+ 5 Twilight Gauntlets Coupon Heavy Armor
 39276	+ 5 Twilight Boots Coupon Heavy Armor
-39277	+ 5 Twilight Shield Coupon Heavy Armor
+39277	+5 Twilight Shield Coupon Heavy Armor
 39278	+ 5 Twilight Leather Helmet Coupon Light Armor
 39279	+ 5 Twilight Leather Armor Coupon Light Armor
 39280	+ 5 Twilight Leather Leggings Coupon Light Armor
@@ -37339,13 +37861,13 @@
 39285	+ 5 Twilight Stockings Coupon Robe
 39286	+ 5 Twilight Gloves Coupon Robe
 39287	+ 5 Twilight Shoes Coupon Robe
-39288	+ 5 Twilight Sigil Coupon Robe
+39288	+5 Twilight Sigil Coupon Robe
 39289	+ 6 Twilight Helmet Coupon Heavy Armor
 39290	+ 6 Twilight Breastplate Coupon Heavy Armor
 39291	+ 6 Twilight Gaiters Coupon Heavy Armor
 39292	+ 6 Twilight Gauntlets Coupon Heavy Armor
 39293	+ 6 Twilight Boots Coupon Heavy Armor
-39294	+ 6 Twilight Shield Coupon Heavy Armor
+39294	+6 Twilight Shield Coupon Heavy Armor
 39295	+ 6 Twilight Leather Helmet Coupon Light Armor
 39296	+ 6 Twilight Leather Armor Coupon Light Armor
 39297	+ 6 Twilight Leather Leggings Coupon Light Armor
@@ -37356,13 +37878,13 @@
 39302	+ 6 Twilight Stockings Coupon Robe
 39303	+ 6 Twilight Gloves Coupon Robe
 39304	+ 6 Twilight Shoes Coupon Robe
-39305	+ 6 Twilight Sigil Coupon Robe
+39305	+6 Twilight Sigil Coupon Robe
 39306	+ 8 Twilight Helmet Coupon Heavy Armor
 39307	+ 8 Twilight Breastplate Coupon Heavy Armor
 39308	+ 8 Twilight Gaiters Coupon Heavy Armor
 39309	+ 8 Twilight Gauntlets Coupon Heavy Armor
 39310	+ 8 Twilight Boots Coupon Heavy Armor
-39311	+ 8 Twilight Shield Coupon Heavy Armor
+39311	+8 Twilight Shield Coupon Heavy Armor
 39312	+ 8 Twilight Leather Helmet Coupon Light Armor
 39313	+ 8 Twilight Leather Armor Coupon Light Armor
 39314	+ 8 Twilight Leather Leggings Coupon Light Armor
@@ -37373,7 +37895,7 @@
 39319	+ 8 Twilight Stockings Coupon Robe
 39320	+ 8 Twilight Gloves Coupon Robe
 39321	+ 8 Twilight Shoes Coupon Robe
-39322	+ 8 Twilight Sigil Coupon Robe
+39322	+8 Twilight Sigil Coupon Robe
 39323	Designer Eternal Armor Pack
 39324	Eternal Armor Crafting Pack
 39325	Eternal Armor Pack
@@ -37615,10 +38137,10 @@
 39561	Mid-grade Wind Dye Pack
 39562	High-grade Wind Dye Pack
 39563	Talisman - Wind Pack
-39564	Talisman - Wind Pack P. Skill Critical Damage
-39565	Talisman - Wind Pack M. Skill Critical Damage
-39566	Talisman - Wind Pack
-39567	Talisman - Wind Pack
+39564	Talisman - Wind Box P. Skill Critical Damage
+39565	Talisman - Wind Box M. Skill Critical Damage
+39566	Talisman - Wind Box Defense
+39567	Talisman - Wind Box Debuff Defense
 39568	Talisman - Wind: P. Critical Damage Passive
 39569	Talisman - Wind: M. Critical Damage Passive
 39570	Talisman - Wind: Defense
@@ -38262,7 +38784,7 @@
 40211	Recipe: R95 (100%)
 40212	Recipe: R99 (100%)
 40213	Ertheia's Rare Accessory Pack 7-day
-40214	Blessed Antharas' Earring  Pack 7-day
+40214	Blessed Antharas' Earring Pack 7-day
 40215	Blessed Valakas' Necklace Pack 7-day
 40216	Tauti's Ring Pack 7-day
 40217	Earth Wyrm Heart Ring Pack 7-day
@@ -38353,8 +38875,8 @@
 40302	Buff Helmet CHA
 40303	Entrance Pass: Spezion (Normal)
 40304	Entrance Pass: Spezion (Epic)
-40305	Dual Expertise Rune (R99-grade) 30-day
-40306	Dual Expertise Rune Pack R99-grade
+40305	Expertise Rune (R99-grade) 30-day
+40306	Expertise Rune Pack R99-grade
 40307	Dynamic Dual Master Gift Pack
 40308	Dynamic Dual Knight Gift Pack
 40309	Scroll of Escape: Dwarven Village
@@ -38421,7 +38943,7 @@
 40370	Sweet Cheese Hat 30-day
 40371	Vigilante Hat 30-day
 45372	Agathion - Blessed Pisces 30-day
-45373	Agathion - Blessed Pisces Pack
+45373	Blessed Pisces Agathion Bracelet Pack
 45374	Laser Gun Event
 45375	Alien Nano Supplement Event
 45376	Reward Capsule Event
@@ -38621,8 +39143,8 @@
 45570	Agathion - Radiant Cancer Pack 30-day
 45571	Agathion - Cancer Pack 15-day
 45572	Zodiac Agathion Pack (15-day)
-45573	Radiant Zodiac Agathion Pack (30-day)
-45574	Twinkling Zodiac Agathion Pack (30-day)
+45573	Zodiac Agathion Pack (30-day)
+45574	Zodiac Agathion Pack (30-day)
 45575	Special Bait Pack
 45576	SP Scroll Pack
 45577	Zodiac Agathion Pack (15-day)
@@ -38776,13 +39298,13 @@
 45725	Eternal Gaiters Attack Type / Heavy (30-day)
 45726	Eternal Gauntlets Attack Type / Heavy (30-day)
 45727	Eternal Boots Attack Type / Heavy (30-day)
-45728	Eternal Shield Attack Type / Heavy (30-day)
+45728	Eternal Shield Attack Type/Heavy (30-day)
 45729	Eternal Helmet Defense Type / Heavy (30-day)
 45730	Eternal Breastplate Defense Type / Heavy (30-day)
 45731	Eternal Gaiters Defense Type / Heavy (30-day)
 45732	Eternal Gauntlets Defense Type / Heavy (30-day)
 45733	Eternal Boots Defense Type / Heavy (30-day)
-45734	Eternal Shield Defense Type / Heavy (30-day)
+45734	Eternal Shield Defense Type/Heavy (30-day)
 45735	Eternal Leather Helmet Assassin Type / Light (30-day)
 45736	Eternal Leather Armor Assassin Type / Light (30-day)
 45737	Eternal Leather Leggings Assassin Type / Light (30-day)
@@ -38816,13 +39338,13 @@
 45765	Seraph Gaiters Attack Type / Heavy (30-day)
 45766	Seraph Gauntlets Attack Type / Heavy (30-day)
 45767	Seraph Boots Attack Type / Heavy (30-day)
-45768	Seraph Shield Attack Type / Heavy (30-day)
+45768	Seraph Shield Attack Type/Heavy (30-day)
 45769	Seraph Helmet Defense Type / Heavy (30-day)
 45770	Seraph Breastplate Defense Type / Heavy (30-day)
 45771	Seraph Gaiters Defense Type / Heavy (30-day)
 45772	Seraph Gauntlets Defense Type / Heavy (30-day)
 45773	Seraph Boots Defense Type / Heavy (30-day)
-45774	Seraph Shield Defense Type / Heavy (30-day)
+45774	Seraph Shield Defense Type/Heavy (30-day)
 45775	Seraph Leather Helmet Assassin Type / Light (30-day)
 45776	Seraph Leather Armor Assassin Type / Light (30-day)
 45777	Seraph Leather Leggings Assassin Type / Light (30-day)
@@ -39278,17 +39800,17 @@
 46227	L2 Market Belt Pack Event
 46228	L2 Market Talisman - Seven Signs Pack Event
 46229	L2 Market R99 Weapon Enhancement Stone Pack Event
-46230	+8  Amaranthine Shaper Capsule Not in Use
-46231	+8  Amaranthine Cutter Capsule Not in Use
-46232	+8  Amaranthine Slasher Capsule Not in Use
-46233	+8  Amaranthine Avenger Capsule Not in Use
-46234	+8  Amaranthine Fighter Capsule Not in Use
-46235	+8  Amaranthine Stormer Capsule Not in Use
-46236	+8  Amaranthine Thrower Capsule Not in Use
-46237	+8  Amaranthine Shooter Capsule Not in Use
-46238	+8  Amaranthine Buster Capsule Not in Use
-46239	+8  Amaranthine Caster Capsule Not in Use
-46240	+8  Amaranthine Retributer Capsule Not in Use
+46230	+8 Amaranthine Shaper Capsule Not in Use
+46231	+8 Amaranthine Cutter Capsule Not in Use
+46232	+8 Amaranthine Slasher Capsule Not in Use
+46233	+8 Amaranthine Avenger Capsule Not in Use
+46234	+8 Amaranthine Fighter Capsule Not in Use
+46235	+8 Amaranthine Stormer Capsule Not in Use
+46236	+8 Amaranthine Thrower Capsule Not in Use
+46237	+8 Amaranthine Shooter Capsule Not in Use
+46238	+8 Amaranthine Buster Capsule Not in Use
+46239	+8 Amaranthine Caster Capsule Not in Use
+46240	+8 Amaranthine Retributer Capsule Not in Use
 46241	+4 Eternal Heavy Armor Capsule Event
 46242	+4 Eternal Light Armor Capsule Event
 46243	+4 Eternal Robe Armor Capsule Event
@@ -39405,18 +39927,18 @@
 46354	Agathion - Blessed Aquarius 30-day
 46355	Agathion - Blessed Sagittarius 30-day
 46356	Agathion - Blessed Cancer 30-day
-46357	Agathion - Blessed Virgo Pack 30-day
-46358	Agathion - Blessed Capricorn Pack 30-day
-46359	Agathion - Blessed Libra Pack 30-day
-46360	Agathion - Blessed Aries Pack 30-day
-46361	Agathion - Blessed Taurus Pack 30-day
-46362	Agathion - Blessed Leo Pack 30-day
-46363	Agathion - Blessed Gemini Pack 30-day
-46364	Agathion - Blessed Scorpio Pack 30-day
-46365	Agathion - Blessed Aquarius Pack 30-day
-46366	Agathion - Blessed Pisces Pack 30-day
-46367	Agathion - Blessed Sagittarius Pack 30-day
-46368	Agathion - Blessed Cancer Pack 30-day
+46357	Blessed Virgo Agathion Pack 30-day
+46358	Blessed Capricorn Agathion Pack 30-day
+46359	Blessed Libra Agathion Pack 30-day
+46360	Blessed Aries Agathion Pack 30-day
+46361	Blessed Taurus Agathion Pack 30-day
+46362	Blessed Leo Agathion Pack 30-day
+46363	Blessed Gemini Agathion Pack 30-day
+46364	Blessed Scorpio Agathion Pack 30-day
+46365	Blessed Aquarius Agathion Pack 30-day
+46366	Blessed Pisces Agathion Pack 30-day
+46367	Blessed Sagittarius Agathion Pack 30-day
+46368	Blessed Cancer Agathion Pack 30-day
 46369	Blessed Zodiac Agathion Pack (30-day)
 46370	Christmas Card Event
 46371	Ashen Certificate
@@ -39489,7 +40011,7 @@
 46438	Heine Special Bait (99~)
 46439	Heine Special Bait Coupon
 46440	Heine Treasure Chest
-46441	Zodiac Agathion Box
+46441	Zodiac Agathion Pack
 46442	Heine Special Fishing Tools - 300 Pack
 46443	Heine Special Fishing Tools - 3,000 Pack
 46444	Kain's Soul Crystal - Stage 1
@@ -40220,21 +40742,21 @@
 47169	Visitors Flag
 47170	Purified Water
 47171	Shine Stone of the Trackers
-47172	Basic Supply Box Blackbird Clan
-47173	Intermediate Supply Box Blackbird Clan
-47174	Advanced Supply Box Blackbird Clan
-47175	Basic Supply Box Kingdom's Royal Guard
-47176	Intermediate Supply Box Kingdom's Royal Guard
-47177	Advanced Supply Box Kingdom's Royal Guard
-47178	Basic Supply Box Mother Tree Guardians
-47179	Intermediate Supply Box Mother Tree Guardians
-47180	Advanced Supply Box Mother Tree Guardians
-47181	Basic Supply Box Unworldly Visitors
-47182	Intermediate Supply Box Unworldly Visitors
-47183	Advanced Supply Box Unworldly Visitors
-47184	Basic Supply Box Giant Trackers
-47185	Intermediate Supply Box Giant Trackers
-47186	Advanced Supply Box Giant Trackers
+47172	Blackbird Clan Basic Supply Box Hellbound
+47173	Blackbird Clan Intermediate Supply Box Hellbound
+47174	Blackbird Clan Advanced Supply Box Hellbound
+47175	Kingdom's Royal Guard Basic Supply Box Atelia Fortress
+47176	Kingdom's Royal Guard Intermediate Supply Box Atelia Fortress
+47177	Kingdom's Royal Guard Advanced Supply Box Atelia Fortress
+47178	Mother Tree Guardians Basic Treasure Chest Enchanted Valley
+47179	Mother Tree Guardians Intermediate Treasure Chest Enchanted Valley
+47180	Mother Tree Guardians Advanced Treasure Chest Enchanted Valley
+47181	Unworldly Visitors Basic Supply Box Garden of Spirits
+47182	Unworldly Visitors Intermediate Supply Box Garden of Spirits
+47183	Unworldly Visitors Advanced Supply Box Garden of Spirits
+47184	Giant Trackers Basic Treasure Chest Giant's Cave
+47185	Giant Trackers Intermediate Treasure Chest Giant's Cave
+47186	Giant Trackers Advanced Treasure Chest Giant's Cave
 47187	Proofs of Battle Readiness
 47188	Memories of the Wind
 47189	Energy Laden With the Day's Warmth
@@ -40366,7 +40888,7 @@
 47315	Bloody Eternal Gaiters Attack Type / Heavy Armor
 47316	Bloody Eternal Gauntlets Attack Type / Heavy Armor
 47317	Bloody Eternal Boots Attack Type / Heavy Armor
-47318	Blessed Eternal Shield Attack Type / Heavy Armor
+47318	Blessed Eternal Shield Attack Type/Heavy
 47319	Bloody Eternal Leather Helmet Assassin Type / Light Armor
 47320	Bloody Eternal Leather Armor Assassin Type / Light Armor
 47321	Bloody Eternal Leather Leggings Assassin Type / Light Armor
@@ -40382,7 +40904,7 @@
 47331	Bloody Eternal Gaiters Defense Type / Heavy Armor
 47332	Bloody Eternal Gauntlets Defense Type / Heavy Armor
 47333	Bloody Eternal Boots Defense Type / Heavy Armor
-47334	Blessed Eternal Shield Defense Type / Heavy Armor
+47334	Blessed Eternal Shield Defense Type/Heavy
 47335	Bloody Eternal Leather Helmet Enchant Type / Light Armor
 47336	Bloody Eternal Leather Armor Enchant Type / Light Armor
 47337	Bloody Eternal Leather Leggings Enchant Type / Light Armor
@@ -40416,7 +40938,7 @@
 47365	Blue Musketeer Appearance Stone
 47366	Red Musketeer Appearance Stone
 47367	Royal Save Ticket Box
-47368	Agathion Box
+47368	Agathion Pack
 47369	Superion Dye Pack
 47370	Superion Elcyum Box
 47371	Superion Codex Box
@@ -40430,7 +40952,7 @@
 47379	Red Dark/Bloody Coupon Event
 47380	Blessed Lucky Weapon Enchant Stone Chest - R Event
 47381	Blessed Lucky Armor Enchant Stone Chest - R Event
-47382	Freya's Wind Scroll (High-grade) Temporary Name
+47382	Freya's Wind Scroll Event
 47383	Red Libra Supplies Lv. 5 Event
 47384	Express Bus Pass Card
 47385	Balthus Knight Mark
@@ -40605,7 +41127,7 @@
 47560	Master Fishing Rod Stage 4
 47561	Master Fishing Rod Stage 5
 47562	Santiago's Reel Fragment
-47563	Zodiac Agathion Box
+47563	Zodiac Agathion Pack
 47564	Reward for Defeating the Giant Monsters
 47565	Reward for Defeating the Giant Monsters
 47566	Reward for Defeating the Giant Monsters
@@ -40792,7 +41314,7 @@
 47747	+8 Blessed Eternal Armor Supply Items
 47748	Rare Weapon Fragment Supply Items
 47749	Dark Eternal Enhancement Stone - 2
-47750	Zodiac Agathion Stage 5 Supply Items
+47750	Zodiac Agathion Stage 5 Supplies
 47751	+8 Blessed Eternal Armor Heavy Capsule Event
 47752	+8 Blessed Eternal Armor Greaves Capsules Event
 47753	+8 Blessed Eternal Armor Robe Capsule Event
@@ -40896,8 +41418,8 @@
 47851	Sayha's Energy
 47852	Spellbook: Dignity of the Exalted Lv4
 47853	Spellbook: Dignity of the Exalted Lv5
-47854	Spellbook: Vitality of the Exalted Lv1
-47855	Spellbook: Vitality of the Exalted Lv2
+47854	Spellbook: Vitality of the Exalted Lv. 1
+47855	Spellbook: Vitality of the Exalted Lv. 2
 47866	Star Sign
 47867	Frenzied Tauti's One-handed Axe
 47868	Frenzied Tauti's Two-handed Axe
@@ -40983,12 +41505,257 @@
 47948	Request - Fields
 47949	Request - Instanced Zone Dungeon
 47950	Request - Fields
+47951	Crystal of Determination
+47952	Crystal of Protection
+47953	Challenger's Shaper
+47954	Challenger's Dicing Death
+47955	Challenger's Slasher
+47956	Challenger's Avenger
+47957	Challenger's Fighter
+47958	Challenger's Stormer
+47959	Challenger's Thrower
+47960	Challenger's Shooter
+47961	Challenger's Buster
+47962	Challenger's Caster
+47963	Challenger's Retributer
+47964	Challenger's Dualsword
+47965	Challenger's Dual Dagger
+47966	Challenger's Dual Blunt
+47967	Challenger's Enhanced Shaper
+47968	Challenger's Enhanced Dicing Death
+47969	Challenger's Enhanced Slasher
+47970	Challenger's Enhanced Avenger
+47971	Challenger's Enhanced Fighter
+47972	Challenger's Enhanced Stormer
+47973	Challenger's Enhanced Thrower
+47974	Challenger's Enhanced Shooter
+47975	Challenger's Enhanced Buster
+47976	Challenger's Enhanced Caster
+47977	Challenger's Enhanced Retributer
+47978	Challenger's Enhanced Dualsword
+47979	Challenger's Enhanced Dual Dagger
+47980	Challenger's Enhanced Dual Blunt
+47981	Challenger's Weapon Selection Ticket
+47982	Challenger's Weapon Exchange Ticket
+47983	Brooch Spirit Stone
+47984	La Vie En Rose's Glorious Brooch
+47985	La Vie En Rose's Glorious Brooch Enchant Type
+47986	+5 Shiny Elemental Shirt Box
+47987	Challenger's Weapon Enhancement Ticket
+47988	Master's Lucky Jewelry Box
+47989	Lucky Jewel Ticket
+47990	La Vie En Rose's Glorious Brooch Rare
+47991	Brooch Spirit Stone Rare
+47992	Fish Chilli Stew - WIT Event
+47993	Fish Chilli Stew - INT Event
+47994	Fish Chilli Stew - MEN Event
+47995	Fish Chilli Stew - DEX Event
+47996	Fish Chilli Stew - STR Event
+47997	Fish Chilli Stew - CON Event
+47998	Fish Cream Stew - WIT Event
+47999	Fish Cream Stew - INT Event
+48000	Fish Cream Stew - MEN Event
+48001	Fish Cream Stew - DEX Event
+48002	Fish Cream Stew - STR Event
+48003	Fish Cream Stew - CON Event
 48004	Scroll: Energy of Harmony
-48018	Chevalier Outfit
-48021	Valkyrie Outfit
-48025	Chevalier Outfit Appearance Stone
-48028	Valkyrie Outfit Appearance Stone
+48005	Transformed Energy
+48006	Essence of Evil Thoughts
+48007	Bracelet of Challenger
+48008	Freya's Ice Crystal
+48009	Freya's Heart-pounding Shopping Bag
+48010	Freya Winter Card
+48011	Sirra Winter Card
+48012	Snowman Winter Card
+48013	2016 Freya's Kindness
+48014	Freya's Dark Rune (2-hour) Box
+48015	Freya's Dark Rune 2-hour
+48016	White Knight Suit
+48017	Heal Costume
+48018	Chevalier Costume
+48019	Kat the Cat Costume
+48020	Barbarian Wolf Costume
+48021	Valkyrie Costume
+48022	Teddy Bear Costume
+48023	White Knight Suit Appearance Stone
+48024	Healer Outfit Appearance Stone
+48025	Chevalier Costume Appearance Stone
+48026	Kat the Cat Costume Appearance Stone
+48027	Barbarian Wolf Costume Appearance Stone
+48028	Valkyrie Costume Appearance Stone
+48029	Freya's CHA Potion
+48030	Faction Amity Token
 48031	Entrance Pass: Shilen's Altar
+48032	Sayha Talisman Stage 8 Treasure Chest
+48033	Test - Agathion Items
+48034	Test - Bracelet Main 1 Slot
+48035	Test - Bracelet Main 1 Slot, Subclass 1 Slot
+48036	Test - Bracelet Main 1 Slot, Subclass 2 Slot
+48037	Test - Bracelet Main 1 Slot, Subclass 3 Slot
+48038	Test - Bracelet Main 1 Slot, Subclass 4 Slot
+48039	Agathion Enchant Scroll
+48040	Blessed Agathion Enchant Scroll
+48041	Agathion Enchant Scroll of the Giants
+48042	Agathion Enchant Scroll of Destruction
+48043	Agathion Enchant Stone
+48044	Blessed Agathion Enchant Stone
+48045	Agathion Enchant Stone of the Giants
+48046	Zodiac Agathion Book of Growth
+48047	Ancient Zodiac Agathion Book of Growth
+48048	Virgo Agathion Charm
+48049	Capricorn Agathion Charm
+48050	Libra Agathion Charm
+48051	Aries Agathion Charm
+48052	Taurus Agathion Charm
+48053	Leo Agathion Charm
+48054	Gemini Agathion Charm
+48055	Scorpio Agathion Charm
+48056	Aquarius Agathion Charm
+48057	Pisces Agathion Charm
+48058	Sagittarius Agathion Charm
+48059	Cancer Agathion Charm
+48060	Elementary Seed Bracelet
+48061	Intermediate Seed Bracelet
+48062	High-grade Seed Bracelet
+48063	Top-grade Seed Bracelet
+48064	Super Advanced Seed Bracelet
+48065	Zodiac Cube Fragment
+48066	Zodiac Agathion Cube
+48067	Elementary Seed Bracelet Treasure Chest
+48068	Intermediate Seed Bracelet Treasure Chest
+48069	High-grade Seed Bracelet Treasure Chest
+48070	Top-grade Seed Bracelet Treasure Chest
+48071	Super Advanced Seed Bracelet Box
+48072	Elementary Seed Bracelet 15-day
+48073	Intermediate Seed Bracelet 15-day
+48074	High-grade Seed Bracelet 30-day
+48075	Top-grade Seed Bracelet 30-day
+48076	Super Advanced Seed Bracelet 30-day
+48077	Elementary Seed Bracelet Treasure Chest 15-day
+48078	Intermediate Seed Bracelet Treasure Chest 15-day
+48079	High-grade Seed Bracelet Treasure Chest 30-day
+48080	Top-grade Seed Bracelet Treasure Chest 30-day
+48081	Super Advanced Seed Bracelet Box 30-day
+48082	Agathion Charm - Rainbow Clan Hall
+48083	Agathion Charm - Wild Beast Reserve
+48084	Agathion Charm - Gludio
+48085	Agathion Charm - Dion
+48086	Agathion Charm - Giran
+48087	Agathion Charm - Oren
+48088	Agathion Charm - Aden
+48089	Agathion Charm - Innadril
+48090	Agathion Charm - Goddard
+48091	Agathion Charm - Rune
+48092	Agathion Charm - Schuttgart
+48093	Agathion Charm
+48094	Agathion Charm - Fortress
+48095	Agathion Charm
+48096	Agathion Charm - Little Angel Firework
+48097	Agathion Charm - Little Angel Big Head
+48098	Agathion Charm - Little Angel Escape
+48099	Agathion Charm - Little Angel Resurrection
+48100	Agathion Charm - Little Angel
+48101	Agathion Charm - Little Devil Firework
+48102	Agathion Charm - Little Devil Big Head
+48103	Agathion Charm - Little Devil Escape
+48104	Agathion Charm - Little Devil Resurrection
+48105	Agathion Charm - Little Devil
+48106	Agathion Charm - Rudolph
+48107	Agathion Summon Charm - Monkey
+48108	Agathion Summon Charm - Griffin
+48109	Agathion Charm - Little Angel
+48110	Agathion Charm - Little Devil
+48111	Love Agathion Charm 30-day
+48112	Agathion - Angry Devil Charm 30-day
+48113	Agathion - Shiny Charm 30-day
+48114	Agathion - Sobbing Charm 30-day
+48115	Love Agathion Charm 7-day
+48116	Love Agathion Charm - Event 30-day
+48117	Love Agathion Charm - Event 7-day
+48118	Agathion Charm - Knight
+48119	Agathion Charm - Rudolph 14-day
+48120	Agathion Charm - Love 14-day
+48121	Agathion Charm - Juju 14-day
+48122	Agathion Charm - Antharas
+48123	Agathion Charm - Nevit's Messenger Kanna
+48124	Fairy Agathion Charm
+48125	Player Commendation - Propeller Agathion Charm PC-exclusive
+48126	Player Commendation - Magical Girl Agathion Charm PC-exclusive
+48127	Player Commendation - Cobra Agathion Charm PC-exclusive
+48128	Player Commendation - Baby Ufa Agathion Charm PC-exclusive
+48129	Bae Kisung Agathion Charm 90-day
+48130	Bae Kisung Agathion Charm 1-day
+48131	Agathion Charm - Anakim Holly Barrier
+48132	Agathion Charm - Anakim Holly Barrier 30-day
+48133	Agathion - Joon Charm (30-day)
+48134	Agathion - Shiny Charm
+48135	Agathion Charm - Zaken's Spirit Swords
+48136	Agathion - Lantern Pack Event
+48137	Lantern Agathion's Gift Event
+48138	Agathion - Makeshift Bat Pack
+48139	Agathion - Cow Pack (7-day)
+48140	Agathion - Makeshift Bat Pack (7-day)
+48141	Agathion - Griffin Pack (7-day)
+48142	Agathion - Makeshift Bat Pack (30-day)
+48143	Agathion - Cow Pack
+48144	Agathion - Cow Pack (30-day)
+48145	Agathion - Griffin Pack (30-day)
+48146	Agathion - Griffin Pack
+48147	Agathion - Pegasus Pack
+48148	Agathion Charm - Lantern 33-day (Event)
+48149	Agathion Charm - Makeshift Bat 7-day
+48150	Agathion Charm - Cow 7-day
+48151	Agathion Charm - Griffin 7-day
+48152	Agathion Charm - Makeshift Bat 30-day
+48153	Agathion Charm - Cow
+48154	Agathion Charm - Cow 30-day
+48155	Agathion Charm - Griffin 30-day
+48156	Agathion Charm - Griffin
+48157	Agathion Charm - Pegasus
+48158	Agathion Charm - Makeshift Bat
+48159	Secret Embryo Bait Wish Stone 15-day
+48160	Elysium Special Stew Event
+48161	R99 Bait Cube 15-day
+48162	Dimensional Traces
+48163	Dimensional Energy Fragment
+48164	Dimensional Exploration Report
+48165	Clues of Liberty
+48166	Hunter's Stone Fragment
+48167	Hunter's Stone
+48168	Attribute Practice Long Sword
+48169	Attribute Practice Fire Stone
+48170	Enhancement Practice Long Sword
+48171	Practice Weapon Enchant Scroll
+48172	Herphah's Mission List
+48173	Certificate from Santiago
+48174	Certificate from Rupio
+48175	Certificate from Flutter
+48176	Certificate from Vincenz
+48177	Certificate from Ferris
+48178	Seed of Fire
+48179	Seed of Wind
+48180	Seed of Earth
+48181	Seed of Chaos
+48182	Tribute Flowers
+48183	Worn Necklace
+48184	Trace of Evil Spirit
+48185	Blue Petal
+48186	Bloody Fruit
+48187	Certificate of Maphr
+48188	Certificate of Pa'agrio
+48189	Certificate of Einhasad
+48190	Certificate of Sayha
+48191	Certificate of Eva
+48192	Hatchling Scales
+48193	Herphah's Summoning Scroll
+48194	Antharas Shaper Balthus Knight
+48195	Antharas Slasher Balthus Knight
+48196	Antharas Thrower Balthus Knight
+48197	Antharas Buster Balthus Knight
+48198	Antharas Cutter Balthus Knight
+48199	Antharas Stormer Balthus Knight
+48200	Antharas Fighter Balthus Knight
+48201	Antharas Dualsword Balthus Knight
 48202	Circlet of Authority
 48203	Noble Circlet of Authority
 48204	Radiant Circlet of Authority
@@ -41004,9 +41771,301 @@
 48214	Reconstruction Society's Enchantment Pack
 48215	Circlet Spirit Stone
 48216	Circlet Upgrade Stone Pack
-48217	High-grade Balthus Knight Mark
-48218	Veteran Duo Bracelet Pack Event
-48219	Returned Duo Bracelet Pack Event
-48220	Royal White Save Ticket (R99) Event
+48217	Balthus Knights Supply Box
+48218	Balthus Knights Supply Box
+48219	Balthus Knights Supply Box
+48220	Balthus Knights Supply Box
+48221	Balthus Knight Supply Items List
+48222	New Year's Gift Package Event
+48223	Lucky Gift Coupon 3 Hours
+48224	Lucky Gift Coupon 6 Hours
+48225	Chorong's Lucky Scroll Event
+48226	Lucky Bait
+48227	+7 Zodiac Agathion Charm Box
+48228	Life Stone Instilled with Giants' Power (x3) Box
+48229	Chorong's Summon Friend Scroll
+48230	Antharas Transformation Slasher
+48231	Antharas Transformation Costume
+48232	Devil Spearshooter
+48233	Clan Cloak- War Specialty Stage 1
+48234	Clan Cloak- War Specialty Stage 2
+48235	Clan Cloak- War Specialty Stage 3
+48236	Clan Cloak- War Specialty Stage 4
+48237	Clan Cloak - Growth Specialty Stage 1
+48238	Clan Cloak - Growth Specialty Stage 2
+48239	Clan Cloak - Growth Specialty Stage 3
+48240	Clan Cloak - Growth Specialty Stage 4
+48241	Clan Cloak - Combat Specialty Stage 1
+48242	Clan Cloak - Combat Specialty Stage 2
+48243	Clan Cloak - Combat Specialty Stage 3
+48244	Clan Cloak - Combat Specialty Stage 4
+48245	Putrefied Extract
+48246	Rotten Blood
+48247	Research Item Materials
+48248	Completed Research Item
+48249	Fragment of Monster Soul
+48250	Herphah's Support Box
+48251	Herphah's Completion Box
+48252	Herphah Bracelet
+48253	Herphah's Support Box Key
+48254	Giant Trackers Basic Treasure Chest Superion
+48255	Giant Trackers Intermediate Treasure Chest Superion
+48256	Giant Trackers Advanced Treasure Chest Superion
+48257	Clan Point Token
+48258	Clan Cloak War Specialty Upgrade Stone Stage 1
+48259	Clan Cloak War Specialty Upgrade Stone Stage 2
+48260	Clan Cloak War Specialty Upgrade Stone Stage 3
+48261	Clan Cloak- Combat Specialty Upgrade Stone Stage 1
+48262	Clan Cloak- Combat Specialty Upgrade Stone Stage 2
+48263	Clan Cloak- Combat Specialty Upgrade Stone Stage 3
+48264	Clan Cloak Enchant Scroll
+48265	Giant's Clan Cloak Enchant Scroll
+48266	Raid Specialty Cloak Enchant Scroll
+48267	Raid Specialty Cloak Giant's Enchant Scroll
+48268	Training Fairy Agathion Charm 1-day
+48269	Huge Giant's Apostle
+48270	Giant Queen's Apostle
+48271	Enhanced Giant's Apostle
+48272	Personal Fame Token
+48273	Glorious Defense Box
+48274	Defender's Valor Chest
+48275	Chaos Essence Pack
+48276	Chaos Essence (Dual Class) Treasure Chest (Time limited)
+48277	Balthus Knight Bracelet
+48278	Clan Cloak - Economy Specialty Stage 1
+48279	Clan Cloak - Economy Specialty Stage 2
+48280	Clan Cloak - Economy Specialty Stage 3
+48281	Clan Cloak - Economy Specialty Stage 4
+48282	Party Scroll of Escape
+48283	Stealth Detector
+48284	Valor Recovery Potion
+48285	Scroll: PK
+48286	Scroll: Reputation
+48287	Snow Man Transformation Stick 15-day
+48288	Scarecrow Jack Transformation Stick 15-day
+48289	Tin Golem Transformation Stick 15-day
+48290	Gatekeeper Transformation Stick 15-day
+48291	Aqua Elf Transformation Harp 15-day
+48292	Aden Hero Support Box
+48293	+12 Bloody Amaranthine Weapon Pack
+48294	+10 Eternal Armor Set Pack
+48295	+10 Eternal Armor Heavy Armor Capsule
+48296	+10 Eternal Armor Light Armor Capsule
+48297	+10 Eternal Armor Robe Capsule
+48298	+10 Zodiac Agathion Box
+48299	Balthus Graduation Reward Box
+48300	Resolute Recovery Potion
+48301	Resolute Attack Scroll
+48302	Resolute Defense Scroll
+48303	Resolute Raid Point Rune (2-hour) Box
+48304	Resolute Raid Point Rune 2-hour
+48305	Blessed Antharas' Earring - Shield 30-day
+48306	Blessed Antharas' Earring - Earth 30-day
+48307	Blessed Antharas' Earring - Pure 30-day
+48308	Blessed Valakas' Necklace - Body 30-day
+48309	Blessed Valakas' Necklace - Mind 30-day
+48310	Blessed Valakas' Necklace - Barrier 30-day
+48311	Lindvior's Earring - Shield 30-day
+48312	Lindvior's Earring - Earth 30-day
+48313	Lindvior's Earring - Pure 30-day
+48314	Suspicious Safe
+48315	Shiny Gold Bar
+48316	Vitality Beer
+48317	Honey Vitality Beer
+48318	Dark Bloody Enhancement Stone Box
+48319	Royal White Save Ticket Treasure Chest
+48320	Royal Purple Save Ticket Treasure Chest
+48321	Dimensional Bracelet Stage 6 (Basic) Treasure Chest
+48322	Dimensional Bracelet Enhancement Stone Treasure Chest
+48323	Divine Zodiac Agathion Book of Growth
+48324	Agathion Masters Box
+48325	Special Agathion Masters Box
+48326	Burnstein's Aufgabe Shield
+48327	Kelbim's Geffelen Shulter
+48328	Superion Core Shard
+48329	Istina's Reflector
+48330	Taiga Kite Shield
+48331	Tanta Skull Shield
+48332	Rael Tribe Wrist Shield
+48333	Kunda's Battle Shield
+48334	Freya's Ice Flower Shield
+48335	Deathmask Shield
+48336	Berserker's Crusader Shield
+48337	Makkum's Cartwheel
+48338	Fallen Angel Shulter
+48339	Silver Scarab
+48340	Vampire Fang Shield
+48341	Ice Shard Shield
+48342	Angelus Shield
+48343	Burnstein's Aufgabe Shield Appearance Stone 30-day
+48344	Kelbim's Geffelen Shulter Appearance Stone 30-day
+48345	Superion Core Shard Appearance Stone 30-day
+48346	Istina Reflect Appearance Stone 30-day
+48347	Taiga Kite Shield Appearance Stone 30-day
+48348	Tanta Tribe Skull Shield Appearance Stone 30-day
+48349	Rael Tribe Wrist Shield Appearance Stone 30-day
+48350	Kunda's Battle Shield Appearance Stone 30-day
+48351	Freya's Ice Flower Shield Appearance Stone 30-day
+48352	Deathmask Shield Appearance Stone 30-day
+48353	Berserker's Crusader Shield Appearance Stone 30-day
+48354	Makkum's Cartwheel Appearance Stone 30-day
+48355	Fallen Angel Shulter Appearance Stone 30-day
+48356	Silver Scarab Appearance Stone 30-day
+48357	Vampire Fang Shield Appearance Stone 30-day
+48358	Ice Shard Shield Appearance Stone 30-day
+48359	Angelus Shield Appearance Stone 30-day
+48360	Adventure Guild Support Box
+48361	Adventure Guild Talisman
+48362	Adventure Guild Completion Box
+48363	Nerupa's Faint Threads
+48364	Nerupa's Vivid Threads
+48365	Nerupa's Intense Threads
+48366	Lithra's Consideration
+48367	Thread of Fate
+48368	Nerupa Bud Petals
+48369	Request - Wasteland West
+48370	Request - Wasteland East
+48371	Request - Forest of the Dead
+48372	Request - Swamp of Screams
+48373	Request - Wasteland West
+48374	Request - Wasteland East
+48375	Request - Forest of the Dead
+48376	Request - Swamp of Screams
+48377	Traces of Evil Spirit
+48378	Monster Fragment
+48379	Putrefied Extract
+48380	Rotten Blood
+48381	Traces of Mutation
+48382	Cocoon Destroyer Shell
+48383	Control Module
+48384	Cannonball of Despair
+48385	Cannonball of Lunacy
+48386	Cannonball of Rage
+48387	Ancient Zodiac Agathion Book of Growth Event
+48388	Red Libra Kaliel's Energy Box
+48389	Shiny Agathion Cube Fragment
+48390	Shiny T-shirt Cube Fragment
+48391	Mysterious Bait Cube Fragment
+48392	Shiny Talisman Cube Fragment
+48393	Adventure Guild Cube Box
+48394	Mysterious Bait
+48395	Burnstein's Pflicht Shield
+48396	Burnstein's Pflicht Shield Appearance Stone 30-day
+48397	Mother Tree Guardians Basic Treasure Chest Shadow of the Mother Tree
+48398	Mother Tree Guardians Intermediate Treasure Chest Shadow of the Mother Tree
+48399	Mother Tree Guardians Advanced Treasure Chest Shadow of the Mother Tree
+48400	Items Seal Scroll
+48401	Release Seal Scroll 15-minute
+48402	Test_Count Items 1
+48403	Test_Count Items 2
+48404	Test_Count Items 3
+48405	Blackish Scarab
+48406	Scarlet Scarab
+48407	Gold Scarab
+48408	Blackish Scarab Appearance Stone 30-day
+48409	Scarlet Scarab Appearance Stone 30-day
+48410	Gold Scarab Appearance Stone 30-day
+48411	Release Seal Scroll (15-min) Box 15-minute
+48412	Scroll of Escape: Town of Aden
+48413	Scroll of Escape: Town of Aden
+48414	GM Lassana's Present Box 30-day
+48415	Clan Hall Belt Stage 1
+48416	Clan Hall Belt Stage 2
+48417	Enhanced Ruler's Authority
+48418	Authority Ornament
+48419	Clan Hall Belt Ornament
+48420	Belt Crafting Scroll
+48421	Belt Disassembly Scroll
+48422	Talisman - Wind Box
+48423	Talisman - Wind Box P. Skill Critical Damage
+48424	Talisman - Wind Box M. Skill Critical Damage
+48425	Talisman - Wind Box Defense
+48426	Talisman - Wind Box Debuff Defense
+48427	Talisman - Wind: P. Critical Damage 30-day
+48428	Talisman- Wind: M. Critical Damage 30-day
+48429	Talisman - Wind: Defense 30-day
+48430	Talisman - Wind: Debuff Resistance 30-day
+48431	Player Commendation Talisman- STR 2-hour
+48432	Player Commendation Talisman - INT 2-hour
+48433	Player Commendation Talisman - DEX 2-hour
+48434	Player Commendation Talisman - WIT 2-hour
+48435	Player Commendation Talisman - CON 2-hour
+48436	Player Commendation Talisman - MEN 2-hour
+48437	Player Commendation Talisman - Atk. Attribute Boost 2-hour
+48438	Player Commendation Talisman - Attribute Defense Boost 2-hour
+48439	Fortress Talisman - Vitality 15-day
+48440	Fortress Talisman - P. Skill Power 15-day
+48441	Fortress Talisman - M. Skill Power 15-day
+48442	Fortress Talisman - P. Atk. 15-day
+48443	Fortress Talisman - M. Atk. 15-day
+48444	Fortress Talisman - P. Def. 15-day
+48445	Fortress Talisman - M. Def. 15-day
+48446	Fortress Talisman - Atk. Spd. 15-day
+48447	Fortress Talisman - Casting Spd. 15-day
+48448	Fortress Talisman - P. Accuracy 15-day
+48449	Fortress Talisman - M. Accuracy 15-day
+48450	Fortress Talisman - Shield Def. 15-day
+48451	Fortress Talisman - Max HP 15-day
+48452	Fortress Talisman - Max MP 15-day
+48453	Fortress Talisman - Movement Speed 15-day
+48454	Fortress Talisman Box
+48455	Fortress Talisman- Vitality Box
+48456	Fortress Talisman - P. Skill Power Box
+48457	Fortress Talisman - M. Skill Power Box
+48458	Fortress Talisman - P. Atk. Box
+48459	Fortress Talisman - M. Atk. Box
+48460	Fortress Talisman - P. Def. Box
+48461	Fortress Talisman - M. Def. Box
+48462	Fortress Talisman - Atk. Spd. Box
+48463	Fortress Talisman - Casting Spd. Box
+48464	Fortress Talisman - P. Accuracy Box
+48465	Fortress Talisman - M. Accuracy Box
+48466	Fortress Talisman - Shield Def. Box
+48467	Fortress Talisman - Max HP Box
+48468	Fortress Talisman - Max MP Box
+48469	Fortress Talisman - Movement Speed Box
+48470	Adventure Guild Supply Box
+48471	Adventure Guild Supply Box
+48472	Night Goblin Coin
+48473	Night Goblin Coin (500) Box Event
+48474	Night Goblin Coin (800) Box Event
+48475	Night Goblin Coin (2000) Box Event
+48476	Dark/Bloody Amaranthine Enhancement Stone Treasure Chest
+48477	Balthus Knight Cube
+48478	Knights' Basic Supplies Event
+48479	Knights' Enchant Scroll Supply Items Event
+48480	+8 Shiny Elemental T-shirt Pack
+48481	+8 Reflect Attack T-shirt Pack
+48482	+8 Reflect Magic T-shirt Pack
+48483	+7 Shiny Elemental Shirt 1-day
+48484	+7 Reflect Attack T-shirt 1-day
+48485	+7 Reflect Magic T-shirt 1-day
+48486	Sayha Talisman Stage 6 1-day
+48487	Merlot's Promise
+48488	Merlot's Special Order
+48489	Herphah's Teleport Scroll
+48490	Merlot's Gift
+48491	Dragon Shirt
+48492	Dragon Leather Shirt
+48493	Dragon Rind Leather Shirt
+48494	Mysterious Dragon Slayer
+48495	Noble Leather Upgrade Stone
+48496	Radiant Rind Upgrade Stone
+48497	Glowing Dragon's Attribute Potion EXP
+48498	Blessed Dragon Shirt Enchant Scroll
+48499	Relics of the Dragons
+48500	Dragon's Relic Chest
+48501	Shining Dragon's Relic Chest
+48502	Mysterious Weapon Enchant Scroll
+48503	Mysterious and Special Weapon Enchant Scroll
+48504	+10 Bloody Armor set Pack
+48505	+10 Bloody Armor Heavy Armor Capsule
+48506	+10 Bloody Armor Light Armor Capsule
+48507	+10 Bloody Armor Robe Capsule
+48508	+5 Zodiac Agathion Box
+48509	+6 Zodiac Agathion Box
+48510	+7 Zodiac Agathion Box
+48511	Royal Red Save Ticket Treasure Chest
+48512	NPC Only_Lionel Hunter
 49783	Sibis Coin Box
 49798	Cheer Pom Poms Event

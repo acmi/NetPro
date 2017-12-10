@@ -324,7 +324,7 @@
 324	Accepted Quest
 325	Description
 326	Item
-327	Cancel
+327	Stop
 328	Announcements
 329	Language
 330	Invite
@@ -643,7 +643,7 @@
 643	Recipe List
 644	Creator MP
 645	Create
-646	Cancel
+646	Close
 647	Results
 648	Number of Retained Items
 649	Recipe Book
@@ -674,12 +674,12 @@
 674	Join a Clan
 675	Ennoble
 676	View Warehouse Contents
-677	Clan Crest Management
+677	Clan Crest
 678	Clan Hall Related Privileges
 679	Entrance Privileges
 680	Other Functions
 681	Dismiss
-682	Castle Privileges
+682	Castle/Fortress Privileges
 683	Opening a Door
 684	Other Rights
 685	Dismiss
@@ -1308,7 +1308,7 @@
 1308	Accumulated Score
 1309	Search Area
 1310	Search
-1311	Clan Reputation Score
+1311	Clan Rep
 1312	Territory
 1313	Fields
 1314	Dungeon
@@ -1327,7 +1327,7 @@
 1327	Title
 1328	Rank
 1329	Order of Knights
-1330	Change Title
+1330	Change
 1331	Change Rank
 1332	Sponsor
 1333	Select
@@ -1361,7 +1361,7 @@
 1361	Mercenaries
 1362	Misc.
 1363	Party
-1364	Cancel
+1364	Close
 1365	Status
 1366	Period
 1367	Declare War
@@ -1383,15 +1383,15 @@
 1383	General
 1384	Loot Leader
 1385	Vagabond
-1386	Vassal
-1387	Apprentice
-1388	Heir
-1389	Knight
-1390	Elder
-1391	Baron
-1392	Viscount
-1393	Count
-1394	Marquis
+1386	Apprentice
+1387	Wandering Knight
+1388	Knight
+1389	Elite Knight
+1390	Baron
+1391	Count
+1392	Duke
+1393	King
+1394	Emperor
 1395	Duke
 1396	Grand Duke
 1397	Distinguished King
@@ -1403,11 +1403,11 @@
 1403	2nd Order of Knights
 1404	3rd Order of Knights
 1405	4th Order of Knights
-1406	1st Level
-1407	2nd Level
-1408	3rd Level
-1409	4th Level
-1410	5th Level
+1406	Rank 1 Privileges
+1407	Rank 2 Privileges
+1408	Rank 3 Privileges
+1409	Rank 4 Privileges
+1410	Rank 5 Privileges
 1411	Main Clan Rank
 1412	Royal Guard Rank
 1413	Order of Knights Rank
@@ -1448,9 +1448,9 @@
 1448	PC Coupon Event
 1449	Note
 1450	Status
-1451	Affiliation Ranking
+1451	Affiliation Rank Privileges
 1452	Academy
-1453	Individual Ranking
+1453	Individual Rank Privileges
 1454	No score
 1455	Useful Information
 1456	Game Tips
@@ -1470,7 +1470,7 @@
 1470	Affiliation:
 1471	Member:
 1472	Hide Dropped Items
-1473	NC OTP Service
+1473	OTP Service
 1474	Enlarge Map
 1475	Minimize
 1476	Decline Duel
@@ -1689,8 +1689,8 @@
 1689	Update
 1690	Match Results
 1691	Kill
-1692	Notification
-1693	Cancel
+1692	Notify On
+1693	Notify Off
 1694	Physical Skills
 1695	Magic Skills
 1696	Reinforcement Skills
@@ -1743,7 +1743,7 @@
 1743	Manufacture Level
 1744	Kill Point
 1745	Match Results
-1746	Save My Location
+1746	Add My Location
 1747	My Location
 1748	Teleport Location
 1749	Saved Teleport List
@@ -2630,7 +2630,7 @@
 2727	Hover the mouse over each stage for details.
 2728	Create
 2729	Cancel Delete
-2730	Only those requesting NC OTP service should make an entry into this field.
+2730	Only those requesting OTP service should input
 2731	Test Server
 2732	Broadcast Server
 2733	Crossbow
@@ -3006,7 +3006,7 @@
 3203	- Can also acquire the "10th Anniversary Item" if the raid is successful<br>- The raid occurs every Friday~Sunday at 11:00 AM, 2:00 PM, and 11:00 PM<br>- The reward can be acquired once a day regardless of the number of raids<br>- Only one character Lv. 85 or above within an account can receive the reward.
 3204	First Event
 3205	Second Event
-3206	Dancing Cats
+3206	Dancing with Dancing Cat
 3207	Dandy has come to celebrate the 10th anniversary of Lineage 2!<br>- Speak with Dandy to try powerful Dragon Weapons during the event for 100,000 Adena.<br>- Upgrade Dragon weapons by claiming daily gift of Dandy's Scroll Release Seal from Dandy. Purchase extra Dandy's Scrolls on the L2 Store!
 3208	13th Anniversary Event
 3209	Collect Memory Fragments located throughout the world of Aden.<br>Obtain 10th Anniversary Items through monster hunting and take them to Chaotic Chronicle the NPC for Memory Fragments. While receiving the rewards, you may learn something new about this continent. (Can acquire Secret Fragments 1 and 4)
@@ -3370,7 +3370,7 @@
 3567	Common Settings
 3568	Disable
 3569	Show only on system message window
-3570	“Common Settings - Show only on system message window” is enabled.
+3570	"Common Settings - Show only on system message window" is enabled.
 3571	Performance Settings
 3572	Environment Settings
 3573	Show Detailed Settings
@@ -3404,7 +3404,7 @@
 3601	PC Cafe Event
 3602	Draw Event
 3603	Special Event
-3604	Unavailable to accept
+3604	Unavailable
 3605	Applied Time
 3606	days
 3607	Mon
@@ -3422,6 +3422,10 @@
 3619	Discount Event
 3620	Web Event
 3621	Purchase complete.
+3622	Number Card Game
+3623	Retry
+3624	Remaining Chances
+3625	Remaining Count
 3626	Equipment Upgrade
 3627	Upgrade
 3628	Click on the equipment slot to upgrade.
@@ -3430,9 +3434,181 @@
 3631	Upgrade the equipment above?
 3632	The enchant value might change after the upgrade.
 3633	Soul Crystal Enhancement/Augmentation/Attribute/Appearance options will be kept the same.
+3634	N Shop
 3635	Imbuing power into the equipment.
 3636	Upgrade Success!!
 3637	Not enough ingredients.
+3638	Agathion
+3639	Grow Agathion
+3640	Special Ability
+3641	Unique Ability
+3642	Apply both the Special Ability and Unique Ability
+3643	Apply only the Unique Ability
+3644	Mass Ripper
+3645	Seer
+3646	Throne of Heroes
+3647	My Clan - Last Season
+3648	My Clan - This Season
+3649	Newbie Info
+3650	Intermediate Player Info
+3651	Character Info
+3652	Contents Info
+3653	Item Info
+3654	Community Info
+3655	Current Stage
+3656	Clan Raid
+3657	Management
+3658	Change
+3659	Elite Clan Member
+3660	Normal Clan Member
+3661	Elite Clan Member Privileges
+3662	Normal Clan Member Privileges
+3663	Crest
+3664	Clan Raid
+3665	Join Clan Raid
+3666	Add Clan Crest
+3667	Add Alliance Crest
+3668	· Displayed above the character<br>· Clan Crest: 16*12 pixels<br>· Alliance Crest: 8*12 pixels<br>· Only 256-color<br>· Only BMP file
+3669	· Displayed on the shield, cloak and flag of the clan<br>· 256*256 pixels<br>· 24bit and 32bit colors<br>· TGA and BMP files
+3670	Clan Quest
+3671	Clan Shop
+3672	My Rep
+3673	Clan Specialties
+3674	Clan Specialty
+3675	Combat Specialty
+3676	War Specialty
+3677	Clan Development Points
+3678	One-time Mission
+3679	Repeatable Mission
+3680	Prerequisites
+3681	Normal Missions played
+3682	Unavailable
+3683	Intensive
+3684	Achievement
+3685	Repeat
+3686	Combat Specialty Lv. 3 required
+3687	War Specialty Lv. 3 required
+3688	The list shows the rewards you received by playing normal missions this week.\nThe reward receipt count is reset at 6:30 AM every Wednesday.\nThe maximum reward receipt count is 18 for Noblesse and\n20 for Exalted.
+3689	Normal mission complete
+3690	You worked hard this week.\nYour effort will contribute to the growth of our clan.
+3691	· You received the maximum normal mission rewards\n for this week.\n\n· All missions in progress are set to Not Allowed.\n\n· You can continue to play the missions from this cycle\nin the next cycle.\n\n· The reward receipt count for normal missions is reset\n  at 6:30 AM every Wednesday.
+3692	or higher
+3693	Applied Date
+3694	My Rep
+3695	Show Unavailable
+3696	There is no mission available.
+3697	Fame by Cycle
+3698	Total Fame
+3699	Contribution
+3700	Current Cycle
+3701	Previous Cycle
+3702	Unlock Characteristics
+3703	Unlock Seal
+3704	Reset Characteristics
+3705	Unlock
+3706	See Current Cycle
+3707	See Previous Cycle
+3708	Level up
+3709	Opposing Clan
+3710	Clan Notification
+3711	Show/Hide Offline Clan Members
+3712	Promote to Elite Clan Member
+3713	Promote to Normal Clan Member
+3714	No penalty
+3715	Penalty in effect
+3716	Click the button to see details
+3717	No base
+3718	Show messages on login
+3719	Enter a message to notify clan members.
+3720	No affiliated clan members
+3721	In the Clan Membership System, you can see which clans are recruiting members and request to join a clan.\n\nIf none of the clans appeal to you, you can create a new clan through the NPC representing your race, such as the Grand Master or High Priest.
+3722	Manage Clan Shop
+3723	Clan Item
+3724	Show Locked Items
+3725	Remaining Stock
+3726	Price
+3727	Quantity
+3728	Conditions for Unlocking
+3729	Activation Cost
+3730	Activate Items
+3731	Clan Level
+3732	Residence ownership
+3733	Clan Adena
+3734	No title
+3735	Buy Item
+3736	Activation
+3737	Prerequisites
+3738	Clan Skills
+3739	Specialty Skills
+3740	Specialty Benefits
+3741	Seal effects
+3742	Cost
+3743	Conditions for Starting War
+3744	None
+3745	Elite
+3746	Faeron
+3747	Balthus
+3748	Improve your skill step by step!
+3749	Start from level 1.
+3750	If you join us, you can improve your skills quickly.
+3751	Your starting level in the Balthus Knights is level 85.
+3752	Not enough
+3753	Activation required
+3754	Locked
+3755	Only the clan leader can use this function.
+3756	and
+3757	or
+3758	See Clan Member Privileges
+3759	Cancels the changes to settings.
+3760	Resets all settings to default. (Click the Apply button to apply the changes.)
+3761	The changes will be applied.
+3762	Create Clan
+3763	Clan Creation Conditions
+3764	Enter a clan name
+3765	The clan will be created.
+3766	A group of skillful and popular adventurers who work towards a common goal.
+3767	Delete Clan Crest
+3768	Delete Alliance Crest
+3769	Equal
+3770	Seal Items
+3771	Release Seals
+3772	Your Seal Scrolls
+3773	Your Release Seal Scrolls
+3774	Seal
+3775	<Sealing effect enabled>
+3776	Spirit Info
+3777	Attribute Attack Power
+3778	Attribute Defense
+3779	Attribute Critical Rate
+3780	Attribute Critical Damage
+3781	Water Spirit
+3782	Fire Spirit
+3783	Wind Spirit
+3784	Earth Spirit
+3785	Inactive
+3786	pt.
+3787	Spirit Stats
+3788	Spirit Characteristics
+3789	Characteristic Points
+3790	Total Characteristic Points
+3791	Available Characteristic Points
+3792	Evolve
+3793	Drain
+3794	Extract
+3795	Evolve Spirits
+3796	Drain Spirits
+3797	Extract Spirits
+3798	Spirits
+3799	Enhance Spirit Characteristics
+3800	Reset Spirit Characteristics
+3801	Cube Items
+3802	Usage limit
+3803	The item will disappear once the usage limit has been reached.
+3804	Once a day (Reset at 06:30 AM)
+3805	Seal effect
+3806	Cannot use functions except Equip, Access to Private and Pet Warehouses, and Account Sharing.
+3807	Unable to seal
+3808	Release Seal
 4001	An envoy dispatched by the Blackbird Clan. Assigns quests associated with the Blackbird Clan.
 4002	An envoy dispatched by the Giant Trackers. Assigns quests associated with the Giant Trackers.
 4003	An envoy dispatched by the Mother Tree Guardians. Assigns quests associated with the Mother Tree Guardians.
@@ -3473,6 +3649,18 @@
 4519	Matching is completed.<br>Do you want to enter war now?
 4520	Confirm
 4521	Resurrection
+4522	Invite to Party
+4523	Leave Party
+4524	Dismiss Party Member
+4525	Delegate Party Leader
+4526	RP
+4527	RANK
+4528	Arena Ranking
+4529	No reward to receive.
+4530	GOLD
+4531	SILVER
+4532	BRONZE
+4533	The ranking data has not been collected yet.<br>Please try again later.
 5001	L2 Store
 5002	All Items
 5003	Best
@@ -3721,6 +3909,9 @@
 5858	Receive Reward: At the Campfire
 5859	Permanent Ban
 5860	Temporary Ban
+5861	All Files
+5862	Block Impolite Characters
+5863	Block Adena Sale Ads
 7001	Roll Dice to Distribute Items
 7002	Manual Distribution by Party Leader
 7003	Roll Dice
@@ -4103,7 +4294,7 @@
 7380	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Attack-type Warrior</font> - Use Two-handed Weapon: Orc Raider -> Destroyer<br><br><font color='#FFDF4C'>Attack Warrior</font> - Use Attack Weapons: Orc Raider -> Tyrant<br>
 7381	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Recovery Wizard</font> - Party Recovery, Party Enhancement: Orc Shaman -> Warcryer <br><br><font color='#FFDF4C'>Recovery Wizard</font> - Clan Recovery, Clan Enhancement: Orc Shaman -> Overlord<br>
 7382	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Attack Warrior</font> - Summon Mechanic: Artisan -> Warsmith<br><br><font color='#FFDF4C'>Attack-type Warior</font> - Use Critical Dagger: Scavenger -> Bounty Hunter<br>
-7383	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Attack-type Warrior</font> - Use Ancient Sword for Charge Attacks: Trooper  -> Berserker<br><br><font color='#FFDF4C'>Swordsman</font> - Use Attack Magic, Attack Skills: Trooper -> Soul Breaker<br>
+7383	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Attack-type Warrior</font> - Use Ancient Sword for Charge Attacks: Trooper -> Berserker<br><br><font color='#FFDF4C'>Swordsman</font> - Use Attack Magic, Attack Skills: Trooper -> Soul Breaker<br>
 7384	<font color='#FFDF4C'>Classes Available Next</font><br><font color='#FFDF4C'>Long-range Warrior</font> - Use Crossbow, Traps: Warder -> Arbalester<br><br><font color='#FFDF4C'>Swordsman</font> - Use Attack Magic, Attack Skills: Warder -> Soul Breaker<br>
 7385	Class Trait
 7386	QT Novice Room

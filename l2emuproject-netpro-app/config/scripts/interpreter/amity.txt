@@ -5,3 +5,4 @@
 5	Kingdom's Royal Guards
 6	Fishing Guild
 7	Hunters Guild
+8	Adventure Guild

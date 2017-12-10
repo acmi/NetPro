@@ -1,5 +1,5 @@
 0	You have been disconnected from the server.
-1	The server will be coming down in $s1 second(s).  Please find a safe place to log out.
+1	The server will be coming down in $s1 second(s). Please find a safe place to log out.
 2	$s1 does not exist.
 3	$s1 is not currently logged in.
 4	You cannot ask yourself to apply to a clan.
@@ -62,8 +62,8 @@
 61	Nothing happened.
 62	Your $s1 has been successfully enchanted.
 63	Your +$s1 $s2 has been successfully enchanted.
-64	The enchantment has failed!  Your $s1 has been crystallized.
-65	The enchantment has failed!  Your +$s1 $s2 has been crystallized.
+64	The enchantment has failed! Your $s1 has been crystallized.
+65	The enchantment has failed! Your +$s1 $s2 has been crystallized.
 66	$c1 is inviting you to join a party. Do you accept?
 67	$s1 has invited you to join their clan, $s2. Do you wish to join?
 68	Would you like to withdraw from clan $s1? If you leave, you will have to wait at least a day before joining another clan.
@@ -178,7 +178,7 @@
 177	Message refusal mode.
 178	Message acceptance mode.
 179	You cannot discard those items here.
-180	You have $s1 day(s) left until deletion.  Do you wish to cancel this action?
+180	You have $s1 day(s) left until deletion. Do you wish to cancel this action?
 181	Cannot see target.
 182	Do you wish to stop the currently selected "$s1" quest?
 183	There are too many users on the server. Please try again later.
@@ -189,31 +189,31 @@
 188	Please create your clan name.
 189	Your clan has been created.
 190	You have failed to create a clan.
-191	Clan member $s1 has been expelled.
+191	$s1 has been dismissed.
 192	You have failed to expel $s1 from the clan.
 193	Clan has dispersed.
 194	You have failed to disperse the clan.
 195	Entered the clan.
 196	$s1 declined your clan invitation.
-197	You have withdrawn from the clan.
+197	You have left the clan.
 198	You have failed to withdraw from the $s1 clan.
-199	You have recently been dismissed from a clan.  You are not allowed to join another clan for 24 hours.
+199	You have recently been dismissed from a clan. You are not allowed to join another clan for 24 hours.
 200	You have withdrawn from the party.
 201	$c1 was expelled from the party.
 202	You have been expelled from the party.
 203	The party has dispersed.
 204	Incorrect name. Please try again.
-205	Incorrect character name.  Please try again.
+205	Incorrect character name. Please try again.
 206	Please enter the name of the clan you wish to declare war on.
 207	$s2 of the clan $s1 requests a declaration of war. Do you accept?
 208	Please include file type when entering file path.
-209	The size of the image file is inappropriate.  Please adjust to 16x12 pixels.
+209	The size of the image file is inappropriate. Please adjust to 16x12 pixels.
 210	Cannot find file. Please enter precise path.
 211	You can only register a 16x12 pixel 256 color BMP files.
 212	You are not a clan member and cannot perform this action.
 213	Not working. Please try again later.
 214	Your title has been changed.
-215	A clan war with Clan $s1 has started. The clan that cancels the war first will lose 5,000 Clan Reputation. Any clan that cancels the war will be unable to declare a war for 1 week. If your clan member gets killed by the other clan, XP decreases by 1/4 of the amount that decreases in the hunting ground.
+215	A clan war with $s1 has started. The clan that withdraws from the war first will lose 10,000 Clan Reputation. Any clan that cancels the war will be unable to declare war for 1 week. If your clan member is killed by the other clan, XP decreases by 1/4 of the amount that decreases in the hunting ground.
 216	War with the $s1 clan has ended.
 217	You have won the war over the $s1 clan!
 218	You have surrendered to the $s1 clan.
@@ -231,7 +231,7 @@
 230	You must wait 10 days before creating a new clan.
 231	After a clan member is dismissed from a clan, the clan must wait at least a day before accepting a new member.
 232	After leaving or having been dismissed from a clan, you must wait at least a day before joining another clan.
-233	The Academy/Royal Guard/Order of Knights is full and cannot accept new members at this time.
+233	This clan is full and cannot accept new members at this time.
 234	The target must be a clan member.
 235	You are not authorized to bestow these rights.
 236	Only the clan leader is enabled.
@@ -248,7 +248,7 @@
 247	You have already been at war with the $s1 clan: 5 days must pass before you can challenge this clan again.
 248	You cannot proclaim war: the $s1 clan does not have enough members.
 249	Do you wish to surrender to clan $s1?
-250	You have personally surrendered to the $s1 clan.  You are no longer participating in this clan war.
+250	You have personally surrendered to the $s1 clan. You are no longer participating in this clan war.
 251	You cannot proclaim war: you are at war with another clan.
 252	Enter the name of the clan you wish to surrender to.
 253	Enter the name of the clan you wish to end the war with.
@@ -258,7 +258,7 @@
 257	Do you offer the $s1 clan a proposal to end the war?
 258	You are not involved in a clan war.
 259	Select clan members from list.
-260	Your clan lost 5,000 Reputation points for withdrawing from the Clan War.
+260	Your clan lost 10,000 Reputation points for withdrawing from the Clan War.
 261	Clan name is invalid.
 262	Clan name's length is incorrect.
 263	You have already requested the dissolution of your clan.
@@ -269,11 +269,11 @@
 268	That player already belongs to another clan.
 269	You cannot dismiss yourself.
 270	You have already surrendered.
-271	A player can only be granted a title if the clan is level 3 or above.
-272	A clan crest can only be registered when the clan's skill level is 3 or above.
-273	A clan war can only be declared when a clan's level is 3 or above.
-274	Your clan's level has increased.
-275	The clan has failed to increase its level.
+271	The clan must be level 3 or above to grant a title.
+272	The clan must be level 3 or above to register a clan crest.
+273	The clan must be level 5 or above to declare a clan war.
+274	Your clan level has risen.
+275	Failed to level up the clan.
 276	You do not have the necessary materials or prerequisites to learn this skill.
 277	You have earned $s1.
 278	You do not have enough SP to learn this skill.
@@ -371,8 +371,8 @@
 370	Failed to pick up $s1.
 371	Acquired +$s1 $s2.
 372	Failed to earn $s1.
-373	You are trying to destroy +$s1 $s2.  Do you wish to continue?
-374	You are attempting to crystallize +$s1 $s2.  Do you wish to continue?
+373	You are trying to destroy +$s1 $s2. Do you wish to continue?
+374	You are attempting to crystallize +$s1 $s2. Do you wish to continue?
 375	+$s1$s2 has been dropped.
 376	$c1 has obtained +$s2 $s3.
 377	+$s1 $s2 disappeared.
@@ -437,7 +437,7 @@
 436	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 437	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 438	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-439	In accordance with the company's User Agreement and Operational Policy this account has been suspended at the account holder's request.  In order to restore the account, please  visit the Support Center on the NCSOFT website (https://support.lineage2.com).
+439	In accordance with the company's User Agreement and Operational Policy this account has been suspended at the account holder's request. In order to restore the account, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 440	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 441	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 442	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
@@ -467,7 +467,7 @@
 466	You have exceeded the limit.
 467	You may not accept any clan within a day after expelling another clan.
 468	A clan that has withdrawn or been expelled cannot enter into an alliance within one day of withdrawal or expulsion.
-469	You may not ally with a clan you are currently at war with.  That would be diabolical and treacherous.
+469	You may not ally with a clan you are currently at war with. That would be diabolical and treacherous.
 470	Only the clan leader may apply for withdrawal from the alliance.
 471	Alliance leaders cannot withdraw.
 472	You cannot expel yourself from the clan.
@@ -481,7 +481,7 @@
 480	Please check your friends list.
 481	$s1 has been deleted from your friends list.
 482	You cannot add yourself to your own friend list.
-483	This function is inaccessible right now.  Please try again later.
+483	This function is inaccessible right now. Please try again later.
 484	This player is already registered on your friends list.
 485	No new friend invitations may be accepted.
 486	The following user is not on your friends list.
@@ -496,7 +496,7 @@
 495	Affiliated clans: Total $s1 clan(s)
 496	=====<Clan Information>=====
 497	Clan Name: $s1
-498	Clan Leader:  $s1
+498	Clan Leader: $s1
 499	Clan Level: $s1
 500	------------------------
 501	========================
@@ -504,7 +504,7 @@
 503	Your friend $s1 just logged in.
 504	Only clan leaders may create alliances.
 505	You cannot create a new alliance within 1 day of dissolution.
-506	Incorrect alliance name.  Please try again.
+506	Incorrect alliance name. Please try again.
 507	Incorrect length for an alliance name.
 508	That alliance name already exists.
 509	Unable to proceed. Clan ally is currently registered as an enemy for the siege.
@@ -552,7 +552,7 @@
 551	As you are currently schedule for clan dissolution, your clan level cannot be increased.
 552	As you are currently schedule for clan dissolution, you cannot register or delete a Clan Crest.
 553	The opposing clan has applied for dispersion.
-554	You cannot disperse the clans in your alliance.
+554	The opposing clan has requested to dissolve.
 555	You cannot move due to the weight of your inventory.
 556	You cannot move in this state.
 557	As your pet is currently out, its summoning item cannot be destroyed.
@@ -671,7 +671,7 @@
 670	You are declining the registration of clan $s1 as a defender. Do you want to continue?
 671	You are accepting the registration of clan $s1 as a defender. Do you want to continue?
 672	$s1 Adena disappeared.
-673	Only a clan leader whose clan is of level 2 or above is allowed to participate in a clan hall auction.
+673	You can participate in the clan hall auction if your clan level is 4 or above and you are the clan leader or have the auction right.
 674	It has not yet been seven days since canceling an auction.
 675	There are no clan halls up for auction.
 676	Since you have already submitted a bid, you are not allowed to participate in another auction at this time.
@@ -1006,12 +1006,12 @@
 1005	There is not enough Adena in the clan hall warehouse.
 1006	Your bid has been successfully placed.
 1007	The preliminary match registration for $s1 has finished.
-1008	A hungry strider cannot be mounted or dismounted.
-1009	A strider cannot be ridden when dead.
-1010	A dead strider cannot be ridden.
-1011	A strider in battle cannot be ridden.
-1012	A strider cannot be ridden while in battle.
-1013	A strider can be ridden only when standing.
+1008	You can neither mount nor dismount while hungry.
+1009	You cannot use a mount while dead.
+1010	You cannot use a dead mount.
+1011	You cannot use a mount that is in battle.
+1012	You cannot use a mount while in battle.
+1013	You must be standing to use a mount.
 1014	Your pet gained $s1 XP.
 1015	Your pet hit for $s1 damage.
 1016	Your pet received $s2 damage by $c1.
@@ -1059,7 +1059,7 @@
 1058	The sales price for seeds is $s1 Adena.
 1059	The remaining purchasing amount is $s1 Adena.
 1060	The remainder after selling the seeds is $s1.
-1061	The recipe cannot be registered.  You do not have the ability to create items.
+1061	The recipe cannot be registered. You do not have the ability to create items.
 1062	Writing something new is possible after level 10.
 1063	The Petition Service is currently unavailable, please send a support ticket on https://lineage2.custhelp.com; If you become trapped or unable to move, please use the '/unstuck' command.
 1064	The equipment, +$s1 $s2, has been removed.
@@ -1070,12 +1070,12 @@
 1069	$s2 MP has been restored by $c1.
 1070	You do not have 'read' permission.
 1071	You do not have 'write' permission.
-1072	You have obtained a ticket for the Monster Race #$s1  -  Single.
-1073	You have obtained a ticket for the Monster Race #$s1  -  Single.
+1072	You have obtained a ticket for the Monster Race #$s1 - Single.
+1073	You have obtained a ticket for the Monster Race #$s1 - Single.
 1074	You do not meet the age requirement to purchase a Monster Race Ticket.
 1075	The bid amount must be higher than the previous bid.
 1076	The game cannot be terminated at this time.
-1077	A GameGuard Execution error has occurred.  Please send the *.erl file(s) located in the GameGuard folder to game@inca.co.kr.
+1077	A GameGuard Execution error has occurred. Please send the *.erl file(s) located in the GameGuard folder to game@inca.co.kr.
 1078	When a user's keyboard input exceeds a certain cumulative score a chat ban will be applied. This is done to discourage spamming. Please avoid posting the same message multiple times during a short period.
 1079	 The target is currently banned from chatting.
 1080	Being permanent, are you sure you wish to use the facelift potion - Type A?
@@ -1110,7 +1110,7 @@
 1109	The hair style change potion - Type E is being used.
 1110	The hair style change potion - Type F is being used.
 1111	The hair style change potion - Type G is being used.
-1112	The prize amount for the winner of Lottery #$s1 is $s2 Adena.  We have $s3 first prize winners.
+1112	The prize amount for the winner of Lottery #$s1 is $s2 Adena. We have $s3 first prize winners.
 1113	The prize amount for Lucky Lottery #$s1 is $s2 Adena. There was no first prize winner in this drawing, therefore the jackpot will be added to the next drawing.
 1114	Your clan may not register to participate in a siege while under a grace period of the clan's dissolution.
 1115	Individuals may not surrender during combat.
@@ -1176,7 +1176,7 @@
 1175	The Innadril pleasure boat will arrive in approximately 1 minute.
 1176	The SSQ Competition period is underway.
 1177	This is the seal validation period.
-1178	This seal permits the group that holds it to exclusive entry to the dungeons opened by the Seal of Avarice during the seal validation period.  It also permits trading with the Merchant of Mammon and permits meetings with Anakim or Lilith in the Disciple's Necropolis.
+1178	This seal permits the group that holds it to exclusive entry to the dungeons opened by the Seal of Avarice during the seal validation period. It also permits trading with the Merchant of Mammon and permits meetings with Anakim or Lilith in the Disciple's Necropolis.
 1179	This seal permits the group that holds it to enter the dungeon opened by the Seal of Gnosis, use the teleportation service offered by the priest in the village, and do business with the Blacksmith of Mammon. The Orator of Revelations appears and casts good magic on the winners, and the Preacher of Doom appears and casts bad magic on the losers.
 1180	During the Seal Validation period, the cabal's maximum CP amount increases. In addition, the cabal possessing the seal will benefit from favorable changes in the cost to up-grade Castle defense mercenaries, castle gates and walls; basic P. Def. of castle gates and walls; and the limit imposed on the castle tax rate. The use of siege war weapons will also be limited. If the Revolutionary Army of Dusk takes possession of this seal during the castle siege war, only the clan that owns the castle can come to its defense.
 1181	Do you really wish to change the title?
@@ -1204,11 +1204,11 @@
 1203	There is no clan war in progress.
 1204	The screenshot has been saved. ($s1 $s2x$s3)
 1205	Your mailbox is full. There is a 100 message limit.
-1206	The memo box is full.  There is a 100 memo limit.
+1206	The memo box is full. There is a 100 memo limit.
 1207	Please make an entry in the field.
 1208	$c1 died and dropped $s3 $s2(s).
 1209	Congratulations. Your raid was successful.
-1210	Seven Signs: The competition period has begun.  Visit a Priest of Dawn or Priestess of Dusk to participate in the event.
+1210	Seven Signs: The competition period has begun. Visit a Priest of Dawn or Priestess of Dusk to participate in the event.
 1211	Seven Signs: The competition period has ended. The next quest event will start in one week.
 1212	Seven Signs: The Lords of Dawn have obtained the Seal of Avarice.
 1213	Seven Signs: The Lords of Dawn have obtained the Seal of Gnosis.
@@ -1236,7 +1236,7 @@
 1235	Do you wish to delete all your friends?
 1236	Please enter security card number.
 1237	Please enter the card number for number $s1.
-1238	Your temporary mailbox is full.  No more mail can be stored; you have reached the 10 message limit.
+1238	Your temporary mailbox is full. No more mail can be stored; you have reached the 10 message limit.
 1239	The keyboard security module has failed to load. Please exit the game and try again.
 1240	Seven Signs: The Revolutionaries of Dusk have won.
 1241	Seven Signs: The Lords of Dawn have won.
@@ -1309,7 +1309,7 @@
 1308	Congratulations - You've completed a class transfer!
 1309	To use this option, you must have the latest version of Windows Live Messenger installed on your computer.
 1310	For full functionality, the latest version of Windows Live Messenger must be installed on your computer.
-1311	Previous versions of Windows Live Messenger only provide the basic features for in-game Windows Live Messenger chat.  Add/Delete Contacts and other Windows Live Messenger options are not available.
+1311	Previous versions of Windows Live Messenger only provide the basic features for in-game Windows Live Messenger chat. Add/Delete Contacts and other Windows Live Messenger options are not available.
 1312	The latest version of Windows Live Messenger may be obtained from the Windows Live web site (http://explore.live.com/messenger).
 1313	To better serve our customers, all chat histories are stored and maintained by NCSOFT. If you do not agree to have your chat records stored, please close the chat window now. For more information regarding this procedure, please visit our home page at http://us.ncsoft.com/en/legal/user-agreements/lineage-2-user-agreement.html. Thank you!
 1314	Please enter the passport ID of the person you wish to add to your contact list.
@@ -1335,14 +1335,14 @@
 1334	Your recording has been stored in the Replay folder.
 1335	Your attempt to store this recording has failed.
 1336	The replay file, $s1.$s2 has been corrupted, please check the file.
-1337	This will terminate the replay.  Do you wish to continue?
+1337	This will terminate the replay. Do you wish to continue?
 1338	You have exceeded the maximum amount that may be transferred at one time.
 1339	Once a macro is assigned to a shortcut, it cannot be run as part of a new macro.
 1340	This server cannot be accessed with the coupon you are using.
 1341	Incorrect name and/or email address.
 1342	You are already logged in.
-1343	Incorrect email address and/or password.  Your attempt to log into .NET Messenger Service has failed.
-1344	Your request to log into the .NET Messenger Service has failed.  Please verify that you are currently connected to the internet.
+1343	Incorrect email address and/or password. Your attempt to log into .NET Messenger Service has failed.
+1344	Your request to log into the .NET Messenger Service has failed. Please verify that you are currently connected to the internet.
 1345	Click on the OK button after you have selected a contact name.
 1346	You are currently entering a chat message.
 1347	The Lineage II messenger could not carry out the task you requested.
@@ -1360,11 +1360,11 @@
 1359	$s1 has logged in.
 1360	You have received a message from $s1.
 1361	Due to a system error, you have been logged out of the .NET Messenger Service.
-1362	Please select the contact you wish to delete.  If you would like to delete a group, click the button next to My Status, and then use the Options menu.
+1362	Please select the contact you wish to delete. If you would like to delete a group, click the button next to My Status, and then use the Options menu.
 1363	Your request to participate to initiate an alliance war has been denied.
 1364	The request for an alliance war has been rejected.
 1365	$s2 of $s1 clan has surrendered as an individual.
-1366	In order to delete a group, you must not have any contacts listed under that group.  Please transfer your contact(s) to another group before continuing with deletion.
+1366	In order to delete a group, you must not have any contacts listed under that group. Please transfer your contact(s) to another group before continuing with deletion.
 1367	Only members of the group are allowed to add records.
 1368	You can not try those items on at the same time.
 1369	You've exceeded the maximum.
@@ -1380,7 +1380,7 @@
 1379	$c1 has obtained $s2 Adena.
 1380	You can't summon a $s1 while on the battleground.
 1381	The party leader has obtained $s2 $s1(s).
-1382	To fulfill the quest, you must bring the chosen weapon.  Are you sure you want to choose this weapon?
+1382	To fulfill the quest, you must bring the chosen weapon. Are you sure you want to choose this weapon?
 1383	Are you sure you want to exchange?
 1384	$c1 has become the party leader.
 1385	You are not allowed to dismount in this location.
@@ -1402,11 +1402,11 @@
 1401	Slow down, you are already the party leader.
 1402	You may only transfer party leadership to another member of the party.
 1403	You have failed to transfer party leadership.
-1404	The owner of the private workshop has changed the price for creating this item.  Please check the new price before trying again.
+1404	The owner of the private workshop has changed the price for creating this item. Please check the new price before trying again.
 1405	$s1 CP has been restored.
 1406	$s2 CP has been restored by $c1.
 1407	You are using a computer that does not allow you to log in with two accounts at the same time.
-1408	Your prepaid remaining usage time is $s1 hour(s) and $s2 minute(s).  You have $s3 paid reservations left.
+1408	Your prepaid remaining usage time is $s1 hour(s) and $s2 minute(s). You have $s3 paid reservations left.
 1409	Your prepaid usage time has expired. Your new prepaid reservation will be used. The remaining usage time is $s1 hour(s) and $s2 minute(s).
 1410	Your prepaid usage time has expired. You do not have any more prepaid reservations left.
 1411	The number of your prepaid reservations has changed.
@@ -1428,7 +1428,7 @@
 1427	Race setup file error - ExpSkillID$s1 is not specified.
 1428	Race setup file error - ExpItemCnt is not specified.
 1429	Race setup file error - ExpItemID$s1 is not specified.
-1430	Race setup file error -  TeleportDelay is not specified.
+1430	Race setup file error - TeleportDelay is not specified.
 1431	The race will be stopped temporarily.
 1432	Your opponent is currently in a petrified state.
 1433	The automatic use of $s1 has been activated.
@@ -1443,7 +1443,7 @@
 1442	Remaining Time: $s1 second(s)
 1443	You do not have enough SP to enchant that skill.
 1444	You do not have enough XP to enchant that skill.
-1445	Your previous subclass will be removed and replaced with the new subclass at level 40.  Do you wish to continue?
+1445	Your previous subclass will be removed and replaced with the new subclass at level 40. Do you wish to continue?
 1446	The ferry from $s1 to $s2 has been delayed.
 1447	You cannot do that while fishing.
 1448	Only fishing skills may be used at this time.
@@ -1480,7 +1480,7 @@
 1479	That is the wrong grade of soulshot for that fishing pole.
 1480	Are you sure you wish to remove yourself from the Olympiad waiting list?
 1481	You have selected an All-Class Battle. Do you wish to participate?
-1482	You've selected to join a class specific game.  Continue?
+1482	You've selected to join a class specific game. Continue?
 1483	Are you ready to become a Hero?
 1484	Would you like to use the selected hero weapon?
 1485	The ferry from Talking Island to Gludin Harbor has been delayed.
@@ -1535,7 +1535,7 @@
 1534	Attention: $c1 has picked up +$s2 $s3.
 1535	Attention: $c1's pet has picked up $s2.
 1536	Attention: $c1's pet has picked up +$s2 $s3.
-1537	Current Location:  $s1 / $s2 / $s3 (near Rune Village)
+1537	Current Location: $s1 / $s2 / $s3 (near Rune Village)
 1538	Current Location: $s1 / $s2 / $s3 (near the Town of Goddard)
 1539	Cargo has arrived at Talking Island Village.
 1540	Cargo has arrived at the Dark Elf Village.
@@ -1596,10 +1596,10 @@
 1595	$s1 has succeeded.
 1596	You were hit by $s1!
 1597	$s1 has failed.
-1598	Soulshots and spiritshots are not available for a dead pet or servitor.  Sad, isn't it?
+1598	Soulshots and spiritshots are not available for a dead pet or servitor. Sad, isn't it?
 1599	You cannot "observe" while you are in combat!
-1600	Tomorrow's items will ALL be set to 0.  Do you wish to continue?
-1601	Tomorrow's items will all be set to the same value as today's items.  Do you wish to continue?
+1600	Tomorrow's items will ALL be set to 0. Do you wish to continue?
+1601	Tomorrow's items will all be set to the same value as today's items. Do you wish to continue?
 1602	Only a party leader can access the Command Channel.
 1603	Only the Command Channel creator can use the Raid Leader text.
 1604	While dressed in formal wear, you can't use items that require all skills and casting operations.
@@ -1621,12 +1621,12 @@
 1620	Welcome to Rune Harbor.
 1621	Departure for Gludin Harbor will take place in five minutes!
 1622	Departure for Gludin Harbor will take place in one minute!
-1623	Make haste!  We will be departing for Gludin Harbor shortly…
+1623	Make haste! We will be departing for Gludin Harbor shortly…
 1624	We are now departing for Gludin Harbor. Hold on and enjoy the ride!
 1625	Departure for Rune Harbor will take place after anchoring for ten minutes.
 1626	Departure for Rune Harbor will take place in five minutes!
 1627	Departure for Rune Harbor will take place in one minute!
-1628	Make haste!  We will be departing for Gludin Harbor shortly…
+1628	Make haste! We will be departing for Gludin Harbor shortly…
 1629	We are now departing for Rune Harbor. Hold on and enjoy the ride!
 1630	The ferry from Rune Harbor will be arriving at Gludin Harbor in approximately 15 minutes.
 1631	The ferry from Rune Harbor will be arriving at Gludin Harbor in approximately 10 minutes.
@@ -1639,8 +1639,8 @@
 1638	You cannot fish while using a recipe book, private workshop or private store.
 1639	Round $s1 of the Olympiad Games has started!
 1640	Round $s1 of the Olympiad Games has now ended.
-1641	Sharpen your swords, tighten the stitching in your armor, and make haste to a Olympiad Manager!  Battles in the Olympiad Games are now taking place!
-1642	Much carnage has been left for the cleanup crew of the Olympiad Stadium.  Battles in the Olympiad Games are now over!
+1641	Sharpen your swords, tighten the stitching in your armor, and make haste to a Olympiad Manager! Battles in the Olympiad Games are now taking place!
+1642	Much carnage has been left for the cleanup crew of the Olympiad Stadium. Battles in the Olympiad Games are now over!
 1643	Current Location: $s1 / $s2 / $s3 (Dimensional Crack)
 1644	none
 1645	none
@@ -1648,7 +1648,7 @@
 1647	none
 1648	none
 1649	Play time is now accumulating.
-1650	Due to high server traffic, your login attempt has failed.  Please try again soon.
+1650	Due to high server traffic, your login attempt has failed. Please try again soon.
 1651	The Olympiad Games are not currently in progress.
 1652	You are now recording gameplay.
 1653	Your recording has been successfully stored. ($s1)
@@ -1660,10 +1660,10 @@
 1659	Current Location: $s1 / $s2 / $s3 (Cemetery of the Empire).
 1660	Channel Creator: $c1
 1661	$c1 has obtained $s3 $s2(s).
-1662	The fish are no longer biting here because you've caught too many!  Try fishing in another location.
-1663	The Clan Mark was successfully registered.  The symbol will appear on the clan flag, and the insignia is only displayed on items pertaining to a clan that owns a clan hall or castle.
-1664	The fish is resisting your efforts to haul it in!  Look at that bobber go!
-1665	You've worn that fish out!  It can't even pull the bobber under the water!
+1662	The fish are no longer biting here because you've caught too many! Try fishing in another location.
+1663	The Clan Mark was successfully registered. The symbol will appear on the clan flag, and the insignia is only displayed on items pertaining to a clan that owns a clan hall or castle.
+1664	The fish is resisting your efforts to haul it in! Look at that bobber go!
+1665	You've worn that fish out! It can't even pull the bobber under the water!
 1666	You have obtained +$s1 $s2.
 1667	Lethal Strike!
 1668	Hit with Lethal Strike!
@@ -1685,7 +1685,7 @@
 1684	A Clan War can not be declared against a clan that is being dissolved.
 1685	You are unable to equip this item when your PK count is greater than or equal to one.
 1686	Stones and mortar tumble to the earth - the castle wall has taken damage!
-1687	This area cannot be entered while mounted atop of a Wyvern.  You will be dismounted from your Wyvern if you do not leave!
+1687	This area cannot be entered while mounted atop of a Wyvern. You will be dismounted from your Wyvern if you do not leave!
 1688	You cannot enchant while operating a Private Store or Private Workshop.
 1689	$c1 is already registered on the class match waiting list.
 1690	$c1 is already registered on the waiting list for the All-Class Battle.
@@ -1702,7 +1702,7 @@
 1701	You don't have enough soulshots needed for a pet/servitor.
 1702	$s1 is using a third party program.
 1703	The previously investigated user is not using a third party program.
-1704	Please close the  setup window for your private workshop or private store, and try again.
+1704	Please close the setup window for your private workshop or private store, and try again.
 1705	You can earn PC Points for a further $s1 hour(s).
 1706	You can spend your PC Points for a further $s1 hour(s).
 1707	You earned $s1 PC Point(s).
@@ -1715,7 +1715,7 @@
 1714	Current Location: $s1 / $s2 / $s3 (Near the Town of Schuttgart)
 1715	This is a Peaceful Zone\n- PvP is not allowed in this area.
 1716	Altered Zone
-1717	Siege War Zone \n- A siege is currently in progress in this area.  \n If a character dies in this zone, their resurrection ability may be restricted.
+1717	Siege War Zone \n- A siege is currently in progress in this area. \n If a character dies in this zone, their resurrection ability may be restricted.
 1718	General Field
 1719	Seven Signs Zone \n- Although a character's level may increase while in this area, HP and MP \n will not be regenerated.
 1720	---
@@ -1822,7 +1822,7 @@
 1821	$s2's evil presence is felt in $s1.
 1822	$s1 has been sealed.
 1823	The registration period for a clan hall war has ended.
-1824	You have been registered for a clan hall war.  Please move to the left side of the clan hall's arena and get ready.
+1824	You have been registered for a clan hall war. Please move to the left side of the clan hall's arena and get ready.
 1825	You have failed in your attempt to register for the clan hall war. Please try again.
 1826	In $s1 minute(s), the game will begin. All players must hurry and move to the left side of the clan hall's arena.
 1827	In $s1 minute(s), the game will begin. All players, please enter the arena now.
@@ -1838,8 +1838,8 @@
 1837	$c1 has sent you an invitation to join the $s3 Royal Guard under the $s2 clan. Would you like to join?
 1838	1. The coupon can be used once per character.
 1839	2. A used serial number may not be used again.
-1840	3. If you enter the incorrect serial number more than 5 times,\n   you may use it again after a certain amount of time passes.
-1841	This clan hall war has been cancelled.  Not enough clans have registered.
+1840	3. If you enter the incorrect serial number more than 5 times,\n  you may use it again after a certain amount of time passes.
+1841	This clan hall war has been cancelled. Not enough clans have registered.
 1842	$c1 wishes to summon you from $s2. Do you accept?
 1843	$c1 is engaged in combat and cannot be summoned or teleported.
 1844	$c1 is dead at the moment and cannot be summoned or teleported.
@@ -1885,7 +1885,7 @@
 1884	Enter the PC Room coupon serial number:
 1885	This serial number cannot be entered. Please try again in $s1 minute(s).
 1886	This serial number has already been used.
-1887	Invalid serial number.  Your attempt to enter the number has failed $s1 time(s). You will be allowed to make $s2 more attempt(s).
+1887	Invalid serial number. Your attempt to enter the number has failed $s1 time(s). You will be allowed to make $s2 more attempt(s).
 1888	Invalid serial number. Your attempt to enter the number has failed 5 times. Please try again in 4 hours.
 1889	Congratulations! You have received $s1.
 1890	Since you have already used this coupon, you may not use this serial number.
@@ -1900,17 +1900,17 @@
 1899	You cannot use summoning or teleporting in this area.
 1900	$c1 has entered the party room.
 1901	$s1 has sent an invitation to room <$s2>.
-1902	Incompatible item grade.  This item cannot be used.
+1902	Incompatible item grade. This item cannot be used.
 1903	To request an NC OTP service,\nrun the cell phone NC OTP service,\nand enter the displayed NC OTP number within 1 minute.\nIf you did not make the request,\nleave this part blank,\nand press the login button.
 1904	A subclass may not be created or changed while a servitor or pet is summoned.
 1905	$c2 from $s1 will be replaced with $c4 from $s3.
 1906	Select the combat unit to transfer to.
-1907	Select the  character who will\n replace the current character.
+1907	Select the character who will\n replace the current character.
 1908	$c1 is in an area which blocks summoning or teleporting.
 1909	==< List of Clan Academy Graduates During the Past Week >==
 1910	Graduates: $c1.
 1911	A user participating in the Olympiad cannot use summoning or teleporting.
-1912	NC OTP service requester only entry
+1912	Only those requesting OTP service should input
 1913	The remaining recycle time for $s1 is $s2 minute(s).
 1914	The remaining recycle time for $s1 is $s2 second(s).
 1915	The game will end in $s1 second(s).
@@ -2012,7 +2012,7 @@
 2011	The augmented item cannot be discarded.
 2012	$s1 has been activated.
 2013	Your seed or remaining purchase amount is inadequate.
-2014	You cannot proceed because the manor cannot accept any more crops.  All crops have been returned and no Adena withdrawn.
+2014	You cannot proceed because the manor cannot accept any more crops. All crops have been returned and no Adena withdrawn.
 2015	A skill is ready to be used again.
 2016	A skill is ready to be used again but its re-use counter time has increased.
 2017	$c1 cannot duel because $c1 is currently engaged in a private store or manufacture.
@@ -2036,8 +2036,8 @@
 2035	There are $s1 minute(s) remaining until the item can be purchased again.
 2036	Unable to invite because the party is locked.
 2037	Unable to create character. You are unable to create a new character on the selected server. A restriction is in place which restricts users from creating characters on different servers where no previous character exists. Please choose another server.
-2038	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to drop items and/or Adena.  To unlock all of the features of Lineage II, purchase the full version today.
-2039	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to trade items and/or Adena.  To unlock all of the features of Lineage II, purchase the full version today.
+2038	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to drop items and/or Adena. To unlock all of the features of Lineage II, purchase the full version today.
+2039	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to trade items and/or Adena. To unlock all of the features of Lineage II, purchase the full version today.
 2040	Cannot trade items with the targeted user.
 2041	Some Lineage II features have been limited for free trials. Trial accounts aren't allowed to setup private stores. To unlock all of the features of Lineage II, purchase the full version today.
 2042	This account has been suspended for non-payment based on the cell phone payment agreement.\nPlease go to http://us.ncsoft.com/en/.
@@ -2220,8 +2220,8 @@
 2219	This squad skill has already been learned.
 2220	The previous level skill has not been learned.
 2221	Do you wish to activate the selected functions?
-2222	It will cost 150,000 Adena to place scouts. Do you wish to continue?
-2223	It will cost 200,000 Adena for a fortress gate enhancement. Do you wish to continue?
+2222	It will cost 250,000 Adena to place scouts. Do you wish to continue?
+2223	It will cost 800,000 Adena for a fortress gate enhancement. Do you wish to continue?
 2224	Your crossbow is preparing to fire.
 2225	There are no other skills to learn. Please come back after $s1nd class change.
 2226	Not enough bolts.
@@ -2229,7 +2229,7 @@
 2228	Instant zone time limit:
 2229	There is no instant zone under a time limit.
 2230	$s1 will be available for re-use after $s2 hour(s) $s3 minute(s).
-2231	The supply items have not  been provided because the castle you are in contract with doesn't have enough Clan Reputation.
+2231	The supply items have not been provided because the castle you are in contract with doesn't have enough Clan Reputation.
 2232	$s1 will be crystallized before destruction. Will you continue?
 2233	Siege registration is not possible due to your castle contract.
 2234	Do you wish to use this Kamael exclusive Hero Weapon?
@@ -2358,7 +2358,7 @@
 2357	You cannot use My Teleports in an instant zone.
 2358	You have no space to save the teleport location.
 2359	You cannot teleport because you do not have a teleport item.
-2360	My Teleports Spellbk: $s1
+2360	Scrolls: $s1
 2361	Current Location: $s1
 2362	The saved teleport location will be deleted. Do you wish to continue?
 2363	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
@@ -2795,12 +2795,12 @@
 2937	A territory owning clan member cannot use a disguise scroll.
 2938	The disguise scroll cannot be used while you are engaged in a private store or manufacture workshop.
 2939	A disguise cannot be used when you are in a chaotic state.
-2940	Items with the enchantment level of +3 or higher can benefit from enchanting chance boosting items.
+2940	Items enchanted to 3 or above can benefit from chance boosting items.
 2941	The request cannot be completed because the requirements are not met. In order to participate in a team match, all team members must have an Olympiad score of 10 or more.
-2942	The first gift's remaining resupply time is $s1 hour(s) $s2 minute(s) $s3 second(s).  (If you resummon the Agathion at the gift supply time, the supply time can take an additional 10 minutes.)
+2942	The first gift's remaining resupply time is $s1 hour(s) $s2 minute(s) $s3 second(s). (If you resummon the Agathion at the gift supply time, the supply time can take an additional 10 minutes.)
 2943	The first gift's remaining resupply time is $s1 minute(s) $s2 second(s). (If you resummon the Agathion at the gift supply time, the supply time can take an additional 10 minutes.)
-2944	The first gift's remaining resupply time is $s1 second(s).  (If you resummon the Agathion at the gift supply time, the supply time can take an additional 10 minutes.)
-2945	The second gift's remaining resupply time is $s1 hour(s) $s2 minute(s) $s3 second(s).  (If you resummon the Agathion at the gift supply time, the supply time can take an additional 1 hour 10 minutes.)
+2944	The first gift's remaining resupply time is $s1 second(s). (If you resummon the Agathion at the gift supply time, the supply time can take an additional 10 minutes.)
+2945	The second gift's remaining resupply time is $s1 hour(s) $s2 minute(s) $s3 second(s). (If you resummon the Agathion at the gift supply time, the supply time can take an additional 1 hour 10 minutes.)
 2946	The second gift's remaining resupply time is $s1 minute(s) $s2 second(s). (If you resummon the Agathion at the gift supply time, the supply time can take an additional 1 hour 10 minutes.)
 2947	The second gift's remaining resupply time is $s1 second(s). (If you resummon the Agathion at the gift supply time, the supply time can take an additional 1 hour 10 minutes.)
 2955	The territory war exclusive disguise and transformation can be used 20 minutes before the start of the territory war to 10 minutes after its end.
@@ -3154,8 +3154,8 @@
 3303	Battle status of Seed of Annihilation: Stagnant
 3304	$s1h $s2m
 3305	Number of people: $s1
-3306	You are declaring Clan War against $s1. If you withdraw from the war, your clan will lose 5,000 Reputation points. Proceed?
-3307	$s1 will be deleted from Friend List.\nDo you want to continue?  à
+3306	You are declaring Clan War against $s1. If you withdraw from the war, your clan will lose 10,000 Reputation points. Proceed?
+3307	$s1 will be deleted from Friend List.\nDo you want to continue? 
 3308	No character is selected to add to the list. Please select a character.
 3309	You are now recording a video. UI can be hidden using Alt + H.
 3310	Recording will be ended due to lack of capacity in the hard disk. The video that has been recorded so far will automatically be stored on the path of $s1.
@@ -3397,7 +3397,7 @@
 3546	How long has it been since I've had a visitor…?
 3547	Do you know who I am? Or do you just want to know what my crime was?
 3548	Learn now from me about the tragic past…filled with agony, sorrow…
-3549	…and  learn about the heartless witch that you worship as a goddess! Haha…
+3549	…and learn about the heartless witch that you worship as a goddess! Haha…
 3550	The goddess imprisoned us. She saw us as incomplete, malformed.
 3551	We defied her…urghh!
 3552	Genesis! We gathered at the Garden of Genesis and pleaded to her for mercy.
@@ -3535,7 +3535,7 @@
 3684	You cannot change a class in this region.
 3685	A replacement for $s1 is found. The player will be replaced in 3 minutes.
 3686	The shared dimensional item has been successfully found.
-3687	The NC OTP number is incorrect. Please check the number and enter it again.
+3687	The OTP number is incorrect. Please check the number and enter it again.
 3688	The shared dimensional item has not been found.
 3689	The mentoring relationship with $s1 has been canceled. The mentor cannot obtain another mentee for two days.
 3690	Do you wish to make $s1 your mentor? (Class: $s2 / Level: $s3)
@@ -3559,7 +3559,7 @@
 3708	$s1 will be removed from your Ignore List.\nProceed?
 3709	Could not connect to Authentication Server. Please try again later.
 3710	Invitation can occur only when the mentee is in main class status.
-3711	Do you wish to end the mentoring relationship with $s1?  If the mentor's contract ends, the mentor cannot obtain another mentee for two days.
+3711	Do you wish to end the mentoring relationship with $s1? If the mentor's contract ends, the mentor cannot obtain another mentee for two days.
 3712	Plunder skill has been already used on this target.
 3713	You can bond with a new mentee in $s1 day(s) $s2 hour(s) $s3 minute(s).
 3714	Shilen is engulfing the entire continent with darkness.
@@ -3569,7 +3569,7 @@
 3718	The character's name was not entered.
 3719	Do you wish to delete the selected re-play?
 3720	$s1 Adena is need to operate the manor.
-3721	Not in Use - New Field for Addition
+3721	You are not authorized to do that.
 3722	$s1 has successfully hatched the egg.
 3723	$s1 has failed to hatch the egg.
 3724	$s1 has successfully hatched the egg by creating the perfect temperature for incubation.
@@ -3617,7 +3617,7 @@
 3766	You are the first to visit me in so many years. Perhaps I should treat you with the respect you deserve.
 3767	You have already been blessed with the honor of meeting with me!
 3768	Now, offer your lives and die with grace!
-3769	Not in Use - New Field for Addition
+3769	You cannot receive the reward because your Inventory exceeds the weight/quantity limit.
 3770	The Clan Flag, the symbol of your clan, has been summoned.
 3771	The Clan Flag, the symbol of your clan, is under attack.
 3772	The Clan Flag, the symbol of your clan, has been destroyed.
@@ -3729,9 +3729,9 @@
 3878	$s1 has accepted the request.
 3879	The number of clan request points has increased to $s1.
 3880	A clan request/quest is in progress. Please try again later.
-3881	You cannot redeem it because you don't have  points.
+3881	You cannot redeem it because you don't have points.
 3882	Because $s1 died, $s2 $s3 is destroyed.
-3883	If you cancel a declared war, you will lose 5,000 Clan Reputation. Proceed?
+3883	Do you want to withdraw from the war against $s1? If you withdraw from a declared war, you will lose 10,000 Clan Reputation.
 3884	Can be used only when HP is less than 100%%.
 3885	Can be used only when MP is less than 100%%.
 3886	Can be used only when CP is less than 100%%.
@@ -3792,7 +3792,7 @@
 4034	You can edit the clan information, but deleting text results in a 5-minute penalty.
 4035	Only the clan leader or someone with rank management authority may change clan information.
 4036	Cancelling entry applications results in a 5-minute penalty.
-4037	Entered into list. Entries are in order of Clan Reputation, recalculated every day at 6:30 am.  You can edit the text, but if you delete the text, you cannot enter clan information for 5 minutes. Entered text will be automatically deleted after 30 days.
+4037	Entered into list. Entries are in order of Clan Reputation, recalculated every day at 6:30 am. You can edit the text, but if you delete the text, you cannot enter clan information for 5 minutes. Entered text will be automatically deleted after 30 days.
 4038	You may apply for entry after $s1 minute(s) due to cancelling your application.
 4039	Entry application complete. Use "Entry Application Info" to check or cancel your application. Application is automatically cancelled after 30 days; if you cancel application, you cannot apply again for 5 minutes.
 4040	Entry application cancelled. You may apply to a new clan after 5 minutes.
@@ -3835,7 +3835,7 @@
 4077	Congratulations! $s1 has reached Lv. 85. Will you now go on to unearth more exciting mysteries in the world of Aden?
 4078	Congratulations! $s1 has reached Lv. 85. Further mysteries of Aden will be revealed to you in $s2 second(s).
 4079	You cannot play a disabled character. Please select an enabled character.
-4080	We hope you enjoyed your free trial of Lineage II. With a play pass, you can go beyond Lv. 85  to explore an even more exciting and expansive world in Aden.
+4080	We hope you enjoyed your free trial of Lineage II. With a play pass, you can go beyond Lv. 85 to explore an even more exciting and expansive world in Aden.
 4081	You can run a maximum of 3 clients on the same PC.
 4082	<font color='#FFDF4C'>Path to Awakening</font><br>If you are a new player, you can earn free rewards as you level up by visiting the following website: http://truly-free.lineage2.com/path. Log in with your Lineage II account and claim the rewards when you reach each milestone. Don't miss out!
 4083	Welcome to Lineage II!<br>Please select a character you can use for free, or purchase a Lineage II play pass.
@@ -3845,7 +3845,7 @@
 4087	Clan Entry Application: Deleted 30 days after application, which is $s1/$s2/$s3 at 6:30 am.
 4088	Waiting List: Deleted 30 days after application, which is $s1/$s2/$s3 at 6:30 am.
 4089	Welcome to Lineage II.<br>You create up to 2 characters within a server and level them up to 85 for free. The free service will end for the server when you reach Lv. 85; please use a Lineage II play pass if you wish to continue playing afterwards.<br><br>Free play requirements<br>1: Character Level<br>2: Character XP<br>3: Character Creation Date (chronological order)
-4090	Returning players will receive free passes as a welcome-back gift. The pass must be retrieved within 24 hours.\n\nClick "Receive" to go to the website for the pass. This will log you out of the game. Do you wish to proceed?\n\n(Click Cancel if you have already registered the pass.)
+4090	Returning players will receive free passes as a welcome-back gift. You can see the support goods and pass for Aden warriors in the Free Adventure Service. \n\nClick "Receive" to go to the website for the pass. This will log you out of the game. Do you wish to proceed?\n\n(Click Cancel if you have already registered the pass.)
 4091	This quest cannot be deleted.
 4092	A free player will have limited access to rights as clan leader. Will you transfer clan leadership?
 4093	You have limited access to rights as clan leader as you are a free player.
@@ -3994,7 +3994,7 @@
 4236	You have failed to combined the items. You have obtained $s1.
 4237	You cannot equip $s1 without equipping a brooch.
 4238	You can use World Chat (press &) $s1 more time(s).
-4239	You have spent your World Chat quota for the day. A new day starts every day at 18:30.
+4239	You have spent your World Chat quota for the day. The World Chat quota resets at 7AM everyday.
 4240	You can use World Chat from Lv. $s1.
 4241	You have $s1 sec. until you are able to use World Chat.
 4242	Transmutable after $s1
@@ -4029,7 +4029,7 @@
 4271	Current location: $s1 / $s2 / $s3
 4272	Aaahh! Urgh...!
 4273	No one lays a finger on my sister!
-4274	Ni... Ni... Nidrah!  Ugh... Urrrgh...
+4274	Ni... Ni... Nidrah! Ugh... Urrrgh...
 4275	That is my cue. Til next time!
 4276	Leave this to me. Go! We'll meet again.
 4277	You cannot Awaken when you are a Hero or on the wait list for Hero status.
@@ -4122,8 +4122,8 @@
 4364	Not enough $s1 and $s2.
 4365	The expert has been placed successfully.
 4366	The allocation fee will be deducted from the clan's warehouse, and once the duration expires, it will be withdrawn.\nContinue?
-4367	Clan $s1 currently has the 1 day penalty for kicking out  a member, so it cannot accept new members.
-4368	The Academy/Royal Guard/Order of Knights have been fully filled, so you cannot join the clan.
+4367	Clan $s1 currently has the 1 day penalty for kicking out a member, so it cannot accept new members.
+4368	The clan is full, so you cannot join the clan.
 4369	Clan $s1 has requested to be dissolved, so you cannot join the clan.
 4370	You've already graduated from the Clan Academy, so you cannot join again.
 4371	You cannot join a clan while you are in the Training Camp.
@@ -4176,7 +4176,7 @@
 4418	You don't have enough space in your inventory to continue with compounding. You need more than 2 empty slots.
 4419	The auction for $s1 will begin in 24 hours.
 4420	The auction for $s1 is in progress.
-4421	$s1 is sold for $s2 Adena.
+4421	$s1 was sold for $s2 Adena.
 4422	Processing failed due to death of a character. Resurrect first and try again.
 4423	The Faction Level of $s1 has increased. Open the Factions window to check.
 4424	When you compound, you may lose some or all of the ingredients. Continue?
@@ -4242,6 +4242,120 @@
 4484	Thank you for your unwavering faith for all this time.
 4485	Thank you for your love.
 4486	Lineage 2 will always be by your side.
+4487	You cannot exchange items during the number card game.
+4488	You cannot send a request to a character who is playing the number card game.
+4489	You cannot send or receive attached items during the number card game. You can only read or send mail.
+4490	The number card game has ended because you are too far from the event NPC.
+4491	You cannot do Couple Actions during the number card game.
+4492	$c1 is playing the number card game. You cannot request Couple Actions.
+4493	Guess the number on my card!
+4494	The number is higher!
+4495	The number is lower!
+4496	I can't believe it... I lost!
+4497	I won! Haha.
+4498	The game has ended because you have used all your chances.
+4499	The game has ended because time has run out.
+4500	The reward is kept for $s1 hours. You can receive it from the event NPC before starting a new game.
+4501	You can receive the reward only when your inventory is below 80%% of its weight and quantity limits. (The reward is kept for $s1 hours. You can receive it from the event NPC before starting a new game.)
+4502	NC OTP Service ended on February 15, 2017. You can no longer play the game with the account registered for NC OTP Service. Unregister the account from NC OTP Service, and log in again.
+4503	NC OTP Service ended on February 15, 2017. You can no longer play the game with the account registered for NC OTP Service. Unregister the account from NC OTP Service, and log in again.
+4504	Register the Agathion you want to grow.
+4505	Press the Start button to grow the selected Agathion.
+4506	If the growth fails, the Agathion will be lost.
+4507	Warning of destruction!\n\nIf the growth fails, the Agathion will be destroyed.\n\nAre you sure you want to continue?
+4508	If it fails, the Agathion's growth level will be <reset>.
+4509	If it fails, the Agathion's growth level will be <retained>.
+4510	Press the Start button to grow the selected Agathion.
+4511	The growth failed. The Agathion was lost, and the item was <destroyed>.
+4512	The growth failed. The Agathion's growth level was <reset>.
+4513	Congratulations! The Agathion was successfully grown to <$s1>.
+4514	Do you want to leave the $s1 clan? If you leave, you cannot join another clan for a certain period.
+4515	Do you want to dismiss $s1 from your clan? If you dismiss a clan member, you cannot accept a new member for a certain period.
+4516	You were dismissed from the clan. You cannot join another clan for $s1 minutes.
+4517	You cannot accept a new member for $s1 minutes after dismissing a clan member.
+4518	If you are dismissed from or leave a clan, you cannot join another clan for $s1 minutes.
+4519	$c1 cannot join your clan because $s2 minutes has not passed since they left another clan.
+4520	You cannot join this clan because $s1 minutes has not passed since you left another clan.
+4521	$s1 was summoned as a Primary Agathion.
+4522	$s1‘s power was unlocked, thereby activating all its abilities.
+4523	$s1 was summoned as a Secondary Agathion.
+4524	Only $s1‘s Unique Ability becomes active.
+4525	$s1‘s power was sealed.
+4526	Cannot summon any more Agathions.
+4527	You cannot use the Agathion's power because you are not wearing the left bracelet.
+4528	+$s1$s2 was summoned as a Primary Agathion.
+4529	+$s1$s2‘s power was unlocked, thereby activating all its abilities.
+4530	+$s1$s2 was summoned as a Secondary Agathion.
+4531	Only +$s1$s2‘s Unique Ability becomes active.
+4532	+$s1$s2‘s power was sealed.
+4533	Your status does not allow you to use this function.
+4534	$s1‘s status allows them to use this function.
+4535	Current location: $s1/$s2/$s3 (Balthus Knight Barracks)
+4536	Current location: $s1/$s2/$s3 (Hatchling Habitat)
+4537	Current location: $s1/$s2/$s3 (Near Hatchling Habitat)
+4538	Current location: $s1/$s2/$s3 (Antharas' Nest)
+4539	You do not belong to any clan.
+4540	Your clan's point is 0.
+4541	Your clan has not played the Throne of Heroes.
+4542	You can enter up to 16 alphanumeric characters.
+4543	No spaces are allowed.
+4544	$s1‘s affiliation will be changed.
+4545	$s1‘s privileges will be changed.
+4546	Clan Level $s1 or higher
+4547	Character Level $s1 or higher
+4548	Character Level $s1 or lower
+4549	$s1 playable
+4550	$s1 must be completed
+4551	The cycle is updated at 7:00 every Wednesday.
+4552	If you fulfill the goal, you can earn $s1 Personal Fame.
+4553	Rank $s1
+4554	· Consumes 1 Clan Development Point.\n· Consumes $s1 Clan Reputation Points.\n·Resetting to default does not refund Clan Reputation Points.\n\nDo you want to unlock the characteristic?
+4555	· Consumes $s1 Clan Reputation Points.\n· Unable to retrieve the Clan Reputation Points by resetting to default.\n· Extends the durations of previously unlocked seal.\n\nDo you want to unlock the seal?
+4556	· Consumes 10,000 Clan Reputation Points.\n· Resets all Specialized skills and seal effects.\n· Retrieves the Clan Development Points paid for unlocking.\n· Unable to retrieve the Clam Fame paid for unlocking.\n\nAre you sure to reset?
+4557	Unlocked $s1.
+4558	All clan characteristics were reset.
+4559	Cannot proceed due to a system error. Please try again later.
+4560	Cannot extend the seal activation time any longer.
+4561	Not enough money to unlock Specialization.
+4562	Not enough money to unlock seal.
+4563	Not enough money to reset.
+4564	Activation required
+4565	None
+4566	Locked
+4567	The above item will be activated. Are you sure you want to continue?
+4568	Activated the above item in the Clan Shop.
+4569	The item will be purchased. Are you sure you want to continue?
+4570	Purchased the item successfully.
+4571	Valid for: $s1 days after unlocked
+4572	$s1/5 kills
+4573	$s1/5 killed
+4574	Invite players to the clan
+4575	Grant or remove titles
+4576	View the warehouse (only the clan reader can search items)
+4577	Change a clan member's privilege level and manage the Clan Membership System (registering and editing the clan, approving membership, etc.)
+4578	Declare/Cancel a Clan War
+4579	Start the Throne of Heroes
+4580	Dismiss a clan member
+4581	Manage the clan crest and mark (only the alliance leader can control the alliance crest)
+4582	Buy clan items from the Clan Shop
+4583	Activate clan items in the Clan Shop, manage clan characteristics, and level up the clan
+4584	Summon the clan airship
+4585	Access the Clan Hall
+4586	Use the additional functions set in the Clan Hall
+4587	Use the functions related with the Clan Hall bidding and auction
+4588	Expel outsiders from the Clan Hall
+4589	Set additional functions to the Clan Hall
+4590	Access the castle and open/close the castle gate
+4591	Register, cancel, and approve the list of castle siege and defense warfare
+4592	Use the additional functions set in the castle/fortress
+4593	Set functions such as enhancing traps or castle walls
+4594	Expel outsiders from the castle/fortress
+4595	Manage the castle taxation, castle vault, and control the castle vault deposits/withdrawals
+4596	Hire/position mercenaries
+4597	Manor settings and use blacksmith
+4598	Increase the number of clan members ($s1)
+4599	Increase the number of clan members ($s1) and elite clan members ($s2)
+4600	Clan warehouse available
 4601	- Great P. Def. and skillful Shield Defense<br>- Increased P. Def. for the whole party<br>- Protect party members
 4602	By the will of the Chaos, the power of Abelius, the Golden Commander of the ancient giants, has been combined with the ancient power of light. The blessing of the giants and the light upon him gave him the courage to be the fearless shield of the continent.
 4603	- Great P. Def.<br>- Increased P. Atk. For the whole party<br>Vampiric Rage and Reinforced Dark Panther
@@ -4268,7 +4382,7 @@
 4624	By the will of the Chaos, the power of Ashagen, the greatest assassin of the giants, has been combined with the ancient power of light and wind. This power allowed for quick, tempestuous attacks.
 4625	- High Critical Damage<br>- Reflect Atk. Skill damage
 4626	By the will of the Chaos, the power of Ashagen, the greatest assassin of the giants, has been combined with the ancient power of darkness and wind. This power endowed the Othell Ghost Hunters with speed and critical attacks that made them the ultimate assassins.
-4627	- Specializes in Spoil (Plunder) <br>  (* obtains rare items and ingredients)
+4627	- Specializes in Spoil (Plunder) <br> (* obtains rare items and ingredients)
 4628	By the will of the Chaos, the power of Ashagen, the greatest assassin of the giants, has been combined with the ancient power of the earth and wind. Heightened in all senses, they now utilize their abilities in both battlefield and at home.
 4629	- Balanced Critical Damage and Critical Rate<br>- Stable damage-dealing
 4630	By the will of the Chaos, the power of Cranigg, the ancient giant hero with the Third Eye, has been combined with the ancient power of light. The Sagittarius can now pierce not only the body, but also the soul of an opponent as a result.
@@ -4316,6 +4430,32 @@
 4672	Magic Damage Dealer
 4673	- Specializes in magical two-handed weapons<br> - Close-range Damage Spells<br> - Uses Wind for Defense
 4674	Able to tap into the power of the wind god, Sayha's Seers can diffuse themselves into the wind for transport or defenses. Their talents account for their extraordinary survivability.
+4675	Clan Bulletin
+4676	Use the clan crest/title
+4677	Participate in the Ceremony of Chaos
+4678	Bid/own auctionable Clan Hall
+4679	Create an alliance and declare a clan war
+4680	Participate in clan hall wars, fortress battles, castle siege, and the Throne of Heroes
+4681	Bid/own provisional Clan Hall
+4682	Bid/own super advanced provisional Clan Hall
+4683	Earn Clan Development Points
+4684	Quite good for a newbie!
+4685	Hey! Are you okay?
+4686	You cannot enter because a party member does not belong to your clan.
+4687	<$s1> activated. You can buy it from the Clan Shop.
+4688	<$s1> purchased <$s2> from the Clan Shop.
+4689	Cannot use this function consecutively. Please try again later.
+4690	Cannot use this function while casting a skill.
+4691	Not enough money for activation.
+4692	You don't have enough money to buy the item or your inventory exceeds the weight/quantity limit.
+4693	The clan level rose to $s1.
+4694	Earned the Clan Development Points.
+4695	You earned $s1 Clan Reputation Points for your clan.
+4696	Reset $s1 to default settings.
+4697	Canceled.
+4698	Changed the clan privileges.
+4699	Clan Shop available
+4700	This dummy message is not displayed on the chat window.
 4701	You can easily configure the graphic quality with presets. A higher value means more visual effects. Note that a high value may reduce game performance.
 4702	Reduces the resources allocated to the programs running in the background. Use this option to increase performance.
 4703	Hides the tags for items on the ground. Use this option to increase performance.
@@ -4492,7 +4632,7 @@
 4874	Right/ left click the mouse simultaneously to move.
 4875	Display the names of yourself, your pet, and your servitor.
 4876	Display the names of another player's character, their pet, and their servitor.
-4877	Reset the detailed settings of the activated Chat tab.
+4877	Reset the settings of the activated Chat tab.
 4878	Use the 1:1 inquiry service.
 4879	View the guide.
 4880	View the forums.
@@ -4544,7 +4684,7 @@
 5031	The account has been temporarily restricted due to an incomplete cell phone (ARS) transaction. For more information, please visit http://us.ncsoft.com/en/.
 5032	Your account needs verification.<br>Visit the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">)</font>, verify your account and try again.
 5033	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-5034	This account has declined the User Agreement or has requested for membership withdrawal.  Please try again after <br><font color="FFDF4C">cancelling the Game Agreement declination</font> or <font color="FFDF4C">cancelling the membership withdrawal request</font>.
+5034	This account has declined the User Agreement or has requested for membership withdrawal. Please try again after <br><font color="FFDF4C">cancelling the Game Agreement declination</font> or <font color="FFDF4C">cancelling the membership withdrawal request</font>.
 5035	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
 5036	Your account has been suspended.<br>For more information, visit <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
 5037	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
@@ -4574,15 +4714,57 @@
 5061	A character belonging to a <font color="FFDF4C">clan</font> may not be deleted.
 5062	A <font color="FFDF4C">Clan Leader</font> may not be deleted. Please disband the clan and try again.
 5063	A <font color="FFDF4C">Clan Member</font> may not be deleted. Please leave the clan and try again.
-5064	Authentication has failed as you have entered an incorrect authentication number or did not enter the authentication number.  If you fail authentication <font color="FFDF4C">3 times</font> in a row, game access will be restricted for <font color="FFDF4C">30 minutes</font>.
+5064	Authentication has failed as you have entered an incorrect authentication number or did not enter the authentication number. If you fail authentication <font color="FFDF4C">3 times</font> in a row, game access will be restricted for <font color="FFDF4C">30 minutes</font>.
 5065	An unexpected error has occured. Please contact our Customer Support Team at https://support.lineage2.com
 5066	An unexpected error has occured. Please contact our Customer Support Team at https://support.lineage2.com
-5067	If you fail authentication <font color="FFDF4C">3 times</font> in a row,  game access will be restricted for <font color="FFDF4C">30 minutes</font>. Please try again later.
-5068	To request an NC OTP service,<br>run the cell phone NC OTP service<br>and enter the displayed NC OTP number within 1 minute.<br>If you did not make the request,<br>leave this part blank,<br>and click on the login tab.
+5067	If you fail authentication <font color="FFDF4C">3 times</font> in a row, game access will be restricted for <font color="FFDF4C">30 minutes</font>. Please try again later.
+5068	To request an OTP service,<br>run the cell phone OTP service<br>and enter the displayed OTP number within 1 minute.<br>If you did not make the request,<br>leave this part blank,<br>and click on the login tab.
 5069	Please enter card number <font color="FFDF4C">$s1</font>.
 5070	<font size='15' color='#FFDF5F'>As of April 22nd 2015, Lineage II launched the updated Classic Server.</font><br><font size='13' color='#ABABAB'>Giran, Elf, Dark Elf</font> → Giran (NEW)
 5071	<font color='#FFDF4C'>Generous benefits await the returning heroes!</font>
 5072	To get the dormant user benefits, go to <font color='#FFDF4C'>Lineage II Homepage > Dormant user coupon page</font>(<font color='#6699FF'><a href='asfunction:homePage'>lineage2.plaync.com/service/freecoupon/dormancy</a></font>).<br>Get the dormant user benefits and access our game!
+5100	Available only for members authorized to activate items
+5101	No war in progress. The clan must be level 5 or higher to start a clan war.
+5102	Assigned the target to the selected division.
+5103	Changed the target's privileges.
+5104	Cannot use this function while using a Private Store.
+5105	Cannot report a character who is fighting in a duel.
+5106	No Spirits are available.
+5107	<$s1> will be your attack attribute from now on.
+5108	<$s1> will evolve to <$s2-Star>. $s3-Star Spirits can grow up to Lv. $s4.
+5109	<$s1> evolved to <$s2-Star>!
+5110	<$s1, $s2-Star> card will be extracted. After the extraction, the Spirit will return to the egg state.
+5111	Extracted <$s1, $s2-Star> card successfully!
+5112	Register a card you want to drain. $s1-Star Spirits can grow up to Lv. $s2.
+5113	<$s1, $s2-Star> card will be drained. $s3-Star Spirit scan grow up to Lv. $s4.
+5114	Drain successful!
+5115	Characteristic Points will be used to enhance the stats of <$s1>. You can retrieve these points by resetting the stats. Are you sure you want to continue?
+5116	Characteristics were applied successfully.
+5117	To reset the characteristics of the selected spirit, the following ingredients will be consumed, and <$s1> Characteristic Points will be lost. Are you sure you want to continue?
+5118	Reset the selected Spirit's Characteristics successfully.
+5119	Cannot report a character who has signed up for Olympiad.
+5120	Not allowed to sign up for Olympiad while the report of illegal program users is being verified.
+5121	The item has been sealed.
+5122	The seal has been released from the item.
+5123	Not allowed because the item is sealed. Try again after releasing the seal.
+5124	$s1 cannot be sealed.
+5125	Not allowed because $s1 is not sealed.
+5126	Canceled the use of the Seal/Release Seal Scroll.
+5127	Sealing/unsealing is in progress. Please try again after completing this process.
+5128	You cannot seal/unseal an item while you're running a Private Store or Private Workshop.
+5129	Select an item you want to seal.
+5130	The selected item will be sealed.\nTo unseal it, you must go through the identify verification process.
+5131	<Note on sealing>\nYou can release the seal by requesting N Shop for the Release Seal Scroll Box.
+5132	Select an item you want to unseal.
+5133	The seal will be removed from the selected item.
+5134	Cannot grow any more.
+5135	Used all the registered items.
+5136	$s1 Attribute Attack Power
+5137	$s1 Attribute Defense
+5138	$s1 Attribute Critical Rate
+5139	$s1 Attribute Critical Damage
+5140	$s1 will be used. You can use $s2 times more.
+5141	$s1 is used. $s1 will be lost because it has been used the maximum amount of times.
 5142	Level $s1 Reward
 5300	Your account has been suspended due to account theft. If you registered your e-mail in your personal information, a notification mail will have been sent, so please check. If you have nothing to do with the account theft, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Account theft report center</font> and submit your letter of objection. For more information, <font color="FFDF4C">contact us via 1-to-1 inquiry through the Support Center</font>.
 5301	Your account has been suspended as per our management policy for manipulating our GM service or customer support service to disrupt other users' normal gameplay or the company's game operation. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
@@ -4618,6 +4800,7 @@
 5331	Your account has been suspended temporarily for an objection raised to your real name verification process. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
 5332	Your account has been idle for a long time. If you do not play the game for a certain period, your account will become idle. You can reactivate your account at the <font color="FFDF4C">plaync webpage (</font><font color="6699FF"><a action="url https://id.plaync.com/account/dormant/index">id.plaync.com/account/dormant/index</a></font><font color="FFDF4C">)</font>.
 5333	Your account has been completely blocked due to account theft. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via the Support Center</font>.
+5334	Your account is temporarily banned because a suspicious attempt to sign into your account was detected. You can regain access by completing the identity verification process in our website. For more information, visit the <font color="FFDF4C">plaync website (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and send a query to Customer Service 1:1 Petition</font>.
 5501	$s1 has been killed by $s2.
 5502	$s1 has been killed by a monster.
 5503	$s1 has died.
@@ -4656,6 +4839,35 @@
 5536	$s1: Moving.
 5537	$s1: Be careful!
 5538	You must be in a group to access the Group channel.
+5539	Will you accept $s1‘s group invitation?
+5540	$s1 joined the group.
+5541	$s1 has declined to join the group.
+5542	Invitation was canceled because $s1 did not respond.
+5543	Invitation was canceled because $s1 did not respond.
+5544	The player belongs to another group.
+5545	Failed to invite the player as they are fighting in the arena.
+5546	Failed to invite the player as they are preparing to fight in the arena.
+5547	Cannot find the target.
+5548	You cannot invite yourself.
+5549	Select a player you want to invite to the group.
+5550	Cannot invite a new player because your group is full.
+5551	$s1 left the group.
+5552	The group was disbanded.
+5553	You don't belong to any group.
+5554	Dismissed $s1 from the group.
+5555	Only the group leader can dismiss a group member.
+5556	You cannot dismiss yourself.
+5557	$s1 is now the group leader.
+5558	Only the group leader can delegate privileges.
+5559	You cannot delegate privileges to yourself.
+5560	You can delegate privileges only to a group member.
+5561	You must be a member of the group to use the group channel.
+5562	Input a name and press the Enter key to invite
+5563	You cannot resurrect while you're signing up for battle.
+5564	You cannot apply as some of your group members are still in the arena.
+5565	Liberated $s1 Stage $s2.
+5566	The seal of the monster can be removed.
+5567	$s1: $s2! Be careful!
 6001	The item has been successfully purchased.
 6002	The item has failed to be purchased.
 6003	The item you selected cannot be purchased. Unfortunately, the sale period ended.
@@ -4905,6 +5117,8 @@
 6833	The character has already been blocked.
 6834	Your character has been restricted. <br>Please check the icon below for details.
 6835	Your account has been suspended as per our management policy for disrupting other users' normal gameplay or the company's game operation. For more information, contact us through the Support Center.
+6836	The security card service has ended so you will be able to connect to the game after cancelling the security card. In order to protect your account, please cancel the security card and request Google OTP.
+6837	Please enter the OTP number. The numbers change for each login.
 7001	Cannot proceed until the current dice roll is over.
 7002	Your inventory's weight/limit has been exceeded, so you can't participate in the dice roll.
 7003	You are outside the range to participate in the dice roll.
@@ -5035,7 +5249,7 @@
 7128	Failed to pester. Please check the conditions and try again.
 7129	You'll get free Vitality mode activations, and the number from the previous day will be reset.
 7130	The item you selected has either already been sold or canceled, so it's not available for purchase.\nPlease check again.
-7140	You do not have enough XP, so the  Karma amount cannot be reduced.
+7140	You do not have enough XP, so the Karma amount cannot be reduced.
 7150	$s1m
 7151	<html><body>Click on the <font color='#FFDF4C'>TAB</font> to select the next target</body></html>
 7152	You cannot gift yourself.
@@ -5238,7 +5452,7 @@
 7349	You'ved ended your master-student relationship with $s1. You must wait a full day to find another one.
 7350	Your student $s1 has reached Lv. 77 and graduated.\nNow, even if your graduated student logs in, you won't get the buff.\nFind another student.
 7351	You've reached Lv. 77 and graduated. Graduated students can no longer receive the buff.
-7352	$s1  has become your master.
+7352	$s1 has become your master.
 7353	$s1 has become your student.
 7354	$s1 day(s), $s2 hour(s), $s3 minute(s)
 7355	Your student has achieved a goal so you are sending a reward.
@@ -5340,7 +5554,7 @@
 7451	You already have a clan hall, so you cannot bid.
 7452	You've exceeded the limit and cannot retrieve the item. Please check your limit in the inventory.
 7453	You've exceeded the limit so you cannot deposit the item. Please check your items in the warehouse.
-7454	You can check the time for re-entering the instance zone by using the  '/instancezone' command.
+7454	You can check the time for re-entering the instance zone by using the '/instancezone' command.
 7455	The system cannot be used with the light client.
 7456	Not enough seeds to make the purchase.
 7457	Not enough Adena to purchase seeds.
@@ -5352,7 +5566,7 @@
 7463	Current Location: Ivory Tower Entrance
 7464	The Great Growth event is here. XP from hunting and item drop rate are doubled between 20:00-22:00 every day.
 7465	Cannot obtain the item from this location.
-7466	Cannot mount/dismount from a strider while in battle.
+7466	You cannot mount or dismount from a strider that is in battle.
 7467	A team that entered first is currently in battle. Please wait until it's over.
 7468	You've received SP as an additional reward.
 7469	You received event items. Old Bronze Box x$s1, Faint Silver Box x$s2, Shiny Gold Box x$s3.

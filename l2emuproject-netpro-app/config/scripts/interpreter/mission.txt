@@ -1,0 +1,115 @@
+1001	Hunt Lv. 85+ monsters
+1002	Carry out Lv. 99+ faction quests
+1003	Explore Lv. 85-94 instanced zones
+1004	Explore Lv. 95-99 instanced zones
+1005	Explore Lv. 100-105 instanced zones
+1006	Ashen Shadow and Mystic Tavern
+1007	Go Fishing
+1008	Rare Auction Bidding
+1009	Attempt Augmenting
+1010	Attempt Combining
+1011	Lv. 85-94 Field Raid Hunt
+1012	Lv. 95-99 Field Raid Hunt
+1013	Lv. 100-105 Field Raid Hunt
+1014	Explore Alliance Instanced Zone (Novice)
+1015	Olympiad Participation
+1016	Ceremony of Chaos Participation
+1017	Explore Alliance Instanced Zone (Intermediate)
+1018	Explore Alliance Instanced Zone (Advanced)
+2001	Lv. 85-94 Field Boss Hunt
+2002	Lv. 100-105 Field Boss Hunt
+2003	Join the Keucereus Defense
+2004	Catch Nimble Fish
+2005	Dimensional Warp Assault
+2006	Outer Messiah's Castle Battle
+2007	Challenge the Throne of Heroes
+2008	1st Rank at the Throne of Heroes
+2009	Defeat the Dimensional Raid Boss
+2010	Castle Siege: Successfu Attack
+2011	Castle Siege: Successful Defense
+2012	Dimensional Siege: Successful Attack
+2013	Dimensional Siege: Successful Defense
+2014	Olympiad Winner
+2015	Olympiad Hero
+2016	Ceremony of Chaos Winner
+2017	Ceremony of Chaos Champion
+2018	Throne of Heroes: Defeat Goldberg
+3001	Reach Main Class Lv. 99
+3002	Reach Main Class Lv. 100
+3003	Reach Main Class Lv. 101
+3004	Reach Main Class Lv. 102
+3005	Reach Main Class Lv. 103
+3006	Reach Main Class Lv. 104
+3007	Reach Main Class Lv. 105
+3008	Reach Main Class Lv. 106
+3009	Reach Main Class Lv. 107
+3010	Reach Main Class Lv. 108
+3011	Reach Main Class Lv. 109
+3012	Reach Main Class Lv. 110
+3013	Reach Dual Class Lv. 99
+3014	Reach Dual Class Lv. 100
+3015	Reach Dual Class Lv. 101
+3016	Reach Dual Class Lv. 102
+3017	Reach Dual Class Lv. 103
+3018	Reach Dual Class Lv. 104
+3019	Reach Dual Class Lv. 105
+3020	Reach Dual Class Lv. 106
+3021	Reach Dual Class Lv. 107
+3022	Reach Dual Class Lv. 108
+3023	Reach Dual Class Lv. 109
+3024	Reach Dual Class Lv. 110
+3025	Obtain Noblesse status
+3026	Obtain Exalted Status
+3027	Monster Hunting: First Steps
+3028	Monster Hunting: Seasoned
+3029	Monster Hunting: Expert
+3030	Rare Tavern Monster Hunting
+3031	World Boss Raid: First Steps
+3032	World Boss Raid: Seasoned
+3033	World Boss Raid: Expert
+3034	Olympiad Beginner
+3035	Olympiad Veteran
+3036	Olympiad Master
+3037	Olympiad: Hero of Heroes
+3038	Olympiad: From Defeat to Victory
+3039	Olympiad Participation Award
+3040	Ceremony of Chaos Beginner
+3041	Ceremony of Chaos Veteran
+3042	Ceremony of Chaos Master
+3043	Ceremony of Chaos: Best of the Best
+3044	Ceremony of Chaos: Survival Expert
+3045	Ceremony of Chaos Participation Award
+3046	Ceremony of Chaos Consolation Prize
+3047	Angler's Descendant
+3048	Big Player in the Auction House
+3049	Novice Recycler
+3050	Professional Recycler
+3051	Expert Recycler
+3052	Obtain Talisman- Golden Bough!
+3053	Achieve Venir's Talisman Stage 15
+3054	Achieve Venir's Talisman Stage 24
+3055	Augmenting Expert: Weapon
+3056	Augmenting Expert: Accessory
+3057	Augmenting Expert: Hair Accessory
+3058	All Wiped Out
+3060	Zodiac Agathion Researcher
+3061	Zodiac Agathion Collector
+3062	Zodiac Agathion Professional
+3063	Apocalypse Weapon +10
+3064	Apocalypse Weapon +15
+3065	Apocalypse Weapon +20
+3066	Specter Weapon +10
+3067	Specter Weapon +15
+3068	Specter Weapon +20
+3069	Amaranthine Weapon +10
+3070	Amaranthine Weapon +15
+3071	Amaranthine Weapon +20
+3072	Bloody Amaranthine Weapon +10
+3073	Bloody Amaranthine Weapon +15
+3074	Bloody Amaranthine Weapon +20
+3075	Dark Amaranthine Weapon +10
+3076	Dark Amaranthine Weapon +15
+3077	Dark Amaranthine Weapon +20
+4001	Using Freya's Scrolls
+4002	Gain PC Cafe Points
+4015	Exalted: Golden Opportunity

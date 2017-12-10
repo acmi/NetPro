@@ -623,6 +623,55 @@
 8626	Babayaga
 8627	Elk
 8628	Frintezza, Enamored
+8629	Virgo Agathion
+8630	Capricorn Agathion
+8631	Libra Agathion
+8632	Aries Agathion
+8633	Taurus Agathion
+8634	Leo Agathion
+8635	Gemini Agathion
+8636	Scorpio Agathion
+8637	Aquarius Agathion
+8638	Pisces Agathion
+8639	Sagittarius Agathion
+8640	Cancer Agathion
+8641	Virgo Agathion
+8642	Capricorn Agathion
+8643	Libra Agathion
+8644	Aries Agathion
+8645	Taurus Agathion
+8646	Leo Agathion
+8647	Gemini Agathion
+8648	Scorpio Agathion
+8649	Aquarius Agathion
+8650	Pisces Agathion
+8651	Sagittarius Agathion
+8652	Cancer Agathion
+8653	Virgo Agathion
+8654	Capricorn Agathion
+8655	Libra Agathion
+8656	Aries Agathion
+8657	Taurus Agathion
+8658	Leo Agathion
+8659	Gemini Agathion
+8660	Scorpio Agathion
+8661	Aquarius Agathion
+8662	Pisces Agathion
+8663	Sagittarius Agathion
+8664	Cancer Agathion
+8665	Virgo Agathion
+8666	Capricorn Agathion
+8667	Libra Agathion
+8668	Aries Agathion
+8669	Taurus Agathion
+8670	Leo Agathion
+8671	Gemini Agathion
+8672	Scorpio Agathion
+8673	Aquarius Agathion
+8674	Pisces Agathion
+8675	Sagittarius Agathion
+8676	Cancer Agathion
+8677	Rico
 12077	Wolf
 12311	Hatchling of the Wind
 12312	Hatchling of the Stars
@@ -1162,6 +1211,23 @@
 13550	Angel of Death
 13551	Magic Woodpile
 13552	Large Magic Woodpile
+13553	Virgo Agathion
+13554	Capricorn Agathion
+13555	Libra Agathion
+13556	Aries Agathion
+13557	Taurus Agathion
+13558	Leo Agathion
+13559	Gemini Agathion
+13560	Scorpio Agathion
+13561	Aquarius Agathion
+13562	Pisces Agathion
+13563	Sagittarius Agathion
+13564	Cancer Agathion
+13565	Inhale Soul
+13566	Inhale Soul
+13567	Inhale Soul
+13568	Inhale Soul
+13569	Inhale Soul
 14001	Reanimated Man
 14002	Reanimated Man
 14003	Reanimated Man
@@ -2360,6 +2426,7 @@
 15208	Discarded Wizard's Soul
 15209	Discarded Wizard's Soul
 15210	Discarded Wizard's Soul
+15211	Dominant Flag
 15922	[not named in client]
 15923	[not named in client]
 15925	[not named in client]
@@ -4069,6 +4136,46 @@
 19671	[not named in client]
 19672	Firecracker Box
 19673	[not named in client]
+19674	[not named in client]
+19675	Mechanical Device
+19676	Area Dummy
+19677	Seal of Gnosis, Seven Signs
+19678	Seal of Strife, Seven Signs
+19679	Seal of Avarice, Seven Signs
+19680	Seal of Punishment, Seven Signs
+19681	Seal of Awakening, Seven Signs
+19682	Seal of Calamity, Seven Signs
+19683	Seal of Destruction, Seven Signs
+19684	Special Raid Skill
+19685	Superion Giant
+19686	Hunter Giant
+19687	Enchant Type Giant
+19688	Embryo Apostle
+19689	Ward of Danger
+19690	Spicula Elite Captain
+19691	Spicula Elite Lieutenant
+19692	Elite Clone Member
+19693	Spicula Elite Member
+19694	Boz, Spicula Clone Generator
+19695	Antharas
+19696	Clan Flag
+19697	Clan Flag
+19698	Clan Flag
+19699	Clan Flag
+19700	Antharas
+19701	Seed of Hellfire Monster
+19702	Lithra Bud, Flower of the Present
+19703	Nerupa Bud, Flower of the Past
+19704	[not named in client]
+19705	Fairy
+19706	Satyr
+19707	Violent Fairy
+19708	Isle of Souls Monster
+19709	Shadow of the Mother Tree Monster
+19710	Spezion
+19711	Field Raid Monster
+19712	Field Raid Monster
+19713	Field Raid Monster
 20001	Gremlin
 20002	Rabbit
 20003	Goblin
@@ -5837,7 +5944,7 @@
 23258	Crane Golem
 23259	Broken-bodied Golem
 23260	Summoned Golem Body
-23261	Broken Berserk Golem
+23261	Control Golem
 23262	Spicula Elite Soldier
 23263	Broken Golem of Repairs
 23264	Broken Drill Golem
@@ -6090,7 +6197,7 @@
 23559	El Floato
 23560	El Floato
 23561	Harpe
-23562	Harpe, Separated Evil Thoughts
+23562	Harpe, Spirit of the Night
 23563	Croamis, Gatekeeper
 23564	Croa
 23565	Amis
@@ -6342,6 +6449,8 @@
 23813	Cantera Floxis
 23814	Cantera Belika
 23815	Cantera Bridget
+23816	Om Bathus, Hunter
+23817	Om Kshana, Hunter
 23820	Ketra Elite Soldier
 23821	Ketra Commando
 23822	Ketra Centurion, Ketra Orc Leader
@@ -6594,6 +6703,78 @@
 24069	Alfred von Hellmann
 24070	Kain Van Halter, Traitor
 24071	Kain Van Halter, Traitor
+24072	Paragon, Great Temple Guardian
+24073	Creed Guardian
+24074	Soul Reaper
+24075	Blind Berserker
+24076	Soul Destroyer
+24077	Judge of Heresy
+24078	Choir of Darkness
+24079	Temple Raider
+24080	Temple Passionate Soldier
+24081	Temple Guardian Captain
+24082	Temple Elite Captain
+24083	Temple Dark Wizard
+24084	Temple Flame Master
+24085	Temple Archon
+24086	Temple High Priest
+24087	Antharas
+24088	Antharas
+24089	Hatchling
+24090	Hatchling
+24091	Gem Dragon
+24092	Great Temple Butcher
+24093	Great Temple Decanus
+24094	Great Temple Soul Guide
+24095	Great Temple Dark Judge
+24096	Great Temple Siege Chariot
+24097	Gem Dragon
+24098	Hatchling Bomber
+24099	Cyclone
+24100	Netherworld Butcher
+24101	Netherworld Mino
+24102	Extraterrestrial Demon
+24103	Netherworld Shaman, Watcher
+24104	Netherworld Salamander, Hunter
+24105	Netherworld Golem
+24106	Netherworld Archon, Slayer
+24107	Netherworld Banshee, Avenger
+24108	Extraterrestrial Berserker
+24109	Extraterrestrial Shaman, Watcher
+24110	Extraterrestrial Salamander, Hunter
+24111	Extraterrestrial Golem
+24112	Extraterrestrial Archon, Slayer
+24113	Extraterrestrial Banshee, Avenger
+24114	Extraterrestrial Binder
+24115	Lithra Butterfly
+24116	Lithra Needle
+24117	Crystal Reep
+24118	Crystal Reep, Repeat
+24119	Crystal Needle
+24120	Crystal Needle, Repeat
+24121	Treant Blossom
+24122	Treant Blossom, Repeat
+24123	Flush Teasle
+24124	Flush Teasle, Repeat
+24125	Creeper Rampike
+24126	Creeper Rampike, Repeat
+24127	Lithra Aprias, Lithra Bloom
+24128	Nerupa Aprias, Nerupa Bloom
+24129	Spicula Security Captain
+24130	Berserk Control Golem
+24131	Explosive Energy
+24132	Apparition Swordsman
+24133	Apparition Magus
+24134	Apparition Monk
+24135	Prison Warden
+24136	Prison Watchman
+24137	Prison Manager
+24138	Nightmare Creature
+24139	Reep Child
+24140	Needle Child
+24141	Blossom Child
+24142	Teasle Child
+24143	Netherworld Archer, Scout
 25001	Greyclaw Kutus, Raid Boss
 25002	Kutus' Escort, Raid Fighter
 25003	Kutus' Pawn, Raid Fighter
@@ -7198,18 +7379,18 @@
 25650	Awakened Ancient Executor, Raid Boss
 25651	Awakened Ancient Prophet, Raid Boss
 25652	Awakened Ancient Prophet, Raid Boss
-25653	Kanadis Herald, Invading Forces
-25654	Kanadis Herald, Invading Forces
+25653	Kanadis Guardian, Invading Forces
+25654	Kanadis Punisher, Invading Forces
 25655	Kanadis Herald, Invading Forces
-25656	Kanadis Fanatic
-25657	Kanadis Fanatic
+25656	Kanadis Follower
+25657	Kanadis Layperson
 25658	Kanadis Fanatic
-25659	Kanadis Guide, Invading Forces
+25659	Kanadis Evangelist, Invading Forces
 25660	Kanadis Guide, Invading Forces
 25661	Kanadis Guide, Invading Forces
 25662	Kanadis Follower
-25663	Kanadis Follower
-25664	Kanadis Follower
+25663	Kanadis Sniper
+25664	Kanadis Fighter
 25667	Cannibalistic Stakato Captain, Shadow of Violence
 25668	Cannibalistic Stakato Captain, Shadow of Violence
 25669	Cannibalistic Stakato Captain, Shadow of Violence
@@ -7761,6 +7942,78 @@
 26246	Berserker, Guardian Captain's Immediate
 26247	Roa, Camille's Special Subordinate
 26248	Frederick the Destroyer
+26249	Darion
+26250	Goldberg
+26251	Handy Cannon Gunner
+26252	Anchor Warrior
+26253	Operator
+26254	Axe Warrior
+26255	Zaken
+26256	Devil Guardian
+26257	Devil Spearshooter
+26258	Devil Warrior
+26259	Devil Dolores
+26260	Blader
+26261	Tiat
+26262	Dragontroop Spellshifter
+26263	Dragontroop Royal Guard Captain
+26264	Dragontroop Lancer
+26265	Dragontroop Berserker
+26266	Tauti
+26267	Mary Reed
+26268	Shield Master
+26269	Spear Master
+26270	Bow Master
+26271	Magic Master
+26272	Dancing Bard, GM's Guardian
+26273	Golden Bat Dandy, GM's Guardian
+26274	Snow Man, GM's Guardian
+26275	Super Kat the Cat, GM's Guardian
+26276	Spicula Zero, Raid Boss
+26277	Ashen Shadow Expeditionary Force Leaders Kantu, Raid Boss
+26278	Ashen Shadow Expeditionary Force Leaders Kai, Raid Boss
+26279	Ashen Shadow Expeditionary Force Leaders Heine, Raid Boss
+26280	Ashen Shadow Expeditionary Force Leaders Xenon, Raid Boss
+26281	Ashen Shadow Expeditionary Force Soldier Recruit, Raid Fighter
+26282	Ashen Shadow Expeditionary Force Scout, Raid Fighter
+26283	Ashen Shadow Expeditionary Force Wizard, Raid Fighter
+26284	Ashen Shadow Expeditionary Force Healer, Raid Fighter
+26285	Blood Devil Brutal, Raid Boss
+26286	Blood Devil Akun, Raid Boss
+26287	Blood Devil Epica, Raid Boss
+26288	Blood Queen Julia, Raid Boss
+26289	Blood Devil Knight, Raid Fighter
+26290	Blood Devil Shooter, Raid Fighter
+26291	Blood Devil Sorceress, Raid Fighter
+26292	Blood Devil Shaman, Raid Fighter
+26293	Valiant Edgar, Raid Boss
+26294	Vicious Blood, Raid Boss
+26295	Coquette Morrigan, Raid Boss
+26296	Cunning Croby, Raid Boss
+26297	Vampire Berserker, Raid Fighter
+26298	Vampire Shooter, Raid Fighter
+26299	Vampire Wizard, Raid Fighter
+26300	Vampire Witch, Raid Fighter
+26301	Evil Spirit Knight Tretan, Raid Boss
+26302	Evil Spirit Knight Boros, Raid Boss
+26303	Evil Spirit Alusion, Raid Boss
+26304	Evil Spirit's Puppet Graff, Raid Boss
+26305	Evil Spirit Warrior, Raid Fighter
+26306	Evil Spirit Archer, Raid Fighter
+26307	Evil Spirit Black Wizard, Raid Fighter
+26308	Evil Spirit Shaman, Raid Fighter
+26309	Death Reaper, Raid Soul Plunderer
+26310	Death Reaper, Raid Soul Plunderer
+26311	Extraterrestrial Makkum, Raid Boss
+26312	Lithra, Raid Boss
+26313	Lithra Bud, Raid Fighter
+26314	Lithra Aprias, Raid Fighter
+26315	Lithra Butterfly, Raid Fighter
+26316	Lithra Needle, Raid Fighter
+26317	Spezion, Raid Boss
+26318	Spezion's Despair, Raid Fighter
+26319	Spezion's Lunacy, Raid Fighter
+26320	Spezion's Rage, Raid Fighter
 27001	Orc Sniper
 27002	Orc Captain
 27003	Spirit Of Mirrors, Quest Monster
@@ -8269,6 +8522,10 @@
 27544	Nebulite Eye, Quest Monster
 27545	Nebulite Watch, Quest Monster
 27546	Nebulite Golem, Quest Monster
+27547	Chaos Wraith, Quest Monster
+27548	Mysterious Monster Plant, Quest Monster
+27549	Flame Thirster, Quest Monster
+27550	Wind Vortex
 29001	Queen Ant
 29002	Queen Ant Larva
 29003	Nurse Ant
@@ -8583,6 +8840,13 @@
 29315	Mimillion, Red Lightning Watchman
 29316	Mimillus, Blue Lightning Watchman
 29317	Lindvior, Wind Dragon
+29318	Etis van Etina, Overlord
+29319	Etis van Etina, Overlord
+29320	Kain Van Halter, Disciple of Void
+29321	Martyr of Greed
+29322	Guide of Pride
+29323	Seeker of Despair
+29324	Liberator of Lust
 30001	Lector, Weapon Merchant
 30002	Jackson, Armor Merchant
 30003	Silvia, Accessory Merchant
@@ -8703,7 +8967,7 @@
 30143	Trudy, Master
 30144	Harne, Magister
 30145	Vlasty, Magister
-30146	Teleport Device
+30146	Mintia, Gatekeeper
 30147	Unoren, Weapon Merchant
 30148	Ariel, Armor Merchant
 30149	Creamees, Accessory Merchant
@@ -10245,8 +10509,8 @@
 32021	Ice Sculpture
 32022	Kier
 32023	Ice Shelf
-32024	Mulia, Clan Trader
-32025	Ilia, Clan Trader
+32024	Mulia, (Former) Clan Trader
+32025	Ilia, Clan Hall Belt Manager
 32026	Hestui Guard
 32027	Divine Furnace
 32028	Holy Grail
@@ -10523,7 +10787,7 @@
 32324	Black Stone Monolith
 32325	Yin, Attribute Master
 32326	Yang, Attribute Master
-32327	Adventurers' Guide, Newbie Buff Manager
+32327	Adventurers' Guide, Buff Manager
 32328	Crystalline Golem
 32330	Garden Guard
 32331	[not named in client]
@@ -11950,7 +12214,7 @@
 33783	Lanya, Eva's Spirit
 33784	Heine Water Source
 33785	Altar of Shilen
-33786	Mother Tree
+33786	Mother Tree's Memory
 33787	Pa'agrio Temple
 33788	Deserted Dwarven House
 33789	Cave of Souls
@@ -12112,7 +12376,7 @@
 33947	Grakon, Warehouse Keeper
 33948	Astiel, Gatekeeper
 33949	Anita, Auction House Manager
-33950	Adventurer's Guide, Apprentice
+33950	Adventurers' Guide, Apprentice
 33951	Sivanthe, Forest Patrol
 33952	Leira, Forest Patrol
 33953	Milone, Forest Patrol
@@ -12471,7 +12735,7 @@
 34327	Violet, Messenger from the Blackbird Clan
 34328	Laia, Auction Broker
 34329	Gift Giving Dandy, To the Hero Who Defeated Kain Dandy
-34330	Chorong, Holiday Fairy
+34330	Chorong, Event Manager
 34331	Logart Van Dyke, Royal Guard Captain
 34332	Dinford, Quartermaster
 34333	Giselle von Hellmann
@@ -12491,11 +12755,77 @@
 34347	Etis van Etina
 34348	Victory, Congratulations
 34349	Bliss, Magic Flame Trader
+34350	Memoria, Number Card Game Maitre ‘D
 34351	Dancing Cat
 34352	Dancing Cat
 34353	Dancing Cat
 34354	Dancing Cat
 34355	Leona Blackbird, Lord of the Blackbird Clan
+34356	Rafini
+34357	Orin, Entrance Manager
+34358	Messenger of Victory, Embryo Victory News
+34359	Tarti
+34360	Tarti
+34361	Stig Mach, Balthus Knight Captain
+34362	Herphah
+34363	[not named in client]
+34364	[not named in client]
+34365	Tarti
+34366	Stig Mach, Balthus Knight Captain
+34367	Herphah
+34368	Fellow, Balthus Knight
+34369	Ateld, Balthus Knight
+34370	Paulia, Balthus Knight
+34371	Rash, Support Troop Lieutenant
+34372	Balthus Knight
+34373	Roien, Sigel Phoenix Knight
+34374	Brome, Tyrr Doombringer
+34375	Mion, Othell Fortune Seeker
+34376	Takhun, Iss Doomcryer
+34377	Tariah, Eviscerator
+34378	Elias, Wynn Arcana Lord
+34379	Elena, Aeore Eva's Saint
+34380	Ultrian, Feoh Storm Screamer
+34381	Narita, Sayha's Seer
+34382	Kayleen, Yul Ghost Sentinel
+34383	McCoy, Hatchling Manager
+34384	Sibis, Balthus Knight
+34385	Camcud, Balthus Knight
+34386	Sigel Knight: Master Defender, Sigel Knight Awakening
+34387	Powerful Melee Damage Dealer, Tyrr Warrior Awakening
+34388	Othell Rogue: Dagger Master, Othell Rogue Awakening
+34389	Yul Archer: Bow/Crossbow Master, Yul Archer Awakening
+34390	Feoh Wizard: Master Wizard, Feoh Wizard Awakening
+34391	Iss Enchanter: Buff Master, Iss Enchanter Awakening
+34392	Wynn Summoner: Master Summoner, Wynn Summoner Awakening
+34393	Aeore Healer: Master Healer, Aeore Healer Awakening
+34394	Navari, Queen
+34395	Nameless Tombstone
+34396	White Flower
+34397	Nameless Revenant
+34398	Memorial
+34399	Lanaka, Priest
+34400	Akher, Priest
+34401	Seed of Wind
+34402	Wind Grass
+34403	Pure Flame Flower
+34404	Wynn Feline Queen, Elias
+34405	Magician, Event Manager
+34406	Tarti
+34407	Fairy Citizen
+34408	Fairy Citizen
+34409	Fairy Citizen
+34410	Fairy Citizen
+34411	Asterios, Hierarch
+34412	Nerupa
+34413	Penny, Adventure Guildsman
+34414	Lapathia, Black Wizard
+34415	Ceriel
+34416	Rain, Grocer
+34417	Saypia, Warehouse Keeper
+34418	GM Lassana, Present Delivering
+34419	Luna, Dragon Slayer
+34423	Draco, Ancient Dragon
 35010	Mercenary
 35011	Mercenary
 35012	Mercenary
@@ -13964,8 +14294,8 @@
 36476	Wyvern Manager, Demon Fortress
 36477	Wyvern Manager, Monastic Fortress
 36478	Mickey, Pet Trader
-36479	Rapidus, Reputation Manager
-36480	Scipio, Reputation Manager
+36479	Rapidus, (Former) Fame Manager
+36480	Scipio, (Former) Fame Manager
 36481	Mercenary Captain, Gludio
 36482	Mercenary Captain, Dion
 36483	Mercenary Captain, Giran

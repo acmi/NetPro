@@ -64,7 +64,6 @@
 238	Success/Failure of Business
 239	Won't You Join Us?
 240	I'm the Only One You Can Trust
-245	Come to Me
 254	Legendary Tales
 270	The One Who Ends Silence
 278	Home Security
@@ -103,7 +102,6 @@
 485	Hot Spring Water
 488	Wonders of Caring
 489	In This Quiet Place
-490	Duty of the Survivor
 491	In Nomine Patris
 492	Tomb Raiders
 493	Kicking Out Unwelcome Guests
@@ -114,16 +112,36 @@
 498	Incarnation of Jealousy Pelline (Solo)
 499	Incarnation of Gluttony Kalios (Solo)
 500	Brothers Bound in Chains
-501	Proof of Clan Alliance
-503	Pursuit of Clan Ambition!
 504	Competition for the Bandit Stronghold
-508	A Clan's Reputation
-509	A Clan's Fame
-510	A Clan's Prestige
 511	Awl Under Foot
 512	Blade Under Foot
 551	Olympiad Starter
 553	Olympiad Undefeated
+561	Basic Mission: Harnak Underground Ruins
+562	Basic Mission: Altar of Evil
+563	Basic Mission: Bloody Swampland
+564	Basic Mission: Kartia's Labyrinth (Solo)
+565	Basic Mission: Fairy Settlement - West
+566	Basic Mission: Fairy Settlement - East
+567	Basic Mission: Isle of Souls
+568	Special Mission: Nornil's Cave
+569	Basic Mission: Seal of Shilen
+570	Special Mission: Kartia's Labyrinth (Party)
+571	Special Mission: Proof of Unity (Field Raid)
+572	Special Mission: Proof of Courage (Field Raid)
+573	Special Mission: Proof of Strength (Field Raid)
+574	Special Mission: Nornil's Garden
+575	Special Mission: Fortuna
+576	Special Mission: Defeat Spezion
+580	Beyond the Memories
+581	The Purification Ritual
+582	Wash Blood with Blood
+583	Meaning of Survival
+584	Never Say Good Bye
+585	Can't Go Against the Time
+586	Mutated Creatures
+587	More Aggressive Operation
+588	Head-on Crash
 617	Gather the Flames
 618	Into the Flames
 620	Four Goblets
@@ -149,6 +167,12 @@
 671	Path to Finding the Past
 672	Embryo the Archenemy
 673	Beleth' Ambition
+674	Changes in the Shadow of the Mother Tree
+675	What the Thread of the Past Shows
+676	Hunter Guild Request - West Wasteland
+677	Hunter Guild Request - East Wasteland
+678	Hunter Guild Request - Forest of the Dead
+679	Hunter Guild Request - Swamp of Screams
 688	Defeat the Elrokian Raiders!
 690	|Attack| Begin Alliance Base Defense - 1
 691	|Attack| Begin Alliance Base Defense - 2
@@ -196,11 +220,15 @@
 734	Red Libra Request - Nightmare Kamaloka
 735	Red Libra Request - Embryo Command Post
 736	Red Libra Request - Altar of Shilen
+737	A Sword Hidden in a Smile
+738	Dimensional Exploration of the Unworldly Visitors
+743	At the Altar of Oblivion
 744	The Alligator Hunter returns
 745	The Outlaws are Incoming
 746	The Reason One Cannot Wait
 747	Defending the Forsaken Plains
 748	Endless Revenge
+749	Ties with the Guardians
 750	Seven Flowers
 751	Liberating the Spirits
 752	Uncover the Secret
@@ -217,10 +245,9 @@
 763	A Daunting Task
 764	Weakening the Varka Silenos Forces
 765	Weakening the Ketra Orc Forces
-766	10-day Adventure
 772	Purifying Souls
 773	To Calm the Flood
-774	Dreaming of peace
+774	Dreaming of Peace
 775	Retrieving the Chaos Fragment
 776	Slay Dark Lord Ekimus
 777	Slay Dark Lord Tiat
@@ -312,7 +339,6 @@
 989	Adventure Guild's Special Request - Lv. 5
 10273	Good Day to Fly
 10274	Collecting in the Air
-10275	Containing the Attribute Power
 10282	To the Seed of Annihilation
 10283	Request of Ice Merchant
 10284	Acquisition of Divine Sword
@@ -355,7 +381,6 @@
 10336	Divided Sakum, Kanilov
 10337	Sakum's Impact
 10338	Seize Your Destiny
-10339	Fighting the Forgotten
 10341	Day of Destiny: Human's Fate
 10342	Day of Destiny: Elven Fate
 10343	Day of Destiny: Dark Elf's Fate
@@ -412,7 +437,6 @@
 10404	Kekropus' Letter: A Hidden Meaning
 10405	Kartia's Seed
 10406	Before Darkness Bears Fruit
-10407	Let's Go Fishing
 10408	Kekropus' Letter: The Swamp of Screams
 10409	A Suspicious Vagabond in the Swamp
 10410	Embryo in the Swamp of Screams
@@ -448,8 +472,6 @@
 10457	Kefensis' Illusion
 10459	A Sick Ambition
 10460	Return of the Alligator Hunter
-10462	Temper a Rusting Blade
-10465	Soul Frost Sword
 10472	Winds of Fate: Encroaching Shadows
 10501	Embroidered on a Cloak, Part 1: Zaken's Soul
 10502	Embroidered on a Cloak, Part 2: Freya's Soul
@@ -478,6 +500,40 @@
 10542	Searching for New Power
 10543	Shedding Weight
 10544	Seeker Supplies
+10552	Challenge! Balthus Knight!
+10553	What Matters More Than Ability
+10554	Gift for You
+10555	Charge at Antharas
+10556	Forgotten Power: Start of Fate
+10557	New Power, Winds of Fate
+10558	Hidden in Chaos
+10559	Before the Guide
+10560	Way of Wandering Knight
+10561	Across the Death Line
+10562	Take Up Arms
+10563	Control of Power
+10564	Prove Progress
+10565	Nothing Is Impossible
+10566	Best Choice
+10567	Special Mission: Nornil's Garden
+10568	Kamael's Technological Advancement
+10569	Declaration of War
+10570	Hurrah for Kamael's Independence
+10571	Strategic Reconciliation
+10572	To Expel the Embryo's Forces
+10574	Special Mission: Fortuna
+10575	Let's Go Fishing
+10576	Glittering Shiny Weapons
+10577	Temper a Rusting Blade
+10578	The Soul of a Sword
+10579	Containing the Attribute Power
+10580	Special Mission: Defeat Spezion
+10594	Fergason's Scheme
+10595	The Dimensional Warp - 8
+10596	The Dimensional Warp - 9
+10597	Escape to the Shadow of the Mother Tree
+10598	With All Your Might
+10599	Thread of Fate Hanging on the Mother Tree
 10658	Makkum in the Dimension
 10701	The Road to Destruction
 10702	The Road to Infinity
@@ -488,12 +544,8 @@
 10708	Strengthen the Barrier
 10709	The Stolen Seed
 10710	Life Energy Repository
-10712	The Minstrel's Song, Part 1
-10717	The Minstrel's Song, Part 2
-10720	The Minstrel's Song, Part 3
-10723	The Minstrel's Song, Part 4
-10726	The Minstrel's Song, Part 5
-10731	The Minstrel's Song, Part 6
+10726	Tulesir's Song - 1
+10731	Tulesir's Song - 2
 10732	A Foreign Land
 10733	The Test for Survival
 10734	Do or Die

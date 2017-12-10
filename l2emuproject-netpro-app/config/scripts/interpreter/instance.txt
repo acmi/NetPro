@@ -265,3 +265,18 @@
 265	Outer Messiah's Castle
 266	Inner Messiah's Castle
 267	Mystic Tavern
+268	Throne of Heroes
+269	Hatchling Nest
+270	Hatchling Cage
+271	Antharas' Nest
+272	Power of Abelius
+273	Power of Sapyros
+274	Power of Kashnaga
+275	Power of Cranigg
+276	Power of Naviarope
+277	Power of Raister
+278	Power of Soltkreig
+279	Power of Lakcis
+280	Faeron Village
+281	Eva's Hidden Space
+282	Nornil's Garden

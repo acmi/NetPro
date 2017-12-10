@@ -1,5 +1,9 @@
 12220001	Inner Castle Gate
 12220002	Inner Castle Gate
+12230702	Great Temple Outer Castle Gate
+12230704	Great Temple Outer Castle Gate
+12230802	Great Temple Inner Castle Gate
+12230804	Great Temple Inner Castle Gate
 12240001	Entrance of Destruction
 12240002	Entrance of Destruction
 12240003	Gate
@@ -572,7 +576,16 @@
 18110003	Midway Gate
 18110004	Adventurer's Gateway
 18110005	Gate of Test
-18110006	Gate of Truth
+18110006	Gate
+18110007	Gate
+18110008	Gate
+18110009	Gate
+18110010	Gate
+18110011	Gate
+18110012	Gate
+18110013	Gate
+18110014	Gate
+18110015	Gate
 18130010	Chair
 18130011	Chair
 18130012	Chair
@@ -724,8 +737,8 @@
 18190102	Magic Prison
 18190104	Magic Prison
 18190106	Magic Prison
-18200001	Fort Gate
-18200002	Fort Gate
+18200001	Will of Croamis
+18200002	Will of Croamis
 18200003	Fort Gate
 18200004	Fort Gate
 18200005	Fort Gate
@@ -736,8 +749,6 @@
 18200010	Fort Gate
 18200011	Fort Gate
 18200012	Fort Gate
-18200101	Wall of Evil Thoughts
-18200102	Wall of Evil Thoughts
 18200500	Flagpole
 18220001	Fort Gate
 18220002	Fort Gate

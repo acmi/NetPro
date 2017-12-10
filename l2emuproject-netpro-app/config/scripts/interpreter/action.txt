@@ -226,8 +226,6 @@
 1139	Phantom Pounce [/usesummonskill]
 1140	Phantom Touch [/usesummonskill]
 1141	Phantom Power [/usesummonskill]
-1142	Panther Roar [/usesummonskill]
-1143	Panther Rush [/usesummonskill]
 1144	Commando Jumping Attack [/usesummonskill]
 1145	Commando Double Slash [/usesummonskill]
 1146	Elemental Slam [/usesummonskill]

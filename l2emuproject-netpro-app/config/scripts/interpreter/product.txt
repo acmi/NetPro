@@ -1849,3 +1849,16 @@
 1011849	Legendary Scroll
 1011850	Ancient Cloak Enchant Scroll
 1011851	Valkyrie Appearance Stone
+1011852	Chevalier Outfit Appearance Stone
+1011853	Carrot (x40)
+1011854	Carrot (x4000)
+1011855	Ultimate Carrot Pack (x40000)
+1011856	Wondrous Jewelry Box x1
+1011857	Wondrous Jewelry Box x30 (don't use this one)
+1011858	Wondrous Jewelry Box x150
+1011859	La Vie En Rose's Radiant Brooch
+1011860	Black Friday Bundle
+1011861	Monster Research x100
+1011862	Monster Research x10,000
+1011863	Monster Research x200,000
+1011864	Wondrous Jewelry Box x25

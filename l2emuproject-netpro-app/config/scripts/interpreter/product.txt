@@ -1862,3 +1862,15 @@
 1011862	Monster Research x10,000
 1011863	Monster Research x200,000
 1011864	Wondrous Jewelry Box x25
+1011865	Winter Holiday Pack
+1011866	Santa's Blessing x10
+1011867	Winter Holiday Support Bundle
+1011868	Cloak Enchant Scroll Pack x5
+1011869	Cloak Enchant Scroll Pack x20
+1011870	Cloak Enchant Scroll Pack x75
+1011871	Legendary Scroll Pack x5
+1011872	Legendary Scroll Pack x20
+1011873	Legendary Scroll Pack x50
+1011874	Ultimate Legendary Scroll Pack x100
+1011875	Legendary Scroll x1
+1011876	Legendary Scroll x10

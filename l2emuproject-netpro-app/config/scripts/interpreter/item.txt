@@ -28599,6 +28599,24 @@
 29128	Sagittarius Agathion Charm Park 15-day
 29129	Cancer Agathion Charm Park 30-day
 29130	Cancer Agathion Charm Park 15-day
+29131	Matchstick
+29132	Match Head
+29133	Well-made Matchstick
+29134	Powerful Matchstick
+29135	Bonfire
+29136	Regular Dish
+29137	Very Delicious Dish
+29138	Match Sisters' Gift
+29139	Match Sisters' Matchstick
+29140	Cooking Ingredient
+29141	Freya's Charisma Potion Cat Transformation
+29142	Freya's Charisma Potion Panda Transformation
+29143	Rudolph's Nose
+29144	Freya's Heart-pounding Shopping Bag
+29145	Freya Winter Card
+29146	Sirra Winter Card
+29147	Snowman Winter Card
+29148	NoItemName
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste
@@ -42067,5 +42085,11 @@
 48510	+7 Zodiac Agathion Box
 48511	Royal Red Save Ticket Treasure Chest
 48512	NPC Only_Lionel Hunter
+48630	Master Fisherman's Blessing - 1-hr
+48631	Master Fisherman's Blessing - 2-hr
+48632	Master Fisherman's Blessing - 4-hr
+48633	Master Fisherman's Blessing - 8-hr
+48765	Cat Outfit
+48766	Panda Outfit
 49783	Sibis Coin Box
 49798	Cheer Pom Poms Event

@@ -672,6 +672,9 @@
 8675	Sagittarius Agathion
 8676	Cancer Agathion
 8677	Rico
+8678	made with matchsticks, Bonfire
+8679	looking for matchsticks, Older Match Sister
+8680	Younger Match Sister, Hungry
 12077	Wolf
 12311	Hatchling of the Wind
 12312	Hatchling of the Stars

@@ -4309,9 +4309,9 @@
 4551	The cycle is updated at 7:00 every Wednesday.
 4552	If you fulfill the goal, you can earn $s1 Personal Fame.
 4553	Rank $s1
-4554	· Consumes 1 Clan Development Point.\n· Consumes $s1 Clan Reputation Points.\n·Resetting to default does not refund Clan Reputation Points.\n\nDo you want to unlock the characteristic?
-4555	· Consumes $s1 Clan Reputation Points.\n· Unable to retrieve the Clan Reputation Points by resetting to default.\n· Extends the durations of previously unlocked seal.\n\nDo you want to unlock the seal?
-4556	· Consumes 10,000 Clan Reputation Points.\n· Resets all Specialized skills and seal effects.\n· Retrieves the Clan Development Points paid for unlocking.\n· Unable to retrieve the Clam Fame paid for unlocking.\n\nAre you sure to reset?
+4554	· Consumes 1 Clan Development Point.\n· Consumes $s1 Clan Rep.\n· Initializing does not refund Clan Rep.\n\nDo you want to continue?
+4555	· Consumes $s1 Clan Rep.\n· Initializing does not refund Clan Rep.\n· Time can be extended once after unlocking.\n\nDo you want to continue?
+4556	· Consumes 10,000 Clan Rep.\n· Resets all specialties and seals.\n· Used Clan Development Points will be refunded.\n· Used Clan Rep will NOT be refunded.\n\nDo you want to continue?
 4557	Unlocked $s1.
 4558	All clan characteristics were reset.
 4559	Cannot proceed due to a system error. Please try again later.

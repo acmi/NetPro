@@ -1948,6 +1948,46 @@
 		<packet id="CM_REQ_BLOCK_LIST_FOR_AD" name="RequestBlockListForAD" />
 		<packet id="CM_REQ_UPGRADE_SYSTEM_RESULT" name="RequestUpgradeSystemResult" />
 		<packet id="CM_REQ_USER_BAN_INFO" name="RequestUserBanInfo" />
+		
+		<!-- Salvation/140 -->
+		<packet id="C_EX_CARD_UPDOWN_PICK_NUMB" name="RequestCardUpdownGamePickNumber" />
+		<packet id="C_EX_CARD_UPDOWN_GAME_REWARD_REQUEST" name="RequestCardUpdownGameReward" />
+		<packet id="C_EX_CARD_UPDOWN_GAME_RETRY" name="RequestCardUpdownGameRetry" />
+		<packet id="C_EX_CARD_UPDOWN_GAME_QUIT" name="RequestCardUpdownGameQuit" />
+		<packet id="C_EX_ARENA_RANK_ALL" name="ExRequestArenaRankAll" />
+		<packet id="C_EX_ARENA_MYRANK" name="ExRequestArenaMyRank" />
+		<packet id="C_EX_SWAP_AGATHION_SLOT_ITEMS" name="RequestSwapAgathionSlotItems" />
+		<packet id="C_EX_PLEDGE_CONTRIBUTION_RANK" name="RequestExPledgeContributionRank" />
+		<packet id="C_EX_PLEDGE_CONTRIBUTION_INFO" name="RequestExPledgeContributionInfo" />
+		<packet id="C_EX_PLEDGE_CONTRIBUTION_REWARD" name="RequestExPledgeContributionReward" />
+		<packet id="C_EX_PLEDGE_LEVEL_UP" name="RequestExPledgeLevelUp" />
+		<packet id="C_EX_PLEDGE_MISSION_INFO" name="RequestPledgeMissionInfo" />
+		<packet id="C_EX_PLEDGE_MISSION_REWARD" name="RequestPledgeMissionReward" />
+		<packet id="C_EX_PLEDGE_MASTERY_INFO" name="RequestExPledgeMasteryInfo" />
+		<packet id="C_EX_PLEDGE_MASTERY_SET" name="RequestExPledgeMasterySet" />
+		<packet id="C_EX_PLEDGE_MASTERY_RESET" name="RequestExPledgeMasteryReset" />
+		<packet id="C_EX_PLEDGE_SKILL_INFO" name="RequestExPledgeSkillInfo" />
+		<packet id="C_EX_PLEDGE_SKILL_ACTIVATE" name="RequestExPledgeSkillActivate" />
+		<packet id="C_EX_PLEDGE_ITEM_LIST" name="RequestExPledgeItemList" />
+		<packet id="C_EX_PLEDGE_ITEM_ACTIVATE" name="RequestExPledgeItemActivate" />
+		<packet id="C_EX_PLEDGE_ANNOUNCE" name="RequestExPledgeAnnounce" />
+		<packet id="C_EX_PLEDGE_ANNOUNCE_SET" name="RequestExPledgeAnnounceSet" />
+		<packet id="C_EX_CREATE_PLEDGE" name="RequestCreatePledge" />
+		<packet id="C_EX_PLEDGE_ITEM_INFO" name="RequestExPledgeItemInfo" />
+		<packet id="C_EX_PLEDGE_ITEM_BUY" name="RequestExPledgeItemBuy" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_INFO" name="RequestExElementalSpiritInfo" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_EXTRACT_INFO" name="RequestExElementalSpiritExtractInfo" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_EXTRACT" name="RequestExElementalSpiritExtract" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_EVOLUTION_INFO" name="RequestExElementalSpiritEvolutionInfo" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_EVOLUTION" name="RequestExElementalSpiritEvolution" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_SET_TALENT" name="RequestExElementalSpiritSetTalent" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_INIT_TALENT" name="RequestExElementalSpiritInitTalent" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_ABSORB_INFO" name="RequestExElementalSpiritAbsorbInfo" />
+		<packet id="C_EX_ELEMENTAL_SPIRIT_ABSORB" name="RequestExElementalSpiritAbsorb" />
+		<packet id="C_EX_REQUEST_LOCKED_ITEM" name="RequestExRequestLockedItem" />
+		<packet id="C_EX_REQUEST_UNLOCKED_ITEM" name="RequestExRequestUnlockedItem" />
+		<packet id="C_EX_LOCKED_ITEM_CANCEL" name="RequestExLockedItemCancel" />
+		<packet id="C_EX_UNLOCKED_ITEM_CANCEL" name="RequestExUnLockedItemCancel" />
 	</client>
 	<server>
 		<!--
@@ -4757,5 +4797,50 @@
 		<packet id="SM_EX_SHOW_UPGRADE_SYSTEM" name="ExShowUpgradeSystem" />
 		<packet id="SM_EX_UPGRADE_SYSTEM_RESULT" name="ExUpgradeSystemResult" />
 		<packet id="SM_EX_USER_BAN_INFO" name="ExUserBanInfo" />
+		
+		<!-- Salvation/140 -->
+		<packet id="S_EX_ARENA_SHOW_ENEMY_PARTY_LOCATION" name="ExArenaShowEnemyPartyLocation" />
+		<packet id="S_EX_CARD_UPDOWN_GAME_START" name="ExCardUpdownGameStart" />
+		<packet id="S_EX_CARD_UPDOWN_PICK_RESULT" name="ExCardUpdownGamePickResult" />
+		<packet id="S_EX_CARD_UPDOWN_GAME_PREPARE_REWARD" name="ExCardUpdownGamePrepReward" />
+		<packet id="S_EX_CARD_UPDOWN_GAME_REWARD_REPLY" name="ExCardUpdownGameRewardReply" />
+		<packet id="S_EX_CARD_UPDOWN_GAME_QUIT" name="ExCardUpdownGameQuit" />
+		<packet id="S_EX_ARENA_RANK_ALL" name="ExArenaRankAll" />
+		<packet id="S_EX_ARENA_MYRANK" name="ExArenaMyRank" />
+		<packet id="S_EX_PLEDGE_CLASSIC_RAID_INFO" name="ExPledgeClassicRaidInfo" />
+		<packet id="S_EX_ARENA_OBSERVE" name="ExArenaObserve" />
+		<packet id="S_EX_HTML_WITH_NPC_VIEWPORT" name="ExHtmlWithNPCViewport" />
+		<packet id="S_EX_PLEDGE_CONTRIBUTION_RANK" name="ExPledgeContributionRank" />
+		<packet id="S_EX_PLEDGE_CONTRIBUTION_INFO" name="ExPledgeContributionInfo" />
+		<packet id="S_EX_PLEDGE_CONTRIBUTION_REWARD" name="ExPledgeContributionReward" />
+		<packet id="S_EX_PLEDGE_RAID_INFO" name="ExPledgeRaidInfo" />
+		<packet id="S_EX_PLEDGE_RAID_RANK" name="ExPledgeRaidRank" />
+		<packet id="S_EX_PLEDGE_LEVEL_UP" name="ExPledgeLevelUp" />
+		<packet id="S_EX_PLEDGE_SHOW_INFO_UPDATE" name="ExPledgeShowInfoUpdate" />
+		<packet id="S_EX_PLEDGE_MISSION_INFO" name="ExPledgeMissionInfo" />
+		<packet id="S_EX_PLEDGE_MISSION_REWARD_COUNT" name="ExPledgeMissionRewardCount" />
+		<packet id="S_EX_PLEDGE_MASTERY_INFO" name="ExPledgeMasteryInfo" />
+		<packet id="S_EX_PLEDGE_MASTERY_SET" name="ExPledgeMasterySet" />
+		<packet id="S_EX_PLEDGE_MASTERY_RESET" name="ExPledgeMasteryReset" />
+		<packet id="S_EX_TUTORIAL_SHOW_ID" name="ExTutorialShowID" />
+		<packet id="S_EX_PLEDGE_SKILL_INFO" name="ExPledgeSkillInfo" />
+		<packet id="S_EX_PLEDGE_SKILL_ACTIVATE" name="ExPledgeSkillActivate" />
+		<packet id="S_EX_PLEDGE_ITEM_LIST" name="ExPledgeItemList" />
+		<packet id="S_EX_PLEDGE_ITEM_ACTIVATE" name="ExPledgeItemActivate" />
+		<packet id="S_EX_PLEDGE_ANNOUNCE" name="ExPledgeAnnounce" />
+		<packet id="S_EX_PLEDGE_ANNOUNCE_SET" name="ExPledgeAnnounceSet" />
+		<packet id="S_EX_SET_PLEDGE_EMBLEM" name="ExSetPledgeEmblem" />
+		<packet id="S_EX_SHOW_CREATE_PLEDGE" name="ExShowCreatePledge" />
+		<packet id="S_EX_PLEDGE_ITEM_INFO" name="ExPledgeItemInfo" />
+		<packet id="S_EX_PLEDGE_ITEM_BUY" name="ExPledgeItemBuy" />
+		<packet id="S_EX_ELEMENTAL_SPIRIT_INFO" name="ExElementalSpiritInfo" />
+		<packet id="S_EX_ELEMENTAL_SPIRIT_EXTRACT_INFO" name="ExElementalSpiritExtractInfo" />
+		<packet id="S_EX_ELEMENTAL_SPIRIT_EVOLUTION_INFO" name="ExElementalSpiritEvolutionInfo" />
+		<packet id="S_EX_ELEMENTAL_SPIRIT_EVOLUTION" name="ExElementalSpiritEvolution" />
+		<packet id="S_EX_ELEMENTAL_SPIRIT_SET_TALENT" name="ExElementalSpiritSetTalent" />
+		<packet id="S_EX_ELEMENTAL_SPIRIT_ABSORB_INFO" name="ExElementalSpiritAbsorbInfo" />
+		<packet id="S_EX_ELEMENTAL_SPIRIT_ABSORB" name="ExElementalSpiritAbsorb" />
+		<packet id="S_EX_CHOOSE_LOCKED_ITEM" name="ExChooseLockedItem" />
+		<packet id="S_EX_LOCKED_RESULT" name="ExLockedResult" />
 	</server>
 </packets>

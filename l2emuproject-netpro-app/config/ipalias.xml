@@ -16,10 +16,10 @@
 	
 	<!-- Individual servers -->
 	<!-- NA:7777 -->
-	<address ip="64.25.37.132" alias="Chronos" />
-	<address ip="64.25.37.133" alias="Naia" />
-	<address ip="64.25.37.137" alias="Event Server" />
-	<address ip="64.25.37.144" alias="Freya" />
+	<address ip="64.25.37.140" alias="Chronos" />
+	<address ip="64.25.37.141" alias="Naia" />
+	<address ip="64.25.37.145" alias="Event Server" />
+	<address ip="64.25.37.142" alias="Freya" />
 	
 	<!-- KR:7777 -->
 	<address ip="112.175.192.7" alias="드비안느" />

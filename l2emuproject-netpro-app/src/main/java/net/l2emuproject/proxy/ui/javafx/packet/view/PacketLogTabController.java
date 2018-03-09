@@ -70,9 +70,7 @@ import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -135,15 +133,15 @@ public class PacketLogTabController implements Initializable
 	@FXML
 	private MenuItem _miHidePacketInProtocol;
 	
-	private static final int AUTO_SCROLL_THRESHOLD = 250;
+	//private static final int AUTO_SCROLL_THRESHOLD = 250;
 	
 	private final ObservableList<PacketLogEntry> _memoryPackets, _tablePackets;
 	
 	private final ObjectProperty<IProtocolVersion> _protocolProperty;
 	private ICacheServerID _entityCacheContext;
 	
-	private BooleanProperty _scrollLockProperty;
-	private boolean _autoScrollPending;
+	//private BooleanProperty _scrollLockProperty;
+	//private boolean _autoScrollPending;
 	
 	private final ObjectProperty<IPacketHidingConfig> _packetHidingConfigProperty;
 	private Consumer<IProtocolVersion> _onProtocolHidingConfigChange;
@@ -157,7 +155,8 @@ public class PacketLogTabController implements Initializable
 		_tablePackets = FXCollections.observableArrayList();
 		
 		_protocolProperty = new SimpleObjectProperty<>(ProtocolVersionManager.getInstance().getFallbackProtocolGame());
-		_protocolProperty.addListener((obs, old, neu) -> {
+		_protocolProperty.addListener(obs -> {
+			final IProtocolVersion neu = _protocolProperty.getValue();
 			if (neu == null)
 				return;
 			
@@ -167,7 +166,7 @@ public class PacketLogTabController implements Initializable
 			
 			refreshSelectedPacketView();
 		});
-		_scrollLockProperty = new SimpleBooleanProperty(false);
+		//_scrollLockProperty = new SimpleBooleanProperty(false);
 		// will only be modified on the UI thread
 		_packetHidingConfigProperty = new SimpleObjectProperty<>(
 				new PacketHidingConfig(new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes), new TreeSet<>(OpcodeOwnerSet::comparePacketPrefixes)));

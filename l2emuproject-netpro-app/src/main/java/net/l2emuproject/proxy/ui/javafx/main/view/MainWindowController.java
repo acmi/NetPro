@@ -91,6 +91,7 @@ import net.l2emuproject.proxy.network.meta.UserDefinedProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.setup.IPAliasManager;
+import net.l2emuproject.proxy.state.entity.cache.EntityInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ServerSocketID;
 import net.l2emuproject.proxy.ui.ReceivedPacket;
 import net.l2emuproject.proxy.ui.i18n.BytesizeFormat;
@@ -1299,12 +1300,16 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 				tabs.add(_tabIdle);
 			if (userData.getClient() != null)
 				_sessionCapture.remove(userData.getClient());
+			if (userData.getServer() != null)
+				EntityInfoCache.removeSharedContext(new ServerSocketID(userData.getServer().getInetSocketAddress()));
 		});
 		tabs.remove(_tabIdle);
 		tabs.add(tab);
 		_tpConnections.getSelectionModel().select(tab);
 		if (userData.getClient() != null)
 			_sessionCapture.put(userData.getClient(), userData.isCaptureDisabled());
+		if (userData.getServer() != null)
+			EntityInfoCache.addSharedContext(new ServerSocketID(userData.getServer().getInetSocketAddress()));
 	}
 	
 	@Override

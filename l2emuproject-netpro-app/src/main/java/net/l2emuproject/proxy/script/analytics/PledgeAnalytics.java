@@ -20,12 +20,16 @@ import java.util.List;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfo;
+import net.l2emuproject.proxy.state.entity.L2ObjectInfoCache;
+import net.l2emuproject.proxy.state.entity.ObjectInfo;
 import net.l2emuproject.proxy.state.entity.PledgeInfo;
 import net.l2emuproject.proxy.state.entity.cache.AllianceCrestInfoCache;
 import net.l2emuproject.proxy.state.entity.cache.AllianceInfoCache;
 import net.l2emuproject.proxy.state.entity.cache.PledgeCrestInfoCache;
 import net.l2emuproject.proxy.state.entity.cache.PledgeInfoCache;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
+import net.l2emuproject.proxy.state.entity.type.PledgeType;
 
 /**
  * Allows pledge IDs to be interpreted in a log file.
@@ -109,6 +113,8 @@ public class PledgeAnalytics extends PpeAnalyticsScript
 				
 				final PledgeInfo pi = PledgeInfoCache.getInstance().getOrAdd(id, cacheContext);
 				pi.setName(name);
+				final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(id, cacheContext).setType(new PledgeType());
+				oi.setName(name);
 				
 				final int allyId = pi.getAllianceID();
 				if (allyId != 0 && !ans.isEmpty())

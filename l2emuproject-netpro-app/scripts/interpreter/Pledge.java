@@ -16,6 +16,8 @@
 package interpreter;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
+import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.PledgeCrestInfo;
@@ -43,7 +45,14 @@ public class Pledge extends ScriptedFieldValueInterpreter implements IntegerInte
 			if (pci.getCrestImgSrc() != null)
 				sb.append("<img src=\"").append(pci.getCrestImgSrc()).append("\" border=\"0\" />");
 		}
-		sb.append(pi.getName());
+		try
+		{
+			sb.append(MetaclassRegistry.getInstance().getInterpreter("ObjectID", IntegerInterpreter.class).getInterpretation(value, entityCacheContext));
+		}
+		catch (final InvalidFieldValueInterpreterException e)
+		{
+			sb.append(pi.getName());
+		}
 		
 		return sb.toString();
 	}

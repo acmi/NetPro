@@ -4316,9 +4316,9 @@
 4558	All clan characteristics were reset.
 4559	Cannot proceed due to a system error. Please try again later.
 4560	Cannot extend the seal activation time any longer.
-4561	Not enough money to unlock Specialization.
-4562	Not enough money to unlock seal.
-4563	Not enough money to reset.
+4561	Does not meet requirements to unlock Specialization.
+4562	Does not meet requirements to unlock seal.
+4563	Does not meet requirements to reset.
 4564	Activation required
 4565	None
 4566	Locked
@@ -5119,6 +5119,7 @@
 6835	Your account has been suspended as per our management policy for disrupting other users' normal gameplay or the company's game operation. For more information, contact us through the Support Center.
 6836	The security card service has ended so you will be able to connect to the game after cancelling the security card. In order to protect your account, please cancel the security card and request Google OTP.
 6837	Please enter the OTP number. The numbers change for each login.
+6838	You received a warrior from the Secret Supply Items of the Balthus Knights! You received $s1.
 7001	Cannot proceed until the current dice roll is over.
 7002	Your inventory's weight/limit has been exceeded, so you can't participate in the dice roll.
 7003	You are outside the range to participate in the dice roll.

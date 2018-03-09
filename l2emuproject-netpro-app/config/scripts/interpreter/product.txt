@@ -1874,3 +1874,13 @@
 1011874	Ultimate Legendary Scroll Pack x100
 1011875	Legendary Scroll x1
 1011876	Legendary Scroll x10
+1011877	Fortune Reading Ticket x1
+1011878	Fortune Reading Ticket Coupon x1
+1011879	Fortune Reading Ticket Coupon x50
+1011880	Circlet of Beserker
+1011881	Circlet of Wizardry
+1011882	Circlet of Protection
+1011883	Enchant Circlet Pack x1
+1011884	Enchant Circlet Pack x10
+1011885	Enchant Circlet Pack x30
+1011886	Ultimate Enchant Circlet Pack

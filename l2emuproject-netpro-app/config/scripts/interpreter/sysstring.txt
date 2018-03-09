@@ -3335,7 +3335,7 @@
 3532	Show Raid
 3533	Equipped
 3534	Castle Siege in progress
-3535	Dimensional Siege in progress - Teleport here through Aden Castle or Rune Castle NPC Mermoden.
+3535	Dimensional Siege in progress - Teleport here through NPC Mermoden in each of the castles.
 3536	Dimensional Raid in progress - Teleport here through Hunters' Village NPC Merlot.
 3537	Available to use.
 3538	Auction in progress - Participate through Auction Broker Laia in front of the Town of Giran Luxury Goods Hall.
@@ -3912,6 +3912,8 @@
 5861	All Files
 5862	Block Impolite Characters
 5863	Block Adena Sale Ads
+5864	Main Agathion
+5865	Sub Agathion
 7001	Roll Dice to Distribute Items
 7002	Manual Distribution by Party Leader
 7003	Roll Dice

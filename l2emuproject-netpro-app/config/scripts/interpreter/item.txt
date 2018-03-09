@@ -28607,7 +28607,7 @@
 29136	Regular Dish
 29137	Very Delicious Dish
 29138	Match Sisters' Gift
-29139	Match Sisters' Matchstick
+29139	Match Sisters' Gratitude
 29140	Cooking Ingredient
 29141	Freya's Charisma Potion Cat Transformation
 29142	Freya's Charisma Potion Panda Transformation
@@ -28616,7 +28616,32 @@
 29145	Freya Winter Card
 29146	Sirra Winter Card
 29147	Snowman Winter Card
-29148	NoItemName
+29148	Freya's Christmas Treasure Chest
+29149	Sayha's Talisman Stage 6 1-day
+29150	Low-grade Zodiac Agathion Pack
+29151	Mid-grade Zodiac Agathion Pack
+29152	High-grade Zodiac Agathion Pack
+29153	Prestige Rune 30-day
+29154	Mochi Event
+29155	Lineage II Baseball Uniform Appearance Stone Event
+29156	Lineage II Baseball Cap Appearance Stone Event
+29157	Lineage II Baseball Uniform Appearance Stone 30-day
+29158	Lineage II Baseball Cap Appearance Stone 30-day
+29159	Jindo Dog Hat
+29160	Shaggy Dog Hat
+29161	Prestige Rune Pack 30-day
+29162	Light Imbued Treasure Chest
+29163	Stable Cloak Enchantment Scroll
+29164	Legendary Scroll (High-grade)
+29165	High-grade Spirit Stone - Ancient Kingdom
+29166	High-grade Spirit Stone - Elmoreden
+29167	High-grade Spirit Stone - Aden
+29168	High-grade Spirit Stone - Elmore
+29169	High-grade Spirit Stone - Ferios
+29170	High-grade Spirit Stone Pack - Legendary
+29171	High-grade Spirit Stone Pack - Cloak
+29172	Red Star Solvent
+29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
 30002	Blessed Requiem Shooter Critical Slow + Haste

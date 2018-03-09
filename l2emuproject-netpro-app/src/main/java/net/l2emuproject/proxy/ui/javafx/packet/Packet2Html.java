@@ -77,6 +77,15 @@ public final class Packet2Html implements ISODateTime
 {
 	static final L2Logger LOG = L2Logger.getLogger(Packet2Html.class);
 	private static final Pattern HTML_TAG = Pattern.compile("<html", Pattern.LITERAL | Pattern.CASE_INSENSITIVE);
+	private static final Pattern TABLE_TAG = Pattern.compile("<table", Pattern.LITERAL | Pattern.CASE_INSENSITIVE);
+	// @formatter:off
+	private static final Pattern[] LINE_BREAK_TAGS = {
+		Pattern.compile("&lt;br", Pattern.LITERAL | Pattern.CASE_INSENSITIVE),
+		Pattern.compile("&lt;button", Pattern.LITERAL | Pattern.CASE_INSENSITIVE),
+		Pattern.compile("&lt;a ", Pattern.LITERAL | Pattern.CASE_INSENSITIVE),
+	};
+	// @formatter:on
+	private static final String INSERTED_RETURN = "\r\n&#x23ce;";
 	
 	final L2TextBuilder _packetBuilder, _packetBodyBuilder;
 	private final Map<DataType, MutableInt> _currentHyperlinkID;
@@ -379,6 +388,38 @@ public final class Packet2Html implements ISODateTime
 			interpretation = "N/A";
 		else if (interpretation instanceof byte[])
 			interpretation = HexUtil.bytesToHexString((byte[])interpretation, " ");
+		else if (interpretation instanceof CharSequence && HTML_TAG.matcher((CharSequence)interpretation).find())
+		{
+			final StringBuilder sb = new StringBuilder((CharSequence)interpretation);
+			final boolean hasTable = TABLE_TAG.matcher(sb).find();
+			for (int i = sb.length() - 1; i >= 0; --i)
+			{
+				switch (sb.charAt(i))
+				{
+					case '&':
+						sb.insert(i + 1, "amp;");
+						break;
+					case '<':
+						sb.deleteCharAt(i).insert(i, "&lt;");
+						if (hasTable)
+							continue;
+						for (final Pattern tag : LINE_BREAK_TAGS)
+						{
+							if (tag.matcher(sb.subSequence(i, i + tag.pattern().length())).matches())
+							{
+								sb.insert(i, INSERTED_RETURN);
+								break;
+							}
+						}
+						break;
+					case '>':
+						sb.deleteCharAt(i).insert(i, "&gt;");
+						break;
+				}
+			}
+			sb.insert(0, "<pre><code>").append("</code></pre>");
+			interpretation = sb.toString();
+		}
 		
 		_packetBuilder.append("<img src=\"").append(visualDataType.getIconImgSrc()).append("\" title=\"").append(UIStrings.get(visualDataType.getIconTooltip())).append("\" border=\"0\" />");
 		

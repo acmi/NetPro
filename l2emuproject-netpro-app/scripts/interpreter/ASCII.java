@@ -35,7 +35,7 @@ public class ASCII extends ScriptedFieldValueInterpreter implements ByteArrayInt
 		for (len = value.length; len > 0; --len)
 			if (value[len - 1] != 0)
 				break;
-		
-		return new String(value, 0, len, US_ASCII);
+			
+		return "<pre>" + new String(value, 0, len, US_ASCII) + "</pre>";
 	}
 }

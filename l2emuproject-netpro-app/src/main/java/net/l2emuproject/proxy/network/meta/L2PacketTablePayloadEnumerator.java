@@ -38,6 +38,7 @@ import net.l2emuproject.proxy.network.meta.structure.BranchElement;
 import net.l2emuproject.proxy.network.meta.structure.FieldElement;
 import net.l2emuproject.proxy.network.meta.structure.LoopElement;
 import net.l2emuproject.proxy.network.meta.structure.field.FieldValue;
+import net.l2emuproject.proxy.network.meta.structure.field.FieldValueReadOption;
 import net.l2emuproject.proxy.network.meta.structure.field.bytes.AbstractByteArrayFieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.bytes.ByteArrayFieldValue;
 import net.l2emuproject.proxy.network.meta.structure.field.decimal.AbstractDecimalFieldElement;
@@ -93,7 +94,7 @@ public class L2PacketTablePayloadEnumerator implements PacketPayloadEnumerator
 			}
 			
 			final EnumeratingVisitor visitor = new EnumeratingVisitor(template, result);
-			template.visitStructureElements(visitor, result._buffer, Collections.emptyMap());
+			template.visitStructureElements(visitor, result._buffer, Collections.singletonMap(FieldValueReadOption.APPLY_MODIFICATIONS, null));
 			if (visitor._partialEnumerationException != null)
 				throw visitor._partialEnumerationException;
 			if (visitor._failure != null)

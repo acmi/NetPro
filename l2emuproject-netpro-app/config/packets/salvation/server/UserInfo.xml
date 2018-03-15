@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="527" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="My OID" type="ObjectID">
+		<scriptAlias id="OIC_PLAYER_OID" />
+		<scriptAlias id="OIL_OBJECT_ID" />
+		<scriptAlias id="LUA_USER_OID" />
+	</dword>
+	<dword alias="Dynamic content size" />
+	<word alias="Struct type (23)" />
+	<unsignedByte alias="Bitmask byte #1" id="exUI_1" />
+	<unsignedByte alias="Bitmask byte #2" id="exUI_2" />
+	<unsignedByte alias="Bitmask byte #3" id="exUI_3" />
+
+	<branch id="exUI_1" condition="bitmask.Bit7">
+		<dword alias="Roles" type="UserRoles" />
+	</branch>
+	<branch id="exUI_1" condition="bitmask.Bit6" description="Name/base appearance">
+		<word alias="Block size" />
+		<sstring alias="Name">
+			<scriptAlias id="OIC_PLAYER_NAME" />
+		</sstring>
+		<byte alias="Builder level" />
+		<byte alias="Race" type="Race" />
+		<byte alias="Sex" type="Sex" />
+		<dword alias="Visible class" type="CharacterClass" />
+		<dword alias="Class" type="CharacterClass" />
+		<byte alias="Level">
+			<scriptAlias id="LUA_USER_LEVEL" />
+		</byte>
+	</branch>
+	<branch id="exUI_1" condition="bitmask.Bit5" description="Base stats">
+		<word alias="Block size (18)" />
+		<word alias="STR" />
+		<word alias="DEX" />
+		<word alias="CON" />
+		<word alias="INT" />
+		<word alias="WIT" />
+		<word alias="MEN" />
+		<word alias="LUC" />
+		<word alias="CHA" />
+	</branch>
+	<branch id="exUI_1" condition="bitmask.Bit4" description="Maximum HP/MP/CP">
+		<word alias="Block size (14)" />
+		<dword alias="Maximum HP" />
+		<dword alias="Maximum MP" />
+		<dword alias="Maximum CP" />
+	</branch>
+	<branch id="exUI_1" condition="bitmask.Bit3" description="Current HP/MP/CP/XP/SP">
+		<word alias="Block size (38)" />
+		<dword alias="Current HP" />
+		<dword alias="Current MP" />
+		<dword alias="Current CP" />
+		<qword alias="SP">
+			<scriptAlias id="LUA_USER_SP" />
+		</qword>
+		<qword alias="XP" />
+		<double alias="Progress to next level (%)" />
+	</branch>
+	<branch id="exUI_1" condition="bitmask.Bit2" description="Weapon glow">
+		<word alias="Block size (4)" />
+		<byte alias="Weapon enchant glow" type="EnchantEffect" />
+		<byte alias="Armor enchant glow" type="EnchantEffect" />
+	</branch>
+	<branch id="exUI_1" condition="bitmask.Bit1" description="Facial features">
+		<word alias="Block size (15)" />
+		<dword alias="Hair style" type="Alphabet" />
+		<dword alias="Hair color" type="Alphabet" />
+		<dword alias="Face" type="Alphabet" />
+		<byte alias="Show Hair Accessory" type="YesOrNo" />
+	</branch>
+	<branch id="exUI_1" condition="bitmask.Bit0" description="Personal store">
+		<word alias="Block size (6)" />
+		<byte alias="Mount type" type="MountType" />
+		<byte alias="Private store" type="PersonalStoreType">
+			<scriptAlias id="LUA_USER_STORE_TYPE" />
+		</byte>
+		<byte alias="Can crystallize" type="YesOrNo" />
+		<byte alias="Ability points"  type="AbilityWingIcon" /> <!-- NEW -->
+	</branch>
+
+	<branch id="exUI_2" condition="bitmask.Bit7" description="Stats screen/base values">
+		<word alias="Block size (56)" />
+		<word alias="Weapon status" type="WeaponStatus" />
+		<dword alias="P. Attack" />
+		<dword alias="Attack Speed" />
+		<dword alias="P. Defense" />
+		<dword alias="P. Evasion" />
+		<dword alias="P. Accuracy" />
+		<dword alias="P. Critical" />
+		<dword alias="M. Attack" />
+		<dword alias="Casting Speed" />
+		<dword alias="Attack Speed" />
+		<dword alias="M. Evasion" />
+		<dword alias="M. Defense" />
+		<dword alias="M. Accuracy" />
+		<dword alias="M. Critical" />
+	</branch>
+	<branch id="exUI_2" condition="bitmask.Bit6" description="Stats screen/elemental defense">
+		<word alias="Block size (14)" />
+		<word alias="Fire defense" type="ElementPower" />
+		<word alias="Water defense" type="ElementPower" />
+		<word alias="Wind defense" type="ElementPower" />
+		<word alias="Earth defense" type="ElementPower" />
+		<word alias="Holy defense" type="ElementPower" />
+		<word alias="Dark defense" type="ElementPower" />
+	</branch>
+	<branch id="exUI_2" condition="bitmask.Bit5" description="Location">
+		<word alias="Block size (18)" />
+		<dword alias="Location X">
+			<scriptAlias id="OIL_OBJECT_X_SERVER" />
+		</dword>
+		<dword alias="Location Y">
+			<scriptAlias id="OIL_OBJECT_Y_SERVER" />
+		</dword>
+		<dword alias="Location Z">
+			<scriptAlias id="OIL_OBJECT_Z_SERVER" />
+		</dword>
+		<dword alias="Vehicle OID" />
+	</branch>
+	<branch id="exUI_2" condition="bitmask.Bit4" description="Movement speed">
+		<word alias="Block size (18)" />
+		<word alias="Running speed (on ground)">
+			<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+		</word>
+		<word alias="Walking speed (on ground)">
+			<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+		</word>
+		<word alias="Running speed (in water)">
+			<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+		</word>
+		<word alias="Walking speed (in water)">
+			<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+		</word>
+		<word alias="Running speed (mounted)" />
+		<word alias="Walking speed (mounted)" />
+		<word alias="Running speed (flying mounted)">
+			<scriptAlias id="OIL_OBJECT_RUN_SPEED" />
+		</word>
+		<word alias="Walking speed (flying mounted)">
+			<scriptAlias id="OIL_OBJECT_WALK_SPEED" />
+		</word>
+	</branch>
+	<branch id="exUI_2" condition="bitmask.Bit3" description="Animation speed">
+		<word alias="Block size (18)" />
+		<double alias="Movement speed multiplier">
+			<scriptAlias id="OIL_OBJECT_SPEED_MULTI" />
+		</double>
+		<double alias="Attack speed multiplier" />
+	</branch>
+	<branch id="exUI_2" condition="bitmask.Bit2" description="Object boundaries">
+		<word alias="Block size (18)" />
+		<double alias="Collision radius (width)" />
+		<double alias="Collision height (height)" />
+	</branch>
+	<branch id="exUI_2" condition="bitmask.Bit1" description="Stats screen/elemental offense">
+		<word alias="Block size (5)" />
+		<byte alias="Attack element" type="ElementType" />
+		<word alias="Attack element power" type="ElementPower" />
+	</branch>
+	<branch id="exUI_2" condition="bitmask.Bit0" description="Pledge info/LFP">
+		<word alias="Block size" />
+		<sstring alias="Title">
+			<scriptAlias id="OIC_PLAYER_TITLE" />
+		</sstring>
+		<word alias="unk 0" />
+		<dword alias="Pledge ID" type="Pledge">
+			<scriptAlias id="PIC_PLEDGE_ID" />
+		</dword>
+		<dword alias="Pledge insignia ID" />
+		<dword alias="Pledge crest ID" type="PledgeCrest">
+			<scriptAlias id="PIC_PLEDGE_CREST_ID" />
+		</dword>
+		<dword alias="Pledge privileges" type="PledgePrivileges" />
+		<byte alias="Pledge leader" type="YesOrNo" />
+		<dword alias="Alliance ID" type="Alliance">
+			<scriptAlias id="AIC_ALLY_ID" />
+		</dword>
+		<dword alias="Alliance crest ID" type="AllianceCrest">
+			<scriptAlias id="AIC_ALLY_CREST_ID" />
+		</dword>
+		<byte alias="Looking for party" type="YesOrNo" />
+	</branch>
+
+	<branch id="exUI_3" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<byte alias="In PvP" type="YesOrNo" />
+		<dword alias="Reputation" />
+		<byte alias="Noble" type="YesOrNo" />
+		<byte alias="Hero" type="YesOrNo" />
+		<byte alias="Social class" type="PledgeRank" />
+		<dword alias="PK Count" />
+		<dword alias="PvP Count" />
+		<word alias="Recommendations" />
+		<word alias="Evaluation score" />
+	</branch>
+	<branch id="exUI_3" condition="bitmask.Bit6">
+		<word alias="Block size (15)" />
+		<dword alias="Vitality" type="VitalityLevel" />
+		<byte alias="unk 0" />
+		<dword alias="Fame" />
+		<dword alias="Raid Points" />
+	</branch>
+	<branch id="exUI_3" condition="bitmask.Bit5">
+		<word alias="Block size (11)" />
+		<byte alias="Talisman slots" />
+		<byte alias="Cloak slot" type="YesOrNo" />
+		<byte alias="Duel team" type="DuelTeam" />
+		<dword alias="Unknown team mask" />
+		<word alias="" />
+	</branch>
+	<branch id="exUI_3" condition="bitmask.Bit4">
+		<word alias="Block size (4)" />
+		<byte alias="Swimming" type="YesOrNo" />
+		<byte alias="Movement type" type="MoveType">
+			<scriptAlias id="OIL_OBJECT_MOVE_MODE" />
+		</byte>
+	</branch>
+	<branch id="exUI_3" condition="bitmask.Bit3">
+		<word alias="Block size (10)" />
+		<dword alias="Name color" type="BGR" />
+		<dword alias="Title color" type="BGR" />
+	</branch>
+	<branch id="exUI_3" condition="bitmask.Bit2">
+		<word alias="Block size (9)" />
+		<dword alias="Mount" type="Npc" />
+		<word alias="Inventory slots" />
+		<byte alias="Hide title" type="YesOrNo" />
+	</branch>
+	<branch id="exUI_3" condition="bitmask.Bit1">
+		<word alias="Block size (9)" />
+		<byte alias="unk 0" />
+		<dword alias="unk" />
+		<byte alias="unk 0" />
+		<byte alias="unk 0" />
+	</branch>
+	<!-- bit 0 is never used -->
+</packet>

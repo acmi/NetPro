@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
-		<packet opcodePrefix="D0 36 01" id="C_EX_UPGRADE_SYSTEM_REQUEST" />
+		<packet opcodePrefix="D0 36 01" id="CM_REQ_UPGRADE_SYSTEM_RESULT" />
 		<packet opcodePrefix="D0 37 01" id="C_EX_CARD_UPDOWN_PICK_NUMB" />
 		<packet opcodePrefix="D0 38 01" id="C_EX_CARD_UPDOWN_GAME_REWARD_REQUEST" />
 		<packet opcodePrefix="D0 39 01" id="C_EX_CARD_UPDOWN_GAME_RETRY" />
@@ -44,8 +44,8 @@
 		<packet opcodePrefix="D0 5E 01" id="CM_REQ_USER_BAN_INFO" />
 	</client>
 	<server>
-		<packet opcodePrefix="FE CD 01" id="S_EX_SHOW_UPGRADE_SYSTEM" />
-		<packet opcodePrefix="FE CE 01" id="S_EX_UPGRADE_SYSTEM_RESULT" />
+		<packet opcodePrefix="FE CD 01" id="SM_EX_SHOW_UPGRADE_SYSTEM" />
+		<packet opcodePrefix="FE CE 01" id="SM_EX_UPGRADE_SYSTEM_RESULT" />
 		<packet opcodePrefix="FE CF 01" id="S_EX_CARD_UPDOWN_GAME_START" />
 		<packet opcodePrefix="FE D0 01" id="S_EX_CARD_UPDOWN_PICK_RESULT" />
 		<packet opcodePrefix="FE D1 01" id="S_EX_CARD_UPDOWN_GAME_PREPARE_REWARD" />
@@ -88,8 +88,8 @@
 		<packet opcodePrefix="FE F6 01" id="S_EX_ELEMENTAL_SPIRIT_ABSORB" />
 		<packet opcodePrefix="FE F7 01" id="S_EX_CHOOSE_LOCKED_ITEM" />
 		<packet opcodePrefix="FE F8 01" id="S_EX_LOCKED_RESULT" />
-		<packet opcodePrefix="FE F9 01" id="S_EX_DRESS_ROOM_UI_OPEN" />
-		<packet opcodePrefix="FE FA 01" id="S_EX_DRESS_HANGER_LIST" />
-		<packet opcodePrefix="FE FB 01" id="S_EX_USER_BAN_INFO" />
+		<packet opcodePrefix="FE F9 01" id="SM_EX_DRESS_ROOM_UI_OPEN" />
+		<packet opcodePrefix="FE FA 01" id="SM_EX_DRESS_HANGER_LIST" />
+		<packet opcodePrefix="FE FB 01" id="SM_EX_USER_BAN_INFO" />
 	</server>
 </mapping>

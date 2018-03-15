@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package modifier;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
+import net.l2emuproject.proxy.network.meta.modifier.IntegerModifier;
+import net.l2emuproject.proxy.script.modifier.ScriptedFieldValueModifier;
 
 /**
- * Interprets the given bit mask as additional structures with item data.
+ * Doubles the value.
  * 
  * @author savormix
  */
-public class ItemInfoEx extends ScriptedBitmaskInterpreter
+public final class Double extends ScriptedFieldValueModifier implements IntegerModifier
 {
-	/** Constructs this interpreter. */
-	public ItemInfoEx()
+	@Override
+	public long apply(long value)
 	{
-		super("Augmentation", "Elemental attribute(s)", "Enchant bonus(es)", "Appearance", "Soul crystal effect(s)", null, "Reuse delay");
+		return value << 1;
 	}
 }

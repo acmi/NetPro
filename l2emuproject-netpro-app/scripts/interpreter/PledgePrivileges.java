@@ -18,7 +18,7 @@ package interpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
 
 /**
- * Interprets the given bit mask as required/used paperdoll slots.
+ * Interprets the given bit mask as pledge power.
  * 
  * @author savormix
  */
@@ -37,8 +37,8 @@ public class PledgePrivileges extends ScriptedBitmaskInterpreter
 				"Clan war", // 5
 				"Dismiss",
 				"Edit crest",
-				"Apprentice",
-				"Troops/Fame",
+				"Use functions", // "Apprentice",
+				"Set functions", // "Troops/Fame",
 				"Summon airship", // 10
 				"Clan hall: entry/exit",
 				"Clan hall: use functions",
@@ -52,7 +52,8 @@ public class PledgePrivileges extends ScriptedBitmaskInterpreter
 				"Castle/Fortress: right to dismiss", // 20
 				"Castle/Fortress: manage taxes",
 				"Castle/Fortress: mercenaries",
-				"Castle/Fortress: set functions"
+				"Castle/Fortress: set functions",
+				"Throne of heroes"
 		);
 		// @formatter:on
 	}

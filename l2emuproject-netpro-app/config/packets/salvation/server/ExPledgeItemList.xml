@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="S_EX_PLEDGE_ITEM_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="Items" id="cnt" />
+	<loop id="cnt">
+		<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info">
+			<scriptAlias id="pledge_item_list_ex" />
+		</byte>
+		<dword alias="Item UID" />
+		<dword alias="Item" type="Item" id="is_ticket" />
+		<unsignedByte alias="Slot number" type="MyInventorySlot" />
+		<qword alias="Amount" />
+		<byte alias="Main item type" type="ItemType2" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<byte alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket">
+			<unsignedByte alias="Round of lottery" mod="NewLotteryEvent" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket">
+			<unsignedByte alias="Lane(s)" type="item.MonsterRaceLane" />
+		</branch>
+
+		<word alias="Equipped" type="YesOrNo" />
+		<qword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
+
+		<branch id="is_ticket" condition="GenericItem">
+			<byte alias="Enchant level">
+				<scriptAlias id="pledge_item_list_enchant_level" />
+			</byte>
+			<byte alias="Name exists" type="YesOrNo" />
+		</branch>
+		<branch id="is_ticket" condition="LotteryTicket"> <!-- still written due to private stores & co., no VISUAL effect in client -->
+			<unsignedByte alias="Selected numbers (truncated)"
+				type="LottoNumbers" />
+			<unsignedByte alias="Selected numbers (upper byte)"
+				mod="ShiftLeft16" type="LottoNumbers" />
+		</branch>
+		<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+			<byte alias="Race number" />
+			<byte alias="Bet" type="MonsterRaceBetMultiplier" />
+		</branch>
+
+		<dword alias="Mana left" type="ShadowMana" />
+		<dword alias="Time remaining" type="TimeRemaining" />
+		<byte alias="Usable" type="YesOrNo" />
+
+		<byte alias="" />
+		<byte alias="" />
+		
+		<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
+			<dword alias="Augmentation effect (1)" type="Augmentation">
+				<scriptAlias id="pledge_item_list_aug1" />
+			</dword>
+			<dword alias="Augmentation effect (2)" type="Augmentation">
+				<scriptAlias id="pledge_item_list_aug2" />
+			</dword>
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit1"> <!-- elemental info -->
+			<word alias="Attack element" type="ElementType" />
+			<word alias="Attack element power" type="ElementPower" />
+			<word alias="Fire defense" type="ElementPower" />
+			<word alias="Water defense" type="ElementPower" />
+			<word alias="Wind defense" type="ElementPower" />
+			<word alias="Earth defense" type="ElementPower" />
+			<word alias="Holy defense" type="ElementPower" />
+			<word alias="Dark defense" type="ElementPower" />
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
+			<dword alias="Enchant effect (1)" type="Augmentation">
+				<scriptAlias id="pledge_item_list_enc1" />
+			</dword>
+			<dword alias="Enchant effect (2)" type="Augmentation">
+				<scriptAlias id="pledge_item_list_enc2" />
+			</dword>
+			<dword alias="Enchant effect (3)" type="Augmentation">
+				<scriptAlias id="pledge_item_list_enc3" />
+			</dword>
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit3"> <!-- appearance info -->
+			<branch id="is_ticket" condition="GenericItem">
+				<dword alias="Visible item" type="Item">
+					<scriptAlias id="pledge_item_list_appearance" />
+				</dword>
+			</branch>
+			<branch id="is_ticket" condition="LotteryTicket">
+				<dword alias="Selected numbers" type="LottoNumbers" />
+			</branch>
+			<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
+				<word alias="Race number" />
+				<word alias="Bet" type="MonsterRaceBetMultiplier" />
+			</branch>
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit4"> <!-- soul crystal (SA) info -->
+			<byte alias="Primary special abilities" id="sa1_cnt">
+				<scriptAlias id="pledge_item_list_SA1_COUNT" />
+			</byte>
+			<loop id="sa1_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal">
+					<scriptAlias id="pledge_item_list_SA1" />
+				</dword>
+			</loop>
+			<byte alias="Secondary special abilities" id="sa2_cnt">
+				<scriptAlias id="pledge_item_list_SA2_COUNT" />
+			</byte>
+			<loop id="sa2_cnt">
+				<dword alias="SA effect" type="item.SoulCrystal">
+					<scriptAlias id="pledge_item_list_SA2" />
+				</dword>
+			</loop>
+		</branch>
+		<branch id="extra_info" condition="bitmask.Bit6">
+			<dword alias="Reuse delay" type="MillisRemaining" />
+		</branch>
+		
+		<byte alias="Availability" type="pledge.ItemStatus" />
+		<qword alias="Purchase price: adena" />
+		<dword alias="Purchase price: fame" />
+		<byte alias="Required pledge level" />
+		<byte alias="Required pledge mastery" type="pledge.Mastery" />
+		<qword alias="Activation price: adena" />
+		<dword alias="Activation price: reputation" />
+		<dword alias="Time to deactivation" type="TimeRemaining" />
+		<dword alias="Time to restock" type="TimeRemaining" />
+		<word alias="Current stock" />
+		<word alias="Total stock" />
+	</loop>
+</packet>

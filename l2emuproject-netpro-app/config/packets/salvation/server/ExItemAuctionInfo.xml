@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Augmentation/enchant effect WORDs are now DWORDs -->
-<!-- Underground: Soul Crystal Effect extension -->
 <packet id="401" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<byte alias="Open window" type="YesOrNo" />
 	<dword alias="Auction ID" />
@@ -45,6 +43,9 @@
 	<byte alias="Usable" type="YesOrNo" />
 
 	<!-- NEW -->
+	<byte alias="" />
+	<byte alias="" />
+
 	<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
 		<dword alias="Augmentation effect (1)" type="Augmentation" />
 		<dword alias="Augmentation effect (2)" type="Augmentation" />
@@ -59,7 +60,6 @@
 		<word alias="Holy defense" type="ElementPower" />
 		<word alias="Dark defense" type="ElementPower" />
 	</branch>
-	<!-- NEW -->
 	<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
 		<dword alias="Enchant effect (1)" type="Augmentation" />
 		<dword alias="Enchant effect (2)" type="Augmentation" />
@@ -86,5 +86,8 @@
 		<loop id="sa2_cnt">
 			<dword alias="SA effect" type="item.SoulCrystal" />
 		</loop>
+	</branch>
+	<branch id="extra_info" condition="bitmask.Bit6">
+		<dword alias="" />
 	</branch>
 </packet>

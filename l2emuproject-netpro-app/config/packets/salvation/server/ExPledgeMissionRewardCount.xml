@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="S_EX_PLEDGE_MISSION_REWARD_COUNT" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Claimed" />
+	<dword alias="Naximum" />
+</packet>

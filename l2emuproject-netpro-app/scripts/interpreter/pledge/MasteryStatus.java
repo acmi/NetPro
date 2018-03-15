@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.pledge;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
- * Interprets the given bit mask as additional structures with item data.
+ * Interprets the given byte/word/dword value as a pledge mastery status.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class ItemInfoEx extends ScriptedBitmaskInterpreter
+public final class MasteryStatus extends ScriptedZeroBasedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
-	public ItemInfoEx()
+	public MasteryStatus()
 	{
-		super("Augmentation", "Elemental attribute(s)", "Enchant bonus(es)", "Appearance", "Soul crystal effect(s)", null, "Reuse delay");
+		super("Locked", "Purchasable", "Applied");
 	}
 }

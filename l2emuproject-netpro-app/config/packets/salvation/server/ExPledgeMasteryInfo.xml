@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="S_EX_PLEDGE_MASTERY_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Consumed development points" />
+	<dword alias="Total development points" />
+	<dword alias="Masteries" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Mastery" type="pledge.Mastery" />
+		<dword alias="Purchased" type="YesOrNo" /> <!-- Points spent, most likely -->
+		<byte alias="Availability" type="pledge.MasteryStatus" />
+	</loop>
+</packet>

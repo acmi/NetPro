@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="S_EX_PLEDGE_MISSION_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Updates" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Mission" type="pledge.Mission" />
+		<dword alias="Progress" />
+		<byte alias="State" type="pledge.MissionState" />
+	</loop>
+</packet>

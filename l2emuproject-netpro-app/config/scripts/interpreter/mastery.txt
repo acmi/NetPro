@@ -1,0 +1,21 @@
+1	Clan Specialty Lv. 1
+2	Clan Specialty Lv. 2
+3	Clan Specialty Lv. 3
+4	Clan Specialty Lv. 4
+5	Clan Specialty Lv. 5
+6	Clan Specialty Lv. 6
+7	Combat Specialty Lv. 1
+8	Combat Specialty Lv. 2
+9	Combat Specialty Lv. 3
+10	Combat Specialty Lv. 4
+11	Combat Specialty Lv. 5
+12	War Specialty Lv. 1
+13	War Specialty Lv. 2
+14	War Specialty Lv. 3
+15	War Specialty Lv. 4
+16	War Specialty Lv. 5
+17	Clan Specialty Lv. 4- Engraving
+18	Combat Specialty Lv. 3 - Seal
+19	Combat Specialty Lv. 5 - Seal
+20	War Specialty Lv. 3 - Seal
+21	War Specialty Lv. 5 - Seal

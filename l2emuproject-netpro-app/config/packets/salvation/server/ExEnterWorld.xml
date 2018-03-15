@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_ENTER_WORLD" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Current time" type="SecondsSinceEpoch" />
+	<dword alias="Offset to UTC (seconds)" /> <!-- amount of seconds to add to get equivalent time in UTC+0 -->
+	<dword alias="0" />
+</packet>

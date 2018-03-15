@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
-
-import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
+package net.l2emuproject.proxy.state.entity.type;
 
 /**
- * Interprets the given bit mask as additional structures with item data.
+ * Defines an object type – pledge.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class ItemInfoEx extends ScriptedBitmaskInterpreter
+public class PledgeType implements ObjectType
 {
-	/** Constructs this interpreter. */
-	public ItemInfoEx()
+	@Override
+	public String describe()
 	{
-		super("Augmentation", "Elemental attribute(s)", "Enchant bonus(es)", "Appearance", "Soul crystal effect(s)", null, "Reuse delay");
+		return "Pledge";
 	}
 }

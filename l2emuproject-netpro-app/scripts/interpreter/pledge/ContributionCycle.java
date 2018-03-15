@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.pledge;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
+import net.l2emuproject.proxy.script.interpreter.ScriptedBooleanInterpreter;
 
 /**
- * Interprets the given bit mask as additional structures with item data.
+ * Interprets an integer as CoC arena status.
  * 
- * @author savormix
+ * @author _dev_
  */
-public class ItemInfoEx extends ScriptedBitmaskInterpreter
+public final class ContributionCycle extends ScriptedBooleanInterpreter
 {
 	/** Constructs this interpreter. */
-	public ItemInfoEx()
+	public ContributionCycle()
 	{
-		super("Augmentation", "Elemental attribute(s)", "Enchant bonus(es)", "Appearance", "Soul crystal effect(s)", null, "Reuse delay");
+		super("Previous", "Current");
 	}
 }

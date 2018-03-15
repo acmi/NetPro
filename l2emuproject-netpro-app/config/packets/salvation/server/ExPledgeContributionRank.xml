@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="S_EX_PLEDGE_CONTRIBUTION_RANK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Cycle" type="pledge.ContributionCycle" />
+	<dword alias="Contributors" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Rank" />
+		<bytes alias="Name" type="UTF16LE">
+			<length>50</length>
+		</bytes>
+		<dword alias="Unit" type="PledgeUnit" />
+		<dword alias="Cycle reputation" />
+		<dword alias="Total reputation" />
+	</loop>
+</packet>

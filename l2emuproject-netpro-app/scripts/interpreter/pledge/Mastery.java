@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package interpreter;
+package interpreter.pledge;
 
-import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
+import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 
 /**
- * Interprets the given bit mask as additional structures with item data.
- * 
- * @author savormix
+ * @author _dev_
  */
-public class ItemInfoEx extends ScriptedBitmaskInterpreter
+public class Mastery extends ScriptedIntegerIdInterpreter
 {
 	/** Constructs this interpreter. */
-	public ItemInfoEx()
+	public Mastery()
 	{
-		super("Augmentation", "Elemental attribute(s)", "Enchant bonus(es)", "Appearance", "Soul crystal effect(s)", null, "Reuse delay");
+		super(loadFromResource("mastery.txt", ImmutablePair.of(0L, "None")));
 	}
 }

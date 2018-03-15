@@ -26,7 +26,6 @@ import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.wrapException;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.text.NumberFormat;
@@ -35,10 +34,10 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -49,6 +48,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.mutable.MutableInt;
+import org.apache.commons.lang3.tuple.Pair;
 
 import eu.revengineer.simplejse.exception.DependencyResolutionException;
 import eu.revengineer.simplejse.exception.MutableOperationInProgressException;
@@ -105,6 +105,7 @@ import net.l2emuproject.proxy.ui.javafx.io.view.PacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.io.view.SamuraiPacketLogLoadOptionController;
 import net.l2emuproject.proxy.ui.javafx.packet.IPacketHidingConfig;
 import net.l2emuproject.proxy.ui.javafx.packet.PacketLogEntry;
+import net.l2emuproject.proxy.ui.javafx.packet.view.PacketBuilderDialogController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketDisplayConfigDialogController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabController;
 import net.l2emuproject.proxy.ui.javafx.packet.view.PacketLogTabUserData;
@@ -125,7 +126,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -169,7 +169,7 @@ import javafx.util.Duration;
  * 
  * @author _dev_
  */
-public class MainWindowController implements Initializable, IOConstants, ConnectionListener, PacketListener, CaptureController
+public class MainWindowController implements IOConstants, ConnectionListener, PacketListener, CaptureController
 {
 	static final L2Logger LOG = L2Logger.getLogger(MainWindowController.class);
 	
@@ -242,6 +242,10 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	private final Map<Proxy, Boolean> _sessionCapture;
 	private volatile boolean _globalCaptureDisable;
 	
+	private final ObservableList<Pair<Integer, Proxy>> _injectableConnections;
+	
+	private Stage _packetInjectDialog;
+	
 	/** Constructs this controller. */
 	public MainWindowController()
 	{
@@ -249,10 +253,12 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 		_connectionIdentifier = new MutableInt(0);
 		
 		_sessionCapture = new ConcurrentHashMap<>();
+		
+		_injectableConnections = FXCollections.observableArrayList(new LinkedList<>());
 	}
 	
-	@Override
-	public void initialize(URL location, ResourceBundle resources)
+	@FXML
+	private void initialize()
 	{
 		_cbCaptureSession.setVisible(false);
 		_labProtocol.setVisible(false);
@@ -351,6 +357,26 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 		});
 	}
 	
+	/**
+	 * Returns the primary application window.
+	 * 
+	 * @return main application window
+	 */
+	public Window getMainWindow()
+	{
+		return _tpConnections.getScene().getWindow();
+	}
+	
+	private PacketLogTabController getCurrentPacketTabController()
+	{
+		final Tab packetTab = _tpConnections.getSelectionModel().getSelectedItem();
+		if (packetTab == null)
+			return null;
+		
+		final Object controller = packetTab.getUserData();
+		return controller instanceof PacketLogTabUserData ? ((PacketLogTabUserData)controller).getController() : null;
+	}
+	
 	private void rebuildProtocolMenu()
 	{
 		for (final Window wnd : _openPacketHidingConfigWindows.values())
@@ -443,26 +469,6 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.NONE).show();
 			return;
 		}
-	}
-	
-	/**
-	 * Returns the primary application window.
-	 * 
-	 * @return main application window
-	 */
-	public Window getMainWindow()
-	{
-		return _tpConnections.getScene().getWindow();
-	}
-	
-	private PacketLogTabController getCurrentPacketTabController()
-	{
-		final Tab packetTab = _tpConnections.getSelectionModel().getSelectedItem();
-		if (packetTab == null)
-			return null;
-		
-		final Object controller = packetTab.getUserData();
-		return controller instanceof PacketLogTabUserData ? ((PacketLogTabUserData)controller).getController() : null;
 	}
 	
 	@FXML
@@ -946,6 +952,46 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	// ------------------------
 	
 	// ----------------------------
+	// ========== VIEW MENU BEGIN
+	// ----------------------------
+	
+	@FXML
+	private void showPacketInjectDialog(ActionEvent event)
+	{
+		if (_packetInjectDialog != null)
+		{
+			_packetInjectDialog.show();
+			_packetInjectDialog.toFront();
+			return;
+		}
+		
+		try
+		{
+			final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(PacketBuilderDialogController.class), UIStrings.getBundle());
+			final Scene scene = new Scene(loader.load());
+			loader.<PacketBuilderDialogController> getController().setClientConnections(_injectableConnections);
+			
+			_packetInjectDialog = new Stage(StageStyle.DECORATED);
+			_packetInjectDialog.setTitle(UIStrings.get("packetbuilder.injectdlg.title"));
+			_packetInjectDialog.setScene(scene);
+			_packetInjectDialog.getIcons().addAll(FXUtils.getIconListFX());
+			// _packetInjectDialog.setAlwaysOnTop(true);
+			WindowTracker.getInstance().add(_packetInjectDialog);
+			_packetInjectDialog.show();
+		}
+		catch (final IOException e)
+		{
+			final Throwable t = StackTraceUtil.stripUntilClassContext(e, true, PacketBuilderDialogController.class.getName());
+			wrapException(t, "generic.err.internal.title", null, "generic.err.internal.header.fxml", null, getMainWindow(), Modality.WINDOW_MODAL).show();
+			return;
+		}
+	}
+	
+	// ------------------------
+	// ========== VIEW MENU END
+	// ------------------------
+	
+	// ----------------------------
 	// ========== SCRIPT MENU BEGIN
 	// ----------------------------
 	
@@ -1391,14 +1437,18 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	public void onServerConnection(Proxy server)
 	{
 		Platform.runLater(() -> {
+			final int cid = _connectionIdentifier.incrementAndGet();
+			// for clarity, auth injections are no longer supported in this version
+			if (ServiceType.valueOf(server.getProtocol()) == ServiceType.GAME)
+				_injectableConnections.add(Pair.of(cid, server.getClient()));
+			
 			final Tab tab;
 			final PacketLogTabController controller;
-			
 			try
 			{
 				final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(PacketLogTabController.class), UIStrings.getBundle());
 				tab = new Tab(
-						UIStrings.get("packettab.title", _connectionIdentifier.incrementAndGet(), IPAliasManager.toUserFriendlyString(server.getClient().getHostAddress()),
+						UIStrings.get("packettab.title", cid, IPAliasManager.toUserFriendlyString(server.getClient().getHostAddress()),
 								IPAliasManager.toUserFriendlyString(server.getHostAddress())),
 						loader.load());
 				controller = loader.getController();
@@ -1432,6 +1482,14 @@ public class MainWindowController implements Initializable, IOConstants, Connect
 	public void onDisconnection(Proxy client, Proxy server)
 	{
 		Platform.runLater(() -> {
+			for (final Iterator<Pair<Integer, Proxy>> it = _injectableConnections.iterator(); it.hasNext();)
+			{
+				if (it.next().getRight() == client)
+				{
+					it.remove();
+					break;
+				}
+			}
 			final ObservableList<Tab> tabs = _tpConnections.getTabs();
 			for (final Tab tab : tabs)
 			{

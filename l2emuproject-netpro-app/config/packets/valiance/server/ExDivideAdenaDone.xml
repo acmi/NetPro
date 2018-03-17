@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="653" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<word alias="Distributor's view" type="YesOrNo" /> <!-- no visual difference, though -->
+	<byte alias="Distributor's view" type="YesOrNo" /> <!-- no visual difference, though -->
+	<byte alias="Distribution type" type="party.AdenaDistributionType" /> <!-- no visual difference, though -->
 	<dword alias="Recipient count" />
 	<qword alias="Amount per person" />
 	<qword alias="Total amount" />

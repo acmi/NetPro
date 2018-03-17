@@ -357,6 +357,7 @@
 
 			<xs:enumeration value="olympiad.InfoMode" />
 
+			<xs:enumeration value="party.AdenaDistributionType" />
 			<xs:enumeration value="party.PartyMatchingAffilation" />
 			<xs:enumeration value="party.PartyMatchingListMode" />
 

@@ -915,6 +915,25 @@ public final class CommonPacketSender extends PacketWriterScript
 		server.sendPacket(new ProxyRepeatedPacket(bb));
 	}
 	
+	public static final void sendConfirmDlg(L2GameServer server, int message, boolean answer, int ref)
+	{
+		final int size = 1 + 4 + 4 + 4;
+		final ByteBuffer bb = CommonPacketSender.allocate(size);
+		final MMOBuffer buf = CommonPacketSender.allocate(bb);
+		
+		buf.writeC(0xC6);
+		buf.writeD(message);
+		buf.writeD(answer);
+		buf.writeD(ref);
+		
+		server.sendPacket(new ProxyRepeatedPacket(bb));
+	}
+	
+	public static final void sendRequestPledgeMissionReward(L2GameServer server, int mission)
+	{
+		sendRequestExD(server, 0x01_43, mission);
+	}
+	
 	private static final void sendRequestEx(L2GameServer server, int secondOp)
 	{
 		server.sendPacket(new ProxyRepeatedPacket((byte)0xD0, (byte)(secondOp & 0xFF), (byte)(secondOp >> 8)));

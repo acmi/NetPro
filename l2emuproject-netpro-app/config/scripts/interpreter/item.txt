@@ -28077,7 +28077,7 @@
 28606	+10 Aden Cloak - Legendary Box
 28607	+10 Elmore Cloak - Legendary Box
 28608	+10 Ferios Cloak - Legendary Box
-28609	High-grade Balthus Knight Mark
+28609	High-Grade Oriana's Disguised Clothing
 28610	Veteran Duo Bracelet Pack Event
 28611	Returned Duo Bracelet Pack Event
 28612	Royal White Save Ticket (R99) Event
@@ -28641,6 +28641,31 @@
 29170	High-grade Spirit Stone Pack - Legendary
 29171	High-grade Spirit Stone Pack - Cloak
 29172	Red Star Solvent
+29173	Prestige Rune Pack 7-day
+29174	Prestige Rune 7-day
+29175	Prestige Rune Pack 1-day
+29176	Prestige Rune 1-day
+29177	Prestige Cube Pack 1-day
+29178	Prestige Cube 1-day
+29179	Eva's Rune Pack (1-day)
+29180	Eva's Rune 1-day
+29181	Mermaid Agathion Charm
+29182	Master's Fishing Coin
+29183	Mermaid Agathion Enchant Scroll
+29184	Mermaid's Trace
+29185	Master's Fishing Potion 1-hr
+29186	Golden Fishing Shot
+29187	Fishing XP Box Lv. 85-94
+29188	Fishing XP Box Lv .95-98
+29189	Fishing XP Box Lv. 99-101
+29190	Fishing XP Box Lv. 102-104
+29191	Fishing XP Box Lv. 105
+29192	Shining Fishing Box
+29193	Fishing XP Scroll Lv. 85-94
+29194	Fishing XP Scroll Lv .95-98
+29195	Fishing XP Scroll Lv. 99-101
+29196	Fishing XP Scroll Lv. 102-104
+29197	Fishing XP Scroll Lv. 105
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
@@ -40998,12 +41023,12 @@
 47382	Freya's Wind Scroll Event
 47383	Red Libra Supplies Lv. 5 Event
 47384	Express Bus Pass Card
-47385	Balthus Knight Mark
-47386	Sibis' Letter Event
-47387	Balthus Knights Supply Items
+47385	Oriana's Disguised Clothing
+47386	Oriana's Letter Event
+47387	Oriana's Lucky Draw Supply Items
 47388	12th Anniversary Souvenir
 47389	12th Anniversary Supply Item
-47390	Forever/Longing Talisman/Energy of Longing Supply Items
+47390	Longing Talisman/Energy of Longing Supply Items
 47391	Venir Stage 11/12/13 Talisman Supply Items
 47392	Shining Scroll: Enchant Elemental Shirt
 47393	Dark Assassin/White Assassin Suit Supply Items
@@ -41012,7 +41037,7 @@
 47396	Nurka/Rydel/Gustav's Belt Supply Item
 47397	Seven Signs/Anakim/Lilith Talisman Supply Item
 47398	Bloody Eternal Enhancement Stone - x2
-47399	Sibis Coin Box
+47399	Oriana's Coin Box
 47400	Veteran Duo Bracelet Event
 47401	Returned Duo Bracelet Event
 47402	Emperor's Dessert Set (Attack Type)
@@ -41029,7 +41054,7 @@
 47413	PC Cafe Points Coupon (200 points)
 47414	Duo's Gift Event
 47415	Duo - Freya's Wind Cube
-47416	Sibis' Suspicious Supply Items
+47416	Oriana's Suspicious Supply Items
 47417	Dandy's Elemental Shirt 2-hour
 47418	Dandy's Shiny Elemental Shirt 2-hour
 47419	Dandy's Uniform
@@ -41359,7 +41384,7 @@
 47749	Dark Eternal Enhancement Stone - 2
 47750	Zodiac Agathion Stage 5 Supplies
 47751	+8 Blessed Eternal Armor Heavy Capsule Event
-47752	+8 Blessed Eternal Armor Greaves Capsules Event
+47752	+8 Blessed Eternal Armor Light Capsule Event
 47753	+8 Blessed Eternal Armor Robe Capsule Event
 47754	Dragon's Treasure Chest
 47755	Shining Dragon's Treasure Chest
@@ -42116,5 +42141,5 @@
 48633	Master Fisherman's Blessing - 8-hr
 48765	Cat Outfit
 48766	Panda Outfit
-49783	Sibis Coin Box
+49783	Oriana's Coin
 49798	Cheer Pom Poms Event

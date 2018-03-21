@@ -675,6 +675,7 @@
 8678	made with matchsticks, Bonfire
 8679	looking for matchsticks, Older Match Sister
 8680	Younger Match Sister, Hungry
+8681	Mermaid Agathion
 12077	Wolf
 12311	Hatchling of the Wind
 12312	Hatchling of the Stars
@@ -12679,7 +12680,7 @@
 34259	Dandy, Dreaming
 34260	Dandy, Successful
 34261	Dandy, Successful
-34262	Sibis, Balthus Knights' Supply Officer
+34262	Oriana, Golden Girl
 34263	Dandy, Celebrating
 34264	Dandy, Celebrating
 34265	Lias, Dimensional Researcher
@@ -12792,7 +12793,7 @@
 34381	Narita, Sayha's Seer
 34382	Kayleen, Yul Ghost Sentinel
 34383	McCoy, Hatchling Manager
-34384	Sibis, Balthus Knight
+34384	Oriana, Golden Girl
 34385	Camcud, Balthus Knight
 34386	Sigel Knight: Master Defender, Sigel Knight Awakening
 34387	Powerful Melee Damage Dealer, Tyrr Warrior Awakening

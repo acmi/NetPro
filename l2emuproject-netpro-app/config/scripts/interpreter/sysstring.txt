@@ -2785,7 +2785,7 @@
 2982	Reward for No. 1
 2983	Reward for All
 2984	Obtainable Reward(s)
-2985	Sibis Coin
+2985	Oriana's Coin
 2986	Conditions for War
 2987	Clan Request Explanation
 2988	Beauty Shop
@@ -3609,6 +3609,15 @@
 3806	Cannot use functions except Equip, Access to Private and Pet Warehouses, and Account Sharing.
 3807	Unable to seal
 3808	Release Seal
+3860	Set Next Target
+3861	Next Target
+3862	Target to Taunt
+3863	Monster
+3864	PC
+3865	NPC
+3868	Hide Pet/Servitor in towns
+3871	Reject Party Invitation - By Character
+3872	Reject Friend Request - By Character
 4001	An envoy dispatched by the Blackbird Clan. Assigns quests associated with the Blackbird Clan.
 4002	An envoy dispatched by the Giant Trackers. Assigns quests associated with the Giant Trackers.
 4003	An envoy dispatched by the Mother Tree Guardians. Assigns quests associated with the Mother Tree Guardians.

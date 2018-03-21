@@ -30317,7 +30317,7 @@
 30317	Alignment Def. + 30.
 30318	P. Skill MP Consumption - 1%.
 30319	M. Skill MP Consumption - 1%.
-30320	Skill MP Consumption - 1%.
+30320	Skill Cooldown - 1%.
 30321	P. Skill Critical Damage + 1%.
 30322	M. Skill Critical Damage + 1%.
 30323	Received Heal Amount + 1%.
@@ -34489,3 +34489,18 @@
 41117	[not named in client]
 41118	[not named in client]
 41119	[not named in client]
+41120	[not named in client]
+41121	[not named in client]
+41122	[not named in client]
+41123	[not named in client]
+41124	[not named in client]
+41125	[not named in client]
+41126	[not named in client]
+41127	[not named in client]
+41128	[not named in client]
+41129	[not named in client]
+41130	[not named in client]
+41131	[not named in client]
+41132	[not named in client]
+41133	[not named in client]
+41134	[not named in client]

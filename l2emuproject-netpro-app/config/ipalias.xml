@@ -10,9 +10,11 @@
 	<address ip="64.25.35.104" alias="NA" />
 	<address ip="112.175.192.60" alias="KR" />
 	<address ip="112.175.192.65" alias="KR PTS" />
-	<address ip="106.186.45.250" alias="JP" />
+	<address ip="106.186.46.87" alias="JP" />
+	<address ip="106.186.46.88" alias="JP" />
+	<address ip="106.186.46.89" alias="JP" />
 	<address ip="210.68.144.4" alias="TW" />
-	<address ip="109.105.156.10" alias="EU" />
+	<address ip="185.47.157.161" alias="EU" />
 	
 	<!-- Individual servers -->
 	<!-- NA:7777 -->

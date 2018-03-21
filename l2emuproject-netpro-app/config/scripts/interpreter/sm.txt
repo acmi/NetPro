@@ -3696,9 +3696,9 @@
 3845	You came out of the clan request area.
 3846	You cannot use $s1.
 3847	Use $s1.
-3848	$s1 obtained $s2, the Balthus Knights Secret Supply Items.
-3849	You obtained $s1 Sibis Coins.
-3850	There are no Sibis Coins available to obtain.
+3848	$s1 obtained $s2, of Oriana's Supply Items.
+3849	You obtained $s1 Oriana's Coins.
+3850	There are no Oriana's Coins available to obtain.
 3851	You've obtained $s1. You can obtain up to 2 of these items a day. You can get more after 06:30 AM every day.
 3852	Click the Apply button to apply the changes.
 3853	You cannot participate in the Ceremony of Chaos as a flying transformed object.
@@ -3735,17 +3735,17 @@
 3884	Can be used only when HP is less than 100%%.
 3885	Can be used only when MP is less than 100%%.
 3886	Can be used only when CP is less than 100%%.
-3887	The Balthus Knights event is ready to begin. Marks of the Balthus Knights cannot be used before the event begins.
-3888	The Balthus Knights event is in progress.
-3889	The Balthus Knights event has begun. Characters of level 85 or higher and who are Awakened may participate in this event.
+3887	The Oriana's Lucky Draw event is ready to begin. Oriana's Disguised Clothing cannot be used before the event begins.
+3888	The Oriana's Lucky Draw event is in progress.
+3889	The Oriana's Lucky Draw event has begun. Characters of level 90 or higher and who are Awakened may participate in this event.
 3890	Except the vitality buff, all buffs including Art of Seduction will be deleted.
 3891	You've obtained individual request points ($s1/100).
-3892	You are not participating in the event. Use the Mark of the Balthus Knights to participate.<br>You can obtain the Mark of the Balthus Knights from the Balthus Knight Supply Item or Sibis' Suspicious Supply Items.
+3892	You are not participating in the event. You need Oriana's Disguised Clothing to participate.<br>You can obtain Oriana's Disguised Clothing from Oriana's Lucky Draw Supply Items or Oriana's Suspicious Supply Items.
 3893	You cannot receive the item $s1 because you've exceeded the limit on the quantity and weight of the inventory.
-3894	You are currently in Stage $s1, Round $s2 of the Balthus Knights event.
+3894	You are currently in Stage $s1, Round $s2 of the Oriana's Lucky Draw event.
 3895	You cannot go because the maximum number of participants in the clan request has been exceeded.
 3896	There's a new clan request! Get it from the Clan Request Manager.
-3897	You can now participate in the Balthus Knights event as the server is open.
+3897	You can now participate in the Oriana's Lucky Draw event as the server is open.
 3898	You cannot use the item because the effect is already applied.
 3899	You can purchase rewards through the Clan Request Manager.
 3900	Change Rank.
@@ -4650,6 +4650,18 @@
 4892	Using this function will show the system messages only in the dedicated window and other messages in the rest of the channels will become deactivated.
 4893	Choose the channel of the activated Chat tab. No channels of the standard tabs can be changed.
 4894	Change the quality of the visual effect settings quickly according to the pre-configured setting value.
+4895	Selects all hostile targets.
+4896	Selects a hostile monster. (Excludes hostile PC's Pets / Servitors)
+4897	Selects a hostile PC. (Excludes hostile PC's Pets / Servitors)
+4898	Selects a friendly NPC.
+4899	Hide the pets and servitors of other PCs in town.
+4900	Reject a regular user's invitation to a party.
+4901	Reject a friend's invitation to a party.
+4902	Reject a clan member's invitation to a party.
+4903	Turn on/off to reject party invitations from everyone.
+4904	Reject a regular user's friend request.
+4905	Reject a clan member's friend request.
+4906	Turn on/off to reject friend requests from everyone.
 5000	Your account has been suspended due to account theft. If you registered your e-mail in your personal information, a notification mail will have been sent, so please check. If you have nothing to do with the account theft, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Account theft report center</font> and submit your letter of objection. For more information, <font color="FFDF4C">contact us via 1-to-1 inquiry through the Support Center</font>.
 5001	Your account has been suspended as per our management policy because it is confirmed that you submitted a false report. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
 5002	Your account has been suspended as per our management policy for failing to verify your account during the specified period after submitting the report of account theft. To unblock your account, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Report center</font> and go through the user verification process in the account theft report. For more information, go to <font color="FFDF4C">plaync (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
@@ -5119,7 +5131,7 @@
 6835	Your account has been suspended as per our management policy for disrupting other users' normal gameplay or the company's game operation. For more information, contact us through the Support Center.
 6836	The security card service has ended so you will be able to connect to the game after cancelling the security card. In order to protect your account, please cancel the security card and request Google OTP.
 6837	Please enter the OTP number. The numbers change for each login.
-6838	You received a warrior from the Secret Supply Items of the Balthus Knights! You received $s1.
+6838	A winner has been selected! They have recieved $s1.
 7001	Cannot proceed until the current dice roll is over.
 7002	Your inventory's weight/limit has been exceeded, so you can't participate in the dice roll.
 7003	You are outside the range to participate in the dice roll.

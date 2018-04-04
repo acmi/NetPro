@@ -28666,6 +28666,23 @@
 29195	Fishing XP Scroll Lv. 99-101
 29196	Fishing XP Scroll Lv. 102-104
 29197	Fishing XP Scroll Lv. 105
+29198	Ultimate Fortune Jewelry Box
+29199	New User's Leaf 14-day
+29200	Returning User's Leaf 14-day
+29201	New User's Leaf Box 14-day
+29202	Returning User's Leaf Box 14-day
+29203	Suspicious Safe
+29204	Shining Gold Bar
+29205	Vitality Beer
+29206	Honey Vitality Beer
+29207	Teddy Bear Appearance Stone
+29208	Cat Plushie Appearance Stone
+29209	Panda Plushie Appearance Stone
+29210	Dark Eternal Ingredient Set
+29211	Bloody Eternal Ingredient Set
+29212	Adventurer's Circlet
+29213	Adventurer's Bracelet
+29214	T-shirt Box
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow

@@ -119,6 +119,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
+import javafx.beans.binding.IntegerBinding;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
@@ -309,6 +310,8 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 			
 			_labProtocol.textProperty().bind(Bindings.convert(controller.protocolProperty()));
 			_labProtocol.setVisible(true);
+			final IntegerBinding protocolVersionProperty = Bindings.createIntegerBinding(() -> controller.protocolProperty().get().getVersion(), controller.protocolProperty());
+			_tbPacketHidingConfig.textProperty().bind(UIStrings.getEx("main.pdc", protocolVersionProperty));
 			_tbPacketHidingConfig.setVisible(true);
 			_cbCaptureSession.setSelected(ud.isCaptureDisabled());
 		});

@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<packet id="500" xmlns="http://www.l2emu-unique.net"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<!-- Packet header was reordered -->
+<!-- Added a WORD to loop element with lockdown state -->
+<!-- Added a DWORD for a new item extension - reuse delay -->
+<packet id="500" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<byte alias="Type" id="list_type" />
 	<branch id="list_type" condition="item.ItemListSize">
-		<word alias="" />
-		<word alias="Total item count" />
-		<word alias="" />
+		<word alias="Special item count" id="spec_cnt" />
+		<branch id="spec_cnt" condition="Positive">
+			<byte alias="Restriction" type="ItemRestriction" />
+		</branch>
+		<loop id="spec_cnt">
+			<dword alias="Special item" type="Item" />
+		</loop>
+		<dword alias="Total items" />
 	</branch>
 	<branch id="list_type" condition="item.ItemListPage">
-		<word alias="Item count" id="index_0" />
-		<word alias="" />
-		<word alias="Total item count" />
-		<word alias="" />
-		<loop id="index_0">
+		<dword alias="Total items" />
+		<dword alias="Items in this page" id="items" />
+		<loop id="items">
 			<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />
 			<dword alias="Item OID" type="ObjectID">
 				<scriptAlias id="OIC_ITEM_OID" />
@@ -60,8 +64,7 @@
 			<byte alias="Usable" type="YesOrNo" />
 
 			<!-- NEW -->
-			<byte alias="" />
-			<byte alias="" />
+			<word alias="Locked" type="YesOrNo" />
 
 			<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
 				<dword alias="Augmentation effect (1)" type="Augmentation" />
@@ -106,7 +109,7 @@
 			</branch>
 			<!-- NEW -->
 			<branch id="extra_info" condition="bitmask.Bit6">
-				<dword alias="" />
+				<dword alias="Reuse delay" type="MillisRemaining" />
 			</branch>
 		</loop>
 	</branch>

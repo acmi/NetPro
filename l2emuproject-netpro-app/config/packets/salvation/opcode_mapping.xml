@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
+		<packet opcodePrefix="D0 1B 01" id="CM_REQ_EVENT_BALTHUS_TOKEN" />
+		<packet opcodePrefix="D0 1C 01" id="CM_REQ_PARTY_MATCHING_HISTORY" />
+		<packet opcodePrefix="D0 1D 01" id="CM_EX_ARENA_CUSTOM_NOTIFICATION" />
+
 		<packet opcodePrefix="D0 36 01" id="CM_REQ_UPGRADE_SYSTEM_RESULT" />
 		<packet opcodePrefix="D0 37 01" id="C_EX_CARD_UPDOWN_PICK_NUMB" />
 		<packet opcodePrefix="D0 38 01" id="C_EX_CARD_UPDOWN_GAME_REWARD_REQUEST" />

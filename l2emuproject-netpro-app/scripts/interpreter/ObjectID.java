@@ -67,7 +67,7 @@ public class ObjectID extends ScriptedFieldValueInterpreter implements IntegerIn
 		{
 			final int cls = (sid >>> CLS_SHIFT);
 			final int index = cls - CLS_INDEX_OFFSET;
-			if (index < 0 || index > values().length)
+			if (index < 0 || index >= values().length)
 				return "What " + cls + " -_- ";
 			return values()[index].toString();
 		}

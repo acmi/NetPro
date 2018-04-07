@@ -2,18 +2,13 @@
 <!-- Packet header was reordered -->
 <!-- Added a WORD to loop element with lockdown state -->
 <!-- Added a DWORD for a new item extension - reuse delay -->
-<packet id="SM_PRIVATE_STORE_MANAGE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<byte alias="Type" id="list_type" type="item.ItemListType">
-		<scriptAlias id="private_store_sell_manage_list_type" />
-	</byte>
+<packet id="SM_PRIVATE_STORE_BUY_MANAGE_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="Type" id="list_type" type="item.ItemListType" />
 	<branch id="list_type" condition="item.ItemListSize">
-		<dword alias="Seller OID" type="ObjectID">
-			<scriptAlias id="private_store_sell_manage_owner" />
-		</dword>
-		<dword alias="Package sale" type="YesOrNo" />
+		<dword alias="Buyer OID" type="ObjectID" />
 		<qword alias="Adena" />
-		<dword alias="Offer count" id="index_0" />
-		<loop id="index_0">
+		<dword alias="Offer count" id="offers" />
+		<loop id="offers">
 			<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />
 			<dword alias="Item OID" type="ObjectID">
 				<scriptAlias id="OIC_ITEM_OID" />
@@ -22,17 +17,14 @@
 				<scriptAlias id="OIC_ITEM_TEMPLATE" />
 			</dword>
 			<byte alias="0" /> <!-- Slot number is not specified -->
-			<qword alias="Amount">
-				<scriptAlias id="OIC_ITEM_AMOUNT" />
-			</qword>
-
+			<qword alias="Quantity bought" />
 			<byte alias="Main item type" type="ItemType2" />
 
 			<branch id="is_ticket" condition="GenericItem">
 				<byte alias="0" /> <!-- This is 0. A verified 0. 100% to be 0. That's why the branch is here. -->
 			</branch>
 			<branch id="is_ticket" condition="LotteryTicket">
-				<unsignedByte alias="Round of lottery" mod="NewLotteryEvent" />
+				<byte alias="0" /> <!-- Event number is not specified  -->
 			</branch>
 			<branch id="is_ticket" condition="MonsterRaceTicket">
 				<unsignedByte alias="Lane(s)" type="item.MonsterRaceLane" />
@@ -60,7 +52,7 @@
 
 			<!-- NEW -->
 			<word alias="Locked" type="YesOrNo" />
-	
+
 			<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
 				<dword alias="Augmentation effect (1)" type="Augmentation" />
 				<dword alias="Augmentation effect (2)" type="Augmentation" />
@@ -109,13 +101,14 @@
 
 			<qword alias="Price" />
 			<qword alias="Reference (shop) price" />
+			<qword alias="Quantity bought (dupe)" />
 		</loop>
-		<dword alias="Total sellable count" />
+		<dword alias="Total buyables" />
 	</branch>
 	<branch id="list_type" condition="item.ItemListPage">
-		<dword alias="Sellable count" id="index_0" />
-		<dword alias="Total sellable count" />
-		<loop id="index_0">
+		<dword alias="Total buyables" />
+		<dword alias="Buyables in this page" id="buyables" />
+		<loop id="buyables">
 			<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />
 			<dword alias="Item OID" type="ObjectID">
 				<scriptAlias id="OIC_ITEM_OID" />
@@ -127,7 +120,6 @@
 			<qword alias="Amount">
 				<scriptAlias id="OIC_ITEM_AMOUNT" />
 			</qword>
-
 			<byte alias="Main item type" type="ItemType2" />
 
 			<branch id="is_ticket" condition="GenericItem">

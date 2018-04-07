@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Packet header was reordered -->
+<!-- Packet header was added -->
 <!-- Added a WORD to loop element with lockdown state -->
 <!-- Added a DWORD for a new item extension - reuse delay -->
-<packet id="SM_ITEM_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+<packet id="SM_TRADE_START" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<byte alias="Type" id="list_type" type="item.ItemListType" />
 	<branch id="list_type" condition="item.ItemListSize">
-		<word alias="Open window" type="YesOrNo" />
-		<word alias="Special item count" id="spec_cnt" />
-		<branch id="spec_cnt" condition="Positive">
-			<byte alias="Restriction" type="ItemRestriction" />
-		</branch>
-		<loop id="spec_cnt">
-			<dword alias="Special item" type="Item" />
-		</loop>
-		<dword alias="Total items" />
+		<dword alias="Trading with OID" type="ObjectID" />
+		<byte alias="Relations with other trader" type="AntiImpersonationRelation" />
+		<byte alias="Other trader level" />
+		<dword alias="Tradables" />
 	</branch>
 	<branch id="list_type" condition="item.ItemListPage">
-		<dword alias="Total items" />
-		<dword alias="Items in this page" id="items" />
-		<loop id="items">
-			<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info">
-				<scriptAlias id="LUA_IL_EX" />
-			</byte>
+		<dword alias="Total tradables" />
+		<dword alias="Tradables in this page" id="tradables" />
+		<loop id="tradables">
+			<byte alias="Extension(s)" type="ItemInfoEx" id="extra_info" />
 			<dword alias="Item OID" type="ObjectID">
 				<scriptAlias id="OIC_ITEM_OID" />
-				<scriptAlias id="LUA_IL_OID" />
 			</dword>
 			<dword alias="Item" type="Item" id="is_ticket">
 				<scriptAlias id="OIC_ITEM_TEMPLATE" />
-				<scriptAlias id="LUA_IL_TEMPLATE" />
 			</dword>
-			<unsignedByte alias="Slot number" type="MyInventorySlot" />
+			<byte alias="Slot number" type="MyInventorySlot" />
 			<qword alias="Amount">
 				<scriptAlias id="OIC_ITEM_AMOUNT" />
-				<scriptAlias id="LUA_IL_AMOUNT" />
 			</qword>
 			<byte alias="Main item type" type="ItemType2" />
 
@@ -51,16 +41,12 @@
 			<qword alias="Used paperdoll slot(s)" type="equip.PaperdollMask" />
 
 			<branch id="is_ticket" condition="GenericItem">
-				<byte alias="Enchant level">
-					<scriptAlias id="LUA_IL_ENCHANT_LEVEL" />
-				</byte>
+				<byte alias="Enchant level" />
 				<byte alias="Name exists" type="YesOrNo" />
 			</branch>
 			<branch id="is_ticket" condition="LotteryTicket"> <!-- still written due to private stores & co., no VISUAL effect in client -->
-				<unsignedByte alias="Selected numbers (truncated)"
-					type="LottoNumbers" />
-				<unsignedByte alias="Selected numbers (upper byte)"
-					mod="ShiftLeft16" type="LottoNumbers" />
+				<unsignedByte alias="Selected numbers (truncated)" type="LottoNumbers" />
+				<unsignedByte alias="Selected numbers (upper byte)" mod="ShiftLeft16" type="LottoNumbers" />
 			</branch>
 			<branch id="is_ticket" condition="MonsterRaceTicket"> <!-- untested -->
 				<byte alias="Race number" />
@@ -75,12 +61,8 @@
 			<word alias="Locked" type="YesOrNo" />
 
 			<branch id="extra_info" condition="bitmask.Bit0"> <!-- augmentation info -->
-				<dword alias="Augmentation effect (1)" type="Augmentation">
-					<scriptAlias id="LUA_IL_AUG1" />
-				</dword>
-				<dword alias="Augmentation effect (2)" type="Augmentation">
-					<scriptAlias id="LUA_IL_AUG2" />
-				</dword>
+				<dword alias="Augmentation effect (1)" type="Augmentation" />
+				<dword alias="Augmentation effect (2)" type="Augmentation" />
 			</branch>
 			<branch id="extra_info" condition="bitmask.Bit1"> <!-- elemental info -->
 				<word alias="Attack element" type="ElementType" />
@@ -93,21 +75,13 @@
 				<word alias="Dark defense" type="ElementPower" />
 			</branch>
 			<branch id="extra_info" condition="bitmask.Bit2"> <!-- enchant bonus info -->
-				<dword alias="Enchant effect (1)" type="Augmentation">
-					<scriptAlias id="LUA_IL_ENC1" />
-				</dword>
-				<dword alias="Enchant effect (2)" type="Augmentation">
-					<scriptAlias id="LUA_IL_ENC2" />
-				</dword>
-				<dword alias="Enchant effect (3)" type="Augmentation">
-					<scriptAlias id="LUA_IL_ENC3" />
-				</dword>
+				<dword alias="Enchant effect (1)" type="Augmentation" />
+				<dword alias="Enchant effect (2)" type="Augmentation" />
+				<dword alias="Enchant effect (3)" type="Augmentation" />
 			</branch>
 			<branch id="extra_info" condition="bitmask.Bit3"> <!-- appearance info -->
 				<branch id="is_ticket" condition="GenericItem">
-					<dword alias="Visible item" type="Item">
-						<scriptAlias id="LUA_IL_APPEARANCE" />
-					</dword>
+					<dword alias="Visible item" type="Item" />
 				</branch>
 				<branch id="is_ticket" condition="LotteryTicket">
 					<dword alias="Selected numbers" type="LottoNumbers" />
@@ -118,21 +92,13 @@
 				</branch>
 			</branch>
 			<branch id="extra_info" condition="bitmask.Bit4"> <!-- soul crystal (SA) info -->
-				<byte alias="Primary special abilities" id="sa1_cnt">
-					<scriptAlias id="LUA_IL_SA1_COUNT" />
-				</byte>
+				<byte alias="Primary special abilities" id="sa1_cnt" />
 				<loop id="sa1_cnt">
-					<dword alias="SA effect" type="item.SoulCrystal">
-						<scriptAlias id="LUA_IL_SA1" />
-					</dword>
+					<dword alias="SA effect" type="item.SoulCrystal" />
 				</loop>
-				<byte alias="Secondary special abilities" id="sa2_cnt">
-					<scriptAlias id="LUA_IL_SA2_COUNT" />
-				</byte>
+				<byte alias="Secondary special abilities" id="sa2_cnt" />
 				<loop id="sa2_cnt">
-					<dword alias="SA effect" type="item.SoulCrystal">
-						<scriptAlias id="LUA_IL_SA2" />
-					</dword>
+					<dword alias="SA effect" type="item.SoulCrystal" />
 				</loop>
 			</branch>
 			<!-- NEW -->

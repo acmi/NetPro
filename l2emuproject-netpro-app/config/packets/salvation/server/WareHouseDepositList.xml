@@ -3,7 +3,7 @@
 <!-- Added a WORD to loop element with lockdown state -->
 <!-- Added a DWORD for a new item extension - reuse delay -->
 <packet id="SM_WARE_HOUSE_DEPOSIT_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<byte alias="Type" id="list_type" />
+	<byte alias="Type" id="list_type" type="item.ItemListType" />
 	<branch id="list_type" condition="item.ItemListSize">
 		<word alias="Warehouse" type="Warehouse" />
 		<qword alias="Viewer's adena" />

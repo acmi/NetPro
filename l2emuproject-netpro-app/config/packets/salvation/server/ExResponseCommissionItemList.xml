@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <packet id="554" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
-	<byte alias="Type" id="list_type" />
+	<byte alias="Type" id="list_type" type="item.ItemListType" />
 	<branch id="list_type" condition="item.ItemListSize">
 		<dword alias="Total item count" />
 	</branch>

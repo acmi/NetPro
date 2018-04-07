@@ -346,6 +346,7 @@
 			<xs:enumeration value="item.AutoShotState" />
 			<xs:enumeration value="item.AttributeEnchantResult" />
 			<xs:enumeration value="item.EnsoulType" />
+			<xs:enumeration value="item.ItemListType" />
 			<xs:enumeration value="item.MonsterRaceLane" />
 			<xs:enumeration value="item.ShotType" />
 			<xs:enumeration value="item.SoulCrystal" />

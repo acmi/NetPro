@@ -62,13 +62,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>com.versioneye</groupId>
-				<artifactId>versioneye-maven-plugin</artifactId>
-				<configuration>
-					<projectId>5757073259c02a000e913724</projectId>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 	<repositories>

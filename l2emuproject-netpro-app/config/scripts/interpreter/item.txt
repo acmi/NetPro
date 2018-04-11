@@ -28683,6 +28683,9 @@
 29212	Adventurer's Circlet
 29213	Adventurer's Bracelet
 29214	T-shirt Box
+29215	Novice Package Lv. 85
+29216	Novice Package Lv. 95
+29217	Novice Package Lv. 99
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow

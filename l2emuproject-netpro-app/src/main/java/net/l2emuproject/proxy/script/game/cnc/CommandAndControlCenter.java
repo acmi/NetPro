@@ -27,16 +27,18 @@ import net.l2emuproject.proxy.script.game.InteractiveBypasses;
 import net.l2emuproject.proxy.script.game.InteractiveChatCommands;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.packets.util.CommonPacketSender;
+import net.l2emuproject.proxy.script.packets.util.SystemMessageRecipient;
 import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * @author _dev_
  */
-public final class CommandAndControlCenter extends PpeEnabledGameScript implements InteractiveBypasses, InteractiveChatCommands
+public final class CommandAndControlCenter extends PpeEnabledGameScript implements InteractiveBypasses, InteractiveChatCommands, SystemMessageRecipient
 {
 	private static final L2Logger LOG = L2Logger.getLogger(CommandAndControlCenter.class);
 	
 	private final Map<Object, CnCMenu> _menus;
+	private Object _loginMenuKey;
 	
 	CommandAndControlCenter()
 	{
@@ -76,6 +78,8 @@ public final class CommandAndControlCenter extends PpeEnabledGameScript implemen
 	
 	public final void remove(Object key, CnCMenu menu)
 	{
+		if (key.equals(_loginMenuKey))
+			_loginMenuKey = null;
 		_menus.remove(key, menu);
 	}
 	
@@ -94,6 +98,21 @@ public final class CommandAndControlCenter extends PpeEnabledGameScript implemen
 		menu.remove(action);
 	}
 	
+	public final void setOnLogin(Object loginMenuKey) {
+		_loginMenuKey = loginMenuKey;
+	}
+	
+	private void showMenu(L2GameClient client, CnCMenu menu)
+	{
+		final L2TextBuilder tb = new L2TextBuilder("<html><head><title>L2EMU Unique</title></head><body><center>");
+		tb.append("<combobox width=270 var=sub list=\"");
+		for (final CnCAction action : menu)
+			tb.append(action.getLabel()).append(';');
+		tb.setLength(tb.length() - 1);
+		tb.append("\"><br><a action=\"bypass -h ").append(menu.getActionBypassPrefix()).append("$sub\">Go</a>");
+		CommonPacketSender.sendTutorialHTML(client, tb.append("</center></body></html>").moveToString());
+	}
+	
 	@Override
 	public void handleClientPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
@@ -105,13 +124,7 @@ public final class CommandAndControlCenter extends PpeEnabledGameScript implemen
 				if (!menu.getOpenCommand().matcher(buf.readString(chatCmd)).matches())
 					continue;
 				
-				final L2TextBuilder tb = new L2TextBuilder("<html><head><title>L2EMU Unique</title></head><body><center>");
-				tb.append("<combobox width=270 var=sub list=\"");
-				for (final CnCAction action : menu)
-					tb.append(action.getLabel()).append(';');
-				tb.setLength(tb.length() - 1);
-				tb.append("\"><br><a action=\"bypass -h ").append(menu.getActionBypassPrefix()).append("$sub\">Go</a>");
-				CommonPacketSender.sendTutorialHTML(client, tb.append("</center></body></html>").moveToString());
+				showMenu(client, menu);
 				return;
 			}
 			return;
@@ -141,7 +154,16 @@ public final class CommandAndControlCenter extends PpeEnabledGameScript implemen
 	@Override
 	public void handleServerPacket(L2GameClient client, L2GameServer server, RandomAccessMMOBuffer buf) throws RuntimeException
 	{
-		// nothing to handle
+		if (_loginMenuKey == null)
+			return;
+		
+		final int sm = buf.readFirstInteger32(SYSMSG_ID);
+		if (sm != 34)
+			return;
+		
+		final CnCMenu loginMenu = _menus.get(_loginMenuKey);
+		if (loginMenu != null)
+			showMenu(client, loginMenu);
 	}
 	
 	public static CommandAndControlCenter getInstance()

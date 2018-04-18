@@ -20,6 +20,7 @@
       <outputDirectory>lib/</outputDirectory>
       <excludes>
         <exclude>${groupId}:${artifactId}</exclude>
+        <exclude>org.eclipse.jdt.core.compiler:ecj</exclude>
       </excludes>
     </dependencySet>
   </dependencySets>

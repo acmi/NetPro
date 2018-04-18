@@ -28686,6 +28686,13 @@
 29215	Novice Package Lv. 85
 29216	Novice Package Lv. 95
 29217	Novice Package Lv. 99
+29218	Accessory of the Gods Upgrade Set Box Necklace
+29219	Accessory of the Gods Upgrade Set Box Earrings
+29220	Accessory of the Gods Upgrade Set Box Ring
+29221	Accessory of the Gods Crafting Set Box Necklace
+29222	Accessory of the Gods Crafting Set Box Earrings
+29223	Accessory of the Gods Crafting Set Box Ring
+29224	Box of War Hero's Soul
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow

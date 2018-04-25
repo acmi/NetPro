@@ -27923,7 +27923,7 @@
 28452	Fortune Talisman Pack
 28453	Sayha's Energy
 28454	Sayha's Blessing
-28455	Dimensional Bracelet Stage 6 Pack
+28455	Dimensional Bracelet Stage 6 Pack CHA +5
 28456	Dimensional Bracelet Stage 6 CHA+5
 28457	Seed Talisman Enhancement Pack
 28458	Fortune Hair Accessory Box
@@ -28693,6 +28693,9 @@
 29222	Accessory of the Gods Crafting Set Box Earrings
 29223	Accessory of the Gods Crafting Set Box Ring
 29224	Box of War Hero's Soul
+29225	14th Anniversary Rune 100% 1-hr
+29226	14th Anniversary Rune 100% Pack (1-hr)
+29227	Shattered Squash Fragment
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow

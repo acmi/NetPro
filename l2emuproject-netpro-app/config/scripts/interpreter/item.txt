@@ -27953,11 +27953,11 @@
 28482	Intermediate Forbidden Secret Book
 28483	High-grade Forbidden Secret Book
 28484	Brooch Spirit Stone
-28485	Brooch Spirit Stone Rare-Type
+28485	Brooch Spirit Stone Rare
 28486	La Vie En Rose's Radiant Brooch
-28487	La Vie En Rose's Radiant Brooch Enchant Type
-28488	La Vie En Rose's Radiant Brooch Rare-Type
-28489	Brilliant Brooch Jewel
+28487	La Vie En Rose's Glorious Brooch
+28488	La Vie En Rose's Glorious Brooch Rare
+28489	Glorious Brooch Fragment
 28490	Frenzied Tauti's Small Fragment
 28491	Insane Kelbim's Small Fragment
 28492	Freya's Luxury Shopping Bag
@@ -28696,6 +28696,11 @@
 29225	14th Anniversary Rune 100% 1-hr
 29226	14th Anniversary Rune 100% Pack (1-hr)
 29227	Shattered Squash Fragment
+29239	Stabilized Agathion Charm Book of Growth
+29240	NoItemName
+29241	NoItemName
+29242	NoItemName
+29243	NoItemName
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
@@ -41637,7 +41642,7 @@
 47982	Challenger's Weapon Exchange Ticket
 47983	Brooch Spirit Stone
 47984	La Vie En Rose's Glorious Brooch
-47985	La Vie En Rose's Glorious Brooch Enchant Type
+47985	La Vie En Rose's Glorious Brooch
 47986	+5 Shiny Elemental Shirt Box
 47987	Challenger's Weapon Enhancement Ticket
 47988	Master's Lucky Jewelry Box

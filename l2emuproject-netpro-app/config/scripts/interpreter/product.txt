@@ -1895,3 +1895,24 @@
 1011895	14th Anniversary Veteran Pack (14-year)
 1011896	Nectar (x500)
 1011897	Nectar (x10000)
+1011898	La Vie En Rose's Brooch
+1011899	Ultimate Jewelry Box
+1011900	Ultimate Jewelry Box (x30)
+1011901	Ultimate Jewelry Box (x100)
+1011902	Ultimate Jewelry Box (x150) Limited
+1011903	Shadai's Brooch Pack
+1011904	Shadai’s Master Package
+1011905	Heavenly Scroll: Enchant Weapon (R-grade)
+1011906	Life Stone Instilled with Giants' Power
+1011907	Amaranthine Weapon Pack
+1011908	Eternal Armor Pack
+1011909	Transformation Sealbook: Anakim
+1011910	Lv5 Legendary Dye Pack
+1011911	Elcyum
+1011912	Tempest Stone
+1011913	Ancient Hero's Weapon Pack x2
+1011914	Rune Stone
+1011915	Soul Bottle Fragment Pack
+1011916	Maphr's Luck Potion
+1011917	Giant's Energy
+1011918	Heavenly Recovery Potion (x3)

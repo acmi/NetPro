@@ -28701,6 +28701,10 @@
 29241	NoItemName
 29242	NoItemName
 29243	NoItemName
+29244	NoItemName
+29245	NoItemName
+29246	NoItemName
+29247	NoItemName
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow

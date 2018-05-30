@@ -28697,14 +28697,14 @@
 29226	14th Anniversary Rune 100% Pack (1-hr)
 29227	Shattered Squash Fragment
 29239	Stabilized Agathion Charm Book of Growth
-29240	NoItemName
-29241	NoItemName
-29242	NoItemName
-29243	NoItemName
-29244	NoItemName
-29245	NoItemName
-29246	NoItemName
-29247	NoItemName
+29240	Red Light Cheer Event
+29241	Blue Light Cheer Event
+29242	Silver Light Cheer Event
+29243	Green Light Cheer Event
+29244	+7 Elmoreden Cloak Box
+29245	+7 Aden Cloak Box
+29246	+7 Elmore Cloak Box
+29247	+7 Ferios Cloak Box
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow

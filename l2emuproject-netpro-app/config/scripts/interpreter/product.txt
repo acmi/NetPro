@@ -1916,3 +1916,4 @@
 1011916	Maphr's Luck Potion
 1011917	Giant's Energy
 1011918	Heavenly Recovery Potion (x3)
+1011919	Ultimate Jewelry Box (x150) Limited

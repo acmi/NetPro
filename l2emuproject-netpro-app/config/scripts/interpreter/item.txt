@@ -28705,6 +28705,11 @@
 29245	+7 Aden Cloak Box
 29246	+7 Elmore Cloak Box
 29247	+7 Ferios Cloak Box
+29248	Reconstruction Society's Enchantment Pack
+29252	Freya's Deluxe Shopping Bag
+29253	Freya Special Card
+29254	Sirra Special Card
+29255	Snowman Special Card
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
@@ -41674,7 +41679,7 @@
 48010	Freya Winter Card
 48011	Sirra Winter Card
 48012	Snowman Winter Card
-48013	2016 Freya's Kindness
+48013	Freya's Kindness
 48014	Freya's Dark Rune (2-hour) Box
 48015	Freya's Dark Rune 2-hour
 48016	White Knight Suit

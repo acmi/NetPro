@@ -1868,9 +1868,9 @@
 1011868	Cloak Enchant Scroll Pack x5
 1011869	Cloak Enchant Scroll Pack x20
 1011870	Cloak Enchant Scroll Pack x75
-1011871	Legendary Scroll Pack x5
-1011872	Legendary Scroll Pack x20
-1011873	Legendary Scroll Pack x50
+1011871	Legendary Enchant Scroll Pack x5
+1011872	Legendary Enchant Scroll Pack x20
+1011873	Legendary Enchant Scroll Pack x50
 1011874	Ultimate Legendary Scroll Pack x100
 1011875	Legendary Scroll x1
 1011876	Legendary Scroll x10
@@ -1920,3 +1920,5 @@
 1011920	Freya’s Deluxe Shopping Bag x1
 1011921	Freya’s Deluxe Shopping Bag x20
 1011922	Ultimate Freya’s Deluxe Shopping Bag x250
+1011923	Cloak Enchant Scroll Pack x75
+1011924	Ultimate Legendary Enchant Scroll Pack x100

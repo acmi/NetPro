@@ -33370,6 +33370,370 @@
 33370	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
 33371	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
 33372	Active Skill: Dragon Rage / Dragon Scale/ Dragon Rise
+33373	[not named in client]
+33374	[not named in client]
+33375	[not named in client]
+33376	[not named in client]
+33388	[not named in client]
+33389	[not named in client]
+33390	[not named in client]
+33391	[not named in client]
+33392	[not named in client]
+33393	[not named in client]
+33394	[not named in client]
+33395	[not named in client]
+33396	[not named in client]
+33397	[not named in client]
+33398	[not named in client]
+33399	[not named in client]
+33400	[not named in client]
+33401	[not named in client]
+33402	[not named in client]
+33403	[not named in client]
+33404	[not named in client]
+33405	[not named in client]
+33406	[not named in client]
+33407	[not named in client]
+33408	[not named in client]
+33409	[not named in client]
+33410	[not named in client]
+33411	[not named in client]
+33412	[not named in client]
+33413	[not named in client]
+33414	[not named in client]
+33415	[not named in client]
+33416	[not named in client]
+33417	[not named in client]
+33418	[not named in client]
+33419	[not named in client]
+33420	[not named in client]
+33421	[not named in client]
+33422	[not named in client]
+33423	[not named in client]
+33424	[not named in client]
+33425	[not named in client]
+33426	[not named in client]
+33427	[not named in client]
+33428	[not named in client]
+33429	Enchanting a hair accessory increases its debuff resistance and an adds extra option depending on the equipped Protection/Power/Foresight circlet.
+33430	Debuff Resistance +1%
+33431	Debuff Resistance +2%
+33432	Debuff Resistance +3%
+33433	Debuff Resistance +4%
+33434	Debuff Resistance +5%
+33435	Debuff Resistance +6%
+33436	Debuff Resistance +7%\n\n<Circlet Set Equip Effect>\nPower - P. Atk. +1%\nForesight - M. Atk. +1%\nProtection - P. Def./M. Def. +1%
+33437	Debuff Resistance +8%\n\n<Circlet Set Equip Effect>\nPower - P. Atk. +3%\nForesight - M. Atk. +3%\nProtection - P. Def./M. Def. +3%
+33438	Debuff Resistance +9%\n\n<Circlet Set Equip Effect>\nPower - P. Atk. +5%\nForesight - M. Atk. +5%\nProtection - P. Def./M. Def. +5%
+33439	Debuff Resistance +10%\n\n<Circlet Set Equip Effect>\nPower - P. Atk. +10%\nForesight - M. Atk. +10%\nProtection - P. Def./M. Def. +10%
+33440	Angel's necklace. Enchanting the necklace adds special options.
+33441	Stun/Paralysis/Bleed Resistance +20%
+33442	Stun/Paralysis/Bleed Resistance and Attack Success +20%
+33443	Stun/Paralysis/Bleed Resistance and Attack Success +20%, Speed +5
+33444	Stun/Paralysis/Bleed Resistance and Attack Success +20%, Speed +5, Damage Reflect +5%
+33445	Stun/Paralysis/Bleed Resistance and Attack Success +20%, Speed +5, Damage Reflect +5%, and Skill Cooldown -10%
+33446	Stun/Paralysis/Bleed Resistance and Attack Success +20%, Speed +5, Damage Reflect +5%, Skill Cooldown -10%, and P. Def./M. Def. +1%
+33447	Stun/Paralysis/Bleed Resistance and Attack Success +21%, Speed +6, Damage Reflect +6%, Skill Cooldown -11%, and P. Def./M. Def. +2%
+33448	Stun/Paralysis/Bleed Resistance and Attack Success +22%, Speed +7, Damage Reflect +7%, Skill Cooldown -12%, P. Def./M. Def. +3%
+33449	Stun/Paralysis/Bleed Resistance and Attack Success +23%, Speed +8, Damage Reflect +8%, Skill Cooldown -13%, P. Def./M. Def. +4%, Skill Power +3%
+33450	Stun/Paralysis/Bleed Resistance and Attack Success +25%, Speed +10, Damage Reflect +10%, Skill Cooldown -15%, P. Def./M. Def. +5%, Skill Power +5%
+33451	An Angel's earring. Enchanting the earring adds special options.
+33452	Stun/Mental Attack/Sleep Resistance +20%
+33453	Stun/Mental Attack/Sleep Resistance and Attack Success +20%
+33454	Stun/Mental Attack/Sleep Resistance and Attack Success +20%, Skill MP Consumption -3%
+33455	Stun/Mental Attack/Sleep Resistance and Attack Success +20%, Received Heal Amount +5%, Skill MP Consumption -3%
+33456	Stun/Mental Attack/Sleep Resistance and Attack Success +20%, Received Heal Amount +7%, Vampiric Rage +3%, Skill MP Consumption -3%
+33457	Stun/Mental Attack/Sleep Resistance and Attack Success +20%, Received Heal Amount +10%, Vampiric Rage +4%, P. Atk./M. Atk. +1%, Skill MP Consumption -5%
+33458	Stun/Mental Attack/Sleep Resistance and Attack Success +21%, Received Heal Amount +11%, Vampiric Rage +4%, P. Atk./M. Atk. +2%, Skill MP Consumption -6%
+33459	Stun/Mental Attack/Sleep Resistance and Attack Success +22%, Received Heal Amount +12%, Vampiric Rage +4%, P. Atk./M. Atk. +3%, Skill MP Consumption -7%
+33460	Stun/Mental Attack/Sleep Resistance and Attack Success +23%, Received Heal Amount +13%, Vampiric Rage +5%, P. Atk./M. Atk. +4%, Skill MP Consumption -8%, Received P. Atk./M. Atk. Critical Damage -5%
+33461	Stun/Mental Attack/Sleep Resistance and Attack Success +25%, Received Heal Amount +15%, Vampiric Rage +6%, P. Atk./M. Atk. +5%, Skill MP Consumption -10%, Received P. Atk./M. Atk. Critical Damage -7%
+33462	Activates 5 talisman slots\nP. Atk. +1%
+33463	Activates 5 talisman slots\nP. Atk. +2%
+33464	Activates 6 talisman slots\nP. Atk. +2%
+33465	Activates 6 talisman slots\nP. Atk. +3%
+33466	Activates 6 talisman slots\nP. Atk. +4%
+33467	Activates 6 talisman slots\nP. Atk. +5%
+33468	Activates 6 talisman slots\nP. Atk. +6%
+33469	Activates 6 talisman slots\nP. Atk. +7%
+33470	Activates 6 talisman slots\nP. Atk. +8%
+33471	Activates 6 talisman slots\nP. Atk. +9%
+33472	Activates 6 talisman slots\nP. Atk. +10%
+33473	Activates 5 talisman slots\nM. Atk. +1%
+33474	Activates 5 talisman slots\nM. Atk. +2%
+33475	Activates 6 talisman slots\nM. Atk. +2%
+33476	Activates 6 talisman slots\nM. Atk. +3%
+33477	Activates 6 talisman slots\nM. Atk. +4%
+33478	Activates 6 talisman slots\nM. Atk. +5%
+33479	Activates 6 talisman slots\nM. Atk. +7%
+33480	Activates 6 talisman slots\nM. Atk. +9%
+33481	Activates 6 talisman slots\nM. Atk. +11%
+33482	Activates 6 talisman slots\nM. Atk. +13%
+33483	Activates 6 talisman slots\nM. Atk. +15%
+33484	Activates 5 talisman slots\nP. Def./M. Def. +1%
+33485	Activates 5 talisman slots\nP. Def./M. Def. +2%
+33486	Activates 6 talisman slots\nP. Def./M. Def. +2%
+33487	Activates 6 talisman slots\nP. Def./M. Def. +3%
+33488	Activates 6 talisman slots\nP. Def./M. Def. +4%
+33489	Activates 6 talisman slots\nP. Def./M. Def. +5%
+33490	Activates 6 talisman slots\nP. Def./M. Def. +6%
+33491	Activates 6 talisman slots\nP. Def./M. Def. +7%
+33492	Activates 6 talisman slots\nP. Def./M. Def. +8%
+33493	Activates 6 talisman slots\nP. Def./M. Def. +9%
+33494	Activates 6 talisman slots\nP. Def./M. Def. +10%
+33495	Knock Back/Knock Down/Pull/Daze Resistance +10%
+33496	Knock Back/Knock Down/Pull/Daze Resistance +20%
+33497	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +20%
+33498	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +20%, Vitality Bonus XP/SP +10%
+33499	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +20%, Vitality Bonus XP/SP +10%, Acquired XP/SP +5%
+33500	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +20%, Vitality Bonus XP/SP +10%, Acquired XP/SP +5%, Standard/P. Atk./M. Atk. Skill Critical Damage +10%
+33501	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +25%, Vitality Bonus XP/SP +15%, Acquired XP/SP +10%, Standard/P. Atk./M. Atk. Skill Critical Damage +15%
+33502	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +25%, Vitality Bonus XP/SP +16%, Acquired XP/SP +11%, Standard/P. Atk./M. Atk. Skill Critical Damage +16%
+33503	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +25%, Vitality Bonus XP/SP +17%, Acquired XP/SP +12%, Standard/P. Atk./M. Atk. Skill Critical Damage +17%
+33504	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +25%, Vitality Bonus XP/SP +18%, Acquired XP/SP +13%, Standard/P. Atk./M. Atk. Skill Critical Damage +18%, additional damage to immobilized target +3%
+33505	Knock Back/Knock Down/Pull/Daze Resistance and Attack Success +25%, Vitality Bonus XP/SP +20%, Acquired XP/SP +15%, Standard/P. Atk./M. Atk. Skill Critical Damage +20%, additional damage to immobilized target +5%
+33506	P. Atk. increased when upgraded
+33507	P. Atk. +1%
+33508	P. Atk. +2%
+33509	P. Atk. +3%
+33510	P. Atk. +5%
+33511	P. Atk. +6%
+33512	P. Atk. +7%
+33513	P. Atk. +9%
+33514	P. Atk. +11%
+33515	P. Atk. +13%
+33516	P. Atk. +15%
+33517	M. Atk. increased when upgraded
+33518	M. Atk. +1%
+33519	M. Atk. +2%
+33520	M. Atk. +3%
+33521	M. Atk. +5%
+33522	M. Atk. +6%
+33523	M. Atk. +7%
+33524	M. Atk. +9%
+33525	M. Atk. +11%
+33526	M. Atk. +13%
+33527	M. Atk. +15%
+33528	Atk. Spd. increased when upgraded
+33529	Atk. Spd. +1%
+33530	Atk. Spd. +2%
+33531	Atk. Spd. +3%
+33532	Atk. Spd. +5%
+33533	Atk. Spd. +6%
+33534	Atk. Spd. +7%
+33535	Atk. Spd. +9%
+33536	Atk. Spd. +11%
+33537	Atk. Spd. +13%
+33538	Atk. Spd. +15%
+33539	Casting Spd. increased when upgraded
+33540	Casting Spd. +1%
+33541	Casting Spd. +2%
+33542	Casting Spd. +3%
+33543	Casting Spd. +5%
+33544	Casting Spd. +6%
+33545	Casting Spd. +7%
+33546	Casting Spd. +9%
+33547	Casting Spd. +11%
+33548	Casting Spd. +13%
+33549	Casting Spd. +15%
+33550	P. Def. increased when upgraded
+33551	P. Def. +1%
+33552	P. Def. +2%
+33553	P. Def. +3%
+33554	P. Def. +5%
+33555	P. Def. +7%
+33556	P. Def. +9%
+33557	P. Def. +11%
+33558	P. Def. +14%
+33559	P. Def. +17%
+33560	P. Def. +20%
+33561	M. Def. increased when upgraded
+33562	M. Def. +1%
+33563	M. Def. +2%
+33564	M. Def. +3%
+33565	M. Def. +5%
+33566	M. Def. +7%
+33567	M. Def. +9%
+33568	M. Def. +11%
+33569	M. Def. +14%
+33570	M. Def. +17%
+33571	M. Def. +20%
+33572	Max HP increased when upgraded
+33573	Max HP +1%
+33574	Max HP +2%
+33575	Max HP +3%
+33576	Max HP +5%
+33577	Max HP +7%
+33578	Max HP +9%
+33579	Max HP +11%
+33580	Max HP +14%
+33581	Max HP +17%
+33582	Max HP +20%
+33583	Max MP increased when upgraded
+33584	Max MP +1%
+33585	Max MP +2%
+33586	Max MP +3%
+33587	Max MP +5%
+33588	Max MP +7%
+33589	Max MP +9%
+33590	Max MP +11%
+33591	Max MP +14%
+33592	Max MP +17%
+33593	Max MP +20%
+33594	XP Gain increased when upgraded
+33595	XP Gain +1%
+33596	XP Gain +2%
+33597	XP Gain +3%
+33598	XP Gain +5%
+33599	XP Gain +6%
+33600	XP Gain +7%
+33601	XP Gain +9%
+33602	XP Gain +11%
+33603	XP Gain +13%
+33604	XP Gain +15%
+33605	HP Absorption increased when upgraded
+33606	HP Absorption +1%
+33607	HP Absorption +1%
+33608	HP Absorption +2%
+33609	HP Absorption +3%
+33610	HP Absorption +3%
+33611	HP Absorption +4%
+33612	HP Absorption +5%
+33613	HP Absorption +6%
+33614	HP Absorption +7%
+33615	HP Absorption +8%
+33616	Speed increased when upgraded
+33617	Speed +1
+33618	Speed +2
+33619	Speed +3
+33620	Speed +5
+33621	Speed +6
+33622	Speed +7
+33623	Speed +9
+33624	Speed +11
+33625	Speed +13
+33626	Speed +15
+33627	Received Heal Amount increased when upgraded
+33628	Received Heal Amount +1%
+33629	Received Heal Amount +2%
+33630	Received Heal Amount +3%
+33631	Received Heal Amount +5%
+33632	Received Heal Amount +7%
+33633	Received Heal Amount +9%
+33634	Received Heal Amount +11%
+33635	Received Heal Amount +14%
+33636	Received Heal Amount +17%
+33637	Received Heal Amount +20%
+33638	P. Atk. increased when upgraded
+33639	P. Atk. +1%
+33640	P. Atk. +1%
+33641	P. Atk. +2%
+33642	P. Atk. +3%
+33643	P. Atk. +4%
+33644	P. Atk. +5%
+33645	P. Atk. +6%
+33646	P. Atk. +7%
+33647	P. Atk. +8%
+33648	P. Atk. +10%
+33649	M. Atk. increased when upgraded
+33650	M. Atk. +1%
+33651	M. Atk. +1%
+33652	M. Atk. +2%
+33653	M. Atk. +3%
+33654	M. Atk. +4%
+33655	M. Atk. +5%
+33656	M. Atk. +6%
+33657	M. Atk. +7%
+33658	M. Atk. +8%
+33659	M. Atk. +10%
+33660	P. Accuracy increased when upgraded
+33661	P. Accuracy +1
+33662	P. Accuracy +1
+33663	P. Accuracy +2
+33664	P. Accuracy +3
+33665	P. Accuracy +4
+33666	P. Accuracy +5
+33667	P. Accuracy +6
+33668	P. Accuracy +7
+33669	P. Accuracy +8
+33670	P. Accuracy +10
+33671	M. Accuracy increased when upgraded
+33672	M. Accuracy +1
+33673	M. Accuracy +1
+33674	M. Accuracy +2
+33675	M. Accuracy +3
+33676	M. Accuracy +4
+33677	M. Accuracy +5
+33678	M. Accuracy +6
+33679	M. Accuracy +7
+33680	M. Accuracy +8
+33681	M. Accuracy +10
+33682	P. Critical Rate increased when upgraded
+33683	P. Critical Rate +1%
+33684	P. Critical Rate +2%
+33685	P. Critical Rate +3%
+33686	P. Critical Rate +5%
+33687	P. Critical Rate +7%
+33688	P. Critical Rate +9%
+33689	P. Critical Rate +11%
+33690	P. Critical Rate +14%
+33691	P. Critical Rate +17%
+33692	P. Critical Rate +20%
+33693	P. Skill Critical Rate increased when upgraded
+33694	P. Skill Critical Rate +1%
+33695	P. Skill Critical Rate +1%
+33696	P. Skill Critical Rate +2%
+33697	P. Skill Critical Rate +3%
+33698	P. Skill Critical Rate +4%
+33699	P. Skill Critical Rate +5%
+33700	P. Skill Critical Rate +6%
+33701	P. Skill Critical Rate +7%
+33702	P. Skill Critical Rate +8%
+33703	P. Skill Critical Rate +10%
+33704	M. Skill Critical Rate increased when upgraded
+33705	M. Skill Critical Rate +1%
+33706	M. Skill Critical Rate +1%
+33707	M. Skill Critical Rate +2%
+33708	M. Skill Critical Rate +3%
+33709	M. Skill Critical Rate +4%
+33710	M. Skill Critical Rate +5%
+33711	M. Skill Critical Rate +6%
+33712	M. Skill Critical Rate +7%
+33713	M. Skill Critical Rate +8%
+33714	M. Skill Critical Rate +10%
+33715	Potion / Elixir Effect Bonus increased when upgraded
+33716	Potion / Elixir Effect Bonus +50
+33717	Potion / Elixir Effect Bonus +100
+33718	Potion / Elixir Effect Bonus +200
+33719	Potion / Elixir Effect Bonus +300
+33720	Potion / Elixir Effect Bonus +400
+33721	Potion / Elixir Effect Bonus +500
+33722	Potion / Elixir Effect Bonus +600
+33723	Potion / Elixir Effect Bonus +700
+33724	Potion / Elixir Effect Bonus +800
+33725	Potion / Elixir Effect Bonus +100
+33726	Received Damage When Immobilized reduced when upgraded
+33727	Received Damage When Immobilized -1%
+33728	Received Damage When Immobilized -1%
+33729	Received Damage When Immobilized -2%
+33730	Received Damage When Immobilized -3%
+33731	Received Damage When Immobilized -4%
+33732	Received Damage When Immobilized -5%
+33733	Received Damage When Immobilized -6%
+33734	Received Damage When Immobilized -7%
+33735	Received Damage When Immobilized -8%
+33736	Received Damage When Immobilized -10%
+33737	Fixed Damage reduced when upgraded
+33738	Fixed Damage -1%
+33739	Fixed Damage -1%
+33740	Fixed Damage -2%
+33741	Fixed Damage -3%
+33742	Fixed Damage -4%
+33743	Fixed Damage -5%
+33744	Fixed Damage -6%
+33745	Fixed Damage -7%
+33746	Fixed Damage -8%
+33747	Fixed Damage -10%
 40001	Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. Can be used in the Olympiad.
 40002	Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. Can be used in the Olympiad.
 40003	Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, Attribute Def. + 5. Can be used in the Olympiad.
@@ -34504,3 +34868,230 @@
 41132	[not named in client]
 41133	[not named in client]
 41134	[not named in client]
+41135	[not named in client]
+41136	[not named in client]
+41137	[not named in client]
+41138	[not named in client]
+41139	[not named in client]
+41140	[not named in client]
+41141	[not named in client]
+41142	[not named in client]
+41143	[not named in client]
+41144	[not named in client]
+41145	[not named in client]
+41146	[not named in client]
+41147	[not named in client]
+41148	[not named in client]
+41149	[not named in client]
+41150	[not named in client]
+41151	[not named in client]
+41152	[not named in client]
+41153	[not named in client]
+41154	[not named in client]
+41155	[not named in client]
+41156	[not named in client]
+41157	[not named in client]
+41158	[not named in client]
+41159	[not named in client]
+41160	[not named in client]
+41161	[not named in client]
+41162	[not named in client]
+41163	[not named in client]
+41164	[not named in client]
+41165	[not named in client]
+41166	[not named in client]
+41167	[not named in client]
+41168	[not named in client]
+41169	[not named in client]
+41170	[not named in client]
+41171	[not named in client]
+41172	[not named in client]
+41173	[not named in client]
+41174	[not named in client]
+41175	[not named in client]
+41176	[not named in client]
+41177	[not named in client]
+41178	[not named in client]
+41179	[not named in client]
+41180	[not named in client]
+41181	[not named in client]
+41182	[not named in client]
+41183	[not named in client]
+41184	[not named in client]
+41185	[not named in client]
+41186	[not named in client]
+41187	[not named in client]
+41188	[not named in client]
+41189	[not named in client]
+41190	[not named in client]
+41191	[not named in client]
+41192	[not named in client]
+41193	[not named in client]
+41194	[not named in client]
+41195	[not named in client]
+41196	[not named in client]
+41197	[not named in client]
+41198	[not named in client]
+41199	[not named in client]
+41200	[not named in client]
+41201	[not named in client]
+41202	[not named in client]
+41203	[not named in client]
+41204	[not named in client]
+41205	[not named in client]
+41206	[not named in client]
+41207	[not named in client]
+41208	[not named in client]
+41209	[not named in client]
+41210	[not named in client]
+41211	[not named in client]
+41212	[not named in client]
+41213	[not named in client]
+41214	[not named in client]
+41215	[not named in client]
+41216	[not named in client]
+41217	[not named in client]
+41218	[not named in client]
+41219	[not named in client]
+41220	[not named in client]
+41221	[not named in client]
+41222	[not named in client]
+41223	[not named in client]
+41224	[not named in client]
+41225	[not named in client]
+41226	[not named in client]
+41227	[not named in client]
+41228	[not named in client]
+41229	[not named in client]
+41230	[not named in client]
+41231	[not named in client]
+41232	[not named in client]
+41233	[not named in client]
+41234	[not named in client]
+41235	[not named in client]
+41236	[not named in client]
+41237	[not named in client]
+41238	[not named in client]
+41239	[not named in client]
+41240	[not named in client]
+41241	[not named in client]
+41242	[not named in client]
+41243	[not named in client]
+41244	[not named in client]
+41245	[not named in client]
+41246	[not named in client]
+41247	[not named in client]
+41248	[not named in client]
+41249	[not named in client]
+41250	[not named in client]
+41251	[not named in client]
+41252	[not named in client]
+41253	[not named in client]
+41254	[not named in client]
+41255	[not named in client]
+41256	[not named in client]
+41257	[not named in client]
+41258	[not named in client]
+41259	[not named in client]
+41260	[not named in client]
+41261	[not named in client]
+41262	[not named in client]
+41263	[not named in client]
+41264	[not named in client]
+41265	[not named in client]
+41266	[not named in client]
+41267	[not named in client]
+41268	[not named in client]
+41269	[not named in client]
+41270	[not named in client]
+41271	[not named in client]
+41272	[not named in client]
+41273	[not named in client]
+41274	[not named in client]
+41275	[not named in client]
+41276	[not named in client]
+41277	[not named in client]
+41278	[not named in client]
+41279	[not named in client]
+41280	[not named in client]
+41281	[not named in client]
+41282	[not named in client]
+41283	[not named in client]
+41284	[not named in client]
+41285	[not named in client]
+41286	[not named in client]
+41287	[not named in client]
+41288	[not named in client]
+41289	[not named in client]
+41290	[not named in client]
+41291	[not named in client]
+41292	[not named in client]
+41293	[not named in client]
+41294	[not named in client]
+41295	[not named in client]
+41296	[not named in client]
+41297	[not named in client]
+41298	[not named in client]
+41299	[not named in client]
+41300	[not named in client]
+41301	[not named in client]
+41302	[not named in client]
+41303	[not named in client]
+41304	[not named in client]
+41305	[not named in client]
+41306	[not named in client]
+41307	[not named in client]
+41308	[not named in client]
+41309	[not named in client]
+41310	[not named in client]
+41311	[not named in client]
+41312	[not named in client]
+41313	[not named in client]
+41314	[not named in client]
+41315	[not named in client]
+41316	[not named in client]
+41317	[not named in client]
+41318	[not named in client]
+41319	[not named in client]
+41320	[not named in client]
+41321	[not named in client]
+41322	[not named in client]
+41323	[not named in client]
+41324	[not named in client]
+41325	[not named in client]
+41326	[not named in client]
+41327	[not named in client]
+41328	[not named in client]
+41329	[not named in client]
+41330	[not named in client]
+41331	[not named in client]
+41332	[not named in client]
+41333	[not named in client]
+41334	[not named in client]
+41335	[not named in client]
+41336	[not named in client]
+41337	[not named in client]
+41338	[not named in client]
+41339	[not named in client]
+41340	[not named in client]
+41341	[not named in client]
+41342	[not named in client]
+41343	[not named in client]
+41344	[not named in client]
+41345	[not named in client]
+41346	[not named in client]
+41347	[not named in client]
+41348	[not named in client]
+41349	[not named in client]
+41350	[not named in client]
+41351	[not named in client]
+41352	[not named in client]
+41353	[not named in client]
+41354	[not named in client]
+41355	[not named in client]
+41356	[not named in client]
+41357	[not named in client]
+41358	[not named in client]
+41359	[not named in client]
+41360	[not named in client]
+41361	[not named in client]

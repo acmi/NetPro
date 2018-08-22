@@ -2,8 +2,6 @@
 15	Sweet Whispers
 16	The Coming Darkness
 17	Light and Darkness
-19	Go to the Pastureland!
-20	Bring Up With Love
 31	Secret Buried in the Swamp
 32	An Obvious Lie
 33	Make a Pair of Dress Shoes
@@ -16,14 +14,8 @@
 43	Help the Sister!
 44	Help the Son!
 61	Law Enforcement
-109	In Search of the Nest
-110	To the Primeval Isle
-111	Elrokian Hunter's Proof
 115	The Other Side of Truth
 119	Last Imperial Prince
-124	Meeting the Elroki
-125	The Name of Evil - 1
-126	The Name of Evil - 2
 128	Pailaka - Song of Ice and Fire
 129	Pailaka - Devil's Legacy
 134	Temple Missionary
@@ -37,7 +29,6 @@
 142	Fallen Angel - Request of Dawn
 143	Fallen Angel - Request of Dusk
 144	Pailaka - Injured Dragon
-146	The Zero Hour
 149	Primal Mother, Istina
 150	Extreme Challenge: Primal Mother Resurrected
 177	Split Destiny
@@ -60,14 +51,7 @@
 197	Seven Signs, the Sacred Book of Seal
 198	Seven Signs, Embryo
 210	Obtain a Wolf Pet
-237	Winds of Change
-238	Success/Failure of Business
-239	Won't You Join Us?
-240	I'm the Only One You Can Trust
 254	Legendary Tales
-270	The One Who Ends Silence
-278	Home Security
-310	Only What Remains
 337	Audience with the Land Dragon
 344	1000 years, the End of Lamentation
 371	Shrieks of Ghosts
@@ -81,12 +65,9 @@
 454	Completely Lost
 455	Wings of Sand
 456	Don't Know, Don't Care
-457	Lost and Found
-458	Perfect Form
 459	The Villain of the Underground Mine, Teredor
 460	Precious Research Material
 462	Stuffed Ancient Heroes
-464	Oath
 465	We Are Friends
 466	Placing My Small Power
 468	Be Lost in the Mysterious Scent
@@ -100,9 +81,6 @@
 482	Recertification of Value
 483	Intended Tactic
 485	Hot Spring Water
-488	Wonders of Caring
-489	In This Quiet Place
-491	In Nomine Patris
 492	Tomb Raiders
 493	Kicking Out Unwelcome Guests
 494	Incarnation of Greed Zellaka (Group)
@@ -115,8 +93,13 @@
 504	Competition for the Bandit Stronghold
 511	Awl Under Foot
 512	Blade Under Foot
+529	Regular Barrier Maintenance
 551	Olympiad Starter
 553	Olympiad Undefeated
+554	Red Libra Request - Silent Valley
+555	Red Libra Request - Atelia Refinery
+556	Red Libra Request - Fallen Emperor's Throne
+557	Red Libra Request - Fall of Etina
 561	Basic Mission: Harnak Underground Ruins
 562	Basic Mission: Altar of Evil
 563	Basic Mission: Bloody Swampland
@@ -133,6 +116,7 @@
 574	Special Mission: Nornil's Garden
 575	Special Mission: Fortuna
 576	Special Mission: Defeat Spezion
+577	Basic Mission: Silent Valley
 580	Beyond the Memories
 581	The Purification Ritual
 582	Wash Blood with Blood
@@ -142,6 +126,11 @@
 586	Mutated Creatures
 587	More Aggressive Operation
 588	Head-on Crash
+589	A Secret Change
+590	To Each Their Own
+591	Great Ambitions
+599	Demons and Dimensional Energy
+600	Key to the Refining Process
 617	Gather the Flames
 618	Into the Flames
 620	Four Goblets
@@ -149,11 +138,6 @@
 622	Specialty Liquor Delivery
 623	The Finest Food
 627	Heart in Search of Power
-631	Delicious Top Choice Meat
-641	Attack Sailren!
-642	A Powerful Primeval Creature
-643	Rise and Fall of the Elroki Tribe
-645	Ghosts of Batur
 648	An Ice Merchant's Dream
 655	A Grand Plan for Taming Wild Beasts
 662	A Game of Cards
@@ -173,7 +157,8 @@
 677	Hunter Guild Request - East Wasteland
 678	Hunter Guild Request - Forest of the Dead
 679	Hunter Guild Request - Swamp of Screams
-688	Defeat the Elrokian Raiders!
+680	Hunter Guild Request - Sea of Spores
+681	Hunter Guild Request - Shadow of the Mother Tree
 690	|Attack| Begin Alliance Base Defense - 1
 691	|Attack| Begin Alliance Base Defense - 2
 692	|Attack| Begin Alliance Base Defense - 3
@@ -225,7 +210,6 @@
 743	At the Altar of Oblivion
 744	The Alligator Hunter returns
 745	The Outlaws are Incoming
-746	The Reason One Cannot Wait
 747	Defending the Forsaken Plains
 748	Endless Revenge
 749	Ties with the Guardians
@@ -245,7 +229,6 @@
 763	A Daunting Task
 764	Weakening the Varka Silenos Forces
 765	Weakening the Ketra Orc Forces
-772	Purifying Souls
 773	To Calm the Flood
 774	Dreaming of Peace
 775	Retrieving the Chaos Fragment
@@ -302,6 +285,7 @@
 845	Sabotage the Embryo Supplies
 846	Building up Strength
 861	Kain's Choice
+863	Red Libra Request - Shadow of the Mother Tree
 895	Another Side of the Festival - 1
 896	Another Side of the Festival - 2
 901	How Lavasauruses Are Made
@@ -337,16 +321,12 @@
 987	Adventure Guild's Special Request - Lv. 3
 988	Adventure Guild's Special Request - Lv. 4
 989	Adventure Guild's Special Request - Lv. 5
-10273	Good Day to Fly
-10274	Collecting in the Air
 10282	To the Seed of Annihilation
 10283	Request of Ice Merchant
 10284	Acquisition of Divine Sword
 10285	Meeting Sirra
 10286	Reunion with Sirra
 10287	Story of Those Left
-10288	Secret Mission
-10289	Fade to Black
 10290	Land Dragon Conqueror
 10291	Fire Dragon Destroyer
 10292	Seven Signs, Mysterious Girl
@@ -401,13 +381,7 @@
 10365	For the Searchdog King
 10366	Report on the situation at the ruins
 10369	Noblesse, Soul Testing
-10370	Menacing Times
-10371	Grasp Thy Power
-10372	Purgatory Volvere
 10373	Exploring the Dimension - Sealing the Dimension
-10374	That Place Succubus
-10375	Succubus Disciples
-10376	Bloody Good Time
 10377	The Invaded Execution Grounds
 10378	Weeding Work
 10379	An Uninvited Guest
@@ -427,10 +401,6 @@
 10393	Kekropus' Letter: A Clue Completed
 10394	Mutual Benefit
 10395	Not a Traitor
-10396	Witch of Spores
-10397	Kekropus' Letter: A Suspicious Badge
-10398	A Suspicious Badge
-10399	The Alphabet of the Giants
 10401	Kekropus' Letter: Decoding the Badge
 10402	Nowhere to Turn
 10403	The Guardian Giant
@@ -457,14 +427,10 @@
 10425	The Ketra Orc Supporters
 10426	Assassination of the Ketra Orc Commander
 10427	Assassination of the Ketra Orc Chief
-10442	The Annihilated Plains - 1
-10443	The Annihilated Plains - 2
-10444	The Origin of Monsters
 10445	An Impending Threat
 10446	Hit and Run
 10447	Timing is Everything
 10450	A Dark Ambition
-10452	Is it Edible?
 10453	Stopping the Wind Dragon
 10454	Final Embryo Apostle
 10455	Elikia's Letter
@@ -487,9 +453,11 @@
 10526	The Dark Secret of the Ketra Orcs
 10527	The Assassination of the Ketra Orc Commander
 10528	The Assassination of the Ketra Orc Chief
+10529	Ivory Tower's Research - Floating Sea Journal
 10530	Kekropus' Letter, The Dragon's Transition
 10531	Odd Happenings at Dragon Valley
 10532	Uncovering the Conspiracy
+10533	Orfen's Ambition
 10534	Hatchling Research
 10535	Blacksmith's Soul-awakening Weapon - 3
 10537	Kamael Disarray
@@ -541,7 +509,6 @@
 10704	Bottle of Octavis' Soul
 10705	Bottle of Tauti's Soul
 10707	Flames of Sorrow
-10708	Strengthen the Barrier
 10709	The Stolen Seed
 10710	Life Energy Repository
 10726	Tulesir's Song - 1
@@ -585,9 +552,6 @@
 10775	In Search of an Ancient Giant
 10776	The Wrath of the Giants
 10777	Reports from Cruma Tower, Part 2
-10779	Letters from the Queen: Sea of Spores
-10780	A Weakened Barrier
-10781	Ingredients to Enforcements
 10782	Letters from the Queen: Forsaken Plains
 10783	Traces of an Ambush
 10784	The Broken Device
@@ -663,3 +627,12 @@
 10881	For the Pride
 10882	Victory Collection
 10883	Immortal Honor
+10885	Savior's Path - Discovery
+10886	Savior's Path - Search the Refinery
+10887	Savior's Path - Demons and Atelia
+10888	Savior's Path - Defeat the Embryo
+10889	Savior's Path - Fallen Emperor's Throne
+10890	Savior's Path - Fall of Etina
+10891	At a New Place
+10892	Revenge, One Step at a Time
+10893	End of Twisted Fate

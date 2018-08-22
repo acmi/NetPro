@@ -69,7 +69,7 @@
 69	Bastard Sword
 70	Claymore
 71	Flamberge
-72	StormBringer
+72	Stormbringer
 73	Shamshir
 74	Katana
 75	Caliburs
@@ -121,7 +121,7 @@
 121	Sword of Watershadow
 122	Handmade Sword
 123	Saber
-124	Two-handed Sword
+124	Two-Handed Sword
 125	Spinebone Sword
 126	Artisan's Sword
 127	Crimson Sword
@@ -1296,7 +1296,7 @@
 1296	Gladius
 1297	Bastard Sword
 1298	Caliburs
-1299	Great Sword
+1299	For Dualsword Test
 1300	Apprentice's Rod
 1301	Big Hammer
 1302	Bec de Corbin
@@ -1771,7 +1771,7 @@
 1771	Elven Bow Shaft
 1772	Leaf of the Mother Tree
 1773	Dwarven Trident Piece
-1774	Piece of Two-handed Sword
+1774	Two-handed Sword Fragment
 1775	Two-handed Sword Mold
 1776	Piece of Spiked Club
 1777	Steel Piece of Club
@@ -2023,7 +2023,7 @@
 2023	Conjuror's Staff Head
 2024	Elven Bow Shaft
 2025	Dwarven Trident Edge
-2026	Two-handed Sword Edge
+2026	Two-handed Sword Blade
 2027	Spiked Club Head
 2028	Shilen Knife Edge
 2029	Gastraphetes Shaft
@@ -2057,7 +2057,7 @@
 2057	Ancient Reagent Remnant
 2058	Atuba Mace Head
 2059	Flamberge Blade
-2060	StormBringer Blade
+2060	Stormbringer Blade
 2061	Big Hammer Head
 2062	Scythe Edge
 2063	Battle Axe Head
@@ -2261,7 +2261,7 @@
 2261	Recipe: Conjuror's Staff
 2262	Recipe: Elven Bow
 2263	Recipe: Dwarven Trident
-2264	Recipe: Two-handed Sword
+2264	Recipe: Two-handed Sword (100%)
 2265	Recipe: Spiked Club
 2266	Recipe: Shilen Knife
 2267	Recipe: Gastraphetes
@@ -2295,7 +2295,7 @@
 2295	Recipe: Ancient Reagent
 2296	Recipe: Atuba Mace
 2297	Recipe: Flamberge
-2298	Recipe: StormBringer
+2298	Recipe: Stormbringer
 2299	Recipe: Big Hammer
 2300	Recipe: Scythe
 2301	Recipe: Battle Axe
@@ -2558,17 +2558,17 @@
 2558	Sword of Revolution*Sword of Revolution
 2559	Sword of Revolution*Elven Long Sword
 2560	Elven Long Sword*Elven Long Sword
-2561	StormBringer*StormBringer
-2562	StormBringer*Shamshir
-2563	StormBringer*Katana
-2564	StormBringer*Spirit Sword
-2565	StormBringer*Raid Sword
-2566	StormBringer*Caliburs
-2567	StormBringer*Ultimate Sword
-2568	StormBringer*Sword of Delusion
-2569	StormBringer*Sword of Nightmare
-2570	StormBringer*Tsurugi
-2571	StormBringer*Samurai Long sword
+2561	Stormbringer*Stormbringer
+2562	Stormbringer*Shamshir
+2563	Stormbringer*Katana
+2564	Stormbringer*Spirit Sword
+2565	Stormbringer*Raid Sword
+2566	Stormbringer*Caliburs
+2567	Stormbringer*Ultimate Sword
+2568	Stormbringer*Sword of Delusion
+2569	Stormbringer*Sword of Nightmare
+2570	Stormbringer*Tsurugi
+2571	Stormbringer*Samurai Long sword
 2572	Shamshir*Shamshir
 2573	Shamshir*Katana
 2574	Shamshir*Spirit Sword
@@ -4678,9 +4678,9 @@
 4678	Scroll: Decrease Hate
 4679	Eva's Blessing
 4680	Potion of Revenge
-4681	StormBringer Critical Anger
-4682	StormBringer Focus
-4683	StormBringer Light Armor
+4681	Stormbringer Critical Anger
+4682	Stormbringer Focus
+4683	Stormbringer Light Armor
 4684	Shamshir Guidance
 4685	Shamshir Back Blow
 4686	Shamshir Rsk. Evasion
@@ -5123,7 +5123,7 @@
 5123	Mature Thorn Codran
 5124	Mature Great Codran
 5125	Harvester
-5126	Dual Weapon Crafting Stamp
+5126	Dualsword Crafting Stamp
 5127	Dailaon Knife
 5128	Crokian Blade
 5129	Doll Knife
@@ -8818,7 +8818,7 @@
 8818	Daimon Crystal Mana Up
 8819	Daimon Crystal Acumen
 8820	Daimon Crystal Magic Mental Shield
-8821	Shadow Item: Two-handed Sword
+8821	Shadow Item - Two-handed Sword
 8822	Shadow Item: Crimson Sword
 8823	Shadow Item: Spiked Club
 8824	Shadow Item: Staff of Magic
@@ -8845,7 +8845,7 @@
 8845	Shadow Item: Akat Longbow
 8846	Shadow Item: Pa'agrian Sword
 8847	Shadow Item: Fisted Blade
-8848	Shadow Item: StormBringer*StormBringer
+8848	Shadow Item: Stormbringer*Stormbringer
 8849	Shadow Item: Great Sword
 8850	Shadow Item: Heavy War Axe
 8851	Shadow Item: Spirit's Staff
@@ -8934,7 +8934,7 @@
 8934	Shadow Item: Fisted Blade
 8935	Test Rapier
 8936	Santa's Antlers
-8937	Shadow Item: StormBringer*StormBringer
+8937	Shadow Item: Stormbringer*Stormbringer
 8938	Tallum Blade*Damascus
 8939	Dominic's Mark
 8940	Mark of the Future: Human
@@ -8979,7 +8979,7 @@
 8979	Shadow Item: Viper Fang
 8980	Shadow Item: Compound Bow
 8981	Shadow Item: Crucifix of Blessing
-8982	Shadow Item: Two-handed Sword
+8982	Shadow Item - Two-handed Sword
 8983	Shadow Item: Crimson Sword
 8984	Shadow Item: Spiked Club
 8985	Shadow Item: Staff of Magic
@@ -8997,7 +8997,7 @@
 8997	Shadow Item: Akat Longbow
 8998	Shadow Item: Pa'agrian Sword
 8999	Shadow Item: Fisted Blade
-9000	Shadow Item: StormBringer*StormBringer
+9000	Shadow Item: Stormbringer*Stormbringer
 9001	Shadow Item: Great Sword
 9002	Shadow Item: Heavy War Axe
 9003	Shadow Item: Spirit's Staff
@@ -10894,7 +10894,7 @@
 10894	Sword of Valhalla - Nature Acumen
 10895	Sword of Valhalla - Nature Magic Weakness
 10896	Sword of Valhalla - Nature Magic Regeneration
-10897	StormBringer*Samurai Long Sword - Destruction
+10897	Stormbringer*Samurai Long Sword - Destruction
 10898	Spell Breaker - Tidal Wave
 10899	Spell Breaker - Hail Acumen
 10900	Spell Breaker - Hail Mental Shield
@@ -11664,7 +11664,7 @@
 11664	Common Item - Mystic Knife
 11665	Common Item - Triple-Edged Jamadhr
 11666	Common Item - Spiked Club
-11667	Common Item - Two-handed Sword
+11667	Basic Weapon - Two-handed Sword
 11668	Common Item - Estoc
 11669	Common Item - Estoc
 11670	Common Item - Elven Sword
@@ -11753,7 +11753,7 @@
 11753	Common Item - Soldat Estoc
 11754	Common Item - Schlager
 11755	Common Item - Skull Graver
-11756	Common Item - StormBringer
+11756	Common Item - Stormbringer
 11757	Common Item - Stick of Faith
 11758	Common Item - Arbalest
 11759	Common Item - Crystallized Ice Bow
@@ -11828,13 +11828,13 @@
 11828	Common Item - Sage's Staff
 11829	Common Item - Homunkulus' Sword
 11830	Common Item - Scorpion
-11831	Common Item - StormBringer*StormBringer
+11831	Common Item - Stormbringer*Stormbringer
 11832	Common Item - Widow Maker
 11833	Common Item - Pa'agrio Axe
-11834	Common Item - StormBringer*Raid Sword
-11835	Common Item - StormBringer*Shamshir
-11836	Common Item - StormBringer*Spirit Sword
-11837	Common Item - StormBringer*Katana
+11834	Common Item - Stormbringer*Raid Sword
+11835	Common Item - Stormbringer*Shamshir
+11836	Common Item - Stormbringer*Spirit Sword
+11837	Common Item - Stormbringer*Katana
 11838	Common Item - Ghoul's Staff
 11839	Common Item - Great Pata
 11840	Common Item - Dwarven Hammer
@@ -11861,11 +11861,11 @@
 11861	Common Item - Katana*Spirit Sword
 11862	Common Item - Katana*Katana
 11863	Common Item - Crystal Dagger
-11864	Common Item - StormBringer*Ultimate Sword
-11865	Common Item - StormBringer*Sword of Delusion
-11866	Common Item - StormBringer*Sword of Nightmare
-11867	Common Item - StormBringer*Tsurugi
-11868	Common Item - StormBringer*Caliburs
+11864	Common Item - Stormbringer*Ultimate Sword
+11865	Common Item - Stormbringer*Sword of Delusion
+11866	Common Item - Stormbringer*Sword of Nightmare
+11867	Common Item - Stormbringer*Tsurugi
+11868	Common Item - Stormbringer*Caliburs
 11869	Common Item - Raid Sword*Ultimate Sword
 11870	Common Item - Raid Sword*Sword of Delusion
 11871	Common Item - Raid Sword*Sword of Nightmare
@@ -11898,7 +11898,7 @@
 11898	Common Item - Sword of Delusion*Sword of Nightmare
 11899	Common Item - Sword of Delusion*Tsurugi
 11900	Common Item - Sword of Valhalla
-11901	Common Item - StormBringer*Samurai Long Sword
+11901	Common Item - Stormbringer*Samurai Long Sword
 11902	Common Item - Spell Breaker
 11903	Common Item - Arthro Nail
 11904	Common Item - Ice Storm Hammer
@@ -13525,7 +13525,7 @@
 13525	Gracian Soldier Shield
 13526	Test Belt
 13527	Test Cloak
-13528	Test Dual Daggers
+13528	Test Dual Dagger
 13529	Test Sigil
 13530	Flag of Gludio
 13531	Flag of Dion
@@ -13880,8 +13880,8 @@
 13880	Variant Drake Wing Horns
 13881	Attribute Master Yang's Sword 10-minute
 13882	Dynasty Dual Dagger
-13883	Icarus Dual Daggers
-13884	Vesper Dual Daggers
+13883	Icarus Dual Dagger
+13884	Vesper Dual Dagger
 13885	Sealed Arcana Sigil
 13886	Sealed Dynasty Sigil
 13887	Sealed Vesper Sigil
@@ -14458,7 +14458,7 @@
 14458	Icarus Hall - Hail {PvP} - Mana Up
 14459	Icarus Hall - Hail {PvP} - Conversion
 14460	Icarus Hall - Hail {PvP} - Acumen
-14461	Icarus Dual Daggers {PvP}
+14461	Icarus Dual Dagger - Chaos {PvP}
 14462	Vesper Dualsword {PvP}
 14463	Vesper Cutter {PvP}
 14464	Vesper Slasher {PvP}
@@ -14474,7 +14474,7 @@
 14474	Vesper Pincer {PvP}
 14475	Vesper Shooter {PvP}
 14476	Vesper Nagan {PvP}
-14477	Vesper Dual Daggers {PvP}
+14477	Vesper Dual Dagger {PvP}
 14478	Vesper Cutter {PvP} - Haste
 14479	Vesper Cutter {PvP} - Health
 14480	Vesper Cutter {PvP} - Focus
@@ -14524,9 +14524,9 @@
 14524	Vesper Noble Leather Breastplate {PvP}
 14525	Vesper Noble Tunic {PvP}
 14526	Dynasty Dual Dagger - Great Gale
-14527	Icarus Dual Daggers - Confusion
+14527	Icarus Dual Dagger - Chaos
 14528	Dynasty Dual Dagger - Great Gale {PvP}
-14529	Icarus Dual Daggers - Confusion {PvP}
+14529	Icarus Dual Dagger - Chaos {PvP}
 14530	Maxwell House Pack
 14531	Gludio Supply Box - Magic Pin S-/A-grade
 14532	Dion Supply Box - Magic Pin S-/A-grade
@@ -14779,7 +14779,7 @@
 14779	Cheesecake Herb
 14780	Baguette's Bread Sword
 14781	Baguette's Dagger
-14782	Baguette's Two-handed Sword
+14782	Baguette Two-handed Sword
 14783	Baguette's Mace
 14784	Baguette's Two-handed Hammer
 14785	Baguette's Spear
@@ -15235,10 +15235,10 @@
 15235	Dagger of Fortune Set 10-day
 15236	Bow of Fortune Set 10-day
 15237	Blunt Weapon of Fortune Set 10-day
-15238	One-handed Sword of Fortune Set 10-day
-15239	Two-handed Sword of Fortune Set 10-day
+15238	One-handed Sword of Friendship Set 10-day
+15239	Two-handed Sword of Friendship Set 10-day
 15240	Fist Weapon of Fortune Set 10-day
-15241	Dualsword of Fortune Set 10-day
+15241	Dualsword of Friendship Set 10-day
 15242	Spear of Fortune Set 10-day
 15243	Ancient Sword of Fortune Set 10-day
 15244	Rapier of Fortune Set 10-day
@@ -15259,10 +15259,10 @@
 15259	Dagger of Fortune Set 30-day
 15260	Bow of Fortune Set 30-day
 15261	Blunt Weapon of Fortune Set 30-day
-15262	One-handed Sword of Fortune Set 30-day
-15263	Two-handed Sword of Fortune Set 30-day
+15262	One-handed Sword of Friendship Set 30-day
+15263	Two-handed Sword of Friendship Set 30-day
 15264	Fist Weapon of Fortune Set 30-day
-15265	Dualsword of Fortune Set 30-day
+15265	Dualsword of Friendship Set 30-day
 15266	Spear of Fortune Set 30-day
 15267	Ancient Sword of Fortune Set 30-day
 15268	Short Sword of Fortune Set 30-day
@@ -16145,16 +16145,16 @@
 16145	Vesper Pincer - Thunder {PvP}
 16146	Vesper Shooter - Clairvoyance {PvP}
 16147	Vesper Nagan - Great Gale {PvP}
-16148	Vesper Dual Daggers - Great Gale
-16149	Vesper Dual Daggers - Great Gale {PvP}
+16148	Vesper Dual Dagger - Great Gale
+16149	Vesper Dual Dagger - Great Gale {PvP}
 16150	Vesper Dualsword - Destruction
 16151	Vesper Dualsword - Destruction {PvP}
-16152	Skull Edge Dual Daggers
-16153	Skull Edge Dual Daggers {PvP}
+16152	Skull Edge Dual Dagger
+16153	Skull Edge Dual Dagger {PvP}
 16154	Periel Dualsword
 16155	Periel Dualsword {PvP}
-16156	Mamba Edge Dual Daggers
-16157	Mamba Edge Dual Daggers {PvP}
+16156	Mamba Edge Dual Dagger
+16157	Mamba Edge Dual Dagger {PvP}
 16158	Eternal Core Dualsword
 16159	Eternal Core Dualsword {PvP}
 16160	Life Stone - Lv. 85
@@ -16560,10 +16560,10 @@
 16988	Dagger of Fortune Set 90-day
 16989	Bow of Fortune Set 90-day
 16990	Blunt Weapon of Fortune Set 90-day
-16991	One-handed Sword of Fortune Set 90-day
-16992	Two-handed Sword of Fortune Set 90-day
+16991	One-handed Sword of Friendship Set 90-day
+16992	Two-handed Sword of Friendship Set 90-day
 16993	Fist Weapon of Fortune Set 90-day
-16994	Dualsword of Fortune Set 90-day
+16994	Dualsword of Friendship Set 90-day
 16995	Spear of Fortune Set 90-day
 16996	Ancient Sword of Fortune Set 90-day
 16997	Short Sword of Fortune Set 90-day
@@ -19814,7 +19814,7 @@
 20254	Love Agathion Pack (Event)
 20255	Baguette Sword 7-day
 20256	Baguette Dagger 7-day
-20257	Baguette Dualsword 7-day
+20257	Baguette Great Two-handed Sword 7-day
 20258	Baguette Mace 7-day
 20259	Baguette Heavy Hammer 7-day
 20260	Baguette Spear 7-day
@@ -19827,7 +19827,7 @@
 20267	Baguette Rapier 7-day
 20268	Baguette Ancient Sword 7-day
 20269	Baguette Crossbow 7-day
-20270	Baguette's Dualsword 7-day
+20270	Baguette Dualsword 7-day
 20271	Baguette Legacy
 20272	Baguette's Herb
 20273	Cream Puff Herb
@@ -22090,7 +22090,7 @@
 22544	Auction House Fee 100% Voucher 3-unit Pack
 22545	Auction House Extension Voucher (15-day) 3-unit Pack
 22546	Auction House Extension Voucher (30-day) 3-unit Pack
-22547	(Test) One-handed Emerald Weapon
+22547	(Test) Emerald One-handed Sword
 22550	Scroll: Enchant Weapon (A-grade) Event
 22551	Scroll: Enchant Armor (A-grade) Event
 22552	Scroll: Enchant Weapon (B-grade) Event
@@ -22200,8 +22200,8 @@
 22656	Emerald Weapon: Crossbow
 22657	Emerald Weapon: One-handed Blunt Weapon
 22658	Emerald Weapon: Two-handed Blunt Weapon
-22659	Emerald Weapon: One-handed Magic Blunt Weapon
-22660	Emerald Weapon: Two-handed Magic Blunt Weapon
+22659	Emerald Weapon: One-handed Staff
+22660	Emerald Weapon: Two-handed Staff
 22661	Emerald Weapon: Dualsword
 22662	Emerald Weapon: Dual Dagger
 22663	Emerald Weapon: Dual Blunt Weapon
@@ -22209,17 +22209,17 @@
 22665	Emerald Weapon: Sigil
 22666	Emerald Weapon Appearance Stone: Sword
 22667	Emerald Weapon Appearance Stone: Dagger
-22668	Emerald Weapon Appearance Stone: Two-handed Sword
+22668	Emerald Two-handed Sword Appearance Stone
 22669	Emerald Weapon Appearance Stone: Fist Weapon
 22670	Emerald Weapon Appearance Stone: Spear
 22671	Emerald Weapon Appearance Stone: Bow
 22672	Emerald Weapon Appearance Stone: Crossbow
 22673	Emerald Weapon Appearance Stone: One-handed Blunt Weapon
 22674	Emerald Weapon Appearance Stone: Two-handed Blunt Weapon
-22675	Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon
-22676	Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon
-22677	Emerald Weapon Appearance Stone: Dualsword
-22678	Emerald Weapon Appearance Stone: Dual Dagger
+22675	Emerald One-handed Staff Appearance Stone
+22676	Emerald Two-handed Staff Appearance Stone
+22677	Emerald Dualsword Appearance Stone
+22678	Emerald Dual Dagger Appearance Stone
 22679	Emerald Weapon Appearance Stone: Dual Blunt Weapon
 22680	Emerald Weapon Appearance Stone: Shield
 22681	Emerald Weapon Appearance Stone: Sigil
@@ -22259,10 +22259,10 @@
 22715	Japanese Great Spear
 22716	Japanese Bow
 22717	Japanese Crossbow
-22718	Japanese Blunt Weapon
+22718	Japanese One-handed Blunt Weapon
 22719	Japanese Giant Blunt Weapon
-22720	Japanese Magic Blunt Weapon
-22721	Japanese Giant Magic Blunt Weapon
+22720	Japanese One-handed Staff
+22721	Japanese Giant Two-handed Staff
 22722	Japanese Dualsword
 22723	Japanese Double Dagger
 22724	Japanese Double Blunt Weapon
@@ -22275,10 +22275,10 @@
 22731	Japanese Great Spear Appearance Stone
 22732	Japanese Bow Appearance Stone
 22733	Japanese Crossbow Appearance Stone
-22734	Japanese Blunt Appearance Stone
+22734	Japanese One-handed Blunt Weapon Appearance Stone
 22735	Japanese Giant Blunt Appearance Stone
-22736	Japanese Magic Blunt Appearance Stone
-22737	Japanese Giant Magic Blunt Appearance Stone
+22736	Japanese One-handed Staff Appearance Stone
+22737	Japanese Giant Two-handed Staff Appearance Stone
 22738	Japanese Dualsword Appearance Stone
 22739	Japanese Double Dagger Appearance Stone
 22740	Japanese Double Blunt Appearance Stone
@@ -22633,7 +22633,7 @@
 23136	Uthanka's Ring
 23137	Extra Pass: Ancient Kartia's Labyrinth
 23138	Vesper Dualsword of Fortune 90-day
-23139	Vesper Dual Dagger of Fortune 90-day
+23139	Vesper Dual Dagger of Friendship 90-day
 23140	Military Underwear
 23141	Premium Underwear
 23142	Temptation Underwear
@@ -23390,8 +23390,8 @@
 23919	Tears Crossbow
 23920	Tears One-handed Blunt Weapon
 23921	Tears Magic Sword
-23922	Tears One-handed Magic Blunt Weapon
-23923	Tears Two-handed Magic Blunt Weapon
+23922	Tears One-handed Staff
+23923	Tears Two-handed Staff
 23924	Tears Dualsword
 23925	Tears Dual Dagger
 23926	Tears Dual Blunt Weapon
@@ -23406,8 +23406,8 @@
 23935	Tears Crossbow Appearance Stone 7-day
 23936	Tears One-handed Blunt Weapon Appearance Stone 7-day
 23937	Tears Magic Sword Appearance Stone 7-day
-23938	Tears One-handed Magic Blunt Weapon Appearance Stone 7-day
-23939	Tears Two-handed Magic Blunt Weapon Appearance Stone 7-day
+23938	Tears One-handed Staff Appearance Stone 7-day
+23939	Tears Two-handed Staff Appearance Stone 7-day
 23940	Tears Dualsword Appearance Stone 7-day
 23941	Tears Dual Dagger Appearance Stone 7-day
 23942	Tears Dual Blunt Weapon Appearance Stone 7-day
@@ -25714,9 +25714,9 @@
 26243	Lost Armor
 26244	Symbol of Courage
 26245	Symbol of Courage
-26246	Returning Hero's Support Box
-26247	Returning Hero's High-grade Support Box
-26248	Returning Hero's Support Cube
+26246	Hero's Support Box
+26247	Hero's High-grade Support Box
+26248	Hero's Support Cube
 26249	Cloak of Light for the Chosen
 26250	Cloak of Darkness for the Chosen
 26251	Lilith Server Mask
@@ -27893,16 +27893,16 @@
 28422	Shiny Elemental Shirt Special Pack
 28423	Reflect Attack T-shirt Special Pack
 28424	Reflect Magic T-shirt Special Pack
-28425	Royal White Save Ticket (R)
-28426	Royal White Save Ticket (R95)
-28427	Royal White Save Ticket (R99)
-28428	Royal Purple Save Ticket (R)
-28429	Royal Purple Save Ticket (R95)
-28430	Royal Purple Save Ticket (R99)
+28425	Royal White Save Ticket (R-grade)
+28426	Royal White Save Ticket (R95-grade)
+28427	Royal White Save Ticket (R99-grade)
+28428	Royal Purple Save Ticket (R-grade)
+28429	Royal Purple Save Ticket (R95-grade)
+28430	Royal Purple Save Ticket (R99-grade)
 28431	Entrance Pass: Embryo Command Post
 28432	Abundant Seven Signs Box
 28433	Agathion - Babayaga Premium
-28434	Mount - Elk
+28434	Mount - Fire Elk
 28435	Draco's Hat: Warrior Event
 28436	Draco's Hat: Wizard Event
 28437	Sayha's Talisman Stage 1
@@ -27923,7 +27923,7 @@
 28452	Fortune Talisman Pack
 28453	Sayha's Energy
 28454	Sayha's Blessing
-28455	Dimensional Bracelet Stage 6 Pack CHA +5
+28455	Dimensional Bracelet Stage 6 Pack CHA+5
 28456	Dimensional Bracelet Stage 6 CHA+5
 28457	Seed Talisman Enhancement Pack
 28458	Fortune Hair Accessory Box
@@ -27936,7 +27936,7 @@
 28465	Heine Exclusive Reward Chest
 28466	Heine Exclusive Fishing Tools - 300 Pack
 28467	Heine Exclusive Fishing Tools - 3,000 Pack
-28468	Topaz (7-day) Lv5
+28468	Topaz Lv. 5 7-day
 28469	La Vie En Rose's Topaz Chest 7-day
 28470	Ultimate Jewelry Box
 28471	Mount - Elk 7-day
@@ -27953,11 +27953,11 @@
 28482	Intermediate Forbidden Secret Book
 28483	High-grade Forbidden Secret Book
 28484	Brooch Spirit Stone
-28485	Brooch Spirit Stone Rare
+28485	Brooch Spirit Stone Rare-Type
 28486	La Vie En Rose's Radiant Brooch
-28487	La Vie En Rose's Glorious Brooch
-28488	La Vie En Rose's Glorious Brooch Rare
-28489	Glorious Brooch Fragment
+28487	La Vie En Rose's Radiant Brooch Enchant Type
+28488	La Vie En Rose's Radiant Brooch Rare-Type
+28489	Brilliant Brooch Jewel
 28490	Frenzied Tauti's Small Fragment
 28491	Insane Kelbim's Small Fragment
 28492	Freya's Luxury Shopping Bag
@@ -27999,7 +27999,7 @@
 28528	Passion Treasure Chest
 28529	Messiah's Castle's Lost Treasure Chest
 28530	Top-grade Brooch Spirit Stone Rare-Type
-28531	Top-grade Returning Hero's Support Box
+28531	Top-grade Hero's Support Box
 28532	Ruby Lv. 3 30-day
 28533	Sapphire Lv. 3 30-day
 28534	Emerald Lv. 3 30-day
@@ -28080,7 +28080,7 @@
 28609	High-Grade Oriana's Disguised Clothing
 28610	Veteran Duo Bracelet Pack Event
 28611	Returned Duo Bracelet Pack Event
-28612	Royal White Save Ticket (R99) Event
+28612	Royal White Save Ticket (R99-grade) Event
 28613	Evolved Agathion - Virgo Stage 1
 28614	Evolved Agathion - Virgo Stage 2
 28615	Evolved Agathion - Virgo Stage 3
@@ -28641,61 +28641,72 @@
 29170	High-grade Spirit Stone Pack - Legendary
 29171	High-grade Spirit Stone Pack - Cloak
 29172	Red Star Solvent
-29173	Prestige Rune Pack 7-day
-29174	Prestige Rune 7-day
-29175	Prestige Rune Pack 1-day
-29176	Prestige Rune 1-day
+29173	High-grade Drop Rate Rune 300% Pack 7-day
+29174	High-grade Drop Rate Rune 300% 7-day
+29175	High-grade Drop Rate Rune 300% Pack 1-day
+29176	High-grade Drop Rate Rune 300% 1-day
 29177	Prestige Cube Pack 1-day
 29178	Prestige Cube 1-day
 29179	Eva's Rune Pack (1-day)
 29180	Eva's Rune 1-day
 29181	Mermaid Agathion Charm
 29182	Master's Fishing Coin
-29183	Mermaid Agathion Enchant Scroll
+29183	Scroll: Enchant Mermaid Agathion
 29184	Mermaid's Trace
-29185	Master's Fishing Potion 1-hr
+29185	Master's Fishing Potion 1-hour
 29186	Golden Fishing Shot
-29187	Fishing XP Box Lv. 85-94
-29188	Fishing XP Box Lv .95-98
-29189	Fishing XP Box Lv. 99-101
-29190	Fishing XP Box Lv. 102-104
-29191	Fishing XP Box Lv. 105
+29187	Fishing XP Box Lv85 - 94
+29188	Fishing XP Box Lv95 - 98
+29189	Fishing XP Box Lv99 - 101
+29190	Fishing XP Box Lv102 - 104
+29191	Fishing XP Box Lv105
 29192	Shining Fishing Box
-29193	Fishing XP Scroll Lv. 85-94
-29194	Fishing XP Scroll Lv .95-98
-29195	Fishing XP Scroll Lv. 99-101
-29196	Fishing XP Scroll Lv. 102-104
-29197	Fishing XP Scroll Lv. 105
+29193	Fishing Scroll: XP Lv85 - 94
+29194	Fishing Scroll: XP Lv95 - 98
+29195	Fishing Scroll: XP Lv99 - 101
+29196	Fishing Scroll: XP Lv102 - 104
+29197	Fishing Scroll: XP Lv105
 29198	Ultimate Fortune Jewelry Box
-29199	New User's Leaf 14-day
-29200	Returning User's Leaf 14-day
-29201	New User's Leaf Box 14-day
-29202	Returning User's Leaf Box 14-day
-29203	Suspicious Safe
+29199	New User Sprout 14-day
+29200	Dormant User Sprout 14-day
+29201	New User Sprout Box 14-day
+29202	Dormant User Sprout Box 14-day
+29203	Suspicious Vault
 29204	Shining Gold Bar
 29205	Vitality Beer
 29206	Honey Vitality Beer
 29207	Teddy Bear Appearance Stone
-29208	Cat Plushie Appearance Stone
-29209	Panda Plushie Appearance Stone
+29208	Cat Plushy Appearance Stone
+29209	Panda Plushy Appearance Stone
 29210	Dark Eternal Ingredient Set
 29211	Bloody Eternal Ingredient Set
 29212	Adventurer's Circlet
 29213	Adventurer's Bracelet
 29214	T-shirt Box
-29215	Novice Package Lv. 85
-29216	Novice Package Lv. 95
-29217	Novice Package Lv. 99
-29218	Accessory of the Gods Upgrade Set Box Necklace
-29219	Accessory of the Gods Upgrade Set Box Earrings
-29220	Accessory of the Gods Upgrade Set Box Ring
-29221	Accessory of the Gods Crafting Set Box Necklace
-29222	Accessory of the Gods Crafting Set Box Earrings
-29223	Accessory of the Gods Crafting Set Box Ring
-29224	Box of War Hero's Soul
-29225	14th Anniversary Rune 100% 1-hr
-29226	14th Anniversary Rune 100% Pack (1-hr)
-29227	Shattered Squash Fragment
+29215	Beginner's Package Lv85
+29216	Beginner's Package Lv95
+29217	Beginner's Package Lv99
+29218	God's Accessory Upgrade Set Box Necklace
+29219	God's Accessory Upgrade Set Box Earring
+29220	God's Accessory Upgrade Set Box Ring
+29221	God's Accessory Creation Set Box Necklace
+29222	God's Accessory Creation Set Box Earring
+29223	God's Accessory Creation Set Box Ring
+29224	Box Containing War God's Soul
+29225	14th Anniversary Rune 100% 1-hour
+29226	14th Anniversary Rune 100% (1 hour) Pack
+29227	Shattered Gourd Shard
+29228	Babayaga Agathion Charm Luxury
+29229	Minion Eye Agathion Charm
+29230	Minion Eye Agathion Charm 7-day
+29231	Minion Eye Agathion Charm 30-day
+29232	Matryoshka Agathion Charm
+29233	Matryoshka Agathion Charm 7-day
+29234	Matryoshka Agathion Charm 30-day
+29235	Minion Eye Agathion Charm 7-Day Pack
+29236	Minion Eye Agathion Charm 30-Day Pack
+29237	Matryoshka Agathion Charm 7-Day Pack
+29238	Matryoshka Agathion Charm 30-Day Pack
 29239	Stabilized Agathion Charm Book of Growth
 29240	Red Light Cheer Event
 29241	Blue Light Cheer Event
@@ -28706,10 +28717,154 @@
 29246	+7 Elmore Cloak Box
 29247	+7 Ferios Cloak Box
 29248	Reconstruction Society's Enchantment Pack
+29249	Agathion Charm - Ball Trapping Gnosian
+29250	Agathion Charm - Ball Trapping Orodriel
+29251	Agathion Charm - Penalty Kick
 29252	Freya's Deluxe Shopping Bag
 29253	Freya Special Card
 29254	Sirra Special Card
 29255	Snowman Special Card
+29256	Seven Deadly Sins Card: Meliodas
+29257	Seven Deadly Sins Card: Meliodas 2
+29258	Seven Deadly Sins Card: Diane
+29259	Seven Deadly Sins Card: Ban
+29260	Seven Deadly Sins Card: King
+29261	Seven Deadly Sins Card: Gowther
+29262	Seven Deadly Sins Card: Merlin
+29263	Seven Deadly Sins Card: Escanor
+29264	Lioneth Kingdom Card: Elizabeth
+29265	Dreyfus Card: Gil Sanda
+29266	Dreyfus Card: Howzer
+29267	Handsen Card: Yurigo
+29268	Ten Commandments Card: Jerudoris
+29269	Ten Commandments Card: Estarossa
+29270	Ten Commandments Card: Galan
+29271	Brittania
+29272	Pet Card: Hawk
+29273	Legendary Knights Card: Seven Deadly Sins
+29274	Oriana's Suspicious Supply Items
+29275	Water Dragon's Treasure Chest
+29276	Meliodas Agathion Charm Stage 1
+29277	Elizabeth Agathion Charm Stage 1
+29278	Hawk Agathion Charm Stage 1
+29279	Ban Agathion Charm Stage 1
+29280	Diane Agathion Charm Stage 1
+29281	King Agathion Charm Stage 1
+29282	Merlin Agathion Charm Stage 1
+29283	Gowther Agathion Charm Stage 1
+29284	Escanor Agathion Charm Stage 1
+29285	Meliodas Agathion Charm Stage 2
+29286	Elizabeth Agathion Charm Stage 2
+29287	Hawk Agathion Charm Stage 2
+29288	Ban Agathion Charm Stage 2
+29289	Diane Agathion Charm Stage 2
+29290	King Agathion Charm Stage 2
+29291	Merlin Agathion Charm Stage 2
+29292	Gowther Agathion Charm Stage 2
+29293	Escanor Agathion Charm Stage 2
+29294	Meliodas Agathion Charm Stage 3
+29295	Elizabeth Agathion Charm Stage 3
+29296	Hawk Agathion Charm Stage 3
+29297	Ban Agathion Charm Stage 3
+29298	Diane Agathion Charm Stage 3
+29299	King Agathion Charm Stage 3
+29300	Merlin Agathion Charm Stage 3
+29301	Gowther Agathion Charm Stage 3
+29302	Escanor Agathion Charm Stage 3
+29303	Seven Deadly Sins Agathion Charm Book of Growth
+29304	Seven Deadly Sins Agathion Charm Upgrade Stone
+29305	Dragon Claw Coupon
+29306	Merlin's Magic Bracelet 30-day
+29307	Merlin's Magic Bracelet (30-day) Pack
+29308	Seven Deadly Sins : Antharas Shaper - Fragment 1-hr
+29309	Seven Deadly Sins : Antharas Slasher - Fragment 1-hr
+29310	Seven Deadly Sins : Antharas Thrower - Fragment 1-hr
+29311	Seven Deadly Sins : Antharas Buster - Fragment 1-hr
+29312	Seven Deadly Sins : Antharas Cutter - Fragment 1-hr
+29313	Seven Deadly Sins : Antharas Stormer - Fragment 1-hr
+29314	Seven Deadly Sins : Antharas Fighter - Fragment 1-hr
+29315	Seven Deadly Sins : Antharas Avenger - Fragment 1-hr
+29316	Seven Deadly Sins : Antharas Dual Blunt - Fragment 1-hr
+29317	Seven Deadly Sins : Antharas Dualsword - Fragment 1-hr
+29318	Seven Deadly Sins : Valakas Shaper - Fragment 1-hr
+29319	Seven Deadly Sins : Valakas Cutter - Fragment 1-hr
+29320	Seven Deadly Sins : Valakas Slasher - Fragment 1-hr
+29321	Seven Deadly Sins : Valakas Thrower - Fragment 1-hr
+29322	Seven Deadly Sins : Valakas Buster - Fragment 1-hr
+29323	Seven Deadly Sins : Valakas Caster - Fragment 1-hr
+29324	Seven Deadly Sins : Valakas Retributer - Fragment 1-hr
+29325	Seven Deadly Sins : Lindvior Shaper - Fragment 1-hr
+29326	Seven Deadly Sins : Lindvior Thrower - Fragment 1-hr
+29327	Seven Deadly Sins : Lindvior Slasher - Fragment 1-hr
+29328	Seven Deadly Sins : Lindvior Caster - Fragment 1-hr
+29329	Seven Deadly Sins : Lindvior Cutter - Fragment 1-hr
+29330	Seven Deadly Sins : Lindvior Shooter - Fragment 1-hr
+29331	Seven Deadly Sins : Lindvior Dual Dagger - Fragment 1-hr
+29332	Seven Deadly Sins : Antharas Shaper - High-grade 1-hr
+29333	Seven Deadly Sins : Antharas Slasher - High-grade 1-hr
+29334	Seven Deadly Sins : Antharas Thrower - High-grade 1-hr
+29335	Seven Deadly Sins : Antharas Buster - High-grade 1-hr
+29336	Seven Deadly Sins : Antharas Cutter - High-grade 1-hr
+29337	Seven Deadly Sins : Antharas Stormer - High-grade 1-hr
+29338	Seven Deadly Sins : Antharas Fighter - High-grade 1-hr
+29339	Seven Deadly Sins : Antharas Avenger - High-grade 1-hr
+29340	Seven Deadly Sins : Antharas Dual Blunt - High-grade 1-hr
+29341	Seven Deadly Sins : Antharas Dualsword - High-grade 1-hr
+29342	Seven Deadly Sins : Valakas Shaper - High-grade 1-hr
+29343	Seven Deadly Sins : Valakas Cutter - High-grade 1-hr
+29344	Seven Deadly Sins : Valakas Slasher - High-grade 1-hr
+29345	Seven Deadly Sins : Valakas Thrower - High-grade 1-hr
+29346	Seven Deadly Sins : Valakas Buster - High-grade 1-hr
+29347	Seven Deadly Sins : Valakas Caster - High-grade 1-hr
+29348	Seven Deadly Sins : Valakas Retributer - High-grade 1-hr
+29349	Seven Deadly Sins : Lindvior Shaper - High-grade 1-hr
+29350	Seven Deadly Sins : Lindvior Thrower - High-grade 1-hr
+29351	Seven Deadly Sins : Lindvior Slasher - High-grade 1-hr
+29352	Seven Deadly Sins : Lindvior Caster - High-grade 1-hr
+29353	Seven Deadly Sins : Lindvior Cutter - High-grade 1-hr
+29354	Seven Deadly Sins : Lindvior Shooter - High-grade 1-hr
+29355	Seven Deadly Sins : Lindvior Dual Dagger - High-grade 1-hr
+29356	Seven Deadly Sins Card Pouch
+29357	Legendary Knights Card: Seven Deadly Sins (2-hr) Pack
+29358	Animate Appearance Stone Random Box
+29359	Hawk Agathion Charm - Stage 3 7-day
+29360	+5 Hawk Agathion Charm - Stage 3 (7-day) Box
+29361	Merlin's Magic Bracelet 7-day
+29362	Merlin's Magic Bracelet (7-day) Pack
+29363	Hero's Cheering Cube
+29364	Hero's Support Box
+29365	Hero's High-grade Support Box
+29366	Hero's Support Cube
+29367	New User Sprout 30-day
+29368	New User Sprout Box 30-day
+29369	Hero's Mark
+29370	Goddess Eva's Treasure Chest
+29371	Seraph Armor Pack (Heavy)
+29372	Seraph Armor Pack (Light)
+29373	Seraph Armor Pack (Robe)
+29374	Eternal Armor Pack (Heavy)
+29375	Eternal Armor Pack (Light)
+29376	Eternal Armor Pack (Robe)
+29377	Deton's Red Potion
+29378	Deton's Yellow Potion
+29379	Deton's Purple Potion
+29380	Deton's Blue Potion 1-hr
+29381	Deton's Blue Potion 2-hr
+29382	Deton's Blue Potion 4-hr
+29383	Deton's Blue Potion 8-hr
+29384	Level 4 Box of Gems
+29385	Level 5 Box of Gems
+29386	Honey Rose Beer
+29387	Honey Rose Beer 2-hr
+29388	Paulina's Magic Bracelet 7-day
+29389	Paulina's Magic Bracelet (7-day) Box
+29390	Paulina's Magic Bracelet 30-day
+29391	Paulina's Magic Bracelet (30-day)  Box
+29392	Dragon's Relic
+29393	Dragon's Relic Chest
+29394	Shining Dragon's Relic Chest
+29395	Water Spirit's Gift
+29396	Attendance Rare Accessory Box
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow
@@ -29119,9 +29274,9 @@
 30405	Infinity Dual Blunt Weapon
 30406	Internal test type stone Pack
 30407	Internal test type crystal Pack
-30408	Dual Weapon Crafting Stamp (R-grade)
-30409	Dual Weapon Crafting Stamp (R95-grade)
-30410	Dual Weapon Crafting Stamp (R99-grade)
+30408	Dualsword Crafting Stamp - R-grade
+30409	Dualsword Crafting Stamp (R95-grade)
+30410	Dualsword Crafting Stamp (R99-grade)
 30411	Talisman (R-grade) - Knock Back Resistance (Passive)
 30412	Talisman (R-grade) - Knock Down Resistance (Passive)
 30413	Talisman (R-grade) - Binding Resistance (Passive)
@@ -29497,7 +29652,7 @@
 30783	Bound Ecliptic Axe - M. Atk.
 30784	Bound Ecliptic Axe - Magic Hold
 30785	Bound Icarus Dualsword
-30786	Bound Icarus Dual Daggers
+30786	Bound Icarus Dual Dagger
 30787	Bound Heathen's Book
 30788	Bound Winged Spear
 30789	Bound Widow Maker
@@ -29719,15 +29874,15 @@
 31005	Bound Stiletto - Critical Bleed
 31006	Bound Stiletto - Critical Poison
 31007	Bound Stiletto - Mortal Strike
-31008	Bound StormBringer*Katana
-31009	Bound StormBringer*Spirit Sword
-31010	Bound StormBringer*StormBringer
-31011	Bound StormBringer*Shamshir
-31012	Bound StormBringer*Raid Sword
-31013	Bound StormBringer
-31014	Bound StormBringer - Critical Anger
-31015	Bound StormBringer - Focus
-31016	Bound StormBringer - Light Armor
+31008	Bound Stormbringer*Katana
+31009	Bound Stormbringer*Spirit Sword
+31010	Bound Stormbringer*Stormbringer
+31011	Bound Stormbringer*Shamshir
+31012	Bound Stormbringer*Raid Sword
+31013	Bound Stormbringer
+31014	Bound Stormbringer - Critical Anger
+31015	Bound Stormbringer - Focus
+31016	Bound Stormbringer - Light Armor
 31017	Bound Star Buster
 31018	Bound Star Buster - Health
 31019	Bound Star Buster - Haste
@@ -30611,12 +30766,12 @@
 31897	Unidentified Spinebone Sword
 31898	Unidentified Spiked Club
 31899	Unidentified Stiletto
-31900	Unidentified StormBringer*Katana
-31901	Unidentified StormBringer*Spirit Sword
-31902	Unidentified StormBringer*StormBringer
-31903	Unidentified StormBringer*Shamshir
-31904	Unidentified StormBringer*Raid Sword
-31905	Unidentified StormBringer
+31900	Unidentified Stormbringer*Katana
+31901	Unidentified Stormbringer*Spirit Sword
+31902	Unidentified Stormbringer*Stormbringer
+31903	Unidentified Stormbringer*Shamshir
+31904	Unidentified Stormbringer*Raid Sword
+31905	Unidentified Stormbringer
 31906	Unidentified Star Buster
 31907	Unidentified Scorpion
 31908	Unidentified Scale Mail
@@ -31117,7 +31272,7 @@
 32403	Fantasy Knuckle Duster Not in Use
 32404	Fantasy Fisted Blade Not in Use
 32405	Fantasy Sword of Revolution*Sword of Revolution Not in Use
-32406	Fantasy StormBringer*StormBringer Not in Use
+32406	Fantasy Stormbringer*Stormbringer Not in Use
 32407	Fantasy Compound Armor Not in Use
 32408	Fantasy Theca Leather Armor Not in Use
 32409	Fantasy Theca Leather Gaiters Not in Use
@@ -31255,7 +31410,7 @@
 32541	Fantasy Dynasty Shield Not in Use
 32542	Fantasy Dynasty Sigil Not in Use
 32543	Fantasy Icarus Disperser Not in Use
-32544	Fantasy Icarus Dual Daggers Not in Use
+32544	Fantasy Icarus Dual Dagger Not in Use
 32545	Fantasy Icarus Spirit Not in Use
 32546	Fantasy Icarus Sawsword Not in Use
 32547	Fantasy Icarus Stinger Not in Use
@@ -31284,7 +31439,7 @@
 32570	Fantasy Moirai Helmet Not in Use
 32571	Fantasy Moirai Sigil Not in Use
 32572	Fantasy Vesper Shaper Not in Use
-32573	Fantasy Vesper Dual Daggers Not in Use
+32573	Fantasy Vesper Dual Dagger Not in Use
 32574	Fantasy Vesper Buster Not in Use
 32575	Fantasy Vesper Cutter Not in Use
 32576	Fantasy Vesper Pincer Not in Use
@@ -32037,7 +32192,7 @@
 33323	Majestic Gauntlets of Destiny (Water, Earth, Holy) Robe
 33324	Majestic Boots of Destiny (Water, Earth, Holy) Robe
 33325	Vesper Shaper of Destiny (Fire) - Critical Damage
-33326	Vesper Dual Daggers of Destiny (Fire)
+33326	Vesper Dual Dagger of Destiny (Fire)
 33327	Vesper Cutter of Destiny (Fire) - Focus
 33328	Vesper Buster of Destiny (Fire) - Acumen
 33329	Vesper Pincer of Destiny (Fire) - Focus
@@ -32053,7 +32208,7 @@
 33339	Vesper Fighter of Destiny (Fire) - Focus
 33340	Vesper Dualsword of Destiny (Fire)
 33341	Vesper Shaper of Destiny (Water) - Critical Damage
-33342	Vesper Dual Daggers of Destiny (Water)
+33342	Vesper Dual Dagger of Destiny (Water)
 33343	Vesper Cutter of Destiny (Water) - Focus
 33344	Vesper Buster of Destiny (Water) - Acumen
 33345	Vesper Pincer of Destiny (Water) - Focus
@@ -32069,7 +32224,7 @@
 33355	Vesper Fighter of Destiny (Water) - Focus
 33356	Vesper Dualsword of Destiny (Water)
 33357	Vesper Shaper of Destiny (Wind) - Critical Damage
-33358	Vesper Dual Daggers of Destiny (Wind)
+33358	Vesper Dual Dagger of Destiny (Wind)
 33359	Vesper Cutter of Destiny (Wind) - Focus
 33360	Vesper Buster of Destiny (Wind) - Acumen
 33361	Vesper Pincer of Destiny (Wind) - Focus
@@ -32085,7 +32240,7 @@
 33371	Vesper Fighter of Destiny (Wind) - Focus
 33372	Vesper Dualsword of Destiny (Wind)
 33373	Vesper Shaper of Destiny (Earth) - Critical Damage
-33374	Vesper Dual Daggers of Destiny (Earth)
+33374	Vesper Dual Dagger of Destiny (Earth)
 33375	Vesper Cutter of Destiny (Earth) - Focus
 33376	Vesper Buster of Destiny (Earth) - Acumen
 33377	Vesper Pincer of Destiny (Earth) - Focus
@@ -32101,7 +32256,7 @@
 33387	Vesper Fighter of Destiny (Earth) - Focus
 33388	Vesper Dualsword of Destiny (Earth)
 33389	Vesper Shaper of Destiny (Holy) - Critical Damage
-33390	Vesper Dual Daggers of Destiny (Holy)
+33390	Vesper Dual Dagger of Destiny (Holy)
 33391	Vesper Cutter of Destiny (Holy) - Focus
 33392	Vesper Buster of Destiny (Holy) - Acumen
 33393	Vesper Pincer of Destiny (Holy) - Focus
@@ -32117,7 +32272,7 @@
 33403	Vesper Fighter of Destiny (Holy) - Focus
 33404	Vesper Dualsword of Destiny (Holy)
 33405	Vesper Shaper of Destiny (Dark) - Critical Damage
-33406	Vesper Dual Daggers of Destiny (Dark)
+33406	Vesper Dual Dagger of Destiny (Dark)
 33407	Vesper Cutter of Destiny (Dark) - Focus
 33408	Vesper Buster of Destiny (Dark) - Acumen
 33409	Vesper Pincer of Destiny (Dark) - Focus
@@ -33130,12 +33285,12 @@
 34416	Player Commendation - Vesper Nagan (Fire) - Focus PC-exclusive
 34417	Player Commendation - Vesper Nagan (Holy) - Focus PC-exclusive
 34418	Player Commendation - Vesper Nagan (Dark) - Focus PC-exclusive
-34419	Player Commendation - Vesper Dual Daggers (Earth) PC-exclusive
-34420	Player Commendation - Vesper Dual Daggers (Water) PC-exclusive
-34421	Player Commendation - Vesper Dual Daggers (Wind) PC-exclusive
-34422	Player Commendation - Vesper Dual Daggers (Fire) PC-exclusive
-34423	Player Commendation - Vesper Dual Daggers (Holy) PC-exclusive
-34424	Player Commendation - Vesper Dual Daggers (Dark) PC-exclusive
+34419	Player Commendation - Vesper Dual Dagger (Earth) PC-exclusive
+34420	Player Commendation - Vesper Dual Dagger (Water) PC-exclusive
+34421	Player Commendation - Vesper Dual Dagger (Wind) PC-exclusive
+34422	Player Commendation - Vesper Dual Dagger (Fire) PC-exclusive
+34423	Player Commendation - Vesper Dual Dagger (Holy) PC-exclusive
+34424	Player Commendation - Vesper Dual Dagger (Dark) PC-exclusive
 34425	Player Commendation - Vesper Dualsword (Earth) PC-exclusive
 34426	Player Commendation - Vesper Dualsword (Water) PC-exclusive
 34427	Player Commendation - Vesper Dualsword (Wind) PC-exclusive
@@ -34336,7 +34491,7 @@
 35635	Bow of Protection
 35636	Magic Sword of Protection
 35637	Dagger of Protection
-35638	Dual Weapon of Protection
+35638	Dualsword of Protection
 35639	Two-handed Sword of Protection
 35640	Nucleus of Darkness
 35641	Mysterious Supply Box - Magic Pin (B, C-grade)
@@ -35025,7 +35180,7 @@
 36335	Caffeine Energy Drink Event
 36336	Protein Energy Drink Event
 36337	DHA Energy Drink Event
-36338	Omega3 Energy Drink Event
+36338	Omega 3 Energy Drink Event
 36339	Medal of Glory Event
 36340	Medal of Victory Event
 36341	Medal of Friendship Event
@@ -35319,36 +35474,36 @@
 36629	Blessed Scroll: Modify Armor (D-grade) 7-day
 36630	Hair Accessory Appearance Stone 15-day
 36631	Blessed Hair Accessory Appearance Stone 7-day
-36632	Emerald Weapon: One-handed Sword
+36632	Emerald Weapon - One-handed Sword
 36633	Emerald Weapon: Dagger
-36634	Emerald Weapon: Two-handed Sword
+36634	Emerald Weapon - Two-handed Sword
 36635	Emerald Weapon: Fist Weapon
 36636	Emerald Weapon: Spear
 36637	Emerald Weapon: Bow
 36638	Emerald Weapon: Crossbow
 36639	Emerald Weapon: One-handed Blunt Weapon
 36640	Emerald Weapon: Two-handed Blunt Weapon
-36641	Emerald Weapon: One-handed Magic Blunt Weapon
-36642	Emerald Weapon: Two-handed Magic Blunt Weapon
-36643	Emerald Weapon: Dualsword
-36644	Emerald Weapon: Dual Dagger
+36641	Emerald Weapon - One-handed Staff
+36642	Emerald Weapon - Two-handed Staff
+36643	Emerald Weapon - Dualsword
+36644	Emerald Weapon - Dual Dagger
 36645	Emerald Weapon: Dual Blunt Weapon
 36646	Emerald Weapon: Shield
 36647	Emerald Weapon: Sigil
-36648	Emerald Weapon Appearance Stone: Sword 7-day
+36648	Emerald Weapon Appearance Stone: One-handed Sword 7-day
 36649	Emerald Weapon Appearance Stone: Dagger 7-day
 36650	Emerald Weapon Appearance Stone: Two-handed Sword 7-day
 36651	Emerald Weapon Appearance Stone: Fist Weapon 7-day
 36652	Emerald Weapon Appearance Stone: Spear 7-day
 36653	Emerald Weapon Appearance Stone: Bow 7-day
 36654	Emerald Weapon Appearance Stone: Crossbow 7-day
-36655	Emerald Weapon Appearance Stone: One-handed Blunt Weapon 7-day
-36656	Emerald Weapon Appearance Stone: Two-handed Blunt Weapon 7-day
-36657	Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon 7-day
-36658	Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon 7-day
+36655	Emerald Weapon Appearance Stone: One-handed Blunt 7-day
+36656	Emerald Weapon Appearance Stone: Two-handed Blunt 7-day
+36657	Emerald Weapon Appearance Stone: One-handed Staff 7-day
+36658	Emerald Weapon Appearance Stone: Two-handed Staff 7-day
 36659	Emerald Weapon Appearance Stone: Dualsword 7-day
 36660	Emerald Weapon Appearance Stone: Dual Dagger 7-day
-36661	Emerald Weapon Appearance Stone: Dual Blunt Weapon 7-day
+36661	Emerald Weapon Appearance Stone: Dual Blunt 7-day
 36662	Emerald Weapon Appearance Stone: Shield 7-day
 36663	Emerald Weapon Appearance Stone: Sigil 7-day
 36664	9th Anniversary Hat
@@ -35404,13 +35559,13 @@
 36714	Kartia's Mutated Seed
 36715	Evil Freed Soul
 36716	Guardian Soul's Pendant
-36717	Augmentation Practice StormBringer
+36717	Augmentation Practice Stormbringer
 36718	Augmentation Practice Spirit Stone (46)
 36719	Augmentation Practice Gemstone (R-grade)
-36720	Soul Crystal Practice StormBringer
+36720	Soul Crystal Practice Stormbringer
 36721	Practice Kain's Soul Crystal - Stage 1
 36722	Soul Crystal Practice Gemstone
-36723	Soul Crystal Option StormBringer Focus
+36723	Soul Crystal Option Stormbringer Focus
 36724	Practice Leather Belt
 36725	Practice Magic Pin (C-grade)
 36726	Flutter's Magic Pin Leather Belt (Low-grade)
@@ -35738,7 +35893,7 @@
 37048	Sword of Corruption
 37049	Octavis' Sword
 37050	Tegaffe's Dualsword
-37051	Seknus' One-handed Magic Sword
+37051	Seknus' Magic Sword
 37052	Tebot's Axe
 37053	Glakias' Hammer
 37054	Tebot's Dual Blunt Weapon
@@ -35758,7 +35913,7 @@
 37068	Monster Weapon Appearance Stone: Sword of Corruption
 37069	Monster Weapon Appearance Stone: Octavis' Sword
 37070	Monster Weapon Appearance Stone: Tegaffe's Dualsword
-37071	Monster Weapon Appearance Stone: Seknus' One-handed Magic Sword
+37071	Monster Weapon Appearance Stone: Seknus' Magic Sword
 37072	Monster Weapon Appearance Stone: Tebot's Axe
 37073	Monster Weapon Appearance Stone: Glakias' Hammer
 37074	Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon
@@ -35928,7 +36083,7 @@
 37239	Steel Immortal Earring (30-day)
 37240	Steel Immortal Necklace (30-day)
 37241	Steel Immortal Ring (30-day)
-37242	Steel StormBringer (60-day)
+37242	Steel Stormbringer (60-day)
 37243	Steel Yaksa Mace (60-day)
 37244	Steel Saber*Sword of Revolution (60-day)
 37245	Steel Mysterious Sword (60-day)
@@ -35942,7 +36097,7 @@
 37253	Steel Chakram (60-day)
 37254	Steel Sword of Valhalla (60-day)
 37255	Steel Spell Breaker (60-day)
-37256	Steel StormBringer*Ultimate Sword (60-day)
+37256	Steel Stormbringer*Ultimate Sword (60-day)
 37257	Steel Wizard's Tear (60-day)
 37258	Steel Great Axe (60-day)
 37259	Steel Twilight Knife (60-day)
@@ -36086,36 +36241,36 @@
 37397	Kaiser's Assistance
 37398	Black Anvil Guild's Dimensional Chest
 37399	Dimensional Castle Lord's Support Box
-37400	Emerald Weapon Appearance Stone: Sword 15-day
+37400	Emerald Weapon Appearance Stone: One-handed Sword 15-day
 37401	Emerald Weapon Appearance Stone: Dagger 15-day
 37402	Emerald Weapon Appearance Stone: Two-handed Sword 15-day
 37403	Emerald Weapon Appearance Stone: Fist Weapon 15-day
 37404	Emerald Weapon Appearance Stone: Spear 15-day
 37405	Emerald Weapon Appearance Stone: Bow 15-day
 37406	Emerald Weapon Appearance Stone: Crossbow 15-day
-37407	Emerald Weapon Appearance Stone: One-handed Blunt Weapon 15-day
-37408	Emerald Weapon Appearance Stone: Two-handed Blunt Weapon 15-day
-37409	Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon 15-day
-37410	Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon 15-day
+37407	Emerald Weapon Appearance Stone: One-handed Blunt 15-day
+37408	Emerald Weapon Appearance Stone: Two-handed Blunt 15-day
+37409	Emerald Weapon Appearance Stone: One-handed Staff 15-day
+37410	Emerald Weapon Appearance Stone: Two-handed Staff 15-day
 37411	Emerald Weapon Appearance Stone: Dualsword 15-day
 37412	Emerald Weapon Appearance Stone: Dual Dagger 15-day
-37413	Emerald Weapon Appearance Stone: Dual Blunt Weapon 15-day
+37413	Emerald Weapon Appearance Stone: Dual Blunt 15-day
 37414	Emerald Weapon Appearance Stone: Shield 15-day
 37415	Emerald Weapon Appearance Stone: Sigil 15-day
-37416	Emerald Weapon Appearance Stone: Sword
+37416	Emerald Weapon Appearance Stone: One-handed Sword
 37417	Emerald Weapon Appearance Stone: Dagger
 37418	Emerald Weapon Appearance Stone: Two-handed Sword
 37419	Emerald Weapon Appearance Stone: Fist Weapon
 37420	Emerald Weapon Appearance Stone: Spear
 37421	Emerald Weapon Appearance Stone: Bow
 37422	Emerald Weapon Appearance Stone: Crossbow
-37423	Emerald Weapon Appearance Stone: One-handed Blunt Weapon
-37424	Emerald Weapon Appearance Stone: Two-handed Blunt Weapon
-37425	Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon
-37426	Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon
+37423	Emerald Weapon Appearance Stone: One-handed Blunt
+37424	Emerald Weapon Appearance Stone: Two-handed Blunt
+37425	Emerald Weapon Appearance Stone: One-handed Staff
+37426	Emerald Weapon Appearance Stone: Two-handed Staff
 37427	Emerald Weapon Appearance Stone: Dualsword
 37428	Emerald Weapon Appearance Stone: Dual Dagger
-37429	Emerald Weapon Appearance Stone: Dual Blunt Weapon
+37429	Emerald Weapon Appearance Stone: Dual Blunt
 37430	Emerald Weapon Appearance Stone: Shield
 37431	Emerald Weapon Appearance Stone: Sigil
 37432	Scroll: Modify Emerald Weapon Ticket (Expiratory)
@@ -36209,9 +36364,9 @@
 37520	Bottle of Baium's Soul
 37521	Baium's Soul Ring
 37522	Frintezza's Soul Necklace
-37523	Summon Scroll: Pomona
+37523	Summon Scroll: Bae Kisung
 37524	Passion Treasure Chest
-37525	Agathion - Pomona 90-day
+37525	Agathion - Bae Kisung 90-day
 37527	Transformation Sealbook: Part-time Seller One-eyed ParaPara Cat
 37528	Transformation Sealbook: Part-time Seller Smiling ParaPara Cat
 37529	Transformation Sealbook: Part-time Seller Charming ParaPara Cat
@@ -36222,8 +36377,8 @@
 37534	Santa Suit
 37535	Santa Hat
 37536	Santa's Blessing
-37537	Pomona's Gift Box
-37538	Pomona Agathion Pack
+37537	Bae Kisung's Gift Box
+37538	Bae Kisung Agathion Box
 37539	Enchant Scroll Pack
 37540	Giant's Enchant Scroll Pack
 37541	Blessed Enchant Scroll Pack
@@ -36236,7 +36391,7 @@
 37548	Rudolph's Gift Stage 3
 37549	Rudolph's Gift Stage 4
 37550	Snowman's Buff
-37551	Winter Holiday Gift
+37551	2012 Holiday Gift
 37552	Wintermelon Seed
 37553	Large Wintermelon Seed
 37554	Kisung's Cherry Nose Buff Scroll Event
@@ -36381,9 +36536,9 @@
 37693	Valentine Spear
 37694	Valentine Bow
 37695	Valentine Crossbow
-37696	Valentine One-handed Magic Sword
-37697	Valentine One-handed Magic Blunt Weapon
-37698	Valentine Two-handed Magic Blunt Weapon
+37696	Valentine Magic Sword
+37697	Valentine One-handed Staff
+37698	Valentine Two-handed Staff
 37699	Valentine Dualsword
 37700	Valentine Dual Dagger
 37701	Valentine Dual Blunt Weapon
@@ -36525,9 +36680,9 @@
 37837	Valentine Appearance Stone: Spear 15-day
 37838	Valentine Appearance Stone: Bow 15-day
 37839	Valentine Appearance Stone: Crossbow 15-day
-37840	Valentine Appearance Stone: One-handed Magic Sword 15-day
-37841	Valentine Appearance Stone: One-handed Magic Blunt Weapon 15-day
-37842	Valentine Appearance Stone: Two-handed Magic Blunt Weapon 15-day
+37840	Valentine Appearance Stone: Magic Sword 15-day
+37841	Valentine Appearance Stone: One-handed Staff 15-day
+37842	Valentine Appearance Stone: Two-handed Staff 15-day
 37843	Valentine Appearance Stone: Dualsword 15-day
 37844	Valentine Appearance Stone: Dual Dagger 15-day
 37845	Valentine Appearance Stone: Dual Blunt Weapon 15-day
@@ -36541,9 +36696,9 @@
 37853	Valentine Appearance Stone: Spear 30-day
 37854	Valentine Appearance Stone: Bow 30-day
 37855	Valentine Appearance Stone: Crossbow 30-day
-37856	Valentine Appearance Stone: One-handed Magic Sword 30-day
-37857	Valentine Appearance Stone: One-handed Magic Blunt Weapon 30-day
-37858	Valentine Appearance Stone: Two-handed Magic Blunt Weapon 30-day
+37856	Valentine Appearance Stone: Magic Sword 30-day
+37857	Valentine Appearance Stone: One-handed Staff 30-day
+37858	Valentine Appearance Stone: Two-handed Staff 30-day
 37859	Valentine Appearance Stone: Dualsword 30-day
 37860	Valentine Appearance Stone: Dual Dagger 30-day
 37861	Valentine Appearance Stone: Dual Blunt Weapon 30-day
@@ -36561,9 +36716,9 @@
 37873	Hero's Weapon: Spear 15-day
 37874	Hero's Weapon: Bow 15-day
 37875	Hero's Weapon: Crossbow 15-day
-37876	Hero's Weapon: One-handed Magic Sword 15-day
-37877	Hero's Weapon: One-handed Magic Blunt Weapon 15-day
-37878	Hero's Weapon: Two-handed Magic Blunt Weapon 15-day
+37876	Hero's Weapon: Magic Sword 15-day
+37877	Hero's Weapon: One-handed Staff 15-day
+37878	Hero's Weapon: Two-handed Staff 15-day
 37879	Hero's Weapon: Dualsword 15-day
 37880	Hero's Weapon: Dual Dagger 15-day
 37881	Hero's Weapon: Dual Blunt Weapon 15-day
@@ -36579,7 +36734,7 @@
 37891	Superior Herb of Growth
 37892	Leona's Reward Box
 37893	Bloodied Demonic Tome
-37894	Improved Warrior's Recovery Potion
+37894	Warrior's Recovery Potion
 37895	SP Rune (Low-grade) 7-day
 37896	SP Rune (Mid-grade) 7-day
 37897	SP Rune (High-grade) 7-day
@@ -36600,10 +36755,10 @@
 37912	Chrono Maracas Appearance Stone: Dualsword
 37913	Pumpkin Dagger Appearance Stone: Dagger
 37914	Pumpkin Dual Dagger Appearance Stone: Dual Dagger
-37915	Scarecrow Sword Appearance Stone: One-handed Magic Sword
+37915	Scarecrow Magic Sword Appearance Stone: Magic Sword
 37916	Pumpkin Dagger
 37917	Pumpkin Dual Dagger
-37918	Scarecrow Sword
+37918	Scarecrow Magic Sword
 37919	Pig Lollipop Appearance Stone: One-handed Sword 15-day
 37920	Chrono Cithara Appearance Stone: One-handed Sword 15-day
 37921	Chrono Unitus Appearance Stone: Fist Weapon 15-day
@@ -36612,7 +36767,7 @@
 37924	Chrono Maracas Appearance Stone: Dualsword 15-day
 37925	Pumpkin Dagger Appearance Stone: Dagger 15-day
 37926	Pumpkin Dual Dagger Appearance Stone: Dual Dagger 15-day
-37927	Scarecrow Sword Appearance Stone: One-handed Magic Sword 15-day
+37927	Scarecrow Sword Appearance Stone: Magic Sword 15-day
 37928	Player Commendation - Art of Seduction
 37929	Awakened Warrior's Blade (7-day) Haste
 37930	Awakened Warrior's Cleaver (7-day) Haste
@@ -36878,7 +37033,7 @@
 38190	Trumpetfish Appearance Stone: Dagger 30-day
 38191	Shark Appearance Stone: Two-handed Sword 30-day
 38192	Squid Appearance Stone: Spear 30-day
-38193	Sea Horse Appearance Stone: Two-handed Magic Blunt Weapon 30-day
+38193	Sea Horse Appearance Stone: Two-handed Staff 30-day
 38194	Lobster Appearance Stone: Fist Weapon 30-day
 38195	Giant Crab Appearance Stone: Bow 30-day
 38196	Crayfish Appearance Stone: Crossbow 30-day
@@ -36889,7 +37044,7 @@
 38201	Trumpetfish Appearance Stone: Dagger
 38202	Shark Appearance Stone: Two-handed Sword
 38203	Squid Appearance Stone: Spear
-38204	Sea Horse Appearance Stone: Two-handed Magic Blunt Weapon
+38204	Sea Horse Appearance Stone: Two-handed Staff
 38205	Lobster Appearance Stone: Fist Weapon
 38206	Giant Crab Appearance Stone: Bow
 38207	Crayfish Appearance Stone: Crossbow
@@ -36900,19 +37055,19 @@
 38212	Trumpetfish: Dagger
 38213	Shark: Two-handed Sword
 38214	Squid: Spear
-38215	Sea Horse: Two-handed Magic Blunt Weapon
+38215	Sea Horse: Two-handed Staff
 38216	Lobster: Fist Weapon
 38217	Giant Crab: Bow
 38218	Crayfish: Crossbow
 38219	Starfish: Sigil
 38220	Turtle: Shield
 38221	Blue Mackerel: Dualsword
-38222	Fish Stew WIT
-38223	Fish Stew INT
-38224	Fish Stew MEN
-38225	Fish Stew DEX
-38226	Fish Stew STR
-38227	Fish Stew CON
+38222	Rotten Fish Stew
+38223	Rotten Fish Stew
+38224	Rotten Fish Stew
+38225	Rotten Fish Stew
+38226	Rotten Fish Stew
+38227	Rotten Fish Stew
 38228	Lady's Hairpin STR
 38229	Lady's Hairpin DEX
 38230	Lady's Hairpin CON
@@ -37377,7 +37532,7 @@
 38689	Steel Immortal Earring (30-day)
 38690	Steel Immortal Necklace (30-day)
 38691	Steel Immortal Ring (30-day)
-38692	Steel StormBringer
+38692	Steel Stormbringer
 38693	Steel Yaksa Mace
 38694	Steel Saber*Sword of Revolution
 38695	Steel Mysterious Sword
@@ -37391,7 +37546,7 @@
 38703	Steel Chakram
 38704	Steel Sword of Valhalla
 38705	Steel Spell Breaker
-38706	Steel StormBringer*Ultimate Sword
+38706	Steel Stormbringer*Ultimate Sword
 38707	Steel Wizard's Tear
 38708	Steel Great Axe
 38709	Steel Twilight Knife
@@ -37437,8 +37592,8 @@
 38749	Steel Dynasty Bow
 38750	Lara's Card Key
 38751	Lara's Business Card
-38752	Lara's Gift
-38753	Lara's Secret Gift
+38752	Team Leader Lara's Gift
+38753	Team Leader Lara's Luxury Gift
 38754	Shiny Elemental Shirt + 8 Coupon
 38755	Shiny Elemental Shirt + 7 Coupon
 38756	Chaos Essence Pack
@@ -37508,16 +37663,16 @@
 38820	Lindvior Cutter Borrowed by Dandy
 38821	Lindvior Shooter Borrowed by Dandy
 38822	Lindvior Dual Dagger Borrowed by Dandy
-38823	Genuine Antharas Shaper
-38824	Genuine Antharas Slasher
-38825	Genuine Antharas Thrower
-38826	Genuine Antharas Buster
-38827	Genuine Antharas Cutter
-38828	Genuine Antharas Stormer
-38829	Genuine Antharas Fighter
-38830	Genuine Antharas Avenger
-38831	Genuine Antharas Dual Blunt Weapon
-38832	Genuine Antharas Dualsword
+38823	Genuine Antharas Shaper 15-day
+38824	Genuine Antharas Slasher 15-day
+38825	Genuine Antharas Thrower 15-day
+38826	Genuine Antharas Buster 15-day
+38827	Genuine Antharas Cutter 15-day
+38828	Genuine Antharas Stormer 15-day
+38829	Genuine Antharas Fighter 15-day
+38830	Genuine Antharas Avenger 15-day
+38831	Genuine Antharas Dual Blunt Weapon 15-day
+38832	Genuine Antharas Dualsword 15-day
 38833	Genuine Valakas Shaper
 38834	Genuine Valakas Cutter
 38835	Genuine Valakas Slasher
@@ -39854,7 +40009,7 @@
 46169	Eliyah's Letter
 46170	Atelia Fortress Protection Box Event
 46171	Garden of the Spirits Protection Box Event
-46172	Drew Protection Box Event
+46172	Grand Fortune Pouch Event
 46173	Male Swimsuit No.1 Appearance Stone 30-day
 46174	Male Swimsuit No.2 Appearance Stone 30-day
 46175	Bikini No.1 Appearance Stone 30-day
@@ -39900,13 +40055,13 @@
 46215	Halloween Dualsword
 46216	Halloween Dual Dagger
 46217	Halloween Dual Blunt Weapon
-46218	Magic Number Cube Event
+46218	Elysium Animal Cure Event
 46219	Summon Scroll: Piero Event
 46220	Membership Card - Market Eleven Event
 46221	L2 Market R99 Armor Enhancement Stone Pack Event
-46222	L2 Market +8 Amaranthine Weapon Pack Event
+46222	L2 Market +8 Amaranthine Weapon Pack
 46223	L2 Market Seed Talisman Pack Event
-46224	L2 Market +4 Eternal Armor Pack Event
+46224	+4 Eternal Armor Pack
 46225	L2 Market Rare Accessory Pack Event
 46226	L2 Market Soul Bottle Pack Event
 46227	L2 Market Belt Pack Event
@@ -40067,9 +40222,9 @@
 46382	Frozen Bow
 46383	Frozen Crossbow
 46384	Frozen One-handed Blunt Weapon
-46385	Frozen Two-handed Blunt Weapon
-46386	Frozen One-handed Magic Blunt Weapon
-46387	Frozen Two-handed Magic Blunt Weapon
+46385	Frozen Magic Sword
+46386	Frozen One-handed Staff
+46387	Frozen Two-handed Staff
 46388	Frozen Dualsword
 46389	Frozen Dual Dagger
 46390	Frozen Dual Blunt
@@ -40306,12 +40461,12 @@
 46621	Shadow Blue Seal Bracelet
 46622	1,000,000,000 Adana Event
 46623	5,000,000,000 Adana Event
-46624	Entrance Pass: Embryo Command Post 1-day
+46624	Entrance Pass: Embryo Command Post
 46625	Entrance Pass: Nightmare Kamaloka 1-day
 46626	Growth Accelerator Feed Mystic Tavern - Kelbim
 46627	Blue Dynasty Circlet LUC
 46628	Blue Dynasty Circlet CHA
-46629	Practice StormBringer
+46629	Practice Stormbringer
 46630	Twilight Necklace 30-day
 46631	Twilight Earring 30-day
 46632	Twilight Ring 30-day
@@ -40942,7 +41097,7 @@
 47257	Life Crystal
 47258	Blood Crystal
 47259	Wind Crystal
-47260	Giant Crystal
+47260	Giant's Crystal
 47261	Blackbird Clan Talisman Stage 1
 47262	Blackbird Clan Talisman Stage 2
 47263	Blackbird Clan Talisman Stage 3
@@ -40994,7 +41149,7 @@
 47309	Giant Trackers Talisman Stage 9
 47310	Giant Trackers Talisman Stage 10
 47311	Aromatic Spice
-47312	Spicy Seasoning
+47312	Universal Seasoning
 47313	Bloody Eternal Helmet Attack Type / Heavy Armor
 47314	Bloody Eternal Breastplate Attack Type / Heavy Armor
 47315	Bloody Eternal Gaiters Attack Type / Heavy Armor
@@ -41072,15 +41227,15 @@
 47387	Oriana's Lucky Draw Supply Items
 47388	12th Anniversary Souvenir
 47389	12th Anniversary Supply Item
-47390	Longing Talisman/Energy of Longing Supply Items
-47391	Venir Stage 11/12/13 Talisman Supply Items
+47390	Insanity/Longing Talisman/Energy of Longing Box
+47391	Venir Stage 11/12/13 Talisman Box
 47392	Shining Scroll: Enchant Elemental Shirt
-47393	Dark Assassin/White Assassin Suit Supply Items
-47394	Scroll of Blessing R99/R95/R(2) Supply Item
-47395	Bottle of Antharas/Valakas/Baium's Soul Supply Item
-47396	Nurka/Rydel/Gustav's Belt Supply Item
-47397	Seven Signs/Anakim/Lilith Talisman Supply Item
-47398	Bloody Eternal Enhancement Stone - x2
+47393	Dark Assassin/White Assassin Suit Box
+47394	Scroll of Blessing R99/R95/R(2) Box
+47395	Antharas/Valakas/Baium's Soul Bottle Box
+47396	Nurka/Lidia/Gustav's Belt Box
+47397	Seven Signs/Anakim/Lilith Talisman Box
+47398	2 Bloody Eternal Enhancement Stones Box
 47399	Oriana's Coin Box
 47400	Veteran Duo Bracelet Event
 47401	Returned Duo Bracelet Event
@@ -41223,7 +41378,7 @@
 47544	Request - Northern Region, Isle of Prayer
 47545	Request - Garden of Spirits
 47546	Request - Atelia Fortress
-47547	Bait
+47547	Corroded Bait
 47548	Bait R99
 47549	PC Cafe Bait
 47550	Ugly Fish
@@ -41251,9 +41406,9 @@
 47572	Intermediate Supply Box Fishing Guild
 47573	Magic Spices
 47574	PC Cafe Treasure Chest
-47575	Royal White Save Ticket (R)
-47576	Royal White Save Ticket (R95)
-47577	Royal White Save Ticket (R99)
+47575	Royal White Save Ticket (R-grade)
+47576	Royal White Save Ticket (R95-grade)
+47577	Royal White Save Ticket (R99-grade)
 47578	Gran Kain's Miraculous Medicine
 47579	Christmas Party Herb
 47580	Practice Fishing Rod 1-hour
@@ -41298,9 +41453,9 @@
 47619	Angler's Shining Treasure Chest
 47620	Angler's Treasure Chest
 47621	Angler's Bait Box
-47622	Royal Purple Save Ticket (R)
-47623	Royal Purple Save Ticket (R95)
-47624	Royal Purple Save Ticket (R99)
+47622	Royal Purple Save Ticket (R-grade)
+47623	Royal Purple Save Ticket (R95-grade)
+47624	Royal Purple Save Ticket (R99-grade)
 47625	Eli T-shirt
 47626	Ruby Lv. 3 Jewelry Box
 47627	Sapphire Lv. 3 Jewelry Box
@@ -41332,7 +41487,7 @@
 47653	PVE Rune Test Item
 47654	PvE Rune - 1min Test Item
 47655	PvE Rune - 10min Test Item
-47656	Protector's Guardian Earrings 30-day
+47656	Warrior's Earring 30-day
 47657	Potion of Protection: Pull
 47658	Potion of Protection: Danger Zone
 47659	Potion of Protection: Seduction
@@ -41422,11 +41577,11 @@
 47743	Advanced Aria's Bracelet WIT+4
 47744	Advanced Aria's Bracelet STR+4
 47745	Advanced Aria's Bracelet INT+4
-47746	+10 Blessed Amaranthine Weapon Supply Items
-47747	+8 Blessed Eternal Armor Supply Items
+47746	+10 Blessed Amaranthine Weapon Pack
+47747	+8 Blessed Eternal Armor Pack
 47748	Rare Weapon Fragment Supply Items
-47749	Dark Eternal Enhancement Stone - 2
-47750	Zodiac Agathion Stage 5 Supplies
+47749	2 Dark Eternal Enhancement Stones Box
+47750	Zodiac Agathion Stage 5 Box
 47751	+8 Blessed Eternal Armor Heavy Capsule Event
 47752	+8 Blessed Eternal Armor Light Capsule Event
 47753	+8 Blessed Eternal Armor Robe Capsule Event
@@ -41579,17 +41734,17 @@
 47910	Angel's Gift Package Lv2
 47911	Angel's Gift Package Lv3
 47912	Angel's Gift Package Lv4
-47913	Greater Transport Box 30-day
-47914	Advanced Red&Blue Cat's Eye Treasure Chest 30-day
-47915	Greater Tanzanite Box 30-day
+47913	Greater Vital Stone Lv. 1 Box 30-day
+47914	Greater Red&Blue Cat's Eye Lv. 1 Box 30-day
+47915	Greater Tanzanite Lv. 1 Box 30-day
 47916	Nevit's Cloak of Light Box 30-day
 47917	Nevit's Cloak of Light 30-day
 47918	Nevit's Gold Hourglass
 47919	Shining Scroll of Growth
-47920	Greater Vital Stone 30-day
+47920	Greater Vital Stone Lv. 1 30-day
 47921	Greater Red Cat's Eye 30-day
 47922	Greater Blue Cat's Eye 30-day
-47923	Greater Tanzanite 30-day
+47923	Greater Tanzanite Lv. 1 30-day
 47924	Coin of Light
 47925	Red Libra Request - Altar of Shilen
 47926	Red Libra Request - Altar of Shilen
@@ -41651,7 +41806,7 @@
 47982	Challenger's Weapon Exchange Ticket
 47983	Brooch Spirit Stone
 47984	La Vie En Rose's Glorious Brooch
-47985	La Vie En Rose's Glorious Brooch
+47985	La Vie En Rose's Glorious Brooch Enchant Type
 47986	+5 Shiny Elemental Shirt Box
 47987	Challenger's Weapon Enhancement Ticket
 47988	Master's Lucky Jewelry Box
@@ -41679,7 +41834,7 @@
 48010	Freya Winter Card
 48011	Sirra Winter Card
 48012	Snowman Winter Card
-48013	Freya's Kindness
+48013	2016 Freya's Kindness
 48014	Freya's Dark Rune (2-hour) Box
 48015	Freya's Dark Rune 2-hour
 48016	White Knight Suit
@@ -41695,7 +41850,7 @@
 48026	Kat the Cat Costume Appearance Stone
 48027	Barbarian Wolf Costume Appearance Stone
 48028	Valkyrie Costume Appearance Stone
-48029	Freya's CHA Potion
+48029	Freya's Charisma Potion
 48030	Faction Amity Token
 48031	Entrance Pass: Shilen's Altar
 48032	Sayha Talisman Stage 8 Treasure Chest
@@ -41730,7 +41885,7 @@
 48061	Intermediate Seed Bracelet
 48062	High-grade Seed Bracelet
 48063	Top-grade Seed Bracelet
-48064	Super Advanced Seed Bracelet
+48064	Super Advanced Seed Bracelet Stage 1
 48065	Zodiac Cube Fragment
 48066	Zodiac Agathion Cube
 48067	Elementary Seed Bracelet Treasure Chest
@@ -42142,7 +42297,7 @@
 48473	Night Goblin Coin (500) Box Event
 48474	Night Goblin Coin (800) Box Event
 48475	Night Goblin Coin (2000) Box Event
-48476	Dark/Bloody Amaranthine Enhancement Stone Treasure Chest
+48476	Dark / Bloody Amaranthine Enhancement Stone Treasure Chest
 48477	Balthus Knight Cube
 48478	Knights' Basic Supplies Event
 48479	Knights' Enchant Scroll Supply Items Event
@@ -42179,11 +42334,429 @@
 48510	+7 Zodiac Agathion Box
 48511	Royal Red Save Ticket Treasure Chest
 48512	NPC Only_Lionel Hunter
+48513	Elysium Recovery Potion
+48514	Red Libra Request - Shadow of the Mother Tree
+48515	Red Libra Request - Shadow of the Mother Tree
+48516	Medal of Honor
+48517	Grand Medal of Honor
+48518	Adventure Guild Cube
+48519	Adventure Guild Supply Box
+48520	Red Libra's Fortune Scroll Event
+48521	Red Libra's Adena Gift Box Event
+48522	Red Libra's Scroll of Blessing Gift Box Event
+48523	Red Libra's Rare Earring Gift Box Event
+48524	Red Libra's Rare Ring Gift Box Event
+48525	Red Libra's Rare Necklace Gift Box Event
+48526	Red Libra's Talisman Gift Box Event
+48527	Red Libra's Suit Appearance Stone Gift Box Event
+48528	Red Libra's Outfit Appearance Stone Gift Box Event
+48529	Red Libra's Soul Crystal Gift Box Event
+48530	Red Libra's Spirit Stone Gift Box Event
+48531	Red Libra's Lv. 5 Legendary Dye Gift Box Event
+48532	Red Libra's Seed Bracelet Gift Box Event
+48533	Trace of Evil
+48534	Dust of Destroyed Demon
+48535	Scroll of Escape: Silent Valley
+48536	Soul Quartz
+48537	Bait
+48538	Bait R102
+48539	Bait R105
+48540	Fried Fish P. Atk.
+48541	Steamed Fish M. Atk.
+48542	Grilled Fish Combat Speed
+48543	Braised Fish Max HP/MP
+48544	Royal Fish Soup Combat Prowess
+48545	Leona Blackbird's Message
+48546	Tokens of Etina
+48547	Atelia in Extraction
+48548	Origin of Giants
+48549	Fragment of Condensed Energy
+48550	Crystal of Condensed Energy
+48551	Olympiad Class Winner's Rune
+48552	Olympiad Class Runner-up's Rune
+48553	Legend Celebration Rune 2-hour
+48554	Legend Infinity Shaper
+48555	Legend Infinity Cutter
+48556	Legend Infinity Slasher
+48557	Legend Infinity Avenger
+48558	Legend Infinity Fighter
+48559	Legend Infinity Stormer
+48560	Legend Infinity Thrower
+48561	Legend Infinity Shooter
+48562	Legend Infinity Buster
+48563	Legend Infinity Caster
+48564	Legend Infinity Retributer
+48565	Legend Infinity Dualsword
+48566	Legend Infinity Dual Dagger
+48567	Legend Infinity Dual Blunt Weapon
+48568	Guard Agathion Fragment
+48569	Angel's Breath
+48570	Guard Agathion Scroll of Growth
+48571	Ancient Guard Agathion Scroll of Growth
+48572	Masia's Guard Agathion Charm
+48573	Paulina's Guard Agathion Charm
+48574	Tersi's Guard Agathion Charm
+48575	Super Advanced Seed Bracelet Stage 2
+48576	Super Advanced Seed Bracelet Stage 3
+48577	Super Advanced Seed Bracelet Stage 4
+48578	Demon Slayer's Proof
+48579	Blackbird Clan Basic Box Atelia Refinery
+48580	Blackbird Clan Intermediate Box Atelia Refinery
+48581	Blackbird Clan Advanced Box Atelia Refinery
+48582	Savior's Enchant Scroll
+48583	Special Savior's Enchant Scroll
+48584	Savior's Mask
+48585	Savior's Wish
+48586	Savior's Enchant Scroll Fragment
+48587	Goblin Liquor
+48588	Goblin Cudgel
+48589	Energy of Topaz
+48590	Energy of Ruby
+48591	Energy of Obsidian
+48592	Energy of Opal
+48593	Energy of Emerald
+48594	Energy of Aquamarine
+48595	Energy of Diamond
+48596	Energy of Pearl
+48597	Energy of Sapphire
+48598	Energy of Vital Stone
+48599	Energy of Garnet
+48600	Energy of Tanzanite
+48601	Energy of Red Cat's Eye
+48602	Energy of Blue Cat's Eye
+48603	Gem Crystal
+48604	Episode Mask 2
+48605	Episode Mask 3
+48606	Throne of Heroes 1st Place Reward Box
+48607	Throne of Heroes 2nd Place Reward Box
+48608	Throne of Heroes 3rd Place Reward Box
+48609	Throne of Heroes 4th Place Reward Box
+48610	Throne of Heroes 5th Place Reward Box
+48611	Throne of Heroes Lv. 1 Reward Box
+48612	Throne of Heroes Lv. 2 Reward Box
+48613	Throne of Heroes Lv. 3 Reward Box
+48614	Throne of Heroes Lv. 4 Reward Box
+48615	Throne of Heroes Lv. 5 Reward Box
+48616	Amaranthine Weapon Crafting Pack
+48617	Eternal Armor Crafting Pack
+48618	Specter Weapon Crafting Pack
+48619	Seraph Armor Crafting Pack
+48620	R99 Heavy Armor Crafting Pack
+48621	R99 Light Armor Crafting Pack
+48622	R99 Robe Crafting Pack
+48623	Warrior's Ring 30-day
+48624	Warrior's Miracle Cure
+48625	Warrior's Rune Box (1-hour)
+48626	Warrior's Rune 1-hour
+48627	Shining Fortune Box
+48628	Archangel's Fortune Box
+48629	Nevit's Fortune Box
 48630	Master Fisherman's Blessing - 1-hr
 48631	Master Fisherman's Blessing - 2-hr
 48632	Master Fisherman's Blessing - 4-hr
 48633	Master Fisherman's Blessing - 8-hr
+48634	Fantastic Fishing Spot Entrance Pass Pack (1-hour)
+48635	Fantastic Fishing Spot Entrance Pass Pack (2-hour)
+48636	Fantastic Fishing Spot Entrance Pass Pack (4-hour)
+48637	Fantastic Fishing Spot Entrance Pass Pack (8-hour)
+48638	Fantastic Fishing Spot Entrance Pass (1-hour)
+48639	Fantastic Fishing Spot Entrance Pass (2-hour)
+48640	Fantastic Fishing Spot Entrance Pass (4-hour)
+48641	Fantastic Fishing Spot Entrance Pass (8-hour)
+48642	Shining Nevit's Gold Sandglass
+48643	Angel's Gift Bundle Lv. 5
+48644	Greater Ruby Lv. 1 30-day
+48645	Greater Sapphire Lv. 1 30-day
+48646	Greater Opal Lv. 1 30-day
+48647	Greater Diamond Lv. 1 30-day
+48648	Greater Pearl Lv. 1 30-day
+48649	Greater Ruby & Sapphire Lv. 1 Box 30-day
+48650	Blue Potion - Fishing XP Bonus 1-hour
+48651	Rudolph's Yellow Potion
+48652	Rudolph's Red Potion
+48653	Deton's Gift Bundle
+48654	Fresh Tuna
+48655	Greater Opal Lv. 1 Box 30-day
+48656	Greater Diamond Lv. 1 Box 30-day
+48657	Greater Pearl Lv. 1 Box 30-day
+48658	Full Rare Accessory Box 30-day
+48659	Greater Red&Blue Cat's Eye Lv. 1 Box 30-day
+48660	Chorong's Thanksgiving Gift Cube Event
+48661	Rudolph's Purple Potion
+48662	Deton's Special Vitality Tonic Bundle
+48663	Blue Potion - Fishing XP Bonus 2-hour
+48664	Deton's Blue Potion 4-hour
+48665	Deton's Blue Potion 8-hour
+48666	Dragon Claw Box (Fragment)
+48667	Dragon Claw Box (Standard)
+48668	Scroll: Enchant Angel Accessory
+48669	Angel's Necklace
+48670	Chorong's Thanksgiving Lucky Pouch Event
+48671	Windstorm Box
+48672	Chorong's Special Lucky Pouch Event
+48673	Fantastic Fishing Spot Entrance Pass Pack (1-hour) Event
+48674	Freya's Dark Rune (30-day) Pack
+48675	Freya's Bloody Rune (30-day) Pack
+48676	Freya's Vital Rune (30-day) Pack
+48677	Advanced Mammon's Talisman Box - Skill Power 30-day
+48678	Advanced Mammon's Talisman Box - Attack Attribute 30-day
+48679	Advanced Mammon's Talisman Box - Skill Cooldown 30-day
+48680	Freya's Dark Rune 30-day
+48681	Freya's Bloody Rune 30-day
+48682	Freya's Vital Rune 30-day
+48683	Advanced Mammon's Talisman Skill Power
+48684	Advanced Mammon's Talisman Attack Attribute
+48685	Advanced Mammon's Talisman Skill Cooldown
+48686	Dimensional Bracelet (30-day) Stage 6 Box
+48687	Dimensional Bracelet - Stage 6 CHA +5
+48688	Goblin Pouch
+48689	Red Libra Request - Silent Valley
+48690	Red Libra Request - Atelia Refinery
+48691	Red Libra Request - Fallen Emperor's Throne
+48692	Red Libra Request - Fall of Etina
+48693	Red Libra Request - Silent Valley
+48694	Red Libra Request - Atelia Refinery
+48695	Red Libra Request - Fallen Emperor's Throne
+48696	Red Libra Request - Fall of Etina
+48697	Red Libra Entrance Pass - Kartia Labyrinth (Lv. 95 Party) 4-hour
+48698	Red Libra Entrance Pass - Crystal Prison (Baylor) 4-hour
+48699	Red Libra Entrance Pass - Nightmare Kamaloka 4-hour
+48700	Red Libra Entrance Pass - Embryo Command Post 4-hour
+48701	Red Libra Entrance Pass - Altar of Shilen 4-hour
+48702	Red Libra Entrance Pass - Fallen Emperor's Throne 4-hour
+48703	Red Libra Entrance Pass - Fall of Etina 4-hour
+48704	Fallen Emperor's Throne Entrance Pass
+48705	Fall of Etina Entrance Pass
+48706	Red Libra Specialty - Vitality Tonic
+48707	Red Libra Specialty - Fishing XP Bonus 1-hour
+48708	Chronicle Token (30-day) Box Not in Use
+48709	Chronicle Token
+48710	Red Libra Supply Items Event
+48711	Red Libra Special Supply Items Event
+48712	14th Anniversary Gift Box Event
+48713	14th Anniversary Enchant Scroll Pack Event
+48714	Libra Cube Stage 1
+48715	Libra Cube Stage 2
+48716	Libra Cube Stage 3
+48717	Libra Cube Stage 4
+48718	Libra Cube Stage 5
+48719	Libra Cube Stage 6
+48720	Libra Cube Stage 7
+48721	Libra Cube Stage 8
+48722	Libra Cube Stage 9
+48723	Libra Cube Stage 10
+48724	Libra Cube Stage 11
+48725	Libra Cube Stage 12
+48726	Libra Cube Stage 13
+48727	Libra Cube Stage 14
+48728	Libra Cube Stage 15
+48729	Libra Cube Stage 16
+48730	Libra Cube Stage 17
+48731	Libra Cube Stage 18
+48732	Libra Cube Stage 19
+48733	Libra Cube Stage 20
+48734	Libra Cube Stage 21
+48735	Red's Hidden Libra Cube Stage 1
+48736	Red's Hidden Libra Cube Stage 2
+48737	Red's Hidden Libra Cube Stage 3
+48738	Red's Hidden Libra Cube Stage 4
+48739	Red's Hidden Special Libra Cube Stage 5
+48740	Red's Hidden Libra Cube Stage 6
+48741	Red's Hidden Libra Cube Stage 7
+48742	Red's Hidden Libra Cube Stage 8
+48743	Red's Hidden Libra Cube Stage 9
+48744	Red's Hidden Special Libra Cube Stage 10
+48745	Red's Hidden Libra Cube Stage 11
+48746	Red's Hidden Libra Cube Stage 12
+48747	Red's Hidden Libra Cube Stage 13
+48748	Red's Hidden Libra Cube Stage 14
+48749	Red's Hidden Special Libra Cube Stage 15
+48750	Red's Hidden Libra Cube Stage 16
+48751	Red's Hidden Libra Cube Stage 17
+48752	Red's Hidden Libra Cube Stage 18
+48753	Red's Hidden Libra Cube Stage 19
+48754	Red's Hidden Special Libra Cube Stage 20
+48755	Shining Dragon Attribute Tonic (XP) Event
+48756	+6 Shiny Elemental Shirt 30-day
+48757	Red Libra's +7 Agathion Charm Gift Box Event
+48758	Red Libra's +6 Guard Agathion Charm Gift Box Event
+48759	Red Libra's Lv. 5 Gem Gift Box Event
+48760	Red Libra's Dark/Bloody Enhancement Stone Gift Box Event
+48761	Red Libra's R99 Save Ticket Gift Box Event
+48762	Angler's Blessing (1-hour) Event
+48763	Talisman - Battle: Cancel Hide (1-day)
+48764	Talisman - Battle: Cancel Hide (3-day)
 48765	Cat Outfit
 48766	Panda Outfit
+48767	Greater Topaz Lv. 2
+48768	Greater Topaz Lv. 3
+48769	Greater Topaz Lv. 4
+48770	Greater Topaz Lv. 5
+48771	Greater Ruby Lv. 2
+48772	Greater Ruby Lv. 3
+48773	Greater Ruby Lv. 4
+48774	Greater Ruby Lv. 5
+48775	Greater Sapphire Lv. 2
+48776	Greater Sapphire Lv. 3
+48777	Greater Sapphire Lv. 4
+48778	Greater Sapphire Lv. 5
+48779	Greater Obsidian Lv. 2
+48780	Greater Obsidian Lv. 3
+48781	Greater Obsidian Lv. 4
+48782	Greater Obsidian Lv. 5
+48783	Greater Opal Lv. 2
+48784	Greater Opal Lv. 3
+48785	Greater Opal Lv. 4
+48786	Greater Opal Lv. 5
+48787	Greater Emerald Lv. 2
+48788	Greater Emerald Lv. 3
+48789	Greater Emerald Lv. 4
+48790	Greater Emerald Lv. 5
+48791	Greater Aquamarine Lv. 2
+48792	Greater Aquamarine Lv. 3
+48793	Greater Aquamarine Lv. 4
+48794	Greater Aquamarine Lv. 5
+48795	Greater Diamond Lv. 2
+48796	Greater Diamond Lv. 3
+48797	Greater Diamond Lv. 4
+48798	Greater Diamond Lv. 5
+48799	Greater Pearl Lv. 2
+48800	Greater Pearl Lv. 3
+48801	Greater Pearl Lv. 4
+48802	Greater Pearl Lv. 5
+48803	Greater Vital Stone Lv. 2
+48804	Greater Vital Stone Lv. 3
+48805	Greater Vital Stone Lv. 4
+48806	Greater Vital Stone Lv. 5
+48807	Greater Garnet Lv. 2
+48808	Greater Garnet Lv. 3
+48809	Greater Garnet Lv. 4
+48810	Greater Garnet Lv. 5
+48811	Greater Tanzanite Lv. 2
+48812	Greater Tanzanite Lv. 3
+48813	Greater Tanzanite Lv. 4
+48814	Greater Tanzanite Lv. 5
+48815	Greater Red Cat's Eye Lv. 2
+48816	Greater Red Cat's Eye Lv. 3
+48817	Greater Red Cat's Eye Lv. 4
+48818	Greater Red Cat's Eye Lv. 5
+48819	Greater Blue Cat's Eye Lv. 2
+48820	Greater Blue Cat's Eye Lv. 3
+48821	Greater Blue Cat's Eye Lv. 4
+48822	Greater Blue Cat's Eye Lv. 5
+48823	Freya's Ice Staff Event
+48824	Scroll: Enchant Freya Staff Event
+48825	Scroll: Enchant Giant's Freya Staff Event
+48826	Freya's Fortune Box
+48827	Sirra's Fortune Box
+48828	Snowman's Fortune Box
+48829	Freya's Fortune Stick
+48830	Freya's Ice Rose
+48831	Gem Energy
+48832	Rare Accessory Box
+48833	Giant Monster's Soul
+48834	Merkios' Mark
+48835	Merkios' Altar Entrance Pass
+48836	Floating Sea Journal
+48837	Dispersing Energy of the Floating Sea
+48838	Seized Energy of the Floating Sea
+48839	Ultimate Lv. 5 Jewelry Box
+48840	Ultimate Lv. 1 Luxurious Jewelry Box
+48841	Angel's Earring
+48842	Lucien's Bracelet Attack
+48843	Lucien's Bracelet Magic
+48844	Lucien's Bracelet Defense
+48845	Scroll: Enchant Blessed Lucien's Bracelet
+48846	Chronicle Cube - 30 times
+48847	Chronicle Cube - 90 times
+48848	Freya's Ice Rose Event
+48849	Chronicle Token 30-day
+48850	Chronicle Token 90-day
+48851	Chronicle Support Box
+48852	Freya's Secret Box
+48853	Lucky Gift Coupon 8-hour
+48854	1 Billion Adena Box
+48855	2 Billion Adena Box
+48856	3 Billion Adena Box
+48857	Shining Dragon Attribute Tonic (XP) Event
+48858	Mysterious Ancient Herb
+48859	Sayha's Talisman Stage 8
+48860	Fallen Angel's Ring Box
+48861	+9 Fallen Angel's Ring Box
+48862	+10 Fallen Angel's Ring Box
+48863	Scroll: Enchant Fallen Angel Accessory
+48864	Fallen Angel's Ring
+48865	Fantastic Fishing Cube (15 times)
+48866	Fantastic Fishing Basic Bundle
+48867	Fantastic Fishing Intermediate Bundle
+48868	Fantastic Fishing Advanced Bundle
+48869	Fantastic Fishing Cube Box
+48870	Infinite Bliss
+48871	All is Well
+48872	Rudolph's Token of Gratitude
+48873	Red Bell
+48874	Lucky Herb Pouch
+48875	Forgotten Spellbook
+48876	Forgotten Spellbook Chapter 1
+48877	Forgotten Spellbook Chapter 2
+48878	Forgotten Spellbook Chapter 3
+48879	Request - Sea of Spores
+48880	Request - Shadow of the Mother Tree
+48881	Request - Sea of Spores
+48882	Request - Shadow of the Mother Tree
+48883	Letter 2018 Event
+48884	Letter H Event
+48885	Letter A Event
+48886	Letter P Event
+48887	Letter Y Event
+48888	Letter N Event
+48889	Letter E Event
+48890	Letter W Event
+48891	Letter R Event
+48892	Scroll: Summon Golden Dog
+48893	Bobsleigh Potion
+48894	Figure Skating Potion
+48895	Curling Potion
+48896	Happy Dog's Lucky Pouch
+48897	Happy Dog's Grab Bag
+48898	Suspicious Vault
+48912	Gran Kain's Scroll: Enchant Weapon (R-grade)
+48954	Artifact Book - Level 1
+48955	Artifact Book - Level 2
+48956	Artifact Book - Level 3
+48957	Artifact - P. Atk. Fighting Spirit
+48958	Artifact - M. Atk. Fighting Spirit
+48959	Artifact - Atk. Spd. Fighting Spirit
+48960	Artifact - Casting Spd. Fighting Spirit
+48961	Artifact - P. Def. Protection
+48962	Artifact - M. Def. Protection
+48963	Artifact - Max HP Protection
+48964	Artifact - Max MP Protection
+48965	Artifact - XP Gain Support
+48966	Artifact - HP Absorption Support
+48967	Artifact - Speed Support
+48968	Artifact - Received Heal Amount Support
+48969	Artifact - P. Atk. Balance
+48970	Artifact - M. Atk. Balance
+48971	Artifact - P. Accuracy Balance
+48972	Artifact - M. Accuracy Balance
+48973	Artifact - P. Critical Rate Balance
+48974	Artifact - P. Skill Critical Rate Balance
+48975	Artifact - M. Skill Critical Rate Balance
+48976	Artifact - Potion / Elixir Effect Bonus Balance
+48977	Artifact - Received Damage Reduction When Imobilized Balance
+48980	Artifact - Attack Attribute Balance
+48981	Artifact - Defense Attribute Balance
+48982	Artifact - Received Damage Reduction When Imobilized Balance
+48983	Artifact - P. Skill Power Balance
+48984	Artifact - M. Skill Power Balance
+48985	Artifact - Fixed Damage Reduction Balance
+48991	Artifact - Fortune Box Event
+48992	+5 Radiant Circlet of Authority Box
+48993	+5 Radiant Circlet of Foresight Box
+48994	+5 Radiant Circlet of Grace Box
+48995	+5 Dragon Rind Leather Shirt Box
 49783	Oriana's Coin
 49798	Cheer Pom Poms Event
+80000	Artifact Fragment
+91162	Gold Cheer Stamen Event

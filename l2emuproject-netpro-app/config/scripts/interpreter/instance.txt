@@ -159,7 +159,7 @@
 159	Spezion's Cavern
 160	Teredor's Cavern
 161	Kimerian's Cavern
-162	Epic Kimerian's Cavern
+162	Kimerian's Cavern (Epic)
 163	Emerald Square
 164	Steam Corridor
 165	Coral Garden
@@ -167,7 +167,7 @@
 167	Crystal Prison (Balok)
 168	Coral Garden Hall
 169	Istina's Cavern
-170	Epic Istina's Cavern
+170	Istina's Cavern (Epic)
 171	Seed of Annihilation (Nursery)
 172	Lachik Dwelling Warzone
 173	Lachik Dwelling Warzone
@@ -178,7 +178,7 @@
 178	Labyrinth of Belis
 179	Fortuna
 180	Octavis's Cavern
-181	Epic Octavis's Cavern
+181	Octavis' Cavern (Epic)
 182	Museum Dungeon
 183	Antharas' Nest (Balthus Knights)
 184	Valakas Warzone
@@ -193,7 +193,7 @@
 193	Altar of Shilen
 194	Altar of Shilen
 195	Harnak Underground Ruins
-196	Epic Spezion's Cavern
+196	Spezion's Cavern (Epic)
 197	Elcadia's Cabin
 198	Legacy of Cruma Tower
 199	Rim Kamaloka
@@ -216,7 +216,7 @@
 216	Verdof's Room (Devil's Island)
 217	Eva's Hidden Space
 218	Tauti's Cavern
-219	Epic Tauti's Cavern
+219	Tauti's Cavern (Epic)
 220	Arena 1
 221	Arena 2
 222	Arena 3
@@ -280,3 +280,10 @@
 280	Faeron Village
 281	Eva's Hidden Space
 282	Nornil's Garden
+283	Fallen Emperor's Throne
+284	Fall of Etina
+285	Fall of Etina
+286	Fall of Etina
+287	Frintezza - Last Imperial Tomb (Epic)
+288	Ice Queen's Castle (Epic)
+289	Merkios' Altar

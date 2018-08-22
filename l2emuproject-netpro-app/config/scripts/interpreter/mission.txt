@@ -11,11 +11,12 @@
 1011	Lv. 85-94 Field Raid Hunt
 1012	Lv. 95-99 Field Raid Hunt
 1013	Lv. 100-105 Field Raid Hunt
-1014	Explore Alliance Instanced Zone (Novice)
+1014	Explore Alliance Instanced Zone Stage 1
 1015	Olympiad Participation
 1016	Ceremony of Chaos Participation
-1017	Explore Alliance Instanced Zone (Intermediate)
-1018	Explore Alliance Instanced Zone (Advanced)
+1017	Explore Alliance Instanced Zone Stage 2
+1018	Explore Alliance Instanced Zone Stage 3
+1019	Lv. 106 - 110 Field Raid Hunt
 2001	Lv. 85-94 Field Boss Hunt
 2002	Lv. 100-105 Field Boss Hunt
 2003	Join the Keucereus Defense
@@ -34,6 +35,7 @@
 2016	Ceremony of Chaos Winner
 2017	Ceremony of Chaos Champion
 2018	Throne of Heroes: Defeat Goldberg
+2019	Lv. 106 - 110 Field Boss Hunt
 3001	Reach Main Class Lv. 99
 3002	Reach Main Class Lv. 100
 3003	Reach Main Class Lv. 101
@@ -110,6 +112,29 @@
 3075	Dark Amaranthine Weapon +10
 3076	Dark Amaranthine Weapon +15
 3077	Dark Amaranthine Weapon +20
+3078	Reach Adventure Guild Lv. 1
+3079	Reach Adventure Guild Lv. 3
+3080	Reach Adventure Guild Lv. 6
+3081	Savior's Path - Standing at the End
+3082	Reach Main Class Lv. 111
+3083	Reach Main Class Lv. 112
+3084	Reach Main Class Lv. 113
+3085	Reach Main Class Lv. 114
+3086	Reach Main Class Lv. 115
+3087	Reach Main Class Lv. 116
+3088	Reach Main Class Lv. 117
+3089	Reach Main Class Lv. 118
+3090	Reach Main Class Lv. 119
+3091	Reach Main Class Lv. 120
+3092	Reach Dual Class Lv. 111
+3093	Reach Dual Class Lv. 112
+3094	Reach Dual Class Lv. 113
+3095	Reach Dual Class Lv. 114
+3096	Reach Dual Class Lv. 115
+3097	Reach Dual Class Lv. 116
+3098	Reach Dual Class Lv. 117
+3099	Reach Dual Class Lv. 118
+3100	Reach Dual Class Lv. 119
+3101	Reach Dual Class Lv. 120
 4001	Using Freya's Scrolls
 4002	Gain PC Cafe Points
-4015	Exalted: Golden Opportunity

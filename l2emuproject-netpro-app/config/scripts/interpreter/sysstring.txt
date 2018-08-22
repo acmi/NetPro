@@ -2101,6 +2101,13 @@
 2155	Not in Use 1
 2156	Not in Use 2
 2157	Show/hide HP gage
+2158	View Bulletin
+2159	Hide Bulletin
+2160	Change Next Target
+2161	Attack
+2162	Use Token
+2163	Marked Target
+2164	Next Target
 2201	Received Mail
 2202	Sent Mail
 2203	The currently selected icon represents your skill at present. Please select another icon to modify your current skill enchant.
@@ -2421,14 +2428,14 @@
 2518	Auction Item
 2519	Cancel Auction
 2520	Weapon
-2521	1-H Sword
-2522	1-H Magic Sword
-2523	2-H Sword
+2521	Sword
+2522	Magic Sword
+2523	Double Swords
 2524	Dualsword
 2525	Blunt Weapon
-2526	1-H Magic Blunt Weapon
+2526	Staff
 2527	2-H Blunt Weapon
-2528	2-H Magic Blunt Weapon
+2528	2-H Staff
 2529	Dual Blunt Weapon
 2530	Fist Weapon
 2531	Other Weapon
@@ -3339,7 +3346,7 @@
 3536	Dimensional Raid in progress - Teleport here through Hunters' Village NPC Merlot.
 3537	Available to use.
 3538	Auction in progress - Participate through Auction Broker Laia in front of the Town of Giran Luxury Goods Hall.
-3539	Available to use.
+3539	Using Enhanced Shader Effect
 3540	Keucereus Alliance Base Defense Battle in progress - Join through Bella the Town of Gludio Gatekeeper.
 3541	Available to use.
 3542	Solo Instanced Zone
@@ -3370,7 +3377,7 @@
 3567	Common Settings
 3568	Disable
 3569	Show only on system message window
-3570	"Common Settings - Show only on system message window" is enabled.
+3570	Common Settings - Show only on system message window is enabled.
 3571	Performance Settings
 3572	Environment Settings
 3573	Show Detailed Settings
@@ -3576,7 +3583,7 @@
 3773	Your Release Seal Scrolls
 3774	Seal
 3775	<Sealing effect enabled>
-3776	Spirit Info
+3776	Manage Spirit
 3777	Attribute Attack Power
 3778	Attribute Defense
 3779	Attribute Critical Rate
@@ -3609,15 +3616,90 @@
 3806	Cannot use functions except Equip, Access to Private and Pet Warehouses, and Account Sharing.
 3807	Unable to seal
 3808	Release Seal
+3809	Max
+3810	In Use
+3811	Auto Registration
+3812	After the third class change, clear Attribute mission to activate Attribute.
+3813	Fire Attack Power
+3814	Fire Attack Defense
+3815	Fire Attack Critical Rate
+3816	Fire Attack Critical Damage
+3817	Water Attack Power
+3818	Water Attack Defense
+3819	Water Attack Critical Rate
+3820	Water Attack Critical Damage
+3821	Wind Attack Power
+3822	Wind Attack Defense
+3823	Wind Attack Critical Rate
+3824	Wind Attack Critical Damage
+3825	Earth Attack Power
+3826	Earth Attack Defense
+3827	Earth Attack Critical Rate
+3828	Earth Attack Critical Damage
+3829	Staff
+3830	Magic Sword
+3831	Sword
+3832	Double Swords (Ancient Sword)
+3833	Double Staffs
+3834	You can check the Spirit's detailed stats and enhance their abilities.
+3835	Olympiad in progress
+3836	Olympiad in preparation
+3837	My Record
+3838	Number of available matches this week:
+3839	You join up to 25 matches per week\nand reset takes place at 12AM of the 1st day of each month\nin 1 week interval.
+3840	Rank is decided with a 5 Stage system, based on members\nwho've joined at least 25 battles after a weekly cycle of Olympiad ends.\nClick the button to view more information.
+3841	Total Rank
+3842	Total Class Rank
+3843	Server Class Rank
+3844	Win
+3845	Olympiad
+3846	Total Ranking
+3847	Year
+3848	Mon
+3849	World Olympiad Match takes place every Friday and Saturday\nfrom 8PM to 12AM.
+3850	Only Awakened Noblesse or Exalted characters with level 85 or higher can join World Olympiad.
+3851	Round Wins and Losses
+3852	Olympiad Point
+3853	Bonus Reward
+3854	Losses
+3855	1R
+3856	2R
+3857	3R
+3858	There aren't any previous records.
+3859	Losses
 3860	Set Next Target
 3861	Next Target
 3862	Target to Taunt
 3863	Monster
 3864	PC
 3865	NPC
+3866	Season
+3867	All Files
 3868	Hide Pet/Servitor in towns
+3869	Joining event
+3870	Did not join event
 3871	Reject Party Invitation - By Character
 3872	Reject Friend Request - By Character
+3877	Artifact
+3878	Upgrade Artifact
+3879	Artifact Effect
+3880	All Artifacts
+3881	Set
+3882	Set Effect Applied
+3883	Cancel Set Effect
+3884	If it fails, the current level will be kept.
+3885	Upgrade Success!
+3886	Upgrade Failed!
+3887	Enter an item to upgrade.
+3888	Enter upgrade materials.\n- Can only enter artifacts of the same type as the item to be upgraded
+3889	Click on the Upgrade button below to upgrade.
+3890	Click on continue to upgrade.
+3891	Fighting Spirit
+3892	Protection
+3893	Support
+3894	Balance
+3895	Artifact Book
+3896	Cannot Upgrade
 4001	An envoy dispatched by the Blackbird Clan. Assigns quests associated with the Blackbird Clan.
 4002	An envoy dispatched by the Giant Trackers. Assigns quests associated with the Giant Trackers.
 4003	An envoy dispatched by the Mother Tree Guardians. Assigns quests associated with the Mother Tree Guardians.
@@ -3670,6 +3752,27 @@
 4531	SILVER
 4532	BRONZE
 4533	The ranking data has not been collected yet.<br>Please try again later.
+4534	Season Free
+4535	Mission Reward
+4536	Prove Class Qualification
+4537	Prove Qualification
+4538	Amount Owned
+4539	Promotion Failed
+4540	Bashutai
+4541	Litba Village
+4542	Guillotine Fortress
+4543	Sanctuary of Seven Signs
+4544	Attack of Valakas
+4545	Atelia Occupation
+4546	Bashutai Canyon at the outskirts of Rune. Lilith and Anakim crash in battle to take charge of the 7 Seals.
+4547	Litba Village is attacked by Valakas and his followers and elite Dragon Slayers are sent from Aden to stop them.
+4548	Devianne from Ivory Tower and Hardin from School of Dark Arts are sent to hunt down demons in Guillotine Fortress for the honor of their group.
+4549	Anakim
+4550	Lilith
+4551	Dragons
+4552	Dragon Slayer
+4553	Ivory Tower
+4554	School of Dark Arts
 5001	L2 Store
 5002	All Items
 5003	Best

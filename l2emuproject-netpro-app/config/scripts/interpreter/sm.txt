@@ -1116,7 +1116,7 @@
 1115	Individuals may not surrender during combat.
 1116	You cannot leave a clan while engaged in combat.
 1117	A clan member may not be dismissed during combat.
-1118	Unable to process this request until your inventory's weight and slot count are less than 80 percent of capacity.
+1118	Not enough space in the inventory. Unable to process this request until your inventory's weight and slot count are less than 80 percent of capacity.
 1119	Quest was automatically canceled when you attempted to settle the accounts of your quest while your inventory exceeded 80 percent of capacity.
 1120	You are still a member of the clan.
 1121	You do not have the right to vote.
@@ -1198,7 +1198,7 @@
 1197	Summoning a servitor costs $s2 $s1.
 1198	The item has been successfully crystallized.
 1199	=======<Clan War Target>=======
-1200	= $s1 ($S2 Alliance)
+1200	= $s1 ($s2 Alliance)
 1201	Please select the quest you wish to abort.
 1202	= $s1 (No Alliance exists)
 1203	There is no clan war in progress.
@@ -1290,7 +1290,7 @@
 1289	The seal was owned during the previous period and 10%% or more people have voted.
 1290	Although the seal was not owned, 35%% or more people have voted.
 1291	Although the seal was owned during the previous period, less than 10%% of people have voted.
-1292	Since the seal was not owned during the previous period, and since less than 35 percent of people have voted.
+1292	The seal was not owned during the previous period, and less than 35%% of people have voted.
 1293	If current trends continue, it will end in a tie.
 1294	The competition has ended in a tie. Therefore, nobody has been awarded the seal.
 1295	Subclasses may not be created or changed while a skill is in use.
@@ -1668,7 +1668,7 @@
 1667	Lethal Strike!
 1668	Hit with Lethal Strike!
 1669	There was nothing found inside.
-1670	Due to your Reeling and/or Pumping skill being three or more levels higher than your Fishing skill, a $s1%% damage penalty will be applied.
+1670	Due to your Reeling and/or Pumping skill being three or more levels higher than your Fishing Expertise, a $s1%% damage penalty will be applied.
 1671	Reeling successful! (Mastery Penalty: $s1%%)
 1672	Pumping successful! (Mastery Penalty: $s1%%)
 1673	For the current Olympiad you have participated in $s1 match(es) and had $s2 win(s) and $s3 defeat(s). You currently have $s4 Olympiad Point(s).
@@ -1689,14 +1689,14 @@
 1688	You cannot enchant while operating a Private Store or Private Workshop.
 1689	$c1 is already registered on the class match waiting list.
 1690	$c1 is already registered on the waiting list for the All-Class Battle.
-1691	$c1 does not meet the participation requirements as the inventory weight / slot is filled beyond 80%%.
+1691	$c1 does not meet the participation requirements as the inventory weight/slot is filled beyond 80%%.
 1692	$c1 does not meet the participation requirements. You cannot participate in the Olympiad because you have changed your class to subclass.
 1693	You may not observe a Olympiad Games match while you are on the waiting list.
 1694	Only a clan leader that is a Noblesse/Exalted can view the Siege War Status window during a siege war.
 1695	You can only use that during a Siege War!
 1696	Your accumulated play time is $s1.
-1697	Your accumulated play time has reached Fatigue level, so you will receive XP or item drops at only 50 percent of the normal rate. For the sake of you physical and emotional health, we encourage you to log out as soon as possible and take a break before returning.
-1698	Your accumulated play time has reached Ill-health level, so you will no longer gain experience or item drops. For the sake of your physical and emotional health, please log out as soon as possible and take a break. Once you have been logged out for at least 5 hours, XP and item drop rate penalties will be removed.
+1697	Your accumulated play time has reached the Fatigue level, so you will receive XP or item drops at only 50%% of the normal rate. For the sake of your physical and emotional health, we encourage you to log out as soon as possible and take a break before returning.
+1698	Your accumulated play time has reached the Unhealthy level, so you will no longer gain experience or item drops. For the sake of your physical and emotional health, please log out as soon as possible and take a break. Once you have been logged out for at least 5 hours, XP and item drop rate penalties will be removed.
 1699	You cannot dismiss a party member by force.
 1700	You don't have enough spiritshots needed for a pet/servitor.
 1701	You don't have enough soulshots needed for a pet/servitor.
@@ -2017,7 +2017,7 @@
 2016	A skill is ready to be used again but its re-use counter time has increased.
 2017	$c1 cannot duel because $c1 is currently engaged in a private store or manufacture.
 2018	$c1 cannot duel because $c1 is currently fishing.
-2019	$c1 cannot duel because $c1's HP or MP is below 50%%.
+2019	Cannot duel because $c1's HP or MP is below 50%%.
 2020	$c1 is in an area where duel is not allowed and you cannot apply for a duel.
 2021	$c1 cannot duel because $c1 is currently engaged in battle.
 2022	$c1 cannot duel because $c1 is already engaged in a duel.
@@ -2107,7 +2107,7 @@
 2106	This dungeon will expire in $s1 minute(s). You will be forced out of the dungeon when the time expires.
 2107	This instant zone will be terminated in $s1 minute(s). You will be forced out of the dungeon when the time expires.
 2108	Your account has been restricted for violating the EULA, RoC and/or the User Agreement. When a user violates the terms of the User Agreement, the company can impose a restriction on their account. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).
-2109	During the server merge, your character name, $s1, conflicted with another. Your name may still be available. Please enter your desired name.
+2109	As the servers have merged, the name $s1 that you have been using may also be in use by someone else. Please enter a new name for your character.
 2110	This character name already exists or is an invalid name. Please enter a new name.
 2111	Enter a shortcut to assign.
 2112	Sub-key can be CTRL, ALT, SHIFT and you may enter two sub-keys at a time. \n Example) CTRL + ALT + A
@@ -2180,7 +2180,7 @@
 2179	You have the highest bid submitted in a Giran Castle auction.
 2180	You have the highest bid submitted in an Aden Castle auction.
 2181	You have highest the bid submitted in a Rune Castle auction.
-2182	You cannot polymorph while riding a boat.
+2182	You cannot polymorph while riding on a boat, airship or elevator.
 2183	The fortress battle of $s1 has finished.
 2184	$s1 is victorious in the fortress battle of $s2.
 2185	Only a party leader can make the request to enter.
@@ -2328,7 +2328,7 @@
 2327	You don't have enough Fame to do that.
 2328	Only clans who are level 4 or above can register for battle at Devastated Castle and Fortress of the Dead.
 2329	Vitality Level $s1 $s2
-2330	: XP/SP boosted by $s1.
+2330	- XP/SP boosted by $s1%%.
 2331	<Rare> $s1
 2332	<Supply> $s1
 2333	You cannot receive the dimensional item because you have exceed your inventory weight/quantity limit.
@@ -2753,8 +2753,15 @@
 2855	No need for translation
 2856	No need for translation
 2857	The HP gages of all characters can be hidden or shown in the event zone.
-2876	Join the Clan Academy to learn the game system as a Clan Member until you reach Level 40. To make the game even more enjoyable, try becoming a member of the clan academy.
-2877	At level 40, the second class transfer becomes possible. Complete the second class transfer to further enhance the performance of your character.
+2858	View the Arena Bulletin.
+2859	Hide the Arena Bulletin.
+2860	Rotate the next target enemy.
+2861	Attack the targeted enemy. (Arena only)
+2862	Mark the targeted enemy. (Arena only)
+2863	Target the marked enemy. (Arena only)
+2864	Change the target enemy in the order of closest distance. (Arena only)
+2883	When you join the Clan Academy, you can learn the game system as a clan member until you reach level 40. Join the Clan Academy to enhance your gaming experience.
+2884	When you reach level 40, the 2nd class transfer becomes available. Completing the 2nd class transfer significantly improves your character's abilities.
 2900	$s1-second(s) to the end of territory war!
 2901	You cannot force attack a member of the same territory.
 2902	You've acquired the ward. Move quickly to your forces' outpost.
@@ -3072,7 +3079,7 @@
 3221	You cannot add your own name.
 3222	The maximum number of names (100) has been reached. You cannot register any more.
 3223	The previous name is being registered. Please try again later.
-3224	The maximum matches you can participate in 1 week is 30.
+3224	You may participate in up to 30 matches per week.
 3225	You may participate in up to 30 matches per week.
 3226	You cannot move while speaking to an NPC. One moment please.
 3227	The large army of Elmoreden is advancing upon the Monastery of Silence.
@@ -3103,14 +3110,14 @@
 3252	if you want to waste your last precious moments babbling pointlessly,
 3253	for soon my era will begin, the era of Embryos Muah ah ah ah ah.
 3254	An error has occurred at the arena, and all matches will handled at no cost.
-3255	Arcane Shield decreased your MP by $s1 instead of HP.
-3256	MP became 0 and the Arcane Shield is disappearing.
+3255	Mana Armor decreased your MP by $s1 instead of HP.
+3256	MP has reached 0. The Mana Armor has disappeared.
 3257	[not named in client]
 3258	[not named in client]
 3259	You have acquired $s1 XP (Bonus: $s2) and $s3 SP (Bonus: $s4).
 3260	You cannot use the skill because the servitor has not been summoned.
 3261	This week, you can participate in a total of $s1 matches.
-3262	You can proceed only when the inventory weight is below 80 percent and the quantity is below 90 percent.
+3262	Not enough space in the Quest inventory. You can proceed only when the inventory weight is below 80 percent and the quantity is below 90 percent.
 3263	There are $s2 second(s) remaining for $s1's re-use time. It is reset every day at 6:30 AM.
 3264	There are $s2 minute(s) $s3 second(s) remaining for $s1's re-use time. It is reset every day at 6:30 AM.
 3265	There are $s2 hour(s) $s3 minute(s) $s4 second(s) remaining for $s1's re-use time. It is reset every day at 6:30 AM.
@@ -3119,13 +3126,13 @@
 3268	You are further infused with the blessings of Nevit!
 3269	Nevit's Advent Blessing shines strongly from above.
 3270	$s1 second(s) remaining
-3271	Current Progress: $1
+3271	Current Progress: $s1
 3272	$s1
 3273	Trap is not installed, therefore the skill can't be used.
 3274	Angel Nevit's Blessing
 3275	Nevit's Advent Blessing has ended. Continue your journey and you will surely meet his favor again sometime soon.
 3276	Crystallization cannot be proceeded because there are no items registered.
-3277	Nevit's Advent Blessing: $1
+3277	Nevit's Advent Blessing: <Bonus Time> $s1
 3278	(allowed after $s1 second(s))
 3279	Subclass $s1 has been upgraded to Duel Class $s2. Congratulations!
 3280	Change $s1 to $s2?
@@ -3329,7 +3336,7 @@
 3478	You cannot register/purchase/cancel an item in a private store or private workshop.
 3479	You cannot register, purchase, or cancel the purchase of an item while enchanting an item, bestowing an attribute, combining jewels, or crystallizing.
 3480	Items that cannot be exchanged/dropped/use a private store or that are for a limited period/augmenting cannot be registered.
-3481	If the weight is 80%% or more and the inventory number is 90%% or more, purchase/cancellation is not possible.
+3481	If the weight is 80%% or more and the inventory amount is 90%% or more, purchase/cancellation is not possible.
 3482	The number of allowed Adena has been exceeded.
 3483	The number of allowed pieces has been exceeded.
 3484	The item has been successfully registered.
@@ -3373,7 +3380,7 @@
 3522	You cannot register for the waiting list on the battlefield (castle siege/fortress siege).
 3523	Looking for a player who will replace the selected party member.
 3524	You are declaring a Clan War against $s1. The Clan War immediately starts when both parties declare the war. Do you want to continue to declare a war?
-3525	Vitality is applied, and you are receiving 200%% bonus XP while hunting. You can use a maximum of 5 Vitality items per week, including Replenishing and Maintaining items.
+3525	Vitality is applied with a 200%% bonus XP while hunting. You can use a maximum of 5 Vitality items per week, including Replenishing and Maintaining items.
 3526	Vitality is not yet applied. Vitality points are all replenished every week during the regular maintenance. You can use a maximum 5 Vitality items per week, including Replenishing and Maintaining items.
 3527	The corresponding party is currently in an area where summoning is not allowed, therefore it cannot join the party. Became re-registered on the waiting list.
 3528	Vitality effect is applied. There's $s1 vitality effect left that may be applied until the next cycle.
@@ -3500,7 +3507,7 @@
 3649	Hahahaha…
 3650	Struggle all you want to, soon my resurrection will be complete...
 3651	That will close this business for all the world. Haha... Hahaha...
-3652	You cannot Awaken due to your current inventory weight. Please organize your inventory and try again. (Dwarven characters must be at 20%% or below the inventory max to Awaken.)
+3652	You cannot Awaken due to your current inventory weight. Please reduce your inventory weight and try again. (Dwarves must be at 20%% or below the weight max to Awaken.)
 3653	Unable to process this request until your inventory's weight and slot count are less than 70 percent of capacity.
 3654	You cannot use Sayune while in a chaotic state.
 3655	You cannot Awaken while you're transformed or riding.
@@ -3574,9 +3581,9 @@
 3723	$s1 has failed to hatch the egg.
 3724	$s1 has successfully hatched the egg by creating the perfect temperature for incubation.
 3725	=====<Temperature Raising Rankings>=====
-3726	Rank $1: $2 ($3.$4 degrees)
+3726	Rank $s1: $s2 ($s3.$s4 degrees)
 3727	=======================
-3728	$1 receives a prize for raising the temperature most.
+3728	$s1 receives a prize for raising the temperature most.
 3729	The character and item recipe levels do not match, so it cannot be used normally.
 3730	Cycle $s1 of the Ceremony of Chaos has begun.
 3731	Cycle $s1 of the Ceremony of Chaos has ended.
@@ -3646,9 +3653,9 @@
 3795	A victor had been named in the Ceremony of Chaos.
 3796	Current Location: $s1 / $s2 / $s3 (inside the Ceremony of Chaos)
 3797	You've obtained the Energy of Destruction. You can obtain up to 2 of these items a day. You can get more after 06:30 AM every day.
-3798	Can be used only when HP is less than 100%%.
-3799	Can be used only when MP is less than 100%%.
-3800	Can be used only when CP is less than 100%%.
+3798	Can only be used when HP is less than 100%%.
+3799	Can only be used when MP is less than 100%%.
+3800	Can only be used when CP is less than 100%%.
 3801	I heard Dr. Chaos left for Pavel Ruins with his Golem troops.
 3802	He arrived on the closed Isle of Souls. It seems he went there for Relics of the Giant.
 3803	It seems he went there for Relics of the Giant.
@@ -3732,9 +3739,9 @@
 3881	You cannot redeem it because you don't have points.
 3882	Because $s1 died, $s2 $s3 is destroyed.
 3883	Do you want to withdraw from the war against $s1? If you withdraw from a declared war, you will lose 10,000 Clan Reputation.
-3884	Can be used only when HP is less than 100%%.
-3885	Can be used only when MP is less than 100%%.
-3886	Can be used only when CP is less than 100%%.
+3884	Can only be used when HP is less than 100%%.
+3885	Can only be used when MP is less than 100%%.
+3886	Can only be used when CP is less than 100%%.
 3887	The Oriana's Lucky Draw event is ready to begin. Oriana's Disguised Clothing cannot be used before the event begins.
 3888	The Oriana's Lucky Draw event is in progress.
 3889	The Oriana's Lucky Draw event has begun. Characters of level 90 or higher and who are Awakened may participate in this event.
@@ -4257,8 +4264,8 @@
 4499	The game has ended because time has run out.
 4500	The reward is kept for $s1 hours. You can receive it from the event NPC before starting a new game.
 4501	You can receive the reward only when your inventory is below 80%% of its weight and quantity limits. (The reward is kept for $s1 hours. You can receive it from the event NPC before starting a new game.)
-4502	NC OTP Service ended on February 15, 2017. You can no longer play the game with the account registered for NC OTP Service. Unregister the account from NC OTP Service, and log in again.
-4503	NC OTP Service ended on February 15, 2017. You can no longer play the game with the account registered for NC OTP Service. Unregister the account from NC OTP Service, and log in again.
+4502	Old) NC OTP related information was deleted on Wednesday August 30th, 2017. Accordingly, Old) NC OTP service accounts require personal verification to reactivate. Complete the personal verification process at Lineage II website to access your account.
+4503	Old) NC OTP related information was deleted on Wednesday August 30th, 2017. Accordingly, Old) NC OTP service accounts require personal verification to reactivate. Complete the personal verification process at Lineage II website to access your account.
 4504	Register the Agathion you want to grow.
 4505	Press the Start button to grow the selected Agathion.
 4506	If the growth fails, the Agathion will be lost.
@@ -4742,17 +4749,17 @@
 5104	Cannot use this function while using a Private Store.
 5105	Cannot report a character who is fighting in a duel.
 5106	No Spirits are available.
-5107	<$s1> will be your attack attribute from now on.
-5108	<$s1> will evolve to <$s2-Star>. $s3-Star Spirits can grow up to Lv. $s4.
+5107	<$s1> will be your attribute attack from now on.
+5108	<$s1> will evolve to <$s2-Star>. Can grow up to Lv. 10 after evolving.
 5109	<$s1> evolved to <$s2-Star>!
-5110	<$s1, $s2-Star> card will be extracted. After the extraction, the Spirit will return to the egg state.
-5111	Extracted <$s1, $s2-Star> card successfully!
-5112	Register a card you want to drain. $s1-Star Spirits can grow up to Lv. $s2.
-5113	<$s1, $s2-Star> card will be drained. $s3-Star Spirit scan grow up to Lv. $s4.
+5110	Extracting with <$s1, x$s2>.
+5111	Extracted <$s1, x$s2> successfully!
+5112	Register a material you want to drain.
+5113	Cannot evolve/absorb/extract while using the private store/workshop.
 5114	Drain successful!
 5115	Characteristic Points will be used to enhance the stats of <$s1>. You can retrieve these points by resetting the stats. Are you sure you want to continue?
 5116	Characteristics were applied successfully.
-5117	To reset the characteristics of the selected spirit, the following ingredients will be consumed, and <$s1> Characteristic Points will be lost. Are you sure you want to continue?
+5117	Use <$s1> to reset the Spirit's characteristics. Continue?
 5118	Reset the selected Spirit's Characteristics successfully.
 5119	Cannot report a character who has signed up for Olympiad.
 5120	Not allowed to sign up for Olympiad while the report of illegal program users is being verified.
@@ -4778,6 +4785,81 @@
 5140	$s1 will be used. You can use $s2 times more.
 5141	$s1 is used. $s1 will be lost because it has been used the maximum amount of times.
 5142	Level $s1 Reward
+5143	There aren't any Attribute Soulshot. Please purchase it at the Shop.
+5144	Not enough ingredients for evolution.
+5145	Spirits can evolve when they reach level 10 and 100%% XP.
+5146	Unable to evolve any further.
+5147	Not enough ingredients to extract.
+5148	<Precautions when extracting> Spirit will revert back to level 1 and its attribute will be reset. Do you want to proceed?
+5149	Not enough ingredients to absorb.
+5150	Unable to absorb because reached maximum level.
+5151	Precaution for loss of $s1 Attribute XP
+5152	Not enough <Adena> to proceed with reset.
+5153	Editing for Attribute has been cancelled.
+5154	Quickly find out what the problem is!
+5155	Did you find out something?
+5156	Here, go before the passage closes.
+5157	This is Great Etina Temple.
+5158	Let's begin. / Yes.
+5159	It's my turn.
+5160	Your edits will not be saved if you change Spirits.
+5161	Use Attribute Attack of <$s1>.
+5162	Unable to extract during battle.
+5163	Unable to extract because Inventory is full.
+5164	Unable to evolve during battle.
+5165	This Spirit cannot evolve.
+5166	Spirit of other Attribute does not fit the evolution condition.
+5167	Unable to absorb during battle.
+5168	Unable to reset Spirit Attribute during battle.
+5169	Unable to open Attribute after the third class change.
+5170	Obtained $s2 Attribute XP of $s1.
+5171	$s1 Attribute Spirit became level $s2.
+5172	Unable to use $s1 because Attribute is not learnt.
+5173	Not enough Attribute XP for extraction.
+5174	$s1 Attack Critical is activated.
+5175	Attack Attribute can be changed after $s1 seconds.
+5176	$s1 has delivered $s3 (Attribute Damage: $s4) to $s2.
+5177	$s1 has received $s3 (Attribute Damage: $s4) from $s2.
+5178	$s1 has delivered $s3 (Attribute Damage: $s5) to $s2, $s4 damage to the damage transference target.
+5179	You did not join Throne of Heroes.
+5180	Ranking information did not load. Please try again later.
+5181	You have obtained an Attribute. Open your Character Information Screen to check.
+5182	Unable to open Olympiad Screen while in participating or watching a match.
+5183	Olympiad can be watches in Peace Zone only.
+5184	ROUND $s1
+5185	+hidden_msg+ Start Olympiad
+5186	+hidden_msg+ Olympiad Victory
+5187	+hidden_msg+ Olympiad Defeat
+5188	+hidden_msg+ Olympiad Tie
+5189	+hidden_msg+ Olympiad Time Over
+5190	+hidden_msg+ Olympiad Knock Down
+5191	+hidden_msg+ Olympiad Round 1
+5192	+hidden_msg+ Olympiad Round 2
+5193	+hidden_msg+ Olympiad Round 3
+5194	This bait cannot be used in this area.
+5195	Do you want to select <$s1>?
+5196	Change next target: $s1
+5197	<$s1> has enchanted successfully! <$s2>
+5198	$s1's enchant is successful!
+5199	$s1
+5200	Unfinished Season
+5201	<$s1> has obtained at <$s2>! <$s3>
+5202	$s1 has obtained at $s2!
+5203	Stage $s1
+5204	Time Left: $s1min
+5206	Not enough space in the Artifact inventory. Please make more room and try again.
+5207	Not enough space in the inventory and the Artifact inventory. Please make more room and try again.
+5208	Artifact upgrade succeeded and you obtained $s1.
+5209	Failed to upgrade Artifact. The item's upgrade level will remain the same.
+5210	You are already equipping the same Artifact.
+5211	You haven't equipped an Artifact Book, so $s1 cannot be equipped.
+5212	Not enough space in the inventory and the Artifact inventory. Unable to process this request until your inventory's weight and slot count are less than 80 percent of capacity.
+5213	Not enough space in the inventory and the Artifact inventory. Unable to process this request until your inventory's slot count is less than 80 percent of capacity.
+5214	Not enough space in the inventory and Artifact inventory. You can proceed only when the inventory weight is below 80 percent and the quantity is below 90 percent.
+5215	Not enough space in the inventory. You can proceed only when the inventory weight is below 80 percent and the quantity is below 90 percent.
+5216	Not enough space in the inventory and the Artifact inventory. Unable to process this request until your inventory's slot count is less than 90 percent of capacity.
+5217	You need a material that has been upgraded to +$s1 or higher.
+5218	No Artifact has been selected.
 5300	Your account has been suspended due to account theft. If you registered your e-mail in your personal information, a notification mail will have been sent, so please check. If you have nothing to do with the account theft, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Account theft report center</font> and submit your letter of objection. For more information, <font color="FFDF4C">contact us via 1-to-1 inquiry through the Support Center</font>.
 5301	Your account has been suspended as per our management policy for manipulating our GM service or customer support service to disrupt other users' normal gameplay or the company's game operation. For more information, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
 5302	Your account has been suspended as per our management policy for failing to verify your account during the specified period after submitting the report of account theft. To unblock your account, go to the <font color="FFDF4C">plaync Homepage (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) > Report center</font> and go through the user verification process in the account theft report. For more information, go to <font color="FFDF4C">plaync (</font><font color="6699FF"><a action="url http://www.plaync.com">www.plaync.com</a></font><font color="FFDF4C">) and contact us via 1-to-1 inquiry through the Support Center</font>.
@@ -4880,6 +4962,10 @@
 5565	Liberated $s1 Stage $s2.
 5566	The seal of the monster can be removed.
 5567	$s1: $s2! Be careful!
+5568	Beginning validation of $s1's qualification.
+5569	Validation of qualification through $s1 is reset after the season ends.
+5570	$s1 class qualification has been validated.
+5571	$s1 promotion has failed. The item's grade remains unchanged.
 6001	The item has been successfully purchased.
 6002	The item has failed to be purchased.
 6003	The item you selected cannot be purchased. Unfortunately, the sale period ended.
@@ -4890,8 +4976,8 @@
 6008	Product Purchase Error - The product is not right.
 6009	Product Purchase Error - The item within the product is not right.
 6010	Your master account has been restricted.
-6011	You acquired $s1 XP and $s2 SP. (As a reward you receive $s3%% more XP.)
-6012	a blessing that increases XP by $1 $2
+6011	You acquired $s1 XP and $s2 SP. (You receive $s3%% more XP as a reward.)
+6012	Ablessing that increases XP by $s1 $s2
 6013	It is not a blessing period. When you reach today's target, you can receive $s1.
 6014	It is Eva's blessing period. $s1 will be effective until $s2.
 6015	It is Eva's blessing period. Until $s1, Jack Sage can gift you with $s2.
@@ -4951,7 +5037,7 @@
 6069	You used the Adventurer's Song. You can use $s1 more. The use limit is reset every Wednesday at 6:30 a.m.
 6070	A maximum of 8 non-quantity items can be given as gifts. \nPlease confirm the quantity.
 6071	Your item gift-giving was successful. \nYou can check the gift item through your mailbox.
-6072	$s1%% XP Rate, Bonus XP is applied.
+6072	$s1%% bonus XP is being applied,
 6073	$s1 vitality items can be used.
 6074	The name of the character cannot be in English.
 6075	If you press the start button, $s1's appearance will be changed. The Appearance Item will be deleted.
@@ -5151,7 +5237,7 @@
 7017	Please enter a message to use the general chat.
 7018	The use of teleport items, the mailbox, skills, as well as attacking, fighting, creating parties, recruiting clan members is limited in prison. Items cannot be dropped/destroyed either.
 7019	Will be opening an external browser. Continue?
-7020	$s1's Info
+7020	$s1%%'s Info
 7021	Cannot open the Private Shop or Workshop until the dice roll is over.
 7022	Cannot exchange items until the dice roll is over.
 7023	The Party Leader's inventory's weight/limit has been exceeded, so the item cannot be acquired.
@@ -5236,8 +5322,8 @@
 7102	You cannot destroy Crystals that have been activated and have XP/SP saved.
 7103	The character has been added as a foe the max number of times allowed, so you cannot add the target as a foe.
 7104	Vitality Mode will be activated for $s1 hour(s) $s2 minute(s).
-7105	Vitality Mode has been activated and you received \n$s1%% bonus XP/SP.\nTime Left: $s2 minutes\nToday's Vitality Mode Activations: $s3 times
-7106	Activate Vitality Mode by clicking on the Activate button to get \n300%% bonus XP/SP.\nThe number of times Vitality Mode is activated is reset every day at 6:30 am\nand you get free activations for that day.
+7105	Vitality Mode has been activated and you received \n$s1%% bonus XP/SP.\nTime Left: $s2 minute(s)\nToday's Vitality Mode Activations: $s3
+7106	Activate Vitality Mode by clicking the Activate button to get \n300%% bonus XP/SP.\nThe number of times Vitality Mode is activated is reset every day at 6:30 AM\nand you get free activations for that day.
 7107	Amount: $s1
 7108	Items needed to activate: $s1
 7109	Mode Active Time : $s1 hrs
@@ -5375,9 +5461,9 @@
 7259	Find $s1 and get your attendance stamp!
 7260	Find Moon Rabbit Sweety to get your attendance stamp!
 7261	Find Moon Guardian Diana to get your attendance stamp!
-7262	You'll get the XP boost from the Moonlight now. During the Moon Festival, you'll get + 100%% XP between 20:00-23:00 every day.
+7262	Now you can receive the XP boost from the Moonlight. During the Moon Festival, you get +100%% XP between 20:00-23:00 every day.
 7263	The Moonlight XP boost is over for today.
-7264	The Moonlight XP boost effect is on. During the Moon Festival, you'll get + 100%% XP between 20:00-23:00 every day.
+7264	The Moonlight XP boost effect is on. During the Moon Festival, you get +100%% XP between 20:00-23:00 every day.
 7265	Day $s1
 7266	The clan's member limit has been reached so recommendations to join cannot be made.
 7267	The clan's member limit has been reached so the application cannot be accepted.
@@ -5505,7 +5591,7 @@
 7389	No grade $s1 Spiritshots available. Please go to the Premium Shop to buy more.
 7390	Cannot use this function binded.
 7391	Cannot delete a character that has requested to join another clan.<br>Please cancel your request first and then delete the character.
-7392	The power of the god of wealth is active. You'll get 100%% XP and 100%% Adena between 20:00-23:00 every day during the New Year's event.
+7392	The God of Fortune's power is active. Get 100%% XP and 100%% Adena between 20:00-23:00 every day during the New Year's event.
 7393	$s1 days
 7394	$s1 hours
 7395	$s1 minutes

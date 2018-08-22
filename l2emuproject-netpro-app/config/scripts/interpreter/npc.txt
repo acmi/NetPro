@@ -676,6 +676,18 @@
 8679	looking for matchsticks, Older Match Sister
 8680	Younger Match Sister, Hungry
 8681	Mermaid Agathion
+8682	Ball Trapping Gnosian
+8683	Ball Trapping Orodriel
+8684	Penalty Kick
+8685	Meliodas Agathion
+8686	Elizabeth Agathion
+8687	Hawk Agathion
+8688	Ban Agathion
+8689	Diane Agathion
+8690	King Agathion
+8691	Merlin Agathion
+8692	Gowther Agathion
+8693	Escanor Agathion
 12077	Wolf
 12311	Hatchling of the Wind
 12312	Hatchling of the Stars
@@ -1232,6 +1244,12 @@
 13567	Inhale Soul
 13568	Inhale Soul
 13569	Inhale Soul
+13570	Masia's Guard
+13571	Pollyne's Guard
+13572	Tersi's Guard
+13573	White Dog
+13574	Pink Dog
+13575	Golden Dog
 14001	Reanimated Man
 14002	Reanimated Man
 14003	Reanimated Man
@@ -3982,20 +4000,11 @@
 19457	Travis, Deceased King
 19458	Treasure Dealer Kaysen
 19459	Nerva's Temporary Prison
-19460	Horn
-19461	Horn
-19462	Horn
-19463	Bloody Horn
-19464	Land of Chaos Transparent
-19465	Land of Chaos Transparent
-19466	Land of Chaos Transparent
-19467	Land of Chaos Transparent
 19470	Kartia's Flower
 19471	Mysterious Assassin
 19472	Mysterious Assassin
 19473	Mysterious Assassin
 19474	[not named in client]
-19475	Legah, One-armed Zombie's Arm
 19476	Lyn Draco
 19477	Generator
 19478	Immariel
@@ -4180,6 +4189,28 @@
 19711	Field Raid Monster
 19712	Field Raid Monster
 19713	Field Raid Monster
+19714	Seal of Gnosis
+19715	Seal of Strife
+19716	Seal of Avarice
+19717	Seal of Punishment
+19718	Seal of Awakening
+19719	Seal of Calamity
+19720	Seal of Destruction
+19721	[not named in client]
+19722	Common Decoration - Tent
+19723	Common Decoration - Campfire
+19724	Common Decoration - Barricade
+19725	Atelia Refinery Monster
+19726	Hall Alarm
+19727	Frintezza's Will
+19728	Ice Knight
+19729	Icy Breath
+19730	Freezing Stone
+19731	Huge Icicle
+19732	[not named in client]
+19733	Summoning Tombstone
+19734	Explosive Orc Barrel
+19735	Powerful Device
 20001	Gremlin
 20002	Rabbit
 20003	Goblin
@@ -4351,8 +4382,6 @@
 20275	Cave Servant Captain
 20276	Royal Cave Servant
 20277	Cave Keeper
-20282	Thunder Wyrm
-20285	Drake
 20287	Cave Maiden
 20291	Enku Orc Hero
 20292	Enku Orc Shaman
@@ -4371,7 +4400,6 @@
 20322	Goblin Brigand
 20323	Goblin Brigand Leader
 20324	Goblin Brigand Lieutenant
-20325	Goblin Raider
 20327	Goblin Snooper
 20330	Spelunking Bat
 20331	Monster Eye Tracker
@@ -4424,7 +4452,6 @@
 20463	Dungeon Skeleton Archer
 20464	Dungeon Skeleton Soldier
 20466	Pincer Spider
-20468	Kaboo Orc
 20469	Kaboo Orc Archer
 20470	Kaboo Orc Soldier
 20471	Kaboo Orc Warrior
@@ -4457,15 +4484,11 @@
 20511	Pitchstone Golem
 20520	Pirate Captain Uthanka
 20521	Whinstone Golem
-20525	Gray Wolf
 20526	Obsidian Golem
 20528	Goblin Lord
-20530	Young Red Keltir
 20531	Young Prairie Keltir
 20533	Longtail Keltir
-20534	Red Keltir
 20535	Prairie Keltir
-20537	Elder Red Keltir
 20538	Elder Prairie Keltir
 20539	Elder Longtail Keltir
 20540	Gemstone Beast
@@ -4569,9 +4592,6 @@
 20684	Vanor Silenos Warrior
 20685	Vanor Silenos Shaman
 20686	Vanor Silenos Chieftain
-20742	Mystical Weaver
-20743	Howler
-20744	Red Eye Vampire Bat
 20745	Gigantiops
 20746	Young Gigantiops
 20747	Roxide
@@ -4681,15 +4701,6 @@
 20961	Bloody Knight
 20962	Bloody Priest
 20963	Bloody Lord
-20965	Chimera Piece
-20966	Mutated Creation
-20967	Creature of the Past
-20968	Forgotten Face
-20969	Giant's Shadow
-20970	Soldier of Ancient Times
-20971	Warrior of Ancient Times
-20972	Shaman of Ancient Times
-20973	Forgotten Ancient People
 20974	Spiteful Soul Leader
 20975	Spiteful Soul Wizard
 20976	Spiteful Soul Warrior
@@ -5070,18 +5081,6 @@
 22004	Grave Robber Lookout
 22005	Grave Robber Ranger
 22006	Grave Robber Guard
-22017	Bandit Sweeper
-22018	Bandit Hound
-22019	Bandit Watchman
-22020	Snow Lynx
-22021	Bandit Undertaker
-22022	Bandit Assassin
-22023	Bandit Warrior
-22024	Bandit Inspector
-22025	Snow Werewolf
-22026	Bandit Captain
-22027	Forgotten Crewman
-22028	Vagabond of the Ruins
 22079	Lost Bandersnatch
 22080	Massive Lost Bandersnatch
 22081	Lost Watchman
@@ -6018,13 +6017,9 @@
 23328	Assassin, Nerva Bloodlust
 23329	Nerva Kaiser
 23330	Rubble
-23332	One-armed Zombie
-23333	Putrefied Zombie
 23334	Shelop
-23335	Poras
 23336	Death Worm
 23337	Large Rubble
-23348	Chaos Horn
 23349	Noctum, Gravekeeper
 23350	Demonic Noctum, Gravekeeper
 23351	Wild Guardian Tree
@@ -6218,8 +6213,6 @@
 23576	Nymph Tulip, Enraged
 23577	Nymph Cosmos, Enraged
 23578	Nymph Guardian, Guardian of the Flower
-23579	Buoyant Seed
-23580	Fluttering Seed
 23581	Apherus
 23582	Nymph Rose, Elegant
 23583	Nymph Lily, Elegant
@@ -6779,6 +6772,132 @@
 24141	Blossom Child
 24142	Teasle Child
 24143	Netherworld Archer, Scout
+24144	Death Rogue
+24145	Death Shooter
+24146	Death Warrior
+24147	Death Sorcerer
+24148	Death Pondus, Atelia Lookout
+24149	Devil Nightmare
+24150	Devil Warrior
+24151	Devil Guardian
+24152	Devil Sinist
+24153	Devil Varos, Atelia Lookout
+24154	Demonic Wizard
+24155	Demonic Warrior
+24156	Demonic Archer
+24157	Demonic Keras
+24158	Demonic Weiss, Atelia Lookout
+24159	Atelia Yuyurina
+24160	Atelia Popobena
+24161	Harke, Atelia Guardian
+24162	Ergalion, Atelia Guardian
+24163	Spira, Atelia Guardian
+24164	Temple Raider
+24165	Temple Passionate Soldier
+24166	Temple Guard Captain
+24167	Temple Elite Captain
+24168	Creed Protector
+24169	Soul Reaper
+24170	Zealous Berserker
+24171	Soul Destroyer
+24172	Heretic Inquisitor
+24173	Great Temple Siege Ram
+24174	Great Temple Dark Judge
+24175	Great Temple Decurion
+24176	Great Temple Slayer
+24177	Paragon, Great Temple Guardian
+24178	Camille, Final Apostle
+24179	Kain Van Halter, Void Apostle
+24180	Temple Raider
+24181	Temple Passionate Soldier
+24182	Temple Guard Captain
+24183	Temple Elite Captain
+24184	Creed Protector
+24185	Soul Reaper
+24186	Zealous Berserker
+24187	Soul Destroyer
+24188	Heretic Inquisitor
+24189	Great Temple Siege Ram
+24190	Great Temple Dark Judge
+24191	Great Temple Decurion
+24192	Great Temple Slayer
+24193	Paragon, Great Temple Guardian
+24194	Camille, Final Apostle
+24195	Kain Van Halter, Void Apostle
+24196	Temple Dark Wizard
+24197	Temple Flame Master
+24198	Temple Archon
+24199	Temple High Priest
+24200	Silence Warrior
+24201	Silence Slave
+24202	Silence Claw
+24203	Silence Witch
+24204	Silence Hannibal, Watcher
+24205	Silence Preacle, Watcher
+24206	Silence Phantom, Watcher
+24207	Hall Keeper Captain
+24208	Hall Keeper Guard
+24209	Hall Keeper Archer
+24210	Hall Keeper Wizard
+24211	Dark Choir Captain
+24212	Dark Choir Deputy
+24213	Halisha Guard Captain
+24214	Halisha Guard Soldier
+24215	Halisha Guard Archer
+24216	Halisha Guard Wizard
+24217	Lahkdoom, Halisha's Minion
+24218	Valanga Orc Scout
+24219	Valanga Orc Warrior
+24220	Valanga Orc Slaughterer
+24221	Valanga Orc Shaman
+24222	Frintezza Guard Captain
+24223	Frintezza Guard Soldier
+24224	Frintezza Guard Archer
+24225	Frintezza Guard Wizard
+24226	Aranea, Energy of the Sea of Spores Tracker
+24227	Keros
+24228	Falena
+24229	Atrofa
+24230	Nuba
+24231	Torfedo
+24232	Arima, Orfen's Handmaiden
+24233	Harane, Energy of the Sea of Spores Devourer
+24234	Lesatanas
+24235	Arbor
+24236	Tergus
+24237	Skeletus
+24238	Atrofine
+24239	Arimus, Orfen's Handmaiden
+24240	Doom Soldier
+24241	Doom Soldier
+24242	Doom Soldier
+24243	Doom Soldier
+24244	Doom Servant
+24245	Doom Servant
+24246	Doom Servant
+24247	Doom Servant
+24248	Doom Archer
+24249	Doom Archer
+24250	Doom Archer
+24251	Doom Archer
+24252	Doom Berserker
+24253	Doom Berserker
+24254	Doom Berserker
+24255	Doom Berserker
+24256	Doom Seer
+24257	Doom Seer
+24258	Doom Seer
+24259	Doom Seer
+24260	Doom Wraith
+24261	Doom Wraith
+24262	Doom Wraith
+24263	Doom Wraith
+24264	Votan
+24265	Votan, Death Knight
+24266	Votan, Berserk Death Knight
+24267	Merkios
+24268	Merkios, Grand Wizard
+24269	Merkios, Berserk Grand Wizard
 25001	Greyclaw Kutus, Raid Boss
 25002	Kutus' Escort, Raid Fighter
 25003	Kutus' Pawn, Raid Fighter
@@ -6933,7 +7052,6 @@
 25166	Ikuntai, Raid Boss
 25167	Ikuntai's Servitor, Raid Fighter
 25168	Ikuntai's Pawn, Raid Fighter
-25169	Ragraman, Raid Boss
 25170	Lizardmen Captain Hellion, Raid Boss
 25171	Hellion's Archers, Raid Fighter
 25172	Hellion's Escort, Raid Fighter
@@ -7004,10 +7122,6 @@
 25241	Harit Hero Tamash, Raid Boss
 25242	Tamash's Advisor, Raid Fighter
 25243	Tamash's Confidant, Raid Fighter
-25244	Last Lesser Giant Olkuth, Raid Boss
-25245	Last Lesser Giant Glaki, Raid Boss
-25246	Glaki's Henchman, Raid Fighter
-25247	Glaki's Servant, Raid Fighter
 25248	Doom Blade Thanatos, Raid Boss
 25252	Palibati Queen Themis, Raid Boss
 25253	Handmaiden of Themis, Raid Fighter
@@ -7100,11 +7214,6 @@
 25349	Halisha's Shadow, Ruler of Sepulcher
 25350	Knight of Shadow
 25351	Knight of Shadow
-25352	Giant Wasteland Basilisk, Raid Boss
-25353	Wasteland Basilisk, Raid Fighter
-25354	Gargoyle Lord Sirocco, Raid Boss
-25355	Sirocco's Gargoyle, Raid Fighter
-25356	Sirocco's Escorts, Raid Fighter
 25357	Sukar Ratman Chief, Raid Boss
 25358	Sukar Ratman Escort, Raid Fighter
 25359	Sukar Ratman Priest, Raid Fighter
@@ -7241,11 +7350,6 @@
 25501	Grave Robber Leader Akata, Raid Boss
 25502	Akata's Warrior, Raid Fighter
 25503	Akata's Subordinate, Raid Fighter
-25504	Nellis' Vengeful Spirit, Raid Boss
-25505	Nellis' Follower, Raid Fighter
-25506	Rayito the Looter, Raid Boss
-25507	Rayito's Guard Captain, Raid Fighter
-25508	Rayito's Henchman, Raid Fighter
 25509	Dark Shaman Varangka, Raid Boss
 25510	Varangka's Descendant, Raid Fighter
 25511	Varangka's Servant, Raid Fighter
@@ -7571,8 +7675,6 @@
 25867	Spezion, Raid Boss
 25868	Spezion, Raid Boss
 25869	Berserk Spezion, Raid Boss
-25870	Rose, Raid Boss
-25871	Thorn, Raid Boss
 25872	Spezion's Subordinate
 25873	Spezion's Subordinate
 25874	Spezion's Subordinate
@@ -7625,9 +7727,6 @@
 25921	Lilith' Escort
 25922	Nerva Chief Turakan, Raid Boss
 25924	Nerva Orc Linebreaker
-25925	Kro, Part of Krogel
-25926	Gel, Part of Krogel
-25927	Krogel, Raid Monster
 25928	Tebot, Raid Monster
 25929	Tegaffe, Raid Monster
 25930	Thesakar, Raid Monster
@@ -8018,6 +8117,72 @@
 26318	Spezion's Despair, Raid Fighter
 26319	Spezion's Lunacy, Raid Fighter
 26320	Spezion's Rage, Raid Fighter
+26321	Etis van Etina, Overlord
+26322	Etis van Etina, Overlord
+26323	Martyr of Avarice
+26324	Guide of Arrogance
+26325	Seeker of Despair
+26326	Liberator of Lust
+26327	Etis van Etina, Overlord
+26328	Etis van Etina, Overlord
+26329	Martyr of Avarice
+26330	Guide of Arrogance
+26331	Seeker of Despair
+26332	Liberator of Lust
+26333	Helios, Emperor of the Beginning
+26334	Helios, Emperor of the Beginning
+26335	Helios, Emperor of the Beginning
+26336	Leopold, Superion Siege Cannon
+26337	Helios's Red Lightning, Enuma Elish
+26338	Helios's Blue Lightning, Enuma Elish
+26339	Leopold Origin, Ultimate Kamael
+26340	Enuma Elish Origin, Ultimate Kamael
+26341	Royal Templar Colonel, Emperor's Escort
+26342	Royal Sharpshooter, Emperor's Escort
+26343	Royal Archmage, Emperor's Escort
+26344	Royal Gatekeeper, Emperor's Escort
+26347	Summoned Harpas
+26348	Summoned Garp
+26349	Summoned Moricks
+26350	Frintezza
+26351	Scarlet van Halisha
+26352	Scarlet van Halisha
+26353	Halisha's Breath
+26354	Halisha's Breath
+26355	Tybel, Halisha's Minion
+26356	Randek, Halisha's Minion
+26357	Freya, Ice Queen
+26358	Freya, Ice Queen
+26359	Freya, Ice Queen
+26360	Glakias, Ice Knight Captain
+26361	Gilatu
+26362	Ekimus, Immortal Lord
+26363	Curain, Screaming Ghost
+26364	Flan, Suffering Ghost
+26365	Aschedor, Howling Ghost
+26366	Panahon, Wailing Ghost
+26367	Yehan Klodekus' Ghost
+26368	Yehan Klanikus' Ghost
+26369	Yehan Klodekus
+26370	Yehan Klanikus
+26371	Zahak, Tauti Underling
+26372	Corrupted Atrofa, Raid Boss
+26373	Corrupted Arbor, Raid Boss
+26374	Corrupted Falena, Raid Boss
+26375	Corrupted Arimus, Raid Boss
+26376	Death Warrior, Raid Fighter
+26377	Skeleton Archer, Raid Fighter
+26378	Bone Angler, Raid Fighter
+26379	Shell Mantaray, Raid Fighter
+26380	Spirit of Time Arachine, Raid Boss
+26381	Spirit of Time Tisraki, Raid Boss
+26382	Spirit of Time Nympia, Raid Boss
+26383	Spirit of Time Lafros, Raid Boss
+26384	Forgotten Teasle, Raid Fighter
+26385	Forgotten Needle, Raid Fighter
+26386	Forgotten Nymph Mage, Raid Fighter
+26387	Forgotten Nymph Healer, Raid Fighter
+26388	Death Reaper, Raid Soul Reaver
 27001	Orc Sniper
 27002	Orc Captain
 27003	Spirit Of Mirrors, Quest Monster
@@ -8486,7 +8651,6 @@
 27504	Guardian Giant Akum, Quest Monster
 27505	Awakening Meccadan, Quest Monster
 27506	Meccadan's Minion, Quest Monster
-27507	One-armed Zombie, Quest Monster
 27508	Swamp of Screams Scout, Embryo
 27509	Forest of the Dead Scout, Embryo
 27510	Ceremony Executor, Embryo
@@ -8851,6 +9015,17 @@
 29322	Guide of Pride
 29323	Seeker of Despair
 29324	Liberator of Lust
+29325	Orfen, Master of the Sea of Spores
+29326	Arima, Orfen's Handmaiden
+29327	Arimus, Orfen's Handmaiden
+29328	Torfedo
+29329	Harane
+29330	Escrito, Fragment of the Sea of Spores
+29331	Aranea, Fragment of the Sea of Spores
+29332	Torfedo
+29333	Harane
+29334	Escrito
+29335	Aranea
 30001	Lector, Weapon Merchant
 30002	Jackson, Armor Merchant
 30003	Silvia, Accessory Merchant
@@ -8928,8 +9103,8 @@
 30093	Groot, Dye Merchant
 30094	Gentler, Wizard Equipment Merchant
 30095	Randolf, Warehouse Keeper
-30097	Galladucci, Weapon Merchant
-30098	Alexandria, Armor Merchant
+30097	Galladucci, Equipment Merchant
+30098	Alexandria, Artifact Merchant
 30103	Valkon, Warehouse Keeper
 30104	Parman, Warehouse Keeper
 30105	Genwitter, Master
@@ -10503,7 +10678,6 @@
 32011	Imperial Tomb Guide
 32012	Tantan, Retired Adventurer
 32013	Suki, Wild Maiden
-32014	Ivan, Runaway Youth
 32015	Scout's Corpse
 32016	Torrant, Beacon Tower Manager
 32017	Karuda
@@ -10541,10 +10715,6 @@
 32049	Rooney, Blacksmith of Wind
 32050	Box of Parts
 32051	Altar Gatekeeper
-32052	Obi, Railroad Worker
-32053	Abey, Railroad Worker
-32054	Ghost of a Railroad Engineer
-32055	Ghost of an Ancient Railroad Engineer
 32056	Aren, Khavatari
 32057	Totem Spirit of Gandi
 32058	Triol's Revelation
@@ -10564,7 +10734,6 @@
 32072	Edwin
 32073	Old Female Drifter
 32075	Sandy the Cat, Tournament Helper
-32076	Box
 32077	Ice Sculpture
 32078	Ice Sculpture
 32079	Ice Sculpture
@@ -12269,13 +12438,9 @@
 33834	Lezonne, Gainak Aide
 33835	Edward, Warehouse Keeper
 33836	Camille, Gatekeeper
-33837	Refugee Corpse, Putrefied
-33838	Quincy, Investigator
 33839	Tuska, Flame Patrol Vice Captain
 33840	Bruener, Flame Patrol Warrior
 33841	Rua, Investigator
-33842	Parajan, Rune Backup Trooper
-33843	Falk, Rune Backup Trooper
 33844	Sea of Spores Patrol
 33845	Andy, Patrol
 33846	Bacon, Paterson's Disciple
@@ -12829,7 +12994,42 @@
 34417	Saypia, Warehouse Keeper
 34418	GM Lassana, Present Delivering
 34419	Luna, Dragon Slayer
+34420	Blue, Temporary Raid Herald
+34421	Elysium Buffalo, Exhausted
+34422	Elysium Buffalo, Recovered
 34423	Draco, Ancient Dragon
+34424	Corzet
+34425	Leona Blackbird, Blackbird Clan Lord
+34426	Leona Blackbird, Blackbird Clan Lord
+34427	Devianne, Truth Seeker
+34428	Atelia Energy
+34429	Leona Blackbird, Lord
+34430	Devianne, Truth Seeker
+34431	Elikia, Verdure Elder
+34432	Sporcha, Blackbird Clan
+34433	Aliber, Bringer of Truth
+34434	Soul Summon Stone
+34435	Valleria, Ivory Tower Wizard
+34436	Leona Blackbird, Lord
+34437	Devianne, Truth Seeker
+34438	Elikia, Verdure Elder
+34439	Sporcha, Blackbird Clan
+34440	Aliber, Bringer of Truth
+34441	Atelia Refinery Teleport Device
+34442	Atelia Refinery Teleport Device
+34443	Atelia Refinery Teleport Device
+34444	Atelia Refinery Teleport Device
+34445	Denign, Accessory Artisan
+34446	Kale, Balthus Knight
+34447	Rash, Support Troop Lieutenant
+34448	Chorina
+34449	Jamon
+34450	Toma, Golden Compass Explorer
+34451	Meirin, Golden Compass Explorer
+34452	Aurora, Event Manager
+34453	Holiday Tree
+34454	Holiday Tree
+34455	Happy Dog, Joy to All
 35010	Mercenary
 35011	Mercenary
 35012	Mercenary

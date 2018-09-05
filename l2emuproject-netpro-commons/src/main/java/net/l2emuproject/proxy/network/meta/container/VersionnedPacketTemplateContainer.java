@@ -16,7 +16,14 @@
 package net.l2emuproject.proxy.network.meta.container;
 
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
@@ -32,22 +39,25 @@ import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 {
 	private final Map<T, Map<EndpointType, PacketPrefixResolver>> _containers;
-	private final T _fallback;
+	private final Map<Set<String>, T> _fallbacks;
 	
 	/**
 	 * Creates a versionned packet template container.
 	 * 
 	 * @param containers packet templates
-	 * @param fallback protocol to use if the original has no templates
 	 */
-	public VersionnedPacketTemplateContainer(Map<T, Map<EndpointType, PacketPrefixResolver>> containers, T fallback)
+	public VersionnedPacketTemplateContainer(Map<T, Map<EndpointType, PacketPrefixResolver>> containers)
 	{
-		final Map<EndpointType, PacketPrefixResolver> fallbackMap = containers.get(fallback);
-		if (fallbackMap == null || fallbackMap.size() != 2)
-			throw new IllegalArgumentException(fallback.toString() + " not in " + containers.keySet());
-		
 		_containers = containers;
-		_fallback = fallback;
+		
+		_fallbacks = new HashMap<>();
+		for (final Entry<T, Map<EndpointType, PacketPrefixResolver>> e : containers.entrySet()) {
+			final T protocol = e.getKey();
+			final Map<EndpointType, PacketPrefixResolver> map = e.getValue();
+			if (map == null || map.size() != 2)
+				continue;
+			_fallbacks.compute(protocol.getAltModes(), (k, old) -> old == null || protocol.isNewerThan(old) ? protocol : old);
+		}
 	}
 	
 	/**
@@ -77,11 +87,11 @@ public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 	{
 		final Map<EndpointType, PacketPrefixResolver> map = _containers.get(version);
 		if (map == null)
-			return getTemplate(_fallback, endpoint, packet, offset, length);
+			return getTemplate(getFallback(version.getAltModes()), endpoint, packet, offset, length);
 		
 		final PacketPrefixResolver container = map.get(endpoint);
 		if (container == null)
-			return getTemplate(_fallback, endpoint, packet, offset, length);
+			return getTemplate(getFallback(version.getAltModes()), endpoint, packet, offset, length);
 		
 		return container.resolve(packet);
 	}
@@ -100,11 +110,11 @@ public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 	{
 		final Map<EndpointType, PacketPrefixResolver> map = _containers.get(version);
 		if (map == null)
-			return getTemplate(_fallback, endpoint, packet);
+			return getTemplate(getFallback(version.getAltModes()), endpoint, packet);
 		
 		final PacketPrefixResolver container = map.get(endpoint);
 		if (container == null)
-			return getTemplate(_fallback, endpoint, packet);
+			return getTemplate(getFallback(version.getAltModes()), endpoint, packet);
 		
 		return container.resolve(packet);
 	}
@@ -120,22 +130,44 @@ public class VersionnedPacketTemplateContainer<T extends IProtocolVersion>
 	{
 		final Map<EndpointType, PacketPrefixResolver> map = _containers.get(version);
 		if (map == null)
-			return getTemplates(_fallback, endpoint);
+			return getTemplates(getFallback(version.getAltModes()), endpoint);
 		
 		final PacketPrefixResolver container = map.get(endpoint);
 		if (container == null)
-			return getTemplates(_fallback, endpoint);
+			return getTemplates(getFallback(version.getAltModes()), endpoint);
 		
 		return container.getAllTemplates().stream();
 	}
 	
 	/**
 	 * Returns a protocol version to be used if no packet definitions are provided for the one originally requested.
-	 * 
+	 * @param altModes alternative modes
 	 * @return fallback protocol version
 	 */
-	public T getFallback()
+	public T getFallback(Set<String> altModes)
 	{
-		return _fallback;
+		// quick logic explanation without fancy formatting in javadoc
+		// alternative modes are expected to be in order of significance, e.g.
+		// 1. classic 2. taiwan 3. add_differentiator
+		// and the fallback versions will be queried in this order:
+		// 1. c t a_d
+		// 2. c t
+		// 3. c
+		// 4. t a_d
+		// 5. t
+		// 6. a_d
+		// 7. [no alt modes]
+		
+		if (!altModes.isEmpty()) {
+			List<String> orderedModes = new ArrayList<>(altModes);
+			for (int i = 0; i < altModes.size(); ++i) {
+				for (int sz = altModes.size() - i; sz > 0; --sz) {
+					T fallback = _fallbacks.get(new HashSet<>(orderedModes.subList(i, i + sz)));
+					if (fallback != null)
+						return fallback;
+				}
+			}
+		}
+		return _fallbacks.get(Collections.emptySet());
 	}
 }

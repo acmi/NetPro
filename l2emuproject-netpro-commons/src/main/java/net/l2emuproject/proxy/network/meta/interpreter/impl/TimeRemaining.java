@@ -17,7 +17,8 @@ package net.l2emuproject.proxy.network.meta.interpreter.impl;
 
 import java.util.concurrent.TimeUnit;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.TimeAmountInterpreter;
 
@@ -26,10 +27,10 @@ import net.l2emuproject.util.TimeAmountInterpreter;
  * 
  * @author savormix
  */
-public class TimeRemaining implements IntegerInterpreter
+public class TimeRemaining implements IntegerTranslator
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		return TimeAmountInterpreter.consolidate(value, TimeUnit.SECONDS, TimeUnit.SECONDS, TimeUnit.DAYS, "N/A");
 	}

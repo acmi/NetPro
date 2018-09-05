@@ -23,12 +23,13 @@ import java.util.Map;
 import java.util.Set;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.CompositeReadBufferUnderflowException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueModifierException;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.StringInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.StringTranslator;
 import net.l2emuproject.proxy.network.meta.modifier.StringModifier;
 import net.l2emuproject.proxy.network.meta.structure.FieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.FieldValueReadOption;
@@ -90,10 +91,10 @@ public abstract class AbstractStringFieldElement extends FieldElement<StringFiel
 		if (vi != null)
 		{
 			final InterpreterContext ctx = (InterpreterContext)options.get(COMPUTE_INTERPRETATION);
-			final StringInterpreter interpreter = mcr.getInterpreter(vi, StringInterpreter.class);
-			if (interpreter instanceof ContextualFieldValueInterpreter)
-				((ContextualFieldValueInterpreter)interpreter).reviewContext(ctx.getWireframe());
-			interpreted = interpreter.getInterpretation(modifiedValue, ctx.getEntityContext());
+			final StringTranslator interpreter = mcr.getTranslator(vi, StringTranslator.class);
+			if (interpreter instanceof ContextualFieldValueTranslator)
+				((ContextualFieldValueTranslator)interpreter).reviewContext(ctx.getWireframe());
+			interpreted = interpreter.translate(modifiedValue, ctx.getWireframe().getProtocol(), ctx.getEntityContext());
 		}
 		else
 			interpreted = modifiedValue;

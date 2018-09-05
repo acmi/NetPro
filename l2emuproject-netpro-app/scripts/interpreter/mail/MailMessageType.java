@@ -20,7 +20,7 @@ import eu.revengineer.simplejse.init.InitializationPriority;
 
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 
 /**
@@ -40,8 +40,8 @@ public final class MailMessageType extends ScriptedZeroBasedIntegerIdInterpreter
 	{
 		try
 		{
-			final IntegerInterpreter npc = MetaclassRegistry.getInstance().getInterpreter("Npc", IntegerInterpreter.class);
-			return new Object[] { "Standard", "Private", "NPC", npc.getInterpretation(32_600), "Commission expiry", "Commission success", npc.getInterpretation(33_587), "Gift", null, null
+			final IntegerTranslator npc = MetaclassRegistry.getInstance().getTranslator("Npc", IntegerTranslator.class);
+			return new Object[] { "Standard", "Private", "NPC", npc.translate(32_600, null), "Commission expiry", "Commission success", npc.translate(33_587, null), "Gift", null, null
 			};
 		}
 		catch (final InvalidFieldValueInterpreterException e)

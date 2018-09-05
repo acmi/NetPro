@@ -17,6 +17,7 @@ package net.l2emuproject.proxy.script.analytics.user.impl;
 
 import java.util.Arrays;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.analytics.user.ItemSpecialAbilities;
 
 /**
@@ -24,16 +25,19 @@ import net.l2emuproject.proxy.script.analytics.user.ItemSpecialAbilities;
  */
 public final class ItemSpecialAbilitiesImpl implements ItemSpecialAbilities
 {
+	private final IProtocolVersion _protocol;
 	private final int[] _primaries, _specials;
 	
 	/**
 	 * Wraps item's soecial abilities.
 	 * 
+	 * @param protocol protocol version
 	 * @param primaries set of general SAs
 	 * @param specials set of special SAs
 	 */
-	public ItemSpecialAbilitiesImpl(int[] primaries, int[] specials)
+	public ItemSpecialAbilitiesImpl(IProtocolVersion protocol, int[] primaries, int[] specials)
 	{
+		_protocol = protocol;
 		_primaries = primaries;
 		_specials = specials;
 	}
@@ -53,7 +57,7 @@ public final class ItemSpecialAbilitiesImpl implements ItemSpecialAbilities
 	@Override
 	public String toString()
 	{
-		return String.valueOf(ItemSpecialAbilities.toString(this));
+		return String.valueOf(ItemSpecialAbilities.toString(this, _protocol));
 	}
 	
 	@Override

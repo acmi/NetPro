@@ -20,8 +20,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.io.IOConstants;
-import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -30,7 +31,7 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author _dev_
  */
-public class QuestCompletion extends ScriptedFieldValueInterpreter implements ByteArrayInterpreter, IOConstants
+public class QuestCompletion extends ScriptedFieldValueInterpreter implements ByteArrayTranslator, IOConstants
 {
 	private final String[] _questNames;
 	
@@ -58,7 +59,7 @@ public class QuestCompletion extends ScriptedFieldValueInterpreter implements By
 	}
 	
 	@Override
-	public Object getInterpretation(byte[] value, ICacheServerID entityCacheContext)
+	public Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final L2TextBuilder tb = new L2TextBuilder();
 		final int sz = Math.min(value.length, _questNames.length);

@@ -138,6 +138,16 @@ public final class L2GameClient extends AbstractL2ClientProxy
 	}
 	
 	/**
+	 * Adjust protocol version based on alternative mode(s) communicated after the bare protocol version value was sent.
+	 * 
+	 * @param version adjusted protocol version
+	 */
+	public void adjustVersion(IGameProtocolVersion version)
+	{
+		super.setVersion(version);
+	}
+	
+	/**
 	 * Returns the packet opcode shuffling implementation.
 	 * 
 	 * @return opcode deobfuscator

@@ -1988,105 +1988,30 @@
 		<packet id="C_EX_REQUEST_UNLOCKED_ITEM" name="RequestExRequestUnlockedItem" />
 		<packet id="C_EX_LOCKED_ITEM_CANCEL" name="RequestExLockedItemCancel" />
 		<packet id="C_EX_UNLOCKED_ITEM_CANCEL" name="RequestExUnLockedItemCancel" />
+		<packet id="C_EX_INTERACT_MODIFY" name="RequestInteractModify" />
+		<packet id="C_EX_XIGN_CODE" name="RequestXignCode" />
+		
+		<!-- Etina's Fate/152 -->
+		<packet id="C_EX_ELEMENTAL_SPIRIT_CHANGE_TYPE" name="RequestExElementalSpiritChangeType" />
+		<packet id="C_EX_TRY_ENCHANT_ARTIFACT" name="RequestEnchantArtifact" />
 	</client>
 	<server>
-		<!--
-		UNICODE "SetEncryption"
-		UNICODE "(Receive)%s"
-		-->
-		<packet id="LS_SM_SET_ENCRYPTION" name="SetEncryption" /> <!-- ??? -->
-		<!--
-		ASCII "ddddd"
-		UNICODE "AuthGameGuardPacket"
-		UNICODE "(Receive)%s SessionID Error:%d,%d"
-		-->
-		<packet id="LS_SM_AUTH_GAME_GUARD" name="AuthGameGuard" />
-		<!--
-		UNICODE "BlockedAccountPacket"
-		UNICODE "(Receive)%s"
-		ASCII "dd"
-		-->
-		<packet id="LS_SM_BLOCKED_ACCOUNT" name="BlockedAccount" />
-		<!--
-		UNICODE "LoginFailPacket2"
-		UNICODE "(Receive)%s errorcode:%d"
-		-->
+		<packet id="LS_SM_SET_ENCRYPTION" name="ProtocolVersion" />
 		<packet id="LS_SM_LOGIN_FAIL_2" name="LoginFail2" />
-		<!--
-		UNICODE "AccountKickedPacket"
-		UNICODE "(Receive)%s"
-		-->
-		<packet id="LS_SM_ACCOUNT_KICKED" name="AccountKicked" />
-		<!--
-		UNICODE "BlockedAccountWithMsgPacket"
-		UNICODE "(Receive)%s"
-		ASCII "hS"
-		-->
-		<packet id="LS_SM_BLOCKED_ACCOUNT_WITH_MSG" name="BlockedAccountWithMsg" />
-		<!--
-		UNICODE "SCCheckReqPacket"
-		UNICODE "(Receive)%s"
-		ASCII "dc"
-		-->
-		<packet id="LS_SM_SC_CHECK_REQ" name="SCCheckReq" />
-		<!--
-		UNICODE "LoginOkPacket"
-		UNICODE "(Receive)%s"
-		-->
+		<packet id="LS_SM_BLOCKED_ACCOUNT" name="BlockedAccount" />
 		<packet id="LS_SM_LOGIN_OK" name="LoginOk" />
-		<!--
-		UNICODE "ServerFailPacket"
-		UNICODE "(Receive)%s"
-		-->
-		<packet id="LS_SM_SERVER_FAIL" name="ServerFail" />
-		<!--
-		ASCII "cc"
-		ASCII "cddcchhcdc"
-		ASCII "hc"
-		UNICODE "ServerListPacket"
-		UNICODE "(Receive)%s Character Created ServerNum:%d"
-		ASCII "ccc"
-		UNICODE "ServerListPacket"
-		UNICODE "(Receive)%s Server ID:%d, char num:%d, tobeDeletedNum:%d"
-		UNICODE "ServerListPacket"
-		UNICODE "(Receive)%s ServerNum:%d"
-		-->
 		<packet id="LS_SM_SERVER_LIST" name="ServerList" />
-		<!--
-		UNICODE "PlayFailPacket"
-		UNICODE "(Receive)%s"
-		-->
+		<packet id="LS_SM_SERVER_FAIL" name="ServerFail" />
 		<packet id="LS_SM_PLAY_FAIL" name="PlayFail" />
-		<!--
-		UNICODE "PlayOkPacket"
-		UNICODE "(Receive)%s"
-		ASCII "dd"
-		-->
-		<packet id="LS_SM_PLAY_OK" name="PlayOk" /> <!-- ??? -->
-		<packet id="LS_SM_11" name="Unnamed 11" />
-		
-		<!--
-		UNICODE "TelAuthStartedPacket"
-		UNICODE "(Receive)%s"
-		-->
-		<packet id="LS_SM_TEL_AUTH_STARTED" name="TelAuthStarted" />
-		<!--
-		UNICODE "LoginOtpFail"
-		UNICODE "(Receive)%s"
-		-->
+		<packet id="LS_SM_PLAY_OK" name="PlayOk" />
+		<packet id="LS_SM_ACCOUNT_KICKED" name="AccountKicked" />
+		<packet id="LS_SM_BLOCKED_ACCOUNT_WITH_MSG" name="BlockedAccountWithMsg" />
+		<packet id="LS_SM_SC_CHECK_REQ" name="SCCheckReq" />
+		<packet id="LS_SM_AUTH_GAME_GUARD" name="AuthGameGuard" />
 		<packet id="LS_SM_LOGIN_OTP_FAIL" name="LoginOtpFail" />
-		<!--
-		UNICODE "PIAgreementAckPacket"
-		UNICODE "(Receive)%s"
-		ASCII "dc"
-		-->
-		<packet id="LS_SM_PI_AGREEMENT_ACK" name="PIAgreementAck" />
-		<!--
-		UNICODE "PIAgreementCheckAckPacket"
-		UNICODE "(Receive)%s"
-		ASCII "dc"
-		-->
+		<packet id="LS_SM_TEL_AUTH_STARTED" name="TelAuthStarted" />
 		<packet id="LS_SM_PI_AGREEMENT_CHECK_ACK" name="PIAgreementCheckAck" />
+		<packet id="LS_SM_PI_AGREEMENT_ACK" name="PIAgreementAck" />
 		
 		<packet id="5" name="Dummy_05" />
 		<packet id="8" name="AttackCanceled" />
@@ -4842,5 +4767,15 @@
 		<packet id="S_EX_ELEMENTAL_SPIRIT_ABSORB" name="ExElementalSpiritAbsorb" />
 		<packet id="S_EX_CHOOSE_LOCKED_ITEM" name="ExChooseLockedItem" />
 		<packet id="S_EX_LOCKED_RESULT" name="ExLockedResult" />
+		<packet id="S_EX_XIGN_CODE" name="ExXignCode" />
+		
+		<!-- Etina's Fate/152 -->
+		<packet id="S_EX_ELEMENTAL_SPIRIT_EXTRACT" name="ExElementalSpiritExtract" />
+		<packet id="S_EX_OLYMPIAD_INFO" name="ExOlympiadInfo" />
+		<packet id="S_EX_OLYMPIAD_RECORD" name="ExOlympiadRecord" />
+		<packet id="S_EX_OLYMPIAD_MATCH_INFO" name="ExOlympiadMatchInfo" />
+		<packet id="S_EX_ELEMENTAL_SPIRIT_GET_EXP" name="ExElementalSpiritGetExp" />
+		<packet id="S_EX_ITEM_ANNOUNCE" name="ExItemAnnounce" />
+		<packet id="S_EX_TRY_ENCHANT_ARTIFACT_RESULT" name="ExEnchantArtifactResult" />
 	</server>
 </packets>

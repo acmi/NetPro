@@ -15,6 +15,8 @@
  */
 package net.l2emuproject.proxy.state.entity.context;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
+
 /**
  * This is a marker superinterface for entity existence boundary defining cache contexts.
  * 
@@ -31,4 +33,9 @@ public interface ICacheServerID
 	 *
 	boolean isLastOfAKind();
 	*/
+	/**
+	 * Returns the protocol version of the associated context.
+	 * @return protocol version
+	 */
+	//IProtocolVersion getProtocol();
 }

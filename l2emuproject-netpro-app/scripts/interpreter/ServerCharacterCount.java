@@ -16,28 +16,29 @@
 package interpreter;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
  * @author _dev_
  */
-public class ServerCharacterCount extends ScriptedFieldValueInterpreter implements ByteArrayInterpreter
+public class ServerCharacterCount extends ScriptedFieldValueInterpreter implements ByteArrayTranslator
 {
 	@Override
-	public Object getInterpretation(byte[] value, ICacheServerID entityCacheContext)
+	public Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value.length < 1 || value[0] == 0)
 			return "None";
 			
-		IntegerInterpreter interp = null;
+		IntegerTranslator interp = null;
 		try
 		{
-			interp = MetaclassRegistry.getInstance().getInterpreter("GameServerName", IntegerInterpreter.class);
+			interp = MetaclassRegistry.getInstance().getTranslator("GameServerName", IntegerTranslator.class);
 		}
 		catch (InvalidFieldValueInterpreterException e)
 		{
@@ -53,7 +54,7 @@ public class ServerCharacterCount extends ScriptedFieldValueInterpreter implemen
 				
 			tb.append(cnt).append(" in ");
 			if (interp != null)
-				tb.append(interp.getInterpretation(id, entityCacheContext));
+				tb.append(interp.translate(id, protocol, entityCacheContext));
 			else
 				tb.append("Server").append(id);
 			tb.append(", ");

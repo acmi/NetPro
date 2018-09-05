@@ -16,7 +16,6 @@
 package net.l2emuproject.proxy.io.definitions;
 
 import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
@@ -34,7 +33,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.FieldValueCondition;
-import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
+import net.l2emuproject.proxy.network.meta.FieldValueTranslator;
 import net.l2emuproject.proxy.network.meta.FieldValueModifier;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.PacketTemplate;
@@ -82,7 +81,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 	
 	private int _added, _updated;
 	
-	EndpointPacketLoader(IProtocolVersion protocolVersion, Map<String, byte[]> id2Prefix, Map<String, String> id2Name, Map<String, IPacketTemplate> packetsByID, ByteBuffer structureBuffer)
+	EndpointPacketLoader(IProtocolVersion protocolVersion, Map<String, byte[]> id2Prefix, Map<String, String> id2Name, Map<String, IPacketTemplate> packetsByID)
 	{
 		_protocolVersion = protocolVersion;
 		_id2Prefix = id2Prefix;
@@ -244,7 +243,7 @@ class EndpointPacketLoader extends SimpleFileVisitor<Path>
 		{
 			try
 			{
-				MetaclassRegistry.getInstance().getInterpreter(valueInterpreter, FieldValueInterpreter.class);
+				MetaclassRegistry.getInstance().getTranslator(valueInterpreter, FieldValueTranslator.class);
 			}
 			catch (InvalidFieldValueInterpreterException e)
 			{

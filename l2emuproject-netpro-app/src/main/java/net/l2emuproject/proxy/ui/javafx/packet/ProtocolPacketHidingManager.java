@@ -20,12 +20,10 @@ import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.Collections;
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.function.Consumer;
@@ -77,8 +75,7 @@ public final class ProtocolPacketHidingManager implements IOConstants
 				{
 					try
 					{
-						PacketHidingConfigFileUtils.saveHidingConfiguration(PROTOCOL_PACKET_HIDING_DIR
-								.resolve((ServiceType.valueOf(protocol).isLogin() ? AUTH_PREFIX : GAME_PREFIX) + protocol.getVersion() + "." + PROTOCOL_PACKET_HIDING_EXTENSION), cfg.get());
+						PacketHidingConfigFileUtils.saveHidingConfiguration(PROTOCOL_PACKET_HIDING_DIR.resolve(toFilename(protocol)), cfg.get());
 					}
 					catch (IOException e)
 					{
@@ -120,17 +117,13 @@ public final class ProtocolPacketHidingManager implements IOConstants
 	{
 		final Map<Path, Exception> report = new TreeMap<Path, Exception>();
 		
-		final Map<ServiceType, String> type2Prefix = new EnumMap<>(ServiceType.class);
-		type2Prefix.put(ServiceType.LOGIN, AUTH_PREFIX);
-		type2Prefix.put(ServiceType.GAME, GAME_PREFIX);
-		
 		final Map<IProtocolVersion, ReadOnlyObjectWrapper<IPacketHidingConfig>> configurations = new HashMap<>();
-		for (final Entry<ServiceType, String> e : type2Prefix.entrySet())
+		for (final ServiceType serviceType : ServiceType.VALUES)
 		{
 			int totalConfigurations = 0;
-			for (final IProtocolVersion protocol : VersionnedPacketTable.getInstance().getKnownProtocols(e.getKey()))
+			for (final IProtocolVersion protocol : VersionnedPacketTable.getInstance().getKnownProtocols(serviceType))
 			{
-				final Path file = PROTOCOL_PACKET_HIDING_DIR.resolve(e.getValue() + protocol.getVersion() + "." + PROTOCOL_PACKET_HIDING_EXTENSION);
+				final Path file = PROTOCOL_PACKET_HIDING_DIR.resolve(toFilename(protocol));
 				try
 				{
 					configurations.put(protocol, new ReadOnlyObjectWrapper<>(PacketHidingConfigFileUtils.readHidingConfiguration(file)));
@@ -146,7 +139,7 @@ public final class ProtocolPacketHidingManager implements IOConstants
 					report.put(file, ex);
 				}
 			}
-			LOG.info("Loaded packet hiding configurations for " + totalConfigurations + " " + e.getKey().toString().toLowerCase(Locale.ENGLISH) + " protocol versions.");
+			LOG.info("Loaded packet hiding configurations for " + totalConfigurations + " " + serviceType.toString().toLowerCase(Locale.ENGLISH) + " protocol versions.");
 		}
 		_configurations.putAll(configurations);
 		
@@ -156,6 +149,14 @@ public final class ProtocolPacketHidingManager implements IOConstants
 	private IPacketHidingConfig newHidingConfig()
 	{
 		return new PacketHidingConfig(new HashSet<>(Collections.emptySet()), new HashSet<>(Collections.emptySet()));
+	}
+	
+	private static final String toFilename(IProtocolVersion protocol) {
+		final StringBuilder sb = new StringBuilder(ServiceType.valueOf(protocol).isLogin() ? AUTH_PREFIX : GAME_PREFIX).append(protocol.getVersion());
+		for (final String altMode : protocol.getAltModes()) {
+			sb.append('-').append(altMode);
+		}
+		return sb.append('.').append(PROTOCOL_PACKET_HIDING_EXTENSION).toString();
 	}
 	
 	/**

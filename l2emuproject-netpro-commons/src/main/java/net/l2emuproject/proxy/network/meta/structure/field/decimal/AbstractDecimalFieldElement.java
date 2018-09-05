@@ -26,8 +26,8 @@ import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueModifierException;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.DecimalInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.DecimalTranslator;
 import net.l2emuproject.proxy.network.meta.modifier.DecimalModifier;
 import net.l2emuproject.proxy.network.meta.structure.FieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.FieldValueReadOption;
@@ -73,7 +73,7 @@ public abstract class AbstractDecimalFieldElement extends FieldElement<DecimalFi
 		{
 			value = readValue(buf);
 		}
-		catch (BufferUnderflowException e)
+		catch (final BufferUnderflowException e)
 		{
 			if (isOptional())
 				return null;
@@ -89,10 +89,10 @@ public abstract class AbstractDecimalFieldElement extends FieldElement<DecimalFi
 		if (vi != null)
 		{
 			final InterpreterContext ctx = (InterpreterContext)options.get(COMPUTE_INTERPRETATION);
-			final DecimalInterpreter interpreter = mcr.getInterpreter(vi, DecimalInterpreter.class);
-			if (interpreter instanceof ContextualFieldValueInterpreter)
-				((ContextualFieldValueInterpreter)interpreter).reviewContext(ctx.getWireframe());
-			interpreted = interpreter.getInterpretation(modifiedValue, ctx.getEntityContext());
+			final DecimalTranslator interpreter = mcr.getTranslator(vi, DecimalTranslator.class);
+			if (interpreter instanceof ContextualFieldValueTranslator)
+				((ContextualFieldValueTranslator)interpreter).reviewContext(ctx.getWireframe());
+			interpreted = interpreter.translate(modifiedValue, ctx.getWireframe().getProtocol(), ctx.getEntityContext());
 		}
 		else
 			interpreted = modifiedValue;

@@ -15,7 +15,8 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -24,10 +25,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public final class WeaponStatus extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public final class WeaponStatus extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		switch ((int)value)
 		{
@@ -35,6 +36,8 @@ public final class WeaponStatus extends ScriptedFieldValueInterpreter implements
 				return "Unarmed";
 			case 40:
 				return "Armed";
+			case 80:
+				return "Armed (2h)";
 			default:
 				return value;
 		}

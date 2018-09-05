@@ -17,6 +17,7 @@ package net.l2emuproject.proxy.io.packetlog;
 
 import java.nio.file.Path;
 import java.util.Map;
+import java.util.Set;
 
 import net.l2emuproject.proxy.network.ServiceType;
 
@@ -36,10 +37,13 @@ public class LogFileHeader
 	private final long _created;
 	private final ServiceType _service;
 	private final int _protocol;
+	private final Set<String> _altModes;
+	private final int _compressionType;
 	
 	private final int _packets;
 	private final Map<Integer, Integer> _cp;
 	private final Map<Integer, Integer> _sp;
+	private final long _totalPacketBytes;
 	
 	/**
 	 * Constructs this header.
@@ -53,12 +57,15 @@ public class LogFileHeader
 	 * @param created log file creation timestamp
 	 * @param service associated service type
 	 * @param protocol network protocol version (-1 for legacy format logs)
+	 * @param altModes alternative modes
+	 * @param compressionType compression type
 	 * @param packets amount of packets within the file (-1 for legacy format logs)
 	 * @param cp client packet amounts within the file (empty for legacy format logs)
 	 * @param sp server packet amounts within the file (empty for legacy format logs)
+	 * @param totalPacketBytes total amount of bytes with packet payload data
 	 */
-	LogFileHeader(Path logFile, long logFileSize, int version, int headerSize, int footerSize, long footerStart, long created, ServiceType service, int protocol, int packets, Map<Integer, Integer> cp,
-			Map<Integer, Integer> sp)
+	LogFileHeader(Path logFile, long logFileSize, int version, int headerSize, int footerSize, long footerStart, long created, ServiceType service, int protocol, Set<String> altModes,
+			int compressionType, int packets, Map<Integer, Integer> cp, Map<Integer, Integer> sp, long totalPacketBytes)
 	{
 		_logFile = logFile;
 		_logFileSize = logFileSize;
@@ -69,10 +76,13 @@ public class LogFileHeader
 		_created = created;
 		_service = service;
 		_protocol = protocol;
+		_altModes = altModes;
+		_compressionType = compressionType;
 		
 		_packets = packets;
 		_cp = cp;
 		_sp = sp;
+		_totalPacketBytes = totalPacketBytes;
 	}
 	
 	/**
@@ -166,6 +176,26 @@ public class LogFileHeader
 	}
 	
 	/**
+	 * Alternative game modes used by the server.
+	 * 
+	 * @return alternative modes
+	 */
+	public Set<String> getAltModes()
+	{
+		return _altModes;
+	}
+	
+	/**
+	 * Type of compression used in this packet log.
+	 * 
+	 * @return compression type
+	 */
+	public int getCompressionType()
+	{
+		return _compressionType;
+	}
+	
+	/**
 	 * Returns the client packet amount map for the associated packet log file.
 	 * 
 	 * @return client packet amounts within the file
@@ -183,6 +213,16 @@ public class LogFileHeader
 	public Map<Integer, Integer> getSp()
 	{
 		return _sp;
+	}
+	
+	/**
+	 * Returns the total amount of bytes used by packet payload data.
+	 * 
+	 * @return total bytes of packet content
+	 */
+	public long getTotalPacketBytes()
+	{
+		return _totalPacketBytes;
 	}
 	
 	/**

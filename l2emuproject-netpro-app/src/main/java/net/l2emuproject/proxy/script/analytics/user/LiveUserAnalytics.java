@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.lang3.ArrayUtils;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.ForwardedNotificationManager;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
@@ -391,6 +392,7 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 			return;
 		}
 		
+		final IProtocolVersion protocol = client.getProtocol();
 		deletion:
 		{
 			final List<EnumeratedPayloadField> deletions = buf.getFieldIndices(DELETED_OID);
@@ -466,10 +468,10 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 				else
 					encLvl = 0;
 				final ItemAugmentation augmentation = ex.contains(ItemExtension.AUGMENTATION)
-						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex)))
+						? new ItemAugmentationImpl(protocol, buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex)))
 						: ItemAugmentation.NO_AUGMENTATION;
 				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
-						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
+						? new ItemEnchantEffectsImpl(protocol, buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
 						: ItemEnchantEffects.NO_EFFECTS;
 				final int appearance;
 				if (ex.contains(ItemExtension.APPEARANCE) && appIndex < apps.size())
@@ -493,11 +495,11 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 						sa1[j] = buf.readInteger32(sa1s.get(++sa1Index));
 					for (int j = 0; j < sa2.length; ++j)
 						sa2[j] = buf.readInteger32(sa2s.get(++sa2Index));
-					sa = new ItemSpecialAbilitiesImpl(sa1, sa2);
+					sa = new ItemSpecialAbilitiesImpl(protocol, sa1, sa2);
 				}
 				else
 					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
-				inventoryItems.add(new InventoryItem(objectID, templateID, amount, encLvl, augmentation, ItemElementalAttributes.NO_ATTRIBUTES, encEff, appearance, sa));
+				inventoryItems.add(new InventoryItem(protocol, objectID, templateID, amount, encLvl, augmentation, ItemElementalAttributes.NO_ATTRIBUTES, encEff, appearance, sa));
 			}
 			computeIfAbsent(client, USER_INVENTORY_KEY, k -> new UserInventory()).setInventory(inventoryItems);
 		}
@@ -537,10 +539,10 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 				else
 					encLvl = 0;
 				final ItemAugmentation augmentation = ex.contains(ItemExtension.AUGMENTATION)
-						? new ItemAugmentationImpl(buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex)))
+						? new ItemAugmentationImpl(protocol, buf.readInteger32(aug1s.get(++augIndex)), buf.readInteger32(aug2s.get(augIndex)))
 						: ItemAugmentation.NO_AUGMENTATION;
 				final ItemEnchantEffects encEff = ex.contains(ItemExtension.ENCHANT_EFFECT)
-						? new ItemEnchantEffectsImpl(buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
+						? new ItemEnchantEffectsImpl(protocol, buf.readInteger32(enc1s.get(++encEffectIndex)), buf.readInteger32(enc2s.get(encEffectIndex)), buf.readInteger32(enc3s.get(encEffectIndex)))
 						: ItemEnchantEffects.NO_EFFECTS;
 				final int appearance;
 				if (ex.contains(ItemExtension.APPEARANCE) && appIndex < apps.size())
@@ -564,12 +566,12 @@ public final class LiveUserAnalytics extends PpeEnabledGameScript implements Res
 						sa1[j] = buf.readInteger32(sa1s.get(++sa1Index));
 					for (int j = 0; j < sa2.length; ++j)
 						sa2[j] = buf.readInteger32(sa2s.get(++sa2Index));
-					sa = new ItemSpecialAbilitiesImpl(sa1, sa2);
+					sa = new ItemSpecialAbilitiesImpl(protocol, sa1, sa2);
 				}
 				else
 					sa = ItemSpecialAbilities.NO_SPECIAL_ABILITY;
 				
-				final InventoryItem item = new InventoryItem(objectID, templateID, amount, encLvl, augmentation, ItemElementalAttributes.NO_ATTRIBUTES, encEff, appearance, sa);
+				final InventoryItem item = new InventoryItem(protocol, objectID, templateID, amount, encLvl, augmentation, ItemElementalAttributes.NO_ATTRIBUTES, encEff, appearance, sa);
 				final int change = buf.readInteger32(changes.get(i));
 				try
 				{

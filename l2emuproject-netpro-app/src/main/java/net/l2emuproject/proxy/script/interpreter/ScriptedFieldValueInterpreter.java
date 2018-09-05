@@ -15,16 +15,16 @@
  */
 package net.l2emuproject.proxy.script.interpreter;
 
-import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
+import net.l2emuproject.proxy.network.meta.FieldValueTranslator;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
 
 /**
- * Enhances {@link FieldValueInterpreter} with managed script capabilities.
+ * Enhances {@link FieldValueTranslator} with managed script capabilities.
  * 
  * @author _dev_
  */
-public abstract class ScriptedFieldValueInterpreter extends ScriptedMetaclass implements FieldValueInterpreter
+public abstract class ScriptedFieldValueInterpreter extends ScriptedMetaclass implements FieldValueTranslator
 {
 	@Override
 	public String getName()

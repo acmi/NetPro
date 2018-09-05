@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.script.analytics.user.impl;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.analytics.user.ItemAugmentation;
 
 /**
@@ -24,16 +25,19 @@ import net.l2emuproject.proxy.script.analytics.user.ItemAugmentation;
  */
 public final class ItemAugmentationImpl implements ItemAugmentation
 {
+	private final IProtocolVersion _protocol;
 	private final int _effect1, _effect2;
 	
 	/**
 	 * Creates an augmentation with given variation effects.
 	 * 
+	 * @param protocol protocol version
 	 * @param effect1 first effect
 	 * @param effect2 second effect
 	 */
-	public ItemAugmentationImpl(int effect1, int effect2)
+	public ItemAugmentationImpl(IProtocolVersion protocol, int effect1, int effect2)
 	{
+		_protocol = protocol;
 		_effect1 = effect1;
 		_effect2 = effect2;
 	}
@@ -53,7 +57,7 @@ public final class ItemAugmentationImpl implements ItemAugmentation
 	@Override
 	public String toString()
 	{
-		return String.valueOf(ItemAugmentation.toString(this));
+		return String.valueOf(ItemAugmentation.toString(this, _protocol));
 	}
 	
 	@Override

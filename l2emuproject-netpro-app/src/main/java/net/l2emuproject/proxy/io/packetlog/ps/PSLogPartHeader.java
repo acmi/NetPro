@@ -17,6 +17,7 @@ package net.l2emuproject.proxy.io.packetlog.ps;
 
 import java.net.InetAddress;
 import java.nio.file.Path;
+import java.util.Set;
 
 /**
  * A class that stores a PacketSamurai/YAL packet log header.
@@ -36,7 +37,9 @@ public class PSLogPartHeader
 	private final String _protocolName, _comments, _serverType;
 	private final long _analyzerBitset, _sessionID;
 	private final boolean _enciphered;
-	private final int _protocol, _headerSize;
+	private final int _protocol;
+	private final Set<String> _altModes;
+	private final int _headerSize;
 	
 	/**
 	 * Constructs this header.
@@ -57,9 +60,10 @@ public class PSLogPartHeader
 	 * @param sessionID [connection source port] × [connection destination port]
 	 * @param enciphered {@code true} if stream has been pre-deciphered, {@code false} otherwise
 	 * @param protocol protocol version or {@code -1}
+	 * @param altModes alternative modes
 	 */
 	PSLogPartHeader(Path logFile, long logFileSize, int version, int packets, boolean multipart, int partNumber, int servicePort, InetAddress clientIP, InetAddress serverIP,
-			String protocolName, String comments, String serverType, long analyzerBitset, long sessionID, boolean enciphered, int protocol)
+			String protocolName, String comments, String serverType, long analyzerBitset, long sessionID, boolean enciphered, int protocol, Set<String> altModes)
 	{
 		_logFile = logFile;
 		_logFileSize = logFileSize;
@@ -77,6 +81,7 @@ public class PSLogPartHeader
 		_sessionID = sessionID;
 		_enciphered = enciphered;
 		_protocol = protocol;
+		_altModes = altModes;
 		
 		_headerSize = 1 + 4 + 1 + 2 + 2 + 4 + 4 + ((_protocolName.length() + 1) << 1) + ((_comments.length() + 1) << 1) + ((_serverType.length() + 1) << 1) + 8 + 8 + 1;
 	}
@@ -239,6 +244,16 @@ public class PSLogPartHeader
 	public int getProtocol()
 	{
 		return _protocol;
+	}
+	
+	/**
+	 * Returns the alternative game modes used by the server.
+	 * 
+	 * @return alternative modes
+	 */
+	public Set<String> getAltModes()
+	{
+		return _altModes;
 	}
 	
 	/**

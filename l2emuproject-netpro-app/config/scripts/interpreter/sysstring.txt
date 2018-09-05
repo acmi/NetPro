@@ -2402,7 +2402,7 @@
 2492	VP
 2493	Tutorial Indicator
 2494	Vitality:
-2495	Bonus XP applied
+2495	Bonus XP/SP applied
 2496	Not applied
 2497	Hit
 2498	Please enter in a character PIN. The character PIN must be entered when you wish to login or delete a character. (This PIN is separate than your game account password.)

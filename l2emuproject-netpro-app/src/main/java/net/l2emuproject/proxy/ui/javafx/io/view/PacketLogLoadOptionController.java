@@ -146,7 +146,7 @@ public final class PacketLogLoadOptionController extends AbstractLogLoadOptionCo
 		controller.setOnProtocolPacketHidingConfigurationChange(_mainWindow::refreshFilters);
 		
 		closeTab(event);
-		tab.setUserData(new PacketLogTabUserData(controller));
+		tab.setUserData(new PacketLogTabUserData(controller, null));
 		_mainWindow.addConnectionTab(tab);
 		final int totalPackets = logFileHeader.getPackets();
 		progressDialog.setFilename(filename);

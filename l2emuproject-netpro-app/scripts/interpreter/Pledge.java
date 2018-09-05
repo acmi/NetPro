@@ -16,9 +16,10 @@
 package interpreter;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.PledgeCrestInfo;
 import net.l2emuproject.proxy.state.entity.PledgeInfo;
@@ -31,10 +32,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public class Pledge extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public class Pledge extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final PledgeInfo pi = PledgeInfoCache.getInstance().getOrAdd((int)value, entityCacheContext);
 		
@@ -47,7 +48,7 @@ public class Pledge extends ScriptedFieldValueInterpreter implements IntegerInte
 		}
 		try
 		{
-			sb.append(MetaclassRegistry.getInstance().getInterpreter("ObjectID", IntegerInterpreter.class).getInterpretation(value, entityCacheContext));
+			sb.append(MetaclassRegistry.getInstance().getTranslator("ObjectID", IntegerTranslator.class).translate(value, protocol, entityCacheContext));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{

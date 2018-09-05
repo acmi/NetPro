@@ -17,9 +17,10 @@ package net.l2emuproject.proxy.script.analytics.user;
 
 import org.apache.commons.lang3.tuple.Triple;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 
 /**
  * An interface representing an item's enchant effects.
@@ -53,15 +54,16 @@ public interface ItemEnchantEffects
 	 * Returns the complete descriptions of all three variation effects assigned to the given augmentation.
 	 * 
 	 * @param enchantEffect item enchant effects
+	 * @param protocol protocol version
 	 * @return variation effect descriptions
 	 */
-	static Triple<String, String, String> toString(ItemEnchantEffects enchantEffect)
+	static Triple<String, String, String> toString(ItemEnchantEffects enchantEffect, IProtocolVersion protocol)
 	{
 		try
 		{
-			final IntegerInterpreter mapper = MetaclassRegistry.getInstance().getInterpreter("Augmentation", IntegerInterpreter.class);
-			return Triple.of(String.valueOf(mapper.getInterpretation(enchantEffect.getEffect1())), String.valueOf(mapper.getInterpretation(enchantEffect.getEffect2())),
-					String.valueOf(mapper.getInterpretation(enchantEffect.getEffect3())));
+			final IntegerTranslator mapper = MetaclassRegistry.getInstance().getTranslator("Augmentation", IntegerTranslator.class);
+			return Triple.of(String.valueOf(mapper.translate(enchantEffect.getEffect1(), protocol, null)), String.valueOf(mapper.translate(enchantEffect.getEffect2(), protocol, null)),
+					String.valueOf(mapper.translate(enchantEffect.getEffect3(), protocol, null)));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{

@@ -15,30 +15,22 @@
  */
 package interpreter.appearance;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.proxy.ui.savormix.io.base.IOConstants;
-import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * Interprets the given byte/word/dword as a quest state.
  * 
  * @author savormix
  */
-public abstract class BeautyTranslator extends ScriptedIntegerIdInterpreter implements ContextualFieldValueInterpreter
+public abstract class BeautyTranslator extends ScriptedIntegerIdInterpreter implements ContextualFieldValueTranslator
 {
-	private static final L2Logger LOG = L2Logger.getLogger(BeautyTranslator.class);
-	
 	/** Class name to use. */
 	protected final ThreadLocal<Long> _className;
 	
@@ -49,7 +41,7 @@ public abstract class BeautyTranslator extends ScriptedIntegerIdInterpreter impl
 	 */
 	protected BeautyTranslator(String filename)
 	{
-		super(loadInterpretations(filename));
+		super(loadFromResource2(filename));
 		
 		_className = new ThreadLocal<Long>(){
 			@Override
@@ -58,31 +50,6 @@ public abstract class BeautyTranslator extends ScriptedIntegerIdInterpreter impl
 				return -1L;
 			}
 		};
-	}
-	
-	private static final Map<Long, String> loadInterpretations(String filename)
-	{
-		final Map<Long, String> mapping = new HashMap<>();
-		try (final BufferedReader br = IOConstants.openScriptResource("interpreter", filename))
-		{
-			for (String line; (line = br.readLine()) != null;)
-			{
-				final int idx = line.indexOf('\t'), idx2 = line.indexOf('\t', idx + 1);
-				if (idx == -1 || idx2 == -1)
-					continue;
-				
-				final long className = Integer.parseInt(line.substring(0, idx));
-				final long id = Integer.parseInt(line.substring(idx + 1, idx2));
-				final String name = line.substring(idx2 + 1);
-				
-				mapping.put((className << 32) | (id & 0xFF_FF_FF_FFL), name.intern());
-			}
-		}
-		catch (final IOException e)
-		{
-			LOG.error("Could not load beauty shop color interpretations", e);
-		}
-		return mapping.isEmpty() ? Collections.emptyMap() : mapping;
 	}
 	
 	@Override
@@ -102,12 +69,12 @@ public abstract class BeautyTranslator extends ScriptedIntegerIdInterpreter impl
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		try
 		{
 			value = (_className.get() << 32) | value;
-			final Object result = super.getInterpretation(value, entityCacheContext);
+			final Object result = super.translate(value, protocol, entityCacheContext);
 			if (result instanceof String)
 				return result;
 			// fallback: interpret as ID

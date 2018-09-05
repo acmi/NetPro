@@ -225,6 +225,7 @@ public class PSPacketLogUtils
 				leBuffer.clear();
 				
 				protocolVersionNumber = leBuffer.getInt();
+				// FIXME: alt modes
 			}
 			catch (final EOFException e)
 			{
@@ -232,7 +233,7 @@ public class PSPacketLogUtils
 				totalPackets = 0;
 			}
 			return new PSLogPartHeader(packetLogFile, size, logFileVersion, totalPackets, multipart, partNumber, servicePort, sourceIP, destinationIP, protocolName, comments, serverType,
-					analyzerBitSet, sessionID, enciphered, protocolVersionNumber);
+					analyzerBitSet, sessionID, enciphered, protocolVersionNumber, Collections.emptySet());
 		}
 		catch (final BufferUnderflowException e)
 		{

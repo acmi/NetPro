@@ -15,32 +15,24 @@
  */
 package interpreter;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * @author _dev_
  */
-public final class FlyPathNode extends ScriptedIntegerIdInterpreter implements ContextualFieldValueInterpreter, IntegerInterpreter
+public final class FlyPathNode extends ScriptedIntegerIdInterpreter implements ContextualFieldValueTranslator, IntegerTranslator
 {
-	private static final L2Logger LOG = L2Logger.getLogger(FlyPathNode.class);
-	
 	private final ThreadLocal<Integer> _path;
 	
 	/** Constructs this interpreter. */
 	public FlyPathNode()
 	{
-		super(loadInterpretations());
+		super(loadFromResource2("fly.txt"));
 		
 		_path = new ThreadLocal<Integer>()
 		{
@@ -52,31 +44,6 @@ public final class FlyPathNode extends ScriptedIntegerIdInterpreter implements C
 		};
 	}
 	
-	private static final Map<Long, String> loadInterpretations()
-	{
-		final Map<Long, String> mapping = new HashMap<>();
-		try (final BufferedReader br = IOConstants.openScriptResource("interpreter", "fly.txt"))
-		{
-			for (String line; (line = br.readLine()) != null;)
-			{
-				final int idx = line.indexOf('\t'), idx2 = line.indexOf('\t', idx + 1);
-				if (idx == -1 || idx2 == -1)
-					continue;
-				
-				final long path = Integer.parseInt(line.substring(0, idx));
-				final int node = Integer.parseInt(line.substring(idx + 1, idx2));
-				final String name = line.substring(idx2 + 1);
-				
-				mapping.put(Long.valueOf((path << 32) | node), name);
-			}
-		}
-		catch (IOException e)
-		{
-			LOG.error("Could not load sayune interpretations", e);
-		}
-		return mapping;
-	}
-	
 	@Override
 	public void reviewContext(RandomAccessMMOBuffer buf)
 	{
@@ -84,12 +51,12 @@ public final class FlyPathNode extends ScriptedIntegerIdInterpreter implements C
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value == -1)
 			return "Ground level";
 		
-		final Object result = super.getInterpretation((_path.get().longValue() << 32) | value, entityCacheContext);
+		final Object result = super.translate((_path.get().longValue() << 32) | value, protocol, entityCacheContext);
 		return result instanceof String ? result : value;
 	}
 }

@@ -17,7 +17,8 @@ package interpreter;
 
 import static java.nio.charset.StandardCharsets.US_ASCII;
 
-import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -26,10 +27,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author _dev_
  */
-public class ASCII extends ScriptedFieldValueInterpreter implements ByteArrayInterpreter
+public class ASCII extends ScriptedFieldValueInterpreter implements ByteArrayTranslator
 {
 	@Override
-	public Object getInterpretation(byte[] value, ICacheServerID entityCacheContext)
+	public Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		int len;
 		for (len = value.length; len > 0; --len)

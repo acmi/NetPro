@@ -18,6 +18,7 @@ package net.l2emuproject.proxy.script.analytics;
 import java.util.List;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.game.server.L2GameServer;
@@ -26,7 +27,7 @@ import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.ScriptFieldAlias;
 import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics;
 import net.l2emuproject.proxy.script.analytics.user.LiveUserAnalytics.UserInfo;
@@ -167,10 +168,11 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 		final List<EnumeratedPayloadField> givenNames = rab.getFieldIndices(NPC_NAME_STRING);
 		final List<EnumeratedPayloadField> ownerNames = rab.getFieldIndices(NPC_TITLE_STRING);
 		
-		IntegerInterpreter interp = null;
+		final IProtocolVersion protocol = rab.getProtocol();
+		IntegerTranslator interp = null;
 		try
 		{
-			interp = MetaclassRegistry.getInstance().getInterpreter("Npc", IntegerInterpreter.class);
+			interp = MetaclassRegistry.getInstance().getTranslator("Npc", IntegerTranslator.class);
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
@@ -183,7 +185,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 				continue;
 			
 			final int id = rab.readInteger32(templates.get(++t));
-			String name = interp != null ? String.valueOf(interp.getInterpretation(id, cacheContext)) : String.valueOf(id);
+			String name = interp != null ? String.valueOf(interp.translate(id, protocol, cacheContext)) : String.valueOf(id);
 			
 			final ObjectType objType;
 			switch (type)
@@ -228,10 +230,10 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			return false;
 		
 		final List<EnumeratedPayloadField> names = rab.getFieldIndices(ITEM_NAME_ID), amounts = rab.getFieldIndices(ITEM_AMOUNT);
-		IntegerInterpreter interp = null;
+		IntegerTranslator interp = null;
 		try
 		{
-			interp = MetaclassRegistry.getInstance().getInterpreter("Item", IntegerInterpreter.class);
+			interp = MetaclassRegistry.getInstance().getTranslator("Item", IntegerTranslator.class);
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
@@ -245,7 +247,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			
 			final int id = rab.readInteger32(names.get(i));
 			final long amount = amounts.size() <= i ? 1 : rab.readInteger(amounts.get(i)); // e.g. Old CSI/UI with equip OIDs, ExUIES
-			final String name = interp != null ? String.valueOf(interp.getInterpretation(id, cacheContext)) : String.valueOf(id);
+			final String name = interp != null ? String.valueOf(interp.translate(id, rab.getProtocol(), cacheContext)) : String.valueOf(id);
 			final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(oid, cacheContext).setType(new ItemType(id, amount));
 			oi.setName(name);
 		}
@@ -260,10 +262,10 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 			return false;
 		
 		final List<EnumeratedPayloadField> names = rab.getFieldIndices(EDITOR_ID);
-		IntegerInterpreter interp = null;
+		IntegerTranslator interp = null;
 		try
 		{
-			interp = MetaclassRegistry.getInstance().getInterpreter("StaticObject", IntegerInterpreter.class);
+			interp = MetaclassRegistry.getInstance().getTranslator("StaticObject", IntegerTranslator.class);
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
@@ -276,7 +278,7 @@ public class ObjectAnalytics extends PpeAnalyticsScript
 				continue;
 			
 			final int id = rab.readInteger32(names.get(i));
-			final String name = interp != null ? String.valueOf(interp.getInterpretation(id, cacheContext)) : String.valueOf(id);
+			final String name = interp != null ? String.valueOf(interp.translate(id, rab.getProtocol(), cacheContext)) : String.valueOf(id);
 			final ObjectInfo<L2ObjectInfo> oi = L2ObjectInfoCache.getOrAdd(oid, cacheContext).setType(new StaticObjectType(id));
 			oi.setName(name);
 		}

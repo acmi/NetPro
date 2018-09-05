@@ -250,6 +250,7 @@
 			<xs:enumeration value="SecondsLeftToTime" />
 			<xs:enumeration value="SecondsSinceEpoch" />
 			<xs:enumeration value="ServerCharacterCount" />
+			<xs:enumeration value="ServerType" />
 			<xs:enumeration value="ServitorType" />
 			<xs:enumeration value="SevenSignsPeriod" />
 			<xs:enumeration value="SevenSignsRecordTab" />
@@ -329,8 +330,14 @@
 			<xs:enumeration value="equip.ExUserEquipSlot1" />
 			<xs:enumeration value="equip.ExUserEquipSlot2" />
 			<xs:enumeration value="equip.ExUserEquipSlot3" />
+			<xs:enumeration value="equip.ExUserEquipSlot3EF" />
 			<xs:enumeration value="equip.ExUserEquipSlot4" />
+			<xs:enumeration value="equip.ExUserEquipSlot4EF" />
 			<xs:enumeration value="equip.ExUserEquipSlot5" />
+			<xs:enumeration value="equip.ExUserEquipSlot5EF" />
+			<xs:enumeration value="equip.ExUserEquipSlot6" />
+			<xs:enumeration value="equip.ExUserEquipSlot7" />
+			<xs:enumeration value="equip.ExUserEquipSlot8" />
 			<xs:enumeration value="equip.PaperdollMask" />
 			<xs:enumeration value="equip.PeriodicHennaExpiration" />
 

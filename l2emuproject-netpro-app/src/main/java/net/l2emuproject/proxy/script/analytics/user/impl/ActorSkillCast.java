@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.analytics.user.SkillCast;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.util.TimeAmountInterpreter;
@@ -102,8 +102,8 @@ public final class ActorSkillCast implements SkillCast
 		final String remainTime = "[" + (_cancelled ? "CNCL" : (remainingTime <= 0 ? "DONE" : TimeAmountInterpreter.consolidateMillis(remainingTime))) + "]";
 		try
 		{
-			final IntegerInterpreter interpreter = MetaclassRegistry.getInstance().getInterpreter("SkillNameID", IntegerInterpreter.class);
-			return remainTime + String.valueOf(interpreter.getInterpretation(L2SkillTranslator.getSkillNameID(_id, _level, _sublevel), null));
+			final IntegerTranslator interpreter = MetaclassRegistry.getInstance().getTranslator("SkillNameID", IntegerTranslator.class);
+			return remainTime + String.valueOf(interpreter.translate(L2SkillTranslator.getSkillNameID(_id, _level, _sublevel), null));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{

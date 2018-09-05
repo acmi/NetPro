@@ -18,15 +18,15 @@ package net.l2emuproject.proxy.script.interpreter;
 import eu.revengineer.simplejse.type.UnloadableScript;
 
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
-import net.l2emuproject.proxy.network.meta.interpreter.BitmaskInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.BitmaskTranslator;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
 
 /**
- * Enhances {@link BitmaskInterpreter} with managed script capabilities.
+ * Enhances {@link BitmaskTranslator} with managed script capabilities.
  * 
  * @author _dev_
  */
-public abstract class ScriptedBitmaskInterpreter extends BitmaskInterpreter implements UnloadableScript
+public abstract class ScriptedBitmaskInterpreter extends BitmaskTranslator implements UnloadableScript
 {
 	/**
 	 * Creates this interpreter.

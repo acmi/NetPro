@@ -23,11 +23,12 @@ import java.util.Map;
 import java.util.Set;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueModifierException;
-import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
 import net.l2emuproject.proxy.network.meta.modifier.ByteArrayModifier;
 import net.l2emuproject.proxy.network.meta.structure.FieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.FieldValueReadOption;
@@ -90,10 +91,10 @@ public abstract class AbstractByteArrayFieldElement extends FieldElement<ByteArr
 		if (vi != null)
 		{
 			final InterpreterContext ctx = (InterpreterContext)options.get(COMPUTE_INTERPRETATION);
-			final ByteArrayInterpreter interpreter = mcr.getInterpreter(vi, ByteArrayInterpreter.class);
-			if (interpreter instanceof ContextualFieldValueInterpreter)
-				((ContextualFieldValueInterpreter)interpreter).reviewContext(ctx.getWireframe());
-			interpreted = interpreter.getInterpretation(modifiedValue, ctx.getEntityContext());
+			final ByteArrayTranslator interpreter = mcr.getTranslator(vi, ByteArrayTranslator.class);
+			if (interpreter instanceof ContextualFieldValueTranslator)
+				((ContextualFieldValueTranslator)interpreter).reviewContext(ctx.getWireframe());
+			interpreted = interpreter.translate(modifiedValue, ctx.getWireframe().getProtocol(), ctx.getEntityContext());
 		}
 		else
 			interpreted = modifiedValue;

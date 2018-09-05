@@ -17,9 +17,10 @@ package net.l2emuproject.proxy.script.analytics.user;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 
 /**
  * An interface representing an item augmentation.
@@ -46,14 +47,15 @@ public interface ItemAugmentation
 	 * Returns the complete descriptions of both variation effects assigned to the given augmentation.
 	 * 
 	 * @param augmentation an item augmentation
+	 * @param protocol protocol version
 	 * @return variation effect descriptions
 	 */
-	static Pair<String, String> toString(ItemAugmentation augmentation)
+	static Pair<String, String> toString(ItemAugmentation augmentation, IProtocolVersion protocol)
 	{
 		try
 		{
-			final IntegerInterpreter mapper = MetaclassRegistry.getInstance().getInterpreter("Augmentation", IntegerInterpreter.class);
-			return Pair.of(String.valueOf(mapper.getInterpretation(augmentation.getEffect1())), String.valueOf(mapper.getInterpretation(augmentation.getEffect2())));
+			final IntegerTranslator mapper = MetaclassRegistry.getInstance().getTranslator("Augmentation", IntegerTranslator.class);
+			return Pair.of(String.valueOf(mapper.translate(augmentation.getEffect1(), protocol, null)), String.valueOf(mapper.translate(augmentation.getEffect2(), protocol, null)));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{

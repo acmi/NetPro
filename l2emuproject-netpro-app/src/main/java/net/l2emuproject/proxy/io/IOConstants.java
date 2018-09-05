@@ -66,7 +66,9 @@ public interface IOConstants
 	/** Default packet log file extension */
 	String LOG_EXTENSION = "plog";
 	/** Version of packet log file format for files written by this application. */
-	int LOG_VERSION = 7;
+	int LOG_VERSION = 10;
+	/** Current packet log compression type (deflate) */
+	int COMPRESSION_TYPE = 1;
 	/** Absolute position of the header size field in file */
 	int LOG_HEADER_SIZE_POS = 8 + 1;
 	/** Absolute position of the footer size field in file */

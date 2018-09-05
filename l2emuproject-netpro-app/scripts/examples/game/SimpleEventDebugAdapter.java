@@ -64,7 +64,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onCast(L2GameClient client, int casterOID, int targetOID, int skill, int level, int castTime, int coolTime)
 	{
 		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
-		LOG.info(L2ObjectInfoCache.getOrAdd(casterOID, context) + " started " + L2SkillTranslator.getInterpretation(skill, level) + " on " + L2ObjectInfoCache.getOrAdd(targetOID, context));
+		LOG.info(L2ObjectInfoCache.getOrAdd(casterOID, context) + " started " + L2SkillTranslator.translate(client.getProtocol(), skill, level) + " on " + L2ObjectInfoCache.getOrAdd(targetOID, context));
 		LOG.info("Cast will complete in " + castTime + " ms and skill can be re-cast in " + coolTime + " ms.");
 	}
 	
@@ -72,7 +72,7 @@ public class SimpleEventDebugAdapter implements SimpleEventListener, UnloadableS
 	public void onCastSuccess(L2GameClient client, int casterOID, int targetOID, int skill, int level)
 	{
 		final ICacheServerID context = PpeEnabledScript.getEntityContext(client);
-		LOG.info(L2ObjectInfoCache.getOrAdd(casterOID, context) + " executed " + L2SkillTranslator.getInterpretation(skill, level) + " on " + L2ObjectInfoCache.getOrAdd(targetOID, context));
+		LOG.info(L2ObjectInfoCache.getOrAdd(casterOID, context) + " executed " + L2SkillTranslator.translate(client.getProtocol(), skill, level) + " on " + L2ObjectInfoCache.getOrAdd(targetOID, context));
 	}
 	
 	@Override

@@ -15,6 +15,7 @@
  */
 package interpreter;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.interpreter.ScriptedZeroBasedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -33,11 +34,11 @@ public class MercenaryName extends ScriptedZeroBasedIntegerIdInterpreter
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value == 0L)
 			return "N/A";
 		
-		return super.getInterpretation(value, entityCacheContext);
+		return super.translate(value, protocol, entityCacheContext);
 	}
 }

@@ -15,16 +15,10 @@
  */
 package interpreter;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * Interprets the given byte/word/dword as a skill name ID.
@@ -33,45 +27,16 @@ import net.l2emuproject.util.logging.L2Logger;
  */
 public class SkillNameID extends ScriptedIntegerIdInterpreter
 {
-	private static final L2Logger LOG = L2Logger.getLogger(SkillNameID.class);
-	
 	/** Constructs this interpreter. */
 	public SkillNameID()
 	{
-		super(loadInterpretations());
-	}
-	
-	private static final Map<Long, String> loadInterpretations()
-	{
-		final Map<Long, String> mapping = new HashMap<>();
-		try (final BufferedReader br = IOConstants.openScriptResource("interpreter", "skill.txt"))
-		{
-			for (String line; (line = br.readLine()) != null;)
-			{
-				final int idx = line.indexOf('\t'), idx2 = line.indexOf('\t', idx + 1);
-				if (idx == -1 || idx2 == -1)
-					continue;
-				
-				final int id = Integer.parseInt(line.substring(0, idx));
-				final int lvl = Integer.parseInt(line.substring(idx + 1, idx2));
-				final String name = line.substring(idx2 + 1);
-				
-				mapping.put(Long.valueOf(L2SkillTranslator.getSkillNameID(id, lvl, null)), name.intern());
-			}
-		}
-		catch (IOException e)
-		{
-			LOG.error("Could not load skill level interpretations", e);
-		}
-		mapping.put(Long.valueOf(L2SkillTranslator.getSkillNameID(0, 0, 0)), "None"); // SBSU
-		mapping.put(Long.valueOf(L2SkillTranslator.getSkillNameID(0, 1, 0)), "None"); // default interpretation without level
-		return mapping;
+		super(loadFromResource2("skill.txt", (id, lvl) -> L2SkillTranslator.getSkillNameID((int)id, (int)lvl, null)));
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
-		final Object result = super.getInterpretation(value, entityCacheContext);
+		final Object result = super.translate(value, protocol, entityCacheContext);
 		if (result instanceof String)
 			return result;
 		
@@ -82,14 +47,15 @@ public class SkillNameID extends ScriptedIntegerIdInterpreter
 	 * Returns the highest level for the given skill ID, ignoring entries with sublevels. Returns {@code 0} for unknown skills.
 	 * 
 	 * @param skillID skill ID
+	 * @param protocol protocol version
 	 * @return highest non-enchanted level or {@code 0}
 	 */
-	public int getHighestLevel(int skillID)
+	public int getHighestLevel(int skillID, IProtocolVersion protocol)
 	{
 		int result = 0;
 		for (int level = 1; level < 100; ++level)
 		{
-			final Object i = super.getInterpretation(L2SkillTranslator.getSkillNameID(skillID, level, 0), null);
+			final Object i = super.translate(L2SkillTranslator.getSkillNameID(skillID, level, 0), protocol, null);
 			if (!(i instanceof String))
 				continue; // it is not mandatory for skills to have level 1, and probably levels in between
 				

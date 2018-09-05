@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
+	<client>
+		<packet opcodePrefix="D0 5D 01" id="C_EX_ELEMENTAL_SPIRIT_CHANGE_TYPE" />
+		<packet opcodePrefix="D0 5E 01" id="CM_REQ_BLOCK_LIST_FOR_AD" />
+		<packet opcodePrefix="D0 5F 01" id="CM_REQ_USER_BAN_INFO" />
+		<packet opcodePrefix="D0 60 01" id="C_EX_INTERACT_MODIFY" />
+		<packet opcodePrefix="D0 61 01" id="C_EX_TRY_ENCHANT_ARTIFACT" />
+		<packet opcodePrefix="D0 62 01" id="C_EX_XIGN_CODE" />
+	</client>
+	<server>
+		<packet opcodePrefix="FE F9 01" id="S_EX_ELEMENTAL_SPIRIT_EXTRACT" />
+		<packet opcodePrefix="FE FA 01" id="S_EX_OLYMPIAD_INFO" />
+		<packet opcodePrefix="FE FB 01" id="S_EX_OLYMPIAD_RECORD" />
+		<packet opcodePrefix="FE FC 01" id="S_EX_OLYMPIAD_MATCH_INFO" />
+		<packet opcodePrefix="FE FD 01" id="S_EX_ELEMENTAL_SPIRIT_GET_EXP" />
+		<packet opcodePrefix="FE FE 01" id="S_EX_ITEM_ANNOUNCE" />
+		<packet opcodePrefix="FE FF 01" id="SM_EX_DRESS_ROOM_UI_OPEN" />
+		<packet opcodePrefix="FE 00 02" id="SM_EX_DRESS_HANGER_LIST" />
+		<packet opcodePrefix="FE 01 02" id="SM_EX_USER_BAN_INFO" />
+		<packet opcodePrefix="FE 02 02" id="S_EX_TRY_ENCHANT_ARTIFACT_RESULT" />
+		<packet opcodePrefix="FE 03 02" id="S_EX_XIGN_CODE" />
+	</server>
+</mapping>

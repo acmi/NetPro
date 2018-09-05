@@ -15,6 +15,6 @@
 	
 	<!-- NEW -->
 	<dword alias="Localization" type="Language">
-		<scriptAlias id="localization" />
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_SERVER_LANG" />
 	</dword>
 </packet>

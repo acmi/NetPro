@@ -31,7 +31,7 @@ import java.util.Set;
 
 import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.io.NewIOHelper;
-import net.l2emuproject.proxy.io.definitions.VersionnedPacketTable;
+import net.l2emuproject.proxy.io.definitions.VersionnedPacketLoader;
 import net.l2emuproject.proxy.io.exception.DamagedFileException;
 import net.l2emuproject.proxy.io.exception.InsufficientlyLargeFileException;
 import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
@@ -116,7 +116,7 @@ public final class PacketHidingConfigFileUtils implements IOConstants
 					final int prefixSize = in.readByte();
 					final byte[] prefix = new byte[prefixSize];
 					in.read(prefix);
-					prefixSet.add(VersionnedPacketTable.internedValueOf(prefix));
+					prefixSet.add(VersionnedPacketLoader.internedValueOf(prefix));
 					in.skip(totalSize - prefixSize - 1, false);
 				}
 			}

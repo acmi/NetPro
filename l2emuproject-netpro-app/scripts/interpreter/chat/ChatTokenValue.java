@@ -16,13 +16,13 @@
 package interpreter.chat;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
-
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.StringInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.StringTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
@@ -35,7 +35,7 @@ import interpreter.chat.ChatTokenType.TokenType;
  * @author _dev_
  */
 @HasScriptDependencies("interpreter.chat.ChatTokenType")
-public abstract class ChatTokenValue extends ScriptedFieldValueInterpreter implements ContextualFieldValueInterpreter, StringInterpreter
+public abstract class ChatTokenValue extends ScriptedFieldValueInterpreter implements ContextualFieldValueTranslator, StringTranslator
 {
 	private final String _typeFieldAlias;
 	private final ThreadLocal<TokenType> _type;
@@ -65,24 +65,24 @@ public abstract class ChatTokenValue extends ScriptedFieldValueInterpreter imple
 	}
 	
 	@Override
-	public Object getInterpretation(String value, ICacheServerID entityCacheContext)
+	public Object translate(String value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		try
 		{
 			switch (_type.get())
 			{
 				case FSTRING:
-					return MetaclassRegistry.getInstance().getInterpreter("ImmutableNpcString", ScriptedIntegerIdInterpreter.class).getInterpretation(Long.parseLong(value), entityCacheContext);
+					return MetaclassRegistry.getInstance().getTranslator("ImmutableNpcString", ScriptedIntegerIdInterpreter.class).translate(Long.parseLong(value), protocol, entityCacheContext);
 				case ITEM:
-					return MetaclassRegistry.getInstance().getInterpreter("Item", ScriptedIntegerIdInterpreter.class).getInterpretation(Long.parseLong(value), entityCacheContext);
+					return MetaclassRegistry.getInstance().getTranslator("Item", ScriptedIntegerIdInterpreter.class).translate(Long.parseLong(value), protocol, entityCacheContext);
 				case NPC:
-					return MetaclassRegistry.getInstance().getInterpreter("Npc", ScriptedIntegerIdInterpreter.class).getInterpretation(Long.parseLong(value), entityCacheContext);
+					return MetaclassRegistry.getInstance().getTranslator("Npc", ScriptedIntegerIdInterpreter.class).translate(Long.parseLong(value), protocol, entityCacheContext);
 				case QUEST:
-					return MetaclassRegistry.getInstance().getInterpreter("Quest", ScriptedIntegerIdInterpreter.class).getInterpretation(Long.parseLong(value), entityCacheContext);
+					return MetaclassRegistry.getInstance().getTranslator("Quest", ScriptedIntegerIdInterpreter.class).translate(Long.parseLong(value), protocol, entityCacheContext);
 				case SKILL:
-					return MetaclassRegistry.getInstance().getInterpreter("Skill", ScriptedIntegerIdInterpreter.class).getInterpretation(Long.parseLong(value), entityCacheContext);
+					return MetaclassRegistry.getInstance().getTranslator("Skill", ScriptedIntegerIdInterpreter.class).translate(Long.parseLong(value), protocol, entityCacheContext);
 				case SYSSTRING:
-					return MetaclassRegistry.getInstance().getInterpreter("SysString", ScriptedIntegerIdInterpreter.class).getInterpretation(Long.parseLong(value), entityCacheContext);
+					return MetaclassRegistry.getInstance().getTranslator("SysString", ScriptedIntegerIdInterpreter.class).translate(Long.parseLong(value), protocol, entityCacheContext);
 				case STRING:
 				default:
 					break;

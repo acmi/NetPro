@@ -26,8 +26,8 @@ import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueModifierException;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.network.meta.modifier.IntegerModifier;
 import net.l2emuproject.proxy.network.meta.structure.FieldElement;
 import net.l2emuproject.proxy.network.meta.structure.field.FieldValueReadOption;
@@ -89,10 +89,10 @@ public abstract class AbstractIntegerFieldElement extends FieldElement<IntegerFi
 		if (vi != null)
 		{
 			final InterpreterContext ctx = (InterpreterContext)options.get(COMPUTE_INTERPRETATION);
-			final IntegerInterpreter interpreter = mcr.getInterpreter(vi, IntegerInterpreter.class);
-			if (interpreter instanceof ContextualFieldValueInterpreter)
-				((ContextualFieldValueInterpreter)interpreter).reviewContext(ctx.getWireframe());
-			interpreted = interpreter.getInterpretation(modifiedValue, ctx.getEntityContext());
+			final IntegerTranslator interpreter = mcr.getTranslator(vi, IntegerTranslator.class);
+			if (interpreter instanceof ContextualFieldValueTranslator)
+				((ContextualFieldValueTranslator)interpreter).reviewContext(ctx.getWireframe());
+			interpreted = interpreter.translate(modifiedValue, ctx.getWireframe().getProtocol(), ctx.getEntityContext());
 		}
 		else
 			interpreted = modifiedValue;

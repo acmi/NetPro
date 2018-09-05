@@ -20,7 +20,8 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.ISODateTime;
 
@@ -29,10 +30,10 @@ import net.l2emuproject.util.ISODateTime;
  * 
  * @author savormix
  */
-public class SecondsSinceEpoch implements IntegerInterpreter, ISODateTime
+public class SecondsSinceEpoch implements IntegerTranslator, ISODateTime
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		return new SimpleDateFormat(ISO_DATE_TIME_ZONE).format(new Date(SECONDS.toMillis(value)));
 	}

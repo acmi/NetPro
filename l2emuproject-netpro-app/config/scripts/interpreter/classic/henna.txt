@@ -1,0 +1,372 @@
+1	STR Dye STR + 1, CON - 3
+2	STR Dye STR + 1, DEX - 3
+3	CON Dye CON + 1, STR - 3
+4	CON Dye CON + 1, DEX - 3
+5	DEX Dye DEX + 1, STR - 3
+6	DEX Dye DEX + 1, CON - 3
+7	INT Dye INT + 1, MEN - 3
+8	INT Dye INT + 1, WIT - 3
+9	MEN Dye MEN + 1, INT - 3
+10	MEN Dye MEN + 1, WIT - 3
+11	WIT Dye WIT + 1, INT - 3
+12	WIT Dye WIT + 1, MEN - 3
+13	STR Dye STR + 1, CON - 2
+14	STR Dye STR + 1, DEX - 2
+15	CON Dye CON + 1, STR - 2
+16	CON Dye CON + 1, DEX - 2
+17	DEX Dye DEX + 1, STR - 2
+18	DEX Dye DEX + 1, CON - 2
+19	INT Dye INT + 1, MEN - 2
+20	INT Dye INT + 1, WIT - 2
+21	MEN Dye MEN + 1, INT - 2
+22	MEN Dye MEN + 1, WIT - 2
+23	WIT Dye WIT + 1, INT - 2
+24	WIT Dye WIT + 1, MEN - 2
+25	STR Dye STR + 1, CON - 1
+26	STR Dye STR + 1, DEX - 1
+27	CON Dye CON + 1, STR - 1
+28	CON Dye CON + 1, DEX - 1
+29	DEX Dye DEX + 1, STR - 1
+30	DEX Dye DEX + 1, CON - 1
+31	INT Dye INT + 1, MEN - 1
+32	INT Dye INT + 1, WIT - 1
+33	MEN Dye MEN + 1, INT - 1
+34	MEN Dye MEN + 1, WIT - 1
+35	WIT Dye WIT + 1, INT - 1
+36	WIT Dye WIT + 1, MEN - 1
+37	Greater STR Dye STR + 1, CON - 3
+38	Greater STR Dye STR + 1, DEX - 3
+39	Greater CON Dye CON + 1, STR - 3
+40	Greater CON Dye CON + 1, DEX - 3
+41	Greater DEX Dye DEX + 1, STR - 3
+42	Greater DEX Dye DEX + 1, CON - 3
+43	Greater INT Dye INT + 1, MEN - 3
+44	Greater INT Dye INT + 1, WIT - 3
+45	Greater MEN Dye MEN + 1, INT - 3
+46	Greater MEN Dye MEN + 1, WIT - 3
+47	Greater WIT Dye WIT + 1, INT - 3
+48	Greater WIT Dye WIT + 1, MEN - 3
+49	Greater STR Dye STR + 1, CON - 2
+50	Greater STR Dye STR + 1, DEX - 2
+51	Greater CON Dye CON + 1, STR - 2
+52	Greater CON Dye CON + 1, DEX - 2
+53	Greater DEX Dye DEX + 1, STR - 2
+54	Greater DEX Dye DEX + 1, CON - 2
+55	Greater INT Dye INT + 1, MEN - 2
+56	Greater INT Dye INT + 1, WIT - 2
+57	Greater MEN Dye MEN + 1, INT - 2
+58	Greater MEN Dye MEN + 1, WIT - 2
+59	Greater WIT Dye WIT + 1, INT - 2
+60	Greater WIT Dye WIT + 1, MEN - 2
+61	Greater STR Dye STR + 2, CON - 4
+62	Greater STR Dye STR + 2, DEX - 4
+63	Greater CON Dye CON + 2, STR - 4
+64	Greater CON Dye CON + 2, DEX - 4
+65	Greater DEX Dye DEX + 2, STR - 4
+66	Greater DEX Dye DEX + 2, CON - 4
+67	Greater INT Dye INT + 2, MEN - 4
+68	Greater INT Dye INT + 2, WIT - 4
+69	Greater MEN Dye MEN + 2, INT - 4
+70	Greater MEN Dye MEN + 2, WIT - 4
+71	Greater WIT Dye WIT + 2, INT - 4
+72	Greater WIT Dye WIT + 2, MEN - 4
+73	Greater STR Dye STR + 2, CON - 3
+74	Greater STR Dye STR + 2, DEX - 3
+75	Greater CON Dye CON + 2, STR - 3
+76	Greater CON Dye CON + 2, DEX - 3
+77	Greater DEX Dye DEX + 2, STR - 3
+78	Greater DEX Dye DEX + 2, CON - 3
+79	Greater INT Dye INT + 2, MEN - 3
+80	Greater INT Dye INT + 2, WIT - 3
+81	Greater MEN Dye MEN + 2, INT - 3
+82	Greater MEN Dye MEN + 2, WIT - 3
+83	Greater WIT Dye WIT + 2, INT - 3
+84	Greater WIT Dye WIT + 2, MEN - 3
+85	Greater STR Dye STR + 3, CON - 5
+86	Greater STR Dye STR + 3, DEX - 5
+87	Greater CON Dye CON + 3, STR - 5
+88	Greater CON Dye CON + 3, DEX - 5
+89	Greater DEX Dye DEX + 3, STR - 5
+90	Greater DEX Dye DEX + 3, CON - 5
+91	Greater INT Dye INT + 3, MEN - 5
+92	Greater INT Dye INT + 3, WIT - 5
+93	Greater MEN Dye MEN + 3, INT - 5
+94	Greater MEN Dye MEN + 3, WIT - 5
+95	Greater WIT Dye WIT + 3, INT - 5
+96	Greater WIT Dye WIT + 3, MEN - 5
+97	Greater STR Dye STR + 3, CON - 4
+98	Greater STR Dye STR + 3, DEX - 4
+99	Greater CON Dye CON + 3, STR - 4
+100	Greater CON Dye CON + 3, DEX - 4
+101	Greater DEX Dye DEX + 3, STR - 4
+102	Greater DEX Dye DEX + 3, CON - 4
+103	Greater INT Dye INT + 3, MEN - 4
+104	Greater INT Dye INT + 3, WIT - 4
+105	Greater MEN Dye MEN + 3, INT - 4
+106	Greater MEN Dye MEN + 3, WIT - 4
+107	Greater WIT Dye WIT + 3, INT - 4
+108	Greater WIT Dye WIT + 3, MEN - 4
+109	Greater STR Dye STR + 1, CON - 1
+110	Greater STR Dye STR + 1, DEX - 1
+111	Greater CON Dye CON + 1, STR - 1
+112	Greater CON Dye CON + 1, DEX - 1
+113	Greater DEX Dye DEX + 1, STR - 1
+114	Greater DEX Dye DEX + 1, CON - 1
+115	Greater INT Dye INT + 1, MEN - 1
+116	Greater INT Dye INT + 1, WIT - 1
+117	Greater MEN Dye MEN + 1, INT - 1
+118	Greater MEN Dye MEN + 1, WIT - 1
+119	Greater WIT Dye WIT + 1, INT - 1
+120	Greater WIT Dye WIT + 1, MEN - 1
+121	Greater STR Dye STR + 4, CON - 6
+122	Greater STR Dye STR + 4, DEX - 6
+123	Greater CON Dye CON + 4, STR - 6
+124	Greater CON Dye CON + 4, DEX - 6
+125	Greater DEX Dye DEX + 4, STR - 6
+126	Greater DEX Dye DEX + 4, CON - 6
+127	Greater INT Dye INT + 4, MEN - 6
+128	Greater INT Dye INT + 4, WIT - 6
+129	Greater MEN Dye MEN + 4, INT - 6
+130	Greater MEN Dye MEN + 4, WIT - 6
+131	Greater WIT Dye WIT + 4, INT - 6
+132	Greater WIT Dye WIT + 4, MEN - 6
+133	Greater STR Dye STR + 4, CON - 5
+134	Greater STR Dye STR + 4, DEX - 5
+135	Greater CON Dye CON + 4, STR - 5
+136	Greater CON Dye CON + 4, DEX - 5
+137	Greater DEX Dye DEX + 4, STR - 5
+138	Greater DEX Dye DEX + 4, CON - 5
+139	Greater INT Dye INT + 4, MEN - 5
+140	Greater INT Dye INT + 4, WIT - 5
+141	Greater MEN Dye MEN + 4, INT - 5
+142	Greater MEN Dye MEN + 4, WIT - 5
+143	Greater WIT Dye WIT + 4, INT - 5
+144	Greater WIT Dye WIT + 4, MEN - 5
+145	Greater STR Dye STR + 2, CON - 2
+146	Greater STR Dye STR + 2, DEX - 2
+147	Greater CON Dye CON + 2, STR - 2
+148	Greater CON Dye CON + 2, DEX - 2
+149	Greater DEX Dye DEX + 2, STR - 2
+150	Greater DEX Dye DEX + 2, CON - 2
+151	Greater INT Dye INT + 2, MEN - 2
+152	Greater INT Dye INT + 2, WIT - 2
+153	Greater MEN Dye MEN + 2, INT - 2
+154	Greater MEN Dye MEN + 2, WIT - 2
+155	Greater WIT Dye WIT + 2, INT - 2
+156	Greater WIT Dye WIT + 2, MEN - 2
+157	Greater STR Dye STR + 3, CON - 3
+158	Greater STR Dye STR + 3, DEX - 3
+159	Greater CON Dye CON + 3, STR - 3
+160	Greater CON Dye CON + 3, DEX - 3
+161	Greater DEX Dye DEX + 3, STR - 3
+162	Greater DEX Dye DEX + 3, CON - 3
+163	Greater INT Dye INT + 3, MEN - 3
+164	Greater INT Dye INT + 3, WIT - 3
+165	Greater MEN Dye MEN + 3, INT - 3
+166	Greater MEN Dye MEN + 3, WIT - 3
+167	Greater WIT Dye WIT + 3, INT - 3
+168	Greater WIT Dye WIT + 3, MEN - 3
+169	Greater STR Dye STR + 4, CON - 4
+170	Greater STR Dye STR + 4, DEX - 4
+171	Greater CON Dye CON + 4, STR - 4
+172	Greater CON Dye CON + 4, DEX - 4
+173	Greater DEX Dye DEX + 4, STR - 4
+174	Greater DEX Dye DEX + 4, CON - 4
+175	Greater INT Dye INT + 4, MEN - 4
+176	Greater INT Dye INT + 4, WIT - 4
+177	Greater MEN Dye MEN + 4, INT - 4
+178	Greater MEN Dye MEN + 4, WIT - 4
+179	Greater WIT Dye WIT + 4, INT - 4
+180	Greater WIT Dye WIT + 4, MEN - 4
+181	Best Dye of STR STR + 1, CON - 3
+182	Best Dye of STR STR + 1, DEX - 3
+183	Best Dye of CON CON + 1, STR - 3
+184	Best Dye of CON CON + 1, DEX - 3
+185	Best Dye of DEX DEX + 1, STR - 3
+186	Best Dye of DEX DEX + 1, CON - 3
+187	Best Dye of INT INT + 1, MEN - 3
+188	Best Dye of INT INT + 1, WIT - 3
+189	Best Dye of MEN MEN + 1, INT - 3
+190	Best Dye of MEN MEN + 1, WIT - 3
+191	Best Dye of WIT WIT + 1, INT - 3
+192	Best Dye of WIT WIT + 1, MEN - 3
+193	Best Dye of STR STR + 1, CON - 2
+194	Best Dye of STR STR + 1, DEX - 2
+195	Best Dye of CON CON + 1, STR - 2
+196	Best Dye of CON CON + 1, DEX - 2
+197	Best Dye of DEX DEX + 1, STR - 2
+198	Best Dye of DEX DEX + 1, CON - 2
+199	Best Dye of INT INT + 1, MEN - 2
+200	Best Dye of INT INT + 1, WIT - 2
+201	Best Dye of MEN MEN + 1, INT - 2
+202	Best Dye of MEN MEN + 1, WIT - 2
+203	Best Dye of WIT WIT + 1, INT - 2
+204	Best Dye of WIT WIT + 1, MEN - 2
+205	Best Dye of STR STR + 1, CON - 1
+206	Best Dye of STR STR + 1, DEX - 1
+207	Best Dye of CON CON + 1, STR - 1
+208	Best Dye of CON CON + 1, DEX - 1
+209	Best Dye of DEX DEX + 1, STR - 1
+210	Best Dye of DEX DEX + 1, CON - 1
+211	Best Dye of INT INT + 1, MEN - 1
+212	Best Dye of INT INT + 1, WIT - 1
+213	Best Dye of MEN MEN + 1, INT - 1
+214	Best Dye of MEN MEN + 1, WIT - 1
+215	Best Dye of WIT WIT + 1, INT - 1
+216	Best Dye of WIT WIT + 1, MEN - 1
+217	Best Dye of STR STR + 2, CON - 3
+218	Best Dye of STR STR + 2, DEX - 3
+219	Best Dye of CON CON + 2, STR - 3
+220	Best Dye of CON CON + 2, DEX - 3
+221	Best Dye of DEX DEX + 2, STR - 3
+222	Best Dye of DEX DEX + 2, CON - 3
+223	Best Dye of INT INT + 2, MEN - 3
+224	Best Dye of INT INT + 2, WIT - 3
+225	Best Dye of MEN MEN + 2, INT - 3
+226	Best Dye of MEN MEN + 2, WIT - 3
+227	Best Dye of WIT WIT + 2, INT - 3
+228	Best Dye of WIT WIT + 2, MEN - 3
+229	Best Dye of STR STR + 2, CON - 2
+230	Best Dye of STR STR + 2, DEX - 2
+231	Best Dye of CON CON + 2, STR - 2
+232	Best Dye of CON CON + 2, DEX - 2
+233	Best Dye of DEX DEX + 2, STR - 2
+234	Best Dye of DEX DEX + 2, CON - 2
+235	Best Dye of INT INT + 2, MEN - 2
+236	Best Dye of INT INT + 2, WIT - 2
+237	Best Dye of MEN MEN + 2, INT - 2
+238	Best Dye of MEN MEN + 2, WIT - 2
+239	Best Dye of WIT WIT + 2, INT - 2
+240	Best Dye of WIT WIT + 2, MEN - 2
+241	Best Dye of STR STR + 2, CON - 1
+242	Best Dye of STR STR + 2, DEX - 1
+243	Best Dye of CON CON + 2, STR - 1
+244	Best Dye of CON CON + 2, DEX - 1
+245	Best Dye of DEX DEX + 2, STR - 1
+246	Best Dye of DEX DEX + 2, CON - 1
+247	Best Dye of INT INT + 2, MEN - 1
+248	Best Dye of INT INT + 2, WIT - 1
+249	Best Dye of MEN MEN + 2, INT - 1
+250	Best Dye of MEN MEN + 2, WIT - 1
+251	Best Dye of WIT WIT + 2, INT - 1
+252	Best Dye of WIT WIT + 2, MEN - 1
+253	Best Dye of STR STR + 3, CON - 3
+254	Best Dye of STR STR + 3, DEX - 3
+255	Best Dye of CON CON + 3, STR - 3
+256	Best Dye of CON CON + 3, DEX - 3
+257	Best Dye of DEX DEX + 3, STR - 3
+258	Best Dye of DEX DEX + 3, CON - 3
+259	Best Dye of INT INT + 3, MEN - 3
+260	Best Dye of INT INT + 3, WIT - 3
+261	Best Dye of MEN MEN + 3, INT - 3
+262	Best Dye of MEN MEN + 3, WIT - 3
+263	Best Dye of WIT WIT + 3, INT - 3
+264	Best Dye of WIT WIT + 3, MEN - 3
+265	Best Dye of STR STR + 3, CON - 2
+266	Best Dye of STR STR + 3, DEX - 2
+267	Best Dye of CON CON + 3, STR - 2
+268	Best Dye of CON CON + 3, DEX - 2
+269	Best Dye of DEX DEX + 3, STR - 2
+270	Best Dye of DEX DEX + 3, CON - 2
+271	Best Dye of INT INT + 3, MEN - 2
+272	Best Dye of INT INT + 3, WIT - 2
+273	Best Dye of MEN MEN + 3, INT - 2
+274	Best Dye of MEN MEN + 3, WIT - 2
+275	Best Dye of WIT WIT + 3, INT - 2
+276	Best Dye of WIT WIT + 3, MEN - 2
+277	Best Dye of STR STR + 3, CON - 1
+278	Best Dye of STR STR + 3, DEX - 1
+279	Best Dye of CON CON + 3, STR - 1
+280	Best Dye of CON CON + 3, DEX - 1
+281	Best Dye of DEX DEX + 3, STR - 1
+282	Best Dye of DEX DEX + 3, CON - 1
+283	Best Dye of INT INT + 3, MEN - 1
+284	Best Dye of INT INT + 3, WIT - 1
+285	Best Dye of MEN MEN + 3, INT - 1
+286	Best Dye of MEN MEN + 3, WIT - 1
+287	Best Dye of WIT WIT + 3, INT - 1
+288	Best Dye of WIT WIT + 3, MEN - 1
+289	Best Dye of STR STR + 4, CON - 4
+290	Best Dye of STR STR + 4, DEX - 4
+291	Best Dye of CON CON + 4, STR - 4
+292	Best Dye of CON CON + 4, DEX - 4
+293	Best Dye of DEX DEX + 4, STR - 4
+294	Best Dye of DEX DEX + 4, CON - 4
+295	Best Dye of INT INT + 4, MEN - 4
+296	Best Dye of INT INT + 4, WIT - 4
+297	Best Dye of MEN MEN + 4, INT - 4
+298	Best Dye of MEN MEN + 4, WIT - 4
+299	Best Dye of WIT WIT + 4, INT - 4
+300	Best Dye of WIT WIT + 4, MEN - 4
+301	Best Dye of STR STR+4, CON-3
+302	Best Dye of STR STR+4, DEX-3
+303	Best Dye of CON CON+4, STR-3
+304	Best Dye of CON CON+4, DEX-3
+305	Best Dye of DEX DEX+4, STR-3
+306	Best Dye of DEX DEX+4, CON-3
+307	Best Dye of INT INT+4, MEN-3
+308	Best Dye of INT INT+4, WIT-3
+309	Best Dye of MEN MEN+4, INT-3
+310	Best Dye of MEN MEN+4, WIT-3
+311	Best Dye of WIT WIT+4, INT-3
+312	Best Dye of WIT WIT+4, MEN-3
+313	Best Dye of STR STR + 4, CON - 2
+314	Best Dye of STR STR + 4, DEX - 2
+315	Best Dye of CON CON + 4, STR - 2
+316	Best Dye of CON CON + 4, DEX - 2
+317	Best Dye of DEX DEX + 4, STR - 2
+318	Best Dye of DEX DEX + 4, CON - 2
+319	Best Dye of INT INT + 4, MEN - 2
+320	Best Dye of INT INT + 4, WIT - 2
+321	Best Dye of MEN MEN + 4, INT - 2
+322	Best Dye of MEN MEN + 4, WIT - 2
+323	Best Dye of WIT WIT + 4, INT - 2
+324	Best Dye of WIT WIT + 4, MEN - 2
+600	Premium STR Dye STR + 1, CON - 1
+601	Premium STR Dye STR + 1, DEX - 1
+602	Premium CON Dye CON + 1, STR - 1
+603	Premium CON Dye CON + 1, DEX - 1
+604	Premium DEX Dye DEX + 1, STR - 1
+605	Premium DEX Dye DEX + 1, CON - 1
+606	Premium INT Dye INT + 1, MEN - 1
+607	Premium INT Dye INT + 1, WIT - 1
+608	Premium MEN Dye MEN + 1, INT - 1
+609	Premium MEN Dye MEN + 1, WIT - 1
+610	Premium WIT Dye WIT + 1, INT - 1
+611	Premium WIT Dye WIT + 1, MEN - 1
+612	Premium STR Dye STR + 2, CON - 2
+613	Premium STR Dye STR + 2, DEX - 2
+614	Premium CON Dye CON + 2, STR - 2
+615	Premium CON Dye CON + 2, DEX - 2
+616	Premium DEX Dye DEX + 2, STR - 2
+617	Premium DEX Dye DEX + 2, CON - 2
+618	Premium INT Dye INT + 2, MEN - 2
+619	Premium INT Dye INT + 2, WIT - 2
+620	Premium MEN Dye MEN + 2, INT - 2
+621	Premium MEN Dye MEN + 2, WIT - 2
+622	Premium WIT Dye WIT + 2, INT - 2
+623	Premium WIT Dye WIT + 2, MEN - 2
+624	Premium STR Dye STR + 3, CON - 3
+625	Premium STR Dye STR + 3, DEX - 3
+626	Premium CON Dye CON + 3, STR - 3
+627	Premium CON Dye CON + 3, DEX - 3
+628	Premium DEX Dye DEX + 3, STR - 3
+629	Premium DEX Dye DEX + 3, CON - 3
+630	Premium INT Dye INT + 3, MEN - 3
+631	Premium INT Dye INT + 3, WIT - 3
+632	Premium MEN Dye MEN + 3, INT - 3
+633	Premium MEN Dye MEN + 3, WIT - 3
+634	Premium WIT Dye WIT + 3, INT - 3
+635	Premium WIT Dye WIT + 3, MEN - 3
+636	Greater Premium STR Dye STR+4, CON-3
+637	Greater Premium STR Dye STR+4, DEX-3
+638	Greater Premium CON Dye CON+4, STR-3
+639	Greater Premium CON Dye CON+4, DEX-3
+640	Greater Premium DEX Dye DEX+4, STR-3
+641	Greater Premium DEX Dye DEX+4, CON-3
+642	Greater Premium INT Dye INT+4, MEN-3
+643	Greater Premium INT Dye INT+4, WIT-3
+644	Greater Premium MEN Dye MEN+4, INT-3
+645	Greater Premium MEN Dye MEN+4, WIT-3
+646	Greater Premium WIT Dye WIT+4, INT-3
+647	Greater Premium WIT Dye WIT+4, MEN-3

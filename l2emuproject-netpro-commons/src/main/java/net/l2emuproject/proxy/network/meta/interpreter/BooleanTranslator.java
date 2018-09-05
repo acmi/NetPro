@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.network.meta.interpreter;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -27,7 +28,7 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public abstract class BooleanInterpreter implements IntegerInterpreter
+public abstract class BooleanTranslator implements IntegerTranslator
 {
 	private final Object _falseEquivalent, _trueEquivalent;
 	
@@ -37,14 +38,14 @@ public abstract class BooleanInterpreter implements IntegerInterpreter
 	 * @param falseEquivalent interpretation for {@code false}
 	 * @param trueEquivalent interpretation for {@code true}
 	 */
-	protected BooleanInterpreter(Object falseEquivalent, Object trueEquivalent)
+	protected BooleanTranslator(Object falseEquivalent, Object trueEquivalent)
 	{
 		_falseEquivalent = falseEquivalent;
 		_trueEquivalent = trueEquivalent;
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		return value != 0 ? _trueEquivalent : _falseEquivalent;
 	}

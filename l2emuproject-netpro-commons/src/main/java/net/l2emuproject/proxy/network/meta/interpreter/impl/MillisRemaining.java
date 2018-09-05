@@ -17,7 +17,8 @@ package net.l2emuproject.proxy.network.meta.interpreter.impl;
 
 import java.util.concurrent.TimeUnit;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.ISODateTime;
 import net.l2emuproject.util.TimeAmountInterpreter;
@@ -27,10 +28,10 @@ import net.l2emuproject.util.TimeAmountInterpreter;
  * 
  * @author savormix
  */
-public class MillisRemaining implements IntegerInterpreter, ISODateTime
+public class MillisRemaining implements IntegerTranslator, ISODateTime
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		// this used to show weeks, but client only shows days
 		return TimeAmountInterpreter.consolidate(value, TimeUnit.MILLISECONDS, TimeUnit.MILLISECONDS, TimeUnit.DAYS, "N/A");

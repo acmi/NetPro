@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_RECIVE_VIP_PRODUCT_LIST" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<qword alias="" />
+	<qword alias="" />
+	<qword alias="" />
+	<byte alias="" />
+	<dword alias="" id="cnt1" />
+	<loop id="cnt1">
+		<dword alias="" type="product.Product" />
+		<byte alias="" />
+		<byte alias="" />
+		<dword alias="" />
+		<dword alias="" />
+		<byte alias="" />
+		<byte alias="" />
+		<byte alias="" />
+		<byte alias="" id="cnt2" />
+		<loop id="cnt2">
+			<dword alias="" type="Item" />
+			<dword alias="" />
+		</loop>
+	</loop>
+</packet>

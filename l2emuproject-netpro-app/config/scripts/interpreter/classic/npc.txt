@@ -1,0 +1,5838 @@
+159	Tame Princess Ant
+1513	One-eyed Bat Drove Agathion
+1514	Pegasus Agathion
+1523	God of Fortune
+1533	Uthanka Agathion
+1539	Iken Agathion
+1540	Lanya Agathion
+1541	Gnosian Agathion
+1542	Cheerleader Orodriel Agathion
+1543	Lakinos Agathion
+1544	Mortia Agathion
+1545	Heintz Agathion
+1546	Meruril Agathion
+1547	Taman Zu Rapatui Agathion
+1548	Kaurin Agathion
+1549	Ahertbein Agathion
+1550	Naonin Agathion
+1551	Guangong Agathion
+1552	Gwanseum Nyang Agathion
+1553	Blue Opera Agathion
+1554	Red Opera Agathion
+1556	Miss Chipao Agathion
+1574	Phoenix
+1586	Flower Fairy Spirit
+1592	Cheerleader Meruril
+1594	Singer & Dancer Agathion
+1595	Zaken's Spirit Swords Agathion
+4308	Angel Cat, Love's Envoy
+4309	Little Angel Cat, Love Envoy
+9000	Rosello, Letter Collector
+9001	Diana, Contest Participant
+9002	Synge the Cat, Best Singer
+9003	Tumran Bugbear Warrior, Incredibly Strong Monster
+9004	Ruin Imp Elder, Incredibly Strong Monster
+9005	Ol Mahum Novice, Incredibly Strong Monster
+9006	Turek Orc Elder, Incredibly Strong Monster
+9007	Torfe, Incredibly Strong Monster
+9008	[not named in client]
+9009	[not named in client]
+9010	[not named in client]
+9011	[not named in client]
+9012	[not named in client]
+9013	Shcrowl, Zombie Lord
+9014	Riana, Event Manager
+9015	Riana, Celebrating Victory
+9016	Elk
+9017	Babayaga
+9018	Minion Eye
+9019	Matryoshka
+9020	Frintezza, In Love
+9021	Sin Eater
+9022	Rico
+9023	Bonfire, Made with matchsticks
+9024	Older Sister, Daydreamer Match Girl
+9025	Younger Sister, Hungry Match Girl
+9026	Transformed: Part-time Seller Cat
+9027	Transformed: Part-time Seller Cat
+9028	Transformed: Part-time Seller Cat
+9029	Transformed: Part-time Seller Cat
+9030	Transformed: Part-time Seller Cat
+9031	Big Wedding Cake
+9032	Bugbear Agathion
+9033	Dryad Agathion
+9034	Happy Cat, Tournament Helper
+9035	Mermaid Agathion
+9036	Ball Trapping Gnosian
+9037	Ball Trapping Orodriel
+9038	Penalty Kick
+9039	Meliodas Agathion
+9040	Elizabeth Agathion
+9041	Hawk Agathion
+9042	Ban Agathion
+9043	Diane Agathion
+9044	King Agathion
+9045	Merlin Agathion
+9046	Gowther Agathion
+9047	Escanor Agathion
+9048	Snake, Card Master
+12774	Young Squash
+12775	High Quality Squash
+12776	Defective Squash
+12777	Large Young Squash
+12778	High Quality Large Squash
+12779	Defective Large Squash
+13001	Heart of Warding
+13002	Life Control Tower
+13003	Life Control Tower
+13004	Flame Control Tower
+13005	Flame Control Tower
+13016	King Squash
+13017	Emperor Squash
+13146	Tawny-maned Lion
+13271	Growing Watermelon
+13272	Rotten Watermelon
+13273	Fresh Watermelon
+13274	Plump Watermelon
+13275	Growing Honey Watermelon
+13276	Rotten Honey Watermelon
+13277	Fresh Honey Watermelon
+13278	Plump Honey Watermelon
+13399	Snowy Young Squash
+13400	Snowy Ripe Squash
+13401	Snowy Rotten Squash
+13402	Snowy Royal Ripe Squash
+13403	Snowy Large Young Squash
+13404	Snowy Large Ripe Squash
+13405	Snowy Large Rotten Squash
+13406	Snowy Royal Large Ripe Squash
+13407	Pisces
+13408	Aquarius
+13409	Cancer
+13410	Virgo
+13411	Aries
+13412	Capricorn
+13413	Gemini
+13414	Leo
+13415	Libra
+13416	Sagittarius
+13417	Scorpio
+13418	Taurus
+13419	High Quality Squash
+13420	Defective Squash
+13421	Large Young Squash
+13422	High Quality Large Squash
+13479	Rosy Rose
+13480	Purple Rose
+13481	Blue Rose
+13497	Pisces
+13498	Aquarius
+13499	Cancer
+13500	Virgo
+13501	Aries
+13502	Capricorn
+13503	Gemini
+13504	Leo
+13505	Libra
+13506	Sagittarius
+13507	Scorpio
+13508	Taurus
+13509	Pisces
+13510	Aquarius
+13511	Cancer
+13512	Virgo
+13513	Aries
+13514	Capricorn
+13515	Gemini
+13516	Leo
+13517	Libra
+13518	Sagittarius
+13519	Scorpio
+13520	Taurus
+13521	Tawny-maned Lion
+13522	Pegasus
+13523	Cougar Bite
+13524	Kukuru
+13525	Black Bear
+13528	Cutie-pie Antharas
+13529	Kafka
+13530	Pirate Ship Crew
+13551	Bundle of Magical Firewood
+13552	Big Bundle of Magical Firewood
+13553	Virgo Agathion
+13554	Capricorn Agathion
+13555	Libra Agathion
+13556	Aries Agathion
+13557	Taurus Agathion
+13558	Leo Agathion
+13559	Gemini Agathion
+13560	Scorpio Agathion
+13561	Aquarius Agathion
+13562	Pisces Agathion
+13563	Sagittarius Agathion
+13564	Cancer Agathion
+13565	Ignis, Fire Spirit Seed
+13566	Ignis, Minor Fire Spirit
+13567	Ignis, Lesser Fire Spirit
+13568	Ignis, Intermediate Fire Spirit
+13569	Nebula, Water Spirit Seed
+13570	Nebula, Minor Water Spirit
+13571	Nebula, Lesser Water Spirit
+13572	Nebula, Intermediate Water Spirit
+13573	Procella, Wind Spirit Seed
+13574	Procella, Minor Wind Spirit
+13575	Procella, Lesser Wind Spirit
+13576	Procella, Intermediate Wind Spirit
+13577	Petram, Earth Spirit Seed
+13578	Petram, Minor Earth Spirit
+13579	Petram, Lesser Earth Spirit
+13580	Petram, Intermediate Earth Spirit
+13581	Penitent Agathion
+13582	Ignis
+13583	Nebula
+13584	Procella
+13585	Petram
+13586	Dark Elf
+13587	Dwarf
+13588	Elf
+13589	Fairweather Borna
+13590	Deadly Rose
+14001	Reanimated Man
+14002	Reanimated Man
+14003	Reanimated Man
+14004	Reanimated Man
+14005	Reanimated Man
+14006	Reanimated Man
+14007	Reanimated Man
+14008	Reanimated Man
+14009	Reanimated Man
+14010	Reanimated Man
+14011	Reanimated Man
+14012	Reanimated Man
+14013	Reanimated Man
+14014	Reanimated Man
+14015	Reanimated Man
+14016	Reanimated Man
+14017	Reanimated Man
+14018	Reanimated Man
+14019	Reanimated Man
+14020	Reanimated Man
+14021	Reanimated Man
+14022	Reanimated Man
+14023	Reanimated Man
+14024	Reanimated Man
+14025	Reanimated Man
+14026	Reanimated Man
+14027	Reanimated Man
+14028	Reanimated Man
+14029	Reanimated Man
+14030	Reanimated Man
+14031	Reanimated Man
+14032	Reanimated Man
+14033	Reanimated Man
+14034	Reanimated Man
+14035	Reanimated Man
+14036	Reanimated Man
+14037	Reanimated Man
+14038	Corrupted Man
+14039	Corrupted Man
+14040	Corrupted Man
+14041	Corrupted Man
+14042	Corrupted Man
+14043	Corrupted Man
+14044	Corrupted Man
+14045	Corrupted Man
+14046	Corrupted Man
+14047	Corrupted Man
+14048	Corrupted Man
+14049	Corrupted Man
+14050	Corrupted Man
+14051	Corrupted Man
+14052	Corrupted Man
+14053	Corrupted Man
+14054	Corrupted Man
+14055	Corrupted Man
+14056	Corrupted Man
+14057	Corrupted Man
+14058	Corrupted Man
+14059	Corrupted Man
+14060	Corrupted Man
+14061	Corrupted Man
+14062	Corrupted Man
+14063	Corrupted Man
+14064	Corrupted Man
+14065	Corrupted Man
+14066	Corrupted Man
+14067	Corrupted Man
+14068	Corrupted Man
+14069	Corrupted Man
+14070	Corrupted Man
+14071	Corrupted Man
+14072	Corrupted Man
+14073	Corrupted Man
+14074	Cursed Man
+14075	Cursed Man
+14076	Cursed Man
+14077	Cursed Man
+14078	Cursed Man
+14079	Cursed Man
+14080	Cursed Man
+14081	Cursed Man
+14082	Cursed Man
+14083	Cursed Man
+14084	Cursed Man
+14085	Cursed Man
+14086	Cursed Man
+14087	Cursed Man
+14088	Cursed Man
+14089	Cursed Man
+14090	Cursed Man
+14091	Cursed Man
+14092	Cursed Man
+14093	Cursed Man
+14094	Cursed Man
+14095	Cursed Man
+14096	Cursed Man
+14097	Cursed Man
+14098	Cursed Man
+14099	Cursed Man
+14100	Cursed Man
+14101	Cursed Man
+14102	Cursed Man
+14103	Cursed Man
+14104	Cursed Man
+14105	Cursed Man
+14106	Cursed Man
+14107	Cursed Man
+14108	Cursed Man
+14109	Cursed Man
+14110	Cursed Man
+14111	Kat the Cat
+14112	Kat the Cat
+14113	Kat the Cat
+14114	Kat the Cat
+14115	Kat the Cat
+14116	Kat the Cat
+14117	Kat the Cat
+14118	Kat the Cat
+14119	Kat the Cat
+14120	Kat the Cat
+14121	Kat the Cat
+14122	Kat the Cat
+14123	Kat the Cat
+14124	Kat the Cat
+14125	Kat the Cat
+14126	Kat the Cat
+14127	Kat the Cat
+14128	Kat the Cat
+14129	Kat the Cat
+14130	Kat the Cat
+14131	Kat the Cat
+14132	Kat the Cat
+14133	Kat the Cat
+14134	Kat the Cat
+14135	Kat the Cat
+14136	Kat the Cat
+14137	Kat the Cat
+14138	Kat the Cat
+14139	Kat the Cat
+14140	Kat the Cat
+14141	Kat the Cat
+14142	Kat the Cat
+14143	Kat the Cat
+14144	Kat the Cat
+14145	Kat the Cat
+14146	Kat the Cat
+14147	Kat the Cat
+14148	Kat the Cat
+14149	Kat the Cat
+14150	Kat the Cat
+14151	Kat the Cat
+14152	Kat the Cat
+14153	Kat the Cat
+14154	Kat the Cat
+14155	Kat the Cat
+14156	Kat the Cat
+14157	Kat the Cat
+14158	Kat the Cat
+14159	Mew the Cat
+14160	Mew the Cat
+14161	Mew the Cat
+14162	Mew the Cat
+14163	Mew the Cat
+14164	Mew the Cat
+14165	Mew the Cat
+14166	Mew the Cat
+14167	Mew the Cat
+14168	Mew the Cat
+14169	Mew the Cat
+14170	Mew the Cat
+14171	Mew the Cat
+14172	Mew the Cat
+14173	Mew the Cat
+14174	Mew the Cat
+14175	Mew the Cat
+14176	Mew the Cat
+14177	Mew the Cat
+14178	Mew the Cat
+14179	Mew the Cat
+14180	Mew the Cat
+14181	Mew the Cat
+14182	Mew the Cat
+14183	Mew the Cat
+14184	Mew the Cat
+14185	Mew the Cat
+14186	Mew the Cat
+14187	Mew the Cat
+14188	Mew the Cat
+14189	Mew the Cat
+14190	Mew the Cat
+14191	Mew the Cat
+14192	Mew the Cat
+14193	Mew the Cat
+14194	Mew the Cat
+14195	Mew the Cat
+14196	Mew the Cat
+14197	Mew the Cat
+14198	Mew the Cat
+14199	Mew the Cat
+14200	Mew the Cat
+14201	Mew the Cat
+14202	Mew the Cat
+14203	Mew the Cat
+14204	Mew the Cat
+14205	Mew the Cat
+14206	Mew the Cat
+14207	Kai the Cat
+14208	Kai the Cat
+14209	Kai the Cat
+14210	Kai the Cat
+14211	Kai the Cat
+14212	Kai the Cat
+14213	Kai the Cat
+14214	Kai the Cat
+14215	Kai the Cat
+14216	Kai the Cat
+14217	Kai the Cat
+14218	Kai the Cat
+14219	Kai the Cat
+14220	Kai the Cat
+14221	Kai the Cat
+14222	Kai the Cat
+14223	Kai the Cat
+14224	Kai the Cat
+14225	Kai the Cat
+14226	Kai the Cat
+14227	Kai the Cat
+14228	Kai the Cat
+14229	Kai the Cat
+14230	Kai the Cat
+14231	Kai the Cat
+14232	Kai the Cat
+14233	Kai the Cat
+14234	Kai the Cat
+14235	Kai the Cat
+14236	Kai the Cat
+14237	Kai the Cat
+14238	Kai the Cat
+14239	Kai the Cat
+14240	Kai the Cat
+14241	Kai the Cat
+14242	Kai the Cat
+14243	Kai the Cat
+14244	Kai the Cat
+14245	Kai the Cat
+14246	Kai the Cat
+14247	Kai the Cat
+14248	Kai the Cat
+14249	Kai the Cat
+14250	Kai the Cat
+14251	Feline Queen
+14252	Feline Queen
+14253	Feline Queen
+14254	Feline Queen
+14255	Feline Queen
+14256	Feline Queen
+14257	Feline Queen
+14258	Feline Queen
+14259	Feline Queen
+14260	Feline Queen
+14265	Feline Queen
+14266	Feline Queen
+14267	Feline Queen
+14268	Feline Queen
+14269	Feline Queen
+14270	Feline Queen
+14271	Feline Queen
+14272	Feline Queen
+14273	Feline Queen
+14274	Feline Queen
+14275	Feline Queen
+14276	Feline Queen
+14277	Feline Queen
+14278	Feline Queen
+14279	Feline Queen
+14280	Feline Queen
+14281	Feline Queen
+14282	Feline Queen
+14283	Feline Queen
+14284	Feline Queen
+14285	Feline Queen
+14286	Feline Queen
+14287	Feline Queen
+14288	Feline Queen
+14289	Feline Queen
+14290	Feline Queen
+14291	Feline Queen
+14292	Feline Queen
+14293	Feline Queen
+14294	Feline Queen
+14295	Boxer the Unicorn
+14296	Boxer the Unicorn
+14297	Boxer the Unicorn
+14298	Boxer the Unicorn
+14299	Boxer the Unicorn
+14300	Boxer the Unicorn
+14301	Boxer the Unicorn
+14302	Boxer the Unicorn
+14303	Boxer the Unicorn
+14304	Boxer the Unicorn
+14305	Boxer the Unicorn
+14306	Boxer the Unicorn
+14307	Boxer the Unicorn
+14308	Boxer the Unicorn
+14309	Boxer the Unicorn
+14310	Boxer the Unicorn
+14311	Boxer the Unicorn
+14312	Boxer the Unicorn
+14313	Boxer the Unicorn
+14314	Boxer the Unicorn
+14315	Boxer the Unicorn
+14316	Boxer the Unicorn
+14317	Boxer the Unicorn
+14318	Boxer the Unicorn
+14319	Boxer the Unicorn
+14320	Boxer the Unicorn
+14321	Boxer the Unicorn
+14322	Boxer the Unicorn
+14323	Boxer the Unicorn
+14324	Boxer the Unicorn
+14325	Boxer the Unicorn
+14326	Boxer the Unicorn
+14327	Boxer the Unicorn
+14328	Boxer the Unicorn
+14329	Boxer the Unicorn
+14330	Boxer the Unicorn
+14331	Boxer the Unicorn
+14332	Boxer the Unicorn
+14333	Boxer the Unicorn
+14334	Boxer the Unicorn
+14335	Boxer the Unicorn
+14336	Boxer the Unicorn
+14337	Boxer the Unicorn
+14338	Boxer the Unicorn
+14339	Boxer the Unicorn
+14340	Boxer the Unicorn
+14341	Boxer the Unicorn
+14342	Boxer the Unicorn
+14343	Mirage the Unicorn
+14344	Mirage the Unicorn
+14345	Mirage the Unicorn
+14346	Mirage the Unicorn
+14347	Mirage the Unicorn
+14348	Mirage the Unicorn
+14349	Mirage the Unicorn
+14350	Mirage the Unicorn
+14351	Mirage the Unicorn
+14352	Mirage the Unicorn
+14353	Mirage the Unicorn
+14354	Mirage the Unicorn
+14355	Mirage the Unicorn
+14356	Mirage the Unicorn
+14357	Mirage the Unicorn
+14358	Mirage the Unicorn
+14359	Mirage the Unicorn
+14360	Mirage the Unicorn
+14361	Mirage the Unicorn
+14362	Mirage the Unicorn
+14363	Mirage the Unicorn
+14364	Mirage the Unicorn
+14365	Mirage the Unicorn
+14366	Mirage the Unicorn
+14367	Mirage the Unicorn
+14368	Mirage the Unicorn
+14369	Mirage the Unicorn
+14370	Mirage the Unicorn
+14371	Mirage the Unicorn
+14372	Mirage the Unicorn
+14373	Mirage the Unicorn
+14374	Mirage the Unicorn
+14375	Mirage the Unicorn
+14376	Mirage the Unicorn
+14377	Mirage the Unicorn
+14378	Mirage the Unicorn
+14379	Mirage the Unicorn
+14380	Mirage the Unicorn
+14381	Mirage the Unicorn
+14382	Mirage the Unicorn
+14383	Mirage the Unicorn
+14384	Mirage the Unicorn
+14385	Mirage the Unicorn
+14386	Mirage the Unicorn
+14387	Mirage the Unicorn
+14388	Mirage the Unicorn
+14389	Mirage the Unicorn
+14390	Mirage the Unicorn
+14391	Merrow the Unicorn
+14392	Merrow the Unicorn
+14393	Merrow the Unicorn
+14394	Merrow the Unicorn
+14395	Merrow the Unicorn
+14396	Merrow the Unicorn
+14397	Merrow the Unicorn
+14398	Merrow the Unicorn
+14399	Merrow the Unicorn
+14400	Merrow the Unicorn
+14401	Merrow the Unicorn
+14402	Merrow the Unicorn
+14403	Merrow the Unicorn
+14404	Merrow the Unicorn
+14405	Merrow the Unicorn
+14406	Merrow the Unicorn
+14407	Merrow the Unicorn
+14408	Merrow the Unicorn
+14409	Merrow the Unicorn
+14410	Merrow the Unicorn
+14411	Merrow the Unicorn
+14412	Merrow the Unicorn
+14413	Merrow the Unicorn
+14414	Merrow the Unicorn
+14415	Merrow the Unicorn
+14416	Merrow the Unicorn
+14417	Merrow the Unicorn
+14418	Merrow the Unicorn
+14419	Merrow the Unicorn
+14420	Merrow the Unicorn
+14421	Merrow the Unicorn
+14422	Merrow the Unicorn
+14423	Merrow the Unicorn
+14424	Merrow the Unicorn
+14425	Merrow the Unicorn
+14426	Merrow the Unicorn
+14427	Merrow the Unicorn
+14428	Merrow the Unicorn
+14429	Merrow the Unicorn
+14430	Merrow the Unicorn
+14431	Merrow the Unicorn
+14432	Merrow the Unicorn
+14433	Merrow the Unicorn
+14434	Merrow the Unicorn
+14435	Seraphim the Unicorn
+14436	Seraphim the Unicorn
+14437	Seraphim the Unicorn
+14438	Seraphim the Unicorn
+14439	Seraphim the Unicorn
+14440	Seraphim the Unicorn
+14441	Seraphim the Unicorn
+14442	Seraphim the Unicorn
+14443	Seraphim the Unicorn
+14444	Seraphim the Unicorn
+14449	Seraphim the Unicorn
+14450	Seraphim the Unicorn
+14451	Seraphim the Unicorn
+14452	Seraphim the Unicorn
+14453	Seraphim the Unicorn
+14454	Seraphim the Unicorn
+14455	Seraphim the Unicorn
+14456	Seraphim the Unicorn
+14457	Seraphim the Unicorn
+14458	Seraphim the Unicorn
+14459	Seraphim the Unicorn
+14460	Seraphim the Unicorn
+14461	Seraphim the Unicorn
+14462	Seraphim the Unicorn
+14463	Seraphim the Unicorn
+14464	Seraphim the Unicorn
+14465	Seraphim the Unicorn
+14466	Seraphim the Unicorn
+14467	Seraphim the Unicorn
+14468	Seraphim the Unicorn
+14469	Seraphim the Unicorn
+14470	Seraphim the Unicorn
+14471	Seraphim the Unicorn
+14472	Seraphim the Unicorn
+14473	Seraphim the Unicorn
+14474	Seraphim the Unicorn
+14475	Seraphim the Unicorn
+14476	Seraphim the Unicorn
+14477	Seraphim the Unicorn
+14478	Seraphim the Unicorn
+14479	Shadow
+14480	Shadow
+14481	Shadow
+14482	Shadow
+14483	Shadow
+14484	Shadow
+14485	Shadow
+14486	Shadow
+14487	Shadow
+14488	Shadow
+14489	Shadow
+14490	Shadow
+14491	Shadow
+14492	Shadow
+14493	Shadow
+14494	Shadow
+14495	Shadow
+14496	Shadow
+14497	Shadow
+14498	Shadow
+14499	Shadow
+14500	Shadow
+14501	Shadow
+14502	Shadow
+14503	Shadow
+14504	Shadow
+14505	Shadow
+14506	Shadow
+14507	Shadow
+14508	Shadow
+14509	Shadow
+14510	Shadow
+14511	Shadow
+14512	Shadow
+14513	Shadow
+14514	Shadow
+14515	Shadow
+14516	Shadow
+14517	Shadow
+14518	Shadow
+14519	Shadow
+14520	Shadow
+14521	Shadow
+14522	Shadow
+14523	Shadow
+14524	Shadow
+14525	Shadow
+14526	Shadow
+14527	Silhouette
+14528	Silhouette
+14529	Silhouette
+14530	Silhouette
+14531	Silhouette
+14532	Silhouette
+14533	Silhouette
+14534	Silhouette
+14535	Silhouette
+14536	Silhouette
+14537	Silhouette
+14538	Silhouette
+14539	Silhouette
+14540	Silhouette
+14541	Silhouette
+14542	Silhouette
+14543	Silhouette
+14544	Silhouette
+14545	Silhouette
+14546	Silhouette
+14547	Silhouette
+14548	Silhouette
+14549	Silhouette
+14550	Silhouette
+14551	Silhouette
+14552	Silhouette
+14553	Silhouette
+14554	Silhouette
+14555	Silhouette
+14556	Silhouette
+14557	Silhouette
+14558	Silhouette
+14559	Silhouette
+14560	Silhouette
+14561	Silhouette
+14562	Silhouette
+14563	Silhouette
+14564	Silhouette
+14565	Silhouette
+14566	Silhouette
+14567	Silhouette
+14568	Silhouette
+14569	Silhouette
+14570	Silhouette
+14571	Silhouette
+14572	Silhouette
+14573	Silhouette
+14574	Silhouette
+14575	Soulless
+14576	Soulless
+14577	Soulless
+14578	Soulless
+14579	Soulless
+14580	Soulless
+14581	Soulless
+14582	Soulless
+14583	Soulless
+14584	Soulless
+14585	Soulless
+14586	Soulless
+14587	Soulless
+14588	Soulless
+14589	Soulless
+14590	Soulless
+14591	Soulless
+14592	Soulless
+14593	Soulless
+14594	Soulless
+14595	Soulless
+14596	Soulless
+14597	Soulless
+14598	Soulless
+14599	Soulless
+14600	Soulless
+14601	Soulless
+14602	Soulless
+14603	Soulless
+14604	Soulless
+14605	Soulless
+14606	Soulless
+14607	Soulless
+14608	Soulless
+14609	Soulless
+14610	Soulless
+14611	Soulless
+14612	Soulless
+14613	Soulless
+14614	Soulless
+14615	Soulless
+14616	Soulless
+14617	Soulless
+14618	Soulless
+14619	Nightshade
+14620	Nightshade
+14621	Nightshade
+14622	Nightshade
+14623	Nightshade
+14624	Nightshade
+14625	Nightshade
+14626	Nightshade
+14627	Nightshade
+14628	Nightshade
+14633	Nightshade
+14634	Nightshade
+14635	Nightshade
+14636	Nightshade
+14637	Nightshade
+14638	Nightshade
+14639	Nightshade
+14640	Nightshade
+14641	Nightshade
+14642	Nightshade
+14643	Nightshade
+14644	Nightshade
+14645	Nightshade
+14646	Nightshade
+14647	Nightshade
+14648	Nightshade
+14649	Nightshade
+14650	Nightshade
+14651	Nightshade
+14652	Nightshade
+14653	Nightshade
+14654	Nightshade
+14655	Nightshade
+14656	Nightshade
+14657	Nightshade
+14658	Nightshade
+14659	Nightshade
+14660	Nightshade
+14661	Nightshade
+14662	Nightshade
+14663	Mechanic Golem
+14664	Mechanic Golem
+14665	Mechanic Golem
+14666	Mechanic Golem
+14667	Mechanic Golem
+14668	Mechanic Golem
+14669	Mechanic Golem
+14670	Mechanic Golem
+14671	Mechanic Golem
+14672	Mechanic Golem
+14673	Mechanic Golem
+14674	Mechanic Golem
+14675	Mechanic Golem
+14676	Mechanic Golem
+14677	Mechanic Golem
+14678	Mechanic Golem
+14679	Mechanic Golem
+14680	Mechanic Golem
+14681	Mechanic Golem
+14682	Mechanic Golem
+14683	Mechanic Golem
+14684	Mechanic Golem
+14685	Mechanic Golem
+14686	Mechanic Golem
+14687	Mechanic Golem
+14688	Mechanic Golem
+14689	Mechanic Golem
+14690	Mechanic Golem
+14691	Mechanic Golem
+14692	Mechanic Golem
+14693	Mechanic Golem
+14694	Mechanic Golem
+14695	Mechanic Golem
+14696	Mechanic Golem
+14697	Mechanic Golem
+14698	Mechanic Golem
+14699	Mechanic Golem
+14700	Mechanic Golem
+14701	Mechanic Golem
+14702	Big Boom
+14703	Big Boom
+14704	Big Boom
+14705	Big Boom
+14706	Big Boom
+14707	Big Boom
+14708	Big Boom
+14709	Big Boom
+14710	Big Boom
+14711	Big Boom
+14712	Big Boom
+14713	Big Boom
+14714	Big Boom
+14715	Big Boom
+14716	Big Boom
+14717	Big Boom
+14718	Big Boom
+14719	Big Boom
+14720	Big Boom
+14721	Big Boom
+14722	Big Boom
+14723	Big Boom
+14724	Big Boom
+14725	Big Boom
+14726	Big Boom
+14727	Big Boom
+14728	Big Boom
+14729	Big Boom
+14730	Big Boom
+14731	Big Boom
+14732	Big Boom
+14733	Big Boom
+14734	Big Boom
+14735	Big Boom
+14736	Big Boom
+14737	Siege Golem
+14738	Siege Golem
+14739	Siege Golem
+14740	Siege Golem
+14741	Siege Golem
+14742	Siege Golem
+14743	Siege Golem
+14744	Siege Golem
+14745	Siege Golem
+14746	Siege Golem
+14747	Siege Golem
+14748	Siege Golem
+14749	Siege Golem
+14750	Siege Golem
+14751	Siege Golem
+14752	Siege Golem
+14753	Siege Golem
+14754	Siege Golem
+14755	Siege Golem
+14756	Siege Golem
+14757	Siege Golem
+14758	Siege Golem
+14759	Siege Golem
+14760	Siege Golem
+14761	Siege Golem
+14762	Siege Golem
+14763	Siege Golem
+14764	Siege Golem
+14765	Siege Golem
+14766	Siege Golem
+14767	Siege Golem
+14768	Wild Hog Cannon
+14769	Wild Hog Cannon
+14770	Wild Hog Cannon
+14771	Wild Hog Cannon
+14772	Wild Hog Cannon
+14773	Wild Hog Cannon
+14774	Wild Hog Cannon
+14775	Wild Hog Cannon
+14776	Wild Hog Cannon
+14777	Wild Hog Cannon
+14778	Wild Hog Cannon
+14779	Wild Hog Cannon
+14780	Wild Hog Cannon
+14781	Wild Hog Cannon
+14782	Wild Hog Cannon
+14783	Wild Hog Cannon
+14784	Wild Hog Cannon
+14785	Wild Hog Cannon
+14786	Wild Hog Cannon
+14787	Wild Hog Cannon
+14788	Wild Hog Cannon
+14789	Wild Hog Cannon
+14790	Wild Hog Cannon
+14791	Wild Hog Cannon
+14792	Wild Hog Cannon
+14793	Wild Hog Cannon
+14794	Wild Hog Cannon
+14795	Wild Hog Cannon
+14796	Wild Hog Cannon
+14797	Wild Hog Cannon
+14798	Wild Hog Cannon
+14799	Dark Panther
+14800	Dark Panther
+14801	Dark Panther
+14802	Dark Panther
+14803	Dark Panther
+14804	Dark Panther
+14805	Dark Panther
+14806	Dark Panther
+14807	Dark Panther
+14808	Dark Panther
+14809	Dark Panther
+14810	Dark Panther
+14811	Dark Panther
+14812	Dark Panther
+14813	Dark Panther
+14814	Dark Panther
+14815	Dark Panther
+14816	Dark Panther
+14817	Dark Panther
+14818	Dark Panther
+14819	Dark Panther
+14820	Dark Panther
+14821	Dark Panther
+14822	Dark Panther
+14823	Dark Panther
+14824	Dark Panther
+14825	Dark Panther
+14826	Dark Panther
+14827	Dark Panther
+14828	Dark Panther
+14829	Dark Panther
+14830	Dark Panther
+14831	Dark Panther
+14832	Dark Panther
+14833	Dark Panther
+14834	Dark Panther
+14835	Dark Panther
+14836	Feline King
+14837	Magnus the Unicorn
+14838	Spectral Lord
+14839	Swoop Cannon
+14840	Swoop Cannon
+14841	Swoop Cannon
+14842	Swoop Cannon
+14843	Swoop Cannon
+14844	Swoop Cannon
+14845	Swoop Cannon
+14846	Swoop Cannon
+14847	Swoop Cannon
+14848	Swoop Cannon
+14849	Swoop Cannon
+14850	Swoop Cannon
+14851	Swoop Cannon
+14852	Swoop Cannon
+14853	Swoop Cannon
+14854	Swoop Cannon
+14855	Swoop Cannon
+14856	Swoop Cannon
+14857	Swoop Cannon
+14858	Swoop Cannon
+14859	Swoop Cannon
+14860	Swoop Cannon
+14861	Swoop Cannon
+14862	Swoop Cannon
+14863	Swoop Cannon
+14864	Swoop Cannon
+14865	Swoop Cannon
+14866	Swoop Cannon
+14867	Swoop Cannon
+14868	Swoop Cannon
+14869	Swoop Cannon
+14870	Divine Beast
+14871	Feline King
+14872	Feline King
+14873	Feline King
+14874	Feline King
+14875	Feline King
+14876	Feline King
+14877	Feline King
+14878	Feline King
+14879	Feline King
+14880	Feline King
+14881	Feline King
+14882	Feline King
+14883	Feline King
+14884	Feline King
+14885	Feline King
+14886	Magnus the Unicorn
+14887	Magnus the Unicorn
+14888	Magnus the Unicorn
+14889	Magnus the Unicorn
+14890	Magnus the Unicorn
+14891	Magnus the Unicorn
+14892	Magnus the Unicorn
+14893	Magnus the Unicorn
+14894	Magnus the Unicorn
+14895	Magnus the Unicorn
+14896	Magnus the Unicorn
+14897	Magnus the Unicorn
+14898	Magnus the Unicorn
+14899	Magnus the Unicorn
+14900	Magnus the Unicorn
+14901	Spectral Lord
+14902	Spectral Lord
+14903	Spectral Lord
+14904	Spectral Lord
+14905	Spectral Lord
+14906	Spectral Lord
+14907	Spectral Lord
+14908	Spectral Lord
+14909	Spectral Lord
+14910	Spectral Lord
+14911	Spectral Lord
+14912	Spectral Lord
+14913	Spectral Lord
+14914	Spectral Lord
+14915	Spectral Lord
+14916	Ricky
+14917	Advanced Ricky
+15941	[not named in client]
+15942	[not named in client]
+16049	Love Agathion
+16055	Griffon
+16056	Joy
+16063	Saerom
+16073	Rudolph Agathion
+16078	Nevit's Messenger Kanna
+18001	[not named in client]
+18002	Scarecrow
+18003	Bomb
+18004	Tower
+18005	[not named in client]
+18006	[not named in client]
+18007	Captain of Blood Knights, Chaos Decoy
+18008	[not named in client]
+18009	[not named in client]
+18010	[not named in client]
+18011	[not named in client]
+18012	[not named in client]
+18013	[not named in client]
+18014	[not named in client]
+18015	Blood Knight, Chaos Decoy
+18016	Treasure Chest, Gludio
+18017	Teleport, Giant's Cave
+18018	[not named in client]
+18019	[not named in client]
+18020	Queen Ant
+18021	Queen Ant Larva
+18022	Nurse Ant
+18023	Escort Ant
+18024	Royal Guard Ant
+18025	Nakondas, Raid Boss
+18026	Nakondas' Slave, Raid Fighter
+18027	Nakondas' Chain, Raid Boss
+18028	Crazy Mechanic Golem, Raid Fighter
+18029	Orfen
+18030	Laikel
+18031	Laikel Leos
+18032	Riba
+18033	Riba Iren
+18034	Beleth' Seer Sephia, Raid Boss
+18035	Soul Drinker, Raid Fighter
+18036	Sephia's Salve, Raid Fighter
+18037	Timak Priest Ragoth, Raid Boss
+18038	Ragoth' Escort, Raid Fighter
+18039	Ragoth' Herald, Raid Fighter
+18040	Lord Ishka, Raid Boss
+18041	Ishka's Elite Officer, Raid Fighter
+18042	Ishka's Elite Soldier, Raid Fighter
+18043	Taik High Prefect Arak, Raid Boss
+18044	Arak's Archer, Raid Fighter
+18045	Arak's Footman, Raid Fighter
+18046	Roaring Lord Kastor, Raid Boss
+18047	Kastor's Priest, Raid Fighter
+18048	Kastor's Prefect, Raid Fighter
+18049	Shilen's Messenger Cabrio, Raid Boss
+18050	Cabrio Captor, Raid Fighter
+18051	Cabrio Blader, Raid Fighter
+18052	Priest of Core Decar, Raid Boss
+18053	Baium
+18054	Archangel
+18055	[not named in client]
+18056	Dancing Bard, Raid Boss
+18057	Golden Bat Dandy, Raid Boss
+18058	Super Mew the Cat, Raid Boss
+18059	Snowman, Raid Boss
+18120	Halisha's Officer
+18121	Halisha's Officer
+18122	Halisha's Officer
+18123	Halisha's Officer
+18124	Halisha's Officer
+18125	Halisha's Officer
+18126	Halisha's Officer
+18127	Halisha's Officer
+18128	Halisha's Officer
+18129	Halisha's Officer
+18130	Halisha's Officer
+18131	Halisha's Officer
+18132	Imperial Healer
+18133	Imperial Mosaic
+18134	Imperial Mosaic
+18135	Imperial Mosaic
+18136	Imperial Mosaic
+18137	Imperial Mosaic
+18138	Imperial Mosaic
+18139	Imperial Mosaic
+18140	Imperial Mosaic
+18141	Graveyard Beetle
+18142	Graveyard Beetle
+18143	Graveyard Beetle
+18144	Graveyard Beetle
+18145	Graveyard Beetle
+18146	Graveyard Beetle
+18147	Graveyard Beetle
+18148	Graveyard Beetle
+18149	Graveyard Beetle
+18150	Victim
+18151	Victim
+18152	Victim
+18153	Victim
+18154	Victim
+18155	Victim
+18156	Victim
+18157	Victim
+18158	Halisha's Executioner
+18159	Halisha's Executioner
+18160	Halisha's Executioner
+18161	Halisha's Executioner
+18162	Halisha's Executioner
+18163	Halisha's Executioner
+18164	Halisha's Executioner
+18165	Halisha's Executioner
+18166	Imperial Guard
+18167	Imperial Guard
+18168	Imperial Guard
+18169	Imperial Guard
+18170	Imperial Guard
+18171	Imperial Guard
+18172	Imperial Guard
+18173	Halisha's Foreman
+18174	Halisha's Foreman
+18175	Halisha's Foreman
+18176	Halisha's Foreman
+18177	Halisha's Foreman
+18178	Halisha's Foreman
+18179	Halisha's Foreman
+18180	Halisha's Foreman
+18181	Halisha's Foreman
+18182	Halisha's Foreman
+18183	Halisha's Foreman
+18184	Halisha's Foreman
+18185	Evil Astrologer
+18186	Evil Astrologer
+18187	Dark Knight
+18188	Dark Knight
+18189	Dark Knight
+18190	Dark Knight
+18191	Witch of dust
+18192	Witch of dust
+18193	Witch of dust
+18194	Witch of dust
+18195	Signet of Emperor
+18196	Charm of Corner
+18197	Charm of Corner
+18198	Charm of Corner
+18199	Charm of Corner
+18200	Charm of Corner
+18201	Charm of Corner
+18202	Charm of Corner
+18203	Charm of Corner
+18204	Charm of Corner
+18205	Charm of Corner
+18206	Charm of Corner
+18207	Charm of Corner
+18208	Charm of Corner
+18209	Charm of Corner
+18210	Charm of Corner
+18211	Charm of Corner
+18212	Halisha's Archon
+18213	Halisha's Archon
+18214	Halisha's Archon
+18215	Halisha's Archon
+18216	Halisha's Archon
+18217	Halisha's Archon
+18218	Halisha's Archon
+18219	Halisha's Archon
+18220	Shaman of Darkness
+18221	Shaman of Darkness
+18222	Assassin of Darkness
+18223	Assassin of Darkness
+18224	Assassin of Darkness
+18225	Assassin of Darkness
+18226	Caster of Darkness
+18227	Caster of Darkness
+18228	Caster of Darkness
+18229	Caster of Darkness
+18230	Signet of Emperor
+18231	Statue of Protection
+18232	Statue of Protection
+18233	Statue of Protection
+18234	Statue of Protection
+18235	Statue of Protection
+18236	Statue of Protection
+18237	Statue of Protection
+18238	Statue of Protection
+18239	Statue of Protection
+18240	Statue of Protection
+18241	Statue of Protection
+18242	Statue of Protection
+18243	Statue of Protection
+18244	Watchman of Grave
+18245	Watchman of Grave
+18246	Watchman of Grave
+18247	Watchman of Grave
+18248	Watchman of Grave
+18249	Watchman of Grave
+18250	Watchman of Grave
+18251	Watchman of Grave
+18252	Watchman of Grave
+18253	Watchman of Grave
+18254	Watchman of Grave
+18255	Watchman of Grave
+18256	Halisha's Treasure Chest
+18342	Gremlin
+18919	[not named in client]
+18926	Varka's Altar
+18927	Campfire
+18928	Campfire
+19133	Expedition Member
+19134	Antharas Decoration 1
+19135	Antharas Decoration 2
+19136	Expedition Member
+19137	Expedition Member
+19545	Warming Fire
+19671	[not named in client]
+19673	[not named in client]
+20001	Gremlin
+20002	Rabbit
+20003	Goblin
+20004	Imp
+20005	Imp Elder
+20006	Orc Archer
+20007	Green Fungus
+20008	Felim Lizardman
+20009	Vuku Orc
+20010	Felim Lizardman Scout
+20011	Vuku Orc Archer
+20012	Gora Werewolf
+20013	Dryad
+20014	Felim Lizardman Warrior
+20015	Marsh Zombie
+20016	Stone Golem
+20017	Vuku Orc Warrior
+20018	Carnivorous Fungus
+20019	Dryad Elder
+20020	Marsh Zombie Scout
+20021	Red Bear
+20022	Misery Skeleton
+20023	Shadow Beast
+20024	Langk Lizardman Warrior
+20025	Lesser Dark Horror
+20026	Ruin Zombie
+20027	Langk Lizardman Scout
+20028	Pincher
+20029	Ruin Zombie Leader
+20030	Langk Lizardman
+20031	Onyx Beast
+20032	Pinrul
+20033	Shade Horror
+20034	Prowler
+20035	Skeleton Tracker
+20036	Lirein
+20037	Mana Seeker
+20038	Giant Venomous Spider
+20039	Ratman Scavenger
+20040	Sukar Ratman
+20041	Contortion of Lunacy
+20042	Skeleton Tracker Captain
+20043	Arachnid Tracker
+20044	Lirein Elder
+20045	Skeleton Scout
+20046	Stink Zombie
+20047	Sukar Ratman Captain
+20048	Lesser Succubus
+20049	Lycanthrope
+20050	Arachnid Predator
+20051	Skeleton Bowman
+20052	Lesser Succubus Turen
+20053	Ol Mahum Patrol
+20054	Ruin Spartoi
+20055	Monster Eye Watchman
+20056	Dre Vanul Disposer
+20057	Lesser Succubus Tilfo
+20058	Ol Mahum Guard
+20059	Monster Eye Patrol
+20060	Raging Spartoi
+20061	Ol Mahum Straggler
+20062	Tumran Bugbear
+20063	Ol Mahum Shooter
+20064	Tumran Bugbear Warrior
+20065	Ol Mahum Patrolman
+20066	Ol Mahum Officer
+20067	Monster Eye Watcher
+20068	Monster Eye Destroyer
+20069	Selu Lizardman Scout
+20070	Lesser Basilisk
+20071	Selu Lizardman Warrior
+20072	Basilisk
+20073	Ol Mahum Legionnaire
+20074	Androscorpio
+20075	Ant Larva
+20076	Ol Mahum Commander
+20077	Androscorpio Hunter
+20078	Whispering Wind
+20079	Ant
+20080	Ant Captain
+20081	Ant Overseer
+20082	Ant Recruit
+20083	Granite Golem
+20084	Ant Patrol
+20085	Puncher
+20086	Ant Guard
+20087	Ant Soldier
+20088	Ant Warrior Captain
+20089	Noble Ant
+20090	Noble Ant Captain
+20091	Young Fox
+20092	Monster Eye
+20093	Orc Warrior
+20094	Orc Sniper
+20095	Vampire Bat
+20096	Orc Lieutenant
+20097	Drill Bat
+20098	Orc Captain
+20099	Skeleton
+20100	Skeleton Archer
+20101	Crasher
+20102	Skeleton Marksman
+20103	Giant Spider
+20104	Skeleton Lord
+20105	Dark Horror
+20106	Giant Fang Spider
+20107	Ratman
+20108	Giant Blade Spider
+20109	Salamander
+20110	Undine
+20111	Ratman Lieutenant
+20112	Salamander Elder
+20113	Undine Elder
+20114	Salamander Noble
+20115	Undine Noble
+20116	Fox
+20117	Dre Vanul
+20118	Dre Vanul Watchman
+20119	Elder Fox
+20120	Wolf
+20121	Giant Toad
+20130	Orc
+20131	Orc Soldier
+20132	Werewolf
+20133	Bugbear
+20134	Cave Maiden
+20135	Alligator
+20136	Death Knight
+20137	Drake
+20138	Turek Orc Commander, Turek Guardian
+20139	Divine Angel
+20140	Giant Leech
+20141	Giant Wild Boar
+20142	Blood Queen
+20143	Bear
+20144	Hangman Tree
+20145	Harpy
+20146	Headless Knight
+20147	Hobgoblin
+20148	Starving Spirit
+20149	Steel Golem
+20150	King Bugbear
+20151	Kobold
+20152	Lizardman
+20153	Magical Weaver
+20154	Mandragora
+20155	Mandragora Sapling
+20156	Mandragora Blossom
+20157	Marsh Stakato
+20158	Medusa
+20159	Minotaur
+20160	Neer Crawler
+20161	Oel Mahum
+20162	Ogre
+20163	Ol Mahum
+20164	Ol Mahum Archer
+20165	Ol Mahum Champion
+20166	Succubus
+20167	Serpent Slave
+20168	Silenos
+20169	Skeleton Royal Guard
+20170	Spartoi
+20171	Specter
+20172	Sylph
+20173	Troll
+20174	Two-headed Giant
+20175	Walking Fungus
+20176	Wyrm
+20177	Zombie
+20189	Crystal Puma
+20190	Skeleton Marauder
+20191	Skeleton Raider
+20192	Tyrant
+20193	Elder Tyrant
+20194	Queen Undine
+20197	Sorrow Maiden
+20198	Neer Crawler Berserker
+20199	Amber Basilisk
+20200	Strain
+20201	Ghoul
+20202	Corpse Tracker
+20203	Dion Grizzly
+20204	Bloody Bee
+20205	Dire Wolf
+20206	Cardiff Werewolf
+20207	Ol Mahum Guerilla
+20208	Ol Mahum Raider
+20209	Ol Mahum Sniper
+20210	Ol Mahum Lieutenant
+20211	Ol Mahum Captain
+20212	Bloody Axe Turmak, Ol Mahum Lord
+20213	Porta
+20214	Excuro
+20215	Mordeo
+20216	Ricenseo
+20217	Krator
+20218	Premo
+20219	Validus
+20220	Dicor
+20221	Perum
+20222	Torfe
+20223	Mandragora Sprout
+20224	Ol Mahum Ranger
+20225	Giant Mist Leech
+20226	Gray Ant
+20227	Mist Horror Ripper
+20228	Giant Crimson Ant
+20229	Weird Wasp
+20230	Marsh Stakato Worker
+20231	Toad Lord
+20232	Marsh Stakato Soldier
+20233	Marsh Spider
+20234	Marsh Stakato Drone
+20235	Shackle
+20236	Cave Servant
+20237	Cave Servant Archer
+20238	Cave Servant Warrior
+20239	Cave Servant Captain
+20240	Royal Cave Servant
+20241	Hunter Gargoyle
+20242	Dustwind Gargoyle
+20243	Thunder Wyrm
+20244	Maluk Succubus
+20245	Maluk Succubus Turen
+20246	Cave Keeper
+20248	Turak Bugbear
+20249	Turak Bugbear Warrior
+20250	Glass Jaguar
+20251	Delu Lizardman
+20252	Delu Lizardman Scout
+20253	Delu Lizardman Warrior
+20254	Skeleton Axeman
+20255	Batur Orc
+20256	Batur Orc Archer
+20257	Batur Orc Warrior
+20258	Batur Orc Shaman
+20259	Batur Orc Prefect
+20260	Orc Hero
+20261	Orc Shaman
+20265	Monster Eye Searcher
+20266	Monster Eye Gazer
+20267	Breka Orc
+20268	Breka Orc Archer
+20269	Breka Orc Shaman
+20270	Breka Orc Prefect
+20271	Breka Orc Warrior
+20272	Cave Servant
+20273	Cave Servant Archer
+20274	Cave Servant Warrior
+20275	Cave Servant Captain
+20276	Royal Cave Servant
+20277	Cave Keeper
+20279	Shackle
+20280	Headless Knight
+20281	Dustwind Gargoyle
+20282	Thunder Wyrm
+20283	Maluk Succubus
+20284	Maluk Succubus Turen
+20285	Drake
+20286	Hunter Gargoyle
+20287	Cave Maiden
+20291	Enku Orc Hero
+20292	Enku Orc Shaman
+20293	Virud Lizardman
+20294	Virud Lizardman Matriarch
+20295	Virud Lizardman Warrior
+20296	Virud Lizardman Scout
+20297	Virud Lizardman Shaman
+20298	Virud Lizardman Shaman
+20299	Zenta Lizardman
+20300	Zenta Lizardman Matriarch
+20301	Zenta Lizardman Scout
+20302	Zenta Lizardman Warrior
+20303	Zenta Lizardman Shaman
+20304	Marsh Stakato Queen
+20305	Grave
+20307	Garum Werewolf
+20308	Hook Spider
+20309	Brown Fox
+20310	Brown Bear
+20311	Rakeclaw Imp
+20312	Rakeclaw Imp Hunter
+20313	Rakeclaw Imp Leader
+20314	Giant White Shark
+20316	Blackwing Bat
+20317	Black Wolf
+20318	Black Timber Wolf
+20319	Goblin Tomb Raider
+20320	Goblin Tomb Raider Leader
+20321	Goblin Thief
+20322	Goblin Brigand
+20323	Goblin Brigand Leader
+20324	Goblin Brigand Lieutenant
+20325	Goblin Raider
+20326	Goblin Scout
+20327	Goblin Snooper
+20328	Goblin Lookout
+20329	Ghost Guardian
+20330	Spelunking Bat
+20331	Monster Eye Tracker
+20333	Greystone Golem
+20334	Gremlin Scavenger
+20335	Grizzly Bear
+20336	Green Dryad
+20337	Longtail Fox
+20338	Nightmare Weaver
+20340	Slave Skeleton
+20341	Undead Slave
+20342	Werewolf Chieftain
+20343	Werewolf Hunter
+20345	Dark Terror
+20346	Darkstone Golem
+20347	Doom Wraith
+20348	Cave Spider
+20349	Cave Bat
+20350	Cave Fang Spider
+20351	Dre Vanul Tracker
+20352	Dre Vanul Slayer
+20353	Dre Vanul Beholder
+20354	Dwarf Ghost
+20356	Langk Lizardman Leader
+20357	Langk Lizardman Lieutenant
+20358	Ratman Hunter
+20359	Ratman Warrior
+20360	Ratman Spy
+20361	Tunath Orc Marksman
+20362	Tunath Orc Warrior Captain
+20363	Maraku Werewolf
+20364	Maraku Werewolf Chieftain
+20365	Mountain Fungus
+20367	Merkenis' Escort
+20368	Graveyard Keeper
+20369	Moonstone Beast
+20370	Barbed Bat
+20371	Mist Terror
+20372	Baraq Orc Warrior
+20373	Baraq Orc Warrior Captain
+20374	Varangka's Guard
+20375	Varangka's Escort
+20376	Varika Brigand Leader
+20377	Varika's Bandit
+20378	Stone Giant
+20379	Stone Giant Soldier
+20380	Stone Giant Guardian
+20381	Vaiss Orc
+20382	Vaiss Orc Warrior Captain
+20383	Binding
+20385	Balor Orc Archer
+20386	Balor Orc Warrior
+20387	Balor Orc Warrior Captain
+20388	Balor Orc Warrior Lieutenant
+20389	Boogle Ratman
+20390	Boogle Ratman Captain
+20391	Red Fox
+20392	Red Eye Bat
+20393	Red Scavenger Spider
+20394	Crimson Tarantula
+20398	Vrykolakas
+20399	Vrykolakas Wolfkin
+20400	Blood Fungus
+20401	Veelan Bugbear
+20402	Veelan Bugbear Warrior
+20403	Hunter Tarantula
+20404	Silent Horror
+20405	Knoriks, Antharas Watchman
+20406	Banshee
+20407	Maluk Banshee
+20410	Scavenger Spider
+20411	Scavenger Bat
+20412	Cave Banshee
+20415	Scarlet Salamander
+20416	Scarlet Salamander Elder
+20418	Crystalline Beast
+20419	Akaste Succubus
+20420	Akaste Succubus Turen
+20421	Akaste Succubus Tilfo
+20422	Akaste Skeleton Prefect
+20423	Akaste Skeleton Archer
+20424	Akaste Skeleton Lord
+20425	Akaste Skeleton Warrior
+20426	Evil Eye
+20427	Evil Eye Watchman
+20428	Evil Eye Patrol
+20429	Evil Eye Lookout
+20431	Elf Ghost
+20432	Elpy
+20433	Festering Bat
+20435	Opal Beast
+20436	Ol Mahum Supplier
+20437	Ol Mahum Recruit
+20438	Ol Mahum General
+20439	Ol Mahum Sergeant
+20440	Elder Brown Fox
+20441	Elder Longtail Fox
+20442	Elder Wolf
+20443	Elder Red Fox
+20444	Elder Prairie Fox
+20445	Uthanka Pirate
+20446	Utuku Orc
+20447	Utuku Orc Archer
+20448	Utuku Orc Soldier
+20449	Will-O-Wisp
+20450	Relic Werewolf
+20451	Relic Spartoi
+20453	Human Ghost
+20454	Forgotten Watchman
+20455	Doom Soldier
+20456	Ashen Wolf
+20457	Zombie Soldier
+20458	Zombie Warrior
+20460	Crimson Spider
+20461	Dungeon Spider
+20462	Cave Blade Spider
+20463	Dungeon Skeleton Archer
+20464	Dungeon Skeleton Soldier
+20465	Prairie Fox
+20466	Pincer Spider
+20468	Kaboo Orc
+20469	Kaboo Orc Archer
+20470	Kaboo Orc Soldier
+20471	Kaboo Orc Warrior
+20472	Kaboo Orc Warrior Captain
+20473	Kaboo Orc Warrior Lieutenant
+20474	Kasha Spider
+20475	Kasha Wolf
+20476	Kasha Fang Spider
+20477	Kasha Timber Wolf
+20478	Kasha Blade Spider
+20479	Kasha Bear
+20480	Blade Bat
+20481	Bearded Keltir
+20483	Corpse Candle
+20487	Kuruka Ratman
+20488	Kuruka Ratman Hunter
+20489	Quicksilver Beast
+20490	Death Doll
+20491	Crypt Horror
+20492	Kirunak's Escort
+20494	Turek War Hound
+20495	Turek Orc Prefect
+20496	Turek Orc Archer
+20497	Turek Orc Skirmisher
+20498	Turek Orc Supplier
+20499	Turek Orc Footman
+20500	Turek Orc Sentinel
+20501	Turek Orc Priest
+20502	Twink Puma
+20504	Dread Soldier
+20505	Ruin Bat
+20506	Ruin Imp
+20507	Ruin Imp Elder
+20508	Plunder Tarantula
+20509	Spore Fungus
+20510	Puma
+20511	Pitchstone Golem
+20512	Field Stalker
+20513	Skeleton Knight
+20514	Shield Skeleton
+20515	Skeleton Infantryman
+20516	Skeleton Sentinel
+20517	Skeleton Hunter
+20518	Skeleton Hunter Archer
+20519	Skeleton Pikeman
+20520	Pirate Captain Uthanka
+20521	Whinstone Golem
+20522	White Fang
+20524	Grey Wolf Elder
+20525	Gray Wolf
+20526	Obsidian Golem
+20527	Snow Wolf
+20528	Goblin Lord
+20529	Young Brown Keltir
+20530	Young Red Keltir
+20531	Young Prairie Keltir
+20532	Brown Keltir
+20533	Longtail Keltir
+20534	Red Keltir
+20535	Prairie Keltir
+20536	Elder Brown Keltir
+20537	Elder Red Keltir
+20538	Elder Prairie Keltir
+20539	Elder Longtail Keltir
+20540	Gemstone Beast
+20541	Ore Bat
+20542	Skeleton Longbowman
+20543	Ghost
+20544	Elder Keltir
+20545	Young Keltir
+20546	Turek Orc Elder
+20547	Ol Mahum Support Troop
+20548	Ol Mahum Deserter
+20549	Ol Mahum Lord
+20550	Guardian Basilisk
+20551	Road Scavenger
+20552	Fettered Soul
+20553	Windsus
+20554	Grandis
+20555	Giant Fungus
+20556	Giant Monster Eye
+20557	Dire Wyrm
+20558	Rotting tree
+20559	Rotting Golem
+20560	Trisalim
+20561	Trisalim Tarantula
+20562	Spore Zombie
+20563	Manashen Gargoyle
+20564	Reinforced Monster Eye
+20565	Reinforced Stone Golem
+20566	Reinforced Steel Golem
+20567	Reinforced Gargoyle
+20568	Formor
+20569	Formor Elder
+20570	Tarlk Bugbear
+20571	Tarlk Bugbear Warrior
+20572	Tarlk Bugbear Captain
+20573	Tarlk Basilisk
+20574	Elder Tarlk Basilisk
+20575	Oel Mahum Warrior
+20576	Oel Mahum Shaman
+20577	Leto Lizardman
+20578	Leto Lizardman Archer
+20579	Leto Lizardman Soldier
+20580	Leto Lizardman Warrior
+20581	Leto Lizardman Shaman
+20582	Leto Lizardman Overlord
+20583	Timak Orc
+20584	Timak Orc Archer
+20585	Timak Orc Soldier
+20586	Timak Orc Warrior
+20587	Timak Orc Shaman
+20588	Timak Orc Prefect
+20589	Fline
+20590	Liele
+20591	Valley Treant
+20592	Satyr
+20593	Unicorn
+20594	Forest Runner
+20595	Fline Elder
+20596	Liele Elder
+20597	Valley Treant Elder
+20598	Satyr Elder
+20599	Elder the Unicorn
+20600	Karul Bugbear
+20601	Tamlin Orc
+20602	Tamlin Orc Archer
+20603	Kronbe Spider
+20604	Lakin
+20605	Weird Drake
+20606	Kuran Kobold
+20607	Kuran Kobold Warrior
+20608	Patin Archer
+20609	Salamander Lakin
+20610	Sentinel Of Water
+20611	Dre Vanul Warrior
+20612	Salamander Rowin
+20613	Lafi Lizardman
+20614	Lafi Lizardman Scout
+20615	Ritmal Swordsman
+20616	Undine Lakin
+20617	Watchman Of Water
+20618	Kanil Succubus
+20619	Undine Rowin
+20620	Cave Beast
+20621	Death Wave
+20622	Maluk Soldier
+20623	Plando
+20624	Cave Howler
+20625	Maluk Knight
+20626	Maluk Berserker
+20627	Maluk Lord
+20628	Limal Karinness
+20629	Karik
+20630	Taik Orc
+20631	Taik Orc Archer
+20632	Taik Orc Warrior
+20633	Taik Orc Shaman
+20634	Taik Orc Captain
+20635	Carinkain
+20636	Forest of Mirrors Ghost
+20637	Forest of Mirrors Ghost
+20638	Forest of Mirrors Ghost
+20639	Mirror
+20640	Harit Lizardman
+20641	Harit Lizardman Soldier
+20642	Harit Lizardman Archer
+20643	Harit Lizardman Warrior
+20644	Harit Lizardman Shaman
+20645	Harit Lizardman Matriarch
+20646	Halingka
+20647	Yintzu
+20648	Paliote
+20649	Hamrut
+20650	Kranrot
+20651	Gamlin, Elven Scout
+20652	Leogul, Elven Scout
+20653	Lesser Giant Bandit
+20654	Lesser Giant Soldier
+20655	Lesser Giant Shooter
+20656	Lesser Giant Warrior
+20657	Lesser Giant Wizard
+20658	Lesser Giant Elder
+20659	Graveyard Wanderer
+20660	Archer of Greed
+20661	Hatar Ratman Thief
+20662	Hatar Ratman Boss
+20663	Hatar Hanishee
+20664	Deprive
+20665	Taik Orc Supply
+20666	Taik Orc Watchman
+20667	Farcran, Violent
+20668	Grave Guard
+20669	Taik Orc Supply Officer
+20670	Crimson Drake
+20671	Kadios
+20672	Trives
+20673	Palibati
+20674	Doom Knight
+20675	Tairim
+20676	Judge of Marsh
+20677	Tulben
+20678	Tortured Undead
+20679	Marsh Stalker
+20680	Marsh Drake
+20681	Vanor Silenos
+20682	Vanor Silenos Solider
+20683	Vanor Silenos Scout
+20684	Vanor Silenos Warrior
+20685	Vanor Silenos Shaman
+20686	Vanor Silenos Chieftain
+20738	Kobold Looter Bepook
+20739	Bepook's Pet
+20742	Mystical Weaver
+20743	Howler
+20744	Red Eye Vampire Bat
+20745	Gigantiops
+20746	Young Gigantiops
+20747	Roxide
+20748	Roxide's Follower
+20749	Death Fire
+20750	Fire Archer
+20751	Snipe
+20752	Snipe's Subordinate
+20753	Dark Lord
+20754	Dark Knight
+20755	Talakin Commander
+20756	Talakin Archer
+20757	Talakin Raider
+20758	Dragon Bearer Captain
+20759	Dragon Bearer Warrior
+20760	Dragon Bearer Archer
+20761	Pytan
+20762	Pytan Knight
+20763	Lord of the Plains
+20764	Wizard of the Plains
+20765	Warrior of the Plains
+20766	Scout of the Plains
+20767	Timak Orc Troop Captain
+20768	Timak Orc Troop Shaman
+20769	Timak Orc Troop Warrior
+20770	Timak Orc Troop Archer
+20771	Barif
+20772	Barif's Pet
+20773	Conjurer Bat Lord
+20774	Conjurer Bat
+20775	Bugbear Raider
+20776	Dark Succubus
+20777	Hunter Bear
+20778	Ragna Orc Prefect
+20779	Ragna Orc Priest
+20780	Bloody Axe's Escort
+20781	Delu Lizardman Shaman
+20782	Ol Mahum Novice
+20783	Dread Wolf
+20784	Tasaba Lizardman
+20785	Tasaba Lizardman Shaman
+20786	Lienrik
+20787	Lienrik Lad
+20788	Rakul
+20789	Crokian
+20790	Dailaon
+20791	Crokian Warrior
+20792	Coral
+20793	Nos
+20794	Stakato
+20795	Stakato Worker
+20796	Stakato Warrior
+20797	Stakato Drone
+20798	Water Giant
+20799	Queen Lad
+20800	Eva's Watchman
+20801	Piker
+20802	Mage
+20803	Doll Master
+20804	Crokian Lad
+20805	Dailaon Lad
+20806	Crokian Lad Warrior
+20807	Farhite Lad
+20808	Nos Lad
+20809	Ghost of the Tower
+20810	Hallate's Watchman
+20811	Ghastly Warrior
+20812	Archer of Despair
+20813	Crendion
+20814	Blader of Despair
+20815	Hallate's Hound Dog
+20816	Hallate's Royal Guard
+20817	Corrupt Sage
+20818	Hallate's Warrior
+20819	Archer of Abyss
+20820	Hallate's Knight
+20821	Erin Ediunce
+20822	Hallate's Maid
+20823	Platinum Tribe Soldier
+20824	Hallate's Commander
+20825	Hallate's Inspector
+20826	Platinum Tribe Archer
+20827	Platinum Tribe Warrior
+20828	Platinum Tribe Shaman
+20829	Platinum Tribe Prefect
+20830	Guardian Angel
+20831	Seal Angel
+20832	Zaken's Pikeman
+20833	Zaken's Archer
+20834	Mardian
+20835	Zaken's Watchman
+20836	Pirate Zombie
+20837	Tainted Ogre
+20838	Bloody Bat
+20839	Dismal Humming
+20840	Death Flyer
+20841	Fiend Archer
+20842	Musveren
+20843	Zaken's Royal Guard
+20844	Kaim Vanul
+20845	Pirate Zombie Captain
+20846	Doll Blader
+20847	Veil Master
+20848	Light Bringer
+20849	Light Worm
+20850	Golden Stag Lord
+20851	Theeder
+20852	Banshee
+20853	Kel Mahum
+20854	Kel Mahum Warrior
+20855	Kel Mahum Archer
+20856	Kel Mahum Shaman
+20857	Kel Mahum Champion
+20858	Angel
+20859	Guardian Angel
+20860	Seal Angel
+20861	Oel Mahum Champion
+20862	Death Lord
+20919	Maille Lizardman
+20920	Maille Lizardman Scout
+20921	Maille Lizardman Guard
+20922	Maille Lizardman Warrior
+20923	Maille Lizardman Shaman
+20924	Maille Lizardman Matriarch
+20925	Giant Araneid
+20926	Poison Araneid
+20927	King of the Araneid
+20928	Hatu Weird Wasp
+20929	Hatu Dire Wolf
+20930	Hatu Brown Bear
+20931	Hatu Onyx Beast
+20932	Hatu Crimson Bear
+20933	Hatu Windsus
+20934	Wasp Worker
+20935	Wasp Captain
+20936	Tanor Silenos
+20937	Tanor Silenos Solider
+20938	Tanor Silenos Scout
+20939	Tanor Silenos Warrior
+20940	Tanor Silenos Shaman
+20941	Tanor Silenos Chieftain
+20942	Nightmare Guide
+20943	Nightmare Watchman
+20944	Nightmare Lord
+20945	Cadeine
+20946	Sanhidro
+20947	Connabi
+20948	Bartal
+20949	Luminun
+20950	Innersen
+20951	Pobby's Maid
+20952	Pobby Escort
+20953	Pobby
+20954	Starving Corpse
+20955	Ghostly Warrior
+20956	Knight of the Past
+20957	Nihil Invader
+20958	Death Agent
+20959	Dark Guard
+20960	Bloody Ghost
+20961	Bloody Knight
+20962	Bloody Priest
+20963	Bloody Lord
+20964	Huge Footmark
+20965	Chimera Piece
+20966	Mutated Creation
+20967	Creature of the Past
+20968	Forgotten Face
+20969	Giant's Shadow
+20970	Soldier of Ancient Times
+20971	Warrior of Ancient Times
+20972	Shaman of Ancient Times
+20973	Forgotten Ancient People
+20974	Spiteful Soul Leader
+20975	Spiteful Soul Wizard
+20976	Spiteful Soul Warrior
+20977	Elmoreden's Lady, Slave of Avarice
+20978	Elmoreden's Archer
+20979	Elmoreden's Maid
+20980	Hallate's Subordinate Mul
+20981	Mul's Wizard
+20982	Mul's Knight
+20983	Binder
+20984	Bound Warrior
+20985	Bound Archer
+20986	Sairon
+20987	Sairon's Doll
+20988	Sairon's Puppet
+20989	Lageos
+20990	Pageos
+20991	Swamp Tribe
+20992	Swamp Alligator
+20993	Swamp Warrior
+20994	Garden Guard Captain
+20995	Garden Guard
+20996	Spiteful Ghost of Ruins
+20997	Soldier of Grief
+20998	Cruel Punisher
+20999	Roving Soul
+21000	Soul of Ruins
+21001	Archer of Destruction
+21002	Doom Scout
+21003	Graveyard Lich
+21004	Dismal Pole
+21005	Graveyard Predator
+21006	Doom Servant
+21007	Doom Guard
+21008	Doom Archer
+21009	Doom Trooper
+21010	Doom Warrior
+21011	Ol Mahum Van Soldier
+21012	Magical Eye
+21013	Ol Mahum Van Archer
+21014	Lesser Warlike Tyrant
+21015	Ol Mahum Van Captain
+21016	Warlike Tyrant
+21017	Fallen Orc
+21018	Ancient Gargoyle
+21019	Fallen Orc Archer
+21020	Fallen Orc Shaman
+21021	Sharp Talon Tiger, Elite Soldier of Oblivion
+21022	Fallen Orc Captain
+21023	Sobbing Wind
+21024	Babbling Wind
+21025	Giggling Wind
+21026	Singing Wind
+21034	Ogre
+21035	Catherok
+21036	Shindebarn
+21037	Ossiud
+21038	Liangma
+21039	Snipe's Subordinate
+21040	Soldier of Darkness
+21058	Beast Lord
+21059	Beast Guardian
+21060	Beast Seer
+21061	Hallate's Guardian
+21062	Messenger Angel
+21063	Messenger Angel
+21064	Platinum Tribe Guardian Archer
+21065	Platinum Tribe Guardian Warrior
+21066	Platinum Tribe Guardian Shaman
+21067	Guardian Archangel
+21068	Guardian Archangel
+21069	Platinum Tribe Guardian Prefect
+21070	Seal Archangel
+21071	Seal Archangel
+21072	Platinum Tribe Guardian Chief
+21073	Elmoreden's Warrior
+21074	Bound Wizard
+21075	Slaughter Bathin
+21076	Bathin's Knight
+21077	Bathin's Wizard
+21078	Magus Valac
+21079	Valac's Creature
+21080	Valac's Guardian Spirit
+21081	Power Angel Amon, Tower Guardian
+21082	Amon's Escort
+21083	Amon's Spirits
+21084	Bloody Lady
+21085	Bloody Sniper
+21086	Bloody Liviona
+21087	Bloody Knight
+21088	Bloody Banshee
+21089	Bloody Lord
+21090	Bloody Guardian
+21091	Bloody Keeper
+21092	Bloody Mystic
+21093	Ratman Chieftain
+21094	Ratman Chief
+21095	Giant Poison Bee
+21096	Cloudy Beast
+21097	Young Araneid
+21098	Plain Grizzly
+21099	Cloudy Beast Turen
+21100	Langk Lizardman Sentinel
+21101	Langk Lizardman Shaman
+21102	Watchman of the Plains
+21103	Roughly Hewn Rock Golem
+21104	Delu Lizardman Supplier
+21105	Delu Lizardman Special Agent
+21106	Cursed Watchman
+21107	Delu Lizardman Commander
+21108	Glow Wisp
+21109	Hames Orc Scout
+21110	Swamp Predator
+21111	Lava Wyrm
+21112	Hames Orc Foot Soldier
+21113	Hames Orc Sniper
+21114	Cursed Guardian
+21115	Hames Orc Shaman
+21116	Hames Orc Prefect
+21117	Kasha Imp
+21118	Baar Dre Vanul
+21119	Kasha Hobgoblin
+21120	Kasha Imp Turen
+21121	Kasha Dire Wolf
+21122	Kasha Bugbear
+21123	Baar Dre Vanul Destroyer
+21124	Red Eye Barbed Bat
+21125	Northern Trimden
+21126	Kerope Werewolf
+21127	Northern Goblin
+21128	Spine Golem
+21129	Kerope Werewolf Chief
+21130	Northern Goblin Captain
+21131	Reinforced Spine Golem
+21132	Underground Kobold
+21133	Dead Pit Skeleton Archer
+21134	Dead Pit Spartoi
+21135	Underground Kobold Warrior
+21136	Dead Pit Horror
+21137	Iron Ore Golem
+21138	Greedy Geist
+21139	Catacomb Barbed Bat
+21140	Catacomb Wisp
+21141	Catacomb Serpent
+21142	Graveyard Keeper Spartoi
+21143	Catacomb Scavenger Bat
+21144	Catacomb Shadow
+21145	Catacomb Stakato Soldier
+21146	Graveyard Keeper Dark Horror
+21147	Catacomb Gargoyle
+21148	Catacomb Liviona
+21149	Decayed Ancient Pikeman
+21150	Decayed Ancient Soldier
+21151	Decayed Ancient Knight
+21152	Purgatory Wisp
+21153	Purgatory Serpent
+21154	Hell Keeper Medusa
+21155	Purgatory Conjurer
+21156	Purgatory Shadow
+21157	Purgatory Tarantula
+21158	Hell Keeper Crimson Doll
+21159	Purgatory Gargoyle
+21160	Purgatory Liviona
+21161	Ancient Holy Ground's Hermit
+21162	Ancient Holy Ground's Totem
+21163	Ancient Holy Ground's Wing
+21164	Ancient Holy Ground's Guardian Spirit
+21165	Ancient Holy Ground's Vision
+21166	Lith Scout
+21167	Lith Witch
+21168	Lith Warrior
+21169	Lith Guard
+21170	Lith Medium
+21171	Lith Prefect
+21172	Lith Patrolman
+21173	Lith Shaman
+21174	Lith Commander
+21175	Lilim Butcher
+21176	Lilim Magus
+21177	Lilim Knight-Errant
+21178	Lilim Marauder
+21179	Lilim Priest
+21180	Lilim Knight
+21181	Lilim Assassin
+21182	Lilim Soldier
+21183	Lilim Knight Captain
+21184	Lilim Slayer
+21185	Lilim Great Magus
+21186	Lilim Royal Knight
+21187	Gigant Slave
+21188	Gigant Acolyte
+21189	Gigant Overseer
+21190	Gigant Footman
+21191	Gigant Cleric
+21192	Gigant Officer
+21193	Gigant Raider
+21194	Gigant Confessor
+21195	Gigant Officer
+21196	Nephilim Sentinel
+21197	Nephilim Priest
+21198	Nephilim Swordsman
+21199	Nephilim Guard
+21200	Nephilim Bishop
+21201	Nephilim Centurion
+21202	Nephilim Scout
+21203	Nephilim Archbishop
+21204	Nephilim Praetorian
+21205	Nephilim Royal Guard
+21206	Nephilim Cardinal
+21207	Nephilim Commander
+21208	Martyrium Lookout
+21209	Martyrium Watchman
+21210	Crypt Lookout
+21211	Crypt Watchman
+21212	Martyrium Sentinel
+21213	Martyrium Monk
+21214	Crypt Sentinel
+21215	Crypt Monk
+21216	Martyrium Prefect
+21217	Martyrium Priest
+21218	Crypt Prefect
+21219	Crypt Priest
+21220	Mausoleum Archon
+21221	Mausoleum Inquisitor
+21222	Sepulcher Archon
+21223	Sepulcher Inquisitor
+21224	Mausoleum Royal Guardian
+21225	Mausoleum Sage
+21226	Sepulcher Royal Guardian
+21227	Sepulcher Sage
+21228	Mausoleum Royal Guard
+21229	Mausoleum Prophet
+21230	Sepulcher Royal Guard
+21231	Sepulcher Prophet
+21232	Barrow Lookout
+21233	Barrow Watchman
+21234	Tomb Lookout
+21235	Tomb Watchman
+21236	Barrow Sentinel
+21237	Barrow Monk
+21238	Tomb Sentinel
+21239	Tomb Monk
+21240	Barrow Prefect
+21241	Barrow Priest
+21242	Tomb Prefect
+21243	Tomb Priest
+21244	Graveyard Archon
+21245	Graveyard Inquisitor
+21246	Netherworld Archon
+21247	Netherworld Inquisitor
+21248	Graveyard Guardian
+21249	Graveyard Sage
+21250	Netherworld Guardian
+21251	Netherworld Sage
+21252	Graveyard Royal Guard
+21253	Graveyard Prophet
+21254	Netherworld Royal Guard
+21255	Netherworld Prophet
+21256	Underground Werewolf
+21257	Evil Eye Seer
+21258	Fallen Orc Shaman
+21259	Fallen Orc Shaman, Enhanced
+21260	Betrayer Orc Hero
+21261	Ol Mahum Transcender
+21262	Ol Mahum Transcender
+21263	Ol Mahum Transcender
+21264	Ol Mahum Transcender
+21265	Cave Ant Larva
+21266	Cave Ant Larva
+21267	Cave Ant Larva
+21268	Cave Ant Larva
+21269	Cave Ant
+21270	Cave Ant Soldier
+21271	Cave Ant
+21272	Cave Ant Soldier
+21273	Cave Noble Ant
+21396	Carrion Scarab
+21397	Carrion Scarab
+21398	Soldier Scarab
+21399	Soldier Scarab
+21400	Hexa Beetle
+21401	Hexa Beetle
+21402	Katraxis
+21403	Katraxis
+21404	Tera Beetle
+21405	Tera Beetle
+21406	Knight of Empire
+21407	Knight of Empire
+21408	Royal Guard of Empire
+21409	Royal Guard of Empire
+21410	Guardian Scarab
+21411	Guardian Scarab
+21412	Ustralith
+21413	Ustralith
+21414	Assassin of Empire
+21415	Assassin of Empire
+21416	Imperial Commander
+21417	Imperial Commander
+21418	Imperial Royal Guard
+21419	Imperial Royal Guard
+21420	Ashuras
+21421	Ashuras
+21422	Dancer of Empire
+21423	Dancer of Empire
+21424	Ashkenas
+21425	Ashkenas
+21426	Abraxion
+21427	Abraxion
+21428	Hasturan
+21429	Hasturan
+21430	Arimanes
+21431	Arimanes
+21432	Chakram Beetle
+21433	Jamadar Beetle
+21434	Priest of Blood
+21435	Guide of Offering
+21436	Leader of Offering
+21437	Offering Bug
+21438	Gatekeeper's Ghost
+21439	Gatekeeper's Ghost
+21440	Vassal Ghost
+21602	Ancient Holy Ground's Wing
+21603	Ancient Holy Ground's Guardian Spirit
+21604	Ancient Holy Ground's Vision
+21605	Lilim Knight Captain
+21606	Lilim Great Magus
+21607	Nephilim Cardinal
+21608	Nephilim Commander
+21609	Netherworld Royal Guard
+21610	Netherworld Prophet
+21611	Lilim Assassin
+21612	Lilim Soldier
+21613	Nephilim Archbishop
+21614	Nephilim Praetorian
+21615	Graveyard Guardian
+21616	Graveyard Sage
+21617	Netherworld Guardian
+21618	Netherworld Sage
+21619	Graveyard Royal Guard
+21620	Purgatory Serpent
+21621	Hell Keeper Medusa
+21622	Purgatory Conjurer
+21623	Purgatory Gargoyle
+21624	Nephilim Swordsman
+21625	Nephilim Guard
+21626	Mausoleum Inquisitor
+21627	Sepulcher Archon
+21628	Sepulcher Inquisitor
+21629	Purgatory Tarantula
+21630	Purgatory Shadow
+21631	Hell Keeper Crimson Doll
+21632	Lilim Priest
+21633	Lilim Knight
+21634	Nephilim Scout
+21635	Mausoleum Royal Guardian
+21636	Mausoleum Sage
+21637	Sepulcher Royal Guardian
+21638	Wandering Dead of the Dungeon
+21639	Wandering Spirit of the Dungeon
+21640	Wandering Ghost of the Dungeon
+21641	Wandering Evil Thoughts of the Dungeon
+21642	Unworldly Overseer, Wandering
+21643	Condemned of Infinity, Captured
+21644	Wandering Dead of Abyss
+21645	Wandering Spirit of Abyss
+21646	Wandering Ghost of Abyss
+21647	Wandering Evil Thoughts of Abyss
+21648	Abyss Warder, Wandering
+21649	Condemned of Abyss, Captured
+21650	Swampland Watchman, Quest Monster
+21651	Flame Drake, Quest Monster
+21652	Fiery Ifrit, Quest Monster
+21653	Ikedit, Quest Monster
+21654	Dreco, Earth Guardian
+21655	Raido, Earth Guardian
+21656	Golem, Earth Guardian
+21657	Wyrm, Earth Guardian
+21658	Harit, Earth Guardian
+21659	Trooper, Earth Guardian
+21660	Palibati, Earth Guardian
+21661	Scarlet Worker
+21662	Scarlet Soldier
+21663	Scarlet Noble
+21664	Tepra Scorpion
+21665	Tepra Scarab
+21666	Assassin Beetle
+21667	Mercenary of Destruction
+21668	Knight of Destruction
+21669	Evil Spirit Wizard of Destruction
+21670	Lavastone Golem
+21671	Magma Golem
+21672	Arimanes of Destruction
+21673	Iblis of Immortality
+21674	Balor of Immortality
+21675	Ashuras of Immortality
+21676	Lavasillisk
+21677	Flame Ifrit
+21678	Magma Drake
+21679	Lavasaurus
+21680	Elder Lavasaurus
+21681	Scarlet Stakato Noble
+21682	Assassin Beetle
+21683	Evil Spirit Wizard of Destruction
+21684	Arimanes of Destruction
+21685	Ashuras of Eternity
+21686	Flaming Drake
+21687	Dread Wolf
+21688	Tasaba Lizardman
+21689	Tasaba Lizardman Shaman
+21690	Ogre
+21691	Tasaba Lizardman Sniper
+21692	Tasaba Lizardman Sniper
+21693	Lienrik
+21694	Lienrik Lad
+21695	Lesser Watchman
+21696	Lesser Summoner
+21697	Conquered Native
+21698	Bewitched Native
+21699	Ailith Hunter
+21700	Ailith Watchman
+21701	Hellinack, Naia's Guardian
+21702	Magic Circle Patrol
+21703	Magic Circle Guard
+21704	Magic Circle Watchman
+21705	Remnant Spirit
+21706	Sand Scorpion
+21707	Desert Scorpion
+21708	Body Destroyer
+21709	Soul Harvester
+21710	Caravan Outcast
+21711	Sand Storm
+21712	Kertas
+21713	Darion's Executioner
+21714	Darion's Executor
+21715	Quarry Foreman
+21716	Quarry Foreman
+21717	Quarry Patrol Commander
+21718	Quarry Patrolman
+21719	Chimaera of Earth
+21720	Chimaera of Darkness
+21721	Chimaera of Wind
+21722	Chimaera of Flame
+21723	Seltus, Chimaera
+21724	Factory Worker
+21725	Factory Foreman
+21726	Lesser Evil Spirit
+21727	Greater Evil Spirit
+21728	Factory Foreman
+21729	Magic Circle Guard Captain
+21730	Failan Guard
+21731	Leodas, Partisan Commander
+21732	Native Veteran
+21733	Ketra Orc Searcher
+21734	Ketra Orc Archer
+21735	Ketra Orc Searcher Leader
+21736	Ketra Priest
+21737	Ketra Orc Ranger
+21738	Ketra Orc Ranger Officer
+21739	Ketra Orc Grand Priest
+21740	Ketra Orc Escort Chief
+21741	Ketra Elite Searcher
+21742	Varka Silenos Searcher
+21743	Varka Silenos Archer
+21744	Varka Silenos Searcher Leader
+21745	Varka Priest
+21746	Varka Silenos Ranger
+21747	Varka Silenos Ranger Officer
+21748	Varka Silenos Grand Priest
+21749	Varka Silenos Escort Chief
+21750	Varka Elite Searcher
+21751	Treasure Lookout
+21752	Ketra Orc Commander
+21753	Varka Silenos Commander
+21754	Commander's Ghost
+21755	Commander's Ghost
+21756	Mysterious Treasure Chest
+21757	Mysterious Treasure Chest
+21758	Treasure Lookout
+21759	Ketra Orc Captain
+21760	Varka Silenos Chief
+21761	Salamander, Elite
+21762	Lava, Elite
+21763	Pyra, Master
+21764	Growler, Elite
+21765	Tree Soldier, Elite
+21766	Tortai, Master
+21767	Undine, Elite
+21768	Snow Golem, Elite
+21769	Istri, Master
+21770	Sylph, Elite
+21771	Kimerian, Elite
+21772	Radi, Master
+21773	Guard Captain's Subordinate
+21774	Buffalo, Guardian of the Canyon
+21775	Arahan, Hero of Ages
+21776	Fish, Wind Guardian
+21777	White Tiger
+21778	Black Tiger
+21779	Scorn Warrior
+21780	Porcupine
+21781	Scorn Soldier
+21782	Scorn Seeker
+21783	Nero Commander
+21784	Storm Monk
+21785	Breeze Warrior
+21786	Sharp Kau
+21787	Breeze Spiker
+21788	Breeze Mage
+21789	Folding
+21790	Wing Grow
+21791	Storm Lucifer
+21792	Blow Breaker
+21793	Brolly Seeker
+21794	Seer
+21795	Guardian Spirit
+21796	Midnight Sairon
+21797	Daymen
+21798	Kookaburra
+21799	Kookaburra
+21800	Kookaburra
+21801	Antelope
+21802	Antelope
+21803	Antelope
+21804	Bandersnatch
+21805	Bandersnatch
+21806	Bandersnatch
+21807	Buffalo
+21808	Buffalo
+21809	Buffalo
+21810	Grendel
+21811	Grendel
+21812	Grendel
+21813	Canyon Antelope
+21814	Canyon Antelope Warrior
+21815	Canyon Bandersnatch
+21816	Canyon Bandersnatch Warrior
+21817	Eye of Restrainer
+21818	Valley Buffalo
+21819	Eye of Guide
+21820	Gaze of Nightmares
+21821	Eye of Watchman
+21822	Homunculus
+21823	Valley Grendel Warrior
+21824	Eye of Pilgrim
+21825	Elder Homunculus
+21826	Eye of Ruler
+21827	Sly Hound Dog
+21828	Disciple of Protection
+21829	Disciples of Punishment
+21830	Apostle of Conquest
+21831	Apostle of Strength
+21832	Disciples of Authority
+21833	Hot Springs Bandersnatchling
+21834	Hot Springs Buffalo
+21835	Hot Springs Flava
+21836	Hot Springs Atroxspawn
+21837	Hot Springs Antelope
+21838	Hot Springs Nepenthes
+21839	Hot Springs Yeti, Hot Springs Master
+21840	Hot Springs Atrox
+21841	Hot Springs Bandersnatch
+21842	Hot Springs Grendel
+21843	Ketra Orc Footman
+21844	Ketra's War Hound
+21845	Grazing Kookaburra
+21846	Ketra Orc Raider
+21847	Ketra Orc Scout
+21848	Ketra Orc Shaman
+21849	Grazing Buffalo
+21850	Ketra Orc Warrior
+21851	Ketra Orc Lieutenant
+21852	Grazing Windsus
+21853	Ketra Orc Medium
+21854	Ketra Orc Elite Soldier
+21855	Ketra Orc Centurion
+21856	Grazing Elder Buffalo
+21857	Ketra Orc Priest
+21858	Ketra Orc Officer
+21859	Ketra Orc Battalion Commander
+21860	Grazing Elder Kookaburra
+21861	Ketra Orc Grand Priest
+21862	Ketra's Commander
+21863	Ketra's Elite Royal Guard
+21864	Ketra's Head Shaman
+21865	Ketra's Head Royal Guard
+21866	Ketra's Prophet
+21867	Prophet's Escort
+21868	Prophet's Aide
+21869	Varka's Altar Rear Escort, Guardian of the Altar
+21870	Varka Silenos Footman
+21871	Grazing Antelope
+21872	Varka Silenos Scout
+21873	Varka Silenos Hunter
+21874	Varka's Altar Shaman, Guardian of the Altar
+21875	Grazing Nepenthes
+21876	Varka Silenos Priest
+21877	Varka Silenos Warrior
+21878	Grazing Bandersnatch
+21879	Varka Silenos Medium
+21880	Varka Silenos Magus
+21881	Varka Silenos Sergeant
+21882	Grazing Flava
+21883	Varka Silenos Chief Priest
+21884	Varka Silenos Great Magus
+21885	Varka Silenos Officer
+21886	Grazing Elder Antelope
+21887	Varka Silenos Grand Priest
+21888	Varka's Commander
+21889	Varka's Elite Escort
+21890	Varka's Chief Magus
+21891	Varka's Chief Escort
+21892	Varka's Prophet
+21893	Prophet's Royal Guard
+21894	Prophet's Disciple
+21895	Mausoleum Prophet
+21896	Ancient Holy Ground's Hermit
+21897	Ancient Holy Ground's Totem
+21898	Ancient Holy Ground Witch
+21899	Ancient Martyrium Watchman
+21900	Ancient Holy Ground Dead
+21901	Lilim Slayer
+21902	Lilim Sorcerer
+21903	Lilim Royal Knight
+21904	Graveyard Prophet
+21905	Netherworld Gatekeeper
+21906	Netherworld Guide
+21907	Sepulcher Royal Guard
+21908	Sepulcher Prophet
+21909	Sepulcher Hermit
+21910	Nephilim Royal Guard
+21911	Nephilim High Priest
+21912	Nephilim Royal Escort
+23820	Ketra Elite Soldier
+23821	Ketra Commando
+23822	Ketra Centurion, Ketra Orc Leader
+23823	Ketra Shaman
+23824	Ketra Commander, Ketra Orc Leader
+23825	Kel Mahum Ranger
+23826	Kel Mahum Hunter
+23827	Kel Mahum Elite Leader, Kel Mahum Leader
+23828	Kel Mahum Priest
+23829	Kel Mahum Commander, Kel Mahum Leader
+23830	Doom Wraith
+23831	Bloody Maid
+23832	Chaos Skeleton, Demon's Servant
+23833	Veil Master
+23834	Blood Queen, Demon's Servant
+23835	Tanta Elite Mercenary
+23836	Tanta Sharpshooter
+23837	Tanta Shaman, Tanta Lizardman Leader
+23838	Tanta High Priest
+23839	Tanta Commander, Tanta Lizardman Leader
+23840	Frightful Poisonous Spider
+23841	Scorpion of Terror
+23842	Laikel of Terror, Leader of Creation
+23843	Giant Spider of Terror, Leader of Creation
+23844	Riba of Terror, Leader of Creation
+23845	Stakato Worker
+23846	Stakato Guard
+23847	Stakato Invader, Stakato Leader
+23848	Stakato Queen, Stakato Leader
+23849	Ultimate Gatekeeper A1803-1, Gatekeeper Leader
+23850	Hell Assassin
+23851	Hell Dark Wizard
+23852	Hell Armor, Devil’s Advocate
+23853	Hell Queen, Devil’s Advocate
+23854	Hell Lord, Devil’s Advocate
+23855	Heavenly Soldier
+23856	Heavenly Priest
+23857	Heavenly Judge, Angel’s Advocate
+23858	Heavenly Wings
+23859	Heavenly Guardian, Angel’s Advocate
+23860	Drake
+23861	Mutated Drake
+23862	Drak, Dragon’s Advocate
+23863	Inferno Drake
+23864	Chaos Drake, Dragon’s Advocate
+23865	Velociraptor
+23866	Ornithomimus
+23867	Pterosaur, Dominator of the Wild
+23868	Primeval Strider
+23869	Tyrannosaurus, Dominator of the Wild
+23870	Giant Golden Pig of Good Fortune, Intruding Challenger
+23871	Dancing Bard, Intruding Challenger
+23872	Gatekeeper Roxxy, Intruding Challenger
+23873	Super Kat the Cat, Intruding Challenger
+23874	Super Mew the Cat, Intruding Challenger
+23875	Super Queen the Cat, Intruding Challenger
+23876	Roa, Intruding Challenger
+23877	Golden Bat Dandy, Intruding Challenger
+23878	Ketra Elite Soldier
+23879	Ketra Commando
+23880	Ketra Centurion, Ketra Orc Leader
+23881	Ketra Shaman
+23882	Ketra Commander, Ketra Orc Leader
+23883	Kel Mahum Ranger
+23884	Kel Mahum Hunter
+23885	Kel Mahum Elite Leader, Kel Mahum Leader
+23886	Kel Mahum Priest
+23887	Kel Mahum Commander, Kel Mahum Leader
+23888	Doom Wraith
+23889	Bloody Maid
+23890	Chaos Skeleton, Demon's Servant
+23891	Veil Master
+23892	Blood Queen, Demon's Servant
+23893	Tanta Elite Mercenary
+23894	Tanta Sharpshooter
+23895	Tanta Shaman, Tanta Lizardman Leader
+23896	Tanta High Priest
+23897	Tanta Commander, Tanta Lizardman Leader
+23898	Frightful Poisonous Spider
+23899	Scorpion of Terror
+23900	Laikel of Terror, Leader of Creation
+23901	Giant Spider of Terror, Leader of Creation
+23902	Riba of Terror, Leader of Creation
+23903	Stakato Worker
+23904	Stakato Guard
+23905	Stakato Invader, Stakato Leader
+23906	Stakato Queen, Stakato Leader
+23907	Ultimate Gatekeeper A1803-1, Gatekeeper Leader
+23908	Hell Assassin
+23909	Hell Dark Wizard
+23910	Hell Armor, Devil’s Advocate
+23911	Hell Queen, Devil’s Advocate
+23912	Hell Lord, Devil’s Advocate
+23913	Heavenly Soldier
+23914	Heavenly Priest
+23915	Heavenly Judge, Angel’s Advocate
+23916	Heavenly Wings
+23917	Heavenly Guardian, Angel’s Advocate
+23918	Drake
+23919	Mutated Drake
+23920	Drak, Dragon’s Advocate
+23921	Inferno Drake
+23922	Chaos Drake, Dragon’s Advocate
+23923	Velociraptor
+23924	Ornithomimus
+23925	Pterosaur, Dominator of the Wild
+23926	Primeval Strider
+23927	Tyrannosaurus, Dominator of the Wild
+23928	Giant Golden Pig of Good Fortune, Intruding Challenger
+23929	Dancing Bard, Intruding Challenger
+23930	Gatekeeper Roxxy, Intruding Challenger
+23931	Super Kat the Cat, Intruding Challenger
+23932	Super Mew the Cat, Intruding Challenger
+23933	Super Queen the Cat, Intruding Challenger
+23934	Roa, Intruding Challenger
+23935	Golden Bat Dandy, Intruding Challenger
+23936	Ketra Knight Recruit
+23937	Kel Mahum Knight Recruit
+23938	Doom Wraith
+23939	Tanta Knight Recruit
+23940	Beetle of Terror
+23941	Stakato Knight Recruit
+23942	Hell Knight Recruit
+23943	Heavenly Guardian
+23944	Drake Knight Recruit
+23945	Velociraptor Protector Tree
+23946	Ketra Knight Recruit
+23947	Kel Mahum Knight Recruit
+23948	Doom Wraith
+23949	Tanta Knight Recruit
+23950	Beetle of Terror
+23951	Stakato Knight Recruit
+23952	Hell Knight Recruit
+23953	Heavenly Guardian
+23954	Drake Knight Recruit
+23955	Velociraptor Protector Tree
+23956	Veil Master, Aide of the Blood Queen
+23957	Tanta Healer, Commander’s Medic
+23958	Young Poisonous Spider
+23959	Young Stakato
+23960	Banshee, Queen’s Maid
+23961	Angel
+23962	Baby Golden Pig
+23963	Small Bard
+23964	Would-be Gatekeeper
+23965	Kat the Cat
+23966	Mew the Cat
+23967	Feline Queen
+23968	Roa Fan Club Human
+23969	Roa Fan Club Dwarf
+23970	Dandy’s Dinosaur Friend
+23971	Veil Master, Aide of the Blood Queen
+23972	Tanta Healer, Commander’s Medic
+23973	Young Poisonous Spider
+23974	Young Stakato
+23975	Banshee, Queen’s Maid
+23976	Angel
+23977	Baby Golden Pig
+23978	Small Bard
+23979	Would-be Gatekeeper
+23980	Kat the Cat
+23981	Mew the Cat
+23982	Feline Queen
+23983	Roa Fan Club Human
+23984	Roa Fan Club Dwarf
+23985	Dandy’s Dinosaur Friend
+23986	Leona Blackbird, Dragon’s Advocate
+23987	Kain Van Halter, Prince of the Second Dimension
+23988	Queen Ant, Successor in the Ant Nest
+23989	Escort Ant
+23990	Royal Guard Ant
+23991	Urfen, Orfen Kin
+23992	Laikel
+23993	Riba
+23994	Zaken, Unworldly Pirate King
+23995	Zaken, Unworldly Pirate King
+23996	Pirate Zombie Captain
+23997	Pirate Zombie
+23998	Saium, Relative of the Emperor
+23999	Traitor Angel
+24000	Leona Blackbird, Dragon’s Advocate
+24001	Kain Van Halter, Prince of the Second Dimension
+24002	Queen Ant, Successor in the Ant Nest
+24003	Escort Ant
+24004	Royal Guard Ant
+24005	Urfen, Orfen Kin
+24006	Laikel
+24007	Riba
+24008	Zaken, Unworldly Pirate King
+24009	Zaken, Unworldly Pirate King
+24010	Pirate Zombie Captain
+24011	Pirate Zombie
+24012	Saium, Relative of the Emperor
+24013	Traitor Angel
+24014	Vanor, Mercenary of Glory
+24015	Barif Camrin
+24016	Lesser Giant Commander
+24017	Destroyer, Converted Giant
+24018	Hekaton Prime, Giants' Cave Master
+24019	Hekaton Chires
+24020	Batur, Lesser Giant Soldier
+24021	Lesser Giant Warrior
+24022	Lesser Giant Wizard
+24023	Hunter Destroyer, Lesser Giant Marauder
+24024	Hunter, Ancient Marauder
+24025	Bloody Purple
+24026	Clipher
+24027	Sairon
+24028	Demon Warrior
+24029	Veil Master
+24030	Stone Vanul
+24031	Death Flyer
+24032	Seer
+24033	Guardian Spirit
+24034	Midnight Sairon
+24035	Daymen
+24036	Dolores
+24037	Maiden Doll
+24038	Tor Scorpion
+24039	Pearl Horror, Cursed Soul
+24040	Midnight Nightmare, Zaken's Minion
+24041	Bloody Mourner
+24042	Clumsy Wimp
+24043	Mysterious Creature
+24044	Zaken's Treasure Chest
+24045	Zaken's Treasure Chest
+24046	Floating Eye Seer
+24047	Floating Eye Seer, Shadow Curse
+24048	Immortal Spirit
+24049	Immortal Spirit, Shadow Curse
+24050	Starving Spirit
+24051	Starving Spirit, Shadow Curse
+24052	Starving Soldier
+24053	Starving Soldier, Shadow Curse
+24054	Starving Warrior
+24055	Starving Warrior, Shadow Curse
+24056	Luxurious Small Jar
+24057	Fiend's Radiant Chest
+24058	Radiant Treasure Chest
+24059	Radiant Jewel Box
+24060	Strong Large Wooden Chest
+24061	Fiend's Strong Chest
+24062	Strong Iron Chest
+24063	Strong Treasure Chest
+24064	Simple Large Wooden Chest
+24065	Simple Big Jar
+24066	Simple Iron Chest
+24067	Simple Treasure Chest
+24068	Ancient Large Wooden Chest
+24069	Old Big Jar
+24070	Ancient Iron Chest
+24071	Ancient Jewel Box
+24072	Small Jar of Luck
+24073	Small Jar of Hope
+24074	Small Jar of Fate
+24075	Large Jar of Luck
+24076	Large Jar of Hope
+24077	Large Jar of Fate
+24078	Large Treasure Chest of Luck
+24079	Large Treasure Chest of Hope
+24080	Large Treasure Chest of Fate
+24081	Small Treasure Chest of Luck
+24082	Small Treasure Chest of Hope
+24083	Small Treasure Chest of Fate
+24084	Keeper of Skeleton's Treasure
+24085	Sairon's Doll
+24086	Sairon's Doll
+25001	Greyclaw Kutus, Raid Boss
+25002	Kutus' Escort, Raid Fighter
+25003	Kutus' Pawn, Raid Fighter
+25004	Turek Mercenary Captain, Raid Boss
+25005	Turek Mercenary Archer, Raid Fighter
+25006	Turek Mercenary Warrior, Raid Fighter
+25007	Retreat Spider Cletu, Raid Boss
+25008	Cletu's Confidant, Raid Fighter
+25009	Cletu's Pawn, Raid Fighter
+25010	Furious Thieles, Raid Boss
+25011	Thieles' Escort, Raid Fighter
+25012	Thieles' Follower, Raid Fighter
+25013	Ghost of Peasant Captain, Raid Boss
+25014	Ghost of Peasant, Raid Fighter
+25015	Ghost of Peasant, Raid Fighter
+25016	The 3rd Underwater Guardian, Raid Boss
+25017	Escort of the 3rd Guardian, Raid Fighter
+25018	Support of the 3rd Guardian, Raid Fighter
+25019	Pan Dryad, Raid Boss
+25020	Breka Warlock Pastu, Raid Boss
+25021	Pastu's Silhouette, Raid Fighter
+25022	Pastu's Shadow, Raid Fighter
+25023	Marsh Stakato Queen Zyrnna, Raid Boss
+25024	Jeruna's Escort Captain, Raid Fighter
+25025	Jeruna's Escort, Raid Fighter
+25026	Ketra's Commander Atis, Raid Boss
+25027	Ketra Marksman, Raid Fighter
+25028	Ketra Raider, Raid Fighter
+25029	Atraiban, Raid Boss
+25030	Atraiban's Top Disciple, Raid Fighter
+25031	Atraiban's Disciple, Raid Fighter
+25032	Eva's Guardian Millenu, Raid Boss
+25033	Millenu Escort Wizard, Raid Fighter
+25034	Millenu Escort Warrior, Raid Fighter
+25035	Shilen's Messenger Cabrio, Raid Boss
+25036	Cabrio Captor, Raid Fighter
+25037	Cabrio Blader, Raid Fighter
+25038	Tirak, Raid Boss
+25039	Tirak's Escort, Raid Fighter
+25040	Tirak's Knight, Raid Fighter
+25041	Remmel, Raid Boss
+25042	Remmel's Archer, Raid Fighter
+25043	Remmel's Escort, Raid Fighter
+25044	Barion, Raid Boss
+25045	Barion's Dark Wizard, Raid Fighter
+25046	Barion's Soldier, Raid Fighter
+25047	Karte, Raid Boss
+25048	Karte's Chief Knight, Raid Fighter
+25049	Karte's Royal Guards, Raid Fighter
+25050	Verfa, Raid Boss
+25051	Rahha, Raid Boss
+25052	Priestess of Rahha, Raid Fighter
+25053	Fanatics of Rahha, Raid Fighter
+25054	Kernon, Raid Boss
+25055	Taliadon, Raid Fighter
+25056	Vemsk, Raid Fighter
+25057	Beacon of Blue Sky, Raid Boss
+25058	Beacon's Shooter, Raid Fighter
+25059	Beacon's Warrior, Raid Fighter
+25060	Unrequited Kael, Raid Boss
+25061	Kael's Bead, Raid Fighter
+25062	Kael's Escort, Raid Fighter
+25063	Chertuba of Great Soul, Raid Boss
+25064	Wizard of Storm Teruk, Raid Boss
+25065	Teruk's Escort, Raid Fighter
+25066	Teruk's Knight, Raid Fighter
+25067	Red Flag Captain Shaka, Raid Boss
+25068	Shaka's Sniper, Raid Fighter
+25069	Shaka's Follower, Raid Fighter
+25070	Enchanted Forest Lookout Ruell, Raid Boss
+25071	Ruell's Wind, Raid Fighter
+25072	Ruell's Unicorn, Raid Fighter
+25073	Bloody Priest Rudelto, Raid Boss
+25074	Rudelto's Banshee, Raid Fighter
+25075	Rudelto's Dre Vanul, Raid Fighter
+25076	Princess Molrang, Raid Boss
+25077	Escort Captain Dogun, Raid Fighter
+25078	Princess' Escort, Raid Fighter
+25079	Cat's Eye, Raid Boss
+25080	Mercenary, Raid Fighter
+25081	Cat's Eye Bandit, Raid Fighter
+25082	Leader of Cat Gang, Raid Boss
+25083	Cat Gang, Raid Fighter
+25084	Cat Gang, Raid Fighter
+25085	Timak Orc Ranger Captain, Raid Boss
+25086	Timak Orc Ranger, Raid Fighter
+25087	Timak Orc Ranger, Raid Fighter
+25088	Crazy Mechanic Golem, Raid Boss
+25089	Soulless Wild Boar, Raid Boss
+25090	Soulless Wolf, Raid Fighter
+25091	Soulless Bear, Raid Fighter
+25092	Korim, Raid Boss
+25093	Korim Guard Captain Kaywon, Raid Fighter
+25094	Korim Guards, Raid Fighter
+25095	Elf Renoa, Raid Boss
+25096	Renoa's Elpy, Raid Fighter
+25097	Renoa's Hog, Raid Fighter
+25098	Sejarr's Servitor, Raid Boss
+25099	Rotting Tree Repiro, Raid Boss
+25100	Spirit of the Sea of Spores, Raid Fighter
+25101	Warrior of the Sea of Spores, Raid Fighter
+25102	Shacram, Raid Boss
+25103	Wizard Isirr, Raid Boss
+25104	Isirr's Escort, Raid Fighter
+25105	Isirr's Escorts, Raid Fighter
+25106	Ghost of the Well Lidia, Raid Boss
+25107	Lidia's Archer, Raid Fighter
+25108	Lidia's Warrior, Raid Fighter
+25109	Antharas Priest Cloe, Raid Boss
+25110	Cloe's Servitor, Raid Fighter
+25111	Cloe's Servitor, Raid Fighter
+25112	Beleth' Agent Meana, Raid Boss
+25113	Meana's Maid, Raid Fighter
+25114	Meana's Guard Doll, Raid Fighter
+25115	Icarus Sample 1, Raid Boss
+25116	Icarus Sample 2, Raid Fighter
+25117	Icarus Sample 3, Raid Fighter
+25118	Execution Grounds Watchman Guillotine, Raid Boss
+25119	Fairy Queen's Messenger Berun, Raid Boss
+25120	Berun's Servant, Raid Fighter
+25121	Berun's Prattler, Raid Fighter
+25122	Refugee Applicant Leo, Raid Boss
+25123	Leo's Servant, Raid Fighter
+25124	Leo's Steward, Raid Fighter
+25125	Fierce Tiger King Angel, Raid Boss
+25126	Longhorn Golkonda, Raid Boss
+25127	Langk Matriarch Rashkos, Raid Boss
+25128	Vuku Grand Priest Gharmash, Raid Boss
+25129	Vuku Shaman, Raid Fighter
+25130	Gharmash's Pet Trimden, Raid Fighter
+25131	Slaughter Lord Gato, Raid Boss
+25132	Gato's Sniper, Raid Fighter
+25133	Gato's Troop Captain, Raid Fighter
+25134	Leto Chief Talkin, Raid Boss
+25135	Talkin's Priest, Raid Fighter
+25136	Talkin's Escort, Raid Fighter
+25137	Beleth' Seer Sephia, Raid Boss
+25138	Soul Drinker, Raid Fighter
+25139	Sephia's Salve, Raid Fighter
+25140	Hekaton Press, Raid Boss
+25141	Hekaton Cottus, Raid Fighter
+25142	Hekaton Chires, Raid Fighter
+25143	Fire of Wrath Shuriel, Raid Boss
+25144	Shuriel's Oracle, Raid Fighter
+25145	Shuriel's Paladin, Raid Fighter
+25146	Evil Spirit Bifrons, Raid Boss
+25147	Assassin of Bifrons, Raid Fighter
+25148	Butcher of Bifrons, Raid Fighter
+25149	Zombie Lord Crowl, Raid Boss
+25150	Evil Spirit Archer, Raid Fighter
+25151	Evil Spirit Warrior, Raid Fighter
+25152	Flame Lord Shadar, Raid Boss
+25153	Claws of Shadar, Raid Fighter
+25154	Whip of Shadar, Raid Fighter
+25155	Shaman King Selu, Raid Boss
+25156	Fanatic Wizard, Raid Fighter
+25157	Fanatic Soldier, Raid Fighter
+25158	King Tarlk, Raid Boss
+25159	Paniel the Unicorn, Raid Boss
+25160	Rapini the Unicorn, Raid Fighter
+25161	Ririf the Unicorn, Raid Fighter
+25162	Giant Marpanak, Raid Boss
+25163	Roaring Skylancer, Raid Boss
+25166	Ikuntai, Raid Boss
+25167	Ikuntai's Servitor, Raid Fighter
+25168	Ikuntai's Pawn, Raid Fighter
+25169	Ragraman, Raid Boss
+25170	Lizardmen Captain Hellion, Raid Boss
+25171	Hellion's Archers, Raid Fighter
+25172	Hellion's Escort, Raid Fighter
+25173	Tiger King Karuta, Raid Boss
+25174	Karuta's Follower, Raid Fighter
+25175	Karuta's Subordinate, Raid Fighter
+25176	Black Lily, Raid Boss
+25177	Guardian Knight of Black Lily, Raid Fighter
+25178	Servitor of Black Lily, Raid Fighter
+25179	Giant Statue Guardian Karum, Raid Boss
+25180	Karum's Guard, Raid Fighter
+25181	Karum's Warrior, Raid Fighter
+25182	Demon Kuri, Raid Boss
+25183	Kuri's Wife, Raid Fighter
+25184	Devil Blader of Chaos, Raid Fighter
+25185	Tasaba Patriarch Hellena, Raid Boss
+25186	Hellena's Sniper, Raid Fighter
+25187	Hellena's Soldier, Raid Fighter
+25188	Apepi, Raid Boss
+25189	Cronos' Servitor Mumu, Raid Boss
+25190	Mumu's Wizard, Raid Fighter
+25191	Mumu's Warrior, Raid Fighter
+25192	Earth Protector Panathen, Raid Boss
+25193	Panathen's Knight, Raid Fighter
+25194	Panathen's Protectors, Raid Fighter
+25198	Fafurion's Herald Lokness, Raid Boss
+25199	Water Dragon Priest Sheshark, Raid Boss
+25200	Sheshark's Family, Raid Fighter
+25201	Sheshark's Escort, Raid Fighter
+25202	Krokian Padisha Sobekk, Raid Boss
+25203	Parhit Sha Sobekk, Raid Fighter
+25204	Krokian Sha Sobekk, Raid Fighter
+25205	Ocean Flame Ashakiel, Raid Boss
+25206	Ashakiel's Blade, Raid Fighter
+25207	Ashakiel's Rod, Raid Fighter
+25208	Water Couatl Ateka, Raid Boss
+25209	Ateka's Shaman, Raid Fighter
+25210	Ateka's Soldier, Raid Fighter
+25211	Sebek, Raid Boss
+25212	Sebek's Priest, Raid Fighter
+25213	Sebek's Fanatic, Raid Fighter
+25214	Fafurion's Servant Sika, Raid Boss
+25215	Sika's Mage, Raid Fighter
+25216	Sika's Warrior, Raid Fighter
+25217	Cursed Clara, Raid Boss
+25218	Clara's Marksman, Raid Fighter
+25219	Clara's Pawn, Raid Fighter
+25220	Death Lord Hallate, Raid Boss
+25221	Death Mage Krician, Raid Fighter
+25222	Death Fighter Harik, Raid Fighter
+25223	Soul Collector Acheron, Raid Boss
+25224	Soul Slasher, Raid Fighter
+25225	Soul Strainer, Raid Fighter
+25226	Roaring Lord Kastor, Raid Boss
+25227	Kastor's Priest, Raid Fighter
+25228	Kastor's Prefect, Raid Fighter
+25229	Storm Winged Naga, Raid Boss
+25230	Timak Priest Ragoth, Raid Boss
+25231	Ragoth' Escort, Raid Fighter
+25232	Ragoth' Herald, Raid Fighter
+25233	Spirit of Andras, the Betrayer, Raid Boss
+25234	Ancient Weird Drake, Raid Boss
+25235	Vanor Chief Kandra, Raid Boss
+25236	Kandra's Healer, Raid Fighter
+25237	Kandra's Guard, Raid Fighter
+25238	Abyss Brukunt, Raid Boss
+25239	Monstrous Beast of Abyss Brukunt, Raid Fighter
+25240	Wild Beast of Abyss Brukunt, Raid Fighter
+25241	Harit Hero Tamash, Raid Boss
+25242	Tamash's Advisor, Raid Fighter
+25243	Tamash's Confidant, Raid Fighter
+25244	Last Lesser Giant Olkuth, Raid Boss
+25245	Last Lesser Giant Glaki, Raid Boss
+25246	Glaki's Henchman, Raid Fighter
+25247	Glaki's Servant, Raid Fighter
+25248	Doom Blade Thanatos, Raid Boss
+25249	Menacing Palatanos, Raid Boss
+25250	Man-Eating Plant of Palatanos, Raid Fighter
+25251	Sapling of Palatanos, Raid Fighter
+25252	Palibati Queen Themis, Raid Boss
+25253	Handmaiden of Themis, Raid Fighter
+25254	Themis' Royal Guard, Raid Fighter
+25255	Gargoyle Lord Tiphon, Raid Boss
+25256	Taik High Prefect Arak, Raid Boss
+25257	Arak's Archer, Raid Fighter
+25258	Arak's Footman, Raid Fighter
+25259	Zaken's Butcher Krantz, Raid Boss
+25260	Iron Giant Totem, Raid Boss
+25261	Totem Guard Archer, Raid Fighter
+25262	Totem Guard, Raid Fighter
+25263	Kernon's Faithful Servant Kelone, Raid Boss
+25264	Kelone's Assassin, Raid Fighter
+25265	Kelone's Secret Knight, Raid Fighter
+25266	Bloody Empress Decarbia, Raid Boss
+25267	Decarbia's Royal Guard, Raid Fighter
+25268	Decarbia's Escort, Raid Fighter
+25269	Beast Lord Behemoth, Raid Boss
+25270	Behemoth Javeliner, Raid Fighter
+25271	Behemoth Flare, Raid Fighter
+25272	Partisan Commander Talakin, Raid Boss
+25273	Carnamakos, Raid Boss
+25274	Carnabarun, Raid Fighter
+25275	Carnassiud, Raid Fighter
+25276	Death Lord Ipos, Raid Boss
+25277	Lilith' Witch Marilion, Raid Boss
+25278	Dead Soul of the Branded, Raid Fighter
+25279	Evil Spirit of the Branded, Raid Fighter
+25280	Pagan Watchman Cerberon, Raid Boss
+25281	Anakim's Nemesis Zakaron, Raid Boss
+25282	Death Lord Shax, Raid Boss
+25283	Lilith, Apostle
+25284	Lilith' Agent
+25285	Lilith' Escort
+25286	Anakim, Fallen Angel
+25287	Anakim's Guardian
+25288	Anakim's Royal Guard
+25289	Anakim's Executor
+25290	Daimon the White-eyed, Raid Boss
+25291	Daimon's Family, Raid Fighter
+25292	Daimon's Family, Raid Fighter
+25293	Hestia, Guardian Deity of the Hot Springs, Raid Boss
+25294	Hestia's Fighter, Raid Fighter
+25295	Hestia's Follower, Raid Fighter
+25296	Icicle Emperor Bumbalump, Raid Boss
+25297	Icicle Giant, Raid Fighter
+25298	Icicle Giant, Raid Fighter
+25299	Ketra's Hero Hekaton, Raid Boss
+25300	Hekaton's Scout, Raid Fighter
+25301	Hekaton's Servant, Raid Fighter
+25302	Ketra's Commander Tayr, Raid Boss
+25303	Tayr's Aide, Raid Fighter
+25304	Tayr's Royal Guard, Raid Fighter
+25305	Ketra's Chief Brakki, Raid Boss
+25306	Fire Spirit Nastron, Raid Boss
+25307	Family of Nastron, Raid Fighter
+25308	Family of Nastron, Raid Fighter
+25309	Varka's Hero Shadith, Raid Boss
+25310	Shadith' Escort Captain, Raid Fighter
+25311	Shadith' Sentinel, Raid Fighter
+25312	Varka's Commander Mos, Raid Boss
+25313	Mos' Aide, Raid Fighter
+25314	Mos' Escort, Raid Fighter
+25315	Varka's Chief Horus, Raid Boss
+25316	Water Spirit Ashutar, Raid Boss
+25317	Family of Ashutar, Raid Fighter
+25318	Family of Ashutar, Raid Fighter
+25319	Ember, Raid Boss
+25320	Sentinel of Ember, Raid Fighter
+25321	Messenger of Ember, Raid Fighter
+25322	Demon's Agent Falston, Raid Boss
+25323	Falston's Disciple, Raid Fighter
+25324	Servant of Falston, Raid Fighter
+25325	Flame of Splendor Barakiel, Raid Boss
+25326	Barakiel's Disciple, Raid Fighter
+25327	Barakiel's Acolyte, Raid Fighter
+25328	Eilhalder von Hellmann, Raid Boss
+25329	Violet, Raid Fighter
+25330	Kurstin, Raid Fighter
+25331	Mina, Raid Fighter
+25332	Dorian, Raid Fighter
+25333	Anakazel, Invaders' Leader
+25334	Anakazel, Invaders' Leader
+25335	Anakazel, Invaders' Leader
+25336	Anakazel, Invaders' Leader
+25337	Anakazel, Invaders' Leader
+25338	Anakazel, Invaders' Leader
+25339	Halisha's Shadow, Ruler of Sepulcher
+25340	Knight of Shadow
+25341	Knight of Shadow
+25342	Halisha's Shadow, Ruler of Sepulcher
+25343	Knight of Shadow
+25344	Knight of Shadow
+25345	Knight of shadow
+25346	Halisha's Shadow, Ruler of Sepulcher
+25347	Knight of Shadow
+25348	Knight of Shadow
+25349	Halisha's Shadow, Ruler of Sepulcher
+25350	Knight of Shadow
+25351	Knight of Shadow
+25352	Giant Wasteland Basilisk, Raid Boss
+25353	Wasteland Basilisk, Raid Fighter
+25354	Gargoyle Lord Sirocco, Raid Boss
+25355	Sirocco's Gargoyle, Raid Fighter
+25356	Sirocco's Escorts, Raid Fighter
+25357	Sukar Ratman Chief, Raid Boss
+25358	Sukar Ratman Escort, Raid Fighter
+25359	Sukar Ratman Priest, Raid Fighter
+25360	Tiger Hornet, Raid Boss
+25361	Yellow Hornet, Raid Fighter
+25362	Tracker Captain Sharuk, Raid Boss
+25363	Sharuk's Tracker, Raid Fighter
+25364	Sharuk's Marksman, Raid Fighter
+25365	Patriarch Kuroboros, Raid Boss
+25366	Kuroboros' Priest, Raid Boss
+25367	Kuroboros' Follower, Raid Fighter
+25368	Kuroboros' Discipline, Raid Fighter
+25369	Soul Scavenger, Raid Boss
+25370	Corpse Scavenger, Raid Fighter
+25371	Anima Scavenger, Raid Fighter
+25372	Discarded Guardian, Raid Boss
+25373	Dagoniel's Herald Malex, Raid Boss
+25374	Abyss Flyer, Raid Fighter
+25375	Zombie Lord Ferkel, Raid Boss
+25376	Ferkel's Warrior, Raid Fighter
+25377	Ferkel's Priest, Raid Fighter
+25378	Madness Beast, Raid Boss
+25379	Dementia Beast, Raid Fighter
+25380	Icarus' Herald Kaysha, Raid Boss
+25381	Nightmare Flyer, Raid Fighter
+25382	Hostile Flyer, Raid Fighter
+25383	Revenant of Sir Calibus, Raid Boss
+25384	Servant of Calibus, Raid Fighter
+25385	Evil Spirit Tempest, Raid Boss
+25386	Ghost of the Execution Grounds, Raid Fighter
+25387	Malignant Spirit of the Execution Grounds, Raid Fighter
+25388	Red Eye Captain Trakia, Raid Boss
+25389	Red Eye Archer, Raid Fighter
+25390	Red Eye Guards, Raid Fighter
+25391	Nurka's Messenger, Raid Boss
+25392	Queen's Royal Guard Captain, Raid Boss
+25393	Marsh Stakato Noble, Raid Fighter
+25394	Premo Prime, Raid Boss
+25395	Archon Susceptor, Raid Boss
+25396	Kusion Susceptor, Raid Fighter
+25397	Gustos Susceptor, Raid Fighter
+25398	Beleth' Eye, Raid Boss
+25399	Watchman's Apprentice, Raid Fighter
+25400	Watchman's Servant, Raid Fighter
+25401	Skyla, Raid Boss
+25402	Skyla's Confidant, Raid Fighter
+25403	Skyla's Follower, Raid Fighter
+25404	Corsair Captain Kylon, Raid Boss
+25405	Kylon's Pirate, Raid Fighter
+25406	Kylon's Mate, Raid Fighter
+25407	Lord Ishka, Raid Boss
+25408	Ishka's Elite Officer, Raid Fighter
+25409	Ishka's Elite Soldier, Raid Fighter
+25410	Road Scavenger Leader, Raid Boss
+25411	Road Scavenger Henchman, Raid Fighter
+25412	Necrosentinel Royal Guard, Raid Boss
+25413	Necrosentinel Archer, Raid Fighter
+25414	Necrosentinel Soldier, Raid Fighter
+25415	Nakondas, Raid Boss
+25416	Nakondas' Slave, Raid Fighter
+25417	Nakondas' Chain, Raid Fighter
+25418	Dread Avenger Kraven, Raid Boss
+25419	Dread Panther, Raid Fighter
+25420	Orfen's Handmaiden, Raid Boss
+25421	Trisalim's Escort, Raid Fighter
+25422	Rotting Tree's Servant, Raid Fighter
+25423	Fairy Queen Timiniel, Raid Boss
+25424	Timiniel's Escort, Raid Fighter
+25425	Timiniel's Escort Captain, Raid Fighter
+25426	Betrayer of Urutu Freki, Raid Boss
+25427	Freki's Vampire Bat, Raid Fighter
+25428	Freki's Wild Bear, Raid Fighter
+25429	Mammon Collector Talos, Raid Boss
+25430	Talos' Pawn, Raid Fighter
+25431	Flamestone Golem, Raid Boss
+25432	Elemental of Flame, Raid Fighter
+25433	Elemental of Spark, Raid Fighter
+25434	Bandit Leader Barda, Raid Boss
+25435	Barda's Pawn, Raid Fighter
+25436	Barda's Shaman, Raid Fighter
+25437	Timak Orc Gosmos, Raid Boss
+25438	Thief Kelbar, Raid Boss
+25439	Kelbar's Subordinate, Raid Fighter
+25440	Kelbar's Wizard, Raid Fighter
+25441	Evil Spirit Cyrion, Raid Boss
+25442	Evil Creature of Forest, Raid Fighter
+25443	Anger of Forest, Raid Fighter
+25444	Enmity Ghost Ramdal, Raid Boss
+25445	Enmity Ghost, Raid Fighter
+25446	Begrudged Shooter, Raid Fighter
+25447	Immortal Savior Mardil, Raid Boss
+25448	Immortal Savior, Raid Fighter
+25449	Immortal Guide, Raid Fighter
+25450	Cherub Galaxia, Raid Boss
+25451	Galaxia's Escorts, Raid Fighter
+25452	Messenger of Angel, Raid Fighter
+25453	Meanas Anor, Raid Boss
+25454	Swamp Wyvern, Raid Fighter
+25455	Swamp Succubus, Raid Fighter
+25456	Mirror of Oblivion, Raid Boss
+25457	Shards of Oblivion, Raid Fighter
+25458	Shadow of Oblivion, Raid Fighter
+25459	Shards of Oblivion, Raid Fighter
+25460	Deadman Ereve, Raid Boss
+25461	Ereve's Knight, Raid Fighter
+25462	Ereve's Squire, Raid Fighter
+25463	Harit Guardian Garangky, Raid Boss
+25464	Garangky Escort Captain, Raid Fighter
+25465	Garangky Escort Wizard, Raid Fighter
+25466	Garangky Escort, Raid Fighter
+25467	Gorgolos, Raid Boss
+25468	Cursed Life, Raid Fighter
+25469	Cursed Soul, Raid Fighter
+25470	Last Titan Utenus, Raid Boss
+25471	Utenus' Wizard, Raid Fighter
+25472	Utenus' Escort, Raid Fighter
+25473	Grave Robber Kim, Raid Boss
+25474	Kim's Gang, Raid Fighter
+25475	Ghost Knight Kabed, Raid Boss
+25476	Kabed's Soldier, Raid Fighter
+25477	Kabed's Archer, Raid Fighter
+25478	Shilen's Priest Hisilrome, Raid Boss
+25479	Hisilrome's Servitor, Raid Fighter
+25480	Hisilrome's Servant, Raid Fighter
+25481	Magus Kenishee, Raid Boss
+25482	Shadow of Kenishee, Raid Fighter
+25483	Phantom of Kenishee, Raid Fighter
+25484	Zaken's Chief Mate Tillion, Raid Boss
+25485	Tillion's Subordinate, Raid Fighter
+25486	Tillion's Bat, Raid Fighter
+25487	Water Spirit Lian, Raid Boss
+25488	Gildor's Spirit, Raid Fighter
+25489	Gildor's Guardian, Raid Fighter
+25490	Gwindorr, Raid Boss
+25491	Gwindorr's Escort, Raid Fighter
+25492	Gwindorr's Follower, Raid Fighter
+25493	Eva's Spirit Niniel, Raid Boss
+25494	Niniel's Spirit, Raid Fighter
+25495	Niniel's Spirit, Raid Fighter
+25496	Fafurion's Envoy Pingolpin, Raid Boss
+25497	Fafurion's Envoy, Raid Fighter
+25498	Fafurion's Henchman Istary, Raid Boss
+25499	Alligator of Istary, Raid Fighter
+25500	Alligator of Istary, Raid Fighter
+25735	Gigantic Golden Pig, Raid Boss
+25736	Gigantic Golden Pig, Raid Boss
+25737	Gigantic Golden Pig, Raid Boss
+25738	Queen Ant Drone Priest, Raid Boss
+25739	Angel Priest of Baium, Raid Boss
+25740	Angel Blade, Raid Fighter
+25741	Angel's Staff, Raid Fighter
+25742	Priest of Core Decar, Raid Boss
+25743	Priest Orfen Lord Ipos, Raid Boss
+25744	Zombie Lord Dorkhon, Raid Boss
+25745	Orc Timak Darphen, Raid Boss
+25746	Evil Magikus, Raid Boss
+25747	Rael Mahum Radium, Raid Boss
+25748	Rael Mahum Supercium, Raid Boss
+25749	Tayga Feron King, Raid Boss
+25750	Tayga Marga Shaman, Raid Boss
+25751	Tayga Septon Champion, Raid Boss
+25752	Tayga Warrior, Raid Fighter
+25753	Tayga Archer, Raid Fighter
+25754	Flamestone Giant, Raid Boss
+25755	Gross Salamander, Raid Boss
+25756	Gross Dre Vanul, Raid Boss
+25757	Gross Ifrit, Raid Boss
+25758	Fiend Goblier, Raid Boss
+25759	Fiend Cherkia, Raid Boss
+25760	Fiend Harthemon, Raid Boss
+25761	Fiend Sarboth, Raid Boss
+25762	Demon Bedukel, Raid Boss
+25763	Bloody Witch Rumilla, Raid Boss
+25764	Demon Collector, Raid Fighter
+25765	Demon Servant, Raid Fighter
+25766	Monster Minotaur, Raid Boss
+25767	Monster Bulleroth, Raid Boss
+25768	Dorcaus, Raid Boss
+25769	Kerfaus, Raid Boss
+25770	Milinaus, Raid Boss
+25771	Centaur Thrower, Raid Fighter
+25772	Evil Orc Zetahl, Raid Boss
+25773	Evil Orc Tabris, Raid Boss
+25774	Evil Orc Ravolas, Raid Boss
+25775	Evil Orc Dephracor, Raid Boss
+25776	Amden Orc Turahot, Raid Boss
+25777	Amden Orc Turation, Raid Boss
+25778	Puppet Orc Archer, Raid Fighter
+25779	Gariott, Raid Boss
+25780	Varbasion, Raid Boss
+25781	Varmoni, Raid Boss
+25782	Overlord Muscel, Raid Boss
+25783	Bathus Elbogen, Raid Boss
+25784	Daumen Kshana, Raid Boss
+25785	Lesser Giant Warrior, Raid Fighter
+25786	Lesser Giant Soldier, Raid Fighter
+25787	Death Knight, Raid Soul Drinker
+25788	Death Knight, Raid Soul Drinker
+25789	Death Knight, Raid Soul Drinker
+25790	Death Knight, Raid Soul Drinker
+25791	Death Knight, Raid Soul Drinker
+25792	Death Knight, Raid Soul Drinker
+25793	Giant Golden Pig, Raid Boss
+25794	Kutis, Kutus' Nemesis
+25795	Garan, Korim's Messenger
+25796	Batur, Kelbar's Leader
+25797	Venir, Kraven's Best Friend
+25798	Oel, Blue Flag Captain
+25799	Taranka, Kandra's Follower
+25800	Kasha, Gosmos' Mentor
+25801	Dorak, Kabed's Rival
+25802	Turan, Leo Tracker
+25803	Varkan, Varka's Gatekeeper
+25804	Ketran, Ketra's Gatekeeper
+25805	Death Lord Likan, Hallate's Follower
+25806	Anbarad, Barda's Nemesis
+25807	Baranos, Mos' Escort Captain
+25808	Takuran, Tayr's Escort Captain
+25809	Nast, Ipos' Agent
+25810	Keltar, Shuriel's Paladin
+25811	Satur, Shadith' Escort Captain
+25812	Kosnak, Hekaton's Escort Captain
+25813	Garaki, Shax's Shadow
+25814	Kutis' Pawn, Raid Fighter
+25815	Garan's Vanguard, Raid Fighter
+25816	Batur's Priest, Raid Fighter
+25817	Venir's Spirit, Raid Fighter
+25818	Oel's Vanguard, Raid Fighter
+25819	Taranka's Healer, Raid Fighter
+25820	Kasha's Marksman, Raid Fighter
+25821	Dorak's Evil Spirit, Raid Fighter
+25822	Turan's Escort, Raid Fighter
+25823	Varkan's Priest, Raid Fighter
+25824	Ketran's Sniper, Raid Fighter
+25825	Likan's Maid, Raid Fighter
+25826	Anbarad's Priest, Raid Fighter
+25827	Baranos' Guard, Raid Fighter
+25828	Takuran's Protector, Raid Fighter
+25829	Nast's Pikeman, Raid Fighter
+25830	Keltar's Shaman, Raid Fighter
+25831	Satur's Priest, Raid Fighter
+25832	Kosnak's Escorts, Raid Fighter
+25833	Garaki's Banshee, Raid Fighter
+25834	Shadai, Captain
+25835	Turabait, Conqueror
+25836	Tiela, Fallen Angel
+25837	Cherkia, Apostle's Demon
+25838	Spicula, Procella's Archenemy
+25839	Shadai's Chief Priest, Raid Fighter
+25840	Turabait Warrior, Raid Fighter
+25841	Tiela's Believer, Raid Fighter
+25842	Cherkia's Escort, Raid Fighter
+25843	Spicula's Follower, Raid Fighter
+25901	Lilith, Apostle
+25902	Lilith' Agent
+25903	Lilith' Escort
+25904	Anakim, Fallen Angel
+25905	Anakim's Guardian
+25906	Anakim's Royal Guard
+25907	Anakim's Executor
+27001	Orc Sniper
+27002	Orc Captain
+27003	Spirit Of Mirrors, Quest Monster
+27004	Spirit Of Mirrors, Quest Monster
+27005	Spirit Of Mirrors, Quest Monster
+27006	Bhato Bloodspear
+27007	Tanuki Skullcrusher
+27008	Kraacul Blackskull
+27009	Taarq Blackskull
+27016	Nerkas, Quest Monster
+27017	Plague Zombie, Quest Monster
+27018	Orc Lieutenant
+27019	Orc Captain
+27020	Varool Foulclaw, Quest Monster
+27021	Kirunak, Quest Monster
+27022	Merkenis, Quest Monster
+27024	Undead Priest, Quest Monster
+27029	Phantom Salamander, Quest Monster
+27030	Water Seer, Quest Monster
+27031	Ol Mahum Sentry, Quest Monster
+27032	Lizardman Warrior, Quest Monster
+27033	Lizardman Lieutenant, Quest Monster
+27034	Lizardman Soldier, Quest Monster
+27035	Tamil, Quest Monster
+27036	Calpico, Quest Monster
+27037	Calpico's Pawn, Quest Monster
+27038	Cat's Eye Bandit, Quest Monster
+27041	Varangka's Messenger, Quest Monster
+27042	Orc Escort, Quest Monster
+27043	Varangka's Tracker, Quest Monster
+27044	Kasha Bear Totem Spirit, Quest Monster
+27045	Kuruka Ratman Captain, Quest Monster
+27046	Sumi, Orc Betrayer
+27047	Wanuk, Orc Betrayer
+27048	Chewba, Orc Betrayer
+27049	Heitafu, Orc Betrayer
+27050	Picubo, Orc Betrayer
+27051	Bumbum, Orc Betrayer
+27052	Minsku, Orc Betrayer
+27053	Chuchu, Orc Betrayer
+27054	Umbar Orc, Quest Monster
+27055	Zakan, Orc Betrayer
+27056	Durka Spirit, Quest Monster
+27058	Honey Bear, Quest Monster
+27059	Uoph, Kaboo Chief
+27060	Kracha, Kaboo Chief
+27061	Batoh, Kaboo Chief
+27062	Tanukia, Kaboo Chief
+27063	Tanukia's Warhound, Quest Monster
+27064	Turel, Kaboo Chief
+27065	Roko, Kaboo Chief
+27066	Roko's Warhound, Quest Monster
+27067	Kamut, Kaboo Chief
+27068	Murtika, Kaboo Chief
+27069	Murtika's Warhound, Quest Monster
+27070	Tumran Orc Brigand, Quest Monster
+27077	Eva's Unicorn, Quest Monster
+27078	Trimden Lord, Quest Monster
+27079	Black Willow Lurker, Quest Monster
+27080	Pashika the Son Of Voltar, Quest Monster
+27081	Vultus the Son Of Voltar, Quest Monster
+27082	Enku Orc Prefect, Quest Monster
+27083	Makum Bugbear Thug, Quest Monster
+27086	Revenant of Tantos Chieftain, Quest Monster
+27088	Harpy Matriarch, Quest Monster
+27089	Road Collector, Quest Monster
+27090	Evil Spirit Kadesh, Quest Monster
+27092	Neer's Escort, Quest Monster
+27093	Delu Chief Kalkis, Quest Monster
+27094	Delu Lizardman Assassin, Quest Monster
+27095	Apparition Singing Flower, Quest Monster
+27096	Singing Flower of Nightmare, Quest Monster
+27097	Singing Flower of Darkness, Quest Monster
+27098	Ghost Fire, Quest Monster
+27099	Nameless Revenant, Quest Monster
+27100	Skeleton Mercenary, Quest Monster
+27101	Dre Vanul Prince Zeruel, Quest Monster
+27102	Pako the Cat, Quest Monster
+27103	Racer the Unicorn, Quest Monster
+27104	Shadow Turen, Quest Monster
+27105	Mimi the Cat, Quest Monster
+27106	Phantasm the Unicorn, Quest Monster
+27107	Silhouette Tilfo, Quest Monster
+27108	Stenoa Gorgon Queen, Quest Monster
+27109	Handmaiden of Stenoa, Quest Monster
+27110	Shyslassys, Quest Monster
+27111	Cave Basilisk, Quest Monster
+27112	Gorr, Quest Monster
+27113	Baraham, Quest Monster
+27114	Succubus Queen, Quest Monster
+27115	Claw Of Succubus, Quest Monster
+27116	Lava Salamander, Quest Monster
+27117	Nahir, Quest Monster
+27118	Black Willow, Quest Monster
+27119	Spirit of Sir Herod, Quest Monster
+27120	Luelle of the Zephyr Winds, Quest Monster
+27121	Actea of the Verdant Wilds, Quest Monster
+27122	Leto Lizardman Agent, Quest Monster
+27123	Leto Lizardman Captain, Quest Monster
+27124	Leto Lizardman Assassin, Quest Monster
+27125	Leto Lizardman Sniper, Quest Monster
+27126	Leto Lizardman Wizard, Quest Monster
+27127	Leto Lizardman Lord, Quest Monster
+27128	Aruraune, Quest Monster
+27129	Ol Mahum Inspector, Quest Monster
+27130	Ol Mahum Betrayer, Quest Monster
+27131	Crimson Werewolf, Quest Monster
+27132	Krudel Lizardman, Quest Monster
+27133	Evil Eye Lord, Quest Monster
+27134	Tatoma, Quest Monster
+27135	Grima, Quest Monster
+27136	Succubus of Seduction, Quest Monster
+27137	Demon King, Quest Monster
+27138	Great Demon King, Quest Monster
+27139	Secret Keeper Tree, Quest Monster
+27140	Breka Prefect Haka, Quest Monster
+27141	Breka Prefect Jaka, Quest Monster
+27142	Breka Prefect Marka, Quest Monster
+27143	Windsus Aleph, Quest Monster
+27144	Tarlk Raider Athu, Quest Monster
+27145	Tarlk Raider Lanka, Quest Monster
+27146	Tarlk Raider Triska, Quest Monster
+27147	Tarlk Raider Motura, Quest Monster
+27148	Tarlk Raider Kalath, Quest Monster
+27149	Gremlin Filcher, Quest Monster
+27150	Black Legion Stormtrooper, Quest Monster
+27151	Delu Lizardman Headhunter, Quest Monster
+27152	Marsh Stakato Marquess, Quest Monster
+27153	Alexandro Sanches, Dark Lord
+27154	Bonaparterius, Abyss King
+27155	Ramsebalius, Evil Overlord
+27156	Leto Shaman Ketz, Quest Monster
+27157	Leto Chief Narak, Quest Monster
+27158	Timak Raider Captain Kaikee, Quest Monster
+27159	Timak Prefect Okun, Quest Monster
+27160	Gok Magok, Grandis Chief
+27161	Taik Prefect Kakran, Quest Monster
+27162	Hatar Chieftain Kubel, Quest Monster
+27163	Vanor Elder Kerunos, Quest Monster
+27164	Karul Chief Orooto, Quest Monster
+27165	Abyssal Jewel 1, Quest Monster
+27166	Abyssal Jewel 2, Quest Monster
+27167	Abyssal Jewel 3, Quest Monster
+27168	Jewel Guardian Mara, Quest Monster
+27169	Jewel Guardian Musfel, Quest Monster
+27170	Jewel Guardian Pyton, Quest Monster
+27171	Ghost of Offering, Quest Monster
+27172	Harit Lizardman Zealot, Quest Monster
+27173	Ritasha's Box 1, Quest Monster
+27174	Ritasha's Box 2, Quest Monster
+27175	Ritasha's Box 3, Quest Monster
+27176	Ritasha's Box 4, Quest Monster
+27177	Ritasha's Box 5, Quest Monster
+27178	Blitz Wyrm, Quest Monster
+27179	Grave Keymaster, Quest Monster
+27180	Imperial Slave, Quest Monster
+27181	Imperial Gravekeeper, Quest Monster
+27182	Ark Guardian Elberoth, Quest Monster
+27183	Ark Guardian Shadowfang, Quest Monster
+27184	Angel Killer, Quest Monster
+27185	Fairy Tree of Wind, Quest Monster
+27186	Fairy Tree of Star, Quest Monster
+27187	Twilight Fairy Tree, Quest Monster
+27188	Fairy Tree of Abyss, Quest Monster
+27189	Soul of Tree Guardian, Quest Monster
+27190	Ol Mahum Support Troop, Quest Monster
+27191	Malcom, Quest Monster
+27192	Succubus Handmaiden, Quest Monster
+27193	Goblin Servant, Quest Monster
+27194	Julie the Ripper, Quest Monster
+27195	Noble Ant, Quest Monster
+27196	Bluebacked Alligator, Quest Monster
+27197	Bejeweled Alligator, Quest Monster
+27199	Crimson Werewolf, Quest Monster
+27200	Krudel Lizardman, Quest Monster
+27201	Ol Mahum Thief, Quest Monster
+27202	Turek Orc Commander, Quest Monster
+27203	Turek Orc Invader, Quest Monster
+27204	Woopee, Quest Monster
+27205	Wild Boar, Quest Monster
+27206	Black Wild Boar, Quest Monster
+27207	White Wild Boar, Quest Monster
+27214	Guardian of Forbidden Knowledge, Quest Monster
+27215	Keeper of the Holy Edict, Quest Monster
+27216	Watcher of the Ancient Pledge, Quest Monster
+27219	Halisha's Archon, Quest Monster
+27220	Halisha's Archon, Quest Monster
+27221	Halisha's Archon, Quest Monster
+27222	Halisha's Archon, Quest Monster
+27223	Halisha's Archon, Quest Monster
+27224	Halisha's Archon, Quest Monster
+27225	Halisha's Archon, Quest Monster
+27226	Halisha's Archon, Quest Monster
+27227	Halisha's Archon, Quest Monster
+27228	Halisha's Archon, Quest Monster
+27229	Halisha's Archon, Quest Monster
+27230	Halisha's Archon, Quest Monster
+27231	Halisha's Archon, Quest Monster
+27232	Halisha's Archon, Quest Monster
+27233	Halisha's Archon, Quest Monster
+27234	Halisha's Archon, Quest Monster
+27235	Halisha's Archon, Quest Monster
+27236	Halisha's Archon, Quest Monster
+27237	Halisha's Archon, Quest Monster
+27238	Halisha's Archon, Quest Monster
+27239	Halisha's Archon, Quest Monster
+27240	Halisha's Archon, Quest Monster
+27241	Halisha's Archon, Quest Monster
+27242	Halisha's Archon, Quest Monster
+27243	Halisha's Archon, Quest Monster
+27244	Halisha's Archon, Quest Monster
+27245	Halisha's Archon, Quest Monster
+27246	Halisha's Archon, Quest Monster
+27247	Halisha's Archon, Quest Monster
+27248	Halisha's Archon, Quest Monster
+27249	Halisha's Archon, Quest Monster
+27250	Fallen Angel Allector, Quest Monster
+27251	Fallen Angel Allector, Quest Monster
+27252	Fallen Angel Allector, Quest Monster
+27253	Hell Fire, Quest Monster
+27254	Unknown Stopper, Quest Monster
+27255	Unknown Stopper, Quest Monster
+27256	Unknown Stopper, Quest Monster
+27257	Archangel Iconoclasis, Quest Monster
+27258	Archangel Iconoclasis, Quest Monster
+27259	Archangel Iconoclasis, Quest Monster
+27260	Archangel Iconoclasis, Quest Monster
+27261	Bead of Sacred Flame, Quest Monster
+27262	Death Lord Hallate, Quest Monster
+27263	Death Lord Hallate, Quest Monster
+27264	Death Lord Hallate, Quest Monster
+27265	Lich King Icarus, Quest Monster
+27266	Fallen Angel Haures, Quest Monster
+27267	Fallen Angel Haures, Quest Monster
+27268	Haures' Escort, Quest Monster
+27269	Fallen Angel Naverius, Quest Monster
+27270	Fallen Angel Naverius, Quest Monster
+27271	Chimera Golem, Quest Monster
+27272	Hallate's Dancer Lillian, Quest Monster
+27273	Assassin Pezel, Quest Monster
+27274	Fallen Angel Tanakia, Quest Monster
+27275	Fallen Angel Tanakia, Quest Monster
+27276	Fallen Angel Tanakia, Quest Monster
+27277	Fallen Angel Tanakia, Quest Monster
+27278	Beleth' Shadow, Quest Monster
+27279	Cursed Kesadein, Quest Monster
+27280	Fallen Angel Narcissus, Quest Monster
+27281	Fallen Angel Metellus, Quest Monster
+27282	Dark Angel Othiel, Quest Monster
+27283	Grandpapa Askalius, Quest Monster
+27284	Flame Evil Spirit Azira, Quest Monster
+27285	Lizard's Totem Sharuhi, Quest Monster
+27286	Fallen Knight Adhil, Quest Monster
+27287	Bound Elf Panacea, Quest Monster
+27288	Sword Player Biel, Quest Monster
+27289	Ancient Sword Master Iron, Quest Monster
+27290	White Wing Commander, Quest Monster
+27291	White Wing Fighter, Quest Monster
+27292	Fallen Noble Orc Muhark, Quest Monster
+27293	Khavatari Uruz, Quest Monster
+27294	Overlord Atrus, Quest Monster
+27295	Sharuhi Mouth Mudaha, Quest Monster
+27296	Stone Watchman Ezekiel, Quest Monster
+27297	Stone Watchman Ezekiel, Quest Monster
+27298	Stone Watchman Ezekiel, Quest Monster
+27299	Stone Watchman Ezekiel, Quest Monster
+27300	Stone Watchman Ezekiel, Quest Monster
+27301	Stone Watchman Ezekiel, Quest Monster
+27302	Stone Guardian Azrael, Quest Monster
+27303	Stone Guardian Azrael, Quest Monster
+27304	Stone Guardian Azrael, Quest Monster
+27305	Stone Guardian Azrael, Quest Monster
+27306	Stone Guardian Azrael, Quest Monster
+27307	Stone Guardian Azrael, Quest Monster
+27308	Assassin Frost, Quest Monster
+27309	Minervia Van Hacken, Quest Monster
+27310	Kitanis Van Hacken, Quest Monster
+27311	Judgment Hound Dog Kelvas, Quest Monster
+27312	Mysterious Servitor, Quest Monster
+27313	Vision Guardian Shakiel, Quest Monster
+27314	Vision Guardian Shakiel, Quest Monster
+27315	Vision Guardian Shakiel, Quest Monster
+27316	Ice Monster, Quest Monster
+27317	Spirit of a Drowned, Quest Monster
+27318	Soul of Cold, Quest Monster
+27319	Ghost of Solitude, Quest Monster
+27320	Fiend of Cold, Quest Monster
+27321	Spirit of Cold, Quest Monster
+27322	Possessed Windsus, Quest Monster
+27323	Windsus Whelp, Quest Monster
+27324	Windsus of Terror, Quest Monster
+27325	Weak Windsus, Quest Monster
+27326	Lesser Strain, Quest Monster
+27327	Lesser Ghoul, Quest Monster
+27328	Lesser Granite Golem, Quest Monster
+27329	Lesser Corpse Tracker, Quest Monster
+27330	Steel Wild Boar, Quest Monster
+29001	Queen Ant
+29002	Queen Ant Larva
+29003	Nurse Ant
+29004	Escort Ant
+29005	Royal Guard Ant
+29006	Core
+29007	Death Knight
+29008	Doom Wraith
+29009	Dicor
+29010	Validus
+29011	Susceptor
+29012	Perum
+29013	Premo
+29014	Orfen
+29015	Laikel
+29016	Laikel Leos
+29017	Riba
+29018	Riba Iren
+29019	Antharas
+29020	Baium
+29021	Archangel
+29022	Zaken
+29023	Doll Blader
+29024	Veil Master
+29025	Baium
+29026	Pirate Zombie Captain
+29027	Pirate Zombie
+29066	Antharas
+29067	Antharas
+29068	Antharas, Land Dragon
+29069	Behemoth Dragon
+29070	Dragon Bomber
+29071	Dragon Bomber
+29072	Dragon Bomber
+29073	Dragon Bomber
+29074	Dragon Bomber
+29075	Dragon Bomber
+29076	Dragon Bomber
+29077	[not named in client]
+29078	[not named in client]
+29079	[not named in client]
+29080	[not named in client]
+29081	[not named in client]
+29082	[not named in client]
+29083	[not named in client]
+29084	[not named in client]
+29085	[not named in client]
+29086	[not named in client]
+29087	[not named in client]
+29088	[not named in client]
+29089	[not named in client]
+29090	[not named in client]
+29091	[not named in client]
+29092	[not named in client]
+29093	[not named in client]
+29094	[not named in client]
+29099	Baium
+29100	Archangel
+29101	Baium
+29102	Antharas, Land Dragon
+29103	Behemoth Dragon
+29104	Tarask Dragon
+29105	King Ignis, Fire Spirit King
+29106	Queen Nebula, Water Spirit Queen
+29107	King Procella, Wind Spirit King
+29108	King Petram, Earth Spirit King
+29109	Freya, Ice Queen
+29110	Safe Zone
+29111	Water Slime
+29112	Procella's Guardian
+29113	Procella's Guardian
+29114	Procella's Guardian
+29115	Procella's Gust
+29116	Petram's Fragment
+29117	Petram's Piece
+29118	Spirit King's Magic
+29119	Zaken
+29190	Tarask Dragon
+30001	Lector, Weapon Merchant
+30002	Jackson, Armor Merchant
+30003	Silvia, Accessory Merchant
+30004	Katerina, Grocer
+30005	Wilford, Warehouse Keeper
+30006	Roxxy, Gatekeeper
+30008	Roien, Grand Master
+30009	Newbie Helper
+30010	Auron, Master
+30011	Turek Orc Elder, Deep in Debt
+30012	Fishing Guild Member
+30013	Pier, Fishing Manager
+30014	Celma, Master
+30015	Ferma
+30016	Baikal, Water Pollution Researcher
+30017	Gallint, Grand Magister
+30018	Miss Patch, Master of Exclusives
+30019	Newbie Helper
+30020	Beginns, Blacksmith
+30021	Beginns Deco
+30022	Zigaunt, Priest
+30023	Melodys, Moodbringer
+30024	Luck Cat, Good luck!
+30026	Bitz, Grand Master
+30027	Gwinter, Master
+30028	Pintage, Master
+30029	Minia, Master
+30030	Vivyan, Priestess
+30031	Biotin, High Priest
+30032	Yohanes, Priest
+30033	Baulro, Magister
+30034	Iris, Magister
+30035	Harrys, Magister
+30036	Petron, Priest
+30037	Levian, High Priestess
+30039	Gilbert, Captain
+30040	Leon, Guard
+30041	Arnold, Guard
+30042	Abellos, Guard
+30043	Johnstone, Guard
+30044	Chiperan, Guard
+30045	Kenyos, Guard
+30046	Hanks, Guard
+30047	Firon, Wharf Manager
+30048	Darin
+30049	Bonnie
+30050	Elias
+30051	Cristel
+30054	Rant, Warehouse Keeper
+30055	Rolfe, Warehouse Keeper
+30057	Amidol, Warehouse Keeper
+30058	Holvas, Warehouse Keeper
+30059	Trisha, Gatekeeper
+30060	Sabrin, Weapon Merchant
+30061	Casey, Armor Merchant
+30062	Sonia, Accessory Merchant
+30063	Lars, Grocer
+30064	Terry, Master
+30065	Arnelle, Master
+30066	Pabris, Grand Master
+30067	Glyvka, Priestess
+30068	Shegfield, Priest
+30069	Rollant, Magister
+30070	Sylvain, High Priest
+30071	Lucas, Captain
+30072	Metty, Guard
+30073	Jacob, Guard
+30074	Harlan, Guard
+30075	Xaber, Guard
+30076	Liam, Guard
+30078	Pano, Floran Merchant
+30079	Barder, Warehouse Keeper
+30080	Clarissa, Gatekeeper
+30081	Helvetia, Grocer
+30082	Denkus, Accessory Merchant
+30083	Pochi, Warehouse Keeper
+30084	Graham, Warrior Weapon Merchant
+30085	Stanford, Wizard Weapon Merchant
+30086	Taurin, Warehouse Keeper
+30087	Peta, Wizard Armor Merchant
+30088	Radia, Warrior Armor Merchant
+30090	Sandra, Accessory Merchant
+30091	Ellie, Accessory Merchant
+30092	Collob, Warehouse Keeper
+30093	Groot, Dye Merchant
+30094	Gentler, Wizard Equipment Merchant
+30095	Randolf, Warehouse Keeper
+30097	Galladucci, Weapon Merchant
+30098	Alexandria, Armor Merchant
+30103	Valkon, Warehouse Keeper
+30104	Parman, Warehouse Keeper
+30105	Genwitter, Master
+30106	Dufner, Master
+30107	Goldian, Master
+30108	Macken, Master
+30109	Hannavalt, Grand Master
+30110	Iker, Magister
+30111	Dieter, Magister
+30112	Maurius, Magister
+30113	Juris, Magister
+30114	Roa, Magister
+30115	Jurek, Grand Magister
+30116	Dustin, Priest
+30117	Primos, Priest
+30118	Pupina, Priestess
+30119	Isabellin, Priestess
+30120	Maximilian, High Priest
+30121	Jeronin, Captain
+30122	Bane, Guard
+30123	Vesa, Guard
+30124	Zerome, Guard
+30125	Belton, Guard
+30126	Rath, Guard
+30128	Atanas, Guard
+30129	Mitraell, Brown Elf Chief
+30130	Undrias, Abyssal Celebrant
+30131	Newbie Helper
+30132	Cecktinon, Abyssal Celebrant
+30133	Kartia, Abyssal Celebrant
+30134	Jasmine, Gatekeeper
+30135	Iria, Weapon Merchant
+30136	Payne, Armor Merchant
+30137	Vollodos, Grocer
+30138	Minaless, Accessory Merchant
+30139	Dorankus, Warehouse Keeper
+30140	Erviante, Warehouse Keeper
+30141	Talos, Hierarch
+30143	Trudy, Master
+30144	Harne, Magister
+30145	Vlasty, Magister
+30146	Mint, Gatekeeper
+30147	Unoren, Weapon Merchant
+30148	Ariel, Armor Merchant
+30149	Creamees, Accessory Merchant
+30150	Herbiel, Grocer
+30151	Chad, Warehouse Keeper
+30152	Julia, Warehouse Keeper
+30153	Markius, Warehouse Keeper
+30154	Asterios, Hierarch
+30155	Ellenia, Grand Master
+30156	Cobendell, Master
+30157	Greenis, Magister
+30158	Esrandell, Grand Magister
+30162	Karin, Gatekeeper
+30163	Rex, Weapon Merchant
+30164	Ian, Armor Merchant
+30165	Ralford, Accessory Merchant
+30166	Wesley, Dye Merchant
+30169	Marty, Warehouse Keeper
+30170	Radic, Warehouse Keeper
+30171	Gaius, Magister
+30174	Arkenias, Grand Magister
+30175	Fairen, Grand Magister
+30176	Valleria, Grand Magister
+30177	Valentina, Gatekeeper
+30178	Zenkin, Armor Merchant
+30179	Raudia, Weapon Merchant
+30180	Sara, Grocer
+30181	Galibredo, Accessory Merchant
+30182	Cliff, Warehouse Keeper
+30183	Hagger, Warehouse Keeper
+30184	Rigol, Master
+30185	Taniac Blackbird, Master
+30186	Bhan, Master
+30187	Klaus Blackbird, Grand Master
+30188	Vadin, Priest
+30189	Rovia, Magister
+30190	Phanovia, Magister
+30191	Hollint, High Priest
+30192	Darya, Master
+30194	Gideon, Magister
+30195	Brecson, Grand Master
+30196	Mouen, Captain
+30197	Hector, Guard
+30198	Jerin, Guard
+30199	Yates, Guard
+30200	Stan, Guard
+30201	Pinaps, Guard
+30202	Leo, Senior Appraiser
+30203	Arena Machine
+30204	Supplies
+30207	Arodin, Weapon Merchant
+30208	Damion, Armor Merchant
+30209	Colleen, Dye Merchant
+30210	Norman, Warehouse Keeper
+30216	Wheeler, Sentinel
+30217	Berros, Sentinel
+30218	Kendell, Sentinel
+30219	Veltress, Sentinel
+30220	Starden, Sentinel
+30221	Rayen, Sentinel
+30222	Alshupes
+30223	Arujien
+30224	Rayla, Sentry Knight
+30230	Edroc, Armor Merchant
+30231	Garette, Accessory Merchant
+30232	Sorint, Warehouse Keeper
+30233	Esmeralda, Gatekeeper
+30253	Simplon, Armor Merchant
+30254	Harmony, Grocer
+30255	Haprock, Warehouse Keeper
+30256	Bella, Gatekeeper
+30283	Altran, Blacksmith
+30284	Alberius, Sentinel Knight
+30285	Gartrandell, Sentinel
+30288	Rains, Grand Master
+30289	Raymond, High Priest
+30290	Xenos, Grand Master
+30291	Alex, Captain
+30293	Manuel, Priest
+30294	Varan, Accessory Merchant
+30297	Tobias, Grand Master
+30298	Pinter, Blacksmith
+30300	Pushkin, Blacksmith
+30301	Hally, Grocer
+30305	Vellior, Hierarch
+30307	Karrod, Blacksmith
+30311	Sir Collin Windawood
+30312	Rockswell, Lighthouse Keeper
+30313	Asha, Trader
+30314	Nestle, Accessory Merchant
+30315	Poesia, Grocer
+30316	Raut, Warehouse Keeper
+30317	Kluto, Blacksmith
+30320	Richlin, Gatekeeper
+30321	Sydnia, Weapon Merchant
+30322	Ballin, Warehouse Keeper
+30325	Audiberti, Master
+30326	Leona, Master
+30327	Sorius, Master
+30328	Reisa, Master
+30329	Virgil, Master
+30330	Sidra, Magister
+30331	Toma, Guard
+30332	Bathis, Captain
+30333	Praga, Guard
+30334	Babenco, Guard
+30335	Brynn, Guard
+30336	Curtis, Guard
+30337	Moretti, Guard
+30338	Melville, Guard
+30342	Varsak
+30344	Rohmer, Magister
+30345	Ramoniell, Magister
+30346	Kayleen, Sentry
+30347	Marion, Sentry
+30348	Nelsya, Sentry
+30349	Jenna, Sentry
+30350	Carlon, Warehouse Keeper
+30351	Astaron
+30352	Karina
+30353	Jughead
+30354	Jewel
+30355	Roselyn, Sentry
+30356	Altima, Sentry
+30357	Kristin, Sentry
+30358	Thifiell, Great Hierarch
+30359	Kaitar, Hierarch
+30360	Harant, Master
+30361	Rizraell
+30362	Andellia
+30363	Aios, Blacksmith
+30368	Lilith
+30369	Baenedes, Master
+30370	Nerupa
+30371	Thalia
+30373	Ramos, Grand Master
+30374	Rhodiell, Master
+30375	Adonius, Priest
+30376	Nell, Magister
+30377	Talbot, Magister
+30378	Estella, Master
+30379	Bezique, Captain
+30380	Plink, Guard
+30381	Alvah, Guard
+30382	Leikan, Guard
+30383	Scott, Guard
+30384	Linus, Guard
+30385	Weisz, Guard
+30386	Luis, Guard
+30387	Clancy, Wharf Manager
+30391	Parina
+30400	Newbie Helper
+30401	Arushinai, Heavenly Rift Guide
+30402	Dimension Keeper
+30403	Toma, A-grade Master
+30404	Newbie Helper
+30405	Marius
+30406	Matheo
+30407	Mesella
+30408	Lionel
+30409	Earth Snake
+30410	Wasteland Lizardman
+30411	Flame Salamander
+30412	Wind Sylph
+30413	Water Undine
+30414	Rosella
+30415	Charkeren
+30416	Triskel
+30417	Sir Klaus Vasper
+30418	Annika
+30419	Arkenia, Witch
+30420	Tyra, Grocer
+30421	Varika, Witch
+30422	Kalinta, Abyssal Celebrant
+30423	Northwind
+30424	Allana
+30425	Neti
+30426	Prias
+30427	Siff, Gatekeeper
+30428	Perrin
+30429	Tiramisa, Gatekeeper
+30430	Trionell, Sentinel
+30431	Eriel, Sentinel
+30432	Irene, Sentry
+30433	Kathaway, Sentry
+30434	Samed
+30435	Leopold
+30436	Sarien, Grocer
+30437	Rolento, Grocer
+30452	Kurt, Guard
+30458	Poitan, Blacksmith
+30459	Wandius, Master
+30460	Cardien, Master
+30461	Mirien, Magister
+30462	Tronix, Grand Master
+30463	Ixia, Master
+30464	Clayton, Magister
+30465	Herven, Guard
+30466	Bright, Guard
+30469	Jonas
+30471	Rupio, Blacksmith
+30472	Rosheria, Master
+30473	Bandellos, Priest
+30474	Angus, Grand Master
+30475	Stapin, Master
+30476	Kaira, Magister
+30477	Sir Ortho Lancer
+30478	Reikin, Guard
+30483	Carsus, Ivory Tower Wizard
+30484	Janssen, Ivory Tower Wizard
+30485	Belkadhi, Ivory Tower Wizard
+30486	Ian, Ivory Tower Wizard
+30487	Rombel, Ivory Tower Wizard
+30497	Edmond
+30498	Moke, Warehouse Chief
+30499	Tapoy, Head Blacksmith
+30500	Osborn, High Prefect
+30501	Kasman, Prefect
+30502	Umos, Priest
+30503	Rikadio, Warehouse Chief
+30504	Mendio, Head Blacksmith
+30505	Drikus, High Prefect
+30506	Buka, Prefect
+30507	Racoy, Priest
+30508	Castor, High Prefect
+30509	Dowki, Prefect
+30510	Somak, Priest
+30511	Gesto, Warehouse Chief
+30512	Kusto, Head Blacksmith
+30513	Penatus, High Prefect
+30514	Vokian, Prefect
+30515	Manakia, Priest
+30516	Reep, Weapon Merchant
+30517	Shari, Armor Merchant
+30518	Garita, Accessory Merchant
+30519	Mion, Grocer
+30520	Reed, Warehouse Chief
+30521	Murdoc, Warehouse Keeper
+30522	Airy, Warehouse Keeper
+30523	Gouph, Collector
+30524	Pippi, Collector
+30525	Bronk, Head Blacksmith
+30526	Brunon, Blacksmith
+30527	Silvera, Blacksmith
+30528	Laferon, Foreman
+30529	Maron, Miner
+30530	Newbie Helper
+30531	Lockirin, Iron Gate's
+30532	Spiron, Golden Wheel's
+30533	Balanki, Silver Scale's
+30534	Keef, Bronze Key's
+30535	Filaur, Gray Pillar's
+30536	Arin, Black Anvil's
+30537	Daichir, Head Priest of the Earth
+30538	Zimenf, Priest of the Earth
+30539	Chichirin, Priestess of the Earth
+30540	Wirphy, Gatekeeper
+30541	Paion, Protector
+30542	Runant, Defender
+30543	Ethan, Defender
+30544	Cromwell, Defender
+30545	Proton, Defender
+30546	Dinkey, Defender
+30547	Tardyon, Defender
+30548	Nathan, Defender
+30549	Ghouliff Droopstone
+30550	Gauri Twinklerock
+30551	Tink Wandergold
+30552	Kiril Sparkystone
+30553	Maryse Redbonnet
+30554	Bolter, Miner
+30555	Torocco, Carrier
+30556	Toma, Master
+30557	Torai
+30558	Jakal, Weapon Merchant
+30559	Kunai, Armor Merchant
+30560	Uska, Accessory Merchant
+30561	Papuma, Grocer
+30562	Grookin, Warehouse Keeper
+30563	Imantu, Warehouse Keeper
+30564	Sumari, Blacksmith
+30565	Kakai, Pa'agrio Lord
+30566	Varkees, Atuba Chief
+30567	Tantus, Neruga Chief
+30568	Hatos, Urutu Chief
+30569	Brukurse, Prefect
+30570	Karukia, Prefect
+30571	Tanapi, Priest
+30572	Livina, Priest
+30573	Vulkus, Flame Guardian
+30575	Newbie Helper
+30576	Tamil, Gatekeeper
+30577	Rukain, Praetorian
+30578	Nakusin, Centurion
+30579	Tamai, Centurion
+30580	Parugon, Centurion
+30581	Orinak, Centurion
+30582	Tiku, Centurion
+30583	Petukai, Centurion
+30584	Vapook, Centurion
+30585	Tataru Zu Hestui
+30586	Anai Zu Neruga
+30587	Gantaki Zu Urutu
+30588	Takia Zu Duda-Mara
+30589	Kazkin Zu Gandi
+30590	Rosheek, Khavatari
+30591	Toruku, Khavatari
+30592	Hestui Totem Spirit
+30593	Duda-Mara Totem Spirit
+30594	Ranspo, Warehouse Chief
+30595	Opix, Head Blacksmith
+30596	Harkel, Partisan Gatekeeper
+30597	Piotur
+30598	Newbie Helper
+30599	Newbie Helper
+30600	Newbie Helper
+30601	Newbie Helper
+30602	Newbie Helper
+30608	Maria
+30609	Creta, Astrologer
+30610	Cronos, Elder
+30611	Triff, Drunkard
+30612	Casian, Elder
+30613	Alders' Spirit
+30614	Metheus, Brother
+30615	Voltar, Breka Chief
+30616	Kepra, Enku Chief
+30617	Burai, Turek Chief
+30618	Harak, Tunath Chief
+30619	Driko, Vuku Chief
+30620	Emily
+30621	Nikola, Maestro
+30622	Box Of Titan
+30623	Kaien, Duelist
+30624	Ascalon, Veteran
+30625	Mason
+30626	Hamil, Sagittarius
+30627	Tree
+30628	Strong Wooden Chest
+30629	Rukal, Bard
+30630	Orim, Shadow
+30631	Roderik, Warden
+30632	Endrigo, Warden
+30633	Evert, Fisher
+30634	Galatea, Head Summoner
+30635	Almors, Summoner
+30636	Camoniell, Summoner
+30637	Belthus, Summoner
+30638	Basilla, Summoner
+30639	Celestiel, Summoner
+30640	Brynthea, Summoner
+30641	Takuna, Duda-Mara Chief
+30642	Chianta, Gandi Chief
+30643	First Orc
+30644	Kash
+30645	Martien
+30646	Raldo, Champion
+30647	Chest Of Shyslassys
+30648	Santiago, Hermit
+30649	Ancestor Martankus
+30650	Gerald, Priest of the Earth
+30651	Dorf, Wanderer
+30652	Uruha
+30653	Sir Aron Tanford
+30654	Sir Kiel Nighthawk
+30655	Isael Silvershadow
+30656	Spirit Of Sir Talianus
+30657	Seresin, Cardinal
+30658	Gupu, Father
+30659	Orphan Girl
+30660	Windy Shaoring
+30661	Mysterious Dark Elf
+30662	Piper Longbow
+30663	Slein Shining Blade
+30664	Cain Flying Knife
+30665	Kristina, Saint
+30666	Sla, Prophet
+30667	Ramus
+30668	Katari
+30669	Kakan
+30670	Nyakuri
+30671	Croto, Chief
+30672	Dubabah, Jailer
+30673	Lorain, Researcher
+30674	Daurin Hammercrush
+30675	Kamuru's Corpse
+30676	Croop, Warehouse Chief
+30677	Flutter, Head Blacksmith
+30678	Helton, Blacksmith
+30679	Roameria, Master
+30680	Egnos, Priest
+30681	Karia, High Prefect
+30682	Pekiron, Priest
+30683	Daunt, Prefect
+30684	Viktor, Weapon Merchant
+30685	Baxt, Warehouse Chief
+30686	Silva, Warehouse Keeper
+30687	Vergara, Head Blacksmith
+30688	Duning, Blacksmith
+30689	Siria, Grand Master
+30690	Luther, Master
+30691	Aren Athebaldt, Master
+30692	Stedmiel, Master
+30693	Queenien, Master
+30694	Scraide, Grand Magister
+30695	Moses, Magister
+30696	Page, Magister
+30697	Videlrien, Magister
+30698	Evelyn, Magister
+30699	Medown, Grand Master
+30700	Prestan, Master
+30701	Errickin, Magister
+30702	Bernard, Hunter Guild President
+30703	Colin, Hunter Guild Member
+30704	Garvarentz, High Prefect
+30705	Chakiris, Prefect
+30706	Lazenby, Priest
+30707	Raigen, Captain
+30708	Nasign, Guard
+30709	Norton, Guard
+30710	Weston, Guard
+30711	Byron, Guard
+30712	Makhis, Guard
+30713	Gardner, Guard
+30714	Paros, Guard
+30715	Marina, Magister
+30716	Cecile, Gatekeeper
+30717	Gauen, Magister
+30718	Joan, Magister
+30719	Mariell, Gatekeeper
+30720	Kaiena, Magister
+30721	Ladd, Magister
+30722	Merian, Gatekeeper
+30723	Roy, Captain
+30724	Tavillian, Guard
+30725	Yening, Guard
+30726	Tebose, Guard
+30727	Verona, Gatekeeper
+30728	Leirynn, Militiaman
+30729	Borys, Drunkard
+30730	Jax, Escort
+30731	Martin, Pet Manager
+30732	Ol Mahum Pilgrim
+30733	Guard
+30734	Supply Box On Wharf
+30735	Sophya, Mercenary Captain
+30736	Redfoot, Mercenary
+30737	Morgan, Guildsman
+30738	Matild, Alchemist
+30739	Keltir, Royal Servant
+30740	Toad, Royal Servant
+30741	Rabbit, Royal Servant
+30742	Rupina, Fairy of Love
+30743	Wisdom Chest
+30744	Grey, Hunter Guild Member
+30745	Tor, Hunter Guild Member
+30746	Cybellin
+30747	Mimyu, Fairy
+30748	Exarion, Drake
+30749	Zwov, Drake
+30750	Kalibran, Drake
+30751	Suzet, Wyrm
+30752	Shamhai, Wyrm
+30753	Gabrielle
+30754	Gilmore, Antharas Watchman
+30755	Theodric, Antharas Watchman
+30756	Sir Kristof Rodemai
+30757	Statue of Offering
+30758	Ritasha, Sorceress
+30759	Kalis, Witch
+30760	Sir Gustav Athebaldt
+30761	Corpse Of Fritz
+30762	Corpse Of Lutz
+30763	Corpse Of Kurtz
+30764	Balthazar
+30765	Imperial Coffer
+30766	Cleo, Witch
+30767	Auctioneer
+30768	Auctioneer
+30769	Auctioneer
+30770	Auctioneer
+30771	Auctioneer
+30772	Wilson, Clan Hall Manager
+30773	Todd, Newbie Guide
+30827	Lundy, Pet Manager
+30828	Waters, Pet Manager
+30829	Cooper, Pet Manager
+30830	Joey, Pet Manager
+30831	Nelson, Pet Manager
+30832	Hardin
+30833	Kaspar, Magister
+30834	Cema, Magic Trader
+30835	Icarus, Lich King
+30836	Minerva, Gatekeeper
+30837	Woodrow, Weapon Merchant
+30838	Woodley, Armor Merchant
+30839	Holly, Grocer
+30840	Lorenzo, Spellbook Trader
+30841	Carson, Dye Merchant
+30842	Alexis, Accessory Merchant
+30843	Romp, Warehouse Keeper
+30844	Walderal, Warehouse Keeper
+30845	Klump, Warehouse Chief
+30846	Wilbert, Blacksmith
+30847	Ferris, Head Blacksmith
+30848	Elisa, Gatekeeper
+30849	Sedrick, Grand Master
+30850	Aiken, Master
+30851	Kendra, Master
+30852	Sinden, Master
+30853	Raien, Master
+30854	Drikiyan, Grand Magister
+30855	Desmond, Magister
+30856	Winonin, Grand Magister
+30857	Orven, High Priest
+30858	Ross, Priest
+30859	Vivyan, Priestess
+30860	Flownia, Priestess
+30861	Leonard, Priest
+30862	Oltran, Grand Master
+30863	Ghest, Master
+30864	Hanellin, Magister
+30865	Ladanza, High Prefect
+30866	Marestella, Prefect
+30867	Reva, Priest
+30868	Sir Eric Rodemai
+30869	Lemper, Pet Manager
+30870	Kurtiz, Captain
+30871	Bret, Guard
+30872	Conroy, Guard
+30873	Coleman, Guard
+30874	Aldis, Guard
+30875	Carlton, Guard
+30876	Eastan, Guard
+30877	Grayson, Guard
+30878	Angelina, Gatekeeper
+30879	Felton
+30880	Viktor Van Dake, Border Patrol Captain
+30881	Sanders, Border Patrol Secretary
+30882	Border Patrol
+30883	Border Patrol
+30884	Border Patrol
+30885	Border Patrol
+30886	Border Patrol
+30887	Border Patrol
+30888	Border Patrol
+30889	Border Patrol
+30890	Espen, Armor Merchant
+30891	Verona, Weapon Merchant
+30892	Enverun, Accessory Merchant
+30893	Payel, Grocer
+30894	Natools, Warehouse Chief
+30895	Kluck, Warehouse Keeper
+30896	Mia, Warehouse Keeper
+30897	Roman, Head Blacksmith
+30898	Morning, Blacksmith
+30899	Flauen, Gatekeeper
+30900	Marcus, Grand Master
+30901	Arti, Master
+30902	Karuna, Master
+30903	Traus, Master
+30904	Naiel, Master
+30905	Squillari, High Priest
+30906	Ranton, Priest
+30907	Minevia, Magister
+30908	Tanios, Priest
+30909	Anabel, Magister
+30910	Xairakin, Grand Master
+30911	Brikus, Master
+30912	Xenovia, Magister
+30913	Tushku, High Prefect
+30914	Sorbo, Prefect
+30915	Takina, Priest
+30916	Gosta, Captain
+30917	Dupuis, Guard
+30918	Kent, Guard
+30919	Rodic, Guard
+30920	Kraisen, Guard
+30921	Timos, Guard
+30922	Cage, Guard
+30923	Dunst, Guard
+30924	Nedy, Wharf Manager
+30925	Morelyn, Eva's High Priestess
+30926	Restina, Eva's Priestess
+30927	Alicia, Eva's Priestess
+30928	Fenster, Mercenary
+30929	Patrin, Antique Dealer
+30930	Rogent, Antique Appraiser
+30931	Bentley
+30932	Benica
+30933	Braki
+30934	Marsha, Collector
+30935	Trumpin, Collector
+30936	Pona, Collector
+30937	Morita
+30938	Banutu, Seer
+30939	Johnson, Moonlight Knight
+30940	Amor
+30941	Guz, Ol Mahum Elder
+30942	Rubard, Priest
+30943	Malcom8, Rabbit Prince
+30944	Malcom9, Human Prince
+30945	Malcom10, Prince
+30946	Lucianne Tanford
+30947	Rerikya
+30948	Meridien
+30949	Keplon, Researcher
+30950	Euclie, Researcher
+30951	Pithgon, Researcher
+30952	Dimensional Vortex 1
+30953	Dimensional Vortex 2
+30954	Dimensional Vortex 3
+30955	Gillian's Revenant
+30956	Nanarin, Musician
+30957	Swan, Bard
+30958	Galion
+30959	Barbado, Musician
+30960	Beer Chest
+30961	Clothes Chest
+30962	Statue of Water
+30963	Statue of Fire
+30964	Statue of Wind
+30965	Statue of Earth
+30966	Statue of Darkness
+30967	Statue of Light
+30968	Jennifer, Lady Orc
+30969	Iason Heine
+30970	Dorothy, Locksmith
+30971	Orpheus, Mad Doctor
+30972	Orpheus Resurrector
+30973	Medium Jar
+30974	Oliver, Resurrected Adventurer
+30975	Clarine, Resurrected Adventurer
+30976	Resurrected Town Maiden
+30977	Holy Ark of Secrecy 1
+30978	Holy Ark of Secrecy 2
+30979	Holy Ark of Secrecy 3
+30980	Ark Guardian's Corpse
+30981	Dark Judge
+30982	Sleeping Ant Larva1
+30983	Sleeping Ant Larva2
+30984	Sleeping Ant Larva3
+30985	Sleeping Ant Larva4
+30986	Sleeping Ant Larva5
+30987	Sleeping Ant Larva6
+30988	Verce, Leathersmith
+30989	Chest of Bifrons
+30990	Lottery Ticket Seller
+30991	Lottery Ticket Seller
+30992	Lottery Ticket Seller
+30993	Lottery Ticket Seller
+30994	Lottery Ticket Seller
+30995	Race Manager, Monster Race Track
+31001	Claudia Athebaldt
+31002	Reorin, Maestro
+31003	Here I Come
+31004	Half Moon Love
+31005	Everlasting
+31006	Dark Side of the Moon
+31007	Wind Rider
+31008	Shooting Star
+31009	Cyclone Thunder
+31010	Hungry Baby
+31011	Salty Dog
+31012	Raging Revolution
+31013	Valentine Blue
+31014	Light My Fire
+31015	Red Bullet
+31016	Shining Silver
+31017	Over the Top
+31018	Royal Straight
+31019	All Seven
+31020	Nasty Green
+31021	Shortcut
+31022	Typhoon Tiger
+31023	Red Hot
+31024	Galaxy Express
+31025	Best Condition
+31026	Albatross
+31027	Coffer of the Dead
+31028	Chest of Kernon
+31029	Chest of Golkonda
+31030	Hallate's Chest
+31031	Broadcasting Tower
+31032	Guard
+31033	Sentinel
+31034	Sentry
+31035	Defender
+31036	Centurion
+31042	Kantabilon, Melody Maestro
+31043	Octavia, Melody Maestro
+31044	Galman, Trader of the Valley
+31045	Kitzka, Trader of the Valley
+31046	Marsden, Symbol Maker
+31047	Kell, Symbol Maker
+31048	McDermott, Symbol Maker
+31049	Pepper, Symbol Maker
+31050	Thora, Symbol Maker
+31051	Keach, Symbol Maker
+31052	Heid, Symbol Maker
+31053	Kidder, Symbol Maker
+31067	Rood, Pet Manager
+31074	Corpse of Hutaku
+31075	Gatekeeper Ziggurat
+31076	Gatekeeper Ziggurat
+31077	Gatekeeper Ziggurat
+31078	Gatekeeper Ziggurat
+31079	Gatekeeper Ziggurat
+31080	Gatekeeper Ziggurat
+31081	Gatekeeper Ziggurat
+31082	Gatekeeper Ziggurat
+31083	Gatekeeper Ziggurat
+31084	Gatekeeper Ziggurat
+31085	Gatekeeper Ziggurat
+31086	Gatekeeper Ziggurat
+31087	Gatekeeper Spirit
+31088	Gatekeeper Spirit
+31089	Gatekeeper Spirit
+31210	Race Track Gatekeeper, Monster Race Track
+31211	Race Track Guide
+31225	Arena Manager
+31226	Arena Director
+31255	Puss the Cat, Event Manager
+31256	Leon, Weapon Merchant
+31257	Veronica, Weapon Merchant
+31258	Helmut, Armor Merchant
+31259	Janne, Armor Merchant
+31260	Judith, Accessory Merchant
+31261	Renee, Accessory Merchant
+31262	Rupert, Trader
+31263	Liesel, Grocer
+31264	Olsun, Symbol Maker
+31267	Lietta, Warehouse Manager
+31268	Hakon, Warehouse Manager
+31269	Mona, Warehouse Chief
+31270	Stefano, Warehouse Manager
+31271	Hilda, Blacksmith
+31272	Noel, Head Blacksmith
+31273	Borodin, Blueprint Seller
+31274	Fundin, Mineral Trader
+31275	Tatiana, Gatekeeper
+31276	Bernhard, Grand Master
+31277	Felix, Master
+31278	Bronwyn, Master
+31279	Gregory, High Priest
+31280	Bastian, Priest
+31281	Cerenas, Priest
+31282	Justin, Magister
+31283	Alminas, Magister
+31284	Elena, Spellbook Seller
+31285	Samael, Grand Master
+31286	Drakon, Master
+31287	Kamilen, Magister
+31288	Aklan, High Prefect
+31289	Lakan, Prefect
+31290	Skahi, Priest
+31291	Terava, Amulet Seller
+31292	Andrei, Guard Captain
+31293	Gunter, Guard
+31294	Sven, Guard
+31295	Henrik, Guard
+31296	Cadmon, Guard
+31297	Bayard, Guard
+31298	Ulrich, Guard
+31299	Eugen, Guard
+31445	Shutner, Mineral Trader
+31452	Ghost of Wigoth
+31453	Nameless Spirit
+31454	Ghost of Wigoth
+31455	Key Box
+31456	Key Box
+31457	Key Box
+31458	Key Box
+31459	Key Box
+31460	Key Box
+31461	Key Box
+31462	Key Box
+31463	Key Box
+31464	Key Box
+31465	Key Box
+31466	Key Box
+31467	Key Box
+31468	Mysterious Box
+31469	Mysterious Box
+31470	Mysterious Box
+31471	Mysterious Box
+31472	Mysterious Box
+31473	Mysterious Box
+31474	Mysterious Box
+31475	Mysterious Box
+31476	Mysterious Box
+31477	Mysterious Box
+31478	Mysterious Box
+31479	Mysterious Box
+31480	Mysterious Box
+31481	Mysterious Box
+31482	Mysterious Box
+31483	Mysterious Box
+31484	Mysterious Box
+31485	Mysterious Box
+31486	Mysterious Box
+31487	Mysterious Box
+31580	Galadrid, Master
+31581	Anastia, Magister
+31582	Mordred, Dark Knight
+31583	Feynn, Blacksmith
+31584	Valentine, Brewer
+31585	Sparky the Cat, Keats Servitor
+31586	Sparky the Cat, Keats Servitor
+31587	Halaster, Grand Magister
+31589	Duda-Mara Totem Spirit
+31590	Devianne, Truth Seeker
+31591	Sunset Guide Luna
+31594	Mond, Chief Inspector
+31595	Leona Blackbird, Fire Dragon Bride
+31596	Tobald, Master
+31597	Tobald, Master
+31598	Medina Blackheart
+31599	Disgraced Knight Waldstein
+31601	Pamela Aprodia
+31602	Sharona Artemia, Escort
+31603	Black Cat, Hunter Guild Member
+31604	Grimst, Information Broker
+31605	Kinsley, Head Summoner
+31607	Sake Dun Zu Hestui
+31608	Belinda, Summoner
+31609	Aurora the Unicorn, Belinda's Servitor
+31610	Shiken Gloomdrake
+31611	Scryde Heartseeker
+31612	Eternity Wanderer Staris
+31613	Noctisse, Summoner
+31614	Radyss, Head Summoner
+31616	Hermit
+31617	Aria Furstmater
+31618	Moon Voice Irene
+31619	Erica Ken Weber, Wind Shadow
+31620	Elikia, Verdure Elder
+31621	Abyssal Saintess Elcadia
+31622	Keats, Cursed Summoner
+31629	Kaleidos the Unicorn
+31630	Unicorn Kaleidos
+31631	Eric Ramsheart
+31632	Enigmatic Servitor
+31633	Winter Hunter Kadyth
+31634	Winter Hunter Kadyth
+31635	Winter Hunter Kadyth
+31636	Flame Successor Akkan
+31637	Khavatari Kashu
+31638	Starling Knight Kastien
+31639	Kain Van Halter
+31641	Pilgrim of Darkness
+31642	Tarkai Zu Duda-Mara
+31643	Silver Feyshar
+31644	Franz, Witness of Dawn
+31645	Hindemith Truevoice
+31646	Tablet Of Vision
+31647	Tablet Of Vision
+31648	Tablet Of Vision
+31649	Tablet Of Vision
+31650	Tablet Of Vision
+31651	Tablet Of Vision
+31652	Tablet Of Vision
+31653	Tablet Of Vision
+31654	Tablet Of Vision
+31655	Tablet Of Vision
+31656	Tablet Of Vision
+31657	Tablet Of Vision
+31658	Tablet Of Vision
+31673	Patrol
+31674	Patrol
+31688	Olympiad Manager
+31690	Monument of Heroes
+31713	Fellow, Balthus Knight
+31714	Ateld, Balthus Knight
+31715	Paulia, Balthus Knight
+31716	Rash, Support Troop Lieutenant
+31773	Sonin, Warehouse Keeper
+31774	Magrit, Soul Tracker
+31775	Ingrit, Soul Tracker
+31776	Iris, Soul Tracker
+31777	Rosammy, Soul Tracker
+31778	Tores, Dungeon of Abyss Officer
+31842	Teleportation Cubic
+31843	Teleportation Cubic
+31844	Aracna
+31845	Bloody Pixy
+31846	Satyros
+31847	Pan
+31848	Pixy
+31849	Red Arachne
+31850	Blight Treant
+31851	Treant
+31852	Pixy Murika
+31853	Treant Bremec
+31854	Event Manager
+31855	Event Manager
+31856	Event Manager
+31857	Event Manager
+31858	Event Manager
+31859	Teleportation Cubic
+31860	Puss the Cat, Event Manager
+31861	Gatekeeper
+31862	Angelic Vortex
+31863	Sky, Blue's Chamberlain
+31919	Elmoreden Chamberlain's Ghost
+31920	Elmoreden Servant's Ghost
+31921	Conquerors' Sepulcher Manager
+31922	Sepulcher of Rulers Manager
+31923	Great Sages' Sepulcher Manager
+31924	Judges' Sepulcher Manager
+31925	Hall of Barons Gatekeeper
+31926	Hall of Viscounts Gatekeeper
+31927	Count's Hall Gatekeeper
+31928	Marquis' Hall Gatekeeper
+31929	Hall of Dukes Gatekeeper
+31930	Hall of Barons Gatekeeper
+31931	Hall of Viscounts Gatekeeper
+31932	Count's Hall Gatekeeper
+31933	Marquis' Hall Gatekeeper
+31934	Hall of Dukes Gatekeeper
+31935	Hall of Barons Gatekeeper
+31936	Hall of Viscounts Gatekeeper
+31937	Count's Hall Gatekeeper
+31938	Marquis' Hall Gatekeeper
+31939	Hall of Dukes Gatekeeper
+31940	Hall of Barons Gatekeeper
+31941	Hall of Viscounts Gatekeeper
+31942	Count's Hall Gatekeeper
+31943	Marquis' Hall Gatekeeper
+31944	Hall of Dukes Gatekeeper
+32478	Dimensional Merchant, Life Vitality
+32727	Puss the Cat, Event Manager
+33359	Kerry, Provisional Clan Hall Gatekeeper
+33360	Maid, Provisional Clan Hall Manager
+33668	Maphrian, Land of Abundance Guide
+33833	Spirit Boom, Soulshot Master
+33888	Santa Claus, Merry Christmas 2017
+33889	Blue Snowman
+33890	Red Snowman
+33893	Coco Brownie, Cupid's Messenger
+33922	Uldie, Event Manager
+33923	Belldandy, 12th Anniversary Event!
+33977	Veruti, Alchemist
+34011	Dandy, Dreamer
+34012	Dandy, Dreamer
+34015	Bora, GM Helper
+34016	Teleport, Escape Device
+34017	Eigis Ein
+34018	Bodyguard
+34019	Fethin, Devil's Isle Agent
+34020	Nikia, Devil's Isle Agent
+34021	Garom, Devil's Isle Agent
+34022	Pirate Spirit
+34023	Pirate Spirit
+34024	Heap of Bones
+34025	Heap of Bones
+34026	Heap of Bones
+34027	Heap of Bones
+34028	Sombrie
+34029	Sombrie
+34030	Rissuos
+34031	Rissuos
+34032	Gallu
+34033	Gallu
+34034	Kukoni
+34035	Kukoni
+34036	Hidden Treasure Chest
+34037	Chortie, Grocer
+34038	Teleport
+34039	Chorong, Event Manager
+34040	Tyron, Treasure Hunter
+34041	Bugati
+34042	Flame Entrance Manager
+34043	Water Entrance Manager
+34044	Wind Entrance Manager
+34045	Earth Entrance Manager
+34046	Iris, Researcher
+34047	Tara, Researcher
+34048	Wiri, Researcher
+34049	Tritan, Researcher
+34050	Hermun
+34051	GM Repi, Present Delivering
+34052	Earth Spirit King, Attribute Master
+34053	Sven, Attribute Master
+34054	Goddess of Water, Attribute Master
+34055	Flame Spirit King, Attribute Master
+34056	Tyren, Researcher
+34057	Santa Girl, Event Manager
+34058	White Day Luck Tree
+34059	White Day Love Tree
+34079	Macken, Valuables Merchant
+34080	Pritty, Beauty Shop Merchant
+34081	Supree, Peddler
+34082	Tyke, Merrymaker
+34083	Eleveny, Event Manager
+34084	Piero
+34085	Eleveny, Group Reward Box
+34086	Eleveny
+34087	Santa Claus, Letter Collector
+34088	Christmas Tree, Merry Christmas
+34089	Roa, Assistant
+34210	Red, Wealthy Merchant
+34211	Green, Hierarch
+34212	Black, Artisan
+34213	Pink, Grocer
+34214	Blue, Bodyguard
+34215	[not named in client]
+34216	[not named in client]
+34259	Dandy, Dreaming
+34260	Dandy, Successful
+34261	Dandy, Successful
+34262	Sibi, Balthus Knights’ Supply Officer
+34263	Dandy, Celebrating
+34264	Dandy, Celebrating
+34265	Mucta, Hames Orc Messenger
+34266	Nazeph
+34267	Dazling, Collector
+34268	Rifken, Gourmet
+34269	Tavoz, Brewer
+34270	Broome, Information Broker
+34271	Roo-roo, Information Broker
+34272	Mihai, Tobald's Disciple
+34273	Jeros, Augmenting Blacksmith
+34274	Jeros' Anvil
+34275	Jeris, Augmenting Blacksmith
+34276	Jeris' Anvil
+34277	Lau, Arena Manager
+34278	2015 Christmas Tree, Large
+34279	2015 Christmas Tree, Medium
+34280	2015 Christmas Tree, Small
+34281	2015 Santa Claus
+34282	2015 Santa Girl
+34283	2015 Blue Snow Man
+34284	2015 Red Snow Man
+34285	2015 Baby Rudolph
+34286	2015 Baby Rudolph
+34287	2015 Rudolph, Medium
+34288	2015 Rudolph, Large
+34289	2015 Rudolph Girl
+34290	Adventure Guildsman, PA Event
+34291	Nana, Healer of the Arena
+34292	Chef Monkey, Event Manager
+34293	Maris, Researcher
+34294	Priest of Dawn, Arena
+34295	Priestess of Dusk, Arena
+34296	Veteran, Elder Council
+34297	Veteran, Elder Council
+34298	Veteran, Elder Council
+34299	Veteran, Elder Council
+34300	Wizards, Cupid's Messenger
+34349	Bliss, Magical Flame Merchant
+35010	Mercenary
+35011	Mercenary
+35012	Mercenary
+35013	Mercenary
+35014	Mercenary
+35015	Mercenary
+35016	Mercenary
+35017	Mercenary
+35018	Mercenary
+35019	Mercenary
+35020	Mercenary of Dawn
+35021	Mercenary of Dawn
+35022	Mercenary of Dawn
+35023	Mercenary of Dawn
+35024	Mercenary of Dawn
+35025	Mercenary of Dawn
+35026	Mercenary of Dawn
+35027	Mercenary of Dawn
+35028	Mercenary of Dawn
+35029	Mercenary of Dawn
+35030	Elite Mercenary
+35031	Elite Mercenary
+35032	Elite Mercenary
+35033	Elite Mercenary
+35034	Elite Mercenary
+35035	Elite Mercenary
+35036	Elite Mercenary
+35037	Elite Mercenary
+35038	Elite Mercenary
+35039	Elite Mercenary
+35040	Elite Recruit
+35041	Elite Recruit
+35042	Elite Recruit
+35043	Elite Recruit
+35044	Elite Recruit
+35045	Elite Recruit
+35046	Elite Recruit
+35047	Elite Recruit
+35048	Elite Recruit
+35049	Elite Recruit
+35050	Recruit
+35051	Recruit
+35052	Recruit
+35053	Recruit
+35054	Recruit
+35055	Recruit
+35056	Recruit
+35057	Recruit
+35058	Recruit
+35059	Recruit
+35060	Nephilim Mercenary
+35061	Nephilim Mercenary
+35062	Headquarters
+35063	Gludio Holy Artifact
+35064	Baron Lewin Waldner, Governor
+35065	Cronenberg, Royal Guard Captain
+35066	Royal Knight, Gludio
+35067	Royal Wizard, Gludio
+35068	Royal Wizard, Gludio
+35069	Royal Guard, Gludio
+35070	Escort, Gludio
+35071	Escort, Gludio
+35072	Escort, Gludio
+35073	Escort, Gludio
+35074	Escort, Gludio
+35075	Escort, Gludio
+35076	Escort, Gludio
+35077	Escort, Gludio
+35078	Escort, Gludio
+35079	Royal Knight, Gludio
+35080	Royal Wizard, Gludio
+35081	Royal Wizard, Gludio
+35082	Royal Guard, Gludio
+35083	Escort, Gludio
+35084	Escort, Gludio
+35085	Escort, Gludio
+35086	Escort, Gludio
+35087	Escort, Gludio
+35088	Escort, Gludio
+35089	Escort, Gludio
+35090	Escort, Gludio
+35091	Escort, Gludio
+35092	Gatekeeper, Gludio
+35093	Gatekeeper, Gludio
+35094	Gatekeeper, Gludio
+35095	Mass Gatekeeper, Gludio
+35096	Outer Castle Gatekeeper, Gludio
+35097	Inner Castle Gatekeeper, Gludio
+35098	Blacksmith, Gludio
+35099	Warehouse Keeper, Gludio
+35100	Chamberlain of Light
+35101	Grad, Wyvern Manager
+35102	Greenspan, Mercenary Manager
+35103	Manor Manager, Gludio
+35104	Tyron, Herald from Gludio
+35105	Dion Holy Artifact
+35106	Duke Byron Ashton
+35107	Ivano, Royal Guard Captain
+35108	Royal Knight, Dion
+35109	Royal Wizard, Dion
+35110	Royal Wizard, Dion
+35111	Royal Guard, Dion
+35112	Escort, Dion
+35113	Escort, Dion
+35114	Escort, Dion
+35115	Escort, Dion
+35116	Escort, Dion
+35117	Escort, Dion
+35118	Escort, Dion
+35119	Escort, Dion
+35120	Escort, Dion
+35121	Royal Knight, Dion
+35122	Royal Wizard, Dion
+35123	Royal Wizard, Dion
+35124	Royal Guard, Dion
+35125	Escort, Dion
+35126	Escort, Dion
+35127	Escort, Dion
+35128	Escort, Dion
+35129	Escort, Dion
+35130	Escort, Dion
+35131	Escort, Dion
+35132	Escort, Dion
+35133	Escort, Dion
+35134	Gatekeeper, Dion
+35135	Gatekeeper, Dion
+35136	Gatekeeper, Dion
+35137	Mass Gatekeeper, Dion
+35138	Outer Castle Gatekeeper, Dion
+35139	Inner Castle Gatekeeper, Dion
+35140	Blacksmith, Dion
+35141	Warehouse Keeper, Dion
+35142	Chamberlain of Light
+35143	Hodler, Wyvern Manager
+35144	Mercenary Manager Sanford, Mercenary Manager
+35145	Manor Manager, Dion
+35146	Gibbson, Herald from Dion
+35147	Giran Holy Artifact
+35148	Baron Carmon Esthus
+35149	Ulric, Royal Guard Captain
+35150	Royal Knight, Giran
+35151	Royal Wizard, Giran
+35152	Royal Wizard, Giran
+35153	Royal Guard, Giran
+35154	Escort, Giran
+35155	Escort, Giran
+35156	Escort, Giran
+35157	Escort, Giran
+35158	Escort, Giran
+35159	Escort, Giran
+35160	Escort, Giran
+35161	Escort, Giran
+35162	Escort, Giran
+35163	Royal Knight, Giran
+35164	Royal Wizard, Giran
+35165	Royal Wizard, Giran
+35166	Royal Guard, Giran
+35167	Escort, Giran
+35168	Escort, Giran
+35169	Escort, Giran
+35170	Escort, Giran
+35171	Escort, Giran
+35172	Escort, Giran
+35173	Escort, Giran
+35174	Escort, Giran
+35175	Escort, Giran
+35176	Gatekeeper, Giran
+35177	Gatekeeper, Giran
+35178	Gatekeeper, Giran
+35179	Mass Gatekeeper, Giran
+35180	Outer Castle Gatekeeper, Giran
+35181	Inner Castle Gatekeeper, Giran
+35182	Blacksmith, Giran
+35183	Warehouse Keeper, Giran
+35184	Chamberlain of Light
+35185	Bryce, Wyvern Manager
+35186	Arvid, Mercenary Manager
+35187	Manor Manager, Giran
+35188	Holmes, Herald from Giran
+35189	Oren Holy Artifact
+35190	Balthus Van Dyke, Duke
+35191	Quant, Royal Guard Captain
+35192	Royal Knight, Oren
+35193	Royal Wizard, Oren
+35194	Royal Wizard, Oren
+35195	Royal Guard, Oren
+35196	Escort, Oren
+35197	Escort, Oren
+35198	Escort, Oren
+35199	Escort, Oren
+35200	Escort, Oren
+35201	Escort, Oren
+35202	Escort, Oren
+35203	Escort, Oren
+35204	Escort, Oren
+35205	Royal Knight, Oren
+35206	Royal Wizard, Oren
+35207	Royal Wizard, Oren
+35208	Royal Guard, Oren
+35209	Escort, Oren
+35210	Escort, Oren
+35211	Escort, Oren
+35212	Escort, Oren
+35213	Escort, Oren
+35214	Escort, Oren
+35215	Escort, Oren
+35216	Escort, Oren
+35217	Escort, Oren
+35218	Gatekeeper, Oren
+35219	Gatekeeper, Oren
+35220	Gatekeeper, Oren
+35221	Mass Gatekeeper, Oren
+35222	Outer Castle Gatekeeper, Oren
+35223	Inner Castle Gatekeeper, Oren
+35224	Blacksmith, Oren
+35225	Warehouse Keeper, Oren
+35226	Chamberlain of Light
+35227	Finrod, Wyvern Manager
+35228	Morrison, Mercenary Manager
+35229	Manor Manager, Oren
+35230	Manor Manager, Oren
+35231	Manor Manager, Oren
+35232	Sherwood, Herald from Oren
+35233	Aden Holy Artifact
+35234	Amadeo Cadmus, King
+35235	Royal Knight, Aden
+35236	Royal Wizard, Aden
+35237	Royal Wizard, Aden
+35238	Royal Guard, Aden
+35239	Escort, Aden
+35240	Escort, Aden
+35241	Escort, Aden
+35242	Escort, Aden
+35243	Escort, Aden
+35244	Escort, Aden
+35245	Escort, Aden
+35246	Escort, Aden
+35247	Escort, Aden
+35248	Royal Knight, Aden
+35249	Royal Wizard, Aden
+35250	Royal Wizard, Aden
+35251	Royal Guard, Aden
+35252	Escort, Aden
+35253	Escort, Aden
+35254	Escort, Aden
+35255	Escort, Aden
+35256	Escort, Aden
+35257	Escort, Aden
+35258	Escort, Aden
+35259	Escort, Aden
+35260	Escort, Aden
+35261	Gatekeeper, Aden
+35262	Gatekeeper, Aden
+35263	Gatekeeper, Aden
+35264	Gatekeeper, Aden
+35265	Gatekeeper, Aden
+35266	Mass Gatekeeper, Aden
+35267	Outer Castle Gatekeeper, Aden
+35268	Inner Castle Gatekeeper, Aden
+35269	Hall Gatekeeper, Aden
+35270	Inner Castle Gatekeeper, Aden
+35271	Gatekeeper, Aden
+35272	Blacksmith, Aden
+35273	Warehouse Keeper, Aden
+35274	Chamberlain of Light
+35275	Kruger, Wyvern Manager
+35276	Eldon, Mercenary Manager
+35277	Manor Manager, Aden
+35278	Ruford, Herald from Aden
+35279	Innadril Holy Artifact
+35280	Baron Lionel Hunter
+35281	Schaht, Royal Guard Captain
+35282	Royal Knight, Innadril
+35283	Royal Wizard, Innadril
+35284	Royal Wizard, Innadril
+35285	Royal Guard, Innadril
+35286	Escort, Innadril
+35287	Escort, Innadril
+35288	Escort, Innadril
+35289	Escort, Innadril
+35290	Escort, Innadril
+35291	Escort, Innadril
+35292	Escort, Innadril
+35293	Escort, Innadril
+35294	Escort, Innadril
+35295	Royal Knight, Innadril
+35296	Royal Wizard, Innadril
+35297	Royal Wizard, Innadril
+35298	Royal Guard, Innadril
+35299	Escort, Innadril
+35300	Escort, Innadril
+35301	Escort, Innadril
+35302	Escort, Innadril
+35303	Escort, Innadril
+35304	Escort, Innadril
+35305	Escort, Innadril
+35306	Escort, Innadril
+35307	Escort, Innadril
+35308	Gatekeeper, Innadril
+35309	Gatekeeper, Innadril
+35310	Gatekeeper, Innadril
+35311	Mass Gatekeeper, Innadril
+35312	Outer Castle Gatekeeper, Innadril
+35313	Inner Castle Gatekeeper, Innadril
+35314	Blacksmith, Innadril
+35315	Warehouse Keeper, Innadril
+35316	Chamberlain of Light
+35317	Tate, Wyvern Manager
+35318	Solinus, Mercenary Manager
+35319	Manor Manager, Innadril
+35320	Raybell, Herald from Innadril
+35322	Altar of Fire
+35323	Altar of Water
+35324	Heinz, Royal Guard Captain
+35325	Duke Mora Ken Abygail
+35326	Royal Knight, Goddard
+35327	Royal Wizard, Goddard
+35328	Royal Wizard, Goddard
+35329	Royal Guard, Goddard
+35330	Escort, Goddard
+35331	Escort, Goddard
+35332	Escort, Goddard
+35333	Escort, Goddard
+35334	Escort, Goddard
+35335	Escort, Goddard
+35336	Escort, Goddard
+35337	Escort, Goddard
+35338	Escort, Goddard
+35339	Royal Knight, Goddard
+35340	Royal Wizard, Goddard
+35341	Royal Wizard, Goddard
+35342	Royal Guard, Goddard
+35343	Escort, Goddard
+35344	Escort, Goddard
+35345	Escort, Goddard
+35346	Escort, Goddard
+35347	Escort, Goddard
+35348	Escort, Goddard
+35349	Escort, Goddard
+35350	Escort, Goddard
+35351	Escort, Goddard
+35352	Gatekeeper, Goddard
+35353	Gatekeeper, Goddard
+35354	Gatekeeper, Goddard
+35355	Mass Gatekeeper, Goddard
+35356	Outer Castle Gatekeeper, Goddard
+35357	Inner Castle Gatekeeper, Goddard
+35358	Inner Castle Gatekeeper, Goddard
+35359	Gatekeeper, Goddard
+35360	Gatekeeper, Goddard
+35361	Blacksmith, Goddard
+35362	Warehouse Keeper, Goddard
+35363	Chamberlain of Light
+35364	Hadley, Wyvern Manager
+35365	Rowell, Mercenary Manager
+35366	Manor Manager, Goddard
+35367	Daven, Herald from Goddard
+35368	Bloody Lord Nurka
+35369	Partisan Healer
+35370	Partisan Royal Guard
+35371	Partisan Royal Guard
+35372	Partisan Soldier
+35373	Partisan Wizard
+35374	Partisan Archer
+35375	Bloody Lord Nurka
+35376	Partisan Healer
+35377	Partisan Royal Guard
+35378	Partisan Royal Guard
+35379	Partisan Soldier
+35380	Partisan Wizard
+35381	Partisan Archer
+35382	Brakel, Partisan Herald
+35383	Tamutak, Ol Mahum Steward
+35384	Black, Clan Hall Manager
+35385	Renny, Clan Hall Gatekeeper
+35386	Boyer, Clan Hall Manager
+35387	Baback, Clan Hall Gatekeeper
+35388	Tim, Clan Hall Manager
+35389	Loring, Clan Hall Gatekeeper
+35390	Dillon, Clan Hall Manager
+35391	Latif, Clan Hall Gatekeeper
+35392	Bremmer, Clan Hall Manager
+35393	Faolan, Clan Hall Gatekeeper
+35394	Kalis, Clan Hall Manager
+35395	Kogan, Clan Hall Gatekeeper
+35396	Winker, Clan Hall Manager
+35397	Merton, Clan Hall Gatekeeper
+35398	Ruben, Clan Hall Manager
+35399	Luce, Clan Hall Gatekeeper
+35400	Horner, Clan Hall Manager
+35401	Amiel, Clan Hall Gatekeeper
+35402	Borna, Clan Hall Gatekeeper
+35403	Ron, Clan Hall Manager
+35404	Jamal, Clan Hall Gatekeeper
+35405	Flynn, Clan Hall Manager
+35406	Jabilo, Clan Hall Gatekeeper
+35407	Seth, Clan Hall Manager
+35408	Dietrich
+35409	Mikhail
+35410	Gustav
+35411	Doom Servant
+35412	Doom Guard
+35413	Doom Archer
+35414	Doom Trooper
+35415	Doom Warrior
+35416	Doom Knight
+35417	Gatekeeper of Hell
+35418	Gatekeeper of Hell
+35419	Hephaeston, Wyvern Manager
+35420	Loken, Herald
+35421	Biggerstaff, Steward
+35422	Victor's Flag
+35423	Red Flag
+35424	Yellow Flag
+35425	Green Flag
+35426	Blue Flag
+35427	Purple Flag
+35428	Oel Mahum Berserker
+35429	Oel Mahum Scout
+35430	Oel Mahum Prefect
+35431	Oel Mahum Cleric
+35432	Oel Mahum Thief
+35433	Inner Castle Gatekeeper
+35434	Inner Castle Gatekeeper
+35435	Outer Castle Gatekeeper
+35436	Outer Castle Gatekeeper
+35437	Herald
+35438	Chamberlain
+35439	Carey, Clan Hall Manager
+35440	Daniel, Clan Hall Gatekeeper
+35441	Dianne, Clan Hall Manager
+35442	Jacques, Clan Hall Gatekeeper
+35443	Crissy, Clan Hall Manager
+35444	Joff, Clan Hall Gatekeeper
+35445	Albert, Clan Hall Manager
+35446	Niels, Clan Hall Gatekeeper
+35447	Korgen, Clan Hall Manager
+35448	Rudy, Clan Hall Gatekeeper
+35449	DiMaggio, Clan Hall Manager
+35450	Gellar, Clan Hall Gatekeeper
+35451	Emma, Clan Hall Manager
+35452	Theobolt, Clan Hall Gatekeeper
+35453	Adrienne, Clan Hall Manager
+35454	Rosconne, Clan Hall Gatekeeper
+35455	Bianca, Clan Hall Manager
+35456	Stewart, Clan Hall Gatekeeper
+35457	Gladys, Clan Hall Manager
+35458	Theron, Clan Hall Gatekeeper
+35459	Regina, Clan Hall Manager
+35460	Trey, Clan Hall Gatekeeper
+35461	Aida, Clan Hall Manager
+35462	Kalmer, Clan Hall Gatekeeper
+35463	Helga, Clan Hall Manager
+35464	Volfrem, Clan Hall Gatekeeper
+35465	Millicent, Clan Hall Manager
+35466	Gerard, Clan Hall Gatekeeper
+35467	Branhillde, Clan Hall Manager
+35468	Lambert, Clan Hall Gatekeeper
+35469	Divine Altar
+35470	Astair van Halter, King
+35471	Royal Knight, Rune
+35472	Royal Wizard, Rune
+35473	Royal Wizard, Rune
+35474	Royal Guard, Rune
+35475	Escort, Rune
+35476	Escort, Rune
+35477	Escort, Rune
+35478	Escort, Rune
+35479	Escort, Rune
+35480	Escort, Rune
+35481	Escort, Rune
+35482	Escort, Rune
+35483	Escort, Rune
+35484	Royal Knight, Rune
+35485	Royal Wizard, Rune
+35486	Royal Wizard, Rune
+35487	Royal Guard, Rune
+35488	Escort, Rune
+35489	Escort, Rune
+35490	Escort, Rune
+35491	Escort, Rune
+35492	Escort, Rune
+35493	Escort, Rune
+35494	Escort, Rune
+35495	Escort, Rune
+35496	Escort, Rune
+35497	Gatekeeper, Rune
+35498	Gatekeeper, Rune
+35499	Gatekeeper, Rune
+35500	Gatekeeper, Rune
+35501	Gatekeeper, Rune
+35502	Mass Gatekeeper, Rune
+35503	Outer Castle Gatekeeper, Rune
+35504	Inner Castle Gatekeeper, Rune
+35505	Inner Castle Gatekeeper, Rune
+35506	Dungeon Gatekeeper, Rune
+35507	Blacksmith, Rune
+35508	Warehouse Keeper, Rune
+35509	Chamberlain of Light
+35510	Titus, Wyvern Manager
+35511	Gompus, Mercenary Manager
+35512	Manor Manager, Rune
+35513	Sherman, Herald from Rune
+35514	Altar of Wind
+35515	Altar of Earth
+35516	Verus, Royal Guard Captain
+35517	Swain Ken Orwen, Count
+35518	Royal Knight, Schuttgart
+35519	Royal Wizard, Schuttgart
+35520	Royal Wizard, Schuttgart
+35521	Royal Guard, Schuttgart
+35522	Escort, Schuttgart
+35523	Escort, Schuttgart
+35524	Escort, Schuttgart
+35525	Escort, Schuttgart
+35526	Escort, Schuttgart
+35527	Escort, Schuttgart
+35528	Escort, Schuttgart
+35529	Escort, Schuttgart
+35530	Escort, Schuttgart
+35531	Royal Knight, Schuttgart
+35532	Royal Wizard, Schuttgart
+35533	Royal Wizard, Schuttgart
+35534	Royal Guard, Schuttgart
+35535	Escort, Schuttgart
+35536	Escort, Schuttgart
+35537	Escort, Schuttgart
+35538	Escort, Schuttgart
+35539	Escort, Schuttgart
+35540	Escort, Schuttgart
+35541	Escort, Schuttgart
+35542	Escort, Schuttgart
+35543	Escort, Schuttgart
+35544	Gatekeeper, Schuttgart
+35545	Gatekeeper, Schuttgart
+35546	Gatekeeper, Schuttgart
+35547	Mass Gatekeeper, Schuttgart
+35548	Outer Castle Gatekeeper, Schuttgart
+35549	Inner Castle Gatekeeper, Schuttgart
+35550	Inner Castle Gatekeeper, Schuttgart
+35551	Gatekeeper, Schuttgart
+35552	Gatekeeper, Schuttgart
+35553	Blacksmith, Schuttgart
+35554	Warehouse Keeper, Schuttgart
+35555	Chamberlain of Light
+35556	Gallic, Wyvern Manager
+35557	Kendrew, Mercenary Manager
+35558	Manor Manager, Schuttgart
+35559	Daguerre, Herald from Schuttgart
+35560	Mass Gatekeeper
+35561	Mass Gatekeeper
+35562	Mass Gatekeeper
+35563	Mass Gatekeeper
+35564	Mass Gatekeeper
+35565	Mass Gatekeeper
+35566	Ronald, Clan Hall Manager
+35567	Emil, Clan Hall Gatekeeper
+35568	Wayne, Clan Hall Manager
+35569	Daniel, Clan Hall Gatekeeper
+35570	Patty, Clan Hall Manager
+35571	Dale, Clan Hall Gatekeeper
+35572	Jimmy, Clan Hall Manager
+35573	Shawn, Clan Hall Gatekeeper
+35574	Michael, Clan Hall Manager
+35575	Ryan, Clan Hall Gatekeeper
+35576	Jack, Clan Hall Manager
+35577	Harry, Clan Hall Gatekeeper
+35578	Karuto, Clan Hall Manager
+35579	Egon, Clan Hall Gatekeeper
+35580	Carol, Clan Hall Manager
+35581	Osho, Clan Hall Gatekeeper
+35582	Stanley, Clan Hall Manager
+35583	Walter, Clan Hall Gatekeeper
+35584	Billy, Clan Hall Manager
+35585	Alice, Clan Hall Gatekeeper
+35586	Serena, Clan Hall Manager
+35587	Neria, Clan Hall Gatekeeper
+36402	Olympiad Host
+36609	Proclaimer, Gludio
+36610	Proclaimer, Dion
+36611	Proclaimer, Giran
+36612	Proclaimer, Oren
+36613	Proclaimer, Aden
+36614	Proclaimer, Innadril
+36615	Proclaimer, Goddard
+36616	Proclaimer, Rune
+36617	Proclaimer, Schuttgart
+36653	Chamberlain of Darkness
+36654	Chamberlain of Darkness
+36655	Chamberlain of Darkness
+36656	Chamberlain of Darkness
+36657	Chamberlain of Darkness
+36658	Chamberlain of Darkness
+36659	Chamberlain of Darkness
+36660	Chamberlain of Darkness
+36661	Chamberlain of Darkness
+36664	Herald of Light
+36665	Herald of Light
+36666	Herald of Light
+36667	Herald of Light
+36668	Herald of Light
+36669	Herald of Light
+36670	Herald of Light
+36671	Herald of Light
+36672	Herald of Light
+36673	Herald of Darkness
+36674	Herald of Darkness
+36675	Herald of Darkness
+36676	Herald of Darkness
+36677	Herald of Darkness
+36678	Herald of Darkness
+36679	Herald of Darkness
+36680	Herald of Darkness
+36681	Herald of Darkness
+36721	Leina, Clan Hall Manager
+36722	Bini, Clan Hall Gatekeeper
+36723	Bubek, Clan Hall Manager
+36724	Varin, Clan Hall Gatekeeper
+36725	Sarina, Clan Hall Manager
+36726	Loneiren, Clan Hall Gatekeeper
+36727	Arinas, Clan Hall Manager
+36728	Cardiff, Clan Hall Gatekeeper
+36729	Bremen, Clan Hall Manager
+36730	Faolin, Clan Hall Gatekeeper
+36731	Kalein, Clan Hall Manager
+36732	Coren, Clan Hall Gatekeeper
+36733	Winsnun, Clan Hall Manager
+36734	Muren, Clan Hall Gatekeeper
+36735	Yuven, Clan Hall Manager
+36736	Lenning, Clan Hall Gatekeeper
+36737	Gairin, Clan Hall Manager
+36738	Ludina, Clan Hall Gatekeeper
+36739	Flon, Clan Hall Manager
+36740	Danif, Clan Hall Gatekeeper
+36783	Human Knight, Royal Guard
+36784	Human Knight, Royal Guard
+36785	Human Knight, Royal Guard
+36786	Human Knight, Royal Guard
+36787	Shield, Gludio
+36788	Human Knight, Royal Guard
+36789	Human Knight, Royal Guard
+36790	Human Knight, Royal Guard
+36791	Human Knight, Royal Guard

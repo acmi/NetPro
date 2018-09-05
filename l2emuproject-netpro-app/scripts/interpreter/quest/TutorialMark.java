@@ -15,35 +15,28 @@
  */
 package interpreter.quest;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * Interprets the given byte/word/dword as a tutorial mark ID.
  * 
  * @author _dev_
  */
-public class TutorialMark extends ScriptedIntegerIdInterpreter implements ContextualFieldValueInterpreter
+public class TutorialMark extends ScriptedIntegerIdInterpreter implements ContextualFieldValueTranslator
 {
-	private static final L2Logger LOG = L2Logger.getLogger(TutorialMark.class);
-	
 	private final ThreadLocal<Integer> _type;
 	
 	/** Constructs this interpreter. */
 	public TutorialMark()
 	{
-		super(loadInterpretations());
+		super(loadFromResource2("tutorial.txt"));
 		
 		_type = new ThreadLocal<Integer>() {
 			@Override
@@ -52,31 +45,6 @@ public class TutorialMark extends ScriptedIntegerIdInterpreter implements Contex
 				return 1; // default to quest
 			}
 		};
-	}
-	
-	private static final Map<Long, String> loadInterpretations()
-	{
-		final Map<Long, String> mapping = new HashMap<>();
-		try (final BufferedReader br = IOConstants.openScriptResource("interpreter", "tutorial.txt"))
-		{
-			for (String line; (line = br.readLine()) != null;)
-			{
-				final int idx = line.indexOf('\t'), idx2 = line.indexOf('\t', idx + 1);
-				if (idx == -1 || idx2 == -1)
-					continue;
-				
-				final long type = Integer.parseInt(line.substring(0, idx));
-				final long mark = Integer.parseInt(line.substring(idx + 1, idx2));
-				final String name = line.substring(idx2 + 1);
-				
-				mapping.put(mark | (type << 32), name.intern());
-			}
-		}
-		catch (IOException e)
-		{
-			LOG.error("Could not load tutorial mark interpretations", e);
-		}
-		return mapping;
 	}
 	
 	@Override
@@ -96,13 +64,13 @@ public class TutorialMark extends ScriptedIntegerIdInterpreter implements Contex
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		try
 		{
 			final long mark = value;
 			value = mark | (_type.get().longValue() << 32);
-			final Object result = super.getInterpretation(value, entityCacheContext);
+			final Object result = super.translate(value, protocol, entityCacheContext);
 			if (result instanceof String)
 				return result;
 			return Long.valueOf(mark);

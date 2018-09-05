@@ -19,9 +19,10 @@ import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.Locale;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.analytics.user.ItemAugmentation;
 import net.l2emuproject.proxy.script.analytics.user.ItemElementalAttributes;
 import net.l2emuproject.proxy.script.analytics.user.ItemEnchantEffects;
@@ -35,6 +36,7 @@ import net.l2emuproject.util.HexUtil;
  */
 public final class InventoryItem
 {
+	private final IProtocolVersion _protocol;
 	private final int _objectID;
 	private final int _templateID;
 	private final long _amount;
@@ -48,6 +50,7 @@ public final class InventoryItem
 	/**
 	 * Creates an inventory item.
 	 * 
+	 * @param protocol protocol version
 	 * @param objectID runtime ID
 	 * @param templateID template ID
 	 * @param amount amount
@@ -58,10 +61,10 @@ public final class InventoryItem
 	 * @param appearance appearance
 	 * @param specialAbilities special abilities
 	 */
-	public InventoryItem(int objectID, int templateID, long amount, int enchantLevel, ItemAugmentation augmentation, ItemElementalAttributes elementalAttributes, ItemEnchantEffects enchantEffect,
-			int appearance,
-			ItemSpecialAbilities specialAbilities)
+	public InventoryItem(IProtocolVersion protocol, int objectID, int templateID, long amount, int enchantLevel, ItemAugmentation augmentation, ItemElementalAttributes elementalAttributes,
+			ItemEnchantEffects enchantEffect, int appearance, ItemSpecialAbilities specialAbilities)
 	{
+		_protocol = protocol;
 		_objectID = objectID;
 		_templateID = templateID;
 		_amount = amount;
@@ -198,7 +201,7 @@ public final class InventoryItem
 			sb.append("Augmented ");
 		try
 		{
-			sb.append(MetaclassRegistry.getInstance().getInterpreter("Item", IntegerInterpreter.class).getInterpretation(_templateID));
+			sb.append(MetaclassRegistry.getInstance().getTranslator("Item", IntegerTranslator.class).translate(_templateID, _protocol, null));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
@@ -206,7 +209,7 @@ public final class InventoryItem
 		}
 		if (ItemSpecialAbilities.isWithSpecialAbility(_specialAbilities))
 		{
-			final Iterator<String> it = ItemSpecialAbilities.toTitleString(_specialAbilities).iterator();
+			final Iterator<String> it = ItemSpecialAbilities.toTitleString(_specialAbilities, _protocol).iterator();
 			sb.append(' ').append(it.next());
 			while (it.hasNext())
 				sb.append('/').append(it.next());

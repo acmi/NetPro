@@ -18,6 +18,7 @@ package interpreter;
 import eu.revengineer.simplejse.HasScriptDependencies;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -29,12 +30,12 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 public class CommunityBoardHtml extends PreformattedHtml
 {
 	@Override
-	public Object getInterpretation(String value, ICacheServerID entityCacheContext)
+	public Object translate(String value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final L2TextBuilder tb = new L2TextBuilder();
 		int contentIdx = 0;
 		for (int idx = 0; (idx = value.indexOf(8, contentIdx) + 1) != 0; contentIdx = idx)
 			tb.append('[').append(value.substring(contentIdx, idx)).append(']');
-		return tb.append(super.getInterpretation(value.substring(contentIdx), entityCacheContext)).moveToString();
+		return tb.append(super.translate(value.substring(contentIdx), protocol, entityCacheContext)).moveToString();
 	}
 }

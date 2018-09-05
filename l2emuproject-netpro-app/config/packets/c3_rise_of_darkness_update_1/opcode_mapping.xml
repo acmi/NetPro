@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
-		<packet opcodePrefix="2E" id="CM__USER_ACK" />
+		<removedPacket id="CM_REQ_MAGIC_SKILL_LIST"/>
+		<packet opcodePrefix="2E 00 00 00" id="CM__USER_ACK" />
 		<packet opcodePrefix="6F" id="CM_REQ_LIST_PARTY_WATING" />
 		<packet opcodePrefix="70" id="CM_REQ_MANAGE_PARTY_ROOM" />
 		<packet opcodePrefix="71" id="CM_REQ_JOIN_PARTY_ROOM" />

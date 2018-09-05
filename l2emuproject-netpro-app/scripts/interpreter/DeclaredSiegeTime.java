@@ -16,7 +16,7 @@
 package interpreter;
 
 import eu.revengineer.simplejse.type.UnloadableScript;
-
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.interpreter.impl.SecondsSinceEpoch;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
@@ -33,12 +33,12 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 public class DeclaredSiegeTime extends SecondsSinceEpoch implements UnloadableScript
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value <= 0)
 			return "Undecided/Automatic";
 		
-		return super.getInterpretation(value, entityCacheContext);
+		return super.translate(value, protocol, entityCacheContext);
 	}
 	
 	@Override

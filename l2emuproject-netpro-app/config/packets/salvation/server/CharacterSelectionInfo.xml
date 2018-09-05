@@ -77,11 +77,11 @@
 		<dword alias="Jewel (6)" type="Item" />
 		
 		<!-- NEW -->
-		<dword alias="" type="Item" />
-		<dword alias="" type="Item" />
-		<dword alias="" type="Item" />
-		<dword alias="" type="Item" />
-		<dword alias="" type="Item" />
+		<dword alias="Charm (primary)" type="Item" />
+		<dword alias="Charm (special 1)" type="Item" />
+		<dword alias="Charm (special 2)" type="Item" />
+		<dword alias="Charm (special 3)" type="Item" />
+		<dword alias="Charm (special 4)" type="Item" />
 
 		<dword alias="Visible Weapon" type="Item" />
 		<dword alias="Visible Shield [Sigil]" type="Item" />

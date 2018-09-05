@@ -25,7 +25,7 @@ import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
 import net.l2emuproject.proxy.script.game.PpeEnabledGameScript;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
@@ -67,7 +67,7 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 		final ImmutableSystemMessage ism;
 		try
 		{
-			ism = MetaclassRegistry.getInstance().getInterpreter(ScriptedMetaclass.getAlias(ImmutableSystemMessage.class), ImmutableSystemMessage.class);
+			ism = MetaclassRegistry.getInstance().getTranslator(ScriptedMetaclass.getAlias(ImmutableSystemMessage.class), ImmutableSystemMessage.class);
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
@@ -94,7 +94,7 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 						final int npcClassID = SystemMessageRecipient.readIntegerToken(buf);
 						try
 						{
-							target = String.valueOf(MetaclassRegistry.getInstance().getInterpreter("Npc", IntegerInterpreter.class).getInterpretation(npcClassID, null));
+							target = String.valueOf(MetaclassRegistry.getInstance().getTranslator("Npc", IntegerTranslator.class).translate(npcClassID, null));
 						}
 						catch (final InvalidFieldValueInterpreterException e)
 						{
@@ -115,12 +115,12 @@ public class SkillFailureNotifier extends PpeEnabledGameScript implements System
 				if (skillType == SYSMSG_TOKEN_SKILL)
 				{
 					final long skillNameID = SystemMessageRecipient.readSkillToken(buf);
-					skill = L2SkillTranslator.getInterpretation(skillNameID, null);
+					skill = L2SkillTranslator.translate(client.getProtocol(), skillNameID, null);
 				}
 				else
 					skill = "Unknown[" + skillType + "]";
 			}
-				CommonPacketSender.sendScreenMessage(client, POS_RESISTED, 0, SMALL_FONT, 0, 1, false, DURATION, FADE, ism.getRepresentation(SM_RESISTED_EFFECT, target, skill));
+				CommonPacketSender.sendScreenMessage(client, POS_RESISTED, 0, SMALL_FONT, 0, 1, false, DURATION, FADE, ism.getRepresentation(client.getProtocol(), SM_RESISTED_EFFECT, target, skill));
 				break;
 			default:
 				return;

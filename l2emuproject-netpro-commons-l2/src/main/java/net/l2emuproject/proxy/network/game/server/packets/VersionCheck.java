@@ -16,11 +16,14 @@
 package net.l2emuproject.proxy.network.game.server.packets;
 
 import java.nio.BufferUnderflowException;
+import java.util.Set;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.ClientProtocolVersion;
 import net.l2emuproject.network.protocol.IGameProtocolVersion;
+import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.Packet;
+import net.l2emuproject.proxy.network.game.L2ServerType;
 import net.l2emuproject.proxy.network.game.client.L2GameClient;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.PacketPayloadEnumerator;
@@ -60,6 +63,7 @@ public final class VersionCheck extends L2GameServerPacket implements RequiredIn
 		final IGameProtocolVersion cpv = client.getProtocol();
 		boolean cipherEnabled = false;
 		long cipherKeyPart, shuffleSeed = 0;
+		int serverType = 0;
 		
 		findInitialValues:
 		{
@@ -88,8 +92,10 @@ public final class VersionCheck extends L2GameServerPacket implements RequiredIn
 				cipherKeyPart = enumerator.readFirstInteger(CIPHER_KEY_PART);
 				cipherEnabled = enumerator.readFirstInteger32(CIPHER_STATE) != 0;
 				
-				final EnumeratedPayloadField field = enumerator.getSingleFieldIndex(OBFUSCATION_KEY);
-				shuffleSeed = field != null ? enumerator.readInteger(field) : 0;
+				final EnumeratedPayloadField seedField = enumerator.getSingleFieldIndex(OBFUSCATION_KEY);
+				shuffleSeed = seedField != null ? enumerator.readInteger(seedField) : 0;
+				final EnumeratedPayloadField typeField = enumerator.getSingleFieldIndex(SERVER_TYPE);
+				serverType = typeField != null ? enumerator.readInteger32(typeField) : 0;
 				break findInitialValues;
 			}
 			
@@ -105,6 +111,10 @@ public final class VersionCheck extends L2GameServerPacket implements RequiredIn
 				buf.skip(4 + 1); // unk, game server ID, unk
 				
 				shuffleSeed = buf.readD();
+				
+				if (cpv.isNewerThanOrEqualTo(ClientProtocolVersion.ERTHEIA_UPDATE_1)) {
+					serverType = buf.readC();
+				}
 			}
 		}
 		
@@ -113,8 +123,17 @@ public final class VersionCheck extends L2GameServerPacket implements RequiredIn
 			getReceiver().initCipher(cipherKeyPart);
 			client.initCipher(cipherKeyPart);
 		}
+		
 		if (shuffleSeed != 0)
 			client.getDeobfuscator().init(shuffleSeed);
+		
+		Set<String> altModes = L2ServerType.valueOf(serverType).getAltModeSet();
+		// override everything that may have been preset
+		getReceiver().setAltModes(altModes); // alt mode for server type; additional types may be added later on
+		// adjust protocol version accordingly
+		IGameProtocolVersion newProtocol = ProtocolVersionManager.getInstance().getGameProtocol(cpv.getVersion(), altModes);
+		if (newProtocol != null)
+			client.adjustVersion(newProtocol);
 	}
 	
 	@Override

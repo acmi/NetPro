@@ -13,5 +13,7 @@
 	<dword alias="CM opcode shuffling seed">
 		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_OBFUSCATION_KEY" />
 	</dword>
-	<byte alias="Classic mode" type="YesOrNo" /> <!-- NEW -->
+	<byte alias="Server type" type="ServerType"> <!-- NEW -->
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_SERVER_TYPE" />
+	</byte>
 </packet>

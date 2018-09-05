@@ -15,9 +15,10 @@
  */
 package interpreter.equip;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.network.meta.interpreter.impl.SecondsSinceEpoch;
 import net.l2emuproject.proxy.network.meta.interpreter.impl.TimeRemaining;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
@@ -26,15 +27,15 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 /**
  * @author _dev_
  */
-public final class PeriodicHennaExpiration extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public final class PeriodicHennaExpiration extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
-	private static final IntegerInterpreter TIMESTAMP, DIFFERENCE;
+	private static final IntegerTranslator TIMESTAMP, DIFFERENCE;
 	static
 	{
 		try
 		{
-			TIMESTAMP = MetaclassRegistry.getInstance().getInterpreter(SecondsSinceEpoch.class.getSimpleName(), IntegerInterpreter.class);
-			DIFFERENCE = MetaclassRegistry.getInstance().getInterpreter(TimeRemaining.class.getSimpleName(), IntegerInterpreter.class);
+			TIMESTAMP = MetaclassRegistry.getInstance().getTranslator(SecondsSinceEpoch.class.getSimpleName(), IntegerTranslator.class);
+			DIFFERENCE = MetaclassRegistry.getInstance().getTranslator(TimeRemaining.class.getSimpleName(), IntegerTranslator.class);
 		}
 		catch (InvalidFieldValueInterpreterException e)
 		{
@@ -44,11 +45,11 @@ public final class PeriodicHennaExpiration extends ScriptedFieldValueInterpreter
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value > 1_000_000_000) // initial packet
-			return TIMESTAMP.getInterpretation(value, entityCacheContext);
+			return TIMESTAMP.translate(value, protocol, entityCacheContext);
 		
-		return DIFFERENCE.getInterpretation(value, entityCacheContext);
+		return DIFFERENCE.translate(value, protocol, entityCacheContext);
 	}
 }

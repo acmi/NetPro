@@ -17,9 +17,10 @@ package interpreter;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -37,9 +38,9 @@ public class PledgeBase extends ScriptedIntegerIdInterpreter
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
-		final Object result = super.getInterpretation(value, entityCacheContext);
+		final Object result = super.translate(value, protocol, entityCacheContext);
 		if (!(result instanceof Long))
 			return result;
 			
@@ -49,7 +50,7 @@ public class PledgeBase extends ScriptedIntegerIdInterpreter
 			
 		try
 		{
-			return MetaclassRegistry.getInstance().getInterpreter("Instance", IntegerInterpreter.class).getInterpretation(value, entityCacheContext);
+			return MetaclassRegistry.getInstance().getTranslator("Instance", IntegerTranslator.class).translate(value, protocol, entityCacheContext);
 		}
 		catch (InvalidFieldValueInterpreterException e)
 		{

@@ -21,6 +21,7 @@ import net.l2emuproject.network.mmocore.MMOLogger;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.Proxy;
 import net.l2emuproject.proxy.network.ProxyPacketHandler;
+import net.l2emuproject.proxy.network.game.client.packets.RequestLogin;
 import net.l2emuproject.proxy.network.game.client.packets.SendProtocolVersion;
 import net.l2emuproject.proxy.network.packets.ProxyReceivedPacket;
 import net.l2emuproject.util.HexUtil;
@@ -37,6 +38,13 @@ public final class L2GameClientPackets extends ProxyPacketHandler
 	@Override
 	protected ProxyReceivedPacket handlePacketImpl(ByteBuffer buf, Proxy client, int opcode)
 	{
+		switch (opcode)
+		{
+			case RequestLogin.OPCODE:
+			case RequestLogin.OPCODE_LEGACY:
+				return new RequestLogin(opcode);
+		}
+		
 		// proxy only does what it must do
 		// all other invasive ops can be done via scripts
 		if (((L2GameClient)client).isHandshakeDone())

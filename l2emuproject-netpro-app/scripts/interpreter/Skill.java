@@ -19,13 +19,13 @@ import java.util.List;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
 import eu.revengineer.simplejse.init.InitializationPriority;
-
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
@@ -38,7 +38,7 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  */
 @HasScriptDependencies("interpreter.SkillNameID")
 @InitializationPriority(1)
-public class Skill extends ScriptedFieldValueInterpreter implements ContextualFieldValueInterpreter, IntegerInterpreter
+public class Skill extends ScriptedFieldValueInterpreter implements ContextualFieldValueTranslator, IntegerTranslator
 {
 	/** If you are using IO style skill definitions (level+sublevel), keep {@code true}. If you use legacy definitions, set to {@code false}. */
 	private static boolean AUTOFIX_LEGACY_ENCHANT_LEVELS = true;
@@ -68,7 +68,7 @@ public class Skill extends ScriptedFieldValueInterpreter implements ContextualFi
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final Integer contextLevel = _level.get();
 		
@@ -78,10 +78,10 @@ public class Skill extends ScriptedFieldValueInterpreter implements ContextualFi
 		value = L2SkillTranslator.getSkillNameID(id, lvl, null);
 		try
 		{
-			final SkillNameID interpreter = MetaclassRegistry.getInstance().getInterpreter(ScriptedMetaclass.getAlias(SkillNameID.class), SkillNameID.class);
+			final SkillNameID interpreter = MetaclassRegistry.getInstance().getTranslator(ScriptedMetaclass.getAlias(SkillNameID.class), SkillNameID.class);
 			if (contextLevel == null)
 			{
-				final int highestWithoutSublevel = interpreter.getHighestLevel(id);
+				final int highestWithoutSublevel = interpreter.getHighestLevel(id, protocol);
 				if (highestWithoutSublevel > 0)
 					value = L2SkillTranslator.getSkillNameID(id, lvl = highestWithoutSublevel, null);
 			}
@@ -89,13 +89,13 @@ public class Skill extends ScriptedFieldValueInterpreter implements ContextualFi
 			if (AUTOFIX_LEGACY_ENCHANT_LEVELS && rawLevel > 99)
 			{
 				if (rawLevel > 140) // initial method with 2 routes max
-					value = L2SkillTranslator.getSkillNameID(id, interpreter.getHighestLevel(id), 2000 + lvl % 140);
+					value = L2SkillTranslator.getSkillNameID(id, interpreter.getHighestLevel(id, protocol), 2000 + lvl % 140);
 				else
 					// legacy method without sublevels
-					value = L2SkillTranslator.getSkillNameID(id, interpreter.getHighestLevel(id), (lvl / 100) * 1_000 + lvl % 100);
+					value = L2SkillTranslator.getSkillNameID(id, interpreter.getHighestLevel(id, protocol), (lvl / 100) * 1_000 + lvl % 100);
 			}
 			
-			return interpreter.getInterpretation(value, entityCacheContext);
+			return interpreter.translate(value, protocol, entityCacheContext);
 		}
 		catch (InvalidFieldValueInterpreterException e)
 		{

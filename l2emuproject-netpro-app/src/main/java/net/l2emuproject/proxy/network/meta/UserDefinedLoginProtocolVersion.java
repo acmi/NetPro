@@ -15,6 +15,8 @@
  */
 package net.l2emuproject.proxy.network.meta;
 
+import java.util.Collections;
+
 import net.l2emuproject.network.protocol.ILoginProtocolVersion;
 
 /**
@@ -34,6 +36,6 @@ public class UserDefinedLoginProtocolVersion extends UserDefinedProtocolVersion 
 	 */
 	public UserDefinedLoginProtocolVersion(String alias, String category, int version, long date)
 	{
-		super(alias, category, version, date);
+		super(alias, category, version, Collections.emptySet(), date);
 	}
 }

@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.analytics.user.AbnormalStatusModifier;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 import net.l2emuproject.util.TimeAmountInterpreter;
@@ -81,8 +81,8 @@ public final class UserAbnormalStatusModifier implements AbnormalStatusModifier
 		final StringBuilder sb = new StringBuilder();
 		try
 		{
-			final IntegerInterpreter interpreter = MetaclassRegistry.getInstance().getInterpreter("SkillNameID", IntegerInterpreter.class);
-			sb.append(interpreter.getInterpretation(L2SkillTranslator.getSkillNameID(_skillID, _skillLevel, _skillSublevel), null));
+			final IntegerTranslator interpreter = MetaclassRegistry.getInstance().getTranslator("SkillNameID", IntegerTranslator.class);
+			sb.append(interpreter.translate(L2SkillTranslator.getSkillNameID(_skillID, _skillLevel, _skillSublevel), null));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{

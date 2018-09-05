@@ -15,7 +15,8 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -24,10 +25,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author _dev_
  */
-public class BlockedAccountDialogMessage extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public class BlockedAccountDialogMessage extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		return "This account and all related accounts have been restricted as you have requested a membership withdrawal. (Reference Number Regarding Membership Withdrawal Request: $s1) For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com). .";
 	}

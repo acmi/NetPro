@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_CHARACTER_SELECTION_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Created character count" id="index_0" />
+	<dword alias="Max character count" />
+	<byte alias="0" />
+	<byte alias="play mode" /> <!-- [0=can't play] [1=can play free until level 85] [2=100% free play] -->
+	<dword alias="Korea" type="YesOrNo" />
+	<byte alias="giftMessageForInactiveAccounts" type="YesOrNo" />
+	<byte alias="Balthus Knights" />
+	<loop id="index_0">
+		<string alias="Character name" />
+		<dword alias="Character ID" />
+		<string alias="Account name" />
+		<dword alias="Account ID" />
+		<dword alias="Pledge ID" type="Pledge" />
+		<dword alias="Builder level" />
+		<dword alias="Sex" type="Sex" />
+		<dword alias="Race" type="Race" />
+		<dword alias="Visible class" type="CharacterClass" />
+		<dword alias="Server" type="GameServerName" />
+		<dword alias="Location X" />
+		<dword alias="Location Y" />
+		<dword alias="Location Z" />
+		<double alias="Current HP" />
+		<double alias="Current MP" />
+		<qword alias="SP" />
+		<qword alias="XP" />
+		<double alias="Progress to next level (%)" />
+		<dword alias="Level" />
+		<dword alias="Reputation" />
+		<dword alias="PK Count" />
+		<dword alias="PvP Count" />
+
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+		<dword alias="0" />
+
+		<dword alias="Unk" />
+		<dword alias="Unk" />
+
+		<dword alias="Underwear" type="Item" />
+		<dword alias="Earring (right)" type="Item" />
+		<dword alias="Earring (left)" type="Item" />
+		<dword alias="Necklace" type="Item" />
+		<dword alias="Ring (right)" type="Item" />
+		<dword alias="Ring (left)" type="Item" />
+		<dword alias="Headgear" type="Item" />
+		<dword alias="Weapon" type="Item" />
+		<dword alias="Shield [Sigil]" type="Item" />
+		<dword alias="Gloves" type="Item" />
+		<dword alias="Upper Body" type="Item" />
+		<dword alias="Lower Body" type="Item" />
+		<dword alias="Boots" type="Item" />
+		<dword alias="Cloak" type="Item" />
+		<dword alias="Weapon / Two Handed" type="Item" />
+		<dword alias="Hair Accessory (left)" type="Item" />
+		<dword alias="Hair Accessory (right)" type="Item" />
+		<dword alias="Right Bracelet" type="Item" />
+		<dword alias="Left Bracelet" type="Item" />
+		<dword alias="Charm (primary)" type="Item" />
+		<dword alias="Charm (special 1)" type="Item" />
+		<dword alias="Charm (special 2)" type="Item" />
+		<dword alias="Charm (special 3)" type="Item" />
+		<dword alias="Charm (special 4)" type="Item" />
+		<dword alias="Talisman (1)" type="Item" />
+		<dword alias="Talisman (2)" type="Item" />
+		<dword alias="Talisman (3)" type="Item" />
+		<dword alias="Talisman (4)" type="Item" />
+		<dword alias="Talisman (5)" type="Item" />
+		<dword alias="Talisman (6)" type="Item" />
+		<dword alias="Belt" type="Item" />
+		<dword alias="Brooch" type="Item" />
+		<dword alias="Jewel (1)" type="Item" />
+		<dword alias="Jewel (2)" type="Item" />
+		<dword alias="Jewel (3)" type="Item" />
+		<dword alias="Jewel (4)" type="Item" />
+		<dword alias="Jewel (5)" type="Item" />
+		<dword alias="Jewel (6)" type="Item" />
+		
+		<!-- NEW -->
+		<dword alias="Book" type="Item" />
+		<dword alias="Balance artifact (1)" type="Item" />
+		<dword alias="Balance artifact (2)" type="Item" />
+		<dword alias="Balance artifact (3)" type="Item" />
+		<dword alias="Balance artifact (4)" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+		<dword alias="" type="Item" />
+
+		<dword alias="Visible Weapon" type="Item" />
+		<dword alias="Visible Shield [Sigil]" type="Item" />
+		<dword alias="Visible Gloves" type="Item" />
+		<dword alias="Visible Upper Body" type="Item" />
+		<dword alias="Visible Lower Body" type="Item" />
+		<dword alias="Visible Boots" type="Item" />
+		<dword alias="Visible Weapon / Two Handed" type="Item" />
+		<dword alias="Visible Hair Accessory (left)" type="Item" />
+		<dword alias="Visible Hair Accessory (right)" type="Item" />
+
+		<word alias="Upper Body enchant level" />
+		<word alias="Lower Body enchant level" />
+		<word alias="Headgear enchant level" />
+		<word alias="Gloves enchant level" />
+		<word alias="Boots enchant level" />
+
+		<dword alias="Hair Style" type="Alphabet" />
+		<dword alias="Hair Color" type="Alphabet" />
+		<dword alias="Face" type="Alphabet" />
+
+		<double alias="Maximum HP" />
+		<double alias="Maximum MP" />
+		<dword alias="Time to deletion" type="TimeRemaining" />
+		<dword alias="Class" type="CharacterClass" />
+		<dword alias="Selected" type="YesOrNo" />
+		<byte alias="Weapon enchant level" type="EnchantEffect" />
+		<dword alias="Weapon augmentation effect (1)" type="Augmentation" />
+		<dword alias="Weapon augmentation effect (2)" type="Augmentation" />
+		<dword alias="Transformation" type="Transformation" />
+		
+		<dword alias="Pet" type="Npc" />
+		<dword alias="Pet level" />
+		<dword alias="Pet Food" />
+		<dword alias="Pet Food Level" />
+		<double alias="Current pet HP" />
+		<double alias="Current pet MP" />
+
+		<dword alias="Vitality" type="VitalityLevel" />
+		<dword alias="Vitality Percent" />
+		<dword alias="Remaining vitality item uses" /> <!-- Resets each week -->
+
+		<dword alias="Available" /> <!-- active = not banned / suspended -->
+		<byte alias="Noblesse" type="YesOrNo" />
+		<byte alias="Hero" type="YesOrNo" />
+		<byte alias="Show Hair Accessory" type="YesOrNo" />
+	</loop>
+</packet>

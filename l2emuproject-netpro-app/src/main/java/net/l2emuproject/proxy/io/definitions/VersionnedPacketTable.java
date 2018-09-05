@@ -15,32 +15,24 @@
  */
 package net.l2emuproject.proxy.io.definitions;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.IdentityHashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -59,14 +51,16 @@ import net.l2emuproject.proxy.StartupOption;
 import net.l2emuproject.proxy.io.IOConstants;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
+import net.l2emuproject.proxy.network.meta.FieldValueTranslator;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
 import net.l2emuproject.proxy.network.meta.L2PacketTablePayloadEnumerator;
 import net.l2emuproject.proxy.network.meta.L2PpeProvider;
+import net.l2emuproject.proxy.network.meta.ProtocolTreeNode;
 import net.l2emuproject.proxy.network.meta.UserDefinedGameProtocolVersion;
 import net.l2emuproject.proxy.network.meta.UserDefinedLoginProtocolVersion;
+import net.l2emuproject.proxy.network.meta.UserDefinedProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.PacketPrefixResolver;
 import net.l2emuproject.proxy.network.meta.container.VersionnedPacketTemplateContainer;
-import net.l2emuproject.util.HexUtil;
 import net.l2emuproject.util.L2XMLUtils;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -78,7 +72,6 @@ import net.l2emuproject.util.logging.L2Logger;
 public class VersionnedPacketTable implements IOConstants
 {
 	private static final L2Logger LOG = L2Logger.getLogger(VersionnedPacketTable.class);
-	private static final Map<ByteArrayWrapper, byte[]> INTERNED_PACKET_PREFIXES = new ConcurrentHashMap<>();
 	
 	volatile ProtocolDefinitions _definitions;
 	
@@ -88,18 +81,19 @@ public class VersionnedPacketTable implements IOConstants
 		
 		ProtocolVersionManager.getInstance().addLoginFactory(new ProtocolVersionFactory<ILoginProtocolVersion>(){
 			@Override
-			public ILoginProtocolVersion getByVersion(int version)
+			public ILoginProtocolVersion getByVersion(int version, Set<String> altModes)
 			{
-				return _definitions.getLoginProtocol(version);
+				return _definitions.getLoginProtocol(version, altModes);
 			}
 		});
 		ProtocolVersionManager.getInstance().addGameFactory(new ProtocolVersionFactory<IGameProtocolVersion>(){
 			@Override
-			public IGameProtocolVersion getByVersion(int version)
+			public IGameProtocolVersion getByVersion(int version, Set<String> altModes)
 			{
-				return _definitions.getGameProtocol(version);
+				return _definitions.getGameProtocol(version, altModes);
 			}
 		});
+		System.setProperty(FieldValueTranslator.PROPERTY_PROTOCOLS_LOADED, Boolean.TRUE.toString());
 	}
 	
 	/**
@@ -210,14 +204,28 @@ public class VersionnedPacketTable implements IOConstants
 			LOG.info("Total: " + id2NameClient.size() + " client packets and " + id2NameServer.size() + " server packets.");
 			
 			LOG.info("Loading protocol declarations…");
+			int totalDeclaredLP = 0, disabledLP = 0, orphanedLP = 0;
+			int totalDeclaredGP = 0, disabledGP = 0, orphanedGP = 0;
 			final SortedMap<UserDefinedLoginProtocolVersion, String> lp = new TreeMap<>();
 			final SortedMap<UserDefinedGameProtocolVersion, String> gp = new TreeMap<>();
+			final Map<String, UserDefinedLoginProtocolVersion> id2lp = new IdentityHashMap<>();
+			final Map<String, UserDefinedGameProtocolVersion> id2gp = new IdentityHashMap<>();
+			final Map<String, String> id2lpPID = new IdentityHashMap<>(), id2gpPID = new IdentityHashMap<>();
 			for (final Node pro : L2XMLUtils.listNodes(L2XMLUtils.getChildNodeByName(L2XMLUtils.getXMLFile(definitionRoot.resolve("all_known_protocols.xml")), "protocols")))
 			{
 				if (!pro.getNodeName().endsWith("rotocol"))
 					continue;
 				
-				final String alias, category;
+				final boolean auth = pro.getNodeName().startsWith("authP");
+				
+				final String id, alias, category, parentID;
+				final String ownID = L2XMLUtils.getNodeAttributeStringValue(pro, "id", null);
+				if (ownID == null)
+				{
+					LOG.warn("Invalid definition config encountered. ID is missing.");
+					continue;
+				}
+				id = ownID.intern();
 				alias = L2XMLUtils.getNodeAttributeStringValue(pro, "alias", null);
 				if (alias == null)
 				{
@@ -230,17 +238,29 @@ public class VersionnedPacketTable implements IOConstants
 					LOG.warn("Invalid definition config encountered, category is missing: " + alias);
 					continue;
 				}
+				final String pid = L2XMLUtils.getNodeAttributeStringValue(pro, "parentID", null);
+				parentID = pid != null ? pid.intern() : null;
+				
+				if (auth)
+					totalDeclaredLP += 1;
+				else
+					totalDeclaredGP += 1;
 				
 				if (L2XMLUtils.getBoolean(pro, "disabled", false))
 				{
 					LOG.info("Skipping " + alias + " protocol...");
+					if (auth)
+						disabledLP += 1;
+					else
+						disabledGP += 1;
 					continue;
 				}
 				
 				OpcodeTableShuffleType shuffleMode = OpcodeTableShuffleType.NONE;
 				int[] primary = ArrayUtils.EMPTY_INT_ARRAY, secondary = ArrayUtils.EMPTY_INT_ARRAY;
-				int secondaryCount = 0x1FF;
+				int secondaryCount = 0x02_FF;
 				VersionInfo version = null;
+				Set<String> altModes = Collections.emptySet();
 				String definitionDir = null;
 				
 				for (final Node opt : L2XMLUtils.listNodes(pro))
@@ -249,6 +269,14 @@ public class VersionnedPacketTable implements IOConstants
 					{
 						case "version":
 							version = new VersionInfo(Integer.parseInt(opt.getTextContent()), L2XMLUtils.getString(opt, "date"));
+							break;
+						case "alternativeModes":
+							for (final Node mode : L2XMLUtils.listNodesByNodeName(opt, "mode"))
+							{
+								if (altModes.isEmpty())
+									altModes = new LinkedHashSet<>();
+								altModes.add(mode.getTextContent().trim().intern());
+							}
 							break;
 						case "shuffle":
 							shuffleMode = Enum.valueOf(OpcodeTableShuffleType.class, opt.getTextContent());
@@ -277,16 +305,21 @@ public class VersionnedPacketTable implements IOConstants
 				try
 				{
 					final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-					if (pro.getNodeName().startsWith("authP"))
+					if (auth)
 					{
 						final UserDefinedLoginProtocolVersion ver = new UserDefinedLoginProtocolVersion(alias, category, version._version, df.parse(version._date).getTime());
 						lp.put(ver, definitionDir);
+						id2lp.put(id, ver);
+						id2lpPID.put(id, parentID);
 					}
 					else
 					{
-						final UserDefinedGameProtocolVersion ver = new UserDefinedGameProtocolVersion(alias, category, version._version, df.parse(version._date).getTime(), shuffleMode, primary,
+						final UserDefinedGameProtocolVersion ver = new UserDefinedGameProtocolVersion(alias, category, version._version, altModes, df.parse(version._date).getTime(), shuffleMode,
+								primary,
 								secondaryCount, secondary);
 						gp.put(ver, definitionDir);
+						id2gp.put(id, ver);
+						id2gpPID.put(id, parentID);
 					}
 				}
 				catch (final ParseException e)
@@ -296,7 +329,11 @@ public class VersionnedPacketTable implements IOConstants
 				}
 			}
 			
-			LOG.info("Total: " + lp.size() + " login protocols and " + gp.size() + " game protocols.");
+			orphanedLP = removeOrphans(id2lp, id2lpPID, lp);
+			orphanedGP = removeOrphans(id2gp, id2gpPID, gp);
+			
+			LOG.info("Loaded " + lp.size() + "/" + totalDeclaredLP + " login protocols (" + disabledLP + " disabled, " + orphanedLP + " orphaned) and " + gp.size() + "/" + totalDeclaredGP
+					+ " game protocols(" + disabledGP + " disabled, " + orphanedGP + " orphaned).");
 			if (lp.isEmpty())
 				throw new RuntimeException("No login protocols defined");
 			if (gp.isEmpty())
@@ -308,375 +345,21 @@ public class VersionnedPacketTable implements IOConstants
 			{
 				LOG.info("Loading packet definitions…");
 				
-				final ByteBuffer fullStructBuf = ByteBuffer.allocate(64 << 10).order(ByteOrder.LITTLE_ENDIAN);
 				loginMap = new HashMap<>();
 				gameMap = new HashMap<>();
 				
 				{
 					LOG.info("Loading login packets…");
-					final Map<String, byte[]> id2PrefixClient = new IdentityHashMap<>(), id2PrefixServer = new IdentityHashMap<>();
-					final Map<String, IPacketTemplate> clientPacketsByID = new IdentityHashMap<>(), serverPacketsByID = new IdentityHashMap<>();
-					final Map<byte[], String> prefix2IDClient = new HashMap<>(), prefix2IDServer = new HashMap<>();
-					for (final Entry<UserDefinedLoginProtocolVersion, String> e : lp.entrySet())
-					{
-						int removedClientPackets = 0, removedServerPackets = 0;
-						final List<RedundantOpcodeMapping> redundantMappings = new ArrayList<>(); // abuse lazy allocation
-						final Set<ByteArrayWrapper> declaredOpcodes = new HashSet<>();
-						final Set<String> assignedIDs = new HashSet<>();
-						final String proName = e.getKey().getAlias();
-						final Path root = definitionRoot.resolve(e.getValue());
-						try
-						{
-							final Node mappings = L2XMLUtils.getChildNodeByName(L2XMLUtils.getXMLFile(root.resolve("opcode_mapping.xml")), "mapping");
-							final Node clientMaps = L2XMLUtils.getChildNodeByName(mappings, "client");
-							for (final Node packet : L2XMLUtils.listNodesByNodeName(clientMaps, "removedPacket"))
-							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
-								if (!id2NameClient.containsKey(packetID))
-									LOG.info(proName + " attempts to remove a nonexistent client packet: " + packetID + " [" + e.getValue() + "]");
-								if (id2PrefixClient.remove(packetID) == null)
-									LOG.info(proName + " declares a removed client packet, even though it was never mapped to any opcode: " + packetID + " [" + e.getValue() + "]");
-								clientPacketsByID.remove(packetID);
-								++removedClientPackets;
-							}
-							for (final Node packet : L2XMLUtils.listNodesByNodeName(clientMaps, "packet"))
-							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
-								if (!id2NameClient.containsKey(packetID))
-									LOG.info(proName + " attempts to declare a nonexistent client packet: " + packetID + " [" + e.getValue() + "]");
-								
-								final String prefixHexString = L2XMLUtils.getAttribute(packet, "opcodePrefix");
-								final byte[] prefix = hexStringToInternedBytes(prefixHexString);
-								if (id2PrefixClient.put(packetID, prefix) == prefix)
-									redundantMappings.add(new RedundantOpcodeMapping(prefixHexString, packetID, true));
-								if (!declaredOpcodes.add(new ByteArrayWrapper(prefix)))
-									LOG.info(proName + ": too many declarations for CM " + prefixHexString + "!");
-								if (!assignedIDs.add(packetID))
-									LOG.info(proName + " maps multiple opcode sets to client packet: " + packetID + " [" + e.getValue() + "]");
-								
-								// automatically remove obsolete mappings
-								final String previousID = prefix2IDClient.put(prefix, packetID);
-								if (previousID != null)
-								{
-									final byte[] currentPrefixOfPreviousPacket = id2PrefixClient.get(previousID);
-									if (currentPrefixOfPreviousPacket == prefix)
-										id2PrefixClient.remove(previousID);
-								}
-							}
-							declaredOpcodes.clear();
-							assignedIDs.clear();
-							final Node serverMaps = L2XMLUtils.getChildNodeByName(mappings, "server");
-							for (final Node packet : L2XMLUtils.listNodesByNodeName(serverMaps, "removedPacket"))
-							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
-								if (!id2NameServer.containsKey(packetID))
-									LOG.info(proName + " attempts to remove a nonexistent server packet: " + packetID + " [" + e.getValue() + "]");
-								if (id2PrefixServer.remove(packetID) == null)
-									LOG.info(proName + " declares a removed server packet, even though it was never mapped to any opcode: " + packetID + " [" + e.getValue() + "]");
-								serverPacketsByID.remove(packetID);
-								++removedServerPackets;
-							}
-							for (final Node packet : L2XMLUtils.listNodesByNodeName(serverMaps, "packet"))
-							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
-								if (!id2NameServer.containsKey(packetID))
-									LOG.info(proName + " attempts to declare a nonexistent server packet: " + packetID + " [" + e.getValue() + "]");
-								
-								final String prefixHexString = L2XMLUtils.getAttribute(packet, "opcodePrefix");
-								final byte[] prefix = hexStringToInternedBytes(prefixHexString);
-								if (id2PrefixServer.put(packetID, prefix) == prefix)
-									redundantMappings.add(new RedundantOpcodeMapping(prefixHexString, packetID, false));
-								if (!declaredOpcodes.add(new ByteArrayWrapper(prefix)))
-									LOG.info(proName + ": too many declarations for SM " + prefixHexString + "!");
-								if (!assignedIDs.add(packetID))
-									LOG.info(proName + " maps multiple opcode sets to server packet: " + packetID + " [" + e.getValue() + "]");
-								
-								// automatically remove obsolete mappings
-								final String previousID = prefix2IDServer.put(prefix, packetID);
-								if (previousID != null)
-								{
-									final byte[] currentPrefixOfPreviousPacket = id2PrefixServer.get(previousID);
-									if (currentPrefixOfPreviousPacket == prefix)
-										id2PrefixServer.remove(previousID);
-								}
-							}
-							declaredOpcodes.clear();
-							assignedIDs.clear();
-						}
-						catch (final FileNotFoundException ex)
-						{
-							// with incremental loading, this is OK now
-							// LOG.warn(e.getKey() + ": " + ex.getMessage());
-						}
-						catch (final Exception ex)
-						{
-							LOG.fatal(e.getKey(), ex);
-							continue;
-						}
-						
-						LOG.info(proName + " declares " + id2PrefixClient.size() + " client and " + id2PrefixServer.size() + " server packets.");
-						if (!redundantMappings.isEmpty())
-						{
-							LOG.info(proName + " redundantly declares " + redundantMappings);
-							/*
-							try
-							{
-								boolean clientEntries = true;
-								final List<String> lines = Files.readAllLines(root.resolve("opcode_mapping.xml"));
-								for (final Iterator<String> it = lines.iterator(); it.hasNext();)
-								{
-									final String line = it.next();
-									if (line.contains("<server"))
-									{
-										clientEntries = false;
-										continue;
-									}
-									for (final RedundantOpcodeMapping redundantEntry : redundantMappings)
-									{
-										if (clientEntries != redundantEntry._client)
-											continue;
-										
-										if (line.contains("opcodePrefix=\"" + redundantEntry._prefix + "\"") && line.contains("id=\"" + redundantEntry._id + "\""))
-											it.remove();
-									}
-								}
-								Files.write(root.resolve("opcode_mapping_autofix.xml"), lines);
-							}
-							catch (IOException ex)
-							{
-								// ignore
-							}
-							*/
-						}
-						
-						final UserDefinedLoginProtocolVersion protocol = e.getKey();
-						Set<IPacketTemplate> clientPackets = Collections.emptySet(), serverPackets = Collections.emptySet();
-						{
-							EndpointPacketLoader loader = new EndpointPacketLoader(protocol, id2PrefixClient, id2NameClient, clientPacketsByID, fullStructBuf);
-							try
-							{
-								Files.walkFileTree(root.resolve("client"), loader);
-								LOG.info(proName + ": [" + loader.getAdded() + " new, " + loader.getUpdated() + " updated, " + removedClientPackets + " removed client packets].");
-							}
-							catch (final NoSuchFileException ex)
-							{
-								// looks too verbose to me
-								// LOG.warn(e.getKey() + ": missing " + ex.getMessage());
-							}
-							finally
-							{
-								clientPackets = loader.getPackets();
-							}
-							loader = new EndpointPacketLoader(protocol, id2PrefixServer, id2NameServer, serverPacketsByID, fullStructBuf);
-							try
-							{
-								Files.walkFileTree(root.resolve("server"), loader);
-								LOG.info(proName + ": [" + loader.getAdded() + " new, " + loader.getUpdated() + " updated, " + removedServerPackets + " removed server packets].");
-							}
-							catch (final NoSuchFileException ex)
-							{
-								// looks too verbose to me
-								// LOG.warn(e.getKey() + ": missing " + ex.getMessage());
-							}
-							finally
-							{
-								serverPackets = loader.getPackets();
-							}
-						}
-						
-						final Map<EndpointType, PacketPrefixResolver> endpointMap = new EnumMap<>(EndpointType.class);
-						endpointMap.put(EndpointType.CLIENT, new PacketPrefixResolver(clientPackets));
-						endpointMap.put(EndpointType.SERVER, new PacketPrefixResolver(serverPackets));
-						loginMap.put(protocol, endpointMap);
-					}
+					final ProtocolTreeNode<UserDefinedLoginProtocolVersion> lpt = ProtocolTreeNode.fromMap(id2lpPID, id2lp);
+					for (final ProtocolTreeNode<UserDefinedLoginProtocolVersion> root : lpt.getChildren())
+						loadToMap(new VersionnedPacketLoader<>(id2NameClient, id2NameServer), root, lp, loginMap);
 				}
 				
 				{
 					LOG.info("Loading game packets…");
-					final Map<String, byte[]> id2PrefixClient = new IdentityHashMap<>(), id2PrefixServer = new IdentityHashMap<>();
-					final Map<String, IPacketTemplate> clientPacketsByID = new IdentityHashMap<>(), serverPacketsByID = new IdentityHashMap<>();
-					final Map<byte[], String> prefix2IDClient = new HashMap<>(), prefix2IDServer = new HashMap<>();
-					for (final Iterator<Entry<UserDefinedGameProtocolVersion, String>> it = gp.entrySet().iterator(); it.hasNext();)
-					{
-						int removedClientPackets = 0, removedServerPackets = 0;
-						final List<RedundantOpcodeMapping> redundantMappings = new ArrayList<>(); // abuse lazy allocation
-						final Set<ByteArrayWrapper> declaredOpcodes = new HashSet<>();
-						final Set<String> assignedIDs = new HashSet<>();
-						final Entry<UserDefinedGameProtocolVersion, String> e = it.next();
-						final String proName = e.getKey().getAlias();
-						final Path root = definitionRoot.resolve(e.getValue());
-						
-						// an opcode mapping is mandatory
-						try
-						{
-							final Node mappings = L2XMLUtils.getChildNodeByName(L2XMLUtils.getXMLFile(root.resolve("opcode_mapping.xml")), "mapping");
-							final Node clientMaps = L2XMLUtils.getChildNodeByName(mappings, "client");
-							for (final Node packet : L2XMLUtils.listNodesByNodeName(clientMaps, "removedPacket"))
-							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
-								if (!id2NameClient.containsKey(packetID))
-									LOG.info(proName + " attempts to remove a nonexistent client packet: " + packetID + " [" + e.getValue() + "]");
-								if (id2PrefixClient.remove(packetID) == null)
-									LOG.info(proName + " declares a removed client packet, even though it was never mapped to any opcode: " + packetID + " [" + e.getValue() + "]");
-								clientPacketsByID.remove(packetID);
-								assignedIDs.add(packetID);
-								++removedClientPackets;
-							}
-							for (final Node packet : L2XMLUtils.listNodesByNodeName(L2XMLUtils.getChildNodeByName(mappings, "client"), "packet"))
-							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
-								if (!id2NameClient.containsKey(packetID))
-									LOG.info(proName + " attempts to declare a nonexistent client packet: " + packetID + " [" + e.getValue() + "]");
-								
-								final String prefixHexString = L2XMLUtils.getAttribute(packet, "opcodePrefix");
-								final byte[] prefix = hexStringToInternedBytes(prefixHexString);
-								if (id2PrefixClient.put(packetID, prefix) == prefix)
-									redundantMappings.add(new RedundantOpcodeMapping(prefixHexString, packetID, true));
-								if (!declaredOpcodes.add(new ByteArrayWrapper(prefix)))
-									LOG.info(proName + ": too many declarations for CM " + prefixHexString + "!");
-								if (!assignedIDs.add(packetID))
-									LOG.info(proName + " maps multiple opcode sets to client packet: " + packetID + " [" + e.getValue() + "]");
-								
-								// automatically remove obsolete mappings
-								final String previousID = prefix2IDClient.put(prefix, packetID);
-								if (previousID != null)
-								{
-									final byte[] currentPrefixOfPreviousPacket = id2PrefixClient.get(previousID);
-									if (currentPrefixOfPreviousPacket == prefix)
-										id2PrefixClient.remove(previousID);
-								}
-							}
-							declaredOpcodes.clear();
-							assignedIDs.clear();
-							final Node serverMaps = L2XMLUtils.getChildNodeByName(mappings, "server");
-							for (final Node packet : L2XMLUtils.listNodesByNodeName(serverMaps, "removedPacket"))
-							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
-								if (!id2NameServer.containsKey(packetID))
-									LOG.info(proName + " attempts to remove a nonexistent server packet: " + packetID + " [" + e.getValue() + "]");
-								if (id2PrefixServer.remove(packetID) == null)
-									LOG.info(proName + " declares a removed server packet, even though it was never mapped to any opcode: " + packetID + " [" + e.getValue() + "]");
-								serverPacketsByID.remove(packetID);
-								++removedServerPackets;
-							}
-							for (final Node packet : L2XMLUtils.listNodesByNodeName(L2XMLUtils.getChildNodeByName(mappings, "server"), "packet"))
-							{
-								final String packetID = L2XMLUtils.getAttribute(packet, "id").intern();
-								if (!id2NameServer.containsKey(packetID))
-									LOG.info(proName + " attempts to declare a nonexistent server packet: " + packetID + " [" + e.getValue() + "]");
-								
-								final String prefixHexString = L2XMLUtils.getAttribute(packet, "opcodePrefix");
-								final byte[] prefix = hexStringToInternedBytes(prefixHexString);
-								if (id2PrefixServer.put(packetID, prefix) == prefix)
-									redundantMappings.add(new RedundantOpcodeMapping(prefixHexString, packetID, false));
-								if (!declaredOpcodes.add(new ByteArrayWrapper(prefix)))
-									LOG.info(proName + ": too many declarations for SM " + prefixHexString + "!");
-								if (!assignedIDs.add(packetID))
-									LOG.info(proName + " maps multiple opcode sets to server packet: " + packetID + " [" + e.getValue() + "]");
-								
-								// automatically remove obsolete mappings
-								final String previousID = prefix2IDServer.put(prefix, packetID);
-								if (previousID != null)
-								{
-									final byte[] currentPrefixOfPreviousPacket = id2PrefixServer.get(previousID);
-									if (currentPrefixOfPreviousPacket == prefix)
-										id2PrefixServer.remove(previousID);
-								}
-							}
-							declaredOpcodes.clear();
-							assignedIDs.clear();
-						}
-						catch (final FileNotFoundException ex)
-						{
-							// with incremental loading, this is OK now
-							// it.remove();
-							// LOG.warn(e.getKey() + ": " + ex.getMessage());
-						}
-						catch (final Exception ex)
-						{
-							it.remove();
-							LOG.fatal(e.getKey(), ex);
-							continue;
-						}
-						
-						// but packets are not, as there might not be any changes between protocol revisions
-						LOG.info(proName + " declares " + id2PrefixClient.size() + " client[shuffle: " + e.getKey().getOpcodeTableShuffleConfig().getShuffleMode() + "] and " + id2PrefixServer.size()
-								+ " server packets.");
-						if (!redundantMappings.isEmpty())
-						{
-							LOG.info(proName + " redundantly declares " + redundantMappings);
-							/*
-							try
-							{
-								boolean clientEntries = true;
-								final List<String> lines = Files.readAllLines(root.resolve("opcode_mapping.xml"));
-								for (final Iterator<String> it2 = lines.iterator(); it2.hasNext();)
-								{
-									final String line = it2.next();
-									if (line.contains("<server"))
-									{
-										clientEntries = false;
-										continue;
-									}
-									for (final RedundantOpcodeMapping redundantEntry : redundantMappings)
-									{
-										if (clientEntries != redundantEntry._client)
-											continue;
-										
-										if (line.contains("opcodePrefix=\"" + redundantEntry._prefix + "\"") && line.contains("id=\"" + redundantEntry._id + "\""))
-											it2.remove();
-									}
-								}
-								Files.write(root.resolve("opcode_mapping.xml"), lines);
-								Files.delete(root.resolve("opcode_mapping_autofix.xml"));
-							}
-							catch (IOException ex)
-							{
-								// ignore
-							}
-							*/
-						}
-						
-						final UserDefinedGameProtocolVersion protocol = e.getKey();
-						Set<IPacketTemplate> clientPackets = Collections.emptySet(), serverPackets = Collections.emptySet();
-						{
-							EndpointPacketLoader loader = new EndpointPacketLoader(protocol, id2PrefixClient, id2NameClient, clientPacketsByID, fullStructBuf);
-							try
-							{
-								Files.walkFileTree(root.resolve("client"), loader);
-								LOG.info(proName + ": [" + loader.getAdded() + " new, " + loader.getUpdated() + " updated, " + removedClientPackets + " removed client packets].");
-							}
-							catch (final NoSuchFileException ex)
-							{
-								// looks too verbose to me
-								// LOG.warn(e.getKey() + ": missing " + ex.getMessage());
-							}
-							finally
-							{
-								clientPackets = loader.getPackets();
-							}
-							loader = new EndpointPacketLoader(protocol, id2PrefixServer, id2NameServer, serverPacketsByID, fullStructBuf);
-							try
-							{
-								Files.walkFileTree(root.resolve("server"), loader);
-								LOG.info(proName + ": [" + loader.getAdded() + " new, " + loader.getUpdated() + " updated, " + removedServerPackets + " removed server packets].");
-							}
-							catch (final NoSuchFileException ex)
-							{
-								// looks too verbose to me
-								// LOG.warn(e.getKey() + ": missing " + ex.getMessage());
-							}
-							finally
-							{
-								serverPackets = loader.getPackets();
-							}
-						}
-						
-						final Map<EndpointType, PacketPrefixResolver> endpointMap = new EnumMap<>(EndpointType.class);
-						endpointMap.put(EndpointType.CLIENT, new PacketPrefixResolver(clientPackets));
-						endpointMap.put(EndpointType.SERVER, new PacketPrefixResolver(serverPackets));
-						gameMap.put(e.getKey(), endpointMap);
-					}
+					final ProtocolTreeNode<UserDefinedGameProtocolVersion> gpt = ProtocolTreeNode.fromMap(id2gpPID, id2gp);
+					for (final ProtocolTreeNode<UserDefinedGameProtocolVersion> root : gpt.getChildren())
+						loadToMap(new VersionnedPacketLoader<>(id2NameClient, id2NameServer), root, gp, gameMap);
 				}
 			}
 			else
@@ -695,8 +378,7 @@ public class VersionnedPacketTable implements IOConstants
 				}
 			}
 			
-			_definitions = new ProtocolDefinitions(lp.keySet(), gp.keySet(), new VersionnedPacketTemplateContainer<>(loginMap, lp.lastKey()),
-					new VersionnedPacketTemplateContainer<>(gameMap, gp.lastKey()));
+			_definitions = new ProtocolDefinitions(lp.keySet(), gp.keySet(), new VersionnedPacketTemplateContainer<>(loginMap), new VersionnedPacketTemplateContainer<>(gameMap));
 			
 			if (L2PpeProvider.getPacketPayloadEnumerator() == null)
 				L2PpeProvider.initialize(new L2PacketTablePayloadEnumerator());
@@ -707,22 +389,45 @@ public class VersionnedPacketTable implements IOConstants
 		}
 	}
 	
-	private static final byte[] hexStringToInternedBytes(String bytes)
+	private static <T extends UserDefinedProtocolVersion> int removeOrphans(Map<String, T> id2Protocol, Map<String, String> id2pid, Map<T, String> loaded)
 	{
-		final byte[] equivalent = HexUtil.hexStringToBytes(bytes);
-		final byte[] interned = INTERNED_PACKET_PREFIXES.putIfAbsent(new ByteArrayWrapper(equivalent), equivalent);
-		return interned != null ? interned : equivalent;
+		int result = 0;
+		boolean removed;
+		do
+		{
+			removed = false;
+			for (final Entry<String, String> e : id2pid.entrySet())
+			{
+				final String pid = e.getValue();
+				if (pid == null)
+					continue;
+				if (!id2Protocol.containsKey(pid))
+				{
+					final String id = e.getKey();
+					LOG.info("Missing parent: " + pid + ", removing protocol " + id);
+					final T loadedProtocol = id2Protocol.remove(id);
+					loaded.remove(loadedProtocol);
+					id2pid.remove(id);
+					result += 1;
+					removed = true;
+					break;
+				}
+			}
+		}
+		while (removed);
+		return result;
 	}
 	
-	/**
-	 * Returns an interned version of the given byte array, iff such a byte array was already interned.
-	 * 
-	 * @param prefix a packet prefix
-	 * @return an equivalent byte array
-	 */
-	public static final byte[] internedValueOf(byte[] prefix)
+	private static <T extends UserDefinedProtocolVersion> void loadToMap(VersionnedPacketLoader<T> loader, ProtocolTreeNode<T> node, Map<T, String> protocol2DefDir,
+			Map<T, Map<EndpointType, PacketPrefixResolver>> map) throws IOException
 	{
-		return INTERNED_PACKET_PREFIXES.getOrDefault(new ByteArrayWrapper(prefix), prefix);
+		final T protocol = Objects.requireNonNull(node.getProtocol());
+		final Map<EndpointType, PacketPrefixResolver> endpointMap = loader.load(protocol, Objects.requireNonNull(protocol2DefDir.get(protocol)));
+		if (endpointMap == null)
+			return;
+		map.put(protocol, endpointMap);
+		for (final ProtocolTreeNode<T> child : node.getChildren())
+			loadToMap(new VersionnedPacketLoader<>(loader), child, protocol2DefDir, map);
 	}
 	
 	private static final class VersionInfo
@@ -755,54 +460,6 @@ public class VersionnedPacketTable implements IOConstants
 		public String toString()
 		{
 			return _version + " " + _date;
-		}
-	}
-	
-	private static final class RedundantOpcodeMapping
-	{
-		final String _prefix;
-		final String _id;
-		final boolean _client;
-		
-		RedundantOpcodeMapping(String prefix, String id, boolean client)
-		{
-			_prefix = prefix;
-			_id = id;
-			_client = client;
-		}
-		
-		@Override
-		public String toString()
-		{
-			return "[" + (_client ? "C" : "S") + "]" + _prefix + "->" + _id;
-		}
-	}
-	
-	private static final class ByteArrayWrapper
-	{
-		private final byte[] _array;
-		
-		ByteArrayWrapper(byte[] array)
-		{
-			_array = array;
-		}
-		
-		@Override
-		public boolean equals(Object o)
-		{
-			return o instanceof ByteArrayWrapper ? Arrays.equals(_array, ((ByteArrayWrapper)o)._array) : false;
-		}
-		
-		@Override
-		public int hashCode()
-		{
-			return Arrays.hashCode(_array);
-		}
-		
-		@Override
-		public String toString()
-		{
-			return HexUtil.bytesToHexString(_array, " ");
 		}
 	}
 	

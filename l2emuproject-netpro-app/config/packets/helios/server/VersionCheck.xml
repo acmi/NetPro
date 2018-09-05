@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- New CHAR field appended at the end of the packet (Arena mode?) -->
+<!-- New CHAR field appended at the end of the packet -->
 <packet id="SM_VERSION_CHECK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<byte alias="Exact version match" type="YesOrNo" />
 	<qword alias="Cipher key part">
@@ -13,6 +13,8 @@
 	<dword alias="CM opcode shuffling seed">
 		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_OBFUSCATION_KEY" />
 	</dword>
-	<byte alias="Classic mode" type="YesOrNo" />
-	<byte alias="Arena mode" type="YesOrNo" /> <!-- NEW -->
+	<byte alias="Server type" type="ServerType">
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_SERVER_TYPE" />
+	</byte>
+	<byte alias="Queued login" type="YesOrNo" /> <!-- NEW -->
 </packet>

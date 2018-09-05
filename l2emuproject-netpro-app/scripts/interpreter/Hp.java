@@ -15,7 +15,8 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -24,14 +25,14 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public class Hp extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public class Hp extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	// High Five specific
 	private static final int PREDICTED_ABSOLUTE_HP_LIMIT = 99_999;
 	private static final int EQUAL_TO_MAXIMUM_HP = 10_000_000;
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value > PREDICTED_ABSOLUTE_HP_LIMIT)
 			return String.valueOf(value * 100 / EQUAL_TO_MAXIMUM_HP) + "%";

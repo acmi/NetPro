@@ -20,7 +20,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.proxy.ui.dds.DDSReader;
@@ -31,12 +32,12 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public class DirectDrawSurface extends ScriptedFieldValueInterpreter implements ByteArrayInterpreter
+public class DirectDrawSurface extends ScriptedFieldValueInterpreter implements ByteArrayTranslator
 {
 	private static final L2Logger LOG = L2Logger.getLogger(DirectDrawSurface.class);
 	
 	@Override
-	public Object getInterpretation(byte[] value, ICacheServerID cacheContext)
+	public Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID cacheContext)
 	{
 		try
 		{

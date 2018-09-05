@@ -15,6 +15,8 @@
  */
 package net.l2emuproject.proxy.network.meta;
 
+import java.util.Set;
+
 import net.l2emuproject.network.protocol.ClientProtocolVersion;
 import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.network.protocol.IProtocolVersion;
@@ -38,15 +40,16 @@ public class UserDefinedGameProtocolVersion extends UserDefinedProtocolVersion i
 	 * @param alias protocol name
 	 * @param category protocol group
 	 * @param version protocol revision number
+	 * @param altModes alternative modes
 	 * @param date protocol version introduction to NA data
 	 * @param shuffleMode opcode shuffle implementation to be used
 	 * @param const1 primary opcodes exempt from CM opcode shuffling
 	 * @param total2 total amount of secondary (extended) opcodes
 	 * @param const2 secondary (extended) opcodes exempt from CM opcode shuffling
 	 */
-	public UserDefinedGameProtocolVersion(String alias, String category, int version, long date, OpcodeTableShuffleType shuffleMode, int[] const1, int total2, int[] const2)
+	public UserDefinedGameProtocolVersion(String alias, String category, int version, Set<String> altModes, long date, OpcodeTableShuffleType shuffleMode, int[] const1, int total2, int[] const2)
 	{
-		super(alias, category, version, date);
+		super(alias, category, version, altModes, date);
 		
 		_shuffleConfig = new UserDefinedOpcodeTableShuffleConfig(shuffleMode, const1, total2, const2);
 	}
@@ -55,7 +58,7 @@ public class UserDefinedGameProtocolVersion extends UserDefinedProtocolVersion i
 	{
 		if (version instanceof ClientProtocolVersion)
 		{
-			final IProtocolVersion protocol = ProtocolVersionManager.getInstance().getGameProtocol(version.getVersion());
+			final IProtocolVersion protocol = ProtocolVersionManager.getInstance().getGameProtocol(version.getVersion(), version.getAltModes());
 			if (!(protocol instanceof UnknownProtocolVersion))
 				return protocol;
 		}

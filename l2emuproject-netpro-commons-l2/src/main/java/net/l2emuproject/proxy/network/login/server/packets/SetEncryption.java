@@ -20,6 +20,7 @@ import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_C3_C4_TRAN
 import static net.l2emuproject.network.security.LoginCipher.READ_ONLY_PRELUDE_KEY;
 
 import java.nio.BufferUnderflowException;
+import java.util.Collections;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.ILoginProtocolVersion;
@@ -70,7 +71,7 @@ public class SetEncryption extends L2LoginServerPacket implements RequiredInvasi
 			// TODO: check with later AuthDs
 			if (version == 0)
 				version = LoginProtocolVersion.PRELUDE_BETA.getVersion();
-			final ILoginProtocolVersion ver = ProtocolVersionManager.getInstance().getLoginProtocol(version);
+			final ILoginProtocolVersion ver = ProtocolVersionManager.getInstance().getLoginProtocol(version, Collections.emptySet());
 			if (ver != null)
 			{
 				getRecipient().setVersion(protocol = ver);

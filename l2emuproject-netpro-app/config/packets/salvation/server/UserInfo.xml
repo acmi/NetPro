@@ -162,7 +162,7 @@
 		<sstring alias="Title">
 			<scriptAlias id="OIC_PLAYER_TITLE" />
 		</sstring>
-		<word alias="unk 0" />
+		<word alias="Pledge unit" type="PledgeUnit" />
 		<dword alias="Pledge ID" type="Pledge">
 			<scriptAlias id="PIC_PLEDGE_ID" />
 		</dword>
@@ -203,10 +203,11 @@
 	<branch id="exUI_3" condition="bitmask.Bit5">
 		<word alias="Block size (11)" />
 		<byte alias="Talisman slots" />
-		<byte alias="Cloak slot" type="YesOrNo" />
+		<byte alias="Jewel slots" />
 		<byte alias="Duel team" type="DuelTeam" />
 		<dword alias="Unknown team mask" />
-		<word alias="" />
+		<byte alias="Charm slots" />
+		<byte alias="" />
 	</branch>
 	<branch id="exUI_3" condition="bitmask.Bit4">
 		<word alias="Block size (4)" />

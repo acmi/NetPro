@@ -3,6 +3,9 @@
 	<dword alias="Target OID" type="ObjectID">
 		<scriptAlias id="LUA_TARGET_OID" />
 		<scriptAlias id="HLE_SELF_TARGET_OID" />
+		<scriptAlias id="mts_oid" />
 	</dword>
-	<word alias="Level difference" />
+	<word alias="Level difference">
+		<scriptAlias id="mts_level_diff" />
+	</word>
 </packet>

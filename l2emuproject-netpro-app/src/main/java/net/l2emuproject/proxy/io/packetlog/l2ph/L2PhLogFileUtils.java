@@ -25,6 +25,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.Collections;
 
 import net.l2emuproject.io.EmptyChecksum;
 import net.l2emuproject.network.protocol.IProtocolVersion;
@@ -115,7 +116,8 @@ public final class L2PhLogFileUtils implements IOConstants
 		final long firstPacketArrivalTime = toUNIX(ByteBuffer.wrap(firstPacket, 1, 8).order(ByteOrder.LITTLE_ENDIAN).getDouble());
 		final int opcode = firstPacket.length > minSize ? firstPacket[minSize] : -1;
 		final int protocol = opcode == 0x00 || opcode == 0x0E ? ByteBuffer.wrap(firstPacket, 1 + 8 + 2 + 1, 4).order(ByteOrder.LITTLE_ENDIAN).getInt() : -1;
-		return new L2PhLogFileHeader(packetLogFile, filesize, false, toServiceType(firstPacket[0]), firstPacketArrivalTime, protocol);
+		// FIXME: alt modes
+		return new L2PhLogFileHeader(packetLogFile, filesize, false, toServiceType(firstPacket[0]), firstPacketArrivalTime, protocol, Collections.emptySet());
 	}
 	
 	/**
@@ -174,7 +176,8 @@ public final class L2PhLogFileUtils implements IOConstants
 			{
 				protocol = -1;
 			}
-			return new L2PhLogFileHeader(packetLogFile, filesize, true, toServiceType((byte)firstPacketType), firstPacketArrivalTime, protocol);
+			// FIXME: alt modes
+			return new L2PhLogFileHeader(packetLogFile, filesize, true, toServiceType((byte)firstPacketType), firstPacketArrivalTime, protocol, Collections.emptySet());
 		}
 	}
 	

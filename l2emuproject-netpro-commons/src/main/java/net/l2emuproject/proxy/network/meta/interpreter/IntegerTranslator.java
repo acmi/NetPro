@@ -15,7 +15,8 @@
  */
 package net.l2emuproject.proxy.network.meta.interpreter;
 
-import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.FieldValueTranslator;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -23,35 +24,37 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author _dev_
  */
-public interface IntegerInterpreter extends FieldValueInterpreter
+public interface IntegerTranslator extends FieldValueTranslator
 {
-	default Boolean isKnown(long value, ICacheServerID entityCacheContext)
+	default Boolean isKnown(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		return null;
 	}
 	
-	default Boolean isKnown(long value)
+	default Boolean isKnown(long value, IProtocolVersion protocol)
 	{
-		return isKnown(value, null);
+		return isKnown(value, protocol, null);
 	}
 	
 	/**
-	 * Returns an interpretation of the given 8-64 bit integer value.
+	 * Returns the given 8-64 bit integer value translated to an user-friendly object.
 	 * 
 	 * @param value value
+	 * @param protocol protocol version
 	 * @param entityCacheContext entity existence boundary defining context
-	 * @return interpretation
+	 * @return translation
 	 */
-	Object getInterpretation(long value, ICacheServerID entityCacheContext);
+	Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext);
 	
 	/**
-	 * Returns an interpretation of the given 8-64 bit integer value.
+	 * Returns the given 8-64 bit integer value translated to an user-friendly object.
 	 * 
 	 * @param value value
-	 * @return interpretation
+	 * @param protocol protocol version
+	 * @return translation
 	 */
-	default Object getInterpretation(long value)
+	default Object translate(long value, IProtocolVersion protocol)
 	{
-		return getInterpretation(value, null);
+		return translate(value, protocol, null);
 	}
 }

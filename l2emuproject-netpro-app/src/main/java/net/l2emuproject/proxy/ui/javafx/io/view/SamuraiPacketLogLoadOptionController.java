@@ -159,7 +159,7 @@ public final class SamuraiPacketLogLoadOptionController extends AbstractLogLoadO
 		controller.setOnProtocolPacketHidingConfigurationChange(_mainWindow::refreshFilters);
 		
 		closeTab(event);
-		tab.setUserData(new PacketLogTabUserData(controller));
+		tab.setUserData(new PacketLogTabUserData(controller, null));
 		_mainWindow.addConnectionTab(tab);
 		final int totalPackets = -1;
 		progressDialog.setFilename(filename);

@@ -15,8 +15,12 @@
 		<length>16</length>
 		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_BF_KEY" />
 	</bytes>
-	
-	<dword alias="0" optional="true" />
+
+	<byte alias="" optional="true" />
+	<byte alias="" optional="true" />
+	<byte alias="" optional="true" />
+	<byte alias="" optional="true" />
+
 	<bytes alias="Padding" optional="true">
 		<length>11</length>
 	</bytes>

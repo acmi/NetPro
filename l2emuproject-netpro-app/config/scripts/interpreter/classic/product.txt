@@ -1,0 +1,62 @@
+100001	Daily Present - VIP1
+100002	Daily Present - VIP2
+100003	Daily Present - VIP3
+100004	Daily Present - VIP4
+100005	Daily Present - VIP5
+100006	Daily Present - VIP6
+100007	Daily Present - VIP7
+100101	EXP/SP Scroll (30%)
+100102	EXP/SP Scroll(40%)
+100201	1st Class Transfer Effect Scroll
+100202	2nd Class Transfer Effect Scroll
+100301	Scroll: Enchant Weapon (D-grade)
+100302	Scroll: Enchant Armor (D-grade)
+100303	Blessed Scroll: Enchant Weapon (D-grade)
+100304	Blessed Scroll: Enchant Armor (D-grade)
+100305	Scroll: Enchant Weapon (C-grade)
+100306	Scroll: Enchant Armor (C-grade)
+100313	Blessed Scroll: Enchant Weapon (C-grade)
+100314	Blessed Scroll: Enchant Armor (C-grade)
+100401	Package: Mysterious Soulshot (No-grade, 100 pcs.)
+100402	Package: Mysterious Blessed Spiritshot (No-grade, 100 pcs.)
+100403	Package: Mysterious Soulshot (D-grade, 100 pcs.)
+100404	Package: Mysterious Blessed Spiritshot (D-grade, 100 pcs.)
+100405	Package: Mysterious Soulshot (C-grade, 100 pcs.)
+100406	Package: Mysterious Blessed Spiritshot (C-grade, 100 pcs.)
+100407	Package: Mysterious Soulshot (B-grade, 100 pcs.)
+100408	Package: Mysterious Blessed Spiritshot (B-grade, 100 pcs)
+100501	Sniper's Mysterious Package (No-grade)
+100502	Mystic's Mysterious Package (No-grade)
+100503	Sniper's Mysterious Package (D-grade)
+100504	Mystic's Mysterious Package (D-grade)
+100505	Sniper's Mysterious Package (C-grade)
+100506	Mystic's Mysterious Package (CNo-grade)
+100507	Sniper's Mysterious Package (B-grade)
+100508	Mystic's Mysterious Package (B-grade)
+100601	Quick Healing Potion
+100602	Major Quick Healing Potion
+100701	Refined Romantic Chapeau: Red
+100702	Refined Angel Ring
+100703	Refined Wizard Hat
+100704	Laborer Hat
+100705	Top Hat
+100706	Vigilante Hat
+100801	Feather of Blessing
+100802	Blessed Scroll of Escape
+100803	Blessed Scroll of Resurrection
+100901	Teleport: Talking Island Village
+100902	Teleport: Elven Village
+100903	Teleport: Dark Elf Village
+100904	Teleport: Orc Village
+100905	Teleport: Dwarven Village
+100906	Teleport: Gludin
+100907	Teleport: Gludio
+101001	Novice's Package - Lvl 1
+101002	Ring of Chronicle Heir Part
+101005	Traveler's Package - Lvl 1
+101006	Package: Special Pirate Fruit
+101007	Package: Special Pirate Fruit
+101008	Shaft with Antharas treasures
+101009	Shaft with Antharas treasures
+101010	Golden Mermaid's Fishing Supplies Chest
+101011	Golden Mermaid's Fishing Supplies Chest

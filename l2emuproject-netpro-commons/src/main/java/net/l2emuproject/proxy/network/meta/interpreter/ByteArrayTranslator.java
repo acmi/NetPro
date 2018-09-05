@@ -15,33 +15,36 @@
  */
 package net.l2emuproject.proxy.network.meta.interpreter;
 
-import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.FieldValueTranslator;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
- * An interpreter for floating point values.
+ * An interpreter for byte array values.
  * 
  * @author _dev_
  */
-public interface DecimalInterpreter extends FieldValueInterpreter
+public interface ByteArrayTranslator extends FieldValueTranslator
 {
 	/**
-	 * Returns an interpretation of the given floating point value.
+	 * Returns an interpretation of the given byte array.
 	 * 
-	 * @param value value
+	 * @param value byte array
+	 * @param protocol protocol version
 	 * @param entityCacheContext entity existence boundary defining context
 	 * @return interpretation
 	 */
-	Object getInterpretation(double value, ICacheServerID entityCacheContext);
+	Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID entityCacheContext);
 	
 	/**
-	 * Returns an interpretation of the given floating point value.
+	 * Returns an interpretation of the given byte array.
 	 * 
-	 * @param value value
+	 * @param value byte array
+	 * @param protocol protocol version
 	 * @return interpretation
 	 */
-	default Object getInterpretation(double value)
+	default Object translate(byte[] value, IProtocolVersion protocol)
 	{
-		return getInterpretation(value, null);
+		return translate(value, protocol, null);
 	}
 }

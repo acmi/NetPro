@@ -16,6 +16,7 @@
 package interpreter;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -37,12 +38,12 @@ public class HitTypes extends ScriptedBitmaskInterpreter
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if ((value & SS_MASK) != SS_MASK)
-			return super.getInterpretation(value, entityCacheContext);
+			return super.translate(value, protocol, entityCacheContext);
 			
-		final L2TextBuilder sb = new L2TextBuilder(String.valueOf(super.getInterpretation(value, entityCacheContext)));
+		final L2TextBuilder sb = new L2TextBuilder(String.valueOf(super.translate(value, protocol, entityCacheContext)));
 		final int insertionIdx = sb.indexOf(SS_INTERP) + SS_INTERP.length();
 		sb.insert(insertionIdx, ": " + SS_GRADES[(int)(value & 7)] + " grade");
 		return sb.moveToString();

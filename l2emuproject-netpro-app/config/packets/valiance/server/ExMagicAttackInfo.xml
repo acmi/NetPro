@@ -5,5 +5,8 @@
 <packet id="562" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
 	<dword alias="Caster OID" type="ObjectID" />
 	<dword alias="Target OID" type="ObjectID" />
-	<dword alias="" />
+	<dword alias="Result" />
+	<!-- 1 = m crit (offensive) -->
+	<!-- 2 = m crit (restoration) -->
+	<!-- 4 = spell resisted by target -->
 </packet>

@@ -50,9 +50,9 @@ public class PaperdollMask extends ScriptedBitmaskInterpreter
 				"Cloak",
 				"Weapon / Two Handed",
 				"One-piece armor", // 15
-				"Hair Accessory (top)",
+				"Hair Accessory (left)",
 				"Formal wear",
-				"Hair Accessory (bottom)",
+				"Hair Accessory (right)",
 				"Hair Accessory (both)",
 				"Right Bracelet", // 20
 				"Left Bracelet",
@@ -64,7 +64,19 @@ public class PaperdollMask extends ScriptedBitmaskInterpreter
 				null,
 				"Belt",
 				"Brooch",
-				"Jewel" // 30
+				"Jewel", // 30
+				null,
+				null,
+				null,
+				null,
+				null, // 35
+				"Charm (primary)",
+				"Charm (special)",
+				null,
+				null,
+				null,
+				"Book",
+				"Artifact (balance)"
 		);
 		// @formatter:on
 	}

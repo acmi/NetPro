@@ -43,6 +43,11 @@ public interface RequiredInvasiveOperations
 	String CIPHER_KEY_PART = "__INVASIVE_AUTO_EXTRACT_CIPHER_KEY_HALF";
 	/** Identifies the cipher state (enabled/disabled) boolean */
 	String CIPHER_STATE = "__INVASIVE_AUTO_EXTRACT_CIPHER_STATE";
+	/** Identifies alternative protocol (classic, arena, etc.) */
+	String SERVER_TYPE = "__INVASIVE_AUTO_EXTRACT_SERVER_TYPE";
+	
+	/** Identifies alternative protocol (region-specific/missing features) */
+	String LOCALIZATION_TYPE = "__INVASIVE_AUTO_EXTRACT_SERVER_LANG";
 	
 	/** Identifies whether a dimensional server session was reserved successfully */
 	String DIMENSIONAL_SESSION_RESULT = "__INVASIVE_AUTO_EXTRACT_EXTRA_SESSION_OPEN";

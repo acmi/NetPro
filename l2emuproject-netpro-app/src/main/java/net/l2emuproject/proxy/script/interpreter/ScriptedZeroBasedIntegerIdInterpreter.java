@@ -18,7 +18,7 @@ package net.l2emuproject.proxy.script.interpreter;
 import eu.revengineer.simplejse.type.UnloadableScript;
 
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
-import net.l2emuproject.proxy.network.meta.interpreter.ZeroBasedIntegerIdInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ZeroBasedIntegerIdTranslator;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
 
 /**
@@ -26,7 +26,7 @@ import net.l2emuproject.proxy.script.ScriptedMetaclass;
  * 
  * @author _dev_
  */
-public abstract class ScriptedZeroBasedIntegerIdInterpreter extends ZeroBasedIntegerIdInterpreter implements UnloadableScript
+public abstract class ScriptedZeroBasedIntegerIdInterpreter extends ZeroBasedIntegerIdTranslator implements UnloadableScript
 {
 	/**
 	 * Constructs this interpreter.

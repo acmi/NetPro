@@ -20,7 +20,7 @@ import interpreter.DirectDrawSurface;
 import java.awt.image.BufferedImage;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
-
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -46,9 +46,9 @@ public class AbstractCrestDDS extends DirectDrawSurface
 	}
 	
 	@Override
-	public Object getInterpretation(byte[] value, ICacheServerID cacheContext)
+	public Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID cacheContext)
 	{
-		final Object image = super.getInterpretation(value, cacheContext);
+		final Object image = super.translate(value, protocol, cacheContext);
 		if (image instanceof BufferedImage)
 		{
 			final BufferedImage x16 = (BufferedImage)image;

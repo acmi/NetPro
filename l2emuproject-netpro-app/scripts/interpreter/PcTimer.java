@@ -16,7 +16,8 @@
 package interpreter;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -25,12 +26,12 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public class PcTimer extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public class PcTimer extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	private static final int FIVE_MINUTES = 100;
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		int minutes = (int)value / FIVE_MINUTES * 5;
 		final int hours = minutes / 60;

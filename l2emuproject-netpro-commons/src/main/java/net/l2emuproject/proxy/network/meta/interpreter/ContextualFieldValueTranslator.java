@@ -15,33 +15,21 @@
  */
 package net.l2emuproject.proxy.network.meta.interpreter;
 
-import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
-import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
+import net.l2emuproject.proxy.network.meta.FieldValueTranslator;
+import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
 
 /**
- * An interpreter for string values.
+ * Marks an interpreter that requires contextual data for value interpretation.
  * 
  * @author _dev_
  */
-public interface StringInterpreter extends FieldValueInterpreter
+public interface ContextualFieldValueTranslator extends FieldValueTranslator
 {
 	/**
-	 * Returns an interpretation of the given string value.
+	 * Acquires contextual data required for interpreting value at {@code buffer.getCurrentOffset()}.
+	 * The implementation should be thread safe; use thread local variables.
 	 * 
-	 * @param value value
-	 * @param entityCacheContext entity existence boundary defining context
-	 * @return interpretation
+	 * @param buffer packet body buffer
 	 */
-	Object getInterpretation(String value, ICacheServerID entityCacheContext);
-	
-	/**
-	 * Returns an interpretation of the given string value.
-	 * 
-	 * @param value value
-	 * @return interpretation
-	 */
-	default Object getInterpretation(String value)
-	{
-		return getInterpretation(value, null);
-	}
+	void reviewContext(RandomAccessMMOBuffer buffer);
 }

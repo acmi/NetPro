@@ -17,7 +17,8 @@ package interpreter;
 
 import static java.nio.charset.StandardCharsets.UTF_16LE;
 
-import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -26,10 +27,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author _dev_
  */
-public class UTF16LE extends ScriptedFieldValueInterpreter implements ByteArrayInterpreter
+public class UTF16LE extends ScriptedFieldValueInterpreter implements ByteArrayTranslator
 {
 	@Override
-	public Object getInterpretation(byte[] value, ICacheServerID entityCacheContext)
+	public Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value.length < 2)
 			return "<pre></pre>";

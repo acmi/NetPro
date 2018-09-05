@@ -17,9 +17,10 @@ package net.l2emuproject.proxy.network.meta.container;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Stream;
 
 import net.l2emuproject.proxy.network.meta.FieldValueCondition;
-import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
+import net.l2emuproject.proxy.network.meta.FieldValueTranslator;
 import net.l2emuproject.proxy.network.meta.FieldValueModifier;
 import net.l2emuproject.proxy.network.meta.condition.impl.Negative;
 import net.l2emuproject.proxy.network.meta.condition.impl.NonNegative;
@@ -51,7 +52,7 @@ import net.l2emuproject.proxy.network.meta.interpreter.impl.YesOrNo;
 public class MetaclassRegistry
 {
 	private final Map<String, FieldValueCondition> _conditions;
-	private final Map<String, FieldValueInterpreter> _interpreters;
+	private final Map<String, FieldValueTranslator> _interpreters;
 	private final Map<String, FieldValueModifier> _modifiers;
 	
 	MetaclassRegistry()
@@ -152,7 +153,7 @@ public class MetaclassRegistry
 	 * @param alias interpreter alias used in packet definitions
 	 * @param interpreter interpreter to register
 	 */
-	public void register(String alias, FieldValueInterpreter interpreter)
+	public void register(String alias, FieldValueTranslator interpreter)
 	{
 		_interpreters.put(alias, interpreter);
 	}
@@ -163,7 +164,7 @@ public class MetaclassRegistry
 	 * @param alias interpreter alias used in packet definitions
 	 * @param interpreter interpreter to remove
 	 */
-	public void remove(String alias, FieldValueInterpreter interpreter)
+	public void remove(String alias, FieldValueTranslator interpreter)
 	{
 		_interpreters.remove(alias, interpreter);
 	}
@@ -177,13 +178,18 @@ public class MetaclassRegistry
 	 * @throws InvalidFieldValueInterpreterException if expectations are not met
 	 * @param <T> expected return type
 	 */
-	public <T extends FieldValueInterpreter> T getInterpreter(String alias, Class<? extends T> expectedClass) throws InvalidFieldValueInterpreterException
+	public <T extends FieldValueTranslator> T getTranslator(String alias, Class<? extends T> expectedClass) throws InvalidFieldValueInterpreterException
 	{
-		final FieldValueInterpreter result = _interpreters.get(alias);
+		final FieldValueTranslator result = _interpreters.get(alias);
 		if (expectedClass.isInstance(result))
 			return expectedClass.cast(result);
 		
 		throw new InvalidFieldValueInterpreterException(result, alias, expectedClass.getName());
+	}
+	
+	public Stream<FieldValueTranslator> getProtocolDependentTranslators()
+	{
+		return _interpreters.values().stream().filter(FieldValueTranslator::dependsOnLoadedProtocols);
 	}
 	
 	/**

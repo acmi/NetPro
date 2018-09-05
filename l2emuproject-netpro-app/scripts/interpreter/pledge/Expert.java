@@ -15,12 +15,14 @@
  */
 package interpreter.pledge;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
 import eu.revengineer.simplejse.init.InitializationPriority;
-
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
@@ -42,19 +44,26 @@ public class Expert extends ScriptedIntegerIdInterpreter
 	{
 		super(convertToSysStrings(loadFromResource("expert.txt")));
 	}
-	
-	private static final Map<Long, String> convertToSysStrings(Map<Long, String> strings)
+
+	// FIXME: should depend on the protocol version!!!
+	private static final Map<IProtocolVersion, Map<Long, ?>> convertToSysStrings(Map<IProtocolVersion, Map<Long, ?>> wrapper)
 	{
+		final Map<IProtocolVersion, Map<Long, ?>> result = new HashMap<>();
 		try
 		{
-			final SysString interpreter = MetaclassRegistry.getInstance().getInterpreter(ScriptedMetaclass.getAlias(SysString.class), SysString.class);
-			for (final Entry<Long, String> e : strings.entrySet())
-				e.setValue(String.valueOf(interpreter.getInterpretation(Long.parseLong(e.getValue()))));
+			final SysString interpreter = MetaclassRegistry.getInstance().getTranslator(ScriptedMetaclass.getAlias(SysString.class), SysString.class);
+			for (final Entry<IProtocolVersion, Map<Long, ?>> we : wrapper.entrySet())
+			{
+				final Map<Long, String> map = new HashMap<>();
+				result.put(we.getKey(), map);
+				for (final Entry<Long, ?> e : we.getValue().entrySet())
+					map.put(e.getKey(), String.valueOf(interpreter.translate(Long.parseLong(e.getValue().toString()), null, null)));
+			}
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
 			// the sysstring interpreter might be disabled
 		}
-		return strings;
+		return Collections.unmodifiableMap(result);
 	}
 }

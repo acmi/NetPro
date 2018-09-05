@@ -5,9 +5,11 @@
 	<loop id="cnt">
 		<dword alias="Quest" type="Quest">
 			<scriptAlias id="__INTERP_QUEST_ID"/>
+			<scriptAlias id="quest_list_id"/>
 		</dword>
 		<dword alias="State" type="QuestState">
 			<scriptAlias id="__INTERP_QUEST_STATE"/>
+			<scriptAlias id="quest_list_state"/>
 		</dword>
 	</loop>
 	<bytes alias="Quest completion flags" type="quest.QuestCompletion">

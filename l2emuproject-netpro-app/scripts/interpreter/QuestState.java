@@ -15,36 +15,28 @@
  */
 package interpreter;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import net.l2emuproject.proxy.io.IOConstants;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
-import net.l2emuproject.util.logging.L2Logger;
 
 /**
  * Interprets the given byte/word/dword as a quest state.
  * 
  * @author savormix
  */
-public class QuestState extends ScriptedIntegerIdInterpreter implements ContextualFieldValueInterpreter
+public class QuestState extends ScriptedIntegerIdInterpreter implements ContextualFieldValueTranslator
 {
-	private static final L2Logger LOG = L2Logger.getLogger(QuestState.class);
-	
 	private final ThreadLocal<Long> _quest;
 	
 	/** Constructs this interpreter. */
 	public QuestState()
 	{
-		super(loadInterpretations());
+		super(loadFromResource2("qstate.txt"));
 		
 		_quest = new ThreadLocal<Long>()
 		{
@@ -56,29 +48,10 @@ public class QuestState extends ScriptedIntegerIdInterpreter implements Contextu
 		};
 	}
 	
-	private static final Map<Long, String> loadInterpretations()
+	public Object translate(int questID, int value, IProtocolVersion protocol)
 	{
-		final Map<Long, String> mapping = new HashMap<>();
-		try (final BufferedReader br = IOConstants.openScriptResource("interpreter", "qstate.txt"))
-		{
-			for (String line; (line = br.readLine()) != null;)
-			{
-				final int idx = line.indexOf('\t'), idx2 = line.indexOf('\t', idx + 1);
-				if (idx == -1 || idx2 == -1)
-					continue;
-				
-				final long quest = Integer.parseInt(line.substring(0, idx));
-				final long state = Integer.parseInt(line.substring(idx + 1, idx2));
-				final String desc = line.substring(idx2 + 1);
-				
-				mapping.put((quest << 32) | (state & 0xFF_FF_FF_FFL), desc.intern());
-			}
-		}
-		catch (IOException e)
-		{
-			LOG.error("Could not load quest state interpretations", e);
-		}
-		return mapping.isEmpty() ? Collections.emptyMap() : mapping;
+		_quest.set(Long.valueOf(questID));
+		return translate(value, protocol, null);
 	}
 	
 	@Override
@@ -99,7 +72,7 @@ public class QuestState extends ScriptedIntegerIdInterpreter implements Contextu
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		try
 		{
@@ -110,7 +83,7 @@ public class QuestState extends ScriptedIntegerIdInterpreter implements Contextu
 				state = Integer.toBinaryString(state).length();
 			}
 			value = (_quest.get() << 32) | state;
-			final Object result = super.getInterpretation(value, entityCacheContext);
+			final Object result = super.translate(value, protocol, entityCacheContext);
 			if (result instanceof String)
 				return result;
 			// fallback: interpret as quest level

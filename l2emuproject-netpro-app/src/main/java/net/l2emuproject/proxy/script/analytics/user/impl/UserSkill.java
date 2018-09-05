@@ -21,7 +21,7 @@ import java.util.Set;
 
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.analytics.user.SkillListSkill;
 import net.l2emuproject.proxy.script.interpreter.L2SkillTranslator;
 
@@ -88,8 +88,8 @@ public final class UserSkill implements SkillListSkill
 	{
 		try
 		{
-			final IntegerInterpreter interpreter = MetaclassRegistry.getInstance().getInterpreter("SkillNameID", IntegerInterpreter.class);
-			return String.valueOf(interpreter.getInterpretation(L2SkillTranslator.getSkillNameID(_id, _level, _sublevel), null));
+			final IntegerTranslator interpreter = MetaclassRegistry.getInstance().getTranslator("SkillNameID", IntegerTranslator.class);
+			return String.valueOf(interpreter.translate(L2SkillTranslator.getSkillNameID(_id, _level, _sublevel), null));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{

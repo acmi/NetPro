@@ -15,12 +15,14 @@
  */
 package interpreter;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import eu.revengineer.simplejse.HasScriptDependencies;
 import eu.revengineer.simplejse.init.InitializationPriority;
-
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
 import net.l2emuproject.proxy.script.ScriptedMetaclass;
@@ -41,19 +43,27 @@ public class Transformation extends ScriptedIntegerIdInterpreter
 		super(convertToNPCs(loadFromResource("trans.txt")));
 	}
 	
-	private static final Map<Long, String> convertToNPCs(Map<Long, String> transformations)
+	// FIXME: should depend on the protocol version!!!
+	private static final Map<IProtocolVersion, Map<Long, ?>> convertToNPCs(Map<IProtocolVersion, Map<Long, ?>> wrapper)
 	{
+		final Map<IProtocolVersion, Map<Long, ?>> result = new HashMap<>();
 		try
 		{
-			final Npc interpreter = MetaclassRegistry.getInstance().getInterpreter(ScriptedMetaclass.getAlias(Npc.class), Npc.class);
-			for (final Entry<Long, String> e : transformations.entrySet())
-				e.setValue(String.valueOf(interpreter.getInterpretation(Long.parseLong(e.getValue()))));
+			final Npc interpreter = MetaclassRegistry.getInstance().getTranslator(ScriptedMetaclass.getAlias(Npc.class), Npc.class);
+			for (final Entry<IProtocolVersion, Map<Long, ?>> we : wrapper.entrySet())
+			{
+				final Map<Long, String> map = new HashMap<>();
+				if (we.getKey() == null)
+					map.put(0L, "None");
+				result.put(we.getKey(), map);
+				for (final Entry<Long, ?> e : we.getValue().entrySet())
+					map.put(e.getKey(), String.valueOf(interpreter.translate(Long.parseLong(e.getValue().toString()), null, null)));
+			}
 		}
-		catch (InvalidFieldValueInterpreterException e)
+		catch (final InvalidFieldValueInterpreterException e)
 		{
-			// the NPC interpreter might be disabled
+			// the sysstring interpreter might be disabled
 		}
-		transformations.put(0L, "None");
-		return transformations;
+		return Collections.unmodifiableMap(result);
 	}
 }

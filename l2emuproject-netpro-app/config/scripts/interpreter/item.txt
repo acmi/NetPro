@@ -28860,11 +28860,18 @@
 29389	Paulina's Magic Bracelet (7-day) Box
 29390	Paulina's Magic Bracelet 30-day
 29391	Paulina's Magic Bracelet (30-day)  Box
-29392	Dragon's Relic
-29393	Dragon's Relic Chest
-29394	Shining Dragon's Relic Chest
+29392	Sealed Artifact Box
+29393	Artifact Box
+29394	Rare Artifact Box
 29395	Water Spirit's Gift
 29396	Attendance Rare Accessory Box
+29397	Ancient Relic
+29398	Ancient Relic Box
+29399	Shining Ancient Relic Box
+29400	Ancient Relic Coin
+29401	Ultimate Lv. 3 Jewelry Box
+29402	Ultimate Lv. 4 Jewelry Box
+29403	Ultimate Lv. 5 Jewelry Box
 29989	White Day Warrior Two-handed Blunt
 30000	Blessed Requiem Thrower Long Blow + Damage Up
 30001	Blessed Requiem Shooter Focus + Critical Slow

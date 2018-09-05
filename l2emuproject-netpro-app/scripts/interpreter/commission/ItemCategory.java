@@ -17,17 +17,18 @@ package interpreter.commission;
 
 import java.util.List;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.EnumeratedPayloadField;
 import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
-import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueInterpreter;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.ContextualFieldValueTranslator;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
  * @author _dev_
  */
-public class ItemCategory extends ScriptedFieldValueInterpreter implements ContextualFieldValueInterpreter, IntegerInterpreter
+public class ItemCategory extends ScriptedFieldValueInterpreter implements ContextualFieldValueTranslator, IntegerTranslator
 {
 	private static final String[] DEPTH_1 = { "Weapon", "Armor", "Accessory", "Supplies", "Pet goods", "Etc" };
 	// @formatter:off
@@ -69,7 +70,7 @@ public class ItemCategory extends ScriptedFieldValueInterpreter implements Conte
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final int idx = (int)value;
 		try

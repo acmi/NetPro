@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_EX_CONFIRM_VIP_ATTENDANCE_CHECK" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<byte alias="1" id="cond" />
+	<branch id="cond" condition="Positive">
+		<byte alias="" />
+		<dword alias="" />
+		<dword alias="" />
+	</branch>
+</packet>

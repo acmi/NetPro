@@ -16,7 +16,7 @@
 	<dword alias="Auth key" />
 
 	<dword alias="Localization" type="Language">
-		<scriptAlias id="localization" />
+		<scriptAlias id="__INVASIVE_AUTO_EXTRACT_SERVER_LANG" />
 	</dword>
 	<qword alias="Unknown" /> <!-- 485 (GF), 376 (GF U1), 512 (HF), 579 (GDS), etc etc -->
 </packet>

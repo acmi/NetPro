@@ -16,7 +16,10 @@
 package net.l2emuproject.proxy.network.meta;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
 
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.UnknownProtocolVersion;
@@ -33,6 +36,7 @@ public abstract class UserDefinedProtocolVersion implements IProtocolVersion, Co
 	private final String _alias;
 	private final String _category;
 	private final int _version;
+	private final Set<String> _altModes;
 	private final long _date;
 	
 	/**
@@ -41,13 +45,15 @@ public abstract class UserDefinedProtocolVersion implements IProtocolVersion, Co
 	 * @param alias protocol name
 	 * @param category protocol group
 	 * @param version protocol revision number
+	 * @param altModes alternative modes
 	 * @param date protocol version introduction to NA data
 	 */
-	public UserDefinedProtocolVersion(String alias, String category, int version, long date)
+	public UserDefinedProtocolVersion(String alias, String category, int version, Set<String> altModes, long date)
 	{
 		_alias = alias;
 		_category = category;
 		_version = version;
+		_altModes = altModes;
 		_date = date;
 	}
 	
@@ -75,6 +81,12 @@ public abstract class UserDefinedProtocolVersion implements IProtocolVersion, Co
 	public int getVersion()
 	{
 		return _version;
+	}
+	
+	@Override
+	public Set<String> getAltModes()
+	{
+		return _altModes;
 	}
 	
 	@Override
@@ -134,10 +146,12 @@ public abstract class UserDefinedProtocolVersion implements IProtocolVersion, Co
 			return obj.equals(this);
 		if (getClass() != obj.getClass())
 			return false;
-		UserDefinedProtocolVersion other = (UserDefinedProtocolVersion)obj;
+		final UserDefinedProtocolVersion other = (UserDefinedProtocolVersion)obj;
 		if (_date != other._date)
 			return false;
 		if (_version != other._version)
+			return false;
+		if (!_altModes.equals(other._altModes))
 			return false;
 		return true;
 	}
@@ -149,7 +163,18 @@ public abstract class UserDefinedProtocolVersion implements IProtocolVersion, Co
 			return -1;
 		if (_date > other.getReleaseDate())
 			return +1;
-		
+		final int modeCountDiff = _altModes.size() - other.getAltModes().size();
+		if (modeCountDiff < 0)
+			return -1;
+		if (modeCountDiff > 0)
+			return +1;
+		final Iterator<String> it1 = new ArrayList<>(_altModes).iterator(), it2 = new ArrayList<>(other.getAltModes()).iterator();
+		while (it1.hasNext())
+		{
+			final int diff = it1.next().compareTo(it2.next());
+			if (diff != 0)
+				return diff;
+		}
 		return 0;
 	}
 }

@@ -17,7 +17,8 @@ package interpreter.auth;
 
 import java.nio.charset.StandardCharsets;
 
-import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -26,10 +27,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author _dev_
  */
-public class CustomServerName extends ScriptedFieldValueInterpreter implements ByteArrayInterpreter
+public class CustomServerName extends ScriptedFieldValueInterpreter implements ByteArrayTranslator
 {
 	@Override
-	public Object getInterpretation(byte[] value, ICacheServerID entityCacheContext)
+	public Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		return new String(value, StandardCharsets.UTF_16LE).trim();
 	}

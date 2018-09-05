@@ -15,7 +15,7 @@
  */
 package net.l2emuproject.proxy.network.meta.exception;
 
-import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
+import net.l2emuproject.proxy.network.meta.FieldValueTranslator;
 
 /**
  * An exception notifying about an unknown value interpreter type.
@@ -33,7 +33,7 @@ public class InvalidFieldValueInterpreterException extends InvalidMetaclassExcep
 	 * @param alias interpreter type alias
 	 * @param expectedSuperclass expected supertype
 	 */
-	public InvalidFieldValueInterpreterException(FieldValueInterpreter interpreter, String alias, String expectedSuperclass)
+	public InvalidFieldValueInterpreterException(FieldValueTranslator interpreter, String alias, String expectedSuperclass)
 	{
 		super("Interpreter", interpreter, alias, expectedSuperclass);
 	}

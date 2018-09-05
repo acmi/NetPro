@@ -1926,3 +1926,6 @@
 1011926	Valiant Scroll Pack (x25)
 1011927	Cat Plushie Appearance Stone
 1011928	Dual Expertise Rune Pack (R99-grade)
+1011929	Sealed Artifact Box
+1011930	Ultimate Sealed Artifact Box (x150)
+1011931	Sealed Artifact Box (x30)

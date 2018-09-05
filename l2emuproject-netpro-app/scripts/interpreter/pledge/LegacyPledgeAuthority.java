@@ -15,6 +15,7 @@
  */
 package interpreter.pledge;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -36,11 +37,11 @@ public final class LegacyPledgeAuthority extends ScriptedBitmaskInterpreter
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value == -1)
 			return "Pledge leader";
 			
-		return super.getInterpretation(value, entityCacheContext);
+		return super.translate(value, protocol, entityCacheContext);
 	}
 }

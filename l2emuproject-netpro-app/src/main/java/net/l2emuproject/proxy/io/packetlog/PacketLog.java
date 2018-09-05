@@ -19,6 +19,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.zip.Deflater;
 
 import org.apache.commons.lang3.mutable.MutableInt;
 
@@ -36,6 +37,9 @@ public class PacketLog
 	private static final byte EXT_SERVER = (byte)0xFE;
 	
 	private final NewIOHelper _writer;
+	private final Deflater _deflater;
+	private final ByteBuffer _deflateBuffer;
+	private final byte[] _outputBuffer;
 	
 	private final Map<Integer, MutableInt> _cp;
 	private final Map<Integer, MutableInt> _sp;
@@ -43,15 +47,20 @@ public class PacketLog
 	private final ByteBuffer _buffer;
 	
 	private int _total;
+	private long _totalPacketBytes;
 	
 	/**
-	 * Creates a packet counter.
+	 * Creates a packet log metadata tracker.
 	 * 
 	 * @param writer an associated log file writer
+	 * @param deflater deflate implementation
 	 */
-	public PacketLog(NewIOHelper writer)
+	public PacketLog(NewIOHelper writer, Deflater deflater)
 	{
 		_writer = writer;
+		_deflater = deflater;
+		_deflateBuffer = _deflater != null ? ByteBuffer.allocate((1 + 2 + (1 << 16) - 1 + 8 + 1) << 1).order(ByteOrder.LITTLE_ENDIAN) : null;
+		_outputBuffer = _deflater != null ? new byte[8192] : null;
 		
 		_cp = new HashMap<>();
 		_sp = new HashMap<>();
@@ -59,11 +68,13 @@ public class PacketLog
 		_buffer = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
 		
 		_total = 0;
+		_totalPacketBytes = 0L;
 	}
 	
 	void onPacket(ReceivedPacket packet)
 	{
 		++_total;
+		_totalPacketBytes += packet.getBody().length;
 		
 		_buffer.putInt(0, 0);
 		
@@ -99,6 +110,21 @@ public class PacketLog
 		return _writer;
 	}
 	
+	Deflater getDeflater()
+	{
+		return _deflater;
+	}
+	
+	ByteBuffer getDeflateBuffer()
+	{
+		return _deflateBuffer;
+	}
+	
+	byte[] getOutputBuffer()
+	{
+		return _outputBuffer;
+	}
+	
 	Map<Integer, MutableInt> getCp()
 	{
 		return _cp;
@@ -112,5 +138,10 @@ public class PacketLog
 	int getTotal()
 	{
 		return _total;
+	}
+	
+	long getTotalPacketBytes()
+	{
+		return _totalPacketBytes;
 	}
 }

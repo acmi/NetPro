@@ -16,7 +16,8 @@
 package interpreter.shortcut;
 
 import net.l2emuproject.lang.L2TextBuilder;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -25,7 +26,7 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public abstract class ShortcutSlot extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public abstract class ShortcutSlot extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	private final int _barSize;
 	
@@ -40,7 +41,7 @@ public abstract class ShortcutSlot extends ScriptedFieldValueInterpreter impleme
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final L2TextBuilder sb = new L2TextBuilder("Slot: ");
 		sb.append(value % _barSize + 1).append(", bar: ").append(value / _barSize + 1);

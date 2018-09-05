@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.network.meta.interpreter;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -27,7 +28,7 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public class BitmaskInterpreter implements IntegerInterpreter
+public class BitmaskTranslator implements IntegerTranslator
 {
 	private final Object _zeroInterpretation;
 	private final Object[] _bitInterpretations;
@@ -39,7 +40,7 @@ public class BitmaskInterpreter implements IntegerInterpreter
 	 * @param passNullHere {@code null}
 	 * @param zeroInterpretation interpretation of no enabled bits
 	 */
-	protected BitmaskInterpreter(Object zeroInterpretation, Void passNullHere, Object[] bitInterpretations)
+	protected BitmaskTranslator(Object zeroInterpretation, Void passNullHere, Object[] bitInterpretations)
 	{
 		_bitInterpretations = bitInterpretations;
 		_zeroInterpretation = zeroInterpretation;
@@ -50,13 +51,13 @@ public class BitmaskInterpreter implements IntegerInterpreter
 	 * 
 	 * @param bitInterpretations known bit interpretations
 	 */
-	protected BitmaskInterpreter(Object... bitInterpretations)
+	protected BitmaskTranslator(Object... bitInterpretations)
 	{
 		this("None", null, bitInterpretations);
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final StringBuilder sb = new StringBuilder();
 		final int maxBit = Math.min(_bitInterpretations.length, 64);

@@ -18,7 +18,8 @@ package net.l2emuproject.proxy.script.interpreter;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -27,8 +28,7 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * @author _dev_
  */
 @Deprecated
-@SuppressWarnings("javadoc")
-public abstract class ScriptedLegacyIntegerIdInterpreter extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public abstract class ScriptedLegacyIntegerIdInterpreter extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	private final Map<Long, String> _interpretations;
 	
@@ -47,7 +47,7 @@ public abstract class ScriptedLegacyIntegerIdInterpreter extends ScriptedFieldVa
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		return _interpretations.get(value);
 	}

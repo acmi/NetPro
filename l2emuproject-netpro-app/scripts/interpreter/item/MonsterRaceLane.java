@@ -15,7 +15,8 @@
  */
 package interpreter.item;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -24,10 +25,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author _dev_
  */
-public final class MonsterRaceLane extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public final class MonsterRaceLane extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final long lane1 = value & 0x0F, lane2 = value >>> 4;
 		if (lane2 == 0)

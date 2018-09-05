@@ -21,9 +21,10 @@ import java.util.List;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 
 /**
  * Contains all special abilities applied on an item.
@@ -50,18 +51,19 @@ public interface ItemSpecialAbilities
 	 * Returns complete descriptions of all special abilties assigned to the given item.
 	 * 
 	 * @param specialAbilities item special abilities
+	 * @param protocol protocol version
 	 * @return descriptions of all SAs, in order
 	 */
-	static List<String> toString(ItemSpecialAbilities specialAbilities)
+	static List<String> toString(ItemSpecialAbilities specialAbilities, IProtocolVersion protocol)
 	{
 		final List<String> result = new ArrayList<>(specialAbilities.getPrimaries().length + specialAbilities.getSpecials().length);
 		try
 		{
-			final IntegerInterpreter mapper = MetaclassRegistry.getInstance().getInterpreter("item.SoulCrystal", IntegerInterpreter.class);
+			final IntegerTranslator mapper = MetaclassRegistry.getInstance().getTranslator("item.SoulCrystal", IntegerTranslator.class);
 			for (final int specialAbility : specialAbilities.getPrimaries())
-				result.add(String.valueOf(mapper.getInterpretation(specialAbility)));
+				result.add(String.valueOf(mapper.translate(specialAbility, protocol, null)));
 			for (final int specialAbility : specialAbilities.getSpecials())
-				result.add(String.valueOf(mapper.getInterpretation(specialAbility)));
+				result.add(String.valueOf(mapper.translate(specialAbility, protocol, null)));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
@@ -77,15 +79,16 @@ public interface ItemSpecialAbilities
 	 * Returns the strings used to compose SA names shown in item name, e.g. Mystic/HP Mystic/Sigel.
 	 * 
 	 * @param specialAbilities special ability wrapper
+	 * @param protocol protocol version
 	 * @return individual SA names to be used on item name, in order
 	 */
-	static List<String> toTitleString(ItemSpecialAbilities specialAbilities)
+	static List<String> toTitleString(ItemSpecialAbilities specialAbilities, IProtocolVersion protocol)
 	{
 		final List<String> result = new ArrayList<>(specialAbilities.getPrimaries().length + specialAbilities.getSpecials().length);
 		for (final int specialAbility : specialAbilities.getPrimaries())
-			result.add(toTitleString(specialAbility));
+			result.add(toTitleString(specialAbility, protocol));
 		for (final int specialAbility : specialAbilities.getSpecials())
-			result.add(toTitleString(specialAbility));
+			result.add(toTitleString(specialAbility, protocol));
 		return result;
 	}
 	
@@ -93,14 +96,15 @@ public interface ItemSpecialAbilities
 	 * Returns a string used in item name for the given SA.
 	 * 
 	 * @param specialAbility SA
+	 * @param protocol protocol version
 	 * @return SA name, without stage nor description
 	 */
-	static String toTitleString(int specialAbility)
+	static String toTitleString(int specialAbility, IProtocolVersion protocol)
 	{
 		try
 		{
-			final IntegerInterpreter mapper = MetaclassRegistry.getInstance().getInterpreter("item.SoulCrystal", IntegerInterpreter.class);
-			final String fullString = String.valueOf(mapper.getInterpretation(specialAbility));
+			final IntegerTranslator mapper = MetaclassRegistry.getInstance().getTranslator("item.SoulCrystal", IntegerTranslator.class);
+			final String fullString = String.valueOf(mapper.translate(specialAbility, protocol, null));
 			int endIndex = fullString.indexOf(" Stage ");
 			if (endIndex == -1)
 				endIndex = fullString.indexOf(" (");

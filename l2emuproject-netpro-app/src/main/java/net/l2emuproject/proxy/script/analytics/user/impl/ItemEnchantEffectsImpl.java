@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.script.analytics.user.impl;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.analytics.user.ItemEnchantEffects;
 
 /**
@@ -24,17 +25,20 @@ import net.l2emuproject.proxy.script.analytics.user.ItemEnchantEffects;
  */
 public final class ItemEnchantEffectsImpl implements ItemEnchantEffects
 {
+	private final IProtocolVersion _protocol;
 	private final int _effect1, _effect2, _effect3;
 	
 	/**
 	 * Wraps up to three variation effects related to item's enchant level.
 	 * 
+	 * @param protocol protocol version
 	 * @param effect1 first effect
 	 * @param effect2 second effect
 	 * @param effect3 third effect
 	 */
-	public ItemEnchantEffectsImpl(int effect1, int effect2, int effect3)
+	public ItemEnchantEffectsImpl(IProtocolVersion protocol, int effect1, int effect2, int effect3)
 	{
+		_protocol = protocol;
 		_effect1 = effect1;
 		_effect2 = effect2;
 		_effect3 = effect3;
@@ -61,7 +65,7 @@ public final class ItemEnchantEffectsImpl implements ItemEnchantEffects
 	@Override
 	public String toString()
 	{
-		return String.valueOf(ItemEnchantEffects.toString(this));
+		return String.valueOf(ItemEnchantEffects.toString(this, _protocol));
 	}
 	
 	@Override

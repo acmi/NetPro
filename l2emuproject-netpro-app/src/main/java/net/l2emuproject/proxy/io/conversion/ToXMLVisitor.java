@@ -101,7 +101,7 @@ public class ToXMLVisitor implements HistoricalLogPacketVisitor, IOConstants, IS
 	{
 		final Path logFile = logHeader.getLogFile();
 		
-		_protocol = ProtocolVersionManager.getInstance().getProtocol(logHeader.getProtocol(), logHeader.getService().isLogin());
+		_protocol = ProtocolVersionManager.getInstance().getProtocol(logHeader.getProtocol(), logHeader.getService().isLogin(), logHeader.getAltModes());
 		_cacheContext = new HistoricalPacketLog(logFile);
 		
 		_writer = Files.newBufferedWriter(logFile.resolveSibling(logFile.getFileName() + ".xml"));

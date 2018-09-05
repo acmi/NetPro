@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="SM_HENNA_INFO" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<word alias="INT modifier" />
+	<word alias="STR modifier" />
+	<word alias="CON modifier" />
+	<word alias="MEN modifier" />
+	<word alias="DEX modifier" />
+	<word alias="WIT modifier" />
+	<word alias="LUC modifier" /> 
+	<word alias="CHA modifier" />
+
+	<dword alias="Available slots" />
+	<dword alias="Used slots" id="cnt" />
+	<loop id="cnt">
+		<dword alias="Henna" type="Henna" />
+		<dword alias="Active" type="YesOrNo" />
+	</loop>
+</packet>

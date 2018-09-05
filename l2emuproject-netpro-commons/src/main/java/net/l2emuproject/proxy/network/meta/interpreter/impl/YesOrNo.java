@@ -15,14 +15,14 @@
  */
 package net.l2emuproject.proxy.network.meta.interpreter.impl;
 
-import net.l2emuproject.proxy.network.meta.interpreter.BooleanInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.BooleanTranslator;
 
 /**
  * Interprets the given boolean as yes or no.
  * 
  * @author savormix
  */
-public final class YesOrNo extends BooleanInterpreter
+public final class YesOrNo extends BooleanTranslator
 {
 	/** Constructs this interpreter. */
 	public YesOrNo()

@@ -17,10 +17,11 @@ package net.l2emuproject.proxy.io.definitions;
 
 import java.nio.ByteBuffer;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -42,51 +43,65 @@ import net.l2emuproject.util.logging.L2Logger;
  */
 class ProtocolDefinitions
 {
-	private final Map<Integer, ? extends ILoginProtocolVersion> _loginProtocols;
-	private final Map<Integer, ? extends IGameProtocolVersion> _gameProtocols;
+	private static final L2Logger LOG = L2Logger.getLogger(ProtocolDefinitions.class);
+	
+	private final Map<Integer, Map<Set<String>, ILoginProtocolVersion>> _loginProtocols;
+	private final Map<Integer, Map<Set<String>, IGameProtocolVersion>> _gameProtocols;
 	
 	private final VersionnedPacketTemplateContainer<? extends ILoginProtocolVersion> _loginPackets;
 	private final VersionnedPacketTemplateContainer<? extends IGameProtocolVersion> _gamePackets;
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	<L extends ILoginProtocolVersion, G extends IGameProtocolVersion> ProtocolDefinitions(Collection<L> loginProtocols, Collection<G> gameProtocols, VersionnedPacketTemplateContainer<L> loginPackets,
 			VersionnedPacketTemplateContainer<G> gamePackets)
 	{
-		final ProtocolCollisionResolver merger = new ProtocolCollisionResolver();
-		_loginProtocols = loginProtocols.stream().collect(Collectors.toMap(IProtocolVersion::getVersion, Function.<L> identity(), /*(u, v) -> v*/merger, LinkedHashMap::new));
-		_gameProtocols = gameProtocols.stream().collect(Collectors.toMap(IProtocolVersion::getVersion, Function.<G> identity(), /*(u, v) -> v*/merger, LinkedHashMap::new));
+		_loginProtocols = asMap(loginProtocols);
+		_gameProtocols = asMap(gameProtocols);
 		
 		_loginPackets = loginPackets;
 		_gamePackets = gamePackets;
 	}
 	
-	ILoginProtocolVersion getLoginProtocol(int version)
+	private static <T extends IProtocolVersion> Map<Integer, Map<Set<String>, T>> asMap(Collection<? extends T> protocols) {
+		final Map<Integer, Map<Set<String>, T>> map = new LinkedHashMap<>();
+		for (final T protocol : protocols) {
+			T oldProtocol = map.computeIfAbsent(protocol.getVersion(), k -> new HashMap<>()).put(protocol.getAltModes(), protocol);
+			if (oldProtocol != null)
+				LOG.warn("Collision! " + oldProtocol + " -> " + protocol + (protocol.getAltModes().isEmpty() ? "" : " " + protocol.getAltModes()));
+		}
+		return Collections.unmodifiableMap(map);
+	}
+	
+	ILoginProtocolVersion getLoginProtocol(int version, Set<String> altModes)
 	{
 		if (version == -1)
-			return _loginPackets.getFallback();
+			return _loginPackets.getFallback(altModes);
 		
-		ILoginProtocolVersion ver = _loginProtocols.get(version);
+		ILoginProtocolVersion ver = _loginProtocols.getOrDefault(version, Collections.emptyMap()).get(altModes);
 		if (ver == null)
-			ver = new UnknownLoginProtocolVersion(version, _loginPackets.getFallback());
+			ver = new UnknownLoginProtocolVersion(version, _loginPackets.getFallback(altModes));
 		
 		return ver;
 	}
 	
-	IGameProtocolVersion getGameProtocol(int version)
+	IGameProtocolVersion getGameProtocol(int version, Set<String> altModes)
 	{
 		if (version == -1)
-			return _gamePackets.getFallback();
+			return _gamePackets.getFallback(altModes);
 		
-		IGameProtocolVersion ver = _gameProtocols.get(version);
+		IGameProtocolVersion ver = _gameProtocols.getOrDefault(version, Collections.emptyMap()).get(altModes);
 		if (ver == null)
-			ver = new UnknownGameProtocolVersion(version, _gamePackets.getFallback());
+			ver = new UnknownGameProtocolVersion(version, _gamePackets.getFallback(altModes));
 		
 		return ver;
 	}
 	
 	Collection<? extends IProtocolVersion> getKnownProtocols(ServiceType service)
 	{
-		return service.isLogin() ? _loginProtocols.values() : _gameProtocols.values();
+		return service.isLogin() ? allValues(_loginProtocols) : allValues(_gameProtocols);
+	}
+	
+	private static <T extends IProtocolVersion> Collection<? extends IProtocolVersion> allValues(Map<Integer, Map<Set<String>, T>> map) {
+		return map.values().stream().map(Map::values).flatMap(Collection::stream).collect(Collectors.toList());
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -115,21 +130,5 @@ class ProtocolDefinitions
 	public Stream<IPacketTemplate> getTemplates(IProtocolVersion protocol, EndpointType endpoint)
 	{
 		return table(protocol).getTemplates(protocol, endpoint);
-	}
-	
-	private static final class ProtocolCollisionResolver<T extends IProtocolVersion> implements BinaryOperator<T>
-	{
-		private static final L2Logger LOG = L2Logger.getLogger(ProtocolCollisionResolver.class);
-		
-		ProtocolCollisionResolver()
-		{
-		}
-		
-		@Override
-		public T apply(T t, T u)
-		{
-			LOG.warn("Collision! " + t + " -> " + u);
-			return u;
-		}
 	}
 }

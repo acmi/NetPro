@@ -44,6 +44,7 @@ import org.apache.commons.lang3.mutable.MutableBoolean;
 import eu.revengineer.simplejse.config.JCSCConfig;
 import eu.revengineer.simplejse.exception.IncompatibleScriptCacheException;
 import eu.revengineer.simplejse.exception.StaleScriptCacheException;
+import eu.revengineer.simplejse.init.ReloadableScriptInitializer;
 import eu.revengineer.simplejse.reporting.AptReportingHandler;
 import eu.revengineer.simplejse.reporting.DiagnosticLogFile;
 import eu.revengineer.simplejse.reporting.JavacReportingHandler;
@@ -58,6 +59,7 @@ import net.l2emuproject.proxy.network.game.client.L2GameClientConnections;
 import net.l2emuproject.proxy.network.game.server.L2GameServerConnections;
 import net.l2emuproject.proxy.network.login.client.L2LoginClientConnections;
 import net.l2emuproject.proxy.network.login.server.L2LoginServerConnections;
+import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.script.LogLoadScriptManager;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.script.PpeEnabledLoaderScriptRegistry;
@@ -413,6 +415,7 @@ public class NetPro extends Application implements NetProThreadPriority
 							}
 						});
 						reporter.wait();
+						fqcn2Exception.clear();
 					}
 				}
 				
@@ -421,8 +424,55 @@ public class NetPro extends Application implements NetProThreadPriority
 			
 			// 2.3 LOAD NETWORK PROTOCOL RELATED DEFINITIONS
 			VersionnedPacketTable.getInstance();
+			if (StartupOption.DISABLE_SCRIPTS.isNotSet())
+			{
+				final ReloadableScriptInitializer scriptInitializer = NetProScriptCache.getInitializer();
+				final Map<String, Class<?>> translators = new TreeMap<>();
+				MetaclassRegistry.getInstance().getProtocolDependentTranslators().forEach(t -> translators.put(t.getClass().getSimpleName(), t.getClass()));
+				for (final Class<?> translator : translators.values())
+				{
+					try
+					{
+						final Class<?> scriptClass = scriptInitializer.getManagedScript(translator.getName());
+						if (scriptClass != null)
+							scriptInitializer.initialize(scriptClass);
+					}
+					catch (RuntimeException e)
+					{
+						fqcn2Exception.put(translator, e);
+					}
+				}
+			}
 			if (reporter != null)
 			{
+				if (!fqcn2Exception.isEmpty())
+				{
+					// 2.2.5 REPORT SCRIPT INITIALIZATION ERRORS
+					synchronized (reporter)
+					{
+						Platform.runLater(() -> {
+							final Alert alert = new Alert(AlertType.WARNING);
+							alert.initModality(Modality.APPLICATION_MODAL);
+							alert.initOwner(SPLASH_STAGE);
+							alert.initStyle(StageStyle.UTILITY);
+							alert.setTitle(UIStrings.get("startup.scripts.err.dialog.title.init"));
+							alert.setHeaderText(UIStrings.get("startup.scripts.err.dialog.header.init"));
+							alert.setContentText(UIStrings.get("startup.scripts.err.dialog.content.init"));
+							
+							alert.getDialogPane().setExpandableContent(MainWindowController.makeScriptExceptionMapExpandableContent(fqcn2Exception));
+							WindowTracker.getInstance().add(alert);
+							alert.showAndWait();
+							
+							synchronized (reporter)
+							{
+								reporter.notifyAll();
+							}
+						});
+						reporter.wait();
+						fqcn2Exception.clear();
+					}
+				}
+				
 				// 2.3.1 LOAD PROTOCOL BASED PACKET HIDING CONFIG
 				final Semaphore semaphore = new Semaphore(0);
 				ProtocolPacketHidingManager.AUTOMATIC_LOADING_EXCEPTION_HANDLER = exceptions -> {

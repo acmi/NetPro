@@ -21,6 +21,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import net.l2emuproject.lang.L2TextBuilder;
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 
 /**
@@ -44,13 +45,14 @@ public class ImmutableSystemMessage extends ScriptedIntegerIdInterpreter
 	/**
 	 * Returns a system message with given tokens inserted into it.
 	 * 
+	 * @param protocol protocol version
 	 * @param sm system message ID
 	 * @param tokens tokens
 	 * @return complete message as string
 	 */
-	public String getRepresentation(int sm, String... tokens)
+	public String getRepresentation(IProtocolVersion protocol, int sm, String... tokens)
 	{
-		final L2TextBuilder tb = new L2TextBuilder(String.valueOf(getInterpretation(sm)));
+		final L2TextBuilder tb = new L2TextBuilder(String.valueOf(translate(sm, protocol, null)));
 		for (int i = 0; i < _tokens.length && i < tokens.length; ++i)
 		{
 			final Matcher m = _tokens[i].matcher(tb);

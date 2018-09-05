@@ -17,6 +17,7 @@ package interpreter;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -36,11 +37,11 @@ public class Npc extends ScriptedIntegerIdInterpreter
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		if (value >= NPC_CLASS_ID_OFFSET)
 			value -= NPC_CLASS_ID_OFFSET;
 		
-		return super.getInterpretation(value, entityCacheContext);
+		return super.translate(value, protocol, entityCacheContext);
 	}
 }

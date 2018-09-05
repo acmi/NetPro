@@ -15,7 +15,8 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.AllianceCrestInfo;
 import net.l2emuproject.proxy.state.entity.cache.AllianceCrestInfoCache;
@@ -26,10 +27,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public class AllianceCrest extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public class AllianceCrest extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final AllianceCrestInfo aci = AllianceCrestInfoCache.getInstance().getOrAdd((int)value, entityCacheContext);
 		if (aci.getCrestImgSrc() == null)

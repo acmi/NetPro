@@ -15,9 +15,10 @@
  */
 package net.l2emuproject.proxy.script.interpreter;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.MetaclassRegistry;
 import net.l2emuproject.proxy.network.meta.exception.InvalidFieldValueInterpreterException;
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 
 /**
  * This class operates with IO or later skill name IDs.
@@ -26,9 +27,9 @@ import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
  */
 public final class L2SkillTranslator
 {
-	/** An interpreter that returns skill names when calling the {@link IntegerInterpreter#getInterpretation(long)} method with a skill ID. */
+	/** An interpreter that returns skill names when calling the {@link IntegerTranslator#translate(long, IProtocolVersion)} method with a skill ID. */
 	public static String SKILL_INTERPRETER = "Skill";
-	/** An interpreter that returns skill names when calling the {@link IntegerInterpreter#getInterpretation(long)} method with a skill name ID. */
+	/** An interpreter that returns skill names when calling the {@link IntegerTranslator#translate(long, IProtocolVersion)} method with a skill name ID. */
 	public static String SKILL_NAME_ID_INTERPRETER = "SkillNameID";
 	
 	private L2SkillTranslator()
@@ -40,14 +41,15 @@ public final class L2SkillTranslator
 	 * Returns a string interpretation of the specified skill ID (at the first skill level).<BR>
 	 * Depends on the {@link #SKILL_INTERPRETER} interpreter.
 	 * 
+	 * @param protocol protocol version
 	 * @param skillID skill ID
 	 * @return skill name
 	 */
-	public static final String getInterpretation(int skillID)
+	public static final String translate(IProtocolVersion protocol, int skillID)
 	{
 		try
 		{
-			return String.valueOf(MetaclassRegistry.getInstance().getInterpreter(SKILL_INTERPRETER, IntegerInterpreter.class).getInterpretation(skillID));
+			return String.valueOf(MetaclassRegistry.getInstance().getTranslator(SKILL_INTERPRETER, IntegerTranslator.class).translate(skillID, protocol, null));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{
@@ -59,56 +61,60 @@ public final class L2SkillTranslator
 	 * Returns a string interpretation of the specified skill ID at the specified skill level.<BR>
 	 * Depends on the {@link #SKILL_NAME_ID_INTERPRETER} interpreter.
 	 * 
+	 * @param protocol protocol version
 	 * @param skillID skill ID
 	 * @param level skill level
 	 * @return skill name
 	 */
-	public static final String getInterpretation(int skillID, int level)
+	public static final String translate(IProtocolVersion protocol, int skillID, int level)
 	{
-		return getInterpretation(skillID, level, 0);
+		return translate(protocol, skillID, level, 0);
 	}
 	
 	/**
 	 * Returns a string interpretation of the specified skill ID at the specified skill level and sublevel.<BR>
 	 * Depends on the {@link #SKILL_NAME_ID_INTERPRETER} interpreter.
 	 * 
+	 * @param protocol protocol version
 	 * @param skillID skill ID
 	 * @param level skill level
 	 * @param sublevel skill sublevel
 	 * @return skill name
 	 */
-	public static final String getInterpretation(int skillID, int level, int sublevel)
+	public static final String translate(IProtocolVersion protocol, int skillID, int level, int sublevel)
 	{
-		return getInterpretation(getSkillNameID(skillID, level, 0), null);
+		return translate(protocol, getSkillNameID(skillID, level, 0), null);
 	}
 	
 	/**
 	 * Returns a string interpretation of the specified skill ID at the specified skill level.<BR>
 	 * Depends on the {@link #SKILL_NAME_ID_INTERPRETER} interpreter.
 	 * 
+	 * @param protocol protocol version
 	 * @param skillID skill ID
 	 * @param jointLevel skill level and sublevel
 	 * @param passNullHere {@code null}
 	 * @return skill name
 	 */
-	public static final String getInterpretation(int skillID, int jointLevel, Void passNullHere)
+	public static final String translate(IProtocolVersion protocol, int skillID, int jointLevel, Void passNullHere)
 	{
-		return getInterpretation(((long)skillID << 32) | jointLevel, passNullHere);
+		return translate(protocol, ((long)skillID << 32) | jointLevel, passNullHere);
 	}
 	
 	/**
 	 * Returns a string interpretation of the specified skill ID at the specified skill level.<BR>
 	 * Depends on the {@link #SKILL_NAME_ID_INTERPRETER} interpreter.
 	 * 
+	 * @param protocol protocol version
 	 * @param skillNameID skill ID and level
 	 * @param passNullHere {@code null}
 	 * @return skill name
 	 */
-	public static final String getInterpretation(long skillNameID, Void passNullHere)
+	public static final String translate(IProtocolVersion protocol, long skillNameID, Void passNullHere)
 	{
 		try
 		{
-			return String.valueOf(MetaclassRegistry.getInstance().getInterpreter(SKILL_NAME_ID_INTERPRETER, IntegerInterpreter.class).getInterpretation(skillNameID));
+			return String.valueOf(MetaclassRegistry.getInstance().getTranslator(SKILL_NAME_ID_INTERPRETER, IntegerTranslator.class).translate(skillNameID, protocol, null));
 		}
 		catch (final InvalidFieldValueInterpreterException e)
 		{

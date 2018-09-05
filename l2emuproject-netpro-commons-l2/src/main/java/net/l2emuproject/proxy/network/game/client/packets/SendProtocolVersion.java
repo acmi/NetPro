@@ -16,18 +16,20 @@
 package net.l2emuproject.proxy.network.game.client.packets;
 
 import java.nio.BufferUnderflowException;
+import java.util.Collections;
 
 import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.network.Packet;
+import net.l2emuproject.proxy.network.meta.RequiredInvasiveOperations;
 
 /**
  * This packet contains the protocol version that L2 client will use for communications.<BR>
  * 
  * @author savormix
  */
-public final class SendProtocolVersion extends L2GameClientPacket
+public final class SendProtocolVersion extends L2GameClientPacket implements RequiredInvasiveOperations
 {
 	/** Packet's identifier */
 	public static final int OPCODE = 0x0E;
@@ -49,7 +51,7 @@ public final class SendProtocolVersion extends L2GameClientPacket
 	{
 		// unfortunately, we cannot use PPE here; we don't know which protocol version is used :P
 		final int version = buf.readD();
-		final IGameProtocolVersion cpv = ProtocolVersionManager.getInstance().getGameProtocol(version);
+		final IGameProtocolVersion cpv = ProtocolVersionManager.getInstance().getGameProtocol(version, Collections.emptySet()); // client does not know which alt modes server will use yet
 		if (cpv != null)
 			getReceiver().setVersion(cpv);
 		else

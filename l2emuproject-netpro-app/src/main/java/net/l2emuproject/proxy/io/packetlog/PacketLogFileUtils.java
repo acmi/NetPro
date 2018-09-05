@@ -27,6 +27,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -44,6 +45,8 @@ import net.l2emuproject.proxy.io.exception.UnknownFileTypeException;
 import net.l2emuproject.proxy.io.packetlog.LogLoadOptions.LogLoadFlag;
 import net.l2emuproject.proxy.network.EndpointType;
 import net.l2emuproject.proxy.network.ServiceType;
+import net.l2emuproject.proxy.network.game.L2ServerLocale;
+import net.l2emuproject.proxy.network.game.L2ServerType;
 import net.l2emuproject.proxy.ui.javafx.packet.ProtocolPacketHidingManager;
 
 /**
@@ -122,7 +125,7 @@ public final class PacketLogFileUtils implements IOConstants
 			if (size < 9)
 				throw new InsufficientlyLargeFileException();
 		}
-		catch (IOException e)
+		catch (final IOException e)
 		{
 			fail = new FilesizeMeasureException(e);
 		}
@@ -148,7 +151,7 @@ public final class PacketLogFileUtils implements IOConstants
 			{
 				logFileVersion = in.readByte() & 0xFF;
 			}
-			catch (BufferOverflowException e)
+			catch (final BufferOverflowException e)
 			{
 				throw new InsufficientlyLargeFileException();
 			}
@@ -192,6 +195,9 @@ public final class PacketLogFileUtils implements IOConstants
 			ServiceType service = ServiceType.GAME;
 			final long creationTime;
 			int protocolVersionNumber = -1;
+			final Set<String> altModes = new LinkedHashSet<>();
+			int compressionType = 0;
+			long totalPacketBytes = 0L;
 			
 			if (logFileVersion < 6)
 			{
@@ -206,6 +212,16 @@ public final class PacketLogFileUtils implements IOConstants
 				if (in.readBoolean())
 					service = ServiceType.LOGIN;
 				protocolVersionNumber = in.readInt();
+				if (logFileVersion == 8) // never published and not used anymore
+				{
+					in.readBoolean();
+					in.readBoolean();
+				}
+				if (logFileVersion >= 10)
+				{
+					totalPacketBytes = in.readLong();
+					compressionType = in.readByte();
+				}
 			}
 			
 			final long unreadHeaderBytes = headerSize - in.getPositionInChannel(false);
@@ -221,27 +237,66 @@ public final class PacketLogFileUtils implements IOConstants
 			if (Thread.interrupted())
 				throw new InterruptedException();
 			
+			in.skip(unreadHeaderBytes, false);
+			
+			@SuppressWarnings("resource")
+			final NetProPacketLogFileIterator it = new NetProPacketLogFileIterator(in, logFileVersion, footerStartPosition, compressionType, packetLogFile);
+			LogFilePacket firstPacket = null;
 			extractProtocolVersion: if (protocolVersionNumber == -1)
 			{
-				in.skip(unreadHeaderBytes, false);
-				
 				// first packet should be [C] SendProtocolVersion
-				if (!in.readBoolean()) // not a client packet
+				if (!it.hasNext())
+					break extractProtocolVersion;
+				firstPacket = it.next();
+				if (!firstPacket.getEndpoint().isClient()) // not a client packet
+					break extractProtocolVersion;
+				if (firstPacket.getContent().length < 1 + 4)
 					break extractProtocolVersion;
 				
-				final int packetSize = in.readChar();
-				if (packetSize < 1 + 4)
-					break extractProtocolVersion;
-				
-				final int opcode = in.readByte();
+				final int opcode = firstPacket.getContent()[0];
 				if (opcode != 0x00 && opcode != 0x0E) // Chronicle opcode/Throne opcode
 					break extractProtocolVersion;
 				
-				final ByteBuffer leBuffer = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
-				in.read(leBuffer);
-				leBuffer.clear();
+				protocolVersionNumber = ByteBuffer.wrap(firstPacket.getContent(), 1, 4).order(ByteOrder.LITTLE_ENDIAN).getInt();
+			}
+			
+			LogFilePacket secondPacket = null;
+			extractAltModes: if (logFileVersion < 9)
+			{
+				extractServerType:
+				{
+					// second packet should be [S] VersionCheck
+					if (!it.hasNext())
+						break extractAltModes;
+					if (firstPacket == null)
+					{
+						firstPacket = it.next();
+						if (!it.hasNext())
+							break extractAltModes;
+					}
+					secondPacket = it.next();
+					if (!secondPacket.getEndpoint().isServer()) // not a server packet
+						break extractServerType;
+					if (secondPacket.getContent().length < 1 + 1 + 8 + 4 + 4 + 1 + 4 + 1)
+						break extractServerType;
+					altModes.addAll(L2ServerType.valueOf(secondPacket.getContent()[23]).getAltModeSet());
+				}
 				
-				protocolVersionNumber = leBuffer.getInt();
+				for (int i = 0; it.hasNext() && i < 5; ++i)
+				{
+					final LogFilePacket packet = it.next();
+					if (packet.getEndpoint().isServer())
+						continue;
+					if (packet.getContent()[0] != 0x2B)
+						continue;
+					final ByteBuffer buf = ByteBuffer.wrap(packet.getContent()).order(ByteOrder.LITTLE_ENDIAN);
+					buf.position(1);
+					while (buf.getChar() != 0)
+						continue;
+					buf.position(buf.position() + 16);
+					altModes.addAll(L2ServerLocale.valueOf(buf.getInt()).getAltModeSet());
+					break;
+				}
 			}
 			
 			int totalPackets = -1;
@@ -281,11 +336,27 @@ public final class PacketLogFileUtils implements IOConstants
 					if (Thread.interrupted())
 						throw new InterruptedException();
 				}
+				
+				if (logFileVersion < 9)
+					break footer;
+				
+				final int altModeCount = in.readByte() & 0xFF;
+				for (int i = 0; i < altModeCount; ++i)
+				{
+					final int modeLength = in.readByte() & 0xFF;
+					final char[] modeChars = new char[modeLength];
+					for (int j = 0; j < modeLength; ++j)
+					{
+						modeChars[j] = (char)in.readChar();
+					}
+					altModes.add(String.valueOf(modeChars));
+				}
 			}
 			
-			return new LogFileHeader(packetLogFile, size, logFileVersion, headerSize, footerSize, footerStartPosition, creationTime, service, protocolVersionNumber, totalPackets, cp, sp);
+			return new LogFileHeader(packetLogFile, size, logFileVersion, headerSize, footerSize, footerStartPosition, creationTime, service, protocolVersionNumber, altModes, compressionType,
+					totalPackets, cp, sp, totalPacketBytes);
 		}
-		catch (BufferUnderflowException e)
+		catch (final BufferUnderflowException e)
 		{
 			throw new TruncatedPacketLogFileException();
 		}

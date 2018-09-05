@@ -9,7 +9,9 @@
 		<scriptAlias id="npc_info_oid" />
 	</dword>
 
-	<byte alias="Knownlist state" type="KnownlistState" id="object_action" />
+	<byte alias="Knownlist state" type="KnownlistState" id="object_action">
+		<scriptAlias id="npc_info_kl_action" />
+	</byte>
 	<word alias="37" />
 	
 	<!--
@@ -64,17 +66,29 @@
 	-->
 
 	<!-- Always has bits 5 and 6 enabled; bit 1 is never observed -->
-	<unsignedByte alias="Fields #1" type="structure.ExNpcInfoFieldMask1" id="exNI_1" />
+	<unsignedByte alias="Fields #1" type="structure.ExNpcInfoFieldMask1" id="exNI_1">
+		<scriptAlias id="npc_info_mask_1" />
+	</unsignedByte>
 	<!-- All bits appear to be in use -->
-	<unsignedByte alias="Fields #2" type="structure.ExNpcInfoFieldMask2" id="exNI_2" />
+	<unsignedByte alias="Fields #2" type="structure.ExNpcInfoFieldMask2" id="exNI_2">
+		<scriptAlias id="npc_info_mask_2" />
+	</unsignedByte>
 	<!-- Bit 7 is never observed -->
-	<unsignedByte alias="Fields #3" type="structure.ExNpcInfoFieldMask3" id="exNI_3" />
+	<unsignedByte alias="Fields #3" type="structure.ExNpcInfoFieldMask3" id="exNI_3">
+		<scriptAlias id="npc_info_mask_3" />
+	</unsignedByte>
 	<!-- Always has bit 1 enabled; all bits appear to be in use -->
-	<unsignedByte alias="Fields #4" type="structure.ExNpcInfoFieldMask4" id="exNI_4" />
+	<unsignedByte alias="Fields #4" type="structure.ExNpcInfoFieldMask4" id="exNI_4">
+		<scriptAlias id="npc_info_mask_4" />
+	</unsignedByte>
 	<!-- Bits 0 and 1 are never observed -->
-	<unsignedByte alias="Fields #5" type="structure.ExNpcInfoFieldMask5" id="exNI_5" />
+	<unsignedByte alias="Fields #5" type="structure.ExNpcInfoFieldMask5" id="exNI_5">
+		<scriptAlias id="npc_info_mask_5" />
+	</unsignedByte>
 
-	<unsignedByte alias="1st block size" />
+	<unsignedByte alias="1st block size">
+		<scriptAlias id="npc_info_block1_size" />
+	</unsignedByte>
 	<branch description="1st block">
 		<byte alias="Attackable" type="YesOrNo">
 			<scriptAlias id="npc_info_enemy" />
@@ -82,10 +96,13 @@
 		<dword alias="Relations" type="relation.RelationTypeHelios" />
 		<string alias="Title">
 			<scriptAlias id="OIC_NPC_TITLE" />
+			<scriptAlias id="npc_info_title_string" />
 		</string>
 	</branch>
 
-	<word alias="2nd block size" />
+	<word alias="2nd block size">
+		<scriptAlias id="npc_info_block2_size" />
+	</word>
 	<branch description="2nd block">
 		<!-- Fields #1 -->
 		<branch id="exNI_1" condition="bitmask.Bit7" description="Template">
@@ -189,6 +206,7 @@
 		<branch id="exNI_4" condition="bitmask.Bit5" description="Max HP">
 			<dword alias="Max HP">
 				<scriptAlias id="npc_info_hp_maximum" />
+				<scriptAlias id="npc_info_loc_ip" />
 			</dword>
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit4" description="Max MP">
@@ -205,15 +223,20 @@
 		<branch id="exNI_1" condition="bitmask.Bit4" description="Name">
 			<string alias="Name">
 				<scriptAlias id="OIC_GIVEN_NAME" />
+				<scriptAlias id="npc_info_name_string" />
 			</string>
 		</branch>
 		<branch id="exNI_4" condition="bitmask.Bit0" description="Name (npcstring)">
-			<dword alias="Name" type="ImmutableNpcString" />
+			<dword alias="Name" type="ImmutableNpcString">
+				<scriptAlias id="npc_info_name_npcstring" />
+			</dword>
 		</branch>
 
 		<!-- Fields #5 -->
 		<branch id="exNI_5" condition="bitmask.Bit7" description="Title (npcstring)">
-			<dword alias="Title" type="ImmutableNpcString" />
+			<dword alias="Title" type="ImmutableNpcString">
+				<scriptAlias id="npc_info_title_npcstring" />
+			</dword>
 		</branch>
 		<branch id="exNI_5" condition="bitmask.Bit6" description="PvP">
 			<byte alias="In PvP" type="Pvp" />

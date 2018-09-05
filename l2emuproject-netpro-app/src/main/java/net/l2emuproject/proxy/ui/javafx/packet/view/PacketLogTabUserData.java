@@ -18,6 +18,7 @@ package net.l2emuproject.proxy.ui.javafx.packet.view;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 
+import javafx.beans.property.StringProperty;
 import net.l2emuproject.proxy.network.Proxy;
 
 /**
@@ -27,11 +28,13 @@ public final class PacketLogTabUserData
 {
 	private final PacketLogTabController _controller;
 	private Reference<Proxy> _client, _server;
-	private boolean _captureDisabled;
+	private boolean _captureDisabled, _online;
+	private final StringProperty _charNameProperty;
 	
-	public PacketLogTabUserData(PacketLogTabController controller)
+	public PacketLogTabUserData(PacketLogTabController controller, StringProperty charNameProperty)
 	{
 		_controller = controller;
+		_charNameProperty = charNameProperty;
 	}
 	
 	public Proxy getClient()
@@ -64,8 +67,23 @@ public final class PacketLogTabUserData
 		_captureDisabled = captureDisabled;
 	}
 	
+	public boolean isOnline()
+	{
+		return _online;
+	}
+	
+	public void setOnline(boolean online)
+	{
+		_online = online;
+	}
+	
 	public PacketLogTabController getController()
 	{
 		return _controller;
+	}
+	
+	public StringProperty charNameProperty()
+	{
+		return _charNameProperty;
 	}
 }

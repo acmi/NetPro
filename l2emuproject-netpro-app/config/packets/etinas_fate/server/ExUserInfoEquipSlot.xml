@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Major reorder and new slots -->
+<packet id="646" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Character OID" type="ObjectID" />
+	<word alias="Equipment slot count" />
+	<unsignedByte alias="Updated slots #1" type="equip.ExUserEquipSlot1" id="exUIES_1" />
+	<unsignedByte alias="Updated slots #2" type="equip.ExUserEquipSlot2" id="exUIES_2" />
+	<unsignedByte alias="Updated slots #3" type="equip.ExUserEquipSlot3EF" id="exUIES_3" />
+	<unsignedByte alias="Updated slots #4" type="equip.ExUserEquipSlot4EF" id="exUIES_4" />
+	<unsignedByte alias="Updated slots #5" type="equip.ExUserEquipSlot5EF" id="exUIES_5" />
+
+	<!-- NEW -->
+	<unsignedByte alias="Updated slots #6" type="equip.ExUserEquipSlot6" id="exUIES_6" />
+	<unsignedByte alias="Updated slots #7" type="equip.ExUserEquipSlot7" id="exUIES_7" />
+	<unsignedByte alias="Updated slots #8" type="equip.ExUserEquipSlot8" id="exUIES_8" />
+
+	<branch id="exUIES_1" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<dword alias="Underwear OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Underwear" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Underwear augmentation effect (1)" type="Augmentation" />
+		<dword alias="Underwear augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Underwear" type="Item" />
+	</branch>
+	<branch id="exUIES_1" condition="bitmask.Bit6">
+		<word alias="Block size (22)" />
+		<dword alias="Earring (right) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Earring (right)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Earring (right) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Earring (right) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Earring (right)" type="Item" />
+	</branch>
+	<branch id="exUIES_1" condition="bitmask.Bit5">
+		<word alias="Block size (22)" />
+		<dword alias="Earring (left) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Earring (left)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Earring (left) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Earring (left) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Earring (left)" type="Item" />
+	</branch>
+	<branch id="exUIES_1" condition="bitmask.Bit4">
+		<word alias="Block size (22)" />
+		<dword alias="Necklace OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Necklace" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Necklace augmentation effect (1)" type="Augmentation" />
+		<dword alias="Necklace augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Necklace" type="Item" />
+	</branch>
+	<branch id="exUIES_1" condition="bitmask.Bit3">
+		<word alias="Block size (22)" />
+		<dword alias="Ring (right) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Ring (right)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Ring (right) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Ring (right) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Ring (right)" type="Item" />
+	</branch>
+	<branch id="exUIES_1" condition="bitmask.Bit2">
+		<word alias="Block size (22)" />
+		<dword alias="Ring (left) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Ring (left)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Ring (left) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Ring (left) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Ring (left)" type="Item" />
+	</branch>
+	<branch id="exUIES_1" condition="bitmask.Bit1">
+		<word alias="Block size (22)" />
+		<dword alias="Headgear OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Headgear" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Headgear augmentation effect (1)" type="Augmentation" />
+		<dword alias="Headgear augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Headgear" type="Item" />
+	</branch>
+	<branch id="exUIES_1" condition="bitmask.Bit0">
+		<word alias="Block size (22)" />
+		<dword alias="Weapon OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Weapon" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Weapon augmentation effect (1)" type="Augmentation" />
+		<dword alias="Weapon augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Weapon" type="Item" />
+	</branch>
+
+	<branch id="exUIES_2" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<dword alias="Shield [Sigil] OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Shield [Sigil]" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Shield [Sigil] augmentation effect (1)" type="Augmentation" />
+		<dword alias="Shield [Sigil] augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Shield [Sigil]" type="Item" />
+	</branch>
+	<branch id="exUIES_2" condition="bitmask.Bit6">
+		<word alias="Block size (22)" />
+		<dword alias="Gloves OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Gloves" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Gloves augmentation effect (1)" type="Augmentation" />
+		<dword alias="Gloves augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Gloves" type="Item" />
+	</branch>
+	<branch id="exUIES_2" condition="bitmask.Bit5">
+		<word alias="Block size (22)" />
+		<dword alias="Upper Body OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Upper Body" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Upper Body augmentation effect (1)" type="Augmentation" />
+		<dword alias="Upper Body augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Upper Body" type="Item" />
+	</branch>
+	<branch id="exUIES_2" condition="bitmask.Bit4">
+		<word alias="Block size (22)" />
+		<dword alias="Lower Body OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Lower Body" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Lower Body augmentation effect (1)" type="Augmentation" />
+		<dword alias="Lower Body augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Lower Body" type="Item" />
+	</branch>
+	<branch id="exUIES_2" condition="bitmask.Bit3">
+		<word alias="Block size (22)" />
+		<dword alias="Boots OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Boots" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Boots augmentation effect (1)" type="Augmentation" />
+		<dword alias="Boots augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Boots" type="Item" />
+	</branch>
+	<branch id="exUIES_2" condition="bitmask.Bit2">
+		<word alias="Block size (22)" />
+		<dword alias="Cloak OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Cloak" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Cloak augmentation effect (1)" type="Augmentation" />
+		<dword alias="Cloak augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Cloak" type="Item" />
+	</branch>
+	<branch id="exUIES_2" condition="bitmask.Bit1">
+		<word alias="Block size (22)" />
+		<dword alias="Weapon / Two Handed OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Weapon / Two Handed" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Weapon / Two Handed augmentation effect (1)" type="Augmentation" />
+		<dword alias="Weapon / Two Handed augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Weapon / Two Handed" type="Item" />
+	</branch>
+	<branch id="exUIES_2" condition="bitmask.Bit0">
+		<word alias="Block size (22)" />
+		<dword alias="Hair Accessory (left) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Hair Accessory (left)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Hair Accessory (left) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Hair Accessory (left) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Hair Accessory (left)" type="Item" />
+	</branch>
+
+	<branch id="exUIES_3" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<dword alias="Hair Accessory (right) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Hair Accessory (right)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Hair Accessory (right) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Hair Accessory (right) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Hair Accessory (right)" type="Item" />
+	</branch>
+	<branch id="exUIES_3" condition="bitmask.Bit6">
+		<word alias="Block size (22)" />
+		<dword alias="Bracelet (left) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Bracelet (left)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Bracelet (left) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Bracelet (left) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Bracelet (left)" type="Item" />
+	</branch>
+	<branch id="exUIES_3" condition="bitmask.Bit5">
+		<word alias="Block size (22)" />
+		<dword alias="Bracelet (right) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Bracelet (right)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Bracelet (right) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Bracelet (right) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Bracelet (right)" type="Item" />
+	</branch>
+	<branch id="exUIES_3" condition="bitmask.Bit4">
+		<word alias="Block size (22)" />
+		<dword alias="Charm (primary) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Charm (primary)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Charm (primary) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Charm (primary) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Charm (primary)" type="Item" />
+	</branch>
+	<branch id="exUIES_3" condition="bitmask.Bit3">
+		<word alias="Block size (22)" />
+		<dword alias="Charm (special 1) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Charm (special 1)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Charm (special 1) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Charm (special 1) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Charm (special 1)" type="Item" />
+	</branch>
+	<branch id="exUIES_3" condition="bitmask.Bit2">
+		<word alias="Block size (22)" />
+		<dword alias="Charm (special 2) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Charm (special 2)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Charm (special 2) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Charm (special 2) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Charm (special 2)" type="Item" />
+	</branch>
+	<branch id="exUIES_3" condition="bitmask.Bit1">
+		<word alias="Block size (22)" />
+		<dword alias="Charm (special 3) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Charm (special 3)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Charm (special 3) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Charm (special 3) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Charm (special 3)" type="Item" />
+	</branch>
+	<branch id="exUIES_3" condition="bitmask.Bit0">
+		<word alias="Block size (22)" />
+		<dword alias="Charm (special 4) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Charm (special 4)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Charm (special 4) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Charm (special 4) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Charm (special 4)" type="Item" />
+	</branch>
+
+	<branch id="exUIES_4" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<dword alias="Talisman (1) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Talisman (1)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Talisman (1) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Talisman (1) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Talisman (1)" type="Item" />
+	</branch>
+	<branch id="exUIES_4" condition="bitmask.Bit6">
+		<word alias="Block size (22)" />
+		<dword alias="Talisman (2) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Talisman (2)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Talisman (2) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Talisman (2) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Talisman (2)" type="Item" />
+	</branch>
+	<branch id="exUIES_4" condition="bitmask.Bit5">
+		<word alias="Block size (22)" />
+		<dword alias="Talisman (3) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Talisman (3)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Talisman (3) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Talisman (3) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Talisman (3)" type="Item" />
+	</branch>
+	<branch id="exUIES_4" condition="bitmask.Bit4">
+		<word alias="Block size (22)" />
+		<dword alias="Talisman (4) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Talisman (4)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Talisman (4) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Talisman (4) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Talisman (4)" type="Item" />
+	</branch>
+	<branch id="exUIES_4" condition="bitmask.Bit3">
+		<word alias="Block size (22)" />
+		<dword alias="Talisman (5) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Talisman (5)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Talisman (5) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Talisman (5) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Talisman (5)" type="Item" />
+	</branch>
+	<branch id="exUIES_4" condition="bitmask.Bit2">
+		<word alias="Block size (22)" />
+		<dword alias="Talisman (6) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Talisman (6)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Talisman (6) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Talisman (6) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Talisman (6)" type="Item" />
+	</branch>
+	<branch id="exUIES_4" condition="bitmask.Bit1">
+		<word alias="Block size (22)" />
+		<dword alias="Belt OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Belt" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Belt augmentation effect (1)" type="Augmentation" />
+		<dword alias="Belt augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible belt" type="Item" />
+	</branch>
+	<branch id="exUIES_4" condition="bitmask.Bit0">
+		<word alias="Block size (22)" />
+		<dword alias="Brooch OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Brooch" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Brooch augmentation effect (1)" type="Augmentation" />
+		<dword alias="Brooch augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Brooch" type="Item" />
+	</branch>
+
+	<branch id="exUIES_5" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<dword alias="Jewel (1) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Jewel (1)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Jewel (1) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Jewel (1) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Jewel (1)" type="Item" />
+	</branch>
+	<branch id="exUIES_5" condition="bitmask.Bit6">
+		<word alias="Block size (22)" />
+		<dword alias="Jewel (2) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Jewel (2)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Jewel (2) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Jewel (2) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Jewel (2)" type="Item" />
+	</branch>
+	<branch id="exUIES_5" condition="bitmask.Bit5">
+		<word alias="Block size (22)" />
+		<dword alias="Jewel (3) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Jewel (3)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Jewel (3) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Jewel (3) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Jewel (3)" type="Item" />
+	</branch>
+	<branch id="exUIES_5" condition="bitmask.Bit4">
+		<word alias="Block size (22)" />
+		<dword alias="Jewel (4) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Jewel (4)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Jewel (4) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Jewel (4) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Jewel (4)" type="Item" />
+	</branch>
+	<branch id="exUIES_5" condition="bitmask.Bit3">
+		<word alias="Block size (22)" />
+		<dword alias="Jewel (5) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Jewel (5)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Jewel (5) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Jewel (5) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Jewel (5)" type="Item" />
+	</branch>
+	<branch id="exUIES_5" condition="bitmask.Bit2">
+		<word alias="Block size (22)" />
+		<dword alias="Jewel (6) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Jewel (6)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Jewel (6) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Jewel (6) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Jewel (6)" type="Item" />
+	</branch>
+
+	<!-- NEW -->
+	<branch id="exUIES_5" condition="bitmask.Bit1">
+		<word alias="Block size (22)" />
+		<dword alias="Book OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Book" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Book augmentation effect (1)" type="Augmentation" />
+		<dword alias="Book augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible book" type="Item" />
+	</branch>
+	<branch id="exUIES_5" condition="bitmask.Bit0">
+		<word alias="Block size (22)" />
+		<dword alias="Balance artifact (1) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Balance artifact (1)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Balance artifact (1) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Balance artifact (1) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible balance artifact (1)" type="Item" />
+	</branch>
+
+	<branch id="exUIES_6" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<dword alias="Balance artifact (2) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Balance artifact (2)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Balance artifact (2) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Balance artifact (2) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible balance artifact (2)" type="Item" />
+	</branch>
+	<branch id="exUIES_6" condition="bitmask.Bit6">
+		<word alias="Block size (22)" />
+		<dword alias="Balance artifact (3) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Balance artifact (3)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Balance artifact (3) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Balance artifact (3) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Balance artifact (3)" type="Item" />
+	</branch>
+	<branch id="exUIES_6" condition="bitmask.Bit5">
+		<word alias="Block size (22)" />
+		<dword alias="Balance artifact (4) OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="Balance artifact (4)" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="Balance artifact (4) augmentation effect (1)" type="Augmentation" />
+		<dword alias="Balance artifact (4) augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible Balance artifact (4)" type="Item" />
+	</branch>
+	<branch id="exUIES_6" condition="bitmask.Bit4">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_6" condition="bitmask.Bit3">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_6" condition="bitmask.Bit2">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_6" condition="bitmask.Bit1">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_6" condition="bitmask.Bit0">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+
+	<branch id="exUIES_7" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_7" condition="bitmask.Bit6">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_7" condition="bitmask.Bit5">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_7" condition="bitmask.Bit4">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_7" condition="bitmask.Bit3">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_7" condition="bitmask.Bit2">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_7" condition="bitmask.Bit1">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_7" condition="bitmask.Bit0">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+
+	<branch id="exUIES_8" condition="bitmask.Bit7">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_8" condition="bitmask.Bit6">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_8" condition="bitmask.Bit5">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+	<branch id="exUIES_8" condition="bitmask.Bit4">
+		<word alias="Block size (22)" />
+		<dword alias="OID" type="ObjectID">
+			<scriptAlias id="OIC_ITEM_OID" />
+		</dword>
+		<dword alias="" type="Item">
+			<scriptAlias id="OIC_ITEM_TEMPLATE" />
+		</dword>
+		<dword alias="augmentation effect (1)" type="Augmentation" />
+		<dword alias="augmentation effect (2)" type="Augmentation" />
+		<dword alias="Visible" type="Item" />
+	</branch>
+</packet>

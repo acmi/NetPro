@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packet id="CM_REQ_QUEUE_TICKET_LOGIN" xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../../schemata/packet.xsd">
+	<dword alias="Random #1" />
+	<dword alias="Random #2" />
+	<qword alias="Unknown" />
+	<dword alias="Account ID" />
+	<dword alias="Random #3" />
+	<dword alias="Random #4" />
+	<dword alias="Session ID" />
+	<dword alias="Random #5" />
+</packet>

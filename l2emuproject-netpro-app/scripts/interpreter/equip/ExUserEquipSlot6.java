@@ -13,23 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.l2emuproject.proxy.network.meta.interpreter;
+package interpreter.equip;
 
-import net.l2emuproject.proxy.network.meta.FieldValueInterpreter;
-import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
+import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
 
 /**
- * Marks an interpreter that requires contextual data for value interpretation.
+ * Interprets the fifth slot mask byte of the ExUIEquipSlot packet.
  * 
  * @author _dev_
  */
-public interface ContextualFieldValueInterpreter extends FieldValueInterpreter
+public class ExUserEquipSlot6 extends ScriptedBitmaskInterpreter
 {
-	/**
-	 * Acquires contextual data required for interpreting value at {@code buffer.getCurrentOffset()}.
-	 * The implementation should be thread safe; use thread local variables.
-	 * 
-	 * @param buffer packet body buffer
-	 */
-	void reviewContext(RandomAccessMMOBuffer buffer);
+	/** Constructs this interpreter. */
+	public ExUserEquipSlot6()
+	{
+		super(null, (Object)null, null, null, null, "Balance artifact (4)", "Balance artifact (3)", "Balance artifact (2)");
+	}
 }

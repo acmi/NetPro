@@ -20,6 +20,8 @@ import static net.l2emuproject.proxy.network.game.client.L2GameClient.initialize
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SocketChannel;
+import java.util.Collections;
+import java.util.Set;
 
 import net.l2emuproject.network.protocol.IGameProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
@@ -38,6 +40,8 @@ public final class L2GameServer extends AbstractL2ServerProxy
 	private ICipher _cipher;
 	private boolean _firstTime;
 	
+	private Set<String> _altModes;
+	
 	/**
 	 * Creates an internal object representing a game server connection.
 	 * 
@@ -52,6 +56,8 @@ public final class L2GameServer extends AbstractL2ServerProxy
 		
 		_cipher = EmptyCipher.getInstance();
 		_firstTime = true;
+		
+		_altModes = Collections.emptySet();
 	}
 	
 	@Override
@@ -142,6 +148,16 @@ public final class L2GameServer extends AbstractL2ServerProxy
 	public L2GameClient getTargetClient()
 	{
 		return (L2GameClient)super.getTarget();
+	}
+	
+	public Set<String> getAltModes()
+	{
+		return _altModes;
+	}
+	
+	public void setAltModes(Set<String> altModes)
+	{
+		_altModes = altModes;
 	}
 	
 	@Override

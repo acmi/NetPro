@@ -13,14 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.l2emuproject.proxy.network.meta;
+package interpreter.equip;
+
+import net.l2emuproject.proxy.script.interpreter.ScriptedBitmaskInterpreter;
 
 /**
- * Marks a value interpreter class.
+ * Interprets the fifth slot mask byte of the ExUIEquipSlot packet.
  * 
  * @author _dev_
  */
-public interface FieldValueInterpreter
+public class ExUserEquipSlot7 extends ScriptedBitmaskInterpreter
 {
-	// marker interface
+	/** Constructs this interpreter. */
+	public ExUserEquipSlot7()
+	{
+		super(null, (Object)null, null, null, null, null, null, null);
+	}
 }

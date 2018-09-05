@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping xmlns="http://www.l2emu-unique.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.l2emu-unique.net ../../schemata/mapping.xsd">
 	<client>
+		<packet opcodePrefix="38" id="CM__USER_ACK" />
 		<packet opcodePrefix="D0 83 00 01 00 00 00" id="325" />
 		<packet opcodePrefix="D0 83 00 02 00 00 00" id="326" />
 		<packet opcodePrefix="D0 83 00 03 00 00 00" id="327" />

@@ -15,7 +15,8 @@
  */
 package interpreter.chat;
 
-import net.l2emuproject.proxy.network.meta.interpreter.IntegerInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.IntegerTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.EnumValues;
@@ -25,10 +26,10 @@ import net.l2emuproject.util.EnumValues;
  * 
  * @author _dev_
  */
-public final class ChatTokenType extends ScriptedFieldValueInterpreter implements IntegerInterpreter
+public final class ChatTokenType extends ScriptedFieldValueInterpreter implements IntegerTranslator
 {
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		return String.valueOf(getType((int)value));
 	}

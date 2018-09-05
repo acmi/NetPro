@@ -11,35 +11,53 @@
 	<dword alias="Chat" type="Chat" id="chat" />
 	<dword alias="NPC" type="Npc">
 		<scriptAlias id="OIC_NPC_TEMPLATE" />
+		<scriptAlias id="npc_say_npc_template" />
 	</dword>
 
-	<dword alias="Message" type="ImmutableNpcString" id="msg" />
+	<dword alias="Message" type="ImmutableNpcString" id="msg">
+		<scriptAlias id="npc_say_message" />
+	</dword>
 	<branch id="msg" condition="Negative">
 		<string alias="Custom message" />
 	</branch>
 	<branch id="msg" condition="NonNegative">
-		<string alias="1st token" type="chat.ChatToken1Value" />
-		<string alias="2nd token" type="chat.ChatToken2Value" />
-		<string alias="3rd token" type="chat.ChatToken3Value" />
-		<string alias="4th token" type="chat.ChatToken4Value" />
-		<string alias="5th token" type="chat.ChatToken5Value" />
+		<string alias="1st token" type="chat.ChatToken1Value">
+			<scriptAlias id="npc_say_token1" />
+		</string>
+		<string alias="2nd token" type="chat.ChatToken2Value">
+			<scriptAlias id="npc_say_token2" />
+		</string>
+		<string alias="3rd token" type="chat.ChatToken3Value">
+			<scriptAlias id="npc_say_token3" />
+		</string>
+		<string alias="4th token" type="chat.ChatToken4Value">
+			<scriptAlias id="npc_say_token4" />
+		</string>
+		<string alias="5th token" type="chat.ChatToken5Value">
+			<scriptAlias id="npc_say_token5" />
+		</string>
 
 		<!-- NEW -->
 		<branch id="chat" condition="NotPrivateMessage">
 			<dword alias="1st token type" type="chat.ChatTokenType">
 				<scriptAlias id="__INTERP_ENABLER_TOKEN1_TYPE" />
+				<scriptAlias id="npc_say_token1_type" />
 			</dword>
 			<dword alias="2nd token type" type="chat.ChatTokenType">
 				<scriptAlias id="__INTERP_ENABLER_TOKEN2_TYPE" />
+				<scriptAlias id="npc_say_token2_type" />
 			</dword>
 			<dword alias="3rd token type" type="chat.ChatTokenType">
 				<scriptAlias id="__INTERP_ENABLER_TOKEN3_TYPE" />
+				<scriptAlias id="npc_say_token3_type" />
 			</dword>
 			<dword alias="4th token type" type="chat.ChatTokenType">
 				<scriptAlias id="__INTERP_ENABLER_TOKEN4_TYPE" />
+				<scriptAlias id="npc_say_token4_type" />
 			</dword>
 			<dword alias="5th token type" type="chat.ChatTokenType">
 				<scriptAlias id="__INTERP_ENABLER_TOKEN5_TYPE" />
+				<scriptAlias id="npc_say_token5_type" />
 			</dword>
 		</branch>
 	</branch>

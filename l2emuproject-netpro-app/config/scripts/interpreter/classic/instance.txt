@@ -1,0 +1,22 @@
+147	Olympiad
+148	Olympiad
+149	Olympiad
+150	Olympiad
+182	Balthus Knights - Baium
+183	Balthus Knights - Antharas
+184	Balthus Knight - Zaken
+186	Orchid Hall
+187	Ellia Hall
+188	Laurell Hall
+189	Orchid Hall
+190	Ellia Hall
+191	Laurell Hall
+192	Monster Arena
+193	Elite Monster Arena
+194	Clan Arena
+195	King Ignis' Abode
+196	Queen Nebula's Abode
+197	King Procella's Abode
+198	King Petram's Abode
+199	Lilith
+200	Anakim

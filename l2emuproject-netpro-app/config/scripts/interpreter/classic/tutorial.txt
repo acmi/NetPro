@@ -1,0 +1,43 @@
+0	1	Talk to Newbie Helper
+0	2	Quest
+0	5	Back to Newbie Helper
+0	13	Guide to the 1st Class Change
+0	28	Meet Newbie Helper
+1	10	Recommended Quest Guide
+1	15	2nd Class Quest - 1
+1	16	2nd Class Quest - 2
+1	17	2nd Class Quest - 3
+1	18	Moonshadow Knight
+1	70	Guide to the 3rd Class Change
+1	71	Guide to the 3rd Class Change
+1	72	Guide to the 3rd Class Change
+1	73	Guide to the 3rd Class Change
+1	74	Guide to the 3rd Class Change
+1	75	Guide to the 3rd Class Change
+1	76	Guide to the 3rd Class Change
+1	77	Guide to the 3rd Class Change
+1	78	Guide to the 3rd Class Change
+1	79	Guide to the 3rd Class Change
+1	80	Guide to the 3rd Class Change
+1	81	Guide to the 3rd Class Change
+1	82	Guide to the 3rd Class Change
+1	83	Guide to the 3rd Class Change
+1	84	Guide to the 3rd Class Change
+1	85	Guide to the 3rd Class Change
+1	86	Guide to the 3rd Class Change
+1	87	Guide to the 3rd Class Change
+1	88	Guide to the 3rd Class Change
+1	89	Guide to the 3rd Class Change
+1	90	Guide to the 3rd Class Change
+1	91	Guide to the 3rd Class Change
+1	92	Guide to the 3rd Class Change
+1	93	Guide to the 3rd Class Change
+1	94	Guide to the 3rd Class Change
+1	95	Guide to the 3rd Class Change
+1	96	Guide to the 3rd Class Change
+1	97	Guide to the 3rd Class Change
+1	98	Guide to the 3rd Class Change
+1	99	Guide to the 3rd Class Change
+1	100	Guide to the 3rd Class Change
+1	101	Learn Attributes Guide
+1	102	Check Attributes Guide

@@ -15,7 +15,8 @@
  */
 package interpreter;
 
-import net.l2emuproject.proxy.network.meta.interpreter.StringInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.StringTranslator;
 import net.l2emuproject.proxy.script.interpreter.ScriptedFieldValueInterpreter;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
@@ -24,10 +25,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public class PreformattedHtml extends ScriptedFieldValueInterpreter implements StringInterpreter
+public class PreformattedHtml extends ScriptedFieldValueInterpreter implements StringTranslator
 {
 	@Override
-	public Object getInterpretation(String value, ICacheServerID entityCacheContext)
+	public Object translate(String value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		/*
 		if (value.startsWith(".."))

@@ -5,7 +5,8 @@
 	<dword alias="Factions" id="cnt" />
 	<loop id="cnt">
 		<byte alias="Faction" type="quest.Faction" />
-		<word alias="Level" />
+		<byte alias="Level" />
+		<byte alias="Maximal progress reached" type="YesOrNo" />
 		<single alias="Progress to next level (%)" />
 	</loop>
 </packet>

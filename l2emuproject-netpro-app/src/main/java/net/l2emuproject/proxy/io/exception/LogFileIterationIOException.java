@@ -17,6 +17,7 @@ package net.l2emuproject.proxy.io.exception;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.zip.DataFormatException;
 
 /**
  * Allows an {@link Iterator} to throw {@link IOException}s.
@@ -34,6 +35,17 @@ public final class LogFileIterationIOException extends RuntimeException
 	 * @param cause the real cause
 	 */
 	public LogFileIterationIOException(String filename, IOException cause)
+	{
+		super(cause);
+	}
+	
+	/**
+	 * Wraps a {@link DataFormatException}.
+	 * 
+	 * @param filename associated log file
+	 * @param cause the real cause
+	 */
+	public LogFileIterationIOException(String filename, DataFormatException cause)
 	{
 		super(cause);
 	}

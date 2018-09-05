@@ -5032,7 +5032,7 @@
 6064	Items that were given as gifts cannot be returned for refund. \n\nDo you want to gift it to $s1?
 6065	$s1 has sent you a gift.
 6066	If you cancel sending, the gift item cannot be sent again, and it will be returned to your character.
-6067	Vitality is applied, and you receive $s1 bonus XP. A maximum of $s2 Vitality potion(s) can be used per week, including replenishing/maintaining/recovering.
+6067	Vitality is applied, and you receive $s1 bonus XP/SP. A maximum of $s2 Vitality potion(s) can be used per week, including replenishing/maintaining/recovering.
 6068	Vitality is not yet applied. Vitality is replenished every Wednesday at 6:30 a.m. A maximum of $s1 vitality potion(s) can be used per week, including replenishing/maintaining/recovering.
 6069	You used the Adventurer's Song. You can use $s1 more. The use limit is reset every Wednesday at 6:30 a.m.
 6070	A maximum of 8 non-quantity items can be given as gifts. \nPlease confirm the quantity.
@@ -5154,7 +5154,7 @@
 6186	You cannot report someone who is in battle or is using a private store or shop.
 6187	Cannot continue because another report is being processed. Please try again after entering the verification number.
 6188	You do not meet the level requirements to receive the Attendance Reward. Please check the required level. (You can redeem your reward 30 minutes after logging in.)
-6189	- You must receive the attendance reward in a given day to receive the next day's reward.\n- Rewards received once cannot be reverted back.
+6189	- Receive the reward each day to receive the next day's reward.\n\n- Rewards received once cannot be reverted back.
 6190	This item cannot be used as an offering.
 6191	No more offerings can be registered.
 6192	How many $s1 would you like to register as offerings?

@@ -27,6 +27,7 @@ import static net.l2emuproject.proxy.ui.javafx.UtilityDialogs.wrapException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.file.Path;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -60,6 +62,7 @@ import net.l2emuproject.lang.L2System;
 import net.l2emuproject.lang.L2TextBuilder;
 import net.l2emuproject.lang.management.ShutdownManager;
 import net.l2emuproject.lang.management.TerminationStatus;
+import net.l2emuproject.network.mmocore.MMOBuffer;
 import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.network.protocol.ProtocolVersionManager;
 import net.l2emuproject.proxy.NetPro;
@@ -87,8 +90,13 @@ import net.l2emuproject.proxy.network.ServiceType;
 import net.l2emuproject.proxy.network.listener.ConnectionListener;
 import net.l2emuproject.proxy.network.listener.PacketListener;
 import net.l2emuproject.proxy.network.meta.IPacketTemplate;
+import net.l2emuproject.proxy.network.meta.PacketPayloadEnumerator;
+import net.l2emuproject.proxy.network.meta.RandomAccessMMOBuffer;
+import net.l2emuproject.proxy.network.meta.SimplePpeProvider;
 import net.l2emuproject.proxy.network.meta.UserDefinedProtocolVersion;
 import net.l2emuproject.proxy.network.meta.container.OpcodeOwnerSet;
+import net.l2emuproject.proxy.network.meta.exception.InvalidPacketOpcodeSchemeException;
+import net.l2emuproject.proxy.network.meta.exception.PartialPayloadEnumerationException;
 import net.l2emuproject.proxy.script.NetProScriptCache;
 import net.l2emuproject.proxy.setup.IPAliasManager;
 import net.l2emuproject.proxy.state.entity.cache.EntityInfoCache;
@@ -121,6 +129,8 @@ import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.IntegerBinding;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -307,13 +317,14 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 			final PacketLogTabController controller = ud.getController();
 			
 			_miSave.disableProperty().bind(Bindings.not(controller.hasMemoryPackets()));
-			
+
+			_cbCaptureSession.setSelected(ud.isCaptureDisabled());
+			_cbCaptureSession.setVisible(ud.isOnline());
 			_labProtocol.textProperty().bind(Bindings.convert(controller.protocolProperty()));
 			_labProtocol.setVisible(true);
 			final IntegerBinding protocolVersionProperty = Bindings.createIntegerBinding(() -> controller.protocolProperty().get().getVersion(), controller.protocolProperty());
 			_tbPacketHidingConfig.textProperty().bind(UIStrings.getEx("main.pdc", protocolVersionProperty));
 			_tbPacketHidingConfig.setVisible(true);
-			_cbCaptureSession.setSelected(ud.isCaptureDisabled());
 		});
 		_tpConnections.addEventHandler(KeyEvent.KEY_PRESSED, e -> {
 			if (e.getCode() != KeyCode.F3 || e.isAltDown())
@@ -355,6 +366,9 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 				return;
 			
 			final PacketLogTabUserData userData = (PacketLogTabUserData)ud;
+			if (userData.getClient() == null)
+				return;
+			
 			userData.setCaptureDisabled(neu);
 			_sessionCapture.put(userData.getClient(), neu);
 		});
@@ -793,7 +807,7 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 							final String filename = validLogFile.getLogFile().getFileName().toString();
 							controller.setPacketLog(filename, approxSize, exactSize, UIStrings.get(validLogFile.isRaw() ? "load.infodlg.phx.details.type.raw" : "load.infodlg.phx.details.type.std"),
 									FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
-									ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin()), validLogFile.getFirstPacketArrivalTime());
+									ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin(), validLogFile.getAltModes()), validLogFile.getFirstPacketArrivalTime());
 							tab.setUserData(validLogFile);
 							tabs[i] = tab;
 							continue;
@@ -840,7 +854,7 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 									logPart.getClientIP().getHostAddress() + (cp != null ? (":" + cp) : ""), logPart.getProtocolName(), logPart.getComments(),
 									UIStrings.get(logPart.isEnciphered() ? "load.infodlg.ps.details.stream.unprocessed" : "load.infodlg.ps.details.stream.preprocessed"),
 									FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
-									ProtocolVersionManager.getInstance().getProtocol(logPart.getProtocol(), service.isLogin()), logPart.isEnciphered(), logPart.isEnciphered());
+									ProtocolVersionManager.getInstance().getProtocol(logPart.getProtocol(), service.isLogin(), logPart.getAltModes()), logPart.isEnciphered(), logPart.isEnciphered());
 							tab.setUserData(validLogFile);
 							tabs[i] = tab;
 							continue;
@@ -869,9 +883,9 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 						
 						final ServiceType service = validLogFile.getService();
 						final String filename = validLogFile.getLogFile().getFileName().toString();
-						controller.setPacketLog(filename, approxSize, exactSize, HexUtil.fillHex(validLogFile.getVersion(), 2), integerFormat.format(validLogFile.getPackets()),
+						controller.setPacketLog(filename, approxSize, exactSize, String.format(Locale.ROOT, "%02X", validLogFile.getVersion()), integerFormat.format(validLogFile.getPackets()),
 								FXCollections.observableArrayList(VersionnedPacketTable.getInstance().getKnownProtocols(service)),
-								ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin()));
+								ProtocolVersionManager.getInstance().getProtocol(validLogFile.getProtocol(), service.isLogin(), validLogFile.getAltModes()));
 						tab.setUserData(validLogFile);
 						tabs[i] = tab;
 					}
@@ -916,7 +930,7 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 					final PacketLogTabUserData userData = (PacketLogTabUserData)ud;
 					final ObjectProperty<IProtocolVersion> pp = userData.getController().protocolProperty();
 					final IProtocolVersion old = pp.getValue();
-					final IProtocolVersion neu = ProtocolVersionManager.getInstance().getProtocol(old.getVersion(), ServiceType.valueOf(old).isLogin());
+					final IProtocolVersion neu = ProtocolVersionManager.getInstance().getProtocol(old.getVersion(), ServiceType.valueOf(old).isLogin(), old.getAltModes());
 					pp.set(neu);
 					userData.getController().refreshSelectedPacketView();
 				}
@@ -1345,8 +1359,10 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 		final PacketLogTabUserData userData = (PacketLogTabUserData)tab.getUserData();
 		tab.setOnClosed(e -> {
 			final int threshold = tabs.contains(_tabConsole) ? 1 : 0;
-			if (tabs.size() <= threshold)
+			if (tabs.size() <= threshold) {
 				tabs.add(_tabIdle);
+				_tpConnections.getSelectionModel().select(_tabIdle);
+			}
 			if (userData.getClient() != null)
 				_sessionCapture.remove(userData.getClient());
 			if (userData.getServer() != null)
@@ -1375,9 +1391,6 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 	
 	private void findTabAndAddPacket(Proxy sender, Proxy recipient, ByteBuffer packet, long time)
 	{
-		if (isCaptureDisabledFor(sender.getClient()))
-			return;
-		
 		final byte[] body = new byte[packet.clear().remaining()];
 		packet.get(body);
 		
@@ -1385,9 +1398,6 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 		final PacketLogEntry ple = new PacketLogEntry(result);
 		
 		Platform.runLater(() -> {
-			if (_cbCaptureGlobal.isSelected())
-				return;
-			
 			final ObservableList<Tab> tabs = _tpConnections.getTabs();
 			for (final Tab tab : tabs)
 			{
@@ -1399,7 +1409,15 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 				if (userData.getClient() != sender && userData.getServer() != sender && userData.getClient() != recipient && userData.getServer() != recipient)
 					continue;
 				
-				if (userData.isCaptureDisabled())
+				if (userData.charNameProperty() != null)
+				{
+					// set character name
+					final String charName = getNewCharName(result, sender.getProtocol());
+					if (charName != null)
+						userData.charNameProperty().set(charName);
+				}
+				
+				if (_cbCaptureGlobal.isSelected() || userData.isCaptureDisabled())
 					return;
 				
 				ple.updateView(sender.getProtocol());
@@ -1407,6 +1425,51 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 				break;
 			}
 		});
+	}
+	
+	private String getNewCharName(ReceivedPacket packet, IProtocolVersion protocol)
+	{
+		if (!packet.getEndpoint().isServer())
+			return null;
+		
+		final IPacketTemplate template = VersionnedPacketTable.getInstance().getTemplate(protocol, packet.getEndpoint(), packet.getBody());
+		if (template == null || template.getName() == null)
+			return null;
+		switch (template.getName())
+		{
+		case "CharacterSelectionInfo":
+			return "[Lobby]";
+		case "CharacterSelected":
+			final PacketPayloadEnumerator ppe = SimplePpeProvider.getPacketPayloadEnumerator();
+			if (ppe == null)
+				return "[Unknown]";
+			
+			try
+			{
+				RandomAccessMMOBuffer enumerator = null;
+				try
+				{
+					enumerator = ppe.enumeratePacketPayload(protocol, new MMOBuffer().setByteBuffer(ByteBuffer.wrap(packet.getBody()).order(ByteOrder.LITTLE_ENDIAN)), () -> packet.getEndpoint());
+				}
+				catch (final InvalidPacketOpcodeSchemeException e)
+				{
+					LOG.error("This cannot happen", e);
+					return "[Unknown]";
+				}
+				catch (final PartialPayloadEnumerationException e)
+				{
+					// ignore this due to reasons
+					enumerator = e.getBuffer();
+				}
+				return enumerator.readFirstString("__AUTO_EXTRACT_CHAR_NAME");
+			}
+			catch (RuntimeException e)
+			{
+				return "[Unknown]";
+			}
+		default:
+			return null;
+		}
 	}
 	
 	@Override
@@ -1442,18 +1505,26 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 		Platform.runLater(() -> {
 			final int cid = _connectionIdentifier.incrementAndGet();
 			// for clarity, auth injections are no longer supported in this version
-			if (ServiceType.valueOf(server.getProtocol()) == ServiceType.GAME)
+			ServiceType serviceType = ServiceType.valueOf(server.getProtocol());
+			if (serviceType == ServiceType.GAME)
 				_injectableConnections.add(Pair.of(cid, server.getClient()));
+			
+			StringProperty charNameProperty = null;
 			
 			final Tab tab;
 			final PacketLogTabController controller;
 			try
 			{
 				final FXMLLoader loader = new FXMLLoader(FXUtils.getFXML(PacketLogTabController.class), UIStrings.getBundle());
-				tab = new Tab(
+				tab = new Tab(IPAliasManager.toUserFriendlyString(
 						UIStrings.get("packettab.title", cid, IPAliasManager.toUserFriendlyString(server.getClient().getHostAddress()),
-								IPAliasManager.toUserFriendlyString(server.getHostAddress())),
+								IPAliasManager.toUserFriendlyString(server.getHostAddress()))),
 						loader.load());
+				if (serviceType == ServiceType.GAME)
+				{
+					charNameProperty = new SimpleStringProperty("[Lobby]");
+					tab.textProperty().bind(charNameProperty.concat("@").concat(IPAliasManager.toUserFriendlyString(server.getHostAddress())));
+				}
 				controller = loader.getController();
 			}
 			catch (final IOException e)
@@ -1473,9 +1544,10 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 			gc.fillOval(0, 0, 10, 10);
 			tab.setGraphic(icon);
 			
-			final PacketLogTabUserData userData = new PacketLogTabUserData(controller);
+			final PacketLogTabUserData userData = new PacketLogTabUserData(controller, charNameProperty);
 			userData.setServer(server);
 			userData.setClient(server.getClient());
+			userData.setOnline(true);
 			tab.setUserData(userData);
 			addConnectionTab(tab);
 		});
@@ -1504,11 +1576,16 @@ public class MainWindowController implements IOConstants, ConnectionListener, Pa
 				if (client != userData.getClient() && server != userData.getServer())
 					continue;
 				
+				userData.setOnline(false);
+				
 				final Canvas icon = new Canvas(10, 10);
 				final GraphicsContext gc = icon.getGraphicsContext2D();
 				gc.setFill(new RadialGradient(0, 0, 0.5, 0.5, 0.7, true, CycleMethod.NO_CYCLE, new Stop(0, Color.BLACK), new Stop(1, Color.TRANSPARENT)));
 				gc.fillOval(0, 0, 10, 10);
 				tab.setGraphic(icon);
+				
+				if (_tpConnections.getSelectionModel().getSelectedItem() == tab)
+					_cbCaptureSession.setVisible(false);
 				break;
 			}
 		});

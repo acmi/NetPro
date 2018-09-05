@@ -34,6 +34,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.zip.Deflater;
 
 import org.apache.commons.lang3.mutable.MutableInt;
 
@@ -188,12 +189,26 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 							final ReceivedPacket packet = pi._packet;
 							final byte[] buf = packet.getBody();
 							
-							ioh.writeBoolean(packet.getEndpoint().isClient());
-							ioh.writeChar(buf.length);
-							ioh.write(buf);
-							ioh.writeLong(packet.getReceived());
-							ioh.writeByte((int)BitMaskUtils.maskOf(pi._flags));
-							
+							Deflater deflater = log.getDeflater();
+							if (deflater != null)
+							{
+								ByteBuffer deflateBuffer = log.getDeflateBuffer();
+								deflateBuffer.put((byte)(packet.getEndpoint().isClient() ? 1 : 0));
+								deflateBuffer.putChar((char)buf.length);
+								deflateBuffer.put(buf);
+								deflateBuffer.putLong(packet.getReceived());
+								deflateBuffer.put((byte)BitMaskUtils.maskOf(pi._flags));
+								if (deflateBuffer.position() > (deflateBuffer.capacity() >> 1))
+									writeBlock(log);
+							}
+							else
+							{
+								ioh.writeBoolean(packet.getEndpoint().isClient());
+								ioh.writeChar(buf.length);
+								ioh.write(buf);
+								ioh.writeLong(packet.getReceived());
+								ioh.writeByte((int)BitMaskUtils.maskOf(pi._flags));
+							}
 							log.onPacket(packet);
 						}
 					}
@@ -289,10 +304,10 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 			final NewIOHelper ioh = new NewIOHelper(chan);
 			
 			ioh.writeLong(LOG_MAGIC_INCOMPLETE).writeByte(LOG_VERSION);
-			ioh.writeInt(8 + 1 + 4 + 4 + 8 + 8 + 1 + 4).writeInt(0).writeLong(-1); // header size, footer size, footer start
+			ioh.writeInt(8 + 1 + 4 + 4 + 8 + 8 + 1 + 4 + 8 + 1).writeInt(0).writeLong(-1); // header size, footer size, footer start
 			ioh.writeLong(connection._time).writeBoolean(type.isLogin()).writeInt(-1); // protocol version
-			
-			_files.put(provider, new PacketLog(ioh));
+			ioh.writeLong(0).writeByte(COMPRESSION_TYPE); // total packet data size, compression type
+			_files.put(provider, new PacketLog(ioh, new Deflater(Deflater.DEFAULT_COMPRESSION, true)));
 		}
 		catch (final IOException e)
 		{
@@ -301,14 +316,50 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 		}
 	}
 	
-	@SuppressWarnings("static-method")
-	private void closeFile(PacketLog log, IProtocolVersion protocol)
+	private static void writeBlock(PacketLog log) throws IOException
+	{
+		NewIOHelper ioh = log.getWriter();
+		final long totalSizePos = ioh.getPositionInChannel(true);
+		ioh.writeInt(0); // deflated size
+		int totalDeflatedSize = 0;
+		
+		final Deflater deflater = log.getDeflater();
+		final ByteBuffer deflateBuffer = log.getDeflateBuffer();
+		final byte[] outputBuffer = log.getOutputBuffer();
+		deflater.setInput(deflateBuffer.array(), 0, deflateBuffer.position());
+		int deflatedSize;
+		// UNLIKE zlib, do not initiate with SYNC_FLUSH and continue with NO_FLUSH until the marker is flushed; a different approach must be used according to the JavaDoc:
+		// In the case of FULL_FLUSH or SYNC_FLUSH, if the return value is len, the space available in outputbuffer b, this method should be invoked again with the same flush parameter and more output space.
+		do
+		{
+			deflatedSize = deflater.deflate(outputBuffer, 0, outputBuffer.length, Deflater.SYNC_FLUSH);
+			ioh.write(outputBuffer, 0, deflatedSize);
+			totalDeflatedSize += deflatedSize;
+			//int toOutput = Math.min(deflatedSize, 4);
+			//LOG.info("Flush ended in " + HexUtil.bytesToHexString(outputBuffer, deflatedSize - toOutput, toOutput, " "));
+		}
+		while (deflatedSize == outputBuffer.length);
+		deflateBuffer.clear();
+		ioh.flush();
+		final long blockEndPos = ioh.getPositionInChannel(true) - 4;
+		ioh.setPositionInChannel(totalSizePos);
+		ioh.writeInt(totalDeflatedSize - 4).flush();
+		ioh.setPositionInChannel(blockEndPos);
+	}
+	
+	private static void closeFile(PacketLog log, IProtocolVersion protocol)
 	{
 		if (log == null)
 			return;
 		
 		try (final NewIOHelper ioh = log.getWriter())
 		{
+			if (log.getDeflater() != null)
+			{
+				writeBlock(log);
+				ioh.writeInt(-1);
+			}
+			
 			final long footerStartPos = ioh.getPositionInChannel(true);
 			
 			ioh.writeInt(log.getTotal()); // total packets in file
@@ -327,6 +378,17 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 					ioh.writeInt(e.getKey()).writeInt(e.getValue().intValue()); // packet & count
 			}
 			
+			final Set<String> altModes = protocol.getAltModes();
+			final int modeCount = Math.min(0xFF, altModes.size());
+			ioh.writeByte(modeCount);
+			for (final String altMode : altModes)
+			{
+				final int modeLength = Math.min(0xFF, altMode.length());
+				ioh.writeByte(modeLength);
+				for (int i = 0; i < modeLength; ++i)
+					ioh.writeChar(altMode.charAt(i));
+			}
+			
 			final int fs = (int)(ioh.getPositionInChannel(true) - footerStartPos);
 			
 			ioh.flush();
@@ -338,6 +400,7 @@ public class HistoricalLogIOThread extends Thread implements IOConstants, Connec
 			{
 				ioh.setPositionInChannel(LOG_PROTOCOL_POS);
 				ioh.writeInt(protocol.getVersion());
+				ioh.writeLong(log.getTotalPacketBytes());
 			}
 			ioh.flush();
 			{

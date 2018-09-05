@@ -8,6 +8,7 @@
 package net.l2emuproject.proxy.io.packetlog.l2ph;
 
 import java.nio.file.Path;
+import java.util.Set;
 
 import net.l2emuproject.proxy.network.ServiceType;
 
@@ -24,6 +25,7 @@ public class L2PhLogFileHeader
 	private final ServiceType _firstPacketServiceType;
 	private final long _firstPacketArrivalTime;
 	private final int _protocol;
+	private final Set<String> _altModes;
 	
 	/**
 	 * Constructs this header.
@@ -34,8 +36,9 @@ public class L2PhLogFileHeader
 	 * @param firstPacketServiceType service type of the first packet in log file
 	 * @param firstPacketArrivalTime timestamp of the first packet in log file
 	 * @param protocol network protocol version (-1 if first packet is not {@code SendProtocolVersion})
+	 * @param altModes alternative modes
 	 */
-	L2PhLogFileHeader(Path logFile, long logFileSize, boolean raw, ServiceType firstPacketServiceType, long firstPacketArrivalTime, int protocol)
+	L2PhLogFileHeader(Path logFile, long logFileSize, boolean raw, ServiceType firstPacketServiceType, long firstPacketArrivalTime, int protocol, Set<String> altModes)
 	{
 		_logFile = logFile;
 		_logFileSize = logFileSize;
@@ -43,6 +46,7 @@ public class L2PhLogFileHeader
 		_firstPacketServiceType = firstPacketServiceType;
 		_firstPacketArrivalTime = firstPacketArrivalTime;
 		_protocol = protocol;
+		_altModes = altModes;
 	}
 	
 	/**
@@ -103,6 +107,16 @@ public class L2PhLogFileHeader
 	public int getProtocol()
 	{
 		return _protocol;
+	}
+	
+	/**
+	 * Returns the alternative game modes used by the server.
+	 * 
+	 * @return alternative modes
+	 */
+	public Set<String> getAltModes()
+	{
+		return _altModes;
 	}
 	
 	@Override

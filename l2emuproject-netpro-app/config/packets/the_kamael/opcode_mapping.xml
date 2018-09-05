@@ -52,7 +52,7 @@
 		<packet opcodePrefix="35" id="CM_CHANGE_MOVE_TYPE" />
 		<packet opcodePrefix="36" id="CM_CHANGE_WAIT_TYPE" />
 		<packet opcodePrefix="37" id="CM_REQ_SELL_ITEM" />
-		<packet opcodePrefix="38" id="CM__USER_ACK" />
+		<packet opcodePrefix="38 00 00 00" id="CM__USER_ACK" />
 		<packet opcodePrefix="39" id="CM_REQ_MAGIC_SKILL_USE" />
 		<packet opcodePrefix="3A" id="CM_SEND_APPERING" />
 		<packet opcodePrefix="3B" id="CM_SEND_WARE_HOUSE_DEPOSIT_LIST" />

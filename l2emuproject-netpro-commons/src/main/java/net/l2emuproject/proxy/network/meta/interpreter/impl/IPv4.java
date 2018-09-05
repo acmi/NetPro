@@ -15,7 +15,8 @@
  */
 package net.l2emuproject.proxy.network.meta.interpreter.impl;
 
-import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayInterpreter;
+import net.l2emuproject.network.protocol.IProtocolVersion;
+import net.l2emuproject.proxy.network.meta.interpreter.ByteArrayTranslator;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -23,10 +24,10 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author savormix
  */
-public class IPv4 implements ByteArrayInterpreter
+public class IPv4 implements ByteArrayTranslator
 {
 	@Override
-	public Object getInterpretation(byte[] value, ICacheServerID entityCacheContext)
+	public Object translate(byte[] value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final StringBuilder sb = new StringBuilder(String.valueOf(value[0] & 0xFF));
 		for (int i = 1; i < 4; i++)

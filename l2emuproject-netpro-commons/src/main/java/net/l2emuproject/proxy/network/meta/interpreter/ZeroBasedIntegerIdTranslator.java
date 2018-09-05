@@ -15,6 +15,7 @@
  */
 package net.l2emuproject.proxy.network.meta.interpreter;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 
 /**
@@ -22,7 +23,7 @@ import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
  * 
  * @author _dev_
  */
-public abstract class ZeroBasedIntegerIdInterpreter implements IntegerInterpreter
+public abstract class ZeroBasedIntegerIdTranslator implements IntegerTranslator
 {
 	private final InterpreterMetadata _metadata;
 	private final Object[] _interpretations;
@@ -33,7 +34,7 @@ public abstract class ZeroBasedIntegerIdInterpreter implements IntegerInterprete
 	 * @param metadata metadata
 	 * @param interpretations known ID interpretations
 	 */
-	protected ZeroBasedIntegerIdInterpreter(InterpreterMetadata metadata, Object... interpretations)
+	protected ZeroBasedIntegerIdTranslator(InterpreterMetadata metadata, Object... interpretations)
 	{
 		_metadata = metadata;
 		_interpretations = interpretations;
@@ -44,13 +45,13 @@ public abstract class ZeroBasedIntegerIdInterpreter implements IntegerInterprete
 	 * 
 	 * @param interpretations known ID interpretations
 	 */
-	protected ZeroBasedIntegerIdInterpreter(Object... interpretations)
+	protected ZeroBasedIntegerIdTranslator(Object... interpretations)
 	{
 		this(InterpreterMetadata.DEFAULT_METADATA, interpretations);
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
 		final int idx = (int)(value - _metadata._offset);
 		if (idx < 0 || idx >= _interpretations.length || _interpretations[idx] == null)

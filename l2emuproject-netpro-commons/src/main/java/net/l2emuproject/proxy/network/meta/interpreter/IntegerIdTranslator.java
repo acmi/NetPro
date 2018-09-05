@@ -24,6 +24,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.state.entity.context.ICacheServerID;
 import net.l2emuproject.util.logging.L2Logger;
 
@@ -32,43 +33,43 @@ import net.l2emuproject.util.logging.L2Logger;
  * 
  * @author savormix
  */
-public abstract class IntegerIdInterpreter implements IntegerInterpreter
+public abstract class IntegerIdTranslator implements IntegerTranslator
 {
-	private final Map<Long, ?> _id2Interpretation;
+	private final Map<IProtocolVersion, Map<Long, ?>> _id2InterpretationWrapper;
 	private final Object _unknownKeyInterpretation;
 	
 	/**
 	 * Constructs this interpreter.
 	 * 
-	 * @param id2Interpretation known ID interpretations
+	 * @param id2InterpretationWrapper known ID interpretations
 	 * @param unknownKeyInterpretation unknown ID interpretation or {@code null}
 	 */
-	protected IntegerIdInterpreter(Map<Long, ?> id2Interpretation, Object unknownKeyInterpretation)
+	protected IntegerIdTranslator(Map<IProtocolVersion, Map<Long, ?>> id2InterpretationWrapper, Object unknownKeyInterpretation)
 	{
-		_id2Interpretation = id2Interpretation;
+		_id2InterpretationWrapper = id2InterpretationWrapper;
 		_unknownKeyInterpretation = unknownKeyInterpretation;
 	}
 	
 	/**
 	 * Constructs this interpreter.
 	 * 
-	 * @param id2Interpretation known ID interpretations
+	 * @param id2InterpretationWrapper known ID interpretations
 	 */
-	protected IntegerIdInterpreter(Map<Long, ?> id2Interpretation)
+	protected IntegerIdTranslator(Map<IProtocolVersion, Map<Long, ?>> id2InterpretationWrapper)
 	{
-		this(id2Interpretation, null);
+		this(id2InterpretationWrapper, null);
 	}
 	
 	@Override
-	public Boolean isKnown(long value, ICacheServerID entityCacheContext)
+	public Boolean isKnown(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
-		return _id2Interpretation.containsKey(value);
+		return _id2InterpretationWrapper.getOrDefault(protocol, _id2InterpretationWrapper.getOrDefault(null, Collections.emptyMap())).containsKey(value);
 	}
 	
 	@Override
-	public Object getInterpretation(long value, ICacheServerID entityCacheContext)
+	public Object translate(long value, IProtocolVersion protocol, ICacheServerID entityCacheContext)
 	{
-		Object result = _id2Interpretation.get(value);
+		Object result = _id2InterpretationWrapper.getOrDefault(protocol, _id2InterpretationWrapper.getOrDefault(null, Collections.emptyMap())).get(value);
 		if (result == null)
 			result = _unknownKeyInterpretation;
 		if (result == null)

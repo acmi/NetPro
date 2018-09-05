@@ -19,6 +19,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.l2emuproject.network.protocol.IProtocolVersion;
 import net.l2emuproject.proxy.script.interpreter.ScriptedIntegerIdInterpreter;
 
 /**
@@ -34,8 +35,9 @@ public class Event extends ScriptedIntegerIdInterpreter
 		super(build());
 	}
 	
-	private static final Map<Long, String> build()
+	private static final Map<IProtocolVersion, Map<Long, ?>> build()
 	{
+		final Map<IProtocolVersion, Map<Long, ?>> wrapper = new HashMap<>();
 		final Map<Long, String> result = new HashMap<>();
 		result.put(20090401L, "April fool's 2009");
 		result.put(20090801L, "Eva's inferno");
@@ -43,6 +45,7 @@ public class Event extends ScriptedIntegerIdInterpreter
 		result.put(20091225L, "Raising rudolph");
 		result.put(20100214L, "Lover's jubilee");
 		result.put(20100401L, "Player commendation");
-		return Collections.unmodifiableMap(result);
+		wrapper.put(null, Collections.unmodifiableMap(result));
+		return Collections.unmodifiableMap(wrapper);
 	}
 }
